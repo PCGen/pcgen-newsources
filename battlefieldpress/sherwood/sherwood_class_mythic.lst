@@ -1,19 +1,21 @@
-# CVS $Revision: $ $Author: $ -- Sat Sep 22 13:52:50 2007 -- reformated by prettylst.pl v1.38 (build 2788)
-SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com
+# CVS $Revision: $ $Author: $ -- Sun Jan 13 21:03:05 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source Page		Save checks bonus											Combat bonus
 CLASS:Conjurer	HD:6		TYPE:PC.Base	ABB:Con		MAXLEVEL:10	HASSUBCLASS:NO	SOURCEPAGE:pg.xxx	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Conjurer	STARTSKILLPTS:5	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Heal|Intimidate|TYPE.Knowledge|TYPE.Profession|Sense Motive|Survival
-1					BONUS:VAR|SFMLevel|CL																																										AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
-1:REPEATLEVEL:2|SKIP=0|MAX=9	ADD:FEAT|Reactive Charm/Retributive Curse,Greater Charm,Evil Eye,Augury,Legend Lore,Locate Object or Person,Clairaudience/Clairvoyance,Craft Talisman,Brew Potion,Craft Magic Arms and Armor,Create Legendary Item,Fey Friend,Familiar,Monstrous Ally
-2:REPEATLEVEL:2|SKIP=0|MAX=10	ADD:FEAT|Swashbuckling Point,Alertness,Animal Affinity,Deceitful,Great Fortitude,Iron Will,Negotiator,Persuasive,Self Sufficient,Skill Focus
+1								BONUS:VAR|SFMLevel|CL										AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
+1	BONUS:ABILITYPOOL|Conjurer Class|(CL+1)/2
+2	BONUS:ABILITYPOOL|Conjurer Feat|CL/2
+#1:REPEATLEVEL:2|SKIP=0|MAX=9	ADD:FEAT|Reactive Charm/Retributive Curse,Greater Charm,Evil Eye,Augury,Legend Lore,Locate Object or Person,Clairaudience/Clairvoyance,Craft Talisman,Brew Potion,Craft Magic Arms and Armor,Create Legendary Item,Fey Friend,Familiar,Monstrous Ally
+#2:REPEATLEVEL:2|SKIP=0|MAX=10	ADD:FEAT|Swashbuckling Point,Alertness,Animal Affinity,Deceitful,Great Fortitude,Iron Will,Negotiator,Persuasive,Self Sufficient,Skill Focus
 #REDO as Abilities to remove the add feature.
 
 #Block: Defense
-1					AUTO:FEAT|ConjurerDefense
-1					BONUS:VAR|ConjurerAC|(CL+1)/2
+1													ABILITY:Internal|AUTOMATIC|ConjurerDefense
+1								BONUS:VAR|ConjurerAC|(CL+1)/2
 #3					BONUS:VAR|ConjurerAC|1
 #5					BONUS:VAR|ConjurerAC|1
 #7					BONUS:VAR|ConjurerAC|1

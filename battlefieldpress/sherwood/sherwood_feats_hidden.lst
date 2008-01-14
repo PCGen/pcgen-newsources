@@ -1,78 +1,79 @@
-# CVS $Revision: $ $Author: $ -- Sat Sep 22 13:52:50 2007 -- reformated by prettylst.pl v1.38 (build 2788)
-SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com
+# CVS $Revision: $ $Author: $ -- Sun Jan 13 21:03:05 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
 ###Block: Class Defense Bonus:
 # Feat Name					Type								Visible			Required Feat						Prohibited Feat				Multiple Requirements											Special Ability									Define						Stackable?	Multiple?	Combat bonus								Modify VAR									Allow Follower		Allowed Companions
-EngineerDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:EngineerDefense|0							BONUS:COMBAT|AC|EngineerDefense|TYPE=ClassBonus.REPLACE
-KnaveDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:KnaveDefense|0								BONUS:COMBAT|AC|KnaveDefense|TYPE=ClassBonus.REPLACE
-ManAtArmsDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:ManAtArmsAC|0								BONUS:COMBAT|AC|ManAtArmsAC|TYPE=ClassBonus.REPLACE
-NobleDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:NobleAC|0									BONUS:COMBAT|AC|NobleAC|TYPE=ClassBonus.REPLACE
-PriestDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:PriestAC|0									BONUS:COMBAT|AC|PriestAC|TYPE=ClassBonus.REPLACE
-YeomanDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:YeomanAC|0									BONUS:COMBAT|AC|YeomanAC|TYPE=ClassBonus.REPLACE
-ConjurerDefense				CATEGORY:Internal								VISIBLE:DISPLAY																																										DEFINE:ConjurerAC|0								BONUS:COMBAT|AC|ConjurerAC|TYPE=ClassBonus.REPLACE
+# Ability Name				Category of Ability	Type								Visible		Required Ability								Restricted Ability					Multiple Requirements																	Special ABility									Define						Stackable?	Multiple?	Choose		Combat bonus								Modify VAR									Allow Follower		Allowed Companions
+EngineerDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:EngineerDefense|0										BONUS:COMBAT|AC|EngineerDefense|TYPE=ClassBonus.REPLACE
+KnaveDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:KnaveDefense|0											BONUS:COMBAT|AC|KnaveDefense|TYPE=ClassBonus.REPLACE
+ManAtArmsDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:ManAtArmsAC|0											BONUS:COMBAT|AC|ManAtArmsAC|TYPE=ClassBonus.REPLACE
+NobleDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:NobleAC|0												BONUS:COMBAT|AC|NobleAC|TYPE=ClassBonus.REPLACE
+PriestDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:PriestAC|0												BONUS:COMBAT|AC|PriestAC|TYPE=ClassBonus.REPLACE
+YeomanDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:YeomanAC|0												BONUS:COMBAT|AC|YeomanAC|TYPE=ClassBonus.REPLACE
+ConjurerDefense				CATEGORY:Internal										VISIBLE:DISPLAY																																																		DEFINE:ConjurerAC|0											BONUS:COMBAT|AC|ConjurerAC|TYPE=ClassBonus.REPLACE
 
 #Block: CLASS FEATS:
-Swashbuckling Point			CATEGORY:FEAT	TYPE:ClassAbility.SwashbucklingPoint		VISIBLE:DISPLAY																															SAB:Swashbuckling Points - %|SwashbucklingPointTotal			DEFINE:SwashbucklingPointTotal|0		STACK:YES	MULT:YES											BONUS:VAR|SwashbucklingPointTotal|1	CHOOSE:NOCHOICE
+Swashbuckling Point			CATEGORY:FEAT		TYPE:ClassAbility.SwashbucklingPoint		VISIBLE:DISPLAY																																							SAB:Swashbuckling Points - %|SwashbucklingPointTotal			DEFINE:SwashbucklingPointTotal|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE											BONUS:VAR|SwashbucklingPointTotal|1
 
 ### Starting Aspects -
 ###COMMENTS: Mechanism was needed to prevent gaining the "aspect" of more than one class. Starting class is the only valid aspect.
-Invention				CATEGORY:Internal	TYPE:ClassAbility.StartingAspect.Engineer		VISIBLE:NO											!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect															SAB:Invention
-Swashbuckler			CATEGORY:Internal	TYPE:ClassAbility.StartingAspect.Knave		VISIBLE:NO											!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect															
-Tactician				CATEGORY:Internal	TYPE:ClassAbility.StartingAspect.ManAtArms	VISIBLE:NO											!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Privilege				CATEGORY:Internal	TYPE:ClassAbility.StartingAspect.Noble		VISIBLE:NO											!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Inspiring Presence		CATEGORY:Internal	TYPE:ClassAbility.StartingAspect.Priest		VISIBLE:NO											!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Commoner's Aspect			CATEGORY:Internal	TYPE:ClassAbility.StartingAspect.Yeoman		VISIBLE:NO											!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect															SAB:Commoner's Aspect - +%|CommonerAspectLV				DEFINE:CommonerAspectLV|0
+Invention					CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Engineer		VISIBLE:NO												!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect																					SAB:Invention
+Swashbuckler				CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Knave		VISIBLE:NO												!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
+Tactician					CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.ManAtArms	VISIBLE:NO												!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
+Privilege					CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Noble		VISIBLE:NO												!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
+Inspiring Presence			CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Priest		VISIBLE:NO												!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
+Commoner's Aspect				CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Yeoman		VISIBLE:NO												!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect																					SAB:Commoner's Aspect - +%|CommonerAspectLV				DEFINE:CommonerAspectLV|0
 
 ### Man at Arms - Tactical
-Offensive Tactics			CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Offensive Tactics],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Offensive Tactics - +%|OffensiveTacticTaken				DEFINE:OffensiveTacticTaken|0			STACK:YES	MULT:YES											BONUS:VAR|OffensiveTacticTaken|1
-Defensive Tactics			CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Defensive Tactics],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Defensive Tactics - +%|DefensiveTacticTaken				DEFINE:DefensiveTacticTaken|0			STACK:YES	MULT:YES											BONUS:VAR|DefensiveTacticTaken|1
-Coordinated Maneuvers		CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Coordinated Maneuvers],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Coordinated Maneuvers - +%|CoordinatedManeuversTaken		DEFINE:CoordinatedManeuversTaken|0		STACK:YES	MULT:YES											BONUS:VAR|CoordinatedManeuversTaken|2
-Stand Fast				CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Stand Fast],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Stand Fast - +%|StandFastTaken						DEFINE:StandFastTaken|0				STACK:YES	MULT:YES											BONUS:VAR|StandFastTaken|2
-Heads Up				CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Heads Up],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]		SAB:Heads Up - +%|HeadsUpTaken							DEFINE:HeadsUpTaken|0				STACK:YES	MULT:YES											BONUS:VAR|HeadsUpTaken|2
-Inspiration				CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Inspiration],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Inspiration - +%|InspirationTaken					DEFINE:InspirationTaken|0			STACK:YES	MULT:YES											BONUS:VAR|InspirationTaken|2
-Coordinate				CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Tactician																									SAB:Coordinate
-Close and Attack			CATEGORY:Class Ability		TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Close and Attack],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Close and Attack - +%|CloseAndAttackTaken				DEFINE:CloseAndAttackTaken|0			STACK:YES	MULT:YES											BONUS:VAR|CloseAndAttackTaken|2
+Offensive Tactics				CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Offensive Tactics],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Offensive Tactics - +%|OffensiveTacticTaken				DEFINE:OffensiveTacticTaken|0			STACK:YES	MULT:YES														BONUS:VAR|OffensiveTacticTaken|1
+Defensive Tactics				CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Defensive Tactics],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Defensive Tactics - +%|DefensiveTacticTaken				DEFINE:DefensiveTacticTaken|0			STACK:YES	MULT:YES														BONUS:VAR|DefensiveTacticTaken|1
+Coordinated Maneuvers			CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Coordinated Maneuvers],[PREABILITY:1,CATEGORY=ANY,Tactician]		SAB:Coordinated Maneuvers - +%|CoordinatedManeuversTaken		DEFINE:CoordinatedManeuversTaken|0		STACK:YES	MULT:YES														BONUS:VAR|CoordinatedManeuversTaken|2
+Stand Fast					CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Stand Fast],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Stand Fast - +%|StandFastTaken						DEFINE:StandFastTaken|0				STACK:YES	MULT:YES														BONUS:VAR|StandFastTaken|2
+Heads Up					CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Heads Up],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Heads Up - +%|HeadsUpTaken						DEFINE:HeadsUpTaken|0				STACK:YES	MULT:YES														BONUS:VAR|HeadsUpTaken|2
+Inspiration					CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Inspiration],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Inspiration - +%|InspirationTaken					DEFINE:InspirationTaken|0			STACK:YES	MULT:YES														BONUS:VAR|InspirationTaken|2
+Coordinate					CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Tactician																																	SAB:Coordinate
+Close and Attack				CATEGORY:Class Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Close and Attack],[PREABILITY:1,CATEGORY=ANY,Tactician]				SAB:Close and Attack - +%|CloseAndAttackTaken				DEFINE:CloseAndAttackTaken|0			STACK:YES	MULT:YES														BONUS:VAR|CloseAndAttackTaken|2
 
 ### Noble
-Abbot					CATEGORY:Internal	TYPE:ClassAbility.NobleStarting							PREABILITY:1,CATEGORY=ANY,Privilege																									SAB:Abbot
-Manorial Lord			CATEGORY:Internal	TYPE:ClassAbility.NobleStarting							PREABILITY:1,CATEGORY=ANY,Privilege																									SAB:Manorial Lord
-Wandering Knight			CATEGORY:Internal	TYPE:ClassAbility.NobleStarting							PREABILITY:1,CATEGORY=ANY,Privilege																									SAB:Wandering Knight
+Abbot						CATEGORY:Internal		TYPE:ClassAbility.NobleStarting						PREABILITY:1,CATEGORY=ANY,Privilege																																	SAB:Abbot
+Manorial Lord				CATEGORY:Internal		TYPE:ClassAbility.NobleStarting						PREABILITY:1,CATEGORY=ANY,Privilege																																	SAB:Manorial Lord
+Wandering Knight				CATEGORY:Internal		TYPE:ClassAbility.NobleStarting						PREABILITY:1,CATEGORY=ANY,Privilege																																	SAB:Wandering Knight
 
 #### Priest
-Calming Presence			CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Calming Presence],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]		SAB:Calming Presence +%|CalmingPresence					DEFINE:CalmingPresence|0			STACK:YES	MULT:YES											BONUS:VAR|CalmingPresence|2
-Everyone Has Their Time		CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Everyone Has Their Time],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]	SAB:Everyone Has Their Time +%|EveryoneHasTheirTimeTaken		DEFINE:EveryoneHasTheirTimeTaken|0		STACK:YES	MULT:YES											BONUS:VAR|EveryoneHasTheirTimeTaken|var("CL=Priest")
-Cast Out				CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Inspiring Presence																								SAB:Cast Out																	STACK:NO	MULT:NO
-Ecclesiastical Privilege	CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Ecclesiastical Privilege],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]	SAB:Ecclesiastical Privilege - +%|EcclesiasticalPrivilegeTaken	DEFINE:EcclesiasticalPrivilegeTaken|0	STACK:NO	MULT:NO											BONUS:VAR|EcclesiasticalPrivilegeTaken|var("CL=Priest")
-Fear God's Wrath			CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																	PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Fear God's Wrath],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]		SAB:Fear God's Wrath															STACK:NO	MULT:NO
+Calming Presence				CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Calming Presence],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]			SAB:Calming Presence +%|CalmingPresence					DEFINE:CalmingPresence|0			STACK:YES	MULT:YES														BONUS:VAR|CalmingPresence|2
+Everyone Has Their Time			CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Everyone Has Their Time],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]	SAB:Everyone Has Their Time +%|EveryoneHasTheirTimeTaken		DEFINE:EveryoneHasTheirTimeTaken|0		STACK:YES	MULT:YES														BONUS:VAR|EveryoneHasTheirTimeTaken|var("CL=Priest")
+Cast Out					CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Inspiring Presence																															SAB:Cast Out																STACK:NO	MULT:NO
+Ecclesiastical Privilege		CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Ecclesiastical Privilege],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]	SAB:Ecclesiastical Privilege - +%|EcclesiasticalPrivilegeTaken	DEFINE:EcclesiasticalPrivilegeTaken|0	STACK:NO	MULT:NO														BONUS:VAR|EcclesiasticalPrivilegeTaken|var("CL=Priest")
+Fear God's Wrath				CATEGORY:Class Ability	TYPE:ClassAbility.Priest				VISIBLE:DISPLAY																			PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Fear God's Wrath],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]			SAB:Fear God's Wrath															STACK:NO	MULT:NO
 
 ### Yeoman
-#Commoner's Aspect Increase										VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Commoner's Aspect																																										STACK:YES	MULT:YES											BONUS:VAR|CommonerAspectLV|2	
+#Commoner's Aspect Increase										VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Commoner's Aspect																																										STACK:YES	MULT:YES											BONUS:VAR|CommonerAspectLV|2
 
 
 ############ ABILITYCATEGORIES would be good for this Section ##########
 ### CONJURER
 #Block: Charms and Curses
-Personal Magic				CATEGORY:Class Ability		TYPE:Conjurer.CharmCurse						VISIBLE:DISPLAY
-Reactive Charm/Retributive Curse	CATEGORY:Class Ability		TYPE:Conjurer.CharmCurse						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Personal Magic
-Greater Charm				CATEGORY:Class Ability		TYPE:Conjurer.CharmCurse						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Reactive Charm/Retributive Curse
-Evil Eye					CATEGORY:Class Ability		TYPE:Conjurer.CharmCurse						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Greater Charm
+Personal Magic				CATEGORY:Class Ability	TYPE:Conjurer.CharmCurse				VISIBLE:DISPLAY
+Reactive Charm/Retributive Curse	CATEGORY:Class Ability	TYPE:Conjurer.CharmCurse				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Personal Magic
+Greater Charm				CATEGORY:Class Ability	TYPE:Conjurer.CharmCurse				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Reactive Charm/Retributive Curse
+Evil Eye					CATEGORY:Class Ability	TYPE:Conjurer.CharmCurse				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Greater Charm
 
 #Block: Divination
-Augury					CATEGORY:Class Ability		TYPE:Conjurer.Divination						VISIBLE:DISPLAY
-Legend Lore					CATEGORY:Class Ability		TYPE:Conjurer.Divination						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Augury
-Locate Object or Person			CATEGORY:Class Ability		TYPE:Conjurer.Divination						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Legend Lore
-Clairaudience/Clairvoyance		CATEGORY:Class Ability		TYPE:Conjurer.Divination						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Locate Object or Person
+Augury					CATEGORY:Class Ability	TYPE:Conjurer.Divination				VISIBLE:DISPLAY
+Legend Lore					CATEGORY:Class Ability	TYPE:Conjurer.Divination				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Augury
+Locate Object or Person			CATEGORY:Class Ability	TYPE:Conjurer.Divination				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Legend Lore
+Clairaudience/Clairvoyance		CATEGORY:Class Ability	TYPE:Conjurer.Divination				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Locate Object or Person
 
 #Block: Enchantment
-Craft Talisman				CATEGORY:Class Ability		TYPE:Conjurer.Enchantment						VISIBLE:DISPLAY
-Brew Potion					CATEGORY:Class Ability		TYPE:Conjurer.Enchantment						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Craft Talisman
-Craft Magic Arms and Armor		CATEGORY:Class Ability		TYPE:Conjurer.Enchantment						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Brew Potion
-Create Legendary Item			CATEGORY:Class Ability		TYPE:Conjurer.Enchantment						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Craft Magic Arms and Armor
+Craft Talisman				CATEGORY:Class Ability	TYPE:Conjurer.Enchantment				VISIBLE:DISPLAY
+Brew Potion					CATEGORY:Class Ability	TYPE:Conjurer.Enchantment				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Craft Talisman
+Craft Magic Arms and Armor		CATEGORY:Class Ability	TYPE:Conjurer.Enchantment				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Brew Potion
+Create Legendary Item			CATEGORY:Class Ability	TYPE:Conjurer.Enchantment				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Craft Magic Arms and Armor
 
 #Block: Fairy Lore
-Fey Friend					CATEGORY:Class Ability		TYPE:FairyLore.Conjurer						VISIBLE:DISPLAY																															SAB:Fey Friend
-Familiar					CATEGORY:Class Ability		TYPE:FairyLore.Conjurer						VISIBLE:DISPLAY																														SAB:Familiar	SAB:Summon Familiar						DEFINE:SFMLevel|0																													FOLLOWERS:Familiar|1	COMPANIONLIST:Familiar|Bat,Cat,Hawk,Lizard,Owl,Rat,Raven,Snake (Viper/Tiny),Toad,Weasel
-Monstrous Ally				CATEGORY:Class Ability		TYPE:FairyLore.Conjurer						VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Fey Friend																									SAB:Monstrous Ally
+Fey Friend					CATEGORY:Class Ability	TYPE:FairyLore.Conjurer					VISIBLE:DISPLAY																																							SAB:Fey Friend
+Familiar					CATEGORY:Class Ability	TYPE:FairyLore.Conjurer					VISIBLE:DISPLAY																																							SAB:Familiar	SAB:Summon Familiar					DEFINE:SFMLevel|0																																FOLLOWERS:Familiar|1	COMPANIONLIST:Familiar|Bat,Cat,Hawk,Lizard,Owl,Rat,Raven,Snake (Viper/Tiny),Toad,Weasel
+Monstrous Ally				CATEGORY:Class Ability	TYPE:FairyLore.Conjurer					VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Fey Friend																																SAB:Monstrous Ally
 
 #

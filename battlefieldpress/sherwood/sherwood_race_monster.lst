@@ -1,32 +1,41 @@
-SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com
+# CVS $Revision: $ $Author: $ -- Sun Jan 13 21:42:45 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
-
-Dragon_Sherwood	OUTPUTNAME:Dragon	CR:11	MONSTERCLASS:Magical Beast:15	MOVE:Walk,30,Fly,50	SIZE:H	VISION:Low-light|Darkvision (120')	SAB:Scent	SAB:Immunity to Fire	ALIGN:CE
-#AC 20
-#SAB:Breath Weapon (Ex) 40-ft. cone, damage 6d8 fire, Reflex DC 22
-# Ability Focus (breath weapon), Alertness, Hover, Iron Will, Multiattack, Snatch*.		FEAT:Alertness|Hover|Iron Will|Multiattack|Snatch
-#Stat: Str:27, DEX:10, CON:21, INT:14, WIS:17, CHA:18
-BONUS:STAT|STR|16	BONUS:STAT|CON|10	BONUS:STAT|INT|4	BONUS:STAT|WIS|6		BONUS:STAT|CHA|8
-#Skill Bluff +10, Concentration +17, Diplomacy +14, Hide –4, Intimidate +20, Jump +29, Knowledge (arcana) +10, Knowledge (geography) +8, Knowledge (local) +8, Knowledge (nature) +10, Listen +18, Search +18, Sense Motive +10, Spot +21.
-
-Gargoyle_Sherwood	OUTPUTNAME:Gargoyle	CR:5	MONSTERCLASS:Monstrous Humanoid:6	MOVE:Walk,40,Fly,60	DR:10/magic	VISION:Darkvision (60')	SAB:Freeze	ALIGN:CE	
-#STR:15, Dx:14, Cn:18, INT:6, WIS:11, CHA:7
-#Skills and Feats: Hide +7, Listen +5, Spot +5; Flyby Attack, Multiattack, Toughness.
-
-
-#Werewolf, grab from RSRD for mixes.
-
-#Selkie	
+# Race Name				Output Name			Starting Feats	Size		Move				Face/Space	Reach		Vision					Required AL	Combat bonus						Stat bonus														Feat						Natural Attacks																												Special ABility															Spell Res.	Damage Reduction	MONSTERCLASS				Main Race Type			Race Subtype		Type				Template				CR		Innate Spells
+Dragon_Sherwood			OUTPUTNAME:Dragon		STARTFEATS:1	SIZE:H	MOVE:Walk,30,Fly,50	FACE:15	REACH:10	VISION:Low-light|Darkvision (120')	PREALIGN:CE	BONUS:COMBAT|AC|10|TYPE=NaturalArmor.REPLACE	BONUS:STAT|STR|16	BONUS:STAT|CON|10	BONUS:STAT|INT|4	BONUS:STAT|WIS|6	BONUS:STAT|CHA|8	FEAT:Snatch					NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Piercing,*1,3d6|Claws,Weapon.Natural.Melee.Finesseable.Piercing,*2,1d8										SAB:Scent	SAB:Immunity to Fire	SAB:Breath Weapon (Ex) 40-ft. cone, damage 6d8 fire, Reflex DC 22						MONSTERCLASS:Magical Beast:15		RACETYPE:Dragon			RACESUBTYPE:Dragon	TYPE:Dragon								CR:11
+Gargoyle_Sherwood			OUTPUTNAME:Gargoyle	STARTFEATS:1	SIZE:M	MOVE:Walk,40,Fly,60	FACE:5	REACH:5	VISION:Darkvision (60')			PREALIGN:CE	BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:STAT|STR,DEX|4	BONUS:STAT|CON|8	BONUS:STAT|INT,CHA|-4											NATURALATTACKS:Claws,Weapon.Natural.Melee.Finesseable.Slashing,*2,1d4|Bite,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d6|Gore,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d6	SAB:Freeze																		DR:10/magic		MONSTERCLASS:Monstrous Humanoid:6	RACETYPE:Monstrous Humanoid	RACESUBTYPE:Gargoyle	TYPE:Monstrous Humanoid						CR:5
+Selkie								STARTFEATS:1	SIZE:M	MOVE:Walk,20,Swim,50	FACE:5	REACH:5	VISION:Low-light				PREALIGN:CN	BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:STAT|STR,DEX|2	BONUS:STAT|CON|4	BONUS:STAT|CHA|6	BONUS:STAT|WIS|-2																																							SAB:Selkie Cape (Su)																			MONSTERCLASS:Humanoid:1			RACETYPE:Humanoid			RACESUBTYPE:Elf		TYPE:Humanoid		TEMPLATE:Aquatic			CR:1/2
 
 ###Fey
-Changling (Young Child)	CR:1/4	MONSTERCLASS:Humanoid:1	SAB:Hearth Curse (Ex)	ALIGN:CE
-#Str 8, Dex 13, Con 12, Int 10, Wis 9, Cha 6. Skills and Feats: Bluff +2, Hide +3, Listen +2, Move Silently +3, Spot +2; Alertness.
+Changeling (Young Child)					STARTFEATS:1	SIZE:S	MOVE:Walk,20		FACE:5	REACH:5							PREALIGN:CE									BONUS:STAT|STR,WIS|-2	BONUS:STAT|DEX,CON|2	BONUS:STAT|CHA|-4											NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d4																			SAB:Hearth Curse (Ex)																			MONSTERCLASS:Humanoid:1			RACETYPE:Humanoid			RACESUBTYPE:Changeling	TYPE:Humanoid		TEMPLATE:Fey			CR:1/4
+Grogach								STARTFEATS:1	SIZE:S	MOVE:Walk,20		FACE:5	REACH:5	VISION:Low-light				PREALIGN:CG									BONUS:STAT|DEX|8	BONUS:STAT|INT,WIS|2	BONUS:STAT|CHA|6																																										SAB:Spell-like abilities																		MONSTERCLASS:Fey:1			RACETYPE:Fey			RACESUBTYPE:Grogach	TYPE:Fey			TEMPLATE:Fey			CR:1		SPELLS:Innate|TIMES=-1|CASTERLEVEL=1|Mage Hand|Mending|Prestidigitation,10+CHA|Open/Close
+Leprechaun								STARTFEATS:1	SIZE:S	MOVE:Walk,40		FACE:5	REACH:5	VISION:Low-light				PREALIGN:TN	BONUS:COMBAT|AC|0|TYPE=NaturalArmor.REPLACE	BONUS:STAT|STR|-4	BONUS:STAT|DEX,INT,CHA|6	BONUS:STAT|WIS|4																																									SAB:Spell-like abilities													SR:25					MONSTERCLASS:Fey:1			RACETYPE:Fey			RACESUBTYPE:Leprechaun	TYPE:Fey			TEMPLATE:Fey			CR:3		SPELLS:Innate|TIMES=-1|CASTERLEVEL=7|Blink|Dancing Lights,10+CHA|Greater Teleport,10+CHA|Invisibility,12+CHA|Mage Hand|Mending|Polymorph Any Object,17+CHA|Ventriloquism
+Pooka (Goblin Form)						STARTFEATS:1	SIZE:S	MOVE:Walk,20		FACE:5	REACH:5	VISION:Darkvision (60')			PREALIGN:CN	BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE																						NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d6																			SAB:Spell-like abilities																		MONSTERCLASS:Fey:4			RACETYPE:Fey			RACESUBTYPE:Pooka		TYPE:Fey			TEMPLATE:Fey			CR:3		SPELLS:Innate|TIMES=-1|CASTERLEVEL=1|Polymorph	SPELLS:Innate|TIMES=1|CASTERLEVEL=1|Augury
 
-Grogach	CR:1	MONSTERCLASS:Fey:1	SAB:Spell-like abilities	VISION:Low-light
-#Str 11, Dex 18, Con 11, Int 12, Wis 13, Cha 16.
-#Skills and Feats: Bluff +7, Escape Artist +8, hide +14, Jump +4, Listen +7, Move Silently +10, Search +5, Sense Motive +5, Spot +7; Alertness.
-#Spell-Like Abilities: At will—mage hand, mending, open/close, prestidigitation.
+#Ghosts
+Banshee								STARTFEATS:1	SIZE:M	MOVE:Fly,60			FACE:5	REACH:5	VISION:Darkvision (60')			PREALIGN:LE									BONUS:STAT|DEX|6	BONUS:STAT|INT,WIS,CHA|4								FEAT:Improved Initiative|Alertness	NATURALATTACKS:Incorporeal touch,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d4																	SAB:Fear (Su)																				MONSTERCLASS:Undead:5			RACETYPE:Undead			RACESUBTYPE:Banshee	TYPE:Undead			TEMPLATE:Incorporeal|Undead	CR:5
+Ghost									STARTFEATS:1	SIZE:M	MOVE:Fly,40			FACE:5	REACH:5	VISION:Darkvision (60')			PREALIGN:TN									BONUS:STAT|DEX|4	BONUS:STAT|INT|-4	BONUS:STAT|WIS,CHA|2												NATURALATTACKS:Incorporeal touch,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d4																	SAB:Aging (Su)	SAB:Strength Damage (Su)															MONSTERCLASS:Undead:3			RACETYPE:Undead			RACESUBTYPE:Ghost		TYPE:Undead			TEMPLATE:Incorporeal|Undead	CR:3
 
+#####
+#COMMENT: Werewolf appears to be all templates added in the rsrd, everything looks the same at a cursory glance. Will leave werewolf out for now.
+#Werewolf, grab from RSRD for mixes.
+#Werewolf (Human Form)	CR:3	SIZE:M	humanoid (Humanoid, shapechanger); HD 1d8+1 plus 2d8+6; hp 20; Init +4; Spd 30 ft.; AC 17, touch 10, flat-footed 17; Space/Reach 5 ft./5 ft.; Base Atk/Grapple +2/+3; Atk/Full Atk +3 melee (1d8+1/19–20, longsword) or +2 ranged (1d8/19–20, light crossbow); SQ Alternate form, low-light vision, scent, wolf empathy; AL CE; SV Fort +6, Ref +3, Will +2; Str 13, Dex 11, Con 12, Int 10, Wis 11, Cha 8.
+#Skills and Feats: Handle Animal +1, Hide +1, Listen +1, Move Silently +2, Spot +1, Survival +2; Improved Initiative, Iron WillB, Stealthy, TrackB, Weapon Focus (bite).
+#Werewolf (Wolf Form)	CR:3	SIZE:M	BONUS:COMBAT|AC|4|TYPE=NaturalArmor.REPLACE	FACE:5	REACH:5	NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d6	SAB:Curse of Lycanthropy	SAB:Trip	SAB:Alternate Form	DR:10/silver	VISION:Low-light	SAB:Scent	SAB:Wolf Empathy	ALIN:CE	BONUS:STAT|STR,DEX|4	BONUS:STAT|CON|6	BONUS:STAT|CHA|-2
+#humanoid (Humanoid, shapechanger); HD 1d8+1 plus 2d8+6; hp 20; Init +6; Spd 50 ft.;
+#KIT STUFF
+#STR=11|DEX=11|CON=10|INT=10|WIS=11|CHA=10
+#Str 15, Dex 15, Con 16, Int 10, Wis 11, Cha 8.
+#Skills and Feats: Handle Animal +1, Hide +6, Listen +1, Move Silently +6, Spot +1, Survival +2*; Improved Initiative, Iron WillB, Stealthy, TrackB, Weapon Focus (bite).
+#Werewolf (hybrid form): CR 3; Medium humanoid (Humanoid, shapechanger); HD 1d8+1 plus 2d8+6; hp 20; Init +6; Spd 30 ft.; AC 16, touch 12, flat-footed 14; Space/Reach 5 ft./5 ft.; Base Atk/Grapple +2/+4; Atk +4 melee (1d4+2, claw); Full Atk +4 melee (1d4+2, 2 claws) and +0 melee (1d6+1, bite); SA Curse of lycanthropy; SQ Alternate form, damage reduction 10/silver, low-light vision, scent, wolf empathy; AL CE; SV Fort +6, Ref +3, Will +2; Str 13, Dex 11, Con 12, Int 10, Wis 11, Cha 8.
+#Skills and Feats: Handle Animal +1, Hide +6, Listen +1, Move Silently +6, Spot +1, Survival +2*; Improved Initiative, Iron WillB, Stealthy, TrackB, Weapon Focus (bite).
+#Alternate Form (Su): A werewolf can assume a bipedal hybrid form or the form of a wolf.
+#Curse of Lycanthropy (Su): Any humanoid or giant hit by a werewolf’s bite attack in animal or hybrid form must succeed on a DC 15 Fortitude save or contract lycanthropy.
+#Trip (Ex): A werewolf in animal form that hits with a bite attack can attempt to trip the opponent (+2 check modifier) as a free action with making a touch attack or provoking an attack of opportunity. If the attempt fails, the opponent cannot react to trip the werewolf.
+#Wolf Empathy (Ex): Communicate with wolves and dire wolves, and a +4 racial bonus on Charisma-based checks against wolves and dire wolves.
+#Skills: A werewolf in hybrid or wolf form gains a +4 racial bonus on Survival checks when tracking by scent.
 
-
+#
+##EOF
+#
