@@ -1,119 +1,97 @@
-# CVS $Revision: $ $Author: $ -- Sun Jan 13 21:03:05 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+# CVS $Revision$ $Author$ -- Wed Jan 16 23:08:38 2008 -- reformated by prettylst.pl v1.38 (build 4314)
 SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
+###Block: Engineer ----------------------------------------------------------------------
+
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-CLASS:Engineer	HD:6		TYPE:PC.Base	ABB:Eng		MAXLEVEL:10	SOURCEPAGE:pg.2		BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+CLASS:Engineer	HD:6		TYPE:PC.Base	ABB:Eng		MAXLEVEL:10	SOURCEPAGE:pg.2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Engineer	STARTSKILLPTS:9	CSKILL:Appraise|Climb|TYPE.Craft|Concentration|Diplomacy|Jump|Knowledge (Architecture and Engineering)|Knowledge (Geography|Knowledge (History)|Knowledge (Local)|Knowledge (Nobility and Royalty)|Listen|TYPE.Profession|Ride|Search|Spot|Swim|Use Device|Use Rope
-#Block: Proficiencies
-1																										AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|All Automatic Proficiencies
-1																										AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
-#CLASS
-1																						TEMPLATE:Core Class
+###Block: Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|All Automatic Proficiencies
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+###Block: Class Abilities
+1								BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
 2								BONUS:VAR|EngineerDefense|CL/2	ABILITY:Internal|AUTOMATIC|EngineerDefense
-2	BONUS:ABILITYPOOL|Engineer Feat|CL/2
-#2:REPEATLEVEL:2|SKIP=0|MAX=10			ADD:FEAT|Alertness,Deft Hands,Investigator,Iron Will,Noble Patron,Rapid Reload,Skill Focus,Swashbuckling Point
-### END ENGINEER
+2	BONUS:ABILITYPOOL|Engineer Ability|CL/2
+
+
+###Block: Knave -------------------------------------------------------------------------
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
-CLASS:Knave		HD:6		TYPE:PC.Base	ABB:Kna		MAXLEVEL:10	SOURCEPAGE:pg.4		BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Knave		HD:6		TYPE:PC.Base	ABB:Kna		MAXLEVEL:10	SOURCEPAGE:pg.4	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Knave		STARTSKILLPTS:7	CSKILL:Appraise|Balance|Bluff|Climb|TYPE.Craft|Disguise|Escape Artist|Forgery|Gather Information|Hide|Intimidate|Jump|Knowledge (Geography)|Knowledge (Local)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Ride|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Device|Use Rope
-1																				TEMPLATE:Core Class
-#Block: Proficiencies
-1																								AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
-1																																			AUTO:WEAPONPROF|Flail,Shortbow
-1																								AUTO:FEAT|Armor Proficiency (Light)|Shield Proficiency
-#Block: Class Abilities
-1							BONUS:VAR|KnaveDefense|(CL/2)+1	ABILITY:Internal|AUTOMATIC|KnaveDefense
-1:REPEATLEVEL:2|SKIP=0|MAX=9	ABILITY:FEAT|NORMAL|Swashbuckling Point|PREABILITY:1,CATEGORY=FEAT|Swashbuckler
-2	BONUS:ABILITYPOOL|Knave Feat|CL/2
-#1:REPEATLEVEL:2|SKIP=0|MAX=9			VFEAT:Swashbuckling Point|PREFEAT:1,Swashbuckler
-#2:REPEATLEVEL:2|SKIP=0|MAX=10			ADD:FEAT|Acrobatic,Agile,Athletic,Blade Ballet,Blind Fight,Bow Mastery,Combat Expertise,Combat Reflexes,Dead Shot,Deceitful,Dodge,Far Shot,Friendly Fire,Grace Under Fire,Improved Disarm,Improved Feint,Improved Initiative,In the Groove,Instinctive Shot,Lightning Reflexes,Manyshot,Mobility,Mounted Archery,Mounted Combat,Parry,Perfect Shot,Pinpoint Accuracy,Point Blank Shot,Precise Shot,Quick Leap,Ranged Disarm,Rapid Shot,Riposte,Run,Shot on the Run,Stealthy,Taunt,Tournament Archer,Weapon Finesse,Weapon Trip,Swashbuckling Point
-### END KNAVE
+1	TEMPLATE:Core Class
+###Block: Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies	AUTO:WEAPONPROF|Flail,Shortbow
+1	AUTO:FEAT|Armor Proficiency (Light)|Shield Proficiency
+###Block: Class Abilities
+1								BONUS:VAR|KnaveDefense|(CL/2)+1	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|KnaveDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+2	BONUS:ABILITYPOOL|Knave Ability|CL/2
+
+
+###Block: Man-at-Arms -------------------------------------------------------------------------------------------
 
 # Class Name	Output Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Man-at-Arms	OUTPUTNAME:Man-at-Arms	HD:10		TYPE:PC.Base	ABB:Man		MAXLEVEL:10	SOURCEPAGE:pg.5	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Man-at-Arms	STARTSKILLPTS:5	CSKILL:Balance|Climb|TYPE.Craft|Gather Information|Handle Animal|Intimidate|Jump|Knowledge (Geography)|Knowledge (Local)|Knowledge (Nobility and Royalty|Listen|TYPE.Profession|Ride|Search|Sense Motive|Spot|Swim|Tumble
-#Block: Proficiencies
-1													AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
-1													AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
-#Block: Class Abilities
-1									TEMPLATE:Core Class
-#Leave this hidden add in - needed for one core only.
-1	BONUS:ABILITYPOOL|Man-at-Arms Class|(CL+1)/2
-2	BONUS:ABILITYPOOL|Man-at-Arms Feat|CL/2
+###Block: Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+###Block: Class Abilities
+1	BONUS:ABILITYPOOL|Man-at-Arms Class|(CL+1)/2	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+2	BONUS:ABILITYPOOL|Man-at-Arms Ability|CL/2	BONUS:VAR|ManAtArmsAC|((CL+1)*2)/5	ABILITY:Internal|AUTOMATIC|ManAtArmsDefense
 
-#ADD:FEAT|Offensive Tactics,Defensive Tactics,Coordinated Maneuvers,Stand Fast,Heads Up,Inspiration,Coordinate,Close and Attack
-#ADD:FEAT|Swashbuckling Point,Blind Fight,Bow Mastery,Cleave,Clinging Combat,Combat Expertise,Combat Reflexes,Dodge,Far Shot,Friendly Fire,Grace Under Fire,Great Cleave,Great Fortitude,Improved Bull Rush,Improved Critical,Improved Disarm,Improved Feint,Improved Initiative,Improved Leverage,Improved Overrun,Improved Sunder,Improved Trip,Improved Two Weapon Defense,In the Groove,Instinctive Shot,Last Ditch,Manyshot,Merciful Fighter,Mobility,Mounted Archery,Mounted Combat,Parry,Perfect Shot,Pinpoint Accuracy,Point Blank Shot,Power Attack,Precise Shot,Quick Draw,Quick Leap,Ranged Disarm,Rapid Reload,Rapid Shot,Reactive Shot,Ride By Attack,Riposte,Rising Strike,Shot on the Run,Spirited Charge,Spring Attack,Superior Mounted Archery,Threaten Zone,Toughness,Tournament Archer,Trample,Two Weapon Defense,Two Weapon Fighting,Weapon Focus,Weapon Specialization,Weapon Trip,Whirlwind Attack.
-2:REPEATLEVEL:2|SKIP=0|MAX=4					BONUS:VAR|ManAtArmsAC|1																																																																																																																																																						ABILITY:Internal|AUTOMATIC|ManAtArmsDefense
-#4					BONUS:VAR|ManAtArmsAC|1
-7:REPEATLEVEL:2|SKIP=0|MAX=9					BONUS:VAR|ManAtArmsAC|1
-#9					BONUS:VAR|ManAtArmsAC|1
+
 
 ### END MAN-AT-ARMS
 
+###Block: Noble -------------------------------------------------------------------------
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Noble		HD:8		TYPE:PC.Base	ABB:Nob		MAXLEVEL:10	SOURCEPAGE:pg.8	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Noble		STARTSKILLPTS:5	CSKILL:Appraise|Balance|Climb|TYPE.Craft|Diplomacy|Forgery|Gather Information|Handle Animal|Intimidate|Jump|Knowledge (Geography)|Knowledge (History)|Knowledge (Law)|Knowledge (Local)|Knowledge (Nobility and Royalty|TYPE.Perform|TYPE.Profession|Ride|Swim
-#Block: Proficiencies
-1																										AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies|Martial Weapon Proficiency
-1																										AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
-#Block: Class Abilities
-1																						TEMPLATE:Core Class
-1							ADD:ABILITY|Internal|NORMAL|TYPE.NobleStarting
-2	BONUS:ABILITYPOOL|Noble Feat|CL/2
-#2:REPEATLEVEL:2|SKIP=0|MAX=10					ADD:FEAT|Swashbuckling Point,Animal Affinity,Athletic,Far Shot,Great Fortitude,Iron Will,Master Tracker,Mounted Combat,Negotiator,Persuasive,Point Blank Shot,Rapid Shot,Ride By Attack,Skill Focus,Spirited Charge,Tournament Archer,Track,Trample,Weapon Focus
-1															ABILITY:Internal|AUTOMATIC|NobleDefense
-1:REPEATLEVEL:2|SKIP=0|MAX=10	BONUS:VAR|NobleAC|1
-#3					BONUS:VAR|NobleAC|1
-#5					BONUS:VAR|NobleAC|1
-#7					BONUS:VAR|NobleAC|1
-#9					BONUS:VAR|NobleAC|1
+###Block: Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies|Martial Weapon Proficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+###Block: Class Abilities
+1								BONUS:VAR|NobleAC|(CL+1)/2	BONUS:VAR|SwashbucklingPointTotal|1	ADD:ABILITY|Internal|NORMAL|TYPE.NobleStarting	ABILITY:Internal|AUTOMATIC|NobleDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+2	BONUS:ABILITYPOOL|Noble Ability|CL/2
 
-###
+
+###Block: Priest ------------------------------------------------------------------------
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Priest	HD:6		TYPE:PC.Base	ABB:Pri		MAXLEVEL:10	SOURCEPAGE:pg.10	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Priest	STARTSKILLPTS:7	CSKILL:Appraise|Concentration|TYPE.Craft|Diplomacy|Gather Information|Heal|Intimidate|Knowledge (Geography)|Knowledge (History)|Knowledge (Law)|Knowledge (Local)|Knowledge (Nature)|Knowledge (Nobility and Royalty|Knowledge (Religion)|Listen|TYPE.Perform|TYPE.Profession|Ride|Sense Motive|Survival|Swim
-#Block: Proficiencies
-1																											AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
-1																											AUTO:FEAT|Armor Proficiency (Light)
-#Block: Class Abilities
-1																							TEMPLATE:Core Class
-1	BONUS:ABILITYPOOL|Priest Class|(CL+1)/2
-2	BONUS:ABILITYPOOL|Priest Feat|CL/2
-#1:REPEATLEVEL:2|SKIP=0|MAX=9	ADD:FEAT|Calming Presence|Everone Has Their Time|Stand Fast|Heads Up|Inspiration|Cast Out|Ecclesiastical Privilege|Fear God's Wrath
-#2:REPEATLEVEL:2|SKIP=0|MAX=10	ADD:FEAT|Swashbuckling Point,Dodge,Great Fortitude,Improved Unarmed Strike,Investigator,Iron Will,Lightning Reflexes,Mercantile,Negotiator,Noble Patron,Persuasive,Run,Self Sufficient,Skill Focus,Weapon of Opportunity
-1								BONUS:VAR|EcclesiasticalPrivilegeTaken|CL/2	ABILITY:Internal|AUTOMATIC|PriestDefense
-2:REPEATLEVEL:2|SKIP=0|MAX=4	BONUS:VAR|PriestAC|1
-#4	BONUS:VAR|PriestAC|1
-7:REPEATLEVEL:2|SKIP=0|MAX=9	BONUS:VAR|PriestAC|1
-#9	BONUS:VAR|PriestAC|1
-###
+###Block: Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
+1	AUTO:FEAT|Armor Proficiency (Light)
+###Block: Class Abilities
+1	BONUS:ABILITYPOOL|Priest Class|(CL+1)/2	BONUS:VAR|EcclesiasticalPrivilegeTaken|CL/2	BONUS:VAR|PriestAC|((CL+1)*2)/5	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|PriestDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+2	BONUS:ABILITYPOOL|Priest Ability|CL/2
+
+
+###Block: Yeoman ------------------------------------------------------------------------
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Yeoman	HD:10		TYPE:PC.Base	ABB:Yeo		MAXLEVEL:10	SOURCEPAGE:pg.12	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Yeoman	STARTSKILLPTS:7	CSKILL:Balance|Climb|TYPE.Craft|Handle Animal|Intimidate|Jump|Knowledge (Local)|Knowledge (Nature)|TYPE.Perform|TYPE.Profession|Ride|Survival|Swim|Tumble|Use Rope
-#Block: Proficiencies
-1																									AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies				AUTO:WEAPONPROF|Flail
-1																									AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency
-#Block: Class Abilities
-1																					TEMPLATE:Core Class
-1							BONUS:VAR|CommonerAspectLV|((CL+1)/2)*2
-2	BONUS:ABILITYPOOL|Yeoman Feat|CL/2
-#Block:Defense
-2														ABILITY:Internal|AUTOMATIC|YeomanDefense
-2:REPEATLEVEL:2|SKIP=0|MAX=4	BONUS:VAR|YeomanAC|1
-7:REPEATLEVEL:2|SKIP=0|MAX=9	BONUS:VAR|YeomanAC|1
-#2:REPEATLEVEL:2|SKIP=0|MAX=10	ADD:FEAT|Swashbuckling Point,Alertness,Animal Affinity,Athletic,Barroom Brawler,Cleave,Die Hard,Endurance,Great Cleave,Improved Bull Rush,Improved Overrun,Improved Sunder,Improved Grapple,Improved Knockout Blow,Improved Unarmed Strike,Knockout Blow,Merciful Fighter,Negotiator,Power Attack,Run,Stunning Fist,Self Sufficient,Skill Focus,Toughness,Weapon of Opportunity
-#4	BONUS:VAR|YeomanAC|1
-#9	BONUS:VAR|YeomanAC|1
+###Block: Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies				AUTO:WEAPONPROF|Flail
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency
+###Block: Class Abilities
+1								BONUS:VAR|SwashbucklingPointTotal|1		ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+1								BONUS:VAR|CommonerAspectLV|((CL+1)/2)*2
+2	BONUS:ABILITYPOOL|Yeoman Ability|CL/2	BONUS:VAR|YeomanAC|(CL+1)/2			ABILITY:Internal|AUTOMATIC|YeomanDefense
 
 
+#
+##EOF
+#
