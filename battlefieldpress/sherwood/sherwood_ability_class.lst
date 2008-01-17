@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Thu Jan 17 13:41:20 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+# CVS $Revision$ $Author$ -- Thu Jan 17 15:06:34 2008 -- reformated by prettylst.pl v1.38 (build 4314)
 SOURCELONG:Sherwood - The Legend of Robin Hood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
@@ -28,24 +28,24 @@ Swashbuckling Points	CATEGORY:Special Ability					VISIBLE:NO		SAB:Swashbuckling 
 Swashbuckling Point	CATEGORY:Special Ability	TYPE:SwashbucklingPoint	VISIBLE:DISPLAY																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|SwashbucklingPointTotal|1
 
 ###Block: Core Ability
-# Ability Name		Category of Ability		Type				Visible		Special ABility						Define				Bonus to Ability Pool
+# Ability Name		Category of Ability		Type				Visible		Special ABility						Define					Bonus to Ability Pool								Modify VAR
 Invention			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Invention
-Swashbuckler		CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Swashbuckler
-Tactician			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Tactician
-Privilege			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY														BONUS:ABILITYPOOL|Noble Privilege|1
-Inspiring Presence	CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Inspiring Presence
+Swashbuckler		CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Swashbuckler						DEFINE:SwashbucklerBonusPoints|0												BONUS:VAR|SwashbucklingPointTotal|SwashbucklerBonusPoints
+Tactician			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Tactician						DEFINE:TacticianTactics|0		BONUS:ABILITYPOOL|Tactician|TacticianTactics
+Privilege			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY															BONUS:ABILITYPOOL|Noble Privilege|1
+Inspiring Presence	CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Inspiring Presence					DEFINE:InspiringPresenceEffects|0	BONUS:ABILITYPOOL|Inspiring Presence|InspiringPresenceEffects
 Commoner's Aspect		CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Commoner's Aspect ~ +%|CommonerAspectLV	DEFINE:CommonerAspectLV|0
 
 ###Block: Man at Arms - Tactical
-# Ability Name		Category of Ability		Type								Visible		Required Ability				Multiple Requirements																	Special ABility								Define					Stackable?	Multiple?	Choose		Modify VAR
-Offensive Tactics		CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Offensive Tactics],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Offensive Tactics - +%|OffensiveTacticTaken			DEFINE:OffensiveTacticTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|OffensiveTacticTaken|1
-Defensive Tactics		CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Defensive Tactics],[PREABILITY:1,CATEGORY=ANY,Tactician]			SAB:Defensive Tactics - +%|DefensiveTacticTaken			DEFINE:DefensiveTacticTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|DefensiveTacticTaken|1
-Coordinated Maneuvers	CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Coordinated Maneuvers],[PREABILITY:1,CATEGORY=ANY,Tactician]		SAB:Coordinated Maneuvers - +%|CoordinatedManeuversTaken	DEFINE:CoordinatedManeuversTaken|0	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CoordinatedManeuversTaken|2
-Stand Fast			CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Stand Fast],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Stand Fast - +%|StandFastTaken					DEFINE:StandFastTaken|0			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|StandFastTaken|2
-Heads Up			CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Heads Up],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Heads Up - +%|HeadsUpTaken					DEFINE:HeadsUpTaken|0			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HeadsUpTaken|2
-Inspiration			CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician.Priest	VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,CHECKMULT,Inspiration],[PREABILITY:1,CATEGORY=ANY,Tactician,Inspiring Presence]	SAB:Inspiration - +%|InspirationTaken				DEFINE:InspirationTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|InspirationTaken|2
-Coordinate			CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Tactician																					SAB:Coordinate
-Close and Attack		CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Close and Attack],[PREABILITY:1,CATEGORY=ANY,Tactician]				SAB:Close and Attack - +%|CloseAndAttackTaken			DEFINE:CloseAndAttackTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CloseAndAttackTaken|2
+# Ability Name		Category of Ability		Type							Visible		Special ABility								Define					Stackable?	Multiple?	Choose		Modify VAR
+Offensive Tactics		CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms			VISIBLE:DISPLAY	SAB:Offensive Tactics - +%|OffensiveTacticTaken			DEFINE:OffensiveTacticTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|OffensiveTacticTaken|1
+Defensive Tactics		CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms			VISIBLE:DISPLAY	SAB:Defensive Tactics - +%|DefensiveTacticTaken			DEFINE:DefensiveTacticTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|DefensiveTacticTaken|1
+Coordinated Maneuvers	CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms			VISIBLE:DISPLAY	SAB:Coordinated Maneuvers - +%|CoordinatedManeuversTaken	DEFINE:CoordinatedManeuversTaken|0	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CoordinatedManeuversTaken|2
+Stand Fast			CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms.Priest	VISIBLE:DISPLAY	SAB:Stand Fast - +%|StandFastTaken					DEFINE:StandFastTaken|0			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|StandFastTaken|2
+Heads Up			CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms.Priest	VISIBLE:DISPLAY	SAB:Heads Up - +%|HeadsUpTaken					DEFINE:HeadsUpTaken|0			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HeadsUpTaken|2
+Inspiration			CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms.Priest	VISIBLE:DISPLAY	SAB:Inspiration - +%|InspirationTaken				DEFINE:InspirationTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|InspirationTaken|2
+Coordinate			CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms			VISIBLE:DISPLAY	SAB:Coordinate
+Close and Attack		CATEGORY:Special Ability	TYPE:SpecialQuality.ManAtArms			VISIBLE:DISPLAY	SAB:Close and Attack - +%|CloseAndAttackTaken			DEFINE:CloseAndAttackTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CloseAndAttackTaken|2
 
 ###Block: Noble
 # Ability Name	Category of Ability		Type						Special ABility
@@ -54,15 +54,12 @@ Manorial Lord	CATEGORY:Special Ability	TYPE:SpecialQuality.NoblePrivilege	SAB:Pr
 Wandering Knight	CATEGORY:Special Ability	TYPE:SpecialQuality.NoblePrivilege	SAB:Privilege (Wandering Knight)
 
 ###Block: Priest
-# Ability Name			Category of Ability		Type					Visible		Required Ability						Multiple Requirements																	Special ABility									Define						Stackable?	Multiple?	Choose		Modify VAR
-Calming Presence			CATEGORY:Special Ability	TYPE:ClassAbility.Priest	VISIBLE:DISPLAY									PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Calming Presence],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]			SAB:Calming Presence +%|CalmingPresence					DEFINE:CalmingPresence|0			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CalmingPresence|2
-Everyone Has Their Time		CATEGORY:Special Ability	TYPE:ClassAbility.Priest	VISIBLE:DISPLAY									PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Everyone Has Their Time],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]	SAB:Everyone Has Their Time +%|EveryoneHasTheirTimeTaken		DEFINE:EveryoneHasTheirTimeTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|EveryoneHasTheirTimeTaken|var("CL=Priest")
-Cast Out				CATEGORY:Special Ability	TYPE:ClassAbility.Priest	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=ANY,Inspiring Presence																					SAB:Cast Out
-Ecclesiastical Privilege	CATEGORY:Special Ability	TYPE:ClassAbility.Priest	VISIBLE:DISPLAY									PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Ecclesiastical Privilege],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]	SAB:Ecclesiastical Privilege - +%|EcclesiasticalPrivilegeTaken	DEFINE:EcclesiasticalPrivilegeTaken|0	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|EcclesiasticalPrivilegeTaken|var("CL=Priest")
-Fear God's Wrath			CATEGORY:Special Ability	TYPE:ClassAbility.Priest	VISIBLE:DISPLAY									PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Fear God's Wrath],[PREABILITY:1,CATEGORY=ANY,Inspiring Presence]			SAB:Fear God's Wrath
-
-### Yeoman
-#Commoner's Aspect Increase										VISIBLE:DISPLAY			PREABILITY:1,CATEGORY=ANY,Commoner's Aspect																																										STACK:YES	MULT:YES											BONUS:VAR|CommonerAspectLV|2
+# Ability Name			Category of Ability		Type					Visible		Special ABility									Define						Stackable?	Multiple?	Choose		Modify VAR
+Calming Presence			CATEGORY:Special Ability	TYPE:SpecialQuality.Priest	VISIBLE:DISPLAY	SAB:Calming Presence +%|CalmingPresence					DEFINE:CalmingPresence|0			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CalmingPresence|2
+Everyone Has Their Time		CATEGORY:Special Ability	TYPE:SpecialQuality.Priest	VISIBLE:DISPLAY	SAB:Everyone Has Their Time +%|EveryoneHasTheirTimeTaken		DEFINE:EveryoneHasTheirTimeTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|EveryoneHasTheirTimeTaken|var("CL=Priest")
+Cast Out				CATEGORY:Special Ability	TYPE:SpecialQuality.Priest	VISIBLE:DISPLAY	SAB:Cast Out
+Ecclesiastical Privilege	CATEGORY:Special Ability	TYPE:SpecialQuality.Priest	VISIBLE:DISPLAY	SAB:Ecclesiastical Privilege - +%|EcclesiasticalPrivilegeTaken	DEFINE:EcclesiasticalPrivilegeTaken|0	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|EcclesiasticalPrivilegeTaken|var("CL=Priest")
+Fear God's Wrath			CATEGORY:Special Ability	TYPE:SpecialQuality.Priest	VISIBLE:DISPLAY	SAB:Fear God's Wrath
 
 
 ############ ABILITYCATEGORIES would be good for this Section ##########

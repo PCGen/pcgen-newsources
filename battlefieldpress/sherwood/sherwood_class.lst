@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Thu Jan 17 13:41:20 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+# CVS $Revision$ $Author$ -- Thu Jan 17 15:01:57 2008 -- reformated by prettylst.pl v1.38 (build 4314)
 SOURCELONG:Sherwood - The Legend of Robin Hood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
@@ -12,8 +12,7 @@ CLASS:Engineer	STARTSKILLPTS:9	CSKILL:Appraise|Climb|TYPE.Craft|Concentration|Di
 1	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|All Automatic Proficiencies
 1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
 ###Block: Class Abilities
-1								BONUS:VAR|SwashbucklingPointTotal|1		ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
-2								BONUS:VAR|EngineerDefense|((CL+1)*2)/5	ABILITY:Internal|AUTOMATIC|EngineerDefense
+1								BONUS:VAR|EngineerDefense|((CL+1)*2)/5	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|EngineerDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
 2	BONUS:ABILITYPOOL|Engineer Ability|CL/2
 
 
@@ -28,7 +27,7 @@ CLASS:Knave		STARTSKILLPTS:7	CSKILL:Appraise|Balance|Bluff|Climb|TYPE.Craft|Disg
 1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies	AUTO:WEAPONPROF|Flail,Shortbow
 1	AUTO:FEAT|Armor Proficiency (Light)|Shield Proficiency
 ###Block: Class Abilities
-1								BONUS:VAR|KnaveDefense|(((CL+4)*3)/8)+1	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|KnaveDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+1								BONUS:VAR|SwashbucklerBonusPoints|(CL+1)/2	BONUS:VAR|KnaveDefense|(((CL+4)*3)/8)+1	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|KnaveDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
 2	BONUS:ABILITYPOOL|Knave Ability|CL/2
 
 
@@ -42,8 +41,8 @@ CLASS:Man-at-Arms	STARTSKILLPTS:5	CSKILL:Balance|Climb|TYPE.Craft|Gather Informa
 1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
 1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
 ###Block: Class Abilities
-1	BONUS:ABILITYPOOL|Man-at-Arms Class|(CL+1)/2	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
-2	BONUS:ABILITYPOOL|Man-at-Arms Ability|CL/2	BONUS:VAR|ManAtArmsAC|((CL+1)*2)/5	ABILITY:Internal|AUTOMATIC|ManAtArmsDefense
+1									BONUS:VAR|ManAtArmsAC|((CL+1)*2)/5	BONUS:VAR|TacticianTactics|(CL+1)/2	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|ManAtArmsDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+2	BONUS:ABILITYPOOL|Man-at-Arms Ability|CL/2
 
 
 
@@ -73,7 +72,7 @@ CLASS:Priest	STARTSKILLPTS:7	CSKILL:Appraise|Concentration|TYPE.Craft|Diplomacy|
 1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
 1	AUTO:FEAT|Armor Proficiency (Light)
 ###Block: Class Abilities
-1	BONUS:ABILITYPOOL|Priest Class|(CL+1)/2	BONUS:VAR|EcclesiasticalPrivilegeTaken|CL/2	BONUS:VAR|PriestAC|((CL+1)*2)/5	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|PriestDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+1								BONUS:VAR|InspiringPresenceEffects|(CL+1)/2	BONUS:VAR|EcclesiasticalPrivilegeTaken|CL/2	BONUS:VAR|PriestAC|((CL+1)*2)/5	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|PriestDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
 2	BONUS:ABILITYPOOL|Priest Ability|CL/2
 
 
@@ -87,9 +86,8 @@ CLASS:Yeoman	STARTSKILLPTS:7	CSKILL:Balance|Climb|TYPE.Craft|Handle Animal|Intim
 1	AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies				AUTO:WEAPONPROF|Flail
 1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency
 ###Block: Class Abilities
-1								BONUS:VAR|SwashbucklingPointTotal|1		ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
-1								BONUS:VAR|CommonerAspectLV|((CL+1)/2)*2
-2	BONUS:ABILITYPOOL|Yeoman Ability|CL/2	BONUS:VAR|YeomanAC|(CL+1)/2			ABILITY:Internal|AUTOMATIC|YeomanDefense
+1								BONUS:VAR|CommonerAspectLV|((CL+1)/2)*2	BONUS:VAR|YeomanAC|(CL+1)/2	BONUS:VAR|SwashbucklingPointTotal|1	ABILITY:Internal|AUTOMATIC|YeomanDefense	ABILITY:Special Ability|AUTOMATIC|Swashbuckling Points	TEMPLATE:Core Class
+2	BONUS:ABILITYPOOL|Yeoman Ability|CL/2
 
 
 #
