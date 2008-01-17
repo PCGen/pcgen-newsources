@@ -1,5 +1,5 @@
-# CVS $Revision$ $Author$ -- Wed Jan 16 23:08:38 2008 -- reformated by prettylst.pl v1.38 (build 4314)
-SOURCELONG:Battlefield Press - Sherwood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
+# CVS $Revision$ $Author$ -- Thu Jan 17 13:41:20 2008 -- reformated by prettylst.pl v1.38 (build 4314)
+SOURCELONG:Sherwood - The Legend of Robin Hood	SOURCESHORT:Sherwood	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-01
 #Original Entry: Andrew Maitland
 
 ###Block: Class Defense Bonus
@@ -27,15 +27,14 @@ Conjurer Bonus Feat	CATEGORY:Special Ability	TYPE:ConjurerAbility	VISIBLE:DISPLA
 Swashbuckling Points	CATEGORY:Special Ability					VISIBLE:NO		SAB:Swashbuckling Points ~ %/session|SwashbucklingPointTotal	DEFINE:SwashbucklingPointTotal|0
 Swashbuckling Point	CATEGORY:Special Ability	TYPE:SwashbucklingPoint	VISIBLE:DISPLAY																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|SwashbucklingPointTotal|1
 
-###Block: Starting Aspects -
-###COMMENTS: Mechanism was needed to prevent gaining the "aspect" of more than one class. Starting class is the only valid aspect.
-# Ability Name		Category of Ability	Type								Visible	Restricted Ability					Special ABility						Define
-Invention			CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Engineer		VISIBLE:NO	!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect	SAB:Invention
-Swashbuckler		CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Knave		VISIBLE:NO	!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Tactician			CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.ManAtArms	VISIBLE:NO	!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Privilege			CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Noble		VISIBLE:NO	!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Inspiring Presence	CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Priest		VISIBLE:NO	!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect
-Commoner's Aspect		CATEGORY:Internal		TYPE:ClassAbility.StartingAspect.Yeoman		VISIBLE:NO	!PREABILITY:1,CATEGORY=ANY,TYPE.StartingAspect	SAB:Commoner's Aspect - +%|CommonerAspectLV	DEFINE:CommonerAspectLV|0
+###Block: Core Ability
+# Ability Name		Category of Ability		Type				Visible		Special ABility						Define				Bonus to Ability Pool
+Invention			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Invention
+Swashbuckler		CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Swashbuckler
+Tactician			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Tactician
+Privilege			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY														BONUS:ABILITYPOOL|Noble Privilege|1
+Inspiring Presence	CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Inspiring Presence
+Commoner's Aspect		CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:DISPLAY	SAB:Commoner's Aspect ~ +%|CommonerAspectLV	DEFINE:CommonerAspectLV|0
 
 ###Block: Man at Arms - Tactical
 # Ability Name		Category of Ability		Type								Visible		Required Ability				Multiple Requirements																	Special ABility								Define					Stackable?	Multiple?	Choose		Modify VAR
@@ -49,10 +48,10 @@ Coordinate			CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VIS
 Close and Attack		CATEGORY:Special Ability	TYPE:ClassAbility.ManAtArms.Tactician		VISIBLE:DISPLAY							PREMULT:2,[!PREABILITY:2,CATEGORY=ANY,MULT,Close and Attack],[PREABILITY:1,CATEGORY=ANY,Tactician]				SAB:Close and Attack - +%|CloseAndAttackTaken			DEFINE:CloseAndAttackTaken|0		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CloseAndAttackTaken|2
 
 ###Block: Noble
-# Ability Name	Category of Ability	Type						Required Ability				Special ABility
-Abbot			CATEGORY:Internal		TYPE:ClassAbility.NobleStarting	PREABILITY:1,CATEGORY=ANY,Privilege	SAB:Abbot
-Manorial Lord	CATEGORY:Internal		TYPE:ClassAbility.NobleStarting	PREABILITY:1,CATEGORY=ANY,Privilege	SAB:Manorial Lord
-Wandering Knight	CATEGORY:Internal		TYPE:ClassAbility.NobleStarting	PREABILITY:1,CATEGORY=ANY,Privilege	SAB:Wandering Knight
+# Ability Name	Category of Ability		Type						Special ABility
+Abbot			CATEGORY:Special Ability	TYPE:SpecialQuality.NoblePrivilege	SAB:Privilege (Abbot)
+Manorial Lord	CATEGORY:Special Ability	TYPE:SpecialQuality.NoblePrivilege	SAB:Privilege (Manorial Lord)
+Wandering Knight	CATEGORY:Special Ability	TYPE:SpecialQuality.NoblePrivilege	SAB:Privilege (Wandering Knight)
 
 ###Block: Priest
 # Ability Name			Category of Ability		Type					Visible		Required Ability						Multiple Requirements																	Special ABility									Define						Stackable?	Multiple?	Choose		Modify VAR
