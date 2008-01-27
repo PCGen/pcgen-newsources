@@ -1,0 +1,193 @@
+# CVS $Revision: $ $Author: $ -- Fri Dec  7 00:38:49 2007 -- reformated by prettylst.pl v1.38 (build 4314)
+SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts.com
+#Original Entry by:E. C. Smith (Maredudd), 2007
+
+
+#Block: Armor and Shield Enhancements --------------------------------------------------------------
+# Modifier Name					Unique Key				Output Name					Type			Plus		Cost							Visible		Type granted	Source Page		Multiple Requirements											Required Type						Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Move
+Avoiding						KEY:AVOID										TYPE:Armor.Shield			COST:10000						VISIBLE:QUALIFY	ITYPE:		SOURCEPAGE:pg.4															PRETYPE:Armor|Shield,GMWORKA,Light																	SPROP:Grants the wearer the benefits of the Mobility feat while worn													VFEAT:Mobility
+Backlashing						KEY:BACKLASHING									TYPE:Shield				COST:110000						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:Shield																				SPROP:If active, may redirect a portion of the spell back
+Buffering						KEY:BUFFERING									TYPE:Armor.Shield	PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:Armor,GMWORKA,Light								DR:5/Piercing or Slashing						SPROP:Partially immune to bludgeoning damage
+Bull Rushing					KEY:BULL_RUSHING									TYPE:Armor.Shield	PLUS:0	COST:10000						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:																					SPROP:Gain benefits of Improved Bull Rushing feat																VFEAT:Improved Bull Rush|!PREFEAT:1,Improved Bull Rush
+Climbing						KEY:CLIMBING									TYPE:Armor.Shield	PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:																					SPROP:Spider climb 3/day
+Complementing					KEY:COMPLEMENTING_A								TYPE:Armor		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:Armor,GMWORKA																			SPROP:Shield and Armor gain bonus when worn together
+Complementing					KEY:COMPLEMENTING_S								TYPE:Shield		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:Shield,GMWORKA																			SPROP:Shield and Armor gain bonus when worn together
+Deflecting						KEY:DEFLECTING									TYPE:Shield		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:Armor,GMWORKA									DR:5/Bludgeoning or Slashing						SPROP:Partially immune to piercing damage
+Enlarging						KEY:ENLARGING									TYPE:Armor		PLUS:0	COST:3200						VISIBLE:QUALIFY				SOURCEPAGE:pg.4															PRETYPE:Armor																				SPROP:Enlarge person 1/day
+#Multiple times adds to times per day
+Fleet Foot						KEY:FLEET_FOOT			OUTPUTNAME:Fleet-Foot			TYPE:Armor		PLUS:0	COST:6000						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor															BONUS:MOVEADD|TYPE.Walk|10	SPROP:Increase base speed by 10
+Floating (Greater)				KEY:FLOATING_G			OUTPUTNAME:Floating, Greater		TYPE:Armor		PLUS:0	COST:15000						VISIBLE:QUALIFY				SOURCEPAGE:pg.															PRETYPE:Armor,GMWORKA																			SPROP:Gain swim speed 10																																				MOVE:Swim,10
+Grace							KEY:GRACE_A										TYPE:Armor		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.															PRETYPE:																					SPROP:Treat as Mithral for Special
+#Weight in half, DOES NOT STACK WITH MITHRAL...
+Magnetic						KEY:MAGNETIC_S									TYPE:Shield		PLUS:0	COST:2						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Shield,Metal																			SPROP:Opponents attacking with metal weapons might stick to shield.
+Mobile						KEY:MOBILE										TYPE:Armor		PLUS:0	COST:10080						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor																				SPROP:Freedom of Movement 1.day
+Mobile (Greater)					KEY:MOBILE_G			OUTPUTNAME:Mobile, Greater		TYPE:Armor		PLUS:0	COST:61200						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor																				SPROP:Freedom of Movement 1/day as an immediate action
+Scintillating					KEY:SCINTILLATING									TYPE:Armor		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor																				SPROP:Mirror Image 1/day
+Scintillating (Greater)				KEY:SCINTILLATING_G		OUTPUTNAME:Scintillating, Greater	TYPE:Armor		PLUS:4	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor																				SPROP:Mirror Image 3/day
+Steadfast						KEY:STEADFAST									TYPE:Armor		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor																				SPROP:Size category 1 higher for purposes of strength based special attacks
+Sustaining						KEY:SUSTAINING									TYPE:Armor		PLUS:0	COST:34000						VISIBLE:QUALIFY				SOURCEPAGE:pg.5															PRETYPE:Armor																				SPROP:Automatic curing if dropped to -1 or lower, up to 15 hp
+Sustaining (Improved)				KEY:SUSTAINING_I			OUTPUTNAME:Sustaining, Improved	TYPE:Armor		PLUS:0	COST:68000						VISIBLE:QUALIFY				SOURCEPAGE:pg.6															PRETYPE:Armor,GMWORKA																			SPROP:Automatic curing if dropped to -1 or lower, up to 30 hp
+Unmoveable						KEY:UNMOVEABLE									TYPE:Armor		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.6															PRETYPE:Armor																				SPROP:When activated you cannot be tripped or bull rushed, any attempt to tumble through your square fails
+Unyielding						KEY:UNYIELDING									TYPE:Armor		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.6															PRETYPE:Armor																				SPROP:Aid spell 3/day
+Warning						KEY:WARNING										TYPE:Armor		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.6															PRETYPE:Armor																				SPROP:Retain Dexterity bonus to AC even if flat-footed
+Withstanding					KEY:WITHSTANDING									TYPE:Armor		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.6															PRETYPE:Armor,EQMOD=GMWORKA									DR:5/Bludgeoning or Piercing						SPROP:Partially immune to Slashing damage
+
+#	COST:0	PLUS:0	KEY:		TYPE:		VISIBLE:QUALIFY	SOURCEPAGE:pg.	PRETYPE:		SPROP:
+
+#Block: Melee Weapon Enhancements ------------------------------------------------------------------
+
+Aiding						KEY:AIDING										TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.16															PRETYPE:Weapon,Melee																			SPROP:Aid another bonus doubled to +4
+Anchoring						KEY:ANCHORING									TYPE:Weapon		PLUS:0	COST:25600						VISIBLE:QUALIFY				SOURCEPAGE:pg.16															PRETYPE:Weapon																				SPROP:Dimensional Archor 1/day upon creature hit
+#
+Bonded (+3)						KEY:BONDED_3									TYPE:Weapon		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.16															PRETYPE:Weapon																			SPROP:Weapon grows with character
+Bonded (+5)						KEY:BONDED_5									TYPE:Weapon		PLUS:5	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.16															PRETYPE:Weapon																			SPROP:Weapon grows with character
+Bonded (+10)					KEY:BONDED_10									TYPE:Weapon		PLUS:10	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.16															PRETYPE:Weapon																			SPROP:Weapon grows with character
+#COMMENT:NEED SPECIAL CONSIDERATION +3, +5 OR +10
+Charger						KEY:CHARGER										TYPE:Weapon.Melee		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.17															PRETYPE:Weapon,Melee																				SPROP:Deal an extra 2d6 damage on a charge attack
+Concussive						KEY:CONCUSSIVE									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.17															PRETYPE:Weapon																				SPROP:Deal an extra 1d4 sonic damage per hit
+Concussive Burst					KEY:CONCUSSIVE_BURST								TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.17															PRETYPE:Weapon																				SPROP:On critical hit deal an extra +1d8 (2d8 for x3, 3d8 for x4)
+Crushing						KEY:CRUSHING									TYPE:Weapon		PLUS:5	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.17															PRETYPE:Weapon,Bludgeoning,Melee																		SPROP:Funtions as Vorporal for Bludgeoning weapon
+Cycling						KEY:CYCLING										TYPE:Weapon		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:Magical enhancement bonus cycles through +1 to +5
+Destruction						KEY:DESTRUCTION									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon,Slashing,Melee																			SPROP:As disruption but for slashing weapons
+Dissolution						KEY:DISSOLUTION									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon,Piercing																			SPROP:As disruption but for piercing weapons
+Faithful						KEY:FAITHFUL									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:Deals an additional 1d6 to creatures of different faith
+Feinting						KEY:FEINTING									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:Gain +4 circumstance bonus to Feint an opponent
+Feinting (Greater)				KEY:FEINTING_G			OUTPUTNAME:Feinting, Greater		TYPE:Weapon		PLUS:0	COST:3						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:Gain +4 circumstance bonus to Feint an opponent plus Improved Feint feat											VFEAT:Improved Feint
+Grace							KEY:GRACE_W										TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon,Melee					!PRETYPE:TwoHanded											SPROP:Allows weapon to benefit from weapon finesse
+Harmonizing						KEY:HARMONIZING									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:+4 circumstance bonus to Perform when using Bardic Music
+Harmonizing (Greater)				KEY:HARMONIZING_G			OUTPUTNAME:Harmonizing, Greater	TYPE:Weapon		PLUS:0	COST:2						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:+4 circumstance bonus to Perform when using Bardic Music plus doubles the duration of the effect
+Hexing						KEY:HEXING										TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon																				SPROP:Bestow Curse on Critical hit
+Intense						KEY:INTENSE										TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.18															PRETYPE:Weapon,Bludgeoning,Melee																		SPROP:As Keen but for Bludgeoning weapons
+Jagged						KEY:JAGGED										TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon																					SPROP:Deal 1 point of Constitution damage on critical hit
+#Cannot have viscious applied as well as vice versa	EQMOD=VISCIOUS
+Lesser Vorpal					KEY:LESSER_VORPAL									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon,Melee																					SPROP:On critical hit DC 19 Fortitude or creature stunned 1d4 rounds, Illusion (Glamer) of creature beheaded, Will DC 19 if interacted with
+Multi Form						KEY:MULTI_FORM			OUTPUTNAME:Multi-Form			TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon,Melee																					SPROP:Polymorph into same weapon type and damage die
+Off Hander						KEY:OFF_HANDER			OUTPUTNAME:Off-Hander			TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon,Melee																					SPROP:Reduce Two Weapon Fighting penalty by 1 for both weapons
+Off Hander (Greater)				KEY:OFF_HANDER_G			OUTPUTNAME:Off-Hander, Greater	TYPE:Weapon		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon,Melee																					SPROP:Reduce Two Weapon Fighting penalty by 1 for both weapons plus grants Two Weapon Fighting									VFEAT:Two Weapon Fighting
+Opportunistic					KEY:OPPORTUNISTIC									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon,Melee																					SPROP:Gain one additional attack of opportunity each round
+Precision						KEY:PRECISION									TYPE:Weapon		PLUS:4	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon																					SPROP:Increase critical multiplier by 1
+#COMMENT:Does not stack with other Crit mult boosts
+Protecting						KEY:PROTECTING									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon																					SPROP:Gain +2 Enhancement bonus to attack when fighting defensively
+Quick Drawing					KEY:QUICK_DRAWING									TYPE:Weapon		PLUS:0	COST:10000						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon																					SPROP:Draw weapon as if you possed the quick draw feat
+Reaching						KEY:REACHING									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon																					SPROP:Gain a 5 ft reach extension to the weapon
+Reflecting						KEY:REFLECTING_W									TYPE:Weapon		PLUS:4	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.19															PRETYPE:Weapon,Melee																					SPROP:Reflect spells back at caster 3/day (as spell turning)
+Reforming						KEY:REFORMING									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon																					SPROP:Weapon will reform if sundered at wielder's next turn, but loses one enhancement bonus each time, min of +1
+Riposte						KEY:RIPOSTE										TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon																					SPROP:When fighting defensively (2/day) can do a riposte attack
+Scaling						KEY:SCALING										TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon,Melee																					SPROP:Weapon Damage die increases one step
+###COMMENT:Unable to figure the best method to implement this... Weapon Die Increases one step
+Searing						KEY:SEARING										TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon																					SPROP:Deal an extra 1d6 divine damage
+Skewering						KEY:SKEWERING									TYPE:Weapon		PLUS:5	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon,Piercing																			SPROP:As vorpal but applies to Piercing weapon
+Soulbound						KEY:SOULBOUND									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon,EQMOD=LEGENDARY																					SPROP:Weapon is forever bonded to subject, can be called to hand as an immediate action (Teleport Object)
+#Requires Legendary Quality
+Spell Eating					KEY:SPELL_EATING			OUTPUTNAME:Spell-Eating			TYPE:Weapon		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon																					SPROP:Chance to dispel an active spell effect on struck creature
+Spellstoring (Greater)				KEY:SPELLSTORING_G		OUTPUTNAME:Spellstoring, Greater	TYPE:Weapon		PLUS:5	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.20															PRETYPE:Weapon																					SPROP:As spell storing but up to 6th level.
+Stunning						KEY:STUNNING									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon																					SPROP:On critical hit, DC 15 Fortitude or creature is stunned for 1 round
+Surreptitious					KEY:SURREPTITIOUS									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon,Light																			SPROP:+10 circumstance bonus to Hide checks to conceal the weapon
+Unyielding						KEY:UNYIELDING									TYPE:Weapon		PLUS:0	COST:10800						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon																					SPROP:Aid 3/day
+Venomous						KEY:VENOMOUS									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon																					SPROP:Creature struck must save DC 16 Fortidue or take 1 point of temp Constitution damage
+#COMMENT can be taken multiple times, increases DC by +2 and poison Damage by 1
+Vicious Wounding					KEY:VICIOUS_WOUNDING								TYPE:Weapon		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon																					SPROP:As Wounding plus on Critical hit creature takes an additional Con Damage equal to weapon Crit modifer.
+Watery Form						KEY:WATERY_FORM									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon																					SPROP:Weapon may be transformed into one ounce of liquid
+Weakening						KEY:WEAKENING									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon																					SPROP:Deal 1 point of Strength damage with each hit
+
+EQMOD=VISCIOUS.MOD																																																											!PRETYPE:1,EQMOD=JAGGED
+
+#		COST:0	PLUS:0	KEY:		TYPE:		VISIBLE:QUALIFY	SOURCEPAGE:pg.	PRETYPE:		SPROP:
+
+#Block: Ranged Weapon Enhancements ------------------------------------------------------------------
+Bane Seeking (Aberrations)			KEY:BANE_SEEKING_ABER								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Animals)				KEY:BANE_SEEKING_ANIM								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Aquatic Humanoids)		KEY:BANE_SEEKING_AQHU								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Constructs)			KEY:BANE_SEEKING_CONS								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Dark Kin)				KEY:BANE_SEEKING_DARK								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Dwarfs)				KEY:BANE_SEEKING_DWAR								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Elementals)			KEY:BANE_SEEKING_ELEM								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Elorii)				KEY:BANE_SEEKING_ELOR								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Entropic)				KEY:BANE_SEEKING_ENTR								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Giants)				KEY:BANE_SEEKING_GIAN								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Gnolls)				KEY:BANE_SEEKING_GNOL								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Goblinoids)			KEY:BANE_SEEKING_GOBL								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Humans)				KEY:BANE_SEEKING_HUMA								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Infernals)			KEY:BANE_SEEKING_INFE								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Magical Beasts)			KEY:BANE_SEEKING_MABE								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Monstrous Humanoids)		KEY:BANE_SEEKING_MOHU								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Val)				KEY:BANE_SEEKING_VAL								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Oozes)				KEY:BANE_SEEKING_OOZE								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Orcs)				KEY:BANE_SEEKING_ORCS								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Air)			KEY:BANE_SEEKING_OAIR								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Chaotic)		KEY:BANE_SEEKING_OCHA								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Earth)		KEY:BANE_SEEKING_OEAR								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Evil)		KEY:BANE_SEEKING_OEVI								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Fire)		KEY:BANE_SEEKING_OFIR								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Good)		KEY:BANE_SEEKING_OGOO								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Lawful)		KEY:BANE_SEEKING_OLAW								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Outsiders, Water)		KEY:BANE_SEEKING_OWAT								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Plants)				KEY:BANE_SEEKING_PLAN								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Psibane)				KEY:BANE_SEEKING_PSIB								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Reptilian Humanoids)		KEY:BANE_SEEKING_REHU								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Undead)				KEY:BANE_SEEKING_UNDE								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Vermin)				KEY:BANE_SEEKING_VERM								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+###COMMENT:These are present as special cases
+Bane Seeking (Dragons)				KEY:BANE_SEEKING_DRAG								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Halflings)			KEY:BANE_SEEKING_HALF								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+###COMMENT:Fey are non-existent
+Bane Seeking (Fey)				KEY:BANE_SEEKING_FEY								TYPE:Ranged		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Ssetheric)			KEY:BANE_SEEKING_SSETHERIC							TYPE:Ranged		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Bane Seeking (Tainted)				KEY:BANE_SEEKING_TAINTED							TYPE:Ranged		PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Ranged																				SPROP:Negates cover against specified creature except full cover.
+Blasting						KEY:BLASTING									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.21															PRETYPE:Weapon,Ranged,AltherianPistolRifle															SPROP:Deals an additional 2d6 fire damage 5ft. radius.
+#COMMENT:Applied only to pistols, see text   AltherianPistolRifle
+Boring						KEY:BORING										TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.22															PRETYPE:Weapon,Ranged,Piercing																	SPROP:Deals an additional 1d6 damage for 1d3 rounds
+Guided						KEY:GUIDED										TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.22															PRETYPE:Weapon,Ranged																			SPROP:Negates cover the target may have.
+Stabilized						KEY:STABILIZED									TYPE:Weapon		PLUS:1	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.22															PRETYPE:Weapon,Ranged																			SPROP:Halve penalties when making attacks mounted.
+Transporting					KEY:TRANSPORTING									TYPE:Weapon		PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.22															PRETYPE:Weapon,Ranged																			SPROP:2/day on a successfull hit, DC 16 Will save or struck creature teleported 200 ft straight up
+
+#Block: Magical Siege Engine Enhancements -----------------------------------------------------------
+Ease							KEY:EASE_SIEGE									TYPE:SiegeWeapon	PLUS:5	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.110	PREMULT:2,[PRETYPE:1,SiegeWeapon],[PRETYPE:1,Balista,Catapult,Thrown,Projectile]																							SPROP:Easier to reload
+Hard Striking					KEY:HARD_STRIKING_SIEGE								TYPE:SiegeWeapon	PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.111															PRETYPE:SiegeWeapon,Ram,Melee																		SPROP:Deals double damage to structures
+Keen							KEY:KEEN_SIEGE									TYPE:SiegeWeapon	PLUS:2	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.111															PRETYPE:SiegeWeapon,Balista,Projectile																SPROP:Critical threat range doubled
+Unerring Aim					KEY:UNERRING_AIM_SIEGE								TYPE:SiegeWeapon	PLUS:3	COST:0						VISIBLE:QUALIFY				SOURCEPAGE:pg.111															PRETYPE:SiegeWeapon,Catapult,Thrown																	SPROP:Halve time to aim
+
+# Modifier Name					Unique Key				Output Name					Type			Plus		Cost							Visible		Type granted	Source Page		Multiple Requirements											Required Type						Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Move
+Charges (25)					KEY:FIM_CHARGED_ITEM_25													COST:((BASECOST/25)*%CHARGES)-BASECOST	VISIBLE:NO																																																																														CHOOSE:NOCHOICE	CHARGES:1|25
+##
+###EOF
+##
+#Core System Bane Modifications
+# Modifier Name					Unique Key				Output Name					Type			Plus		Cost							Visible		Type granted	Source Page		Multiple Requirements											Required Type						Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Move
+#	Bane (aberrations +1 bonus
+#	Bane (animals) +1 bonus
+#	Bane (aquatic humanoids) +1 bonus
+#	Bane (constructs) +1 bonus
+#	Bane (dark-kin)  3 +1 bonus
+#	Bane (dragons)  Special
+#	Bane (dwarfs) dwarf 4 +1 bonus
+#	Bane (elementals) +1 bonus
+#	Bane (elorii) +1 bonus
+#	Bane (entropic) +1 bonus
+#	Bane (fey) Non-existent
+#	Bane (giants) +1 bonus
+#	Bane (gnolls) +1 bonus
+#	Bane (goblinoids) 5 +1 bonus
+#	Bane (halflings) 1 Special
+#	Bane (humans) 8 +1 bonus
+#	Bane (infernals) 9 +1 bonus
+#	Bane (magical beasts) +1 bonus
+#	Bane (monstrous humanoids) +1 bonus
+#	Bane (val) 8 +1 bonus
+#	Bane (oozes) +1 bonus
+#	Bane (orcs) 6 +1 bonus
+#	Bane (outsiders, air) +1 bonus
+#	Bane (outsiders, chaotic) +1 bonus
+#	Bane (outsiders, earth) +1 bonus
+#	Bane (outsiders, evil) +1 bonus
+#	Bane (outsiders, fire) +1 bonus
+#	Bane (outsiders, good) +1 bonus
+#	Bane (outsiders, lawful) +1 bonus
+#	Bane (outsiders, Water) +1 bonus
+#	Bane (plants) +1 bonus
+#	Bane (psibane) 10 +1 bonus
+#	Bane (reptilian humanoids) +1 bonus
+#	Bane (ssethric Creatures) 11 +2 bonus
+#	Bane (tainted) Creatures 12 +2 bonus
+#	Bane (undead) +1 bonus
+#	Bane (vermin) +1 bonus
