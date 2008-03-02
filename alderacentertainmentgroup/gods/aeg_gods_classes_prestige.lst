@@ -5,6 +5,7 @@ SOURCELONG:Alderac Entertainment Group (AEG) - Gods	SOURCESHORT:Gods	SOURCEWEB:h
 # Barbarian Prestige Classes
 #
 
+#Class:Medicine Man (Complete)
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus										Combat bonus
 CLASS:Medicine Man	HD:8		TYPE:PC.Prestige	ABB:MedMn		MAXLEVEL:10	SOURCEPAGE:pg.8	BONUS:CHECKS|Fortitude,Will|(CL/2)+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|(CL/3)+(CL/4)-(CL/7)+(CL/10)+1
 # Class Name		Required Ability								Required AL		Req. Att.	Required Race	Required Skill								Req. Spell Type		Required Stat
@@ -32,6 +33,7 @@ CLASS:Medicine Man	STARTSKILLPTS:6	CSKILL:Animal Empathy|Balance|Climb|Concentra
 # Bugbear Prestige Classes
 #
 
+#Class:Hunter (Complete)
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Hunter	HD:8		TYPE:PC.Prestige	ABB:Hntr		MAXLEVEL:10	SOURCEPAGE:pg.16	BONUS:CHECKS|Fortitude,Will|(CL/3)	BONUS:CHECKS|Reflex|(CL/2+1)	BONUS:COMBAT|BAB|(CL-1)/4+(CL-1)
 # Class Name	Required Feat					Required Skill								Required Text
@@ -52,6 +54,7 @@ CLASS:Hunter	STARTSKILLPTS:4	CSKILL:Climb|Hide|Intuit Direction|Jump|Listen|Move
 9	BONUS:VAR|VitalShotCritRangeBonusedWeapons|1
 10	BONUS:VAR|CrackShotMult|1
 
+#Class:Slaver (Complete)
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Slaver	HD:8		TYPE:PC.Prestige	ABB:Slvr		MAXLEVEL:10	SOURCEPAGE:pg.17	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|(CL-1)/4+(CL-1)
 # Class Name	Required AL		Req. Att.	Required Feat				Required Skill
@@ -74,8 +77,11 @@ CLASS:Slaver	STARTSKILLPTS:2	CSKILL:Animal Empathy|Bluff|Handle Animal|Intimidat
 9	AUTO:FEAT|Frightful Presence
 10	AUTO:FEAT|Master of Wills
 
+#
 # Dark Elf Prestige Classes
+#
 
+#Class:Poison Master
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Poison Master	HD:6		TYPE:PC.Prestige	ABB:PsnMst		MAXLEVEL:10	SOURCEPAGE:pg.27	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|CL/2
 # Class Name		Required AL		Required Skill
@@ -84,17 +90,18 @@ CLASS:Poison Master	PREALIGN:LE,NE,CE	PRESKILL:2,Alchemy=6,Knowledge (arcana)=4
 CLASS:Poison Master	STARTSKILLPTS:2	CSKILL:Alchemy|Concentration|Heal|Knowledge (nature)|Spellcraft|Use Magic Device
 ### Block: Class Features
 ### Block: Normal Progression
-1	AUTO:FEAT|Poison Use
-2	AUTO:FEAT|Brew Potion
+1	AUTO:FEAT|Poison Use|Brew Poison
+2	AUTO:FEAT|Delay Poison
 3	AUTO:FEAT|Immunity to Poison
-4	AUTO:FEAT|Poisoned Flesh
-5	AUTO:FEAT|Identify Poison
+4	AUTO:FEAT|Poisoned Flesh|PRECLASSLEVELMAX:Poisin Master=6
+5	AUTO:FEAT|Identify Potion
 6	AUTO:FEAT|Acid Flesh
 7	AUTO:FEAT|Improved Poisoned Flesh
 8	AUTO:FEAT|Poison Adaptation
 9	AUTO:FEAT|Death Draught
 10	AUTO:FEAT|Breath of Poison
 
+#Class: Spider Warrior
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Spider Warrior	HD:10		TYPE:PC.Prestige	ABB:SpdrWr		MAXLEVEL:10	SOURCEPAGE:pg.26	BONUS:CHECKS|Fortitude,Reflex|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Req. Att.	Required Race		Required Skill
@@ -121,6 +128,7 @@ CLASS:Spider Warrior	STARTSKILLPTS:2	CSKILL:Animal Empathy|Balance|Climb|Handle 
 # Giant Prestige Classes
 #
 
+#Class:Karhollan Guard
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Karhollan Guard	HD:10		TYPE:PC.Prestige	ABB:KarGrd		MAXLEVEL:10	SOURCEPAGE:pg.42	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Required Feat						Required Race	Required Stat
@@ -142,8 +150,11 @@ CLASS:Karhollan Guard	STARTSKILLPTS:2	CSKILL:Climb|Craft (stoneworking)|Diplomac
 9	BONUS:VAR|PersonalPresenceBonus|1
 10	BONUS:VAR|RangedCombatDefense|1	BONUS:VAR|FlameStrikeCasterLevel|3
 
+#
 # Gnoll Prestige Classes
+#
 
+#Class:The Returned
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus					Combat bonus
 CLASS:The Returned	HD:8		TYPE:PC.Prestige	ABB:Rtnd		MAXLEVEL:10	SOURCEPAGE:pg.50	BONUS:CHECKS|Fortitude,Reflex|CL/2+2	BONUS:COMBAT|BAB|
 # Class Name		Restricted AL	Req. Att.	!PRECHECK			Required Text
@@ -163,8 +174,11 @@ CLASS:The Returned	STARTSKILLPTS:3	CSKILL:Bluff|Climb|Concentration|Diplomacy|In
 9					AUTO:FEAT|Demon in Form
 10					AUTO:FEAT|Demon in Fact
 
+#
 # Goblin Prestige Classes
+#
 
+#Class:Exemplar
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Exemplar	HD:8		TYPE:PC.Prestige	ABB:Explr		MAXLEVEL:10	SOURCEPAGE:pg.58	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL-1
 # Class Name	Required AL			Required Check Base	Required Domain				Required Feat		Required Race	Required Text
@@ -185,29 +199,11 @@ CLASS:Exemplar	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|Intimidate|K
 9	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine
 10						ADD:SPELLCASTER|Divine									AUTO:FEAT|Exemplar Revealed
 
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
-CLASS:Ex-Exemplar	HD:8		TYPE:PC.Prestige	ABB:Xmplr		MAXLEVEL:10	SOURCEPAGE:pg.58	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL-1
-
-# Class Name	Required AL			Required Check Base	Required Domain				Required Feat		Required Race	Required Text
-CLASS:Exemplar	PREALIGN:CN,LN,NG,NE	PRECHECKBASE:1,Will=5	PREDOMAIN:1,Chaos,Law,Good,Law	PREFEAT:1,Iron Will	PRERACE:1,Goblin	PRETEXT:Character must make contact with a direct servant of their deity, their deity, or a powerful (CR IS+) Outsider of their chosen domain, and convince this other entity to support them to the exemplary prestige class.
-# Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Exemplar	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|Intimidate|Knowledge (religion)|Perform|Scry|Spellcraft
-### Block: Class Features
-1										CHOOSE:WEAPONPROF|1|DEITYWEAPON
-### Block: Normal Progression
-1						ADD:SPELLCASTER|Divine									AUTO:FEAT|Strength From Purpose
-2						ADD:SPELLCASTER|Divine									AUTO:FEAT|Divine Wrath
-3	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine									AUTO:FEAT|Leadership
-4						ADD:SPELLCASTER|Divine									AUTO:FEAT|Enlightened Madness
-5						ADD:SPELLCASTER|Divine
-6	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine									AUTO:FEAT|Scorn the Heretic
-7						ADD:SPELLCASTER|Divine									AUTO:FEAT|Divine Grace
-8						ADD:SPELLCASTER|Divine									AUTO:FEAT|Departure
-9	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine
-10						ADD:SPELLCASTER|Divine									AUTO:FEAT|Exemplar Revealed
-
+#
 # Hobgoblin Prestige Classes
+#
 
+#Class:Servants of the One
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Servants of the One	HD:6		TYPE:PC.Prestige	ABB:Svnt1		MAXLEVEL:10	SOURCEPAGE:pg.64	BONUS:CHECKS|Fortitude|CL/3	BONUS:CHECKS|Reflex,Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4
 # Class Name			Required AL	Required Feat			Required Race		Required Skill							Required Text
@@ -228,8 +224,11 @@ CLASS:Servants of the One	STARTSKILLPTS:4	CSKILL:Bluff|Concentration|Diplomacy|G
 9														AUTO:FEAT|Many bodies One Soul
 10														AUTO:FEAT|Eternitys Humble Offerings
 
+#
 # Impossible Things Prestige Classes
+#
 
+#Class:Humanoid Hunter
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Humanoid Hunter	HD:10		TYPE:PC.Prestige	ABB:HdHnt		MAXLEVEL:10	SOURCEPAGE:pg.73	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Req. Att.	Required Race							Required Skill							Required Text
@@ -248,8 +247,11 @@ CLASS:Humanoid Hunter	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Hide|Jump|Knowledge (hum
 6																								AUTO:FEAT|Hide the Beast
 10																								AUTO:FEAT|Death Blow
 
+#
 # Kobold Prestige Classes
+#
 
+#Class:The Broken
 # Class Name	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:The Broken	TYPE:PC.Prestige	ABB:Brkn		MAXLEVEL:10	SOURCEPAGE:pg.80	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|CL-1
 # Class Name	Required AL		Req. Spell Type		Required Text
@@ -275,8 +277,11 @@ CLASS:The Broken	STARTSKILLPTS:3	CSKILL:Alchemy|Bluff|Concentration|Diplomacy|In
 9						AUTO:FEAT|Beyond Flesh
 10						AUTO:FEAT|Beyond Pain
 
+#
 # Lizardfolk Prestige Classes
+#
 
+#Class:Master of the Swamp
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Master of the Swamp	HD:10		TYPE:PC.Prestige	ABB:MotS		MAXLEVEL:10	SOURCEPAGE:pg.86	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name			Required AL		Req. Att.	Required Feat			Multiple Requirements								Required Race				Required Skill							Required Text
@@ -299,8 +304,11 @@ CLASS:Master of the Swamp	STARTSKILLPTS:4	CSKILL:Animal Empathy|Climb|TYPE.Craft
 9																					SPELLS:Innate|TIMES=1|CASTERLEVEL=CL|Summon Natures Ally IV
 10	BONUS:VAR|LizardfolkAllyBonus|1																												AUTO:FEAT|Power of Istos
 
+#
 # Ogre Prestige Classes
+#
 
+#Class:Black Nail
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Black Nail	HD:10		TYPE:PC.Prestige	ABB:BlkNl		MAXLEVEL:5	SOURCEPAGE:pg.102	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name	Required AL		Req. Att.	Required Feat								Required Race			Required Skill
@@ -319,6 +327,7 @@ CLASS:Black Nail	STARTSKILLPTS:2	CSKILL:Balance|Climb|Intimidate|Intuit Directio
 4	BONUS:COMBAT|AC|1|TYPE=NaturalArmor	ADD:FEAT|TYPE=Fighter
 5	BONUS:COMBAT|AC|1|TYPE=NaturalArmor					AUTO:FEAT|Great Leadership
 
+#Class:Chaos Crusader
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Chaos Crusader	HD:8		TYPE:PC.Prestige	ABB:ChsCr		MAXLEVEL:10	SOURCEPAGE:pg.104	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Required AL		Req. Att.	Required Feat			Required Race			Req. Spell Type		Required Stat
@@ -344,8 +353,11 @@ CLASS:Chaos Crusader	STARTSKILLPTS:2	CSKILL:Bluff|Concentation|TYPE.Craft|Diplom
 9									BONUS:DR|-|1
 10												AUTO:FEAT|Dispel Good
 
+#
 # Orc Prestige Classes
+#
 
+#Class:Keeper of Secrets (Complete)
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Keeper of Secrets	HD:6		TYPE:PC.Prestige	ABB:KpSct		MAXLEVEL:10	SOURCEPAGE:pg.19	BONUS:CHECKS|Will|CL/2+2	BONUS:CHECKS|Fortitude,Reflex|CL/3	BONUS:COMBAT|BAB|CL/2
 # Class Name		Required Domain		Required Race		Required Skill				Req. Spell Type
@@ -366,6 +378,7 @@ CLASS:Keeper of Secrets	STARTSKILLPTS:4	CSKILL:Alchemy|Concentration|TYPE.Craft|
 9	AUTO:FEAT|Shadow Double
 10									BONUS:ABILITYPOOL|KSKnownSpellBonus|2
 
+#Class:Underworld Druid of Thovis
 # Class Name				Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Underworld Druid of Thovis	HD:8		TYPE:PC.Prestige	ABB:UDoTh		MAXLEVEL:5	SOURCEPAGE:pg.120	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|(CL/2)+(CL/3)
 # Class Name				Required Class				Required Deity	Required Feat		Required Skill				Required Text
@@ -386,6 +399,7 @@ CLASS:Underworld Druid of Thovis	STARTSKILLPTS:4	CSKILL:Animal Empathy|Concentra
 4						AUTO:FEAT|Underworld Crusader
 5						AUTO:FEAT|Chosen of Thovis
 
+#Class:Whip of Urog
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Whip of Urog	HD:8		TYPE:PC.Prestige	ABB:WpUr		MAXLEVEL:10	SOURCEPAGE:pg.122	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|(CL-1)-(CL/5)-(CL/9)+(CL/10)
 # Class Name		Req. Att.	Required Domain	Required Feat		Required Skill
@@ -409,8 +423,11 @@ CLASS:Whip of Urog	STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Handle Animal|Intimid
 9	AUTO:FEAT|Urogs Endurance
 10
 
+#
 # Sylvan Forces Prestige Classes. 125
+#
 
+#Class:Dryad Ranger
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Dryad Ranger	HD:8		TYPE:PC.Prestige	ABB:DrRng		MAXLEVEL:10	SOURCEPAGE:pg.129	BONUS:CHECKS|Reflex,Will|CL/2+2	BONUS:CHECKS|Fortitude|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Required Race	Required Text
@@ -437,8 +454,11 @@ CLASS:Dryad Ranger	SPELLSTAT:WIS
 9																																																			AUTO:FEAT|Improved Evasion
 10																																																			AUTO:FEAT|Freedom
 
+#
 # Troll Prestige Classes
+#
 
+#Class:Vendaks Chosen
 # Class Name		Output Name				Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Vendaks Chosen	OUTPUTNAME:Vendak's Chosen	HD:8		TYPE:PC.Prestige	ABB:VndCh		MAXLEVEL:10	SOURCEPAGE:pg.137	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|(CL-1)-(CL/5)-(CL/9)+(CL/10)
 # Class Name		Required Domain			Required Race	Req. Spell Type		Required Text
