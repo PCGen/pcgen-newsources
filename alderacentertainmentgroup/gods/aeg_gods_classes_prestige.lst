@@ -78,14 +78,14 @@ CLASS:Slaver	STARTSKILLPTS:2	CSKILL:Animal Empathy|Bluff|Handle Animal|Intimidat
 10	AUTO:FEAT|Master of Wills
 
 #
-# Dark Elf Prestige Classes
+# Dark Elf Prestige Classes (QC'd)
 #
 
-#Class:Poison Master
+#Class:Poison Master (Complete)
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Poison Master	HD:6		TYPE:PC.Prestige	ABB:PsnMst		MAXLEVEL:10	SOURCEPAGE:pg.27	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|CL/2
 # Class Name		Required AL		Required Skill
-CLASS:Poison Master	PREALIGN:LE,NE,CE	PRESKILL:2,Alchemy=6,Knowledge (arcana)=4
+CLASS:Poison Master	PREALIGN:LE,NE,CE	PRESKILL:2,Alchemy=6,Knowledge (arcana)=4	PREFEAT:1,Brew Potion	PRETEXT:Must be taught by a Poison Master of 5th level or greater.
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Poison Master	STARTSKILLPTS:2	CSKILL:Alchemy|Concentration|Heal|Knowledge (nature)|Spellcraft|Use Magic Device
 ### Block: Class Features
@@ -93,7 +93,7 @@ CLASS:Poison Master	STARTSKILLPTS:2	CSKILL:Alchemy|Concentration|Heal|Knowledge 
 1	AUTO:FEAT|Poison Use|Brew Poison
 2	AUTO:FEAT|Delay Poison
 3	AUTO:FEAT|Immunity to Poison
-4	AUTO:FEAT|Poisoned Flesh|PRECLASSLEVELMAX:Poisin Master=6
+4	ABILITY:FEAT|AUTOMATIC|Poisoned Flesh|PRECLASSLEVELMAX:Poison Master=6
 5	AUTO:FEAT|Identify Potion
 6	AUTO:FEAT|Acid Flesh
 7	AUTO:FEAT|Improved Poisoned Flesh
@@ -101,27 +101,24 @@ CLASS:Poison Master	STARTSKILLPTS:2	CSKILL:Alchemy|Concentration|Heal|Knowledge 
 9	AUTO:FEAT|Death Draught
 10	AUTO:FEAT|Breath of Poison
 
-#Class: Spider Warrior
+#Class: Spider Warrior (Complete)
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Spider Warrior	HD:10		TYPE:PC.Prestige	ABB:SpdrWr		MAXLEVEL:10	SOURCEPAGE:pg.26	BONUS:CHECKS|Fortitude,Reflex|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Req. Att.	Required Race		Required Skill
 CLASS:Spider Warrior	PREATT:6	PRERACE:1,Elf (Drow)	PRESKILL:2,Animal Empathy,Ride=6
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Spider Warrior	STARTSKILLPTS:2	CSKILL:Animal Empathy|Balance|Climb|Handle Animal|Hide|Jump|Move Silently|Ride
-### Block: Class Features
+### Block: Proficiencies
 1																							AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiencies
 1																							AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
-1							DEFINE:SummonSpidersTimes|0	SPELLS:Innate|TIMES=SummonSpidersTimes|CASTERLEVEL=CL|Command
 ### Block: Normal Progression
 1:REPEATLEVEL:2											ADD:FEAT|Alertness,Improved Initiative,Mounted Combat,Mounted Archery,Trample,Ride-By Attack,Spirited Charge,Point Blank Shot,Far Shot,Precise Shot,Rapid Shot,Shot on the Run
 2																							AUTO:FEAT|Spider Mount
 3																							AUTO:FEAT|Immunity to Webs
 4	BONUS:VAR|SummonSpidersTimes|1																	AUTO:FEAT|Summon Spiders
-5
 6																							AUTO:FEAT|Immunity to Poison
 7	BONUS:VAR|SummonSpidersTimes|1
-8
-9
+8																							AUTO:FEAT|Spider Climb
 10	BONUS:VAR|SummonSpidersTimes|1																	AUTO:FEAT|Spider Shape
 
 #
