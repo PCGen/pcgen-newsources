@@ -1,20 +1,24 @@
 # CVS $Revision: $ $Author: $ -- Sun Dec 30 21:49:06 2007 -- reformated by prettylst.pl v1.38 (build 4387)
-SOURCELONG:Alderac Entertainment Group (AEG) - Gods	SOURCESHORT:Gods	SOURCEWEB:http://alderac.com/d20
+SOURCELONG:Alderac Entertainment Group (AEG) - Gods	SOURCESHORT:Gods	SOURCEWEB:http://www.alderac.com/d20
 
 #
 # Barbarian Prestige Classes
 #
 
 #Class:Medicine Man (Complete)
-# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus										Combat bonus
+# Class Name		Hit Dice	Type				Abbreviation	Max Level	Source Page		Save checks bonus										Combat bonus
 CLASS:Medicine Man	HD:8		TYPE:PC.Prestige	ABB:MedMn		MAXLEVEL:10	SOURCEPAGE:pg.8	BONUS:CHECKS|Fortitude,Will|(CL/2)+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|(CL/3)+(CL/4)-(CL/7)+(CL/10)+1
-# Class Name		Required Ability								Required AL		Req. Att.	Required Race	Required Skill								Req. Spell Type		Required Stat
+# Class Name		Required Ability											Required AL			Req. Att.	Required Race	Required Skill								Req. Spell Type		Required Stat
 CLASS:Medicine Man	PREABILITY:3,CATEGORY=FEAT,Great Fortitude,Toughness,Track	PREALIGN:LG,NG,CG	PREATT:4	PRERACE:1,Human	PRESKILL:3,Heal=6,Knowledge (nature)=6,Wilderness Lore=6	PRESPELLTYPE:1,Divine=3	PRESTAT:1,WIS=17
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Medicine Man	STARTSKILLPTS:6	CSKILL:Animal Empathy|Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intuit Direction|Jump|Knowledge (religion)|Listen|Move Silently|Perform|Ride|Scry|Search|Sense Motive|Spellcraft|Spot|Swim|Tumble|Use Rope|Wilderness Lore
 ### Block: Weapon, Armor, and Shield Proficiencies
 1																						AUTO:FEAT|Simple Weapon Proficiency
 1																						AUTO:FEAT|Armor Proficiency (Light)
+###Block: Rage variables
+1	BONUS:VAR|BarbRageTimesLVL|CL						DEFINE:BarbRageTimesLVL|0
+1	BONUS:VAR|BarbRagePowerLVL|CL						DEFINE:BarbRagePowerLVL|0
+1	BONUS:VAR|RageTimes|(BarbRageTimesLVL)/4+1			DEFINE:RageTimes|0
 ### Block: Class Features
 1							ADD:ABILITY|1|FEAT|AUTOMATIC|TYPE.TotemAnimal
 ### Block: Normal Progression
@@ -122,10 +126,10 @@ CLASS:Spider Warrior	STARTSKILLPTS:2	CSKILL:Animal Empathy|Balance|Climb|Handle 
 10	BONUS:VAR|SummonSpidersTimes|1																	AUTO:FEAT|Spider Shape
 
 #
-# Giant Prestige Classes
+# Giant Prestige Classes (QC'd)
 #
 
-#Class:Karhollan Guard
+#Class:Karhollan Guard (Complete)
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Karhollan Guard	HD:10		TYPE:PC.Prestige	ABB:KarGrd		MAXLEVEL:10	SOURCEPAGE:pg.42	BONUS:CHECKS|Fortitude|CL/2+2	BONUS:CHECKS|Reflex,Will|CL/3	BONUS:COMBAT|BAB|CL
 # Class Name		Required Feat						Required Race	Required Stat
@@ -137,7 +141,7 @@ CLASS:Karhollan Guard	STARTSKILLPTS:2	CSKILL:Climb|Craft (stoneworking)|Diplomac
 1													AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
 ### Block: Normal Progression
 1	BONUS:VAR|PersonalPresenceBonus|1							AUTO:FEAT|Personal Presence
-2	BONUS:VAR|RangedCombatDefense|1							AUTO:FEAT|Ranged Combat Defence
+2	BONUS:VAR|RangedCombatDefense|1							AUTO:FEAT|Ranged Combat Defense
 3	BONUS:VAR|PersonalPresenceBonus|1							AUTO:FEAT|Prayer Circle
 4	BONUS:VAR|RangedCombatDefense|1
 5	BONUS:VAR|PersonalPresenceBonus|1	BONUS:VAR|FlameStrikeCasterLevel|12	AUTO:FEAT|Flame Strike

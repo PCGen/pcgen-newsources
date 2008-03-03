@@ -1,15 +1,16 @@
 # CVS $Revision: $ $Author: $ -- Sun Dec 30 21:49:06 2007 -- reformated by prettylst.pl v1.38 (build 4387)
-SOURCELONG:Alderac Entertainment Group (AEG) - Gods	SOURCESHORT:Gods	SOURCEWEB:http://alderac.com/d20
+SOURCELONG:Alderac Entertainment Group (AEG) - Gods	SOURCESHORT:Gods	SOURCEWEB:http://www.alderac.com/d20
 
 ### Block:Weapon Proficiencies
 # Ability Name					Output Name				Category of Ability		Type				Visible				Automatically Gained Weapon Prof.
 Slaver Weapon Proficiencies								CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO			AUTO:WEAPONPROF|Sap|Whip
 
 # Hidden Abilities
-# Ability Name			Output Name						Category of Ability		Type				Visible						Special ABility
-Rebuke Giants											CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO
-Woodlands Stride		OUTPUTNAME:Woodland Stride		CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO					SAB:Woodland Stride
-AEG Trackless Step		OUTPUTNAME:Trackless Step		CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO					SAB:Trackless Step
+# Ability Name			Output Name						Category of Ability		Type							Visible			Special ABility
+#Rebuke Giants table isn't showing up on the OS.
+Rebuke Giants											CATEGORY:FEAT			TYPE:Special.Turning.TurnGiant	VISIBLE:NO		SAB:Rebuke Giant (Su) %/day (turn level %) (turn damage %d%+%)|TurnTimesGiant|TurnLevelGiant|TurnDiceGiant|TurnDieSizeGiant|TurnDamagePlusGiant		DEFINE:TurnTimesGiant|TurnTimesBase	DEFINE:TurnLevelGiant|TurnLevelBase	DEFINE:TurnDiceGiant|TurnDiceBase	DEFINE:TurnDieSizeGiant|TurnDieSizeBase	DEFINE:TurnDamagePlusGiant|TurnDamagePlusBase	DEFINE:TurnCheckGiant|TurnCheckBase				
+Woodlands Stride		OUTPUTNAME:Woodland Stride		CATEGORY:FEAT			TYPE:ClassFeature				VISIBLE:NO		SAB:Woodland Stride
+AEG Trackless Step		OUTPUTNAME:Trackless Step		CATEGORY:FEAT			TYPE:ClassFeature				VISIBLE:NO		SAB:Trackless Step
 
 ###Block: Favored Enemies
 # Ability Name							Output Name										Category of Ability			Type				Visible		Special ABility										Define							Multiple?	Source Page
@@ -24,7 +25,7 @@ HH Favored Enemy (Humanoid (Human))		OUTPUTNAME:Favored Enemy (Humanoid (Human))
 HH Favored Enemy (Humanoid (Orc))		OUTPUTNAME:Favored Enemy (Humanoid (Orc))		CATEGORY:Special Ability	TYPE:HHFavoredEnemy	VISIBLE:YES	SAB:Favored Enemy (Humanoid (Orc))													MULT:NO		SOURCEPAGE:pg.73
 HH Favored Enemy (Humanoid (Reptilian))	OUTPUTNAME:Favored Enemy (Humanoid (Reptilian))	CATEGORY:Special Ability	TYPE:HHFavoredEnemy	VISIBLE:YES	SAB:Favored Enemy (Humanoid (Reptilian))											MULT:NO		SOURCEPAGE:pg.73
 
-###Block: Bonus Known Spells
+###Block: Bonus Known Spells (Complete)
 # Ability Name				Category of Ability			Type						Visible				Prerequisite																											Multiple?	Stack?		Bonus Known Spell							Choose
 Bonus Known Spell 1			CATEGORY:KSKnownSpellBonus	TYPE:KSBonusKnownSpell		VISIBLE:DISPLAY			PRESPELLTYPE:1,Arcane=1	PRETEXT:May not take more than one bonus known spell in the highest spell level avaialable.		MULT:YES	STACK:YES	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=1|1		CHOOSE:NOCHOICE
 Bonus Known Spell 2			CATEGORY:KSKnownSpellBonus	TYPE:KSBonusKnownSpell		VISIBLE:DISPLAY			PRESPELLTYPE:1,Arcane=2	PRETEXT:May not take more than one bonus known spell in the highest spell level avaialable.		MULT:YES	STACK:YES	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=2|1		CHOOSE:NOCHOICE
@@ -36,42 +37,49 @@ Bonus Known Spell 7			CATEGORY:KSKnownSpellBonus	TYPE:KSBonusKnownSpell		VISIBLE
 Bonus Known Spell 8			CATEGORY:KSKnownSpellBonus	TYPE:KSBonusKnownSpell		VISIBLE:DISPLAY			PRESPELLTYPE:1,Arcane=8	PRETEXT:May not take more than one bonus known spell in the highest spell level avaialable.		MULT:YES	STACK:YES	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=8|1		CHOOSE:NOCHOICE
 Bonus Known Spell 9			CATEGORY:KSKnownSpellBonus	TYPE:KSBonusKnownSpell		VISIBLE:DISPLAY			PRESPELLTYPE:1,Arcane=9	PRETEXT:May not take more than one bonus known spell in the highest spell level avaialable.		MULT:YES	STACK:YES	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=9|1		CHOOSE:NOCHOICE
 
-# Barbarian abilities
+##
+## Barbarian abilities (QC'd)
+##
+
 # Barbarian Totem Animals
-# Ability Name			Output Name						Category of Ability		Type				Visible			Required Ability		Special ABility				Template						Combat bonus								Bonus to skill															Class Skill					Vision						Damage Reduction	Natural Attacks
-Totem (Badger)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Badger Totem			TEMPLATE:Totem (Badger)
-Totem (Bat)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Bat Totem				TEMPLATE:Totem (Bat)																																							VISION:Blindsight (120')
-Totem (Bear)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Bear Totem				TEMPLATE:Totem (Bear)																																														DR:2/-
-Totem (Boar)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Boar Totem				TEMPLATE:Totem (Boar)
-Totem (Camel)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Camel Totem				TEMPLATE:Totem (Camel)
-Totem (Cat)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Cat Totem				TEMPLATE:Totem (Cat)														BONUS:SKILL|Hide,Move Silently|4	BONUS:SKILL|Balance,Climb|8
-Totem (Cheetah)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Cheetah Totem			TEMPLATE:Totem (Cheetah)
-Totem (Crocodile)		OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Crocodile Totem			TEMPLATE:Totem (Crocodile)		BONUS:COMBAT|AC|4|TYPE=NaturalArmor
-Totem (Dog)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Dog Totem				TEMPLATE:Totem (Dog)
-Totem (Eagle)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Eagle Totem				TEMPLATE:Totem (Eagle)
-Totem (Hawk)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Hawk Totem				TEMPLATE:Totem (Hawk)														BONUS:SKILL|Spot|8
-Totem (Horse)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Horse Totem				TEMPLATE:Totem (Horse)														BONUS:SKILL|Ride|10
-Totem (Lion)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Lion Totem				TEMPLATE:Totem (Lion)
-Totem (Lizard)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Lizard Totem			TEMPLATE:Totem (Lizard)														BONUS:SKILL|Climb,Blance|8
-Totem (Monkey)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Monkey Totem			TEMPLATE:Totem (Monkey)														BONUS:SKILL|Climb,Jump|8
-Totem (Owl)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Owl Totem				TEMPLATE:Totem (Owl)														BONUS:SKILL|Listen,Spot|4
-Totem (Rat)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Rat Totem				TEMPLATE:Totem (Rat)														BONUS:SKILL|Balance,Climb,Hide,Move Silently|4
-Totem (Raven)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Raven Totem				TEMPLATE:Totem (Raven)
-Totem (Stag)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Stag Totem				TEMPLATE:Totem (Stag)
-Totem (Snake)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Snake Totem				TEMPLATE:Totem (Snake)																																																			NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d2
-Totem (Tiger)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Tiger Totem				TEMPLATE:Totem (Tiger)
-Totem (Weasle)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Weasle Totem			TEMPLATE:Totem (Weasle)														BONUS:SKILL|Balance,Escape Artist|6										CSKILL:Escap Artist
-Totem (Wolf)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Wolf Totem				TEMPLATE:Totem (Wolf)
-Totem (Wolverine)		OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO								SAB:Wolverine Totem			TEMPLATE:Totem (Wolverine)
+# Ability Name			Output Name						Category of Ability		Type				Visible			Special ABility					Template						Combat bonus								Bonus to skill															Class Skill					Vision						Damage Reduction	Natural Attacks
+Totem Animal											CATEGORY:FEAT			TYPE:Special		VISIBLE:NO		SAB:Totem Animal - You have formed a spiritual connection with a living representative of your totem animal.
+Totem (Badger)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Badger Totem				TEMPLATE:Totem (Badger)
+Totem (Bat)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Bat Totem							TEMPLATE:Totem (Bat)																																							VISION:Blindsight (120')
+Totem (Bear)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Bear Totem						TEMPLATE:Totem (Bear)																																														DR:2/-
+Totem (Boar)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Boar Totem						TEMPLATE:Totem (Boar)
+Totem (Camel)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Camel Totem					TEMPLATE:Totem (Camel)
+Totem (Cat)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Cat Totem							TEMPLATE:Totem (Cat)														BONUS:SKILL|Hide,Move Silently|4	BONUS:SKILL|Balance,Climb|8
+Totem (Cheetah)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Cheetah Totem			TEMPLATE:Totem (Cheetah)
+Totem (Crocodile)		OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Crocodile Totem	TEMPLATE:Totem (Crocodile)		BONUS:COMBAT|AC|4|TYPE=NaturalArmor
+Totem (Dog)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Dog Totem							TEMPLATE:Totem (Dog)
+Totem (Eagle)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Eagle Totem					TEMPLATE:Totem (Eagle)
+Totem (Hawk)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Hawk Totem						TEMPLATE:Totem (Hawk)														BONUS:SKILL|Spot|8
+Totem (Horse)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Horse Totem					TEMPLATE:Totem (Horse)														BONUS:SKILL|Ride|10
+Totem (Lion)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Lion Totem						TEMPLATE:Totem (Lion)
+Totem (Lizard)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Lizard Totem				TEMPLATE:Totem (Lizard)														BONUS:SKILL|Climb,Blance|8
+Totem (Monkey)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Monkey Totem				TEMPLATE:Totem (Monkey)														BONUS:SKILL|Climb,Jump|8
+Totem (Owl)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Owl Totem							TEMPLATE:Totem (Owl)														BONUS:SKILL|Listen,Spot|4
+Totem (Rat)				OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Rat Totem							TEMPLATE:Totem (Rat)														BONUS:SKILL|Balance,Climb,Hide,Move Silently|4
+Totem (Raven)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Raven Totem					TEMPLATE:Totem (Raven)
+Totem (Stag)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Stag Totem						TEMPLATE:Totem (Stag)
+Totem (Snake)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Snake Totem					TEMPLATE:Totem (Snake)																																																			NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d2
+Totem (Tiger)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Tiger Totem					TEMPLATE:Totem (Tiger)
+Totem (Weasle)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Weasle Totem				TEMPLATE:Totem (Weasle)														BONUS:SKILL|Balance,Escape Artist|6										CSKILL:Escap Artist
+Totem (Wolf)			OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Wolf Totem						TEMPLATE:Totem (Wolf)
+Totem (Wolverine)		OUTPUTNAME:[name] Totem			CATEGORY:FEAT			TYPE:TotemAnimal	VISIBLE:NO		SAB:Wolverine Totem	TEMPLATE:Totem (Wolverine)
+#
+# Barbarian Totem Notes:  Totemic Rage (Badger and Wolverine) stacks with Barbarian Rage.
+#
 
 ### Block: Medicine Man Class Abilities (Complete)
 # Ability Name			Output Name					Category of Ability		Type					Visible				Special ABility					Innate Spells																Define
 Read Spirit											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Read Spirit
 Shared Life											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Shared Life
-Improved Augury										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Improved Augury				SPELLS:Innate|TIMES=3+CHA|CASTERLEVEL=CL|Augury,15
+Improved Augury										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Improved Augury				SPELLS:Innate|TIMES=3+CHA|CASTERLEVEL=classlevel("Medicine Man")|Augury,15
 Rain Dance											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Rain Dance
-Become Totem										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Become Totem				SPELLS:Innate|TIMES=BecomeTotemTimes|CASTERLEVEL=classlevel("Medicine Man")|Polymorph Self			DEFINE:BecomeTotemTimes|0
-Shape of the Beast									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Shape of the Beast
+Become Totem										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Become Totem - Can take the form of totem animal %/day as per the Polymorph Self spell|BecomeTotemTimes			DEFINE:BecomeTotemTimes|0
+Shape of the Beast									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO			SAB:Shape of the Beast - Can change form to that of any animal (not beasts, magical beasts, abberations, etc.)
 
 ##
 ## Bugbear Abilities (QC'd)
@@ -96,7 +104,7 @@ Slave Trader										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO		SAB:Slave T
 Master of Wills										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO		SAB:Master of Wills
 
 ##
-## Dark Elf Abilities
+## Dark Elf Abilities (QC'd)
 ##
 
 ### Block: Poison Masters Class Abilities (Complete)
@@ -121,14 +129,21 @@ Summon Spiders										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO										S
 Spider Climb										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO										SAB:Spider Climb																																																																																																																																SPELLS:Spider Warrior|TIMES=ATWILL|CASTERLEVEL=classlevel("Spider Warrior")|Spider Climb
 Spider Shape										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO										SAB:Spider Shape
 
-# Karhollan Guard Class Abilities
-# Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
-Personal Presence										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Personal Presence	SAB:Personal Pesence																							DEFINE:PersonalPresenceBonus|0																							STACK:NO	MULT:NO																																																														BONUS:SKILL|Diplomacy,Intimidate|PersonalPresenceBonus
-Flame Strike										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Flame Strike																												DEFINE:FlameStrikeCasterLevel|0									SPELLS:Karhollan Guard|TIMES=1|CASTERLEVEL=FlameStrikeCasterLevel|Flame Strike	STACK:NO	MULT:NO
-Ranged Combat Defense									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Ranged Combat Defense	SAB:Ranged Combat Defense																					DEFINE:RangedCombatDefense|0																								STACK:NO	MULT:NO
-Prayer Circle										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Prayer Circle																																																								STACK:NO	MULT:NO
+##
+## Giant Abilities (QC'd)
+##
 
+# Karhollan Guard Class Abilities (Complete)
+# Ability Name			Output Name					Category of Ability		Type				Visible			Required Ability						Special ABility																																																																																									Define																														Innate Spells																																											Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
+Personal Presence									CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO												SAB:Personal Presence - Recieve a +% insight bonus to Diplomacy and Intimidate|PersonalPresenceBonus				DEFINE:PersonalPresenceBonus|0																																																																																																																																																					BONUS:SKILL|Diplomacy,Intimidate|PersonalPresenceBonus
+Ranged Combat Defense								CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO												SAB:Ranged Combat Defense - Recieve +% dodge bonus to AC against all ranged weapons|RangedCombatDefense		DEFINE:RangedCombatDefense|0
+Prayer Circle										CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO												SAB:Prayer Circle
+Flame Strike										CATEGORY:FEAT			TYPE:ClassFeature	VISIBLE:NO												SAB:Flame Strike																																																																																								DEFINE:FlameStrikeCasterLevel|0					SPELLS:Karhollan Guard|TIMES=1|CASTERLEVEL=FlameStrikeCasterLevel|Flame Strike
+
+##
 ## Gnoll Abilities
+##
+
 # The Returned Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 Demons Heart										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Demon's Heart																																																								STACK:NO	MULT:NO
@@ -140,7 +155,10 @@ Sense of the Outsider									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO					
 Demon in Form										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Demon in Form																																																								STACK:NO	MULT:NO
 Demon in Fact										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Demon in Fact																																																								STACK:NO	MULT:NO
 
+##
 ## Goblin Abilities
+##
+
 # Exemplar Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 Strength of Purpose									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Strength of Purpose																																																							STACK:NO	MULT:NO
@@ -151,7 +169,10 @@ Divine Grace										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO													
 Departure											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Departure																																																								STACK:NO	MULT:NO
 The Exemplar Revealed									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:The Exemplar Reaevled																																																						STACK:NO	MULT:NO
 
+##
 ## Hobgoblin Abilities
+##
+
 # Servant of the One Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 One Heart Many Hands									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:One Heart, Many Hands																																																						STACK:NO	MULT:NO
@@ -162,7 +183,10 @@ Ensnare the Mind										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO									
 Many Bodies One Soul									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Many Bodies, One Soul																																																						STACK:NO	MULT:NO
 Eternitys Humble Offerings								CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Eternity's Humble Offerings																																																					STACK:NO	MULT:NO
 
+##
 ## Impossible Things Abilities
+##
+
 # Humanoid Hunter Class Abilities
 # Ability Name				Category of Ability		Type				Visible		Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 HH Favored Enemy			CATEGORY:FEAT			TYPE:Internal		VISIBLE:NO																																																																						DEFINE:HHFavoredEnemies|0
@@ -183,7 +207,10 @@ Death Blow					CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																				
 #HHFavored Enemy IX		OUTPUTNAME:Favored Enemy IX			CATEGORY:Special Ability	TYPE:HHFavoredEnemy	VISIBLE:NO	PREABILITY:8,CATEGORY=Special Ability,HHFavored Enemy I,HHFavored Enemy II,HHFavored Enemy III,HHFavored Enemy IV,HHFavored Enemy V,HHFavored Enemy VI,HHFavored Enemy VII,HHFavored Enemy VIII					SAB:favored enemy (%CHOICE) +%|FavoredEnemy5																							DEFINE:FavoredEnemy5|FavoredEnemies-4																								MULT:YES	CHOOSE:NUMCHOICES=1|Humanoid (Human)|Humanoid (Dwarf)|Humanoid (Elf)|Humanoid (Gnome)|Humanoid (Halfling)|Humanoid (Orc)|Humanoid (Gnoll)|Humanoid (Goblinoid)|Humanoid (Aquatic)|Humanoid (Reptilian)
 #HHFavored Enemy X			OUTPUTNAME:Favored Enemy X			CATEGORY:Special Ability	TYPE:HHFavoredEnemy	VISIBLE:NO	PREABILITY:9,CATEGORY=Special Ability,HHFavored Enemy I,HHFavored Enemy II,HHFavored Enemy III,HHFavored Enemy IV,HHFavored Enemy V,HHFavored Enemy VI,HHFavored Enemy VII,HHFavored Enemy VIII,HHFavored Enemy IX	SAB:favored enemy (%CHOICE) +%|FavoredEnemy5																							DEFINE:FavoredEnemy5|FavoredEnemies-4																								MULT:YES	CHOOSE:NUMCHOICES=1|Humanoid (Human)|Humanoid (Dwarf)|Humanoid (Elf)|Humanoid (Gnome)|Humanoid (Halfling)|Humanoid (Orc)|Humanoid (Gnoll)|Humanoid (Goblinoid)|Humanoid (Aquatic)|Humanoid (Reptilian)
 
+##
 ## Kobold Abilities
+##
+
 # The Broken One Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 The Wasting											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:The Wasting																																																								STACK:NO	MULT:NO
@@ -194,7 +221,10 @@ Divine Malice										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO												
 Beyond Flesh										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Beyond Flesh																																																								STACK:NO	MULT:NO
 Beyond Pain											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Beyond Pain																																																								STACK:NO	MULT:NO
 
+##
 ## Lizardfolk Abilities
+##
+
 # Master of the Swamp Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 Lizardfolk Ally										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Lizardfolk Ally - +% circumstance bonus to attack when in combat with lizardfolk allies.|LizardFolkAllyBonus												DEFINE:LizardfolkAllyBonus|0																								STACK:NO	MULT:NO
@@ -203,7 +233,10 @@ Water Breathing										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO										
 Power of the Swamp									CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Power of the Swamp																																																							STACK:NO	MULT:NO																																																																									BONUS:STAT|CON|4|TYPE=Divine
 Power of Istos										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Power of Istos																																																							STACK:NO	MULT:NO
 
+##
 ## Ogre Abilities
+##
+
 # Black Nail Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 Oversize Greataxe										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Weapon Focus (Huge Greataxe)																																																					STACK:NO	MULT:NO																																											AUTO:WEAPONPROF|Weapon Focus(Greataxe)
@@ -221,8 +254,11 @@ Hand of God				OUTPUTNAME:Hand of Zohl'Kahn			CATEGORY:FEAT			TYPE:ClassFeature	
 Gathering Horde			OUTPUTNAME:Zohl'Kahn Gathering Horde	CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Zohl'Kahn's Gathering Horde																																																					STACK:NO	MULT:NO																																																																															BONUS:VAR|LeadershipScore|5
 Dispel Good											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Dispel Good																																										SPELLS:Innate|TIMES=1|Dispel Good,14+CHA								STACK:NO	MULT:NO
 
+##
 ## Orc Abilities (Complete)
-# Keeper of Secrets Class Abilities
+##
+
+# Keeper of Secrets Class Abilities (Complete)
 # Ability Name			Output Name					Category of Ability		Type					Visible		Required Ability																																Special ABility																												Define													Innate Spells												Bonus to Known Spells												Stackable?	Multiple?	Choose				Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 Shadow Walker										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Shadow Walker - Gains luck bonus to Bluff checks when creating a diversion.																																																										STACK:NO	MULT:NO
 Lore of Sathus										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Lore of Sathus - Gains knowledge of extra arcane spells.																																													ADD:ABILITY|3|KSKnownSpellBonus|AUTOMATIC|TYPE=KSBonusKnownSpell	STACK:YES	MULT:YES
@@ -249,9 +285,17 @@ Call of Urog										CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO													
 Urogs Battle Cry			OUTPUTNAME:Urog's Battle Cry			CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Urog's Battl Cry																																																							STACK:NO	MULT:NO
 Urogs Endurance			OUTPUTNAME:Urog's Endurance			CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Urog's Endurance																																																							STACK:NO	MULT:NO
 
+##
+## Sylvan Forces Abilities
+##
+
 # Dryad Ranger Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
 Freedom											CATEGORY:FEAT			TYPE:ClassFeature		VISIBLE:NO																																					SAB:Dryad may sever her connection to her Treant, drawing energy from nature itself.	SAB:Regeneration
+
+##
+## Troll Abilities
+##
 
 # Chosen of Vendak Class Abilities
 # Ability Name			Output Name						Category of Ability		Type				Visible	Required Ability																																		Special ABility																												Define													Innate Spells												Stackable?	Multiple?	Choose																																	Template				Move			Automaticaly Gained Weapon Prof.		Combat bonus				Adjust PC Size				Bonus to skill									Stat bonus					Modify VAR																											Class Skill			Vision				Damage Reduction	Natural Attacks
