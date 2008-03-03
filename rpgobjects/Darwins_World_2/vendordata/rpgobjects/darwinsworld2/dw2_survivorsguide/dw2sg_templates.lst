@@ -1,0 +1,66 @@
+SOURCELONG:Darwin's World 2nd Edition - Survivor's Guide (v2.5)	SOURCESHORT:DW2_SG	SOURCEWEB:http://www.rpgobjects.com/index.php?page=dw
+
+###Block:Starting Background/Occupation
+# Starting Background/Occupation	Visible?		Choose a Background
+# Template Name				Visible	Template														Special Ability																																																														Define												Combat bonus					Add to base move						BONUS:SIZEMOD		Bonus to skill															Add to vision																Stat bonus																								Modify VAR																																										Weapon prof. bonus																		Class Skill	Choose a Feat																									KIT									Automatic Languages	Move		SUBRACE	Natural Attacks
+
+#Starting Benefits			VISIBLE:NO	SAB:Reputation - %|Reputation
+
+###Block: Background and Occupation
+# Template Name		Visible	Template																		Bonus to Ability Pool
+Starting Background	VISIBLE:NO	TEMPLATE:CHOOSE:StrongSkills|FastSkills|ToughSkills|SmartSkills|DedicatedSkills|CharismaticSkills|PApocSkills	BONUS:ABILITYPOOL|Background|1
+
+###Block: Assigned for Occupation prerequisites, it's how we know what class was taken first and thus which skills are 1st level class skills --Eddy
+# Template Name	Visible	Required Class
+PApocSkills		VISIBLE:NO	PRECLASS:1,Post Apocalyptic Hero
+
+###Block: Evasion/Improved Evasion
+Evasion			TYPE:Special.Extraordinary			VISIBLE:NO					SAB:Evasion (Ex)|EvasionUsable																					DEFINE:EvasionUsable|0																																																	BONUS:VAR|EvasionUsable|1|PREVAREQ:var("COUNT[FEATNAME=Improved Evasion.ALL]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0
+Improved Evasion		TYPE:Special.Extraordinary.RogueAbilities	VISIBLE:NO	PREFEAT:1,Evasion		SAB:Improved Evasion (Ex)|ImprovedEvasionUsable																		DEFINE:ImprovedEvasionUsable|0							DESC:Class Special Ability																																				BONUS:VAR|ImprovedEvasionUsable|1|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0								SOURCEPAGE:ClassesII.rtf
+
+###Block: Backgrounds
+Background (Feral)			VISIBLE:NO	ADD:ABILITY|Occupation|NORMAL|None	BONUS:ABILITYPOOL|Feral Background Skills|1				ADD:FEAT|TYPE=Feral							KIT:1|Equipment_AnySimpleWeapon
+Background (Tribal)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Tribal Background Skills|1				ADD:FEAT|TYPE=Tribal	ADD:FEAT|Primitive Technology		KIT:1|Equipment_MWArchaicWeapon				LANGAUTO:Unislang
+Background (Ritual Preservationist)	VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Ritual Preservationist Background Skills|1					ADD:FEAT|Post-Apocalyptic Technology	KIT:1|Equipment_ArtifactOfAncientsI			LANGAUTO:Gutter Talk
+Background (Resentful)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Resentful Background Skills|1				ADD:FEAT|TYPE=Resentful	ADD:FEAT|Primitive Technology										LANGAUTO:Unislang
+Background (Radical)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Radical Background Skills|1				ADD:FEAT|TYPE=Radical	ADD:FEAT|Post-Apocalyptic Technology									LANGAUTO:Unislang
+Background (Degenerate)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Degenerate Background Skills|1							ADD:FEAT|Post-Apocalyptic Technology	KIT:1|Equipment_ArtifactOfAncientsI			LANGAUTO:Gutter Talk
+Background (Resurrector)		VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Resurrector Background Skills|1							ADD:FEAT|Post-Apocalyptic Technology	KIT:1|Equipment_ArtifactOfAncientsI			LANGAUTO:Unislang
+Background (Visionary Reinventor)	VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Visionary Reinventor Background Skills|1						ADD:FEAT|Post-Apocalyptic Technology	KIT:1|Equipment_ArtifactOfAncientsI			LANGAUTO:Unislang
+Background (Guardian)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Guardian Background Skills|1														KIT:1|Equipment_WeaponOfAncients				LANGAUTO:Ancient
+Background (Hedonist)			VISIBLE:NO	ADD:ABILITY|Occupation|NORMAL|None	BONUS:ABILITYPOOL|Hedonist Background Skills|1				ADD:FEAT|TYPE=Hedonist	ADD:FEAT|Post-Apocalyptic Technology	KIT:2|Equipment_ArtifactOfAncientsII|Funds_6d6_10	LANGAUTO:Ancient
+Background (Advanced)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Advanced Background Skills|1														KIT:1|Equipment_ArtifactOfAncientsIII			LANGAUTO:Ancient
+
+###Block: Mutant Templates
+# Variable 		- Usage
+# MedIncomp       - Medical Incompatibility DC with modifiers
+#
+
+Mutant							VISIBLE:YES	TEMPLATE:Mutant Definitions	TEMPLATE:Mutant Specials	SUBRACE:Yes
+Mutant Definitions					VISIBLE:NO	DEFINE:isMutant|0	DEFINE:MedIncomp|0	BONUS:ABILITYPOOL|MUTATION|3	BONUS:ABILITYPOOL|DEFECT|3	BONUS:VAR|MedIncomp|15	BONUS:VAR|isMutant|1
+Mutant Specials						VISIBLE:NO	SAB:Medical Incompatibility (DC:%)|MedIncomp
+
+###Block: Templates to handle specific Mutations and Defects
+# Mutations
+Aberrant Horn Development Template			VISIBLE:NO	NATURALATTACKS:Gore,Weapon.Natural.Melee.Piercing.Bludgeoning,*1,1d4	BONUS:WEAPONPROF=Gore|DAMAGESIZE|AberrantHornDevelopment
+Claws Template						VISIBLE:NO	NATURALATTACKS:Claw,Weapon.Natural.Melee.Slashing,*1,1d4			BONUS:WEAPONPROF=Claw|DAMAGESIZE|ClawsMut	
+Complete Wing Development Template			VISIBLE:NO	MOVE:Fly,0
+Gigantism Penalty Template				VISIBLE:NO	BONUS:STAT|DEX|-1|TYPE=GigantismPenalty	BONUS:STAT|STR|-8|TYPE=SizeOffset	BONUS:STAT|CON|-4|TYPE=SizeOffset	BONUS:STAT|DEX|2|TYPE=SizeOffset																															
+Serrated Dental Development Template		VISIBLE:NO	NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing,*1,1d4		BONUS:WEAPONPROF=Bite|DAMAGESIZE|SerratedDentalDevelopment	BONUS:WEAPONPROF=Bite|CRITRANGEADD|1
+
+###Block: Nonexistant Scores
+No Strength							VISIBLE:NO	DEFINE:LOCK.STR|10
+No Dexterity						VISIBLE:NO	DEFINE:LOCK.DEX|10
+No Constitution						VISIBLE:NO	DEFINE:LOCK.CON|10
+No Intelligence						VISIBLE:NO	DEFINE:LOCK.INT|10
+No Wisdom							VISIBLE:NO	DEFINE:LOCK.WIS|10
+No Charisma							VISIBLE:NO	DEFINE:LOCK.CHA|10
+
+###Block: Companion Mods
+Companion Track						VISIBLE:NO	VFEAT:Track
+Companion Evasion						VISIBLE:NO	VFEAT:Evasion
+Companion Improved Evasion				VISIBLE:NO	VFEAT:Improved Evasion
+
+#
+# End
+#

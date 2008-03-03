@@ -1,0 +1,86 @@
+SOURCELONG:Darwin's World 2nd Edition - Survivor's Guide (v2.5)	SOURCESHORT:DW2_SG	SOURCEWEB:http://www.rpgobjects.com/index.php?page=dw
+
+# Weapon Accessories?
+# Made weapon accessories into eqmods but not sure how to represent the cost.
+# They are purchased separately and don't modify the basecost of the item.
+#
+
+#MSRD EqMods
+# Modifier Name			Output Name				Unique Key		Type			Cost			Visible		Choose Naming Option	Source Page
+MASTERCRAFT_WEAP_HIT_1.MOD												COST:3
+MASTERCRAFT_WEAP_HIT_2.MOD												COST:6
+MASTERCRAFT_WEAP_HIT_3.MOD												COST:9
+
+MASTERCRAFT_WEAP_DAM_1.MOD												COST:3
+MASTERCRAFT_WEAP_DAM_2.MOD												COST:6
+MASTERCRAFT_WEAP_DAM_3.MOD												COST:9
+
+MASTERCRAFT_ARMR_1.MOD													COST:3
+MASTERCRAFT_ARMR_2.MOD													COST:6
+MASTERCRAFT_ARMR_3.MOD													COST:9
+
+MASTERCRAFT_SHLD_1.MOD													COST:3
+MASTERCRAFT_SHLD_2.MOD													COST:6
+MASTERCRAFT_SHLD_3.MOD													COST:9
+
+MASTERCRAFT_TOOL_1.MOD													COST:3
+MASTERCRAFT_TOOL_2.MOD													COST:6
+MASTERCRAFT_TOOL_3.MOD													COST:9
+
+# Legacy EQMOD
+MWORKW.MOD															COST:3*%CHOICE
+MWORKA.MOD															COST:3*%CHOICE
+MWORKT.MOD															COST:3*%CHOICE
+
+UPGRADE.MOD															COST:1
+ILLUMINATOR.MOD														COST:75
+LSR_SIGHT.MOD														COST:500
+SCP_STD.MOD															COST:150
+SCP_ELE_OP.MOD														COST:750
+SPEED_LD.MOD														COST:25
+SPPRSS_PIS.MOD														COST:1000
+SPPRSS_RFL.MOD														COST:1250
+
+#DW2 EQMODS
+#Materials
+Leather	KEY:LEATHER	NAMEOPT:NORMAL	TYPE:BaseMaterial.Mundane.Ammunition.Armor.Shield.Weapon.Instruments.Tools.Goods	COST:0	VISIBLE:QUALIFY	SOURCEPAGE:msrdcombat.rtf	!PRETYPE:EQMODTYPE=Mundane	!PRETYPE:1,Metal,Wooden
+
+#Keycard Access
+Access (White)			OUTPUTNAME:White Access		KEY:IDENT_IC	TYPE:IdentityCard	COST:500		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Yellow)			OUTPUTNAME:Yellow Access	KEY:IDENT_IIC	TYPE:IdentityCard	COST:1000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Blue)			OUTPUTNAME:Blue Access		KEY:IDENT_IIIC	TYPE:IdentityCard	COST:3500		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Purple)			OUTPUTNAME:Purple Access	KEY:IDENT_IVC	TYPE:IdentityCard	COST:5000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Red)			OUTPUTNAME:Red Access		KEY:IDENT_VC	TYPE:IdentityCard	COST:12000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Black)			OUTPUTNAME:Black Access		KEY:IDENT_VIC	TYPE:IdentityCard	COST:15000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Lead)			OUTPUTNAME:Lead Access		KEY:IDENT_IM	TYPE:IdentityCard	COST:500		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Copper)			OUTPUTNAME:Copper Access	KEY:IDENT_IIM	TYPE:IdentityCard	COST:4000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Bronze)			OUTPUTNAME:Bronze Access	KEY:IDENT_IIIM	TYPE:IdentityCard	COST:5000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Silver)			OUTPUTNAME:Silver Access	KEY:IDENT_IVM	TYPE:IdentityCard	COST:7000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Gold)			OUTPUTNAME:Gold Access		KEY:IDENT_VM	TYPE:IdentityCard	COST:16000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+Access (Platinum)			OUTPUTNAME:Platinum Access	KEY:IDENT_VIM	TYPE:IdentityCard	COST:21000		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 135
+
+#Vehicle Mods
+Cover Provided (1/2)		KEY:ABVEH_CVR_H	TYPE:VehicleCover	COST:0		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 218			PRETYPE:Transportation	REPLACES:ABVEH_CVR_T,ABVEH_CVR_N,ABVEH_CVR_F,ABVEH_CVR_TH,ABVEH_CVR_HF	SPROP:Provides 1/2 Cover to Crew and Passengers
+Cover Provided (1/2 or Full)	KEY:ABVEH_CVR_HF	TYPE:VehicleCover	COST:0		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 218			PRETYPE:Transportation	REPLACES:ABVEH_CVR_T,ABVEH_CVR_N,ABVEH_CVR_F,ABVEH_CVR_H,ABVEH_CVR_TH	SPROP:Provides 1/2 (or Full) Cover to Crew and Passengers
+Cover Provided (3/4)		KEY:ABVEH_CVR_T	TYPE:VehicleCover	COST:0		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 218			PRETYPE:Transportation	REPLACES:ABVEH_CVR_H,ABVEH_CVR_N,ABVEH_CVR_F,ABVEH_CVR_TH,ABVEH_CVR_HF	SPROP:Provides 3/4 Cover to Crew and Passengers
+Cover Provided (3/4 or 1/2)	KEY:ABVEH_CVR_TH	TYPE:VehicleCover	COST:0		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 218			PRETYPE:Transportation	REPLACES:ABVEH_CVR_H,ABVEH_CVR_N,ABVEH_CVR_F,ABVEH_CVR_T,ABVEH_CVR_F	SPROP:Provides 3/4 (or 1/2) Cover to Crew and Passengers
+Cover Provided (9/10)		KEY:ABVEH_CVR_N	TYPE:VehicleCover	COST:0		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 218			PRETYPE:Transportation	REPLACES:ABVEH_CVR_H,ABVEH_CVR_T,ABVEH_CVR_F,ABVEH_CVR_TH,ABVEH_CVR_HF	SPROP:Provides 9/10 Cover to Crew and Passengers
+Cover Provided (Full)		KEY:ABVEH_CVR_F	TYPE:VehicleCover	COST:0		VISIBLE:QUALIFY	NAMEOPT:NORMAL		SOURCEPAGE:p. 218			PRETYPE:Transportation	REPLACES:ABVEH_CVR_H,ABVEH_CVR_T,ABVEH_CVR_N,ABVEH_CVR_TH,ABVEH_CVR_HF	SPROP:Provides Full Cover to Crew and Passengers
+
+#Powered Armor Mods
+20 Base Movement			KEY:BASE_MV_20	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Base Move - 20'
+25 Base Movement			KEY:BASE_MV_25	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Base Move - 25'
+70 Base Movement			KEY:BASE_MV_70	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Base Move - 70'
+Air Supply				KEY:AIR_SUPP_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Air Supply
+Communication System		KEY:COMM_SYS_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Communication System
+Hazmat				KEY:HAZ_MAT_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:HazMat Protection
+Optics - Night Vision 120	KEY:N_VIS120_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Night Vision (120')
+Optics - Telescopic		KEY:TELE_VIS_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Telescopic Vision (+4 to Spot Checks)	BONUS:SKILL|Spot|4|TYPE=PoweredArmor
+Optics - X Ray			KEY:XRAY_VIS_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:X-Ray Optics
+Gamma Protection - Moderate	KEY:GPRO_MOD_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Gamma Radiation Protection - Moderate
+Geiger Counter			KEY:GEIGER_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Geiger Counter
+Chemical Sensor			KEY:CHEM_SEN_ARMR	TYPE:PoweredArmorMod	COST:0	VISIBLE:NO	NAMEOPT:NOTHING	PRETYPE:Armor.Powered	SPROP:Chemical Sensor
+
+#
+#EOF
+#
