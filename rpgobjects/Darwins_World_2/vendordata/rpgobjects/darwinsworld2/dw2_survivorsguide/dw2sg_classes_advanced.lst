@@ -1,10 +1,10 @@
-# CVS $Revision$ $Author$ -- Tue Mar  4 11:52:47 2008 -- reformated by prettylst.pl v1.38 (build 5225)
+# CVS $Revision$ $Author$ -- Tue Mar  4 23:40:12 2008 -- reformated by prettylst.pl v1.38 (build 5225)
 SOURCELONG:Darwin's World 2nd Edition - Survivor's Guide (v2.5)	SOURCESHORT:DW2_SG	SOURCEWEB:http://www.rpgobjects.com/index.php?page=dw
 
 # Class Name	Hit Dice	Type				Abbreviation	Max Level	Subclass?		Source Page		Define						Save checks bonus																Combat bonus		Modify VAR
 CLASS:Barbarian	HD:12		TYPE:Base.Advanced	ABB:Bbn		MAXLEVEL:10	HASSUBCLASS:NO	SOURCEPAGE:p. 75	DEFINE:Reputation|0	DEFINE:Wealth|0	BONUS:CHECKS|BASE.Fortitude|(CL+3)*2/5	BONUS:CHECKS|BASE.Reflex|(CL+3)*2/5	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL	BONUS:VAR|ClassDefense|(CL+1)/2	BONUS:VAR|Reputation|(CL-1)/4
-# Class Name	Required Ability																Restricted Ability							Req. Att.	Required Skill
-CLASS:Barbarian	PREABILITY:1,CATEGORY=Background,Feral,Tribal	PREABILITY:1,CATEGORY=FEAT,Archaic Weapons Proficiency	!PREABILITY:1,CATEGORY=FEAT,Post-Apocalyptic Technology	PREATT:3	PRESKILL:1,Survival=3
+# Class Name	Required Ability						Req. Att.	Required Feat					Prohibited Feat					Required Skill
+CLASS:Barbarian	PREABILITY:1,CATEGORY=Background,Feral,Tribal	PREATT:3	PREFEAT:1,Archaic Weapons Proficiency	!PREFEAT:1,Post-Apocalyptic Technology	PRESKILL:1,Survival=3
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Barbarian	STARTSKILLPTS:3	CSKILL:Balance|Climb|Handle Animal|Hide|Intimidate|Jump|Listen|Move Silently|Navigate|Search|Spot|Survival
 1	BONUS:VAR|ActionLVL|CL	BONUS:VAR|Action|6+(CL/2)
@@ -65,7 +65,7 @@ CLASS:Juju Doctor	HD:8		TYPE:Base.Advanced	ABB:JujuD		MAXLEVEL:10	HASSUBCLASS:NO
 # Class Name	Req. Att.	Required Feat		Required Skill
 CLASS:Juju Doctor	PREATT:1	PREFEAT:1,Juju Medicine	PRESKILL:1,Treat Injury=6
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Juju Doctor	STARTSKILLPTS:7	CSKILL:Bluff|Concentration|Decipher Script|Diplomacy|Gather Information|Intimidate|Knowledge (Behavorial Sciences)|Knowledge (Earth and Life Sciences)|Knowledge (Mutant Lore)|Knowledge (Technology)|Listen|TYPE.Perform|Read/Write Language|Research|Sense Motive|Speak Language|Spot
+CLASS:Juju Doctor	STARTSKILLPTS:7	CSKILL:Bluff|Concentration|Decipher Script|Diplomacy|Gather Information|Intimidate|Knowledge (Behavioral Sciences)|Knowledge (Earth and Life Sciences)|Knowledge (Mutant Lore)|Knowledge (Technology)|Listen|TYPE.Perform|Read/Write Language|Research|Sense Motive|Speak Language|Spot
 1														BONUS:VAR|ActionLVL|CL	BONUS:VAR|Action|6+(CL/2)
 1							BONUS:ABILITYPOOL|Juju Doctor Feat|(CL/3)
 1	SAB:Juju Specialist (+%)|jujuSpec								BONUS:VAR|jujuSpec|1						BONUS:SKILL|Treat Injury|jujuSpec	DEFINE:jujuSpec|0
@@ -213,7 +213,7 @@ CLASS:Symbiote	PREATT:2	PREFEAT:1,Animal Affinity	PRESKILL:2,Handle Animal,Survi
 CLASS:Symbiote	STARTSKILLPTS:3	CSKILL:Handle Animal|Knowledge (Earth and Life Sciences)|Knowledge (Mutant Lore)|Listen|Navigate|Ride|Sense Motive|Spot|Survival|Treat Injury
 1												BONUS:VAR|ActionLVL|CL	BONUS:VAR|Action|6+(CL/2)
 1					BONUS:ABILITYPOOL|Symbiote Feat|(CL/3)
-1												BONUS:VAR|CompLevel|cl("Symbiote")				AUTO:FEAT|Animal Partner
+1												BONUS:VAR|CompLevel|cl("Symbiote")				ABILITY:Talent|AUTOMATIC|Animal Partner
 2	SAB:Opportunist
 4
 5	SAB:Bond of Friendship

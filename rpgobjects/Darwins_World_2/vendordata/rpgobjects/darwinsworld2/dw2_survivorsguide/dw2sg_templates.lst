@@ -1,28 +1,14 @@
 # CVS $Revision$ $Author$ -- Tue Mar  4 13:24:18 2008 -- reformated by prettylst.pl v1.38 (build 5225)
 SOURCELONG:Darwin's World 2nd Edition - Survivor's Guide (v2.5)	SOURCESHORT:DW2_SG	SOURCEWEB:http://www.rpgobjects.com/index.php?page=dw
 
-###Block:Starting Background/Occupation
-# Starting Background/Occupation	Visible?		Choose a Background
-# Template Name				Visible	Template														Special Ability																																																														Define												Combat bonus					Add to base move						BONUS:SIZEMOD		Bonus to skill															Add to vision																Stat bonus																								Modify VAR																																										Weapon prof. bonus																		Class Skill	Choose a Feat																									KIT									Automatic Languages	Move		SUBRACE	Natural Attacks
-
-#Starting Benefits			VISIBLE:NO	SAB:Reputation - %|Reputation
-
 ###Block: Background and Occupation
 # Template Name		Visible	Template					Bonus to Ability Pool
 Starting Background	VISIBLE:NO							BONUS:ABILITYPOOL|Background|1
-
-
 Occupation.MOD				TEMPLATE:ADDCHOICE:PApocSkills	BONUS:ABILITYPOOL|Occupation|-1|!PREABILITY:1,CATEGORY=Background,TYPE=Background
-
 
 ###Block: Assigned for Occupation prerequisites, it's how we know what class was taken first and thus which skills are 1st level class skills --Eddy
 # Template Name	Visible	Required Class
 PApocSkills		VISIBLE:NO	PRECLASS:1,Post Apocalyptic Hero
-
-###Block: Evasion/Improved Evasion
-# Template Name	Visible	Source Page				Special ABility						Define					Required Feat	Modify VAR																													Type							Description
-Evasion		VISIBLE:NO						SAB:Evasion (Ex)|EvasionUsable			DEFINE:EvasionUsable|0						BONUS:VAR|EvasionUsable|1|PREVAREQ:var("COUNT[FEATNAME=Improved Evasion.ALL]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0	TYPE:Special.Extraordinary
-Improved Evasion	VISIBLE:NO	SOURCEPAGE:ClassesII.rtf	SAB:Improved Evasion (Ex)|ImprovedEvasionUsable	DEFINE:ImprovedEvasionUsable|0	PREFEAT:1,Evasion	BONUS:VAR|ImprovedEvasionUsable|1|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0								TYPE:Special.Extraordinary.RogueAbilities	DESC:Class Special Ability
 
 ###Block: Backgrounds
 # Template Name				Visible	Bonus to Ability Pool																			Automaticaly Gained Feat			Apply Kit								Automatic Languages
@@ -38,18 +24,13 @@ Background (Guardian)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYP
 Background (Hedonist)			VISIBLE:NO	BONUS:ABILITYPOOL|Hedonist Background Skills|1	BONUS:ABILITYPOOL|Hedonist Background Feat|1							AUTO:FEAT|Post-Apocalyptic Technology	KIT:2|Equipment_ArtifactOfAncientsII|Funds_6d6_10	LANGAUTO:Ancient
 Background (Advanced)			VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1	BONUS:ABILITYPOOL|Advanced Background Skills|1																KIT:1|Equipment_ArtifactOfAncientsIII			LANGAUTO:Ancient
 
-###Block: Mutant Templates
-# Variable 		- Usage
-# MedIncomp       - Medical Incompatibility DC with modifiers
-#
-
+###Block: Mutant
 # Template Name		Visible	Template									Special ABility						Define						Bonus to Ability Pool							Modify VAR							SUBRACE
 Mutant			VISIBLE:YES	TEMPLATE:Mutant Definitions	TEMPLATE:Mutant Specials																																		SUBRACE:Yes
 Mutant Definitions	VISIBLE:NO																			DEFINE:isMutant|0	DEFINE:MedIncomp|0	BONUS:ABILITYPOOL|MUTATION|3	BONUS:ABILITYPOOL|DEFECT|3	BONUS:VAR|MedIncomp|15	BONUS:VAR|isMutant|1
 Mutant Specials		VISIBLE:NO											SAB:Medical Incompatibility (DC:%)|MedIncomp
 
 ###Block: Templates to handle specific Mutations and Defects
-# Mutations
 # Template Name					Visible	Stat bonus																								Weapon prof. bonus														Move		Natural Attacks
 Aberrant Horn Development Template		VISIBLE:NO																										BONUS:WEAPONPROF=Gore|DAMAGESIZE|AberrantHornDevelopment										NATURALATTACKS:Gore,Weapon.Natural.Melee.Piercing.Bludgeoning,*1,1d4
 Claws Template					VISIBLE:NO																										BONUS:WEAPONPROF=Claw|DAMAGESIZE|ClawsMut													NATURALATTACKS:Claw,Weapon.Natural.Melee.Slashing,*1,1d4
