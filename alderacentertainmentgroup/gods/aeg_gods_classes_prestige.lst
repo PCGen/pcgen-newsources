@@ -140,16 +140,16 @@ CLASS:Karhollan Guard	STARTSKILLPTS:2	CSKILL:Climb|Craft (stoneworking)|Diplomac
 1													AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiencies
 1													AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
 ### Block: Normal Progression
-1	BONUS:VAR|PersonalPresenceBonus|1							AUTO:FEAT|Personal Presence
-2	BONUS:VAR|RangedCombatDefense|1							AUTO:FEAT|Ranged Combat Defense
-3	BONUS:VAR|PersonalPresenceBonus|1							AUTO:FEAT|Prayer Circle
+1	BONUS:VAR|PersonalPresenceBonus|1										AUTO:FEAT|Personal Presence
+2	BONUS:VAR|RangedCombatDefense|1											AUTO:FEAT|Ranged Combat Defense
+3	BONUS:VAR|PersonalPresenceBonus|1	BONUS:VAR|PrayerCircleRadius|10		AUTO:FEAT|Prayer Circle
 4	BONUS:VAR|RangedCombatDefense|1
 5	BONUS:VAR|PersonalPresenceBonus|1	BONUS:VAR|FlameStrikeCasterLevel|12	AUTO:FEAT|Flame Strike
-6	BONUS:VAR|RangedCombatDefense|1
+6	BONUS:VAR|RangedCombatDefense|1		BONUS:VAR|PrayerCircleRadius|10
 7	BONUS:VAR|PersonalPresenceBonus|1
 8	BONUS:VAR|RangedCombatDefense|1
-9	BONUS:VAR|PersonalPresenceBonus|1
-10	BONUS:VAR|RangedCombatDefense|1	BONUS:VAR|FlameStrikeCasterLevel|3
+9	BONUS:VAR|PersonalPresenceBonus|1	BONUS:VAR|PrayerCircleRadius|10
+10	BONUS:VAR|RangedCombatDefense|1		BONUS:VAR|FlameStrikeCasterLevel|3
 
 #
 # Gnoll Prestige Classes
@@ -159,7 +159,7 @@ CLASS:Karhollan Guard	STARTSKILLPTS:2	CSKILL:Climb|Craft (stoneworking)|Diplomac
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus					Combat bonus
 CLASS:The Returned	HD:8		TYPE:PC.Prestige	ABB:Rtnd		MAXLEVEL:10	SOURCEPAGE:pg.50	BONUS:CHECKS|Fortitude,Reflex|CL/2+2	BONUS:COMBAT|BAB|
 # Class Name		Required Alignment		Req. Att.	!PRECHECK			Required Text
-CLASS:The Returned	PREALIGN:CE				PREATT:4	!PRECHECK:1,Will=6	PRETEXT:The character must be a hero to a group of people and must undergo blasphemous rites. See text.
+CLASS:The Returned	!PREALIGN:LG				PREATT:4	!PRECHECK:1,Will=6	PRETEXT:The character must be a hero to a group of people and must undergo blasphemous rites. See text.
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:The Returned	STARTSKILLPTS:3	CSKILL:Bluff|Climb|Concentration|Diplomacy|Intimidate|Jump|Knowledge (arcana)|Listen|Spellcraft|Swim
 ### Block: Class Features
