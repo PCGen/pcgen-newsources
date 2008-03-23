@@ -1,17 +1,16 @@
-# CVS $Revision: $ $Author: $ -- Thu Nov 29 22:57:25 2007 -- reformated by prettylst.pl v1.38 (build 4314)
+# CVS $Revision: $ $Author: $ -- Sun Mar 23 01:11:23 2008 -- reformated by prettylst.pl v1.38 (build 5580)
 SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts.com
-#AUTHOR:E. C. Smith (Maredudd), 2007
+#Original Entry:E. C. Smith (Maredudd), 2007; Andrew Maitland
 
-#Epic Armor and Shield Enhancements
-# Modifier Name		Unique Key			Output Name
-Clan Bound			KEY:CLANBOUND		OUTPUTNAME:Clan-Bound
-Mages				KEY:MAGES
-Redoubtable			KEY:REDOUBTABLE
-Regenerating		KEY:REGNERATING
+###Block: Epic Armor and Shield Enhancements ------------------------------------------------------------------------
+# Modifier Name		Unique Key			Output Name				Type			Plus		Visible		Multiple Requirements											Required Type		Special Property
+Clan Bound			KEY:CLANBOUND		OUTPUTNAME:Clan-Bound		TYPE:Weapon.Armor	PLUS:6	VISIBLE:QUALIFY															PRETYPE:1,Weapon,Armor
+Mages				KEY:MAGES								TYPE:Armor		PLUS:3	VISIBLE:QUALIFY	PREMULT:2,[PRETYPE:1,Armor],[PRETYPE:1,EQMOD=GMWORKA]										SPROP:Removes all Spell Failure from Armor worn.
+Redoubtable			KEY:REDOUBTABLE							TYPE:Armor		PLUS:6	VISIBLE:QUALIFY	PREMULT:2,[PRETYPE:1,Armor],[PRETYPE:1,EQMOD=GMWORKA]										SPROP:Immune to stunning
+Regenerating		KEY:REGNERATING							TYPE:Armor		PLUS:6	VISIBLE:QUALIFY	PREMULT:2,[PRETYPE:1,Armor],[PRETYPE:1,Legendary2,Legendary3,Legendary4,Legendary5]
 
-#Epic Weapon Enhancements
-Clan Bound			KEY:CLANBOUND_W		OUTPUTNAME:Clan-Bound
-Spellstoring (Epic)	KEY:SPELLSTORING_EPIC	OUTPUTNAME:Spellstoring, Epic
+#Epic Weapon Enhancements --------------------------------------------------------------------------------------------
+Spellstoring (Epic)	KEY:SPELLSTORING_EPIC	OUTPUTNAME:Spellstoring, Epic	TYPE:Weapon		PLUS:7	VISIBLE:QUALIFY															PRETYPE:1,Weapon		SPROP:Store up to two 6th level spells or one spell of up to 10th level
 
 
 
