@@ -1,0 +1,39 @@
+# CVS $Revision: $ $Author: $ -- Wed Apr  2 14:10:13 2008 -- reformated by prettylst.pl v1.38 (build 5580)
+
+###Block: PHB Feat modifications
+# Feat Name									Product Identity?	Visible	Prohibited Class			Prohibited Race	Clear Description	Description									Combat bonus															Bonus to skill												Modify VAR																													Allow Follower					Allowed Companions																																																																																																																																																																																																						Source, Long Desc.				Source Page
+Endurance.MOD																		!PRERACE:1,Gnome
+Skill Focus.MOD																																																			BONUS:SKILL|LIST|3|PRECLASS:1,Patrician|PREVARGT:var("CL=Patrician"),floor(TL/2)
+Weapon Finesse.MOD												!PRECLASS:1,Weapon Savant=2																	BONUS:COMBAT|TOHIT.LowWeight|((max(STR,DEX)-STR)+SHIELDACCHECK)|TYPE=NotRanged|PRETYPE:1,GlassSteel
+Extra Turning.MOD																																																																	BONUS:VAR|TurnTimesBase|-4|PREVAREQ:FocusTurn,1	BONUS:VAR|ChannelTimesBase|4|TYPE=ExtraTurning.STACK	BONUS:VAR|TurnTimesInfernal|4|TYPE=ExtraTurning.STACK|PREVAREQ:FocusTurn,1
+Brew Potion.COPY=Brew Potion (Abebi)
+Brew Potion (Abebi).MOD							NAMEISPI:YES	VISIBLE:NO									DESC:.CLEAR		DESC:Brew as 5th level cleric, only DMG cleric portions																																																																																																																																																																																																																																																																																					SOURCEPAGE:p.274
+Precise Shot.COPY=Precise Shot (Ranger/Flintlock Combat)
+Precise Shot (Ranger/Flintlock Combat)							VISIBLE:NO									DESC:.CLEAR		DESC:Only applies to use of Flintlock weapons																																																																																																																																																																																																																																																																																							SOURCEPAGE:Feats.rtf
+Animal Companion.COPY=Arcanis Animal Companion
+Arcanis Animal Companion.MOD																																																																																													FOLLOWERS:Arcanis Animal Companion|1	COMPANIONLIST:Arcanis Animal Companion|Badger,Camel,Dire Animal (Dire Rat),Dog,Dog (Riding),Eagle,Hawk,Horse (Light),Horse (Heavy),Owl,Pony,Porpoise,Ram,Shark (Medium),Snake (Viper/Small),Snake (Viper/Medium),Squid,Wolf,Wolf Lizard	COMPANIONLIST:Animal Companion|Ape,Bear (Black),Bison,Boar,Cheetah,Crocodile,Dire Animal (Dire Badger),Dire Animal (Dire Bat),Dire Animal (Dire Weasel),Dire Animal (Dire Wolf Lizard),Leopard,Lizard (Monitor),Shark (Large),Snake (Constrictor),Snake (Viper/Large),Wolverine|FOLLOWERADJUSTMENT:-3	COMPANIONLIST:Animal Companion|Bear (Brown),Bull,Dire Animal (Dire Ram),Dire Animal (Dire Wolverine),Crocodile (Giant),Dire Animal (Dire Ape),Dire Animal (Dire Boar),Dire Animal (Dire Wolf),Lion,Rhinoceros,Snake (Viper/Huge),Tiger|FOLLOWERADJUSTMENT:-6	COMPANIONLIST:Animal Companion|Bear (Polar),Dire Animal (Dire Bull),Dire Animal (Dire Lion),Dinosaur (Megaraptor),Shark (Huge),Snake (Constrictor/Giant),Whale (Orca)|FOLLOWERADJUSTMENT:-9	COMPANIONLIST:Animal Companion|Dire Animal (Dire Bear),Elephant,Octopus (Giant)|FOLLOWERADJUSTMENT:-12	COMPANIONLIST:Animal Companion|Dire Animal (Dire Shark),Dire Animal (Dire Tiger),Squid (Giant)|FOLLOWERADJUSTMENT:-15								SOURCEPAGE:ClassesI.rtf
+Animal Companion.COPY=Sentinel Animal Companion
+Sentinel Animal Companion																																																																																													FOLLOWERS:Arcanis Animal Companion|1	COMPANIONLIST:Arcanis Animal Companion|Cat,Dire Animal (Dire Rat),Dog,Dog (Riding)																																																																																																																																																																																												SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.69
+Animal Companion.FORGET
+Summon Familiar.COPY=Summon Arcanis Familiar
+Summon Arcanis Familiar.MOD																																																																																													FOLLOWERS:Arcanis Familiar|1			COMPANIONLIST:Arcanis Familiar|Bat,Cat,Hawk,Lizard,Mongoose,Owl,Parrot,Rat,Raven,Scorpion,Snake (Viper/Tiny),Spider,Spider Monkey,Toad,Weasel																																																																																																																																																																																									SOURCEPAGE:ClassesII.rtf
+
+###Block: PHB Feats redone
+# Feat Name					Type				Required Class		Required Feat									Multiple Requirements										Var. Min. Value			Define				Description		Stackable?	Multiple?	Choose					Bonus to HP						Modify VAR								Weapon prof. bonus			Source, Long Desc.				Source Page
+Weapon Specialization			TYPE:Special.Fighter					PREFEAT:1,Weapon Focus								PREMULT:1,[PREVARGTEQ:WeapSpecQualify,4],[PREVAREQ:OnaranTemplarQualify,1]											DESC:See Text			MULT:YES	CHOOSE:FEAT=Weapon Focus																		BONUS:WEAPONPROF=%LIST|DAMAGE|2								SOURCEPAGE:Feats.rtf
+Greater Weapon Focus			TYPE:General.Fighter					PREFEAT:1,Weapon Focus																					PREVARGTEQ:WeapSpecQualify,8						DESC:See Text	STACK:NO	MULT:YES	CHOOSE:FEAT=Weapon Focus																		BONUS:WEAPONPROF=%LIST|TOHIT|1								SOURCEPAGE:Feats.rtf
+Greater Weapon Specialization		TYPE:General.Fighter					PREFEAT:3,Weapon Focus,Greater Weapon Focus,Weapon Specialization														PREVARGTEQ:WeapSpecQualify,12						DESC:See Text			MULT:YES	CHOOSE:FEAT=Greater Weapon Focus																	BONUS:WEAPONPROF=%LIST|DAMAGE|2								SOURCEPAGE:Feats.rtf
+
+#Excluded Feats
+Psychic Inquisitor.FORGET																																																																															SOURCELONG:Player's Guide to Arcanis
+Monkey Grip.FORGET																																																																																SOURCELONG:Player's Guide to Arcanis
+Energy Admixture.FORGET																																																																																SOURCELONG:Player's Guide to Arcanis
+Superior Weapon Focus.FORGET																																																																															SOURCELONG:Player's Guide to Arcanis
+
+Improved Familiar.MOD																																																		MULT:YES																													SOURCELONG:Player's Guide to Arcanis
+
+#Expanded Psionics
+Closed Mind.MOD								PRECLASS:Slayer,Suromar																																																																						SOURCELONG:Player's Guide to Arcanis
+Craft Psionic Construct.FORGET																																																																														SOURCELONG:Player's Guide to Arcanis
+Metamorphic Transfer.FORGET																																																																															SOURCELONG:Player's Guide to Arcanis
+Psionic Body.MOD																																									DEFINE:PsionicFeatCount|0														BONUS:HP|CURRENTMAX|(PsionicFeatCount*2)	BONUS:VAR|PsionicFeatCount|COUNT[FEATTYPE=Psionic]							SOURCELONG:Player's Guide to Arcanis
