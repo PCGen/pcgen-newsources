@@ -1,10 +1,10 @@
-# CVS $Revision: $ $Author: $ -- Wed Apr  2 14:10:13 2008 -- reformated by prettylst.pl v1.38 (build 5580)
+# CVS $Revision: $ $Author: $ -- Mon Apr  7 16:57:55 2008 -- reformated by prettylst.pl v1.38 (build 5826)
 ##############################################################################################################################################################################################################################################################################################################################################
 
 # Class Name			Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus												Combat bonus
 CLASS:Altherian Sharpshooter	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:ASh		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.164	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name			Req. Att.	Required Feat																							Multiple Requirements									Required Skill
-CLASS:Altherian Sharpshooter	PREATT:5	PREFEAT:5,Exotic Weapon Proficiency (Altherian Flintlock (Rifle)),Hawk Eyed,Point Blank Shot,Precise Shot,Weapon Focus(Altherian Flintlock (Rifle))	PREMULT:1,[PRETEMPLATE:Altheria],[PREFEAT:1,Shining Patrol Service]	PRESKILL:2,Concentration,Craft (Flintlocks)=4
+CLASS:Altherian Sharpshooter	PREATT:5	PREFEAT:5,Exotic Weapon Proficiency (Altherian Flintlock (Rifle)),Hawk Eyed,Point Blank Shot,Precise Shot,Weapon Focus(Altherian Flintlock (Rifle))	PREMULT:1,[PRETEMPLATE:1,Altheria],[PREFEAT:1,Shining Patrol Service]	PRESKILL:2,Concentration,Craft (Flintlocks)=4
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Altherian Sharpshooter	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Concentration|TYPE.Craft|Hide|Jump|Move Silently|TYPE.Profession|Ride|Swim|Tumble
 1	SAB:Range Sneak Attack +%d6|RangeSneakAttack	BONUS:VAR|RangeSneakAttack|1	DEFINE:RangeSneakAttack|0
@@ -37,7 +37,7 @@ CLASS:Altherian Triggermage	STARTSKILLPTS:2	CSKILL:Climb|Concentration|TYPE.Craf
 # Class Name			Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Ansharan Gatekeeper	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:AGk		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.167	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name			Required Deity	Required Feat																			Required Skill													Req. Spell Type		Required Text
-CLASS:Ansharan Gatekeeper	PREDEITY:Anshar	PREFEAT:1,Endurance,Great Fortitude	PREFEAT:1,Skill Focus(TYPE.Arcana),Skill Focus(TYPE.Religion),Skill Focus(Spellcraft)	PRESKILL:1,TYPE.Religion=8	PRESKILL:1,TYPE.Arcana=6	PRESKILL:1,Spellcraft=10	PRESPELLTYPE:1,Arcane=2	PRETEXT:Must be able to activate a portal of Anshar.  Must be attuned to at least 15 portals.
+CLASS:Ansharan Gatekeeper	PREDEITY:1,Anshar	PREFEAT:1,Endurance,Great Fortitude	PREFEAT:1,Skill Focus(TYPE.Arcana),Skill Focus(TYPE.Religion),Skill Focus(Spellcraft)	PRESKILL:1,TYPE.Religion=8	PRESKILL:1,TYPE.Arcana=6	PRESKILL:1,Spellcraft=10	PRESPELLTYPE:1,Arcane=2	PRETEXT:Must be able to activate a portal of Anshar.  Must be attuned to at least 15 portals.
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Ansharan Gatekeeper	STARTSKILLPTS:4	CSKILL:Concentration|Diplomacy|Gather Information|TYPE.Arcana|TYPE.Geography|TYPE.Planes|TYPE.Religion|Listen|Open Lock|TYPE.Profession|Search|Sense Motive|Spellcraft
 1	SAB:Keen Eye (Ex)(+% bonus when searching for any kind of gateway)|CL																	ADD:SPELLCASTER|1|Divine
@@ -75,7 +75,7 @@ CLASS:Battlemage of the Coryani Legions	STARTSKILLPTS:2	CSKILL:Concentration|TYP
 # Class Name			Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Beltinian Exorcist	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:BEx		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.171	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name			Required AL		Required Deity	Required Feat				Required Skill							Req. Known Spell
-CLASS:Beltinian Exorcist	PREALIGN:LG,NG,CG	PREDEITY:Beltine	PREFEAT:2,Turn Undead,Extra Turning	PRESKILL:3,Concentration,TYPE.Arcana,TYPE.Religion=8	PRESPELL:2,Detect Undead,Dispel Evil
+CLASS:Beltinian Exorcist	PREALIGN:LG,NG,CG	PREDEITY:1,Beltine	PREFEAT:2,Turn Undead,Extra Turning	PRESKILL:3,Concentration,TYPE.Arcana,TYPE.Religion=8	PRESPELL:2,Detect Undead,Dispel Evil
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Beltinian Exorcist	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.History|TYPE.Planes|TYPE.Religion|TYPE.Profession|Ride|Search|Spellcraft
 1	SAB:My Spirit is My Own (Su)			BONUS:VAR|TurnLevelBase|CL
@@ -113,8 +113,8 @@ CLASS:Bowman	PREATT:5	PREFEAT:4,Iron Will,Precise Shot,Point Blank Shot,Rapid Sh
 CLASS:Bowman	STARTSKILLPTS:2	CSKILL:Climb|Craft (Bowmaking)|Craft (Fletcher)|Jump|Listen|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
 1	SAB:Arrow Stab (Ex)	SAB:Warrior's Path	SAB:Lightning Draw (Ex)	BONUS:VAR|WeapSpecQualify|CL							ADD:VFEAT|TYPE=Bowman	ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency	AUTO:WEAPONPROF|TYPE=Martial
 2	SAB:Ranged Sneak Attack +%d6|BowmanSneak						BONUS:VAR|BowmanSneak|1+(CL>=5)+(CL>=8)	DEFINE:BowmanSneak|0
-3																															ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Longbow)|Weapon Specialization(Shortbow)	ABILITY:FEAT|AUTOMATIC|Combat Firing
-4																															ABILITY:FEAT|AUTOMATIC|Improved Precise Shot
+3																												ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Longbow)|Weapon Specialization(Shortbow)	ABILITY:FEAT|AUTOMATIC|Combat Firing
+4																												ABILITY:FEAT|AUTOMATIC|Improved Precise Shot
 6	SAB:Hold the Line (Ex)
 7	SAB:Inner Focus (Ex)
 9	SAB:Hail of Arrows (Sp)
@@ -177,7 +177,7 @@ CLASS:Centurion	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Diplomacy|
 # Class Name				Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Emerald Society Archaeologist	NAMEISPI:YES	HD:6		TYPE:PC.Prestige	ABB:ESArc		MAXLEVEL:6	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.185	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name				Required Feat						Req. Special Ability	!PRESA			Required Skill																																			Required Template
-CLASS:Emerald Society Archaeologist	PREFEAT:2,Diligent,Skill Focus(TYPE.History)	PRESA:1,Trapfinding	!PRESA:1,Illiterate	PRESKILL:1,TYPE.Knowledge=3|!PRESKILL:2,TYPE.History,TYPE.Geography	PRESKILL:3,Appraise,Decipher Script	PRESKILL:1,TYPE.Geography=5	PRESKILL:1,TYPE.History=8	PRESKILL:3,Disable Device,Gather Information,Search=4	PRETEMPLATE:Emerald Society
+CLASS:Emerald Society Archaeologist	PREFEAT:2,Diligent,Skill Focus(TYPE.History)	PRESA:1,Trapfinding	!PRESA:1,Illiterate	PRESKILL:1,TYPE.Knowledge=3|!PRESKILL:2,TYPE.History,TYPE.Geography	PRESKILL:3,Appraise,Decipher Script	PRESKILL:1,TYPE.Geography=5	PRESKILL:1,TYPE.History=8	PRESKILL:3,Disable Device,Gather Information,Search=4	PRETEMPLATE:1,Emerald Society
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Emerald Society Archaeologist	STARTSKILLPTS:8	CSKILL:Appraise|Balance|Bluff|Climb|Decipher Script|Diplomacy|Gather Information|Hide|TYPE.Knowledge|Listen|Open Locks|TYPE.Profession|Research|Ride|Search|Sense Motive|Survival|Swim|Use Magic Device|Use Rope
 1	SAB:Ancient Lore (Ex)	SAB:Subject Specialization (Ex)														ABILITY:FEAT|VIRTUAL|Emerald Proficiency|Subject Specialization
@@ -197,34 +197,34 @@ CLASS:Gladiator	PREATT:3	PREFEAT:2,Combat Expertise,Dodge
 CLASS:Gladiator	STARTSKILLPTS:4	CSKILL:Appraise|Balance|Bluff|Climb|TYPE.Craft|Diplomacy|Escape Artist|Examine Martial Technique|Intimidate|Jump|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 #
 SUBCLASS:Samnite		COST:0
-SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when wearing Heavy Armor																																										ABILITY:FEAT|AUTOMATIC|Weapon Focus(Sword (Short))|Weapon Focus(Shortspear)
+SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when wearing Heavy Armor																					ABILITY:FEAT|AUTOMATIC|Weapon Focus(Sword (Short))|Weapon Focus(Shortspear)
 SUBCLASSLEVEL:4																							SAB:Armor Optimization +1										BONUS:COMBAT|AC|1|PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0
-SUBCLASSLEVEL:8																																																																												ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Sword (Short))|Weapon Specialization(Shortspear)
+SUBCLASSLEVEL:8																																																							ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Sword (Short))|Weapon Specialization(Shortspear)
 SUBCLASS:Thracian		COST:0
-SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																																								ABILITY:FEAT|AUTOMATIC|Weapon Focus(Sword (Short))
+SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																			ABILITY:FEAT|AUTOMATIC|Weapon Focus(Sword (Short))
 SUBCLASSLEVEL:4																							SAB:Armor Optimization +1										BONUS:COMBAT|AC|1|PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0
-SUBCLASSLEVEL:8																																																																												ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Sword (Short))
+SUBCLASSLEVEL:8																																																							ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Sword (Short))
 SUBCLASS:Murmillo		COST:0
-SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																			ADD:ABILITY|2|FEAT|AUTOMATIC|Weapon Focus(TYPE=Sword),Weapon Focus(Shortspear)
+SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																																			ADD:ABILITY|2|FEAT|AUTOMATIC|Weapon Focus(TYPE=Sword),Weapon Focus(Shortspear)
 SUBCLASSLEVEL:4																							SAB:Armor Optimization +2										BONUS:COMBAT|AC|2|PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0
-SUBCLASSLEVEL:8																																																							ADD:ABILITY|2|FEAT|AUTOMATIC|Weapon Specialization(TYPE=Sword),Weapon Specialization(Shortspear)
+SUBCLASSLEVEL:8																																																																							ADD:ABILITY|2|FEAT|AUTOMATIC|Weapon Specialization(TYPE=Sword),Weapon Specialization(Shortspear)
 SUBCLASS:Retiarius	COST:0
-SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																																				AUTO:WEAPONPROF|Net	ABILITY:FEAT|AUTOMATIC|Weapon Focus(Trident)
-SUBCLASSLEVEL:4																							SAB:Canny Defense (Ex)											BONUS:COMBAT|AC|min(max(INT,0),CL)|TYPE=Insight|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0																						ABILITY:FEAT|AUTOMATIC|Improved Trip
-SUBCLASSLEVEL:8																																																																												ABILITY:FEAT|AUTOMATIC|Weapon Focus(Net)|Weapon Specialization(Trident)
+SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																			ABILITY:FEAT|AUTOMATIC|Weapon Focus(Trident)																										AUTO:WEAPONPROF|Net
+SUBCLASSLEVEL:4																							SAB:Canny Defense (Ex)											BONUS:COMBAT|AC|min(max(INT,0),CL)|TYPE=Insight|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0	ABILITY:FEAT|AUTOMATIC|Improved Trip
+SUBCLASSLEVEL:8																																																							ABILITY:FEAT|AUTOMATIC|Weapon Focus(Net)|Weapon Specialization(Trident)
 SUBCLASS:Sefacci		COST:0
-SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																																								ABILITY:FEAT|AUTOMATIC||Two Weapon Fighting
-SUBCLASSLEVEL:4																																																																												ABILITY:FEAT|AUTOMATIC|Two Weapon Defense
-SUBCLASSLEVEL:8																																																																												ABILITY:FEAT|AUTOMATIC|Improved Two Weapon Fighting
+SUBCLASSLEVEL:1																							SAB:You lose the benefits of this class style when you wear medium or heavy armor																			ABILITY:FEAT|AUTOMATIC||Two Weapon Fighting
+SUBCLASSLEVEL:4																																																							ABILITY:FEAT|AUTOMATIC|Two Weapon Defense
+SUBCLASSLEVEL:8																																																							ABILITY:FEAT|AUTOMATIC|Improved Two Weapon Fighting
 SUBCLASS:Andabatae	COST:0
-SUBCLASSLEVEL:1	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6 UMULT:2 SA:You lose the benefits of this class style when you wear medium or heavy armor																																																						ABILITY:FEAT|AUTOMATIC|Improved Unarmed Strike
+SUBCLASSLEVEL:1	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6 UMULT:2 SA:You lose the benefits of this class style when you wear medium or heavy armor																																	ABILITY:FEAT|AUTOMATIC|Improved Unarmed Strike
 SUBCLASSLEVEL:2	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
 SUBCLASSLEVEL:3	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
-SUBCLASSLEVEL:4	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6																																																																					ABILITY:FEAT|AUTOMATIC|Blind Fight|Weapon Focus(Unarmed Strike)
+SUBCLASSLEVEL:4	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6																																																ABILITY:FEAT|AUTOMATIC|Blind Fight|Weapon Focus(Unarmed Strike)
 SUBCLASSLEVEL:5	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
 SUBCLASSLEVEL:6	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
 SUBCLASSLEVEL:7	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
-SUBCLASSLEVEL:8	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6																																																																					ABILITY:FEAT|AUTOMATIC|Improved Grapple,Weapon Specialization(Unarmed Strike)
+SUBCLASSLEVEL:8	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6																																																ABILITY:FEAT|AUTOMATIC|Improved Grapple,Weapon Specialization(Unarmed Strike)
 SUBCLASSLEVEL:9	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
 SUBCLASSLEVEL:10	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6
 1																						ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	AUTO:WEAPONPROF|TYPE=Martial
@@ -256,7 +256,7 @@ CLASS:Grand Master	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Craft (Weaponsmith
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Hurrianic Aegis	HD:10		TYPE:PC.Prestige	ABB:HAegs		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.190	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Required AL				Required Check Base		Required Deity	Required Domain			Required Feat							Required Skill												Req. Spell Type
-CLASS:Hurrianic Aegis	PREALIGN:LG,LN,NG,TN,CG,CN	PRECHECKBASE:1,Fortitude=5	PREDEITY:Hurrian	PREDOMAIN:2,Refuge,Protection	PREFEAT:3,Diehard,Endurance,Domain Focus(Refuge)	PRESKILL:2,Concentration,Knowledge (Religion:Hurrian)=6	PRESKILL:1,Spellcraft=4	PRESPELLTYPE:1,Divine=3
+CLASS:Hurrianic Aegis	PREALIGN:LG,LN,NG,TN,CG,CN	PRECHECKBASE:1,Fortitude=5	PREDEITY:1,Hurrian	PREDOMAIN:2,Refuge,Protection	PREFEAT:3,Diehard,Endurance,Domain Focus(Refuge)	PRESKILL:2,Concentration,Knowledge (Religion:Hurrian)=6	PRESKILL:1,Spellcraft=4	PRESPELLTYPE:1,Divine=3
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Hurrianic Aegis	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|Intimidate|Knowledge (Religion:Hurrian)|TYPE.Nature|TYPE.Profession|Sense Motive|Spellcraft|Survival
 1			SAB:Hurrian's Shield (Su)						BONUS:VAR|HurrianAC|1+(CL>=3)+(CL>=5)+(CL>=7)+(CL>=9)	BONUS:COMBAT|AC|HurrianAC|TYPE=Deflection	DEFINE:HurrianAC|0						ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
@@ -275,7 +275,7 @@ CLASS:Hurrianic Aegis	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus												Combat bonus
 CLASS:Larissan Dancer	HD:6		TYPE:PC.Prestige	ABB:LDncr		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.192	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name		Required AL				Required Feat								Multiple Requirements																	Required Skill
-CLASS:Larissan Dancer	PREALIGN:NG,TN,NE,CG,CN,CE	PREFEAT:3,Acrobatic,Agile,Skill Focus(Perform (Dance))	PREMULT:1,[PREDEITY:Larissa],[PREMULT:3,[PREDEITY:Cadic],[PRECLASS:1,Bard=1],[PRESKILL:1,Knowledge (Religion:Larissa)]]	PRESKILL:2,Bluff,Diplomacy=6	PRESKILL:1,Perform (Dance)=10
+CLASS:Larissan Dancer	PREALIGN:NG,TN,NE,CG,CN,CE	PREFEAT:3,Acrobatic,Agile,Skill Focus(Perform (Dance))	PREMULT:1,[PREDEITY:1,Larissa],[PREMULT:3,[PREDEITY:1,Cadic],[PRECLASS:1,Bard=1],[PRESKILL:1,Knowledge (Religion:Larissa)]]	PRESKILL:2,Bluff,Diplomacy=6	PRESKILL:1,Perform (Dance)=10
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Larissan Dancer	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Concentration|Diplomacy|Escape Artist|Gather Information|Hide|TYPE.Arcana|Knowledge (Art and Architecture)|TYPE.History|TYPE.Local|TYPE.Nobility|TYPE.Religion|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Spellcraft|Tumble
 1	SAB:Larissa's Dance (Ex)(%/day)|CL	SAB:Dance of Steel (Ex)|PRESKILL:1,Perform (Dance)=10	ADD:SPELLCASTER|1|ANY
@@ -404,7 +404,7 @@ CLASS:Onaran Templar	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Bless|Bless Weap
 ### What is here (which is what is listed in the rules text of the class) and what is shown int he book on the chart
 ### are completely different.  It needs errata before use.
 #CLASS:Order of the Still Heart	HD:8	MAXLEVEL:10	TYPE:Prestige.PC	ABB:OotSH	SOURCEPAGE:p.204	SOURCELONG:Player's Guide to Arcanis	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
-#CLASS:Order of the Still Heart	PREDEITY:Neroth	PREATT:4	PRESKILL:2,Concentration,TYPE.Religion=8		PREFEAT:1,Iron Will	PRETEXT:Must be a member of the Order in good standing and must pas sthe tests and perform the necromantic rituals necessary to gain admittance.
+#CLASS:Order of the Still Heart	PREDEITY:1,Neroth	PREATT:4	PRESKILL:2,Concentration,TYPE.Religion=8		PREFEAT:1,Iron Will	PRETEXT:Must be a member of the Order in good standing and must pas sthe tests and perform the necromantic rituals necessary to gain admittance.
 #CLASS:Order of the Still Heart	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.History|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
 #1	BONUS:STAT|CON|-2	SAB:The Path Taken
 #2	SAB:Morbidity (Su)	SAB:Tireless (Ex)	SAB:Lure of Darkness (Su)	BONUS:MOVEADD|TYPE.Walk|-5	ADD:SPELLCASTER(ANY)
@@ -420,11 +420,11 @@ CLASS:Onaran Templar	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Bless|Bless Weap
 # Class Name				Hit Dice	Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Order of the Thundering Storm	HD:10		ABB:OotTS		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.205	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name				Required Check Base	Required Deity	Multiple Requirements																				Required Skill
-CLASS:Order of the Thundering Storm	PRECHECKBASE:1,Will=6	PREDEITY:Hurrian	PREMULT:2,[PREFEAT:1,Weapon Focus(Longsword),Weapon Focus(Sword (Kio))],[PREFEAT:4,Combat Expertise,Dodge,Spring Attack,Whirlwind Attack]	PRESKILL:1,TYPE.Religion=5
+CLASS:Order of the Thundering Storm	PRECHECKBASE:1,Will=6	PREDEITY:1,Hurrian	PREMULT:2,[PREFEAT:1,Weapon Focus(Longsword),Weapon Focus(Sword (Kio))],[PREFEAT:4,Combat Expertise,Dodge,Spring Attack,Whirlwind Attack]	PRESKILL:1,TYPE.Religion=5
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Thundering Storm	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Diplomacy|Handle Animal|Intimidate|TYPE.Religion|Ride|Tumble
 1	SAB:The Reluctant Warrior (Su)
-2	SAB:Lay on Hands (Su) % hp/day|LayOnHands|!PRESA:Lay on Hands (Su)	BONUS:VAR|LayOnHands|max(CHA,0)*CL							DEFINE:LayOnHands|0
+2	SAB:Lay on Hands (Su) % hp/day|LayOnHands|!PRESA:1,Lay on Hands (Su)	BONUS:VAR|LayOnHands|max(CHA,0)*CL							DEFINE:LayOnHands|0
 3	SAB:Way of the Wind (Ex)
 4	SAB:Force of the Storm (Su) %/day|ForceStormTimes				BONUS:VAR|ForceStormTimes|CL/4							DEFINE:ForceStormTimes|0
 5	SAB:The Tempest (Ex)
@@ -466,7 +466,7 @@ CLASS:Royal Marine of Milandir	STARTSKILLPTS:2	CSKILL:Balance|Climb|Diplomacy|Ju
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Sarishan Binder	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:SBndr		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.209	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name		Required AL		Required Deity	Required Feat									Required Skill					Req. Known Spell
-CLASS:Sarishan Binder	PREALIGN:LG,LN,LE	PREDEITY:Sarish	PREFEAT:2,Alien Understanding,Greater Spell Focus(Conjuration)	PRESKILL:2,TYPE.Religion,TYPE.Planes=13	PRESPELL:1,Dismissal
+CLASS:Sarishan Binder	PREALIGN:LG,LN,LE	PREDEITY:1,Sarish	PREFEAT:2,Alien Understanding,Greater Spell Focus(Conjuration)	PRESKILL:2,TYPE.Religion,TYPE.Planes=13	PRESPELL:1,Dismissal
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Sarishan Binder	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.Local|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
 1	DOMAIN:Binding	SAB:Focused Turning (Su)							DEFINE:FocusTurn|1					ABILITY:FEAT|AUTOMATIC|Basic Channeling|Channeling|Turn Infernal|Rebuke Infernal
@@ -485,7 +485,7 @@ CLASS:Sarishan Binder	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus								Combat bonus
 CLASS:Sensate of Savona	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:SoS		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.212	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name		Restricted AL		Req. Att.	Required Deity	Required Feat												Required Skill
-CLASS:Sensate of Savona	!PREALIGN:LG,LN,LE	PREATT:5	PREDEITY:Larissa	PREFEAT:4,Dodge,Endurance,Improved Unarmed Strike,Weapon Focus(Unarmed Strike)	PRESKILL:2,TYPE.Religion,Tumble=4
+CLASS:Sensate of Savona	!PREALIGN:LG,LN,LE	PREATT:5	PREDEITY:1,Larissa	PREFEAT:4,Dodge,Endurance,Improved Unarmed Strike,Weapon Focus(Unarmed Strike)	PRESKILL:2,TYPE.Religion,Tumble=4
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Sensate of Savona	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 1								SAB:A Toast to Larissa (Sp) %/day|ToastTimes	SAB:The Life of the Party (Ex)	BONUS:VAR|ToastTimes|1+(CL>=3)+(CL>=5)+(CL>=7)+(CL>=9)							DEFINE:ToastTimes|0	ABILITY:FEAT|AUTOMATIC|Alertness					SPELLS:ClassAbility|TIMES=ToastTimes|CASTERLEVEL=CL|Bear's Endurance|Bull's Strength|Cat's Grace|Cure Moderate Wounds
@@ -553,7 +553,7 @@ CLASS:Tal Kanath	STARTSKILLPTS:2	CSKILL:Balance|Jump|Hide|Listen|Move Silently|T
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Talon of the Hawk	HD:6		TYPE:PC.Prestige	ABB:TotHk		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.217	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name		Req. Att.	Required Feat														Required Skill													Required Template
-CLASS:Talon of the Hawk	PREATT:5	PREFEAT:2,Spell Penetration,Improved Counterspell	PREFEAT:1,Favored Enemy (Ymandrakes)	PRESKILL:1,Concentration=8	PRESKILL:2,TYPE.Arcana,Spellcraft=5	PRESKILL:1,Survival=4	PRETEMPLATE:Hawk
+CLASS:Talon of the Hawk	PREATT:5	PREFEAT:2,Spell Penetration,Improved Counterspell	PREFEAT:1,Favored Enemy (Ymandrakes)	PRESKILL:1,Concentration=8	PRESKILL:2,TYPE.Arcana,Spellcraft=5	PRESKILL:1,Survival=4	PRETEMPLATE:1,Hawk
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Talon of the Hawk	STARTSKILLPTS:4	CSKILL:Balance|Climb|Craft|Diplomacy|Examine Martial Technique|Gather Information|Hide|Intimidate|Jump|TYPE.Arcana|TYPE.History|Listen|Move Silently|TYPE.Profession|Ride|Sense Motive|Survival|Spot|Swim|Tumble|Use Magic Device
 1	SAB:Dispel Focus +%|DispelFocus			BONUS:VAR|SneakAttack|1+(CL>=4)+(CL>=7)+(CL>=10)	BONUS:VAR|DispelFocus|2+(2*(CL>=8))	DEFINE:DispelFocus|0						ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Shield Proficiency|Sneak Attack	AUTO:WEAPONPROF|TYPE.Martial
@@ -572,7 +572,7 @@ CLASS:Talon of the Hawk	STARTSKILLPTS:4	CSKILL:Balance|Climb|Craft|Diplomacy|Exa
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus					List of Class Spells by Level
 CLASS:Ulfian Ranger	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:UlfR		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.218	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	SPELLLEVEL:CLASS|Ulfian Ranger=1|Alarm,Detect Animals or Plants,Detect Snares and Pits,Feather Fall,Jump,Pass Without Trace,Resist Elements,Shillelagh|Ulfian Ranger=2|Cure Light Wounds,Delay Poison,Heat Metal,Protection from Energy,Shocking Grasp,Spider Climb|Ulfian Ranger=3|Call Lightning,Commune with Nature,Gust of Wind
 # Class Name		Req. Att.	Required Feat			Multiple Requirements								Required Region			Required Skill
-CLASS:Ulfian Ranger	PREATT:4	PREFEAT:2,Endurance,Track	PREMULT:1,[PREDEITY:Hurrian],[PRETEMPLATE:1,Tensen,HolrynTensen]	PREREGION:Coryani Empire	PRESKILL:1,Climb=4	PRESKILL:2,TYPE.Nature,Survival=8
+CLASS:Ulfian Ranger	PREATT:4	PREFEAT:2,Endurance,Track	PREMULT:1,[PREDEITY:1,Hurrian],[PRETEMPLATE:1,Tensen,HolrynTensen]	PREREGION:Coryani Empire	PRESKILL:1,Climb=4	PRESKILL:2,TYPE.Nature,Survival=8
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Ulfian Ranger	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.GGeography|TYPE.Nature|Listen|Move Silently|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
 # Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels
@@ -588,7 +588,7 @@ CLASS:Ulfian Ranger	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Alarm|Detect Anim
 # Class Name			Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Val'Mehan Emissary	NAMEISPI:YES	HD:6		TYPE:PC.Prestige	ABB:VME		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.220	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name			Required AL		Required Feat						Required Skill											Required Stat	Required Template
-CLASS:Val'Mehan Emissary	PREALIGN:LG,LN,LE	PREFEAT:2,Judge of Character,Honey Tongued	PRESKILL:1,Bluff=4	PRESKILL:3,Diplomacy,TYPE.Nobility,Sense Motive=8	PRESTAT:1,CHA=16	PRETEMPLATE:Mehan
+CLASS:Val'Mehan Emissary	PREALIGN:LG,LN,LE	PREFEAT:2,Judge of Character,Honey Tongued	PRESKILL:1,Bluff=4	PRESKILL:3,Diplomacy,TYPE.Nobility,Sense Motive=8	PRESTAT:1,CHA=16	PRETEMPLATE:1,Mehan
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Val'Mehan Emissary	STARTSKILLPTS:6	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Disguise|TYPE.Knowledge|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Ride|Sense Motive|Speak Language|Spellcraft|Spot|Swim
 1	SAB:Silver Tongue (Ex)	SAB:Heart of Stone (Ex)	BONUS:SKILL|Bluff,Sense Motive,Diplomacy|2	ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency	AUTO:WEAPONPROF|TYPE.Martial
@@ -618,7 +618,7 @@ CLASS:Warped Ones	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE.Craft|Intimidate|Jum
 # Class Name				Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus					List of Class Spells by Level
 CLASS:Warrior of the Eternal Flame	HD:12		TYPE:PC.Prestige	ABB:WotEF		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.224	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon|Warrior of the Eternal Flame=2|Continual Flame,Flaming Sphere,Flame Blade,Magic Vestment,Resist Energy|Warrior of the Eternal Flame=3|Fire Trap,Flame Arrow,Magic Weapon (Greater),Mantle of Unassailable Flame,Scorching Ray|Warrior of the Eternal Flame=4|Fireball,Fireshield,Flame Strike,Wall of Fire
 # Class Name				Required AL		Req. Att.	Required Deity	Required Feat					Required Skill
-CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:Nier	PREFEAT:2,Toughness,Improved Toughness	PRESKILL:1,TYPE.Religion=4
+CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:1,Nier	PREFEAT:2,Toughness,Improved Toughness	PRESKILL:1,TYPE.Religion=4
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Warrior of the Eternal Flame	STARTSKILLPTS:2	CSKILL:Concentraation|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft
 # Class Name				Spell Stat		Spell Type		Memorize
@@ -650,7 +650,7 @@ CLASS:Weapon Savant	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE.Craft|Examin
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
-# Class Name			Product Identity?	Hit Dice	Type			Max Level	Subclass?		Source, Long Desc.				Save checks bonus													Combat bonus
+# Class Name			Product Identity?	Hit Dice	Type			Max Level	Subclass?		Source, Long Desc.				Save checks bonus												Combat bonus
 CLASS:Combat Styles of Onara	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	MAXLEVEL:5	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|Base.Will|(CL/2)+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name			Req. Att.	Required Feat			Required Skill
 CLASS:Combat Styles of Onara	PREATT:5	PREFEAT:1,Combat Expertise	PRESKILL:1,Balance=5
@@ -781,7 +781,7 @@ CLASS:Elemental Path of Flame	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Elemental Path of Stone	HD:10		TYPE:PC.Prestige	ABB:EPoS		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.62	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name			Required AL		Req. Att.	Required Class	Required Feat														Multiple Requirements						Required Skill																	PRESUBCLASS
-CLASS:Elemental Path of Stone	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREFEAT:4,Combat Expertise,Great Fortitude,Improved Unarmed Strike,Heightened Elorii Bloodline	PREMULT:2,[PRERACE:1,Elorii],[PRETEMPLATE:Marokene]	PRESKILL:2,Balance,Jump=5	PRESKILL:1,Knowledge (Religion:Belisarda),Knowledge (Religion:Elemental Lords)=4	PRESUBCLASS:1,Contemplation of the Elements
+CLASS:Elemental Path of Stone	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREFEAT:4,Combat Expertise,Great Fortitude,Improved Unarmed Strike,Heightened Elorii Bloodline	PREMULT:2,[PRERACE:1,Elorii],[PRETEMPLATE:1,Marokene]	PRESKILL:2,Balance,Jump=5	PRESKILL:1,Knowledge (Religion:Belisarda),Knowledge (Religion:Elemental Lords)=4	PRESUBCLASS:1,Contemplation of the Elements
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Elemental Path of Stone	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|Knowledge (Religion:Belisarda)|Knowledge (Religion:Elemental Lords)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 ###Block: Monk stacking stuff
@@ -799,7 +799,7 @@ CLASS:Elemental Path of Stone	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Elemental Path of Water	HD:8		TYPE:PC.Prestige	ABB:EPoW		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.62	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name			Required AL		Req. Att.	Required Class	Required Feat												Multiple Requirements						Required Skill																	PRESUBCLASS
-CLASS:Elemental Path of Water	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREFEAT:5,Dodge,Evasion,Improved Unarmed Strike,Heightened Elorii Bloodline,Run	PREMULT:2,[PRERACE:1,Elorii],[PRETEMPLATE:Berokene]	PRESKILL:2,Balance,Jump=5	PRESKILL:1,Knowledge (Religion:Belisarda),Knowledge (Religion:Elemental Lords)=4	PRESUBCLASS:1,Contemplation of the Elements
+CLASS:Elemental Path of Water	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREFEAT:5,Dodge,Evasion,Improved Unarmed Strike,Heightened Elorii Bloodline,Run	PREMULT:2,[PRERACE:1,Elorii],[PRETEMPLATE:1,Berokene]	PRESKILL:2,Balance,Jump=5	PRESKILL:1,Knowledge (Religion:Belisarda),Knowledge (Religion:Elemental Lords)=4	PRESUBCLASS:1,Contemplation of the Elements
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Elemental Path of Water	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|Knowledge (Religion:Belisarda)|Knowledge (Religion:Elemental Lords)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 ###Block: Monk stacking stuff
@@ -817,7 +817,7 @@ CLASS:Elemental Path of Water	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Elemental Path of Wind	HD:6		TYPE:PC.Prestige	ABB:EPWnd		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.62	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4
 # Class Name			Required AL		Req. Att.	Required Class	Required Feat														Multiple Requirements						Required Skill																	PRESUBCLASS
-CLASS:Elemental Path of Wind	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREFEAT:4,Combat Relexes,Improved Unarmed Strike,Heightened Elorii Bloodline,Weapon Finesse	PREMULT:2,[PRERACE:1,Elorii],[PRETEMPLATE:Osalikene]	PRESKILL:2,Balance,Jump=5	PRESKILL:1,Knowledge (Religion:Belisarda),Knowledge (Religion:Elemental Lords)=4	PRESUBCLASS:1,Contemplation of the Elements
+CLASS:Elemental Path of Wind	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREFEAT:4,Combat Relexes,Improved Unarmed Strike,Heightened Elorii Bloodline,Weapon Finesse	PREMULT:2,[PRERACE:1,Elorii],[PRETEMPLATE:1,Osalikene]	PRESKILL:2,Balance,Jump=5	PRESKILL:1,Knowledge (Religion:Belisarda),Knowledge (Religion:Elemental Lords)=4	PRESUBCLASS:1,Contemplation of the Elements
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Elemental Path of Wind	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|Knowledge (Religion:Belisarda)|Knowledge (Religion:Elemental Lords)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 ###Block: Monk stacking stuff

@@ -1,7 +1,7 @@
-# CVS $Revision: $ $Author: $ -- Wed Apr  2 14:10:13 2008 -- reformated by prettylst.pl v1.38 (build 5580)
+# CVS $Revision: $ $Author: $ -- Mon Apr  7 16:57:55 2008 -- reformated by prettylst.pl v1.38 (build 5826)
 
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Automatic Languages	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|1			Save checks bonus												Combat bonus
-CLASS:Patrician	HD:6		TYPE:Base.PC	ABB:Pat		MAXLEVEL:20	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.114	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Will|CL/2+2				BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Automatic Languages	Save checks bonus											Combat bonus
+CLASS:Patrician	HD:6		TYPE:Base.PC	ABB:Pat		MAXLEVEL:20	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.114	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Patrician	STARTSKILLPTS:6	CSKILL:Appraise|Black Market|Bluff|Concentration|TYPE.Craft|Decipher Script|Diplomacy|Gather Information|Intimidate|TYPE.Knowledge|Listen|TYPE.Perform|TYPE.Profession|Ride|Research|Sense Motive|Speak Language
 1	SAB:Educated	SAB:Estate|PREVARGT:CL,TL/2																											ADD:ABILITY|FEAT|AUTOMATIC|TYPE.Gentry	ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|PatricianTemplates|Armor Proficiency (Light)
@@ -27,65 +27,65 @@ CLASS:Patrician	STARTSKILLPTS:6	CSKILL:Appraise|Black Market|Bluff|Concentration
 
 ###########################################################################################################################################
 
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source, Long Desc.				Source Page		Automatic Languages	Bonus Languages					Save checks bonus												Combat bonus					Add domain number
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source, Long Desc.				Source Page		Automatic Languages	Bonus Languages					Save checks bonus											Combat bonus					Add domain number
 CLASS:Priest	HD:4		TYPE:Base.PC	ABB:Pst		MAXLEVEL:20	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:pg.117	LANGAUTO:Literacy		LANGBONUS:Ancient Altharin(Imperial)	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:DOMAIN|NUMBER|1
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Priest	STARTSKILLPTS:4	CSKILL:Bluff|Concentration|TYPE.Craft|Decipher Script|Diplomacy|Heal|Intimidate|TYPE.Arcana|TYPE.History|TYPE.Nobility|TYPE.Local|TYPE.Religion|TYPE.Planes|Perform (Oratory)|TYPE.Profession|Sense Motive|Spellcraft
-# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels
+# Class Name	Spell Stat		Spell Type		Automaticaly Known Spell Levels
 CLASS:Priest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9
-SUBCLASS:Priest of Althares	COST:0	PREDEITY:Althares
-SUBCLASSLEVEL:1						SAB:Right to Carry																																																																																						ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Warhammer	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Altherian Flintlock (Pistol))
-SUBCLASSLEVEL:5																																BONUS:VAR|AgesKnowledgeLevel|CL/2|PREDEITY:Althares	BONUS:VAR|AgesKnowledge|AgesKnowledgeLevel|PREDEITY:Althares																												DEFINE:AgesKnowledgeLevel|0																																	ABILITY:FEAT|AUTOMATIC|Knowledge of the Ages
-SUBCLASS:Priest of Anshar	COST:0	PREDEITY:Anshar
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead														ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike
-SUBCLASSLEVEL:3																																																																																																																				ABILITY:FEAT|AUTOMATIC|Endurance
-SUBCLASSLEVEL:9																																																																																																																				ABILITY:FEAT|AUTOMATIC|Diehard
-SUBCLASS:Priest of Belisarda	COST:0	PREDEITY:Belisarda
-SUBCLASSLEVEL:1																																																																																				CSKILL:TYPE.Geography|TYPE.Nature|Survival				ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Longbow
-SUBCLASS:Priest of Beltine	COST:0	PREDEITY:Beltine
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnNerothGood	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnBeltineGood	AUTO:WEAPONPROF|Quarterstaff
-SUBCLASS:Priest of Cadic	COST:0	PREDEITY:Cadic
-SUBCLASSLEVEL:1																																																																																				CSKILL:Hide|Move Silently|TYPE.Perform|Sleight of Hand|Tumble	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnCadicGood	AUTO:WEAPONPROF|Sword (Short)	ABILITY:FEAT|VIRTUAL|Martial Weapon Proficiency(Crossbow (Hand))
-SUBCLASSLEVEL:5																																BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE																																																					ADD:ABILITY|FEAT|AUTOMATIC|Uncanny Dodge|Improved Uncanny Dodge
-SUBCLASS:Priest of Hurrian	COST:0	PREDEITY:Hurrian
-SUBCLASSLEVEL:1																																																																																				CSKILL:Survival									ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Longsword
-SUBCLASS:Priest of Illiir	COST:0	PREDEITY:Illiir
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnIlliirGood	AUTO:WEAPONPROF|Gladius		ABILITY:FEAT|AUTOMATIC|Gladius Exotic Weapon Prciency
+SUBCLASS:Priest of Althares		COST:0	PREDEITY:1,Althares
+SUBCLASSLEVEL:1						SAB:Right to Carry																																																																						ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Altherian Flintlock (Pistol))																	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Warhammer
+SUBCLASSLEVEL:5																																BONUS:VAR|AgesKnowledgeLevel|CL/2|PREDEITY:1,Althares	BONUS:VAR|AgesKnowledge|AgesKnowledgeLevel|PREDEITY:1,Althares																												ABILITY:FEAT|AUTOMATIC|Knowledge of the Ages							DEFINE:AgesKnowledgeLevel|0
+SUBCLASS:Priest of Anshar		COST:0	PREDEITY:1,Anshar
+SUBCLASSLEVEL:1																																																																															ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike																							ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead
+SUBCLASSLEVEL:3																																																																															ABILITY:FEAT|AUTOMATIC|Endurance
+SUBCLASSLEVEL:9																																																																															ABILITY:FEAT|AUTOMATIC|Diehard
+SUBCLASS:Priest of Belisarda		COST:0	PREDEITY:1,Belisarda
+SUBCLASSLEVEL:1																																																																																																		CSKILL:TYPE.Geography|TYPE.Nature|Survival				ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Longbow
+SUBCLASS:Priest of Beltine		COST:0	PREDEITY:1,Beltine
+SUBCLASSLEVEL:1																																																																																																													ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnNerothGood	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnBeltineGood	AUTO:WEAPONPROF|Quarterstaff
+SUBCLASS:Priest of Cadic		COST:0	PREDEITY:1,Cadic
+SUBCLASSLEVEL:1																																																																															ABILITY:FEAT|VIRTUAL|Martial Weapon Proficiency(Crossbow (Hand))									CSKILL:Hide|Move Silently|TYPE.Perform|Sleight of Hand|Tumble	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnCadicGood	AUTO:WEAPONPROF|Sword (Short)
+SUBCLASSLEVEL:5																																BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE																																																																			ADD:ABILITY|FEAT|AUTOMATIC|Uncanny Dodge|Improved Uncanny Dodge
+SUBCLASS:Priest of Hurrian		COST:0	PREDEITY:1,Hurrian
+SUBCLASSLEVEL:1																																																																																																		CSKILL:Survival									ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Longsword
+SUBCLASS:Priest of Illiir		COST:0	PREDEITY:1,Illiir
+SUBCLASSLEVEL:1																																																																															ABILITY:FEAT|AUTOMATIC|Gladius Exotic Weapon Prciency																						ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnIlliirGood	AUTO:WEAPONPROF|Gladius
 SUBCLASSLEVEL:5						SAB:Fearless (Ex)ofi
-SUBCLASS:Priest of the Fire Dragon	COST:0	PREDEITY:Fire Dragon	PREGENDER:F
-SUBCLASSLEVEL:1						SAB:Ignore detrimental effects from natural heat between 80-150 degrees F.																																																																		CSKILL:Survival									ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Flail (Heavy)
-SUBCLASS:Priest of Larissa	COST:0	PREDEITY:Larissa
-SUBCLASSLEVEL:1	DOMAIN:Divination|Pleasure																																																													BONUS:DOMAIN|NUMBER|1															CSKILL:TYPE.Perform|Tumble							ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Rapier		ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Exotic Weapon Proficiency(Whip)
+SUBCLASS:Priest of the Fire Dragon	COST:0	PREDEITY:1,Fire Dragon	PREGENDER:F
+SUBCLASSLEVEL:1						SAB:Ignore detrimental effects from natural heat between 80-150 degrees F.																																																																																CSKILL:Survival									ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Flail (Heavy)
+SUBCLASS:Priest of Larissa		COST:0	PREDEITY:1,Larissa
+SUBCLASSLEVEL:1	DOMAIN:Divination|Pleasure																																																													BONUS:DOMAIN|NUMBER|1										ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Exotic Weapon Proficiency(Whip)						CSKILL:TYPE.Perform|Tumble							ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Rapier
 SUBCLASSLEVEL:3																																																				BONUS:COMBAT|AC|max(CHA,0)|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0
-SUBCLASS:Priest of Neroth	COST:0	PREDEITY:Neroth
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnNerothGood	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnBeltineGood	AUTO:WEAPONPROF|Scythe
-SUBCLASS:Priest of Nier		COST:0	PREDEITY:Nier
-SUBCLASSLEVEL:1						SAB:+1 per die of damage on spells cast with the fire descriptor.	SAB:When turning undead, the Priest of Nier must destroy the undead or nothing happens.																																																																ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Greatsword
-SUBCLASS:Priest of Saluwe	COST:0	PREDEITY:Saluwe
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Spear
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Spear
-SUBCLASSLEVEL:3						SAB:Wild Empathy (Ex)																																																																																																											ABILITY:FEAT|AUTOMATIC|Track
-SUBCLASSLEVEL:4						SAB:Animal Companion (Ex)																						BONUS:VAR|CompLevel|CL																																																																																	ABILITY:FEAT|AUTOMATIC|Druid Animal Companion
-SUBCLASS:Priest of Sarish	COST:0	PREDEITY:Sarish
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:EQUIP|1|Dagger (Sarishan Steel)			AUTO:WEAPONPROF|Dagger																LANGAUTO:Infernal
-SUBCLASSLEVEL:3																																																																																																																				ABILITY:FEAT|AUTOMATIC|Magical Aptitude
+SUBCLASS:Priest of Neroth		COST:0	PREDEITY:1,Neroth
+SUBCLASSLEVEL:1																																																																																																													ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnNerothGood	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnBeltineGood	AUTO:WEAPONPROF|Scythe
+SUBCLASS:Priest of Nier			COST:0	PREDEITY:1,Nier
+SUBCLASSLEVEL:1						SAB:+1 per die of damage on spells cast with the fire descriptor.	SAB:When turning undead, the Priest of Nier must destroy the undead or nothing happens.																																																																														ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Greatsword
+SUBCLASS:Priest of Saluwe		COST:0	PREDEITY:1,Saluwe
+SUBCLASSLEVEL:1																																																																																																													ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Spear
+SUBCLASSLEVEL:1																																																																																																													ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead									AUTO:WEAPONPROF|Spear
+SUBCLASSLEVEL:3						SAB:Wild Empathy (Ex)																																																																						ABILITY:FEAT|AUTOMATIC|Track
+SUBCLASSLEVEL:4						SAB:Animal Companion (Ex)																						BONUS:VAR|CompLevel|CL																																												ABILITY:FEAT|AUTOMATIC|Druid Animal Companion
+SUBCLASS:Priest of Sarish		COST:0	PREDEITY:1,Sarish
+SUBCLASSLEVEL:1																																																																																																													ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:EQUIP|1|Dagger (Sarishan Steel)			AUTO:WEAPONPROF|Dagger		LANGAUTO:Infernal
+SUBCLASSLEVEL:3																																																																															ABILITY:FEAT|AUTOMATIC|Magical Aptitude
 SUBCLASSLEVEL:10						SAB:Mark of My Brother
-SUBCLASS:Priest of Yarris	COST:0	PREDEITY:Yarris
-SUBCLASSLEVEL:1																																																																																															ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnYarrisGood	AUTO:WEAPONPROF|Trident
+SUBCLASS:Priest of Yarris		COST:0	PREDEITY:1,Yarris
+SUBCLASSLEVEL:1																																																																																																													ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnUndead	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnYarrisGood	AUTO:WEAPONPROF|Trident
 SUBCLASSLEVEL:2						SAB:Effected by Endure Elements when within 1 mile of any large body of water.
 SUBCLASSLEVEL:3						SAB:Wild Empathy (Ex) (Water Only)																																																											BONUS:SKILL|Profession (Navigator),Survival,Swim|2
 1																									BONUS:VAR|TurnTimesBase|3+CHA|TYPE=NoStack											DEFINE:AllowImprovedTurning|1	DEFINE:AllowExtraTurning|1	DEFINE:TurnLevelSpecial|0	ABILITY:FEAT|AUTOMATIC|Basic Turning
-1																									BONUS:VAR|TurnLevelBase|CL-3|PREDEITY:Althares,Cadic,Fire Dragon,Larissa,Sarish
-1																									BONUS:VAR|TurnLevelBase|CL-2|PREDEITY:Hurrian,Yarris
-1																									BONUS:VAR|TurnLevelBase|CL-1|PREDEITY:Anshar,Illiir,Saluwe
-1																									BONUS:VAR|TurnLevelBase|CL|PREDEITY:Belisarda,Nier
-1																									BONUS:VAR|TurnLevelBase|CL+2|PREDEITY:Beltine,Neroth
+1																									BONUS:VAR|TurnLevelBase|CL-3|PREDEITY:1,Althares,Cadic,Fire Dragon,Larissa,Sarish
+1																									BONUS:VAR|TurnLevelBase|CL-2|PREDEITY:1,Hurrian,Yarris
+1																									BONUS:VAR|TurnLevelBase|CL-1|PREDEITY:1,Anshar,Illiir,Saluwe
+1																									BONUS:VAR|TurnLevelBase|CL|PREDEITY:1,Belisarda,Nier
+1																									BONUS:VAR|TurnLevelBase|CL+2|PREDEITY:1,Beltine,Neroth
 1																									BONUS:VAR|TurnDamagePlusBase|CL
 1																									BONUS:VAR|TurnCheckBase|CHA|TYPE=NoStack
-1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase-2|PREDEITY:Beltine,Neroth
-1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase+1|PREDEITY:Illiir
-1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase+3|PREDEITY:Yarris
-1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase|PREDEITY:Cadic
+1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase-2|PREDEITY:1,Beltine,Neroth
+1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase+1|PREDEITY:1,Illiir
+1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase+3|PREDEITY:1,Yarris
+1																									BONUS:VAR|TurnLevelSpecial|TurnLevelBase|PREDEITY:1,Cadic
 1																									BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack																										ABILITY:FEAT|AUTOMATIC|TYPE=Channeling	ABILITY:FEAT|AUTOMATIC|Basic Channeling
 1																									BONUS:VAR|ChannelLevelBase|CL
 1																									BONUS:VAR|ChannelDamagePlusBase|CL
@@ -113,7 +113,7 @@ SUBCLASSLEVEL:3						SAB:Wild Empathy (Ex) (Water Only)																									
 
 ###########################################################################################################################################3
 
-# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Automatic Languages	Save checks bonus												Combat bonus
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Automatic Languages	Save checks bonus											Combat bonus
 CLASS:Urban Sentinel	HD:8		TYPE:Base.PC	ABB:USntl		MAXLEVEL:20	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.69	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Urban Sentinel	STARTSKILLPTS:6	CSKILL:Balance|Black Market|Climb|Concentration|TYPE.Craft|Escape Artist|Gather Information|Handle Animal|Hide|Intimidate|Jump|TYPE.Local|Listen|Move Silently|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
@@ -144,356 +144,360 @@ CLASS:Urban Sentinel	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|
 
 #Holy Champions----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ###########################################################################################################################################
-
-# Class Name		Product Identity?	Hit Dice	HASSUBCLASS		Type			Max Level	Source, Long Desc.				Source Page		Automatic Languages	Save checks bonus												Combat bonus
-CLASS:Holy Champion	NAMEISPI:YES	HD:8		HASSUBCLASS:YES	TYPE:Base.PC	MAXLEVEL:20	SOURCELONG:Player's Guide to Arcanis	SPELLSTAT:WIS	SPELLTYPE:Divine		LANGAUTO:Literacy	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-CLASS:Holy Champion	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4
+# per 2006-06-03 errata, added Examine Martial Technique as class skill
+# Class Name		Product Identity?	Hit Dice	Type			ABB		Max Level	Subclass?		Source, Long Desc.				Automatic Languages	Combat bonus
+CLASS:Holy Champion	NAMEISPI:YES	HD:8		TYPE:Base.PC	ABB:XHC	MAXLEVEL:20	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	LANGAUTO:Literacy		BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Spell Type					Automaticaly Known Spell Levels
+CLASS:Holy Champion	PREDEITY:1,Y	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	CSKILL:Examine Martial Technique
 # Philosophic Warrior (Althares)
-SUBCLASS:Philosophic Warrior	COST:0	NAMEISPI:YES	PREALIGN:LG,LN,LE	PREDEITY:Althares	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+2)/2+1	BONUS:CHECKS|BASE.Reflex|CL/3		STARTSKILLPTS:6	CLASS:HC (Althares)	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Althares)|CL/2|PRECLASS:1,HC (Althares)=4
-SUBCLASSLEVEL:1	AUTO:WEAPONPROF|TYPE.Martial	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium),Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency	CHANGEPROF:Altherian Flintlock (Pistol),Altherian Flintlock (Rifle)=Martial
-SUBCLASSLEVEL:2				SAB:Wisdom of Althares (Su)													BONUS:CHECKS|Fortitude,Reflex,Will|max(WIS,0)																						SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=TL|Comprehend Languages
-SUBCLASSLEVEL:3				SAB:Know Thy Enemy (Ex)
-SUBCLASSLEVEL:4	CAST:0,0											SPELLLIST:CLASS|Holy Champion=1|Comprehend Languages,Discern Value,Hardness,Identify,True Strike											ABILITY:FEAT|AUTOMATIC|Scribe Scroll
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:Defender of Altheria (Ex)	SAB:Exploit Flaw (Ex)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Divine Health (Su)						SPELLLIST:CLASS|Holy Champion=2|Augury,Detect Thoughts,Summon Tome
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1		SAB:Exploit Technique (Ex)	SAB:Special Mount(Sp)
-SUBCLASSLEVEL:11	CAST:0,1,1,0										SPELLLIST:CLASS|Holy Champion=3|Clairaudience/Clairvoyance,Tongues
-SUBCLASSLEVEL:12	CAST:0,1,1,1	SAB:Aura of Courage (Ex)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0	SAB:Insight of Althares (Ex)					SPELLLIST:CLASS|Holy Champion=4|Detect Scrying,Legend Lore
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:Tools of the Trade (Ex)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Steel Mind (Ex)
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:Master of Thy Craft (Ex)
+SUBCLASS:Philosophic Warrior	NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4		BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+2)/2+1	BONUS:CHECKS|BASE.Reflex|CL/3	PREALIGN:LG,LN,LE	PREDEITY:1,Althares																											!PRERACE:1,Elorii,Dwarf,Ss'ressen																																																									CLASS:HC (Althares)											STARTSKILLPTS:6	SOURCELONG:Player's Guide to Arcanis
+SUBCLASSLEVEL:1																																																																																																																																																																											ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium),Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency																																																																										AUTO:WEAPONPROF|TYPE.Martial																																					CHANGEPROF:Altherian Flintlock (Pistol),Altherian Flintlock (Rifle)=Martial
+SUBCLASSLEVEL:2																																								SAB:Wisdom of Althares (Su)																																																																																			BONUS:CHECKS|Fortitude,Reflex,Will|max(WIS,0)																																																																																																								SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=TL|Comprehend Languages
+SUBCLASSLEVEL:3																																								SAB:Know Thy Enemy (Ex)
+SUBCLASSLEVEL:4																		CAST:0,0																																																																																																																																																								ABILITY:FEAT|AUTOMATIC|Scribe Scroll																																																																																																					SPELLLIST:CLASS|Holy Champion=1|Comprehend Languages,Discern Value,Hardness,Identify,True Strike
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Defender of Altheria (Ex)	SAB:Exploit Flaw (Ex)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Divine Health (Su)																																																																																																																																																																																																																																											SPELLLIST:CLASS|Holy Champion=2|Augury,Detect Thoughts,Summon Tome
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Exploit Technique (Ex)	SAB:Special Mount(Sp)
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Clairaudience/Clairvoyance,Tongues
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Aura of Courage (Ex)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																				SAB:Insight of Althares (Ex)																																																																																																																																																																																																																																										SPELLLIST:CLASS|Holy Champion=4|Detect Scrying,Legend Lore
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Tools of the Trade (Ex)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Steel Mind (Ex)
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Master of Thy Craft (Ex)
 # Bearer of Woe (Anshar)
-#SUBCLASS:Bearer of Woe	COST:0	NAMEISPI:YES	PREALIGN:LG	PREDEITY:Anshar	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude|(CL+2)/2+1	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:4	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Anshar)|CL/2|PRECLASS:1,HC (Anshar)=4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|TYPE.Geography|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
-SUBCLASS:Bearer of Woe	COST:0	NAMEISPI:YES	PREALIGN:LG	PREDEITY:Anshar	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:4	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Anshar)|CL/2|PRECLASS:1,HC (Anshar)=4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|TYPE.Geography|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
-SUBCLASSLEVEL:1				ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike		BONUS:CHECKS|BASE.Fortitude|(CL+2)/2+1
-SUBCLASSLEVEL:2				BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|2								SAB:I Feel Your Pain (Su) ~ Heal % hp/day|PainLevel	SAB:Mind Over Matter (Su)	BONUS:VAR|PainLevel|max(CON,0)*CL	BONUS:COMBAT|AC|max(CON,1)|TYPE=NaturalArmor|!PREEQUIP:1,TYPE=Armor																		DEFINE:PainLevel|0												ABILITY:FEAT|VIRTUAL|Monk AC
-SUBCLASSLEVEL:3						SAB:You Shall Know My Pain ~ Inflict up to % hp 1/day and heal same amount|PainLevel																																										ABILITY:FEAT|AUTOMATIC|Endurance
-SUBCLASSLEVEL:4	CAST:0,0				SAB:Empowered Fist (Ex)			SPELLLEVEL:CLASS|Holy Champion=1|Bleed,Doom,Inflict Light Wounds,Ray of Enfeeblement
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		DR:1/-	SAB:Pain Tolerance (Ex)																																																					ABILITY:FEAT|AUTOMATIC|Diehard
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0				SAB:Divine Grace (Ex)																						BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)	SPELLLEVEL:CLASS|Holy Champion=2|Inflict Moderate Wounds,Share My Pain,Sticks to Snakes
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1				SAB:Improved Pain Tolerance (Ex)																													BONUS:DR|-|max(floor(max(CON,0)/2),1)
-SUBCLASSLEVEL:11	CAST:0,1,1,0																																				SPELLLEVEL:CLASS|Holy Champion=3|Crushing Despair,Inflict Serious Wounds,Vampiric Touch
-SUBCLASSLEVEL:12	CAST:0,1,1,1			SAB:Aura of Courage (Ex)	SAB:Inner Strength (Su)									BONUS:VAR|ChannelTimesBase|max(CON,1)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0			SAB:Travail Stasis (Ex)			SPELLLEVEL:CLASS|Holy Champion=4|Inflict Critical Wounds
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|2		SAB:Resilience (Su)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1			SAB:Perseverance Over Pain (Sp)
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3			SAB:Martyrdom (Su)
+SUBCLASS:Bearer of Woe		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	STARTSKILLPTS:4	PREALIGN:LG	PREDEITY:1,Anshar	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|TYPE.Geography|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
+#SUBCLASS:Bearer of Woe		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	STARTSKILLPTS:4	PREALIGN:LG	PREDEITY:1,Anshar	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|TYPE.Geography|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
+SUBCLASSLEVEL:1		STARTSKILLPTS:4																					BONUS:CHECKS|Base.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3																																																																																																																														ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike
+SUBCLASSLEVEL:2																																								SAB:I Feel Your Pain (Su) ~ Heal % hp/day|PainLevel	SAB:Mind Over Matter (Su)																																	BONUS:VAR|PainLevel|max(CON,0)*CL																																												BONUS:COMBAT|AC|max(CON,1)|TYPE=NaturalArmor|!PREEQUIP:1,TYPE=Armor																	BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|2	ABILITY:FEAT|VIRTUAL|Monk AC																																									DEFINE:PainLevel|0
+SUBCLASSLEVEL:3																																								SAB:You Shall Know My Pain ~ Inflict up to % hp 1/day and heal same amount|PainLevel																																																																																																																					ABILITY:FEAT|AUTOMATIC|Endurance
+SUBCLASSLEVEL:4	SPELLLEVEL:CLASS|Holy Champion=1|Bleed,Doom,Inflict Light Wounds,Ray of Enfeeblement			CAST:0,0																					SAB:Empowered Fist (Ex)
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1														DR:1/-						SAB:Pain Tolerance (Ex)																																																																																																																																ABILITY:FEAT|AUTOMATIC|Diehard
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8	SPELLLEVEL:CLASS|Holy Champion=2|Inflict Moderate Wounds,Share My Pain,Sticks to Snakes			CAST:0,1,0																					SAB:Divine Grace (Ex)																																																																																				BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Improved Pain Tolerance (Ex)																																																																																																						BONUS:DR|-|max(floor(max(CON,0)/2),1)
+SUBCLASSLEVEL:11	SPELLLEVEL:CLASS|Holy Champion=3|Crushing Despair,Inflict Serious Wounds,Vampiric Touch			CAST:0,1,1,0
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Aura of Courage (Ex)	SAB:Inner Strength (Su)																																						BONUS:VAR|ChannelTimesBase|max(CON,1)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14	SPELLLEVEL:CLASS|Holy Champion=4|Inflict Critical Wounds								CAST:0,2,1,1,0																				SAB:Travail Stasis (Ex)
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Resilience (Su)																																																																																																																								BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|2
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Perseverance Over Pain (Sp)
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Martyrdom (Su)
 # Order of the Twelve Oaks (Belisarda)
-SUBCLASS:Twelve Oaks	COST:0	NAMEISPI:YES	BONUS:HD|MIN|2	PREALIGN:LG,NG,CG	PREDEITY:Belisarda	PRERACE:1,Elorii		SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.77	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:2	BONUS:CASTERLEVEL|HC.Belisarda|CL/2|PRECLASS:1,HC.Belisarda=4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival
-SUBCLASSLEVEL:1																		BONUS:VAR|SmiteEvil|(CL/6)+1																										ABILITY:FEAT|VIRTUAL|Smite Evil	ABILITY:FEAT|AUTOMATIC|Martial Weapon Proficiency|All Martial Proficiencies|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Evil	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2				SAB:Divine Grace (Su)	SAB:Lay on Hands (Su) % hp/day|LayOnHands				BONUS:VAR|LayOnHands|max(CHA,0)*CL			BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)	DEFINE:LayOnHands|0
-SUBCLASSLEVEL:3				SAB:Know Thy Friends (Sp)	SAB:Divine Health (Ex)																							DEFINE:DiscernTimes|max(CHA,1)																																																SPELLS:ClassAbility|TIMES=DiscernTimes|CASTERLEVEL=CL|Discern Lies
-SUBCLASSLEVEL:4	CAST:0,0		SAB:Defender of the Children (Ex)			SPELLLIST:CLASS|Holy Champion=1|Bane,Comprehend Languages,Undetectable Alignment
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:Special Mount (Sp)																																																																																	SPELLS:ClassAbility|TIMES=ChannelTimesBase|CASTERLEVEL=CL|Shield Other (KoTO)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Smite the Wayward Spirits (Su)			SPELLLIST:CLASS|Holy Champion=2|Aid,Animal Messenger,Detect Thoughts,Tongues,Zone of Truth
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1		SAB:Truth Be Told (Sp)																												DEFINE:DiscernTimes|-1
-SUBCLASSLEVEL:11	CAST:0,1,1,0									SPELLLIST:CLASS|Holy Champion=3|Clairaudience/Clairvoyance,Nondetection,Sending
-SUBCLASSLEVEL:12	CAST:0,1,1,1	SAB:One is Many (Sp)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0	SAB:The Truth is Revealed (Sp)	SAB:Touch of Belisarda (Sp) 1/week		SPELLLIST:CLASS|Holy Champion=4|Detect Scrying,Scrying																																																																							SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Heal
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:Divine Spell Resistance % (Su)|EloriiSpell	SAB:Smite Those Who Betray (Su)	BONUS:VAR|EloriiSpell|10+CL													DEFINE:EloriiSpell|0
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Divine Damage Reduction % (Su)|max(CHA,1)
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:I May Take What I Have Given (Su)
+SUBCLASS:Twelve Oaks		NAMEISPI:YES	COST:0				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3		PREALIGN:LG,NG,CG	PREDEITY:1,Belisarda																						PRERACE:1,Elorii														CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival																			SOURCEPAGE:p.77	BONUS:HD|MIN|2					LANGAUTO:Literacy	SOURCELONG:Player's Guide to Arcanis	STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																																																																						BONUS:VAR|SmiteEvil|(CL/6)+1																																																																																	ABILITY:FEAT|VIRTUAL|Smite Evil	ABILITY:FEAT|AUTOMATIC|Martial Weapon Proficiency|All Martial Proficiencies|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																												SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Evil																										AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Divine Grace (Su)	SAB:Lay on Hands (Su) % hp/day|LayOnHands																																				BONUS:VAR|LayOnHands|max(CHA,0)*CL																																				BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)																																																																																		DEFINE:LayOnHands|0
+SUBCLASSLEVEL:3																																								SAB:Know Thy Friends (Sp)	SAB:Divine Health (Ex)																																																																																																																																																																								DEFINE:DiscernTimes|max(CHA,1)																	SPELLS:ClassAbility|TIMES=DiscernTimes|CASTERLEVEL=CL|Discern Lies
+SUBCLASSLEVEL:4																		CAST:0,0																					SAB:Defender of the Children (Ex)																																																																																																																																																																																																																																									SPELLLIST:CLASS|Holy Champion=1|Bane,Comprehend Languages,Undetectable Alignment
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Special Mount (Sp)																																																																																																																																																																																																			SPELLS:ClassAbility|TIMES=ChannelTimesBase|CASTERLEVEL=CL|Shield Other (KoTO)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Smite the Wayward Spirits (Su)																																																																																																																																																																																																																																									SPELLLIST:CLASS|Holy Champion=2|Aid,Animal Messenger,Detect Thoughts,Tongues,Zone of Truth
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Truth Be Told (Sp)																																																																																																																																																																													DEFINE:DiscernTimes|-1
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Clairaudience/Clairvoyance,Nondetection,Sending
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:One is Many (Sp)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																				SAB:The Truth is Revealed (Sp)	SAB:Touch of Belisarda (Sp) 1/week																																																																																																																																																																																											SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Heal																																	SPELLLIST:CLASS|Holy Champion=4|Detect Scrying,Scrying
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Divine Spell Resistance % (Su)|EloriiSpell	SAB:Smite Those Who Betray (Su)																																	BONUS:VAR|EloriiSpell|10+CL																																																																																																																														DEFINE:EloriiSpell|0
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Divine Damage Reduction % (Su)|max(CHA,1)
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:I May Take What I Have Given (Su)
 # Order of the Beltinian Hospitalers
-SUBCLASS:Hospitaler	COST:0	NAMEISPI:YES	PREALIGN:LN	PREDEITY:Beltine	!PRERACE:1,Elorii,Dwarf,Ss'ressen	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.79	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	STARTSKILLPTS:2	BONUS:CASTERLEVEL|HC.Beltine|CL/2|PRECLASS:1,HC.Beltine=2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive
-SUBCLASSLEVEL:1				SAB:Mercy For All	SAB:Weapons of Our Mother (Ex)															BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)														ABILITY:FEAT|AUTOMATIC|Two Weapon Fighting|PREMULT:1,[PREEQUIPBOTH:1,Quarterstaff],[PREEQUIPTWOWEAPON:1,Mace (Light)]	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial	SPELLLEVEL|Holy Champion=1
-SUBCLASSLEVEL:2	CAST:0,0		SAB:Divine Grace (Su)	SAB:Lay on Hands (Su) % hp/day|LayOnHands	SAB:Merciful Strike (Ex)	BONUS:VAR|LayOnHands|max(CHA,0)*CL		SPELLLIST:CLASS|Holy Champion=1|Deathwatch,Detect Undead,Glimpse of the Cauldron,Hide from Undead,Protection from Evil,Sanctuary	DEFINE:LayOnHands|0
-SUBCLASSLEVEL:3	CAST:0,1		SAB:Divine Health (Ex)
-SUBCLASSLEVEL:4	CAST:0,2,0																									SPELLLIST:CLASS|Holy Champion=2|Aid,Calm Emotions,Consecrate,Cure Moderate Wounds,Gentle Repose
-SUBCLASSLEVEL:5	CAST:0,3,1
-SUBCLASSLEVEL:6	CAST:0,3,2
-SUBCLASSLEVEL:7	CAST:0,3,2,0																								SPELLLIST:CLASS|Holy Champion=3|Cure Serious Wounds,Cure Light Wounds (Mass),Hold the Spirit,Magic Circle against Evil,Remove Disease:
-SUBCLASSLEVEL:8	CAST:0,3,3,1	SAB:No Harm Comes to My Charge (Ex)
-SUBCLASSLEVEL:9	CAST:0,3,3,2
-SUBCLASSLEVEL:10	CAST:0,3,3,2,0	SAB:Call Upon My Ancestors (Su)																		SPELLLIST:CLASS|Holy Champion=4|Beltine’s Blessed Strike,Cure Critical Wounds,Cure Moderate Wounds (Mass)
-SUBCLASSLEVEL:11	CAST:0,3,3,3,1
-SUBCLASSLEVEL:12	CAST:0,3,3,3,2
-SUBCLASSLEVEL:13	CAST:0,3,3,3,2,0																								KNOWNSPELLS:LEVEL=5	SPELLLIST:CLASS|Holy Champion=5|Atonement,Break Enchantment,Command (Greater),Cure Serious Wounds (Mass),Dispel Evil,Disrupting Weapon,Hallow,Heal,Raise Dead,Spell Resistance,Symbol of Sleep,True Seeing
-SUBCLASSLEVEL:14	CAST:0,3,3,3,3,1	SAB:Honor Thy Word (Su)
-SUBCLASSLEVEL:15	CAST:0,4,3,3,3,2
-SUBCLASSLEVEL:16	CAST:0,4,4,3,3,2
-SUBCLASSLEVEL:17	CAST:0,4,4,4,3,3
-SUBCLASSLEVEL:18	CAST:0,4,4,4,4,3	SAB:Cessation of Hostility (Su)
-SUBCLASSLEVEL:19	CAST:0,4,4,4,4,4
-SUBCLASSLEVEL:20	CAST:0,4,4,4,4,4	SAB:Ancestor in Waiting (Ex)
+SUBCLASS:Hospitaler		NAMEISPI:YES	COST:0				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=2			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		PREALIGN:LN		PREDEITY:1,Beltine																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive																								SOURCEPAGE:p.79								LANGAUTO:Literacy	SOURCELONG:Player's Guide to Arcanis	STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Mercy For All	SAB:Weapons of Our Mother (Ex)																																																																															BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)																																					ABILITY:FEAT|AUTOMATIC|Two Weapon Fighting|PREMULT:1,[PREEQUIPBOTH:1,Quarterstaff],[PREEQUIPTWOWEAPON:1,Mace (Light)]	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																																																										AUTO:WEAPONPROF|TYPE.Martial																																																					SPELLLEVEL|Holy Champion=1:
+SUBCLASSLEVEL:2																		CAST:0,0																					SAB:Divine Grace (Su)	SAB:Lay on Hands (Su) % hp/day|LayOnHands	SAB:Merciful Strike (Ex)																															BONUS:VAR|LayOnHands|max(CHA,0)*CL																																																																																																																													DEFINE:LayOnHands|0																																																											SPELLLIST:CLASS|Holy Champion=1|Deathwatch,Detect Undead,Glimpse of the Cauldron,Hide from Undead,Protection from Evil,Sanctuary
+SUBCLASSLEVEL:3																		CAST:0,1																					SAB:Divine Health (Ex)
+SUBCLASSLEVEL:4																		CAST:0,2,0																																																																																																																																																																																																																																																																			SPELLLIST:CLASS|Holy Champion=2|Aid,Calm Emotions,Consecrate,Cure Moderate Wounds,Gentle Repose
+SUBCLASSLEVEL:5																		CAST:0,3,1
+SUBCLASSLEVEL:6																		CAST:0,3,2
+SUBCLASSLEVEL:7																		CAST:0,3,2,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Cure Serious Wounds,Cure Light Wounds (Mass),Hold the Spirit,Magic Circle against Evil,Remove Disease:
+SUBCLASSLEVEL:8																		CAST:0,3,3,1																				SAB:No Harm Comes to My Charge (Ex)
+SUBCLASSLEVEL:9																		CAST:0,3,3,2
+SUBCLASSLEVEL:10																		CAST:0,3,3,2,0																				SAB:Call Upon My Ancestors (Su)																																																																																																																																																																																																																																									SPELLLIST:CLASS|Holy Champion=4|Beltine’s Blessed Strike,Cure Critical Wounds,Cure Moderate Wounds (Mass)
+SUBCLASSLEVEL:11																		CAST:0,3,3,3,1
+SUBCLASSLEVEL:12																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:13																		CAST:0,3,3,3,2,0	KNOWNSPELLS:LEVEL=5																																																																																																																																																																																																																																																														SPELLLIST:CLASS|Holy Champion=5|Atonement,Break Enchantment,Command (Greater),Cure Serious Wounds (Mass),Dispel Evil,Disrupting Weapon,Hallow,Heal,Raise Dead,Spell Resistance,Symbol of Sleep,True Seeing
+SUBCLASSLEVEL:14																		CAST:0,3,3,3,3,1																				SAB:Honor Thy Word (Su)
+SUBCLASSLEVEL:15																		CAST:0,4,3,3,3,2
+SUBCLASSLEVEL:16																		CAST:0,4,4,3,3,2
+SUBCLASSLEVEL:17																		CAST:0,4,4,4,3,3
+SUBCLASSLEVEL:18																		CAST:0,4,4,4,4,3																				SAB:Cessation of Hostility (Su)
+SUBCLASSLEVEL:19																		CAST:0,4,4,4,4,4
+SUBCLASSLEVEL:20																		CAST:0,4,4,4,4,4																				SAB:Ancestor in Waiting (Ex)
 # Order of the Twilight Warriors (Cadic)
-SUBCLASS:Twilight Warrior	COST:0	NAMEISPI:YES	PREALIGN:LN	PREDEITY:Cadic	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Diplomacy|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Intimidate|Jump|TYPE.Religion|TYPE.Local|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Rope	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Cadic)|CL/2|PRECLASS:1,HC (Cadic)=4
-SUBCLASSLEVEL:1				VISION:Darkvision (60')	SAB:Pierce the Veil of Shadow (Su)																																		ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency		AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2								SAB:Cloak of Cadic (Su)
-SUBCLASSLEVEL:3								SAB:Shadow Jump (Su)
-SUBCLASSLEVEL:4	CAST:0,0						SAB:Divine Grace (Su)									SPELLLIST:CLASS|Holy Champion=1|Darkness,Disguise Self,Pass Without Trace,Protection from Evil,Undetectable Alignment	BONUS:VAR|SmiteEvil|1							BONUS:CHECKS|ALL|max(CHA,0)													ABILITY:FEAT|VIRTUAL|Smite Evil
-SUBCLASSLEVEL:5	CAST:0,0						SAB:Trapfinding
-SUBCLASSLEVEL:6	CAST:0,1						SAB:Cloak of Cadic (Womb of Darkness) (Su)																																ABILITY:FEAT|VIRTUAL|AUTOMATIC|Evasion
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0						SAB:Turn Shadows (Su)									SPELLLIST:CLASS|Holy Champion=2|Cat’s Grace,Deeper Darkness,Find Traps,Knock,Misdirection,Silence,Songs in the Night,Spider Climb			BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.STACK																		ABILITY:FEAT|AUTOMATIC|Uncanny Dodge
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1						SAB:Cloak of Cadic (Moonless Night) (Su)																																																														SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Shadow Conjuration
-SUBCLASSLEVEL:11	CAST:0,1,1,0																	SPELLLIST:CLASS|Holy Champion=3|Not Where You Think,Shadow Conjuration,Shadow Stride
-SUBCLASSLEVEL:12	CAST:0,1,1,1					SAB:Aura of Courage (Ex)																																			ABILITY:FEAT|VIRTUAL|Slippery Mind
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0					SAB:Cloak of Cadic (Cover of Night) (Su)	SAB:Hide in Plain Sight (Su)	SPELLLIST:CLASS|Holy Champion=4|Shadow Evocation,Dispel Evil,Nondetection,Zone of Silence
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1					SAB:Shadow Mage (Sp)																																																																	SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Shadow Conjuration (Greater)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1					SAB:Shadow Master (Su)																																				ABILITY:FEAT|AUTOMATIC|Improved Evasion
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3					SAB:Shadow Jump 1000 ft. (Su)	SAB:Shadow Blend (Su)
+SUBCLASS:Twilight Warrior	NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3		PREALIGN:LN		PREDEITY:1,Cadic																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Balance|Bluff|Climb|Diplomacy|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Intimidate|Jump|TYPE.Religion|TYPE.Local|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Rope																					STARTSKILLPTS:6
+SUBCLASSLEVEL:1																									VISION:Darkvision (60')												SAB:Pierce the Veil of Shadow (Su)																																																																																																																														ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																																																		AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Cloak of Cadic (Su)
+SUBCLASSLEVEL:3																																								SAB:Shadow Jump (Su)
+SUBCLASSLEVEL:4																		CAST:0,0																					SAB:Divine Grace (Su)																																											BONUS:VAR|SmiteEvil|1																																						BONUS:CHECKS|ALL|max(CHA,0)																																								ABILITY:FEAT|VIRTUAL|Smite Evil																																																																																																						SPELLLIST:CLASS|Holy Champion=1|Darkness,Disguise Self,Pass Without Trace,Protection from Evil,Undetectable Alignment
+SUBCLASSLEVEL:5																		CAST:0,0																					SAB:Trapfinding
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Cloak of Cadic (Womb of Darkness) (Su)																																																																																																																												ABILITY:FEAT|VIRTUAL|AUTOMATIC|Evasion
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Turn Shadows (Su)																																											BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.STACK																																																																												ABILITY:FEAT|AUTOMATIC|Uncanny Dodge																																																																																																					SPELLLIST:CLASS|Holy Champion=2|Cat’s Grace,Deeper Darkness,Find Traps,Knock,Misdirection,Silence,Songs in the Night,Spider Climb
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Cloak of Cadic (Moonless Night) (Su)																																																																																																																																																																																																SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Shadow Conjuration
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Not Where You Think,Shadow Conjuration,Shadow Stride
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Aura of Courage (Ex)																																																																																																																															ABILITY:FEAT|VIRTUAL|Slippery Mind
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																				SAB:Cloak of Cadic (Cover of Night) (Su)	SAB:Hide in Plain Sight (Su)																																																																																																																																																																																																																																			SPELLLIST:CLASS|Holy Champion=4|Shadow Evocation,Dispel Evil,Nondetection,Zone of Silence
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Shadow Mage (Sp)																																																																																																																																																																																																			SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Shadow Conjuration (Greater)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Shadow Master (Su)																																																																																																																																ABILITY:FEAT|AUTOMATIC|Improved Evasion
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Shadow Jump 1000 ft. (Su)	SAB:Shadow Blend (Su)
 # Sentinels of the Blazing Wyrm (Fire Dragon)
-SUBCLASS:Blazing Wyrm	COST:0	NAMEISPI:YES	PREALIGN:LG,LN	PREDEITY:Fire Dragon	PRERACE:1,Ss'ressen	PRETEMPLATE:Black Talon|Ashen Hide	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:2	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|Jump|Knowledge (Geography:Ssethregore)|Knowledge (Nature:Ssethregore)|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Swim	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Fire Dragon)|CL/2|PRECLASS:1,HC (Fire Dragon)=4
-SUBCLASSLEVEL:1					BONUS:HD|MAX|2																																																												ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency																						AUTO:ARMORPROF|ARMORTYPE.Light|ARMORTYPE.Medium|ARMORTYPE.Heavy	AUTO:WEAPONPROF|TYPE.Martial	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Evil
-SUBCLASSLEVEL:2																		BONUS:VAR|DefStTimes|1	BONUS:VAR|DefStDur|3+CON	BONUS:VAR|DefStSTR|2	BONUS:VAR|DefStCON|4	BONUS:VAR|DefStSav|2	BONUS:VAR|DefStAC|4	BONUS:VAR|DefStHP|2*CL	BONUS:VAR|DivGrace|max(0,var("CHA"))	BONUS:VAR|HitPtsDmg|CL*CHA													ABILITY:FEAT|VIRTUAL|Defensive Stance|Divine Grace PGtA|Talons of Flame
-SUBCLASSLEVEL:3																																																																			ABILITY:FEAT|VIRTUAL|Aura of Courage|Burning Blood
-SUBCLASSLEVEL:4																		BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack	BONUS:VAR|ChannelLevelBase|CL-3	BONUS:VAR|ChannelDamagePlusBase|CL-3	BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack																		ADD:VFEAT|TYPE=Channeling	ABILITY:FEAT|VIRTUAL|Basic Channeling
-SUBCLASSLEVEL:4																		BONUS:VAR|ChannelLevelBase|CL-3
-SUBCLASSLEVEL:4																		BONUS:VAR|ChannelDamagePlusBase|CL-3
-SUBCLASSLEVEL:4																		BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack
-SUBCLASSLEVEL:4	CAST:0,0											SPELLLIST:CLASS|Holy Champion=1|Burning Hands,Faerie Fire,Produce Flame,Protection from Evil	BONUS:VAR|SsetEnfLvl|TL-("CL=HC (Fire Dragon)")+("CL=HC (Fire Dragon)"-3)																																									ABILITY:FEAT|VIRTUAL|Ssethric Enforcer
-SUBCLASSLEVEL:6	CAST:0,1																																																																ABILITY:FEAT|AUTOMATIC|Dragons Hide
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0											SPELLLIST:CLASS|Holy Champion=2|Calm Emotions,Heat Metal,Pyrotechnics,Status					BONUS:VAR|ProtWard|CL																																																		ABILITY:FEAT|AUTOMATIC|Protective Ward
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1																																																																ABILITY:FEAT|VIRTUAL|Sanction of the Fire Dragon
-SUBCLASSLEVEL:11	CAST:0,1,1,0										SPELLLIST:CLASS|Holy Champion=3|Flaming Sphere,Mantle of Unassailable Flame,Scorching Ray
-SUBCLASSLEVEL:12	CAST:0,1,1,1															BONUS:VAR|DefStTime|max(CHA,1)																																																ABILITY:FEAT|VIRTUAL|Strength Bonus
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0										SPELLLIST:CLASS|Holy Champion=4|Safeguard,Tongues					BONUS:VAR|BreathDmg|10+(CL/2)+CHA																																																ABILITY:FEAT|VIRTUAL|Breath of Fire
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1																																																															ABILITY:FEAT|VIRTUAL|Constitution Bonus
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SR:CHA+10	DR:10/Magic																																																											ABILITY:FEAT|VIRTUAL|Shimmering Scales
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3					SAB:Dragon Apotheosis (Ex)																																																																												TEMPLATE:CHOOSE:Dragon Apotheosis (Red)|Dragon Apotheosis (Gold)
+SUBCLASS:Blazing Wyrm		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3		PREALIGN:LG,LN	PREDEITY:1,Fire Dragon																						PRERACE:1,Ss'ressen							PRETEMPLATE:1,Black Talon|Ashen Hide	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|Jump|Knowledge (Geography:Ssethregore)|Knowledge (Nature:Ssethregore)|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Swim																											STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																																																																																																																																										BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency																																																								SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Evil															AUTO:ARMORPROF|ARMORTYPE.Light|ARMORTYPE.Medium|ARMORTYPE.Heavy	AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																																																																						BONUS:VAR|DefStTimes|1	BONUS:VAR|DefStDur|3+CON	BONUS:VAR|DefStSTR|2	BONUS:VAR|DefStCON|4	BONUS:VAR|DefStSav|2	BONUS:VAR|DefStAC|4	BONUS:VAR|DefStHP|2*CL	BONUS:VAR|DivGrace|max(0,var("CHA"))	BONUS:VAR|HitPtsDmg|CL*CHA																																													ABILITY:FEAT|VIRTUAL|Defensive Stance|Divine Grace PGtA|Talons of Flame
+SUBCLASSLEVEL:3																																																																																																																																																																											ABILITY:FEAT|VIRTUAL|Aura of Courage|Burning Blood
+SUBCLASSLEVEL:4																																																																																						BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack	BONUS:VAR|ChannelLevelBase|CL-3	BONUS:VAR|ChannelDamagePlusBase|CL-3	BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack																																																									ABILITY:FEAT|VIRTUAL|Basic Channeling																																																							ADD:VFEAT|TYPE=Channeling
+SUBCLASSLEVEL:4																																																																																						BONUS:VAR|ChannelLevelBase|CL-3
+SUBCLASSLEVEL:4																																																																																						BONUS:VAR|ChannelDamagePlusBase|CL-3
+SUBCLASSLEVEL:4																																																																																						BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack
+SUBCLASSLEVEL:4																		CAST:0,0																																																																			BONUS:VAR|SsetEnfLvl|TL-("CL=HC (Fire Dragon)")+("CL=HC (Fire Dragon)"-3)																																																																									ABILITY:FEAT|VIRTUAL|Ssethric Enforcer																																																																																																					SPELLLIST:CLASS|Holy Champion=1|Burning Hands,Faerie Fire,Produce Flame,Protection from Evil
+SUBCLASSLEVEL:6																		CAST:0,1																																																																																																																																																								ABILITY:FEAT|AUTOMATIC|Dragons Hide
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																																																																			BONUS:VAR|ProtWard|CL																																																																																		ABILITY:FEAT|AUTOMATIC|Protective Ward																																																																																																					SPELLLIST:CLASS|Holy Champion=2|Calm Emotions,Heat Metal,Pyrotechnics,Status
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																																																																																																																																																								ABILITY:FEAT|VIRTUAL|Sanction of the Fire Dragon
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Flaming Sphere,Mantle of Unassailable Flame,Scorching Ray
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																																																																		BONUS:VAR|DefStTime|max(CHA,1)																																																																																ABILITY:FEAT|VIRTUAL|Strength Bonus
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																																																																		BONUS:VAR|BreathDmg|10+(CL/2)+CHA																																																																																ABILITY:FEAT|VIRTUAL|Breath of Fire																																																																																																						SPELLLIST:CLASS|Holy Champion=4|Safeguard,Tongues
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																																																																																																																																																							ABILITY:FEAT|VIRTUAL|Constitution Bonus
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1											SR:CHA+10	DR:10/Magic																																																																																																																																									ABILITY:FEAT|VIRTUAL|Shimmering Scales
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Dragon Apotheosis (Ex)																																																																																																																																																																																																															TEMPLATE:CHOOSE:Dragon Apotheosis (Red)|Dragon Apotheosis (Gold)
 # Order of the Storm Lord (Hurrian)
-SUBCLASS:Storm Lord	COST:0	NAMEISPI:YES	PREALIGN:LG,NG,CG	PREDEITY:Hurrian	PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:Tir Betoqi]]	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Jump|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Hurrian)|CL/2|PRECLASS:1,HC (Hurrian)=4
-SUBCLASSLEVEL:1				BONUS:HD|MAX|2																	BONUS:VAR|SmiteEvil|1																										ABILITY:FEAT|VIRTUAL|Smite Evil	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Evil		AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2				SAB:Divine Grace (Su)	SAB:Electricity Resistance % (Su)|2*CL															BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
-SUBCLASSLEVEL:3				SAB:Aura of Courage (Ex)	SAB:Divine Health (Ex)
-SUBCLASSLEVEL:4	CAST:0,0																			SPELLLIST:CLASS|Holy Champion=1|Alter Wind,Protection from Evil,Shocking Grasp,Feather Fall																													ABILITY:FEAT|AUTOMATIC|Weapon Focus(Longsword)
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:Hand of the Storm Lord - Fortitude DC % (Sp)|10+CHA+(floor(CL/2))	SAB:Ride the Lightning (Sp)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Thunderclap - %d4 dmg, deaf for 2d4 rounds, Fortitude Save DC % (Sp)|CL|10+CHA+(floor(CL/2))	SPELLLIST:CLASS|Holy Champion=2|Align Weapon,Heroism,Rage,Retribution,Status,Whirlwind of Blades
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1		SAB:Special Mount (Sp)
-SUBCLASSLEVEL:11	CAST:0,1,1,0																		SPELLLIST:CLASS|Holy Champion=3|Call Lightning,Retribution (Greater),Shield Other (Improved),Wind Wall
-SUBCLASSLEVEL:12	CAST:0,1,1,1																																															ABILITY:FEAT|AUTOMATIC|Weapon Specialization (Longsword)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0																		SPELLLIST:CLASS|Holy Champion=4|Air Walk,Dispel Evil,Divine Power,His Blade Shall Not Harm Me		BONUS:VAR|SmiteEvil|max(CHA,1)
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:The Heavens Speak (Sp)																																																																																		SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Call Lightning Storm
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Voice Like Thunder (Sp) 1/week																																																																																	SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Holy Word
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:I Am the Storm (Su)
+SUBCLASS:Storm Lord		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3		PREALIGN:LG,NG,CG	PREDEITY:1,Hurrian		PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:1,Tir Betoqi]]																	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Jump|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival																																								STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																																																																						BONUS:VAR|SmiteEvil|1																																																																	BONUS:HD|MAX|2															ABILITY:FEAT|VIRTUAL|Smite Evil	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																																					SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Evil																										AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Divine Grace (Su)	SAB:Electricity Resistance % (Su)|2*CL																																																																													BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
+SUBCLASSLEVEL:3																																								SAB:Aura of Courage (Ex)	SAB:Divine Health (Ex)
+SUBCLASSLEVEL:4																		CAST:0,0																																																																																																																																																								ABILITY:FEAT|AUTOMATIC|Weapon Focus(Longsword)																																																																																																				SPELLLIST:CLASS|Holy Champion=1|Alter Wind,Protection from Evil,Shocking Grasp,Feather Fall
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Hand of the Storm Lord - Fortitude DC % (Sp)|10+CHA+(floor(CL/2))	SAB:Ride the Lightning (Sp)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Thunderclap - %d4 dmg, deaf for 2d4 rounds, Fortitude Save DC % (Sp)|CL|10+CHA+(floor(CL/2))																																																																																																																																																																																																																														SPELLLIST:CLASS|Holy Champion=2|Align Weapon,Heroism,Rage,Retribution,Status,Whirlwind of Blades
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Special Mount (Sp)
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Call Lightning,Retribution (Greater),Shield Other (Improved),Wind Wall
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																																																																																																																																																							ABILITY:FEAT|AUTOMATIC|Weapon Specialization (Longsword)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																																																																		BONUS:VAR|SmiteEvil|max(CHA,1)																																																																																																																																																																																											SPELLLIST:CLASS|Holy Champion=4|Air Walk,Dispel Evil,Divine Power,His Blade Shall Not Harm Me
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:The Heavens Speak (Sp)																																																																																																																																																																																																		SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Call Lightning Storm
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Voice Like Thunder (Sp) 1/week																																																																																																																																																																																																	SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Holy Word
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:I Am the Storm (Su)
 # Order of the Harbingers of the Dawn (Illiir)
-SUBCLASS:Harbingers	COST:0	NAMEISPI:YES	PREALIGN:LG,LN,LE	PREDEITY:Illiir	PREMULT:1,[PRERACE:1,Val,Human],[PREMULT:2,[PRERACE:1,Dwarf],[PREREGION:Solanos Mor]]	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Illiir)|CL/2|PRECLASS:1,HC (Illiir)=4
-SUBCLASSLEVEL:1			BONUS:HD|MAX|2	SAB:Smite Chaos (Su) (%/Day, +% to hit, +% Damage)|SmiteChaos|ChaosHit|ChaosDamage	BONUS:VAR|ChaosHit|max(CHA,0)	BONUS:VAR|ChaosDamage|CL										DEFINE:SmiteChaos|1	DEFINE:ChaosHit|0	DEFINE:ChaosDamage|0								ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Chaos	AUTO:WEAPONPROF|TYPE=Martial
-SUBCLASSLEVEL:2				SAB:Lay on Hands (Su) % hp/day|LayOnHands	SAB:Divine Grace (Su)				BONUS:VAR|LayOnHands|max(CHA,0)*CL					BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)	DEFINE:LayOnHands|0
-SUBCLASSLEVEL:3				SAB:Aura of Courage (Ex)	SAB:Divine Health (Ex)
-SUBCLASSLEVEL:4	CAST:0,0												SPELLLIST:CLASS|Holy Champion=1|Cause Fear,Command,Protection from Chaos																																									ABILITY:FEAT|AUTOMATIC|Weapon Focus(Gladius)
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:Perfect Emotions (Ex)																																															ABILITY:FEAT|AUTOMATIC|Improved Familiar
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Smite Infidel (Su) %/Day|SmiteInfidel				SPELLLIST:CLASS|Holy Champion=2|Aid,Align Weapon,Calm Emotions																							DEFINE:SmiteInfidel|1
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1																																			DEFINE:SmiteChaos|max(CHA,1)
-SUBCLASSLEVEL:11	CAST:0,1,1,0											SPELLLIST:CLASS|Holy Champion=3|Bestow Curse,Good Hope,My Honor is My Strength,Searing Light
-SUBCLASSLEVEL:12	CAST:0,1,1,1	SAB:Voice of Our Lord (Su)																																															ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Gladius)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0											SPELLLIST:CLASS|Command (Greater),Dispel Chaos,Divine Power,Perfect Human Form,Zone of Truth																							DEFINE:SmiteInfidel|max(CHA,1)
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:Ensorcell Me Not (Su)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Brilliance of Illiir (Sp)
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:Perfect Glory of Illiir (Su)
+SUBCLASS:Harbingers		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3		PREALIGN:LG,LN,LE	PREDEITY:1,Illiir		PREMULT:1,[PRERACE:1,Val,Human],[PREMULT:2,[PRERACE:1,Dwarf],[PREREGION:Solanos Mor]]																							CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive																																												STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Smite Chaos (Su) (%/Day, +% to hit, +% Damage)|SmiteChaos|ChaosHit|ChaosDamage																																	BONUS:VAR|ChaosHit|max(CHA,0)	BONUS:VAR|ChaosDamage|CL																																																											BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																	DEFINE:SmiteChaos|1	DEFINE:ChaosHit|0	DEFINE:ChaosDamage|0												SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Chaos																										AUTO:WEAPONPROF|TYPE=Martial
+SUBCLASSLEVEL:2																																								SAB:Lay on Hands (Su) % hp/day|LayOnHands	SAB:Divine Grace (Su)																																				BONUS:VAR|LayOnHands|max(CHA,0)*CL																																				BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)																																																																																		DEFINE:LayOnHands|0
+SUBCLASSLEVEL:3																																								SAB:Aura of Courage (Ex)	SAB:Divine Health (Ex)
+SUBCLASSLEVEL:4																		CAST:0,0																																																																																																																																																								ABILITY:FEAT|AUTOMATIC|Weapon Focus(Gladius)																																																																																																				SPELLLIST:CLASS|Holy Champion=1|Cause Fear,Command,Protection from Chaos
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Perfect Emotions (Ex)																																																																																																																															ABILITY:FEAT|AUTOMATIC|Improved Familiar
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Smite Infidel (Su) %/Day|SmiteInfidel																																																																																																																																																																										DEFINE:SmiteInfidel|1																																																											SPELLLIST:CLASS|Holy Champion=2|Aid,Align Weapon,Calm Emotions
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																																																																																																																																																																																																					DEFINE:SmiteChaos|max(CHA,1)
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Bestow Curse,Good Hope,My Honor is My Strength,Searing Light
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Voice of Our Lord (Su)																																																																																																																															ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Gladius)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																																																																																																																																																																																																				DEFINE:SmiteInfidel|max(CHA,1)																																																									SPELLLIST:CLASS|Command (Greater),Dispel Chaos,Divine Power,Perfect Human Form,Zone of Truth
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Ensorcell Me Not (Su)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Brilliance of Illiir (Sp)
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Perfect Glory of Illiir (Su)
 # Order of the Fate Spinner (Larissa)
-SUBCLASS:Fate Spinner	COST:0	NAMEISPI:YES	PREALIGN:CG,CN,CE	PREDEITY:Larissa	PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:Tultipetan]]	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Gather Information|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|Listen|TYPE.Profession|Ride|Spot|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Larissa)|CL/2|PRECLASS:1,HC (Larissa)=4
-SUBCLASSLEVEL:1			BONUS:HD|MAX|2	SAB:Detect Aura (Sp)																																		ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2				SAB:Divine Grace (Su)	SAB:Borrowed Time (Su)									BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
-SUBCLASSLEVEL:3				SAB:Divine Health (Ex)
-SUBCLASSLEVEL:4	CAST:0,0		SAB:Pull the Strands of Fate (Su)	SPELLLIST:CLASS|Holy Champion=1|Bane,Protection from Evil,Protection from Law,True Strike,Twist of Fate
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:More Borrowed Time (Su)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Walk the Web of Fate (Su)		SPELLLIST:CLASS|Holy Champion=2|Aid,Augury, Dance of Fate
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1		SAB:Portents of Things to Come (Ex)
-SUBCLASSLEVEL:11	CAST:0,1,1,0							SPELLLIST:CLASS|Holy Champion=3|Arcane Sight,Euphoria,Larissa’s Kiss
-SUBCLASSLEVEL:12	CAST:0,1,1,1	SAB:Savant (Su)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0	SAB:Fate Favors the Will (Su)		SPELLLIST:CLASS|Holy Champion=4|Divination,I Feel You
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:Supreme Savant (Su)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Blessed Agility (Sp)																																	ABILITY:FEAT|AUTOMATIC|Evasion
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:Alternate Reality (Su)
+SUBCLASS:Fate Spinner		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3		PREALIGN:CG,CN,CE	PREDEITY:1,Larissa		PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:1,Tultipetan]]																	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Gather Information|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|Listen|TYPE.Profession|Ride|Spot|Sense Motive																																						STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Detect Aura (Sp)																																																																																																															BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																																																		AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Divine Grace (Su)	SAB:Borrowed Time (Su)																																																																																BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
+SUBCLASSLEVEL:3																																								SAB:Divine Health (Ex)
+SUBCLASSLEVEL:4																		CAST:0,0																					SAB:Pull the Strands of Fate (Su)																																																																																																																																																																																																																																									SPELLLIST:CLASS|Holy Champion=1|Bane,Protection from Evil,Protection from Law,True Strike,Twist of Fate
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:More Borrowed Time (Su)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Walk the Web of Fate (Su)																																																																																																																																																																																																																																										SPELLLIST:CLASS|Holy Champion=2|Aid,Augury, Dance of Fate
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Portents of Things to Come (Ex)
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Arcane Sight,Euphoria,Larissa’s Kiss
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Savant (Su)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																				SAB:Fate Favors the Will (Su)																																																																																																																																																																																																																																										SPELLLIST:CLASS|Holy Champion=4|Divination,I Feel You
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Supreme Savant (Su)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Blessed Agility (Sp)																																																																																																																															ABILITY:FEAT|AUTOMATIC|Evasion
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Alternate Reality (Su)
 # Deathbringers of Neroth
-SUBCLASS:Deathbringer	COST:0	NAMEISPI:YES	PREALIGN:LG	PREDEITY:Neroth	!PRERACE:1,Elorii,Ss'ressen	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Religion|TYPE.Profession|Ride|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Neroth)|CL/2|PRECLASS:1,HC (Neroth)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2	SAB:Smite Evil (Su) %/day|SmiteEvil								BONUS:VAR|SmiteEvil|1										DEFINE:SmiteEvil|0									ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Evil		AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2				SAB:Divine Grace (Ex)																		BONUS:CHECKS|ALL|max(CHA,0)																																															SPELLS:ClassAbility|TIMES=max(CHA,1)|CASTERLEVEL=CL|Deathwatch
-SUBCLASSLEVEL:3				SAB:Divine Health (Ex)	SAB:Aura of Courage (Ex)
-SUBCLASSLEVEL:4	CAST:0,0		SAB:Turn Undead (Su) (Turn level %)|ChannelLevelUndead	SPELLLEVEL:CLASS|Holy Champion=1|Chill Touch,Detect Undead,Hide from Undead,Protection from Evil
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:Special Mount (Sp)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Neroth's Grasp (Su)							SPELLLEVEL:CLASS|Holy Champion=2|Death Knell,Ghoul Touch,Your Time to Die
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1															BONUS:VAR|SmiteEvil|max(CHA,1)
-SUBCLASSLEVEL:11	CAST:0,1,1,0											SPELLLEVEL:CLASS|Holy Champion=3|Halt Undead,Smell of Death,Speak with Dead
-SUBCLASSLEVEL:12	CAST:0,1,1,1	SAB:To Hear My Voice is to Know Fear (Su)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0	SAB:Horror of Horrors (Sp) - May only be used against Evil aligned creatures		SPELLLEVEL:CLASS|Holy Champion=4|Dispel Evil,Neroth’s Embrace																																																										SPELLS:ClassAbility|TIMES=1|Phantasmal Killer,15+CHA
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:Shroud of Oblivion (Sp)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Final Word (Su)
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:Life Beyond Life (Ex)
+SUBCLASS:Deathbringer		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3		PREALIGN:LG		PREDEITY:1,Neroth																											!PRERACE:1,Elorii,Ss'ressen								CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Religion|TYPE.Profession|Ride|Sense Motive																																													STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Smite Evil (Su) %/day|SmiteEvil																																									BONUS:VAR|SmiteEvil|1																																																																	BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency												DEFINE:SmiteEvil|0																			SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Evil																										AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Divine Grace (Ex)																																																																																				BONUS:CHECKS|ALL|max(CHA,0)																																																																																																											SPELLS:ClassAbility|TIMES=max(CHA,1)|CASTERLEVEL=CL|Deathwatch
+SUBCLASSLEVEL:3																																								SAB:Divine Health (Ex)	SAB:Aura of Courage (Ex)
+SUBCLASSLEVEL:4	SPELLLEVEL:CLASS|Holy Champion=1|Chill Touch,Detect Undead,Hide from Undead,Protection from Evil	CAST:0,0																					SAB:Turn Undead (Su) (Turn level %)|ChannelLevelUndead
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Special Mount (Sp)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8	SPELLLEVEL:CLASS|Holy Champion=2|Death Knell,Ghoul Touch,Your Time to Die					CAST:0,1,0																					SAB:Neroth's Grasp (Su)
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																																																																			BONUS:VAR|SmiteEvil|max(CHA,1)
+SUBCLASSLEVEL:11	SPELLLEVEL:CLASS|Holy Champion=3|Halt Undead,Smell of Death,Speak with Dead					CAST:0,1,1,0
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:To Hear My Voice is to Know Fear (Su)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14	SPELLLEVEL:CLASS|Holy Champion=4|Dispel Evil,Neroth’s Embrace							CAST:0,2,1,1,0																				SAB:Horror of Horrors (Sp) - May only be used against Evil aligned creatures																																																																																																																																																																																										SPELLS:ClassAbility|TIMES=1|Phantasmal Killer,15+CHA
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Shroud of Oblivion (Sp)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Final Word (Su)
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Life Beyond Life (Ex)
 # Holy Judge of Nier
-SUBCLASS:Holy Judge	COST:0	NAMEISPI:YES	PREALIGN:LG,LN,LE	PREDEITY:Nier	PRERACE:1,Human,Val	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nobility|TYPE.Religion|TYPE.Local|TYPE.Profession|Ride|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Nier)|CL/2|PRECLASS:1,HC (Nier)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2	SAB:Discern Aura (Sp)	SAB:Smite Infidel (Su) (%/Day, +% to hit, +% Damage)|SmiteInfidel|InfidelHit|InfidelDamage	BONUS:VAR|InfidelHit|max(CHA,0)	BONUS:VAR|InfidelDamage|CL										DEFINE:SmiteInfidel|0	DEFINE:SmiteInfidel|1	DEFINE:InfidelHit|0	DEFINE:InfidelDamage|0								ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2				SAB:Divine Grace (Su)	SAB:Fiery Touch (Su) 1/Day																							BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
-SUBCLASSLEVEL:3				SAB:Aura of Courage (Ex)	SAB:Divine Health (Ex)
-SUBCLASSLEVEL:4	CAST:0,0												SPELLLIST:CLASS|Holy Champion=1|Burning Hands,Command,Protection from Chaos																																																					ABILITY:FEAT|AUTOMATIC|Weapon Focus(Greatsword)
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1		SAB:Stand and Be Judged (Su)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0		SAB:Energumen (Su)							SPELLLIST:CLASS|Holy Champion=2|Align Weapon,Flame Blade,Heat Metal,Hold Person,Produce Flame,Zone of Truth
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1																																										DEFINE:SmiteInfidel|max(CHA,1)
-SUBCLASSLEVEL:11	CAST:0,1,1,0											SPELLLIST:CLASS|Holy Champion=3|Searing Light,Steamblast,Your Fire is Mine
-SUBCLASSLEVEL:12	CAST:0,1,1,1																																																																ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Greatsword)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0	SAB:To Hear My Voice is to Know Fear (Su)				SPELLLIST:CLASS|Holy Champion=4|Dispel Chaos,Divine Power,Flame Strike
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1	SAB:Conflagration (Sp) 1/Day
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:Gavel of Nier (Su)
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3	SAB:My Word is Law (Su) - Your xp is at maximum (%)|WordLaw											BONUS:VAR|WordLaw|200+(20*CON)															DEFINE:WordLaw|0
+SUBCLASS:Holy Judge		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3		PREALIGN:LG,LN,LE	PREDEITY:1,Nier																							PRERACE:1,Human,Val													CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nobility|TYPE.Religion|TYPE.Local|TYPE.Profession|Ride|Sense Motive																																								STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Discern Aura (Sp)	SAB:Smite Infidel (Su) (%/Day, +% to hit, +% Damage)|SmiteInfidel|InfidelHit|InfidelDamage																											BONUS:VAR|InfidelHit|max(CHA,0)	BONUS:VAR|InfidelDamage|CL																																																										BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																					DEFINE:SmiteInfidel|0	DEFINE:SmiteInfidel|1	DEFINE:InfidelHit|0	DEFINE:InfidelDamage|0																																										AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Divine Grace (Su)	SAB:Fiery Touch (Su) 1/Day																																																																															BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)
+SUBCLASSLEVEL:3																																								SAB:Aura of Courage (Ex)	SAB:Divine Health (Ex)
+SUBCLASSLEVEL:4																		CAST:0,0																																																																																																																																																								ABILITY:FEAT|AUTOMATIC|Weapon Focus(Greatsword)																																																																																																				SPELLLIST:CLASS|Holy Champion=1|Burning Hands,Command,Protection from Chaos
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Stand and Be Judged (Su)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Energumen (Su)																																																																																																																																																																																																																																											SPELLLIST:CLASS|Holy Champion=2|Align Weapon,Flame Blade,Heat Metal,Hold Person,Produce Flame,Zone of Truth
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																																																																																																																																																																																																					DEFINE:SmiteInfidel|max(CHA,1)
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Searing Light,Steamblast,Your Fire is Mine
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																																																																																																																																																							ABILITY:FEAT|AUTOMATIC|Weapon Specialization(Greatsword)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																				SAB:To Hear My Voice is to Know Fear (Su)																																																																																																																																																																																																																																								SPELLLIST:CLASS|Holy Champion=4|Dispel Chaos,Divine Power,Flame Strike
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Conflagration (Sp) 1/Day
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Gavel of Nier (Su)
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:My Word is Law (Su) - Your xp is at maximum (%)|WordLaw																																					BONUS:VAR|WordLaw|200+(20*CON)																																																																																																																													DEFINE:WordLaw|0
 # Order of the Verdant Champions (Saluwe)
-SUBCLASS:Verdant Champion	COST:0	NAMEISPI:YES	PREALIGN:LN	PREDEITY:Saluwe	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Saluwe)|CL/2|PRECLASS:1,HC (Saluwe)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2									SAB:Stability (Ex)	SAB:Strength of the Earth (Su)																															ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2												SAB:Divine Grace (Ex)	SAB:Lay on Hands (Su) % hp/day|LayOnHands	BONUS:VAR|LayOnHands|max(CHA,0)*CL			BONUS:CHECKS|ALL|max(CHA,0)					DEFINE:LayOnHands|0
-SUBCLASSLEVEL:3												SAB:Divine Health (Ex)	SAB:Thorn of Saluwe (Sp)
-SUBCLASSLEVEL:4	CAST:0,0										SAB:Gaea's Embrace (Su)						SPELLLIST:CLASS|Holy Champion=1|Calm Animals,Crushing Weight,Entangle,Protection from Evil,Speak With Animals
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1										SAB:Special Mount (Sp)	SAB:Earth Mastery (Ex)
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0										SAB:Gaea's Ward (Su)						SPELLLIST:CLASS|Holy Champion=2|Animal Messenger,Barkskin,Battle Spines,Cat’s Grace,Soften Earth and Stone
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1
-SUBCLASSLEVEL:11	CAST:0,1,1,0																		SPELLLIST:CLASS|Holy Champion=3|Meld into Stone,Stone Shape
-SUBCLASSLEVEL:12	CAST:0,1,1,1							DR:0/-	SAB:Like the Mountain (Su)																				BONUS:DR|-|max(CHA,1)
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0																		SPELLLIST:CLASS|Holy Champion=4|Fire Seeds,Nature’s Gift,Rending,Spike Stones,Stoneskin
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1									SAB:Ley Line (Su)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	VISION:Tremorsense (TremorLevel)			SAB:Tremorsense %' (Su)|TremorLevel						BONUS:VAR|TremorLevel|5*max(CHA,1)												DEFINE:TremorLevel|0
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3									SAB:Earthshaker (Su)
+SUBCLASS:Verdant Champion	NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3		PREALIGN:LN		PREDEITY:1,Saluwe																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival																																							STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Stability (Ex)	SAB:Strength of the Earth (Su)																																																																																																									BONUS:HD|MAX|2															ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																																																			AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Divine Grace (Ex)	SAB:Lay on Hands (Su) % hp/day|LayOnHands																																				BONUS:VAR|LayOnHands|max(CHA,0)*CL																																				BONUS:CHECKS|ALL|max(CHA,0)																																																																																					DEFINE:LayOnHands|0
+SUBCLASSLEVEL:3																																								SAB:Divine Health (Ex)	SAB:Thorn of Saluwe (Sp)
+SUBCLASSLEVEL:4																		CAST:0,0																					SAB:Gaea's Embrace (Su)																																																																																																																																																																																																																																											SPELLLIST:CLASS|Holy Champion=1|Calm Animals,Crushing Weight,Entangle,Protection from Evil,Speak With Animals
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Special Mount (Sp)	SAB:Earth Mastery (Ex)
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Gaea's Ward (Su)																																																																																																																																																																																																																																											SPELLLIST:CLASS|Holy Champion=2|Animal Messenger,Barkskin,Battle Spines,Cat’s Grace,Soften Earth and Stone
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Meld into Stone,Stone Shape
+SUBCLASSLEVEL:12																		CAST:0,1,1,1													DR:0/-						SAB:Like the Mountain (Su)																																																																																																							BONUS:DR|-|max(CHA,1)
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=4|Fire Seeds,Nature’s Gift,Rending,Spike Stones,Stoneskin
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Ley Line (Su)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1					VISION:Tremorsense (TremorLevel)										SAB:Tremorsense %' (Su)|TremorLevel																																									BONUS:VAR|TremorLevel|5*max(CHA,1)																																																																																																																													DEFINE:TremorLevel|0
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Earthshaker (Su)
 # Order of the Inner Demon (Sarish)
-SUBCLASS:Inner Demon	COST:0	NAMEISPI:YES	PREALIGN:LG	PREDEITY:Sarish	PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:Encalan]]	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Planes|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Sarish)|CL/2|PRECLASS:1,HC (Sarish)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2						SAB:Discern Infernal (Sp)	SAB:Path of the Tainted (Ex)	SAB:Unnatural Aura (Ex)																																									BONUS:SKILL|Handle Animal,Ride|-2						ADD:VFEAT|TYPE=InnerDemon		ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency		AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:2									SAB:Lure of Darkness (Ex)	SAB:The Night Hides Not (Ex)																																																																ABILITY:FEAT|VIRTUAL|Favored Enemy (Infernal Creatures)|Favored Bonus__Infernal_Creatures
-SUBCLASSLEVEL:3									SAB:Immune to Poison (Su)	SAB:Acid and Cold Resistance % (Su)|ResistLevel|PREFEAT:1,Inner Demon Hamatula,Inner Demon Kyton,Inner Demon Osyluth	SAB:Acid, Cold, and Fire Resistance % (Su)|ResistLevel|PREFEAT:1,Inner Demon Glabrezu,Inner Demon Succubus,Inner Demon Vrock	BONUS:VAR|ResistLevel|floor(CL/2)									DEFINE:ResistLevel|0
-SUBCLASSLEVEL:4	CAST:0,0																			SPELLLIST:CLASS|Holy Champion=1|Comprehend Languages,Disguise Self,My Master Allows
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1							SAB:Blessing of Sarish (Su)	SAB:Symbiosis I (Su)																																																									ADD:VFEAT|TYPE=InnerDemonFirst
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0							SAB:Fiendish Mount (Sp)									SPELLLIST:CLASS|Holy Champion=2|Darkness,Produce Flame,Protection from Evil,Undetectable Alignment
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1		SAB:.CLEAR.Symbiosis I (Su)	SAB:Symbiosis II (Su)																																																														ADD:VFEAT|TYPE=InnerDemonSecond
-SUBCLASSLEVEL:11	CAST:0,1,1,0																		SPELLLIST:CLASS|Holy Champion=3|Fear,Deeper Darkness,Magic Circle against Chaos,Magic Circle against Law,Magic Circle against Evil,Nondetection	SPELLLIST:CLASS|Holy Champion=3|Oath[PRETEMPLATE:Mehan,HolrynMehan
-SUBCLASSLEVEL:12	CAST:0,1,1,1						SAB:Aura of Courage (Ex)	SAB:Fire Resistance % (Su)|GreaterResistLevel|PREFEAT:1,Inner Demon Hamatula,Inner Demon Kyton,Inner Demon Osyluth	SAB:Electricity Resistance % (Su)|GreaterResistLevel|PREFEAT:1,Inner Demon Glabrezu,Inner Demon Succubus,Inner Demon Vrock	BONUS:VAR|GreaterResistLevel|CL									DEFINE:GreaterResistLevel|0
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0	SAB:.CLEAR.Symbiosis II (Su)	SAB:Symbiosis III (Su)									SPELLLIST:CLASS|Holy Champion=4|Dispel Chaos,Dispel Evil,Summon Thy Own (Lesser),Zone of Silence																																													ADD:VFEAT|TYPE=InnerDemonThird
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1						SAB:Nightmare Mount (Sp)
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1	SAB:.CLEAR.Symbiosis III (Su)	SAB:Symbiosis IV (Su)																																																														ADD:VFEAT|TYPE=InnerDemonFourth
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3						SAB:Apotheosis (Su)																																																																																																			TEMPLATE:Outsider	TEMPLATE:Native
+SUBCLASS:Inner Demon		NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		PREALIGN:LG		PREDEITY:1,Sarish		PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:1,Encalan]]																	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Planes|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive																																										STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																								SAB:Discern Infernal (Sp)	SAB:Path of the Tainted (Ex)	SAB:Unnatural Aura (Ex)																																																																																																					BONUS:HD|MAX|2	BONUS:SKILL|Handle Animal,Ride|-2									ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																										ADD:VFEAT|TYPE=InnerDemon																																					AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:2																																								SAB:Lure of Darkness (Ex)	SAB:The Night Hides Not (Ex)																																																																																																																										ABILITY:FEAT|VIRTUAL|Favored Enemy (Infernal Creatures)|Favored Bonus__Infernal_Creatures
+SUBCLASSLEVEL:3																																								SAB:Immune to Poison (Su)	SAB:Acid and Cold Resistance % (Su)|ResistLevel|PREFEAT:1,Inner Demon Hamatula,Inner Demon Kyton,Inner Demon Osyluth	SAB:Acid, Cold, and Fire Resistance % (Su)|ResistLevel|PREFEAT:1,Inner Demon Glabrezu,Inner Demon Succubus,Inner Demon Vrock	BONUS:VAR|ResistLevel|floor(CL/2)																																																																																																																													DEFINE:ResistLevel|0
+SUBCLASSLEVEL:4																		CAST:0,0																																																																																																																																																																																																																																																																			SPELLLIST:CLASS|Holy Champion=1|Comprehend Languages,Disguise Self,My Master Allows
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Blessing of Sarish (Su)	SAB:Symbiosis I (Su)																																																																																																																																																																																								ADD:VFEAT|TYPE=InnerDemonFirst
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Fiendish Mount (Sp)																																																																																																																																																																																																																																											SPELLLIST:CLASS|Holy Champion=2|Darkness,Produce Flame,Protection from Evil,Undetectable Alignment
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																SAB:.CLEAR.Symbiosis I (Su)	SAB:Symbiosis II (Su)																																																																																																																																																																																													ADD:VFEAT|TYPE=InnerDemonSecond
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Fear,Deeper Darkness,Magic Circle against Chaos,Magic Circle against Law,Magic Circle against Evil,Nondetection	SPELLLIST:CLASS|Holy Champion=3|Oath[PRETEMPLATE:1,Mehan,HolrynMehan
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Aura of Courage (Ex)	SAB:Fire Resistance % (Su)|GreaterResistLevel|PREFEAT:1,Inner Demon Hamatula,Inner Demon Kyton,Inner Demon Osyluth	SAB:Electricity Resistance % (Su)|GreaterResistLevel|PREFEAT:1,Inner Demon Glabrezu,Inner Demon Succubus,Inner Demon Vrock	BONUS:VAR|GreaterResistLevel|CL																																																																																																																													DEFINE:GreaterResistLevel|0
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0															SAB:.CLEAR.Symbiosis II (Su)	SAB:Symbiosis III (Su)																																																																																																																																																																																													ADD:VFEAT|TYPE=InnerDemonThird																																									SPELLLIST:CLASS|Holy Champion=4|Dispel Chaos,Dispel Evil,Summon Thy Own (Lesser),Zone of Silence
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Nightmare Mount (Sp)
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1															SAB:.CLEAR.Symbiosis III (Su)	SAB:Symbiosis IV (Su)																																																																																																																																																																																													ADD:VFEAT|TYPE=InnerDemonFourth
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Apotheosis (Su)																																																																																																																																																																																																																TEMPLATE:Outsider	TEMPLATE:Native
 # The Sea Lord (Yarris)
-SUBCLASS:Sea Lord		COST:0	NAMEISPI:YES	PREALIGN:LG,NG,CG	PREDEITY:Yarris	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.Geography)|TYPE.Local|TYPE.Nature|Listen|Move Silently|TYPE.Sea|Ride|Search|Spot|Survival|Swim|Use Rope	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Yarris)|CL/2|PRECLASS:1,HC (Yarris)=4
-SUBCLASSLEVEL:1							SAB:+2 to all skill checks when used at sea.																																					ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASSLEVEL:3							SAB:Divine Health (Ex)	SAB:Yarris' Embrace (Sp)
-SUBCLASSLEVEL:4	CAST:0,0		MOVE:Swim,30	SAB:At One with the Sea (Ex)	SAB:Divine Grace (Ex)	SAB:First Pearl of Yarris (Su) - Medium/Medium, Humanoid	SPELLLIST:CLASS|Holy Champion=1|Alter Wind,Dolphin Chant/Mn’harr’s Mighty Swimming,Obscuring Mist			BONUS:CHECKS|ALL|max(CHA,0)
-SUBCLASSLEVEL:5	CAST:0,0
-SUBCLASSLEVEL:6	CAST:0,1					SAB:Second Pearl of Yarris (Su) - Animal/Monstrous Humanoid
-SUBCLASSLEVEL:7	CAST:0,1
-SUBCLASSLEVEL:8	CAST:0,1,0					SAB:Third Pearl of Yarris (Su) - Small/Large, Plant/Vermin										SPELLLIST:CLASS|Holy Champion=2|Control Winds,Saltburst,Water Breathing,Water Walk
-SUBCLASSLEVEL:9	CAST:0,1,0
-SUBCLASSLEVEL:10	CAST:0,1,1					SAB:Fourth Pearl of Yarris (Su) - Giant	SAB:Greater at One with the Sea (Ex)
-SUBCLASSLEVEL:11	CAST:0,1,1,0																							SPELLLIST:CLASS|Holy Champion=3|Control Water,Destroy Water
-SUBCLASSLEVEL:12	CAST:0,1,1,1				SAB:Fifth Pearl of Yarris (Su) - Tiny/Huge, Ooze
-SUBCLASSLEVEL:13	CAST:0,1,1,1
-SUBCLASSLEVEL:14	CAST:0,2,1,1,0				SAB:Sixth Pearl of Yarris (Su) - Abberation												SPELLLIST:CLASS|Holy Champion=4|Like Water,Riptide,Water Stride
-SUBCLASSLEVEL:15	CAST:0,2,1,1,1
-SUBCLASSLEVEL:16	CAST:0,2,2,1,1				SAB:Seventh Pearl of Yarris (Su) - Diminutive/Gargantuan, Magical Beast
-SUBCLASSLEVEL:17	CAST:0,2,2,2,1
-SUBCLASSLEVEL:18	CAST:0,3,2,2,1				SAB:Eighth Pearl of Yarris (Su) - Water Elemental
-SUBCLASSLEVEL:19	CAST:0,3,3,3,2
-SUBCLASSLEVEL:20	CAST:0,3,3,3,3				SAB:Ninth Pearl of Yarris (Su) - Fine/Colossal, Outsider
+SUBCLASS:Sea Lord			NAMEISPI:YES	COST:0	SPELLSTAT:WIS	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3		PREALIGN:LG,NG,CG	PREDEITY:1,Yarris																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.Geography)|TYPE.Local|TYPE.Nature|Listen|Move Silently|TYPE.Sea|Ride|Search|Spot|Survival|Swim|Use Rope																																			STARTSKILLPTS:6
+SUBCLASSLEVEL:1																																								SAB:+2 to all skill checks when used at sea.																																																																																																																												ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																																																		AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASSLEVEL:3																																								SAB:Divine Health (Ex)	SAB:Yarris' Embrace (Sp)
+SUBCLASSLEVEL:4																		CAST:0,0																					SAB:At One with the Sea (Ex)	SAB:Divine Grace (Ex)	SAB:First Pearl of Yarris (Su) - Medium/Medium, Humanoid																																																																					BONUS:CHECKS|ALL|max(CHA,0)																																																																																																																																																			SPELLLIST:CLASS|Holy Champion=1|Alter Wind,Dolphin Chant/Mn’harr’s Mighty Swimming,Obscuring Mist																																	MOVE:Swim,30
+SUBCLASSLEVEL:5																		CAST:0,0
+SUBCLASSLEVEL:6																		CAST:0,1																					SAB:Second Pearl of Yarris (Su) - Animal/Monstrous Humanoid
+SUBCLASSLEVEL:7																		CAST:0,1
+SUBCLASSLEVEL:8																		CAST:0,1,0																					SAB:Third Pearl of Yarris (Su) - Small/Large, Plant/Vermin																																																																																																																																																																																																																																					SPELLLIST:CLASS|Holy Champion=2|Control Winds,Saltburst,Water Breathing,Water Walk
+SUBCLASSLEVEL:9																		CAST:0,1,0
+SUBCLASSLEVEL:10																		CAST:0,1,1																					SAB:Fourth Pearl of Yarris (Su) - Giant	SAB:Greater at One with the Sea (Ex)
+SUBCLASSLEVEL:11																		CAST:0,1,1,0																																																																																																																																																																																																																																																																		SPELLLIST:CLASS|Holy Champion=3|Control Water,Destroy Water
+SUBCLASSLEVEL:12																		CAST:0,1,1,1																				SAB:Fifth Pearl of Yarris (Su) - Tiny/Huge, Ooze
+SUBCLASSLEVEL:13																		CAST:0,1,1,1
+SUBCLASSLEVEL:14																		CAST:0,2,1,1,0																				SAB:Sixth Pearl of Yarris (Su) - Abberation																																																																																																																																																																																																																																							SPELLLIST:CLASS|Holy Champion=4|Like Water,Riptide,Water Stride
+SUBCLASSLEVEL:15																		CAST:0,2,1,1,1
+SUBCLASSLEVEL:16																		CAST:0,2,2,1,1																				SAB:Seventh Pearl of Yarris (Su) - Diminutive/Gargantuan, Magical Beast
+SUBCLASSLEVEL:17																		CAST:0,2,2,2,1
+SUBCLASSLEVEL:18																		CAST:0,3,2,2,1																				SAB:Eighth Pearl of Yarris (Su) - Water Elemental
+SUBCLASSLEVEL:19																		CAST:0,3,3,3,2
+SUBCLASSLEVEL:20																		CAST:0,3,3,3,3																				SAB:Ninth Pearl of Yarris (Su) - Fine/Colossal, Outsider
 ###Block: Aura strength - Deities in Arcanis don't have alignment - Aura based of Cleric's alignment
-1	AUTO:WEAPONPROF|TYPE.Simple
-1																		BONUS:VAR|AlignmentAuraBase|CL												DEFINE:AlignmentAuraBase|0
-1																																																ABILITY:FEAT|VIRTUAL|Aura of Chaos|PREALIGN:CG,CN,CE
-1																																																ABILITY:FEAT|VIRTUAL|Aura of Evil|PREALIGN:LE,NE,CE
-1																																																ABILITY:FEAT|VIRTUAL|Aura of Good|PREALIGN:LG,NG,CG
-1																																																ABILITY:FEAT|VIRTUAL|Aura of Law|PREALIGN:LG,LN,LE
-4																		BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack																ABILITY:FEAT|VIRTUAL|TYPE=Channeling	ABILITY:FEAT|VIRTUAL|Basic Channeling
-4																		BONUS:VAR|ChannelLevelBase|CL-3
-4																		BONUS:VAR|ChannelDamagePlusBase|CL-3
-4																		BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack
-4																		BONUS:VAR|TurnTimesBase|3+CHA|TYPE=NoStack										DEFINE:AllowImprovedTurning|1		ADD:VFEAT|TYPE=TurnUndead	ABILITY:FEAT|VIRTUAL|Basic Turning
-4																		BONUS:VAR|TurnLevelBase|CL													DEFINE:AllowExtraTurning|1
-4																		BONUS:VAR|TurnDamagePlusBase|CL
-4																		BONUS:VAR|TurnCheckBase|CHA|TYPE=Holy Champion
+1																																	AUTO:WEAPONPROF|TYPE.Simple
+1	BONUS:VAR|AlignmentAuraBase|CL			DEFINE:AlignmentAuraBase|0
+1																			ABILITY:FEAT|VIRTUAL|Aura of Chaos|PREALIGN:CG,CN,CE
+1																			ABILITY:FEAT|VIRTUAL|Aura of Evil|PREALIGN:LE,NE,CE
+1																			ABILITY:FEAT|VIRTUAL|Aura of Good|PREALIGN:LG,NG,CG
+1																			ABILITY:FEAT|VIRTUAL|Aura of Law|PREALIGN:LG,LN,LE
+4	BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack											VFEAT:TYPE=Channeling	ABILITY:FEAT|VIRTUAL|Basic Channeling
+4	BONUS:VAR|ChannelLevelBase|CL-3
+4	BONUS:VAR|ChannelDamagePlusBase|CL-3
+4	BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack
+4	BONUS:VAR|TurnTimesBase|3+CHA|TYPE=NoStack	DEFINE:AllowImprovedTurning|1	ADD:VFEAT|TYPE=TurnUndead	ABILITY:FEAT|VIRTUAL|Basic Turning
+4	BONUS:VAR|TurnLevelBase|CL				DEFINE:AllowExtraTurning|1
+4	BONUS:VAR|TurnDamagePlusBase|CL
+4	BONUS:VAR|TurnCheckBase|CHA|TYPE=Holy Champion
 
-CLASS:Ex-Holy Champion	NAMEISPI:YES	HD:8		HASSUBCLASS:YES	TYPE:Base.PC	MAXLEVEL:20	SOURCELONG:Player's Guide to Arcanis	SPELLSTAT:WIS	SPELLTYPE:Divine		LANGAUTO:Literacy	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-SUBCLASS:Philosophic Warrior	COST:0	NAMEISPI:YES	PREALIGN:LG,LN,LE	PREDEITY:Althares	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		STARTSKILLPTS:6	CLASS:HC (Althares)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	BONUS:CASTERLEVEL|HC (Althares)|CL/2|PRECLASS:1,HC (Althares)=4
-SUBCLASSLEVEL:1	AUTO:WEAPONPROF|TYPE.Martial	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium),Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency	CHANGEPROF:Altherian Flintlock (Pistol),Altherian Flintlock (Rifle)=Martial
-SUBCLASS:Bearer	COST:0	NAMEISPI:YES	PREALIGN:LG	PREDEITY:Anshar	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:4	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Anshar)|CL/2|PRECLASS:1,HC (Anshar)=4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|TYPE.Geography|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
-SUBCLASSLEVEL:1				ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike
-SUBCLASSLEVEL:2				BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|2			BONUS:COMBAT|AC|max(CON,1)|TYPE=NaturalArmor|!PREEQUIP:1,TYPE=Armor	ABILITY:FEAT|VIRTUAL|Monk AC
-SUBCLASS:Twelve Oaks	COST:0	NAMEISPI:YES	BONUS:HD|MIN|2	PREALIGN:LG,NG,CG	PREDEITY:Belisarda	PRERACE:1,Elorii		SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.77	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:2	BONUS:CASTERLEVEL|HC.Belisarda|CL/2|PRECLASS:1,HC.Belisarda=4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival
-SUBCLASSLEVEL:1																	ABILITY:FEAT|AUTOMATIC|Martial Weapon Proficiency|All Martial Proficiencies|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Evil	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASS:Hospitaler	COST:0	NAMEISPI:YES	PREALIGN:LN	PREDEITY:Beltine	!PRERACE:1,Elorii,Dwarf,Ss'ressen	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.79	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	STARTSKILLPTS:2	BONUS:CASTERLEVEL|HC.Beltine|CL/2|PRECLASS:1,HC.Beltine=2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive
-SUBCLASSLEVEL:1				BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)														ABILITY:FEAT|AUTOMATIC|Two Weapon Fighting|PREMULT:1,[PREEQUIPBOTH:1,Quarterstaff],[PREEQUIPTWOWEAPON:1,Mace (Light)]	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASS:Twilight Warrior	COST:0	NAMEISPI:YES	PREALIGN:LN	PREDEITY:Cadic	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Diplomacy|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Intimidate|Jump|TYPE.Religion|TYPE.Local|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Rope
-SUBCLASSLEVEL:1				VISION:Darkvision (60')	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency		AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASS:Blazing Wyrm	COST:0	NAMEISPI:YES	PREALIGN:LG,LN	PREDEITY:Fire Dragon	PRERACE:1,Ss'ressen	PRETEMPLATE:Black Talon|Ashen Hide	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:2	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|Jump|Knowledge (Geography:Ssethregore)|Knowledge (Nature:Ssethregore)|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Swim	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Fire Dragon)|CL/2|PRECLASS:1,HC (Fire Dragon)=4
-SUBCLASSLEVEL:1					BONUS:HD|MAX|2																																																												ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency																						AUTO:ARMORPROF|ARMORTYPE.Light|ARMORTYPE.Medium|ARMORTYPE.Heavy	AUTO:WEAPONPROF|TYPE.Martial	SPELLS:ClassAbility|TIMES=-1|CASTERLEVEL=CL|Detect Evil
-SUBCLASS:Holy Judge	COST:0	NAMEISPI:YES	PREALIGN:LG,LN,LE	PREDEITY:Nier	PRERACE:1,Human,Val	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nobility|TYPE.Religion|TYPE.Local|TYPE.Profession|Ride|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Nier)|CL/2|PRECLASS:1,HC (Nier)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASS:Verdant Champion	COST:0	NAMEISPI:YES	PREALIGN:LN	PREDEITY:Saluwe	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Saluwe)|CL/2|PRECLASS:1,HC (Saluwe)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2						ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASS:Inner Demon	COST:0	NAMEISPI:YES	PREALIGN:LG	PREDEITY:Sarish	PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:Encalan]]	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Planes|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Sarish)|CL/2|PRECLASS:1,HC (Sarish)=4
-SUBCLASSLEVEL:1	BONUS:HD|MAX|2					BONUS:SKILL|Handle Animal,Ride|-2		ADD:VFEAT|TYPE=InnerDemon		ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency		AUTO:WEAPONPROF|TYPE.Martial
-SUBCLASS:Sea Lord		COST:0	NAMEISPI:YES	PREALIGN:LG,NG,CG	PREDEITY:Yarris	!PRERACE:1,Elorii,Dwarf,Ss'ressen	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.Geography)|TYPE.Local|TYPE.Nature|Listen|Move Silently|TYPE.Sea|Ride|Search|Spot|Survival|Swim|Use Rope	SPELLSTAT:WIS	BONUS:CASTERLEVEL|HC (Yarris)|CL/2|PRECLASS:1,HC (Yarris)=4
-SUBCLASSLEVEL:1						ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency	AUTO:WEAPONPROF|TYPE.Martial
+# Class Name		Product Identity?	Hit Dice	Type			Visible	Max Level	Subclass?		Source, Long Desc.				Automatic Languages	Combat bonus
+CLASS:Ex-Holy Champion	NAMEISPI:YES	HD:8		TYPE:Base.PC	VISIBLE:NO	MAXLEVEL:20	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	LANGAUTO:Literacy		BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Spell Stat		Spell Type
+CLASS:Ex-Holy Champion	SPELLSTAT:WIS	SPELLTYPE:Divine
+SUBCLASS:Philosophic Warrior	NAMEISPI:YES	COST:0	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4		BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	PREALIGN:LG,LN,LE	PREDEITY:1,Althares																											!PRERACE:1,Elorii,Dwarf,Ss'ressen																																																									CLASS:HC (Althares)	KNOWNSPELLS:LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4											STARTSKILLPTS:6
+SUBCLASSLEVEL:1																																										ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium),Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency																																											AUTO:WEAPONPROF|TYPE.Martial	CHANGEPROF:Altherian Flintlock (Pistol),Altherian Flintlock (Rifle)=Martial
+SUBCLASS:Bearer			NAMEISPI:YES	COST:0	SPELLSTAT:WIS				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	PREALIGN:LG		PREDEITY:1,Anshar																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|TYPE.Geography|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble																																							STARTSKILLPTS:4
+SUBCLASSLEVEL:1																																										ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike
+SUBCLASSLEVEL:2													BONUS:COMBAT|AC|max(CON,1)|TYPE=NaturalArmor|!PREEQUIP:1,TYPE=Armor										BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|2	ABILITY:FEAT|VIRTUAL|Monk AC
+SUBCLASS:Twelve Oaks		NAMEISPI:YES	COST:0							BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	PREALIGN:LG,NG,CG	PREDEITY:1,Belisarda																						PRERACE:1,Elorii														CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival																			SOURCEPAGE:p.77	BONUS:HD|MIN|2													LANGAUTO:Literacy	SOURCELONG:Player's Guide to Arcanis	STARTSKILLPTS:2
+SUBCLASSLEVEL:1																																										ABILITY:FEAT|AUTOMATIC|Martial Weapon Proficiency|All Martial Proficiencies|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																	SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Evil												AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Hospitaler		NAMEISPI:YES	COST:0							BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=2			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	PREALIGN:LN		PREDEITY:1,Beltine																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive																								SOURCEPAGE:p.79																LANGAUTO:Literacy	SOURCELONG:Player's Guide to Arcanis	STARTSKILLPTS:2
+SUBCLASSLEVEL:1					BONUS:CHECKS|Fortitude,Reflex,Will|max(CHA,0)																														ABILITY:FEAT|AUTOMATIC|Two Weapon Fighting|PREMULT:1,[PREEQUIPBOTH:1,Quarterstaff],[PREEQUIPTWOWEAPON:1,Mace (Light)]	ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																											AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Twilight Warrior	NAMEISPI:YES	COST:0																			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	PREALIGN:LN		PREDEITY:1,Cadic																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Balance|Bluff|Climb|Diplomacy|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Intimidate|Jump|TYPE.Religion|TYPE.Local|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Rope																													STARTSKILLPTS:6
+SUBCLASSLEVEL:1	VISION:Darkvision (60')																																						ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																			AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Blazing Wyrm		NAMEISPI:YES	COST:0	SPELLSTAT:WIS				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	PREALIGN:LG,LN	PREDEITY:1,Fire Dragon																						PRERACE:1,Ss'ressen							PRETEMPLATE:1,Black Talon|Ashen Hide	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|Jump|Knowledge (Geography:Ssethregore)|Knowledge (Nature:Ssethregore)|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Swim																																			STARTSKILLPTS:2
+SUBCLASSLEVEL:1																									BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Shield Proficiency|Tower Shield Proficiency																																							SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=CL|Detect Evil	AUTO:ARMORPROF|ARMORTYPE.Light|ARMORTYPE.Medium|ARMORTYPE.Heavy	AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Holy Judge		NAMEISPI:YES	COST:0	SPELLSTAT:WIS				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	PREALIGN:LG,LN,LE	PREDEITY:1,Nier																							PRERACE:1,Human,Val													CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nobility|TYPE.Religion|TYPE.Local|TYPE.Profession|Ride|Sense Motive																																																STARTSKILLPTS:2
+SUBCLASSLEVEL:1																									BONUS:HD|MAX|2															ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency																																															AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Verdant Champion	NAMEISPI:YES	COST:0	SPELLSTAT:WIS				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	PREALIGN:LN		PREDEITY:1,Saluwe																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Intimidate|TYPE.Nature|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Survival																																															STARTSKILLPTS:2
+SUBCLASSLEVEL:1																									BONUS:HD|MAX|2															ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																				AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Inner Demon		NAMEISPI:YES	COST:0	SPELLSTAT:WIS				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	PREALIGN:LG		PREDEITY:1,Sarish		PREMULT:1,[PRERACE:1,Val,Human,Dark-Kin,Half-Orc,Half-Hobgoblin,Gnome],[PREMULT:2,[PRERACE:1,Dwarf],[PRETEMPLATE:1,Encalan]]																	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|TYPE.Planes|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive																																																		STARTSKILLPTS:2
+SUBCLASSLEVEL:1																									BONUS:HD|MAX|2	BONUS:SKILL|Handle Animal,Ride|-2									ABILITY:FEAT|VIRTUAL|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																										ADD:VFEAT|TYPE=InnerDemon																						AUTO:WEAPONPROF|TYPE.Martial
+SUBCLASS:Sea Lord			NAMEISPI:YES	COST:0	SPELLSTAT:WIS				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	PREALIGN:LG,NG,CG	PREDEITY:1,Yarris																											!PRERACE:1,Elorii,Dwarf,Ss'ressen							CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.Geography)|TYPE.Local|TYPE.Nature|Listen|Move Silently|TYPE.Sea|Ride|Search|Spot|Survival|Swim|Use Rope																																											STARTSKILLPTS:6
+SUBCLASSLEVEL:1																																										ABILITY:FEAT|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency																																																			AUTO:WEAPONPROF|TYPE.Martial
