@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Mon Apr  7 16:57:55 2008 -- reformated by prettylst.pl v1.38 (build 5826)
+# CVS $Revision$ $Author$ -- Mon Apr 14 02:04:45 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 
 # per 2006-06-03 errata, added Research and Black Market skills to additional classes
 
@@ -49,14 +49,14 @@ SUBCLASS:Saluwe		COST:0	PREGENDER:FEMALE
 SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Simple Weapon Proficiency)	ABILITY:FEAT|AUTOMATIC|Track											CSKILL:TYPE.Nature|Survival|Swim																																																	SPELLLIST:CLASS|Cleric=2|Crushing Weight|Cleric=3|Battle Spines
 SUBCLASSLEVEL:4																										BONUS:VAR|RangerAnimalCompLVL|CL																																							ABILITY:FEAT|VIRTUAL|Arcanis Animal Companion|Ranger Animal Companion
 SUBCLASS:Sarish		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|VIRTUAL|Rebuke Undead																																																											ADD:LANGUAGE(TYPE=Infernal)1	AUTO:EQUIP|Dagger (Sarishan Steel)															SPELLLIST:CLASS|Cleric=2|My Master Allows|Cleric=5|Summon Thy Own (Lesser)|Cleric=7|Summon Thy Own|Cleric=9|Summon Thy Own (Greater)	SPELLLIST:Cleric=4|Oath|PRETEMPLATE:1,Mehan,HolrynMehan		!PROHIBITSPELL:SCHOOL.Conjuration	LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|VIRTUAL|Rebuke Undead																																																											ADD:LANGUAGE(TYPE=Infernal)1	AUTO:EQUIP|Dagger (Sarishan Steel)															SPELLLIST:CLASS|Cleric=2|My Master Allows|Cleric=5|Summon Thy Own (Lesser)|Cleric=7|Summon Thy Own|Cleric=9|Summon Thy Own (Greater)	SPELLLIST:Cleric=4|Oath|PRETEMPLATE:1,Mehan,HolrynMehan	!PROHIBITSPELL:SCHOOL.Conjuration	LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:3																																																																						ABILITY:FEAT|VIRTUAL|Magical Aptitude
 SUBCLASSLEVEL:10	SAB:Mark of My Brother
 SUBCLASS:Yarris		COST:0
 SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)																CSKILL:TYPE.Nature|Survival|Swim						ADD:VFEAT|TYPE=TurnYarrisGood																									AUTO:WEAPONPROF|Trident											SPELLLIST:CLASS|Cleric=3|Saltburst,Water Stride|Cleric=4|Like Water																												LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:2	SAB:Affected by Endure Elements when within 1 mile of any large body of water.
 SUBCLASSLEVEL:3	SAB:Wild Empathy (Ex) (Water Only)																																																							BONUS:SKILL|Profession (Navigator),Survival,Swim|2
-1	BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack	BONUS:VAR|ChannelLevelBase|CL-3	BONUS:VAR|ChannelDamagePlusBase|CL-3	BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack	ABILITY:FEAT|AUTOMATIC|Basic Channeling|Channeling
+1	BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack	BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack	ABILITY:FEAT|AUTOMATIC|Basic Channeling|Channeling
 1	BONUS:VAR|ChannelLevelBase|CL-3|PREDEITY:1,Althares,Cadic,Fire Dragon,Larissa,Sarish
 1	BONUS:VAR|ChannelLevelBase|CL-2|PREDEITY:1,Hurrian,Yarris
 # Belisarda chg per errata 2006-06-03
@@ -176,7 +176,7 @@ CLASS:Rogue.MOD	AUTO:WEAPONPROF|Saber
 # Class Name	Class Skill
 CLASS:Rogue.MOD	CSKILL:Black Market|TYPE.Local
 
-# Class Name		Required Gender			Required Race			Prohibited Race
+# Class Name		Required Gender				Required Race			Prohibited Race
 CLASS:Sorcerer.MOD	PREGENDER:M|PRERACE:1,Ss'ressen	PRERACE:1,[Half-Hobgoblin]	!PRERACE:1,Human
 # Class Name		Class Skill
 CLASS:Sorcerer.MOD	CSKILL:TYPE.Arcana
@@ -186,7 +186,9 @@ CLASS:Sorcerer.MOD	CSKILL:TYPE.Arcana
 # Class Name	Bonus Languages
 CLASS:Wizard	LANGBONUS:.CLEAR
 # Class Name	Required Gender
-CLASS:Wizard	PREGENDER:M|PRERACE:1,Ss'ressen	CSKILL:Research|TYPE.Knowledge
+CLASS:Wizard	PREGENDER:M|PRERACE:1,Ss'ressen
+# Class Name	Class Skill
+CLASS:Wizard	CSKILL:Research|TYPE.Knowledge
 1	ABILITY:FEAT|VIRTUAL|.CLEAR.Summon Familiar
 1	ABILITY:FEAT|VIRTUAL|Arcanis Familiar
 

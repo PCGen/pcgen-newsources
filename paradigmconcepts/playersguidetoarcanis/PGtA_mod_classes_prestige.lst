@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Wed Apr  2 14:10:13 2008 -- reformated by prettylst.pl v1.38 (build 5580)
+# CVS $Revision$ $Author$ -- Mon Apr 14 02:04:45 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 
 # per 2006-06-03 errata, added Research and Black Market to additional classes as cskill
 
@@ -10,6 +10,7 @@ CLASS:Arcane Archer.MOD	PRERACE:1,Elorii
 # Class Name		Maximum Level
 CLASS:Aristocrat.MOD	PRELEVELMAX:1
 
+# Class Name		Class Skill
 CLASS:Assassin.MOD	CSKILL:Black Market
 
 # Class Name
@@ -17,7 +18,7 @@ CLASS:Blackguard.MOD
 ###Block: Servants Servant (Infernal)
 9	BONUS:VAR|ISLevel|CL	ABILITY:FEAT|VIRTUAL|Infernal Servant|PRECLASS:1,Order of the Inner Demon
 
-# Class Name			Clear Prereq.	Prohibited Race		Required Skill				Req. Casting Type								Prohibited Template
+# Class Name			Clear Prereq.	Prohibited Race		Required Skill				PRESPELLCAST								Prohibited Template
 CLASS:Dragon Disciple.MOD	PRE:.CLEAR		!PRERACE:1,TYPE=Dragon	PRESKILL:1,Knowledge (Arcana)=8	PRESPELLCAST:MEMORIZE=NO	PRESPELLCAST:TYPE.Arcane	!PRETEMPLATE:1,Half Dragon
 
 # Class Name			Required Template
@@ -25,7 +26,7 @@ CLASS:Eldritch Knight.MOD	PRETEMPLATE:1,Hawk,Shield
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page					Save checks bonus											Combat bonus
 CLASS:Hierophant	HD:8		TYPE:PC.Prestige	ABB:Hie		MAXLEVEL:5	SOURCEPAGE:prestigeclasses.rtf	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
-# Class Name	Required Feat			Multiple Requirements											Prohibited Race		Required Skill			Req. Spell Type
+# Class Name	Required Feat			Multiple Requirements												Prohibited Race		Required Skill			Req. Spell Type
 CLASS:Hierophant	PREFEAT:1,TYPE=Metamagic	PREMULT:1,[!PREDEITY:1,Belisarda],[PREMULT:2,[PREDEITY:1,Belisarda],[PRERACE:1,Elorii]]	!PRERACE:1,Dwarf,Gnome	PRESKILL:1,TYPE.Religion=15	PRESPELLTYPE:1,Divine=7
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Hierophant	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|Knowledge (Arcana)|TYPE.Religion|TYPE.Profession|Spellcraft
@@ -35,6 +36,7 @@ CLASS:Hierophant	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|
 4	ADD:SPELLCASTER|1|Divine	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=Hierophant,TYPE=Metamagic
 5	ADD:SPELLCASTER|1|Divine	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=Hierophant,TYPE=Metamagic
 
+# Class Name		Class Skill
 CLASS:Loremaster.MOD	CSKILL:Research
 
 # Class Name		Required Deity
