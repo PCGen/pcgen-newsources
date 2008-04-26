@@ -119,30 +119,32 @@ Flame Strike		TYPE:ClassFeature	VISIBLE:NO	SAB:Flame Strike																DEFIN
 ## Gnoll Abilities
 ##
 
-###Block: The Returned Class Abilities
+###Block: The Returned Class Abilities (Demon in Form needs to have NATURALWEAPON tag added to cover the appropriate natural weapons.)
 # Feat Name			Type			Visible	Special ABility			Define
 Demons Heart		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon's Heart
 Demons Mark			TYPE:ClassFeature	VISIBLE:NO	SAB:Demon's Mark
-Unholy Glory		TYPE:ClassFeature	VISIBLE:NO	SAB:Unholy Glory			DEFINE:UGBonus|0
+Unholy Glory		TYPE:ClassFeature	VISIBLE:NO	SAB:Unholy Glory			DEFINE:UGBonus|0		BONUS:STAT|CHA|UGBonus
 Forbidden Lore		TYPE:ClassFeature	VISIBLE:NO	SAB:Forbidden Lore
 Surrender the Soul	TYPE:ClassFeature	VISIBLE:NO	SAB:Surrender the Soul
-Sense of the Outsider	TYPE:ClassFeature	VISIBLE:NO	SAB:Sense of the Outsider
-Demon in Form		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Form
+Sense Outsider	TYPE:ClassFeature	VISIBLE:NO	SAB:Sense Outsider
+# Natural attacks need to be added to Demon in Form. Horns, Spikes and talons that act as +2 Unholy Claws.
+Demon in Form		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Form									BONUS:STAT|CHA|-6
 Demon in Fact		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Fact
 
 ##
 ## Goblin Abilities
 ##
 
-###Block: Exemplar Class Abilities
-# Feat Name			Output Name					Type			Visible	Special ABility			Stackable?	Multiple?
-Strength of Purpose							TYPE:ClassFeature	VISIBLE:NO	SAB:Strength of Purpose		STACK:NO	MULT:NO
-Divine Wrath								TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Wrath			STACK:NO	MULT:NO
-Enlightened Madness							TYPE:ClassFeature	VISIBLE:NO	SAB:Enlightened Madness		STACK:NO	MULT:NO
-Scorn the Heretic								TYPE:ClassFeature	VISIBLE:NO	SAB:Scorn The Heretic		STACK:NO	MULT:NO
-Divine Grace								TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Grace			STACK:NO	MULT:NO
-Departure									TYPE:ClassFeature	VISIBLE:NO	SAB:Departure			STACK:NO	MULT:NO
-Exemplar Revealed		OUTPUTNAME:The Exemplar Revealed	TYPE:ClassFeature	VISIBLE:NO	SAB:The Exemplar Reaevled	STACK:NO	MULT:NO
+###Block: Exemplar Class Abilities (Complete. SofP needs code work so the domains can be removed and domain spell slots added.)
+# Feat Name				Type				Visible		Special ABility
+# Strength of Purpose removes all bu the aligned domain that the Examplar has access to. This is not currently possible.
+Strength of Purpose		TYPE:ClassFeature	VISIBLE:NO	SAB:Strength of Purpose			BONUS:CASTERLEVEL|DOMAIN.%LIST		CHOOSE:DOMAIN|PC
+Divine Wrath			TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Wrath - All weapons act as magical weapons with a bonus of +% against Outsiders of opposing alignment.|var("CLASSLEVEL=Exemplar")/2|!PRECLASS:1,Exemplar=5			SAB:Divine Wrath - All weapons act as magical weapons with a bonus of +% against Outsiders and spellcasters of opposing alignment|var("CLASSLEVEL=Exemplar")/2|PRECLASS:1,Exemplar=5
+Enlightened Madness		TYPE:ClassFeature	VISIBLE:NO	SAB:Enlightened Madness
+Scorn the Heretic		TYPE:ClassFeature	VISIBLE:NO	SAB:Scorn The Heretic
+Divine Grace			TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Grace
+Departure				TYPE:ClassFeature	VISIBLE:NO	SAB:Departure
+Exemplar Revealed		TYPE:ClassFeature	VISIBLE:NO	SAB:The Exemplar Reaevled
 
 ##
 ## Hobgoblin Abilities
