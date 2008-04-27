@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Sun Apr  6 22:56:20 2008 -- reformated by prettylst.pl v1.38 (build 5225)
+# CVS $Revision$ $Author$ -- Sun Apr 27 15:22:02 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 SOURCELONG:Gods	SOURCESHORT:Gods	SOURCEWEB:http://alderac.com/d20	SOURCEDATE:2002-05
 
 #
@@ -165,22 +165,22 @@ CLASS:Karhollan Guard	STARTSKILLPTS:2	CSKILL:Climb|Craft (Stoneworking)|Diplomac
 
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus					Combat bonus
 CLASS:The Returned	HD:8		TYPE:PC.Prestige	ABB:Rtnd		MAXLEVEL:10	SOURCEPAGE:pg.50	BONUS:CHECKS|Fortitude,Reflex|CL/2+2	BONUS:COMBAT|BAB|
-# Class Name		Restricted AL	Req. Att.	!PRECHECK			Required Text
+# Class Name		Required AL					Req. Att.	!PRECHECK			Required Text
 CLASS:The Returned	PREALIGN:LN,LE,NG,TN,NE,CG,CN,CE	PREATT:4	!PRECHECK:1,Will=6	PRETEXT:The character must be a hero to a group of people and must undergo blasphemous rites. See text.
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:The Returned	STARTSKILLPTS:3	CSKILL:Bluff|Climb|Concentration|Diplomacy|Intimidate|Jump|Knowledge (Arcana)|Listen|Spellcraft|Swim
 ###Block: Class Features
 ###Block: Normal Progression
-1					AUTO:FEAT|Demons Heart|Demons Mark
-2	BONUS:VAR|UGBonus|2	AUTO:FEAT|Unholy Glory		VFEAT:Leadership
-3	BONUS:VAR|FMLevel|CL	AUTO:FEAT|Summon Familiar
-4					AUTO:FEAT|Forbidden Lore
-5	BONUS:VAR|UGBonus|2		BONUS:VAR|LeadershipScore|1
-6					AUTO:FEAT|Surrender the Soul
-7					AUTO:FEAT|Sense Outsider
-8	BONUS:VAR|UGBonus|2		BONUS:VAR|LeadershipScore|1
-9					AUTO:FEAT|Demon in Form
-10					AUTO:FEAT|Demon in Fact
+1													AUTO:FEAT|Demons Heart|Demons Mark
+2	BONUS:VAR|UGBonus|2						VFEAT:Leadership	AUTO:FEAT|Unholy Glory
+3	BONUS:VAR|FMLevel|CL									AUTO:FEAT|Summon Familiar
+4													AUTO:FEAT|Forbidden Lore
+5	BONUS:VAR|UGBonus|2	BONUS:VAR|LeadershipScore|1
+6													AUTO:FEAT|Surrender the Soul
+7													AUTO:FEAT|Sense Outsider
+8	BONUS:VAR|UGBonus|2	BONUS:VAR|LeadershipScore|1
+9													AUTO:FEAT|Demon in Form
+10													AUTO:FEAT|Demon in Fact
 
 #
 # Goblin Prestige Classes
@@ -197,26 +197,26 @@ CLASS:Exemplar	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|Intimidate|K
 ###Block: Class Features
 1	CHOOSE:WEAPONPROF|1|DEITYWEAPON
 ###Block: Normal Progression
-1						ADD:SPELLCASTER|Divine	AUTO:FEAT|Strength of Purpose		VFEAT:Leadership
-2						ADD:SPELLCASTER|Divine	AUTO:FEAT|Divine Wrath
-3	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine	AUTO:FEAT|Leadership
-4						ADD:SPELLCASTER|Divine	AUTO:FEAT|Enlightened Madness
+1						ADD:SPELLCASTER|Divine	VFEAT:Leadership	AUTO:FEAT|Strength of Purpose
+2						ADD:SPELLCASTER|Divine				AUTO:FEAT|Divine Wrath
+3	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine				AUTO:FEAT|Leadership
+4						ADD:SPELLCASTER|Divine				AUTO:FEAT|Enlightened Madness
 5						ADD:SPELLCASTER|Divine
-6	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine	AUTO:FEAT|Scorn the Heretic
-7						ADD:SPELLCASTER|Divine	AUTO:FEAT|Divine Grace
-8						ADD:SPELLCASTER|Divine	AUTO:FEAT|Departure
+6	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine				AUTO:FEAT|Scorn the Heretic
+7						ADD:SPELLCASTER|Divine				AUTO:FEAT|Divine Grace
+8						ADD:SPELLCASTER|Divine				AUTO:FEAT|Departure
 9	BONUS:VAR|LeadershipScore|1	ADD:SPELLCASTER|Divine
-10						ADD:SPELLCASTER|Divine	AUTO:FEAT|Exemplar Revealed
+10						ADD:SPELLCASTER|Divine				AUTO:FEAT|Exemplar Revealed
 
 #Class:Ex-Exemplar (Complete)
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
-CLASS:Ex Exemplar	HD:8		TYPE:PC.Prestige	ABB:ExEx	MAXLEVEL:10	SOURCEPAGE:pg.58	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL-1
-# Class Name	Required AL			Required Check Base	Required Domain				Required Feat		Required Race	Required Text
-CLASS:Ex Exemplar			PRECHECKBASE:1,Will=5	PREDOMAIN:1,Chaos,Law,Good,Law	PREFEAT:1,Iron Will	PRERACE:1,Goblin	PRETEXT:Character must make contact with a direct servant of their deity, their deity, or a powerful (CR IS+) Outsider of their chosen domain, and convince this other entity to support them to the exemplary prestige class.
+CLASS:Ex Exemplar	HD:8		TYPE:PC.Prestige	ABB:ExEx		MAXLEVEL:10	SOURCEPAGE:pg.58	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL-1
+# Class Name	Required Check Base	Required Domain				Required Feat		Required Race	Required Text
+CLASS:Ex Exemplar	PRECHECKBASE:1,Will=5	PREDOMAIN:1,Chaos,Law,Good,Law	PREFEAT:1,Iron Will	PRERACE:1,Goblin	PRETEXT:Character must make contact with a direct servant of their deity, their deity, or a powerful (CR IS+) Outsider of their chosen domain, and convince this other entity to support them to the exemplary prestige class.
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Ex Exemplar	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|Intimidate|Knowledge (Religion)|Perform|Scry|Spellcraft
-###Block: 
+###Block:
 
 #
 # Hobgoblin Prestige Classes

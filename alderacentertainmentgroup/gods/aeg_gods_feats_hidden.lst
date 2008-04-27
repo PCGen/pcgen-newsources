@@ -1,14 +1,14 @@
-# CVS $Revision$ $Author$ -- Sun Apr  6 23:06:56 2008 -- reformated by prettylst.pl v1.38 (build 5225)
+# CVS $Revision$ $Author$ -- Sun Apr 27 15:37:41 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 SOURCELONG:Gods	SOURCESHORT:Gods	SOURCEWEB:http://alderac.com/d20	SOURCEDATE:2002-05
 
 ###Block: Weapon Proficiencies
 # Feat Name				Type			Visible	Automaticaly Gained Weapon Prof.
 Slaver Weapon Proficiencies	TYPE:ClassFeature	VISIBLE:NO	AUTO:WEAPONPROF|Sap|Whip
 
-# Hidden Abilities
-# Feat Name			Output Name				Type						Visible	Special ABility																						Define
-Woodlands Stride		OUTPUTNAME:Woodland Stride	TYPE:ClassFeature				VISIBLE:NO	SAB:Woodland Stride
-AEG Trackless Step	OUTPUTNAME:Trackless Step	TYPE:ClassFeature				VISIBLE:NO	SAB:Trackless Step
+###Block: Hidden Abilities
+# Feat Name			Output Name				Type			Visible	Special ABility
+Woodlands Stride		OUTPUTNAME:Woodland Stride	TYPE:ClassFeature	VISIBLE:NO	SAB:Woodland Stride
+AEG Trackless Step	OUTPUTNAME:Trackless Step	TYPE:ClassFeature	VISIBLE:NO	SAB:Trackless Step
 
 ##
 ## Barbarian abilities (QC'd)
@@ -118,15 +118,15 @@ Flame Strike		TYPE:ClassFeature	VISIBLE:NO	SAB:Flame Strike																DEFIN
 ##
 
 ###Block: The Returned Class Abilities (Demon in Form needs to have NATURALWEAPON tag added to cover the appropriate natural weapons.)
-# Feat Name			Type			Visible	Special ABility			Define
+# Feat Name			Type			Visible	Special ABility		Define		Stat bonus
 Demons Heart		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon's Heart
 Demons Mark			TYPE:ClassFeature	VISIBLE:NO	SAB:Demon's Mark
-Unholy Glory		TYPE:ClassFeature	VISIBLE:NO	SAB:Unholy Glory			DEFINE:UGBonus|0		BONUS:STAT|CHA|UGBonus
+Unholy Glory		TYPE:ClassFeature	VISIBLE:NO	SAB:Unholy Glory		DEFINE:UGBonus|0	BONUS:STAT|CHA|UGBonus
 Forbidden Lore		TYPE:ClassFeature	VISIBLE:NO	SAB:Forbidden Lore
 Surrender the Soul	TYPE:ClassFeature	VISIBLE:NO	SAB:Surrender the Soul
-Sense Outsider	TYPE:ClassFeature	VISIBLE:NO	SAB:Sense Outsider
+Sense Outsider		TYPE:ClassFeature	VISIBLE:NO	SAB:Sense Outsider
 # Natural attacks need to be added to Demon in Form. Horns, Spikes and talons that act as +2 Unholy Claws.
-Demon in Form		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Form									BONUS:STAT|CHA|-6
+Demon in Form		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Form					BONUS:STAT|CHA|-6
 Demon in Fact		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Fact
 
 ##
@@ -136,12 +136,13 @@ Demon in Fact		TYPE:ClassFeature	VISIBLE:NO	SAB:Demon in Fact
 ###Block: Exemplar Class Abilities (Complete. SofP needs code work so the domains can be removed and domain spell slots added.)
 # Feat Name				Type				Visible		Special ABility
 # Strength of Purpose removes all bu the aligned domain that the Examplar has access to. This is not currently possible.
-Strength of Purpose		TYPE:ClassFeature	VISIBLE:NO	SAB:Strength of Purpose			BONUS:CASTERLEVEL|DOMAIN.%LIST		CHOOSE:DOMAIN|PC
-Divine Wrath			TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Wrath - All weapons act as magical weapons with a bonus of +% against Outsiders of opposing alignment.|var("CLASSLEVEL=Exemplar")/2|!PRECLASS:1,Exemplar=5			SAB:Divine Wrath - All weapons act as magical weapons with a bonus of +% against Outsiders and spellcasters of opposing alignment|var("CLASSLEVEL=Exemplar")/2|PRECLASS:1,Exemplar=5
-Enlightened Madness		TYPE:ClassFeature	VISIBLE:NO	SAB:Enlightened Madness
+# Feat Name			Type			Visible	Special ABility																																																									Stackable?	Multiple?	Choose		Caster level
+Strength of Purpose	TYPE:ClassFeature	VISIBLE:NO	SAB:Strength of Purpose																																																								STACK:NO	MULT:YES	CHOOSE:DOMAIN|PC	BONUS:CASTERLEVEL|DOMAIN.%LIST
+Divine Wrath		TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Wrath - All weapons act as magical weapons with a bonus of +% against Outsiders of opposing alignment.|var("CLASSLEVEL=Exemplar")/2|!PRECLASS:1,Exemplar=5	SAB:Divine Wrath - All weapons act as magical weapons with a bonus of +% against Outsiders and spellcasters of opposing alignment|var("CLASSLEVEL=Exemplar")/2|PRECLASS:1,Exemplar=5
+Enlightened Madness	TYPE:ClassFeature	VISIBLE:NO	SAB:Enlightened Madness
 Scorn the Heretic		TYPE:ClassFeature	VISIBLE:NO	SAB:Scorn The Heretic
-Divine Grace			TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Grace
-Departure				TYPE:ClassFeature	VISIBLE:NO	SAB:Departure
+Divine Grace		TYPE:ClassFeature	VISIBLE:NO	SAB:Divine Grace
+Departure			TYPE:ClassFeature	VISIBLE:NO	SAB:Departure
 Exemplar Revealed		TYPE:ClassFeature	VISIBLE:NO	SAB:The Exemplar Reaevled
 
 ##
@@ -164,7 +165,7 @@ Eternitys Humble Offerings	TYPE:ClassFeature	VISIBLE:NO	SAB:Eternity's Humble Of
 
 ###Block: Humanoid Hunter Class Abilities (Complete)
 # Feat Name		Type			Visible	Special ABility																												Define													Stackable?	Multiple?	Modify VAR
-Smite Humanoid	TYPE:ClassFeature	VISIBLE:NO	SAB:Smite Humanoid - may smite a humanoid with one normal melee attack % times/day with a % bonus to hit and % bonus to damage|HHSmiteTimes|HHSmiteToHitBonus|HHSmiteDamageBonus	DEFINE:HHSmiteTimes|0	DEFINE:HHSmiteToHitBonus|0	DEFINE:HHSmiteDamageBonus|0		BONUS:VAR|HHSmiteTimes|1	BONUS:VAR|HHSmiteTimes|1|PRECLASS:1,Humanoid Hunter=8	BONUS:VAR|HHSmiteToHitBonus|if(INT>=0,INT,0)	BONUS:VAR|HHSmiteDamageBonus|var("CLASSLEVEL=Humanoid Hunter")
+Smite Humanoid	TYPE:ClassFeature	VISIBLE:NO	SAB:Smite Humanoid - may smite a humanoid with one normal melee attack % times/day with a % bonus to hit and % bonus to damage|HHSmiteTimes|HHSmiteToHitBonus|HHSmiteDamageBonus	DEFINE:HHSmiteTimes|0	DEFINE:HHSmiteToHitBonus|0	DEFINE:HHSmiteDamageBonus|0					BONUS:VAR|HHSmiteTimes|1	BONUS:VAR|HHSmiteTimes|1|PRECLASS:1,Humanoid Hunter=8	BONUS:VAR|HHSmiteToHitBonus|if(INT>=0,INT,0)	BONUS:VAR|HHSmiteDamageBonus|var("CLASSLEVEL=Humanoid Hunter")
 Hide the Beast	TYPE:ClassFeature	VISIBLE:NO	SAB:Hide the Beast (Su)
 Death Blow		TYPE:ClassFeature	VISIBLE:NO	SAB:Death Blow																																										STACK:NO	MULT:NO
 
