@@ -186,7 +186,7 @@ CLASS:The Returned	STARTSKILLPTS:3	CSKILL:Bluff|Climb|Concentration|Diplomacy|In
 # Goblin Prestige Classes
 #
 
-#Class:Exemplar (Complete except for SofP Class Feature which requires code work.)
+#Class:Exemplar (Complete except for 'Strength of Purpose' Class Feature which requires code work.)
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus								Combat bonus
 CLASS:Exemplar	HD:8		TYPE:PC.Prestige	ABB:Explr		MAXLEVEL:10	SOURCEPAGE:pg.58	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Will|CL/3	BONUS:COMBAT|BAB|CL-1
@@ -245,10 +245,10 @@ CLASS:Servants of the One	STARTSKILLPTS:4	CSKILL:Bluff|Concentration|Diplomacy|G
 10	AUTO:FEAT|Eternitys Humble Offerings
 
 #
-# Impossible Things Prestige Classes
+# Impossible Things Prestige Classes (QC'd)
 #
 
-#Class:Humanoid Hunter
+#Class:Humanoid Hunter (Complete)
 
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus									Combat bonus
 CLASS:Humanoid Hunter	HD:10		TYPE:PC.Prestige	ABB:HdHnt		MAXLEVEL:10	SOURCEPAGE:pg.73	BONUS:CHECKS|Fortitude,Will|CL/2+2	BONUS:CHECKS|Reflex|CL/3	BONUS:COMBAT|BAB|CL
@@ -262,11 +262,11 @@ CLASS:Humanoid Hunter	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Hide|Jump|Knowledge (Hum
 ###Block: Humanoid Hunter Class Features
 1:REPEATLEVEL:2		ADD:FEAT|TYPE=Fighter
 ###Block: Favored Enemy
-1	BONUS:VAR|HHFavoredEnemies|CL	AUTO:FEAT|HH Favored Enemy
+1:REPEATLEVEL:1		ADD:ABILITY|1|Special Ability|AUTOMATIC|HHFavored Enemy
 ###Block: Normal Progression
-2	AUTO:FEAT|Smite Humanoid
-6	AUTO:FEAT|Hide the Beast
-10	AUTO:FEAT|Death Blow
+2	ABILITY:FEAT|AUTOMATIC|Smite Humanoid
+6	ABILITY:FEAT|AUTOMATIC|Hide the Beast
+10	ABILITY:FEAT|AUTOMATIC|Death Blow
 
 #
 # Kobold Prestige Classes

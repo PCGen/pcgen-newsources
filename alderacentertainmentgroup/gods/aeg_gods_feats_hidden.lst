@@ -6,9 +6,7 @@ SOURCELONG:Gods	SOURCESHORT:Gods	SOURCEWEB:http://alderac.com/d20	SOURCEDATE:200
 Slaver Weapon Proficiencies	TYPE:ClassFeature	VISIBLE:NO	AUTO:WEAPONPROF|Sap|Whip
 
 # Hidden Abilities
-###Block: Rebuke Giants table isn't showing up on the OS.
 # Feat Name			Output Name				Type						Visible	Special ABility																						Define
-Rebuke Giants							TYPE:Special.Turning.TurnGiant	VISIBLE:NO	SAB:Rebuke Giant (Su) %/day (turn level %) (turn damage %d%+%)|TurnTimesGiant|TurnLevelGiant|TurnDiceGiant|TurnDieSizeGiant|TurnDamagePlusGiant	DEFINE:TurnTimesGiant|TurnTimesBase	DEFINE:TurnLevelGiant|TurnLevelBase	DEFINE:TurnDiceGiant|TurnDiceBase	DEFINE:TurnDieSizeGiant|TurnDieSizeBase	DEFINE:TurnDamagePlusGiant|TurnDamagePlusBase	DEFINE:TurnCheckGiant|TurnCheckBase
 Woodlands Stride		OUTPUTNAME:Woodland Stride	TYPE:ClassFeature				VISIBLE:NO	SAB:Woodland Stride
 AEG Trackless Step	OUTPUTNAME:Trackless Step	TYPE:ClassFeature				VISIBLE:NO	SAB:Trackless Step
 
@@ -164,11 +162,10 @@ Eternitys Humble Offerings	TYPE:ClassFeature	VISIBLE:NO	SAB:Eternity's Humble Of
 ## Impossible Things Abilities
 ##
 
-###Block: Humanoid Hunter Class Abilities
+###Block: Humanoid Hunter Class Abilities (Complete)
 # Feat Name		Type			Visible	Special ABility																												Define													Stackable?	Multiple?	Modify VAR
-HH Favored Enemy	TYPE:Internal	VISIBLE:NO																															DEFINE:HHFavoredEnemies|0
-Smite Humanoid	TYPE:ClassFeature	VISIBLE:NO	SAB:Smite Humanoid - may smite a humanoid with one normal melee attack %1 times/day with a %2 bonus to hit and %3 bonus to damage|HHSmiteTimes|HHSmiteToHitBonus|HHSmiteDamageBonus	DEFINE:HHSmiteTimes|0	DEFINE:HHSmiteToHitBonus|0	DEFINE:HHSmiteDamageBonus|0	STACK:NO	MULT:NO	BONUS:VAR|HHSmiteTimes|1	BONUS:VAR|HHSmiteTimes|1|PRECLASS:1,Humanoid Hunter=8	BONUS:VAR|HHSmiteToHitBonus|if(INT>=0,INT,0)	BONUS:VAR|HHSmiteDamageBonus|CL
-Hide the Beast	TYPE:ClassFeature	VISIBLE:NO	SAB:Hide the Beast (Su)																																									STACK:NO	MULT:NO
+Smite Humanoid	TYPE:ClassFeature	VISIBLE:NO	SAB:Smite Humanoid - may smite a humanoid with one normal melee attack % times/day with a % bonus to hit and % bonus to damage|HHSmiteTimes|HHSmiteToHitBonus|HHSmiteDamageBonus	DEFINE:HHSmiteTimes|0	DEFINE:HHSmiteToHitBonus|0	DEFINE:HHSmiteDamageBonus|0		BONUS:VAR|HHSmiteTimes|1	BONUS:VAR|HHSmiteTimes|1|PRECLASS:1,Humanoid Hunter=8	BONUS:VAR|HHSmiteToHitBonus|if(INT>=0,INT,0)	BONUS:VAR|HHSmiteDamageBonus|var("CLASSLEVEL=Humanoid Hunter")
+Hide the Beast	TYPE:ClassFeature	VISIBLE:NO	SAB:Hide the Beast (Su)
 Death Blow		TYPE:ClassFeature	VISIBLE:NO	SAB:Death Blow																																										STACK:NO	MULT:NO
 
 ##
