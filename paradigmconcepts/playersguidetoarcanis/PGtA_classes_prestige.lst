@@ -410,7 +410,7 @@ CLASS:Order of the Still Heart	NAMEISPI:YES	HD:8		TYPE:PC.Prestige.PC	ABB:OotSH	
 CLASS:Order of the Still Heart	PREATT:4	PREDEITY:1,Neroth	PREFEAT:1,Iron Will	PRESKILL:2,Concentration,TYPE.Religion=8	PRETEXT:Must be a member of the Order in good standing and must pass the tests and perform the necromantic rituals necessary to gain admittance.
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Still Heart	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.History|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
-1									ABILITY:FEAT|VIRTUAL|ThePathTaken	ABILITY:FEAT|Toughness
+1									ABILITY:FEAT|VIRTUAL|ThePathTaken	ABILITY:FEAT|AUTOMATIC|Toughness
 2					ADD:SPELLCASTER|ANY	ABILITY:FEAT|VIRTUAL|MorbidityOSH|Tireless|LureofDarkness
 3									ABILITY:FEAT|AUTOMATIC|Improved Toughness|MyKinFeedElsewhere
 4	SAB:Fast Healing (Ex) 2	ADD:SPELLCASTER|ANY
@@ -475,7 +475,9 @@ CLASS:Sarishan Binder	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:SBndr		MAXLEVEL:10
 CLASS:Sarishan Binder	PREALIGN:LG,LN,LE	PREDEITY:1,Sarish	PREFEAT:2,Alien Understanding,Greater Spell Focus(Conjuration)	PRESKILL:2,TYPE.Religion,TYPE.Planes=13	PRESPELL:1,Dismissal
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Sarishan Binder	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.Local|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
-1	DOMAIN:Binding	SAB:Focused Turning (Su)							DEFINE:FocusTurn|1					ABILITY:FEAT|AUTOMATIC|Basic Channeling|Channeling|Turn Infernal|Rebuke Infernal
+1	BONUS:VAR|TurnLevelBase|CL-3
+1	BONUS:ABILITYPOOL|Turn Infernal|1|TYPE=ClassAbility	BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL|TYPE=Level.REPLACE	ABILITY:Special Ability|AUTOMATIC|Basic Turning	AUTO:FEAT|Binder Turning
+1	DOMAIN:Binding	SAB:Focused Turning (Su)							DEFINE:FocusTurn|1
 2				SAB:The Sigil of Sarish (Su)											ADD:SPELLCASTER|1|ANY
 3				SAB:Sigil of My Brother (Su)	SAB:Presense of the Infernal (Sp)					ADD:SPELLCASTER|1|ANY
 4				SAB:Infernal Guide (Ex)												ADD:SPELLCASTER|1|ANY

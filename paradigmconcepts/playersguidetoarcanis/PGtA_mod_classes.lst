@@ -11,71 +11,73 @@ CLASS:Barbarian.MOD	LANGAUTO:Literacy|PREREGION:Elorii Nations,Dwarven Enclaves,
 CLASS:Bard.MOD	CSKILL:Black Market|Research
 
 # Class Name
-# Errata 2006-06-03 applied cleric lang bonus
+# Errata 2006-06-03 applied to cleric
 
 # Class Name	Subclass?		Source, Long Desc.				Bonus Languages
 CLASS:Cleric.MOD	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	LANGBONUS:Celestial,Infernal
-# Class Name	Class Skill
-CLASS:Cleric.MOD	CSKILL:TYPE.Arcana|TYPE.History|TYPE.Religion|TYPE.Planes|Research
-SUBCLASS:Althares		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:Racial Ability|VIRTUAL|Walk the Path of the Stars	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Flintlock (Pistol))										CSKILL:.CLEAR.Survival																																																							SPELLLIST:CLASS|Cleric=2|Discern Value,Epiphany,Summon Tome																														LANGAUTO:Ancient Altharin(Imperial)
+# Class Name	Class Skill											Required Deity
+CLASS:Cleric.MOD	CSKILL:TYPE.Arcana|TYPE.History|TYPE.Religion|TYPE.Planes|Research	PREDEITY:1,Y
+SUBCLASS:Althares		COST:0	PREDEITY:1,Althares
+SUBCLASSLEVEL:1																																																																						ABILITY:Racial Ability|VIRTUAL|Walk the Path of the Stars	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Flintlock (Pistol))										CSKILL:.CLEAR.Survival																																																							SPELLLEVEL:CLASS|Cleric=2|Discern Value,Epiphany,Summon Tome																														LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:5																										BONUS:VAR|BardicKnowledgeLevel|((CL=Althares)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel																												ABILITY:FEAT|VIRTUAL|Bardic Knowledge|Knowledge of the Ages
-SUBCLASS:Anshar		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike																																																																								SPELLLIST:CLASS|Cleric=2|Sticks to Snakes|Cleric=4|Share My Pain																													LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Anshar		COST:0	PREDEITY:1,Anshar
+SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|VIRTUAL|Improved Unarmed Strike																																																																								SPELLLEVEL:CLASS|Cleric=2|Sticks to Snakes|Cleric=4|Share My Pain																													LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:3																																																																						ABILITY:FEAT|AUTOMATIC|Endurance
 SUBCLASSLEVEL:9																																																																						ABILITY:FEAT|AUTOMATIC|Dieheard
-SUBCLASS:Belisarda	COST:0
+SUBCLASS:Belisarda	COST:0	PREDEITY:1,Belisarda
 SUBCLASSLEVEL:1																																																																																																									CSKILL:TYPE.Geography|TYPE.Nature|Survival
-SUBCLASS:Beltine		COST:0
-SUBCLASSLEVEL:1																																																																																																																				ADD:VFEAT|TYPE=TurnNerothGood	ADD:VFEAT|TYPE=TurnBeltineGood																																	SPELLLIST:CLASS|Cleric=2|Glimpse of the Cauldron,Hold the Spirit|Cleric=9|Cry For Spirit's Release																							LANGAUTO:Ancient Altharin(Imperial)
-SUBCLASS:Cadic		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Crossbow (Hand))					CSKILL:Hide|Move Silently|TYPE.Perform|Sleight of Hand|Tumble	ADD:VFEAT|TYPE=TurnCadicGood																									AUTO:WEAPONPROF|Rapier|Sword (Short)|Shortbow							SPELLLIST:CLASS|Cleric=2|Songs in the Night|Cleric=3|Shadow Stride|Cleric=4|Not Where You Think																								LANGAUTO:Ancient Altharin(Imperial)	PROHIBITSPELL:DESCRIPTOR.Light	PROHIBITSPELL:SPELL|Searing Light|Sunbeam|Sunburst
+SUBCLASS:Beltine		COST:0	PREDEITY:1,Beltine
+SUBCLASSLEVEL:1																										BONUS:VAR|TurnLevelInCorpUndead|2	BONUS:VAR|TurnLevelCorpUndead|-2																																																																															ABILITY:Special Ability|VIRTUAL|Turn Corporeal Undead|Turn Incorporeal Undead|PREABILITY:1,CATEGORY=Special Ability,Turn Undead	ABILITY:Special Ability|VIRTUAL|Rebuke Corporeal Undead||Rebuke Incorporeal Undead|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead																				SPELLLEVEL:CLASS|Cleric=2|Glimpse of the Cauldron,Hold the Spirit|Cleric=9|Cry For Spirit's Release										LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Cadic		COST:0	PREDEITY:1,Cadic
+SUBCLASSLEVEL:1																										BONUS:VAR|TurnLevelShadowUndead|3																																									ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Crossbow (Hand))					CSKILL:Hide|Move Silently|TYPE.Perform|Sleight of Hand|Tumble	ABILITY:Special Ability|VIRTUAL|Turn Shadow Undead|PREABILITY:1,CATEGORY=Special Ability,Turn Undead	ABILITY:Special Ability|VIRTUAL|Rebuke Shadow Undead|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead																			AUTO:WEAPONPROF|Rapier|Sword (Short)|Shortbow							SPELLLEVEL:CLASS|Cleric=2|Songs in the Night|Cleric=3|Shadow Stride|Cleric=4|Not Where You Think																								LANGAUTO:Ancient Altharin(Imperial)	PROHIBITSPELL:DESCRIPTOR.Light	PROHIBITSPELL:SPELL|Searing Light|Sunbeam|Sunburst
 SUBCLASSLEVEL:5																										BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE																																		ABILITY:FEAT|AUTOMATIC|Uncanny Dodge|Improved Uncanny Dodge
-SUBCLASS:Hurrian		COST:0
-SUBCLASSLEVEL:1																																																																																																									CSKILL:Survival																																						AUTO:WEAPONPROF|Longsword										SPELLLIST:CLASS|Cleric=2|Whirlwind of Blades,Skyward|Cleric=3|Retribution|Cleric=4|His Blade Shall Not Harm Me,Shield Other (Improved)|Cleric=5|Retribution (Greater)|Cleric=7|Shield Other (Greater)							LANGAUTO:Ancient Altharin(Imperial)
-SUBCLASS:Illiir		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Gladius)																																					ADD:VFEAT|TYPE=TurnIlliirGood																																							SPELLLIST:CLASS|Cleric=3|My Honor is My Strength|Cleric=5|Perfect Human Form|Cleric=7|Revelation|Cleric=9|Word of Purification																		LANGAUTO:Ancient Altharin(Imperial)	PROHIBITSPELL:DESCRIPTOR.Shadow.Darkness
+SUBCLASS:Hurrian		COST:0	PREDEITY:1,Hurrian
+SUBCLASSLEVEL:1																																																																																																									CSKILL:Survival																																						AUTO:WEAPONPROF|Longsword										SPELLLEVEL:CLASS|Cleric=2|Whirlwind of Blades,Skyward|Cleric=3|Retribution|Cleric=4|His Blade Shall Not Harm Me,Shield Other (Improved)|Cleric=5|Retribution (Greater)|Cleric=7|Shield Other (Greater)							LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Illiir		COST:0	PREDEITY:1,Illiir
+SUBCLASSLEVEL:1																										BONUS:VAR|TurnLevelSunlightUndead|2																																											ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Gladius)																																			ABILITY:Special Ability|VIRTUAL|Turn Sunlight Undead|PREABILITY:1,CATEGORY=Special Ability,Turn Undead	ABILITY:Special Ability|VIRTUAL|Rebuke Sunlight Undead|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead						SPELLLEVEL:CLASS|Cleric=3|My Honor is My Strength|Cleric=5|Perfect Human Form|Cleric=7|Revelation|Cleric=9|Word of Purification																		LANGAUTO:Ancient Altharin(Imperial)	PROHIBITSPELL:DESCRIPTOR.Shadow.Darkness
 SUBCLASSLEVEL:5	SAB:Fearless (Ex)
-SUBCLASS:Fire Dragon	COST:0	PREGENDER:FEMALE
+SUBCLASS:Fire Dragon	COST:0	PREDEITY:1,Fire Dragon	PREGENDER:FEMALE
 SUBCLASSLEVEL:1	SAB:Ignore detrimental effects from natural heat between 80-150 degrees F.																																																																																												CSKILL:Survival																																						AUTO:WEAPONPROF|Flail (Heavy)
-SUBCLASS:Larissa		COST:0
-SUBCLASSLEVEL:1																																																									BONUS:DOMAIN|NUMBER|1										ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Light)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)						CSKILL:TYPE.Perform|Tumble																																				AUTO:WEAPONPROF|Rapier|TYPE.Whip			ADDDOMAINS:Divination|Pleasure	SPELLLIST:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You																					LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Larissa Oracle	COST:0	PREDEITY:1,Larissa
+SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)|Shield Proficiency													CSKILL:TYPE.Arcana|Listen|Search|Spot																																																			AUTO:WEAPONPROF|TYPE.Whip			DOMAIN:Divination				SPELLLEVEL:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You																					LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:3																																											BONUS:COMBAT|AC|max(CHA,0)|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0
-SUBCLASS:Neroth		COST:0
-SUBCLASSLEVEL:1																																																																																																																				ADD:VFEAT|TYPE=TurnNerothGood	ADD:ABILITY|FEAT|VIRTUAL|Turn Incorporeal Undead,Rebuke Incorporeal Undead												AUTO:WEAPONPROF|Scythe											SPELLLIST:CLASS|Cleric=1|Skeletal Companion|Cleric=2|Your Time to Die|Cleric=3|Mark of Thralldom,Smell of Death|Cleric=4|Neroth's Embrace|Cleric=9|Harm (Mass)													LANGAUTO:Ancient Altharin(Imperial)
-SUBCLASS:Nier		COST:0
-SUBCLASSLEVEL:1	SAB:The Soul Burns - +1 dmg per die on spells with fire descriptor.	SAB:When turning undead, the Nier must destroy the undead or nothing happens.																																													ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Shield Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)																						ADD:VFEAT|TYPE=TurnUndead																									AUTO:WEAPONPROF|Greatsword										SPELLLIST:CLASS|Cleric=4|Your Fire is Mine,Steamblast																															LANGAUTO:Ancient Altharin(Imperial)
-SUBCLASS:Saluwe		COST:0	PREGENDER:FEMALE
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Simple Weapon Proficiency)	ABILITY:FEAT|AUTOMATIC|Track											CSKILL:TYPE.Nature|Survival|Swim																																																	SPELLLIST:CLASS|Cleric=2|Crushing Weight|Cleric=3|Battle Spines
+SUBCLASSLEVEL:5																										BONUS:VAR|BardicKnowledgeLevel|((CL=Larissan Oracle)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel																											ABILITY:FEAT|VIRTUAL|GlimpseoftheForbidden|Bardic Knowledge
+SUBCLASS:Larissa Sensate	COST:0	PREDEITY:1,Larissa
+SUBCLASSLEVEL:1																																																									BONUS:DOMAIN|NUMBER|1										ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Light)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)|Shield Proficiency			CSKILL:TYPE.Perform|Tumble																																				AUTO:WEAPONPROF|Rapier|TYPE.Whip	ADDDOMAINS:Charm,Music,Pleasure	DOMAINS:Divination|Pleasure	SPELLLEVEL:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You																					LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASSLEVEL:3																																											BONUS:COMBAT|AC|max(CHA,0)|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0
+SUBCLASS:Neroth		COST:0	PREDEITY:1,Neroth
+SUBCLASSLEVEL:1																										BONUS:VAR|TurnLevelInCorpUndead|-2	BONUS:VAR|TurnLevelCorpUndead|2																																																																																					ABILITY:Special Ability|VIRTUAL|Turn Corporeal Undead|Turn Incorporeal Undead|PREABILITY:1,CATEGORY=Special Ability,Turn Undead	ABILITY:Special Ability|VIRTUAL|Rebuke Corporeal Undead||Rebuke Incorporeal Undead|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead																				AUTO:WEAPONPROF|Scythe											SPELLLEVEL:CLASS|Cleric=1|Skeletal Companion|Cleric=2|Your Time to Die|Cleric=3|Mark of Thralldom,Smell of Death|Cleric=4|Neroth's Embrace|Cleric=9|Harm (Mass)													LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Nier		COST:0	PREDEITY:1,Nier
+SUBCLASSLEVEL:1	SAB:The Soul Burns - +1 dmg per die on spells with fire descriptor.	SAB:When turning undead, must destroy the undead or nothing happens.																																													ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency|Shield Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)																																															AUTO:WEAPONPROF|Greatsword										SPELLLEVEL:CLASS|Cleric=4|Your Fire is Mine,Steamblast																															LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Saluwe		COST:0	PREDEITY:1,Saluwe	PREGENDER:FEMALE
+SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Simple Weapon Proficiency)	ABILITY:FEAT|AUTOMATIC|Track											CSKILL:TYPE.Nature|Survival|Swim																																																	SPELLLEVEL:CLASS|Cleric=2|Crushing Weight|Cleric=3|Battle Spines
 SUBCLASSLEVEL:4																										BONUS:VAR|RangerAnimalCompLVL|CL																																							ABILITY:FEAT|VIRTUAL|Arcanis Animal Companion|Ranger Animal Companion
-SUBCLASS:Sarish		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|VIRTUAL|Rebuke Undead																																																											ADD:LANGUAGE(TYPE=Infernal)1	AUTO:EQUIP|Dagger (Sarishan Steel)															SPELLLIST:CLASS|Cleric=2|My Master Allows|Cleric=5|Summon Thy Own (Lesser)|Cleric=7|Summon Thy Own|Cleric=9|Summon Thy Own (Greater)	SPELLLIST:Cleric=4|Oath|PRETEMPLATE:1,Mehan,HolrynMehan	!PROHIBITSPELL:SCHOOL.Conjuration	LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Sarish		COST:0	PREDEITY:1,Sarish
+SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|VIRTUAL|Rebuke Undead																																																											ADD:LANGUAGE|TYPE=Infernal	AUTO:EQUIP|Dagger (Sarishan Steel)															SPELLLEVEL:CLASS|Cleric=2|My Master Allows|Cleric=5|Summon Thy Own (Lesser)|Cleric=7|Summon Thy Own|Cleric=9|Summon Thy Own (Greater)	SPELLLEVEL:Cleric=4|Oath|PRETEMPLATE:1,Mehan,HolrynMehan	!PROHIBITSPELL:SCHOOL.Conjuration	LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:3																																																																						ABILITY:FEAT|VIRTUAL|Magical Aptitude
 SUBCLASSLEVEL:10	SAB:Mark of My Brother
-SUBCLASS:Yarris		COST:0
-SUBCLASSLEVEL:1																																																																						ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)																CSKILL:TYPE.Nature|Survival|Swim						ADD:VFEAT|TYPE=TurnYarrisGood																									AUTO:WEAPONPROF|Trident											SPELLLIST:CLASS|Cleric=3|Saltburst,Water Stride|Cleric=4|Like Water																												LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASS:Yarris		COST:0	PREDEITY:1,Yarris
+SUBCLASSLEVEL:1																										BONUS:VAR|TurnLevelAquaticUndead|5																																													ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)																CSKILL:TYPE.Nature|Survival|Swim						ABILITY:Special Ability|VIRTUAL|Turn Aquatic Undead|PREABILITY:1,CATEGORY=Special Ability,Turn Undead	ABILITY:Special Ability|VIRTUAL|Rebuke Aquatic Undead|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead																									AUTO:WEAPONPROF|Trident											SPELLLEVEL:CLASS|Cleric=3|Saltburst,Water Stride|Cleric=4|Like Water																												LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:2	SAB:Affected by Endure Elements when within 1 mile of any large body of water.
 SUBCLASSLEVEL:3	SAB:Wild Empathy (Ex) (Water Only)																																																							BONUS:SKILL|Profession (Navigator),Survival,Swim|2
-1	BONUS:VAR|TurnTimesBase|3+CHA|TYPE=NoStack								DEFINE:AllowImprovedTurning|1	DEFINE:AllowExtraTurning|1	DEFINE:TurnLevelSpecial|0	ABILITY:FEAT|AUTOMATIC|Basic Turning
+SUBCLASS:Beroe	COST:0	PREDEITY:1,Beroe
+SUBCLASSLEVEL:1				BONUS:DOMAIN|-1																																																																																																					CSKILL:TYPE.Geography|TYPE.Nature|Survival
+SUBCLASS:Keleos	COST:0	PREDEITY:1,Keleos
+SUBCLASSLEVEL:1				BONUS:DOMAIN|-1																																																																																																					CSKILL:TYPE.Geography|TYPE.Nature|Survival
+SUBCLASS:Marok	COST:0	PREDEITY:1,Marok
+SUBCLASSLEVEL:1				BONUS:DOMAIN|-1																																																																																																					CSKILL:TYPE.Geography|TYPE.Nature|Survival
+SUBCLASS:Osalian	COST:0	PREDEITY:1,Osalian
+SUBCLASSLEVEL:1				BONUS:DOMAIN|-1																																																																																																					CSKILL:TYPE.Geography|TYPE.Nature|Survival
 1	BONUS:VAR|TurnLevelBase|CL-3|PREDEITY:1,Althares,Cadic,Fire Dragon,Larissa,Sarish
 1	BONUS:VAR|TurnLevelBase|CL-2|PREDEITY:1,Hurrian,Neroth,Yarris
-1	BONUS:VAR|TurnLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe
-1	BONUS:VAR|TurnLevelBase|CL|PREDEITY:1,Belisarda,Nier
+1	BONUS:VAR|TurnLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe,Beroe,Keleos,Marok,Osalian
+1	BONUS:VAR|TurnLevelBase|CL|PREDEITY:1,Nier
 1	BONUS:VAR|TurnLevelBase|CL+2|PREDEITY:1,Beltine,Neroth
-1	BONUS:VAR|TurnDamagePlusBase|CL
-1	BONUS:VAR|TurnCheckBase|CHA|TYPE=NoStack
-1	BONUS:VAR|TurnLevelSpecial|TurnLevelBase-2|PREDEITY:1,Beltine
-1	BONUS:VAR|TurnLevelSpecial|TurnLevelBase+1|PREDEITY:1,Illiir
-1	BONUS:VAR|TurnLevelSpecial|TurnLevelBase+2|PREDEITY:1,Neroth
-1	BONUS:VAR|TurnLevelSpecial|TurnLevelBase+3|PREDEITY:1,Yarris
-1	BONUS:VAR|TurnLevelSpecial|TurnLevelBase|PREDEITY:1,Cadic
-1	BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack																							ABILITY:FEAT|AUTOMATIC|TYPE=Channeling	ABILITY:FEAT|AUTOMATIC|Basic Channeling
-1	BONUS:VAR|ChannelDamagePlusBase|CL
-1	BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack
+1	ABILITY:FEAT|VIRTUAL|Basic Channeling|Channeling	BONUS:VAR|ChannelLevelBase,ChannelDamagePlusBase|CL|TYPE=Level.REPLACE
 1	BONUS:VAR|ChannelLevelBase|CL-3|PREDEITY:1,Althares,Cadic,Fire Dragon,Larissa,Sarish
-1	BONUS:VAR|ChannelLevelBase|CL-2|PREDEITY:1,Hurrian,Yarris
-1	BONUS:VAR|ChannelLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe
-1	BONUS:VAR|ChannelLevelBase|CL|PREDEITY:1,Belisarda,Nier
+1	BONUS:VAR|ChannelLevelBase|CL-2|PREDEITY:1,Hurrian,Neroth,Yarris
+1	BONUS:VAR|ChannelLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe,Beroe,Keleos,Marok,Osalian
+1	BONUS:VAR|ChannelLevelBase|CL|PREDEITY:1,Nier
 1	BONUS:VAR|ChannelLevelBase|CL+2|PREDEITY:1,Beltine,Neroth
 ###Block: Aura strength - Deities in Arcanis don't have alignment - Aura based of Cleric's alignment
 1	ABILITY:FEAT|VIRTUAL|Aura of Chaos|PREALIGN:CG,CN,CE
@@ -99,12 +101,12 @@ CLASS:Fighter.MOD	CSKILL:Examine Martial Technique
 CLASS:Monk.MOD	HASSUBCLASS:YES
 # Class Name	Class Skill
 CLASS:Monk.MOD	CSKILL:TYPE.Arcana|TYPE.Religion|Examine Martial Technique
-SUBCLASS:Order of Althares			COST:0																				PREREGION:Altheria
-SUBCLASSLEVEL:1																																																ABILITY:FEAT|AUTOMATIC|All Automatic Proficiencies|Exotic Weapon Proficiency(Flintlock (Pistol))|Exotic Weapon Proficiency(Flintlock (Rifle))|Martial Weapon Proficiency(Warhammer)																														CSKILL:Craft (Alchemy)	ADD:SAB|FAVOREDCLASS|Transmuter CCSKILL:TYPE.Perform	ADD:ABILITY|FEAT|AUTOMATIC|Improved Grapple,Stunning Fist	AUTO:WEAPONPROF|Dagger|Handaxe|Javelin|Quarterstaff|Unarmed Strike																					REMOVE:FEAT|CLASS.Monk|ALL
+SUBCLASS:Order of Althares			COST:0																				PREREGION:Altheria		FAVOREDCLASS:Psion|Wizard
+SUBCLASSLEVEL:1																																																ABILITY:FEAT|AUTOMATIC|All Automatic Proficiencies|Exotic Weapon Proficiency(Flintlock (Pistol))|Exotic Weapon Proficiency(Flintlock (Rifle))|Martial Weapon Proficiency(Warhammer)																														CSKILL:Craft (Alchemy)	CCSKILL:TYPE.Perform	ADD:ABILITY|FEAT|AUTOMATIC|Improved Grapple,Stunning Fist	AUTO:WEAPONPROF|Dagger|Handaxe|Javelin|Quarterstaff|Unarmed Strike																					REMOVE:FEAT|CLASS.Monk|ALL
 SUBCLASSLEVEL:2																																																ABILITY:FEAT|AUTOMATIC|Combat Reflexes|Combat Firing
-SUBCLASSLEVEL:6																																																ABILITY:FEAT|AUTOMATIC|Improved Disarm|Martial Weapon Technique (Warhammer)
-SUBCLASS:Order of the Blade			COST:0
-SUBCLASSLEVEL:1																																																																																																															ADD:SAB|FAVOREDCLASS|Fighter	ADD:ABILITY|FEAT|VIRTUAL|Weapon Focus(Longsword),Stunning Fist				AUTO:WEAPONPROF|Longsword																												REMOVE:FEAT|CLASS.Monk|ALL
+SUBCLASSLEVEL:6																																																ABILITY:FEAT|AUTOMATIC|Improved Disarm|Martial Weapon Technique (Flintlock Pistol)|Martial Weapon Technique (Warhammer)
+SUBCLASS:Order of the Blade			COST:0																									FAVOREDCLASS:Fighter|Psychic Warrior
+SUBCLASSLEVEL:1																																																																																																															ADD:ABILITY|FEAT|VIRTUAL|Weapon Focus(Longsword),Stunning Fist				AUTO:WEAPONPROF|Longsword																												REMOVE:FEAT|CLASS.Monk|ALL
 SUBCLASSLEVEL:2																																																ABILITY:FEAT|AUTOMATIC|Greater Weapon Focus(Longsword)
 SUBCLASSLEVEL:6																																																ABILITY:FEAT|AUTOMATIC|Improved Disarm|Martial Weapon Technique (Longsword)
 SUBCLASS:Contemplation of the Elements	COST:0																	PRERACE:1,Elorii
@@ -153,28 +155,28 @@ CLASS:Paladin.MOD	HASSUBCLASS:YES	LANGBONUS:Ancient Altharin(Imperial)
 # Class Name	Class Skill
 CLASS:Paladin.MOD	CSKILL:TYPE.Nobility|TYPE.Religion|Examine Martial Technique
 SUBCLASS:Paladin of Althares		PREDEITY:1,Althares
-SUBCLASSLEVEL:1																	BONUS:VAR|BardicKnowledgeLevel|CL	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Altherian Flintlock (Pistol)|Exotic Weapon Proficiency(Altherian Flintlock (Rifle))	ABILITY:FEAT|VIRTUAL|Bardic Knowledge	DEFINE:BardicKnowledgeLevel|0	ADD:SAB|FAVOREDCLASS|HC (Althares)		ADD:LANGUAGE(TYPE=Imperial)1				AUTO:EQUIP|CHOICE	AUTO:EQUIP|Blastpowder (10)	CHOOSE:NUMCHOICES=1|Flintlock (Altherian Pistol)|Flintlock (Altherian Rifle)
+SUBCLASSLEVEL:1																	BONUS:VAR|BardicKnowledgeLevel|CL	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel	ABILITY:FEAT|AUTOMATIC|Exotic Weapon Proficiency(Altherian Flintlock (Pistol)|Exotic Weapon Proficiency(Altherian Flintlock (Rifle))	ABILITY:FEAT|VIRTUAL|Bardic Knowledge	DEFINE:BardicKnowledgeLevel|0	ADD:SAB|FAVOREDCLASS|Holy Champion		ADD:LANGUAGE|TYPE=Imperial				AUTO:EQUIP|CHOICE	AUTO:EQUIP|Blastpowder (10)	CHOOSE:NUMCHOICES=1|Flintlock (Altherian Pistol)|Flintlock (Altherian Rifle)
 SUBCLASS:Paladin of Belisarda		PREDEITY:1,Belisarda
-SUBCLASSLEVEL:1						SAB:Wild Empathy (Ex)																																																									ADD:SAB|FAVOREDCLASS|HC (Belisarda)
+SUBCLASSLEVEL:1						SAB:Wild Empathy (Ex)																																																									ADD:SAB|FAVOREDCLASS|Holy Champion
 SUBCLASS:Paladin of Hurrian		PREDEITY:1,Hurrian
-SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Longsword)																												ADD:SAB|FAVOREDCLASS|HC (Hurrian)
+SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Longsword)																												ADD:SAB|FAVOREDCLASS|Holy Champion
 SUBCLASS:Paladin of Illiir		PREDEITY:1,Illiir
-SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Gladius)																												ADD:SAB|FAVOREDCLASS|HC (Illiir)
+SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Gladius)																												ADD:SAB|FAVOREDCLASS|Holy Champion
 SUBCLASSLEVEL:4	KNOWNSPELLS:Light			SAB:+2 on saving throws against Enchantment spells and abilities.
 SUBCLASSLEVEL:8	KNOWNSPELLS:Searing Light
 SUBCLASS:Paladin of Nier		PREDEITY:1,Nier
-SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Greatsword)																												ADD:SAB|FAVOREDCLASS|HC (Nier)
+SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Greatsword)																												ADD:SAB|FAVOREDCLASS|Holy Champion
 SUBCLASS:Paladin of Sarish		PREDEITY:1,Sarish
-SUBCLASSLEVEL:1						SAB:You gain a Sarishan Steel weapon of your choice.																																																				ADD:SAB|FAVOREDCLASS|HC (Sarish)		ADD:LANGUAGE(TYPE=Imperial,TYPE=Infernal)2
+SUBCLASSLEVEL:1						SAB:You gain a Sarishan Steel weapon of your choice.																																																				ADD:SAB|FAVOREDCLASS|Holy Champion		ADD:LANGUAGE|[2|]TYPE=Imperial,TYPE=Infernal
 SUBCLASS:Paladin of the Fire Dragon	PREDEITY:1,Fire Dragon	PREGENDER:Male
-SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Flail (Heavy))																											ADD:SAB|FAVOREDCLASS|HC (Fire Dragon)
-1	SAB:Aura of Faith (Ex.)
-4					BONUS:VAR|ChannelTimesBase|3+CHA|TYPE=NoStack						DEFINE:AllowImprovedTurning|1	ADD:VFEAT|TYPE=Channeling						ABILITY:FEAT|VIRTUAL|Basic Channeling
-4					BONUS:VAR|ChannelCheckBase|CHA|TYPE=NoStack						DEFINE:AllowExtraTurning|1
-4					BONUS:VAR|ChannelDamagePlusBase|CL-3
-4					BONUS:VAR|ChannelLevelBase|CL-5|PREDEITY:1,Sarish
-4					BONUS:VAR|ChannelLevelBase|CL-4|PREDEITY:1,Althares,Hurrian,Nier,Fire Dragon
-4					BONUS:VAR|ChannelLevelBase|CL-3|PREDEITY:1,Belisarda,Illiir
+SUBCLASSLEVEL:1																															ABILITY:FEAT|AUTOMATIC|Weapon Focus(Flail (Heavy))																											ADD:SAB|FAVOREDCLASS|Holy Champion
+4					REMOVE:FEAT|Basic Turning|Turn Undead
+4					ABILITY:FEAT|VIRTUAL|Basic Channeling|Channeling	BONUS:VAR|ChannelLevelBase,ChannelDamagePlusBase|CL|TYPE=Level.REPLACE
+4	BONUS:VAR|ChannelLevelBase|CL-3|PREDEITY:1,Althares,Cadic,Fire Dragon,Larissa,Sarish
+4	BONUS:VAR|ChannelLevelBase|CL-2|PREDEITY:1,Hurrian,Neroth,Yarris
+4	BONUS:VAR|ChannelLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe,Beroe,Keleos,Marok,Osalian
+4	BONUS:VAR|ChannelLevelBase|CL|PREDEITY:1,Nier
+4	BONUS:VAR|ChannelLevelBase|CL+2|PREDEITY:1,Beltine,Neroth
 5	SAB:Faithful Steed (Sp)																								REMOVE:FEAT|Special Mount
 
 # Class Name	Class Skill
