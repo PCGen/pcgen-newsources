@@ -1,10 +1,18 @@
-# CVS $Revision$ $Author$ -- Thu May 15 04:15:16 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+# CVS $Revision$ $Author$ -- Fri May 16 04:37:56 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2006-06
 #Original Entry:E. C. Smith (Maredudd), 2007; Andrew Maitland
 
+#COMMENTS from Andrew Maitland:
+#This file is in current flux... I have all the costs for the items in a non-uploaded file...
+#Anyone willing to work on the file -> Feel free to add the bonus tags, sprop tags and any relevant tags
+#I'll handle to cost visa via BONUS:ITEMCOST tag. -AMaitland
+
+
+
+
 ## Special Materials
 #Unit Chart
-#Based upon UNIT and Size NOT weight.
+#Based upon UNIT and Size, NOT weight.
 #Medium Light weapon 2
 #Medium One-handed weapon 4
 #Medium Two-handed weapon 8
@@ -16,109 +24,141 @@ SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts
 #
 #
 
-#SIZE Matters	DEFINE:WeaponSizeUnit|0	DEFINE:ArmorSizeUnit|0	DEFINE:ShieldSizeUnit|0
 
+#BONUS:ITEMCOST|TYPE.Ammunition|WT*400
 
+#BASE MEDIUM ITEMS   COST is x*UNIT*SIZE
+#BONUS:ITEMCOST|TYPE.Weapon.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*unit*SIZE
+#BONUS:ITEMCOST|TYPE.Armor.Light|2*unit*SIZE		BONUS:ITEMCOST|TYPE.Armor.Medium|8*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*unit*SIZE
+#BONUS:ITEMCOST|TYPE.Shield.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*unit*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*unit*SIZE
 
+#Sarishan Steel (Med)				KEY:SARISH_MSHD		NAMEISPI:YES										TYPE:Armor.BaseMaterial				COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial			REPLACES:STEEL																										PRETYPE:1,Metal	PRETYPE:1,Shield						!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																			BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement		BONUS:ITEMCOST|TYPE.Shield.Light|800	BONUS:ITEMCOST|TYPE.Shield.Heavy|1600																																								SPROP:30 hp/inch, hardness 10								ASSIGNTOALL:YES
 
 
 # Modifier Name			Unique Key				Output Name					Type					Cost			Visible		Type granted			Source Page		Required Type			BONUS:EQM							BONUS:EQMARMOR																				Special Property			Apply to both heads
 #Aerium 600 per unit
-# Modifier Name			Unique Key				Output Name					Type					Cost			Visible		Type granted			Source Page		Required Type			BONUS:EQM							BONUS:EQMARMOR																				Special Property			Apply to both heads
-Aerium				KEY:FIM_AERIUM_ARMR_LT								TYPE:Armor.BaseMaterial		COST:1200*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:3,Armor,Metal,Light	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	SPROP:Sonic Resistance 2
-Aerium				KEY:FIM_AERIUM_ARMR_MED								TYPE:Armor.BaseMaterial		COST:4800*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:3,Armor,Metal,Medium	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	SPROP:Sonic Resistance 2
-Aerium				KEY:FIM_AERIUM_ARMR_HVY								TYPE:Armor.BaseMaterial		COST:10800*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:3,Armor,Metal,Heavy	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	SPROP:Sonic Resistance 2
+# Modifier Name			Unique Key				Product Identity?	Output Name					Type					Cost		Visible		Type granted					Keys to replace	Source Page		Required Type						Prohibited Type											Combat bonus					BONUS:EQM							BONUS:EQMARMOR																				Modify the item cost																																				Special Property										Apply to both heads
+A1-Test				KEY:FIM_TEST												TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:3,Armor,Metal																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Armor.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*600*SIZE																SPROP:Sonic Resistance 2
 
-Aerium				KEY:FIM_AERIUM_SHLD_LT								TYPE:Shield.BaseMaterial	COST:1200*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:3,Metal,Shield,Light	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	SPROP:Sonic Resistance 2
-Aerium				KEY:FIM_AERIUM_SHLD_HVY								TYPE:Shield.BaseMaterial	COST:2400*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:3,Metal,Shield,Heavy	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	SPROP:Sonic Resistance 2
-Aerium				KEY:FIM_AERIUM_SHLD_TWR								TYPE:Shield.BaseMaterial	COST:4800*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:3,Metal,Shield,Tower	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	SPROP:Sonic Resistance 2
-
-Aerium				KEY:FIM_AERIUM_WEAP								TYPE:Weapon.BaseMaterial	COST:600*SIZE	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork		SOURCEPAGE:p.156	PRETYPE:2,Metal,Weapon		BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2						ASSIGNTOALL:Y
+###
+Aerium				KEY:FIM_AERIUM_ARMR											TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:3,Armor,Metal																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Armor.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*600*SIZE																SPROP:Sonic Resistance 2
+Aerium				KEY:FIM_AERIUM_SHLD											TYPE:Shield.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:3,Metal,Shield																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Shield.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*600*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*600*SIZE																SPROP:Sonic Resistance 2
+Aerium				KEY:FIM_AERIUM_WEAP											TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:2,Metal,Weapon																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Weapon.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*600*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*600*SIZE																												ASSIGNTOALL:Y
 
 
-#Aerium				KEY:FIM_AERIUM_WEAP_MED								TYPE:Weapon.BaseMaterial	COST:600*WT		VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork	SOURCEPAGE:p.156	PRETYPE:3,Thrown,Metal,Weapon	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2						ASSIGNTOALL:Y
-#Aerium				KEY:FIM_AERIUM_WEAP_LG								TYPE:Weapon.BaseMaterial	COST:600*WT		VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork	SOURCEPAGE:p.156	PRETYPE:3,Ranged,Metal,Weapon	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2						ASSIGNTOALL:Y
 
 # Aetherite 500				Unique Key				Type						Cost		Visible			Type granted				Source Page			Required Type		Combat bonus				Weight Modifier									Spell Failure Modifier								AC Check Modifier									Max Dex Modifier					Weapon prop. bonus					Special Property														Apply to both heads
-Aetherite				KEY:FIM_ATHRITE_ARMR_LT								TYPE:Armor.BaseMaterial		COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork	SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Light
-Aetherite				KEY:FIM_ATHRITE_ARMR_MED							TYPE:Armor.BaseMaterial		COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork	SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Medium
-Aetherite				KEY:FIM_ATHRITE_ARMR_HVY							TYPE:Armor.BaseMaterial		COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork	SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Heavy
-
-Aetherite				KEY:FIM_ATHRITE_SHLD_LT								TYPE:Shield.BaseMaterial	COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork	SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Light
-Aetherite				KEY:FIM_ATHRITE_SHLD_HVY							TYPE:Shield.BaseMaterial	COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork	SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Heavy
-Aetherite				KEY:FIM_ATHROTE_SHLD_TWR							TYPE:Shield.BaseMaterial	COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork	SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Tower
+Aetherite				KEY:FIM_ATHRITE_ARMR											TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.	PRETYPE:2,Armor,Metal
+Aetherite				KEY:FIM_ATHRITE_SHLD											TYPE:Shield.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.	PRETYPE:2,Shield,Metal
 
 
-#Aperiite (Netherite)
+#Aperiite (Netherite) 500
 #Adamantine 800
 
 # Beroku 150			Unique Key				Type						Cost		Visible			Type granted				Source Page			Required Type		Combat bonus				Weight Modifier									Spell Failure Modifier								AC Check Modifier									Max Dex Modifier					Weapon prop. bonus					Special Property														Apply to both heads
 #Beroku (Yarricite)		KEY:FIM_BEROKU														COST:300*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
 #
-Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR_LT													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Light
-Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR_MED													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Armor,Metal,Medium
-Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR_HVY													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Armor,Metal,Heavy
 
-Beroku (Yarricite)		KEY:FIM_BEROKU_SHLD_LT													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Shield,Metal,Light
-Beroku (Yarricite)		KEY:FIM_BEROKU_SHLD_HVY													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Shield,Metal,Heavy
-Beroku (Yarricite)		KEY:FIM_BEROKU_SHLD_TWR													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Shield,Metal,Tower
 
-Beroku (Yarricite)		KEY:FIM_BEROKU_WEAP_ML													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Weapon,Melee
-Beroku (Yarricite)		KEY:FIM_BEROKU_WEAP_RG													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Weapon,Ranged
-Beroku (Yarricite)		KEY:FIM_BEROKU_WEAP_TH													COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Weapon,Thrown
+
+Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:3,Armor,Metal,Breastplate																																																					BONUS:ITEMCOST|TYPE.Armor.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*unit*SIZE
+#Breastplate only CHANGE BREASTPLATE TO LIGHT  BONUS:COMBAT|AC|4|TYPE=Armor.STACK
+Beroku (Yarricite)		KEY:FIM_BEROKU_SHLD																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:2,Shield,Metal																																																							BONUS:ITEMCOST|TYPE.Shield.Light|2*150*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*150*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*150*SIZE
+AC Check penalty reduced by 2
+Beroku (Yarricite)		KEY:FIM_BEROKU_WEAP																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:1,Weapon																																																								BONUS:ITEMCOST|TYPE.Weapon.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*unit*SIZE
+
+
 
 
 # Miscelaneous		Unique Key				Type						Cost		Visible			Type granted				Source Page			Required Type		Combat bonus				Weight Modifier									Spell Failure Modifier								AC Check Modifier									Max Dex Modifier					Weapon prop. bonus					Special Property														Apply to both heads
 #Beryllium
 #Deep Crystal 1000 flat cost
-Crystal (Deep)			KEY:FIM_CRYSDEEP			OUTPUTNAME:Crystal, Deep							COST:1000		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Crystal (Mundane)			KEY:FIM_CRYSMUND			OUTPUTNAME:Crystal, Mundane							COST:0		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Darkwood				KEY:FIM_DARKWOOD														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Crystal (Deep)			KEY:FIM_CRYSDEEP						OUTPUTNAME:Crystal, Deep							COST:1000	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:2,
+Crystal (Mundane)			KEY:FIM_CRYSMUND						OUTPUTNAME:Crystal, Mundane							COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:2,
+Darkwood				KEY:FIM_DARKWOOD																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+#Darkqwood 20
+#Dragonhide n/a
 
-#Dragonhide
-Fervidite				KEY:FIM_FERVIDIT														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Fluvium				KEY:FIM_FLUVIUM														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Glass-Steel				KEY:FIM_GLASSSTL			OUTPUTNAME:Glass-Steel								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Greenglass				KEY:FIM_GREENGLA														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Ice					KEY:FIM_ICE															COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Ignium				KEY:FIM_IGNIUM														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Iron (Black ~ Titanium)		KEY:FIM_TITANIUM			OUTPUTNAME:Titanium								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-#Iron, Cold				KEY:FIM_	OUTPUTNAME:Iron, Cold
-Iron (Green ~ Berylium)		KEY:FIM_BERYLIUM			OUTPUTNAME:Berylium								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-#Mithral
+Fervidite				KEY:FIM_FERVIDIT																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+#Fervidite 750
+#WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*750*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*750*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*750*SIZE
+#ArmorEQMOD		BONUS:ITEMCOST|TYPE.Armor.Light|2*750*SIZE		BONUS:ITEMCOST|TYPE.Armor.Medium|8*750*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*750*SIZE
+#ShieldEQMOD		BONUS:ITEMCOST|TYPE.Shield.Light|2*750*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*750*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*750*SIZE
+#BardingEQMOD	BONUS:ITEMCOST|TYPE.Barding|BASECOST*4
+
+Fluvium				KEY:FIM_FLUVIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+#Fluvium 500
+Glass-Steel				KEY:FIM_GLASSSTL						OUTPUTNAME:Glass-Steel								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+#Glass-Steel 500
+Greenglass				KEY:FIM_GREENGLA																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.159	PRETYPE:2,
+#Greenglass 500
+Ignium				KEY:FIM_IGNIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.159	PRETYPE:2,
+#Ignium 500
+Iron (Black ~ Titanium)		KEY:FIM_TITANIUM						OUTPUTNAME:Titanium								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.159	PRETYPE:2,
+#Iron (Black ~ Titanium) 375
+#Iron, Cold NA				KEY:FIM_	OUTPUTNAME:Iron, Cold 159
+Iron (Green ~ Berylium)		KEY:FIM_BERYLIUM						OUTPUTNAME:Berylium								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.160	PRETYPE:2,
+#Iron (Green ~ Berylium) 500
+#Mithral 500
+#
+Netherite (SM)			KEY:FIM_NETHERIT_WEAP_SM										TYPE:Weapon				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+Netherite (MED)			KEY:FIM_NETHERIT_WEAP_MED										TYPE:Weapon				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+Netherite (LG)			KEY:FIM_NETHERIT_WEAP_LG										TYPE:Weapon				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#
+Netherite (SM)			KEY:FIM_NETHERIT_ARMR_SM										TYPE:Armor				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+Netherite (MED)			KEY:FIM_NETHERIT_ARMR_MED										TYPE:Armor				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+Netherite (LG)			KEY:FIM_NETHERIT_ARMR_LG										TYPE:Armor				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#
+Netherite (MED)			KEY:FIM_NETHERIT_SHLD_LT										TYPE:Shield				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+Netherite (MED)			KEY:FIM_NETHERIT_SHLD_HVY										TYPE:Shield				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+Netherite (MED)			KEY:FIM_NETHERIT_SHLD_TWR										TYPE:Shield				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+
 
 #
-Netherite				KEY:FIM_NETHERIT_WEAP								TYPE:Weapon				COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Netherite				KEY:FIM_NETHERIT_ARMR								TYPE:Armor				COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Netherite				KEY:FIM_NETHERIT_SHLD								TYPE:Shield				COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-#
-Orikalka				KEY:FIM_ORIKALKA														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
-Petrified Wood			KEY:FIM_PETRWOOD														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Orikalka				KEY:FIM_ORIKALKA																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Orikalka 1000
+Petrified Wood			KEY:FIM_PETRWOOD																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Petrified Wood 200
 #Silver (Alchemical)		KEY:FIM_		OUTPUTNAME:Silver, Alchemical	COST:0		VISIBLE:QUALIFY	ITYPE:			SOURCEPAGE:p.	PRETYPE:2,
-Tellium				KEY:FIM_TELLIUM														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Tellium				KEY:FIM_TELLIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Tellium 250
+Steel (Altherian)			KEY:FIM_ALTHERIA						OUTPUTNAME:Steel, Altherian							COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Steel (Altherian) x4
+Steel (Sarishan)			KEY:FIM_SARISHAN						OUTPUTNAME:Steel, Sarishan							COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Steel (Sarishan) 400
+###From PGTA_EQUIPMODS
+Sarishan Steel (Sm)		KEY:SARISH_SWEAP			NAMEISPI:YES							TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Weapon,Ammunition	!PRETYPE:1,Shield	!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade		BONUS:COMBAT|TOHIT|1|TYPE=Enhancement																															BONUS:ITEMCOST|TYPE.Weapon.Light|400	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|800	BONUS:ITEMCOST|TYPE.Weapon.Polearm|800	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|1600|!PRETYPE:1,Polearm	BONUS:ITEMCOST|TYPE.Ammunition|WT*400	SPROP:Bypasses damage reduction of Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
+Sarishan Steel (Med)		KEY:SARISH_MWEAP			NAMEISPI:YES							TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Weapon,Ammunition	!PRETYPE:1,Shield	!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade		BONUS:COMBAT|TOHIT|1|TYPE=Enhancement																															BONUS:ITEMCOST|TYPE.Weapon.Light|800	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|1600	BONUS:ITEMCOST|TYPE.Weapon.Polearm|1600	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|3200|!PRETYPE:1,Polearm	BONUS:ITEMCOST|TYPE.Ammunition|WT*400	SPROP:Bypasses damage reduction of Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
+Sarishan Steel (Lg)		KEY:SARISH_LWEAP			NAMEISPI:YES							TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Weapon,Ammunition	!PRETYPE:1,Shield	!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade		BONUS:COMBAT|TOHIT|1|TYPE=Enhancement																															BONUS:ITEMCOST|TYPE.Weapon.Light|1600	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|3200	BONUS:ITEMCOST|TYPE.Weapon.Polearm|3200	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|6400|!PRETYPE:1,Polearm	BONUS:ITEMCOST|TYPE.Ammunition|WT*400	SPROP:Bypasses damage reduction of Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
 
-Steel (Altherian)			KEY:FIM_ALTHERIA			OUTPUTNAME:Steel, Altherian							COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Sarishan Steel (Sm)		KEY:SARISH_SARM			NAMEISPI:YES							TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Armor			!PRETYPE:1,Barding	!PRETYPE:1,SpecialMaterial,Upgrade	!PRETYPE:1,Shield																BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Armor.Light|400	BONUS:ITEMCOST|TYPE.Armor.Medium|1600	BONUS:ITEMCOST|TYPE.Armor.Heavy|3600																				SPROP:+2 Will Saves vs. effects from Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
+Sarishan Steel (Med)		KEY:SARISH_MARM			NAMEISPI:YES							TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Armor			!PRETYPE:1,Barding	!PRETYPE:1,SpecialMaterial,Upgrade	!PRETYPE:1,Shield																BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Armor.Light|800	BONUS:ITEMCOST|TYPE.Armor.Medium|3200	BONUS:ITEMCOST|TYPE.Armor.Heavy|7200																				SPROP:+2 Will Saves vs. effects from Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
+Sarishan Steel (Lg)		KEY:SARISH_LARM			NAMEISPI:YES							TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Armor			!PRETYPE:1,Barding	!PRETYPE:1,SpecialMaterial,Upgrade	!PRETYPE:1,Shield																BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Armor.Light|1600	BONUS:ITEMCOST|TYPE.Armor.Medium|6400	BONUS:ITEMCOST|TYPE.Armor.Heavy|14400																			SPROP:+2 Will Saves vs. effects from Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
 
-Steel (Sarishan)			KEY:FIM_SARISHAN			OUTPUTNAME:Steel, Sarishan							COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Sarishan Steel (Sm)		KEY:SARISH_SSHD			NAMEISPI:YES							TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Shield			!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																				BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Shield.Light|400	BONUS:ITEMCOST|TYPE.Shield.Heavy|800																										SPROP:30 hp/inch, hardness 10								ASSIGNTOALL:YES
+Sarishan Steel (Med)		KEY:SARISH_MSHD			NAMEISPI:YES							TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Shield			!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																				BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Shield.Light|800	BONUS:ITEMCOST|TYPE.Shield.Heavy|1600																										SPROP:30 hp/inch, hardness 10								ASSIGNTOALL:YES
+Sarishan Steel (Lg)		KEY:SARISH_LSHD			NAMEISPI:YES							TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Shield			!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																				BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Shield.Light|1600	BONUS:ITEMCOST|TYPE.Shield.Heavy|3200																										SPROP:30 hp/inch, hardness 10								ASSIGNTOALL:YES
 
-Steel (Sarishan ~ Tempered)	KEY:FIM_SARITEMP			OUTPUTNAME:Steel, Tempered Sarishan						COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Sarishan Steel (Med)		KEY:SARISH_MBRD			NAMEISPI:YES							TYPE:Barding.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Barding			!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																				BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Barding.Light|1600	BONUS:ITEMCOST|TYPE.Barding.Medium|6400	BONUS:ITEMCOST|TYPE.Barding.Heavy|14400																			SPROP:+2 Will Saves vs. effects from Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
+Sarishan Steel (Lg)		KEY:SARISH_LBRD			NAMEISPI:YES							TYPE:Barding.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial	REPLACES:STEEL				PRETYPE:1,Metal	PRETYPE:1,Barding			!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																				BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																BONUS:ITEMCOST|TYPE.Barding.Light|3200	BONUS:ITEMCOST|TYPE.Barding.Medium|12800	BONUS:ITEMCOST|TYPE.Barding.Heavy|28800																			SPROP:+2 Will Saves vs. effects from Infernals, 30 hp/inch, hardness 10	ASSIGNTOALL:YES
+####
 
-Viridiite				KEY:FIM_VIRIDIIT														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Steel (Sarishan ~ Tempered)	KEY:FIM_SARITEMP						OUTPUTNAME:Steel, Tempered Sarishan						COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Steel (Sarishan ~ Tempered) 1000
+Viridiite				KEY:FIM_VIRIDIIT																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,
+#Viridiite 500
+# Wolf Iron 600				Unique Key				Type						Cost		Visible			Type granted				Source Page			Required Type		Combat bonus				Weight Modifier									Spell Failure Modifier								AC Check Modifier									Max Dex Modifier					Weapon prop. bonus					Special Property														Apply to both heads
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR_LT				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,Armor,Metal
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR_MED				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Medium
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR_HVY				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Heavy
 
-# Wolf Iron				Unique Key				Type						Cost		Visible			Type granted				Source Page			Required Type		Combat bonus				Weight Modifier									Spell Failure Modifier								AC Check Modifier									Max Dex Modifier					Weapon prop. bonus					Special Property														Apply to both heads
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR_LT	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Light
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR_MED	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Medium
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR_HVY	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Armor,Metal,Heavy
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD_LT				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Light
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD_HVY				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Heavy
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD_TWR				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Tower
 
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD_LT	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Light
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD_HVY	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Heavy
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD_TWR	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:3,Shield,Metal,Tower
-
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP_MEL	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Weapon,Melee
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP_RNG	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Weapon,Ranged
-Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP_THW	OUTPUTNAME:Tungsten								COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,Weapon,Thrown
-
-Yarricite				KEY:FIM_YARRICIT														COST:0*SIZE		VISIBLE:QUALIFY	ITYPE:				SOURCEPAGE:p.	PRETYPE:2,
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP_MEL				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,Weapon,Melee
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP_RNG				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,Weapon,Ranged
+Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP_THW				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,Weapon,Thrown
 
 
 ###
