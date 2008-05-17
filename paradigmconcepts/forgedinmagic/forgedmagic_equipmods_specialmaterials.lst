@@ -3,26 +3,8 @@ SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts
 #Original Entry:E. C. Smith (Maredudd), 2007; Andrew Maitland
 
 #COMMENTS from Andrew Maitland:
-#This file is in current flux... I have all the costs for the items in a non-uploaded file...
-#Anyone willing to work on the file -> Feel free to add the bonus tags, sprop tags and any relevant tags
-#I'll handle to cost visa via BONUS:ITEMCOST tag. -AMaitland
-
-
-
-
-## Special Materials
-#Unit Chart
-#Based upon UNIT and Size, NOT weight.
-#Medium Light weapon 2
-#Medium One-handed weapon 4
-#Medium Two-handed weapon 8
-
-#Medium Light armor or light shield 2
-#Medium Heavy shield 4
-#Medium Medium armor or tower shield 8
-#Medium Heavy armor 18
-#
-#
+#Just needs to add any relevant Bonus, SPROP tags. Items 95% or higher completed are marked at
+# the bottom with <NAME> ~ Completed
 
 
 #BONUS:ITEMCOST|TYPE.Ammunition|WT*400
@@ -34,10 +16,6 @@ SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts
 
 #Sarishan Steel (Med)				KEY:SARISH_MSHD		NAMEISPI:YES										TYPE:Armor.BaseMaterial				COST:0	VISIBLE:QUALIFY	ITYPE:Sarishan.Masterwork.SpecialMaterial			REPLACES:STEEL																										PRETYPE:1,Metal	PRETYPE:1,Shield						!PRETYPE:1,SpecialMaterial	!PRETYPE:1,Upgrade																			BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement		BONUS:ITEMCOST|TYPE.Shield.Light|800	BONUS:ITEMCOST|TYPE.Shield.Heavy|1600																																								SPROP:30 hp/inch, hardness 10								ASSIGNTOALL:YES
 
-
-# Modifier Name			Unique Key				Output Name					Type					Cost			Visible		Type granted			Source Page		Required Type			BONUS:EQM							BONUS:EQMARMOR																				Special Property			Apply to both heads
-#
-# Modifier Name			Unique Key				Product Identity?	Output Name					Type					Cost		Visible		Type granted					Keys to replace	Source Page		Required Type						Prohibited Type											Combat bonus					BONUS:EQM							BONUS:EQMARMOR																				Modify the item cost																																				Special Property										Apply to both heads
 A1-Test				KEY:FIM_TEST												TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:2,Armor,Metal																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Armor.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*600*SIZE																SPROP:Sonic Resistance 2
 
 ###Aerium 600 ------------------------------------------------------------------------------------------
@@ -45,18 +23,18 @@ Aerium				KEY:FIM_AERIUM_ARMR											TYPE:Armor.BaseMaterial		COST:0	VISIBLE:
 Aerium				KEY:FIM_AERIUM_SHLD											TYPE:Shield.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:2,Metal,Shield																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Shield.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*600*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*600*SIZE																SPROP:Sonic Resistance 2
 Aerium				KEY:FIM_AERIUM_WEAP											TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aerium.Masterwork							SOURCEPAGE:p.156	PRETYPE:2,Metal,Weapon																									BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|3|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|2	BONUS:ITEMCOST|TYPE.Weapon.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*600*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*600*SIZE																												ASSIGNTOALL:Y
 
-###Incomplete
 # Aetherite 500 ----------------------------------------------------------------------------------------
-Aetherite				KEY:FIM_ATHRITE_ARMR											TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.	PRETYPE:2,Armor,Metal		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE
-Aetherite				KEY:FIM_ATHRITE_SHLD											TYPE:Shield.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.	PRETYPE:2,Shield,Metal		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
-Aetherite				KEY:FIM_ATHRITE_WEAP											TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.	PRETYPE:2,Weapon,Metal		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
+Aetherite				KEY:FIM_ATHRITE_ARMR											TYPE:Armor.BaseMaterial		COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.156	PRETYPE:2,Armor,Metal		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE
+Aetherite				KEY:FIM_ATHRITE_SHLD											TYPE:Shield.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.156	PRETYPE:2,Shield,Metal		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
+Aetherite				KEY:FIM_ATHRITE_WEAP											TYPE:Weapon.BaseMaterial	COST:0	VISIBLE:QUALIFY	ITYPE:Aetherite.Masterwork						SOURCEPAGE:p.156	PRETYPE:2,Weapon,Metal		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
 
 #Aperiite (Netherite) 500 ------------------------------------------------------------------------------
-Aperiite (Netherite)			KEY:FIM_APERIITE_WEAP										TYPE:Weapon				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
-#
-Aperiite (Netherite)			KEY:FIM_APERIITE_ARMR										TYPE:Armor				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE
-#
-Aperiite (Netherite)			KEY:FIM_APERIITE_SHLD										TYPE:Shield				COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
+Aperiite (Netherite)			KEY:FIM_APERIITE_WEAP										TYPE:Weapon				COST:0	VISIBLE:QUALIFY	ITYPE:Aperiite.Masterwork									SOURCEPAGE:p.156	PRETYPE:2,Metal,Weapon		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE				BONUS:WEAPON|WIELDCATEGORY|1
+Aperiite (Netherite)			KEY:FIM_APERIITE_ARMR_LT										TYPE:Armor				COST:0	VISIBLE:QUALIFY	ITYPE:Aperiite.Masterwork									SOURCEPAGE:p.156	PRETYPE:3,Metal,Armor,Light		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE		ARMORTYPE:Light|Medium		SPROP:Fire and Cold Resistance 2	BONUS:EQMARMOR|ACCHECK|-2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|-1	BONUS:EQMARMOR|SPELLFAILURE|5|TYPE=Enhancement	SPROP:Turn resistance +2|PRERACE:1,RACETYPE=Undead
+Aperiite (Netherite)			KEY:FIM_APERIITE_ARMR_MED										TYPE:Armor				COST:0	VISIBLE:QUALIFY	ITYPE:Aperiite.Masterwork									SOURCEPAGE:p.156	PRETYPE:3,Metal,Armor,Medium,Heavy		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE	ARMORTYPE:Medium|Heavy		SPROP:Fire and Cold Resistance 2	BONUS:EQMARMOR|ACCHECK|-2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|-1	BONUS:EQMARMOR|SPELLFAILURE|5|TYPE=Enhancement	SPROP:Turn resistance +2|PRERACE:1,RACETYPE=Undead
+Aperiite (Netherite)			KEY:FIM_APERIITE_SHLD										TYPE:Shield				COST:0	VISIBLE:QUALIFY	ITYPE:Aperiite.Masterwork									SOURCEPAGE:p.156	PRETYPE:2,Metal,Shield		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE	SPROP:Turn resistance +2|PRERACE:1,RACETYPE=Undead
+#Need REPLACES masterwork
+#Aperiite ~ Completed
 
 #Adamantine 800 -----------------------------------------------------------------------------------------
 #WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*800*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*800*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*800*SIZE	
@@ -70,11 +48,14 @@ Aperiite (Netherite)			KEY:FIM_APERIITE_SHLD										TYPE:Shield				COST:0	VISI
 #Adamantine		KEY:ADAMANT_WEAP		TYPE:BaseMaterial.MasterworkQuality.Weapon	COST:3000	VISIBLE:QUALIFY	ITYPE:Metal.Adamantine.Masterwork	REPLACES:MWORKW	SOURCEPAGE:RSRD SpecialMaterials.rtf	PRETYPE:1,Metal												BONUS:WEAPON|TOHIT|1|TYPE=Enhancement	SPROP:Ignore 20 hardness		ASSIGNTOALL:NO
 
 # Beroku 150 --------------------------------------------------------------------------------------------
-Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:1,Armor																																																					BONUS:ITEMCOST|TYPE.Armor.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*unit*SIZE
-#Breastplate only CHANGE BREASTPLATE TO LIGHT  BONUS:COMBAT|AC|4|TYPE=Armor.STACK
-Beroku (Yarricite)		KEY:FIM_BEROKU_SHLD																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:2,Shield,Metal																																																							BONUS:ITEMCOST|TYPE.Shield.Light|2*150*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*150*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*150*SIZE
-#AC Check penalty reduced by 2
-Beroku (Yarricite)		KEY:FIM_BEROKU_WEAP																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:1,Weapon																																																								BONUS:ITEMCOST|TYPE.Weapon.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*unit*SIZE
+Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:1,Armor	!PRETYPE:1,Breastplate																																																					BONUS:ITEMCOST|TYPE.Armor.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*unit*SIZE		BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
+Beroku (Yarricite)		KEY:FIM_BEROKU_ARMR_BRST																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:2,Armor,Breastplate																																																					BONUS:ITEMCOST|TYPE.Armor.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*unit*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*unit*SIZE	BONUS:COMBAT|AC|4|TYPE=Armor.STACK	ARMORTYPE:Medium|Light	BONUS:EQMARMOR|ACCHECK|-3|TYPE=Enhancement.REPLACE	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
+#Need a way to select ONLY Breast Plate for ARMR_BRST as the bonus only works for breast plate.
+#COMMENT: Need publisher confirmation on bonuses bestowed to BreastPlate
+Beroku (Yarricite)		KEY:FIM_BEROKU_SHLD																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:2,Shield,Metal																																																							BONUS:ITEMCOST|TYPE.Shield.Light|2*150*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*150*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*150*SIZE	BONUS:EQMARMOR|ACCHECK|-2|TYPE=Enhancement.REPLACE	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
+Beroku (Yarricite)		KEY:FIM_BEROKU_WEAP																COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.157	PRETYPE:1,Weapon																																																								BONUS:ITEMCOST|TYPE.Weapon.Light|2*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*unit*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*unit*SIZE		BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
+#Beroku ~ Completed
+#BONUS:EQMARMOR|ACCHECK|-2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|-1	BONUS:EQMARMOR|SPELLFAILURE|5|TYPE=Enhancement
 
 #Crystal ------------------------------------------------------------------------------------------------
 Crystal (Deep)			KEY:FIM_CRYSDEEP						OUTPUTNAME:Crystal, Deep							COST:1000	VISIBLE:QUALIFY	ITYPE:Metal									SOURCEPAGE:p.157	PRETYPE:2,
@@ -92,28 +73,30 @@ Darkwood				KEY:FIM_DARKWOOD																	COST:0	VISIBLE:QUALIFY	ITYPE:						
 #Dragonhide		KEY:DRACO		TYPE:BaseMaterial.MasterworkQuality.Armor.Shield			COST:BASECOST+300	VISIBLE:QUALIFY	ITYPE:Dragonhide.Nonmetal.Masterwork	REPLACES:MWORKA		SOURCEPAGE:RSRD SpecialMaterials.rtf																																															BONUS:EQMARMOR|ACCHECK|1|TYPE=Enhancement																																																										SPROP:10hp/inch and 10 hardness				ASSIGNTOALL:NO
 
 #Fervidite 750 --------------------------------------------------------------------------------------------
-#WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*750*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*750*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*750*SIZE
-#ArmorEQMOD		BONUS:ITEMCOST|TYPE.Armor.Light|2*750*SIZE		BONUS:ITEMCOST|TYPE.Armor.Medium|8*750*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*750*SIZE
-#ShieldEQMOD		BONUS:ITEMCOST|TYPE.Shield.Light|2*750*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*750*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*750*SIZE
-Fervidite				KEY:FIM_FERVIDIT																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+Fervidite				KEY:FIM_FERVIDIT_WEAP																	COST:0	VISIBLE:QUALIFY	ITYPE:Masterwork.Fervidite.Metal									SOURCEPAGE:p.158	PRETYPE:2,Weapon,Metal	BONUS:ITEMCOST|TYPE.Weapon.Light|2*750*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*750*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*750*SIZE	BONUS:WEAPON|TOHIT,DAMAGE|1
+Fervidite				KEY:FIM_FERVIDIT_ARMR																	COST:0	VISIBLE:QUALIFY	ITYPE:Masterwork.Fervidite.Metal									SOURCEPAGE:p.158	PRETYPE:2,Armor,Metal	BONUS:ITEMCOST|TYPE.Armor.Light|2*750*SIZE		BONUS:ITEMCOST|TYPE.Armor.Medium|8*750*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*750*SIZE	SPROP:Acid, Cold, Electricity and Fire Resistance 2
+Fervidite				KEY:FIM_FERVIDIT_SHLD																	COST:0	VISIBLE:QUALIFY	ITYPE:Masterwork.Fervidite.Metal									SOURCEPAGE:p.158	PRETYPE:2,Shield,Metal	BONUS:ITEMCOST|TYPE.Shield.Light|2*750*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*750*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*750*SIZE	SPROP:Acid, Cold, Electricity and Fire Resistance 2
+#Fervidite ~ Completed
 
 #Fluvium 500 -----------------------------------------------------------------------------------------------
-#WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
-#ArmorEQMOD		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE
-#ShieldEQMOD		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
-Fluvium				KEY:FIM_FLUVIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+Fluvium				KEY:FIM_FLUVIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:Fluvium.Metal.Masterwork									SOURCEPAGE:p.158	PRETYPE:2,Weapon,Metal		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	SPROP:+1 cold damage	SPROP:+1 to hit and additional +1d6 cold damage against Fire subtype
+Fluvium				KEY:FIM_FLUVIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:Fluvium.Metal.Masterwork									SOURCEPAGE:p.158	PRETYPE:2,Armor,Metal		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE	SPROP:Fire Resistance 2
+Fluvium				KEY:FIM_FLUVIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:Fluvium.Metal.Masterwork									SOURCEPAGE:p.158	PRETYPE:2,Shield,Metal		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE	SPROP:Fire Resistance 2
+#Fluvium ~ Completed
+
 
 #Glass-Steel 500 --------------------------------------------------------------------------------------------
-#WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
-#ArmorEQMOD		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE
-#ShieldEQMOD		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
-Glass-Steel				KEY:FIM_GLASSSTL						OUTPUTNAME:Glass-Steel								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.158	PRETYPE:2,
+Glass-Steel				KEY:FIM_GLASSSTL_WEAP						OUTPUTNAME:Glass-Steel								COST:0	VISIBLE:QUALIFY	ITYPE:Glass-steel.Masterwork.Metal									SOURCEPAGE:p.158	PRETYPE:1,Weapon	BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE		BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
+Glass-Steel				KEY:FIM_GLASSSTL_SHLD						OUTPUTNAME:Glass-Steel								COST:0	VISIBLE:QUALIFY	ITYPE:Glass-steel.Masterwork.Metal									SOURCEPAGE:p.158	PRETYPE:1,Shield	BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE		BONUS:EQMARMOR|SPELLFAILURE|-10|TYPE=Enhancement	BONUS:EQMARMOR|ACCHECK|-3|TYPE=Enhancement.REPLACE	BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
+#Glass-Steel ~ Completed
+
+#BONUS:EQMARMOR|ACCHECK|-2|TYPE=Enhancement.REPLACE	BONUS:EQMARMOR|MAXDEX|-1	BONUS:EQMARMOR|SPELLFAILURE|5|TYPE=Enhancement
+#BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE
 
 #Greenglass 500 ----------------------------------------------------------------------------------------------
-#WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
-#ArmorEQMOD		BONUS:ITEMCOST|TYPE.Armor.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*500*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*500*SIZE
-#ShieldEQMOD		BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
-Greenglass				KEY:FIM_GREENGLA																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.159	PRETYPE:2,
+Greenglass				KEY:FIM_GREENGLA_WEAP																	COST:0	VISIBLE:QUALIFY	ITYPE:Masterwork,Greenglass									SOURCEPAGE:p.159	PRETYPE:1,Weapon	!PRETYPE:1,Bludgeoning		BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:WEAPON|TOHIT|1|TYPE=Greenglass|PRETYPE:1,Slashing,Piercing		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
+Greenglass				KEY:FIM_GREENGLA_SHLD																	COST:0	VISIBLE:QUALIFY	ITYPE:Masterwork,Greenglass									SOURCEPAGE:p.159	PRETYPE:1,Shield		BONUS:EQM|WEIGHTDIV|2|TYPE=Enhancement.REPLACE	BONUS:ITEMCOST|TYPE.Shield.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*500*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*500*SIZE
+#Greenglass ~ Completed
 
 #Ignium 500 ---------------------------------------------------------------------------------------------------
 #WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*500*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*500*SIZE	
@@ -122,10 +105,10 @@ Greenglass				KEY:FIM_GREENGLA																	COST:0	VISIBLE:QUALIFY	ITYPE:				
 Ignium				KEY:FIM_IGNIUM																	COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.159	PRETYPE:2,
 
 #Iron (Black ~ Titanium) 375 ----------------------------------------------------------------------------------
-#WeaponEQMOD		BONUS:ITEMCOST|TYPE.Weapon.Light|2*375*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*375*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*375*SIZE	
-#ArmorEQMOD		BONUS:ITEMCOST|TYPE.Armor.Light|2*375*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*375*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*375*SIZE
-#ShieldEQMOD		BONUS:ITEMCOST|TYPE.Shield.Light|2*375*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*375*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*375*SIZE
-Iron (Black ~ Titanium)		KEY:FIM_TITANIUM						OUTPUTNAME:Titanium								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.159	PRETYPE:2,
+Iron (Black ~ Titanium)		KEY:FIM_TITANIUM_WEAP						OUTPUTNAME:Titanium								COST:0	VISIBLE:QUALIFY	ITYPE:Titanium,Masterwok									SOURCEPAGE:p.159	PRETYPE:2,Metal,Weapon		SPROP:+1 acid damage	BONUS:ITEMCOST|TYPE.Weapon.Light|2*375*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*375*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*375*SIZE	
+Iron (Black ~ Titanium)		KEY:FIM_TITANIUM_ARMR						OUTPUTNAME:Titanium								COST:0	VISIBLE:QUALIFY	ITYPE:Titanium,Masterwok									SOURCEPAGE:p.159	PRETYPE:2,Metal,Armor		SPROP:Acid Resistance 2	BONUS:ITEMCOST|TYPE.Armor.Light|2*375*SIZE	BONUS:ITEMCOST|TYPE.Armor.Medium|8*375*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*375*SIZE
+Iron (Black ~ Titanium)		KEY:FIM_TITANIUM_SHLD						OUTPUTNAME:Titanium								COST:0	VISIBLE:QUALIFY	ITYPE:Titanium,Masterwok									SOURCEPAGE:p.159	PRETYPE:2,Metal,Shield		SPROP:Acid Resistance 2	BONUS:ITEMCOST|TYPE.Shield.Light|2*375*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*375*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*375*SIZE
+#Iron (Black ~ Titanium) ~ Completed
 
 #Iron, Cold ---------------------------------------------------------------------------------------------------
 #Iron (Cold) NA				KEY:FIM_	OUTPUTNAME:Iron, Cold 159
@@ -217,7 +200,7 @@ Viridiite				KEY:FIM_VIRIDIIT																	COST:0	VISIBLE:QUALIFY	ITYPE:					
 Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_ARMR				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,Armor,Metal	BONUS:ITEMCOST|TYPE.Armor.Light|2*600*SIZE		BONUS:ITEMCOST|TYPE.Armor.Medium|8*600*SIZE	BONUS:ITEMCOST|TYPE.Armor.Heavy|18*600*SIZE
 Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_SHLD				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:2,Shield,Metal	BONUS:ITEMCOST|TYPE.Shield.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Shield.Heavy|4*600*SIZE	BONUS:ITEMCOST|TYPE.Shield.Tower|8*600*SIZE
 Wolf Iron (Tungsten)		KEY:FIM_WOLFIRON_WEAP				OUTPUTNAME:Tungsten								COST:0	VISIBLE:QUALIFY	ITYPE:									SOURCEPAGE:p.	PRETYPE:1,Weapon		BONUS:ITEMCOST|TYPE.Weapon.Light|2*600*SIZE	BONUS:ITEMCOST|TYPE.Weapon.OneHanded|4*600*SIZE	BONUS:ITEMCOST|TYPE.Weapon.TwoHanded|8*600*SIZE	
-
+#~ Partially complete need bonuses and sprop tags if required
 
 ### Referenced but no EQMOD found -------------------------------------------------
 Copper				KEY:FIM_COPPER
