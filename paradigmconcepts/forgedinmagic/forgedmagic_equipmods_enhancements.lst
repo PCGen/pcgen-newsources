@@ -1,10 +1,10 @@
-# CVS $Revision$ $Author$ -- Fri May 16 23:05:59 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+# CVS $Revision$ $Author$ -- Sat May 17 00:44:56 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 SOURCELONG:Forged in Magic	SOURCESHORT:FiM	SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2006-06
 #Original Entry by:E. C. Smith (Maredudd), 2007; Andrew Maitland
 
 
 #Block: Armor and Shield Enhancements --------------------------------------------------------------
-# Modifier Name				Unique Key					Output Name					Type					Plus		Cost							Visible		Source Page		Multiple Requirements											Required Type							Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Move
+# Modifier Name				Unique Key					Output Name					Type					Plus		Cost							Visible		Source Page		Multiple Requirements											Required Type							Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Ability
 Avoiding					KEY:FIM_AVOIDING										TYPE:Armor.Shield					COST:10000						VISIBLE:QUALIFY	SOURCEPAGE:p.4															PRETYPE:1,Armor,Shield	PRETYPE:2,GMWORKA,Light																SPROP:Grants the wearer the benefits of the Mobility feat while worn													VFEAT:Mobility
 Backlashing					KEY:FIM_BACKLASH										TYPE:Shield						COST:110000						VISIBLE:QUALIFY	SOURCEPAGE:p.4															PRETYPE:1,Shield																					SPROP:If active, may redirect a portion of the spell back
 Buffering					KEY:FIM_BUFFERIN										TYPE:Armor.Shield			PLUS:1	COST:0						VISIBLE:QUALIFY	SOURCEPAGE:p.4															PRETYPE:3,Armor,GMWORKA,Light									DR:5/Piercing or Slashing						SPROP:Partially immune to bludgeoning damage
@@ -16,7 +16,7 @@ Deflecting					KEY:FIM_DEFLECTI										TYPE:Shield				PLUS:1	COST:0						VISIB
 Enlarging					KEY:FIM_ENLARGIN										TYPE:Armor				PLUS:0	COST:3200						VISIBLE:QUALIFY	SOURCEPAGE:p.4															PRETYPE:1,Armor																					SPROP:Enlarge person 1/day
 #Multiple times adds to times per day
 Fleet-Foot					KEY:FIM_FLEETFOO				OUTPUTNAME:Fleet-Foot			TYPE:Armor				PLUS:0	COST:6000						VISIBLE:QUALIFY	SOURCEPAGE:p.5															PRETYPE:1,Armor																BONUS:MOVEADD|TYPE.Walk|10	SPROP:Increase base speed by 10
-Floating (Greater)			KEY:FIM_FLOATING_GRT			OUTPUTNAME:Floating, Greater		TYPE:Armor				PLUS:0	COST:15000						VISIBLE:QUALIFY	SOURCEPAGE:p.5															PRETYPE:2,Armor,GMWORKA																				SPROP:Gain swim speed 10																																				MOVE:Swim,10
+Floating (Greater)			KEY:FIM_FLOATING_GRT			OUTPUTNAME:Floating, Greater		TYPE:Armor				PLUS:0	COST:15000						VISIBLE:QUALIFY	SOURCEPAGE:p.5															PRETYPE:2,Armor,GMWORKA																				SPROP:Gain swim speed 10																																				ABILITY:FEAT|VIRTUAL|Floating ~ Greater
 Grace						KEY:FIM_GRACE_ARMR									TYPE:Armor				PLUS:2	COST:0						VISIBLE:QUALIFY	SOURCEPAGE:p.5																																						SPROP:Treat as Mithral for Special
 #Weight in half, DOES NOT STACK WITH MITHRAL...
 Magnetic					KEY:FIM_MAGNETIC_SHLD									TYPE:Shield				PLUS:0	COST:2						VISIBLE:QUALIFY	SOURCEPAGE:p.5															PRETYPE:2,Shield,Metal																				SPROP:Opponents attacking with metal weapons might stick to shield.
@@ -151,7 +151,7 @@ Hard Striking				KEY:FIM_HARDSTRI_SIEGE									TYPE:SiegeWeapon			PLUS:3	COST:0
 Keen						KEY:FIM_KEEN_SIEGE									TYPE:SiegeWeapon			PLUS:2	COST:0						VISIBLE:QUALIFY	SOURCEPAGE:p.111															PRETYPE:3,SiegeWeapon,Balista,Projectile																	SPROP:Critical threat range doubled
 Unerring Aim				KEY:FIM_UNERRING_AIM_SIEGE								TYPE:SiegeWeapon			PLUS:3	COST:0						VISIBLE:QUALIFY	SOURCEPAGE:p.111															PRETYPE:3,SiegeWeapon,Catapult,Thrown																	SPROP:Halve time to aim
 
-# Modifier Name				Unique Key					Output Name					Type					Plus		Cost							Visible		Source Page		Multiple Requirements											Required Type							Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Move
+# Modifier Name				Unique Key					Output Name					Type					Plus		Cost							Visible		Source Page		Multiple Requirements											Required Type							Prohibited Type		Damage Reduction			Add to base move			Special Property																						Virtual Feat								Choose		Nb of Charges	Ability
 Charges (25)				KEY:FIM_CHARGED_ITEM_25																COST:((BASECOST/25)*%CHARGES)-BASECOST	VISIBLE:NO																																																																												CHOOSE:NOCHOICE	CHARGES:1|25
 ##
 ###EOF
