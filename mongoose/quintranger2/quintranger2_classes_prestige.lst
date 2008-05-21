@@ -1,0 +1,124 @@
+# CVS $Revision: $ $Author: $ -- Tue May 20 18:25:17 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+SOURCELONG:Mongoose Publishing - Quintessential Ranger II	SOURCESHORT:QR_II	SOURCEWEB:http://mongoosepublishing.com	SOURCEDATE:2004-01
+
+
+#The Classes - PRCs
+
+###The Bowman --------------------------------------
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus												Combat bonus
+CLASS:The Bowman	HD:8		TYPE:PC.Prestige	ABB:TBM		MAXLEVEL:10	SOURCEPAGE:pg.56	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Required Ability												Req. Att.	Required Skill					Required Text
+CLASS:The Bowman	PREABILITY:5,CATEGORY=FEAT,Dodge,Point Blank Shot,Manyshot,Mobility,Rapid Shot	PREATT:8	PRESKILL:3,Listen=10,Spot=10,Tumble=4	PRETEXT:See The Bowman Special Entry Requirement, p.58
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:The Bowman	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Concentration|Craft (Bowyer)|Escape Artist|Handle Animal|Hide|Jump|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|Ride|Spot|Survival|Swim|Tumble
+
+1	BONUS:VAR|RangerAnimalCompLVL|CL	BONUS:VAR|RangerAnimalCompLVL|CL|PREFEAT:1,Strong Ally
+1																	ABILITY:FEAT|AUTOMATIC|Wind in the Trees
+2	BONUS:VAR|DartingMongooseBonus|CL/2											ABILITY:FEAT|AUTOMATIC|Darting Mongoose
+3																	ABILITY:FEAT|AUTOMATIC|Close in Archery
+4																	ABILITY:FEAT|AUTOMATIC|Killing Precision
+5																	ABILITY:FEAT|AUTOMATIC|Blurred Shot
+6																	ABILITY:FEAT|AUTOMATIC|Flawless Archery
+7																	ABILITY:FEAT|AUTOMATIC|Unstoppable Arrow
+8																	ABILITY:FEAT|AUTOMATIC|One Arrow Two Lives
+10																	ABILITY:FEAT|AUTOMATIC|Snuff the Candle
+
+
+###Block: The Chameleon ----------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus					Modify VAR
+CLASS:The Chameleon	HD:8		TYPE:PC.Prestige	ABB:TC		MAXLEVEL:10	SOURCEPAGE:pg.58	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|TheChameleonLVL|CL
+# Class Name		Required Ability												Required Class		Required Skill
+CLASS:The Chameleon	PREABILITY:3,CATEGORY=FEAT,Skill Focus(Hide),Skill Focus(Move Silently),Stealthy	PRECLASS:1,Ranger=4	PRESKILL:3,Hide=10,Knowledge (Nature)=10,Move Silently=4
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:The Chameleon	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Concentration|Disguise|Hide|Jump|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|Ride|Search|Spot|Survival|Swim
+
+1	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Camouflage|TC ~ Silent Phantom
+2	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Moving Shadow
+3	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Swift and Silent
+4	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Keen Eye
+5	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Blindsight
+6	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Hide in Plain Sight (Ranger)
+7	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ True Seeing
+8	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Improved Invisibility
+9	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Absolute Silence Absolute Stillness
+10	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|TC ~ Fade from the World
+
+
+#Block: King of the Wilderness --------------------------------------------------------------------------------------------
+
+# Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus					Modify VAR
+CLASS:King of the Wilderness	HD:6		TYPE:PC.Prestige	ABB:KotW		MAXLEVEL:10	SOURCEPAGE:pg.61	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|KingOfTheWildernessLVL|CL
+# Class Name			Required Ability											Required Skill
+CLASS:King of the Wilderness	PREABILITY:3,CATEGORY=FEAT,Skill Focus(Knowledge (Geography)),Endurance,Track	PRESKILL:3,Knowledge (Geography)=10,Knowledge (Nature)=10,Survival=10
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:King of the Wilderness	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Hide|Jump|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|Ride|Search|Spot|Survival|Swim|Use Rope
+
+1														ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Tireless Voyager|Natural Explorer
+2	BONUS:ABILITYPOOL|Terrain Immersion|CL/2							ADD:SPELLCASTER|Ranger
+3														ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Self-Contained|Trackless Step
+4														ADD:SPELLCASTER|Ranger
+5								BONUS:VAR|FastMovementBonus|10	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|King of the Road|Fast Movement
+6														ADD:SPELLCASTER|Ranger
+7														ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Treestrider
+8														ADD:SPELLCASTER|Ranger
+9														ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Unstoppable Voyager
+10								BONUS:VAR|FastMovementBonus|10	ADD:SPELLCASTER|Ranger
+
+
+###Block: The Mighty Hunter -----------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
+CLASS:The Mighty Hunter	HD:8		TYPE:PC.Prestige	ABB:TMH		MAXLEVEL:10	SOURCEPAGE:pg.63	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required Ability								Req. Att.	Required Skill
+CLASS:The Mighty Hunter	PREABILITY:3,CATEGORY=FEAT,Alertness,Self Sufficient,Track	PREATT:9	PRESKILL:4,Listen=10,Move Silently=10,Spot=10,Survival=10
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:The Mighty Hunter	STARTSKILLPTS:4	CSKILL:Climb|Concentration|Handle Animal|Hide|Jump|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|Ride|Search|Spot|Survival|Swim|Use Rope
+
+1														BONUS:VAR|TheMightyHunterLVL|CL
+1	BONUS:ABILITYPOOL|Favored Enemy|1	BONUS:ABILITYPOOL|Favored Enemy Bonus|1									ABILITY:FEAT|AUTOMATIC|Hunter's Instincts
+2																						ABILITY:FEAT|AUTOMATIC|Woodland Stride
+3														BONUS:VAR|FeatofExtraordinaryProwessTimes|CL/3	ABILITY:FEAT|AUTOMATIC|Feat of Extraordinary Prowess|Legendary Hunter
+4																						ABILITY:FEAT|AUTOMATIC|Tireless Hunter
+5	BONUS:ABILITYPOOL|Favored Enemy|1	BONUS:ABILITYPOOL|Favored Enemy Bonus|1
+7																						ABILITY:FEAT|AUTOMATIC|Deadly Precision
+8																						ABILITY:FEAT|AUTOMATIC|Perfect Strike
+10	BONUS:ABILITYPOOL|Favored Enemy|1	BONUS:ABILITYPOOL|Favored Enemy Bonus|1									ABILITY:FEAT|AUTOMATIC|Iconic Hunter
+
+
+###Block: The Obsessed Hunter ---------------------------------------------------------------------------------------------
+
+# Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus								Combat bonus
+CLASS:The Obsessed Hunter	HD:8		TYPE:PC.Prestige	ABB:TMH		MAXLEVEL:5	SOURCEPAGE:pg.65	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name			Required Ability							Required Class		Required Skill
+CLASS:The Obsessed Hunter	PREABILITY:3,CATEGORY=FEAT,Endurance,Iron Will,Track	PRECLASS:1,Ranger=4	PRESKILL:3,Listen=7,Search=7,Survival=7
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:The Obsessed Hunter	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Concentration|Handle Animal|Hide|Intimidate|Jump|Knowledge (Nature)|Listen|Move Silently|Ride|Search|Spot|Survival|Swim|Use Rope
+
+1						ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Obsessed|Reckless Vengeance
+2	BONUS:VAR|NemesisBonus|2	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Nemesis|Speed of the Wildfire
+3						ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Dogged Pursuit|Sense Enemy
+4	BONUS:VAR|NemesisBonus|2	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Fearful Foe
+5						ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Come to Terms|Killing Stroke
+
+
+###Block: The Wolf Master ----------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
+CLASS:The Wolf Master	HD:8		TYPE:PC.Prestige	ABB:TWM		MAXLEVEL:10	SOURCEPAGE:pg.68	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required Ability						Required Skill
+CLASS:The Wolf Master	PREABILITY:3,CATEGORY=FEAT,Alertness,Run,Track	PRESKILL:3,Listen=8,Spot=8,Survival=8
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:The Wolf Master	STARTSKILLPTS:4	CSKILL:Climb|Handle Animal|Hide|Intimidate|Jump|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|Spot|Survival
+
+1	BONUS:VAR|FastMovementBonus|10	BONUS:VAR|AnimalCompLevel|CL	ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Fast Movement|Night Eyes|TWM ~ Animal Companion
+2												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Scent
+3												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Spirit of the Wolf
+4												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Summon the Pack
+5	BONUS:VAR|FastMovementBonus|10						ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Wolf Form
+6												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Predator's Aura|Dire Companion
+7												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Of Wolf and Man
+8												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Unleash the Beast
+9	BONUS:VAR|FastMovementBonus|10						ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Wolf Mastery
+10												ADD:SPELLCASTER|Ranger	ABILITY:FEAT|AUTOMATIC|Wolf in Man's Clothing
