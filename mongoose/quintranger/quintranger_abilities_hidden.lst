@@ -1,9 +1,9 @@
-# CVS $Revision: $ $Author: $ -- Mon May 26 14:27:56 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+# CVS $Revision: $ $Author: $ -- Tue May 27 16:21:10 2008 -- reformated by prettylst.pl v1.38 (build 5869)
 SOURCELONG:Mongoose Publishing - Quintessential Ranger	SOURCESHORT:QR	SOURCEWEB:http://mongoosepublishing.com	SOURCEDATE:2003-01
 #Original Entry by: Andrew Maitland
 
 ###Block: Animal Champion --------------------------------------------------------------------------
-# Ability Name		Category of Ability	Type			Visible	Special ABility																												Define				Innate Spells
+# Ability Name		Category of Ability	Type			Visible	Special ABility																												Define				Innate Spells																																																	Bonus to Ability Pool
 Chosen Species		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Chosen Species
 Animal Friendship		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Animal Friendship (Ex)
 #Animal Companion		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:
@@ -11,11 +11,7 @@ Charm Animal		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Charm Animal (Sp)	
 Power of the Animal	CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Power of the Animal I|PREVAREQ:PowerOfTheAnimalLVL,1	SAB:Power of the Animal II|PREVAREQ:PowerOfTheAnimalLVL,2	SAB:Power of the Animal III|PREVAREQ:PowerOfTheAnimalLVL,3	DEFINE:PowerOfTheAnimalLVL|0
 Animal Form			CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Animal Form (Sp)|PREVAREQ:AnimalFormTimes,1	SAB:Animal Form (Sp) (3/day)|PREVAREQ|AnimalFormTimes,2	SAB:Animal Growth (Sp) (unlimited)|PREVAREQ|AnimalFormTimes,3		DEFINE:AnimalFormTimes|0	SPELLS:Class|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Form|PREVAREQ:AnimalFormTimes,1	SPELLS:Class|TIMES=3|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Form|PREVAREQ:AnimalFormTimes,2	SPELLS:Class|TIMES=ATWILL|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Form|PREVAREQ:AnimalFormTimes,3
 Animal Growth		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Animal Growth (Sp)|PREVAREQ:AnimalGrowthTimes,1	SAB:Animal Growth (Sp) (3/day)|PREVAREQ:AnimalGrowthTimes,3												DEFINE:AnimalGrowthTimes|0	SPELLS:Class|TIMES=AnimalGrowthTimes|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Growth
-Companion Pack		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Companion Pack
-#Add Extra Companions using new group to maintain minimum level
-
-
-
+Companion Pack		CATEGORY:FEAT		TYPE:Class.Hidden	VISIBLE:NO	SAB:Companion Pack																											DEFINE:CompanionPackLvl|0																																																				BONUS:ABILITYPOOL|Companion Pack Choice|1
 
 
 ###Block:Animal Champion Subclass Abilities --------------------------------
