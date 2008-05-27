@@ -1,0 +1,23 @@
+# CVS $Revision: $ $Author: $ -- Mon May 26 04:14:04 2008 -- reformated by prettylst.pl v1.38 (build 5869)
+SOURCELONG:Mongoose Publishing - Quintessential Ranger	SOURCESHORT:QR	SOURCEWEB:http://mongoosepublishing.com	SOURCEDATE:2003-01
+#Original Entry by: Andrew Maitland
+
+
+###Block:Wild Hunter Wild Pack
+# Class of the Master	Type			Hit Dice	Special ABility											Define			Combat bonus						Stat bonus			Modify VAR			Main Race Type
+FOLLOWER:WildPackLvl=1	TYPE:Wild Pack	HD:2		SAB:Link (Ex)	SAB:Animal Hunting (Ex)	SAB:Bonus Tricks +%|BonusTricks	DEFINE:BonusTricks|0	BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:STAT|STR,DEX|1	BONUS:VAR|BonusTricks|1	RACETYPE:Magical Beast
+FOLLOWER:WildPackLvl=3	TYPE:Wild Pack	HD:1		SAB:Improved Scent (Ex)														BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
+FOLLOWER:WildPackLvl=5	TYPE:Wild Pack			SAB:Evasion (Ex)																							BONUS:STAT|STR,DEX|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:WildPackLvl=7	TYPE:Wild Pack	HD:1		SAB:Harry Prey (Ex)														BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
+FOLLOWER:WildPackLvl=9	TYPE:Wild Pack			SAB:Devotion (Ex)																							BONUS:STAT|STR,DEX|1	BONUS:VAR|BonusTricks|1
+
+###Block:Specific Animal Companions
+# Class of the Master	Type			Required Race		Apply Kit
+FOLLOWER:WildPackLvl=1	TYPE:Wild Pack	PRERACE:1,Dog (Riding)	KIT:1|Dog (Riding) Companion
+
+
+
+###Block:Animal Champion Animals
+#FOLLOWER:CompanionPackLvl=1		TYPE:Companion Pack
+
+#To Do: Companion Pack animals are at BASE level that they are acquired. Need to implement.
