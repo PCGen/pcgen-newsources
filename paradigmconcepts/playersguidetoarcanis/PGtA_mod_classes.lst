@@ -41,7 +41,7 @@ SUBCLASSLEVEL:5	SAB:Fearless (Ex)
 SUBCLASS:Fire Dragon	COST:0	PREDEITY:1,Fire Dragon	PREGENDER:FEMALE
 SUBCLASSLEVEL:1	SAB:Ignore detrimental effects from natural heat between 80-150 degrees F.																																																																																												CSKILL:Survival																																						AUTO:WEAPONPROF|Flail (Heavy)
 SUBCLASS:Larissan Oracle	COST:0	PREDEITY:1,Larissa
-SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You																DOMAIN:Divination																																																																						ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)|Shield Proficiency																																																	CSKILL:TYPE.Arcana|Listen|Search|Spot																AUTO:WEAPONPROF|TYPE.Whip																					LANGAUTO:Ancient Altharin(Imperial)
+SUBCLASSLEVEL:1	SAB:+2 to Will saves against mind-affecting effects																	DOMAIN:Divination																																																																						ABILITY:FEAT|AUTOMATIC|Simple Weapon Proficiency	ABILITY:FEAT|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)|Shield Proficiency																																																	CSKILL:TYPE.Arcana|Listen|Search|Spot																AUTO:WEAPONPROF|TYPE.Whip		SPELLLEVEL:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You		LANGAUTO:Ancient Altharin(Imperial)
 SUBCLASSLEVEL:3																																																																																BONUS:COMBAT|AC|max(CHA,0)|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0
 SUBCLASSLEVEL:5																																																														BONUS:VAR|BardicKnowledgeLevel|((CL=Larissan Oracle)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel																												ABILITY:FEAT|VIRTUAL|GlimpseoftheForbidden|Bardic Knowledge
 SUBCLASS:Larissan Sensate	COST:0	PREDEITY:1,Larissa
@@ -118,10 +118,11 @@ SUBCLASSLEVEL:2																																																ABILITY:FEAT|AUTO
 SUBCLASSLEVEL:6																																																ABILITY:FEAT|AUTOMATIC|Heightened Elorii Bloodline|Improved Trip|PREFEAT:1,Improved Elorii Bloodline	ABILITY:FEAT|AUTOMATIC|Improved Elorii Bloodline|Improved Trip|PREMULT:2,[PREFEAT:Elorii Bloodline],[!PREFEAT:1,Improved Elorii Bloodline]	ABILITY:FEAT|AUTOMATIC|Elorii Bloodline|Improved Trip|!PREFEAT:2,Elorii Bloodline,Improved Elorii Bloodline
 SUBCLASSLEVEL:20	SAB:Elemental Soul
 SUBCLASS:Order of the Incandescent Path	COST:0
-SUBCLASSLEVEL:1																																																																																																															ADD:SAB|FAVOREDCLASS|Fighter
+SUBCLASSLEVEL:1																																																																																																															ADD:SAB|FAVOREDCLASS|Fighter|Warrior of the Eternal Flame
 SUBCLASSLEVEL:3																																																ABILITY:FEAT|AUTOMATIC|Iron Skin
 SUBCLASS:Order of the Irridescent Scale	COST:0				PREMULT:3,[PRERACE:1,Ss'ressen],[PRETEMPLATE:1,Black Talon],[PREGENDER:MALE]
-SUBCLASSLEVEL:1	SAB:+2 Dodge bonus to AC against attacks of opprtunity induced by moving.																														BONUS:MOVEADD|TYPE.Walk|10																																																																ADD:SAB|FAVOREDCLASS|Ranger	ADD:ABILITY:FEAT|AUTOMATIC|Iron Skin,Stunning Fist
+# 2006-06-03 errata - issue with stacking of my body bonuses and Ssethregore book prestige class - note in case that book ever gets coded
+SUBCLASSLEVEL:1	SAB:+2 Dodge bonus to AC against attacks of opprtunity induced by moving.																														BONUS:MOVEADD|TYPE.Walk|10																																																																ADD:SAB|FAVOREDCLASS|Ranger	ABILITY:FEAT|AUTOMATIC|Iron Skin	ADD:ABILITY:FEAT|AUTOMATIC|Dragon's Hide|Stunning Fist
 SUBCLASSLEVEL:2																																																ABILITY:FEAT|AUTOMATIC|Combat Reflexes|Tail Attack
 SUBCLASSLEVEL:6																																																ABILITY:FEAT|AUTOMATIC|Avalanche|Improved Trip
 SUBCLASS:Order of the Iron Soul		COST:0
@@ -153,8 +154,9 @@ SUBCLASSLEVEL:6																																																ABILITY:FEAT|VIRT
 19	ABILITY:FEAT|VIRTUAL|Empty Body
 20	ABILITY:FEAT|VIRTUAL|Perfect Self
 
+# per errata 2006-06-03 Divine Grace doesn't stack with the ability of any holy champion class to add an ability bonus to all saving throws, - no idea how to code
 # Class Name	Subclass?		Bonus Languages
-CLASS:Paladin.MOD	HASSUBCLASS:YES	LANGBONUS:Ancient Altharin(Imperial)
+CLASS:Paladin.MOD	HASSUBCLASS:YES	LANGAUTO:Ancient Altharin(Imperial)	LANGBONUS:Celestial|Infernal
 # Class Name	Class Skill
 CLASS:Paladin.MOD	CSKILL:TYPE.Nobility|TYPE.Religion|Examine Martial Technique
 SUBCLASS:Paladin of Althares		PREDEITY:1,Althares
