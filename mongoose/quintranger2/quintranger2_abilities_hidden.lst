@@ -3,38 +3,40 @@ SOURCELONG:Mongoose Publishing - Quintessential Ranger II	SOURCESHORT:QR_II	SOUR
 #Original Entry by: Andrew Maitland
 
 ###Block: The Bowman -------------------------------------------------------------------------------------------------------
-# Ability Name		Category of Ability	Type			Visible	Special ABility										Define										Combat bonus																								Modify VAR
-Wind in the Trees		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Wind in the Trees (Ex)
-Darting Mongoose		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Darting Mongoose (Ex) +%|DartingMongooseBonus|DartingMongooseUsable	DEFINE:DartingMongooseBonus|0	DEFINE:DartingMongooseUsable|0	BONUS:COMBAT|AC|DartingMongooseBonus|TYPE=Insight|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0	BONUS:VAR|DartingMongooseUsable|1|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0
-Close in Archery		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Close in Archery (Ex)
-Killing Precision		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Killing Precision (Ex)
-Blurred Shot		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Blurred Shot (Ex)
-Flawless Archery		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Flawless Archery (Ex)
-Unstoppable Arrow		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Unstoppable Arrow (Ex)
-One Arrow Two Lives	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:One Arrow, Two Lives (Ex)
-Snuff the Candle		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Snuff the Candle (Ex)
+# Ability Name		Category of Ability			Type				Visible	Special ABility										Define										Combat bonus																								Modify VAR
+Wind in the Trees		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Wind in the Trees (Ex)
+Darting Mongoose		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Darting Mongoose (Ex) +%|DartingMongooseBonus|DartingMongooseUsable	DEFINE:DartingMongooseBonus|0	DEFINE:DartingMongooseUsable|0	BONUS:COMBAT|AC|DartingMongooseBonus|TYPE=Insight|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0	BONUS:VAR|DartingMongooseUsable|1|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0
+Close in Archery		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Close in Archery (Ex)
+Killing Precision		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Killing Precision (Ex)
+Blurred Shot		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Blurred Shot (Ex)
+Flawless Archery		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Flawless Archery (Ex)
+Unstoppable Arrow		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Unstoppable Arrow (Ex)
+One Arrow Two Lives	CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:One Arrow, Two Lives (Ex)
+Snuff the Candle		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Snuff the Candle (Ex)
 
 ###Block: The Chameleon ----------------------------------------------------------------------------------------------------
-# Ability Name					Category of Ability	Type			Visible	Special ABility						Define					Innate Spells										Bonus to skill														Modify VAR												Vision
-TC ~ Silent Phantom				CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Silent Phantom (Ex)					DEFINE:TheChameleonLVL|0														BONUS:SKILL|Hide,Move Silently|TheChameleonLVL|TYPE=Competence
-TC ~ Moving Shadow				CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Moving Shadow (Ex)
-TC ~ Swift and Silent				CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Swift and Silent (Ex)
-TC ~ Keen Eye					CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Keen Eye (Ex)																								BONUS:SKILL|Listen,Spot,Search,Survival (Find or follow tracks)|TheChameleonLVL|TYPE=Competence
-TC ~ Blindsight					CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Blindsight (Ex)																																																				VISION:Blindsight	DEFINE:BlindsightRange|0	BONUS:VISION|Blindsight|BlindsightRange
-TC ~ True Seeing					CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:True Seeing (Sp)					DEFINE:ChameleonPlusRangerLVL|0	SPELLS:Class|CASTERLEVEL=ChameleonPlusRangerLVL|True Seeing																			BONUS:VAR|ChameleonPlusRangerLVL|var("CL=Ranger")+var("CL=The Chameleon")
-TC ~ Improved Invisibility			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Improved Invisibility (Sp)									SPELLS:Class|CASTERLEVEL=ChameleonPlusRangerLVL|Improved Invisibility
-TC ~ Absolute Silence Absolute Stillness	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Absolute Silence, Absolute Stillness (Ex)
-TC ~ Fade from the World			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Fade from the World (Su)
+# Ability Name					Category of Ability		Type				Visible	Special ABility						Define					Innate Spells										Bonus to skill														Modify VAR												Vision
+Camouflage						CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Camouflage (Ex)
+TC ~ Silent Phantom				CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Silent Phantom (Ex)					DEFINE:TheChameleonLVL|0														BONUS:SKILL|Hide,Move Silently|TheChameleonLVL|TYPE=Competence
+TC ~ Moving Shadow				CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Moving Shadow (Ex)
+TC ~ Swift and Silent				CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Swift and Silent (Ex)
+TC ~ Keen Eye					CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Keen Eye (Ex)																								BONUS:SKILL|Listen,Spot,Search,Survival (Find or follow tracks)|TheChameleonLVL|TYPE=Competence
+TC ~ Blindsight					CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Blindsight (Ex)																																																				VISION:Blindsight	DEFINE:BlindsightRange|0	BONUS:VISION|Blindsight|BlindsightRange
+TC ~ True Seeing					CATEGORY:Special Ability	TYPE:Spelllike		VISIBLE:NO	SAB:True Seeing (Sp)					DEFINE:ChameleonPlusRangerLVL|0	SPELLS:Class|CASTERLEVEL=ChameleonPlusRangerLVL|True Seeing																			BONUS:VAR|ChameleonPlusRangerLVL|var("CL=Ranger")+var("CL=The Chameleon")
+TC ~ Improved Invisibility			CATEGORY:Special Ability	TYPE:Spelllike		VISIBLE:NO	SAB:Improved Invisibility (Sp)									SPELLS:Class|CASTERLEVEL=ChameleonPlusRangerLVL|Improved Invisibility
+TC ~ Absolute Silence Absolute Stillness	CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Absolute Silence, Absolute Stillness (Ex)
+TC ~ Fade from the World			CATEGORY:Special Ability	TYPE:Supernatural		VISIBLE:NO	SAB:Fade from the World (Su)
+Hide in Plain Sight				CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Hide in Plain Sight (Ex)																																																																		SOURCEPAGE:ClassesII.rtf
 
 ###Block: King of the Wilderness --------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type				Visible	Special ABility					Define					Innate Spells														Add to base move					Bonus to skill
-Tireless Voyager			CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:Tireless Voyager (Ex)
-Natural Explorer			CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:Natural Explorer (Ex)			DEFINE:KingOfTheWildernessLVL|0																								BONUS:SKILL|Climb,Jump,Swim|KingOfTheWildernessLVL|TYPE=Competence
-Self-Contained			CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:Self-Contained (Su)
-King of the Road			CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:King of the Road (Ex)
-Fast Movement			CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:Fast Movement (Ex)				DEFINE:FastMovementBonus|0																		BONUS:MOVEADD|TYPE=Walk|FastMovementBonus
-Treestrider				CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:Treestrider (Su)										SPELLS:Class|TIMES=KingOfTheWildernessLVL/2|CASTERLEVEL=KingOfTheWildernessLVL|Tree Stride
-Unstoppable Voyager		CATEGORY:Special Ability			TYPE:Class.Hidden		VISIBLE:NO	SAB:Unstoppable Voyager (Su)									SPELLS:Class|TIMES=ATWILL|CASTERLEVEL=KingOfTheWildernessLVL|Freedom of Movement
+Tireless Voyager			CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Tireless Voyager (Ex)
+Natural Explorer			CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Natural Explorer (Ex)			DEFINE:KingOfTheWildernessLVL|0																								BONUS:SKILL|Climb,Jump,Swim|KingOfTheWildernessLVL|TYPE=Competence
+Self-Contained			CATEGORY:Special Ability	TYPE:Supernatural		VISIBLE:NO	SAB:Self-Contained (Su)
+King of the Road			CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:King of the Road (Ex)
+Fast Movement			CATEGORY:Special Ability	TYPE:Extraordinary	VISIBLE:NO	SAB:Fast Movement (Ex)				DEFINE:FastMovementBonus|0																		BONUS:MOVEADD|TYPE=Walk|FastMovementBonus
+Treestrider				CATEGORY:Special Ability	TYPE:Supernatural		VISIBLE:NO	SAB:Treestrider (Su)										SPELLS:Class|TIMES=KingOfTheWildernessLVL/2|CASTERLEVEL=KingOfTheWildernessLVL|Tree Stride
+Unstoppable Voyager		CATEGORY:Special Ability	TYPE:Supernatural		VISIBLE:NO	SAB:Unstoppable Voyager (Su)									SPELLS:Class|TIMES=ATWILL|CASTERLEVEL=KingOfTheWildernessLVL|Freedom of Movement
 
 #Block: Terrain Immersion Choices -------------------------------------------------------------------------------------------
 Terrain Immersion (Desert)	CATEGORY:Special Ability	TYPE:Terrain Immersion			SAB:Terrain Immersion (Ex) (Desert)
@@ -49,41 +51,41 @@ Terrain Immersion (Tundra)	CATEGORY:Special Ability	TYPE:Terrain Immersion			SAB
 
 ###Block: The Mighty Hunter -------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability	Type			Visible	Special ABility											Define						Ability					Bonus to skill
-Hunter's Instincts		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Hunter's Instincts (Ex)									DEFINE:TheMightyHunterLVL|0									BONUS:SKILL|Listen,Spot,Search|TheMightyHunterLVL|TYPE=Competence
-Feat of Extraordinary Prowess	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Feat of Extraordinary Prowess (Ex) %/day|FeatofExtraordinaryProwessTimes	DEFINE:FeatofExtraordinaryProwessTimes|0
-Legendary Hunter			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Legendary Hunter (Ex)
-Tireless Hunter			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Tireless Hunter (Ex)																ABILITY:FEAT|AUTOMATIC|Endurance
-Deadly Precision			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Deadly Precision (Ex)
-Perfect Strike			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Perfect Strike (Ex)
-Iconic Hunter			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Iconic Hunter (Ex)
+Hunter's Instincts		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Hunter's Instincts (Ex)									DEFINE:TheMightyHunterLVL|0									BONUS:SKILL|Listen,Spot,Search|TheMightyHunterLVL|TYPE=Competence
+Feat of Extraordinary Prowess	CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Feat of Extraordinary Prowess (Ex) %/day|FeatofExtraordinaryProwessTimes	DEFINE:FeatofExtraordinaryProwessTimes|0
+Legendary Hunter			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Legendary Hunter (Ex)
+Tireless Hunter			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Tireless Hunter (Ex)																ABILITY:FEAT|AUTOMATIC|Endurance
+Deadly Precision			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Deadly Precision (Ex)
+Perfect Strike			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Perfect Strike (Ex)
+Iconic Hunter			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Iconic Hunter (Ex)
 
 ###Block: The Obsessed Hunter ------------------------------------------------------------------------------------------------
 # Ability Name		Category of Ability	Type			Visible	Special ABility				Define
-Obsessed			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Obsessed (Ex)
-Reckless Vengeance	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Reckless Vengeance (Ex)
-Nemesis			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Nemesis (Ex) +%|NemesisBonus	DEFINE:NemesisBonus|0
-Speed of the Wildfire	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Speed of the Wildfire (Ex)
-Dogged Pursuit		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Dogged Pursuit (Ex)
-Sense Enemy			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Sense Enemy (Sp)
-Fearful Foe			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Fearful Foe (Sp)
-Come to Terms		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Come to Terms (Ex)
-Killing Stroke		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Killing Stroke (Ex)
+Obsessed			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Obsessed (Ex)
+Reckless Vengeance	CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Reckless Vengeance (Ex)
+Nemesis			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Nemesis (Ex) +%|NemesisBonus	DEFINE:NemesisBonus|0
+Speed of the Wildfire	CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Speed of the Wildfire (Ex)
+Dogged Pursuit		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Dogged Pursuit (Ex)
+Sense Enemy			CATEGORY:Special Ability		TYPE:Spelllike		VISIBLE:NO	SAB:Sense Enemy (Sp)
+Fearful Foe			CATEGORY:Special Ability		TYPE:Spelllike		VISIBLE:NO	SAB:Fearful Foe (Sp)
+Come to Terms		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Come to Terms (Ex)
+Killing Stroke		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Killing Stroke (Ex)
 
 ###Block: The Wolf Master ----------------------------------------------------------------------------------------------------
-# Ability Name		Category of Ability	Type			Visible	Special ABility				Define				Template					Ability						Combat bonus				Bonus to skill							Modify VAR							Weapon prof. bonus			Allow Follower					Allowed Companions								Vision		Bonus
-Night Eyes			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Night Eyes (Ex)																																																																				VISION:Low-light
-TWM ~ Animal Companion	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO							DEFINE:AnimalCompLevel|0							ABILITY:FEAT|AUTOMATIC|Animal Companion																BONUS:VAR|AnimalCompLevel|var("CL=Ranger")							FOLLOWERS:Wolf Master Animal Companion|1	COMPANIONLIST:Wolf Master Animal Companion|Wolf							BONUS:FOLLOWERS|Animal Companion|-1
-Scent				CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Scent (Ex)
-Spirit of the Wolf	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Spirit of the Wolf (Ex)																																											BONUS:WEAPONPROF=Bite|TOHIT|-5
+# Ability Name		Category of Ability			Type				Visible	Special ABility			Define				Template					Ability						Combat bonus				Bonus to skill							Modify VAR							Weapon prof. bonus			Allow Follower					Allowed Companions								Vision		Bonus
+Night Eyes			CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Night Eyes (Ex)																																																																				VISION:Low-light
+M ~ Animal Companion	CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Animal Companion ~ Lupine	DEFINE:AnimalCompLevel|0							ABILITY:FEAT|AUTOMATIC|Animal Companion																BONUS:VAR|AnimalCompLevel|var("CL=Ranger")							FOLLOWERS:Wolf Master Animal Companion|1	COMPANIONLIST:Wolf Master Animal Companion|Wolf							BONUS:FOLLOWERS|Animal Companion|-1		
+Scent				CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Scent (Ex)
+Spirit of the Wolf	CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Spirit of the Wolf (Ex)																																											BONUS:WEAPONPROF=Bite|TOHIT|-5
 #Comment: TEMPLATE:TheWolfMasterNaturalAttack not working in ability file, placed directly into the Class and works fine.
-Summon the Pack		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Summon the Pack (Su)
-Wolf Form			CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Wolf Form (Su)
-Predator's Aura		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Predator's Aura (Su)																										BONUS:SKILL|Intimidate|var("CL=The Wolf Master")
-Dire Companion		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Dire Companion (Ex)																																																		FOLLOWERS:Wolf Master Dire Companion|1	COMPANIONLIST:Wolf Master Dire Companion|Dire Animal (Dire Wolf)				BONUS:FOLLOWERS|Wolf Master Animal Companion|-1
-Of Wolf and Man		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Of Wolf and Man (Ex)																				BONUS:COMBAT|AC|2|TYPE=NaturalArmor	BONUS:SKILL|Listen,Spot|2													BONUS:WEAPONPROF=Bite|DAMAGESIZE|1
-Unleash the Beast		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Unleash the Beast (Su)
-Wolf Mastery		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Wolf Mastery (Su)
-Wolf in Man's Clothing	CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:Wolf in Man's Clothing (Su)
+Summon the Pack		CATEGORY:Special Ability		TYPE:Supernatural		VISIBLE:NO	SAB:Summon the Pack (Su)
+Wolf Form			CATEGORY:Special Ability		TYPE:Supernatural		VISIBLE:NO	SAB:Wolf Form (Su)
+Predator's Aura		CATEGORY:Special Ability		TYPE:Supernatural		VISIBLE:NO	SAB:Predator's Aura (Su)																										BONUS:SKILL|Intimidate|var("CL=The Wolf Master")
+Dire Companion		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Dire Companion (Ex)																																																		FOLLOWERS:Wolf Master Dire Companion|1	COMPANIONLIST:Wolf Master Dire Companion|Dire Animal (Dire Wolf)				BONUS:FOLLOWERS|Wolf Master Animal Companion|-1
+Of Wolf and Man		CATEGORY:Special Ability		TYPE:Extraordinary	VISIBLE:NO	SAB:Of Wolf and Man (Ex)																				BONUS:COMBAT|AC|2|TYPE=NaturalArmor	BONUS:SKILL|Listen,Spot|2													BONUS:WEAPONPROF=Bite|DAMAGESIZE|1
+Unleash the Beast		CATEGORY:Special Ability		TYPE:Supernatural		VISIBLE:NO	SAB:Unleash the Beast (Su)
+Wolf Mastery		CATEGORY:Special Ability		TYPE:Supernatural		VISIBLE:NO	SAB:Wolf Mastery (Su)
+Wolf in Man's Clothing	CATEGORY:Special Ability		TYPE:Supernatural		VISIBLE:NO	SAB:Wolf in Man's Clothing (Su)
 
 ###Block: New Combat Styles --------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type				Visible		Restricted Ability								Special ABility																																																																																														Virtual Feat																																																											Add to base move																																												Source Page
