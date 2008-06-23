@@ -1,0 +1,278 @@
+# CVS $Revision: 6571 $ $Author: amaitland $ -- Fri Jun 13 00:51:14 2008 -- reformated by prettylst.pl v1.38 (build 6552)
+SOURCELONG:Player's Guide to Arcanis	SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2004-06
+
+# Used on multiple
+Canny Defense		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Canny Defense (Ex)
+Ranged Sneak Attack	CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Ranged Sneak Attack +%d% max % ft|RangedSneakAttack|RangedSneakAttackDie|RangedSneakDistance	DEFINE:RangedSneakAttackDie|6	DEFINE:RangedSneakAttack|0 DEFINE:RangedSneakDistance|0
+
+
+## PRESTIGE CLASS ABILITIES
+
+# Altherian Sharpshooter
+Deadly Aim Ability	CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Deadly Aim																														AUTO:FEAT|Deadly Aim
+Dead Eye			CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Dead Eye
+Focused Training AS	CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Focused Training																													AUTO:FEAT|Quick Reload AS|PRECLASS:1,Altherian Sharpshooter=1	AUTO:FEAT|Weapon Specialization (Flintlock (Rifle))|PRECLASS:1,Altherian Sharpshooter=4
+Ranged Sneak Attack	CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Ranged Sneak Attack +%d% max % ft|RangedSneakAttack|RangedSneakAttackDie|RangedSneakDistance	DEFINE:RangedSneakAttackDie|6	DEFINE:RangedSneakAttack|0 DEFINE:RangedSneakDistance|0
+Steady Hands		CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Steady Hands																														AUTO:FEAT|Shot on the Run
+
+# Altherian Triggermage
+Empower Rune Gun		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Empower Rune Gun (Su) Ghost|PRECLASS:1,Altherian Triggermage=1	SAB:Empower Rune Gun (Su) Ghost, Seeker|PRECLASS:1,Altherian Triggermage=4	SAB:Empower Rune Gun (Su) Ghost, Seeker, Fire's Kiss|PRECLASS:1,Altherian Triggermage=6 SAB:Empower Rune Gun (Su) Ghost, Seeker, Fire's Kiss, Magic Bullet|PRECLASS:1,Altherian Triggermage=8
+Enhance Rune Gun		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Enhance Rune Gun +% (Su)|RuneGunBonus		DEFINE:RuneGunBonus|0
+Enrune Flintlock		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Enrune Flintlock (Su)
+Imbue Bullet		CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Imbue Bullet (Sp)
+Imbue Gun			CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Imbue Gun (Sp)
+Improved Imbue Bullet	CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Improved Imbue Bullet (Sp)	ABILITY|Special Ability|.CLEAR.Imbue Bullet
+
+# Ansharan Gatekeeper
+Dim Door Ability			CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Dimension Door %/day casterlevel %|DDTimes|DDCastLevel	BONUS:VAR|DDTimes|CL/2	BONUS:VAR|DDCastLevel|TL	DEFINE:DDTimes|0	DEFINE:DDCastLevel|0
+Gatemaster				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Gatemaster (Sp) %/day|CL+WIS
+Keen Eye				CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Keen Eye (Ex) +% Search bonus|CL
+Locate Portal			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Locate Portal (Ex)
+Phase Door Ability		CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Phase Door %/day casterlevel %|DDTimes|DDCastLevel
+Spontaneous Portal Ability	CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Spontaneous Portal (Su)
+Teleport Ability			CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Teleport 1/day casterlevel %|DDCastLevel
+
+# Battlemage of the Coryani
+Battle Magic						CATEGORY:Special Ability	TYPE:Internal.Supernatual	VISIBLE:NO		SAB:Battle Magic (Su)
+Battle Spell						CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Battle Spell % (Su)|BattleSpellTimes			DEFINE:BattleSpellTimes|0
+Endurance Ability						CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO																AUTO:FEAT|Endurance
+Hunted							CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Hunted
+Improved Armored Casting				CATEGORY:Special Ability	TYPE:Internal.Extraordiary	VISIBLE:NO	SAB:Improved Armored Casting (Ex)				BONUS:MISC|SPELLFAILURE|-25|TYPE=Armor.REPLACE|PREEQUIP:1,Lorica Segmentata%
+Spell Mast Ability					CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO																ADD:FEAT|Spell Mastery
+Spontaneous Caster Spell				CATEGORY:Special Ability	TYPE:Internal		VISIBLE:NO		SAB:Spontaneous Caster Extra Spells	MULT:YES	ADD:ABILITY|CATEGORY=BMCKnownSpellBonus|TYPE=BMCBonusKnownSpell
+Stable Casting						CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Stable Casting (Ex)
+Strength Coryani Ability	NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO															AUTO:FEAT|Strength of the Coryani Heart
+#### Bonus Known Spells
+# Ability Name		Category of Ability		Type				Visible		Req. Spell Type		Stackable?	Multiple?	Choose		Bonus to spell known/L
+Bonus Known ASpell 1	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=1	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=1|1
+Bonus Known ASpell 2	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=2	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=2|1
+Bonus Known ASpell 3	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=3	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=3|1
+Bonus Known ASpell 4	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=4	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=4|1
+Bonus Known ASpell 5	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=5	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=5|1
+Bonus Known ASpell 6	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=6	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=6|1
+Bonus Known ASpell 7	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=7	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=7|1
+Bonus Known ASpell 8	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=8	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=8|1
+Bonus Known ASpell 9	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Arcane=9	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=9|1
+Bonus Known DSpell 1	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=1	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=1|1
+Bonus Known DSpell 2	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=2	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=2|1
+Bonus Known DSpell 3	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=3	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=3|1
+Bonus Known DSpell 4	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=4	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=4|1
+Bonus Known DSpell 5	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=5	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=5|1
+Bonus Known DSpell 6	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=6	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=6|1
+Bonus Known DSpell 7	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=7	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=7|1
+Bonus Known DSpell 8	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=8	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=8|1
+Bonus Known DSpell 9	CATEGORY:BMCKnownSpellBonus	TYPE:BMCBonusKnownSpell	VISIBLE:DISPLAY	PRESPELLTYPE:1,Divine=9	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=9|1
+
+# Beltinian Exorcist
+Greater Sanctified Ward			CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Greater Sanctified Ward (Su)
+Holy Presence				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Holy Presence (Sp)
+My Spirit is My Own			CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:My Spirit is My Own (Su)
+Rend the Spirit				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Rend the Spirit (Sp)
+Sanctified					CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Sanctified Weapon & Holy Symbol (Su)
+Sanctified Ward				CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Sanctified Ward (Su)
+To Banish the Restless			CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:To Banish the Restless (Sp)
+To Rip the Spirit from the Flesh	CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:To Rip the Spirit from the Flesh (Sp)
+
+# Blackchanter
+Dance Macabre				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Dance Macabre (Sp)
+Elemental Savant (Positive Energy)	CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Elemental Savant (Positive Energy) (Sp)
+Requiem					CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Requiem (Ex)
+
+# Bowman
+Arrow Stab			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Arrow Stab (Ex)
+Focused Training BM	CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Focused Training			AUTO:FEAT|Weapon Specialization(Longbow)|Weapon Specialization(Shortbow)|Combat Firing	BONUS:VAR|WeapSpecQualify|CL
+Hail of Arrows		CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Hail of Arrows (Sp)
+Hold the Line		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Hold the Line (Ex)
+Inner Focus			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Inner Focus (Ex)
+Lightning Draw		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Lightning Draw (Ex)			AUTO:FEAT|Quick Draw|!PREFEAT:1,Quick Draw	BONUS:COMBAT|INITIATIVE|2|TYPE=Competence|PREFEAT:1,Quick Draw
+The Arrow Knows the Way	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:The Arrow Knows the Way (Su)
+Warrior's Path		CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO		SAB:Warrior's Path
+
+# Brethren of St. Theomund
+Divine Stewardship	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Divine Stewardship +% (Ex)|StewardBonus					DEFINE:StewardBonus|0
+Faithful Bodyguard	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Faithful Bodyguard (Ex)
+Righteous Wrath		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Righteous Wrath (Ex)
+Unshakable Dogma		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Unshakable Dogma (Ex)
+
+# Cantenari
+Infernal Enemy						CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Infernal Enemy (Ex)			ABILITY:Special Ability|VIRTUAL|Favored Bonus__Tainted_Creatures
+Infernal Wounding						CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Infernal Wounding (Ex)
+My Mind is My Own						CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:My Mind is My Own (Su)
+Presence of the Infernal				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Presence of the Infernal (Sp)
+Reknown							CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Reknown (Ex)
+Resilience							CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Resilience % (Ex)|ResilienceLevel																				DEFINE:ResilienceLevel|0
+Sarish's Binding			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Sarish's Binding (Sp)
+Sarish's Blessing			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Sarish's Blessing (Su) +1 bonus Infernals	BONUS:CHECKS|ALL|max(CHA,0)|!PREABILITY:1,CATEGORY=Special Ability,Divine Grace PGtA
+Sarish's Judgement		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Sarish's Judgement (Sp)
+Spell Resistance Ability				CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Spell Resistance (Su)
+
+# Centurion
+Damage Reduction Ability					CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO	SAB:Damage Reduction (Ex)										DR:1/-
+Discipline of Steel						CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO	SAB:Discipline of Steel (Ex) (%/day)(+4 attack, +% damage)|DiscSteelDay|DiscSteelDmg	DEFINE:DiscSteelDay|0	DEFINE:DiscSteelDmg|0																																																																																																																																																																																																																																																						BONUS:VAR|DiscSteelDay|1+((var("CL=Centurion"))>=9)	BONUS:VAR|DiscSteelDmg|var("CL=Centurion")																																																																SOURCEPAGE:p.181
+For the Empire							CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO	SAB:For the Empire! (Ex) % rounds|3+CHA
+Strength Coryani Heart Ability	NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO	SAB:Strength of the Coryani Heart (Ex)	AUTO:FEAT|Strength of the Coryani Heart
+Strike the Rod							CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO	SAB:Strike the Rod (Ex)
+
+# Combat Styles
+Advantages and Limitations	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO	SAB:Advantages and Limitations (Ex)
+Combat School Style		CATEGORY:Special Ability	TYPE.Internal.Extraordinary	VISIBLE:NO		SAB:Combat Style - Trainee|PREVAREQ:CL,1	SAB:Combat Style - Novice|PREVAREQ:CL,2	SAB:Combat Style - Adept|PREVAREQ:CL,3	SAB:Combat Style - Expert|PREVAREQ:CL,4	SAB:Combat Style - Master|PREVAREQ:CL,5
+
+# Style Maneuvers
+A Thousand Cuts		CATEGORY:Special Ability	TYPE.Internal.Extraordinary	VISIBLE:NO		SAB:A Thousand Cuts (Ex)
+Balance and Grace		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Balance and Grace (Ex)
+Cutting High and Low	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Cutting High and Low (Ex)
+Cutting Trip		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Cutting Trip (Ex)
+Defensive Perfection	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Defensive Perfection (Ex)
+Defensive Spin Ability	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Defensive Spin Ability (Ex)
+Demi-Volt			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Demi-Volt (Ex)
+Double Lunge		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Double Lunge (Ex)
+Flowing Sand Ability	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Flowing Sand (Ex)				AUTO:FEAT|Flowing Sand
+Impeccable Expertise	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Impeccable Expertise (Ex)
+Instinctual Defense	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Instinctual Defense (Ex)
+Mighty Cleave		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Mighty Cleave (Ex)
+Mighty Swing		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Mighty Swing (Ex)
+Parry				CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Parry (Ex)
+Passing the Charge	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Passing the Charge (Ex)
+Pressing Attack		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Pressing Attack (Ex)
+Punto Riverso		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Punto Riverso (Ex)
+Reaping the Whirlwind	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Reaping the Whirlwind (Ex)
+Spinning Strike		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Spinning Strike (Ex)
+Strike Without Thought	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Strike Without Thought (Ex)
+The Cruelest Cut		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:The Cruelest Cut (Ex)
+To Meet the Charge	CATEGORY:Special Ability	TYPE:Internal.Maneuvers		VISIBLE:NO		SAB:To Meet the Charge (Ex)																	SOURCEPAGE:p.184
+Trap and Cut		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Trap and Cut (Ex)
+
+# Emerald Society Archaeologist
+Ancient Lore		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Ancient Lore (Ex)
+Emerald Proficiency	CATEGORY:Special Ability	TYPE:Internal			VISIBLE:NO																									ADD:FEAT|Weapon Proficiency (Longsword)|Weapon Proficiency (Whip)|Weapon Proficiency (Gladius)
+Find the Past		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Find the Past (Ex)
+Great Lore			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Great Lore (Ex)
+Investigator		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO									AUTO:FEAT|Investigator
+Knowledge Mastery		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Knowledge Mastery (Ex)
+Researcher			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Researcher (Ex)													BONUS:SKILL|TYPE.Knowledge,Gather Information|2
+Subject Specialization	CATEGORY:Special Ability	TYPE:Internal.ClassChoice	VISIBLE:NO					STACK:NO	MULT:YES	CHOOSE:SKILLSNAMED|TYPE.Knowledge|RANKS=4|		BONUS:SKILLS|LIST|3|TYPE=Circumstance
+
+# Gladiator
+Amazing Fortitude		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Amazing Fortitude (Ex)
+As if They Were Gods	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:As if They Were Gods (Ex)																		AUTO:FEAT|Leadership|!PREFEAT:1,Leadership
+Defensive Roll		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Defensive Roll (Ex)			PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0
+Idolized by the Mob	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Idolized by the Mob (Ex)
+Legendary Fortitude	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Legendary Fortitude (Ex)
+Signature Weapon		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Signature Weapon (Ex)
+
+Combat Style					CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO			ADD:ABILITY|Special Ability|Virtual|TYPE=CombatStyle
+Andabatae CS		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Andabatae)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Improved Unarmed Strike
+Murmillo CS			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Murmillo)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|[2|]Weapon Focus(TYPE=Sword),Weapon Focus(Shortspear)
+Retiarius CS		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Retiarius)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|[2|]Weapon Focus(Trident),Exotic Weapon Proficiency (Net)
+Samnite CS			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Samnite)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0								AUTO:FEAT|[2|]Weapon Focus(Sword (Short)),Weapon Focus(Shortspear)
+Sefacci CS			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Sefacci)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Two Weapon Fighting
+Thracian CS			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Thracian)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Weapon Focus(Sword (Short))
+
+Improved Combat Style				CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO			ADD:ABILITY|Special Ability|Virtual|TYPE=ImpCombatStyle
+Andabatae ICS		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.ImpCombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Andabatae)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|[2|]Blind Fight,Weapon Focus(Unarmed Strike)
+Murmillo ICS		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.ImpCombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Murmillo)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		SAB:Armor Optimization +2 (Ex)	BONUS:COMBAT|AC|2
+Retiarius ICS		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.ImpCombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Retiarius)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Improved Trip	ABILITY:Special Ability|Virtual|Canny Defense
+Samnite ICS			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.ImpCombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Samnite)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0								SAB:Armor Optimization +1 (Ex)	BONUS:COMBAT|AC|1
+Sefacci ICS			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.ImpCombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Sefacci)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Two Weapon Defense
+Thracian ICS		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.ImpCombatStyle	VISIBLE:NO		PRECLASS:1,Gladiator (Thracian)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		SAB:Armor Optimization +1 (Ex)	BONUS:COMBAT|AC|1
+
+Combat Style Master				CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO			ADD:ABILITY|Special Ability|Virtual|TYPE=CombatStyleMstr
+Andabatae CSM		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyleMstr	VISIBLE:NO		PRECLASS:1,Gladiator (Andabatae)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|[2|]Improved Grapple,Weapon Specialization(Unarmed Strike)
+Murmillo CSM		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyleMstr	VISIBLE:NO		PRECLASS:1,Gladiator (Murmillo)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		ADD:FEAT|Weapon Specialization(TYPE=Sword),Weapon Specialization(Shortspear)
+Retiarius CSM		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyleMstr	VISIBLE:NO		PRECLASS:1,Gladiator (Retiarius)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Weapon Focus(Net)|Weapon Specialization(Trident)
+Samnite CSM			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyleMstr	VISIBLE:NO		PRECLASS:1,Gladiator (Samnite)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0								ADD:FEAT|Weapon Specialization(Sword (Short)),Weapon Specialization(Shortspear)
+Sefacci CSM			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyleMstr	VISIBLE:NO		PRECLASS:1,Gladiator (Sefacci)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		AUTO:FEAT|Improved Two Weapon Fighting
+Thracian CSM		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.CombatStyleMstr	VISIBLE:NO		PRECLASS:1,Gladiator (Thracian)	PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0		ADD:FEAT|Weapon Specialization(Sword (Short))
+
+# Grand Master
+Master's Edge			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Master's Edge +% (Ex)|MasterEdgeBonus			DEFINE:MasterEdgeBonus|0
+Master's Intuition		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Master's Intuition (Ex)					AUTO:FEAT|Style Convergence
+Master's Reputation		CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Master's Reputation
+Quicken Strike			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Quicken Strike (Ex) 4/Day
+Strike of the Placid Mind	CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Strike of the Placid Mind %/Day (Ex)|PlacidTimes	DEFINE:PlacidTimes
+The Perfect Cut			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:The Perfect Cut %/Day (Ex)|CutTimes			DEFINE:CutTimes|0
+
+# Hurrianic Aegis
+Extra Protection Domain Spell				CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Extra Protection Domain Spell (Ex)
+Hurrian's Bastion			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Hurrian's Bastion (Su)								DR:5/-
+Hurrian's Fortress		NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Hurrian's Fortress (Su)
+Hurrian's Shield			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Hurrian's Shield (Su)
+Hurrian's Wall			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO		SAB:Hurrian's Wall (Su) %/Day|3+CON
+Grtr Domain Focus(Refuge)				CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Greater Domain Focus(Refuge) (Ex)			AUTO:FEAT|Greater Domain Focus(Refuge)
+Mass Shield Ability					CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Mass Shield (Sp)(up to % extra creatures)|MSNum			BONUS:VAR|MSNum|floor(CL/3)		DEFINE:MSNum|0
+Mass Shield Other	Ability				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Mass Shield Other (Sp)(up to % extra creatures)|MSONum		BONUS:VAR|MSONum|floor(CL/2)		DEFINE:MSONum|0
+Quickened Shield Other Ability			CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Quickened Shield Other (Sp)
+Spontaneous Shield Other				CATEGORY:Special Ability	TYPE:Internal.Special		VISIBLE:NO		SAB:Spontaneous Shield Other (Sp)
+Toughness Ability						CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO		SAB:Toughness (Ex)						AUTO:FEAT|Toughness
+
+# Larissan Dancer
+
+# Man-At-Arms
+
+# Master of the Hounds
+
+# Milandisian Canton
+
+# Myrmidon
+
+# Obsidian Sniper
+
+# Onaran Templar
+
+# Order of the Still Heart
+ThePathTaken		CATEGORY:Special Ability	TYPE:Internal.SpecialAbility	VISIBLE:NO																											SAB:The Path Taken: Lose some of the characteristics of mortal form, preparing for the eventual transformation																																																																																																																																																																																		ABILITY:FEAT|VIRTUAL|PathTaken1st|PRECLASS:1,Order of the Still Heart=1	ABILITY:FEAT|VIRTUAL|PathTaken2nd|PRECLASS:1,Order of the Still Heart=2	ABILITY:FEAT|VIRTUAL|PathTaken3rd|PRECLASS:1,Order of the Still Heart=3	ABILITY:FEAT|VIRTUAL|PathTaken4th|PRECLASS:1,Order of the Still Heart=4																																																																																																																																														SOURCEPAGE:p.204
+PathTaken1st		CATEGORY:Special Ability	TYPE:PathTaken			VISIBLE:NO																																																																																																																																																																																																																																																																																																																																						BONUS:STAT|CON|-2																																																																																				SOURCEPAGE:p.204
+PathTaken2nd		CATEGORY:Special Ability	TYPE:PathTaken			VISIBLE:NO																																																																																																																																																																																																																																																																																																																													BONUS:MOVEADD|TYPE.Walk|-5																																																																																											SOURCEPAGE:p.204
+PathTaken3rd		CATEGORY:Special Ability	TYPE:PathTaken			VISIBLE:NO																																																																																																																																																																																																																																																																																																																																						BONUS:STAT|CON|-2																																																																																				SOURCEPAGE:p.204
+PathTaken4th		CATEGORY:Special Ability	TYPE:PathTaken			VISIBLE:NO																																																																																																																																																																																																																																																																																																																													BONUS:MOVEADD|TYPE.Walk|-5																																																																																											SOURCEPAGE:p.204
+MorbidityOSH		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO																											SAB:Morbidity (Su): Members of the Order of the Still Heart																																																																																																																																																																																																																																																																																																																																																																																								SOURCEPAGE:p.204
+LureofDarkness		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO																											SAB:Lure of Darkness (Su): Must resist the draw of the darkness of his soul or character’s alignment moves one step closer to Neutral Evil																																																																																																																																																																																																																																																																																																																																																																										SOURCEPAGE:p.204
+TirelessOSH			CATEGORY:Special Ability	TYPE:Internal.Extraordinary	VISIBLE:NO																											SAB:Tireless (Ex): Have become as tireless and relentless as the dead. Vigil never ends. Gaze shall never again succumb to the call of sleep.																																																																																																																																																																																																																																																																																																																																																																										SOURCEPAGE:p.204
+MyKinFeedElsewhere	CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO																											SAB:My Kin Feed Elsewhere (Su): Immunity to all level and ability draining effects of any undead creature																																																																																																																																																																																																																																																																																																																																																																																SOURCEPAGE:p.205
+DaughterofDeath		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO																											SAB:Daughter of Death (Su): Resistant to the healing powers of positive energy	SAB:Spell Resistance - %+10 against cure/mass cure spells|TL																																																																																																																																																																																																																																																																																																																																																																									SOURCEPAGE:p.205
+AngelofDeath		CATEGORY:Special Ability	TYPE:Internal.Supernatural	VISIBLE:NO																											SAB:Angel of Death (Su): Undead apothesis is now complete																																																																																																																																																																																																																																																																																																																																																																																					DR:10/Magic		SOURCEPAGE:p.205
+
+# Order of the Thundering Storm
+
+# Pistoleer
+
+# Royal Marine
+
+# Sarishan Binder
+Binder Turning		CATEGORY:Special Ability	TYPE:Internal.TurningInfernal			VISIBLE:NO																																																																															DEFINE:AllowExtraTurning|1	DEFINE:AllowImprovedTurning|1																																																																																																																																																																																																																																																				BONUS:VAR|TurnTimesBase|3+CHA|TYPE=Base	BONUS:VAR|TurnCheckBase|CHA|TYPE=Base
+
+# Sensate of Savona
+
+# Sky Knight
+Companion is Giant Eagle	CATEGORY:Special Ability	TYPE:Internal						VISIBLE:NO																																																																																																																																																																																																																															ABILITY:FEAT|AUTOMATIC|Flyby Attack																																																																																																																																																																																								SOURCEPAGE:Errata
+Companion is Other		CATEGORY:Special Ability	TYPE:Internal						VISIBLE:NO																																																																																																																																																																																																																															ABILITY:FEAT|AUTOMATIC|Mobility																																																																																																																																																																																								SOURCEPAGE:Errata
+
+# Spellcaller
+
+# Tal Kanath Dancer of the Elements
+
+# Talons of the Hawk
+
+# Ulfilan Ranger
+
+# val'Mehan Emissary
+
+# Warped Ones
+
+# Warriors of the Eternal Flame
+
+# Weapon Savant
+
+###### Monk Prestige
+
+# Blade of Hurrian
+
+# Elemental Path of Water
+
+# Elemental Path of Stone
+
+# Elemental Path of Air
+
+# Elemental Path of Earth
+
+# Order of the Bronze Sepulcher Elite
