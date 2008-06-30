@@ -56,9 +56,9 @@ CLASS:Battlemage of the Coryani Legions	NAMEISPI:YES	HD:6		TYPE:PC.Prestige	ABB:
 CLASS:Battlemage of the Coryani Legions	PREALIGN:LG,LN,LE	PREFEAT:1,Legionnaire,Armored Caster,Combat Casting	PREMULT:1,[PREFEAT:1,Spell Mastery],[PRESPELLCAST:MEMORIZE=N]	PREREGION:Coryan	PRESKILL:1,Concentration,Spellcraft=10	PRESKILL:1,TYPE.History=5
 # Class Name					Skill Pts/Lvl	Class Skill
 CLASS:Battlemage of the Coryani Legions	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|TYPE.Arcana|TYPE.History|TYPE.Profession|Ride|Spellcraft
-1	ABILITY:Special Ability|VIRTUAL|Endurance Ability|Hunted|Strength Coryani Ability
-# issue with adding known spell of any level for spontaneous casters from 2006-06-03 errata
-2					ABILITY:Special Ability|VIRTUAL|Battle Magic|PRESPELLCAST:MEMORIZE=Y
+1				ABILITY:Special Ability|VIRTUAL|Endurance Ability|Hunted|Strength Coryani Ability
+1:REPEATLEVEL:1	BONUS:ABILITYPOOL|BonusKnownPool|MEMORIZE=N
+2				ABILITY:Special Ability|VIRTUAL|Battle Magic|PRESPELLCAST:MEMORIZE=Y
 2:REPEATLEVEL:1	ADD:SPELLCASTER|Arcane
 3:REPEATLEVEL:4	ABILITY:Special Ability|VIRTUAL|Spell Mast Ability|PRESPELLCAST:MEMORIZE=Y	ABILITY:Special Ability|Special Ability|Spontaneous Caster Spell|PRESPELLCAST:MEMORIZE=N
 4				ABILITY:Special Ability|VIRTUAL|Improved Armored Casting
@@ -235,13 +235,16 @@ CLASS:Grand Master	HD:8		TYPE:PC.Prestige	ABB:GMstr		MAXLEVEL:8	SOURCELONG:Playe
 CLASS:Grand Master	PREFEAT:6,Combat Expertise,Improved Disarm,Power Attack,Greater Weapon Focus,Greater Weapon Specialization,Improved Critical	PRESKILL:1,Craft (Weaponsmithing)=4	PRESKILL:1,Examine Martial Technique=6	PRESKILL:1,Profession (Educator)=2
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Grand Master	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Craft (Weaponsmithing)|Examine Martial Technique|Intimidate|Jump|TYPE.History|TYPE.Nobility|Profession (Educator)|Ride|Sense Motive|Spot|Tumble
-1		ABILITY:Special Ability|VIRTUAL|Master's Edge|Master's Reputation				BONUS:VAR|MasterEdgeBonus|1+(CL>=3)+(CL>=5)+(CL>=7)
-2		ABILITY:Special Ability|VIRTUAL|Master's Intuition|The Perfect Cut			BONUS:VAR|CutTimes|CL/2										AUTO:FEAT|Quick Draw
+1				ABILITY:Special Ability|VIRTUAL|Master's Edge|Master's Reputation
+1:REPEATLEVEL:2		BONUS:VAR|MasterEdgeBonus|1
+2				ABILITY:Special Ability|VIRTUAL|Master's Intuition|The Perfect Cut	AUTO:FEAT|Quick Draw|!PREFEAT:1,Quick Draw
+2:REPEATLEVEL:2	BONUS:VAR|CutTimes|1
 3																											ADD:FEAT|Weapon Master(TYPE=Weapon)
-4		ABILITY:Special Ability|VIRTUAL|Strike of the Placid Mind					BONUS:VAR|PlacidTimes|1+(CL>=6)+(CL>=8)
-5																											AUTO:FEAT|Improved Quick Draw
-6																											ADD:FEAT|Weapon Grand Master(TYPE=Weapon)	AUTO:FEAT|Riposte
-8		ABILITY:Special Ability|VIRTUAL|Quicken Strike
+4				ABILITY:Special Ability|VIRTUAL|Strike of the Placid Mind
+4:REPEATLEVEL:2	BONUS:VAR|PlacidTimes|1
+5																AUTO:FEAT|Improved Quick Draw|!PREFEAT:1,Improved Quick Draw
+6																AUTO:FEAT|Riposte									ADD:FEAT|Weapon Grand Master(TYPE=Weapon)
+8				ABILITY:Special Ability|VIRTUAL|Quicken Strike
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -274,15 +277,15 @@ CLASS:Larissan Dancer	PREALIGN:NG,TN,NE,CG,CN,CE	PREFEAT:1,Acrobatic,Agile	PREFE
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Larissan Dancer	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Concentration|Diplomacy|Escape Artist|Gather Information|Hide|TYPE.Arcana|Knowledge (Art and Architecture)|TYPE.History|TYPE.Local|TYPE.Nobility|TYPE.Religion|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Spellcraft|Tumble
 1:REPEATLEVEL:1	ADD:SPELLCASTER|ANY
-1	SAB:Larissa's Dance (Ex)(%/day)|CL	SAB:Dance of Steel (Ex)|PRESKILL:1,Perform (Dance)=10
-2	SAB:Dance of Protection (Ex)|PRESKILL:1,Perform (Dance)=11
-3	SAB:Dance of the Veiled Promise (Su)|PRESKILL:1,Perform (Dance)=12
-4	SAB:Dance of the Entranced Soul (Sp)|PRESKILL:1,Perform (Dance)=12
-5	SAB:Bardic Dancer (Su)
-6	SAB:Dance of Portent (Sp)|PRESKILL:1,Perform (Dance)=13
-7	SAB:Dance of the Stone Heart (Sp)|PRESKILL:1,Perform (Dance)=15
-8	SAB:Acclaim of the Masses (Ex)						AUTO:FEAT|Leadership
-10	SAB:Dance of the Stolen Heart (Sp)|PRESKILL:1,Perform (Dance)=20
+1				ABILITY:Special Ability|VIRTUAL|Larissa's Dance|Dance of Steel
+2				ABILITY:Special Ability|VIRTUAL|Dance of Protection
+3				ABILITY:Special Ability|VIRTUAL|Dance of the Veiled Promise
+4				ABILITY:Special Ability|VIRTUAL|Dance of the Entranced Soul
+5				ABILITY:Special Ability|VIRTUAL|Bardic Dancer
+6				ABILITY:Special Ability|VIRTUAL|Dance of Portent
+7				ABILITY:Special Ability|VIRTUAL|Dance of the Stone Heart
+8				ABILITY:Special Ability|VIRTUAL|Acclaim of the Masses
+10				ABILITY:Special Ability|VIRTUAL|Dance of the Stolen Heart
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -292,16 +295,16 @@ CLASS:Man-at-Arms	HD:10		TYPE:PC.Prestige	ABB:MAtA		MAXLEVEL:10	SOURCELONG:Playe
 CLASS:Man-at-Arms	PREALIGN:LG,LN,NG,TN	PREATT:4	PREFEAT:2,Alertness,Lightning Reflexes	PRESKILL:1,Profession (Soldier)=6	PRESKILL:1,TYPE.History,TYPE.Nobility=4
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Man-at-Arms	STARTSKILLPTS:4	CSKILL:Climb|Diplomacy|Jump|Handle Animal|Intimidate|TYPE.Geography|TYPE.History|TYPE.Local|TYPE.Nobility|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim
-1																			BONUS:VAR|FighterLVL|CL																																										ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker
-1						BONUS:ABILITYPOOL|Fighter Feat|CL/2+1
-1	SAB:Respected Authority																										AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|All Martial Proficiencies
-2	SAB:Organize (Ex)
-3	SAB:Faithful Bodyguard (Ex)
-4	SAB:Steady (Ex)
-5	SAB:Uncanny Reaction (Ex)								BONUS:COMBAT|INITIATIVE|UnCanBonus	BONUS:VAR|UnCanBonus|1+(CL>=8)+(CL>=10)	DEFINE:UnCanBonus|0
-6	SAB:Faithful Servant (Ex)
-7	SAB:Uncanny Intuition (Ex)
-10	SAB:Hero's Sacrifice (Ex)
+1				ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker
+1				ABILITY:Special Ability|VIRTUAL|Respected Authority				AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|All Martial Proficiencies
+2				ABILITY:Special Ability|VIRTUAL|Organize
+3:REPEATLEVEL:3	BONUS:ABILITYPOOL|Fighter Feat|1
+3				ABILITY:Special Ability|VIRTUAL|Faithful Bodyguard
+4				ABILITY:Special Ability|VIRTUAL|Steady
+5				ABILITY:Special Ability|VIRTUAL|Uncanny Reaction
+6				ABILITY:Special Ability|VIRTUAL|Faithful Servant
+7				ABILITY:Special Ability|VIRTUAL|Uncanny Intuition
+10				ABILITY:Special Ability|VIRTUAL|Hero's Sacrifice
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -311,35 +314,41 @@ CLASS:Master of the Hounds	HD:8		TYPE:PC.Prestige	ABB:MotH		MAXLEVEL:9	SOURCELON
 CLASS:Master of the Hounds	PREATT:5	PREFEAT:1,Track	PREFEAT:1,Gentry (Val),Gentry (Non-Val)	PRESKILL:1,Handle Animal=5	PRESKILL:2,Survival,TYPE.Nobility=3
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Master of the Hounds	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Jump|TYPE.Nature|TYPE.Nobility|Listen|TYPE.Profession|Ride|Search|Spellcraft|Spot|Survival|Swim|Use Rope
-# Class Name			Spell Stat		Spell Type		Automaticaly Known Spell Levels																																																																					Caster level
-CLASS:Master of the Hounds	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Calm Animals|Charm Animal|Command|Cure Light Wounds|Jump|Longstrider|Mage Amror|Magic Fang|Summon Nature's Ally I|Aid|Bear's Endurance|Bull's Strength|Cure Moderate Wounds|Daze Monster|Heroism|Hold Animal|Summon Nature's Ally II|Blink|Deep Slumber|Dominate Animal|Magic Fang (Greater)|Haste|Summon Nature's Ally III|Animal Growth|Charm Monster|Cure Serious Wounds|Freedom of Movement|Mage's Faithful Hound|Summon Nature's Ally IV	BONUS:CASTERLEVEL|Master of the Hounds|CL
-1	CAST:0,0		SAB:Hound Companion (Ex)	SAB:Wild Empathy (Canines) (Ex)	SAB:Status (Ex)
-2	CAST:0,1		SAB:Head of the Pack (Ex)
+# Class Name			Spell Stat		Spell Type		Caster level
+CLASS:Master of the Hounds	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Master of the Hounds|CL
+1					SPELLLEVEL:CLASS|Master of the Hounds=1|Calm Animals,Charm Animal,Command,Cure Light Wounds,Jump,Longstrider,Mage Armor,Magic Fang,Summon Nature’s Ally I (MoH)
+1	CAST:0,0		ABILITY:Special Ability|VIRTUAL|Hound Companion|Wild Empathy (Canines)|Status
+2	CAST:0,1		ABILITY:Special Ability|VIRTUAL|Head of the Pack
+3					SPELLLEVEL:CLASS|Master of the Hounds=2|Aid,Bear’s Endurance,Bull’s Strength,Cure Moderate Wounds,Daze Monster,Heroism,Hold Animal,Summon Nature’s Ally II (MoH)
 3	CAST:0,1,0
-4	CAST:0,2,1		SAB:Augment Summoning (Canines Only) (Su)
-5	CAST:0,2,1,0	SAB:Hamstring +%d6|HamstringBonus									BONUS:VAR|HamstringBonus|1	DEFINE:HamstringBonus|0
-6	CAST:0,3,2,1	SAB:Unwavering Devotion (Ex)
-7	CAST:0,3,2,1,0	SAB:Superior Breed (Ex)
-8	CAST:0,4,3,2,1	SAB:Pack Tactics (Ex)
-9	CAST:0,4,3,2,2	SAB:Lone Wolf (Ex)	SAB:Shared Senses (Sp)
-10	CAST:0,4,4,3,3	SAB:Shared Senses (Sp)											BONUS:VAR|HamstringBonus|1
+4	CAST:0,2,1		ABILITY:Special Ability|VIRTUAL|Augment Summoning Ability (Canines)
+5					SPELLLEVEL:CLASS|Master of the Hounds=3|Blink,Deep Slumber,Dominate Animal,Greater Magic Fang,Haste,Summon Nature’s Ally III (MoH)
+5	CAST:0,2,1,0	ABILITY:Special Ability|VIRTUAL|Hamstring
+5:REPEATLEVEL:5	BONUS:VAR|HamstringBonus|1
+6	CAST:0,3,2,1	ABILITY:Special Ability|VIRTUAL|Unwavering Devotion
+7					SPELLLEVEL:CLASS|Master of the Hounds=4|Animal Growth,Charm Monster,Cure Serious Wounds,Freedom of Movement,Mage’s Faithful Hound,Summon Nature’s Ally IV (MoH)
+7	CAST:0,3,2,1,0	ABILITY:Special Ability|VIRTUAL|Superior Breed
+8	CAST:0,4,3,2,1	ABILITY:Special Ability|VIRTUAL|Pack Tactics
+9	CAST:0,4,3,2,2	ABILITY:Special Ability|VIRTUAL|Lone Wolf
+10	CAST:0,4,4,3,3	ABILITY:Special Ability|VIRTUAL|Shared Senses
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
 # Class Name			Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Milandisian Canton	NAMEISPI:YES	HD:10		TYPE:PC.Prestige	ABB:Cantn		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.198	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name			Req. Att.	Required Feat		Required Region		Required Skill					Required Text																			Var. Min. Value
-CLASS:Milandisian Canton	PREATT:2	PREFEAT:1,Conscript	PREREGION:Milandir	PRESKILL:1,TYPE.Craft,TYPE.Profession=5	PRETEXT:The sum of your bonuses on INT, WIS and CHA must equal 0 or better before bonuses from items, etc. are factored in.	PREVARGTEQ:(STAT.3.BASEMOD)+(STAT.4.BASEMOD)+(STAT.5.BASEMOD),0
+# Class Name			Req. Att.	Required Feat		Required Region		Required Skill					Var. Min. Value
+CLASS:Milandisian Canton	PREATT:2	PREFEAT:1,Conscript	PREREGION:Milandir	PRESKILL:1,TYPE.Craft,TYPE.Profession=5	PREVARGTEQ:(STAT.3.BASEMOD)+(STAT.4.BASEMOD)+(STAT.5.BASEMOD),0
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Milandisian Canton	STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Diplomacy|Heal|Jump|TYPE.History|TYPE.Nobility|TYPE.Profession|Survival|Swim
-1	SAB:Defensive Line (Ex)(+% AC)|LineBonus	BONUS:VAR|LineBonus|1+(CL/4)	DEFINE:LineBonus|0	ADD:FEAT|TYPE=Military,TYPE=Canton,Weapon Focus(Halberd),Weapon Focus(Crossbow (Heavy)),Combat Reflexes,Rapid Reload,Great Fortitude,Iron Will,Lightning Reflexes
-2																																															ABILITY:FEAT|AUTOMATIC|Meet the Charge
-3	SAB:Line Defense (Ex)
+1				ABILITY:Special Ability|VIRTUAL|Defensive Line	ADD:FEAT|TYPE=Military,TYPE=Canton,Weapon Focus(Halberd),Weapon Focus(Crossbow (Heavy)),Combat Reflexes,Rapid Reload,Great Fortitude,Iron Will,Lightning Reflexes
+1:REPEATLEVEL:4	BONUS:VAR|LineBonus|1
+2				ABILITY:Special Ability|VIRTUAL|Always Set
+3				ABILITY:Special Ability|VIRTUAL|Line Defense
 4																	ADD:FEAT|TYPE=Military,TYPE=Canton,Weapon Focus(Halberd),Weapon Focus(Crossbow (Heavy)),Combat Reflexes,Rapid Reload,Great Fortitude,Iron Will,Lightning Reflexes
-6	SAB:Counter Charge (Ex)
-7	SAB:Line Attack (Ex)
+6				ABILITY:Special Ability|VIRTUAL|Counter Charge
+7				ABILITY:Special Ability|VIRTUAL|Line AttackLine Attack	SAB:Line Attack (Ex)
 8																	ADD:FEAT|TYPE=Military,TYPE=Canton,Weapon Focus(Halberd),Weapon Focus(Crossbow (Heavy)),Combat Reflexes,Rapid Reload,Great Fortitude,Iron Will,Lightning Reflexes
-10	SAB:Rapid Set (Ex)
+10				ABILITY:Special Ability|VIRTUAL|Rapid Set
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -349,14 +358,14 @@ CLASS:Myrmidon	NAMEISPI:YES	HD:10		TYPE:PC.Prestige	ABB:Myr		MAXLEVEL:10	SOURCEL
 CLASS:Myrmidon	PREATT:5	PREFEAT:5,Armor Proficiency (Medium),Cleave,Dodge,Iron Will,Power Attack,Weapon Focus(TYPE=Melee)	PREWEAPONPROF:10,TYPE.Martial
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Myrmidon	STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Examine Martial Technique|Handle Animal|Heal|Intimidate|Jump|Listen|Ride|Swim
-1																																													AUTO:FEAT|Great Cleave|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
-2																																													AUTO:FEAT|Aggressive Negotiations|Heedless Assault
-3			SAB:Dedicated Training (Ex)(+%/+%)|MindAffectBonus|FearEffectBonus									BONUS:VAR|MindAffectBonus|CL/3	BONUS:VAR|FearEffectBonus|(CL/3)+1	DEFINE:MindAffectBonus|0	DEFINE:FearEffectBonus|0
-4	DR:1/-
-5			SAB:True Cleaving (Ex)
-7			SAB:Armor Optimization									BONUS:COMBAT|AC|1|TYPE=Dodge
+1				ABILITY:Special Ability|VIRTUAL|Great Cleave Ability			AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+2				ABILITY:Special Ability|VIRTUAL|Aggressive Negotiations Ability|Heedless Assault Ability
+3				ABILITY:Special Ability|VIRTUAL|Dedicated Training
+4				ABILITY:Special Ability|VIRTUAL|Relentless
+5				ABILITY:Special Ability|VIRTUAL|True Cleaving
+7				ABILITY:Special Ability|VIRTUAL|Armor Optimization
 8																				BONUS:DR|-|1
-10			SAB:Trail of Bodies (Ex)
+10				ABILITY:Special Ability|VIRTUAL|Trail of Bodies
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -366,12 +375,14 @@ CLASS:Obsidian Sniper	NAMEISPI:YES	HD:6		ABB:ObSnp		MAXLEVEL:10	SOURCELONG:Playe
 CLASS:Obsidian Sniper	PREFEAT:3,Far Shot,Point Blank Shot,Precise Shot	PRESKILL:3,Hide,Move Silently,Spot=8	PREVARGTEQ:SneakAttack,2
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Obsidian Sniper	STARTSKILLPTS:4	CSKILL:Balance|Black Market|Bluff|Climb|TYPE.Craft|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Intimidate|Jump|Listen|Move Silently|Open Lock|TYPE.Perform|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Magic Device|Use Rope
-1	SAB:Deadly Accuracy %' (Ex)|DeadAccRange		BONUS:VAR|DeadAccRange|min(CL,9)*10+30	BONUS:VAR|RangedSneakAttack|1+(CL>=4)+(CL>=7)+(CL>=10)	DEFINE:DeadAccRange|0	ABILITY:FEAT|VIRTUAL|Ranged Sneak Attack
-2	SAB:Cadic's Strike (Sp)(%/day)|CadicStrike	BONUS:VAR|CadicStrike|CL/2													DEFINE:CadicStrike|0
-3	SAB:Poison Use (Ex)
-6	SAB:Quick Aim (Ex)
-9																														ABILITY:FEAT|AUTOMATIC|Improved Critical(Shortbow)|Deadly Aim(Shortbow)
-10	SAB:Unshakeable Aim (Ex)
+1				ABILITY:Special Ability|VIRTUAL|Deadly Accuracy|Ranged Sneak Attack
+# Ranged sneak distance is educated guess from Bowman Prestige as none is listed in the PGtA
+1:REPEATLEVEL:3	BONUS:VAR|RangedSneakAttack|1	BONUS:VAR|RangedSneakDistance|60
+2				ABILITY:Special Ability|VIRTUAL|Cadic's Strike
+3				ABILITY:Special Ability|VIRTUAL|Poison Use
+6				ABILITY:Special Ability|VIRTUAL|Quick Aim
+9				ABILITY:Special Ability|VIRTUAL|Lethal Aim
+10				ABILITY:Special Ability|VIRTUAL|Unshakeable Aim
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -383,16 +394,21 @@ CLASS:Onaran Templar	PREATT:5	PREFEAT:2,Iron Will,Church Education	PRESKILL:1,TY
 CLASS:Onaran Templar	STARTSKILLPTS:2	CSKILL:Climb|Concentration|TYPE.Craft|Diplomacy|Handle Animal|Jump|TYPE.History|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft|Swim
 # Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels																																											Caster level
 CLASS:Onaran Templar	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Bless|Bless Weapon|Cure Light Wounds|Divine Favor|Restoration (Lesser)|Magic Weapon|Aid|Bull's Strength|Bear's Endurance|Cat's Grace|Cure Moderate Wounds|Dispel Magic|Magic Weapon (Greater)|Prayer|Beltine's Blessed Strike|Death Ward|Divine Smite|Restoration|Sword of Faith	BONUS:CASTERLEVEL|Onaran Templar|CL
-1	CAST:0,1		DR:1/-			SAB:Aura of Faith (Ex)																																																						AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|All Martial Weapon Proficiencies
-2	CAST:0,1,0						SAB:Religious Fury (Ex) (%/day, +2 STR, +2 CON for % rounds)|ReligiousFuryTimes|ReligiousFuryDuration								BONUS:VAR|ReligiousFuryTimes|1	BONUS:VAR|ReligiousFuryDuration|3+CHA	DEFINE:ReligiousFuryTimes|0	DEFINE:ReligiousFuryDuration|0
-3	CAST:0,1,1						SAB:Strength of the Spirit (Ex)
-4	CAST:0,1,1,0			DOMAIN:War	SAB:Unshakable Dogma (Ex)													BONUS:DOMAIN|NUMBER|1
-5	CAST:0,2,1,1																										BONUS:DR|-|1
-6	CAST:0,2,2,1,0																													BONUS:VAR|ReligiousFuryTimes|1								DEFINE:OnaranTemplarQualify|0
-7	CAST:0,3,2,1,1																													BONUS:VAR|OnaranTemplarQualify|1																			ADD:FEAT|Weapon Specialization
-8	CAST:0,3,3,2,2																													BONUS:VAR|OnaranTemplarQualify|-1
-9	CAST:0,4,3,2,2					SAB:Fast Healing 1																																																						AUTO:FEAT|Diehard
-10	CAST:0,4,4,2,2					SAB:Voice of the Gods (Sp)
+1					SPELLLEVEL:CLASS|Onaran Templar=1|Bless,Bless Weapon,Cure Light Wounds,Divine Favor,Restoration (Lesser),Magic Weapon
+1	CAST:0,1		ABILITY:Special Ability|VIRTUAL|Relentless							AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|All Martial Weapon Proficiencies
+2					SPELLLEVEL:CLASS|Onaran Templar=2|Aid,Bull’s Strength,Bear’s Endurance,Cat’s Grace
+2	CAST:0,1,0		ABILITY:Special Ability|VIRTUAL|Religious Fury
+2:REPEATLEVEL:4|SKIP=0|MAX=6	BONUS:VAR|ReligiousFuryTimes|1
+3	CAST:0,1,1		ABILITY:Special Ability|VIRTUAL|Strength of the Spirit
+4					SPELLLEVEL:CLASS|Onaran Templar=3|Cure Moderate Wounds,Dispel Magic,Magic Weapon (Greater),Prayer
+4	CAST:0,1,1,0	ABILITY:Special Ability|VIRTUAL|Unshakable Dogma	DOMAIN:War													BONUS:DOMAIN|NUMBER|1
+5	CAST:0,2,1,1
+6					SPELLLEVEL:CLASS|Onaran Templar=4|Beltine’s Blessed Strike,Death Ward,Divine Smite,Restoration,Sword of Faith
+6	CAST:0,2,2,1,0
+7	CAST:0,3,2,1,1																	ADD:FEAT|Weapon Specialization
+8	CAST:0,3,3,2,2
+9	CAST:0,4,3,2,2	ABILITY:Special Ability|VIRTUAL|Zealot
+10	CAST:0,4,4,2,2	ABILITY:Special Ability|VIRTUAL|Voice of the Gods
 ##############################################################################################################################################################################################################################################################################################################################################
 # errata 2006-06-03 applied
 
@@ -402,16 +418,15 @@ CLASS:Order of the Still Heart	NAMEISPI:YES	HD:8		TYPE:PC.Prestige.PC	ABB:OotSH	
 CLASS:Order of the Still Heart	PREATT:4	PREDEITY:1,Neroth	PREFEAT:1,Iron Will	PRESKILL:2,Concentration,TYPE.Religion=8	PRETEXT:Must be a member of the Order in good standing and must pass the tests and perform the necromantic rituals necessary to gain admittance.
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Still Heart	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.History|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
-1									ABILITY:FEAT|VIRTUAL|ThePathTaken	ABILITY:FEAT|AUTOMATIC|Toughness
-2					ADD:SPELLCASTER|ANY	ABILITY:FEAT|VIRTUAL|MorbidityOSH|Tireless|LureofDarkness
-3									ABILITY:FEAT|AUTOMATIC|Improved Toughness|MyKinFeedElsewhere
-4	SAB:Fast Healing (Ex) 2	ADD:SPELLCASTER|ANY
-5									ABILITY:FEAT|AUTOMATIC|Improved Toughness|DaugherofDeath
-6					ADD:SPELLCASTER|ANY													TEMPLATE:Undead
-7					ADD:SPELLCASTER|ANY
-8					ADD:SPELLCASTER|ANY	ABILITY:FEAT|AUTOMATIC|Improved Toughness
-9					ADD:SPELLCASTER|ANY
-10					ADD:SPELLCASTER|ANY	ABILITY:FEAT|AUTOMATIC|Improved Toughness|AngelofDeath
+1				ABILITY:Special Ability|VIRTUAL|ThePathTaken					AUTO:FEAT|Toughness
+2:REPEATLEVEL:1	ADD:SPELLCASTER|ANY
+2				ABILITY:Special Ability|VIRTUAL|Morbidity OSH|Tireless|Lure of Darkness
+3				ABILITY:Special Ability|VIRTUAL|My Kin Feed Elsewhere				AUTO:FEAT|Improved Toughness
+4				ABILITY:Special Ability|VIRTUAL|Fast Healing							BONUS:VAR|FastHealNo|2
+5				ABILITY:Special Ability|VIRTUAL|Daugher of Death				AUTO:FEAT|Improved Toughness
+6																		TEMPLATE:Undead
+8																AUTO:FEAT|Improved Toughness
+10				ABILITY:Special Ability|VIRTUAL|Angel of Death					AUTO:FEAT|Improved Toughness
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -421,15 +436,15 @@ CLASS:Order of the Thundering Storm	NAMEISPI:YES	HD:10		TYPE:PC.Prestige	ABB:Oot
 CLASS:Order of the Thundering Storm	PRECHECKBASE:1,Will=6	PREDEITY:1,Hurrian	PREMULT:2,[PREFEAT:1,Weapon Focus(Longsword),Weapon Focus(Sword (Kio))],[PREFEAT:4,Combat Expertise,Dodge,Spring Attack,Whirlwind Attack]	PRESKILL:1,TYPE.Religion=5
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Thundering Storm	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Diplomacy|Handle Animal|Intimidate|TYPE.Religion|Ride|Tumble
-1	SAB:The Reluctant Warrior (Su)
-2	SAB:Lay on Hands (Su) % hp/day|LayOnHands|!PRESA:1,Lay on Hands (Su)	BONUS:VAR|LayOnHands|max(CHA,0)*CL							DEFINE:LayOnHands|0
-3	SAB:Way of the Wind (Ex)
-4	SAB:Force of the Storm (Su) %/day|ForceStormTimes				BONUS:VAR|ForceStormTimes|CL/4							DEFINE:ForceStormTimes|0
-5	SAB:The Tempest (Ex)
-6	SAB:Sword Mastery (Ex)															BONUS:WEAPONPROF=Longsword|TOHIT|1
-7	SAB:Eye of the Storm Lord (Su) ~ Will save DC % or shaken|EyeDC		BONUS:VAR|EyeDC|10+CL+CHA								DEFINE:EyeDC|0
-9	SAB:Fury of the Storm Lord (Sp)																								SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=TL|Call Lightning
-10	SAB:Storm's Fury (Ex) %/day|FuryTimes						BONUS:VAR|FuryTimes|CON									DEFINE:FuryTimes|0
+1				ABILITY:Special Ability|VIRTUAL|SAB:The Reluctant Warrior (Su)
+2				ABILITY:Special Ability|VIRTUAL|Lay On Hands|!PREABILITY:1,CATEGORY:Special Ability|Lay On Hands	BONUS:VAR|LayOnHandsLVL|max(CHA,0)*CL
+3				ABILITY:Special Ability|VIRTUAL|Way of the Wind
+4				ABILITY:Special Ability|VIRTUAL|Force of the Storm
+5				ABILITY:Special Ability|VIRTUAL|The Tempest
+6				ABILITY:Special Ability|VIRTUAL|Sword Mastery
+7				ABILITY:Special Ability|VIRTUAL|Eye of the Storm Lord
+9				ABILITY:Special Ability|VIRTUAL|Fury of the Storm Lord
+10				ABILITY:Special Ability|VIRTUAL|Storm's Fury
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -439,11 +454,11 @@ CLASS:Pistoleer	HD:8		TYPE:PC.Prestige	ABB:Pstlr		MAXLEVEL:5	SOURCELONG:Player's
 CLASS:Pistoleer	PREATT:5	PREFEAT:3,Point Blank Shot,Two Weapon Fighting,Weapon Focus(Altherian Flintlock (Pistol))	PRESKILL:2,Concentration,Craft (Flintlocks)=5	PREWEAPONPROF:1,Altherian Flintlock (Pistol)
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Pistoleer	STARTSKILLPTS:2	CSKILL:Balance|Climb|Craft (Flintlocks)|Intimidate|Jump|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
-1	SAB:Two-Handed Quick Draw (Ex)				AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|All Martial Weapon Proficiencies
-2	SAB:Focused Training (Ex)					AUTO:FEAT|Weapon Specialization(Altherian Flintlock (Pistol))|Combat Firing
-3	SAB:Steady Hands (Ex)	SAB:Lightning Hands (Ex)
-4	SAB:Dead Shot (Ex)
-5	SAB:Fire Reflexively (Ex)
+1				ABILITY:Special Ability|VIRTUAL|Two-Handed Quick Draw				AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|All Martial Weapon Proficiencies
+2				ABILITY:Special Ability|VIRTUAL|Focused Training PL
+3				ABILITY:Special Ability|VIRTUAL|Steady Hands|Lightning Hands
+4				ABILITY:Special Ability|VIRTUAL|Dead Shot
+5				ABILITY:Special Ability|VIRTUAL|Fire Reflexively
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -453,11 +468,12 @@ CLASS:Royal Marine of Milandir	NAMEISPI:YES	HD:10		TYPE:PC.Prestige	ABB:RMoM		MA
 CLASS:Royal Marine of Milandir	PREALIGN:LG,LN,LE	PREATT:7	PREFEAT:3,Armor Proficiency (Heavy),Improved Bull Rush,Iron Will	PREREGION:Milandir	PRESKILL:1,Diplomacy=4	PRESKILL:1,Swim=8	PRETEXT:Must be an Officer in the Royal Navy.	PREWEAPONPROF:1,Trident
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Royal Marine of Milandir	STARTSKILLPTS:2	CSKILL:Balance|Climb|Diplomacy|Jump|TYPE.Local|TYPE.Geography|TYPE.Profession|Swim|Use Rope
-1	SAB:Distinction (Ex) +%|DistinctionLevel	BONUS:VAR|DistinctionLevel|2+(CL>=4)	DEFINE:DistinctionLevel|0	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Weapon Focus(Trident)	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|All Martial Weapon Proficiencies
-2	SAB:Shake Off Armor (Ex)
-3	SAB:Superior Bull Rush (Ex)
-4	SAB:Pillar of Courage (Su)
-5	SAB:Martyr's Heart (Ex)																AUTO:FEAT|Diehard|Weapon Specialization(Trident)
+1				ABILITY:Special Ability|VIRTUAL|Distinction	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Weapon Focus(Trident)	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|All Martial Weapon Proficiencies
+1:REPEATLEVEL:4	BONUS:VAR|DistinctionLevel|1
+2				ABILITY:Special Ability|VIRTUAL|Shake Off Armor
+3				ABILITY:Special Ability|VIRTUAL|Superior Bull Rush
+4				ABILITY:Special Ability|VIRTUAL|Pillar of Courage|Armor Mobility
+5				ABILITY:Special Ability|VIRTUAL|Martyr's Heart				AUTO:FEAT|Weapon Specialization(Trident)
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -467,18 +483,16 @@ CLASS:Sarishan Binder	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:SBndr		MAXLEVEL:10
 CLASS:Sarishan Binder	PREALIGN:LG,LN,LE	PREDEITY:1,Sarish	PREFEAT:2,Alien Understanding,Cast Out the Damned	PRESKILL:2,TYPE.Religion,TYPE.Planes=13	PRESPELL:1,Dismissal
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Sarishan Binder	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.Local|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
-1																																				BONUS:VAR|TurnLevelBase|CL-3
-1																											BONUS:ABILITYPOOL|Turn Infernal|1|TYPE=ClassAbility	BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL|TYPE=Level.REPLACE									ABILITY:Special Ability|AUTOMATIC|Basic Turning|Binder Turning
-1	DOMAIN:Binding[PRESPELLCAST:TYPE=Divine]	SAB:Focused Turning (Su)																						DEFINE:FocusTurn|1	ADD:SPELLCASTER|ANY
-2								SAB:The Sigil of Sarish (Su)																																							ADD:SPELLCASTER|ANY
-3								SAB:Sigil of My Brother (Su)	SAB:Presense of the Infernal (Sp)																																	ADD:SPELLCASTER|ANY
-4								SAB:Infernal Guide (Ex)																																								ADD:SPELLCASTER|ANY
-5								SAB:Reknown (Ex)	SAB:Take What is now Mine (Sp)																																			ADD:SPELLCASTER|ANY
-6								SAB:Sarishan Focus (Ex)																																								ADD:SPELLCASTER|ANY	ABILITY:FEAT|AUTOMATIC|Domain Focus(Binding)|Domain Focus(Daemonology)
-7								SAB:Thaumaturgic Circle (Su)																																							ADD:SPELLCASTER|ANY
-8								SAB:Spontaneous Dismissal (Sp)																																						ADD:SPELLCASTER|ANY
-9								SAB:Word of Sarish (Sp)																																								ADD:SPELLCASTER|ANY
-10																																																			ADD:SPELLCASTER|ANY
+1:REPEATLEVEL:1	ADD:SPELLCASTER|ANY
+1				ABILITY:Special Ability|VIRTUAL|Focused Turning		DOMAIN:Binding[PRESPELLCAST:TYPE=Divine]
+2				ABILITY:Special Ability|VIRTUAL|Sigil of Sarish
+3				ABILITY:Special Ability|VIRTUAL|Sigil of My Brother|Presense of the Infernal
+4				ABILITY:Special Ability|VIRTUAL|Infernal Guide
+5				ABILITY:Special Ability|VIRTUAL|Reknown|Take What is now Mine
+6				ABILITY:Special Ability|VIRTUAL|Sarishan Focus
+7				ABILITY:Special Ability|VIRTUAL|Thaumaturgic Circle
+8				ABILITY:Special Ability|VIRTUAL|Spontaneous Dismissal
+9				ABILITY:Special Ability|VIRTUAL|Word of Sarish
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -488,16 +502,17 @@ CLASS:Sensate of Savona	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:SoS		MAXLEVEL:10
 CLASS:Sensate of Savona	!PREALIGN:LG,LN,LE	PREATT:5	PREDEITY:1,Larissa	PREFEAT:2,Endurance,Impoved Unarmed Strike	PRESKILL:2,TYPE.Religion,Tumble=4
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Sensate of Savona	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
-1								SAB:A Toast to Larissa (Sp) %/day|ToastTimes	SAB:The Life of the Party (Ex)							BONUS:VAR|ToastTimes|1+(CL>=3)+(CL>=5)+(CL>=7)+(CL>=9)	DEFINE:ToastTimes|0	ABILITY:FEAT|AUTOMATIC|Alertness					SPELLS:ClassAbility|TIMES=ToastTimes|CASTERLEVEL=CL|Bear's Endurance|Bull's Strength|Cat's Grace|Cure Moderate Wounds
-2	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6	SAB:Stumble (Ex)	SAB:Tolerance (Ex)								BONUS:COMBAT|AC|1|TYPE=Dodge.STACK
-3	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6																																			ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge|Improved Uncanny Dodge
-4	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6	SAB:Barroom Brawler (Ex)																														ABILITY:FEAT|AUTOMATIC|Mobility
+1								ABILITY:Special Ability|VIRTUAL|Alertness Ability|A Toast to Larissa|The Life of the Party
+1:REPEATLEVEL:2	BONUS:VAR|ToastTimes|1
+2	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6	ABILITY:Special Ability|VIRTUAL|Stumble|Tolerance
+3	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6	ABILITY:Special Ability|VIRTUAL|Uncanny Dodge Ability
+4	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6	ABILITY:Special Ability|VIRTUAL|Bar Room Brawler|Mobility Ability
 5	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8
-6	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8	SAB:Lurch (Ex)	SAB:That's the Good Stuff (Sp) 1/day																									ABILITY:FEAT|AUTOMATIC|Improved Feint				SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Haste|Freedom of Movement|Cure Critical Wounds
-7	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8																																			ABILITY:FEAT|AUTOMATIC|Uncanny Dodge|Improved Uncanny Dodge
-8	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6																																			ABILITY:FEAT|AUTOMATIC|Spring Attack
-9	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6																																			ABILITY:FEAT|AUTOMATIC|Avoidance
-10	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6	SAB:Blindsence (Su) 30' radius																																							SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL|Transformation
+6	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8	ABILITY:Special Ability|VIRTUAL|Lurch|That's the Good Stuff
+7	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8
+8	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6	ABILITY:Special Ability|VIRTUAL|Spring Attack Ability
+9	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6	ABILITY:Special Ability|VIRTUAL|Avoidance Ability
+10	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6	ABILITY:Special Ability|VIRTUAL|Blindsense|Just One More
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -508,13 +523,10 @@ CLASS:Sky Knight	PREATT:5	PREFEAT:3,Mounted Combat,Lightning Reflexes,Ride By At
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Sky Knight	STARTSKILLPTS:2	CSKILL:Balance|Climb|TYPE.Craft|Handle Animal|TYPE.Nature|TYPE.Profession|Ride|Spot|Tumble
 # bonded companion updates NOT coded
-1	SAB:Bonded Companion (Ex)																	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency|All Martial Weapon Proficiencies
-2										ADD:ABILITY|Special Ability|VIRTUAL|Companion is Giant Eagle,Companion is Other
-3	SAB:Masterful Rider (Ex)	SAB:Gifted Mount (Ex)
-4	SAB:Falcon's Grace (Ex)
-5	SAB:Call Bonded COmpanion (Su)
-
-### This class needs major errata.  The errata may not affect how it works in PCGen
+1				ABILITY:Special Ability|VIRTUAL|Bonded Companion		AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency|All Martial Weapon Proficiencies
+3				ABILITY:Special Ability|VIRTUAL|Masterful Rider|Gifted Mount
+4				ABILITY:Special Ability|VIRTUAL|Falcon's Grace
+5				ABILITY:Special Ability|VIRTUAL|Call Bonded Companion
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -524,16 +536,12 @@ CLASS:Spellcaller	NAMEISPI:YES	HD:4		TYPE:PC.Prestige	ABB:SpClr		MAXLEVEL:10	SOU
 CLASS:Spellcaller	PREMULT:2,[PRESPELLCAST:MEMORIZE=N],[PRESPELLTYPE:1,Arcane=3]	PRESKILL:2,TYPE.Arcana,Spellcraft=8
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Spellcaller	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Decipher Script|TYPE.Knowledge|TYPE.Profession|Search|Spellcraft
-1	SAB:You cast two fewer times per day for each spell level known	SAB:Spell Studies	ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-2															ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=Metamagic
-3															ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-4															ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=Metamagic
-5															ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-6	SAB:Spell Mimic (Ex)											ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-7															ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-8	SAB:Metammagic Casting (Ex)										ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-9															ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
-10	SAB:Metamagic Mastery (Ex)										ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
+1				ABILITY:Special Ability|VIRTUAL|Spell Studies|Multiple Spontaneous Adjustment	BONUS:ABILITYPOOL|FlexibleKnownSlot|9	BONUS:ABILITYPOOL|KnownSpellSlot|9
+1:REPEATLEVEL:1	ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
+2:REPEATLEVEL:2|SKIP=0|MAX=4	ADD:FEAT|TYPE=Metamagic
+6				ABILITY:Special Ability|VIRTUAL|Spell Mimic
+8				ABILITY:Special Ability|VIRTUAL|Metamagic Casting
+10				ABILITY:Special Ability|VIRTUAL|Metamagic Mastery
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -543,11 +551,11 @@ CLASS:Tal Kanath	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:TalK		MAXLEVEL:5	SOURCE
 CLASS:Tal Kanath	PREALIGN:LG,LN,LE	PREATT:8	PREFEAT:4,Combat Expertise,Dodge,Mobility,Spring Attack,Whirlwind Attack	PREFEAT:1,Weapon Focus(TYPE=Sword)	PREABILITY:1,CATEGORY=Special Ability,Evasion	PRERACE:1,Elorii	PRESKILL:3,Jump,Tumble,Perform (Dance)=4
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Tal Kanath	STARTSKILLPTS:4	CSKILL:Balance|Jump|Hide|Listen|Move Silently|TYPE.Perform|Spot|Tumble
-1	SAB:The First Steps (Ex)																	BONUS:COMBAT|AC|1+(CL>=3)+(CL>=5)|TYPE=Shield|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy]	BONUS:COMBAT|AC|min(max(INT,0),CL)|TYPE=Insight|PREMULT:4,[PREEQUIP:1,TYPE=Melee],[!PREEQUIP:1,TYPE=Shield],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy],[PREVAREQ:ENCUMBERANCE,0]																									ABILITY:FEAT|AUTOMATIC|Martial Weapon Proficiency|Armor Proficiency (Light)	AUTO:WEAPONPROF|TYPE.Martial
-2	SAB:Dance of Air (Ex)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]
-3	SAB:Dance of Fire (Ex)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]																																																							BONUS:WEAPONPROF=TYPE.Melee|DAMAGE|max(CHA,0)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]
-4	SAB:Dance of Water (Ex)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]	BONUS:COMBAT|INITIATIVE|max(WIS,0)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]
-5	SAB:Dance of Earth (Ex)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]																																																						BONUS:WEAPONPROF=TYPE.Melee|TOHIT|max(CON,0)|PREMULT:2,[PREVAREQ:ENCUMBERANCE,0],[!PREEQUIP:1,TYPE=Armor.Medium,TYPE=Armor.Heavy,TYPE=Shield]
+1				ABILITY:Special Ability|VIRTUAL|The First Steps|Armor Bonus Ability																					AUTO:FEAT|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|All Martial Proficiencies
+2				ABILITY:Special Ability|VIRTUAL|Dance of Air
+3				ABILITY:Special Ability|VIRTUAL|Dance of Fire
+4				ABILITY:Special Ability|VIRTUAL|Dance of Water
+5				ABILITY:Special Ability|VIRTUAL|Dance of Earth
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -557,33 +565,35 @@ CLASS:Talon of the Hawk	NAMEISPI:YES	HD:6		TYPE:PC.Prestige	ABB:TotHk		MAXLEVEL:
 CLASS:Talon of the Hawk	PREABILITY:1,CATEGORY=Special Ability,Favored Enemy (Ymandrakes)	PREATT:5	PREFEAT:2,Spell Penetration,Improved Counterspell	PRESKILL:1,Concentration=8	PRESKILL:2,TYPE.Arcana,Spellcraft=5	PRESKILL:1,Survival=4	PRETEMPLATE:1,Hawk
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Talon of the Hawk	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE.Craft|Diplomacy|Examine Martial Technique|Gather Information|Hide|Intimidate|Jump|TYPE.Arcana|TYPE.History|Listen|Move Silently|TYPE.Profession|Ride|Sense Motive|Survival|Spot|Swim|Tumble|Use Magic Device
-1									BONUS:VAR|SneakAttack|1+(CL>=2)+(CL>=5)+(CL>=10)	BONUS:VAR|DispelFocus|2+(2*(CL>=8))	DEFINE:DispelFocus|0	ADD:SPELLCASTER|Arcane						AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Shield Proficiency|Sneak Attack|All Martial Weapon Proficiencies
-2	SAB:Dispel Focus +%|DispelFocus																						ADD:SPELLCASTER|Arcane	ADD:SPELLCASTER|1|Arcane	AUTO:FEAT|Armored Caster
-3																												ADD:SPELLCASTER|Arcane
-4									BONUS:VAR|FavoredYmandrakes|2															ADD:SPELLCASTER|Arcane
-5	SAB:Arcane Savant (Dispel Magic) (Sp)																					ADD:SPELLCASTER|Arcane
-6																												ADD:SPELLCASTER|Arcane
-7									BONUS:VAR|FavoredYmandrakes|2															ADD:SPELLCASTER|Arcane
-8																												ADD:SPELLCASTER|Arcane
-9	SAB:Arcane Savant (Greater Dispel Magic) (Sp)																				ADD:SPELLCASTER|Arcane
-10									BONUS:VAR|FavoredYmandrakes|2															ADD:SPELLCASTER|Arcane
+1				ABILITY:Special Ability|VIRTUAL|Dispel Focus	BONUS:VAR|SneakAttack|1+(CL>=2)+(CL>=5)+(CL>=10)	BONUS:VAR|DispelFocus|2+(2*(CL>=8))	DEFINE:DispelFocus|0	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Shield Proficiency|Sneak Attack|All Martial Weapon Proficiencies
+1:REPEATLEVEL:1	ADD:SPELLCASTER|Arcane
+1:REPEATLEVEL:8	BONUS:VAR|DispelFocus|2
+2												AUTO:FEAT|Armored Caster
+4				ABILITY:Special Ability|VIRUTAL|Favored Enemy (Ymandrakes)
+4:REPEATLEVEL:2	BONUS:VAR|FavoredYmandrakes|2
+5				ABILITY:Special Ability|VIRTUAL|Arcane Savant (Dispel Magic)
+9				ABILITY:Special Ability|VIRTUAL|Arcane Savant (Greater Dispel Magic)
 
 ##############################################################################################################################################################################################################################################################################################################################################
 # Resist Elements not a spell in 3.5 - not errated - taken out of spelllist
 
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus					List of Class Spells by Level
-CLASS:Ulfian Ranger	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:UlfR		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.218	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	SPELLLEVEL:CLASS|Ulfian Ranger=1|Alarm,Detect Animals or Plants,Detect Snares and Pits,Feather Fall,Jump,Pass without Trace,Shillelagh|Ulfian Ranger=2|Cure Light Wounds,Delay Poison,Heat Metal,Protection from Energy,Shocking Grasp,Spider Climb|Ulfian Ranger=3|Call Lightning,Commune with Nature,Gust of Wind
+CLASS:Ulfilan Ranger	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:UlfR		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.218	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	SPELLLEVEL:CLASS|Ulfian Ranger=1|Alarm,Detect Animals or Plants,Detect Snares and Pits,Feather Fall,Jump,Pass without Trace,Shillelagh|Ulfian Ranger=2|Cure Light Wounds,Delay Poison,Heat Metal,Protection from Energy,Shocking Grasp,Spider Climb|Ulfian Ranger=3|Call Lightning,Commune with Nature,Gust of Wind
 # Class Name		Req. Att.	Required Feat			Multiple Requirements									Required Region			Required Skill
-CLASS:Ulfian Ranger	PREATT:4	PREFEAT:2,Endurance,Track	PREMULT:1,[PREDEITY:1,Hurrian],[PRETEMPLATE:1,Tensen,HolrynTensen]	PREREGION:Coryani Empire	PRESKILL:1,Climb=4	PRESKILL:2,TYPE.Nature,Survival=8
+CLASS:Ulfilan Ranger	PREATT:4	PREFEAT:2,Endurance,Track	PREMULT:1,[PREDEITY:1,Hurrian],[PRETEMPLATE:1,Tensen,HolrynTensen]	PREREGION:Coryani Empire	PRESKILL:1,Climb=4	PRESKILL:2,TYPE.Nature,Survival=8
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Ulfian Ranger	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.Geography|TYPE.Nature|Listen|Move Silently|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
+CLASS:Ulfilan Ranger	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|TYPE.Geography|TYPE.Nature|Listen|Move Silently|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
 # Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels																																									Caster level
-CLASS:Ulfian Ranger	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Alarm|Detect Animals or Plants|Detect Snares and Pits|Feather Fall|Jump|Pass Without Trace|Resist Elements|Shillelagh|Cure Light Wounds|Delay Poison|Heat Metal|Protection from Energy|Shocking Grasp|Spider Climb|Call Lightning|Commune with Nature|Gust of Wind	BONUS:CASTERLEVEL|Ulfian Ranger|CL
-1	CAST:0,1					SAB:Homeland Advantage (Ex)	SAB:Wind Staff Mastery (Ex)									AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)
-2	CAST:0,1					SAB:Hurrian's Might (Sp) %/day|MightTimes				BONUS:VAR|MightTimes|CL	DEFINE:MightTimes|0
+CLASS:Ulfilan Ranger	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:Alarm|Detect Animals or Plants|Detect Snares and Pits|Feather Fall|Jump|Pass Without Trace|Resist Elements|Shillelagh|Cure Light Wounds|Delay Poison|Heat Metal|Protection from Energy|Shocking Grasp|Spider Climb|Call Lightning|Commune with Nature|Gust of Wind	BONUS:CASTERLEVEL|Ulfian Ranger|CL
+
+1					SPELLLEVEL:CLASS|Ulfilan Ranger=1|Alarm,Detect Animals or Plants,Detect Snares and Pits,Feather Fall,Jump,Pass Without Trace,Resist Elements,Shillelagh (UR)
+1	CAST:0,1		ABILITY:Special Ability|VIRTUAL|Homeland Advantage									AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)	AUTO:WEAPONPROF|Wind Staff
+2	CAST:0,1		ABILITY:Special Ability|VIRTUAL|Hurrian's Might
+3					SPELLLEVEL:CLASS|Ulfilan Ranger=2|Cure Light Wounds,Delay Poison,Heat Metal,Protection from Elements,Shocking Grasp,Spider Climb
 3	CAST:0,2,1
-4	CAST:0,2,1		DOMAIN:Storm
-5	CAST:0,2,2,1				SAB:Craft Wind Staff (Ex)
+4	CAST:0,2,1		SPELLLIST:1,DOMAIN.Storm	DOMAIN:Storm
+5					SPELLLEVEL:CLASS|Ulfilan Ranger=3|Call Lightning,Commune with Nature,Gust of Wind
+5	CAST:0,2,2,1	ABILITY:Special Ability|VIRTUAL|Craft Wind Staff
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -593,11 +603,11 @@ CLASS:Val'Mehan Emissary	NAMEISPI:YES	HD:6		TYPE:PC.Prestige	ABB:VME		MAXLEVEL:5
 CLASS:Val'Mehan Emissary	PREALIGN:LG,LN,LE	PREFEAT:2,Judge of Character,Honeyed Tongue	PRESKILL:1,Bluff=4	PRESKILL:3,Diplomacy,TYPE.Nobility,Sense Motive=8	PRESTAT:1,CHA=16	PRETEMPLATE:1,Mehan
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Val'Mehan Emissary	STARTSKILLPTS:6	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Disguise|TYPE.Knowledge|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Ride|Sense Motive|Speak Language|Spellcraft|Spot|Swim
-1	SAB:Silver Tongue (Ex)	SAB:Heart of Stone (Ex)	BONUS:SKILL|Bluff,Sense Motive,Diplomacy|2	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies
-2	SAB:Irresistible Aura (Ex)				BONUS:SKILL|TYPE.Charisma|2
-3	SAB:Confidante (Ex)
-4	SAB:Uncanny Judgement (Ex)
-5	SAB:Voice of Honey (Su)
+1				ABILITY:Special Ability|VIRTUAL|Silver Tongue|Heart of Stone													AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies
+2				ABILITY:Special Ability|VIRTUAL|Irresistible Aura
+3				ABILITY:Special Ability|VIRTUAL|Confidante
+4				ABILITY:Special Ability|VIRTUAL|Uncanny Judgement
+5				ABILITY:Special Ability|VIRTUAL|Voice of Honey
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -609,13 +619,13 @@ CLASS:Warped Ones	HD:12		TYPE:PC.Prestige	ABB:WrpO		MAXLEVEL:10	SOURCELONG:Playe
 CLASS:Warped Ones	PREALIGN:CG,CN,CE	PREATT:6	PREFEAT:2,Iron Will,Endurance	PREABILITY:1,CATEGORY=Special Ability,Rage	PREREGION:Hinterlands
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Warped Ones	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE.Craft|Intimidate|Jump|Listen|Spot|Survival|Swim
-1	SAB:Path of Rage (Ex)			BONUS:VAR|RageTimes|1+(CL>=5)+(CL>=10)				AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|VIRTUAL|Twisted Form	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|All Martial Weapon Proficiencies
-2	SAB:Unnatural Endurance (Ex)
-4																	ABILITY:Special Ability|AUTOMATIC|Burst of Strength
-5	SAB:Twisted Visage (Su)
-7	SAB:Dire Rage (Su)
-8	SAB:Twisted Soul (Ex) SR %|SoulSR	BONUS:VAR|SoulSR|15+CL				DEFINE:SoulSR|0
-10	SAB:Juggernaut
+1				ABILITY:Special Ability|VIRTUAL|Twisted Form|Path of Rage									AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|All Martial Weapon Proficiencies
+2				ABILITY:Special Ability|VIRTUAL|Unnatural Endurance
+4				ABILITY:Special Ability|VIRTUAL|Burst of Strength
+5				ABILITY:Special Ability|VIRTUAL|Twisted Visage
+7				ABILITY:Special Ability|VIRTUAL|Dire Rage
+8				ABILITY:Special Ability|VIRTUAL|Twisted Soul
+10				ABILITY:Special Ability|VIRTUAL|Juggernaut
 
 ##############################################################################################################################################################################################################################################################################################################################################
 # 2006-06-03 errata waives Weapon Focus prereq for Order of the Incandescent Path monks - no such requirement listed anywhere
@@ -628,31 +638,34 @@ CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:1,Nier	PR
 CLASS:Warrior of the Eternal Flame	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft
 # Class Name				Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Warrior of the Eternal Flame	SPELLSTAT:CHA	SPELLTYPE:Divine	MEMORIZE:NO	BONUS:CASTERLEVEL|Warrior of the Eternal Flame|CL|PRECLASS:1,Warrior of the Eternal Flame=2
-1																								SAB:Blessing of the First Flame|PREVARLT:WotEFBlessing,4	SAB:Blessing of the Second Flame Flame|PREVARLT:WotEFBlessing,6	SAB:Blessing of the Third Flame|PREVARLT:WotEFBlessing,8	SAB:Blessing of the Fourth Flame|PREVARLT:WotEFBlessing,10	SAB:Blessing of the Final Flame|PREVAREQ:WotEFBlessing,10	SAB:Child of Nier (Su)	BONUS:VAR|WotEFBlessing|CL						DEFINE:WotEFBlessing|0					AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
-2	CAST:0,0		KNOWN:0,1
-3	CAST:0,1		KNOWN:0,1																			SAB:Call Forth His Servants (Sp) (Medium)|PREVARLT:WotEFBlessing,5	SAB:Call Forth His Servants (Sp) (Large)|PREVARLT:WotEFBlessing,8	SAB:Call Forth His Servants (Sp) (Greater)|PREVARGTEQ:WotEFBlessing,8
-4	CAST:0,1,0		KNOWN:0,2,1		KNOWNSPELLS:Burning Hands|Produce Flame|Wall of Fire|Resist Energy		DOMAIN:Fire
+1						PREABILITY:1,CATEGORY=Blessings of Flame,TYPE=BlessingsofFlame	ABILITY=Special Ability,VIRTUAL|Child of Nier		AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|All Martial Proficiencies
+2									SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon
+2	CAST:0,0		KNOWN:0,1		ABILITY:Special Ability|VIRTUAL|To Tap the Fire Within
+3	CAST:0,1		KNOWN:0,1		ABILITY:Special Ability|VIRTUAL|Call Forth His Servants
+4	CAST:0,1,0		KNOWN:0,2,1				SPELLLIST:1,DOMAIN.Fire	DOMAIN:Fire					SPELLLEVEL:CLASS|Warrior of the Eternal Flame=2|Continual Flame,Flaming Sphere,Flame Blade,Magic Vestment,Resist Energy (Fire)
+4:REPEATLEVEL:2|SKIP=0|MAX=10		PREABILITY:1,CATEGORY=Blessings of Flame,TYPE=BlessingsofFlame
 5	CAST:0,1,1		KNOWN:0,2,1
-6	CAST:0,1,1,0	KNOWN:0,2,2,1	KNOWNSPELLS:Inflict Light Wounds|Shatter|Contagion|Inflict Critical Wounds	DOMAIN:Destruction
-7	CAST:0,2,1,1	KNOWN:0,3,2,1																		SAB:Fury of Nier (Sp)																																																																																																								SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=CL*2|Fire Storm,18+CHA
+6	CAST:0,1,1,0	KNOWN:0,2,2,1			SPELLLIST:1,DOMAIN.Destruction	DOMAIN:Destruction	SPELLLEVEL:CLASS|Warrior of the Eternal Flame=3|Fire Trap,Flame Arrow,Magic Weapon (Greater),Mantle of Unassailable Flame,Scorching Ray
+7	CAST:0,2,1,1	KNOWN:0,3,2,1	ABILITY:Special Ability|VIRTUAL|Fury of Nier
+8									SPELLLEVEL:CLASS|Warrior of the Eternal Flame=4|Fireball,Fire Shield,Flame Strike,Wall of Fire,
 8	CAST:0,2,2,1,0	KNOWN:0,3,2,2,1
-9	CAST:0,3,2,1,1	KNOWN:0,3,3,2,2																		SAB:Nier's Embrace (Su) %d8 damage, %/day|EmbraceDamage|EmbraceTimes																																												BONUS:VAR|EmbraceDamage|CL	BONUS:VAR|EmbraceTimes|CL/2	DEFINE:EmbraceDamage|0	DEFINE:EmbraceTimes|0
-10	CAST:0,3,3,2,2	KNOWN:0,3,3,2,2																		SAB:Nier's Gift (Su)	SAB:Fire from the Gates of Heaven (Sp)																																																																																																	SPELLS:ClassAbility|TIMES=1|CASTERLEVEL=17|Elemental Swarm		TEMPLATE:Elemental|Fire|Vulnerability (Cold)
+9	CAST:0,3,2,1,1	KNOWN:0,3,3,2,2	ABILITY:Special Ability|VIRTUAL|Nier's Embrace
+10	CAST:0,3,3,2,2	KNOWN:0,3,3,2,2	ABILITY:Special Ability|VIRTUAL|Nier's Gift|Fire from the Gates of Heaven
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus												Combat bonus
 CLASS:Weapon Savant	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:WpnSv		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.225	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Req. Att.	Required Feat
-CLASS:Weapon Savant	PREATT:6	PREFEAT:4,Combat Expertise,Combat Reflexes,Improved Disarm,Exotic Weapon Proficiency
+CLASS:Weapon Savant	PREATT:6	PREFEAT:7,Combat Expertise,Combat Reflexes,Improved Disarm,Exotic Weapon Proficiency%
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Weapon Savant	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE.Craft|Examine Martial Technique|Jump|TYPE.History|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 # errata says can't count exotic prof feats gained as part of a class - don't know how to determine the others
-1	SAB:Total Weapon Proficiency (Ex)	SAB:Deflect Attack (Ex)|PREMULT:3,[PREEQUIP:1,TYPE.Melee,TYPE.Shield],[PREVARLT:ENCUMBERANCE,2],[!PREEQUIP:1,TYPE.Armor.Heavy]	BONUS:COMBAT|AC|1+(CL>=3)+(CL>=5)|TYPE=Shield.STACK|PREMULT:3,[PREEQUIP:1,TYPE.Melee,TYPE.Shield],[PREVARLT:ENCUMBERANCE,2],[!PREEQUIP:1,TYPE.Armor.Heavy]	AUTO:FEAT|Simple Weapon Proficienc|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|All Martial Weapon Proficiencies
-2	SAB:Total Finesse (Ex)	SAB:Improvised Weapons (Ex)																				BONUS:COMBAT|TOHIT.Melee|((max(STR,DEX)-STR)+SHIELDACCHECK)|TYPE=NotRanged
-3	SAB:Expert Strike (Ex)																									BONUS:COMBAT|DAMAGE.Weapon|1
-4	SAB:Close Combat Fighting (Ex)
-5	SAB:Many Blades, Many Methods (Ex)
+1				ABILITY:Special Ability|VIRTUAL|Total Weapon Proficiency|Deflect Attack		ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+2				ABILITY:Special Ability|VIRTUAL|Total Finesse|Improvised Weapons
+3				ABILITY:Special Ability|VIRTUAL|Expert Strike
+4				ABILITY:Special Ability|VIRTUAL|Close Combat Fighting
+5				ABILITY:Special Ability|VIRTUAL|Many Blades, Many Methods
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -726,16 +739,16 @@ CLASS:Blade of Hurrian	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.C
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1										SAB:Ki Blade (Ex) (+% defending)|KiBladeBonus	SAB:Lightning Leap (Ex)				BONUS:SKILL|Jump|10	BONUS:VAR|KiBladeBonus|2						DEFINE:KiBladeBonus|0
-2										SAB:Lightning Surges Through the Clouds (Ex)
-3										SAB:Clash of Thunder (Ex)																													ABILITY:Special Ability|AUTOMATIC|Deflect Arrows
-4	SAB:.CLEAR.Ki Blade (Ex) (+% defending)			SAB:Lighning Sword (Su)	SAB:Ki Blade (Ex) (+% defending/shocking)|KiBladeBonus
-5																													BONUS:VAR|KiBladeBonus|2
-6										SAB:Clouds Cover the Sun (Ex)
-7										SAB:Hurricane Blow (Ex)																														AUTO:FEAT|Weapon Specialization(Longsword)
-8	SAB:.CLEAR.Ki Blade (Ex) (+% defending/shocking)	SAB:Storm Bringer (Su)	SAB:Ki Blade (Ex) (+% defending/shocking burst)|KiBladeBonus
-9										SAB:Tornado Rush (Sp)
-10										SAB:The Perfect Storm (Su) (Duration % rounds)|StormDuration									BONUS:VAR|StormDuration|3+CON	BONUS:VAR|KiBladeBonus|2	DEFINE:StormDuration|0
+1										ABILITY:Special Ability|VIRTUAL|Ki Blade|Lightning Leap	BONUS:VAR|KiBladeBonus|2
+2										ABILITY:Special Ability|VIRTUAL|Lightning Surges Through the Clouds
+3										ABILITY:Special Ability|VIRTUAL|Clash of Thunder
+4										ABILITY:Special Ability|VIRTUAL|Lightning Sword
+5:REPEATLEVEL:5	BONUS:VAR|KiBladeBonus|2
+6										ABILITY:Special Ability|VIRTUAL|Clouds Cover the Sun
+7										ABILITY:Special Ability|VIRTUAL|Hurricane Blow
+8	SAB:.CLEAR.Ki Blade (Ex) (+% defending/shocking)	ABILITY:Special Ability|VIRTUAL|Storm Bringer
+9										ABILITY:Special Ability|VIRTUAL|Tornado Rush
+10										ABILITY:Special Ability|VIRTUAL|The Perfect Storm
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -749,16 +762,14 @@ CLASS:Order of the Bronze Sepulcher Elite	STARTSKILLPTS:4	CSKILL:Balance|Climb|T
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1	SAB:Eagle Claw (Ex)													BONUS:COMBAT|TOHIT.GRAPPLE|4
-2	SAB:Supreme Stunning Fist (Ex)																BONUS:VAR|InvisTimes|1	DEFINE:InvisTimes|0	SPELLS:ClassAbility|TIMES=InvisTimes|CASTERLEVEL=10|Invisibility
-3	SAB:Ghost Touch (Ex)
-4																						BONUS:VAR|InvisTimes|1
-5	SAB:Chill of the Grave (Ex)
-6																						BONUS:VAR|InvisTimes|1
-7	SAB:Touch of the Ghoul (Ex)
-8																						BONUS:VAR|InvisTimes|1
-9	SAB:Ki Aura (Ex) - immune to ability score loss, energy drain, and fear effects from undead.
-10	SAB:Ki Drain (Sp)
+1						ABILITY:Special Ability|VIRTUAL|Eagle Claw|Rank in Order
+2						ABILITY:Special Ability|VIRTUAL|Supreme Stunning Fist|Invisibility Ability
+2:REPEATLEVEL:2|SKIP=0|MAX=8	BONUS:VAR|InvisTimes|1
+3						ABILITY:Special Ability|VIRTUAL|Ghost Touch Ability
+5						ABILITY:Special Ability|VIRTUAL|Chill of the Grave
+7						ABILITY:Special Ability|VIRTUAL|Touch of the Ghoul
+9						ABILITY:Special Ability|VIRTUAL|Ki Aura
+10						ABILITY:Special Ability|VIRTUAL|Ki Drain
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -772,11 +783,11 @@ CLASS:Elemental Path of Flame	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1						SAB:Fire Resistance % (Su)|ElementResist	SAB:Rapid Strike	BONUS:VAR|ElementResist|3*CL	DEFINE:ElementResist|0
-2						SAB:Immolation 1/day
-3						SAB:Flaming Fists (Su)
-4	SAB:.CLEAR.Immolation 1/day	SAB:Immolation 2/day
-5						SAB:Flaming Bursts (Su)
+1					ABILITY:Special Ability|VIRTUAL|Fire Resistance Ability|Rapid Strike
+2					ABILITY:Special Ability|VIRTUAL|Immolation
+2:REPEATLEVEL:2	BONUS:VAR|ImmoTimes|1
+3					ABILITY:Special Ability|VIRTUAL|Flaming Fists
+5					ABILITY:Special Ability|VIRTUAL|Flaming Burst
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -791,9 +802,9 @@ CLASS:Elemental Path of Stone	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
 1	DR:1/-
-2			SAB:Hands of Stone (Ex)	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
+2					ABILITY:Special Ability|VIRTUAL|SAB:Hands of Stone (Ex)	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
 3															BONUS:DR|-|1
-4			SAB:Absorb Blow (Ex)	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
+4					ABILITY:Special Ability|VIRTUAL|SAB:Absorb Blow (Ex)	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
 5															BONUS:DR|-|1	AUTO:FEAT|Iron Skin
 
 ##############################################################################################################################################################################################################################################################################################################################################
@@ -808,11 +819,11 @@ CLASS:Elemental Path of Water	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1	SAB:Skipping Stone (Ex)
+1					ABILITY:Special Ability|VIRTUAL|SAB:Skipping Stone (Ex)
 2						BONUS:COMBAT|AC|1|TYPE=Dodge
-3	SAB:Misleading Step (Ex)						AUTO:FEAT|Improved Feint
+3					ABILITY:Special Ability|VIRTUAL|SAB:Misleading Step (Ex)	AUTO:FEAT|Improved Feint
 4						BONUS:COMBAT|AC|1|TYPE=Dodge
-5	SAB:Shallow Water (Su)
+5					ABILITY:Special Ability|VIRTUAL|SAB:Shallow Water (Su)
 
 ###############################################################################################################################################3
 
@@ -826,8 +837,8 @@ CLASS:Elemental Path of Wind	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:FEAT|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:FEAT|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1	SAB:Earth to Sky (Ex)					BONUS:COMBAT|AC|1|TYPE=Dodge											AUTO:FEAT|Earth to Sky|Meet the Charge
-2	SAB:Defensive Throw (Ex)	SAB:Wind's Grace
-3	SAB:Stunning Throw (Ex) (Fort DC %)|StunThrowDC	BONUS:COMBAT|AC|1|TYPE=Dodge	BONUS:VAR|StunThrowDC|10+WIS+CL	DEFINE:StunThrowDC|0
+1					ABILITY:Special Ability|VIRTUAL|SAB:Earth to Sky (Ex)					BONUS:COMBAT|AC|1|TYPE=Dodge											AUTO:FEAT|Earth to Sky|Meet the Charge
+2					ABILITY:Special Ability|VIRTUAL|SAB:Defensive Throw (Ex)	SAB:Wind's Grace
+3					ABILITY:Special Ability|VIRTUAL|SAB:Stunning Throw (Ex) (Fort DC %)|StunThrowDC	BONUS:COMBAT|AC|1|TYPE=Dodge	BONUS:VAR|StunThrowDC|10+WIS+CL	DEFINE:StunThrowDC|0
 4																								AUTO:FEAT|Tumbling Strike
-5	SAB:Throw Mastery (Ex)					BONUS:COMBAT|AC|1|TYPE=Dodge
+5					ABILITY:Special Ability|VIRTUAL|SAB:Throw Mastery (Ex)					BONUS:COMBAT|AC|1|TYPE=Dodge
