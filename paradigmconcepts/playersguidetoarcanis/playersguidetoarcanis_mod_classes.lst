@@ -17,8 +17,8 @@ CLASS:Bard.MOD	CSKILL:Black Market|Research
 
 # Class Name	Subclass?		Source, Long Desc.				Bonus Languages
 CLASS:Cleric.MOD	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	LANGBONUS:Celestial,Infernal
-# Class Name	Required Deity
-CLASS:Cleric.MOD	PREDEITY:1,Y
+# Class Name	Required Deity	Allow Base?
+CLASS:Cleric.MOD	PREDEITY:1,Y	ALLOWBASECLASS:NO
 # Class Name	Class Skill
 CLASS:Cleric.MOD	CSKILL:TYPE.Arcana|TYPE.History|TYPE.Religion|TYPE.Planes|Research
 SUBCLASS:Althares			COST:0	PREDEITY:1,Althares
@@ -56,6 +56,7 @@ SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=4|Your Fire is Mine,Steamblast										
 SUBCLASS:Saluwe			COST:0	PREDEITY:1,Saluwe		PREGENDER:FEMALE
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=2|Crushing Weight|Cleric=3|Battle Spines																																																																																									ABILITY:Special Ability|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)																																																				CSKILL:TYPE.Nature|Survival|Swim																							AUTO:FEAT|Track																REMOVE:FEAT|Simple Weapon Proficiency
 SUBCLASSLEVEL:4																																																																																		BONUS:VAR|RangerAnimalCompLVL|CL													ABILITY:Special Ability|VIRTUAL|Arcanis Animal Companion|Ranger Animal Companion
+# supposed to not prohibit based on alignment for Summoning spells - no idea how at this time, so not prohibiting any
 SUBCLASS:Sarish			COST:0	PREDEITY:1,Sarish
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=2|My Master Allows|Cleric=5|Summon Thy Own (Lesser)|Cleric=7|Summon Thy Own|Cleric=9|Summon Thy Own (Greater)																																																																													ABILITY:Special Ability|VIRTUAL|Rebuke Undead|Thy Master Calls																																																																LANGAUTO:Ancient Altharin(Imperial)	ADD:LANGUAGE|TYPE=Infernal	AUTO:EQUIP|Dagger (Sarishan Steel)
 SUBCLASSLEVEL:3																																																																																																																																																																																															AUTO:FEAT|Magical Aptitude
@@ -89,7 +90,8 @@ SUBCLASSLEVEL:1																																																																	
 1	ABILITY:FEAT|VIRTUAL|Aura of Good|PREALIGN:LG,NG,CG
 1	ABILITY:FEAT|VIRTUAL|Aura of Law|PREALIGN:LG,LN,LE
 ###Block: Prohibit spell - Deities in Arcanis don't have alignment
-1	PROHIBITSPELL:.CLEAR
+#?? how can other cleric prohibitions be cleared - this gives an error
+1	PROHIBITSPELL:.CLEARALL
 1	PROHIBITSPELL:ALIGNMENT.Good|PREMULT:2,[PREALIGN:LE,NE,CE],[!PRECLASS:1,Cleric (Sarish)]
 1	PROHIBITSPELL:ALIGNMENT.Evil|PREMULT:2,[PREALIGN:LG,NG,CG],[!PRECLASS:1,Cleric (Sarish)]
 1	PROHIBITSPELL:ALIGNMENT.Lawful|PREMULT:2,[PREALIGN:CG,CN,CE],[!PRECLASS:1,Cleric (Sarish)]
@@ -153,8 +155,8 @@ SUBCLASSLEVEL:6																																													ADD:FEAT|Improved Di
 
 # Class Name	Subclass?		Automatic Languages			Bonus Languages
 CLASS:Paladin.MOD	HASSUBCLASS:YES	LANGAUTO:Ancient Altharin(Imperial)	LANGBONUS:Celestial,Infernal
-# Class Name	Required AL		Required Deity
-CLASS:Paladin.MOD	PREALIGN:LG,NG,CG	PREDEITY:1,Y
+# Class Name	Required AL		Required Deity	Allow Base?
+CLASS:Paladin.MOD	PREALIGN:LG,NG,CG	PREDEITY:1,Y	ALLOWBASECLASS:NO
 # Class Name	Class Skill
 CLASS:Paladin.MOD	CSKILL:TYPE.Nobility|TYPE.Religion|Examine Martial Technique
 SUBCLASS:Paladin of Althares		COST:0	PREDEITY:1,Althares
@@ -200,11 +202,11 @@ CLASS:Sorcerer.MOD	CSKILL:TYPE.Arcana
 1	ADD:FEAT|Eschew Materials	ABILITY:FEAT|VIRTUAL|.CLEAR.Summon Familiar	ABILITY:FEAT|VIRTUAL|Arcanis Familiar
 
 # Class Name	Clear Bonus Languages
-CLASS:Wizard	LANGBONUS:.CLEAR
+CLASS:Wizard.MOD	LANGBONUS:.CLEAR
 # Class Name	Required Gender
-CLASS:Wizard	PREGENDER:M|PRERACE:1,Ss'ressen
+CLASS:Wizard.MOD	PREGENDER:M|PRERACE:1,Ss'ressen
 # Class Name	Class Skill
-CLASS:Wizard	CSKILL:Research|TYPE.Knowledge
+CLASS:Wizard.MOD	CSKILL:Research|TYPE.Knowledge
 1	ABILITY:FEAT|VIRTUAL|.CLEAR.Summon Familiar
 1	ABILITY:FEAT|VIRTUAL|Arcanis Familiar
 

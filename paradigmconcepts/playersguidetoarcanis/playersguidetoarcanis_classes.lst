@@ -7,8 +7,7 @@ CLASS:Patrician	HD:6		TYPE:Base.PC	ABB:Pat		MAXLEVEL:20	SOURCELONG:Player's Guid
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Patrician	STARTSKILLPTS:6	CSKILL:Appraise|Black Market|Bluff|Concentration|TYPE.Craft|Decipher Script|Diplomacy|Gather Information|Intimidate|TYPE.Knowledge|Listen|TYPE.Perform|TYPE.Profession|Ride|Research|Sense Motive|Speak Language
 1																	ADD:FEAT|TYPE=Gentry[PRELEVELMAX:1]					ABILITY:Special Ability|VIRTUAL|Educated|Estate	AUTO:FEAT|Simple Weapon Proficiency|Armor Proficiency (Light)
-2								DEFINE:EyesEarsNumber|0
-2:REPEATLEVEL:4															ADD:ABILITY|Special Ability|VIRTUAL|Eyes and Ears		ABILITY:Special Ability|VIRTUAL|Skilled
+2:REPEATLEVEL:4															ADD:ABILITY|Special Ability|VIRTUAL|Eyes and Ears		ABILITY:Special Ability|VIRTUAL|Skilled		ADD:CLASSSKILLS|1|CROSSCLASSSKILLS
 3								DEFINE:CoordinateBonus|0
 3:REPEATLEVEL:4	BONUS:VAR|CoordinateBonus|1										ADD:ABILITY|Special Ability|VIRTUAL|TYPE=PatricianAdvantage	ABILITY:Special Ability|VIRTUAL|Coordinate
 4								DEFINE:AllowanceLevel|0	DEFINE:AllowanceAmount|0
@@ -18,15 +17,15 @@ CLASS:Patrician	STARTSKILLPTS:6	CSKILL:Appraise|Black Market|Bluff|Concentration
 8:REPEATLEVEL:8	BONUS:VAR|ServantBonus|1																				ABILITY:Special Ability|VIRTUAL|Loyal Servant
 9								DEFINE:RebLessDC|0																ABILITY:Special Ability|VIRTUAL|Rebuke Lesser
 13																																			AUTO:FEAT|Improved Leadership
-17																	ADD:ABILITY|Special Ability|Second Estate
+17																	ADD:ABILITY|Special Ability|VIRTUAL|Second Estate
 
 ###########################################################################################################################################
 # errata 2006-06-03 applied
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source, Long Desc.				Source Page		Automatic Languages	Bonus Languages					Save checks bonus											Combat bonus					Add domain number
 CLASS:Priest	HD:4		TYPE:Base.PC	ABB:Pst		MAXLEVEL:20	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:pg.117	LANGAUTO:Literacy		LANGBONUS:Ancient Altharin(Imperial)	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:DOMAIN|NUMBER|1
-# Class Name	Required Deity	Prohibited Subclass
-CLASS:Priest	PREDEITY:1,Y	!PRESUBCLASS:1,Hospitaler
+# Class Name	Required Deity	Prohibited Subclass		Allow Base?
+CLASS:Priest	PREDEITY:1,Y	!PRESUBCLASS:1,Hospitaler	ALLOWBASECLASS:NO
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Priest	STARTSKILLPTS:6	CSKILL:Bluff|Concentration|TYPE.Craft|Decipher Script|Diplomacy|Heal|Intimidate|TYPE.Arcana|TYPE.History|TYPE.Nobility|TYPE.Local|TYPE.Religion|TYPE.Planes|Perform (Oratory)|TYPE.Profession|Sense Motive|Spellcraft
 # Class Name	Spell Stat		Spell Type		Memorize		Automaticaly Known Spell Levels											Caster level
@@ -39,7 +38,7 @@ SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Priest=2|Sticks to Snakes|Priest=4|Share My Pai
 SUBCLASSLEVEL:3																																																																																																																																																				AUTO:FEAT|Endurance
 SUBCLASSLEVEL:9																																																																																																																																																				AUTO:FEAT|Diehard
 SUBCLASS:Priest of Belisarda		COST:0							PREDEITY:1,Belisarda
-SUBCLASSLEVEL:1																																																																																		BONUS:VAR|RitualPoints|skillinfo("RANK", "Knowledge (Religion:Belisarda)")/5																			CSKILL:TYPE.Geography|TYPE.Nature|Survival										ADD:ABILITY|Special ASbility|AUTOMATIC|TYPE=TurnUndead																				AUTO:WEAPONPROF|Longbow
+SUBCLASSLEVEL:1																																																																																		BONUS:VAR|RitualPoints|skillinfo("RANK", "Knowledge (Religion:Belisarda)")/5																			CSKILL:TYPE.Geography|TYPE.Nature|Survival										ADD:ABILITY|Special Ability|AUTOMATIC|TYPE=TurnUndead																				AUTO:WEAPONPROF|Longbow
 SUBCLASS:Priest of Beltine		COST:0	LANGAUTO:Ancient Altharin(Imperial)	PREDEITY:1,Beltine
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Priest=2|Glimpse of the Cauldron,Hold the Spirit|Priest=9|Cry For Spirit's Release																																																																	BONUS:VAR|RitualPoints|skillinfo("RANK", "Knowledge (Religion:Beltine)")/5																																				ADD:ABILITY|Special Ability|AUTOMATIC|TYPE=TurnNerothGood	ADD:ABILITY|FEAT|AUTOMATIC|TYPE=TurnBeltineGood												AUTO:WEAPONPROF|Quarterstaff
 SUBCLASS:Priest of Cadic		COST:0	LANGAUTO:Ancient Altharin(Imperial)	PREDEITY:1,Cadic
@@ -64,6 +63,7 @@ SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Priest=2|Crushing Weight|Priest=3|Battle Spines
 SUBCLASSLEVEL:1																																																																																																																																		ADD:ABILITY|Special Ability|AUTOMATIC|TYPE=TurnUndead																					AUTO:WEAPONPROF|Spear
 SUBCLASSLEVEL:3																																																																																		BONUS:VAR|WildEmpathy|CL	BONUS:VAR|WildEmpathyMagicalBeast							ABILITY:Special Ability|AUTOMATIC|Wild Empathy																																										AUTO:FEAT|Track
 SUBCLASSLEVEL:4																																																																																		BONUS:VAR|CompLevel|CL														ABILITY:Special Ability|NORMAL|Arcanis Animal Companion|Druid Animal Companion
+# supposed to not prohibit based on alignment for Summoning spells - no idea how at this time, so not prohibiting any
 SUBCLASS:Priest of Sarish		COST:0	LANGAUTO:Ancient Altharin(Imperial)	PREDEITY:1,Sarish
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Priest=2|My Master Allows|Priest=5|Summon Thy Own (Lesser)|Priest=7|Summon Thy Own|Priest=9|Summon Thy Own (Greater)																																																											BONUS:VAR|RitualPoints|skillinfo("RANK","Knowledge (Religion:Sarish)")/5					ABILITY:Special Ability|VIRTUAL|Thy Master Calls																	LANGAUTO:Infernal				ADD:ABILITY|Special Ability|AUTOMATIC|TYPE=TurnUndead	ADD:EQUIP|1|Dagger (Sarishan Steel)															AUTO:WEAPONPROF|Dagger
 SUBCLASSLEVEL:3																																																																																																																																																				AUTO:FEAT|Magical Aptitude
@@ -79,7 +79,7 @@ SUBCLASSLEVEL:3																																																																	
 1										BONUS:VAR|TurnLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe
 1										BONUS:VAR|TurnLevelBase|CL|PREDEITY:1,Nier
 1										BONUS:VAR|TurnLevelBase|CL+2|PREDEITY:1,Beltine,Neroth
-1										BONUS:VAR|ChannelDamagePlusBase|CL|TYPE=Level.REPLACE							ABILITY:FEAT|VIRTUAL|Basic Channeling|Channeling
+1										BONUS:VAR|ChannelDamagePlusBase|CL|TYPE=Level.REPLACE							ABILITY:Special Ability|VIRTUAL|Basic Channeling|Channeling
 1										BONUS:VAR|ChannelLevelBase|CL-3|PREDEITY:1,Althares,Cadic,Fire Dragon,Larissa,Sarish
 1										BONUS:VAR|ChannelLevelBase|CL-2|PREDEITY:1,Hurrian,Yarris
 1										BONUS:VAR|ChannelLevelBase|CL-1|PREDEITY:1,Anshar,Belisarda,Illiir,Saluwe
@@ -96,9 +96,9 @@ SUBCLASSLEVEL:3																																																																	
 1	PROHIBITSPELL:ALIGNMENT.Lawful|PREMULT:2,[PREALIGN:CG,CN,CE],[!PRECLASS:1,Priest (Priest of Sarish)]
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREMULT:2,[PREALIGN:LG,LN,LE],[!PRECLASS:1,Priest (Priest of Sarish)]
 ###Block: Spontaneous casting
-1																	ABILITY:Special Ability|Spontaneous casting - Cure spells|PREABILITY:1,CATEGORY=Special Ability,Turn Undead
-1																	ABILITY:Special Ability|Spontaneous casting - Inflict spells|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead
-1	CAST:3,1								ADD:ABILITY|FEAT|VIRTUAL|RitualsofFaith	ABILITY:Special Ability|VIRTUAL|Trust in Faith
+1																	ABILITY:Special Ability|VIRTUAL|Spontaneous casting - Cure spells|PREABILITY:1,CATEGORY=Special Ability,Turn Undead
+1																	ABILITY:Special Ability|VIRTUAL|Spontaneous casting - Inflict spells|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead
+1	CAST:3,1						ADD:ABILITY|Special Ability|VIRTUAL|Rituals of Faith	ABILITY:Special Ability|VIRTUAL|Trust in Faith
 2	CAST:4,2
 3	CAST:4,2,1															ABILITY:Special Ability|VIRTUAL|Divine Health
 4	CAST:5,3,2
@@ -127,7 +127,7 @@ CLASS:Urban Sentinel	HD:8		TYPE:Base.PC	ABB:USntl		MAXLEVEL:20	SOURCELONG:Player
 CLASS:Urban Sentinel	STARTSKILLPTS:6	CSKILL:Balance|Black Market|Climb|Concentration|TYPE.Craft|Escape Artist|Gather Information|Handle Animal|Hide|Intimidate|Jump|TYPE.Local|Listen|Move Silently|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
 # Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels				Craft Level Mult.	Caster level
 CLASS:Urban Sentinel	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	ITEMCREATE:0.5	BONUS:CASTERLEVEL|Urban Sentinel|CL/2|PRECLASS:1,Urban Sentinel=4
-1										ABILITY:Special Ability|All Martial Proficiencies									AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Streetwise|Track|Armor Proficiency (Light)|Shield Proficiency
+1										ABILITY:Special Ability|All Martial Weapon Proficiencies									AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Streetwise|Track|Armor Proficiency (Light)|Shield Proficiency
 1				BONUS:VAR|RangerFavoredEnemyLVL|CL	ABILITY:Special Ability|AUTOMATIC|Basic Favored Enemy|Ranger Favored Enemy
 1				BONUS:VAR|RangerCombatTreeLVL|CL	ABILITY:Special Ability|VIRTUAL|Ranger Combat Tree
 2
@@ -157,14 +157,14 @@ CLASS:Urban Sentinel	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Ex Class				Source, Long Desc.				Automatic Languages	Bonus Languages			Combat bonus
 CLASS:Holy Champion	NAMEISPI:YES	HD:8		TYPE:Base.PC	ABB:HC		MAXLEVEL:20	HASSUBCLASS:YES	EXCLASS:Ex-Holy Champion	SOURCELONG:Player's Guide to Arcanis	LANGAUTO:Literacy		LANGBONUS:Celestial,Infernal	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Required Deity	Prohibited Subclass
-CLASS:Holy Champion	PREDEITY:1,Y	!PRESUBCLASS:1,Priest of Beltine
+CLASS:Holy Champion	PREDEITY:1,Y	!PRESUBCLASS:1,Priest of Beltine	ALLOWBASECLASS:NO
 # Class Name		Class Skill
 CLASS:Holy Champion	CSKILL:Examine Martial Technique
 # Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels
 CLASS:Holy Champion	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4
 # Philosophic Warrior - Althares #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SUBCLASS:Philosophic Warrior	NAMEISPI:YES	COST:0	LANGAUTO:Ancient Altharin(Imperial)				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+2)/2+1	BONUS:CHECKS|BASE.Reflex|CL/3				STARTSKILLPTS:6	PREALIGN:LG,LN,LE	PREDEITY:1,Althares																													!PRERACE:1,Elorii,Dwarf,Ss'ressen																																																				SOURCEPAGE:p.70	FAVCLASS:Altherian Artificer|Altherian Triggermage|Bard|Cleric|Expert|Loremaster|Paladin|Patrician|Psion
-SUBCLASSLEVEL:1																																																																																														ABILITY:Special Ability|VIRTUAL|Detect Evil	ABILITY:Special Ability|AUTOMATIC|All Martial Proficiencies																																														AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|Martial Weapon Proficiency	AUTO:WEAPONPROF|TYPE=Flintlock	CHANGEPROF:Altherian Flintlock (Pistol),Altherian Flintlock (Rifle)=Martial
+SUBCLASSLEVEL:1																																																																																														ABILITY:Special Ability|VIRTUAL|Detect Evil	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies																																														AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency|Martial Weapon Proficiency	AUTO:WEAPONPROF|TYPE=Flintlock	CHANGEPROF:Altherian Flintlock (Pistol),Altherian Flintlock (Rifle)=Martial
 SUBCLASSLEVEL:2																																																																																														ABILITY:Special Ability|VIRTUAL|Wisdom of Althares																																											SPELLS:ClassAbility|TIMES=ATWILL|CASTERLEVEL=TL|Comprehend Languages
 SUBCLASSLEVEL:3																																																																																														ABILITY:Special Ability|VIRTUAL|Know Thy Enemy
 SUBCLASSLEVEL:4	SPELLLEVEL:CLASS|Holy Champion=1|Comprehend Languages,Discern Value,Hardness,Identify,True Strike																		CAST:0,0																																																																																																																									AUTO:FEAT|Scribe Scroll
@@ -252,7 +252,7 @@ SUBCLASSLEVEL:19																																			CAST:0,4,4,4,4,4
 SUBCLASSLEVEL:20																																			CAST:0,4,4,4,4,4																																																									ABILITY:Special Ability|VIRTUAL|Ancestor in Waiting
 # Order of the Twilight Warriors - Cadic #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SUBCLASS:Twilight Warrior	NAMEISPI:YES	COST:0	LANGAUTO:Ancient Altharin(Imperial)				BONUS:CASTERLEVEL|Holy Champion|CL/2|PRECLASS:1,Holy Champion=4	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3					STARTSKILLPTS:6	PREALIGN:LN		PREDEITY:1,Cadic																								PRERACE:1,Elorii,Dwarf,Ss'ressen														CSKILL:Balance|Bluff|Climb|Diplomacy|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Intimidate|Jump|TYPE.Religion|TYPE.Local|Listen|Move Silently|Open Lock|TYPE.Perform|TYPE.Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Rope	SOURCEPAGE:p.83	FAVCLASS:Bard|Cleric|Obsidian Sniper|Rogue|Urban Sentinental|Shadowdancer|Soulknife
-SUBCLASSLEVEL:1																																																																																														ABILITY:Special Ability|VIRTUAL|Pierce the Veil of Shadow	ABILITY:Special Ability|AUTOMATIC|All Martial Proficiencies																																												AUTO:FEAT|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+SUBCLASSLEVEL:1																																																																																														ABILITY:Special Ability|VIRTUAL|Pierce the Veil of Shadow	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies																																												AUTO:FEAT|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
 SUBCLASSLEVEL:2																																																																																														ABILITY:Special Ability|VIRTUAL|Cloak of Cadic
 SUBCLASSLEVEL:3																																																																		BONUS:VAR|SneakAttack|(CL+1)/4																							ABILITY:Special Ability|VIRTUAL|Sneak Attack|Shadow Jump
 SUBCLASSLEVEL:4	SPELLLEVEL:CLASS|Holy Champion=1|Darkness,Disguise Self,Pass without Trace,Protection from Evil,Undetectable Alignment															CAST:0,0																														BONUS:VAR|SmiteEvil|1																									ABILITY:Special Ability|VIRTUAL|Divine Grace PGtA|Smite Evil

@@ -60,11 +60,11 @@ CLASS:Battlemage of the Coryani Legions	STARTSKILLPTS:2	CSKILL:Concentration|TYP
 1:REPEATLEVEL:1	BONUS:ABILITYPOOL|BonusKnownPool|MEMORIZE=N
 2																									ABILITY:Special Ability|VIRTUAL|Battle Magic|PRESPELLCAST:MEMORIZE=Y
 2:REPEATLEVEL:1														ADD:SPELLCASTER|Arcane
-3:REPEATLEVEL:4																							ABILITY:Special Ability|VIRTUAL|Spell Mast Ability|PRESPELLCAST:MEMORIZE=Y	ABILITY:Special Ability|Special Ability|Spontaneous Caster Spell|PRESPELLCAST:MEMORIZE=N
+3:REPEATLEVEL:4																							ABILITY:Special Ability|VIRTUAL|Spell Mast Ability|PRESPELLCAST:MEMORIZE=Y	ABILITY:Special Ability|VIRTUAL|Spontaneous Caster Spell|PRESPELLCAST:MEMORIZE=N
 4																									ABILITY:Special Ability|VIRTUAL|Improved Armored Casting
 5																									ABILITY:Special Ability|VIRTUAL|Stable Casting
 5:REPEATLEVEL:4														ADD:FEAT|TYPE=Fighter,TYPE=Military,TYPE=Metamagic
-6:REPEATLEVEL:2									BONUS:VAR|BattleSpellTimes|1										ABILITY:Special Ability|VIRTUAL|Battle Spell	ABILITY:Special Ability|Special Ability|Spontaneous Caster Spell|PRESPELLCAST:MEMORIZE=N
+6:REPEATLEVEL:2									BONUS:VAR|BattleSpellTimes|1										ABILITY:Special Ability|VIRTUAL|Battle Spell	ABILITY:Special Ability|VIRTUAL|Spontaneous Caster Spell|PRESPELLCAST:MEMORIZE=N
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -182,19 +182,19 @@ CLASS:Emerald Society Archaeologist	!PREABILITY:1,CATEGORY=Special Ability,Illit
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Emerald Society Archaeologist	STARTSKILLPTS:8	CSKILL:Appraise|Balance|Bluff|Climb|Decipher Script|Diplomacy|Disable Device|Gather Information|Hide|TYPE.Knowledge|Listen|Open Lock|TYPE.Profession|Research|Ride|Search|Sense Motive|Speak Language|Survival|Swim|Use Magic Device|Use Rope
 1								ABILITY:Special Ability|VIRTUAL|Ancient Lore|Emerald Proficiency|
-1:REPEATLEVEL:2						ABILITY:Special Ability|Subject Specialization
+1:REPEATLEVEL:2						ABILITY:Special Ability|VIRTUAL|Subject Specialization
 2								ABILITY:Special Ability|VIRTUAL|Investigator
 3			BONUS:VAR|TrapSense|CL/3	ABILITY:Special Ability|VIRTUAL|Find the Past|Trap Sense
-4								ABILITY:Special Ability|Knowledge Mastery
-5								ABILITY:Special Ability|Researcher
-6								ABILITY:Special Ability|Great Lore
+4								ABILITY:Special Ability|VIRTUAL|Knowledge Mastery
+5								ABILITY:Special Ability|VIRTUAL|Researcher
+6								ABILITY:Special Ability|VIRTUAL|Great Lore
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
 CLASS:Gladiator	HD:8		TYPE:PC.Prestige	ABB:Gldtr		MAXLEVEL:10	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.186	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name	Req. Att.	Required Feat
-CLASS:Gladiator	PREATT:3	PREFEAT:2,Combat Expertise,Dodge
+# Class Name	Req. Att.	Required Feat				Allow base?
+CLASS:Gladiator	PREATT:3	PREFEAT:2,Combat Expertise,Dodge	ALLOWBASECLASS:NO
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Gladiator	STARTSKILLPTS:4	CSKILL:Appraise|Balance|Bluff|Climb|TYPE.Craft|Diplomacy|Escape Artist|Examine Martial Technique|Intimidate|Jump|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 #
@@ -218,7 +218,7 @@ SUBCLASS:Thracian		COST:0
 1												ABILITY:Special Ability|VIRTUAL|Combat Style	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency
 2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge
 3																																AUTO:FEAT|Endurance
-4												ABILITY:Special Ability|Improved Combat Style
+4												ABILITY:Special Ability|VIRTUAL|Improved Combat Style
 5												ABILITY:Special Ability|VIRTUAL|Idolized by the Mob|Signature Weapon
 6												ABILITY:Special Ability|VIRTUAL|Amazing Fortitude
 7												ABILITY:Special Ability|VIRTUAL|Defensive Roll													AUTO:FEAT|Diehard
@@ -296,7 +296,7 @@ CLASS:Man-at-Arms	PREALIGN:LG,LN,NG,TN	PREATT:4	PREFEAT:2,Alertness,Lightning Re
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Man-at-Arms	STARTSKILLPTS:4	CSKILL:Climb|Diplomacy|Jump|Handle Animal|Intimidate|TYPE.Geography|TYPE.History|TYPE.Local|TYPE.Nobility|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim
 1									ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker
-1									ABILITY:Special Ability|VIRTUAL|Respected Authority	ABILITY:Special Ability|AUTOMATIC|All Martial Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+1									ABILITY:Special Ability|VIRTUAL|Respected Authority	ABILITY:Special Ability|AUTOMATIC|All Martial  Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
 2									ABILITY:Special Ability|VIRTUAL|Organize
 3:REPEATLEVEL:3	BONUS:ABILITYPOOL|Fighter Feat|1
 3									ABILITY:Special Ability|VIRTUAL|Faithful Bodyguard
@@ -437,7 +437,7 @@ CLASS:Order of the Thundering Storm	PRECHECKBASE:1,Will=6	PREDEITY:1,Hurrian	PRE
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Thundering Storm	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Diplomacy|Handle Animal|Intimidate|TYPE.Religion|Ride|Tumble
 1								ABILITY:Special Ability|VIRTUAL|SAB:The Reluctant Warrior (Su)
-2	BONUS:VAR|LayOnHandsLVL|max(CHA,0)*CL	ABILITY:Special Ability|VIRTUAL|Lay On Hands|!PREABILITY:1,CATEGORY:Special Ability|Lay On Hands
+2	BONUS:VAR|LayOnHandsLVL|max(CHA,0)*CL	ABILITY:Special Ability|VIRTUAL|Lay On Hands|!PREABILITY:1,CATEGORY=Special Ability,Lay On Hands
 3								ABILITY:Special Ability|VIRTUAL|Way of the Wind
 4								ABILITY:Special Ability|VIRTUAL|Force of the Storm
 5								ABILITY:Special Ability|VIRTUAL|The Tempest
@@ -536,7 +536,7 @@ CLASS:Spellcaller	NAMEISPI:YES	HD:4		TYPE:PC.Prestige	ABB:SpClr		MAXLEVEL:10	SOU
 CLASS:Spellcaller	PREMULT:2,[PRESPELLCAST:MEMORIZE=N],[PRESPELLTYPE:1,Arcane=3]	PRESKILL:2,TYPE.Arcana,Spellcraft=8
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Spellcaller	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Decipher Script|TYPE.Knowledge|TYPE.Profession|Search|Spellcraft
-1					BONUS:ABILITYPOOL|FlexibleKnownSlot|9	BONUS:ABILITYPOOL|KnownSpellSlot|9									ABILITY:Special Ability|VIRTUAL|Spell Studies|Multiple Spontaneous Adjustment
+1					BONUS:ABILITYPOOL|FlexibleKnownSlot|9	BONUS:ABILITYPOOL|SpellStudiesPool|9									ABILITY:Special Ability|VIRTUAL|Spell Studies|Flexible Spell Slot|Multiple Spontaneous Adjustment
 1:REPEATLEVEL:1																ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
 2:REPEATLEVEL:2|SKIP=0|MAX=4														ADD:FEAT|TYPE=Metamagic
 6																										ABILITY:Special Ability|VIRTUAL|Spell Mimic
@@ -551,7 +551,7 @@ CLASS:Tal Kanath	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:TalK		MAXLEVEL:5	SOURCE
 CLASS:Tal Kanath	PREABILITY:1,CATEGORY=Special Ability,Evasion	PREALIGN:LG,LN,LE	PREATT:8	PREFEAT:4,Combat Expertise,Dodge,Mobility,Spring Attack,Whirlwind Attack	PREFEAT:1,Weapon Focus(TYPE=Sword)	PRERACE:1,Elorii	PRESKILL:3,Jump,Tumble,Perform (Dance)=4
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Tal Kanath	STARTSKILLPTS:4	CSKILL:Balance|Jump|Hide|Listen|Move Silently|TYPE.Perform|Spot|Tumble
-1	ABILITY:Special Ability|VIRTUAL|The First Steps|Armor Bonus Ability	ABILITY:Special Ability|AUTOMATIC|All Martial Proficiencies	AUTO:FEAT|Martial Weapon Proficiency|Armor Proficiency (Light)
+1	ABILITY:Special Ability|VIRTUAL|The First Steps|Armor Bonus Ability	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency|Armor Proficiency (Light)
 2	ABILITY:Special Ability|VIRTUAL|Dance of Air
 3	ABILITY:Special Ability|VIRTUAL|Dance of Fire
 4	ABILITY:Special Ability|VIRTUAL|Dance of Water
@@ -569,7 +569,7 @@ CLASS:Talon of the Hawk	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE.Craft|Diplomac
 1:REPEATLEVEL:1																				ADD:SPELLCASTER|Arcane
 1:REPEATLEVEL:8	BONUS:VAR|DispelFocus|2
 2																																																AUTO:FEAT|Armored Caster
-4																										ABILITY:Special Ability|VIRUTAL|Favored Enemy (Ymandrakes)
+4																										ABILITY:Special Ability|VIRTUAL|Favored Enemy (Ymandrakes)
 4:REPEATLEVEL:2	BONUS:VAR|FavoredYmandrakes|2
 5																										ABILITY:Special Ability|VIRTUAL|Arcane Savant (Dispel Magic)
 9																										ABILITY:Special Ability|VIRTUAL|Arcane Savant (Greater Dispel Magic)
@@ -638,7 +638,7 @@ CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:1,Nier	PR
 CLASS:Warrior of the Eternal Flame	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft
 # Class Name				Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Warrior of the Eternal Flame	SPELLSTAT:CHA	SPELLTYPE:Divine	MEMORIZE:NO	BONUS:CASTERLEVEL|Warrior of the Eternal Flame|CL|PRECLASS:1,Warrior of the Eternal Flame=2
-1															PREABILITY:1,CATEGORY=Blessings of Flame,TYPE=BlessingsofFlame	ABILITY:Special Ability|VIRTUAL|Child of Nier	ABILITY:Special Ability|AUTOMATIC|All Martial Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+1															PREABILITY:1,CATEGORY=Blessings of Flame,TYPE=BlessingsofFlame	ABILITY:Special Ability|VIRTUAL|Child of Nier	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
 2																																																																											SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon
 2					CAST:0,0		KNOWN:0,1																	ABILITY:Special Ability|VIRTUAL|To Tap the Fire Within
 3					CAST:0,1		KNOWN:0,1																	ABILITY:Special Ability|VIRTUAL|Call Forth His Servants
@@ -656,8 +656,8 @@ CLASS:Warrior of the Eternal Flame	SPELLSTAT:CHA	SPELLTYPE:Divine	MEMORIZE:NO	BO
 
 # Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus												Combat bonus
 CLASS:Weapon Savant	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:WpnSv		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.225	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name		Req. Att.	Required Feat
-CLASS:Weapon Savant	PREATT:6	PREFEAT:7,Combat Expertise,Combat Reflexes,Improved Disarm,Exotic Weapon Proficiency%
+# Class Name		Req. Att.	Required Feat													Allow Base?
+CLASS:Weapon Savant	PREATT:6	PREFEAT:7,Combat Expertise,Combat Reflexes,Improved Disarm,Exotic Weapon Proficiency%	ALLOWBASECLASS:NO
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Weapon Savant	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE.Craft|Examine Martial Technique|Jump|TYPE.History|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 # errata says can't count exotic prof feats gained as part of a class - don't know how to determine the others
@@ -736,7 +736,9 @@ CLASS:Blade of Hurrian	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREMULT:1,[P
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Blade of Hurrian	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|Knowledge (Warfare & Tactics)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 ###Block: Monk stacking stuff
-1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
+#?? giving errors on the Monk reference - no idea why
+#1	BONUS:UDAM|CLASS.Monk|CL
+1						BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
 1												BONUS:VAR|KiBladeBonus|2	ABILITY:Special Ability|VIRTUAL|Ki Blade|Lightning Leap
@@ -835,8 +837,8 @@ CLASS:Elemental Path of Wind	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=8	PREFEA
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Elemental Path of Wind	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|Knowledge (Religion:Belisarda)|Knowledge (Religion:Elemental Lords)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 ###Block: Monk stacking stuff
-1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:FEAT|VIRTUAL|Monk AC
-1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:FEAT|VIRTUAL|Monk Movement
+1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
+1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
 1								ABILITY:Special Ability|VIRTUAL|Earth to Sky|Dodge Bonus
 1:REPEATLEVEL:2	BONUS:COMBAT|AC|1|TYPE=Dodge
