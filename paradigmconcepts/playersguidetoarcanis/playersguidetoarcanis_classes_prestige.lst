@@ -1,6 +1,6 @@
 # CVS $Revision: 6954 $ $Author: takenote61 $ -- Tue Jul  1 02:27:28 2008 -- reformated by prettylst.pl v1.38 (build 6887)
 
-SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2004-06
+SOURCELONG:Player's Guide to Arcanis	SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2004-06
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -57,7 +57,7 @@ CLASS:Battlemage of the Coryani Legions	PREALIGN:LG,LN,LE	PREFEAT:1,Legionnaire,
 # Class Name					Skill Pts/Lvl	Class Skill
 CLASS:Battlemage of the Coryani Legions	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|TYPE.Arcana|TYPE.History|TYPE.Profession|Ride|Spellcraft
 1																									ABILITY:Special Ability|VIRTUAL|Endurance Ability|Hunted|Strength Coryani Ability
-1:REPEATLEVEL:1	BONUS:ABILITYPOOL|BonusKnownPool|MEMORIZE=N
+1:REPEATLEVEL:1	BONUS:ABILITYPOOL|Bonus Known Slot|MEMORIZE=N
 2																									ABILITY:Special Ability|VIRTUAL|Battle Magic|PRESPELLCAST:MEMORIZE=Y
 2:REPEATLEVEL:1														ADD:SPELLCASTER|Arcane
 3:REPEATLEVEL:4																							ABILITY:Special Ability|VIRTUAL|Spell Mast Ability|PRESPELLCAST:MEMORIZE=Y	ABILITY:Special Ability|VIRTUAL|Spontaneous Caster Spell|PRESPELLCAST:MEMORIZE=N
@@ -536,7 +536,7 @@ CLASS:Spellcaller	NAMEISPI:YES	HD:4		TYPE:PC.Prestige	ABB:SpClr		MAXLEVEL:10	SOU
 CLASS:Spellcaller	PREMULT:2,[PRESPELLCAST:MEMORIZE=N],[PRESPELLTYPE:1,Arcane=3]	PRESKILL:2,TYPE.Arcana,Spellcraft=8
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Spellcaller	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Decipher Script|TYPE.Knowledge|TYPE.Profession|Search|Spellcraft
-1					BONUS:ABILITYPOOL|FlexibleKnownSlot|9	BONUS:ABILITYPOOL|SpellStudiesPool|9									ABILITY:Special Ability|VIRTUAL|Spell Studies|Flexible Spell Slot|Multiple Spontaneous Adjustment
+1					BONUS:ABILITYPOOL|Flexible Known Slot|9	BONUS:ABILITYPOOL|Spell Studies|9									ABILITY:Special Ability|VIRTUAL|Spell Studies|Flexible Spell Slot|Multiple Spontaneous Adjustment
 1:REPEATLEVEL:1																ADD:SPELLCASTER|Arcane[PRESPELLCAST:MEMORIZE=N]
 2:REPEATLEVEL:2|SKIP=0|MAX=4														ADD:FEAT|TYPE=Metamagic
 6																										ABILITY:Special Ability|VIRTUAL|Spell Mimic
@@ -638,12 +638,12 @@ CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:1,Nier	PR
 CLASS:Warrior of the Eternal Flame	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft
 # Class Name				Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Warrior of the Eternal Flame	SPELLSTAT:CHA	SPELLTYPE:Divine	MEMORIZE:NO	BONUS:CASTERLEVEL|Warrior of the Eternal Flame|CL|PRECLASS:1,Warrior of the Eternal Flame=2
-1															PREABILITY:1,CATEGORY=Blessings of Flame,TYPE=BlessingsofFlame	ABILITY:Special Ability|VIRTUAL|Child of Nier	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+1															BONUS:ABILITYPOOL|Blessings of Flame|1					ABILITY:Special Ability|VIRTUAL|Child of Nier	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
 2																																																																											SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon
 2					CAST:0,0		KNOWN:0,1																	ABILITY:Special Ability|VIRTUAL|To Tap the Fire Within
 3					CAST:0,1		KNOWN:0,1																	ABILITY:Special Ability|VIRTUAL|Call Forth His Servants
 4					CAST:0,1,0		KNOWN:0,2,1		DOMAIN:Fire																																																															SPELLLEVEL:CLASS|Warrior of the Eternal Flame=2|Continual Flame,Flaming Sphere,Flame Blade,Magic Vestment,Resist Energy (Fire)		SPELLLIST:1,DOMAIN.Fire
-4:REPEATLEVEL:2|SKIP=0|MAX=10											PREABILITY:1,CATEGORY=Blessings of Flame,TYPE=BlessingsofFlame
+4:REPEATLEVEL:2|SKIP=0|MAX=10											BONUS:ABILITYPOOL|Blessings of Flame|1
 5					CAST:0,1,1		KNOWN:0,2,1
 6					CAST:0,1,1,0	KNOWN:0,2,2,1	DOMAIN:Destruction																																																													SPELLLEVEL:CLASS|Warrior of the Eternal Flame=3|Fire Trap,Flame Arrow,Magic Weapon (Greater),Mantle of Unassailable Flame,Scorching Ray	SPELLLIST:1,DOMAIN.Destruction
 7					CAST:0,2,1,1	KNOWN:0,3,2,1																ABILITY:Special Ability|VIRTUAL|Fury of Nier
@@ -736,8 +736,7 @@ CLASS:Blade of Hurrian	PREALIGN:LG,LN,LE	PREATT:5	PRECLASS:1,Monk=6	PREMULT:1,[P
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Blade of Hurrian	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Escape Artist|Hide|Jump|TYPE.Arcana|TYPE.Religion|Knowledge (Warfare & Tactics)|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Swim|Tumble
 ###Block: Monk stacking stuff
-#?? giving errors on the Monk reference - no idea why
-#1	BONUS:UDAM|CLASS.Monk|CL
+1	BONUS:UDAM|CLASS.Monk|CL
 1						BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
