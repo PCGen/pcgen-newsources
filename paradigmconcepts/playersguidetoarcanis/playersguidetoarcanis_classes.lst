@@ -6,11 +6,18 @@
 CLASS:Patrician	HD:6		TYPE:Base.PC	ABB:Pat		MAXLEVEL:20	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.114	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Patrician	STARTSKILLPTS:6	CSKILL:Appraise|Black Market|Bluff|Concentration|TYPE.Craft|Decipher Script|Diplomacy|Gather Information|Intimidate|TYPE.Knowledge|Listen|TYPE.Perform|TYPE.Profession|Ride|Research|Sense Motive|Speak Language
-1																	ADD:FEAT|TYPE=Gentry[PRELEVELMAX:1]					ABILITY:Special Ability|VIRTUAL|Educated|Estate	AUTO:FEAT|Simple Weapon Proficiency|Armor Proficiency (Light)
+# Estate and Eyes and Ears choosers not working right
+1																	ADD:FEAT|TYPE=Gentry	ADD:ABILITY|Special Ability|VIRTUAL|Estate	ABILITY:Special Ability|VIRTUAL|Educated	AUTO:FEAT|Simple Weapon Proficiency|Armor Proficiency (Light)
+1		ADD:ABILITY|Special Ability|VIRTUAL|Testing Chooser	ADD:FEAT|Testing Feat Chooser		ABILITY:Special Ability|VIRTUAL|Estate2
+1		SAB:Estate 3 - %|CHOICE	CHOOSE:USERINPUT|1|TITLE="Choose location of Estate"
+
+# skilled didn't pop second time
 2:REPEATLEVEL:4															ADD:ABILITY|Special Ability|VIRTUAL|Eyes and Ears		ABILITY:Special Ability|VIRTUAL|Skilled		ADD:CLASSSKILLS|1|CROSSCLASSSKILLS
-3								DEFINE:CoordinateBonus|0
-3:REPEATLEVEL:4	BONUS:VAR|CoordinateBonus|1										ADD:ABILITY|Special Ability|VIRTUAL|TYPE=PatricianAdvantage	ABILITY:Special Ability|VIRTUAL|Coordinate
+3																											ABILITY:Special Ability|VIRTUAL|Coordinate
+# recheck patrician advantage - bonus feat
+3:REPEATLEVEL:4	BONUS:VAR|CoordinateBonus|1										ADD:ABILITY|Special Ability|VIRTUAL|TYPE=PatricianAdv
 4								DEFINE:AllowanceLevel|0	DEFINE:AllowanceAmount|0
+# alowance not showing up
 4:REPEATLEVEL:8	BONUS:VAR|AllowanceLevel|1																				ABILITY:Special Ability|VIRTUAL|Allowance
 5																																			AUTO:FEAT|Leadership
 8								DEFINE:ServantBonus|0
