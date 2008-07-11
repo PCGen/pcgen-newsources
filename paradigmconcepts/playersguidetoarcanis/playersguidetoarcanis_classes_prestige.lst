@@ -1,6 +1,6 @@
-# CVS $Revision: 6954 $ $Author: takenote61 $ -- Tue Jul  1 02:27:28 2008 -- reformated by prettylst.pl v1.38 (build 6887)
+# CVS $Revision: 6954 $ $Author: takenote61 $ -- Fri Jul 11 19:40:38 2008 -- reformated by prettylst.pl v1.38 (build 7077)
 
-SOURCELONG:Player's Guide to Arcanis	SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2004-06
+SOURCEWEB:http://www.paradigmconcepts.com	SOURCEDATE:2004-06
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -191,10 +191,10 @@ CLASS:Emerald Society Archaeologist	STARTSKILLPTS:8	CSKILL:Appraise|Balance|Bluf
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
-CLASS:Gladiator	HD:8		TYPE:PC.Prestige	ABB:Gldtr		MAXLEVEL:10	HASSUBCLASS:YES	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.186	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name	Req. Att.	Required Feat				Allow base?
-CLASS:Gladiator	PREATT:3	PREFEAT:2,Combat Expertise,Dodge	ALLOWBASECLASS:NO
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Subclass?		Base class as subclass?	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus
+CLASS:Gladiator	HD:8		TYPE:PC.Prestige	ABB:Gldtr		MAXLEVEL:10	HASSUBCLASS:YES	ALLOWBASECLASS:NO		SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.186	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Req. Att.	Required Feat
+CLASS:Gladiator	PREATT:3	PREFEAT:2,Combat Expertise,Dodge
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Gladiator	STARTSKILLPTS:4	CSKILL:Appraise|Balance|Bluff|Climb|TYPE.Craft|Diplomacy|Escape Artist|Examine Martial Technique|Intimidate|Jump|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 #
@@ -632,32 +632,32 @@ CLASS:Warped Ones	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE.Craft|Intimidate|Jum
 
 # Class Name				Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus											Combat bonus					List of Class Spells by Level
 CLASS:Warrior of the Eternal Flame	NAMEISPI:YES	HD:12		TYPE:PC.Prestige	ABB:WotEF		MAXLEVEL:10	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.224	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon|Warrior of the Eternal Flame=2|Continual Flame,Flaming Sphere,Flame Blade,Magic Vestment,Resist Energy|Warrior of the Eternal Flame=3|Fire Trap,Flame Arrow,Magic Weapon (Greater),Mantle of Unassailable Flame,Scorching Ray|Warrior of the Eternal Flame=4|Fireball,Fire Shield,Flame Strike,Wall of Fire
-# Class Name				Required AL		Req. Att.	Required Deity	Required Feat																			Required Skill
-CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:1,Nier	PREFEAT:2,Iron Will,Improved Toughness	PREFEAT:1,Weapon Focus (TYPE=Melee)[!PRESUBCLASS:1,Order of the Incandescent Path]	PRESKILL:1,TYPE.Religion=4
+# Class Name				Required AL		Req. Att.	Required Deity	Required Feat					Multiple Requirements																							Required Skill
+CLASS:Warrior of the Eternal Flame	PREALIGN:LG,LN,LE	PREATT:7	PREDEITY:1,Nier	PREFEAT:2,Iron Will,Improved Toughness	PREMULT:1,[PRESUBCLASS:1,Order of the Incandescent Path],[PREMULT:2,[PREFEAT:1,Weapon Focus (TYPE=Melee)],[!PRESUBCLASS:1,Order of the Incandescent Path]]	PRESKILL:1,TYPE.Religion=4
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Warrior of the Eternal Flame	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Examine Martial Technique|Handle Animal|Heal|TYPE.Nobility|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft
 # Class Name				Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Warrior of the Eternal Flame	SPELLSTAT:CHA	SPELLTYPE:Divine	MEMORIZE:NO	BONUS:CASTERLEVEL|Warrior of the Eternal Flame|CL|PRECLASS:1,Warrior of the Eternal Flame=2
-1															BONUS:ABILITYPOOL|Blessings of Flame|1					ABILITY:Special Ability|VIRTUAL|Child of Nier	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
-2																																																																											SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon
-2					CAST:0,0		KNOWN:0,1																	ABILITY:Special Ability|VIRTUAL|To Tap the Fire Within
-3					CAST:0,1		KNOWN:0,1																	ABILITY:Special Ability|VIRTUAL|Call Forth His Servants
-4					CAST:0,1,0		KNOWN:0,2,1		DOMAIN:Fire																																																															SPELLLEVEL:CLASS|Warrior of the Eternal Flame=2|Continual Flame,Flaming Sphere,Flame Blade,Magic Vestment,Resist Energy (Fire)		SPELLLIST:1,DOMAIN.Fire
+1															BONUS:ABILITYPOOL|Blessings of Flame|1	ABILITY:Special Ability|VIRTUAL|Child of Nier	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+2																																																																									SPELLLEVEL:CLASS|Warrior of the Eternal Flame=1|Bless Weapon,Magic Weapon,Cause Fear,Dancing Lights,Pyrotechnics,Spiritual Weapon
+2					CAST:0,0		KNOWN:0,1													ABILITY:Special Ability|VIRTUAL|To Tap the Fire Within
+3					CAST:0,1		KNOWN:0,1													ABILITY:Special Ability|VIRTUAL|Call Forth His Servants
+4					CAST:0,1,0		KNOWN:0,2,1		DOMAIN:Fire																																																													SPELLLEVEL:CLASS|Warrior of the Eternal Flame=2|Continual Flame,Flaming Sphere,Flame Blade,Magic Vestment,Resist Energy (Fire)		SPELLLIST:1,DOMAIN.Fire
 4:REPEATLEVEL:2|SKIP=0|MAX=10											BONUS:ABILITYPOOL|Blessings of Flame|1
 5					CAST:0,1,1		KNOWN:0,2,1
-6					CAST:0,1,1,0	KNOWN:0,2,2,1	DOMAIN:Destruction																																																													SPELLLEVEL:CLASS|Warrior of the Eternal Flame=3|Fire Trap,Flame Arrow,Magic Weapon (Greater),Mantle of Unassailable Flame,Scorching Ray	SPELLLIST:1,DOMAIN.Destruction
-7					CAST:0,2,1,1	KNOWN:0,3,2,1																ABILITY:Special Ability|VIRTUAL|Fury of Nier
-8																																																																											SPELLLEVEL:CLASS|Warrior of the Eternal Flame=4|Fireball,Fire Shield,Flame Strike,Wall of Fire,
+6					CAST:0,1,1,0	KNOWN:0,2,2,1	DOMAIN:Destruction																																																											SPELLLEVEL:CLASS|Warrior of the Eternal Flame=3|Fire Trap,Flame Arrow,Magic Weapon (Greater),Mantle of Unassailable Flame,Scorching Ray	SPELLLIST:1,DOMAIN.Destruction
+7					CAST:0,2,1,1	KNOWN:0,3,2,1												ABILITY:Special Ability|VIRTUAL|Fury of Nier
+8																																																																									SPELLLEVEL:CLASS|Warrior of the Eternal Flame=4|Fireball,Fire Shield,Flame Strike,Wall of Fire,
 8					CAST:0,2,2,1,0	KNOWN:0,3,2,2,1
-9					CAST:0,3,2,1,1	KNOWN:0,3,3,2,2																ABILITY:Special Ability|VIRTUAL|Nier's Embrace
-10					CAST:0,3,3,2,2	KNOWN:0,3,3,2,2																ABILITY:Special Ability|VIRTUAL|Nier's Gift|Fire from the Gates of Heaven
+9					CAST:0,3,2,1,1	KNOWN:0,3,3,2,2												ABILITY:Special Ability|VIRTUAL|Nier's Embrace
+10					CAST:0,3,3,2,2	KNOWN:0,3,3,2,2												ABILITY:Special Ability|VIRTUAL|Nier's Gift|Fire from the Gates of Heaven
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
-# Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Source, Long Desc.				Source Page		Save checks bonus												Combat bonus
-CLASS:Weapon Savant	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:WpnSv		MAXLEVEL:5	SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.225	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name		Req. Att.	Required Feat													Allow Base?
-CLASS:Weapon Savant	PREATT:6	PREFEAT:7,Combat Expertise,Combat Reflexes,Improved Disarm,Exotic Weapon Proficiency%	ALLOWBASECLASS:NO
+# Class Name		Product Identity?	Hit Dice	Type			Abbreviation	Max Level	Base class as subclass?	Source, Long Desc.				Source Page		Save checks bonus												Combat bonus
+CLASS:Weapon Savant	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	ABB:WpnSv		MAXLEVEL:5	ALLOWBASECLASS:NO		SOURCELONG:Player's Guide to Arcanis	SOURCEPAGE:p.225	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Req. Att.	Required Feat
+CLASS:Weapon Savant	PREATT:6	PREFEAT:7,Combat Expertise,Combat Reflexes,Improved Disarm,Exotic Weapon Proficiency
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Weapon Savant	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE.Craft|Examine Martial Technique|Jump|TYPE.History|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 # errata says can't count exotic prof feats gained as part of a class - don't know how to determine the others
@@ -677,53 +677,53 @@ CLASS:Combat Styles of Onara	PREATT:5	PREFEAT:1,Combat Expertise	PRESKILL:1,Bala
 CLASS:Combat Styles of Onara	STARTSKILLPTS:4	CSKILL:Balance|Climb|Diplomacy|Examine Martial Technique|Intimidate|Jump|Swim|Tumble
 # added errata of weapon focus/specialization kio sword equivalent to longsword
 SUBCLASS:Red Sword Fencing School	ABB:RSFS	PREFEAT:5,Dodge,Power Attack,Mobility,Spring Attack,Whirlwind Attack	PREFEAT:1,Weapon Focus(Longsword),Weapon Focus(Sword (Kio)),Weapon Focus(Sword (Short)),Weapon Focus(Sword (Bastard)),Weapon Focus(Greatsword),Weapon Focus(Rapier),Weapon Focus(Gladius)	PREFEAT:1,Weapon Specialization(Longsword),Weapon Specialization(Sword (Kio),Weapon Specialization(Sword (short)),Weapon Specialization(Sword (Bastard)),Weapon Specialization(Greatsword),Weapon Specialization(Rapier),Weapon Specialization(Gladius)
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Canny Defense			BONUS:VAR|CannyDefenseLVL|CL
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Demi-Volt
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|To Meet the Charge|Punto Riverso
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|Pressing Attack
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|Spinning Strike
+SUBCLASSLEVEL:1	BONUS:VAR|CannyDefenseLVL|CL	ABILITY:Special Ability|VIRTUAL|Canny Defense
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Demi-Volt
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|To Meet the Charge|Punto Riverso
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|Pressing Attack
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|Spinning Strike
 SUBCLASS:Steel Wall			ABB:StlWl	PREFEAT:2,Dodge,Quick Draw																																																																																					PRESKILL:1,Sense Motive=5				CSKILL:Sense Motive
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Canny Defense			BONUS:VAR|CannyDefenseLVL|CL
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|Passing the Charge
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|Defensive Perfection
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|Defensive Spin Ability
+SUBCLASSLEVEL:1	BONUS:VAR|CannyDefenseLVL|CL	ABILITY:Special Ability|VIRTUAL|Canny Defense
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|Passing the Charge
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|Defensive Perfection
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|Defensive Spin Ability
 SUBCLASS:Twin Sting			ABB:TwnStg	PREFEAT:4,Dodge,Two Weapon Fighting,Weapon Focus(Rapier),Weapon Finesse
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Canny Defense			BONUS:VAR|CannyDefenseLVL|CL
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Double Lunge
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|Balance and Grace|Trap and Cut
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|A Thousand Cuts
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|The Cruelest Cut
-SUBCLASS:Twin Storms			ABB:TwnStm	PREFEAT:3,Exotic Weapon Proficiency(Sword (Two-Bladed)),Weapon Focus(Sword (Two-Bladed)),Two Weapon Fighting
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Cutting Trip
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|Cutting High and Low|Passing the Charge
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|Pressing Attack
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|A Thousand Cuts
+SUBCLASSLEVEL:1	BONUS:VAR|CannyDefenseLVL|CL	ABILITY:Special Ability|VIRTUAL|Canny Defense
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Double Lunge
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|Balance and Grace|Trap and Cut
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|A Thousand Cuts
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|The Cruelest Cut
+SUBCLASS:Twin Storms			ABB:TwnStm	PREFEAT:3,Exotic Weapon Proficiency (Sword (Two-Bladed)),Weapon Focus(Sword (Two-Bladed)),Two Weapon Fighting
+SUBCLASSLEVEL:1						ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Cutting Trip
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|Cutting High and Low|Passing the Charge
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|Pressing Attack
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|A Thousand Cuts
 SUBCLASS:Haven's Blade			ABB:HvnBl	PREFEAT:4,Cleave,Great Cleave,Weapon Focus(Greatsword),Power Attack
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|To Meet the Charge
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|Flowing Sand Ability
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|Mighty Swing
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|Mighty Cleave
-SUBCLASS:Steel Dragon			ABB:StlDrg	PREFEAT:4,Exotic Weapon Proficiency(Steel Whip),Two Weapon Fighting,Weapon Finesse,Weapon Focus (Steel Whip)
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Canny Defense			BONUS:VAR|CannyDefenseLVL|CL
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Cutting Trip
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|Spinning Strike
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|Pressing Attack
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|Reaping the Whirlwind
-SUBCLASS:Hand Blade and Mind		ABB:HBaM	PREFEAT:2,Weapon Focus(Sword (Kio)),Exotic Weapon Proficiency(Sword (Kio)),Quick Draw																																																																							PREITEM:1,Sword (Kio)	PRESKILL:2,Concentration,Knowledge (Psionics)=4	CSKILL:Concentration|TYPE.Psionics
-SUBCLASSLEVEL:1	ABILITY:Special Ability|VIRTUAL|Canny Defense			BONUS:VAR|CannyDefenseLVL|CL
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Parry
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|Pressing Attack					AUTO:FEAT|Improved Quick Draw
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|A Thousand Cuts
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|Flowing Sand Ability
-SUBCLASS:Sword That Believes		ABB:StBlv	PREFEAT:4,Improved Quick Draw,Quick Draw,Pureblood Kio,Weapon Focus(Sword (Kio)),Exotic Weapon Proficiency(Sword (Kio))																																																																		PREITEM:1,Sword (Kio)
-SUBCLASSLEVEL:1													AUTO:FEAT|Blind Fight
-SUBCLASSLEVEL:2	ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
-SUBCLASSLEVEL:3	ABILITY:Special Ability|VIRTUAL|A Thousand Cuts|Instinctual Defense
-SUBCLASSLEVEL:4	ABILITY:Special Ability|VIRTUAL|Strike Without Thought
-SUBCLASSLEVEL:5	ABILITY:Special Ability|VIRTUAL|Flowing Sand Ability|Mighty Swing
+SUBCLASSLEVEL:1						ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|To Meet the Charge
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|Flowing Sand Ability
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|Mighty Swing
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|Mighty Cleave
+SUBCLASS:Steel Dragon			ABB:StlDrg	PREFEAT:4,Exotic Weapon Proficiency (Steel Whip),Two Weapon Fighting,Weapon Finesse,Weapon Focus (Steel Whip)
+SUBCLASSLEVEL:1	BONUS:VAR|CannyDefenseLVL|CL	ABILITY:Special Ability|VIRTUAL|Canny Defense
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Cutting Trip
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|Spinning Strike
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|Pressing Attack
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|Reaping the Whirlwind
+SUBCLASS:Hand Blade and Mind		ABB:HBaM	PREFEAT:2,Weapon Focus(Sword (Kio)),Exotic Weapon Proficiency (Sword (Kio)),Quick Draw																																																																							PREITEM:1,Sword (Kio)	PRESKILL:2,Concentration,Knowledge (Psionics)=4	CSKILL:Concentration|TYPE.Psionics
+SUBCLASSLEVEL:1	BONUS:VAR|CannyDefenseLVL|CL	ABILITY:Special Ability|VIRTUAL|Canny Defense
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Parry
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|Pressing Attack					AUTO:FEAT|Improved Quick Draw
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|A Thousand Cuts
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|Flowing Sand Ability
+SUBCLASS:Sword That Believes		ABB:StBlv	PREFEAT:4,Improved Quick Draw,Quick Draw,Pureblood Kio,Weapon Focus(Sword (Kio)),Exotic Weapon Proficiency (Sword (Kio))																																																																	PREITEM:1,Sword (Kio)
+SUBCLASSLEVEL:1																		AUTO:FEAT|Blind Fight
+SUBCLASSLEVEL:2						ABILITY:Special Ability|VIRTUAL|Impeccable Expertise
+SUBCLASSLEVEL:3						ABILITY:Special Ability|VIRTUAL|A Thousand Cuts|Instinctual Defense
+SUBCLASSLEVEL:4						ABILITY:Special Ability|VIRTUAL|Strike Without Thought
+SUBCLASSLEVEL:5						ABILITY:Special Ability|VIRTUAL|Flowing Sand Ability|Mighty Swing
 1	ABILITY:Special Ability|VIRTUAL|Advantages and Limitations|Combat School Style
 
 ###############################################################################################################################################################################################################################3
@@ -740,16 +740,16 @@ CLASS:Blade of Hurrian	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.C
 1						BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1												BONUS:VAR|KiBladeBonus|2	ABILITY:Special Ability|VIRTUAL|Ki Blade|Lightning Leap
-2																	ABILITY:Special Ability|VIRTUAL|Lightning Surges Through the Clouds
-3																	ABILITY:Special Ability|VIRTUAL|Clash of Thunder
-4																	ABILITY:Special Ability|VIRTUAL|Lightning Sword
-5:REPEATLEVEL:5										BONUS:VAR|KiBladeBonus|2
-6																	ABILITY:Special Ability|VIRTUAL|Clouds Cover the Sun
-7																	ABILITY:Special Ability|VIRTUAL|Hurricane Blow
-8			SAB:.CLEAR.Ki Blade (Ex) (+% defending/shocking)						ABILITY:Special Ability|VIRTUAL|Storm Bringer
-9																	ABILITY:Special Ability|VIRTUAL|Tornado Rush
-10																	ABILITY:Special Ability|VIRTUAL|The Perfect Storm
+1			BONUS:VAR|KiBladeBonus|2	ABILITY:Special Ability|VIRTUAL|Ki Blade|PREVARLT:CL,8	ABILITY:Special Ability|VIRTUAL|Lightning Leap
+2								ABILITY:Special Ability|VIRTUAL|Lightning Surges Through the Clouds
+3								ABILITY:Special Ability|VIRTUAL|Clash of Thunder
+4								ABILITY:Special Ability|VIRTUAL|Lightning Sword
+5:REPEATLEVEL:5	BONUS:VAR|KiBladeBonus|2
+6								ABILITY:Special Ability|VIRTUAL|Clouds Cover the Sun
+7								ABILITY:Special Ability|VIRTUAL|Hurricane Blow
+8								ABILITY:Special Ability|VIRTUAL|Storm Bringer
+9								ABILITY:Special Ability|VIRTUAL|Tornado Rush
+10								ABILITY:Special Ability|VIRTUAL|The Perfect Storm
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -763,6 +763,7 @@ CLASS:Order of the Bronze Sepulcher Elite	STARTSKILLPTS:4	CSKILL:Balance|Climb|T
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
+1:REPEATLEVEL:1			BONUS:VAR|RankInOrder|1
 1									ABILITY:Special Ability|VIRTUAL|Eagle Claw|Rank in Order
 2									ABILITY:Special Ability|VIRTUAL|Supreme Stunning Fist|Invisibility Ability
 2:REPEATLEVEL:2|SKIP=0|MAX=8	BONUS:VAR|InvisTimes|1
