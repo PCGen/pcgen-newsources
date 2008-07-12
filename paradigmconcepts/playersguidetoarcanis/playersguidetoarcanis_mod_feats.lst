@@ -1,10 +1,12 @@
 # CVS $Revision: 6954 $ $Author: takenote61 $ -- Fri Jul 11 19:40:38 2008 -- reformated by prettylst.pl v1.38 (build 7077)
 
+SOURCELONG:Player's Guide to Arcanis
+
 ###Block: PHB Feat modifications
 # Feat Name									Product Identity?	Type				Visible	Prohibited Class			Required Feat									Prohibited Race	Required Stat	Required Subclass			Required Template		Var. Min. Value			Clear Description	Description										Stackable?	Multiple?	Choose					Combat bonus															Add to base move											Bonus to skill												Weapon prof. bonus			Source, Long Desc.				Source Page
 Endurance.MOD																																	!PRERACE:1,Gnome
 Skill Focus.MOD																																																																																																											BONUS:SKILL|LIST|3|PRECLASS:1,Patrician|PREVARGT:var("CL=Patrician"),floor(TL/2)
-Weapon Finesse.MOD																!PRECLASS:1,Weapon Savant=2																																																								BONUS:COMBAT|TOHIT.LowWeight|((max(STR,DEX)-STR)+SHIELDACCHECK)|TYPE=NotRanged|PRETYPE:1,GlassSteel
+Weapon Finesse.MOD																!PRECLASS:1,Weapon Savant=2																																																								BONUS:COMBAT|TOHIT.LowWeight|((max(STR,DEX)-STR)+SHIELDACCHECK)|TYPE=NotRanged|PREITEM:1,TYPE=GlassSteel
 # probably was a reason for this, but I have  no idea why so commenting until reason appears
 #Extra Turning.MOD																																																																														BONUS:VAR|TurnTimesBase|-4|PREVAREQ:FocusTurn,1	BONUS:VAR|ChannelTimesBase|4|TYPE=ExtraTurning.STACK	BONUS:VAR|TurnTimesInfernal|4|TYPE=ExtraTurning.STACK|PREVAREQ:FocusTurn,1
 Brew Potion.COPY=Brew Potion (Abebi)
