@@ -86,80 +86,65 @@ GEAR:Belt of Giant Strength +2	LOCATION:Equipped
 GEAR:Longspear				LOCATION:Both Hands	EQMOD:PLUS1W
 GEAR:Blanket (Winter)			LOCATION:Carried
 
-## Crowfood
-#STARTPACK:NPC (Crowfood)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.13
-#Crowfood CR 8
-#Male ogrekin human rogue 4/fighter 3 (see page 90)
-#CE Medium giant
-#Init +1; Senses low-light vision; Listen +8, Spot +8
-#DEFENSE
-#AC 16, touch 12, flat-footed 15
-#(+1 deflection, +1 Dex, +4 natural)
-#hp 61 (4d6+3d10+28)
-#Fort +8, Ref +6, Will +5
-#Defensive Abilities evasion, trap sense +1, uncanny dodge
-#OFFENSE
-#Spd 30 ft.
-#Melee +1 ogre hook +14/+9 (1d12+10/×3)
-#Special Attacks sneak attack +2d6
-#STATISTICS
-#Str 22, Dex 13, Con 18, Int 6, Wis 12, Cha 8
-#Base Atk +6; Grp +12
-#Feats Cleave, Dodge, Iron Will, Mobility, Power Attack, Weapon Focus
-#(ogre hook)
-#Skills Climb +16, Escape Artist +8, Hide +8, Jump +13, Listen +8,
-#Move Silently +10, Spot +8
-#Languages Giant
-#SQ deformities, trapfinding
-#Gear +1 ogre hook, ring of protection +1, amulet of natural armor +1,
-#tattered rags and tunic
-#SPECIAL ABILITIES
-#Crowfood’s Deformities (Ex) Crowfood has a +2 racial bonus on
-#Fortitude saves and heals damage twice as fast from rest. He’s also
-#quite ugly and suffers a –4 penalty on all Charisma-based checks.
+STARTPACK:NPC (Crowfood)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.13
+RACE:Human	!PRERACE:1,%
+NAME:Crowfood
+GENDER:Male
+ALIGN:CE
+STAT:STR=16|DEX=13|CON=14|INT=8|WIS=12|CHA=10
+TEMPLATE:Ogrekin
+ABILITY:CATEGORY=Ogrekin Advantageous Deformity|Quick Metabolism
+ABILITY:CATEGORY=Ogrekin Disadvantageous Deformity|Extra Ugly
+CLASS:Rogue	LEVEL:4
+CLASS:Fighter	LEVEL:3
+SKILL:Escape Artist	RANK:7
+SKILL:Listen		RANK:7
+SKILL:Move Silently	RANK:9
+SKILL:Spot			RANK:7
+SKILL:Hide			RANK:7
+SKILL:Jump			RANK:7
+SKILL:Climb			RANK:10
+FEAT:Cleave
+FEAT:Dodge
+FEAT:Iron Will
+FEAT:Mobility
+ABILITY:CATEGORY=Fighter Feat|Power Attack
+ABILITY:CATEGORY=Fighter Feat|Weapon Focus(Ogre Hook)
+GEAR:Ogre Hook				LOCATION:Both Hands	EQMOD:PLUS1W
+GEAR:Ring (Protection +1)		LOCATION:Equipped
+GEAR:Amulet of Natural Armor +1	LOCATION:Equipped
+
 
 ## Mammy Graul
-#STARTPACK:NPC (Mammy Graul)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.17
-#Mammy Graul CR 9
-#Female human ogrekin wizard (necromancer) 8
-#CE Medium giant
-#Init –3; Senses special senses; Listen +2, Spot +2
-#DEFENSE
-#AC 17, touch 7, flat-footed 17
-#(+4 armor, –3 Dex, +6 natural)
-#hp 66 (8d4+32+13 from false life)
-#Fort +6, Ref –1, Will +6
-#OFFENSE
-#Spd 5 ft.
-#Melee mwk quarterstaff +10 (1d6+5)
-#Spells Prepared (CL 8th, +9 touch, +1 ranged touch)
-#4th—bestow curse (DC 18), contagion (DC 18), dimension door
-#3rd—displacement, fly, summon monster III, vampiric touch
-#2nd—blindness/deafness (DC 16), false life (already cast), ghoul touch
-#(DC 16), mirror image, summon monster II
-#1st—chill touch (DC 15), grease (DC 13), mage armor (already cast),
-#ray of enfeeblement, reduce person (DC 13), true strike
-#0—mage hand (3), message, touch of fatigue (DC 14)
+STARTPACK:NPC (Mammy Graul)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.17
+RACE:Human	!PRERACE:1,%
+NAME:Mammy Graul
+GENDER:Female
+ALIGN:CE
+STAT:STR=14|DEX=6|CON=13|INT=17|WIS=10|CHA=12
+TEMPLATE:Ogrekin
+ABILITY:CATEGORY=Ogrekin Advantageous Deformity|Thick Skin
+ABILITY:CATEGORY=Ogrekin Disadvantageous Deformity|Obese
+CLASS:Wizard	SUBCLASS:Necromancer	LEVEL:8
 #Prohibited Schools abjuration, enchantment
-#STATISTICS
-#Str 20, Dex 4, Con 19, Int 15, Wis 10, Cha 10
-#Base Atk +4; Grp +9
-#Feats Alertness (when Blub-Blug is in arm’s reach), Brew Potion, Craft
-#Wand, Craft Wondrous Item, Greater Spell Focus (necromancy),
-#Scribe Scroll, Spell Focus (necromancy)
-#Skills Concentration +15, Knowledge (arcana) +13, Spellcraft +15
-#Languages Abyssal, Common, Giant
-#SQ deformities, summon familiar (toad named Blub-Blug)
-#Combat Gear potion of cure moderate wounds, scroll of animate
-#dead, wand of magic missile (CL 3rd, 44 charges), wand of
-#ray of enfeeblement (28 charges), wand of vampiric touch (33
-#charges); Other Gear amulet of health +2, Varisian idols (2,
-#grant summoned monsters +2 hp per HD if used as an additional
-#material component—see the Rise of the Runelords Player’s Guide)
-#SPECIAL ABILITIES
-#Mammy’s Deformities (Ex) Mammy Graul’s thick layers of blubber
-#increase her natural armor bonus by an additional 3 points. She is
-#also hideously overweight, and suffers a –4 penalty to her Dexterity.
+SKILL:Concentration		RANK:11
+SKILL:Knowledge (Arcana)	RANK:11
+SKILL:Spellcraft			RANK:11
+FEAT:Craft Wand
+FEAT:Craft Wondrous Item
+FEAT:Greater Spell Focus(Necromancy)
+FEAT:Spell Focus(Necromancy)
+ABILITY:CATEGORY=Wizard Feat|Brew Potion
+GEAR:Quarterstaff		EQMOD:MWORKW	LOCATION:Both Hands
+GEAR:Amulet of Health +2			LOCATION:Equipped
+GEAR:Varisian Idol				LOCATION:Carried		QTY:2
+GEAR:Potion (Cure Moderate Wounds)	LOCATION:Carried
+GEAR:Scroll (Animate Dead/Arcane)	LOCATION:Carried
+GEAR:Wand (Magic Missile/3rd level caster)	LOCATION:Carried
+GEAR:Wand	EQMOD:SPL_CHRG|SPELLNAME[Vampiric Touch]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[3]CASTERLEVEL[5]CHARGES[33]	LOCATION:Carried
+GEAR:Wand	EQMOD:SPL_CHRG|SPELLNAME[Ray of Enfeeblement]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[1]CASTERLEVEL[1]CHARGES[28]	LOCATION:Carried
+SPELLS:SPELLBOOK=Known Spells|CLASS=Wizard|Bestow Curse|Contagion|Dimension Door|Displacement|Fly|Summon Monster III|Vampiric Touch|Blindness/Deafness|False Life|Ghoul Touch|Mirror Image|Summon Monster II|Chill Touch|Grease|Mage Armor|Ray of Enfeeblement|Reduce Person|True Strike|Mage Hand|Message|Touch of Fatigue
+SPELLS:SPELLBOOK=Prepared Spells|CLASS=Wizard|Bestow Curse|Contagion|Dimension Door|Displacement|Fly|Summon Monster III|Vampiric Touch|Blindness/Deafness|False Life|Ghoul Touch|Mirror Image|Summon Monster II|Chill Touch|Grease|Mage Armor|Ray of Enfeeblement|Reduce Person|True Strike|Mage Hand=3|Message|Touch of Fatigue
 
 
 ## Hucker Graul
