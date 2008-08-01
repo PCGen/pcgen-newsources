@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Wed Jul 30 13:19:40 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision$ $Author$ -- Fri Aug  1 10:06:29 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Rise of the Runelords - Chapter 3: The Hook Mountain Maassacre	SOURCESHORT:PF3	SOURCEWEB:http://paizo.com/pathfinder/v5748btpy80e8	SOURCEDATE:2007-08
 
 ### Standard NPCs
@@ -32,39 +32,6 @@ GEAR:Arrow					QTY:20	SIZE:L	LOCATION:Carried
 
 ### Unique NPCs
 
-##
-## Shalelu Andosana
-#STARTPACK:NPC ()	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,]	SOURCEPAGE:pg.
-#Shalelu Andosana CR 5
-#Female elf ranger 3/fighter 2
-#CG Medium humanoid
-#Init +3; Senses low-light vision; Listen +9, Spot +3
-#Defense
-#AC 17, touch 13, flat-footed 14
-#(+4 armor, +3 Dex)
-#hp 38 (3d8+2d10+10)
-#Fort +7, Ref +6, Will +2; +2 against enchantment
-#Immune sleep
-#Offense
-#Spd 30 ft.
-#Melee mwk short sword +7 (1d6+1/19–20)
-#Ranged +1 composite longbow +10 (1d8+2/×3) or
-#+1 composite longbow +8/+8 (1d8+2/×3, Rapid Shot)
-#Special Attacks favored enemy +2 (goblinoid)
-#STATISTICS
-#Str 12, Dex 16, Con 14, Int 10, Wis 13, Cha 8
-#Base Atk +5; Grp +6
-#Feats Dodge, Endurance, Point-Blank Shot, Precise Shot, Rapid
-#Shot, Track, Weapon Focus (longbow)
-#Skills Climb +7, Hide +9, Listen +9, Move Silently +9,
-#Search +2, Spot +3, Survival +7, Swim +7
-#Languages Common, Elven, Giant, Goblinoid
-#SQ wild empathy +2
-#Combat Gear wand of cure light wounds
-#(34 charges); Other Gear +1 studded
-#leather armor, +1 composite longbow
-#(+1 Str) with 20 arrows, masterwork short
-#sword, 125 gp
 STARTPACK:NPC (Shalelu Andosana)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Elf]	SOURCEPAGE:pg.9
 RACE:Elf	!PRERACE:1,%
 NAME:Shalelu Andosana
@@ -93,46 +60,33 @@ GEAR:Sword (Short)				SIZE:M	LOCATION:Carried	EQMOD:MWORKW
 GEAR:Arrow				QTY:20	SIZE:M	LOCATION:Carried
 GEAR:Coin (Gold)			QTY:125			LOCATION:Carried
 
-## Rukus Graul
-#Rukus Graul CR 7
-#Male ogrekin human fighter 6 (see page 90)
-#CE Medium giant
-#Init +5; Senses low-light vision; Listen +0, Spot +0
-#DEFENSE
-#AC 14, touch 11, flat-footed 13
-#(+3 natural, +1 Dex)
-#hp 61 (6d10+24)
-#Fort +11, Ref +3, Will +2
-#OFFENSE
-#Spd 30 ft.
-#Melee +1 spear +13/+8 (1d8+13/×3)
-#STATISTICS
-#Str 24, Dex 13, Con 18, Int 10, Wis 10, Cha 6
-#Base Atk +6; Grp +13
-#Feats Cleave, Improved Initiative, Great Fortitude, Power Attack,
-#Skill Focus (survival), Track, Weapon Focus (spear), Weapon
-#Specialization (spear)
-#Skills Handle Animal +7, Intimidate +11, Survival +7
-#Languages Common, Giant
-#SQ deformities
-#Gear +1 spear, belt of giant strength +2, favorite blanket (ratty, fleainfested,
-#and decorated with several Black Arrow insignias)
-#SPECIAL ABILITIES
-#Rukus’s Deformities (Ex) Rukus is particularly mean-looking and gains
-#a +4 racial bonus on Intimidate checks. He cannot wield weapons
-#with his deformed right hand and suffers a –2 penalty on attacks with
-#two-handed weapons.
+
 STARTPACK:NPC (Rukus Graul)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.12
 RACE:Human	!PRERACE:1,%
 NAME:Rukus Graul
 GENDER:Male
 ALIGN:CE
-STAT:STR=18|DEX=13|CON=14|INT=12|WIS=10|CHA=8
+STAT:STR=16|DEX=13|CON=14|INT=12|WIS=10|CHA=8
+TEMPLATE:Ogrekin (Rukus Graul)
 CLASS:Fighter	LEVEL:6
 SKILL:Handle Animal	RANK:9
 SKILL:Intimidate		RANK:9
-SKILL:Survival		RANK:9
+SKILL:Survival		RANK:4
 
+
+FEAT:Improved Initiative
+FEAT:Great Fortitude
+FEAT:Skill Focus(Survival)
+FEAT:Track
+
+ABILITY:CATEGORY=Fighter Feat|Cleave
+ABILITY:CATEGORY=Fighter Feat|Power Attack
+ABILITY:CATEGORY=Fighter Feat|Weapon Focus(Longspear)
+ABILITY:CATEGORY=Fighter Feat|Weapon Specialization(Longspear)
+
+GEAR:Belt of Giant Strength +2	LOCATION:Equipped
+GEAR:Longspear				LOCATION:Both Hands	EQMOD:PLUS1W
+GEAR:Blanket (Winter)			LOCATION:Carried
 
 ## Crowfood
 #STARTPACK:NPC (Crowfood)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.13
