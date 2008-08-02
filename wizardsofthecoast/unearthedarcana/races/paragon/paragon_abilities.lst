@@ -1,0 +1,43 @@
+# CVS $Revision: 315 $ $Author: tir $ -- Fri Aug  1 14:31:13 2008 -- reformated by prettylst.pl v1.38 (build 7207)
+SOURCELONG:Unearthed Arcana	SOURCESHORT:UA
+# Original Entry by: Tir-Gwaith
+
+###Block: Dwarf Paragon
+# Ability Name			Output Name			Category of Ability		Type					Special ABility				Add to vision			Source Page
+Craft Expertise							CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Craft Expertise (Ex)							SOURCEPAGE:p.35
+Improved Stonecunning						CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Improved Stonecunning (Ex)						SOURCEPAGE:p.35
+Improved Darkvision						CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Improved Darkvision (Ex)		BONUS:VISION|Darkvision|30	SOURCEPAGE:p.35
+Dwarf Paragon Save Bonus	OUTPUTNAME:Save Bonus	CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Save Bonus (Ex)								SOURCEPAGE:p.35
+
+###Block: Elf Paragon
+# Ability Name		Category of Ability		Type					Special ABility		Source Page
+Elfsight			CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Elfsight		SOURCEPAGE:p.36
+Resist Enchantments	CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Resist Enchantments	SOURCEPAGE:p.36
+
+###Block: Gnome Paragon
+# Ability Name			Output Name			Category of Ability		Type					Special ABility			Innate Spells										Caster level								Bonus to skill							Source Page
+Illusion Aptitude							CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Illusion Aptitude (Ex)													BONUS:CASTERLEVEL|SCHOOL.Illusion|var("CL=Gnome Paragon")										SOURCEPAGE:p.37
+Keen Senses								CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Keen Senses (Ex)																								BONUS:SKILL|Listen,Craft (Alchemy)|4|TYPE=Racial	SOURCEPAGE:p.37
+Gnome Paragon Mirror Image	OUTPUTNAME:Mirror Image	CATEGORY:Special Ability	TYPE:Special.SpellLike		SAB:Mirror Image (Sp)		SPELLS:Innate|TIMES=1|CASTERLEVEL=var("CL=Gnome Paragon")|Mirror Image																				SOURCEPAGE:p.37
+
+###Block:Half-Dragon Paragon
+# Ability Name	Category of Ability		Type					Special ABility			Caster level								Source Page
+Sorcerous Blood	CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Sorcerous Blood (Ex)	BONUS:CASTERLEVEL|Sorcerer|var("CL=Half Dragon Sorcerer")	SOURCEPAGE:p.39
+
+
+###Block: Half-Orc Paragon
+# Ability Name	Category of Ability		Type					Special ABility			Bonus to skill					Source Page
+Divided Ancestry	CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Divided Ancestry (Ex)								SOURCEPAGE:p.42
+Monstrous Men	CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Monstrous Men (Ex)		BONUS:SKILL|Intimidate|4|TYPE=Racial	SOURCEPAGE:p.42
+
+###Block: Halfling Paragon
+# Ability Name			Output Name			Category of Ability		Type					Special ABility				Save checks bonus							Combat bonus					Bonus to skill							Stat bonus					Weapon prof. bonus					Source Page
+Athletic Prowess							CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Athletic Prowess (Ex)																		BONUS:SKILL|Climb,Jump,Move Silently|3|TYPE=Racial															SOURCEPAGE:p.43
+Halfling Paragon Save Bonus	OUTPUTNAME:Save Bonus	CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Save Bonus (Ex)			BONUS:CHECKS|Fortitude,Reflex,Will|2|TYPE=Racial																															SOURCEPAGE:p.43
+Thrown Weapon Mastery						CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Thrown Weapon Mastery (Ex)										BONUS:COMBAT|DAMAGE.Thrown|1|TYPE=Racial																BONUS:WEAPONPROF=Sling|DAMAGE|2|TYPE=Racial	SOURCEPAGE:p.43
+Halfling Paragon Stat						CATEGORY:Special Ability	TYPE:Special.Extraordinary																																BONUS:STAT|DEX|2|TYPE=Racial.STACK									SOURCEPAGE:p.43
+
+###Block: Human Paragon
+# Ability Name			Category of Ability		Type					Special ABility				Multiple?	Choose				Stat bonus					Class Skill	Source Page
+Adaptive Learning			CATEGORY:Special Ability	TYPE:Special.Extraordinary	SAB:Adaptive Learning (%CHOICE)	MULT:YES	CHOOSE:NUMCHOICES=1|CSKILLS							CSKILL:LIST	SOURCEPAGE:p.44
+Human Paragon Stat Bonus	CATEGORY:Special Ability	TYPE:Special.Extraordinary							MULT:YES	CHOOSE:NUMCHOICES=1|STAT	BONUS:STAT|LIST|2|TYPE=MISC.STACK			SOURCEPAGE:p.44
