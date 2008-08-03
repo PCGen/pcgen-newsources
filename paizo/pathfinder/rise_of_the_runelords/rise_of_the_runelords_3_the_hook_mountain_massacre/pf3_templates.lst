@@ -1,7 +1,13 @@
-# CVS $Revision$ $Author$ -- Fri Aug  1 12:29:52 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision$ $Author$ -- Sat Aug  2 22:07:30 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Rise of the Runelords - Chapter 3: The Hook Mountain Maassacre	SOURCESHORT:PF3	SOURCEWEB:http://paizo.com/pathfinder/v5748btpy80e8	SOURCEDATE:2007-08
 
 # Template Name	Challenge Rating	Level Adjustment	Source Page		Required Race										Required Size	Bonus to Ability Pool												Combat bonus				Stat bonus									Subrace		Main Race Type	Vision
 Ogrekin		CR:1			LEVELADJUSTMENT:2	SOURCEPAGE:pg.90	PRERACE:1,RACETYPE=Fey,RACETYPE=Humanoid,RACETYPE=Monstrous Humanoid	PRESIZEEQ:M		BONUS:ABILITYPOOL|Ogrekin Advantageous Deformity,Ogrekin Disadvantageous Deformity|1	BONUS:COMBAT|AC|3|TYPE=NaturalArmor	BONUS:STAT|STR|6	BONUS:STAT|CON|4	BONUS:STAT|INT,CHA|-2	SUBRACE:Ogrekin	RACETYPE:Giant	VISION:Low-light
 
 #Advanced Donkey Rat							SOURCEPAGE:pg.19	VISIBLE:NO		PRERACE:1,Donkey Rat																																																																																		ADDLEVEL:Animal|5
+
+###Block: Custom NPC Templates
+# Template Name	Save checks bonus			Combat bonus				Stat bonus									Modify VAR
+NPC Raging		BONUS:CHECKS|Will|RageMorale	BONUS:COMBAT|AC|-1*(RageACPenalty)	BONUS:STAT|CON|RageConBonus	BONUS:STAT|STR|RageStrBonus	BONUS:VAR|RageDuration|-(RageConBonus/2)	BONUS:VAR|Enraged|1
+
+

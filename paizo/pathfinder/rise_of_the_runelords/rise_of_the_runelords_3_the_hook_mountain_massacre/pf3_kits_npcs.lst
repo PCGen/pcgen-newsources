@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Fri Aug  1 12:29:52 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision$ $Author$ -- Sat Aug  2 22:07:30 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Rise of the Runelords - Chapter 3: The Hook Mountain Maassacre	SOURCESHORT:PF3	SOURCEWEB:http://paizo.com/pathfinder/v5748btpy80e8	SOURCEDATE:2007-08
 
 ### Standard NPCs
@@ -95,7 +95,7 @@ STAT:STR=16|DEX=13|CON=14|INT=8|WIS=12|CHA=10
 TEMPLATE:Ogrekin
 ABILITY:CATEGORY=Ogrekin Advantageous Deformity|Quick Metabolism
 ABILITY:CATEGORY=Ogrekin Disadvantageous Deformity|Extra Ugly
-CLASS:Rogue	LEVEL:4
+CLASS:Rogue		LEVEL:4
 CLASS:Fighter	LEVEL:3
 SKILL:Escape Artist	RANK:7
 SKILL:Listen		RANK:7
@@ -125,7 +125,7 @@ STAT:STR=14|DEX=6|CON=13|INT=17|WIS=10|CHA=12
 TEMPLATE:Ogrekin
 ABILITY:CATEGORY=Ogrekin Advantageous Deformity|Thick Skin
 ABILITY:CATEGORY=Ogrekin Disadvantageous Deformity|Obese
-CLASS:Wizard	SUBCLASS:Necromancer	LEVEL:8
+CLASS:Wizard	LEVEL:8	SUBCLASS:Necromancer
 #Prohibited Schools abjuration, enchantment
 SKILL:Concentration		RANK:11
 SKILL:Knowledge (Arcana)	RANK:11
@@ -135,95 +135,52 @@ FEAT:Craft Wondrous Item
 FEAT:Greater Spell Focus(Necromancy)
 FEAT:Spell Focus(Necromancy)
 ABILITY:CATEGORY=Wizard Feat|Brew Potion
-GEAR:Quarterstaff		EQMOD:MWORKW	LOCATION:Both Hands
-GEAR:Amulet of Health +2			LOCATION:Equipped
-GEAR:Varisian Idol				LOCATION:Carried		QTY:2
-GEAR:Potion (Cure Moderate Wounds)	LOCATION:Carried
-GEAR:Scroll (Animate Dead/Arcane)	LOCATION:Carried
-GEAR:Wand (Magic Missile/3rd level caster)	LOCATION:Carried
-GEAR:Wand	EQMOD:SPL_CHRG|SPELLNAME[Vampiric Touch]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[3]CASTERLEVEL[5]CHARGES[33]	LOCATION:Carried
-GEAR:Wand	EQMOD:SPL_CHRG|SPELLNAME[Ray of Enfeeblement]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[1]CASTERLEVEL[1]CHARGES[28]	LOCATION:Carried
+GEAR:Quarterstaff							LOCATION:Both Hands	EQMOD:MWORKW
+GEAR:Amulet of Health +2					LOCATION:Equipped
+GEAR:Varisian Idol					QTY:2	LOCATION:Carried
+GEAR:Potion (Cure Moderate Wounds)				LOCATION:Carried
+GEAR:Scroll (Animate Dead/Arcane)				LOCATION:Carried
+GEAR:Wand (Magic Missile/3rd level caster)		LOCATION:Carried
+GEAR:Wand								LOCATION:Carried		EQMOD:SPL_CHRG|SPELLNAME[Vampiric Touch]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[3]CASTERLEVEL[5]CHARGES[33]
+GEAR:Wand								LOCATION:Carried		EQMOD:SPL_CHRG|SPELLNAME[Ray of Enfeeblement]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[1]CASTERLEVEL[1]CHARGES[28]
 SPELLS:SPELLBOOK=Known Spells|CLASS=Wizard|Bestow Curse|Contagion|Dimension Door|Displacement|Fly|Summon Monster III|Vampiric Touch|Blindness/Deafness|False Life|Ghoul Touch|Mirror Image|Summon Monster II|Chill Touch|Grease|Mage Armor|Ray of Enfeeblement|Reduce Person|True Strike|Mage Hand|Message|Touch of Fatigue
 SPELLS:SPELLBOOK=Prepared Spells|CLASS=Wizard|Bestow Curse|Contagion|Dimension Door|Displacement|Fly|Summon Monster III|Vampiric Touch|Blindness/Deafness|False Life|Ghoul Touch|Mirror Image|Summon Monster II|Chill Touch|Grease|Mage Armor|Ray of Enfeeblement|Reduce Person|True Strike|Mage Hand=3|Message|Touch of Fatigue
 
 
-## Hucker Graul
-#STARTPACK:NPC (Hucker Graul)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.19
-#Hucker Graul CR 8
-#Male ogrekin human barbarian 1/rogue 5
-#CE Medium giant
-#Init +7; Senses low-light vision; Listen +10, Spot +1
-#DEFENSE
-#AC 20, touch 11, flat-footed 17
-#(+5 armor, +3 Dex, +4 natural, –2 rage)
-#hp 59 (1d12+5d6+30)
-#Fort +8, Ref +7, Will +6
-#Defensive Abilities evasion, trap sense +1, uncanny dodge; Immune
-#charm effects
-#OFFENSE
-#Spd 40 ft.
-#Melee +1 ogre hook +13 (1d12+12/×3)
-#Special Attacks rage 1/day, sneak attack +3d6
-#TACTICS
-#During Combat Hucker rages on the first round of combat and sends
-#his rats to attack the PCs while he delays so he can move into a
-#flanking position once the rats go.
-#Morale If brought below 25 hit points, Hucker attempts to retreat to
-#area A14, hoping to lure the PCs into a fight with the tendriculos the
-#Grauls keep there. He then fights to the death.
-#Base Statistics When not raging, Hucker’s stats change as
-#follows:
-#AC 22, touch 13, flat-footed 19
-#hp 47
-#Fort +6, Will +4
-#Melee +1 ogre hook +11 (1d12+8/×3)
-#Str 20, Con 16
-#Skills Climb +10, Jump +18
-#STATISTICS
-#Str 24, Dex 16, Con 20, Int 6, Wis 13, Cha 8
-#Base Atk +4; Grp +11
-#Feats Improved Initiative, Power Attack, Skill Focus (Craft
-#[trapmaking]), Weapon Focus (ogre hook)
-#Skills Climb +8, Craft (trapmaking) +10, Handle Animal
-#+3, Hide +8, Jump +20, Listen +10, Move
-#Silently +8, Use Rope +8
-#Languages Giant
-#SQ deformities, trapfinding
-#Combat Gear potion of cure
-#moderate wounds; Other
-#Gear +1 hide shirt,
-#+1 ogre hook, amulet
-#of natural armor +1,
-#collection of severed noses
-#in wax-sealed tin
-#SPECIAL ABILITIES
-#Hucker’s Deformities (Ex) Hucker has
-#a deformed vestigial twin growing from the
-#back of his neck, granting him a +2 racial bonus
-#on Will saves. His malformed jaw gives him a speech
-#impediment and a –2 penalty on any skill check that relies
+STARTPACK:NPC (Hucker Graul)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.19
+RACE:Human	!PRERACE:1,%
+NAME:Hucker Graul
+ALIGN:CE
+STAT:STR=14|DEX=16|CON=12|INT=8|WIS=13|CHA=10
+TEMPLATE:Ogrekin
+ABILITY:CATEGORY=Ogrekin Advantageous Deformity|Vestigal Twin
+ABILITY:CATEGORY=Ogrekin Disadvantageous Deformity|Speech Impediment
+CLASS:Barbarian	LEVEL:1
+CLASS:Rogue		LEVEL:5
+FEAT:Improved Initiative
+FEAT:Power Attack
+FEAT:Skill Focus(Craft (Trapmaking))
+FEAT:Weapon Focus(Ogre Hook)
+SKILL:Handle Animal		RANK:4
+SKILL:Climb				RANK:3
+SKILL:Craft (trapmaking)	RANK:9
+SKILL:Listen			RANK:9
+SKILL:Use Rope			RANK:5
+SKILL:Hide				RANK:7
+SKILL:Move Silently		RANK:7
+SKILL:Jump				RANK:9
+GEAR:Ogre Hook				LOCATION:Both Hands	EQMOD:PLUS1W
+GEAR:Amulet of Natural Armor +1	LOCATION:Equipped
+GEAR:Hide Shirt				LOCATION:Equipped		EQMOD:PLUS1A
+TEMPLATE:NPC Raging
 
-## Biggin
-#Biggin’ CR 7
-#Advanced elite monstrous funnel-web spider (MM 289)
-#N Huge vermin
-#Init +4; Senses darkvision 60 ft., tremorsense 60 ft.; Listen +1, Spot +5
-#Defense
-#AC 17, touch 12, flat-footed 13
-#(+4 Dex, +5 natural, –2 size)
-#hp 133 (14d8+70)
-#Fort +14, Ref +8, Will +5
-#Immune mind-affecting effects
-#Offense
-#Spd 30 ft., climb 20 ft.
-#Melee bite +14 (2d6+9 plus poison)
-#Space 15 ft.; Reach 10 ft.
-#Special Attack poison (DC 22, 1d8 Str/1d8 Str), web
-#Statistics
-#Str 22, Dex 19, Con 20, Int —, Wis 12, Cha 2
-#Base Atk +10; Grp +24
-#Skills Climb +14, Hide +0 (+8 in webs), Move Silently +4 (+12 in
-#webs), Spot +5
+
+STARTPACK:NPC (Biggin)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Monstrous Spider (Huge)]
+RACE:Monstrous Spider (Huge)	!PRERACE:1,%
+NAME:Biggin
+ALIGN:TN
+STAT:STR=14|DEX=13|CON=16|INT=10|WIS=12|CHA=10
+CLASS:Vermin	LEVEL:6
 
 
 STARTPACK:NPC (Jakardros Sovark)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.22
@@ -278,34 +235,34 @@ ABILITY:CATEGORY=Fighter Feat|Weapon Specialization(Handaxe)
 ABILITY:CATEGORY=Fighter Feat|Weapon Specialization(Battleaxe)
 GEAR:Unarmed Strike	LOCATION:Equipped
 
-## Kaven Windstrike
-#Kaven Windstrike CR 7
-#Male human ranger 2/rogue 5
-#CN Medium humanoid
-#Init +3; Senses Listen +9, Spot +9
-#DEFENSE
-#AC 13, touch 13, flat-footed 10
-#(+3 Dex)
-#hp 37 (currently 0; 2d8+5d6+7)
-#Fort +5, Ref +10, Will +0
-#Defensive Abilities evasion, trap sense +1,
-#uncanny dodge
-#OFFENSE
-#Spd 30 ft.
-#Melee unarmed strike +8 (1d3 nonlethal)
-#Special Attacks favored enemy (giants +2),
-#sneak attack +3d6
-#STATISTICS
-#Str 10, Dex 16, Con 12, Int 13, Wis 8, Cha 14
-#Base Atk +5; Grp +5
-#Feats Persuasive, Track, Two-Weapon Defense, Two-Weapon Fighting,
-#Weapon Finesse
-#Skills Bluff +14, Climb +10, Hide +13, Intimidate +6, Listen +9,
-#Move Silently +13, Search +11, Sleight of Hand +13, Spot +9,
-#Survival +4, Swim +5
-#Languages Common, Giant
-#SQ trapfinding, wild empathy +4
+
 STARTPACK:NPC (Kaven Windstrike)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Human]	SOURCEPAGE:pg.24
+RACE:Human	!PRERACE:1,%
+NAME:Kaven Windstrike
+GENDER:Male
+ALIGN:CN
+STAT:STR=10|DEX=16|CON=12|INT=13|WIS=8|CHA=14
+CLASS:Ranger	LEVEL:2
+CLASS:Rogue		LEVEL:5
+SKILL:Survival		RANK:5
+SKILL:Swim			RANK:5
+SKILL:Climb			RANK:10
+SKILL:Hide			RANK:10
+SKILL:Listen		RANK:10
+SKILL:Move Silently	RANK:10
+SKILL:Bluff			RANK:10
+SKILL:Intimidate		RANK:2
+SKILL:Sleight of Hand	RANK:8
+SKILL:Search		RANK:10
+SKILL:Spot			RANK:10
+ABILITY:CATEGORY=Ranger Combat Style|Two Weapon Fighting Combat Style
+ABILITY:CATEGORY=Favored Enemy|Favored Enemy (Giant)
+FEAT:Persuasive
+FEAT:Track
+FEAT:Two Weapon Defense
+FEAT:Two Weapon Fighting
+FEAT:Weapon Finesse
+GEAR:Unarmed Strike	LOCATION:Equipped
 
 
 STARTPACK:NPC (Minktuck Kreeg)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Ogre]	SOURCEPAGE:pg.28
@@ -332,51 +289,27 @@ GEAR:Ogre Hook						SIZE:L	LOCATION:Both	EQMOD:PLUS1W
 GEAR:Longbow (Composite)				SIZE:L	LOCATION:Carried	EQMOD:BOWSTR|+7.MWORKW
 GEAR:Arrow					QTY:20	SIZE:L	LOCATION:Carried
 
-## Jaagrath Kreeg
-#Jaagrath Kreeg CR 10
-#Male ogre barbarian 7
-#CE Large giant
-#Init +1; Senses darkvision 60 ft., low-light vision; Listen +8, Spot +1
-#DEFENSE
-#AC 15, touch 8, flat-footed 14
-#(+2 armor, +1 Dex, +5 natural, –2 rage, –1 size)
-#hp 118 (4d8+7d12+55)
-#Fort +14, Ref +4, Will +4
-#Defensive Abilities trap sense +2, improved uncanny dodge; DR 1/—
-#OFFENSE
-#Spd 50 ft.
-#Melee +1 human bane ogre hook +21/+16 (3d6+16/19–20/×3)
-#Space 10 ft.; Reach 10 ft.
-#Special Attacks rage 2/day
-#TACTICS
-#During Combat Jaagrath is perhaps a bit overconfident in his fighting
-#prowess, but that certainly doesn’t mean he’s a pushover. He rages
-#on the first round of combat, then focuses his attacks on humans,
-#saving other races for “clean up.” On the first round of combat, he
-#makes full Power Attacks (+11/+6; 3d6+36/19–20/×3), but
-#if he misses he drops his Power Attack bonus by 5 points, and then
-#entirely if he continues to miss.
-#Morale If Jaagrath is brought below 25 hit points, he attempts to flee
-#to area B30 to recruit aid, drinking both of his potions as soon as
-#he gets a chance. Once at area B30, he fights to the death.
-#Base Statistics When Jaagrath isn’t raging, his stats change as follows:
-#AC 17, touch 10, flat-footed 16
-#hp 96
-#Fort +12, Will +2
-#Melee +1 human bane ogre hook +19/+14 (3d6+13/19–20/×3)
-#Str 26, Con 16
-#Skills Climb +11
-#STATISTICS
-#Str 30, Dex 12, Con 20, Int 6, Wis 8, Cha 9
-#Base Atk +10; Grp +22
-#Feats Improved Bull Rush, Improved Critical (ogre hook), Power Attack,
-#Weapon Focus (ogre hook)
-#Skills Climb +13, Intimidate +6, Listen +8, Spot +1
-#Languages Common, Giant
-#Combat Gear potions of cure serious wounds (2); Other Gear
-#+1 human bane ogre hook, bracers of armor +2, belt of giant
-#strength +4
+
 STARTPACK:NPC (Jaagrath Kreeg)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Ogre]	SOURCEPAGE:pg.32
+RACE:Ogre	!PRERACE:1,%
+NAME:Jaagrath Kreeg
+GENDER:Male
+ALIGN:CE
+STAT:STR=12|DEX=14|CON=12|INT=10|WIS=8|CHA=13
+CLASS:Barbarian	LEVEL:7
+SKILL:Spot		RANK:2
+SKILL:Climb		RANK:3
+SKILL:Listen	RANK:9
+SKILL:Intimidate	RANK:7
+FEAT:Improved Bull Rush
+FEAT:Improved Critical(Ogre Hook)
+FEAT:Power Attack
+FEAT:Weapon Focus(Ogre Hook)
+GEAR:Ogre Hook					SIZE:L	LOCATION:Both Hands	EQMOD:PLUS1W.BANE_M|Humanoids (human)
+GEAR:Potion (Cure Serious Wounds)	QTY:2			LOCATION:Carried
+GEAR:Bracers of Armor +2					LOCATION:Equipped
+GEAR:Belt of Giant Strength +4				LOCATION:Equipped
+TEMPLATE:NPC Raging
 
 ## Dorella Kreeg
 #Dorella Kreeg CR 10
