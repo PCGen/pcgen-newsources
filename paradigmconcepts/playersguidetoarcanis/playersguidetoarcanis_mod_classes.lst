@@ -23,7 +23,7 @@ CLASS:Cleric.MOD	PREDEITY:1,Y
 CLASS:Cleric.MOD	CSKILL:TYPE.Arcana|TYPE.History|TYPE.Religion|TYPE.Planes|Research
 SUBCLASS:Althares			COST:0	PREDEITY:1,Althares
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=2|Discern Value,Epiphany,Summon Tome																																																																																									ABILITY:Racial Ability|VIRTUAL|Walk the Path of the Stars																																																		CSKILL:.CLEAR.Survival												LANGAUTO:Ancient Altharin(Imperial)						VFEAT:Exotic Weapon Proficiency(Flintlock (Pistol))
-SUBCLASSLEVEL:5																																																																																		BONUS:VAR|BardicKnowledgeLevel|((CL=Althares)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel		ABILITY:Special Ability|NORMAL|Bardic Knowledge|Knowledge of the Ages
+SUBCLASSLEVEL:5																																																																																		BONUS:VAR|BardicKnowledgeLevel|((CL)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel				ABILITY:Special Ability|NORMAL|Bardic Knowledge|Knowledge of the Ages
 SUBCLASS:Anshar			COST:0	PREDEITY:1,Anshar
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=2|Sticks to Snakes|Cleric=4|Share My Pain																																																																																									ABILITY:Special Ability|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)																																																															LANGAUTO:Ancient Altharin(Imperial)																					AUTO:FEAT|Improved Unarmed Strike
 SUBCLASSLEVEL:3																																																																																																																																																																																																								AUTO:FEAT|Endurance
@@ -45,7 +45,7 @@ SUBCLASSLEVEL:1																																																																	
 SUBCLASS:Larissan Oracle	COST:0	PREDEITY:1,Larissa
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You																															DOMAIN:Divination																																																ABILITY:Special Ability|Stern Demeanor	ABILITY:Special Ability|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)|Shield Proficiency																																										CSKILL:TYPE.Arcana|Listen|Search|Spot					LANGAUTO:Ancient Altharin(Imperial)																					AUTO:FEAT|Simple Weapon Proficiency	AUTO:WEAPONPROF|TYPE.Whip
 SUBCLASSLEVEL:3																																																							BONUS:COMBAT|AC|max(CHA,0)|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0
-SUBCLASSLEVEL:5																																																																																		BONUS:VAR|BardicKnowledgeLevel|((CL=Larissan Oracle)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel	ABILITY:Special Ability|NORMAL|GlimpseoftheForbidden|Bardic Knowledge
+SUBCLASSLEVEL:5																																																																																		BONUS:VAR|BardicKnowledgeLevel|((CL)/2)	BONUS:VAR|BardicKnowledge|BardicKnowledgeLevel				ABILITY:Special Ability|NORMAL|GlimpseoftheForbidden|Bardic Knowledge
 SUBCLASS:Larissan Sensate	COST:0	PREDEITY:1,Larissa
 SUBCLASSLEVEL:1	SPELLLEVEL:CLASS|Cleric=1|Armor of Faith|Cleric=2|Twist of Fate|Cleric=4|Phantasmal Lover|Cleric=5|I Feel You																															DOMAIN:Divination|Pleasure															BONUS:DOMAIN|NUMBER|1																												ABILITY:Special Ability|AUTOMATIC|.CLEAR.Armor Proficiency (Light)	ABILITY:Special Ability|AUTOMATIC|.CLEAR.Armor Proficiency (Medium)	ABILITY:Special Ability|AUTOMATIC|.CLEAR.Armor Proficiency (Heavy)|Shield Proficiency																									CSKILL:TYPE.Perform|Tumble							LANGAUTO:Ancient Altharin(Imperial)																											AUTO:WEAPONPROF|Rapier|TYPE.Whip										ADDDOMAINS:Charm.Music.Pleasure
 SUBCLASSLEVEL:3																																																							BONUS:COMBAT|AC|max(CHA,0)|PREVAREQ:ENCUMBERANCE,0,COUNT[EQTYPE.ARMOR.EQUIPPED],0
@@ -215,8 +215,9 @@ CLASS:Wizard.MOD	CSKILL:Research|TYPE.Knowledge
 
 # Class Name	Required Race
 CLASS:Psion.MOD	PRERACE:1,Val
-# Class Name	Class Skill
-CLASS:Psion.MOD	CSKILL:Examine Martial Technique[PRESUBCLASS:1,Egoist]
+# Class Name
+CLASS:Psion.MOD
+1	VFEAT:ClassSkillAdd[PRESUBCLASS:1,Egoist]
 
 # Class Name			Required Race
 CLASS:Psychic Warrior.MOD	PRERACE:1,Val
