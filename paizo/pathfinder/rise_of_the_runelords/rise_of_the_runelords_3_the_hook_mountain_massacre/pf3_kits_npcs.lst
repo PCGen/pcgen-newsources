@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Sat Aug  2 22:07:30 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision$ $Author$ -- Mon Aug  4 17:50:28 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Rise of the Runelords - Chapter 3: The Hook Mountain Maassacre	SOURCESHORT:PF3	SOURCEWEB:http://paizo.com/pathfinder/v5748btpy80e8	SOURCEDATE:2007-08
 
 ### Standard NPCs
@@ -311,42 +311,28 @@ GEAR:Bracers of Armor +2					LOCATION:Equipped
 GEAR:Belt of Giant Strength +4				LOCATION:Equipped
 TEMPLATE:NPC Raging
 
-## Dorella Kreeg
-#Dorella Kreeg CR 10
-#Female ogre sorcerer 9
-#CE Large giant
-#Init –1; Senses darkvision 60 ft., low-light vision; Listen +5, Spot +4
-#DEFENSE
-#AC 19, touch 8, flat-footed 19
-#(+4 armor, –1 Dex, +7 natural, –1 size)
-#hp 92 (4d8+9d4+52)
-#Fort +13, Ref +3, Will +10
-#OFFENSE
-#Spd 40 ft.
-#Melee dagger +10/+5 (1d6+4/19–20)
-#Space 10 ft.; Reach 10 ft.
-#Spells Known (CL 9th, +5 ranged touch)
-#4th (4/day)—confusion (DC 18), shout (DC 16)
-#3rd (6/day)—deep slumber (DC 17), lightning bolt (DC 15),
-#suggestion (DC 17)
-#2nd (7/day)—blindness/deafness (DC 14), hideous laughter (DC 16),
-#mirror image, touch of idiocy
-#1st (7/day)—charm person (DC 15), mage armor, magic missile, shield,
-#true strike
-#0 (6/day)—acid splash, dancing lights, daze (DC 14), ghost sound (DC
-#12), mage hand, mending, message, prestidigitation
-#STATISTICS
-#Str 18, Dex 8, Con 18, Int 8, Wis 13, Cha 15
-#Base Atk +7; Grp +15
-#Feats Alertness (as long as It Tickles is in arm’s reach), Eschew
-#Materials, Extend Spell, Greater Spell Focus (enchantment), Iron
-#Will, Spell Focus (enchantment)
-#Skills Climb +4, Concentration +13, Listen +5, Spot +4
-#Languages Common, Giant
-#SQ summon familiar (rat named It Tickles)
-#Combat Gear wand of acid arrow (43 charges); Other Gear dagger,
-#amulet of natural armor +2, cloak of Charisma +2
+
 STARTPACK:NPC (Dorella Kreeg)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Ogre]	SOURCEPAGE:pg.33
+RACE:Ogre	!PRERACE:1,%
+NAME:Dorella Kreeg
+ALIGN:CE
+STAT:STR=8|DEX=10|CON=14|INT=12|WIS=13|CHA=17
+CLASS:Sorcerer	LEVEL:9
+SKILL:Listen		RANK:4
+SKILL:Spot			RANK:3
+SKILL:Concentration	RANK:9
+FEAT:Eschew Materials
+FEAT:Extend Spell
+FEAT:Greater Spell Focus(Enchantment)
+FEAT:Iron Will
+FEAT:Spell Focus(Enchantment)
+GEAR:Dagger					SIZE:L	LOCATION:Primary Hand
+GEAR:Cloak of Charisma +2				LOCATION:Equipped
+GEAR:Amulet of Natural Armor +2			LOCATION:Equipped
+GEAR:Wand (Acid Arrow)					LOCATION:Carried
+SPELLS:SPELLBOOK=Known Spells|CLASS=Sorcerer|Deep Slumber|Lightning Bolt|Suggestion|Blindness/Deafness|Hideous Laughter|Mirror Image|Touch of Idiocy|Charm Person|Mage Armor|Magic Missile|Shield|True Strike|Acid Splash|Dancing Lights|Daze|Ghost Sound|Mage Hand|Mending|Message|Prestidigitation
+SPELLS:SPELLBOOK=Known Spells|CLASS=Sorcerer|Confusion|Shout
+TEMPLATE:Dorella Kreeg's Magic Buffs
 
 ## Lucrecia
 #Lucrecia CR 10
@@ -382,10 +368,20 @@ STARTPACK:NPC (Dorella Kreeg)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%
 #Base Atk +13; Grp +21
 #Feats Combat Expertise, Improved Feint, Improved Two-Weapon
 #Fighting, Two-Weapon Fighting, Weapon Finesse
-#Skills Bluff +27, Climb +12, Concentration +20, Craft (tattooing)
-#+13, Knowledge (arcana) +20, Knowledge (local) +22, Sense
-#Motive +15, Spellcraft +22, Tumble +27, Swim +12, Use Magic
-#Device +25
+
+#Skills
+#Bluff +27
+#Climb +12
+#Concentration +20
+#Knowledge (arcana) +20
+#Knowledge (local) +22
+#Spellcraft +22
+#Tumble +27
+#Swim +12
+#Sense Motive +15
+#Craft (tattooing)+13
+
+#Use Magic Device +25
 #Languages Abyssal, Common, Draconic, Giant, Thassilonian
 #SQ alternate form, trapfinding
 #Combat Gear wand of scorching ray (22 charges); Other Gear +1 keen
@@ -411,7 +407,38 @@ STARTPACK:NPC (Dorella Kreeg)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%
 #cast spells from the cleric list. Cleric spells are considered arcane
 #spells for a lamia matriarch, meaning that the creature doesn’t need
 #a divine focus to cast them.
-STARTPACK:NPC (Lucrecia)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Lamia]	SOURCEPAGE:pg.35
+
+STARTPACK:NPC (Lucrecia)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Lamia Matriarch]	SOURCEPAGE:pg.35
+RACE:Lamia Matriarch	!PRERACE:1,%
+NAME:Lucrecia
+ALIGN:CE
+STAT:STR=8|DEX=15|CON=12|INT=14|WIS=10|CHA=13
+CLASS:Rogue	LEVEL:2
+FEAT:Combat Expertise
+FEAT:Improved Feint
+FEAT:Improved Two Weapon Fighting
+FEAT:Two Weapon Fighting
+FEAT:Weapon Finesse
+#Bluff +27
+#Climb +12
+#Concentration +20
+#Knowledge (arcana) +20
+#Knowledge (local) +22
+#Spellcraft +22
+#Tumble +27
+#Swim +12
+#Sense Motive +15
+#Craft (tattooing)+13
+
+SKILL:Bluff				RANK:17
+SKILL:Concentration		RANK:15
+SKILL:Knowledge (Arcana)	RANK:15
+SKILL:Knowledge (Local)		RANK:17
+SKILL:Spellcraft			RANK:17
+SKILL:Tumble			RANK:17
+SKILL:Sense Motive		RANK:12
+SKILL:Craft (Tattooing)		RANK:8
+
 
 ## Grazuul
 #Grazuul CR 10
@@ -510,7 +537,6 @@ STARTPACK:NPC (Myriana)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRE
 #touch (DC 17), spectral hand
 #1st—chill touch (DC 16), mage armor, magic missile (3), ray of enfeeblement
 #0—touch of fatigue (5, DC 15)
-#Prohibited Schools abjuration, enchantment
 #STATISTICS
 #Str 29, Dex 12, Con 18, Int 17, Wis 14, Cha 14
 #Base Atk +13; Grp +26
@@ -524,8 +550,46 @@ STARTPACK:NPC (Myriana)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRE
 #Listen +21, Spellcraft +12, Spot +21
 #Languages Common, Draconic, Giant, Thassilonian
 #SQ summon familiar (lizard named Vizarka)
-#Combat Gear wand of enervation (12 charges); Other Gear masterwork
-#earth breaker, ring of minor cold resistance, Sihedron medallion, 650 gp
-#in black onyx gems, spellbook (contains only those spells prepared)
-STARTPACK:NPC (Barl Breakbones)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Giant (Stone)]	SOURCEPAGE:pg.52
 
+#Combat Gear
+#wand of enervation (12 charges)
+#masterwork earth breaker,
+#ring of minor cold resistance,
+#Sihedron medallion,
+#650 gp in black onyx gems,
+#spellbook (contains only those spells prepared)
+
+STARTPACK:NPC (Barl Breakbones)	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Giant (Stone)]	SOURCEPAGE:pg.52
+RACE:Giant (Stone)	!PRERACE:1,%
+NAME:Barl Breakbones
+ALIGN:NE
+STAT:STR=13|DEX=8|CON=10|INT=17|WIS=12|CHA=14
+TEMPLATE:Barl Breakbones Skills
+TEMPLATE:Barl Breakbones Magic Buffs
+CLASS:Wizard	LEVEL:7	SUBCLASS:Necromancer
+#Prohibited Schools abjuration, enchantment
+FEAT:Combat Casting
+FEAT:Greater Spell Focus(Necromancy)
+FEAT:Improved Bull Rush
+FEAT:Improved Critical(Earth Breaker)
+FEAT:Eschew Materials
+FEAT:Power Attack
+FEAT:Spell Focus(Necromancy)
+FEAT:Weapon Focus(Earth Breaker)
+ABILITY:CATEGORY=Wizard Feat|Spell Mastery(Fly,Mage Armor,Magic Missile)
+SKILL:Climb				RANK:20
+SKILL:Hide				RANK:17
+SKILL:Spot				RANK:19
+SKILL:Listen			RANK:19
+SKILL:Knowledge (religion)	RANK:7
+SKILL:Concentration		RANK:10
+SKILL:Knowledge (arcana)	RANK:7
+SKILL:Spellcraft			RANK:7
+GEAR:Wand										LOCATION:Carried		EQMOD:SPL_CHRG|SPELLNAME[Enervation]CASTER[Wizard]SPELLTYPE[Arcane]SPELLLEVEL[4]CASTERLEVEL[7]CHARGES[12]
+GEAR:Earth Breaker						SIZE:L	LOCATION:Both Hands	EQMOD:MWORKW
+GEAR:Ring (Energy Resistance/Cold/Minor)					LOCATION:Equipped
+GEAR:Medallion									LOCATION:Carried		EQMOD:ADDTYPE|ART																NAME:Sihedron Medallion
+GEAR:Onyx						QTY:13			LOCATION:Carried
+GEAR:Spellbook (Wizard's/Blank)						LOCATION:Carried
+SPELLS:SPELLBOOK=Prepared Spells|CLASS=Wizard|Animate Dead|Fear|Fly|Ray of Exhaustion|Vampiric Touch|Blindness/Deafness|Command Undead|False Life|Ghoul Touch|Spectral Hand|Chill Touch|Mage Armor|Magic Missile|Ray of Enfeeblement|Touch of Fatigue=5
+SPELLS:SPELLBOOK=Spellbook (Wizard's/Blank)|CLASS=Wizard|Animate Dead|Fear|Fly|Ray of Exhaustion|Vampiric Touch|Blindness/Deafness|Command Undead|False Life|Ghoul Touch|Spectral Hand|Chill Touch|Mage Armor|Magic Missile|Ray of Enfeeblement
