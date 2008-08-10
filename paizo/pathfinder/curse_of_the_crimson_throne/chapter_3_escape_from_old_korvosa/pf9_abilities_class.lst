@@ -17,29 +17,24 @@ Death Mantis Form		CATEGORY:Special Ability	TYPE:Supernatural.SpecialQuality	SAB
 ###Racial Abilities
 
 ## Achaekekis Racial Abilities
-# Ability Name			Output Name				Category of Ability				Type					Special Abilities
-Achaekekis Immunities							CATEGORY:Special Ability		TYPE:Special.Immunity	SAB:Immune to Ability Damage		SAB:Immune to Ability Drain		SAB:Immune to Blindness		SAB:Immune to Death Effects		SAB:Immune to Energy Drain		SAB:Immune to Fire		SAB:Immune to Mind-affecting Effects		SAB:Immune to Paralysis		SAB:Immune to Poison
-Create Gate								SAB:Create Gate (Su)
-Deathwatch		SAB:Deathwatch (Su)
-Freedom of Movement (Su)
-Improved Evasion (Ex)
-#Poison (Su)
-Regeneration (Su)
-Rend (Ex) 4d8+24 points of damage.
-Savage Criticals (Ex) All of Achaekek’s natural weapons
-threaten a critical hit on a roll of 18–20 (and with its
-Improved Critical feats, these attacks threaten on a 15–20).
-Any creature the Mantis God strikes with a critical hit
-must make a DC 43 Fortitude save to avoid being stunned
-for 1 round from the force of the blow. The save DC is 
-Strength-based.
-Tail Spike (Ex)
-True Seeing (Su)
-Unweaving Aura (Su)
-####
-Continuous Barrage (Ex)
-Flurry of Blows (Ex)
-Monk Qualities A beatific one emulates many of the
+# Ability Name			Output Name		Category of Ability			Type								Special Abilities																																																																																																																																																																																																																Spell-like Abilities
+Achaekekis Immunities					CATEGORY:Special Ability	TYPE:Special.Immunity				SAB:Immune to Ability Damage		SAB:Immune to Ability Drain		SAB:Immune to Blindness		SAB:Immune to Death Effects		SAB:Immune to Energy Drain		SAB:Immune to Mind-affecting Effects		SAB:Immune to Paralysis		SAB:Immune to Poison
+Achaekekis Poison						CATEGORY:Special Ability	TYPESpecial.Poison.Supernatural		SAB:Poison (Su)	~ DC % Fortitude|AchaekekisPoisonDC		DEFINE:AchaekekisPoisonDC|0		BONUS:VAR|AchaekekisPoisonDC|10+(HD/2)+CON
+Create Gate								CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SAB:Create Gate (Su)
+Deathwatch								CATEGORY:Special Ability	TYPE:Special.Supernatural			SAB:Deathwatch (Su)
+Freedom of Movement						CATEGORY:Special Ability	TYPE:SpecialDefence.Supernatural	SAB:Freedom of Movement (Su)
+Rend									CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	SAB:Rend (Ex)
+Savage Criticals						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	SAB:Savage Criticals (Ex) ~ DC % Fortitude|SavageCriticalsDC		DEFINE:SavageCriticalsDC|0		BONUS:VAR|SavageCriticalsDC|10+(HD/2)+STR
+Tail Spikes								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	SAB:Tail Spike (Ex)
+True Seeing								CATEGORY:Special Ability	TYPESpecial.Supernatural			SAB:True Seeing (Su)
+Unweaving Aura							CATEGORY:Special Ability	TYPE:Special.Aura.Supernatural		SAB:Unweaving Aura (Su) ~ DC % Will|UnweavingAuraDC		DEFINE:UnweavingAiraDC|0		BONUS:VAR|UnweavingAuraDC|10+(HD/2)+CHA
+
+
+## Beatific One Racial Abilities
+# Ability Name			Output Name		Category of Ability			Type								Special Abilities																																																																																																																																																																																																																Spell-like Abilities
+Continuous Barrage						CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	SAB:Continuous Barrage (Ex)
+Monk Qualities							CATEGORY:Special Ability	TYPE:SpecialQuality					SAB:Monk Qualities												ABILITY:Special Ability|AUTOMATIC|Monk AC			ABILITY:Special Ability|AUTOMATIC|Monk Movement		ABILITY:Special Ability|AUTOMATIC|Flurry of Blows	ABILITY:Special Ability|VIRTUAL|Greater Flurry of Blows|PREVARGTEQ:GreaterFlurry,1		BONUS:VAR|MonkMoveLVL|CL	BONUS:VAR|MonkACLVL|CL		BONUS:VAR|MonkLVL|CL	BONUS:VAR|FlurryLVL,StunningFistMonkLVL|MonkLVL	DEFINE:MonkLVL|0				BONUS:VAR|MonkBonusFeatLVL|CL			DEFINE:MonkBonusFeatLVL|0
+A beatific one emulates many of the
 strengths of the monk character class. On top of its own
 racial abilities, the beatific one receives the AC bonus,
 unarmed damage, bonus feats, speed bonus, and weapon
