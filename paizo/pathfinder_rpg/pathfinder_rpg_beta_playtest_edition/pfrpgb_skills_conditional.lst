@@ -1,0 +1,23 @@
+# CVS $Revision: 6321 $ $Author: amaitland $ -- Sat Aug 16 02:58:51 2008 -- reformated by prettylst.pl v1.38 (build 7302)
+SOURCELONG:Pathfinder RPG (Beta Playtest Edition)	SOURCESHORT:PFRPGB	SOURCEWEB:http://paizo.com/store/downloads/pathfinderRPG/v5748btpy84o0	SOURCEDATE:2008-08
+# Original Entry by: Stefan Radermacher
+
+###Block: Conditional Skills for output only
+# Skill Name						Key Stat	Untrained?		Skill Penalty Apply	Classes	Type			Visible		Source Page			Bonus to skill
+Appraise (Identify Magic Item)			KEYSTAT:INT	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.55
+Perception (Notice unusual stonework)		KEYSTAT:WIS	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.61
+Perception (Sight)					KEYSTAT:WIS	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.61
+Perception (Sound)					KEYSTAT:WIS	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.61
+Perception (Smell)					KEYSTAT:WIS	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.61
+Perception (Taste)					KEYSTAT:WIS	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.61
+Perception (Touch)					KEYSTAT:WIS	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.61
+Spellcraft (Cast defensively)				KEYSTAT:INT	USEUNTRAINED:NO					CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.63
+Swim (Avoid taking nonlethal fatigue damage)	KEYSTAT:STR	USEUNTRAINED:NO	ACHECK:DOUBLE		CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:SkillsII.rtf	BONUS:SKILL|Swim (Avoid taking nonlethal fatigue damage)|8|PREMOVE:1,Swim=1|TYPE=Racial
+
+
+###Block: Skill .MODs
+# Skill Name	Bonus to skill																																																							Bonus to skill rank
+Appraise.MOD	BONUS:SKILL|Appraise (Identify Magic Item|SKILL.Appraise.MISC																																															BONUS:SKILLRANK|Appraise (Identify Magic Item)|SKILLRANK=Appraise|PRERULE:1,DISPLAYSKILLUSE|PREVARGT:var("SKILL.Appraise (Identify Magic Item).MISC"),var("SKILL.Appraise.MISC")
+Perception.MOD	BONUS:SKILL|Perception (Notice unusual stonework)|SKILL.Perception.MISC	BONUS:SKILL|Perception (Sight)|SKILL.Perception.MISC	BONUS:SKILL|Perception (Sound)|SKILL.Perception.MISC	BONUS:SKILL|Perception (Smell)|SKILL.Perception.MISC	BONUS:SKILL|Perception (Taste)|SKILL.Perception.MISC	BONUS:SKILL|Perception (Touch)|SKILL.Perception.MISC	BONUS:SKILLRANK|Perception (Notice unusual stonework)|SKILLRANK=Perception|PREVARGT:var("SKILL.Perception (Notice unusual stonework).MISC"),var("SKILL.Perception.MISC")	BONUS:SKILLRANK|Perception (Sight)|SKILLRANK=Perception|PREVARGT:var("SKILL.Perception (Sight).MISC"),var("SKILL.Perception.MISC")	BONUS:SKILLRANK|Perception (Sound)|SKILLRANK=Perception|PREVARGT:var("SKILL.Perception (Sound).MISC"),var("SKILL.Perception.MISC")	BONUS:SKILLRANK|Perception (Smell)|SKILLRANK=Perception|PREVARGT:var("SKILL.Perception (Smell).MISC"),var("SKILL.Perception.MISC")	BONUS:SKILLRANK|Perception (Taste)|SKILLRANK=Perception|PREVARGT:var("SKILL.Perception (Taste).MISC"),var("SKILL.Perception.MISC")	BONUS:SKILLRANK|Perception (Touch)|SKILLRANK=Perception|PREVARGT:var("SKILL.Perception (Touch).MISC"),var("SKILL.Perception.MISC")
+Spellcraft.MOD	BONUS:SKILL|Spellcraft (Cast defensively)|SKILL.Spellcraft.MISC																																															BONUS:SKILLRANK|Spellcraft (Cast Defensively)|SKILLRANK=Spellcraft|PRERULE:1,DISPLAYSKILLUSE|PREVARGT:var("SKILL.Spellcraft (Cast defensively).MISC"),var("SKILL.Spellcraft.MISC")
+Swim.MOD		BONUS:SKILL|Swim (Avoid taking nonlethal fatigue damage)|SKILL.Swim.MISC																																													BONUS:SKILLRANK|Swim (Avoid taking nonlethal fatigue damage)|SKILLRANK=Swim|PRERULE:1,DISPLAYSKILLUSE|PREVARGT:var("SKILL.Swim (Avoid taking nonlethal fatigue damage).MISC"),var("SKILL.Swim.MISC")
