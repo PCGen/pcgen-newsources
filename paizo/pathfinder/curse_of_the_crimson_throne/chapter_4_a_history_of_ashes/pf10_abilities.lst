@@ -1,28 +1,28 @@
-# CVS $Revision$ $Author$ -- Sun Aug 10 23:59:36 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision$ $Author$ -- Fri Aug 22 00:10:55 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Curse of the Crimson Throne - Chapter 4: A History of Ashes	SOURCESHORT:PF10	SOURCEWEB:http://paizo.com/pathfinder/v5748btpy82u9	SOURCEDATE:2008-7
 # Original Entry by Eric C Smith
 
 ## Racial Abilities
-## Bonestorm Racial Abilities
-# Ability Name				Category of Ability		Type							Visible	Special ABility										Define			Ability																					Modify VAR
-Distraction					CATEGORY:Special Ability	TYPE:Special.Extraordinary			VISIBLE:NO	SAB:Distraction (Ex) ~ DC % Fortitude|DistractionDC				DEFINE:DistractionDC|0																							BONUS:VAR|DistractionDC|10+(HD/2)+CHA
-Gather Bones				CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		VISIBLE:NO	SAB:Gather Bones (Su)
-Unholy Winds				CATEGORY:Special Ability	TYPE:Special.Supernatural			VISIBLE:NO	SAB:Unholy Winds (Su) ~ DC % Fortitude|UnholyWindDC				DEFINE:UnholyWindDC|0																							BONUS:VAR|UnholyWindDC|10+(HD/2)+
-Wrath						CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		VISIBLE:NO	SAB: Wrath (Su)
+###Block: Bonestorm Racial Abilities
+# Ability Name		Output Name			Category of Ability		Type						Define			Description								Modify VAR
+Bonestorm Distraction	OUTPUTNAME:Distraction	CATEGORY:Special Ability	TYPE:Special.Extraordinary		DEFINE:DistractionDC|0	DESC:Distraction (Ex) ~ DC % Fortitude|DistractionDC	BONUS:VAR|DistractionDC|10+(HD/2)+CHA
+Gather Bones						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Unholy Winds						CATEGORY:Special Ability	TYPE:Special.Supernatural		DEFINE:UnholyWindDC|0	DESC:DC %1 Fortitude|UnholyWindDC				BONUS:VAR|UnholyWindDC|10+(HD/2)+
+Bonestorm Wrath		OUTPUTNAME:Wrath		CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural
 
-## Cinder Wolf Racial Abilities
-# Ability Name				Category of Ability		Type							Visible	Special ABility										Define			Ability																					Modify VAR
-Fiery Body					CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		VISIBLE:NO	SAB:Fiery Body (Su)
-Trip						CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary		VISIBLE:NO	SAB:Trip (Ex)
+###Block: Cinder Wolf Racial Abilities
+# Ability Name	Output Name		Category of Ability		Type						Visible	Special ABility
+Fiery Body					CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:NO	SAB:Fiery Body (Su)
+Cinder Wolf Trip	OUTPUTNAME:Trip	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	VISIBLE:NO	SAB:Trip (Ex)
 
-## Havero Racial Abilities
-# Ability Name				Category of Ability		Type							Visible	Special ABility										Define			Ability																					Modify VAR
-Alien Mind					CATEGORY:Special Ability	TYPE:SpecialDefense.Extraordinary		VISIBLE:NO	SAB:Alien Mind (Ex) ~ DC % Will|AlienMindDC					DEFINE:AlienMindDC|0																							BONUS:VAR|AlienMindDC|10+(HD/2)+WIS
-Light Sensitivity				CATEGORY:Special Ability	TYPE:SpecialWeakness.Extraordinary		VISIBLE:NO	SAB:Light Sensitivity (Ex)
-Appendages					CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary		VISIBLE:NO	SAB:Appendages (Ex)
-No Breath					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		VISIBLE:NO	SAB:No Breath (Ex)
-Telepathic Savant				CATEGORY:Special Ability	TYPE:SpecialCommunication.Supernatural	VISIBLE:NO	SAB:Telepathic Savant (Su)
-Havero Immunities and Resistances	CATEGORY:Special Ability	TYPE:Special.Immunity.Resistance		VISIBLE:NO	SAB:Immune To Inhaled Effects	SAB:Immune to Mind-affecting Effects					ABILITY:Special Ability|AUTOMATIC||Immune To Cold|Resistance To Acid|Resistance To Fire|Resistance To Electricity|Fast Healing	BONUS:VAR|AcidResistanceBonus,FireResistanceBonus,ElectricityResistanceBonus|30
+###Block: Havero Racial Abilities
+# Ability Name				Output Name			Category of Ability		Type							Visible	Special ABility										Define			Ability																				Modify VAR
+Alien Mind									CATEGORY:Special Ability	TYPE:SpecialDefense.Extraordinary		VISIBLE:NO	SAB:Alien Mind (Ex) ~ DC % Will|AlienMindDC					DEFINE:AlienMindDC|0																						BONUS:VAR|AlienMindDC|10+(HD/2)+WIS
+Light Sensitivity								CATEGORY:Special Ability	TYPE:SpecialWeakness.Extraordinary		VISIBLE:NO	SAB:Light Sensitivity (Ex)
+Appendages									CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary		VISIBLE:NO	SAB:Appendages (Ex)
+Havero No Breath				OUTPUTNAME:No Breath	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		VISIBLE:NO	SAB:No Breath (Ex)
+Telepathic Savant								CATEGORY:Special Ability	TYPE:SpecialCommunication.Supernatural	VISIBLE:NO	SAB:Telepathic Savant (Su)
+Havero Immunities and Resistances					CATEGORY:Special Ability	TYPE:Special.Immunity.Resistance		VISIBLE:NO	SAB:Immune To Inhaled Effects	SAB:Immune to Mind-affecting Effects					ABILITY:Special Ability|AUTOMATIC|Immune To Cold|Resistance To Acid|Resistance To Fire|Resistance To Electricity|Fast Healing	BONUS:VAR|AcidResistanceBonus,FireResistanceBonus,ElectricityResistanceBonus|30
 
 ## Havero Appendage Abilities
 # Ability Name			Output Name		Category of Ability			Type								Visible		Cost	Special Abilities																																																																																																																																																																																																																Spell-like Abilities
@@ -38,12 +38,12 @@ Havero Immunities and Resistances	CATEGORY:Special Ability	TYPE:Special.Immunity
 #Vorpal Tentacle						CATEGORY:Havero Appendages	TYPE:SpecialAttack.Extraordinary	VISIBLE:NO	COST:10	SAB:Vorpal Tentacle																																																																																																								NATURALATTACK:Pincer,Weapon.Natural.Melee.Slashing,1,4d6
 
 
-## Red Reaver Racial Abilities
-# Ability Name				Category of Ability		Type							Visible	Special ABility										Define			Ability																					Modify VAR
-Distracted					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		VISIBLE:NO	SAB:Distraction (Ex)
-Red Reaver Flight				CATEGORY:Special Ability	TYPE:Special.Supernatural			VISIBLE:NO	SAB:Flight (Su) ~ May fly for short distances only
-Rend						CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary		VISIBLE:NO	SAB:Rend (Ex)
-Roar						CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		VISIBLE:NO	SAB:Roar (Su) ~ DC % Will save (Mind-affecting fear effect)|RoarSaveDC	DEFINE:RoarSaveDC|0																							BONUS:VAR|RoarSaveDC|10+(HD/2)+CHA
+###Block: Red Reaver Racial Abilities
+# Ability Name		Output Name			Category of Ability		Type						Visible	Define			Description										Modify VAR
+Red Reaver Distracted	OUTPUTNAME:Distracted	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Red Reaver Flight		OUTPUTNAME:Flight		CATEGORY:Special Ability	TYPE:Special.Supernatural		VISIBLE:NO					DESC:May fly for short distances only
+Red Reaver Rend		OUTPUTNAME:Rend		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Red Reaver Roar		OUTPUTNAME:Roar		CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural			DEFINE:RoarSaveDC|0	DESC:DC %1 Will save (Mind-affecting fear effect)|RoarSaveDC	BONUS:VAR|RoarSaveDC|10+(HD/2)+CHA
 
 
 #
