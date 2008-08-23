@@ -80,9 +80,9 @@ CLASS:Beltinian Exorcist	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diploma
 3												ABILITY:Special Ability|VIRTUAL|To Rip the Spirit from the Flesh
 4												ABILITY:Special Ability|VIRTUAL|Sanctified Ward
 5												ABILITY:Special Ability|VIRTUAL|To Banish the Restless
-6												ABILITY:Special Ability|VIRTUAL|Extra Turning
+6																	AUTO:FEAT|Extra Turning
 7												ABILITY:Special Ability|VIRTUAL|Holy Presence
-8												ABILITY:Special Ability|VIRTUAL|Extra Turning
+8																	AUTO:FEAT|Extra Turning
 9												ABILITY:Special Ability|VIRTUAL|Greater Sanctified Ward
 10												ABILITY:Special Ability|VIRTUAL|Rend the Spirit
 
@@ -95,7 +95,7 @@ CLASS:Blackchanter	PREABILITY:1,CATEGORY=Special Ability,Bardic Music	!PREALIGN:
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Blackchanter	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Concentration|TYPE.Craft|Diplomacy|Gather Information|Jump|TYPE.Knowledge|TYPE.Perform|TYPE.Profession|Ride|Sense Motive|Speak Language|Spellcraft|Swim|Tumble
 1:REPEATLEVEL:1	ADD:SPELLCASTER|Arcane
-1			ADD:FEAT|Skill Focus (TYPE=Nobility),Skill Focus (TYPE=Religion)
+1			BONUS:ABILITYPOOL|Blackchanter Skill Focus
 2														ABILITY:Special Ability|VIRTUAL|Requiem
 3			ADD:FEAT|Skill Focus (TYPE=Nobility),Skill Focus (TYPE=Religion)
 4														ABILITY:Special Ability|VIRTUAL|Elemental Savant (Positive Energy)
@@ -127,7 +127,7 @@ CLASS:Brethren of the Order of St. Theomund	NAMEISPI:YES	HD:8		TYPE:PC.Prestige	
 CLASS:Brethren of the Order of St. Theomund	PREALIGN:LG,LN,NG,TN	PREATT:4	PREFEAT:2,Iron Will,Combat Expertise	PRESKILL:1,TYPE.Religion=4	PRETEXT:Must follow the teachings of the Church of Coryan and must be accepted by the order.  Must swear an oath of fealty to the and faith to the Mother Church.
 # Class Name						Skill Pts/Lvl	Class Skill
 CLASS:Brethren of the Order of St. Theomund	STARTSKILLPTS:2	CSKILL:Climb|Concentration|TYPE.Craft|Jump|TYPE.Arcana|TYPE.History|TYPE.Religion|TYPE.Profession|Ride|Sense Motive|Spellcraft|Swim
-1			BONUS:ABILITYPOOL|Fighter Feat|1						ADD:ABILITY|Special Ability|AUTOMATIC|Fighter Level Advance Feat Tracker	ABILITY:Special Ability|VIRTUAL|Unshakable Dogma	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency
+1			BONUS:ABILITYPOOL|Fighter Feat|1						ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker	ABILITY:Special Ability|VIRTUAL|Unshakable Dogma	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency
 2:REPEATLEVEL:1												ADD:SPELLCASTER|Divine
 2:REPEATLEVEL:2							BONUS:VAR|StewardBonus|2
 2																											ABILITY:Special Ability|VIRTUAL|Divine Stewardship
@@ -164,7 +164,7 @@ CLASS:Centurion	PREALIGN:LG,LN,LE,NG,TN,NE	PREATT:5	PREFEAT:2,Leadership,Legionn
 CLASS:Centurion	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Diplomacy|Handle Animal|Intimidate|Jump|TYPE.History|TYPE.Profession|Ride|Sense Motive|Spot|Swim
 1								BONUS:ABILITYPOOL|Fighter Feat|CL/3														ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency
 1																											ABILITY:Special Ability|VIRTUAL|Strength Coryani Heart Ability
-2																											ABILITY:Special Ability|VIRTUAL|Aura of Courage)
+2																											ABILITY:Special Ability|VIRTUAL|Aura of Courage
 3:REPEATLEVEL:3															BONUS:VAR|FighterLVL|CL							ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker
 4																											ABILITY:Special Ability|VIRTUAL|Damage Reduction Ability
 5																	BONUS:VAR|DiscSteelDay|1	BONUS:VAR|DiscSteelDmg|CL	ABILITY:Special Ability|VIRTUAL|Discipline of Steel
@@ -181,13 +181,13 @@ CLASS:Emerald Society Archaeologist	NAMEISPI:YES	HD:6		TYPE:PC.Prestige	ABB:ESAr
 CLASS:Emerald Society Archaeologist	!PREABILITY:1,CATEGORY=Special Ability,Illiteracy	PREFEAT:1,Diligent,Skill Focus(TYPE.History)	PREMULT:2,[PRESKILL:1,TYPE.Knowledge=3],[!PRESKILL:2,TYPE.History,TYPE.Geography=3]	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Trapfinding],[PREMULT:1,[PRETEMPLATE:1,Emerald Society,Azure Way],[PREMULT:1,[PREFEAT:1,Scholar],[PREABILITY:1,CATEGORY=Special Ability,Trapfinding]]	PRESKILL:2,Appraise,Decipher Script=3	PRESKILL:1,TYPE.Geography=5	PRESKILL:1,TYPE.History=8	PRESKILL:3,Disable Device,Gather Information,Search=4
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Emerald Society Archaeologist	STARTSKILLPTS:8	CSKILL:Appraise|Balance|Bluff|Climb|Decipher Script|Diplomacy|Disable Device|Gather Information|Hide|TYPE.Knowledge|Listen|Open Lock|TYPE.Profession|Research|Ride|Search|Sense Motive|Speak Language|Survival|Swim|Use Magic Device|Use Rope
-1								ABILITY:Special Ability|VIRTUAL|Ancient Lore|Emerald Proficiency|
-1:REPEATLEVEL:2						ABILITY:Special Ability|VIRTUAL|Subject Specialization
-2								ABILITY:Special Ability|VIRTUAL|Investigator
-3			BONUS:VAR|TrapSense|CL/3	ABILITY:Special Ability|VIRTUAL|Find the Past|Trap Sense
-4								ABILITY:Special Ability|VIRTUAL|Knowledge Mastery
-5								ABILITY:Special Ability|VIRTUAL|Researcher
-6								ABILITY:Special Ability|VIRTUAL|Great Lore
+1							BONUS:ABILITYPOOL|Special Ability|Emerald Proficiency|1	ABILITY:Special Ability|VIRTUAL|Ancient Lore
+1:REPEATLEVEL:2															ABILITY:Special Ability|VIRTUAL|Subject Specialization
+2																	ABILITY:Special Ability|VIRTUAL|Investigator
+3			BONUS:VAR|TrapSense|CL/3										ABILITY:Special Ability|VIRTUAL|Find the Past|Trap Sense Ability
+4																	ABILITY:Special Ability|VIRTUAL|Knowledge Mastery
+5																	ABILITY:Special Ability|VIRTUAL|Researcher
+6																	ABILITY:Special Ability|VIRTUAL|Great Lore
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -199,22 +199,39 @@ CLASS:Gladiator	PREATT:3	PREFEAT:2,Combat Expertise,Dodge
 CLASS:Gladiator	STARTSKILLPTS:4	CSKILL:Appraise|Balance|Bluff|Climb|TYPE.Craft|Diplomacy|Escape Artist|Examine Martial Technique|Intimidate|Jump|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 #
 SUBCLASS:Andabatae	COST:0
+SUBCLASSLEVEL:1		ABILITY:Special Ability|VIRTUAL|Andabatae CS
+SUBCLASSLEVEL:4		ABILITY:Special Ability|VIRTUAL|Andabatae ICS
+SUBCLASSLEVEL:8		ABILITY:Special Ability|VIRTUAL|Andabatae CSM
 SUBCLASS:Essedarii	COST:0
 SUBCLASS:Murmillo		COST:0
+SUBCLASSLEVEL:1		ABILITY:Special Ability|VIRTUAL|Murmillo CS
+SUBCLASSLEVEL:4		ABILITY:Special Ability|VIRTUAL|Murmillo ICS
+SUBCLASSLEVEL:8		BONUS:ABILITYPOOL|Murmillo Combat Style Mastery|1
 SUBCLASS:Retiarius	COST:0
+SUBCLASSLEVEL:1		ABILITY:Special Ability|VIRTUAL|Retiarius CS
+SUBCLASSLEVEL:4		ABILITY:Special Ability|VIRTUAL|Retiarius ICS
+SUBCLASSLEVEL:8		ABILITY:Special Ability|VIRTUAL|Retiarius CSM
 SUBCLASS:Samnite		COST:0
+SUBCLASSLEVEL:1		ABILITY:Special Ability|VIRTUAL|Samnite CS
+SUBCLASSLEVEL:4		ABILITY:Special Ability|VIRTUAL|Samnite ICS
+SUBCLASSLEVEL:8		BONUS:ABILITYPOOL|Samnite Combat Style Mastery|1
 SUBCLASS:Sefacci		COST:0
+SUBCLASSLEVEL:1		ABILITY:Special Ability|VIRTUAL|Sefacci CS
+SUBCLASSLEVEL:4		ABILITY:Special Ability|VIRTUAL|Sefacci ICS
+SUBCLASSLEVEL:8		ABILITY:Special Ability|VIRTUAL|Sefacci CSM
 SUBCLASS:Thracian		COST:0
-1												ABILITY:Special Ability|VIRTUAL|Combat Style	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies																																	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency
+SUBCLASSLEVEL:1		ABILITY:Special Ability|VIRTUAL|Thracian CS
+SUBCLASSLEVEL:4		ABILITY:Special Ability|VIRTUAL|Thracian ICS
+SUBCLASSLEVEL:8		ABILITY:Special Ability|VIRTUAL|Thracian CSM
+1												ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies																																	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Shield Proficiency|Tower Shield Proficiency
 1												ABILITY:Special Ability|VIRTUAL|GladiatorUDAM1
 2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
 3																																																																AUTO:FEAT|Endurance[PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]]
-4												ABILITY:Special Ability|VIRTUAL|Improved Combat Style|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
 5												ABILITY:Special Ability|VIRTUAL|Idolized by the Mob|Signature Weapon|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
 6												ABILITY:Special Ability|VIRTUAL|Amazing Fortitude|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
 7	BONUS:VAR|DefensiveRollTimes|1						ABILITY:Special Ability|VIRTUAL|Defensive Roll|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]							AUTO:FEAT|Diehard[PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]]
 9												ABILITY:Special Ability|VIRTUAL|Legendary Fortitude|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
-10												ABILITY:Special Ability|VIRTUAL|As if They Were Gods|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
+10												ABILITY:Special Ability|VIRTUAL|As if They Were Gods
 10	ABILITY:Special Ability|VIRTUAL|GladiatorUDAM10|PREMULT:1,[PREMULT:2,[!PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.MEDIUM.EQUIPPED],0,COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]],[PREMULT:2,[PRESUBCLASS:1,Samnite],[PREVAREQ:COUNT[EQTYPE.ARMOR.IS.HEAVY.EQUIPPED],0]]
 
 ##############################################################################################################################################################################################################################################################################################################################################
@@ -231,11 +248,11 @@ CLASS:Grand Master	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Craft (Weaponsmith
 1:REPEATLEVEL:2	BONUS:VAR|MasterEdgeBonus|1
 2															ABILITY:Special Ability|VIRTUAL|Master's Intuition|The Perfect Cut	AUTO:FEAT|Quick Draw[!PREFEAT:1,Quick Draw]
 2:REPEATLEVEL:2	BONUS:VAR|CutTimes|1
-3								ADD:FEAT|Weapon Master(TYPE=Weapon)
+3								BONUS:ABILITYPOOL|Weapon Master Feat|1
 4															ABILITY:Special Ability|VIRTUAL|Strike of the Placid Mind
 4:REPEATLEVEL:2	BONUS:VAR|PlacidTimes|1
 5																											AUTO:FEAT|Improved Quick Draw[!PREFEAT:1,Improved Quick Draw]
-6								ADD:FEAT|Weapon Grand Master(TYPE=Weapon)													AUTO:FEAT|Riposte
+6								BONUS:ABILITYPOOL|Weapon Grand Master Feat|1													AUTO:FEAT|Riposte
 8															ABILITY:Special Ability|VIRTUAL|Quicken Strike
 
 ##############################################################################################################################################################################################################################################################################################################################################
@@ -247,7 +264,7 @@ CLASS:Hurrianic Aegis	PREALIGN:LG,LN,NG,TN,CG,CN	PRECHECKBASE:1,Fortitude=5	PRED
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Hurrianic Aegis	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|Intimidate|Knowledge (Religion:Hurrian)|TYPE.Nature|TYPE.Profession|Sense Motive|Spellcraft|Survival
 1:REPEATLEVEL:2	BONUS:COMBAT|AC|1|TYPE=Deflection
-1													ABILITY:Special Ability|VIRTUAL|Hurrian's Shield	ABILITY:Special Ability|AUTOMATIC|All Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+1													ABILITY:Special Ability|VIRTUAL|Hurrian's Shield	AUTO:FEAT|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
 2:REPEATLEVEL:1							ADD:SPELLCASTER|Divine
 2													ABILITY:Special Ability|VIRTUAL|Grtr Domain Focus(Refuge)|Toughness Ability
 3													ABILITY:Special Ability|VIRTUAL|Spontaneous Shield Other
@@ -288,7 +305,7 @@ CLASS:Man-at-Arms	PREALIGN:LG,LN,NG,TN	PREATT:4	PREFEAT:2,Alertness,Lightning Re
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Man-at-Arms	STARTSKILLPTS:4	CSKILL:Climb|Diplomacy|Jump|Handle Animal|Intimidate|TYPE.Geography|TYPE.History|TYPE.Local|TYPE.Nobility|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim
 1									ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker
-1									ABILITY:Special Ability|VIRTUAL|Respected Authority	ABILITY:Special Ability|AUTOMATIC|All Martial  Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+1									ABILITY:Special Ability|VIRTUAL|Respected Authority	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
 2									ABILITY:Special Ability|VIRTUAL|Organize
 3:REPEATLEVEL:3	BONUS:ABILITYPOOL|Fighter Feat|1
 3									ABILITY:Special Ability|VIRTUAL|Faithful Bodyguard
@@ -338,7 +355,7 @@ CLASS:Milandisian Canton	STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Diplomacy|Heal|
 3																																						ABILITY:Special Ability|VIRTUAL|Line Defense
 4											ADD:FEAT|TYPE=Military,TYPE=Canton,Weapon Focus(Halberd),Weapon Focus(Crossbow (Heavy)),Combat Reflexes,Rapid Reload,Great Fortitude,Iron Will,Lightning Reflexes
 6																																						ABILITY:Special Ability|VIRTUAL|Counter Charge
-7			SAB:Line Attack (Ex)																																ABILITY:Special Ability|VIRTUAL|Line AttackLine Attack
+7			SAB:Line Attack (Ex)																																ABILITY:Special Ability|VIRTUAL|Line Attack
 8											ADD:FEAT|TYPE=Military,TYPE=Canton,Weapon Focus(Halberd),Weapon Focus(Crossbow (Heavy)),Combat Reflexes,Rapid Reload,Great Fortitude,Iron Will,Lightning Reflexes
 10																																						ABILITY:Special Ability|VIRTUAL|Rapid Set
 
@@ -410,12 +427,12 @@ CLASS:Order of the Still Heart	NAMEISPI:YES	HD:8		TYPE:PC.Prestige.PC	ABB:OotSH	
 CLASS:Order of the Still Heart	PREATT:4	PREDEITY:1,Neroth	PREFEAT:1,Iron Will	PRESKILL:2,Concentration,TYPE.Religion=8	PRETEXT:Must be a member of the Order in good standing and must pass the tests and perform the necromantic rituals necessary to gain admittance.
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Still Heart	STARTSKILLPTS:4	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Arcana|TYPE.History|TYPE.Planes|TYPE.Religion|TYPE.Profession|Spellcraft
-1											ABILITY:Special Ability|VIRTUAL|ThePathTaken								AUTO:FEAT|Toughness
+1											ABILITY:Special Ability|VIRTUAL|Path Taken								AUTO:FEAT|Toughness
 2:REPEATLEVEL:1					ADD:SPELLCASTER|ANY
-2											ABILITY:Special Ability|VIRTUAL|Morbidity OSH|Tireless|Lure of Darkness
+2											ABILITY:Special Ability|VIRTUAL|Morbidity OSH|Tireless OSH|Lure of Darkness
 3											ABILITY:Special Ability|VIRTUAL|My Kin Feed Elsewhere							AUTO:FEAT|Improved Toughness
 4			BONUS:VAR|FastHealNo|2					ABILITY:Special Ability|VIRTUAL|Fast Healing
-5											ABILITY:Special Ability|VIRTUAL|Daugher of Death							AUTO:FEAT|Improved Toughness
+5											ABILITY:Special Ability|VIRTUAL|Daughter of Death							AUTO:FEAT|Improved Toughness
 6																							TEMPLATE:Undead
 8																										AUTO:FEAT|Improved Toughness
 10											ABILITY:Special Ability|VIRTUAL|Angel of Death								AUTO:FEAT|Improved Toughness
@@ -428,7 +445,7 @@ CLASS:Order of the Thundering Storm	NAMEISPI:YES	HD:10		TYPE:PC.Prestige	ABB:Oot
 CLASS:Order of the Thundering Storm	PRECHECKBASE:1,Will=6	PREDEITY:1,Hurrian	PREMULT:2,[PREFEAT:1,Weapon Focus(Longsword),Weapon Focus(Sword (Kio))],[PREFEAT:4,Combat Expertise,Dodge,Spring Attack,Whirlwind Attack]	PRESKILL:1,TYPE.Religion=5
 # Class Name				Skill Pts/Lvl	Class Skill
 CLASS:Order of the Thundering Storm	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Diplomacy|Handle Animal|Intimidate|TYPE.Religion|Ride|Tumble
-1								ABILITY:Special Ability|VIRTUAL|SAB:The Reluctant Warrior (Su)
+1								ABILITY:Racial Ability|VIRTUAL|The Reluctant Warrior
 2	BONUS:VAR|LayOnHandsLVL|max(CHA,0)*CL	ABILITY:Special Ability|VIRTUAL|Lay On Hands|!PREABILITY:1,CATEGORY=Special Ability,Lay On Hands
 3								ABILITY:Special Ability|VIRTUAL|Way of the Wind
 4								ABILITY:Special Ability|VIRTUAL|Force of the Storm
@@ -655,11 +672,11 @@ CLASS:Weapon Savant	PREATT:6	PREFEAT:7,Combat Expertise,Combat Reflexes,Improved
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Weapon Savant	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|TYPE.Craft|Examine Martial Technique|Jump|TYPE.History|Listen|TYPE.Profession|Ride|Sense Motive|Spot|Swim|Tumble
 # errata says can't count exotic prof feats gained as part of a class - don't know how to determine the others
-1	ABILITY:Special Ability|VIRTUAL|Total Weapon Proficiency|Deflect Attack|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
+1	ABILITY:Special Ability|VIRTUAL|Total Weapon Proficiency|Deflect Attack	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency|Tower Shield Proficiency
 2	ABILITY:Special Ability|VIRTUAL|Total Finesse|Improvised Weapons
 3	ABILITY:Special Ability|VIRTUAL|Expert Strike
 4	ABILITY:Special Ability|VIRTUAL|Close Combat Fighting
-5	ABILITY:Special Ability|VIRTUAL|Many Blades, Many Methods
+5	ABILITY:Special Ability|VIRTUAL|Many Blades Many Methods
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
@@ -757,15 +774,15 @@ CLASS:Order of the Bronze Sepulcher Elite	STARTSKILLPTS:4	CSKILL:Balance|Climb|T
 1	BONUS:UDAM|CLASS.Monk|CL	BONUS:VAR|MonkACLVL|CL		ABILITY:Special Ability|VIRTUAL|Monk AC
 1						BONUS:VAR|MonkMoveLVL|CL	ABILITY:Special Ability|VIRTUAL|Monk Movement
 ###Block: Normal progression
-1:REPEATLEVEL:1			BONUS:VAR|RankInOrder|1
-1									ABILITY:Special Ability|VIRTUAL|Eagle Claw|Rank in Order
-2									ABILITY:Special Ability|VIRTUAL|Supreme Stunning Fist|Invisibility Ability
+1:REPEATLEVEL:1							BONUS:ABILITYPOOL|Special Ability|RankInOrder|1
+1																	ABILITY:Special Ability|VIRTUAL|Eagle Claw
+2																	ABILITY:Special Ability|VIRTUAL|Supreme Stunning Fist|Invisibility Ability
 2:REPEATLEVEL:2|SKIP=0|MAX=8	BONUS:VAR|InvisTimes|1
-3									ABILITY:Special Ability|VIRTUAL|Ghost Touch Ability
-5									ABILITY:Special Ability|VIRTUAL|Chill of the Grave
-7									ABILITY:Special Ability|VIRTUAL|Touch of the Ghoul
-9									ABILITY:Special Ability|VIRTUAL|Ki Aura
-10									ABILITY:Special Ability|VIRTUAL|Ki Drain
+3																	ABILITY:Special Ability|VIRTUAL|Ghost Touch Ability
+5																	ABILITY:Special Ability|VIRTUAL|Chill of the Grave
+7																	ABILITY:Special Ability|VIRTUAL|Touch of the Ghoul
+9																	ABILITY:Special Ability|VIRTUAL|Ki Aura
+10																	ABILITY:Special Ability|VIRTUAL|Ki Drain
 
 ##############################################################################################################################################################################################################################################################################################################################################
 
