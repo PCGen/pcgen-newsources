@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Sat Jun 14 07:54:21 2008 -- reformated by my_prettylst.pl v1.38 (build 6577)
+# CVS $Revision: $ $Author: $ -- Sun Aug 24 17:50:25 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Mongoose Publishing - Quintessential Ranger	SOURCESHORT:QR	SOURCEWEB:http://mongoosepublishing.com	SOURCEDATE:2003-01
 #Original Entry by: Andrew Maitland
 
@@ -58,11 +58,11 @@ Camel's Fortified Will		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SA
 Camel's Hardiness			CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Camel's Hardiness (Ex)
 
 ###Block:Animal Champion ~ (Cheetah)	PREFEAT:1,Run
-# Ability Name	Category of Ability		Type			Visible	Special ABility			Add to base move																							Bonus to skill
+# Ability Name	Category of Ability		Type			Visible	Special ABility			Add to base move
 Cheetah's Run	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Cheetah's Run (Ex)		BONUS:MOVEADD|TYPE.Walk|10|TYPE=FastMovement|PREVAREQ:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),0,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),0
 #bonus:moveadd|10 only if in no or light armor, no med or hvy load, not culm w/ fast movement from other classes
 Cheetah's Sprint	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Cheetah's Sprint (Ex)
-Pounce		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Pounce (Ex)																												BONUS:SKILL|Jump|4|TYPE=Innate
+# Pounce (exists in the RSRD)
 
 ###Block:Animal Champion ~ (Croodile)	PREFEAT:1,Toughness
 # Ability Name		Category of Ability		Type			Visible	Special ABility			Combat bonus
@@ -117,10 +117,10 @@ Horse and Hattock		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Hor
 # Ability Name		Category of Ability		Type			Visible	Special ABility
 Camouflage			CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Camouflage (Ex)
 Hide in Plain Sight	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Hide in Plain Sight
-#Pounce
+# Pounce (exists in the RSRD)
 
 ###Block:Animal Champion ~ (Lion/Dire Lion)	PREFEAT:2,Skill Focus(Intimidate),Wild Empathy
-#Pounce
+# Pounce (exists in the RSRD)
 # Ability Name		Category of Ability		Type			Visible	Special ABility			Innate Spells			Bonus to skill							Modify VAR
 Lion's Roar			CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Lion's Roar (Sp)		SPELLS:Class|TIMES=3|Fear
 Lion's Regal Bearing	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Lion's Regal Bearing (Ex)						BONUS:SKILL|Diplomacy,Intimidate|3|TYPE=Competence	BONUS:VAR|WildEmpathy|2
@@ -162,9 +162,8 @@ Rhino's Purifying Horn	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB
 Rhino's Healing Horn	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Rhino's Healing Horn (Sp)		SPELLS:Class|TIMES=3|Cure Critical
 
 ###Block:Animal Champion ~ (Shark any)
-# Ability Name	Category of Ability		Type			Visible	Special ABility			Innate Spells					Combat bonus				Bonus to skill
-Water Breathing	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Water Breathing (Sp)	SPELLS:Class|TIMES=3|Water Breathing
-Shark's Skin	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Shark's Skin (Ex)									BONUS:COMBAT|AC|1|TYPE=NaturalArmor	BONUS:SKILL|Swim|1|TYPE=Innate
+# Ability Name	Category of Ability		Type			Visible	Special ABility			Combat bonus				Bonus to skill
+Shark's Skin	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Shark's Skin (Ex)		BONUS:COMBAT|AC|1|TYPE=NaturalArmor	BONUS:SKILL|Swim|1|TYPE=Innate
 Shark's Tracking	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Shark's Tracking (Ex)
 
 ###Block:Animal Champion ~ (Snake any)	PREFEAT:1,Persuasive
@@ -174,7 +173,7 @@ Snake Eyes			CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Snake Eye
 Snake's Healing Slough	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Snake's Healing Slough (Sp)	SPELLS:Class|Heal
 
 ###Block:Animal Champion ~ (Tiger/Dire Tiger)	PREFEAT:1,Skill Focus(Move Silently)
-#Pounce
+# Pounce (exists in the RSRD)
 #Camouflage
 # Ability Name			Category of Ability		Type			Visible	Special ABility				Innate Spells
 Tiger's Fearful Symmetry	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Tiger's Fearful Symmetry (Sp)	SPELLS:Class|TIMES=3|Phantasmal Killer
@@ -284,11 +283,12 @@ Unarmed Combat		CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	
 
 ###Block:Monster SQ & SA
 # Ability Name		Category of Ability		Type								Visible	Special ABility			Define				Description																																																																																																							Vision		Source Page
-Scent				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Senses		VISIBLE:NO	SAB:Scent (Ex)								DESC:You can detect opponents within 30 feet by sense of smell. If the opponent is upwind, the range increases to 60 feet; if downwind, it drops to 15 feet. Strong scents, such as smoke or rotting garbage, can be detected at twice the ranges noted above. Overpowering scents, such as skunk musk or troglodyte stench, can be detected at triple normal range.  When you detect a scent, the exact location of the source is not revealed—only its presence somewhere within range. You can take a move action to note the direction of the scent.  Whenever you come within 5 feet of the source, you pinpoint the source’s location.				SOURCEPAGE:TypesSubtypesAbilities.rtf
-Pounce			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Pounce (Ex)								DESC:When you make a charge, you can follow with a full attack.																																																																																																	SOURCEPAGE:TypesSubtypesAbilities.rtf
-Improved Grab		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Improved Grab (Ex)							DESC:If you hit with a melee weapon, you deal normal damage and can attempt to start a grapple as a free action without provoking an attack of opportunity. No initial touch attack is required. You have the option to conduct the grapple normally, or simply use the part of your body it used in the improved grab to hold the opponent at a -20 penalty on grapple checks, but are not considered grappled yourself.																																							SOURCEPAGE:TypesSubtypesAbilities.rtf
-Rake				CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Rake (Ex)								DESC:You gain extra natural attacks when you grapple or pounce your foe.																																																																																															SOURCEPAGE:TypesSubtypesAbilities.rtf
+# Scent (exists in the RSRD)
+# Pounce (exists in the RSRD)
+#Improved Grab (exists in the RSRD)
+#Rake (exists in the RSRD)
 
+# Ability Name		Category of Ability		Type								Visible	Special ABility			Define				Description																								Vision		Source Page
 Stunning Swat		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Stunning Swat (Ex)
 
 Poison Tolerance		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary			VISIBLE:NO	SAB:Poison Tolerance (Ex)
@@ -297,10 +297,9 @@ Many-Headed Monster	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.At
 
 Puncture			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Puncture (Ex)
 Tooth Breaking		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Tooth Breaking (Ex)
-Low-light Vision		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Senses		VISIBLE:NO																																																																																																																			VISION:Low-light
+Low-light Vision		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Senses		VISIBLE:NO																																				VISION:Low-light
 
-Poison			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Poison (Ex) DC %|PoisonDC	DEFINE:PoisonDC|10+HD+CON	DESC:Poison attacks deal initial damage and possibly secondary damage a minute later to the opponent on failed Fortitude saves (DC %1).|PoisonDC																																																																																			SOURCEPAGE:TypesSubtypesAbilities.rtf
-Cold Vulnerability	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Weakness	VISIBLE:NO	SAB:Cold Vulnerability (Ex)
+Spitting Cobra Poison	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Poison (Ex) DC %|PoisonDC	DEFINE:PoisonDC|10+HD+CON	DESC:Poison attacks deal initial damage and possibly secondary damage a minute later to the opponent on failed Fortitude saves (DC %1).|PoisonDC				SOURCEPAGE:TypesSubtypesAbilities.rtf
 
 Frenzy			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:NO	SAB:Frenzy (Ex)
 
