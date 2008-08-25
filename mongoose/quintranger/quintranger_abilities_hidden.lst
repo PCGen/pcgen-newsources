@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Sun Aug 24 17:50:25 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision: $ $Author: $ -- Sun Aug 24 21:31:10 2008 -- reformated by prettylst.pl v1.38 (build 7233)
 SOURCELONG:Mongoose Publishing - Quintessential Ranger	SOURCESHORT:QR	SOURCEWEB:http://mongoosepublishing.com	SOURCEDATE:2003-01
 #Original Entry by: Andrew Maitland
 
@@ -7,7 +7,7 @@ SOURCELONG:Mongoose Publishing - Quintessential Ranger	SOURCESHORT:QR	SOURCEWEB:
 Chosen Species		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Chosen Species
 Animal Friendship		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Animal Friendship (Ex)
 #Animal Companion		CATEGORY:Special Ability		TYPE:Class.Hidden	VISIBLE:NO	SAB:
-Charm Animal		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Charm Animal (Sp)																																SPELLS:Class|TIMES=AnimalChampionLVL|Charm Animal
+Charm Animal		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Charm Animal (Sp)																																SPELLS:Class|TIMES=CompLevel|Charm Animal
 Power of the Animal	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Power of the Animal I|PREVAREQ:PowerOfTheAnimalLVL,1	SAB:Power of the Animal II|PREVAREQ:PowerOfTheAnimalLVL,2	SAB:Power of the Animal III|PREVAREQ:PowerOfTheAnimalLVL,3	DEFINE:PowerOfTheAnimalLVL|0
 Animal Form			CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Animal Form (Sp)|PREVAREQ:AnimalFormTimes,1	SAB:Animal Form (Sp) (3/day)|PREVAREQ|AnimalFormTimes,2	SAB:Animal Growth (Sp) (unlimited)|PREVAREQ|AnimalFormTimes,3		DEFINE:AnimalFormTimes|0	SPELLS:Class|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Form|PREVAREQ:AnimalFormTimes,1	SPELLS:Class|TIMES=3|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Form|PREVAREQ:AnimalFormTimes,2	SPELLS:Class|TIMES=ATWILL|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Form|PREVAREQ:AnimalFormTimes,3
 Animal Growth		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Animal Growth (Sp)|PREVAREQ:AnimalGrowthTimes,1	SAB:Animal Growth (Sp) (3/day)|PREVAREQ:AnimalGrowthTimes,3												DEFINE:AnimalGrowthTimes|0	SPELLS:Class|TIMES=AnimalGrowthTimes|CASTERLEVEL=10+var("CL=Animal Champion")|Animal Growth
@@ -158,8 +158,8 @@ Diseased Weapons	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Disea
 ###Block:Animal Champion ~ (Rhinoceros)	PREFEAT:1,Improved Overrun
 # Ability Name		Category of Ability		Type			Visible	Special ABility				Innate Spells
 Rhino's Charge		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Rhino's Charge (Ex)
-Rhino's Purifying Horn	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Rhino's Purifying Horn (Sp)	SPELLS:Class|TIMES=3|Neuralize Poison
-Rhino's Healing Horn	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Rhino's Healing Horn (Sp)		SPELLS:Class|TIMES=3|Cure Critical
+Rhino's Purifying Horn	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Rhino's Purifying Horn (Sp)	SPELLS:Class|TIMES=3|Neutralize Poison
+Rhino's Healing Horn	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Rhino's Healing Horn (Sp)		SPELLS:Class|TIMES=3|Cure Critical Wounds
 
 ###Block:Animal Champion ~ (Shark any)
 # Ability Name	Category of Ability		Type			Visible	Special ABility			Combat bonus				Bonus to skill
@@ -244,21 +244,12 @@ Whirling Sweep		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Whirli
 
 ###Block:Outlaw --------------------------------------------------------------------------------------
 
-# Ability Name					Category of Ability		Type			Visible	Special ABility			Modify VAR
-Forest Expertise					CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Forest Expertise (Ex)
-Longbow Feat					CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Longbow Feat
-Outlaw Fellowship					CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Outlaw Fellowship (Ex)
+# Ability Name	Category of Ability		Type			Visible	Special ABility			Modify VAR
+Forest Expertise	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Forest Expertise (Ex)
+Longbow Feat	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Longbow Feat
+Outlaw Fellowship	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Outlaw Fellowship (Ex)
 #Commonwealth of the Forest	CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Commonwealth of the Forest
-Outlaw King						CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Outlaw King (Ex)		BONUS:VAR|LeadershipScore|2
-
-CATEGORY=FEAT|Far Shot.MOD								TYPE:Longbow Feat
-CATEGORY=FEAT|Improved Critical.MOD							TYPE:Longbow Feat
-CATEGORY=FEAT|Improved Precise Shot.MOD						TYPE:Longbow Feat
-CATEGORY=FEAT|Manyshot.MOD								TYPE:Longbow Feat
-CATEGORY=FEAT|Precise Shot.MOD							TYPE:Longbow Feat
-CATEGORY=FEAT|Rapid Shot.MOD								TYPE:Longbow Feat
-CATEGORY=FEAT|Shot on the Run.MOD							TYPE:Longbow Feat
-
+Outlaw King		CATEGORY:Special Ability	TYPE:Class.Hidden	VISIBLE:NO	SAB:Outlaw King (Ex)		BONUS:VAR|LeadershipScore|2
 
 ###Block:Wild Hunter ---------------------------------------------------------------------------------------
 #CATEGORY:FEAT	TYPE:Class.Hidden	VISIBLE:NO	SAB:
