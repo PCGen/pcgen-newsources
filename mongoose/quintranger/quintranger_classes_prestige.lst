@@ -1,12 +1,12 @@
-# CVS $Revision$ $Author$ -- Mon Aug 25 17:53:15 2008 -- reformated by prettylst.pl v1.38 (build 7233)
+# CVS $Revision$ $Author$ -- Tue Aug 26 15:52:28 2008 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Mongoose Publishing - Quintessential Ranger	SOURCESHORT:QR	SOURCEWEB:http://mongoosepublishing.com	SOURCEDATE:2003-01
 #Original Entry by: Andrew Maitland
 
 
 ###Block:Animal Champion -----------------------------------------------------------------------------------------------------
 
-# Class Name		Hit Dice	Type			Abbreviation	Max Level	Subclass?		Base class as subclass?	Ex Class				Source Page		Save checks bonus												Combat bonus
-CLASS:Animal Champion	HD:8		TYPE:PC.Prestige	ABB:AC		MAXLEVEL:10	HASSUBCLASS:YES	ALLOWBASECLASS:NO		EXCLASS:Ex Animal Champion	SOURCEPAGE:pg.23	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Subclass?		Base class as subclass?	Ex Class				Source Page		Define			Save checks bonus												Combat bonus
+CLASS:Animal Champion	HD:8		TYPE:PC.Prestige	ABB:AC		MAXLEVEL:10	HASSUBCLASS:YES	ALLOWBASECLASS:NO		EXCLASS:Ex Animal Champion	SOURCEPAGE:pg.23	DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Required AL		Req. Att.	Required Feat
 CLASS:Animal Champion	PREALIGN:TN,NG	PREATT:10	PREFEAT:1,Animal Affinity
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -48,7 +48,7 @@ SUBCLASS:Animal Champion ~ (Croodile any)						COST:0	PREFEAT:1,Toughness
 SUBCLASSLEVEL:3						ABILITY:Special Ability|AUTOMATIC|Crocodile's Ambush
 SUBCLASSLEVEL:6						ABILITY:Special Ability|AUTOMATIC|Crocodile's Scales
 SUBCLASSLEVEL:9						ABILITY:Special Ability|AUTOMATIC|Crocodile Tears
-SUBCLASS:Animal Champion ~ (Dinosaur any)						COST:0												PREMULT:2,[PREFEAT:1,Power Attack],[PREFEAT:1,Improved Sunder]
+SUBCLASS:Animal Champion ~ (Dinosaur any)						COST:0	PREFEAT:2,Power Attack,Improved Sunder
 SUBCLASSLEVEL:3						ABILITY:Special Ability|AUTOMATIC|Dinosaur Sunder
 SUBCLASSLEVEL:6						ABILITY:Special Ability|AUTOMATIC|Dinosaur Strength
 SUBCLASSLEVEL:9						ABILITY:Special Ability|AUTOMATIC|Terrible Lizard
@@ -141,7 +141,7 @@ SUBCLASSLEVEL:9						ABILITY:Special Ability|AUTOMATIC|Wolverine's Fearlessness
 1	AUTO:FEAT|Armor Proficiency (Light)
 1	AUTO:FEAT|Shield Proficiency
 ###Block: Level Abilities
-1	BONUS:VAR|CompLevel|CL							ABILITY:Special Ability|AUTOMATIC|Animal Friendship|Chosen Species|Animal Companion
+1	BONUS:VAR|CompLevel|CL							ABILITY:Special Ability|AUTOMATIC|Animal Friendship|Chosen Species|Animal Champion Companion
 2											ABILITY:Special Ability|AUTOMATIC|Charm Animal
 3	BONUS:VAR|PowerOfTheAnimalLVL|1					ABILITY:Special Ability|AUTOMATIC|Power of the Animal
 4											ABILITY:Special Ability|AUTOMATIC|Animal Form
