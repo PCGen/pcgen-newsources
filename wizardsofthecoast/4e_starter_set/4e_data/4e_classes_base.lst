@@ -1,0 +1,23 @@
+# CVS $Revision$ $Author$ -- Mon Sep 22 13:04:41 2008 -- reformated by prettylst.pl v1.38 (build 7302)
+SOURCELONG:Starter Set for 4th Ed fun	SOURCESHORT:4e_SK	
+# Original Entry by: Andrew Maitland, Tir-Gwaith
+#
+
+
+###Block: Monkey Warrior ------------------------------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Save checks bonus
+CLASS:Monkey Warrior	HD:1		TYPE:Base.PC	BONUS:CHECKS|Will|1|TYPE=Class
+# Class Name	Multiple Requirements
+CLASS:Monkey Warrior	PREMULT:1,[PRECLASS:1,Monkey Warrior=1],[!PRECLASS:1,ANY]
+1								BONUS:HP|CURRENTMAX|80+CONSCORE
+2								BONUS:HP|CURRENTMAX|(CL-1)*15
+1														BONUS:VAR|HealingSurges|20+CON|TYPE=Class
+1
+1	BONUS:ABILITYPOOL|Monkey Class Skills|1														ABILITY:FEAT|AUTOMATIC|Skill Training (Vine Swinging)
+1																																					TEMPLATE:ClassGrantedTotalLevels
+1																					ABILITY:Special Ability|AUTOMATIC|Monkey Weapon Proficiencies
+
+
+###Block: Next Class ----------------------------------------------------------------------------------------------------------------
+
