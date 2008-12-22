@@ -1,0 +1,321 @@
+# CVS $Revision: $ $Author: $ -- Sun Dec 21 20:59:26 2008 -- reformated by prettylst.pl v1.38 (build 7302)
+SOURCELONG:Elements of Magic (Revised)	SOURCESHORT:EOM	SOURCEWEB:http://www.enworld.org/index.php?page=enpublishing
+
+
+
+
+###Block: Boons ---------------------------------------------------------------------------
+#Block: Minor Boons
+# Ability Name			Output Name				Category of Ability	Type				Visible		Required Vision			Prohibited Vision				Special ABility			Description							Stackable?	Multiple?	Choose							Add 												Bonus to Ability Pool			Save checks bonus					Combat bonus		Bonus to skill rank	Vision			Source Page
+Bonus Feat									CATEGORY:Magical Boon	TYPE:Minor Boon		VISIBLE:YES																		DESC:Boo							STACK:YES	MULT:YES	CHOOSE:NOCHOICE						ADD:ABILITY|FEAT|NORMAL|TYPE.Metamagic,TYPE.ItemCreation,TYPE.Tradition																										SOURCEPAGE:1
+Resist Fear									CATEGORY:Magical Boon	TYPE:Minor Boon		VISIBLE:YES													SAB:Resist Fear (Su)		DESC:Boo									MULT:NO																																														SOURCEPAGE:1
+Animal Speak								CATEGORY:Magical Boon	TYPE:Minor Boon		VISIBLE:YES													SAB:Animal Speak, %CHOICE	DESC:Boo									MULT:YES	CHOOSE:RACE|RACETYPE=Animal																																									SOURCEPAGE:1
+Magically Empowered							CATEGORY:Magical Boon	TYPE:Minor Boon		VISIBLE:YES																		DESC:Boo									MULT:YES	CHOOSE:SKILLSNAMED|TYPE.Strength|TYPE.Dexterity																														BONUS:SKILLRANK|LIST|3					SOURCEPAGE:1
+Minor Energy Resistance							CATEGORY:Magical Boon	TYPE:Minor Boon		VISIBLE:YES																		DESC:Boo									MULT:YES	CHOOSE:NOCHOICE																																											SOURCEPAGE:1
+
+
+
+#Block: Moderate Boons
+Uncanny Vision								CATEGORY:Magical Boon	TYPE:Moderate Boon									!PREVISION:1,Darkvision																STACK:YES	MULT:YES	CHOOSE:FEATADD|TYPE.BonusVision																																								SOURCEPAGE:1
+
+
+
+Uncanny Vision 1			OUTPUTNAME:Special Sight	CATEGORY:FEAT		TYPE:Hidden.BonusVision	VISIBLE:NO							!PREVISION:2,Low-Light,Darkvision																																																											VISION:Low-Light		SOURCEPAGE:1
+Uncanny Vision 2			OUTPUTNAME:Special Sight	CATEGORY:FEAT		TYPE:Hidden.BonusVision	VISIBLE:NO		PREVISION:1,Low-Light																																																																		VISION:Darkvision (30')	SOURCEPAGE:1
+Uncanny Vision 3			OUTPUTNAME:Special Sight	CATEGORY:FEAT		TYPE:Hidden.BonusVision	VISIBLE:NO		PREVISION:1,Darkvision=30																																																																	VISION:Darkvision (30')	SOURCEPAGE:1
+
+Two Minor Boons								CATEGORY:Magical Boon	TYPE:Moderate Boon	VISIBLE:YES													SAB:Animagus (Sp)			DESC:Foo																															BONUS:ABILITYPOOL|Minor Boon|2																				SOURCEPAGE:1
+
+
+Trackless Step (Su)							CATEGORY:Magical Boon	TYPE:Moderate Boon	VISIBLE:YES													SAB:Trackless Step (Su)		DESC:Foo									MULT:NO																																														SOURCEPAGE:1
+Magical Protection							CATEGORY:Magical Boon	TYPE:Moderate Boon	VISIBLE:YES																		DESC:Choose Intelligence, Wisdom, or Charisma.	STACK:NO	MULT:YES									ADD:FEAT|Magical Protection																																	SOURCEPAGE:1
+
+
+
+
+#Block: Major Boons
+Magical Protection ~ INT						CATEGORY:MagicalBoon	TYPE:Major Boon		VISIBLE:DISPLAY																																																							BONUS:CHECKS|ALL|INT|TYPE=Resistance													SOURCEPAGE:1
+Magical Protection ~ WIS						CATEGORY:MagicalBoon	TYPE:Major Boon		VISIBLE:DISPLAY																																																							BONUS:CHECKS|ALL|WIS|TYPE=Resistance													SOURCEPAGE:1
+Magical Protection ~ CHA						CATEGORY:MagicalBoon	TYPE:Major Boon		VISIBLE:DISPLAY																																																							BONUS:CHECKS|ALL|CHA|TYPE=Resistance													SOURCEPAGE:1
+Magical Defenses ~ INT							CATEGORY:MagicalBoon	TYPE:Major Boon		VISIBLE:DISPLAY																																																														BONUS:COMBAT|AC|INT									SOURCEPAGE:1
+Magical Defenses ~ WIS							CATEGORY:MagicalBoon	TYPE:Major Boon		VISIBLE:DISPLAY																																																														BONUS:COMBAT|AC|WIS									SOURCEPAGE:1
+Magical Defenses ~ CHA							CATEGORY:MagicalBoon	TYPE:Major Boon		VISIBLE:DISPLAY																																																														BONUS:COMBAT|AC|CHA									SOURCEPAGE:1
+
+
+###Block: Spell Lists
+# Ability Name			Category of Ability	Type						Description	Source Page
+Abjure Water			CATEGORY:Spell Lists	TYPE:Abjure.Water				DESC:Foo	SOURCEPAGE:1
+Abjure Fire				CATEGORY:Spell Lists	TYPE:Abjure.Fire				DESC:Foo	SOURCEPAGE:1
+Abjure Earth			CATEGORY:Spell Lists	TYPE:Abjure.Earth				DESC:Foo	SOURCEPAGE:1
+Abjure Air				CATEGORY:Spell Lists	TYPE:Abjure.Air				DESC:Foo	SOURCEPAGE:1
+Abjure Death			CATEGORY:Spell Lists	TYPE:Abjure.Death				DESC:Foo	SOURCEPAGE:1
+Abjure Life				CATEGORY:Spell Lists	TYPE:Abjure.Life				DESC:Foo	SOURCEPAGE:1
+Abjure Lava				CATEGORY:Spell Lists	TYPE:Abjure.Lava				DESC:Foo	SOURCEPAGE:1
+Abjure Lightning			CATEGORY:Spell Lists	TYPE:Abjure.Lightning			DESC:Foo	SOURCEPAGE:1
+Abjure Mist				CATEGORY:Spell Lists	TYPE:Abjure.Mist				DESC:Foo	SOURCEPAGE:1
+Abjure Ooze				CATEGORY:Spell Lists	TYPE:Abjure.Ooze				DESC:Foo	SOURCEPAGE:1
+Abjure Acid				CATEGORY:Spell Lists	TYPE:Abjure.Acid				DESC:Foo	SOURCEPAGE:1
+Abjure Metal			CATEGORY:Spell Lists	TYPE:Abjure.Metal				DESC:Foo	SOURCEPAGE:1
+Abjure Shadow			CATEGORY:Spell Lists	TYPE:Abjure.Shadow			DESC:Foo	SOURCEPAGE:1
+Abjure Void				CATEGORY:Spell Lists	TYPE:Abjure.Void				DESC:Foo	SOURCEPAGE:1
+Abjure Crystal			CATEGORY:Spell Lists	TYPE:Abjure.Crystal			DESC:Foo	SOURCEPAGE:1
+Abjure Ice				CATEGORY:Spell Lists	TYPE:Abjure.Ice				DESC:Foo	SOURCEPAGE:1
+Abjure Light			CATEGORY:Spell Lists	TYPE:Abjure.Light				DESC:Foo	SOURCEPAGE:1
+Abjure Sound			CATEGORY:Spell Lists	TYPE:Abjure.Sound				DESC:Foo	SOURCEPAGE:1
+Abjure Force			CATEGORY:Spell Lists	TYPE:Abjure.Force				DESC:Foo	SOURCEPAGE:1
+Abjure Nature			CATEGORY:Spell Lists	TYPE:Abjure.Nature			DESC:Foo	SOURCEPAGE:1
+Abjure Space			CATEGORY:Spell Lists	TYPE:Abjure.Space				DESC:Foo	SOURCEPAGE:1
+Abjure Time				CATEGORY:Spell Lists	TYPE:Abjure.Time				DESC:Foo	SOURCEPAGE:1
+Abjure Aberration			CATEGORY:Spell Lists	TYPE:Abjure.Aberration			DESC:Foo	SOURCEPAGE:1
+Abjure Animal			CATEGORY:Spell Lists	TYPE:Abjure.Animal			DESC:Foo	SOURCEPAGE:1
+Abjure Construct			CATEGORY:Spell Lists	TYPE:Abjure.Construct			DESC:Foo	SOURCEPAGE:1
+Abjure Dragon			CATEGORY:Spell Lists	TYPE:Abjure.Dragon			DESC:Foo	SOURCEPAGE:1
+Abjure Elemental			CATEGORY:Spell Lists	TYPE:Abjure.Elemental			DESC:Foo	SOURCEPAGE:1
+Abjure Fey				CATEGORY:Spell Lists	TYPE:Abjure.Fey				DESC:Foo	SOURCEPAGE:1
+Abjure Giant			CATEGORY:Spell Lists	TYPE:Abjure.Giant				DESC:Foo	SOURCEPAGE:1
+Abjure Humanoid			CATEGORY:Spell Lists	TYPE:Abjure.Humanoid			DESC:Foo	SOURCEPAGE:1
+Abjure Magical Beast		CATEGORY:Spell Lists	TYPE:Abjure.Magical Beast		DESC:Foo	SOURCEPAGE:1
+Abjure Monstrous Humanoid	CATEGORY:Spell Lists	TYPE:Abjure.Monstrous Humanoid	DESC:Foo	SOURCEPAGE:1
+Abjure Outsider			CATEGORY:Spell Lists	TYPE:Abjure.Outsider			DESC:Foo	SOURCEPAGE:1
+Abjure Plant			CATEGORY:Spell Lists	TYPE:Abjure.Plant				DESC:Foo	SOURCEPAGE:1
+Abjure Undead			CATEGORY:Spell Lists	TYPE:Abjure.Undead			DESC:Foo	SOURCEPAGE:1
+Abjure Vermin			CATEGORY:Spell Lists	TYPE:Abjure.Vermin			DESC:Foo	SOURCEPAGE:1
+Abjure Good				CATEGORY:Spell Lists	TYPE:Abjure.Good				DESC:Foo	SOURCEPAGE:1
+Abjure Law				CATEGORY:Spell Lists	TYPE:Abjure.Law				DESC:Foo	SOURCEPAGE:1
+Abjure Balance			CATEGORY:Spell Lists	TYPE:Abjure.Balance			DESC:Foo	SOURCEPAGE:1
+Abjure Evil				CATEGORY:Spell Lists	TYPE:Abjure.Evil				DESC:Foo	SOURCEPAGE:1
+Abjure Chaos			CATEGORY:Spell Lists	TYPE:Abjure.Chaos				DESC:Foo	SOURCEPAGE:1
+Charm Aberration			CATEGORY:Spell Lists	TYPE:Charm.Aberration			DESC:Foo	SOURCEPAGE:1
+Charm Animal			CATEGORY:Spell Lists	TYPE:Charm.Animal				DESC:Foo	SOURCEPAGE:1
+Charm Construct			CATEGORY:Spell Lists	TYPE:Charm.Construct			DESC:Foo	SOURCEPAGE:1
+Charm Dragon			CATEGORY:Spell Lists	TYPE:Charm.Dragon				DESC:Foo	SOURCEPAGE:1
+Charm Elemental			CATEGORY:Spell Lists	TYPE:Charm.Elemental			DESC:Foo	SOURCEPAGE:1
+Charm Fey				CATEGORY:Spell Lists	TYPE:Charm.Fey				DESC:Foo	SOURCEPAGE:1
+Charm Giant				CATEGORY:Spell Lists	TYPE:Charm.Giant				DESC:Foo	SOURCEPAGE:1
+Charm Humanoid			CATEGORY:Spell Lists	TYPE:Charm.Humanoid			DESC:Foo	SOURCEPAGE:1
+Charm Magical Beast		CATEGORY:Spell Lists	TYPE:Charm.Magical Beast		DESC:Foo	SOURCEPAGE:1
+Charm Monstrous Humanoid	CATEGORY:Spell Lists	TYPE:Charm.Monstrous Humanoid		DESC:Foo	SOURCEPAGE:1
+Charm Ooze				CATEGORY:Spell Lists	TYPE:Charm.Ooze				DESC:Foo	SOURCEPAGE:1
+Charm Outsider			CATEGORY:Spell Lists	TYPE:Charm.Outsider			DESC:Foo	SOURCEPAGE:1
+Charm Plant				CATEGORY:Spell Lists	TYPE:Charm.Plant				DESC:Foo	SOURCEPAGE:1
+Charm Undead			CATEGORY:Spell Lists	TYPE:Charm.Undead				DESC:Foo	SOURCEPAGE:1
+Charm Vermin			CATEGORY:Spell Lists	TYPE:Charm.Vermin				DESC:Foo	SOURCEPAGE:1
+Compel Aberration			CATEGORY:Spell Lists	TYPE:Compel.Aberration			DESC:Foo	SOURCEPAGE:1
+Compel Animal			CATEGORY:Spell Lists	TYPE:Compel.Animal			DESC:Foo	SOURCEPAGE:1
+Compel Construct			CATEGORY:Spell Lists	TYPE:Compel.Construct			DESC:Foo	SOURCEPAGE:1
+Compel Dragon			CATEGORY:Spell Lists	TYPE:Compel.Dragon			DESC:Foo	SOURCEPAGE:1
+Compel Elemental			CATEGORY:Spell Lists	TYPE:Compel.Elemental			DESC:Foo	SOURCEPAGE:1
+Compel Fey				CATEGORY:Spell Lists	TYPE:Compel.Fey				DESC:Foo	SOURCEPAGE:1
+Compel Giant			CATEGORY:Spell Lists	TYPE:Compel.Giant				DESC:Foo	SOURCEPAGE:1
+Compel Humanoid			CATEGORY:Spell Lists	TYPE:Compel.Humanoid			DESC:Foo	SOURCEPAGE:1
+Compel Magical Beast		CATEGORY:Spell Lists	TYPE:Compel.Magical Beast		DESC:Foo	SOURCEPAGE:1
+Compel Monstrous Humanoid	CATEGORY:Spell Lists	TYPE:Compel.Monstrous Humanoid	DESC:Foo	SOURCEPAGE:1
+Compel Ooze				CATEGORY:Spell Lists	TYPE:Compel.Ooze				DESC:Foo	SOURCEPAGE:1
+Compel Outsider			CATEGORY:Spell Lists	TYPE:Compel.Outsider			DESC:Foo	SOURCEPAGE:1
+Compel Plant			CATEGORY:Spell Lists	TYPE:Compel.Plant				DESC:Foo	SOURCEPAGE:1
+Compel Undead			CATEGORY:Spell Lists	TYPE:Compel.Undead			DESC:Foo	SOURCEPAGE:1
+Compel Vermin			CATEGORY:Spell Lists	TYPE:Compel.Vermin			DESC:Foo	SOURCEPAGE:1
+Create Water			CATEGORY:Spell Lists	TYPE:Create.Water				DESC:Foo	SOURCEPAGE:1
+Create Fire				CATEGORY:Spell Lists	TYPE:Create.Fire				DESC:Foo	SOURCEPAGE:1
+Create Earth			CATEGORY:Spell Lists	TYPE:Create.Earth				DESC:Foo	SOURCEPAGE:1
+Create Air				CATEGORY:Spell Lists	TYPE:Create.Air				DESC:Foo	SOURCEPAGE:1
+Create Death			CATEGORY:Spell Lists	TYPE:Create.Death				DESC:Foo	SOURCEPAGE:1
+Create Life				CATEGORY:Spell Lists	TYPE:Create.Life				DESC:Foo	SOURCEPAGE:1
+Create Lava				CATEGORY:Spell Lists	TYPE:Create.Lava				DESC:Foo	SOURCEPAGE:1
+Create Lightning			CATEGORY:Spell Lists	TYPE:Create.Lightning			DESC:Foo	SOURCEPAGE:1
+Create Mist				CATEGORY:Spell Lists	TYPE:Create.Mist				DESC:Foo	SOURCEPAGE:1
+Create Ooze				CATEGORY:Spell Lists	TYPE:Create.Ooze				DESC:Foo	SOURCEPAGE:1
+Create Acid				CATEGORY:Spell Lists	TYPE:Create.Acid				DESC:Foo	SOURCEPAGE:1
+Create Metal			CATEGORY:Spell Lists	TYPE:Create.Metal				DESC:Foo	SOURCEPAGE:1
+Create Shadow			CATEGORY:Spell Lists	TYPE:Create.Shadow			DESC:Foo	SOURCEPAGE:1
+Create Void				CATEGORY:Spell Lists	TYPE:Create.Void				DESC:Foo	SOURCEPAGE:1
+Create Crystal			CATEGORY:Spell Lists	TYPE:Create.Crystal			DESC:Foo	SOURCEPAGE:1
+Create Ice				CATEGORY:Spell Lists	TYPE:Create.Ice				DESC:Foo	SOURCEPAGE:1
+Create Light			CATEGORY:Spell Lists	TYPE:Create.Light				DESC:Foo	SOURCEPAGE:1
+Create Sound			CATEGORY:Spell Lists	TYPE:Create.Sound				DESC:Foo	SOURCEPAGE:1
+Create Force			CATEGORY:Spell Lists	TYPE:Create.Force				DESC:Foo	SOURCEPAGE:1
+Create Nature			CATEGORY:Spell Lists	TYPE:Create.Nature			DESC:Foo	SOURCEPAGE:1
+Create Space			CATEGORY:Spell Lists	TYPE:Create.Space				DESC:Foo	SOURCEPAGE:1
+Create Time				CATEGORY:Spell Lists	TYPE:Create.Time				DESC:Foo	SOURCEPAGE:1
+Evoke Water				CATEGORY:Spell Lists	TYPE:Evoke.Water				DESC:Foo	SOURCEPAGE:1
+Evoke Fire				CATEGORY:Spell Lists	TYPE:Evoke.Fire				DESC:Foo	SOURCEPAGE:1
+Evoke Earth				CATEGORY:Spell Lists	TYPE:Evoke.Earth				DESC:Foo	SOURCEPAGE:1
+Evoke Air				CATEGORY:Spell Lists	TYPE:Evoke.Air				DESC:Foo	SOURCEPAGE:1
+Evoke Death				CATEGORY:Spell Lists	TYPE:Evoke.Death				DESC:Foo	SOURCEPAGE:1
+Evoke Life				CATEGORY:Spell Lists	TYPE:Evoke.Life				DESC:Foo	SOURCEPAGE:1
+Evoke Lava				CATEGORY:Spell Lists	TYPE:Evoke.Lava				DESC:Foo	SOURCEPAGE:1
+Evoke Lightning			CATEGORY:Spell Lists	TYPE:Evoke.Lightning			DESC:Foo	SOURCEPAGE:1
+Evoke Mist				CATEGORY:Spell Lists	TYPE:Evoke.Mist				DESC:Foo	SOURCEPAGE:1
+Evoke Ooze				CATEGORY:Spell Lists	TYPE:Evoke.Ooze				DESC:Foo	SOURCEPAGE:1
+Evoke Acid				CATEGORY:Spell Lists	TYPE:Evoke.Acid				DESC:Foo	SOURCEPAGE:1
+Evoke Metal				CATEGORY:Spell Lists	TYPE:Evoke.Metal				DESC:Foo	SOURCEPAGE:1
+Evoke Shadow			CATEGORY:Spell Lists	TYPE:Evoke.Shadow				DESC:Foo	SOURCEPAGE:1
+Evoke Void				CATEGORY:Spell Lists	TYPE:Evoke.Void				DESC:Foo	SOURCEPAGE:1
+Evoke Crystal			CATEGORY:Spell Lists	TYPE:Evoke.Crystal			DESC:Foo	SOURCEPAGE:1
+Evoke Ice				CATEGORY:Spell Lists	TYPE:Evoke.Ice				DESC:Foo	SOURCEPAGE:1
+Evoke Light				CATEGORY:Spell Lists	TYPE:Evoke.Light				DESC:Foo	SOURCEPAGE:1
+Evoke Sound				CATEGORY:Spell Lists	TYPE:Evoke.Sound				DESC:Foo	SOURCEPAGE:1
+Evoke Force				CATEGORY:Spell Lists	TYPE:Evoke.Force				DESC:Foo	SOURCEPAGE:1
+Evoke Nature			CATEGORY:Spell Lists	TYPE:Evoke.Nature				DESC:Foo	SOURCEPAGE:1
+Evoke Space				CATEGORY:Spell Lists	TYPE:Evoke.Space				DESC:Foo	SOURCEPAGE:1
+Evoke Time				CATEGORY:Spell Lists	TYPE:Evoke.Time				DESC:Foo	SOURCEPAGE:1
+Evoke Good				CATEGORY:Spell Lists	TYPE:Evoke.Good				DESC:Foo	SOURCEPAGE:1
+Evoke Law				CATEGORY:Spell Lists	TYPE:Evoke.Law				DESC:Foo	SOURCEPAGE:1
+Evoke Balance			CATEGORY:Spell Lists	TYPE:Evoke.Balance			DESC:Foo	SOURCEPAGE:1
+Evoke Evil				CATEGORY:Spell Lists	TYPE:Evoke.Evil				DESC:Foo	SOURCEPAGE:1
+Evoke Chaos				CATEGORY:Spell Lists	TYPE:Evoke.Chaos				DESC:Foo	SOURCEPAGE:1
+Heal Water				CATEGORY:Spell Lists	TYPE:Heal.Water				DESC:Foo	SOURCEPAGE:1
+Heal Fire				CATEGORY:Spell Lists	TYPE:Heal.Fire				DESC:Foo	SOURCEPAGE:1
+Heal Earth				CATEGORY:Spell Lists	TYPE:Heal.Earth				DESC:Foo	SOURCEPAGE:1
+Heal Air				CATEGORY:Spell Lists	TYPE:Heal.Air				DESC:Foo	SOURCEPAGE:1
+Heal Death				CATEGORY:Spell Lists	TYPE:Heal.Death				DESC:Foo	SOURCEPAGE:1
+Heal Life				CATEGORY:Spell Lists	TYPE:Heal.Life				DESC:Foo	SOURCEPAGE:1
+Heal Lava				CATEGORY:Spell Lists	TYPE:Heal.Lava				DESC:Foo	SOURCEPAGE:1
+Heal Lightning			CATEGORY:Spell Lists	TYPE:Heal.Lightning			DESC:Foo	SOURCEPAGE:1
+Heal Mist				CATEGORY:Spell Lists	TYPE:Heal.Mist				DESC:Foo	SOURCEPAGE:1
+Heal Ooze				CATEGORY:Spell Lists	TYPE:Heal.Ooze				DESC:Foo	SOURCEPAGE:1
+Heal Acid				CATEGORY:Spell Lists	TYPE:Heal.Acid				DESC:Foo	SOURCEPAGE:1
+Heal Metal				CATEGORY:Spell Lists	TYPE:Heal.Metal				DESC:Foo	SOURCEPAGE:1
+Heal Shadow				CATEGORY:Spell Lists	TYPE:Heal.Shadow				DESC:Foo	SOURCEPAGE:1
+Heal Void				CATEGORY:Spell Lists	TYPE:Heal.Void				DESC:Foo	SOURCEPAGE:1
+Heal Crystal			CATEGORY:Spell Lists	TYPE:Heal.Crystal				DESC:Foo	SOURCEPAGE:1
+Heal Ice				CATEGORY:Spell Lists	TYPE:Heal.Ice				DESC:Foo	SOURCEPAGE:1
+Heal Light				CATEGORY:Spell Lists	TYPE:Heal.Light				DESC:Foo	SOURCEPAGE:1
+Heal Sound				CATEGORY:Spell Lists	TYPE:Heal.Sound				DESC:Foo	SOURCEPAGE:1
+Heal Force				CATEGORY:Spell Lists	TYPE:Heal.Force				DESC:Foo	SOURCEPAGE:1
+Heal Nature				CATEGORY:Spell Lists	TYPE:Heal.Nature				DESC:Foo	SOURCEPAGE:1
+Heal Space				CATEGORY:Spell Lists	TYPE:Heal.Space				DESC:Foo	SOURCEPAGE:1
+Heal Time				CATEGORY:Spell Lists	TYPE:Heal.Time				DESC:Foo	SOURCEPAGE:1
+Heal Good				CATEGORY:Spell Lists	TYPE:Heal.Good				DESC:Foo	SOURCEPAGE:1
+Heal Law				CATEGORY:Spell Lists	TYPE:Heal.Law				DESC:Foo	SOURCEPAGE:1
+Heal Balance			CATEGORY:Spell Lists	TYPE:Heal.Balance				DESC:Foo	SOURCEPAGE:1
+Heal Evil				CATEGORY:Spell Lists	TYPE:Heal.Evil				DESC:Foo	SOURCEPAGE:1
+Heal Chaos				CATEGORY:Spell Lists	TYPE:Heal.Chaos				DESC:Foo	SOURCEPAGE:1
+Illusion Water			CATEGORY:Spell Lists	TYPE:Illusion.Water			DESC:Foo	SOURCEPAGE:1
+Illusion Fire			CATEGORY:Spell Lists	TYPE:Illusion.Fire			DESC:Foo	SOURCEPAGE:1
+Illusion Earth			CATEGORY:Spell Lists	TYPE:Illusion.Earth			DESC:Foo	SOURCEPAGE:1
+Illusion Air			CATEGORY:Spell Lists	TYPE:Illusion.Air				DESC:Foo	SOURCEPAGE:1
+Illusion Death			CATEGORY:Spell Lists	TYPE:Illusion.Death			DESC:Foo	SOURCEPAGE:1
+Illusion Life			CATEGORY:Spell Lists	TYPE:Illusion.Life			DESC:Foo	SOURCEPAGE:1
+Illusion Lava			CATEGORY:Spell Lists	TYPE:Illusion.Lava			DESC:Foo	SOURCEPAGE:1
+Illusion Lightning		CATEGORY:Spell Lists	TYPE:Illusion.Lightning			DESC:Foo	SOURCEPAGE:1
+Illusion Mist			CATEGORY:Spell Lists	TYPE:Illusion.Mist			DESC:Foo	SOURCEPAGE:1
+Illusion Ooze			CATEGORY:Spell Lists	TYPE:Illusion.Ooze			DESC:Foo	SOURCEPAGE:1
+Illusion Acid			CATEGORY:Spell Lists	TYPE:Illusion.Acid			DESC:Foo	SOURCEPAGE:1
+Illusion Metal			CATEGORY:Spell Lists	TYPE:Illusion.Metal			DESC:Foo	SOURCEPAGE:1
+Illusion Shadow			CATEGORY:Spell Lists	TYPE:Illusion.Shadow			DESC:Foo	SOURCEPAGE:1
+Illusion Void			CATEGORY:Spell Lists	TYPE:Illusion.Void			DESC:Foo	SOURCEPAGE:1
+Illusion Crystal			CATEGORY:Spell Lists	TYPE:Illusion.Crystal			DESC:Foo	SOURCEPAGE:1
+Illusion Ice			CATEGORY:Spell Lists	TYPE:Illusion.Ice				DESC:Foo	SOURCEPAGE:1
+Illusion Light			CATEGORY:Spell Lists	TYPE:Illusion.Light			DESC:Foo	SOURCEPAGE:1
+Illusion Sound			CATEGORY:Spell Lists	TYPE:Illusion.Sound			DESC:Foo	SOURCEPAGE:1
+Illusion Force			CATEGORY:Spell Lists	TYPE:Illusion.Force			DESC:Foo	SOURCEPAGE:1
+Illusion Nature			CATEGORY:Spell Lists	TYPE:Illusion.Nature			DESC:Foo	SOURCEPAGE:1
+Illusion Space			CATEGORY:Spell Lists	TYPE:Illusion.Space			DESC:Foo	SOURCEPAGE:1
+Illusion Time			CATEGORY:Spell Lists	TYPE:Illusion.Time			DESC:Foo	SOURCEPAGE:1
+Infuse Water			CATEGORY:Spell Lists	TYPE:Infuse.Water				DESC:Foo	SOURCEPAGE:1
+Infuse Fire				CATEGORY:Spell Lists	TYPE:Infuse.Fire				DESC:Foo	SOURCEPAGE:1
+Infuse Earth			CATEGORY:Spell Lists	TYPE:Infuse.Earth				DESC:Foo	SOURCEPAGE:1
+Infuse Air				CATEGORY:Spell Lists	TYPE:Infuse.Air				DESC:Foo	SOURCEPAGE:1
+Infuse Death			CATEGORY:Spell Lists	TYPE:Infuse.Death				DESC:Foo	SOURCEPAGE:1
+Infuse Life				CATEGORY:Spell Lists	TYPE:Infuse.Life				DESC:Foo	SOURCEPAGE:1
+Infuse Lava				CATEGORY:Spell Lists	TYPE:Infuse.Lava				DESC:Foo	SOURCEPAGE:1
+Infuse Lightning			CATEGORY:Spell Lists	TYPE:Infuse.Lightning			DESC:Foo	SOURCEPAGE:1
+Infuse Mist				CATEGORY:Spell Lists	TYPE:Infuse.Mist				DESC:Foo	SOURCEPAGE:1
+Infuse Ooze				CATEGORY:Spell Lists	TYPE:Infuse.Ooze				DESC:Foo	SOURCEPAGE:1
+Infuse Acid				CATEGORY:Spell Lists	TYPE:Infuse.Acid				DESC:Foo	SOURCEPAGE:1
+Infuse Metal			CATEGORY:Spell Lists	TYPE:Infuse.Metal				DESC:Foo	SOURCEPAGE:1
+Infuse Shadow			CATEGORY:Spell Lists	TYPE:Infuse.Shadow			DESC:Foo	SOURCEPAGE:1
+Infuse Void				CATEGORY:Spell Lists	TYPE:Infuse.Void				DESC:Foo	SOURCEPAGE:1
+Infuse Crystal			CATEGORY:Spell Lists	TYPE:Infuse.Crystal			DESC:Foo	SOURCEPAGE:1
+Infuse Ice				CATEGORY:Spell Lists	TYPE:Infuse.Ice				DESC:Foo	SOURCEPAGE:1
+Infuse Light			CATEGORY:Spell Lists	TYPE:Infuse.Light				DESC:Foo	SOURCEPAGE:1
+Infuse Sound			CATEGORY:Spell Lists	TYPE:Infuse.Sound				DESC:Foo	SOURCEPAGE:1
+Infuse Force			CATEGORY:Spell Lists	TYPE:Infuse.Force				DESC:Foo	SOURCEPAGE:1
+Infuse Nature			CATEGORY:Spell Lists	TYPE:Infuse.Nature			DESC:Foo	SOURCEPAGE:1
+Infuse Space			CATEGORY:Spell Lists	TYPE:Infuse.Space				DESC:Foo	SOURCEPAGE:1
+Infuse Time				CATEGORY:Spell Lists	TYPE:Infuse.Time				DESC:Foo	SOURCEPAGE:1
+Infuse Good				CATEGORY:Spell Lists	TYPE:Infuse.Good				DESC:Foo	SOURCEPAGE:1
+Infuse Law				CATEGORY:Spell Lists	TYPE:Infuse.Law				DESC:Foo	SOURCEPAGE:1
+Infuse Balance			CATEGORY:Spell Lists	TYPE:Infuse.Balance			DESC:Foo	SOURCEPAGE:1
+Infuse Evil				CATEGORY:Spell Lists	TYPE:Infuse.Evil				DESC:Foo	SOURCEPAGE:1
+Infuse Chaos			CATEGORY:Spell Lists	TYPE:Infuse.Chaos				DESC:Foo	SOURCEPAGE:1
+Move Water				CATEGORY:Spell Lists	TYPE:Move.Water				DESC:Foo	SOURCEPAGE:1
+Move Fire				CATEGORY:Spell Lists	TYPE:Move.Fire				DESC:Foo	SOURCEPAGE:1
+Move Earth				CATEGORY:Spell Lists	TYPE:Move.Earth				DESC:Foo	SOURCEPAGE:1
+Move Air				CATEGORY:Spell Lists	TYPE:Move.Air				DESC:Foo	SOURCEPAGE:1
+Move Death				CATEGORY:Spell Lists	TYPE:Move.Death				DESC:Foo	SOURCEPAGE:1
+Move Life				CATEGORY:Spell Lists	TYPE:Move.Life				DESC:Foo	SOURCEPAGE:1
+Move Lava				CATEGORY:Spell Lists	TYPE:Move.Lava				DESC:Foo	SOURCEPAGE:1
+Move Lightning			CATEGORY:Spell Lists	TYPE:Move.Lightning			DESC:Foo	SOURCEPAGE:1
+Move Mist				CATEGORY:Spell Lists	TYPE:Move.Mist				DESC:Foo	SOURCEPAGE:1
+Move Ooze				CATEGORY:Spell Lists	TYPE:Move.Ooze				DESC:Foo	SOURCEPAGE:1
+Move Acid				CATEGORY:Spell Lists	TYPE:Move.Acid				DESC:Foo	SOURCEPAGE:1
+Move Metal				CATEGORY:Spell Lists	TYPE:Move.Metal				DESC:Foo	SOURCEPAGE:1
+Move Shadow				CATEGORY:Spell Lists	TYPE:Move.Shadow				DESC:Foo	SOURCEPAGE:1
+Move Void				CATEGORY:Spell Lists	TYPE:Move.Void				DESC:Foo	SOURCEPAGE:1
+Move Crystal			CATEGORY:Spell Lists	TYPE:Move.Crystal				DESC:Foo	SOURCEPAGE:1
+Move Ice				CATEGORY:Spell Lists	TYPE:Move.Ice				DESC:Foo	SOURCEPAGE:1
+Move Light				CATEGORY:Spell Lists	TYPE:Move.Light				DESC:Foo	SOURCEPAGE:1
+Move Sound				CATEGORY:Spell Lists	TYPE:Move.Sound				DESC:Foo	SOURCEPAGE:1
+Move Force				CATEGORY:Spell Lists	TYPE:Move.Force				DESC:Foo	SOURCEPAGE:1
+Move Nature				CATEGORY:Spell Lists	TYPE:Move.Nature				DESC:Foo	SOURCEPAGE:1
+Move Space				CATEGORY:Spell Lists	TYPE:Move.Space				DESC:Foo	SOURCEPAGE:1
+Move Time				CATEGORY:Spell Lists	TYPE:Move.Time				DESC:Foo	SOURCEPAGE:1
+Summon Aberration			CATEGORY:Spell Lists	TYPE:Summon.Aberration			DESC:Foo	SOURCEPAGE:1
+Summon Animal			CATEGORY:Spell Lists	TYPE:Summon.Animal			DESC:Foo	SOURCEPAGE:1
+Summon Construct			CATEGORY:Spell Lists	TYPE:Summon.Construct			DESC:Foo	SOURCEPAGE:1
+Summon Dragon			CATEGORY:Spell Lists	TYPE:Summon.Dragon			DESC:Foo	SOURCEPAGE:1
+Summon Elemental			CATEGORY:Spell Lists	TYPE:Summon.Elemental			DESC:Foo	SOURCEPAGE:1
+Summon Fey				CATEGORY:Spell Lists	TYPE:Summon.Fey				DESC:Foo	SOURCEPAGE:1
+Summon Giant			CATEGORY:Spell Lists	TYPE:Summon.Giant				DESC:Foo	SOURCEPAGE:1
+Summon Humanoid			CATEGORY:Spell Lists	TYPE:Summon.Humanoid			DESC:Foo	SOURCEPAGE:1
+Summon Magical Beast		CATEGORY:Spell Lists	TYPE:Summon.Magical Beast		DESC:Foo	SOURCEPAGE:1
+Summon Monstrous Humanoid	CATEGORY:Spell Lists	TYPE:Summon.Monstrous Humanoid	DESC:Foo	SOURCEPAGE:1
+Summon Ooze				CATEGORY:Spell Lists	TYPE:Summon.Ooze				DESC:Foo	SOURCEPAGE:1
+Summon Outsider			CATEGORY:Spell Lists	TYPE:Summon.Outsider			DESC:Foo	SOURCEPAGE:1
+Summon Plant			CATEGORY:Spell Lists	TYPE:Summon.Plant				DESC:Foo	SOURCEPAGE:1
+Summon Undead			CATEGORY:Spell Lists	TYPE:Summon.Undead			DESC:Foo	SOURCEPAGE:1
+Summon Vermin			CATEGORY:Spell Lists	TYPE:Summon.Vermin			DESC:Foo	SOURCEPAGE:1
+Transform Water			CATEGORY:Spell Lists	TYPE:Transform.Water			DESC:Foo	SOURCEPAGE:1
+Transform Fire			CATEGORY:Spell Lists	TYPE:Transform.Fire			DESC:Foo	SOURCEPAGE:1
+Transform Earth			CATEGORY:Spell Lists	TYPE:Transform.Earth			DESC:Foo	SOURCEPAGE:1
+Transform Air			CATEGORY:Spell Lists	TYPE:Transform.Air			DESC:Foo	SOURCEPAGE:1
+Transform Death			CATEGORY:Spell Lists	TYPE:Transform.Death			DESC:Foo	SOURCEPAGE:1
+Transform Life			CATEGORY:Spell Lists	TYPE:Transform.Life			DESC:Foo	SOURCEPAGE:1
+Transform Lava			CATEGORY:Spell Lists	TYPE:Transform.Lava			DESC:Foo	SOURCEPAGE:1
+Transform Lightning		CATEGORY:Spell Lists	TYPE:Transform.Lightning		DESC:Foo	SOURCEPAGE:1
+Transform Mist			CATEGORY:Spell Lists	TYPE:Transform.Mist			DESC:Foo	SOURCEPAGE:1
+Transform Ooze			CATEGORY:Spell Lists	TYPE:Transform.Ooze			DESC:Foo	SOURCEPAGE:1
+Transform Acid			CATEGORY:Spell Lists	TYPE:Transform.Acid			DESC:Foo	SOURCEPAGE:1
+Transform Metal			CATEGORY:Spell Lists	TYPE:Transform.Metal			DESC:Foo	SOURCEPAGE:1
+Transform Shadow			CATEGORY:Spell Lists	TYPE:Transform.Shadow			DESC:Foo	SOURCEPAGE:1
+Transform Void			CATEGORY:Spell Lists	TYPE:Transform.Void			DESC:Foo	SOURCEPAGE:1
+Transform Crystal			CATEGORY:Spell Lists	TYPE:Transform.Crystal			DESC:Foo	SOURCEPAGE:1
+Transform Ice			CATEGORY:Spell Lists	TYPE:Transform.Ice			DESC:Foo	SOURCEPAGE:1
+Transform Light			CATEGORY:Spell Lists	TYPE:Transform.Light			DESC:Foo	SOURCEPAGE:1
+Transform Sound			CATEGORY:Spell Lists	TYPE:Transform.Sound			DESC:Foo	SOURCEPAGE:1
+Transform Force			CATEGORY:Spell Lists	TYPE:Transform.Force			DESC:Foo	SOURCEPAGE:1
+Transform Nature			CATEGORY:Spell Lists	TYPE:Transform.Nature			DESC:Foo	SOURCEPAGE:1
+Transform Space			CATEGORY:Spell Lists	TYPE:Transform.Space			DESC:Foo	SOURCEPAGE:1
+Transform Time			CATEGORY:Spell Lists	TYPE:Transform.Time			DESC:Foo	SOURCEPAGE:1
+Transform Aberration		CATEGORY:Spell Lists	TYPE:Transform.Aberration		DESC:Foo	SOURCEPAGE:1
+Transform Animal			CATEGORY:Spell Lists	TYPE:Transform.Animal			DESC:Foo	SOURCEPAGE:1
+Transform Construct		CATEGORY:Spell Lists	TYPE:Transform.Construct		DESC:Foo	SOURCEPAGE:1
+Transform Dragon			CATEGORY:Spell Lists	TYPE:Transform.Dragon			DESC:Foo	SOURCEPAGE:1
+Transform Elemental		CATEGORY:Spell Lists	TYPE:Transform.Elemental		DESC:Foo	SOURCEPAGE:1
+Transform Fey			CATEGORY:Spell Lists	TYPE:Transform.Fey			DESC:Foo	SOURCEPAGE:1
+Transform Giant			CATEGORY:Spell Lists	TYPE:Transform.Giant			DESC:Foo	SOURCEPAGE:1
+Transform Humanoid		CATEGORY:Spell Lists	TYPE:Transform.Humanoid			DESC:Foo	SOURCEPAGE:1
+Transform Magical Beast		CATEGORY:Spell Lists	TYPE:Transform.Magical Beast		DESC:Foo	SOURCEPAGE:1
+Transform Monstrous Humanoid	CATEGORY:Spell Lists	TYPE:Transform.Monstrous Humanoid	DESC:Foo	SOURCEPAGE:1
+Transform Outsider		CATEGORY:Spell Lists	TYPE:Transform.Outsider			DESC:Foo	SOURCEPAGE:1
+Transform Plant			CATEGORY:Spell Lists	TYPE:Transform.Plant			DESC:Foo	SOURCEPAGE:1
+Transform Undead			CATEGORY:Spell Lists	TYPE:Transform.Undead			DESC:Foo	SOURCEPAGE:1
+Transform Vermin			CATEGORY:Spell Lists	TYPE:Transform.Vermin			DESC:Foo	SOURCEPAGE:1
+
+
+
+
+
+
