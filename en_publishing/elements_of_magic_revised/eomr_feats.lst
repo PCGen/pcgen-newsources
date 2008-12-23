@@ -1,14 +1,11 @@
 # CVS $Revision: $ $Author: $ -- Sun Dec 21 20:59:26 2008 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Elements of Magic (Revised)	SOURCESHORT:EOM	SOURCEWEB:http://www.enworld.org/index.php?page=enpublishing
-
-
+#Original Entry: Joe Frazier, Clean up by Andrew Maitland
 
 #Item Creation Feats
 # Feat Name			Unique Key			Type						Visible	Category of Ability	Required Ability							Multiple Requirements													Required Skill			Required Template				Define			Description																			Stackable?	Multiple?	Choose			Save checks bonus							Bonus to spell cast/day			Modify VAR
 Craft Charged Item					TYPE:ItemCreation.Elements of Magic
 Craft Permanent Spell					TYPE:ItemCreation.Elements of Magic																PREMULT:2,[PRECLASS:1,SPELLCASTER.EOM=7],[PREFEAT:2,Craft Charged Item,Craft Wondrous Item]
-
-
 
 #EOM feats
 Abjure Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Abjure																																	DESC:Your abjure spells are particularly flexible.
@@ -18,14 +15,11 @@ Arcane Student						TYPE:Elements of Magic																																						
 Armored Casting						TYPE:Elements of Magic																		PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]																		DESC:You have no spell failure chance because of armor.
 Dispel Specialist						TYPE:Specialist.Elements of Magic																																PRESKILL:5,EOM Divination											DESC:You are very skilled at counterspells and magical defenses.
 
-
-
 Divination Specialist					TYPE:Specialist.Elements of Magic																																PRESKILL:5,EOM Dispel Magic											DESC:You have mild precognition that comes unconsciously.
 Evoke Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Evoke																																	DESC:You are very skilled at dealing magical damage.
 Extra Magic Points					TYPE:Elements of Magic																																																	DESC:You have a deeper pool of magical energy to draw from.											STACK:YES	MULT:YES	CHOOSE:NOCHOICE																	BONUS:VAR|BonusSpellPoints|CasterLevelBonus/2
 
 Extra Signature Spells					TYPE:Elements of Magic																																																	DESC:You are good at casting certain spells quickly.																													BONUS:SPELLCAST|TYPE=EOM;LEVEL=0|4
-
 
 Heal Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Heal																																	DESC:Your healing spells can cure multiple weak afflictions cheaply.
 Illusion Specialist					TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Illusion																																	DESC:Your illusion spells are always a little more detailed.
@@ -42,11 +36,7 @@ Spell List Focus																																																										DESC:C
 Transform Specialist					TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Transform																																DESC:Your transform spells can themselves transform, allowing multiple shiftings of shape with one spell.
 
 
-
-
-
-
-#Tradition feats
+###Block:Tradition feats
 LongStep							TYPE:Tradition.Elements of Magic																																					PRETEMPLATE:1,LongWalker Tradition
 Chemical Distilation					TYPE:Tradition.Elements of Magic																																					PRETEMPLATE:1,Alchemist Tradition
 
@@ -57,3 +47,30 @@ Magical Protection					TYPE:Elements of Magic			VISIBLE:YES																					
 
 #Hidden Stuff
 CasterLevel							TYPE:Custom					VISIBLE:NO																																									DEFINE:EOMCasterlevel|0
+
+
+
+
+###Block: Mods
+
+
+Acrobatic.MOD		TYPE:TaskmageFeat
+Agile.MOD			TYPE:TaskmageFeat
+Alertness.MOD		TYPE:TaskmageFeat
+Animal Affinity.MOD	TYPE:TaskmageFeat
+Athletic.MOD		TYPE:TaskmageFeat
+Investigator.MOD		TYPE:TaskmageFeat
+Deft Handes.MOD		TYPE:TaskmageFeat
+Diligent.MOD		TYPE:TaskmageFeat
+Deceitful.MOD		TYPE:TaskmageFeat
+Magical Aptitude.MOD	TYPE:TaskmageFeat
+Negotiator.MOD		TYPE:TaskmageFeat
+Nimble Fingers.MOD	TYPE:TaskmageFeat
+Persuasive.MOD		TYPE:TaskmageFeat
+Self Sufficient.MOD	TYPE:TaskmageFeat
+Skill Focus.MOD		TYPE:TaskmageFeat
+Stealthy.MOD		TYPE:TaskmageFeat
+Track.MOD			TYPE:TaskmageFeat
+Skill Mastery.MOD		TYPE:TaskmageSkillMastery
+
+
