@@ -1,52 +1,53 @@
-# CVS $Revision$ $Author$ -- Sun Dec 21 20:59:26 2008 -- reformated by prettylst.pl v1.38 (build 7302)
+# CVS $Revision$ $Author$ -- Tue Dec 30 12:33:44 2008 -- reformated by prettylst.pl v1.38 (build 8180)
 SOURCELONG:Elements of Magic (Revised)	SOURCESHORT:EOM	SOURCEWEB:http://www.enworld.org/index.php?page=enpublishing
 #Original Entry: Joe Frazier, Clean up by Andrew Maitland
 
 #Item Creation Feats
-# Feat Name			Unique Key			Type						Visible	Category of Ability	Required Ability							Multiple Requirements													Required Skill			Required Template				Define			Description																			Stackable?	Multiple?	Choose			Save checks bonus							Bonus to spell cast/day			Modify VAR
+# Feat Name			Unique Key			Type						Category of Ability	Required Ability							Multiple Requirements													Required Skill			Description																			Stackable?	Multiple?	Choose		Bonus to spell cast/day			Modify VAR
 Craft Charged Item					TYPE:ItemCreation.Elements of Magic
-Craft Permanent Spell					TYPE:ItemCreation.Elements of Magic																PREMULT:2,[PRECLASS:1,SPELLCASTER.EOM=7],[PREFEAT:2,Craft Charged Item,Craft Wondrous Item]
+Craft Permanent Spell					TYPE:ItemCreation.Elements of Magic														PREMULT:2,[PRECLASS:1,SPELLCASTER.EOM=7],[PREFEAT:2,Craft Charged Item,Craft Wondrous Item]
 
 #EOM feats
-Abjure Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Abjure																																	DESC:Your abjure spells are particularly flexible.
-Arcane Master						TYPE:Elements of Magic																		PREMULT:2,[PREFEAT:1,Arcane Specialist],[PRECLASS:1,SPELLCASTER.EOM=10]																				DESC:You can prepare spells you normally could not cast.
-Arcane Specialist						TYPE:Elements of Magic																		PREMULT:2,[PREFEAT:1,Arcane Student],[PRECLASS:1,SPELLCASTER.EOM=3]																				DESC:You can cast spells from books quickly.
-Arcane Student						TYPE:Elements of Magic																																																	DESC:You can prepare spells more easily.
-Armored Casting						TYPE:Elements of Magic																		PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]																		DESC:You have no spell failure chance because of armor.
-Dispel Specialist						TYPE:Specialist.Elements of Magic																																PRESKILL:5,EOM Divination											DESC:You are very skilled at counterspells and magical defenses.
+Abjure Specialist						TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Abjure																							DESC:Your abjure spells are particularly flexible.
+Arcane Master						TYPE:Elements of Magic																PREMULT:2,[PREFEAT:1,Arcane Specialist],[PRECLASS:1,SPELLCASTER.EOM=10]										DESC:You can prepare spells you normally could not cast.
+Arcane Specialist						TYPE:Elements of Magic																PREMULT:2,[PREFEAT:1,Arcane Student],[PRECLASS:1,SPELLCASTER.EOM=3]										DESC:You can cast spells from books quickly.
+Arcane Student						TYPE:Elements of Magic																																					DESC:You can prepare spells more easily.
+Armored Casting						TYPE:Elements of Magic																PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]								DESC:You have no spell failure chance because of armor.
+Dispel Specialist						TYPE:Specialist.Elements of Magic																														PRESKILL:5,EOM Divination	DESC:You are very skilled at counterspells and magical defenses.
 
-Divination Specialist					TYPE:Specialist.Elements of Magic																																PRESKILL:5,EOM Dispel Magic											DESC:You have mild precognition that comes unconsciously.
-Evoke Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Evoke																																	DESC:You are very skilled at dealing magical damage.
-Extra Magic Points					TYPE:Elements of Magic																																																	DESC:You have a deeper pool of magical energy to draw from.											STACK:YES	MULT:YES	CHOOSE:NOCHOICE																	BONUS:VAR|BonusSpellPoints|CasterLevelBonus/2
+Divination Specialist					TYPE:Specialist.Elements of Magic																														PRESKILL:5,EOM Dispel Magic	DESC:You have mild precognition that comes unconsciously.
+Evoke Specialist						TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Evoke																							DESC:You are very skilled at dealing magical damage.
+Extra Magic Points					TYPE:Elements of Magic																																					DESC:You have a deeper pool of magical energy to draw from.											STACK:YES	MULT:YES	CHOOSE:NOCHOICE							BONUS:VAR|BonusSpellPoints|CasterLevelBonus/2
 
-Extra Signature Spells					TYPE:Elements of Magic																																																	DESC:You are good at casting certain spells quickly.																													BONUS:SPELLCAST|TYPE=EOM;LEVEL=0|4
+Extra Signature Spells					TYPE:Elements of Magic																																					DESC:You are good at casting certain spells quickly.																			BONUS:SPELLCAST|TYPE=EOM;LEVEL=0|4
 
-Heal Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Heal																																	DESC:Your healing spells can cure multiple weak afflictions cheaply.
-Illusion Specialist					TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Illusion																																	DESC:Your illusion spells are always a little more detailed.
-Infuse Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Infuse																																	DESC:Your ability-influencing spells last longer.
+Heal Specialist						TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Heal																							DESC:Your healing spells can cure multiple weak afflictions cheaply.
+Illusion Specialist					TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Illusion																							DESC:Your illusion spells are always a little more detailed.
+Infuse Specialist						TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Infuse																							DESC:Your ability-influencing spells last longer.
 
-Natural Spell		KEY:EOM_NATURAL_SPELL	TYPE:Elements of Magic																																																	DESC:You can cast spells while in different creature's forms.
+Natural Spell		KEY:EOM_NATURAL_SPELL	TYPE:Elements of Magic																																					DESC:You can cast spells while in different creature's forms.
 
-Scry Specialist						TYPE:Specialist.Elements of Magic			CATEGORY:Feat																											PRESKILL:5,EOM Scry												DESC:You have an easier time casting spells through scrying.
-Summon Specialist						TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Summon																																	DESC:You are very skilled at handling magically created creatures.
+Scry Specialist						TYPE:Specialist.Elements of Magic	CATEGORY:Feat																											PRESKILL:5,EOM Scry		DESC:You have an easier time casting spells through scrying.
+Summon Specialist						TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Summon																							DESC:You are very skilled at handling magically created creatures.
 
-Spell List Familiarity					TYPE:Elements of Magic																																																	DESC:Choose a spell list, such as Evoke  Death. You can cast a certain spell list more cheaply.
-Spell List Focus																																																										DESC:Choose a spell list, such as Evoke Fire. Your spells of that list are harder to resist.  TYPE:Elements of Magic
+Spell List Familiarity					TYPE:Elements of Magic																																					DESC:Choose a spell list, such as Evoke  Death. You can cast a certain spell list more cheaply.
+Spell List Focus																																														DESC:Choose a spell list, such as Evoke Fire. Your spells of that list are harder to resist.  TYPE:Elements of Magic
 
-Transform Specialist					TYPE:Specialist.Elements of Magic							PREABILITY:6,CATEGORY=Spell Lists,TYPE.Transform																																DESC:Your transform spells can themselves transform, allowing multiple shiftings of shape with one spell.
+Transform Specialist					TYPE:Specialist.Elements of Magic					PREABILITY:6,CATEGORY=Spell Lists,TYPE.Transform																						DESC:Your transform spells can themselves transform, allowing multiple shiftings of shape with one spell.
 
 
 ###Block:Tradition feats
-LongStep							TYPE:Tradition.Elements of Magic																																					PRETEMPLATE:1,LongWalker Tradition
-Chemical Distilation					TYPE:Tradition.Elements of Magic																																					PRETEMPLATE:1,Alchemist Tradition
+# Feat Name			Type						Visible	Required Template				Define			Choose			Save checks bonus
+LongStep			TYPE:Tradition.Elements of Magic			PRETEMPLATE:1,LongWalker Tradition
+Chemical Distilation	TYPE:Tradition.Elements of Magic			PRETEMPLATE:1,Alchemist Tradition
 
 
-Magical Protection					TYPE:Elements of Magic			VISIBLE:YES																																																																					CHOOSE:STAT|DEX|STR|CON	BONUS:CHECKS|Fortitude,Reflex|%LIST|TYPE=Magical Boon
+Magical Protection	TYPE:Elements of Magic			VISIBLE:YES											CHOOSE:STAT|DEX|STR|CON	BONUS:CHECKS|Fortitude,Reflex|%LIST|TYPE=Magical Boon
 
 
 
 #Hidden Stuff
-CasterLevel							TYPE:Custom					VISIBLE:NO																																									DEFINE:EOMCasterlevel|0
+CasterLevel			TYPE:Custom					VISIBLE:NO							DEFINE:EOMCasterlevel|0
 
 
 
@@ -54,6 +55,7 @@ CasterLevel							TYPE:Custom					VISIBLE:NO																																				
 ###Block: Mods
 
 
+# Feat Name			Type
 Acrobatic.MOD		TYPE:TaskmageFeat
 Agile.MOD			TYPE:TaskmageFeat
 Alertness.MOD		TYPE:TaskmageFeat
