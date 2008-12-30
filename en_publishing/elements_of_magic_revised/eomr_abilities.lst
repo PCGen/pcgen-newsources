@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Tue Dec 30 12:33:44 2008 -- reformated by prettylst.pl v1.38 (build 8180)
+# CVS $Revision$ $Author$ -- Tue Dec 30 17:25:35 2008 -- reformated by prettylst.pl v1.38 (build 8180)
 SOURCELONG:Elements of Magic (Revised)	SOURCESHORT:EOM	SOURCEWEB:http://www.enworld.org/index.php?page=enpublishing
 #Original Entry: Joe Frazier, Clean up by Andrew Maitland
 
@@ -6,44 +6,41 @@ SOURCELONG:Elements of Magic (Revised)	SOURCESHORT:EOM	SOURCEWEB:http://www.enwo
 
 ###Block: Boons ---------------------------------------------------------------------------
 #Block: Minor Boons
-# Ability Name			Output Name				Category of Ability	Type							Visible		Required Vision			Prohibited Vision				Special ABility							Define					Description									Stackable?	Multiple?	Choose																							Add 												Bonus to Ability Pool			Save checks bonus						Combat bonus						Bonus to skill rank	Allow Follower		Allowed Companions												Vision			Source Page
-Animal Speak								CATEGORY:Magical Boon	TYPE:SpecialQuality.Minor Boon.Sp																SAB:Animal Speak, %CHOICE																							MULT:YES	CHOOSE:RACE|RACETYPE=Animal																																																																																	SOURCEPAGE:pg.
-Bonus Feat									CATEGORY:Magical Boon	TYPE:SpecialQuality.Minor Boon																																									STACK:YES	MULT:YES	CHOOSE:NOCHOICE																						ADD:ABILITY|FEAT|NORMAL|TYPE.Metamagic,TYPE.ItemCreation,TYPE.Tradition																																																		SOURCEPAGE:pg.
-Resist Fear									CATEGORY:Magical Boon	TYPE:SpecialQuality.Minor Boon.Su																SAB:Resist Fear (Su)																								MULT:NO																																																																																						SOURCEPAGE:pg.
-Magically Empowered							CATEGORY:Magical Boon	TYPE:SpecialQuality.Minor Boon.Su																																											MULT:YES	CHOOSE:SKILLSNAMED|TYPE.Strength|TYPE.Dexterity																																																			BONUS:SKILLRANK|LIST|3																								SOURCEPAGE:pg.
-Minor Energy Resistance							CATEGORY:Magical Boon	TYPE:SpecialQuality.Minor Boon.Su																SAB:Resistance % to %|ResistanceBonusMinor|%LIST	DEFINE:ResistanceBonusMinor|1		DESC:Resistance %1 to %2|ResistanceBonusMinor|%LIST				MULT:YES	CHOOSE:STRING|Air|Death|Earth|Fire|Life|Water|Lava|Lightning|Mist|Ooze|Acid|Metal|Shadow|Void|Crystal|Ice|Light|Sound|Force|Nature|Space|Time																																																														SOURCEPAGE:pg.
-Spiritual Medium								CATEGORY:Magical Boon	TYPE:SpecialQuality.Minor Boon.Su																																											MULT:NO																																																																																						SOURCEPAGE:pg.
+# Ability Name		Category of Ability		Type								Visible		Define				Description															Stackable?	Multiple?	Choose																							Bonus to Ability Pool		Bonus to skill rank	Source Page
+Animal Speak		CATEGORY:Special Ability	TYPE:SpecialQuality.MinorBoon.SpellLike										DESC:You can speak with the following animals as if you have a common language, %1|%CHOICE			MULT:YES	CHOOSE:RACE|RACETYPE=Animal																													SOURCEPAGE:pg. 6
+Mage Bonus Feat		CATEGORY:Special Ability	TYPE:MinorBoon						VISIBLE:DISPLAY																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE																						BONUS:ABILITYPOOL|Mage Feat|1					SOURCEPAGE:pg.
+Resist Fear			CATEGORY:Special Ability	TYPE:SpecialQuality.MinorBoon.Supernatural																																																														SOURCEPAGE:pg. 6
+Magically Empowered	CATEGORY:Special Ability	TYPE:SpecialQuality.MinorBoon.Supernatural																											MULT:YES	CHOOSE:SKILLSNAMED|TYPE.Strength|TYPE.Dexterity																						BONUS:SKILLRANK|LIST|3	SOURCEPAGE:pg. 6
+Minor Energy Resistance	CATEGORY:Special Ability	TYPE:SpecialQuality.MinorBoon.Supernatural				DEFINE:ResistanceBonusMinor|1	DESC:Resistance %1 to %2|ResistanceBonusMinor|%LIST										MULT:YES	CHOOSE:STRING|Air|Death|Earth|Fire|Life|Water|Lava|Lightning|Mist|Ooze|Acid|Metal|Shadow|Void|Crystal|Ice|Light|Sound|Force|Nature|Space|Time										SOURCEPAGE:pg. 6
+Spiritual Medium		CATEGORY:Special Ability	TYPE:SpecialQuality.MinorBoon.Supernatural																																																														SOURCEPAGE:pg. 6
 
+###Block: Moderate Boons
+# Ability Name				Output Name				Category of Ability		Type								Visible		Required Vision							Prohibited Vision		Define					Description																																							Stackable?	Multiple?	Choose																							Ability									Bonus to Ability Pool				Add to vision			Allow Follower		Allowed Companions												Vision			Source Page
+Animagus										CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon																									DESC:You can can transform into the shape of the following animals as a standard action, %1|%CHOICE																								STACK:NO	MULT:YES	CHOOSE:RACE|RACETYPE=Animal																																																																	SOURCEPAGE:pg. 7
+Sixth Sense										CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon																									DESC:Mage gains the supernatural ability to see and hear incorporeal undead.																												STACK:YES	MULT:YES																																																																						SOURCEPAGE:pg. 7
+Mage Summon Familiar			OUTPUTNAME:Summon Familiar	CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon																			DEFINE:FMLevel|0																																												STACK:YES	MULT:YES																																															FOLLOWERS:Familiar|1	COMPANIONLIST:Familiar|Bat,Cat,Hawk,Lizard,Owl,Rat,Raven,Snake (Viper/Tiny),Toad,Weasel					SOURCEPAGE:pg. 7
+Mage Trackless Step			OUTPUTNAME:Trackless Step	CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon.Supernatural																																																																	MULT:NO																																																																						SOURCEPAGE:pg. 7
+Moderate Energy Resistance							CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon																			DEFINE:ResistanceBonusModerate|5	DESC:Resistance %1 to %2|ResistanceBonusModerate|%LIST																																	MULT:YES	CHOOSE:STRING|Air|Death|Earth|Fire|Life|Water|Lava|Lightning|Mist|Ooze|Acid|Metal|Shadow|Void|Crystal|Ice|Light|Sound|Force|Nature|Space|Time
+Uncanny Vision (Low-light)							CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon			VISIBLE:DISPLAY										!PREVISION:1,Low-Light																																																																											ABILITY:Special Ability|AUTOMATIC|Uncanny Vision Output																																VISION:Low-Light		SOURCEPAGE:pg. 7
+Uncanny Vision (Darkvision)							CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon			VISIBLE:DISPLAY	PREVISION:1,Low-Light						!PREVISION:1,Darkvision																																																																											ABILITY:Special Ability|AUTOMATIC|Uncanny Vision Output																																VISION:Darkvision (30')	SOURCEPAGE:pg. 7
+Uncanny Vision (Extra Darkvision)						CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon			VISIBLE:DISPLAY	PREVISION:1,Low-Light	PREVISION:1,Darkvision=30																																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE																						ABILITY:Special Ability|AUTOMATIC|Uncanny Vision Output								BONUS:VISION|Darkvision|30																								SOURCEPAGE:pg. 7
+Uncanny Vision Output			OUTPUTNAME:Uncanny Vision	CATEGORY:Special Ability	TYPE:SpecialQuality					VISIBLE:EXPORT																				DESC:You gain the following visions	DESC:Low-light|PREABILITY:1,CATEGORY=Special Ability,Uncanny Vision (Low-light)	DESC:Darkvision|PREABILITY:1,CATEGORY=Special Ability,Uncanny Vision (Darkvision),Uncanny Vision (Extra Darkvision)																																																																										SOURCEPAGE:pg. 7
+Two Minor Boons									CATEGORY:Special Ability	TYPE:SpecialQuality.ModerateBoon			VISIBLE:DISPLAY																																																																																																		BONUS:ABILITYPOOL|Magical Boon Minor|2																													SOURCEPAGE:pg. 7
 
-#Block: Moderate Boons
-Animagus									CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon										!PREVISION:1,Darkvision																												STACK:YES	MULT:YES																																																																																						SOURCEPAGE:pg.
-Sixth Sense									CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon										!PREVISION:1,Darkvision																												STACK:YES	MULT:YES																																																																																						SOURCEPAGE:pg.
-Summon Familiar								CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon										!PREVISION:1,Darkvision												DEFINE:FMLevel|0														STACK:YES	MULT:YES																																																															FOLLOWERS:Familiar|1	COMPANIONLIST:Familiar|Bat,Cat,Hawk,Lizard,Owl,Rat,Raven,Snake (Viper/Tiny),Toad,Weasel					SOURCEPAGE:pg.
-Trackless Step								CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon.Su															SAB:Trackless Step (Su)																								MULT:NO																																																																																						SOURCEPAGE:pg.
-Moderate Energy Resistance						CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon																SAB:Resistance % to %|ResistanceBonusModerate|%LIST	DEFINE:ResistanceBonusModerate|5	DESC:Resistance %1 to %2|ResistanceBonusModerate|%LIST			MULT:YES	CHOOSE:STRING|Air|Death|Earth|Fire|Life|Water|Lava|Lightning|Mist|Ooze|Acid|Metal|Shadow|Void|Crystal|Ice|Light|Sound|Force|Nature|Space|Time
+###Block:  Major Boons
+# Ability Name			Category of Ability		Type					Visible		Special ABility							Define					Description								Multiple?	Choose																							Save checks bonus						Combat bonus						Source Page
+Greater Animagus			CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon
+Improved Signature Spell	CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon
 #
-Uncanny Vision								CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon										!PREVISION:1,Darkvision																												STACK:YES	MULT:YES	CHOOSE:FEATADD|TYPE.BonusVision																																																																																SOURCEPAGE:pg.
+Magical Protection ~ INT	CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon	VISIBLE:DISPLAY																																																			BONUS:CHECKS|ALL|min(INT,5)|TYPE=Resistance									SOURCEPAGE:pg. 7
+Magical Protection ~ WIS	CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon	VISIBLE:DISPLAY																																																			BONUS:CHECKS|ALL|min(WIS,5)|TYPE=Resistance									SOURCEPAGE:pg. 7
+Magical Protection ~ CHA	CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon	VISIBLE:DISPLAY																																																			BONUS:CHECKS|ALL|min(CHA,5)|TYPE=Resistance									SOURCEPAGE:pg. 7
 #
-Uncanny Vision 1			OUTPUTNAME:Special Sight	CATEGORY:FEAT		TYPE:SpecialQuality.Hidden.BonusVision	VISIBLE:NO							!PREVISION:2,Low-Light,Darkvision																																																																																																															VISION:Low-Light		SOURCEPAGE:pg.
-Uncanny Vision 2			OUTPUTNAME:Special Sight	CATEGORY:FEAT		TYPE:SpecialQuality.Hidden.BonusVision	VISIBLE:NO		PREVISION:1,Low-Light																																																																																																																						VISION:Darkvision (30')	SOURCEPAGE:pg.
-Uncanny Vision 3			OUTPUTNAME:Special Sight	CATEGORY:FEAT		TYPE:SpecialQuality.Hidden.BonusVision	VISIBLE:NO		PREVISION:1,Darkvision=30																																																																																																																					VISION:Darkvision (30')	SOURCEPAGE:pg.
+Magical Defense ~ INT		CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon	VISIBLE:DISPLAY																																																											BONUS:COMBAT|AC|min(INT,5)|TYPE=Deflection	SOURCEPAGE:pg. 7
+Magical Defense ~ WIS		CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon	VISIBLE:DISPLAY																																																											BONUS:COMBAT|AC|min(WIS,5)|TYPE=Deflection	SOURCEPAGE:pg. 7
+Magical Defense ~ CHA		CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon	VISIBLE:DISPLAY																																																											BONUS:COMBAT|AC|min(CHA,5)|TYPE=Deflection	SOURCEPAGE:pg. 7
 #
-Two Minor Boons								CATEGORY:Magical Boon	TYPE:SpecialQuality.Moderate Boon																SAB:Animagus (Sp)																																																															BONUS:ABILITYPOOL|Minor Boon|2																																												SOURCEPAGE:pg.
-
-
-#Block: Major Boons
-Greater Animagus								CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon
-Improved Signature Spell						CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon
-#
-Magical Protection ~ INT						CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon		VISIBLE:DISPLAY																																																																																			BONUS:CHECKS|ALL|min(INT,5)|TYPE=Resistance																																				SOURCEPAGE:pg.
-Magical Protection ~ WIS						CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon		VISIBLE:DISPLAY																																																																																			BONUS:CHECKS|ALL|min(WIS,5)|TYPE=Resistance																																				SOURCEPAGE:pg.
-Magical Protection ~ CHA						CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon		VISIBLE:DISPLAY																																																																																			BONUS:CHECKS|ALL|min(CHA,5)|TYPE=Resistance																																				SOURCEPAGE:pg.
-#
-Magical Defense ~ INT							CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon		VISIBLE:DISPLAY																																																																																											BONUS:COMBAT|AC|min(INT,5)|TYPE=Deflection																												SOURCEPAGE:pg.
-Magical Defense ~ WIS							CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon		VISIBLE:DISPLAY																																																																																											BONUS:COMBAT|AC|min(WIS,5)|TYPE=Deflection																												SOURCEPAGE:pg.
-Magical Defense ~ CHA							CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon		VISIBLE:DISPLAY																																																																																											BONUS:COMBAT|AC|min(CHA,5)|TYPE=Deflection																												SOURCEPAGE:pg.
-#
-Major Energy Resistance							CATEGORY:MagicalBoon	TYPE:SpecialQuality.Major Boon																SAB:Resistance % to %|ResistanceBonusMajor|%LIST	DEFINE:ResistanceBonusMajor|10	DESC:Resistance %1 to %2|ResistanceBonusMajor|%LIST				MULT:YES	CHOOSE:STRING|Air|Death|Earth|Fire|Life|Water|Lava|Lightning|Mist|Ooze|Acid|Metal|Shadow|Void|Crystal|Ice|Light|Sound|Force|Nature|Space|Time
+Major Energy Resistance		CATEGORY:Special Ability	TYPE:SpecialQuality.MajorBoon				SAB:Resistance % to %|ResistanceBonusMajor|%LIST	DEFINE:ResistanceBonusMajor|10	DESC:Resistance %1 to %2|ResistanceBonusMajor|%LIST	MULT:YES	CHOOSE:STRING|Air|Death|Earth|Fire|Life|Water|Lava|Lightning|Mist|Ooze|Acid|Metal|Shadow|Void|Crystal|Ice|Light|Sound|Force|Nature|Space|Time
 
 
 ###Block: Spell Lists

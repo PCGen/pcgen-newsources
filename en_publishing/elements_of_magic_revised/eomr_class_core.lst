@@ -1,12 +1,12 @@
-# CVS $Revision$ $Author$ -- Tue Dec 30 12:33:44 2008 -- reformated by prettylst.pl v1.38 (build 8180)
+# CVS $Revision$ $Author$ -- Tue Dec 30 17:25:35 2008 -- reformated by prettylst.pl v1.38 (build 8180)
 SOURCELONG:Elements of Magic (Revised)	SOURCESHORT:EOM	SOURCEWEB:http://www.enworld.org/index.php?page=enpublishing
 #Original Entry: Joe Frazier, Clean up by Andrew Maitland
 #Comments: This will need to get changed to the new standard. Will correct to 5.16 once the OS supports it.
 
 ###Block: The Mage ----------------------------------------------------------------------------------------------------------------------------------
 
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define																							Save checks bonus											Combat bonus					Modify VAR															CLASS
-CLASS:EOM Mage	HD:4		TYPE:Base.PC.EOM	ABB:Mage		MAXLEVEL:20	SOURCEPAGE:pg.5	DEFINE:BaseSpellPoints|0	DEFINE:CantripsPerDay|0	DEFINE:BonusSpellPoints|0	DEFINE:TotalSpellPoints|0	DEFINE:CasterLevelBonus|CL	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|TotalSpellPoints|BaseSpellPoints	BONUS:VAR|TotalSpellPoints|BonusSpellPoints	CLASS:EOM Mage
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define																							Save checks bonus											Combat bonus					Modify VAR
+CLASS:EOM Mage	HD:4		TYPE:Base.PC.EOM	ABB:Mage		MAXLEVEL:20	SOURCEPAGE:pg.5	DEFINE:BaseSpellPoints|0	DEFINE:CantripsPerDay|0	DEFINE:BonusSpellPoints|0	DEFINE:TotalSpellPoints|0	DEFINE:CasterLevelBonus|CL	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|TotalSpellPoints|BaseSpellPoints	BONUS:VAR|TotalSpellPoints|BonusSpellPoints
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:EOM Mage	STARTSKILLPTS:4	CSKILL:TYPE.Elements of Magic|Concentration|TYPE.Craft|TYPE.Knowledge|TYPE.Profession
 # Class Name	Spell Stat		Spell Type		Memorize		Automatically Known Spell Levels	Spellbook		Caster level
@@ -44,8 +44,8 @@ CLASS:EOM Mage	SPELLSTAT:CHA	SPELLTYPE:EOM	MEMORIZE:YES	KNOWNSPELLS:LEVEL=0|LEVE
 
 ###Block: Mageknight ----------------------------------------------------------------------------------------------------------
 
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define																		Save checks bonus														Combat bonus						Modify VAR															Bonus
-CLASS:Mageknight	HD:8		TYPE:Base.PC	ABB:MgeKnt		MAXLEVEL:20	SOURCEPAGE:8	DEFINE:CantripsPerDay|0	DEFINE:BaseSpellPoints|0	DEFINE:BonusSpellPoints|0	DEFINE:TotalSpellPoints|0	BONUS:CHECKS|BASE.Reflex|(CL+0.5)*1/3*1	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+3)*2/5*1	BONUS:COMBAT|BAB|(CL+0)*3/4*1|TYPE=Base.REPLACE	BONUS:VAR|TotalSpellPoints|BaseSpellPoints	BONUS:VAR|TotalSpellPoints|BonusSpellPoints	BONUS:FMLevel|CL*3/4
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define																		Save checks bonus														Combat bonus						Modify VAR
+CLASS:Mageknight	HD:8		TYPE:Base.PC	ABB:MgeKnt		MAXLEVEL:20	SOURCEPAGE:8	DEFINE:CantripsPerDay|0	DEFINE:BaseSpellPoints|0	DEFINE:BonusSpellPoints|0	DEFINE:TotalSpellPoints|0	BONUS:CHECKS|BASE.Reflex|(CL+0.5)*1/3*1	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+3)*2/5*1	BONUS:COMBAT|BAB|(CL+0)*3/4*1|TYPE=Base.REPLACE	BONUS:VAR|TotalSpellPoints|BaseSpellPoints	BONUS:VAR|TotalSpellPoints|BonusSpellPoints	BONUS:VAR|FMLevel|CL*3/4
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Mageknight	STARTSKILLPTS:2	CSKILL:EOM Spellcraft|Concentration|TYPE.Craft|Knowledge (Arcana)|TYPE.Profession|Ride|Climb|Intimidate|Jump|Swim
 # Class Name	Spell Stat		Spell Type				Memorize		Spellbook		Caster level
@@ -80,8 +80,8 @@ CLASS:Mageknight	SPELLSTAT:CHA	SPELLTYPE:Elements Of Magic	MEMORIZE:YES	SPELLBOO
 
 ###Block: The Taskmage ----------------------------------------------------------------------------------------------------------------------------------
 
-# Class Name		Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source Page		Define																		Save checks bonus			Combat bonus							Modify VAR															Bonus
-CLASS:EOM Taskmage	HD:6		TYPE:Base.PC	ABB:TskMge		MAXLEVEL:20	HASSUBCLASS:NO	SOURCEPAGE:pg.10	DEFINE:CantripsPerDay|0	DEFINE:BaseSpellPoints|0	DEFINE:BonusSpellPoints|0	DEFINE:TotalSpellPoints|0	BONUS:CHECKS|ALL|(CL+3)*2/5*1	BONUS:COMBAT|BAB|(CL+0.5)*1/2*1|TYPE=Base.REPLACE	BONUS:VAR|TotalSpellPoints|BaseSpellPoints	BONUS:VAR|TotalSpellPoints|BonusSpellPoints	BONUS:FMLevel|CL*3/4
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Subclass?		Source Page		Define																		Save checks bonus			Combat bonus							Modify VAR
+CLASS:EOM Taskmage	HD:6		TYPE:Base.PC	ABB:TskMge		MAXLEVEL:20	HASSUBCLASS:NO	SOURCEPAGE:pg.10	DEFINE:CantripsPerDay|0	DEFINE:BaseSpellPoints|0	DEFINE:BonusSpellPoints|0	DEFINE:TotalSpellPoints|0	BONUS:CHECKS|ALL|(CL+3)*2/5*1	BONUS:COMBAT|BAB|(CL+0.5)*1/2*1|TYPE=Base.REPLACE	BONUS:VAR|TotalSpellPoints|BaseSpellPoints	BONUS:VAR|TotalSpellPoints|BonusSpellPoints	BONUS:VAR|FMLevel|CL*3/4
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:EOM Taskmage	STARTSKILLPTS:8	CSKILL:TYPE.Elements of Magic|Concentration|TYPE.Craft|Knowledge (Arcana)|TYPE.Profession
 # Class Name		Spell Stat		Spell Type				Memorize		Spellbook		Caster level
