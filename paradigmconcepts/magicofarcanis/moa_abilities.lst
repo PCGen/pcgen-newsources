@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Mon Dec 29 19:16:19 2008 -- reformated by prettylst.pl v1.38 (build 7302)
+# CVS $Revision: $ $Author: $ -- Fri Jan  9 14:36:22 2009 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Magic of Arcanis	SOURCESHORT:MoA	SOURCEWEB:http://www.paradigmconcepts.com
 #Original Entry: Andrew Maitland (LegacyKing), 2008
 ###ABILITY FILE:
@@ -462,8 +462,8 @@ Metamagical Grand Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordi
 
 ###Block: Song Master of Cadic -------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type
-Bardic Music
-Songs
+Bardic Music			CATEGORY:Special Ability	TYPE:SpecialQuality
+Songs					CATEGORY:Special Ability	TYPE:SpecialQuality
 Song of Heart's Fire		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Song of Darkness' Vengeance	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Song of Love's War		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -630,4 +630,63 @@ Treant Cohort	CATEGORY:Special Ability	TYPE:SpecialQuality
 Metamorphosis	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 
--
+###################################
+### Ymandragoran Prestige Classes #
+###################################
+
+###Block: Ordainer ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Ability Name			Output Name																													Category of Ability		Type						Var. Min. Value			Define								Automatically Gained Feat	Add
+Soul Search				OUTPUTNAME:Improved Soul Search|PREVAREQ:SoulSearchLvl,1	OUTPUTNAME:Superior Soul Search|PREVAREQ:SoulSearchLvl,2											CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural						DEFINE:SoulSearchLvl|0
+Arcane Health																																	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Reduced Arcane Spell Failure	OUTPUTNAME:Improved Reduced Arcane Spell Failure|PREVAREQ:ReducedArcaneSpellFailureLvl,1	OUTPUTNAME:Superior Reduced Arcane Spell Failure|PREVAREQ:ReducedArcaneSpellFailureLvl,2	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary						DEFINE:ReducedArcaneSpellFailureLvl|0
+Absorb Spell																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Power Meta-magic Ability	OUTPUTNAME:Improved Power Meta-magic Ability|PREVAREQ:PowerMetamagicAbilityLvl,1	OUTPUTNAME:Superior Power Meta-magic Ability|PREVAREQ:PowerMetamagicAbilityLvl,2			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural						DEFINE:PowerMetamagicAbilityLvl|0
+Arcane Style			OUTPUTNAME:Improved Arcane Style|PREVAREQ:ArcaneStyleLvl,1																					CATEGORY:Special Ability	TYPE:SpecialQuality								DEFINE:ArcaneStyleLvl|0	DEFINE:OrdainerFeatLvl|0
+Absorb Charges																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Eldritch Storm																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Arcane Mind																																		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Improved Tracking																																	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Arcane Healing																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Sorcerer King's Blessing																															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Spell Thief																																		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Reform Magic																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Experienced Caster																																CATEGORY:Special Ability	TYPE:SpecialQuality																	AUTO:FEAT|Experienced Caster
+#Ordainer Feat Choices
+Spell Focus																																		CATEGORY:Special Ability	TYPE:OrdainerFeat																							ADD:FEAT|Spell Focus
+Greater Spell Focus																																CATEGORY:Special Ability	TYPE:OrdainerFeat				PREVARGTEQ:OrdainerFeatLvl,1															ADD:FEAT|Greater Spell Focus
+
+###Block: Shard Shaper ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Ability Name			Output Name																			Category of Ability		Type				Define					Description
+Shard Spellcasting Ability																					CATEGORY:Special Ability	TYPE:SpecialQuality
+Shard Shaping																							CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:ShardShapingPts|0		DESC:%1 points|ShardShapingPts
+Shard Metamagic I			OUTPUTNAME:Shard Metamagic II|PREVAREQ:ShardMetamagic,1	OUTPUTNAME:Shard Metamagic III|PREVAREQ:ShardMetamagic,2	CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:ShardMetamagic|0
+Access to Languages																						CATEGORY:Special Ability	TYPE:SpecialQuality
+Access to Skills																							CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:ShardShaperSkillsRank|0	DESC:1% ranks|ShardShaperSkillsRank
+Access to Personal Knowledge																					CATEGORY:Special Ability	TYPE:SpecialQuality
+
+###Block: Wine Drinker ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Ability Name						Category of Ability		Type							Define										Description												Add
+Blood Dependence						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary													DESC:+%1|WineDrinkerPoisonTolerance|PREVAREQ:WineDrinkerPoisonTolerance,2
+Blood Tolerance						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Sacrifice							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Poison Tolerance						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		DEFINE:WineDrinkerPoisonLvl|0	DEFINE:WineDrinkerPoisonTolerance|0	DESC:+1%|WineDrinkerPoisonTolerance
+Quick Sacrifice						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Sorcerer's Blood						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Sacrifice in the Midst of Battle			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Poison Immunity						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Lesser Blood Dependence					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+
+#School Access
+School Access - Abjuration				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Conjuration				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Evocation				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Enchantment				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Illusion				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Necromancy				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Divination				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+School Access - Transmutation				CATEGORY:Special Ability	TYPE:SpecialQuality.WineDrinkerSchool
+#
+Wine Drinker Martial Weapon Proficiency Choice	CATEGORY:Special Ability	TYPE:WineDrinkerFeat																												ADD:FEAT|Martial Weapon Proficiency
+
+
+###EOF
