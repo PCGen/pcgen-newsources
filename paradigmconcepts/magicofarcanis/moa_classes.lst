@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Fri Jan  9 14:36:22 2009 -- reformated by prettylst.pl v1.38 (build 7302)
+# CVS $Revision: $ $Author: $ -- Sat Jan 10 23:27:37 2009 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Magic of Arcanis	SOURCESHORT:MoA	SOURCEWEB:http://www.paradigmconcepts.com
 #Original Entry: Andrew Maitland (LegacyKing), 2008
 ###CLASSES
@@ -622,18 +622,553 @@ CLASS:The Ehtzara	SPELLSTAT:CHA	BONUS:CASTERLEVEL|Ehtzara|CL
 10	CAST:6,6,6,6,5	KNOWN:9,5,4,3,2
 
 
-######################################################
-# Rest of the Prestige Classes go here when finished #
-######################################################
+###Block: Discipulus Geometricus --------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name			Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Discipulus Geometricus	HD:4		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.101	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+# Class Name			Required Feat							Required Skill										Required Text
+CLASS:Discipulus Geometricus	PREFEAT:2,Prodigy (Arcane Magic),Sculpt Runic Item	PRESKILL:3,Craft (Stoneworking)=5,Knowledge (Arcana)=12,Spellcraft=12	PRETEXT:Spells: Able to cast 3rd level Arcane spells, at least three of which must be Magic Circle spells.
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Discipulus Geometricus	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Decipher Script|Knowledge|TYPE.Profession|Research|Spellcraft
+#Weapon and Armor Proficiency: Discipulus Geometricae gain very little in the way of military training; they gain no additional weapon or armor proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Arcane Reserve
+2	ABILITY:Special Ability|AUTOMATIC|Lesser Rune Casting
+3	ABILITY:Special Ability|AUTOMATIC|Ritualistic Casting
+5	ABILITY:Special Ability|AUTOMATIC|Sculpt Greater Runic Item
+6	ABILITY:Special Ability|AUTOMATIC|Rune Casting
+7	ABILITY:Special Ability|AUTOMATIC|Inscribe Runes
+9	ABILITY:Special Ability|AUTOMATIC|Prepare Greater Magic Circle
+10	ABILITY:Special Ability|AUTOMATIC|Greater Rune Casting
+###Block:
+1	ADD:SPELLCASTER|ANY
+2	ADD:SPELLCASTER|ANY
+3	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+5	ADD:SPELLCASTER|ANY
+6	ADD:SPELLCASTER|ANY
+7	ADD:SPELLCASTER|ANY
+8	ADD:SPELLCASTER|ANY
+9	ADD:SPELLCASTER|ANY
+10	ADD:SPELLCASTER|ANY
 
 
+###Block: Knight of the Order of St. Armon ----------------------------------------------------------------------------------------------------------------------
+
+# Class Name					Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Knight of the Order of St. Armon	HD:8		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.103	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name					Req. Att.	Required Feat						Required Skill			Required Text
+CLASS:Knight of the Order of St. Armon	PREATT:4	PREFEAT:3,Armored Caster,Gentry,Weapon Focus	PRESKILL:1,Concentration=6	PRETEXT:Spellcasting: Must be able to cast 2nd level arcane spells. Nationality: Milandir
+# Class Name					Skill Pts/Lvl	Class Skill
+CLASS:Knight of the Order of St. Armon	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|Jump|TYPE.Knowledge|TYPE.Profession|Ride|Spellcraft
+#Weapon and Armor Proficiency: A Knight of the Order of St. Armon gains proficiencies with the traditional Milandisian weapons of the longsword, the halberd, and the heavy crossbow. The Knight of the Order of St. Armon is also proficient with light armor, and medium armor.
+
+###Block:
+1	BONUS:ABILITYPOOL||1							ABILITY:Special Ability|AUTOMATIC|Military Training
+2											ABILITY:Special Ability|AUTOMATIC|Arcane Accuracy
+3					BONUS:VAR|ImprovedArmoredCaster|1	ABILITY:Special Ability|AUTOMATIC|Arcane Alacrity|Improved Armored Caster
+5											ABILITY:Special Ability|AUTOMATIC|Arcane Strike
+7					BONUS:VAR|ImprovedArmoredCaster|1	ABILITY:Special Ability|AUTOMATIC|Arcane Defense
+10											ABILITY:Special Ability|AUTOMATIC|Arcane Power
+###Block:
+2	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+6	ADD:SPELLCASTER|ANY
+8	ADD:SPELLCASTER|ANY
+10	ADD:SPELLCASTER|ANY
 
 
+###Block: Magus Irascortum -------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Magus Irascortum	HD:10		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.104	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name		Restricted AL		Required Skill									Required Text
+CLASS:Magus Irascortum	!PREALIGN:LG,LN,LE	PRESKILL:3,Concentration=8,Knowledge (Arcana)=8,Spellcraft=8	PRETEXT:Ability to rage, able to cast 2nd level arcane spells.
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Magus Irascortum	STARTSKILLPTS:2	CSKILL:Climb|Concentration|TYPE.Craft|Intimidate|Jump|Knowledge (Arcana)|Listen|TYPE.Profession|Spellcraft|Survival|Swim
+
+#Weapon and Armor Proficiency: The Magus Irascortum gains no additional weapon or armor proficiencies
+
+###Block:
+1						ABILITY:Special Ability|AUTOMATIC|Focused Fury
+2						ABILITY:Special Ability|AUTOMATIC|Armored Caster
+3	BONUS:VAR|AdditionalRage|1	ABILITY:Special Ability|AUTOMATIC|Additional Rage
+4						ABILITY:Special Ability|AUTOMATIC|Channel Rage
+5						ABILITY:Special Ability|AUTOMATIC|Enhanced Focus
+6						ABILITY:Special Ability|AUTOMATIC|Perfected Control
+7						ABILITY:Special Ability|AUTOMATIC|Arcane Strength
+8						ABILITY:Special Ability|AUTOMATIC|Perfected Control
+9	BONUS:VAR|AdditionalRage|1
+10	BONUS:VAR|ChannelRage|1
+###Block:
+2	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+6	ADD:SPELLCASTER|ANY
+8	ADD:SPELLCASTER|ANY
+10	ADD:SPELLCASTER|ANY
 
 
+###Block: The Master-Smith ------------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:The Master-Smith	HD:8	HD:8	TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.105	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required AL		Required Feat												Required Skill																		Required Text
+CLASS:The Master-Smith	PREALIGN:LG,LN,LE	PREFEAT:2,Skill Focus (Craft (Armorsmithing)),Skill Focus (Craft (Weaponsmithing))	PRESKILL:4,Craft (Weaponsmithing)=6,Craft (Armorsmithing)=6,Profession (Blacksmith)=6,Knowledge (Science: Metallurgy)=5	PRETEXT:Must find a Master-Smith of 5th level or above to take you as an apprentice
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:The Master-Smith	STARTSKILLPTS:6	CSKILL:Appraise|Climb|TYPE.Craft|Concentration|Jump|TYPE.Knowledge|TYPE.Profession|Ride|Search|Spellcraft|Spot|Swim|Use Magic Device|Use Rope
+#Weapon and Armor Proficiency: The Master-Smith is proficient with all simple and martial weapons, with all types of armor, and with shields (including tower shields).
+
+###Block:
+1						ABILITY:Special Ability|AUTOMATIC|Apprenticeship|Silvered Weapon|Skill Mastery
+2						ABILITY:Special Ability|AUTOMATIC|Master Craftsman (Armorsmith)
+3						ABILITY:Special Ability|AUTOMATIC|Weapon Focus (Warhammer)|Cold-Forging
+4						ABILITY:Special Ability|AUTOMATIC|Master Craftsman (Weaponsmith)
+5	BONUS:VAR|SecretOfTheSmithy|1	ABILITY:Special Ability|AUTOMATIC|Master-Smith|Secret of the Smithy
+6						ABILITY:Special Ability|AUTOMATIC|Eschew Spell Requirements
+7	BONUS:VAR|SecretOfTheSmithy|1	ABILITY:Special Ability|AUTOMATIC|A Practiced Hand
+8						ABILITY:Special Ability|AUTOMATIC|Practitioner's Technique
+9	BONUS:VAR|SecretOfTheSmithy|2
+10						ABILITY:Special Ability|AUTOMATIC|Master of the Forge
 
 
+###Block: Savant -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Class Name	Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Savant	HD:4		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.108	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+# Class Name	Required Feat																		Required Skill						Required Text
+CLASS:Savant	PREFEAT:1,Extend Spell	PREFEAT:2,TYPE.Metamagic,TYPE.Metamagic	PREFEAT:1,Prodigy,Magical Aptitude,Arcane Bloodline	PRESKILL:2,Spellcraft=10,Knowledge (Arcana)=10	PRETEXT: Must be able to cast 3rd level spells
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Savant	STARTSKILLPTS:2	CSKILL:Concentration|Craft|Decipher Script|TYPE.Knowledge|TYPE.Profession|Spellcraft
+#No additional W/A Proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Practiced Spellcaster|Metamagic Mastery
+3	ABILITY:Special Ability|AUTOMATIC|Ritualistic Casting
+5	ABILITY:Special Ability|AUTOMATIC|Metaphysical Understanding
+6	ABILITY:Special Ability|AUTOMATIC|Quickened Metamagic
+9	ABILITY:Special Ability|AUTOMATIC|Eldritch Rending
+10	ABILITY:Special Ability|AUTOMATIC|Metamagical Grand Mastery
+###Block:
+2	BONUS:ABILITYPOOL|Savant Feat|1
+4	BONUS:ABILITYPOOL|Savant Feat|1
+6	BONUS:ABILITYPOOL|Savant Feat|1
+8	BONUS:ABILITYPOOL|Savant Feat|1
+
+
+###Block: Song Master of Cadic -------------------------------------------------------------------------------
+
+# Class Name			Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Song Master of Cadic	HD:6		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.110	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+# Class Name			Required Deity	Required Feat				Multiple Requirements												Required Text
+CLASS:Song Master of Cadic	PREDEITY:1,Cadic	PREFEAT:1,Skill Focus(Perform)	PREMULT:2,[PRESKILL:2,Bluff=8,Diplomacy=8],[PRESKILL:2,TYPE.Perform=10,TYPE.Perform=10]	PRETEXT:Spellcasting: Must be able to cast 1st level arcane spells. Special: Bardic Music class ability. The val'Borda musical bloodline powers or having the music domain will suffice for the Bardic Music class ability.
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Song Master of Cadic	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Concentration|TYPE.Craft|Diplomacy|Disguise|Escape Artist|Gather Information|Hide|Jump|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Sleight of Hand|Spellcraft|Spot|Tumble
+#Weapon and Armor Proficiency: The Song Masters of Cadic gain no additional proficiencies.
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Bardic Music|Song of Heart's Fire
+2	ABILITY:Special Ability|AUTOMATIC|Song of Darkness' Vengeance
+3	ABILITY:Special Ability|AUTOMATIC|Song of Love's War
+4	ABILITY:Special Ability|AUTOMATIC|Song of Anguish
+5	ABILITY:Special Ability|AUTOMATIC|Lengthy Song
+7	ABILITY:Special Ability|AUTOMATIC|Powerful Song
+9	ABILITY:Special Ability|AUTOMATIC|Immortal Song
+10	ABILITY:Special Ability|AUTOMATIC|Song of Love Eternal
+###Block:
+1	ADD:SPELLCASTER|ANY
+2	ADD:SPELLCASTER|ANY
+3	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+5	ADD:SPELLCASTER|ANY
+6	ADD:SPELLCASTER|ANY
+7	ADD:SPELLCASTER|ANY
+8	ADD:SPELLCASTER|ANY
+9	ADD:SPELLCASTER|ANY
+10	ADD:SPELLCASTER|ANY
+
+###Block: Spellchanter ---------------------------------------------------------------------------------------------
+#CLASS:Spellchanter	SOURCEPAGE:p.111	HD:4		TYPE:Prestige.PC	MAXLEVEL:10			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+
+# Class Name		Required Feat								Required Skill																				Required Text
+CLASS:Spellchanter	PREFEAT:1,Magical Aptitude,Skill Focus(Perform (Singing))	PRESKILL:5,Perform (Singing)=11,Spellcraft=6,Knowledge (Arcana)=6,Concentration=5,Use Magic Device=5	PRESKILL:2,TYPE.Perform=11	PRETEXT:Special: Must be able to cast 2nd level arcane spells; Special: Bardic Music ability
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Spellchanter	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Concentration|TYPE.Craft|Diplomacy|Gather Information|Jump|TYPE.Knowledge|Listen|TYPE.Perform|TYPE.Profession|Ride|Sense Motive|Speak Language|Spellcraft|Swim|Tumble
+#Weapon and Armor Proficiency: Spellchanters gain very little in the way of military training; they gain no additional weapon or armor proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Advanced Bardic Music|Performance Requirements|Dual-Song|Spell-Singing
+2	ABILITY:Special Ability|AUTOMATIC|Improved Countersong
+5	ABILITY:Special Ability|AUTOMATIC|Song of Spell Warding
+8	ABILITY:Special Ability|AUTOMATIC|Song of Healing
+9	ABILITY:Special Ability|AUTOMATIC|Arcane Harmonics
+
+#BONUS:ABILITYPOOL|Spell Singing|1 or BONUS:VAR|SpellSinging|1,4,7,10
+###Block:
+1	ADD:SPELLCASTER|Bard
+2	ADD:SPELLCASTER|Bard
+3	ADD:SPELLCASTER|Bard
+4	ADD:SPELLCASTER|Bard
+5	ADD:SPELLCASTER|Bard
+6	ADD:SPELLCASTER|Bard
+7	ADD:SPELLCASTER|Bard
+8	ADD:SPELLCASTER|Bard
+9	ADD:SPELLCASTER|Bard
+10	ADD:SPELLCASTER|Bard
+
+
+###Block: Terramancer -------------------------------------------------------------------------------------------
+
+# Class Name	Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Terramancer	HD:8		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.113	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Required Feat			Required Skill													Required Text
+CLASS:Terramancer	PREFEAT:1,Sculpt Runic Item	PRESKILL:3,Knowledge (Geology)=8,Knowledge (The Planes: Earth)=8,Craft (Stonework)=8	PRETEXT:Spellcasting: Earth Domain or the ability to cast 3 spells listed in the Earth Domain, must be able to cast stone shape. Special: Have had peaceful contact with a free-willed earth elemental
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Terramancer	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Heal|Knowledge (Geology)|Knowledge (Religion)|Knowledge (The Planes: Earth)|TYPE.Profession|Spellcraft
+#Weapon and Armor Proficiency: Terramancers gain very little in the way of military training; they gain no additional weapon or armor proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Stonewalk
+2	ABILITY:Special Ability|AUTOMATIC|Earth Subtype
+3	ABILITY:Special Ability|AUTOMATIC|Elemental Ally
+5	ABILITY:Special Ability|AUTOMATIC|Rumblings of the Earth
+10	ABILITY:Special Ability|AUTOMATIC|Mastery of the Earth
+###Block:
+1	BONUS:VAR|Stonewalk|20
+3	BONUS:VAR|ElementalAlly|1
+4	BONUS:VAR|Stonewalk|30
+6	BONUS:VAR|ElementalAlly|1
+7	BONUS:VAR|Stonewalk|30
+9	BONUS:VAR|ElementalAlly|1
+10	BONUS:VAR|Stonewalk|30
+###Block:
+1	ADD:SPELLCASTER|ANY
+2	ADD:SPELLCASTER|ANY
+3	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+5	ADD:SPELLCASTER|ANY
+6	ADD:SPELLCASTER|ANY
+7	ADD:SPELLCASTER|ANY
+8	ADD:SPELLCASTER|ANY
+9	ADD:SPELLCASTER|ANY
+10	ADD:SPELLCASTER|ANY
+
+
+###Block: Vispilio de Magus ----------------------------------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Vispilio de Magus	HD:6		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.115	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name		Required Feat												Required Skill													Required Text
+CLASS:Vispilio de Magus	PREFEAT:1,Skill Focus(Disable Device)	PREFEAT:1,Arcane Knack,Arcane Training	PRESKILL:5,Decipher Script=5,Disable Device=8,Spellcraft=5,Search=8,Use Magic Device=5	PRETEXT:Special: The character must have Trap Finding and Evasion as class features. Additionally, the character must be able to cast the following spells: detect magic, and read magic
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Vispilio de Magus	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|TYPE.Craft|Decipher Script|Diplomacy|Disable Device|Disguise|Escape Artist|Forgery|Gather Information|Hide|Knowledge (Arcana)|Intimidate|Jump|Listen|Move Silently|Open Lock|TYPE.Profession|Search|Sense Motive|Sleight of Hand|Spot|Speak Language|Swim|Tumble|Use Magic Device|Use Rope
+# Class Name		Spell Type		Caster level
+CLASS:Vispilio de Magus	SPELLTYPE:Arcane	BONUS:CASTERLEVEL|Vispilio de Magus|CL
+#Weapon and Armor Proficiency: A Vispilio de Magus gains no proficiency with any weapon or armor. A Vispilio de Magus can cast his class spells while wearing light armor without incurring the normal arcane spell failure chance. However, like any other arcane spellcaster, a Vispilio de Magus wearing medium or heavy armor or using a shield incurs a chance of arcane spell failure if the spell in question has a somatic component (which most do). A multiclassed Vispilio de Magus still incurs the normal arcane spell failure chance when casting arcane spells received from his other classes.
+#Block: Vispilio de Magus Spell List
+1	SPELLLEVEL:CLASS|Vispilio de Magus=1|Detect Magic,Feather Fall,Hold Portal,Read Magic,Comprehend Languages,Identify,Jump
+1	SPELLLEVEL:CLASS|Vispilio de Magus=2|Alter Self,Arcane Lock,Locate Object,See Invisibility,Invisibility,Misdirection,Darkvision,Knock
+1	SPELLLEVEL:CLASS|Vispilio de Magus=3|Arcane Sight,Blink,Dimension Door,Dispel Magic,Fly,Rope Trick,Secret Page,Sending
+1	SPELLLEVEL:CLASS|Vispilio de Magus=4|Arcane Eye,Detect Scrying,Invisibility (Greater),Legend Lore,Prying Eyes
+###Block:
+1	BONUS:ABILITYPOOL|Vispilio de Magus Feat|CL+1/2
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Going it Solo
+2	ABILITY:Special Ability|AUTOMATIC|Trap Sense|Detect Secret Doors
+3	ABILITY:Special Ability|AUTOMATIC|Improved Evasion|Hide in Plain Sight
+4	ABILITY:Special Ability|AUTOMATIC|Greater Dispel
+6	ABILITY:Special Ability|AUTOMATIC|To Walk Like the Spiders
+9	ABILITY:Special Ability|AUTOMATIC|Skill Mastery
+###Block:
+2	BONUS:VAR|TrapSense|1
+4	BONUS:VAR|TrapSense|1
+6	BONUS:VAR|TrapSense|1
+8	BONUS:VAR|TrapSense|1
+10	BONUS:VAR|TrapSense|1
+4	BONUS:VAR|GreaterDispelTimes|1
+7	BONUS:VAR|GreaterDispelTimes|1
+10	BONUS:VAR|GreaterDispelTimes|1
+###Block:
+1	CAST:0,1		KNOWN:0,3
+2	CAST:0,2,1		KNOWN:0,4,3
+3	CAST:0,2,2,1	KNOWN:0,5,4,3
+4	CAST:0,3,2,2,1	KNOWN:0,6,4,4,2
+5	CAST:0,3,3,2,1	KNOWN:0,6,5,4,2
+6	CAST:0,4,3,3,2	KNOWN:0,7,5,5,3
+7	CAST:0,4,4,3,2	KNOWN:0,7,6,5,3
+8	CAST:0,5,4,4,3	KNOWN:0,8,6,6,3
+9	CAST:0,5,5,4,3	KNOWN:0,8,7,7,4
+10	CAST:0,6,5,5,4	KNOWN:0,8,8,8,4
+
+
+###Block: Weather Witch ---------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Weather Witch	HD:4		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.117	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+# Class Name		Required Deity							Required Feat		Required Race					Required Skill						Required Text
+CLASS:Weather Witch	PREDEITY:1,Shamanic,PANTHEON.Saluwe,PANTHEON.Hurrian	PREFEAT:1,Iron Will	PRERACE:1,Human,Half-human,Dark-kin,Val	PRESKILL:2,Concentration=8,Knowledge (Nature)=8	PRETEXT:Special: Must pray for spells or cast spells without preparation
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Weather Witch	STARTSKILLPTS:2	CSKILL:Bluff|Climb|Concentration|TYPE.Craft|Knowledge (Arcana)|Knowledge (nature)|TYPE.Profession|Spellcraft|Survival|Swim
+#Weapon and Armor Proficiency: The Weather Witch gains no additional weapon or armor proficiencies
+###Block:
+1								ABILITY:Special Ability|AUTOMATIC|Resist the Elements
+2								ABILITY:Special Ability|AUTOMATIC|Wind Dance
+3	DOMAIN:Air		BONUS:DOMAIN|NUMBER|1	ABILITY:Special Ability|AUTOMATIC|Air Domain
+4								ABILITY:Special Ability|AUTOMATIC|Rain Chant
+6	DOMAIN:Storm	BONUS:DOMAIN|NUMBER|1	ABILITY:Special Ability|AUTOMATIC|Storms Embrace|Storm Domain
+7								ABILITY:Special Ability|AUTOMATIC|Bend the Storm to Thy Will
+8								ABILITY:Special Ability|AUTOMATIC|Sudden Storm
+10								ABILITY:Special Ability|AUTOMATIC|Furious Storm of Vengeance
+###Block:
+2	BONUS:VAR|WindDance|1
+5	BONUS:VAR|WindDance|1
+9	BONUS:VAR|WindDance|1
+###Block:
+1	ADD:SPELLCASTER|ANY
+2	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+5	ADD:SPELLCASTER|ANY
+7	ADD:SPELLCASTER|ANY
+8	ADD:SPELLCASTER|ANY
+10	ADD:SPELLCASTER|ANY
+
+##################
+# PATHS OF FAITH #
+##################
+
+###Block: Afatkuq --------------------------------------------------------------------------------------
+#CLASS:Afatkuq	SOURCEPAGE:p.118	HD:6		TYPE:Prestige.PC	MAXLEVEL:10			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+
+# Class Name	Required AL		Required Feat							Required Skill																				Required Text
+CLASS:Afatkuq	PREALIGN:LG,LN	PREFEAT:3,Great Fortitude,Iron Will,Skill Focus(Heal)	PRESKILL:5,Heal=8,Knowledge (Local: Pengik)=5,Knowledge (Local: Ssethragore)=5,Knowledge (Nature)=8,Knowledge (Religion: Pengik)=8	PRETEXT:Must be able to understand Ssethric. Must have mundane blood and be unable to cast spells or manifest powers. Pengik
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Afatkuq	STARTSKILLPTS:2	CSKILL:Bluff|Concentration|TYPE.Craft|Decipher Script|Diplomacy|Heal|Knowledge (Nature)|Knowledge (Local)|Knowledge (Religion)|TYPE.Profession|Spellcraft|Sense Motive|Survival
+# Class Name	Spell Stat		Spell Type		Caster level
+CLASS:Afatkuq	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Afatkuq|CL
+#Weapon and Armor Proficiency: Afatkuq are proficient with the following weapons:
+1	ABILITY:Special Ability|AUTOMATIC|Afatkuq Proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Dedication|Craft Totem Shield
+2	ABILITY:Special Ability|AUTOMATIC|Surgery|Healing Surgery
+3	ABILITY:Special Ability|AUTOMATIC|Cleansing Surgery|Brew Potion
+4	ABILITY:Special Ability|AUTOMATIC|Restorative Surgery
+5	ABILITY:Special Ability|AUTOMATIC|Ancestral Dream
+6	ABILITY:Special Ability|AUTOMATIC|Spiritual Surgery
+7	ABILITY:Special Ability|AUTOMATIC|Ssethric Bane
+8	ABILITY:Special Ability|AUTOMATIC|Greater Ancestral Dream|Metaphysical Surgery
+9	ABILITY:Special Ability|AUTOMATIC|Greater Surgery I
+10	ABILITY:Special Ability|AUTOMATIC|Greater Surgery II
+
+#0-level: An afatkuq may choose from all 0-level spells on both the cleric and sorcerer/wizard spell lists.
+###Block:
+1	SPELLLEVEL:CLASS|Afatkuq=1|Bless,Bless Weapon,Detect Magic,Endure Elements,Gust of Wind,Cure Light Wounds (Mass),Obscuring Mist,Shield Other,Shocking Grasp
+1	SPELLLEVEL:CLASS|Afatkuq=2|Acid Arrow,Aid,Barkskin,Continual Flame,Fog Cloud,Cure Moderate Wounds (Mass),Resist Energy,Summon Monster III,Water Breathing
+1	SPELLLEVEL:CLASS|Afatkuq=3|Elemental Form,Fireball,Cure Serious Wounds (Mass),Meld into Stone,Protection from Energy,Scorching Ray,Summon Monster V,Water Walk,Wind Wall
+1	SPELLLEVEL:CLASS|Afatkuq=4|Air Walk,Cone of Cold,Heal,Heroes' Feast,Holy Weapon,Nature's Gift,Stone Shape,Summon Monster VII,Wall of Ice
+###Block:
+1	CAST:5,3		KNOWN:0,3
+2	CAST:6,4		KNOWN:0,4,3
+3	CAST:6,5,0		KNOWN:0,5,4,3
+4	CAST:6,6,3		KNOWN:0,6,4,4,2
+5	CAST:6,6,4,0	KNOWN:0,6,5,4,2
+6	CAST:6,6,5,3	KNOWN:0,7,5,5,3
+7	CAST:6,6,6,4,0	KNOWN:0,7,6,5,3
+8	CAST:6,6,6,5,3	KNOWN:0,8,6,6,3
+9	CAST:6,6,6,6,4	KNOWN:0,8,7,7,4
+10	CAST:6,6,6,6,5	KNOWN:0,8,8,8,4
+
+
+###Block: Berotar ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name	Hit Dice	Type			Max Level	Source Page		Save checks bonus								Combat bonus
+CLASS:Berotar	HD:8		TYPE:Prestige.PC	MAXLEVEL:5	SOURCEPAGE:p.121	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Req. Att.	Required Feat		Required Skill					Required Text
+CLASS:Berotar	PREATT:5	PREFEAT:1,Leadership	PRESKILL:2,Profession (Sailor)=6,Swim=6	PRETEXT:Spellcasting: Be able to cast 3rd level spells and if a cleric have access to either the Air or Water domain. If an arcane caster or a divine caster with no domains, must have access to 2 different spells of 3rd level or higher appearing on the Air or Water domain spell lists. Special: Must be an Elorii from Entaris and be invited into the fellowship.
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Berotar	STARTSKILLPTS:2	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Diplomacy|Knowledge (Arcana)|Knowledge (nature)|Profession (sailor)|Spellcraft|and Swim.
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Master of the Vessel
+2	ABILITY:Special Ability|AUTOMATIC|Command the Winds
+3	ABILITY:Special Ability|AUTOMATIC|Command the Waves
+4	ABILITY:Special Ability|AUTOMATIC|Legion of the Depths
+5	ABILITY:Special Ability|AUTOMATIC|Command the Tempest
+###Block:
+1	ADD:SPELLCASTER|ANY
+2	ADD:SPELLCASTER|ANY
+3	ADD:SPELLCASTER|ANY
+4	ADD:SPELLCASTER|ANY
+5	ADD:SPELLCASTER|ANY
+
+
+###Block: Death Lord ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name	Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Death Lord	HD:6		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.123	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Restricted AL		Required Deity	Required Domain	Required Feat								Required Skill												Required Text
+CLASS:Death Lord	!PREALIGN:LG,NG,CG	PREDEITY:1,Neroth	PREDOMAIN:1,Death	PREFEAT:2,Spell Focus (Necromancy),Domain Focus (Undead)	PRESKILL:3,Knowledge (Arcana)=10,Knowledge (Religion: Neroth)=10,Spellcraft=10	PRETEXT:If Wizard, must be a Specialist Wizard focusing on Necromancy. Must be able to cast 4th level Divine spells and 2nd level Arcane spells
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Death Lord	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|Knowledge (Arcana)|Knowledge (History)|Knowledge (Religion: Neroth)|TYPE.Profession|Spellcraft
+#Weapon and Armor Proficiency: Death Lords gain very little in the way of military training. They gain no additional weapon or armor proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|You Are Mine|Dead Empathy|Skeletal Minion|Sense Undead
+2	ABILITY:Special Ability|AUTOMATIC|Eschew Necromantic Spell Component|Rebuke Corporeal Undead
+3	ABILITY:Special Ability|AUTOMATIC|Secrets of Necromancy|Chosen of Neroth
+4	ABILITY:Special Ability|AUTOMATIC|Legion of the Dead
+5	ABILITY:Special Ability|AUTOMATIC|Darkest Secrets
+6	ABILITY:Special Ability|AUTOMATIC|Necropolis Rising
+8	ABILITY:Special Ability|AUTOMATIC|Death Pact
+9	ABILITY:Special Ability|AUTOMATIC|Control of the Flesh
+10	ABILITY:Special Ability|AUTOMATIC|Touch of Undeath
+###Block:
+4	BONUS:VAR|LegionOfDead|1
+7	BONUS:VAR|LegionOfDead|1
+###Block:
+1	ADD:SPELLCASTER|Arcane
+4	ADD:SPELLCASTER|Arcane
+7	ADD:SPELLCASTER|Arcane
+2	ADD:SPELLCASTER|Divine
+3	ADD:SPELLCASTER|Divine
+5	ADD:SPELLCASTER|Divine
+6	ADD:SPELLCASTER|Divine
+8	ADD:SPELLCASTER|Divine
+9	ADD:SPELLCASTER|Divine
+10	ADD:SPELLCASTER|Divine
+
+###Block: Eagle Hunter -----------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Eagle Hunter	HD:8		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.125	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|EagleCompanionLvl|CL
+# Class Name		Required Ability										Required Feat				Required Region			Required Skill
+CLASS:Eagle Hunter	PREABILITY:2,CATEGORY=Special Ability,Wild Empathy,Animal Companion	PREFEAT:2,Animal Affinity,Track	PREREGION:Hinterlands,Kio	PRESKILL:3,Craft (Leatherworking)=7,Handle Animal=10,Survival=10
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Eagle Hunter	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Jump|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|TYPE.Profession|Ride|Search|Spellcraft|Spot|Survival|Swim|Use Rope
+#Weapon and Armor Proficiency: The Eagle Hunter gains no additional armor proficiencies. The Eagle Hunter gains proficiency with club, composite shortbow, dagger, handaxe, longspear, net, scimitar, shortbow, shortspear, sling, and spear.
+1	ABILITY:Special Ability|AUTOMATIC|Eagle Hunter Proficiencies
+#
+1	ABILITY:Special Ability|AUTOMATIC|We Are One
+2	ABILITY:Special Ability|AUTOMATIC|As The Wind
+3	ABILITY:Special Ability|AUTOMATIC|The Sky Watches
+4	ABILITY:Special Ability|AUTOMATIC|You Lend Your Heart
+5	ABILITY:Special Ability|AUTOMATIC|A Piercing Cry
+9	ABILITY:Special Ability|AUTOMATIC|The Wind is My Ally
+10	ABILITY:Special Ability|AUTOMATIC|My Soul Takes Flight
+###Block:
+3	BONUS:VAR|TheSkyWatches|2
+6	BONUS:VAR|TheSkyWatches|2
+8	BONUS:VAR|TheSkyWatches|4
+4	BONUS:VAR|YouLendYourHeart|2
+7	BONUS:VAR|YouLendYourHeart|2
+10	BONUS:VAR|YouLendYourHeart|2
+###Block:
+1	ADD:SPELLCASTER|Divine
+2	ADD:SPELLCASTER|Divine
+3	ADD:SPELLCASTER|Divine
+4	ADD:SPELLCASTER|Divine
+5	ADD:SPELLCASTER|Divine
+6	ADD:SPELLCASTER|Divine
+7	ADD:SPELLCASTER|Divine
+8	ADD:SPELLCASTER|Divine
+9	ADD:SPELLCASTER|Divine
+10	ADD:SPELLCASTER|Divine
+
+
+###Block: Knowledge Warden of Althares ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name				Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Knowledge Warden of Althares	HD:6		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.127	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name				Required AL		Required Check Base	Required Deity		Required Feat							Required Skill														Required Text
+CLASS:Knowledge Warden of Althares	PREALIGN:LG,LN,LE	PRECHECKBASE:Will=4	PREDEITY:1,Althares	PREFEAT:2,Church Education,Improved Unarmed Strike	PRESKILL:2,TYPE.Knowledge=10,TYPE.Knowledge=10	PRESKILL:2,Gather Information=5,Sense Motive=5	PRETEXT:able to cast 1st level divine spells.  Must be a resident of Altheria, and must be a member of the Order of Knowledge.
+# Class Name				Skill Pts/Lvl	Class Skill
+CLASS:Knowledge Warden of Althares	STARTSKILLPTS:4	CSKILL:Appraise|Balance|Climb|TYPE.Craft|Concentration|Decipher Script|Diplomacy|Escape Artist|Gather Information|Hide|Intimidate|Jump|TYPE.Knowledge|Listen|Move Silently|Search|Sense Motive|Spellcraft|Spot|Tumble
+#Weapon and Armor Proficiency: Knowledge Wardens gain proficiency in monk weapons (see Core Rulebook I) and Altherian flintlock pistols and rifles. They gain no armor proficiencies, and none of the class features below may be used while the Knowledge Warden is wearing armor.
+1	ABILITY|Special Ability|AUTOMATIC|Monk Proficiencies|Knowledge Warden of Althares Proficiencies:
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Monk Abilities|Sworn Servant of Althares
+3	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge|Evasion
+5	ABILITY:Special Ability|AUTOMATIC|The Word of Altheres
+7	ABILITY:Special Ability|AUTOMATIC|Improved Uncanny Dodge
+9	ABILITY:Special Ability|AUTOMATIC|Altheres' Grace
+10	ABILITY:Special Ability|AUTOMATIC|Altheres' Guidance|Improved Evasion
+###Block:
+2	ADD:SPELLCASTER|Divine
+4	ADD:SPELLCASTER|Divine
+6	ADD:SPELLCASTER|Divine
+8	ADD:SPELLCASTER|Divine
+10	ADD:SPELLCASTER|Divine
+
+
+###Block: The Lifewarden  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:The Lifewarden	HD:4		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.129	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name		Required AL		Required Deity		Required Skill										Required Text
+CLASS:The Lifewarden	PREALIGN:LG,NG,CG	PREDEITY:1,Belisarda	PRESKILL:3,Profession (Midwife)=8,Knowledge (Religion)=8,Spellcraft=8	PRETEXT:Must be an Elorii. Must be able to cast 4th level divine spells
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:The Lifewarden	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|Knowledge (Arcana)|Knowledge (History)|Knowledge (History: Ancient)|Knowledge (Religion)|Knowledge (Religion)|TYPE.Profession|Spellcraft
+#Weapon and Armor Proficiency: Lifewardens gain very little in the way of military training; they gain no additional weapon or armor proficiencies
+###Block:
+1								ABILITY:Special Ability|AUTOMATIC|Lay on Hands|Channeling|Expunge Unlife|Swim the Stream of Souls
+2	DOMAIN:Healing	BONUS:DOMAIN|NUMBER|1	ABILITY:Special Ability|AUTOMATIC|Bonus Domain (Healing)|Hands of our Mother
+3								ABILITY:Special Ability|AUTOMATIC|Potent Turning
+4								ABILITY:Special Ability|AUTOMATIC|Extra Channeling
+5								ABILITY:Special Ability|AUTOMATIC|Know the Soul
+7								ABILITY:Special Ability|AUTOMATIC|Read the Signs
+10								ABILITY:Special Ability|AUTOMATIC|Bastion of Life
+###Block:
+3	BONUS:VAR|PotentTurning|1
+6	BONUS:VAR|PotentTurning|1
+9	BONUS:VAR|PotentTurning|1
+
+###Block: Psionic Inquisitor ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name			Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Psionic Inquisitor	HD:6		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.131	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+# Class Name			Required AL		Required Deity			Required Feat					Required Skill															Required Text
+CLASS:Psionic Inquisitor	PREALIGN:LG,LN,LE	PREDEITY:1,Illiir,Sarish	PREFEAT:2,Inquisitor,Psionic Meditation	PRESKILL:3,Concentration=8,Knowledge (Religion)=5,Sense Motive=8	PRESKILL:1,Psicraft=5,Spellcraft=5	PRETEXT:Spellcasting- Must be able to cast 1st level divine spells.; Manifesting: Must be able to manifest 1st level powers.
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Psionic Inquisitor	STARTSKILLPTS:2	CSKILL:Autohypnosis|TYPE.Craft|Concentration|TYPE.Knowledge|Listen|Psicraft|Search|Sense Motive|Spellcraft|Spot
+#Weapon and Armor Proficiency: The Psionic Inquisitor gains no additional weapon or armor proficiencies.
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Holy Inquisitor|Truth of the Body
+3	ABILITY:Special Ability|AUTOMATIC|Sacred Focus|Truth of the Mind
+5	ABILITY:Special Ability|AUTOMATIC|Light of Illiir|Truth of the Heart
+7	ABILITY:Special Ability|AUTOMATIC|Bindings of Sarish|Truth of the Eye
+10	ABILITY:Special Ability|AUTOMATIC|Truth of the Soul
+###Block:
+2	ADD:SPELLCASTER|ANY	ADD:SPELLCASTER|Psionic
+4	ADD:SPELLCASTER|ANY	ADD:SPELLCASTER|Psionic
+6	ADD:SPELLCASTER|ANY	ADD:SPELLCASTER|Psionic
+8	ADD:SPELLCASTER|ANY	ADD:SPELLCASTER|Psionic
+10	ADD:SPELLCASTER|ANY	ADD:SPELLCASTER|Psionic
+
+###Block: Tree Shaper of Saluwe ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Class Name			Hit Dice	Type			Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Tree Shaper of Saluwe	HD:6		TYPE:Prestige.PC	MAXLEVEL:10	SOURCEPAGE:p.133	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
+# Class Name			Req. Att.	Required Deity	Required Skill									Required Text
+CLASS:Tree Shaper of Saluwe	PREATT:4	PREDEITY:1,Saluwe	PRESKILL:3,Craft (Woodworking)=8,Knowledge (Nature)=8,Survival=5	PRETEXT:Spells- Able to cast divine spells. Special- Must either have the Plant domain, or be able to cast tree shape.
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Tree Shaper of Saluwe	STARTSKILLPTS:2	CSKILL:Balance|TYPE.Craft|Concentration|Diplomacy|Escape Artist|Gather Information|Intimidate|Jump|TYPE.Knowledge|Listen|TYPE.Profession|Search|Sense Motive|Spellcraft|Spot|Tumble
+#Weapon and Armor Proficiency: Tree Shapers gain proficiency in druid weapons and armor. They now suffer the same restrictions on available weapons and armor that a druid has.
+1	ABILITY:Special Ability|AUTOMATIC|Druid Proficiencies
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Hide of Bark|Speak with Trees
+2	ABILITY:Special Ability|AUTOMATIC|Tree Shape
+4	ABILITY:Special Ability|AUTOMATIC|Tree Stride
+6	ABILITY:Special Ability|AUTOMATIC|Treant Cohort
+10	ABILITY:Special Ability|AUTOMATIC|Metamorphosis
+###Block:
+1	BONUS:VAR|HideOfBark|6
+3	BONUS:VAR|HideOfBark|1
+5	BONUS:VAR|HideOfBark|1
+7	BONUS:VAR|HideOfBark|1
+9	BONUS:VAR|HideOfBark|1
+2	BONUS:VAR|TreeShape|2
+5	BONUS:VAR|TreeShape|1
+8	BONUS:VAR|TreeShape|1
+4	BONUS:VAR|TreeStride|1
+9	BONUS:VAR|TreeStride|1
+###Block:
+2	ADD:SPELLCASTER|Divine
+4	ADD:SPELLCASTER|Divine
+6	ADD:SPELLCASTER|Divine
+8	ADD:SPELLCASTER|Divine
+10	ADD:SPELLCASTER|Divine
 
 
 ###################################

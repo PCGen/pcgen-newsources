@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Fri Jan  9 14:36:22 2009 -- reformated by prettylst.pl v1.38 (build 7302)
+# CVS $Revision: $ $Author: $ -- Sat Jan 10 23:27:37 2009 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Magic of Arcanis	SOURCESHORT:MoA	SOURCEWEB:http://www.paradigmconcepts.com
 #Original Entry: Andrew Maitland (LegacyKing), 2008
 ###ABILITY FILE:
@@ -423,28 +423,32 @@ Improved Armored Caster	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordina
 Focused Fury	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Armored Caster	CATEGORY:Special Ability	TYPE:SpecialQuality
 Additional Rage	CATEGORY:Special Ability	TYPE:SpecialQuality
+###COMMENT: Add additional rage 3, 9 level
 Channel Rage	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Enhanced Focus	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Perfected Control	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Arcane Strength	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Perfected Control	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
-
+#9	BONUS:VAR|AdditionalRage|1
+#10	BONUS:VAR|ChannelRage|1
 
 ###Block: The Master-Smith ------------------------------------------------------------------------------------------------
-# Ability Name			Category of Ability		Type
-Apprenticeship			CATEGORY:Special Ability	TYPE:SpecialQuality
-Skill Mastery			CATEGORY:Special Ability	TYPE:SpecialQuality
-Silvered Weapon			CATEGORY:Special Ability	TYPE:SpecialQuality
-Master Craftsman			CATEGORY:Special Ability	TYPE:SpecialQuality
-Master Craftsman			CATEGORY:Special Ability	TYPE:SpecialQuality
-Weapon Focus			CATEGORY:Special Ability	TYPE:SpecialQuality
-Cold-Forging			CATEGORY:Special Ability	TYPE:SpecialQuality
-Master-Smith			CATEGORY:Special Ability	TYPE:SpecialQuality
-Secret of the Smithy		CATEGORY:Special Ability	TYPE:SpecialQuality
-Eschew Spell Requirements	CATEGORY:Special Ability	TYPE:SpecialQuality
-A Practiced Hand			CATEGORY:Special Ability	TYPE:SpecialQuality
-Practitioner's Technique	CATEGORY:Special Ability	TYPE:SpecialQuality
-Master of the Forge		CATEGORY:Special Ability	TYPE:SpecialQuality
+# Ability Name				Category of Ability		Type
+Apprenticeship				CATEGORY:Special Ability	TYPE:SpecialQuality
+Skill Mastery				CATEGORY:Special Ability	TYPE:SpecialQuality
+Silvered Weapon				CATEGORY:Special Ability	TYPE:SpecialQuality
+Master Craftsman (Armorsmith)		CATEGORY:Special Ability	TYPE:SpecialQuality
+Master Craftsman (Weaponsmith)	CATEGORY:Special Ability	TYPE:SpecialQuality
+Weapon Focus				CATEGORY:Special Ability	TYPE:SpecialQuality
+Cold-Forging				CATEGORY:Special Ability	TYPE:SpecialQuality
+Master-Smith				CATEGORY:Special Ability	TYPE:SpecialQuality
+Secret of the Smithy			CATEGORY:Special Ability	TYPE:SpecialQuality
+Eschew Spell Requirements		CATEGORY:Special Ability	TYPE:SpecialQuality
+A Practiced Hand				CATEGORY:Special Ability	TYPE:SpecialQuality
+Practitioner's Technique		CATEGORY:Special Ability	TYPE:SpecialQuality
+Master of the Forge			CATEGORY:Special Ability	TYPE:SpecialQuality
+
 
 ###Block: Savant -----------------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type
@@ -490,10 +494,10 @@ Arcane Harmonics			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 
 ###Block: Terramancer -------------------------------------------------------------------------------------------
-# Ability Name		Category of Ability		Type
-Stonewalk			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+# Ability Name		Category of Ability		Type						Define			Description
+Stonewalk			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:Stonewalk|0	DESC:%1|Stonewalk
 Earth Subtype		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Elemental Ally		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Elemental Ally		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:Medium|PREVAREQ:ElementalAlly,1	DESC:Large|PREVAREQ:ElementalAlly,2	DESC:Huge|PREVAREQ:ElementalAlly,3
 Rumblings of the Earth	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Mastery of the Earth	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
@@ -510,9 +514,9 @@ To Walk Like the Spiders	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatur
 Skill Mastery			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 ###Block: Weather Witch -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name			Category of Ability		Type
+# Ability Name			Category of Ability		Type						Define			Description
 Resist the Elements		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Wind Dance				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Wind Dance				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:WindDance|0	DESC:%1/Day|WindDance
 Air Domain				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Rain Chant				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Storms Embrace			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -522,7 +526,8 @@ Sudden Storm			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Furious Storm of Vengeance	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
 ###Block: Afatkuq -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name		Category of Ability		Type
+# Ability Name		Category of Ability		Type						Automatically Gained Armor Prof.	Automatically Gained Shield Prof.	Automatically Gained Weapon Prof.
+Afatkuq Proficiencies	CATEGORY:Special Ability							AUTO:ARMORPROF|TYPE=Light,Non-Metal	AUTO:SHIELDPROF|Totem Shield		AUTO:WEAPONPROF|Club|Dagger|Dart|Quarterstaff|Scimitar|Sickle|Shortspear|Sling|Spear
 Craft Totem Shield	CATEGORY:Special Ability	TYPE:SpecialQuality
 Dedication			CATEGORY:Special Ability	TYPE:SpecialQuality
 Surgery			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
@@ -549,60 +554,64 @@ Command the Tempest	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
 
 ###Block: Death Lord -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name				Category of Ability		Type
-Dead Empathy				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Sense Undead				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-You Are Mine				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Skeletal Minion				CATEGORY:Special Ability	TYPE:SpecialQuality
-Eschew Necromantic Spell Component	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Rebuke Corporeal Undead			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Secrets of Necromancy			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Chosen of Neroth				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Legion of the Dead			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Darkest Secrets				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Necropolis Rising				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Death Pact					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Control of the Flesh			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Touch of Undeath				CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+# Ability Name				Output Name										Category of Ability		Type						Define
+Dead Empathy															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Sense Undead															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+You Are Mine															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Skeletal Minion															CATEGORY:Special Ability	TYPE:SpecialQuality
+Eschew Necromantic Spell Component												CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Rebuke Corporeal Undead														CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Secrets of Necromancy														CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Chosen of Neroth															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Legion of the Dead			OUTPUTNAME:Improved Legion of the Dead|PREVAREQ:LegionOfDead,2	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:LegionOfDead|0
+Darkest Secrets															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Necropolis Rising															CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Death Pact																CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Control of the Flesh														CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Touch of Undeath															CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 
 ###Block: Eagle Hunter -----------------------------------------------------------------------------------
-# Ability Name		Category of Ability		Type
-We Are One			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Soul Link			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Share Spells		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Share Saving Throws	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Improved Evasion		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Command			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Spirit Form			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-As The Wind			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-The Sky Watches		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-You Lend Your Heart	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-A Piercing Cry		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-The Wind is My Ally	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-My Soul Takes Flight	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+# Ability Name			Category of Ability		Type						Define				Description				Automatically Gained Weapon Prof.														Allow Follower			Allowed Companions																	Vision			Spell Res.	Damage Reduction
+Eagle Hunter Proficiencies	CATEGORY:Special Ability																	AUTO:WEAPONPROF|Club|Shortbow (Composite)|Dagger|Handaxe|Longspear|Net|Scimitar|Shortbow|Shortspear|Sling|Spear
+We Are One				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:EagleCompanionLvl|0																									FOLLOWERS:Eagle Companion|1	COMPANIONLIST:Eagle Companion|Eagle (Altai White-Shoulders),Eagle (Hovd Yellow),Eagle (Valley Black),Eagle (Cross)
+Soul Link				CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Share Spells			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Share Saving Throws		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Improved Evasion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Command				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Spirit Form				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																																																							VISION:Darkvision (60')	SR:25		DR:10/magic
+As The Wind				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+The Sky Watches			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:TheSkyWatches|0		DESC:%1|TheSkyWatches
+You Lend Your Heart		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:YouLendYourHeart|0	DESC:1%|YouLendYourHeart
+A Piercing Cry			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+The Wind is My Ally		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+My Soul Takes Flight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+
 
 ###Block: Knowledge Warden of Althares -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name			Category of Ability		Type
-Monk Abilities			CATEGORY:Special Ability	TYPE:SpecialQuality
-Sworn Servant of Althares	CATEGORY:Special Ability	TYPE:SpecialQuality
-Uncanny Dodge			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Evasion				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-The Word of Altheres		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Improved Uncanny Dodge		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Altheres' Grace			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Altheres' Guidance		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Improved Evasion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+# Ability Name						Category of Ability		Type						Automatically Gained Weapon Prof.
+Knowledge Warden of Althares Proficiencies	CATEGORY:Special Ability							AUTO:WEAPONPROF|Altherian Flintlock Pistols|Altherian Flintlock Rifles
+Monk Abilities						CATEGORY:Special Ability	TYPE:SpecialQuality
+Sworn Servant of Althares				CATEGORY:Special Ability	TYPE:SpecialQuality
+Uncanny Dodge						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Evasion							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+The Word of Altheres					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Improved Uncanny Dodge					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Altheres' Grace						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Altheres' Guidance					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Improved Evasion						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 ###Block: The Lifewarden -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name			Category of Ability		Type
+# Ability Name			Category of Ability		Type						Define								Description
 Lay on Hands			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Channeling				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Expunge Unlife			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Swim the Stream of Souls	CATEGORY:Special Ability	TYPE:SpecialQuality
 Bonus Domain (Healing)		CATEGORY:Special Ability	TYPE:SpecialQuality
 Hands of our Mother		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Potent Turning			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Potent Turning			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:PotentTurning|0	DEFINE:PotentTurningDie|6	DESC:1%d%2|PotentTurning|PotentTurningDie
 Extra Channeling			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+###Add CHA to Channeling at 4th, Add WIS to Channeling at 8th
 Know the Soul			CATEGORY:Special Ability	TYPE:SpecialQuality
 Read the Signs			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Bastion of Life			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
@@ -621,11 +630,11 @@ Truth of the Eye			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Truth of the Soul			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
 ###Block: Tree Shaper of Saluwe -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name	Category of Ability		Type
-Hide of Bark	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+# Ability Name	Category of Ability		Type						Define			Description
+Hide of Bark	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:HideOfBark|0	DESC:+%1|HideOfBark
 Speak with Trees	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Tree Shape		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Tree Stride		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Tree Shape		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:TreeShape|0	DESC:%1/day|TreeShape
+Tree Stride		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:TreeStride|0	DESC:%1/day|TreeStride
 Treant Cohort	CATEGORY:Special Ability	TYPE:SpecialQuality
 Metamorphosis	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
