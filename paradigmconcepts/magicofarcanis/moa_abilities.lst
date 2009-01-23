@@ -1,14 +1,14 @@
-# CVS $Revision: $ $Author: $ -- Sat Jan 10 23:27:37 2009 -- reformated by prettylst.pl v1.38 (build 7302)
+# CVS $Revision: $ $Author: $ -- Thu Jan 22 16:26:51 2009 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Magic of Arcanis	SOURCESHORT:MoA	SOURCEWEB:http://www.paradigmconcepts.com
 #Original Entry: Andrew Maitland (LegacyKing), 2008
-###ABILITY FILE:
+
 ###Block: Altherian Artificer -----------------------------------------------------
-# Ability Name			Output Name						Category of Ability		Type						Define				Description			Stackable?	Multiple?	Choose												Selections	Automatically Gained Feat	Add 										Bonus to skill																Modify VAR
+# Ability Name			Output Name						Category of Ability		Type						Define				Description			Stackable?	Multiple?	Choose												Selections	Automatically Gained Feat	Add 										Bonus to skill																Modify VAR				Allow Follower				Allowed Companions
 Altherian Craftsman									CATEGORY:Special Ability																																			AUTO:FEAT|Altherian Craftsman
 Sharp Intellect										CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality
 Dedication											CATEGORY:Special Ability							DEFINE:DedicationBonus|0	DESC:%1|DedicationBonus																									ADD:ABILITY|Special Ability|NORMAL|Dedication Output Choice
 Dedication Output Choice	OUTPUTNAME:Dedication				CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality						DESC:%1|DedicationBonus	STACK:NO	MULT:YES	CHOOSE:SKILLSNAMED|Alchemy|Armorsmith|Flintlocks|Trapmaking|Weaponsmithing	SELECT:1																BONUS:SKILL|%LIST|DedicationBonus	BONUS:SKILL|Knowledge (Architecture and Engineering)|DedicationBonus
-Craft Clockwork Companion								CATEGORY:Special Ability	TYPE:SpecialQuality
+Craft Clockwork Companion								CATEGORY:Special Ability	TYPE:SpecialQuality																																																																					FOLLOWERS:Clockwork Companion|1	COMPANIONLIST:Clockwork Companion|RACETYPE=Clockwork Construct
 #Trapfinding								CATEGORY:Special Ability
 Exploit Flaw										CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality	DEFINE:ExploitFlawBonus|0																																																									BONUS:VAR|ExploitFlawBonus|2
 Master Craftsman										CATEGORY:Special Ability																																								ADD:FEAT|Master Craftsman
@@ -20,7 +20,7 @@ Eschew Requirements		OUTPUTNAME:Eschew Spell Requirements	CATEGORY:Special Abili
 Instant Inspection	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 
 
-###Block: Hedge Mage ------------------------
+###Block: Hedge Mage -----------------------------------------------------------
 # Ability Name			Category of Ability		Type										Required Ability							Multiple?	Choose		Automatically Gained Feat	Bonus to skill
 Aura of Faith			CATEGORY:Special Ability
 Hedge Mage's Education		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
@@ -419,35 +419,38 @@ Improved Armored Caster	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordina
 
 
 ###Block: Magus Irascortum -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name	Category of Ability		Type
-Focused Fury	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Armored Caster	CATEGORY:Special Ability	TYPE:SpecialQuality
-Additional Rage	CATEGORY:Special Ability	TYPE:SpecialQuality
-###COMMENT: Add additional rage 3, 9 level
-Channel Rage	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Enhanced Focus	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Perfected Control	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Arcane Strength	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Perfected Control	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+# Ability Name	Output Name									Category of Ability		Type						Define			Virtual Feat		Bonus to skill					Modify VAR
+Focused Fury											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Armored Caster											CATEGORY:Special Ability	TYPE:SpecialQuality							VFEAT:Armored Caster
+Additional Rage											CATEGORY:Special Ability	TYPE:SpecialQuality			DEFINE:AdditionalRage|0												BONUS:VAR|RageTimes|AdditionalRage
+Channel Rage	OUTPUTNAME:Channel Rage, Greater|PREVAREQ:ChannelRage,1	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:ChannelRage|0
+Enhanced Focus											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary									BONUS:SKILL|Concentration|max(CHA,0)
+Perfected Control											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Arcane Strength											CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Perfected Control											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
-#9	BONUS:VAR|AdditionalRage|1
-#10	BONUS:VAR|ChannelRage|1
 
 ###Block: The Master-Smith ------------------------------------------------------------------------------------------------
-# Ability Name				Category of Ability		Type
-Apprenticeship				CATEGORY:Special Ability	TYPE:SpecialQuality
-Skill Mastery				CATEGORY:Special Ability	TYPE:SpecialQuality
-Silvered Weapon				CATEGORY:Special Ability	TYPE:SpecialQuality
-Master Craftsman (Armorsmith)		CATEGORY:Special Ability	TYPE:SpecialQuality
-Master Craftsman (Weaponsmith)	CATEGORY:Special Ability	TYPE:SpecialQuality
-Weapon Focus				CATEGORY:Special Ability	TYPE:SpecialQuality
-Cold-Forging				CATEGORY:Special Ability	TYPE:SpecialQuality
-Master-Smith				CATEGORY:Special Ability	TYPE:SpecialQuality
-Secret of the Smithy			CATEGORY:Special Ability	TYPE:SpecialQuality
-Eschew Spell Requirements		CATEGORY:Special Ability	TYPE:SpecialQuality
-A Practiced Hand				CATEGORY:Special Ability	TYPE:SpecialQuality
-Practitioner's Technique		CATEGORY:Special Ability	TYPE:SpecialQuality
-Master of the Forge			CATEGORY:Special Ability	TYPE:SpecialQuality
+# Ability Name				Output Name				Category of Ability		Type				Define				Virtual Feat				Add 																Bonus to skill
+Apprenticeship									CATEGORY:Special Ability	TYPE:SpecialQuality
+Skill Mastery (Master-Smith)		OUTPUTNAME:Skill Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:SkillMasteryBonus|0																							BONUS:SKILL|Craft (Armorsmithing),Craft (Weaponsmithing),Knowledge (Science: Metallurgy),Profession (Blacksmith)|SkillMasteryBonus|TYPE=Competence
+Silvered Weapon									CATEGORY:Special Ability	TYPE:SpecialQuality
+Master Craftsman (Armorsmith)							CATEGORY:Special Ability	TYPE:SpecialQuality												ADD:ABILITY|Master Craftsman (Armorsmithing) Feat|Master Craftsman (Weaponsmithing) Bonus
+Master Craftsman (Weaponsmith)						CATEGORY:Special Ability	TYPE:SpecialQuality												ADD:ABILITY|Master Craftsman (Weaponsmithing) Feat|Master Craftsman (Weaponsmithing) Bonus
+Weapon Focus									CATEGORY:Special Ability	TYPE:SpecialQuality						VFEAT:Weapon Focus(Warhammer)
+Cold-Forging									CATEGORY:Special Ability	TYPE:SpecialQuality
+Master-Smith									CATEGORY:Special Ability	TYPE:SpecialQuality						VFEAT:Craft Magic Arms and Armor
+Secret of the Smithy								CATEGORY:Special Ability	TYPE:SpecialQuality
+Eschew Spell Requirements							CATEGORY:Special Ability	TYPE:SpecialQuality
+A Practiced Hand									CATEGORY:Special Ability	TYPE:SpecialQuality
+Practitioner's Technique							CATEGORY:Special Ability	TYPE:SpecialQuality
+Master of the Forge								CATEGORY:Special Ability	TYPE:SpecialQuality
+###Block
+# Ability Name					Category of Ability		Required Feat						Prohibited Feat						Virtual Feat					Bonus to skill
+Master Craftsman (Armorsmithing) Feat	CATEGORY:Special Ability									!PREFEAT:1,Master Craftsman (Armorsmithing)	VFEAT:Master Craftsman (Armorsmithing)
+Master Craftsman (Armorsmithing) Bonus	CATEGORY:Special Ability	PREFEAT:1,Master Craftsman (Armorsmithing)																BONUS:SKILL|Craft (Armorsmithing)|1
+Master Craftsman (Weaponsmithing) Feat	CATEGORY:Special Ability									!PREFEAT:1,Master Craftsman (Weaponsmithing)	VFEAT:Master Craftsman (Weaponsmithing)
+Master Craftsman (Weaponsmithing) Bonus	CATEGORY:Special Ability	PREFEAT:1,Master Craftsman (Weaponsmithing)																BONUS:SKILL|Craft (Weaponsmithing)|1
 
 
 ###Block: Savant -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -465,10 +468,10 @@ Metamagical Grand Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordi
 
 
 ###Block: Song Master of Cadic -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name			Category of Ability		Type
+# Ability Name			Category of Ability		Type						Stat bonus
 Bardic Music			CATEGORY:Special Ability	TYPE:SpecialQuality
 Songs					CATEGORY:Special Ability	TYPE:SpecialQuality
-Song of Heart's Fire		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Song of Heart's Fire		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	BONUS:STAT|STR,DEX|4|TYPE=Morale}PREAPPLY:ANYPC
 Song of Darkness' Vengeance	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Song of Love's War		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Song of Anguish			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
@@ -503,15 +506,15 @@ Mastery of the Earth	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
 
 ###Block: Vispilio de Magus ----------------------------------------------------------------------------------------------------------------------
-# Ability Name			Category of Ability		Type
-Going it Solo			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Detect Secret Doors		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Trap Sense				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Hide in Plain Sight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Improved Evasion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Greater Dispel			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-To Walk Like the Spiders	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Skill Mastery			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+# Ability Name				Output Name				Category of Ability		Type						Innate Spells
+Going it Solo									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Detect Secret Doors								CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	SPELLS:Innate|TIMES=ATWILL|Detect Secret Doors
+#Trap Sense				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Hide in Plain Sight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Improved Evasion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Greater Dispel									CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+To Walk Like the Spiders							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Skill Mastery (Vispilio de Magus)	OUTPUTNAME:Skill Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 ###Block: Weather Witch -------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type						Define			Description
@@ -589,32 +592,38 @@ My Soul Takes Flight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 
 
 ###Block: Knowledge Warden of Althares -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name						Category of Ability		Type						Automatically Gained Weapon Prof.
+# Ability Name						Category of Ability		Type						Automatically Gained Weapon Prof.							Ability																				Combat bonus
 Knowledge Warden of Althares Proficiencies	CATEGORY:Special Ability							AUTO:WEAPONPROF|Altherian Flintlock Pistols|Altherian Flintlock Rifles
 Monk Abilities						CATEGORY:Special Ability	TYPE:SpecialQuality
 Sworn Servant of Althares				CATEGORY:Special Ability	TYPE:SpecialQuality
-Uncanny Dodge						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Evasion							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Uncanny Dodge						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Evasion							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 The Word of Altheres					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Improved Uncanny Dodge					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Altheres' Grace						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Altheres' Grace						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural													ABILITY:Special Ability|VIRTUAL|Monk AC|!PRECLASS:1,Monk=1	ABILITY:Special Ability|VIRTUAL|Monk AC Bonus|PRECLASS:1,Monk=1
+#COMMENT: using preclass monk to avoid a loop. They either gain the monk ability if it's not already possessed OR a +2 insight bonus to AC if they possess the Monk AC ability.
 Altheres' Guidance					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Improved Evasion						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Improved Evasion						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Monk AC Bonus						CATEGORY:Special Ability																																								BONUS:COMBAT|AC|2|TYPE=Insight
+
 
 ###Block: The Lifewarden -------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type						Define								Description
-Lay on Hands			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Channeling				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Lay on Hands			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Channeling				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+# Ability Name			Category of Ability		Type						Define								Description						Ability																															Modify VAR
 Expunge Unlife			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Swim the Stream of Souls	CATEGORY:Special Ability	TYPE:SpecialQuality
 Bonus Domain (Healing)		CATEGORY:Special Ability	TYPE:SpecialQuality
 Hands of our Mother		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Potent Turning			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:PotentTurning|0	DEFINE:PotentTurningDie|6	DESC:1%d%2|PotentTurning|PotentTurningDie
-Extra Channeling			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-###Add CHA to Channeling at 4th, Add WIS to Channeling at 8th
+Extra Channeling			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:LifewardenExtraChanneling|0											ABILITY:Special Ability|AUTOMATIC|Extra Channeling (CHA)|PREVARGTEQ:LifewardenExtraChanneling,1	ABILITY:Special Ability|AUTOMATIC|Extra Channeling (WIS)|PREVARGTEQ:LifewardenExtraChanneling,2
 Know the Soul			CATEGORY:Special Ability	TYPE:SpecialQuality
 Read the Signs			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Bastion of Life			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Extra Channeling (CHA)		CATEGORY:Special Ability																																																							BONUS:VAR|ChannelTimesBase|CHA
+Extra Channeling (WIS)		CATEGORY:Special Ability																																																							BONUS:VAR|ChannelTimesBase|WIS
+
 
 ###Block: Psionic Inquisitor -------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type
@@ -622,6 +631,7 @@ Holy Inquisitor			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Caster and Manifester Levels	CATEGORY:Special Ability	TYPE:SpecialQuality
 Truth of the Body			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Sacred Focus			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#+1 to mind-affecting descriptor
 Truth of the Mind			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Light of Illiir			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Truth of the Heart		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
@@ -630,11 +640,11 @@ Truth of the Eye			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Truth of the Soul			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
 ###Block: Tree Shaper of Saluwe -------------------------------------------------------------------------------------------------------------------------------------------------
-# Ability Name	Category of Ability		Type						Define			Description
-Hide of Bark	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:HideOfBark|0	DESC:+%1|HideOfBark
+# Ability Name	Category of Ability		Type						Define				Description
+Hide of Bark	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:HideOfBarkBonus|0	DESC:+%1|HideOfBarkBonus
 Speak with Trees	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Tree Shape		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:TreeShape|0	DESC:%1/day|TreeShape
-Tree Stride		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:TreeStride|0	DESC:%1/day|TreeStride
+Tree Shape		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:TreeShapeTimes|0		DESC:%1/day|TreeShapeTimes
+Tree Stride		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:TreeStrideTimes|0	DESC:%1/day|TreeStrideTimes
 Treant Cohort	CATEGORY:Special Ability	TYPE:SpecialQuality
 Metamorphosis	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
@@ -697,5 +707,29 @@ School Access - Transmutation				CATEGORY:Special Ability	TYPE:SpecialQuality.Wi
 #
 Wine Drinker Martial Weapon Proficiency Choice	CATEGORY:Special Ability	TYPE:WineDrinkerFeat																												ADD:FEAT|Martial Weapon Proficiency
 
-
+###Block: Bio-Construct -----------------------------------------------------------------------------------------------------------------------------------
+# Ability Name			Output Name			Category of Ability		Type						Ability								Save checks bonus				Bonus to HP			Vision
+BioConstruct							CATEGORY:Special Ability																										VISION:Darkvision(60')
+#
+Flesh Weapons							CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Magic Disruption							CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural
+Ymandragoran Thrall Paralysis	OUTPUTNAME:Paralysis	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Bio-construct traits						CATEGORY:Special Ability	TYPE:SpecialQuality			ABILITY:Immunity To Mind-Affecting|Immunity To Sleep	BONUS:CHECKS|Will|4|TYPE=Racial
+Arcane Sight							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Flesh Shield							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Vulnerability to Chaos						CATEGORY:Special Ability	TYPE:SpecialQuality
 ###EOF
+
+ClockworkConstruct						CATEGORY:Special Ability																						BONUS:HP|CURRENTMAX|1
+#Bonus HP based upon Size; look at constructs for existing example
+
+#Death Attack|Sneak Attack|Camouflage|Evasion|
+
+Extendable Reach							CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Block									CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Riposte								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Knockback								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Standstill								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
+Fast Healing 5							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Guard									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Stabilize								CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
