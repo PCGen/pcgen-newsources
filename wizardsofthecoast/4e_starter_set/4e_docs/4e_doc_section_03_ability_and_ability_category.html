@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<!--
+		PCGen Documentation Project
+			
+		$Author$
+		$Date$
+		$Revision$
+		
+		Contributors: 
+		Eric C Smith - mareduddATblackrootDOTorg
+		Andrew Maitland - drew0500ATyahooDOTcom
+		
+		Description:
+		PCGen's 4E Data Set Creation: Ability Categories and Abilities
+
+		When these documents are completed and merged with the rest of the PCGen Docs, the links for 
+			pcgen.css and valid-html1401.png must be updated.
+	-->
+	<head>
+		<title>PCGen 4e Data Set Creation Walkthrough and Source Help Documents</title>
+		<link rel="stylesheet" type="text/css" href="pcgen.css" >
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	
+	<body>
+		<h1>PCGen 4E Data Set Creation: Ability Categories and Abilities</h1>
+	
+		<p class="indent0">In this lesson we will learn how abilitycategories and abilities interact, as 
+			well as how to create abilities using abilitycategories.</p>
+			
+		<h2>Understanding Ability Categories</h2>
+		<p class="indent0">The Basis for grouping abilities are the <code>ABILITYCATEGORY</code> tag, which is 
+			the foundation upon which the abilities are used. There are two types of ability category; the Superset, 
+			or Parent, and the Subset, or Child. The following tags are used to build an ability category of 
+			either type.</p>
+		<dl class="indent1">
+			<dt><strong>ABILITYCATEGORY</strong></dt>
+			<dd>This is the name of the ability category, which can be either a 'parent' or 'child'. This is 
+				the first tag on every line in the abilitycategory file.</dd>
+			<dt><strong>CATEGORY</strong></dt>
+			<dd>This will determine whether this Abilitycategory is a parent or child. If the ability category 
+				and category names match, then it's a parent, anything else will result in a child category.</dd>
+			<dt><strong>TYPE</strong></dt>
+			<dd>This is a required tag for a child. It determines which abilities will be listed under the parent 
+				category. The Type can have multiple values identified in one tag by using a period-delimited list of 
+				types. In PCGen, we use the period (.) to denote the logical AND function. Therefore, 
+				<code>TYPE:Monkey.General</code> is the equivalent of &quot;This object is both type Monkey and 
+				General&quot;.</dd>
+			<dt><strong>VISIBLE</strong></dt>
+			<dd>Determines whether or not it abilities of this category are visible in the GUI. Valid values are 
+				'YES' (default), 'NO' and 'QUALIFY'. Setting <code>QUALIFY</code> will mean it will only display 
+				if the point pool has one or greater points available, or you have abilities of that category already 
+				selected.</dd>
+			<dt><strong>EDITABLE</strong></dt>
+			<dd>Determines whether you can add entries. In the GUI you will still see the right hand pane, 
+				but the left pane disappears. (For some reason even if set to NO, you can still remove 
+				abilities, but will not be able to add anything)</dd>
+			<dt><strong>EDITPOOL</strong></dt>
+			<dd>Determines whether you can alter the points in the ability pool for this category. Valid values for 
+				this tag are 'YES' and 'NO'.</dd> 
+			<dt><strong>FRACTIONALPOOL</strong></dt>
+			<dd>Determines whether a pool can have fractions. Valid values for this tag are 'YES' and 'NO'. If the 
+				tag is set to <code>FRACTIONALPOOL:NO</code>, the pool can contain whole numbers only. If you set 
+				your abilities to have a fractional cost, you will need to set the value as <code>FRACTIONALPOOL:YES</code>.
+				NOTE: The Ability must contain a <code>COST</code> tag with a fraction number for this to work correctly. e.g. <code>COST:.5</code></dd>
+			<dt><strong>DISPLAYLOCATION</strong></dt>
+			<dd>Sets the parent or child to appear in a certain group. e.g. 'Feats' would make it display under the 
+				'Feats Tab' while 'Class Abilities' would show it under 'Class Abilities'. Even a <code>VISIBLE:NO</code> 
+				ability category will show up as a tab if the <code>DISPLAYLOCATION</code> is either one that does 
+				not currently exist or you don't have one set up. In the absence of this tag it defaults to the 
+				name of ability category.</dd>
+			<dt><strong>PLURAL</strong></dt>
+			<dd>Determines how the name appears in the drop down list. Normally you add an &quot;s&quot; at the end to 
+				indicate multiples, or "plural", e.g. <code>ABILITYCATEGORY:Monkey Fu Choice &lt;tab&gt; PLURAL:Monkey Fu 
+				Choices</code>.</dd>
+		</dl>
+
+		<p class="indent1"><strong>Example Parent Ability Category</strong></p>
+		<p class="indent2"><code>ABILITYCATEGORY:Skill Training</code></p>
+		<p class="indent2"><code>VISIBLE:NO</code></p>
+		<p class="indent2"><code>EDITABLE:NO</code></p>
+		<p class="indent2"><code>EDITPOOL:YES</code></p>
+		<p class="indent2"><code>FRACTIONALPOOL:NO</code></p>
+		<p class="indent2"><code>CATEGORY:Skill Training</code></p>
+		<p class="indent3">The <code>ABILITYCATEGORY</code> and <code>CATEGORY</code> match, making &quot;Skill 
+			Training&quot; a parent category. Note that you do not need the <code>TYPE</code>, <code>DISPLAYLOCATION</code> 
+			or <code>PLURAL</code> tags for a parent.</p>
+
+		<p class="sidebar1"><strong>Note:</strong> At this time it is unknown how few tags are required for a parent.</p>
+
+		<p class="indent1"><strong>Example child Ability Category</strong></p>
+		<p class="indent2"><code>ABILITYCATEGORY:Cleric Class Skills</code></p>
+		<p class="indent2"><code>VISIBLE:QUALIFY</code></p>
+		<p class="indent2"><code>EDITABLE:YES</code></p>
+		<p class="indent2"><code>EDITPOOL:NO</code></p>
+		<p class="indent2"><code>FRACTIONALPOOL:NO</code></p>
+		<p class="indent2"><code>CATEGORY:Skill Training</code></p>
+		<p class="indent2"><code>TYPE:Cleric</code></p>
+		<p class="indent2"><code>DISPLAYLOCATION:1st Level Skill Training</code></p>
+		<p class="indent3">The ability category name is different from the category making &quot;Cleric Class Skills&quot; 
+			a child category.</p>
+
+		<p class="indent0">Now that we understand how to set up a basic parent and child ability category, we need to 
+			populate the categories with abilities from which selections can be made.</p>
+		<p></p>
+
+<hr>
+
+		<h2>Bringing the Ability Category and the Abilities Together</h2>
+
+		<p class="indent0">Using our existing child ability category &quot;Cleric Class Skills&quot;, I want my Cleric 
+			to have one choice, so I'll use the following tag:</p>
+		<p class="indent1"><code>BONUS:ABILITYPOOL|Cleric Class Skills|1</code></p>
+		<p class="indent0">This will grant one choice from the &quot;Cleric Class Skills&quot; pool. However, the list 
+			is, at this time, empty. In order to populate the list we need abilities of the correct category as well 
+			as type. Our ability, using the &quot;Cleric Class Skills&quot; child category, is part of the &quot;Skill 
+			Training&quot; parent category, but having an ability with the category of &quot;Skill Training&quot; will 
+			accomplish nothing by itself. We need to tell it what abilities go in the &quot;Cleric Class Skills&quot; 
+			pool. To do this, we use the <code>TYPE</code> tag.</p>
+		<p class="indent0">By adding the <code>TYPE:Cleric</code> tag to the ability, we are telling PCGen to include 
+			this ability in the list of abilities available through this pool.</p>
+		<p class="sidebar1">This is opposite from how feats work in that without a type a feat will automatically be 
+			displayed.</p>
+
+		<p class="indent0">In an Ability, like in most other PCGen objects, Type is simply a characteristic of the 
+			object and these objects can have more than one type. Generally <code>TYPE</code> can be used to organize 
+			objects into groups. However, in Abilities, <type>TYPE</code> is used to create the sets of objects that 
+			appear in an ability category or in a child ability category.</p>
+
+		<p class="indent1"><strong>Example:</strong></p>
+		<p class="indent2"><code>Dummy Object</code></p>
+		<p class="indent2"><code>TYPE:Cleric</code></p>
+		<p class="indent2"><code>CATEGORY:Skill Training</code></p>
+
+		<p class="indent0"><span class="lstobj">Dummy Object</span> is part of the &quot;Skill Training&quot; ability 
+			category and could be purchased with a point from that pool. We just repeat this until all the abilities 
+			we want are part of the ability category. Also, you may have more than one &quot;type&quot; in an ability. 
+			To give an ability more than one type, you simply list them in a period-delimited list with the 
+			<code>TYPE</code> tag, thus, if we replace <code>TYPE:Cleric</code> in the example above with  
+			<code>TYPE:Cleric.Monkey Fu</code>, the ability <span class="lstobj">Dummy Object</span> is of both the 
+			&quot;Cleric&quot; and &quot;Monkey Fu&quot; types and can be pulled into any ability pool using either 
+			type.</p>
+
+		<p class="indent0">Note that the category, with the ability name, make the unique key for the ability, so an 
+			ability can have more than one type, but it is only allowed one category. You may even have abilities with 
+			the same name, but they must be of different categories.</p>
+		<p class="indent0">Let's say we have three abilities named <span class="lstobj">Monkey Bar</span>, each with a 
+			category of &quot;Special Ability&quot;, &quot;Fighter&quot; and &quot;FEAT&quot; respectively. This 
+			would be shown as:</p>
+		<blockquote class="indent0">
+			<p class="indent2"><code>CATEGORY=Special Ability|Monkey Bar</code></p>
+			<p class="indent2"><code>CATEGORY=Fighter|Monkey Bar</code></p>
+			<p class="indent2"><code>CATEGORY=FEAT|Monkey Bar</code></p>
+		</blockquote>
+
+		<p class="indent0">This is very useful when we want to modify an ability with the <code>.MOD</code> tag. 
+			In the ability file, simply add the old ability name on a new line with the <code>.MOD</code> 
+			tacked to the end of it. Then add the tags required to modify the ability to suit your needs, 
+			making sure to change the category with the <code>CATEGORY</code> tag.</p>
+
+
+		<p class="indent0">We have several groupings of Abilities.</p>
+		<p class="indent0">Datasets from 3e typically use multiple ability categories, including:</p>
+		<p class="indent1">Special Abilities - These will be where you place MOST of your abilities
+		<p class="indent0">- In order to group anything, you will use the 'CATEGORY:' tag.
+
+		<p class="indent1"><code>CATEGORY:Special Ability</code></p>
+		<p class="indent2">Denotes the ability belongs to the Special Ability category.
+
+		<p class="indent1"><code>CATEGORY:FEAT</code></p>
+		<p class="indent2">Is how a Feat would be displayed in an ABILITY file, otherwise in a basic feat file it's 
+			assumed and is not required.</p>
+
+		<p class="indent0">we tend to name these the same as what appears in the rule book for clarity
+--
+
+		<p class="indent0">I would suggest the following ABILITYCATEGORIES:</p>
+		<blockquote class="indent0">
+			<p class="indent2">Special Ability (This will be in the Gamemode)
+			<p class="indent2">First Level (This is optional)
+			<p class="indent2">Skill Training (A suggested spot for your class skills)
+			<p class="indent2">Class Skills (One for each Class)
+			<p class="indent2">Class Choices (One for each class that has a choice inside their begining abilities)
+			<p class="indent2">Powers (I would break those up into How often they can be used and the different Tiers)
+			<p class="indent2">### Class Feat - Uncertain at this time
+		</blockquote>
+
+		<p class="indent0">AS you progress you may find you need more. But this should get your mind in 
+			the right spot.</p>
+		<p></p>
+
+<hr>
+
+		<h2>Abilities</h2>
+
+		<p class="indent0">Now Onto Ability examples.</p>
+
+		<p class="indent0">One of the more complex things to code for beginners would be Skill Training so we 
+			will use the example built in the class instruction for 4e.</p>
+
+		<p class="indent0">How do I indicate I am trained in certain skills?</p>
+
+		<p class="indent0">I'll use an Ability file. I can also use a Feat file, but they are essentially the 
+			same thing, and you'll see this makes more sense as we progress. Normally we place FEATS in a Feat 
+			file so you can use PREFEAT, but these next couple of feats are special cases.</p>
+
+		<blockquote class="indent0">
+			<p class="indent2"><code>Skill Training</code></p>
+			<p class="indent2"><code>CATEGORY:FEAT</code></p>
+			<p class="indent2"><code>TYPE:General.HeroicMonkey</code></p>
+			<p class="indent2"><code>MULT:YES</code></p>
+			<p class="indent2"><code>CHOOSE:SKILLSNAMED|ALL</code></p>
+			<p class="indent2"><code>BONUS:SKILL|LIST|1</code></p>
+		</blockquote>
+		<p class="indent0">NOTE: CATEGORY is only required if you place this in an ability file. FEAT is an 
+			automatic given in a Feat File.</p>
+
+		<p class="indent0">Wow, that is simple yes? So whenever I need my Monkey Warrior to become trained 
+			in a skill he takes this feat.</p>
+
+		<p class="indent0">Well, lets add upon this... Monkey Warrior has a base set of skills he learns, 
+			so... Let's say he has a Skill he can take called Monkey Vine Swinging. (Hey Chimps love to swing!)</p>
+
+		<p class="indent0">So in an ability file we would create this: (This next one must be an ability file to 
+			work correctly!)</p>
+
+		<blockquote class="indent0">
+			<p class="indent2"><code>Trained Class Skill (Monkey Vine Swinging)</code></p>
+			<p class="indent2"><code>CATEGORY:Skill Training</code></p>
+			<p class="indent2"><code>TYPE:MonkeyWarrior</code></p>
+			<p class="indent2"><code>ABILITY:FEAT|AUTOMATIC|Skill Training(Monkey Vine Swinging)</code></p>
+		</blockquote>
+		<p class="indent0">This last part is key... It tells PCGen that we've taken the Skill Training and 
+			assigned Monkey Vine Swinging. So if you take Skill Training again, Monkey Vine Swinging will 
+			not be a choice/</p>
+
+		<p class="indent0">You must do this for each skill you have in your skill list. Also, TYPE is a very 
+			KEY factor here. It's important because TYPE is used to place thigns into ability categories. 
+			You want your TYPE to have the Class that gets this particular class skill. If Healing Monkey 
+			and Warrior Monkey get the same skill then use the period to put both in the TYPE. Like so:</p>
+		<p class="indent1"><code>TYPE:Monkey Warrior.Healing Monkey</code></p>
+		<p class="indent0">Remember the earlier lesson how a TYPE assigns it to a pool? Well, if you set 
+			up your abilitycategories correctly and have Healing Monkey Skills using TYPE:Healing Monkey 
+			and also a Warrior Monkey with TYPE:Warrior Monkey. Then this one skill will show up in both 
+			pools or lists.</p>
+		<p></p>
+
+<hr>
+
+		<p class="indent0">Onto the next part...</p>
+
+		<p class="indent0">OKay, My Monkey Warrior loves Vine Swinging so much he wants to focus more feats 
+			to become better (Cause really, want monkey doesn't focus on simple pleasures?)</p>
+
+		<blockquote class="indent0">
+			<p class="indent2"><code>Skill Focus</code></p>
+			<p class="indent2"><code>TYPE:General.HeroicMonkey</code></p>
+			<p class="indent2"><code>PREABILITY:1,CATEGORY=FEAT,Skill Training</code></p>
+			<p class="indent3">(If doing all in a feat file then this becomes 'PREFEAT:1,Skill Training')</p>
+			<p class="indent2"><code>MULT:YES</code></p>
+			<p class="indent2"><code>CHOOSE:FEAT=Skill Training</code></p>
+			<p class="indent2"><code>BONUS:SKILL|LIST|1</code></p>
+		</blockquote>
+
+		<p class="indent0">Depending on the type of file you use will factor into how you use the 
+			PRExxx tags. A Feat File works with PREFEAT, where a ABILITY File works with PREABILITY. 
+			Though they should be interchangeable you should be aware of the subtle differences. Also, 
+			any ABILITY with a category other than FEAT will NOT take PREFEAT. So, PREFEAT:1,Dodge and 
+			PREABILITY:1,CATEGORY=FEAT,Dodge should work just fine... But try to keep this in mind. If 
+			all your feats are created in an ABILITY file, then restrict yourself to using 
+			PREABILITY:x,CATEGORY=y,z format. (See Tag Index Docs for specific tag usage).</p>
+		<p class="indent0">Okay, that covers the more difficult aspects of Monkey Skills.
+		<p></p>
+
+<hr>
+
+		<h3>Class Abilities</h3>
+		<p class="indent0">Now, Class Abilities...</p>
+
+		<p class="indent0">Monkey Warrior has a Special Class Feature which Allows him to use  
+			'Monkey Warrior Fu'  and 'Monkey Warrior Banana Fling'</p>
+
+		<p class="indent0">In order for that to work we need to create those abilities here. 
+			Recap of how the class is calling them:</p>
+		<p class="indent1"><code>ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Fu|Monkey Warrior 
+			Banana Fling</code></p>
+
+		<p class="indent0">So, to break that tag into basic pieces, first it tells pcgen this is 
+			an ability located in an ability file, next it tells pcgen the abilitycategory of the 
+			ability. That is KEY to understanding where the program looks for the ability, finally 
+			we tell pcgen how this ability will appear on the character. The Nature is very important.</p>
+		<p class="indent0">We have three Natures:</p>
+		<blockquote class="indent0">
+			<p class="indent2"><code>NORMAL</code> charges a pool point and also will NOT add the ability if 
+				you do not meet the Prereqs.</p>
+			<p class="indent2"><code>AUTOMATIC</code> does not charge to the pool, this will automatically appear on 
+				the character (Yellow unless you changed your preferences)</p>
+			<p class="indent2"><code>VIRTUAL</code> bypasses any requirements and will not charge the pool. 
+				(Appears purple by default)</p>
+		</blockquote>
+
+		<p class="indent0">Finally we tell PCGen what the Ability Name is. In this case 
+			Monkey Warrior Fu and Monkey Warrior Banana Fling.</p>
+
+		<p class="sidebar1">NOTE: That each ability is separated by a pipe (|). Do not use 
+			periods (.) or commas (,) or you will have issues.</p>
+
+		<p class="indent0">Okay, so now we know how the ability is called, now we must make the ability.</p>
+
+		<p class="indent0">Making an ability is not hard, inside the ability we can use any global tag. 
+			(See docs for global tags). So what we need to know is what the ability should do.</p>
+
+		<p class="indent0">Monkey Warrior Fu grants our monkey warrior weapon proficiencies, armor 
+			and shield proficiencies and the ability to Shout each time he gets into a fight but only once.</p>
+
+		<p class="indent0">Each Line indented indicates a tab for ease of flow.</p>
+
+		<blockquote class="indent0">
+			<p class="indent2"><code>Monkey Warrior Fu</code></p>
+			<p class="indent2"><code>TYPE:CLass Ability</code></p>
+			<p class="indent2"><code>CATEGORY:Special Ability</code></p>
+			<p class="indent2"><code>AUTO:WEAPONPROF|Monkey Claws|Monkey Bite|Monkey Fists</code></p>
+			<p class="indent2"><code>AUTO:ARMORPROF|Monkey Jacket</code></p>
+			<p class="indent2"><code>AUTO:SHIELDPROF|Bananna Buckler</code></p>
+			<p class="indent2"><code>SAB:Monkey Warrior Shout ~ Once per fight you can instill the 
+				fear of the monkey. At 12th level this Shout deals 1d10 bad breath damage.</code></p>
+		</blockquote>
+
+		<p class="indent0">At 1st - 10th level Monkey Warrior can fling bananas that can do an extra 
+			1d10 damage (Hey, he has big bananas!). at 11th to 20th his Bananas deal 2d10 damage, and 
+			finally he's mastered the Banana flinging so well that 21st to 30th level he does 4d10 
+			damage. So we want to track his damage. You can either note that damage in his ability, 
+			or PCGen can calculate that damage for you. We need two tags. DEFINE and BONUS:VAR. For 
+			the class level line, we only need to place the BONUS:VAR, but the DEFINE tag will need 
+			to be done in his ability.</p>
+
+		<blockquote class="indent0">
+			<p class="indent2"><code>Monkey Warrior Banana Fling</code></p>
+			<p class="indent2"><code>TYPE:Class Ability.SpecialAttack</code></p>
+			<p class="indent2"><code>CATEGORY:Special Ability</code></p>
+			<p class="indent2"><code>SAB:Monkey Fling Banana ~ fling Banana 30 ft and deals 
+				%d% damage|MonkeyBananaDamage|MonkeyBananaDie</code></p>
+			<p class="indent2"><code>DEFINE:MonkeyBananaDamage|0</code></p>
+			<p class="indent2"><code>DEFINE:MonkeyBananaDie|10</code></p>
+		</blockquote>
+
+		<p class="indent0">NOTE: DESC tag should be enabled on the NEW Output Sheet and PDF. 
+			In that case using special TYPES will make it appear in different places. In this 
+			SpecialAttack will appear in the SPecial Attack section. However, DESC uses a 
+			slightly different wildcard. Instead of just '%' for each variable in a row, it 
+			uses a slightly more intelligent mechanic of '%' followed by the number that the 
+			variable appears in.</p>
+
+		<p class="indent0">e.g.
+		<p class="indent1"><code>DESC: I throw %1 rocks per round  plus %2d%3+%1 damage for 
+			%4 rounds|Example1|Example2|Example3|Example4</code></p>
+
+		<p class="indent0">Now lets say:</p>
+		<blockquote class="indent0">
+			<p class="indent2">Example1 = 5
+			<p class="indent2">Example2 = 1
+			<p class="indent2">Example3 = 4
+			<p class="indent2">Example4 = 8
+		</blockquote>
+
+		<p class="indent0">The <code>DESC</code> tag above would output the following line of text: 
+			&quot;I throw 5 rocks per round  plus 1d4+5 for 8 rounds&quot;.</p>
+
+		<p class="indent0">Okay, that is the basics of creating class abilities, which can also 
+			be racial abilities.</p>
+		<p></p>
+
+<hr>
+
+		<p class="indent0">We've covered the basics of creating ABILITYCATEGORY tags to create pools 
+			and learned how to make the abilities so they are put in those pools.</p>
+
+		<p class="indent0">I think this covers the basics for abilities. If we come across more 
+			advanced techniques to be explained they will covered in an advanced series.
+
+<hr>
+
+		<p>
+		<a href="http://validator.w3.org/check?uri=referer"><img
+    	   	src="../images/system/valid-html401.png"
+    	   	alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+		</p>
+
+	</body>
+
+</html>
