@@ -65,11 +65,11 @@
 			with a <code>CLASS</code> tag.</p>
 
 		<p class="indent1"><strong>Example of Class Line</strong></p>
-		<p class="indent2"><code>CLASS:Monkey Warrior &lt;tab&gt; BONUS:CHECKS|Fortitude|3|TYPE=Class</code></p>
+		<p class="indent2"><code>CLASS:Monkey Warrior &lt;&gt; BONUS:CHECKS|Fortitude|3|TYPE=Class</code></p>
 		<p class="indent3">A class line is any line preceeded with the 'CLASS' tag.</p>
 
 		<p class="indent1"><strong>Example of a Class Level Line</strong></p>
-		<p class="indent2"><code>1 &lt;tab&gt; BONUS:CHECKS|Fortitude|3|TYPE=Class</code></p>
+		<p class="indent2"><code>1 &lt;&gt; BONUS:CHECKS|Fortitude|3|TYPE=Class</code></p>
 		<p class="indent3">A Class Level line is any line preceeded by a number indicating a class level, in this case a 
 			&quot;1&quot;, must ALWAYS come after a CLASS line. That way the program knows which class gets what at each 
 			level.</p>
@@ -105,50 +105,50 @@
 
 		<p class="indent0">The rest will go on Class Level lines.</p>
 		<blockquote class="indent0">
-			<p class="indent2"><code>1 &lt;tab&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Proficiencies</code></p>
+			<p class="indent2"><code>1 &lt;&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Proficiencies</code></p>
 			<p class="indent3">At first level the character will recieve the Monkey Warrior Proficiencies ability (which 
 				is part of the Special Ability Category. We cover abilities in another class. PCGen is modular, so things 
 				will reference other files.)</p>
 		</blockquote>
 		<p class="indent0">My Monkey warrior has 20 + his con score for starting HP and then every level beyond first he gains 10 hp
 		<p class="indent0">So in order to make that work I would use
-		<p class="indent1"><code>1 &lt;tab&gt; BONUS:HP|CURRENTMAX|20+CONSCORE</code></p>
-		<p class="indent2">Monkey Warrior will gain 20 plus his Constitution Score at first level </p>
-		<p class="indent1"><code>2 &lt;tab&gt; BONUS:HP|CURRENTMAX|(CL-1)*10</code></p>
+		<p class="indent1"><code>1 &lt;&gt; BONUS:HP|CURRENTMAX|19+CONSCORE</code></p>
+		<p class="indent2">Monkey Warrior will gain 20 plus his Constitution Score at first level. Remember, each level I gain 1 hp from the HD:1 tag.</p>
+		<p class="indent1"><code>2 &lt;&gt; BONUS:HP|CURRENTMAX|(CL-1)*9</code></p>
 		<p class="indent2">This will grant 10 hp per level except for first level (CL = Class Level - 1, so at 1st 
-			level this would be 0). I put it on the 2nd level line just to keep a clean look.</p>
+			level this would be 0). I put it on the 2nd level line just to keep a clean look. Again, I subtract 1 for the auto +1 I gain from the HD tag.</p>
 
-		<p class="indent1"><code>1 &lt;tab&gt; TEMPLATE:ClassGrantedTotalLevels</code></p>
+		<p class="indent1"><code>1 &lt;&gt; TEMPLATE:ClassGrantedTotalLevels</code></p>
 		<p class="indent2">- I like names that I understand what the purpose is, in this case we know that this 
 			template deals with Class Granted Total Levels, which is that stuff which happens regardless of my class. 
 			A template is a very useful tool. It can change your racetype or bestow certain hitdice or many other uses. 
-			You could very easily implment this tag as an ability by using:</p>
+			You could very easily implement this tag as an ability by using:</p>
 		<blockquote class="indent1">
-			<p class="indent1"><code>1 &lt;tab&gt; ABILITY:Special Ability|ClassGrantedTotalLevels</code></p>
+			<p class="indent1"><code>1 &lt;&gt; ABILITY:Special Ability|ClassGrantedTotalLevels</code></p>
 		</blockquote>
 		<p class="indent2">But if you do that you will need to create the additional ability, instead of the 
 		Template. (This is an example of PCGen's flexibility and possible confusion when things become complex.)</p>
 
-		<p class="indent1"><code>1 &lt;tab&gt; BONUS:VAR|HealingSurges|20+CON|TYPE=Class</code></p>
+		<p class="indent1"><code>1 &lt;&gt; BONUS:VAR|HealingSurges|20+CON|TYPE=Class</code></p>
 		<p class="indent2">This game system uses the variable called "HealingSurges" to be consistent, we have to 
-			actually use that name.</p>
+			actually use that name. Our standard is to use the actual name to avoid confusion.</p>
 		<p class="indent2">Monkey Warrior gets 20 plus his Constitution Bonus of that power. Cool... (I suspect Monkey 
 			Warrior is a One Monkey Wrecking Ball).</p>
 
 
-		<p class="indent1"><code>1 &lt;tab&gt; BONUS:ABILITYPOOL|Monkey Warrior Class Skills|1</code></p>
+		<p class="indent1"><code>1 &lt;&gt; BONUS:ABILITYPOOL|Monkey Warrior Class Skills|1</code></p>
 		<p class="indent2">- When we set up Skills, this will make sense, monkey warrior only gets one skill to choose from.</p>
 
-		<p class="indent1"><code>1 &lt;tab&gt; ABILITY:FEAT|AUTOMATIC|Skill Training (Monkey Lore)</code></p>
+		<p class="indent1"><code>1 &lt;&gt; ABILITY:FEAT|AUTOMATIC|Skill Training (Monkey Lore)</code></p>
 		<p class="indent2">- Monkey Warrior is granted the Feat - 'Skill Training (Monkey Lore)' automatically.</p>
 		<p class="indent2">You can also use AUTO:FEAT|Skill Training (Monkey Lore) to accomplish the same thing in this case.</p>
 
-		<p class="indent1"><code>1 &lt;tab&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Weapon Proficiencies|Monkey 
+		<p class="indent1"><code>1 &lt;&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Weapon Proficiencies|Monkey 
 			Warrior Armor Proficiencies</code></p>
 		<p class="indent2">- These tell pcgen to grab those abilities... Which we will setup which proficiencies the 
 			Monkey Warrior knows.</p>
 
-		<p class="indent1"><code>1 &lt;tab&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Fu|Monkey Warrior Percent 
+		<p class="indent1"><code>1 &lt;&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Fu|Monkey Warrior Percent 
 			Chance to find Fleas|Monkey Warrior Banana Fling</code></p>
 		<p class="indent2">- I like keeping the proficiencies separate, but here is Monkey Warrior's Class Abilities. 
 			(Not powers, let's keep that distinction clear).</p>
@@ -164,17 +164,17 @@
 		<p class="indent1">Finally, at 21<sup>st</sup> to 30<sup>th</sup> level he's mastered the banana flinging so well that 
 			he does 4d10 damage.</p>
 		<P class="indent0">To track this additional damage, you can either note that damage in his ability, or PCGen can 
-			calculate that damage for you. To do this, we use two tags. The <code>DEFINE</code> and the <code>BONUS:VAR></code> 
-			tags. We will place the <code>BONUS:VAR></code> tag on the Class Level line, but the <code>DEFINE</code> tag will 
+			calculate that damage for you. To do this, we use two tags. The <code>DEFINE</code> and the <code>BONUS:VAR</code> 
+			tags. We will place the <code>BONUS:VAR</code> tag on the Class Level line, but the <code>DEFINE</code> tag will 
 			need to be included in his ability.</p>
 
 		<p class="indent0">The following goes on the <span class="lstobj">Monkey Warrior</span> Class Level lines:</p>
-		<p class="indent1"><code>1 &lt;tab&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
+		<p class="indent1"><code>1 &lt;&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
 		<p class="indent2">This will add &quot;1&quot; to the variable called &quot;BanannaFlingDamage&quot;. Since our 
 			<code>DEFINE</code> tag is set to zero, the new value will be equal to one.</p>
-		<p class="indent1"><code>11 &lt;tab&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
+		<p class="indent1"><code>11 &lt;&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
 		<p class="indent2">Adds another 1 to the same variable name. (0+1+1 =2)</p>
-		<p class="indent1"><code>21 &lt;tab&gt; BONUS:VAR|BanannaFlingDamage|2</code></p>
+		<p class="indent1"><code>21 &lt;&gt; BONUS:VAR|BanannaFlingDamage|2</code></p>
 		<p class="indent2">Adds 2 to the variable name (0+1+1+2=4)</p>
 
 <hr>
@@ -183,22 +183,22 @@
 
 		<p class="indent0">Here is my final Monkey Warrior with all the completed stuff, does yours look the same?
 		<blockquote class="indent0">
-			<p class="indent2"><code>CLASS:Monkey Warrior &lt;tab&gt; HD:1 &lt;tab&gt; TYPE:Base.PC &lt;tab&gt; 
-				BONUS:CHECKS|Fortitude|3|TYPE=Class &lt;tab&gt; 
+			<p class="indent2"><code>CLASS:Monkey Warrior &lt;&gt; HD:1 &lt;&gt; TYPE:Base.PC &lt;&gt; 
+				BONUS:CHECKS|Fortitude|3|TYPE=Class &lt;&gt; 
 				PREMULT:1,[PRECLASS:1,Monkey Warrior=1],[!PRETYPE:1,PC]</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; BONUS:HP|CURRENTMAX|20+CONSCORE</code></p>
-			<p class="indent2"><code>2 &lt;tab&gt; BONUS:HP|CURRENTMAX|(CL-1)*10</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; BONUS:VAR|HealingSurges|10+CON|TYPE=Class</code></p>	
-			<p class="indent2"><code>1 &lt;tab&gt; BONUS:ABILITYPOOL|Monkey Warrior Class Skills|3</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; ABILITY:FEAT|AUTOMATIC|Skill Training (Monkey Lore)</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; TEMPLATE:ClassGrantedTotalLevels</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Weapon 
+			<p class="indent2"><code>1 &lt;&gt; BONUS:HP|CURRENTMAX|19+CONSCORE</code></p>
+			<p class="indent2"><code>2 &lt;&gt; BONUS:HP|CURRENTMAX|(CL-1)*9</code></p>
+			<p class="indent2"><code>1 &lt;&gt; BONUS:VAR|HealingSurges|10+CON|TYPE=Class</code></p>	
+			<p class="indent2"><code>1 &lt;&gt; BONUS:ABILITYPOOL|Monkey Warrior Class Skills|1</code></p>
+			<p class="indent2"><code>1 &lt;&gt; ABILITY:FEAT|AUTOMATIC|Skill Training (Monkey Lore)</code></p>
+			<p class="indent2"><code>1 &lt;&gt; TEMPLATE:ClassGrantedTotalLevels</code></p>
+			<p class="indent2"><code>1 &lt;&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Weapon 
 				Proficiencies|Monkey Warrior Armor Proficiencies</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Fu|Monkey 
+			<p class="indent2"><code>1 &lt;&gt; ABILITY:Special Ability|AUTOMATIC|Monkey Warrior Fu|Monkey 
 				Warrior Percent Chance to find Fleas|Monkey Warrior Bananna Fling</code></p>
-			<p class="indent2"><code>1 &lt;tab&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
-			<p class="indent2"><code>11 &lt;tab&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
-			<p class="indent2"><code>21 &lt;tab&gt; BONUS:VAR|BanannaFlingDamage|2</code></p>
+			<p class="indent2"><code>1 &lt;&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
+			<p class="indent2"><code>11 &lt;&gt; BONUS:VAR|BanannaFlingDamage|1</code></p>
+			<p class="indent2"><code>21 &lt;&gt; BONUS:VAR|BanannaFlingDamage|2</code></p>
 		</blockquote>
 		<p></p>
 
@@ -211,7 +211,7 @@
 
 		<h2>Monster Class Creation</h2>
 
-		<p class="indent0">Making monsters is not hard, in fact they are fairly easy once you get to </p>
+		<p class="indent0">Making monsters is not hard, in fact they are fairly easy once you get used to it.</p>
 
 		<p class="indent0">Okay, Monsters have specific classes or functions. Today I'll make a nasty one I'll call 
 			<span class="lstobj">Monkey Destroyer</span>.</p>
@@ -223,20 +223,25 @@
 		<p class="indent1"><code>TYPE:Monster</code></p>
 		<p class="indent2">Important that we make any monster types as such.</p>
 
-		<p class="indent1"><code>PREMULT:1,[PRECLASS:1,Monkey Destroyer],[PREPCLEVEL:MAX=1]</code></p>
+		<p class="indent1"><code>HD:1</code></p>
+		<p class="indent2">Monkey Destroyer get 1 hp each level, to adjust this we will use <code>BONUS:HP|CURRENTMAX</code>.</p>
+
+		<p class="indent1"><code>PREMULT:1,[PRECLASS:1,Monkey Destroyer=1],[!PRECLASS:1,ANY=1]</code></p>
 		<p class="indent2">This is optional, but if I want to restrict monsters I can use this.	</p>
 
 		<p class="indent1"><code>BONUS:COMBAT|INITIATIVE|10</code></p>
 		<p class="indent2">Monkey Destroyer is a nasty boy that has a plus 10 to his initiative check.</p>
 
-		<p class="indent1"><code>BONUS:HP|CURRENTMAX|20+CON+(CL*20)</code></p>
-		<p class="indent2">Monkey Destroyer has 20 HP plus his CON bonus plus 20 each level.</p>
+		<p class="indent1"><code>BONUS:HP|CURRENTMAX|19+CON+(CL*19)</code></p>
+		<p class="indent2">Monkey Destroyer has 20 HP plus his CON bonus plus 20 each level. Remember earlier we subtract 1 for the HD gain. 
+		NOTE: We cannot make this 0 yet, so 1 is the default.</p>
 
 		<p class="indent1"><code>BONUS:COMBAT|AC|CL+20</code></p>
 		<p class="indent2">Monkey Destroyer have an AC Defense Bonus of 20 plus 1 per level</p>
 
 		<p class="indent1"><code>BONUS:CHECKS|ALL|CL+20</code></p>
-		<p class="indent2">Monkey Destroyer has all his "defenses" at 20 plus his level (Which does not include the 10 base).</p>
+		<p class="indent2">Monkey Destroyer has all his "defenses" at 20 plus his level (Which does not include the 10 base).
+		Checks have been changed to Defenses</p>
 
 		<p class="indent1"><code>BONUS:COMBAT|BAB|CL+20</code></p>
 		<p class="indent2">Monkey Destroyer is a heavy combat machine. He has an attack bonus of 20 plus his level</p>
@@ -253,10 +258,10 @@
 
 		<p class="indent0">Here is what <span class="lstobj">Monkey Destroyer</span> looks like</p>
 		<blockquote class="indent1">
-			<p class="tagindent1"><code>CLASS:Monkey Destroyer &lt;tab&gt; TYPE:Monster &lt;tab&gt; 
-				PREMULT:[PRECLASS:1,Monkey Destroyer],[PREPCLEVEL:MAX=1] &lt;tab&gt; BONUS:COMBAT|INITIATIVE|10 &lt;tab&gt; 
-				BONUS:HP|CURRENTMAX|20+CON+(CL*20) &lt;tab&gt; BONUS:COMBAT|AC|CL+20 &lt;tab&gt; BONUS:CHECKS|ALL|CL+12 &lt;tab&gt; 
-				BONUS:COMBAT|BAB|CL+20 &lt;tab&gt; BONUS:VAR|OtherBAB|CL+10 &lt;tab&gt; ABILITY:Special Ability|AUTOMATIC|OtherBAB &lt;tab&gt; 
+			<p class="tagindent1"><code>CLASS:Monkey Destroyer &lt;&gt; HD:1 &lt;&gt; TYPE:Monster &lt;&gt; 
+				PREMULT:[PRECLASS:1,Monkey Destroyer],[PREPCLEVEL:MAX=1] &lt;&gt; BONUS:COMBAT|INITIATIVE|10 &lt;&gt; 
+				BONUS:HP|CURRENTMAX|19+CON+(CL*19) &lt;&gt; BONUS:COMBAT|AC|CL+20 &lt;&gt; BONUS:CHECKS|ALL|CL+12 &lt;&gt; 
+				BONUS:COMBAT|BAB|CL+20 &lt;&gt; BONUS:VAR|OtherBAB|CL+10 &lt;&gt; ABILITY:Special Ability|AUTOMATIC|OtherBAB &lt;&gt; 
 				BONUS:VAR|HealingSurges|5</code></p>
 		</blockquote>
 		<p></p>
