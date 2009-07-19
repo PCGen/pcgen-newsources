@@ -9,6 +9,32 @@ Second Level Substituition Bonus	CATEGORY:Special Ability	TYPE:SpecialQuality	DE
 Testing Class levels vs SubLevels	CATEGORY:Special Ability	TYPE:SpecialQuality		DESC:Class Level var using the var("CL=class name") vs cl("class name") for both class and subst. class. Method One class  %1  vs. Subst Class %2. Method two class level %3  vs. Subst Class level %4|var("CL=Code Team Testing")|var("CL=Code Team Substitution Class")|cl("Code Team Testing")|cl("Code Team Substitution Class")
 Save Bonus Break Down			CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:Fortitude is CL+5, Reflex is CL/2+2 and Will is CL/3
 
+
+###Block: Test Performance using MULT:YES w/ CHOOSE and Abilities w/ count
+Disadvantage Counter	CATEGORY:Special Ability	VISIBLE:NO	DEFINE:Disadvantage Points|0	BONUS:ABILITYPOOL|The Supreme Test|var("Disadvantage Points")	BONUS:VAR|Disadvantage Points|3|PREABILITY:1,CATEGORY=Special Ability,TYPE.Disadvantage	BONUS:VAR|Disadvantage Points|3|PREABILITY:2,CATEGORY=Special Ability,TYPE.Disadvantage	BONUS:VAR|Disadvantage Points|4|PREABILITY:3,CATEGORY=Special Ability,TYPE.Disadvantage
+#Use these to test PREABILITY and BONUS Var
+Disadvantage (Accursed)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Aged)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Blocked)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Broke)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Compulsive)					OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Dependent)					OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Foolish)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+Disadvantage (Frail)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
+
+#POOL Cost Changes and CHOOSE:SKILLSNAMED Test
+Skill Focus					OUTPUTNAME:Skill Focus +3								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|3|TYPE=SkillFocus																										COST:6
+Skill Focus Plus Two			OUTPUTNAME:Skill Focus +2								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|2|TYPE=SkillFocus																										COST:4
+Skill Focus Plus One			OUTPUTNAME:Skill Focus +1								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|1|TYPE=SkillFocus																										COST:2
+
+#Count Test w/ PREVAR test
+Warcraft				CATEGORY:Special Ability	TYPE:SpecialAttack											DEFINE:Warcraft Bonus|0	DESC:+%1 BAB|Warcraft Bonus														BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Normal Progression")	BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Half Progression")/2
+#
+Warcraft ~ Normal Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:6
+Warcraft ~ Half Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:3
+
+
+
 #
 # End
 #
