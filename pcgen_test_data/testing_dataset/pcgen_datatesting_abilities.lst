@@ -1,10 +1,13 @@
 SOURCELONG:PCGen Data Testing	SOURCESHORT:PCGen	SOURCEWEB:http://pcgen.sourceforge.net/
 
-
-
-
-
-
+###Block: Code Team Class Testing -----------------------------------------------------------------------------------------------------------
+Strident Monkey Walking	CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:StridentMonkeyWalking|0	DESC:Strident Monkeys have long legs and Add +%1 feet to their movement|StridentMonkeyWalking	BONUS:MOVEADD|TYPE.Walk|StridentMonkeyWalking
+Monkey Bannana Fling	CATEGORY:Special Ability	TYPE:SpecialAttack	DEFINE:MonkeyBannanaFlingBonus|0	DESC:Fling a Bannana %1 feet with a +%2 to hit and +%3 to damage|MonkeyBannanaFlingBonus*10|MonkeyBannanaFlingBonus|MonkeyBannanaFlingBonus*2
+Generic Level Bonus	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You took the Generic Level Bonus, so you should not have Strident Monkey Walking or Monkey Bannana Fling. But just to check vars here is your Class Level in Code Team Testing  %1|CodeTeamTestingLvl	DEFINE:CodeTeamTestingLvl|0
+Second Level Generic	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You took the Second Level Generic, so you should not have any 2nd level Substitution Stuff. But just to check vars here is your Class Level in Code Team Testing  %1|CodeTeamTestingLvl	DEFINE:CodeTeamTestingLvl|0
+Second Level Substituition Bonus	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You took the Second Level Substitution Class, so you should not have Second Level Generic Ability. But just to check vars here is your Class Level in Code Team Testing  %1 vs. your level in Substitution Class|CodeTeamTestingLvl|SubCodeTeamTestingLvl	DEFINE:CodeTeamTestingLvl|0	DEFINE:SubCodeTeamTestingLvl|0
+Testing Class levels vs SubLevels	CATEGORY:Special Ability	TYPE:SpecialQuality		DESC:Class Level var using the var("CL=class name") vs cl("class name") for both class and subst. class. Method One class  %1  vs. Subst Class %2. Method two class level %3  vs. Subst Class level %4|var("CL=Code Team Testing")|var("CL=Code Team Substitution Class")|cl("Code Team Testing")|cl("Code Team Substitution Class")
+Save Bonus Break Down			CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:Fortitude is CL+5, Reflex is CL/2+2 and Will is CL/3
 
 #
 # End
