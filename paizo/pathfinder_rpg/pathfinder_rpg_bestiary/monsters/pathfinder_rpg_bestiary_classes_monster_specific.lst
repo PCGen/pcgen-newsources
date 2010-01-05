@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Tue Dec 29 13:23:59 2009 -- reformated by prettylst.pl v1.39 (build 10232)
+# CVS $Revision$ $Author$ -- Tue Jan  5 12:37:35 2010 -- reformated by prettylst.pl v1.39 (build 10232)
 SOURCELONG:Pathfinder Roleplaying Game Bestiary	SOURCESHORT:PFB	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy85k5	SOURCEDATE:2009-10
 
 # Class Name	Output Name			Hit Dice	Type			Max Level		Source Page		Ability														Save checks bonus											Combat bonus
@@ -18,6 +18,18 @@ CLASS:Archon	PRERACE:1,Archon (Trumpet)	PRERACETYPE:Outsider
 CLASS:Archon	STARTSKILLPTS:6	MODTOSKILLS:YES			CSKILL:Bluff|TYPE.Craft|Knowledge (Planes)|Perception|Sense Motive|Stealth
 ###Block:Proficiencies
 1	BONUS:PCLEVEL|Cleric|ArchonCasterLevel	DEFINE:ArchonCasterLevel|0	ADD:SPELLCASTER|1|Cleric	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency
+
+# Class Name		Output Name			Hit Dice	Type			Max Level		Source Page		Ability														Save checks bonus											Combat bonus
+CLASS:Couatl Outsider	OUTPUTNAME:Outsider	HD:10		TYPE:Monster	MAXLEVEL:NOLIMIT	SOURCEPAGE:p.309	ABILITY:Special Ability|AUTOMATIC|Outsider Traits	ABILITY:FEAT|AUTOMATIC|CMB Output	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required Race	Reg. Race Type
+CLASS:Couatl Outsider	PRERACE:1,Couatl	PRERACETYPE:Outsider
+# Class Name		Skill Pts/Lvl	Add INT to Skill Points?	Class Skill
+CLASS:Couatl Outsider	STARTSKILLPTS:6	MODTOSKILLS:YES			CSKILL:Bluff|TYPE.Craft|Knowledge (Planes)|Perception|Sense Motive|Stealth
+# Class Name		Spell Stat		Spell Type		Memorize	Caster level				Use Spell List
+CLASS:Couatl Outsider	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Couatl Outsider|9	SPELLLIST:2|Sorcerer|Cleric
+###Block:Proficiencies
+1							ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency
+9	CAST:0,6,6,6,4	KNOWN:8,5,4,3,2
 
 # Class Name	Output Name			Hit Dice	Type			Max Level		Source Page		Ability														Save checks bonus											Combat bonus
 CLASS:Ghaele	OUTPUTNAME:Outsider	HD:10		TYPE:Monster	MAXLEVEL:NOLIMIT	SOURCEPAGE:p.309	ABILITY:Special Ability|AUTOMATIC|Outsider Traits	ABILITY:FEAT|AUTOMATIC|CMB Output	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
