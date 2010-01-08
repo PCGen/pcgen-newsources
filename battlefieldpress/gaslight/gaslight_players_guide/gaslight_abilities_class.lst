@@ -1,0 +1,91 @@
+# CVS $Revision$ $Author$ -- Wed Aug 26 16:19:26 2009 -- reformated by prettylst.pl v1.39 (build 10232)
+SOURCELONG:Gaslight - Players Guide	SOURCESHORT:Gaslight	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-05
+#Original Entry: Andrew Maitland
+
+
+###Block: Turning Stuff
+# Ability Name	Category of Ability		Type				Visible	Restricted Ability					Define																																									Description																									Source Page
+Basic Turning	CATEGORY:Special Ability	TYPE:Turning		VISIBLE:NO									DEFINE:TurnTimesBase|0	DEFINE:TurnLevelBase|0	DEFINE:TurnDiceBase|2	DEFINE:TurnDieSizeBase|6	DEFINE:TurnDamagePlusBase|CHA	DEFINE:TurnCheckBase|0																																											SOURCEPAGE:p.
+Turn Undead		CATEGORY:Special Ability	TYPE:Turning.TurnUndead			!PREABILITY:1,CATEGORY=Talent,Rebuke Undead	DEFINE:TurnTimesUndead|TurnTimesBase	DEFINE:TurnLevelUndead|TurnLevelBase	DEFINE:TurnDiceUndead|TurnDiceBase	DEFINE:TurnDieSizeUndead|TurnDieSizeBase	DEFINE:TurnDamagePlusUndead|TurnDamagePlusBase	DEFINE:TurnCheckUndead|TurnCheckBase	DESC:Turn Undead (Su) %1/day (turn level %2) (turn damage %3d%4+%5)|TurnTimesUndead|TurnLevelUndead|TurnDiceUndead|TurnDieSizeUndead|TurnDamagePlusUndead	SOURCEPAGE:p.
+Rebuke Undead	CATEGORY:Special Ability	TYPE:Turning.TurnUndead			!PREABILITY:1,CATEGORY=Talent,Turn Undead		DEFINE:TurnTimesUndead|TurnTimesBase	DEFINE:TurnLevelUndead|TurnLevelBase	DEFINE:TurnDiceUndead|TurnDiceBase	DEFINE:TurnDieSizeUndead|TurnDieSizeBase	DEFINE:TurnDamagePlusUndead|TurnDamagePlusBase	DEFINE:TurnCheckUndead|TurnCheckBase	DESC:Rebuke Undead (Su) %1/day (turn level %2) (turn damage %3d%4+%5)|TurnTimesUndead|TurnLevelUndead|TurnDiceUndead|TurnDieSizeUndead|TurnDamagePlusUndead	SOURCEPAGE:p.
+
+###Block: Acolyte class abilities
+# Ability Name		Category of Ability		Type				Source Page
+Combat Casting		CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.
+Medical Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.
+Minor Medical Miracle	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.
+Medical Miracle		CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.
+
+###Block: Mage class abilities
+# Ability Name	Category of Ability		Type								Define		Stackable?	Multiple?	Choose			Selections		Allow Follower		Allowed Companions											Source Page
+Summon Familiar	CATEGORY:Talent											DEFINE:FMLevel|0												FOLLOWERS:Familiar|1	COMPANIONLIST:Familiar|Bat,Cat,Ferret,Hawk,Owl,Rat,Raven,Snake (Viper/Tiny),Toad	SOURCEPAGE:p.
+Scribe Scroll	CATEGORY:Talent																																											SOURCEPAGE:p.
+Spell Mastery	CATEGORY:Talent			TYPE:SpellMastery											MULT:YES	CHOOSE:SPELLLIST|Y																						SOURCEPAGE:p.
+
+
+
+
+# Ability Name	Category of Ability		Type								Define		Stackable?	Multiple?	Choose			Selections		Allow Follower		Allowed Companions											Source Page
+Eye for Detail	CATEGORY:Special Ability	TYPE:SpecialQuality																																					SOURCEPAGE:p.
+Discern Lies	CATEGORY:Special Ability	TYPE:SpecialQuality																																					SOURCEPAGE:p.
+Web of Contacts	CATEGORY:Special Ability	TYPE:SpecialQuality																																					SOURCEPAGE:p.
+Skill Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.SkillMastery.RogueAbilities				STACK:NO	MULT:YES	CHOOSE:SKILLS		SELECT:3+INT																			SOURCEPAGE:p.
+
+###Block: Explorer class abilities
+# Ability Name		Category of Ability		Type				Stackable?	Multiple?	Choose										Source Page
+Pathfinder			CATEGORY:Special Ability	TYPE:SpecialQuality																SOURCEPAGE:p.
+Favored Terrain		CATEGORY:Special Ability	TYPE:FavoredTerrain	STACK:NO	MULT:YES	CHOOSE:STRING|Arctic|Aquatic|Desert|Forest|Hill|Marsh|Mountains	SOURCEPAGE:p.
+Natural Improvement	CATEGORY:Special Ability	TYPE:SpecialQuality																SOURCEPAGE:p.
+Passage			CATEGORY:Special Ability	TYPE:SpecialQuality																SOURCEPAGE:p.
+By the Bootstraps		CATEGORY:Special Ability	TYPE:SpecialQuality
+Heroic Surge		CATEGORY:Special Ability	TYPE:SpecialQuality
+
+
+###Block: Martial Artist class abilities
+# Ability Name	Category of Ability		Type				Define					Add to base move											Weapon prof. bonus									Source Page
+Evade Fire		CATEGORY:Special Ability	TYPE:SpecialQuality																																SOURCEPAGE:p.
+Fast Movement	CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:FastMovementProgression|0	BONUS:MOVEADD|TYPE.Walk|FastMovementProgression*10|PREVAREQ:ENCUMBERANCE,0													SOURCEPAGE:p.
+Flurry of Blows	CATEGORY:Special Ability	TYPE:SpecialAttack																																SOURCEPAGE:p.
+Iron Fist		CATEGORY:Special Ability	TYPE:SpecialAttack																																SOURCEPAGE:p.
+Living Weapon	CATEGORY:Special Ability	TYPE:SpecialAttack	DEFINE:LivingWeaponProgression|0														BONUS:WEAPONPROF=Unarmed Strike|DAMAGESIZE|LivingWeaponProgression	SOURCEPAGE:p.
+
+###Block: Officer class abilities
+# Ability Name	Category of Ability		Type				Source Page
+Way of Command	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.
+Rallying Call	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.
+
+
+###Block: Rogue class abilities
+# Ability Name					Output Name		Category of Ability		Type						Visible		Required Ability										Restricted Ability										Define			Description			Stackable?	Multiple?	Choose							Bonus to Ability Pool					Weapon prof. bonus					Allow Follower		Allowed Companions											Source Page
+Trapfinding									CATEGORY:Special Ability	TYPE:SpecialQuality																																																																																					SOURCEPAGE:p.
+Evasion									CATEGORY:Special Ability	TYPE:SpecialQuality																																																																																					SOURCEPAGE:p.
+Trap Sense									CATEGORY:Special Ability	TYPE:SpecialQuality																															DEFINE:TrapSenseBonus|0	DESC:+%1|TrapSenseBonus																																															SOURCEPAGE:p.
+Uncanny Dodge								CATEGORY:Special Ability	TYPE:SpecialQuality																																																																																					SOURCEPAGE:p.
+Improved Uncanny Dodge							CATEGORY:Special Ability	TYPE:SpecialQuality																																																																																					SOURCEPAGE:p.
+
+
+
+#Gunslinger
+Close Combat Shot								CATEGORY:Special Ability	TYPE:SpecialQuality
+Gunslinger Weapon Focus							CATEGORY:Special Ability	TYPE:SpecialAttack																																																			BONUS:ABILITYPOOL|Gunslinger Weapon Focus|1
+Defensive Position							CATEGORY:Special Ability	TYPE:SpecialQuality
+Lightning Shot								CATEGORY:Special Ability	TYPE:SpecialQuality
+Sharp-shooting								CATEGORY:Special Ability	TYPE:SpecialQuality
+Gunslinger Greater Weapon Focus					CATEGORY:Special Ability	TYPE:SpecialAttack																																																			BONUS:ABILITYPOOL|Gunslinger Weapon Focus|1
+Bullseye									CATEGORY:Special Ability	TYPE:SpecialQuality
+
+#Gunslinger
+Gunslinger Weapon Focus Choice					CATEGORY:Talent			TYPE:GunslingerWF				VISIBLE:DISPLAY													!PREABILITY:1,CATEGORY=Special Ability,Gunslinger Greater Weapon Focus Choice									STACK:NO	MULT:YES	CHOOSE:WEAPONPROFS|TYPE.PersonalFirearm										BONUS:WEAPONPROF=%LIST|TOHIT|1
+Gunslinger Greater Weapon Focus Choice				CATEGORY:Talent			TYPE:GunslingerWF				VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Gunslinger Weapon Focus Choice																						STACK:NO	MULT:YES	CHOOSE:FEAT=Gunslinger Weapon Focus Choice									BONUS:WEAPONPROF=%LIST|TOHIT|1|TYPE=Competence
+
+###
+Gun Fu						OUTPUTNAME:Gun-Fu	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Dead Aim									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Dodge Fire									CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Firestorm									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+
+
+
+
+
+Summon Familiar								CATEGORY:Special Ability	TYPE:SpecialQuality			VISIBLE:YES																											DEFINE:FMLevel|0																																		FOLLOWERS:Familiar|1	COMPANIONLIST:Familiar|Bat,Cat,Ferret,Hawk,Owl,Rat,Raven,Snake (Viper/Tiny),Toad	SOURCEPAGE:ClassesII.rtf

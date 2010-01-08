@@ -1,0 +1,64 @@
+# CVS $Revision$ $Author$ -- Wed Aug 26 16:19:26 2009 -- reformated by prettylst.pl v1.39 (build 10232)
+SOURCELONG:Gaslight - Players Guide	SOURCESHORT:Gaslight	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-05
+#Original Entry: Andrew Maitland
+
+###Block: Occupation
+# Template Name	Visible	Template																								Define						Bonus to Ability Pool			Apply Kit
+Occupation		VISIBLE:NO	TEMPLATE:CHOOSE:AcolyteSkills|DetectiveSkills|ExplorerSkills|MageSkills|MartialArtistSkills|OfficerSkills|RogueSkills|ScholarSkills|EverymanSkills								BONUS:ABILITYPOOL|Occupation|1	KIT:1|Wealth Roll
+
+Energy Points	VISIBLE:NO																										DEFINE:EnergyPoints|min(INT,WIS,CHA)*TL	BONUS:ABILITYPOOL|Energy Points|TL
+
+###Block: Assigned for Occupation prerequisites, it's how we know what class was taken first and thus which skills are 1st level class skills --Eddy
+# Template Name		Visible	Required Class
+AcolyteSkills		VISIBLE:NO	PRECLASS:1,Acolyte
+DetectiveSkills		VISIBLE:NO	PRECLASS:1,Investigator
+ExplorerSkills		VISIBLE:NO	PRECLASS:1,Explorer
+MageSkills			VISIBLE:NO	PRECLASS:1,Apprentice
+MartialArtistSkills	VISIBLE:NO	PRECLASS:1,Martial Artist
+OfficerSkills		VISIBLE:NO	PRECLASS:1,Officer
+RogueSkills			VISIBLE:NO	PRECLASS:1,Rogue
+ScholarSkills		VISIBLE:NO	PRECLASS:1,Scholar
+EverymanSkills		VISIBLE:NO	PRECLASS:1,Everyman
+
+
+
+
+###Block: Human Ability Bonus
+# Template Name			Visible	Template																										Stat bonus
+Human Ability Bonus		VISIBLE:NO	TEMPLATE:CHOOSE:Stength Ability Bonus|Dexterity Ability Bonus|Constitution Ability Bonus|Intelligence Ability Bonus|Wisdom Ability Bonus|Charisma Ability Bonus
+Stength Ability Bonus		VISIBLE:NO																												BONUS:STAT|STR|2
+Dexterity Ability Bonus		VISIBLE:NO																												BONUS:STAT|DEX|2
+Constitution Ability Bonus	VISIBLE:NO																												BONUS:STAT|CON|2
+Intelligence Ability Bonus	VISIBLE:NO																												BONUS:STAT|INT|2
+Wisdom Ability Bonus		VISIBLE:NO																												BONUS:STAT|WIS|2
+Charisma Ability Bonus		VISIBLE:NO																												BONUS:STAT|CHA|2
+
+###Block: Beast Men Racial Traits
+# Template Name		Visible	Template
+Beast Men Racial Traits	VISIBLE:NO	TEMPLATE:CHOOSE:Bear Racial Traits|Cat Racial Traits|Dog Racial Traits
+###Block:
+# Template Name		Size		Visible	Bonus to skill				Stat bonus																			Ability						Subrace		Natural Attacks
+Bear Racial Traits	SIZE:L	VISIBLE:NO							BONUS:STAT|DEX,INT|-2|TYPE=Racial	BONUS:STAT|STR|4|TYPE=Racial																	SUBRACE:Bear
+Cat Racial Traits				VISIBLE:NO	BONUS:SKILL|Athletics|4|TYPE=Racial	BONUS:STAT|DEX,CHA|2|TYPE=Racial	BONUS:STAT|CON,INT|-2|TYPE=Racial																SUBRACE:Cat
+Dog Racial Traits				VISIBLE:NO							BONUS:STAT|CON|4|TYPE=Racial	BONUS:STAT|INT|-4|TYPE=Racial	BONUS:STAT|WIS|2|TYPE=Racial	BONUS:STAT|CHA|-2|TYPE=Racial	ABILITY:Talent|AUTOMATIC|Improved Scent	SUBRACE:Dog
+#COMMENT: Changed Cat Racial from Climb to Athletics
+
+
+
+#TODO: Wild Shape templates:  Bat|Dire Bat|Rat|Dire Rat|Wolf|Dire Wolf
+
+Claws						VISIBLE:NO																																					NATURALATTACKS:Claw,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*2,1d6
+Fangs						VISIBLE:NO																																					NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d4
+Horns						VISIBLE:NO																																					NATURALATTACKS:Gore,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d4
+
+
+###Block: Import from other source
+# Template Name
+Unarmed Lethal Strike
+Combat Expertise trade off
+
+
+
+#
+# End
+#

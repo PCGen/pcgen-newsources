@@ -1,0 +1,204 @@
+# CVS $Revision$ $Author$ -- Wed Aug 26 16:19:26 2009 -- reformated by prettylst.pl v1.39 (build 10232)
+SOURCELONG:Gaslight - Players Guide	SOURCESHORT:Gaslight	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-05
+#Original Entry: Andrew Maitland
+
+
+###Block: Unconstructed References -------------------------------------------------
+# Ability Name				Category of Ability		Apply Kit
+All Automatic Proficiencies		CATEGORY:Special Ability
+Animal Companion				CATEGORY:Special Ability
+Aquatic					CATEGORY:Special Ability
+Attach					CATEGORY:Special Ability
+Branch Elite				CATEGORY:Special Ability
+Constrict					CATEGORY:Special Ability
+Death Touch					CATEGORY:Special Ability
+Deliver Touch Spells			CATEGORY:Special Ability
+Empathic Link				CATEGORY:Special Ability
+Hawk Familiar Bonuses			CATEGORY:Special Ability
+Hide in Undergrowth			CATEGORY:Special Ability
+Hide when Submerged			CATEGORY:Special Ability
+Improved Evasion				CATEGORY:Special Ability
+Improved Grab				CATEGORY:Special Ability
+Insanity					CATEGORY:Special Ability
+Keen Scent					CATEGORY:Special Ability
+Legendary Speech				CATEGORY:Special Ability
+Owl Familiar Bonuses			CATEGORY:Special Ability
+Poison					CATEGORY:Special Ability
+Pounce					CATEGORY:Special Ability
+Rake						CATEGORY:Special Ability
+Rebuke Scalykind				CATEGORY:Special Ability
+Scry on Familiar				CATEGORY:Special Ability
+Share Spells				CATEGORY:Special Ability
+Speak with Animals of its Kind	CATEGORY:Special Ability
+Speak with Master				CATEGORY:Special Ability
+Spot in Darkness				CATEGORY:Special Ability
+Spot in Daylight				CATEGORY:Special Ability
+Stampede					CATEGORY:Special Ability
+Tracking by Scent				CATEGORY:Special Ability
+Trip						CATEGORY:Special Ability
+
+Starting Wealth				CATEGORY:Wealth			KIT:1|Wealth Roll
+Wealth Roll ~ 2				CATEGORY:Wealth
+Wealth Roll ~ 3				CATEGORY:Wealth
+Wealth Roll ~ 4				CATEGORY:Wealth
+Wealth Roll ~ 5				CATEGORY:Wealth
+Wealth Roll ~ 6				CATEGORY:Wealth
+Wealth Roll ~ 7				CATEGORY:Wealth
+Wealth Roll ~ 8				CATEGORY:Wealth
+
+
+
+
+
+###Block: Regular Stuff --------------------------------------------------------------------------------------------------------------------
+# Ability Name		Category of Ability		Type				Template					Source Page
+Stat Boost +2 (Str)	CATEGORY:Special Ability	TYPE:BonusStat		TEMPLATE:Stength Ability Bonus
+Stat Boost +2 (Dex)	CATEGORY:Special Ability	TYPE:BonusStat		TEMPLATE:Dexterity Ability Bonus
+Stat Boost +2 (Con)	CATEGORY:Special Ability	TYPE:BonusStat		TEMPLATE:Constitution Ability Bonus
+Stat Boost +2 (Int)	CATEGORY:Special Ability	TYPE:BonusStat		TEMPLATE:Intelligence Ability Bonus
+Stat Boost +2 (Wis)	CATEGORY:Special Ability	TYPE:BonusStat		TEMPLATE:Wisdom Ability Bonus
+Stat Boost +2 (Cha)	CATEGORY:Special Ability	TYPE:BonusStat		TEMPLATE:Charisma Ability Bonus
+
+#
+Scent				CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+
+Limited Immortality	CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+Blood Requirement		CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+Blood Drain			CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+Daylight Vulnerability	CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+
+#Werewolf
+Damage Reduction		CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+Alternate Form		CATEGORY:Special Ability	TYPE:SpecialQuality							SOURCEPAGE:p.
+
+###Block: Alternate Form Tree
+# Ability Name	Category of Ability	Type				Required Ability					Required Non-Monster Lvl	Define			Description												Stackable?	Multiple?	Choose									Move			Modify VAR				Source Page
+Mist Form		CATEGORY:Talent		TYPE:VampireTalent																																																				SOURCEPAGE:p.
+Swarm			CATEGORY:Talent		TYPE:VampireTalent	PREABILITY:1,CATEGORY=Talent,Wild Shape	PREPCLEVEL:MIN=8																																										SOURCEPAGE:p.
+Wall-Crawling	CATEGORY:Talent		TYPE:VampireTalent								PREPCLEVEL:MIN=3																																		MOVE:Climb,20						SOURCEPAGE:p.
+Wild Shape		CATEGORY:Talent		TYPE:VampireTalent													DEFINE:WildShapeTimes|0	DESC:%1 times per day you can assume the shape of a %2|WildShapeTimes|%CHOICE	STACK:NO	MULT:YES	CHOOSE:STRING|Bat|Dire Bat|Rat|Dire Rat|Wolf|Dire Wolf				BONUS:VAR|WildShapeTimes|1	SOURCEPAGE:p.
+
+###Block: Amazing Constitution Tree
+# Ability Name		Category of Ability	Type			Required Ability						Source Page
+Resilient Organism	CATEGORY:Talent		TYPE:MultiRacial									SOURCEPAGE:p.
+Second Wind			CATEGORY:Talent		TYPE:MultiRacial									SOURCEPAGE:p.
+Stamina			CATEGORY:Talent		TYPE:MultiRacial	PREABILITY:1,CATEGORY=Talent,Resilient Organism	SOURCEPAGE:p.
+
+###Block: Animal Senses Tree
+# Ability Name	Category of Ability	Type				Required Ability					Vision		Source Page
+Darkvision		CATEGORY:Talent		TYPE:BeastManTalent								VISION:Darkvision	SOURCEPAGE:p.
+Hawk's Eyes		CATEGORY:Talent		TYPE:BeastManTalent	PREABILITY:1,CATEGORY=Talent,Darkvision				SOURCEPAGE:p.
+Improved Scent	CATEGORY:Talent		TYPE:BeastManTalent											SOURCEPAGE:p.
+Keen Hearing	CATEGORY:Talent		TYPE:BeastManTalent											SOURCEPAGE:p.
+
+###Block: Charm Talent Tree
+# Ability Name	Category of Ability	Type				Required Ability					Description																Source Page
+Charm			CATEGORY:Talent		TYPE:WildlingTalent								DESC:+%1 bonus on all Charisma-based skill checks made to influence members of his chosen gender|TL	SOURCEPAGE:p.
+Favor			CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:1,CATEGORY=Talent,Charm																			SOURCEPAGE:p.
+Captivate		CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:2,CATEGORY=Talent,Charm,Favor																		SOURCEPAGE:p.
+Taunt			CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:1,CATEGORY=Talent,Charm																			SOURCEPAGE:p.
+
+###Block: Greater Lycanthrope Talent Tree
+# Ability Name			Category of Ability	Type									Required Ability
+Greater Lycanthrope		CATEGORY:Talent		TYPE:WerewolfTalent.Talent.GreaterLycanthropeTalent
+Regenerative Transformation	CATEGORY:Talent		TYPE:WerewolfTalent.Talent.GreaterLycanthropeTalent	PREABILITY:1,CATEGORY=Talent,Greater Lycanthrope
+Large Hybrid			CATEGORY:Talent		TYPE:WerewolfTalent.Talent.GreaterLycanthropeTalent	PREABILITY:2,CATEGORY=Talent,Greater Lycanthrope,Regenerative Transformation
+
+###Block: Hour of the Wolf
+# Ability Name	Category of Ability	Type								Required Ability
+Thick Hide		CATEGORY:Talent		TYPE:HourOfTheWolfTalent.Talent.WerewolfTalent
+Hide of the Wolf	CATEGORY:Talent		TYPE:HourOfTheWolfTalent.Talent.WerewolfTalent	PREABILITY:1,CATEGORY=Talent,Thick Hide
+Werewolf Plus	CATEGORY:Talent		TYPE:HourOfTheWolfTalent.Talent.WerewolfTalent	PREABILITY:1,CATEGORY=Talent,Hide of the Wolf
+
+###Block: Hybrid Damage Reduction Talent Tree
+# Ability Name			Category of Ability	Type							Required Ability
+Damage Reduction 5/Silver	CATEGORY:Talent		TYPE:HybridDamageReductionTalent.Talent	PREABILITY:2,CATEGORY=Talent,Greater Lycanthrope,Regenerative Transformation
+Damage Reduction 10/Silver	CATEGORY:Talent		TYPE:HybridDamageReductionTalent.Talent	PREABILITY:1,CATEGORY=Talent,Damage Reduction 5/Silver	PREABILITY:1,CATEGORY=Talent,TYPE.GreaterLycanthropeTalent
+Damage Reduction 15/Silver	CATEGORY:Talent		TYPE:HybridDamageReductionTalent.Talent	PREABILITY:1,CATEGORY=Talent,Damage Reduction 10/Silver	PREABILITY:1,CATEGORY=Talent,TYPE.GreaterLycanthropeTalent
+
+
+###Block: Instinctive Response Talent Tree
+# Ability Name		Category of Ability	Type				Required Ability												Combat bonus						Source Page
+Full Alert			CATEGORY:Talent		TYPE:WildlingTalent															BONUS:COMBAT|INITIATIVE|4|TYPE=Circumstance	SOURCEPAGE:p.
+Improved Evasion		CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:3,CATEGORY=Talent,Full Alert,Evasion,Increased Speed												SOURCEPAGE:p.
+Heightened Reflexes	CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:4,CATEGORY=Talent,Full Alert,Evasion,Improved Evasion,Increased Speed									SOURCEPAGE:p.
+
+###Block: Increased Speed Talent Tree
+# Ability Name			Category of Ability	Type				Required Ability										Add to base move			Source Page
+Increased Speed			CATEGORY:Talent		TYPE:WildlingTalent													BONUS:MOVEADD|TYPE.Walk|5	SOURCEPAGE:p.
+Improved Increased Speed	CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:1,CATEGORY=Talent,Increased Speed					BONUS:MOVEADD|TYPE.Walk|5	SOURCEPAGE:p.
+Advanced Increased Speed	CATEGORY:Talent		TYPE:WildlingTalent	PREABILITY:2,CATEGORY=Talent,Increased Speed,Improved Increased Speed	BONUS:MOVEADD|TYPE.Walk|5	SOURCEPAGE:p.
+
+###Block: Dominion Tree
+# Ability Name		Category of Ability	Type				Required Ability								Required Stat	Source Page
+Children of the Night	CATEGORY:Talent		TYPE:VampireTalent	PREABILITY:2,CATEGORY=Talent,Animal Magnetism,Wild Shape				SOURCEPAGE:p.
+Command			CATEGORY:Talent		TYPE:VampireTalent	PREABILITY:2,CATEGORY=Talent,Animal Magnetism,Suggestion				SOURCEPAGE:p.
+Psychic Link		CATEGORY:Talent		TYPE:VampireTalent	PREABILITY:2,CATEGORY=Talent,Animal Magnetism,Suggestion	PRESTAT:1,CHA=15	SOURCEPAGE:p.
+Suggestion			CATEGORY:Talent		TYPE:VampireTalent	PREABILITY:1,CATEGORY=Talent,Animal Magnetism						SOURCEPAGE:p.
+
+###Block: Fortune Tree
+# Ability Name		Category of Ability	Type			Required Ability						Required Non-Monster Lvl	Modify VAR			Source Page
+Inherited Fortune		CATEGORY:Talent		TYPE:HumanTalent									PREPCLEVEL:MAX=1			BONUS:VAR|WealthBonus|2	SOURCEPAGE:p.
+Heirloom			CATEGORY:Talent		TYPE:HumanTalent	PREABILITY:1,CATEGORY=Talent,Inherited Fortune										SOURCEPAGE:p.
+Inherited Treasure	CATEGORY:Talent		TYPE:HumanTalent	PREABILITY:1,CATEGORY=Talent,Inherited Fortune						BONUS:VAR|WealthBonus|4	SOURCEPAGE:p.
+
+###Block: Natural Weaponry Tree
+# Ability Name		Category of Ability	Type						Required Ability									Template		Combat bonus			Source Page
+Claws				CATEGORY:Talent		TYPE:VampireTalent.BeastManTalent												TEMPLATE:Claws						SOURCEPAGE:p.
+Fangs				CATEGORY:Talent		TYPE:VampireTalent.BeastManTalent												TEMPLATE:Fangs						SOURCEPAGE:p.
+Horns				CATEGORY:Talent		TYPE:BeastManTalent														TEMPLATE:Horns						SOURCEPAGE:p.
+Tail Slap			CATEGORY:Talent		TYPE:BeastManTalent																						SOURCEPAGE:p.
+Melee Smash			CATEGORY:Talent		TYPE:VampireTalent.BeastManTalent															BONUS:COMBAT|DAMAGE.Melee|1	SOURCEPAGE:p.
+Improved Melee Smash	CATEGORY:Talent		TYPE:VampireTalent.BeastManTalent	PREABILITY:2,CATEGORY=Talent,Melee Smash,Improved Melee Smash				BONUS:COMBAT|DAMAGE.Melee|1	SOURCEPAGE:p.
+Advanced Melee Smash	CATEGORY:Talent		TYPE:VampireTalent.BeastManTalent	PREABILITY:1,CATEGORY=Talent,Melee Smash								BONUS:COMBAT|DAMAGE.Melee|1	SOURCEPAGE:p.
+
+###Block: Personal Background Tree
+# Ability Name	Category of Ability	Type								Required Non-Monster Lvl	Bonus to skill		Modify VAR			Source Page
+Legendary Beauty	CATEGORY:Talent		TYPE:HumanTalent.VampireTalent			PREPCLEVEL:MAX=1							BONUS:VAR|Reputation|1	SOURCEPAGE:p.
+Enigmatic		CATEGORY:Talent		TYPE:HumanTalent.VampireTalent.BeastManTalent	PREPCLEVEL:MAX=1											SOURCEPAGE:p.
+Raised by Beasts	CATEGORY:Talent		TYPE:HumanTalent.BeastManTalent.WildlingTalent	PREPCLEVEL:MAX=1			BONUS:SKILL|Survival|2					SOURCEPAGE:p.
+Spokesperson	CATEGORY:Talent		TYPE:MultiRacial						PREPCLEVEL:MAX=1											SOURCEPAGE:p.
+Monstrous		CATEGORY:Talent		TYPE:MultiRacial						PREPCLEVEL:MAX=1											SOURCEPAGE:p.
+
+###Block: Privilege Talent Tree
+# Ability Name	Output Name				Category of Ability	Type			Required Non-Monster Lvl	Var. Must Be Grater				Source Page
+Upgrade							CATEGORY:Talent		TYPE:MultiRacial	PREPCLEVEL:MIN=2			PREVARGT:(Reputation+WealthBonus),11	SOURCEPAGE:p.
+He's With Me	OUTPUTNAME:"He's With Me"	CATEGORY:Talent		TYPE:MultiRacial	PREPCLEVEL:MIN=3										SOURCEPAGE:p.
+Undue Influence						CATEGORY:Talent		TYPE:MultiRacial						PREVARGT:(Reputation+WealthBonus),16	SOURCEPAGE:p.
+
+###Block: Prodigy Tree
+# Ability Name		Category of Ability	Type			Required Ability						Required Non-Monster Lvl	Bonus to skill			Source Page
+Additional Training	CATEGORY:Talent		TYPE:HumanTalent	PREABILITY:1,CATEGORY=Talent,Cultural Legacy											SOURCEPAGE:p.
+#TODO: Additional Training benefit
+Cultural Legacy		CATEGORY:Talent		TYPE:HumanTalent									PREPCLEVEL:MAX=1								SOURCEPAGE:p.
+#TODO: Cultural Legacy benefit
+Prodigious Gift		CATEGORY:Talent		TYPE:HumanTalent									PREPCLEVEL:MAX=1								SOURCEPAGE:p.
+Skill Mimic			CATEGORY:Talent		TYPE:HumanTalent	PREABILITY:1,CATEGORY=Talent,Prodigious Gift											SOURCEPAGE:p.
+Superior Intuition	CATEGORY:Talent		TYPE:HumanTalent	PREABILITY:1,CATEGORY=Talent,Prodigious Gift						BONUS:SKILL|Investigate|TL	SOURCEPAGE:p.
+
+###Block: Social Ties Tree
+# Ability Name	Category of Ability	Type			Required Non-Monster Lvl	Source Page
+Ally			CATEGORY:Talent		TYPE:MultiRacial	PREPCLEVEL:MIN=4			SOURCEPAGE:p.
+Contacts		CATEGORY:Talent		TYPE:MultiRacial						SOURCEPAGE:p.
+Family Ties		CATEGORY:Talent		TYPE:MultiRacial	PREPCLEVEL:MAX=1			SOURCEPAGE:p.
+Nemesis		CATEGORY:Talent		TYPE:MultiRacial						SOURCEPAGE:p.
+Organisation Ties	CATEGORY:Talent		TYPE:MultiRacial	PREPCLEVEL:MAX=1			SOURCEPAGE:p.
+Significant Other	CATEGORY:Talent		TYPE:MultiRacial						SOURCEPAGE:p.
+
+###Block: Supernatural Talent tree
+# Ability Name		Category of Ability	Type								Required Non-Monster Lvl	Required Stat				Source Page
+Animal Magnetism		CATEGORY:Talent		TYPE:HumanTalent.BeastManTalent.WildlingTalent	PREPCLEVEL:MAX=1			PRESTAT:1,CHA=13				SOURCEPAGE:p.
+Magical Potency		CATEGORY:Talent		TYPE:HumanTalent.BeastManTalent.WildlingTalent	PREPCLEVEL:MAX=1			PRESTAT:3,INT=11,WIS=11,CHA=11	SOURCEPAGE:p.
+Pact with Darkness	CATEGORY:Talent		TYPE:HumanTalent.BeastManTalent.WildlingTalent	PREPCLEVEL:MAX=1									SOURCEPAGE:p.
+
+
+###Block: Alternate Form Tree
+# Ability Name	Category of Ability	Type								Required Ability
+Sludgerunner	CATEGORY:Talent		TYPE:WildlingTalent.Talent.AlternateFormTalent
+Tunnelrunner	CATEGORY:Talent		TYPE:WildlingTalent.Talent.AlternateFormTalent	PREABILITY:1,CATEGORY=Talent,Sludgerunner
+#
+# End
+#
+
+
+
