@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Fri Jan 15 17:58:13 2010 -- reformated by prettylst.pl v1.39 (build 10232)
+# CVS $Revision$ $Author$ -- Sat Jan 16 23:44:35 2010 -- reformated by prettylst.pl v1.39 (build 10232)
 SOURCELONG:Pathfinder Roleplaying Game Bestiary	SOURCESHORT:PFB	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy85k5	SOURCEDATE:2009-10
 
 ###Block: Dark Folk Abilities
@@ -125,9 +125,30 @@ Spell Deflection	KEY:Spell Deflection ~ Devourer	CATEGORY:Special Ability	TYPE:S
 Powerful Bite	KEY:Powerful Bite ~ Tyrannosaurus	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary						DESC:A tyrannosaurus applies twice its Strength modifier to bite damage.	BONUS:WEAPONPROF=Bite|DAMAGE|max(0,STR)	SOURCEPAGE:p.86
 Stun			KEY:Stun ~ Ankylosaurus			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DEFINE:StunDC|10+(HD/2)+STR	DESC:The ankylosaurus's tail can deliver a powerful, stunning blow.									SOURCEPAGE:p.83	ASPECT:Ability Benefit|(DC %1)|StunDC	BENEFIT:The ankylosaurus's tail can deliver a powerful, stunning blow. A creature struck by this attack must make a DC %1 save or be dazed for 1 round. If the strike is a critical hit and the target fails its save, it is instead stunned for 1d4 rounds.|StunDC
 
+###Block: Doppelganger Abilities
+# Ability Name	Unique Key					Category of Ability		Type						Description																							Automatically Gained Armor Prof.						Automatically Gained Shield Prof.							Automatically Gained Weapon Prof.				Bonus to skill																						Source Page		Aspects					Description of the Benefits
+Mimicry		KEY:Mimicry ~ Doppelganger		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:A doppelganger is proficient in all weapons, armor, and shields.													AUTO:ARMORPROF|ARMORTYPE=Light|ARMORTYPE=Medium|ARMORTYPE=Heavy	AUTO:SHIELDPROF|Buckler|SHIELDTYPE=Light|SHIELDTYPE=Heavy|Tower Shield	AUTO:WEAPONPROF|TYPE=Martial|TYPE=Simple|TYPE=Exotic																									SOURCEPAGE:p.89							BENEFIT:A doppelganger is proficient in all weapons, armor, and shields. In addition, a doppelganger can use any spell trigger or spell completion item as if the spells were on its spell list. Its caster level is %1.
+Perfect Copy	KEY:Perfect Copy ~ Doppelganger	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:When a doppelganger uses change shape, it can assume the appearance of specific individuals.																																																																SOURCEPAGE:p.89
+Change Shape	KEY:Change Shape ~ Doppelganger	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You have the ability to assume the appearance of a specific creature or type of creature, but retains most of your own physical qualities.																																	BONUS:SKILL|Bluff (While using change shape ability)|4|TYPE=Racial	BONUS:SKILL|Disguise (While using change shape ability)|20|TYPE=Racial	SOURCEPAGE:p.89	ASPECT:Ability Benefit|(Alter Self)	BENEFIT:You have the ability to assume the appearance of a specific creature or type of creature, but retains most of your own physical qualities. You cannot change shape to a form more than one size category smaller or larger than your original form. This ability functions as a polymorph spell, but you do not adjust your ability scores (although you gain any other abilities of the creature you mimic).
+
 ###Block: Dragon Turtle abilities
 # Ability Name	Unique Key				Category of Ability		Type						Description																																																								Source Page
 Capsize		KEY:Capsize ~ Dragon Turtle	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:A dragon turtle can attempt to capsize a boat or ship by ramming it as a charge attack and making a CMB check. The DC of this check is 25, or the result of the boat captain's Profession (Sailor) check, whichever is higher. For each size category larger than the dragon turtle's size, it takes a cumulative -10 penalty on this CMB check.	SOURCEPAGE:p.112
+
+###Block: Drider Abilities
+# Ability Name		Unique Key					Category of Ability		Type						Define				Description																																				Weapon prof. bonus																		Wield Category bonus		Source Page		Aspects
+Poison			KEY:Poison ~ Drider			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DEFINE:PoisonDC|10+(HD/2)+CON	DESC:Bite--injury; save Fort DC %1; frequency 1/round for 6 rounds; effect 1d2 Str; cure 1 save.|PoisonDC																																														SOURCEPAGE:p.113	ASPECT:Ability Benefit|(DC %1)|PoisonDC
+Undersized Weapons	KEY:Undersized Weapons ~ Drider	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary						DESC:Although a drider is Large, its upper torso is the same size as that of a Medium humanoid. As a result, they wield weapons as if they were one size category smaller than their actual size (Medium for most centaurs).	BONUS:WEAPONPROF=TYPE.Simple|TOHIT|2	BONUS:WEAPONPROF=TYPE.Martial|TOHIT|2	BONUS:WEAPONPROF=TYPE.Exotic|TOHIT|2	BONUS:WIELDCATEGORY|ALL|1	SOURCEPAGE:p.113
+
+###Block: Dryad Abilities
+# Ability Name	Unique Key				Category of Ability		Type							Description																											Source Page		Description of the Benefits
+Tree Meld		KEY:Tree Meld ~ Dryad		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		DESC:A dryad can meld with any tree, similar to how the spell meld into stone functions. She can remain melded with a tree as long as she wishes.				SOURCEPAGE:p.116
+Tree Dependent	KEY:Tree Dependent ~ Dryad	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.Weakness	DESC:A dryad is mystically bonded to a single, enormous tree and must never stray more than 300 yards from it.										SOURCEPAGE:p.116	BENEFIT:A dryad is mystically bonded to a single, enormous tree and must never stray more than 300 yards from it. Most dryad trees are oak trees, but other trees function as well (often having subtle influences on a specific dryad's personality and appearance). A dryad who moves 300 yards beyond her bonded tree immediately becomes sickened. Every hour thereafter, she must make a DC 15 Fortitude save to resist becoming nauseated for an hour. A dryad that is out of range of her bonded tree for 24 hours takes 1d6 points of Constitution damage, and another 1d6 points of Constitution damage every day that follows-- eventually, this separation kills the dryad. A dryad can forge a new bond with a new tree by performing a 24-hour ritual and making a successful DC 20 Will save.
+Woodcraft		KEY:Woodcraft ~ Dryad		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		DESC:A dryad has a +6 racial bonus to Craft checks involving wood, and is always treated as if she had masterwork artisan's woodworking tools when making such checks.	SOURCEPAGE:p.116
+
+###Block: Duergar Abilities
+# Ability Name		Unique Key			Category of Ability		Type					Source Page
++2 Save Vs. Spells	KEY:Duergar vs Spells	CATEGORY:Special Ability	TYPE:SpecialQuality.Defensive	SOURCEPAGE:p.117
 
 ###Block: Elemental (Air) abilities
 # Ability Name	Unique Key					Category of Ability		Type						Visible	Description															Source Page
