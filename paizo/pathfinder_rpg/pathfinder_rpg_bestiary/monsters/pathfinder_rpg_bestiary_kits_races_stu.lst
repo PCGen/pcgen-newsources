@@ -359,6 +359,7 @@ FEAT:Weapon Finesse
 
 STARTPACK:Sphinx (Gynosphinx) Default	TYPE:DefaultMonster.MagicalBeast	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Sphinx (Gynosphinx)]	SOURCEPAGE:p.257
 RACE:Sphinx (Gynosphinx)	!PRERACE:1,%
+GENDER:Female
 NAME:Gynosphinx
 ALIGN:TN
 STAT:STR=10|DEX=11|CON=10|INT=10|WIS=11|CHA=11
@@ -468,6 +469,81 @@ FEAT:Run
 FEAT:Stunning Critical
 STAT:STR=11|DEX=10|CON=10|INT=11|WIS=11|CHA=10
 
+STARTPACK:Tengu Default	TYPE:DefaultMonster.Humanoid	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Tengu]	SOURCEPAGE:p.263
+RACE:Tengu	!PRERACE:1,%
+NAME:Tengu
+ALIGN:TN
+STAT:STR=12|DEX=15|CON=14|INT=10|WIS=13|CHA=8
+CLASS:Rogue	LEVEL:1
+ABILITY:CATEGORY=Favored Class|Rogue
+ABILITY:CATEGORY=Favored Class Bonus|Bonus Hit Point
+SKILL:Acrobatics		RANK:1
+SKILL:Appraise		RANK:1
+SKILL:Bluff			RANK:1
+SKILL:Climb			RANK:1
+SKILL:Knowledge (Local)	RANK:1
+SKILL:Linguistics		RANK:1
+SKILL:Perception		RANK:1
+SKILL:Stealth		RANK:1
+FEAT:Weapon Finesse
+GEAR:Leather			SIZE:M	LOCATION:Equipped
+GEAR:Dagger				SIZE:M	LOCATION:Primary Hand
+GEAR:Shortbow			SIZE:M	LOCATION:Carried
+GEAR:Arrow		QTY:20			LOCATION:Carried
+
+STARTPACK:Tiefling Default	TYPE:DefaultMonster.Humanoid	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Tiefling]	SOURCEPAGE:p.264
+RACE:Tiefling	!PRERACE:1,%
+NAME:Tiefling
+ALIGN:NE
+STAT:STR=13|DEX=15|CON=14|INT=10|WIS=12|CHA=8
+CLASS:Rogue	LEVEL:1
+ABILITY:CATEGORY=Favored Class|Rogue
+ABILITY:CATEGORY=Favored Class Bonus|Bonus Hit Point
+SKILL:Acrobatics		RANK:1
+SKILL:Bluff			RANK:1
+SKILL:Disable Device	RANK:1
+SKILL:Escape Artist	RANK:1
+SKILL:Intimidate		RANK:1
+SKILL:Perception		RANK:1
+SKILL:Sense Motive	RANK:1
+SKILL:Sleight of Hand	RANK:1
+SKILL:Stealth		RANK:1
+FEAT:Weapon Finesse
+GEAR:Studded Leather			SIZE:M	LOCATION:Equipped
+GEAR:Sword (Short)			SIZE:M	LOCATION:Primary Hand
+GEAR:Crossbow (Light)			SIZE:M	LOCATION:Carried
+GEAR:Bolt (Crossbow)	QTY:20			LOCATION:Carried
+LANGBONUS:Abyssal|Infernal
+
+STARTPACK:Tiger Default	TYPE:DefaultMonster.Animal	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Tiger]	SOURCEPAGE:p.265
+RACE:Tiger	!PRERACE:1,%
+NAME:Tiger
+ALIGN:TN
+STAT:STR=11|DEX=11|CON=11|INT=10|WIS=10|CHA=10
+SKILL:Acrobatics	RANK:1
+SKILL:Perception	RANK:1
+SKILL:Stealth	RANK:2
+SKILL:Swim		RANK:2
+FEAT:Improved Initiative
+FEAT:Skill Focus (Perception)
+FEAT:Weapon Focus (Claw)
+
+STARTPACK:Tiger (Dire) Default	TYPE:DefaultMonster.Animal	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Tiger (Dire)]	SOURCEPAGE:p.265
+RACE:Tiger (Dire)	!PRERACE:1,%
+NAME:Dire Tiger
+ALIGN:TN
+STAT:STR=11|DEX=11|CON=11|INT=10|WIS=10|CHA=10
+SKILL:Perception	RANK:5
+SKILL:Stealth	RANK:1
+SKILL:Swim		RANK:2
+FEAT:Improved Critical (Bite)
+FEAT:Improved Initiative
+FEAT:Run
+FEAT:Skill Focus (Perception)
+FEAT:Skill Focus (Stealth)
+FEAT:Weapon Focus (Bite)
+FEAT:Weapon Focus (Claw)
+
 STARTPACK:Treant Default	TYPE:DefaultMonster.Plant	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Treant],[!PRERACE:1,%]	SOURCEPAGE:p.266
 ALIGN:NG
 RACE:Treant	!PRERACE:1,%
@@ -485,38 +561,6 @@ FEAT:Power Attack
 FEAT:Weapon Focus (Slam)
 STAT:STR=11|DEX=10|CON=11|INT=10|WIS=10|CHA=11
 GEAR:Rock (Medium)	LOCATION:Carried
-
-STARTPACK:Tiger Default	TYPE:DefaultMonster.Animal	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Tiger]	SOURCEPAGE:p.265
-RACE:Tiger	!PRERACE:1,%
-NAME:Tiger
-ALIGN:TN
-STAT:STR=11|DEX=11|CON=11|INT=10|WIS=10|CHA=10
-SKILL:Acrobatics	RANK:1
-SKILL:Perception	RANK:1
-SKILL:Stealth	RANK:2
-SKILL:Swim		RANK:2
-FEAT:Improved Initiative
-FEAT:Skill Focus (Perception)
-FEAT:Weapon Focus (Claw)
-
-
-STARTPACK:Tiger (Dire) Default	TYPE:DefaultMonster.Animal	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Tiger (Dire)]	SOURCEPAGE:p.265
-RACE:Tiger (Dire)	!PRERACE:1,%
-NAME:Dire Tiger
-ALIGN:TN
-STAT:STR=11|DEX=11|CON=11|INT=10|WIS=10|CHA=10
-#SKILL:Acrobatics	RANK:1
-SKILL:Perception	RANK:5
-SKILL:Stealth	RANK:1
-SKILL:Swim		RANK:2
-FEAT:Improved Critical (Bite)
-FEAT:Improved Initiative
-FEAT:Run
-FEAT:Skill Focus (Perception)
-FEAT:Skill Focus (Stealth)
-FEAT:Weapon Focus (Bite)
-FEAT:Weapon Focus (Claw)
-
 
 STARTPACK:Troglodyte Default	TYPE:DefaultMonster.Humanoid	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Troglodyte],[!PRERACE:1,%]	SOURCEPAGE:p.267
 RACE:Troglodyte	!PRERACE:1,%
