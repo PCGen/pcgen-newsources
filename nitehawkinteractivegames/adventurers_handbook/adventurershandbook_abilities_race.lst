@@ -1,12 +1,16 @@
-# CVS $Revision$ $Author$ -- Fri Jan 22 14:30:57 2010 -- reformated by prettylst.pl v1.39 (build 10232)
+# CVS $Revision$ $Author$ -- Sat Jan 23 16:14:19 2010 -- reformated by prettylst.pl v1.39 (build 10232)
 SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
 #Original Entry by: Tir Gwaith
 
-# Not sure on the whole Gwonome Skills.  Lapidary?  Should that be another skill?
+# At some point, prob. good idea to combine the different Weapon Familiarity objects with multiple TYPEs.
 
 ###Block: Dwonome abilities
-# Ability Name					Output Name																									Category of Ability		Type							Description																																			Bonus to skill																																							Change Weapon Prof. Category					Source Page		Temporary effect description
-Dwonome Skills					OUTPUTNAME:+2 to  Craft checks when using skills for gemcutting, lapidary, woodworking, armorsmithing, weaponsmithing, blacksmithing, and whitesmithing.	CATEGORY:Special Ability	TYPE:SpecialQuality																																								BONUS:SKILL|TYPE.Craft|2|TYPE=Racial|PREAPPLY:PC	BONUS:SKILL|Craft (Gemcutting),Craft (Lapidary),Craft (Woodworking),Craft (Metalworking),Craft (Armorsmithing),Craft (Blacksmithing),Craft (Weaponsmithing),Craft (Whitesmithing)|2|TYPE=Racial										SOURCEPAGE:p.8	TEMPDESC:Adjusts Appraise and Craft skill bonuses by 2
-Gnomish-Dwarven Blood																														CATEGORY:Special Ability	TYPE:SpecialQuality				DESC:For all purposes, Dwonomes are considered gnomes and dwarves. They may use weapons and items only usable by gnomes and only usable by dwarves, and weapons meant to only harm dwarves or gnomes may harm them.																																																			SOURCEPAGE:p.8
-Weapon Familiarity (Dwarven weapons)																											CATEGORY:Special Ability	TYPE:SpecialQuality.DwonomeFamiliarity	DESC:Dwonomes, depending upon whether they were raised in a dwarven or gnomish community, may treat dwarven waraxes and dwarven urgroshes or gnome hooked hammers as martial weapon, rather than exotic weapons.																																											CHANGEPROF:Urgrosh (Dwarven),Waraxe (Dwarven)=Martial	SOURCEPAGE:p.8
-Weapon Familiarity (Gnome Hooked Hammer)																											CATEGORY:Special Ability	TYPE:SpecialQuality.DwonomeFamiliarity	DESC:Dwonomes, depending upon whether they were raised in a dwarven or gnomish community, may treat dwarven waraxes and dwarven urgroshes or gnome hooked hammers as martial weapon, rather than exotic weapons.																																											CHANGEPROF:Hammer (Gnome Hooked)=Martial			SOURCEPAGE:p.8
+# Ability Name					Output Name					Category of Ability		Type							Visible		Description																																			Change Weapon Prof. Category					Source Page
+Gnomish Dwarven Blood				OUTPUTNAME:Gnomish-Dwarven Blood	CATEGORY:Special Ability	TYPE:SpecialQuality							DESC:For all purposes, Dwonomes are considered gnomes and dwarves. They may use weapons and items only usable by gnomes and only usable by dwarves, and weapons meant to only harm dwarves or gnomes may harm them.										SOURCEPAGE:p.8
+Weapon Familiarity (Dwarven weapons)							CATEGORY:Special Ability	TYPE:SpecialQuality.DwonomeFamiliarity	VISIBLE:DISPLAY	DESC:Dwonomes raised in a dwarven community may treat dwarven waraxes and dwarven urgroshes as martial weapon, rather than exotic weapons.													CHANGEPROF:Urgrosh (Dwarven),Waraxe (Dwarven)=Martial	SOURCEPAGE:p.8
+Weapon Familiarity (Gnome Hooked Hammer)							CATEGORY:Special Ability	TYPE:SpecialQuality.DwonomeFamiliarity	VISIBLE:DISPLAY	DESC:Dwonomes raised in a gnomish community may treat gnome hooked hammers as martial weapon, rather than exotic weapons.																CHANGEPROF:Hammer (Gnome Hooked)=Martial			SOURCEPAGE:p.8
+
+###Block:Gnomling abilities
+# Ability Name					Unique Key					Output Name					Category of Ability		Type							Visible		Description																														Change Weapon Prof. Category			Source Page
+Gnome Halfling Blood										OUTPUTNAME:Gnome-Halfling Blood	CATEGORY:Special Ability	TYPE:SpecialQuality							DESC:For many special effects a Gnomling is considered both a gnome and Halfling.  Magical weapons useable only by gnomes and halflings will work for a Gnomling and affect them as well.								SOURCEPAGE:p.11
+Weapon Familiarity (Gnome Hooked Hammer)	KEY:Familiarity_Gnomling_gnome							CATEGORY:Special Ability	TYPE:SpecialQuality.GnomlingFamiliarity	VISIBLE:DISPLAY	DESC:Gnomlings raised in a gnomish community may treat gnome hooked hammers as martial weapons instead of exotic weapons.											CHANGEPROF:Hammer (Gnome Hooked)=Martial	SOURCEPAGE:p.11
