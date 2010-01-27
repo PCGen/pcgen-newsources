@@ -1,0 +1,23 @@
+# CVS $Revision$ $Author$ -- Tue Jan 26 20:40:21 2010 -- reformated by prettylst.pl v1.39 (build 10232)
+SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
+#Original Entry by: Tir Gwaith
+
+# Class Name		Hit Dice	Source Page		Save checks bonus															Combat bonus
+CLASS:Ghost Hunter	HD:6		SOURCEPAGE:p.130	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex|min(1,CL/2)+min(1,CL/5)	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+# Class Name		Req. Att.	Required Feat		Required Skill						Required Text
+CLASS:Ghost Hunter	PREATT:4	PREFEAT:1,Alertness	PRESKILL:2,Knowledge (Undead),Sense Motive=4	PRETEXT:To become a ghost hunter the player character must have encountered and defied the approaches of at least one ghost, without the aid of others or magical assistance.
+# Class Name		Class Skill
+CLASS:Ghost Hunter	CSKILL:Concentration|TYPE.Craft|Diplomacy|Knowledge (Undead)|Listen|Search|Sense Motive|Spot
+###Block:Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
+###Block:Level Progression
+1	BONUS:VAR|ResistanceFrightfulMoanHD|CL	ABILITY:Special Ability|AUTOMATIC|Resistance to Frightful Moan
+2								ABILITY:Special Ability|AUTOMATIC|Ghostly Insight
+3	BONUS:VAR|EtheralSightDuration|CL		ABILITY:Special Ability|AUTOMATIC|Ethereal Sight
+4	BONUS:VAR|EtheralAttack|CL/2-1		ABILITY:Special Ability|AUTOMATIC|Etheral Attack
+5	BONUS:VAR|PlanarShiftDuration|CL		ABILITY:Special Ability|AUTOMATIC|Planar Shift
+7								ABILITY:Special Ability|AUTOMATIC|Improved Resistance to Frightful Moan
+9								ABILITY:Special Ability|AUTOMATIC|Contact Ether Plane
+
+
