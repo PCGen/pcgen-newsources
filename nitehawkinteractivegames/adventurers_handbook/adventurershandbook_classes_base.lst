@@ -1,0 +1,120 @@
+# CVS $Revision$ $Author$ -- Sat Jan 30 10:21:27 2010 -- reformated by prettylst.pl v1.39 (build 10232)
+SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
+#Original Entry by: Tir Gwaith
+
+# Skipping Favored Prey for now..
+# Outcast: Casterlevel progression???
+
+# Class Name		Hit Dice	Source Page		Save checks bonus											Combat bonus
+CLASS:Bounty Hunter	HD:8		SOURCEPAGE:p.35	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required AL				Required Stat
+CLASS:Bounty Hunter	PREALIGN:LN,LE,TN,NE,CN,CE	PRESTAT:2,CHA=13,CON=13
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Bounty Hunter	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Diplomacy|Gather Information|Hide|Intimidate|Jump|Knowledge (Trapmaking)|Listen|Move Silently|Ride|Use Rope|Spot|Search|Sense Motive|Swim|Survival
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies|Bounty Hunter Profciencies	AUTO:FEAT|Martial Weapon Proficiency|Simple Weapon Proficiency
+1																						AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
+###Block:Level Progression
+1															AUTO:FEAT|Track
+#1	1st Favored Prey
+2															AUTO:FEAT|Endurance
+3															AUTO:FEAT|Improved Unarmed Combat
+#5	2nd Favored Prey
+8					ABILITY:Special Ability|AUTOMATIC|Base of Operations
+10	BONUS:VAR|Reputation|1	ABILITY:Special Ability|AUTOMATIC|Swift Tracker|Reputation
+#10	3rd Favored Prey
+15					ABILITY:Special Ability|AUTOMATIC|Camouflage
+#15	4th Favored Prey
+20	BONUS:VAR|Reputation|1
+#20	5th Favored Prey
+
+
+# Class Name	Hit Dice	Source Page
+CLASS:Outcast	HD:6		SOURCEPAGE:p.38
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Outcast	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Concentration|TYPE.Craft|Disable Device|Disguise|Handle Animal|Hide|Intimidate|Jump|TYPE.Knowledge|Listen|Move Silently|Open Lock|TYPE.Profession|Sailing|Search|Sense Motive|Speak Language|Spellcraft|Spot|Swim|Tumble|Use Magic Device|Use Rope|Survival
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outcast|CL
+###Block:Proficiencies
+1	BONUS:ABILITYPOOL|Outcast Exotic Weapon|1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency|Simple Weapon Proficiency
+1																								AUTO:FEAT|Armor Proficiency (Light)
+###Block: Level Progression
+1
+2
+3
+4
+5	CAST:1		KNOWN:0		BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=0|INT
+6	CAST:1		KNOWN:0
+7	CAST:1,1		KNOWN:1,0		BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=1|INT
+8	CAST:2,1		KNOWN:1,0
+9	CAST:2,1,1		KNOWN:1,1,0		BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=2|INT
+10	CAST:2,2,1		KNOWN:1,1,0
+11	CAST:3,2,1		KNOWN:2,1,1
+12	CAST:3,2,2,1	KNOWN:2,1,1,1	BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=3|INT
+13	CAST:3,3,2,2,	KNOWN:2,1,1,1
+14	CAST:3,3,2,2,	KNOWN:2,2,1,1
+15	CAST:4,3,3,2	KNOWN:2,2,2,1
+16	CAST:4,3,3,3,1	KNOWN:3,2,2,2,1	BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=4|INT
+17	CAST:4,4,3,3,2	KNOWN:3,2,2,2,1
+18	CAST:4,4,3,3,2	KNOWN:3,3,2,2,1
+19	CAST:4,4,4,3,2	KNOWN:3,3,2,2,1
+20	CAST:5,4,4,4,3	KNOWN:3,3,3,2,2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#1		#
+#2		#
+#3		#
+#4		#
+#5		#
+#6 		#
+#7 		#
+#8		#
+#9 		#
+#10		#
+#11		#
+#12		#
+#13		#
+#14		#
+#15		#
+#16		#
+#17		#
+#18		#
+#19		#
+#20		#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#CLASS:Shaman		SOURCEPAGE:p.42
+#CLASS:Witch			SOURCEPAGE:p.48
+#CLASS:Mentalist		SOURCEPAGE:p.53
+#CLASS:Psionist		SOURCEPAGE:p.57
+
