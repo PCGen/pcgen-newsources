@@ -1,0 +1,17 @@
+# CVS $Revision$ $Author$ -- Wed Feb 17 00:12:17 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Pathfinder Chronicles: Campaign Setting	SOURCESHORT:PFCS	SOURCEWEB:http://paizo.com/store/downloads/pathfinder/pathfinderChronicles/35E/v5748btpy84eo&source=search	SOURCEDATE:2008-08
+
+
+# Ability Name						Unique Key					Category of Ability		Type						Visible		Restricted Ability								Prohibited Feat			Var. Min. Value			Description																									Virtual Feat		Modify VAR			Source Page		Description of the Benefits
+Point-Blank Shot						KEY:Point-Blank Shot ~ Monk		CATEGORY:Special Ability	TYPE:MonkBonusFeat			VISIBLE:DISPLAY												!PREFEAT:1,Point-Blank Shot	PREVARGTEQ:MonkBonusFeatLVL,1																											VFEAT:Point-Blank Shot
+Rapid Shot							KEY:Rapid Shot ~ Monk			CATEGORY:Special Ability	TYPE:MonkBonusFeat			VISIBLE:DISPLAY												!PREFEAT:1,Rapid Shot		PREVARGTEQ:MonkBonusFeatLVL,6																											VFEAT:Rapid Shot
+CATEGORY=Special Ability|Diseased Mercy.MOD																					!PREABILITY:1,CATEGORY=Special Ability,Light of Purity ~ Paladin
+Enhanced Companion					KEY:Enhanced Companion ~ Ranger	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																									DESC:Upon gaining an animal companion at 4th level, the ranger must choose a single type of animal. The ranger cannot call a different animal companion.					BONUS:VAR|CompLevel|1	SOURCEPAGE:p.48	BENEFIT:Upon gaining an animal companion at 4th level, the ranger must choose a single type of animal. The ranger cannot call a different animal companion. The ranger's effective druid level is equal to the ranger's level -2 (instead of the normal -3) for that type of animal. This animal must be on the basic list of companions that can be chosen at 4th level and cannot be changed.
+
+###Block: Low Favored Enemy
+# Ability Name				Unique Key								Category of Ability		Type					Visible		Define					Ability																							Modify VAR
+Favored Enemy (Humanoid (Giant))	KEY:Low Templar Favored Enemy (Humanoid (Giant))	CATEGORY:Special Ability	TYPE:LowTemplarFavoredEnemy	VISIBLE:DISPLAY	DEFINE:LowTemplarFavoredEnemy|0	ABILITY:Special Ability|AUTOMATIC|Low Templar Enemy (Humanoid (Giant))|!PREABILITY:1,CATEGORY=Special Ability,Favored Enemy (Humanoid (Giant))	BONUS:VAR|FavoredHumanoidGiant|LowTemplarFavoredEnemy
+
+#
+# End
+#
