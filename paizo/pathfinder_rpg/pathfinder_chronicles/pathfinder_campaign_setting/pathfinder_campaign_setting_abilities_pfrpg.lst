@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Thu Feb 18 13:07:19 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision$ $Author$ -- Thu Feb 18 16:53:38 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Pathfinder Chronicles: Campaign Setting	SOURCESHORT:PFCS	SOURCEWEB:http://paizo.com/store/downloads/pathfinder/pathfinderChronicles/35E/v5748btpy84eo&source=search	SOURCEDATE:2008-08
 
 
@@ -19,6 +19,17 @@ Companion Advancement (Mantis (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	
 Companion Advancement (Scorpion (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Scorpion (Giant))	ABILITY:Special Ability|AUTOMATIC|Constrict|Grab|Poison ~ Scorpion				BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:SIZEMOD|NUMBER|1	BONUS:VAR|ConstrictDieSize|6	BONUS:VAR|ConstrictDice|1	BONUS:VAR|ConstrictBonusDamage|4
 Companion Advancement (Spider (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Spider (Giant))	ABILITY:Special Ability|AUTOMATIC|Poison ~ Giant Spider|Web						BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE	BONUS:SIZEMOD|NUMBER|1	BONUS:VAR|PoisonSaveDC|2|TYPE=Racial
 Companion Advancement (Wasp (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Wasp (Giant))		ABILITY:Special Ability|AUTOMATIC|Poison ~ Giant Wasp							BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:SIZEMOD|NUMBER|1
+
+###Block: Monk Bonus Feats
+# Ability Name				Category of Ability		Type				Visible		Prohibited Feat						Required Text							Var. Min. Value			Virtual Feat
+Blade Binder				CATEGORY:Special Ability	TYPE:MonkBonusFeat	VISIBLE:DISPLAY	!PREFEAT:1,Blade Binder														PREVARGTEQ:MonkBonusFeatLVL,6	VFEAT:Blade Binder
+Hamatulatsu					CATEGORY:Special Ability	TYPE:MonkBonusFeat	VISIBLE:DISPLAY	!PREFEAT:1,Hamatulatsu														PREVARGTEQ:MonkBonusFeatLVL,2	VFEAT:Hamatulatsu
+Secret of Steel-Shattering Spirit	CATEGORY:Special Ability	TYPE:MonkBonusFeat	VISIBLE:DISPLAY	!PREFEAT:1,Secret of Steel-Shattering Spirit	PRETEXT:trained at one of the Houses of Perfection	PREVARGTEQ:MonkBonusFeatLVL,6	VFEAT:Secret of Steel-Shattering Spirit
+
+###Block: Alternate Ranger Combat Styles
+# Ability Name	Unique Key				Category of Ability		Type				Visible		Required Ability						Prohibited Feat			Required Template						Var. Min. Value			Description																	Virtual Feat												Source Page
+Parting Shot	KEY:Parting Shot ~ Ranger	CATEGORY:Special Ability	TYPE:RangerBonusFeat	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Archery	!PREFEAT:1,Parting Shot		PRETEMPLATE:1,Regional Affinity (Nirmathas)	PREVARGTEQ:CombatStyleLVL,6	DESC:You are an expert skirmisher, able to rain missiles upon your enemies whether advancing or retreating.	VFEAT:Parting Shot|PREVARLT:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),1		SOURCEPAGE:p.113
+Crossbow Mastery						CATEGORY:Special Ability	TYPE:RangerBonusFeat	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Archery	!PREFEAT:1,Crossbow Mastery									PREVARGTEQ:CombatStyleLVL,6	DESC:You can load crossbows with blinding speed and even fire them in melee with little fear of reprisal.	VFEAT:Crossbow Mastery|PREVARLT:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),1	SOURCEPAGE:p.218
 
 #
 # End
