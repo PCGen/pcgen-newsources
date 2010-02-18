@@ -1,4 +1,4 @@
-# CVS $Revision$ $Author$ -- Wed Feb 17 00:12:17 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision$ $Author$ -- Thu Feb 18 13:07:19 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Pathfinder Chronicles: Campaign Setting	SOURCESHORT:PFCS	SOURCEWEB:http://paizo.com/store/downloads/pathfinder/pathfinderChronicles/35E/v5748btpy84eo&source=search	SOURCEDATE:2008-08
 
 
@@ -11,6 +11,14 @@ Enhanced Companion					KEY:Enhanced Companion ~ Ranger	CATEGORY:Special Ability	
 ###Block: Low Favored Enemy
 # Ability Name				Unique Key								Category of Ability		Type					Visible		Define					Ability																							Modify VAR
 Favored Enemy (Humanoid (Giant))	KEY:Low Templar Favored Enemy (Humanoid (Giant))	CATEGORY:Special Ability	TYPE:LowTemplarFavoredEnemy	VISIBLE:DISPLAY	DEFINE:LowTemplarFavoredEnemy|0	ABILITY:Special Ability|AUTOMATIC|Low Templar Enemy (Humanoid (Giant))|!PREABILITY:1,CATEGORY=Special Ability,Favored Enemy (Humanoid (Giant))	BONUS:VAR|FavoredHumanoidGiant|LowTemplarFavoredEnemy
+
+###Block: Companion Advancement
+# Ability Name					Category of Ability		Type			Visible		Required Race					Ability														Combat bonus						Adjust PC Size		Modify VAR															Natural Attacks
+Companion Advancement (Centipede (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Centipede (Giant))	ABILITY:Special Ability|AUTOMATIC|Poison ~ Giant Centipede														BONUS:SIZEMOD|NUMBER|1	BONUS:VAR|PoisonDC|2|TYPE=Racial
+Companion Advancement (Mantis (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Mantis (Giant))	ABILITY:Special Ability|AUTOMATIC|Grab|Lunge ~ Giant Mantis|Mandibles ~ Giant Mantis									BONUS:SIZEMOD|NUMBER|1																	NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d6
+Companion Advancement (Scorpion (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Scorpion (Giant))	ABILITY:Special Ability|AUTOMATIC|Constrict|Grab|Poison ~ Scorpion				BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:SIZEMOD|NUMBER|1	BONUS:VAR|ConstrictDieSize|6	BONUS:VAR|ConstrictDice|1	BONUS:VAR|ConstrictBonusDamage|4
+Companion Advancement (Spider (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Spider (Giant))	ABILITY:Special Ability|AUTOMATIC|Poison ~ Giant Spider|Web						BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE	BONUS:SIZEMOD|NUMBER|1	BONUS:VAR|PoisonSaveDC|2|TYPE=Racial
+Companion Advancement (Wasp (Giant))	CATEGORY:Special Ability	TYPE:CompChoice	VISIBLE:DISPLAY	PRERACE:1,Companion (Wasp (Giant))		ABILITY:Special Ability|AUTOMATIC|Poison ~ Giant Wasp							BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE	BONUS:SIZEMOD|NUMBER|1
 
 #
 # End
