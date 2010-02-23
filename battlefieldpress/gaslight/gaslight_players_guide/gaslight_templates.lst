@@ -1,23 +1,26 @@
-# CVS $Revision$ $Author$ -- Sun Feb 21 22:05:51 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision$ $Author$ -- Mon Feb 22 17:31:21 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Gaslight - Players Guide	SOURCESHORT:Gaslight	SOURCEWEB:www.battlefieldpress.com	SOURCEDATE:2008-05
 #Original Entry: Andrew Maitland
 
 
 ###Block: Occupation
-# Template Name	Visible	Template																								Bonus to Ability Pool
-Occupation		VISIBLE:NO	TEMPLATE:CHOOSE:AcolyteSkills|DetectiveSkills|ExplorerSkills|MageSkills|MartialArtistSkills|OfficerSkills|RogueSkills|ScholarSkills|EverymanSkills	BONUS:ABILITYPOOL|Occupation|1
+# Template Name	Visible	Bonus to Ability Pool
+Occupation		VISIBLE:NO	BONUS:ABILITYPOOL|Occupation|1
 
-###Block: Assigned for Occupation prerequisites, it's how we know what class was taken first and thus which skills are 1st level class skills --Eddy
-# Template Name		Visible	Required Class
-AcolyteSkills		VISIBLE:NO	PRECLASS:1,Acolyte
-DetectiveSkills		VISIBLE:NO	PRECLASS:1,Investigator
-ExplorerSkills		VISIBLE:NO	PRECLASS:1,Explorer
-MageSkills			VISIBLE:NO	PRECLASS:1,Apprentice
-MartialArtistSkills	VISIBLE:NO	PRECLASS:1,Martial Artist
-OfficerSkills		VISIBLE:NO	PRECLASS:1,Officer
-RogueSkills			VISIBLE:NO	PRECLASS:1,Rogue
-ScholarSkills		VISIBLE:NO	PRECLASS:1,Scholar
-EverymanSkills		VISIBLE:NO	PRECLASS:1,Everyman
+###Block: Starting Class
+# Template Name	Hit Dice Size			Visible	Template																		Required Class			Bonus to HP
+Starting Class						VISIBLE:NO	TEMPLATE:CHOOSE:Acolyte|Apprentice|Everyman|Explorer|Gunslinger|Investigator|Martial Artist|Officer|Rogue|Scholar
+Acolyte		HITDIE:1|CLASS=Acolyte		VISIBLE:NO																				PRECLASS:1,Acolyte=1		BONUS:HP|CURRENTMAX|23
+Apprentice		HITDIE:1|CLASS=Apprentice	VISIBLE:NO																				PRECLASS:1,Apprentice=1		BONUS:HP|CURRENTMAX|17
+Everyman		HITDIE:1|CLASS=Everyman		VISIBLE:NO																				PRECLASS:1,Everyman=1		BONUS:HP|CURRENTMAX|17
+Explorer		HITDIE:1|CLASS=Explorer		VISIBLE:NO																				PRECLASS:1,Explorer=1		BONUS:HP|CURRENTMAX|23
+Gunslinger		HITDIE:1|CLASS=Gunslinger	VISIBLE:NO																				PRECLASS:1,Gunslinger=1		BONUS:HP|CURRENTMAX|29
+Investigator	HITDIE:1|CLASS=Investigator	VISIBLE:NO																				PRECLASS:1,Investigator=1	BONUS:HP|CURRENTMAX|17
+Martial Artist	HITDIE:1|CLASS=Martial Artist	VISIBLE:NO																				PRECLASS:1,Martial Artist=1	BONUS:HP|CURRENTMAX|23
+Officer		HITDIE:1|CLASS=Officer		VISIBLE:NO																				PRECLASS:1,Officer=1		BONUS:HP|CURRENTMAX|23
+Rogue			HITDIE:1|CLASS=Rogue		VISIBLE:NO																				PRECLASS:1,Rogue=1		BONUS:HP|CURRENTMAX|23
+Scholar		HITDIE:1|CLASS=Scholar		VISIBLE:NO																				PRECLASS:1,Scholar=1		BONUS:HP|CURRENTMAX|23
+
 
 ###Block: Beast Men Racial Traits
 # Template Name		Visible	Template
