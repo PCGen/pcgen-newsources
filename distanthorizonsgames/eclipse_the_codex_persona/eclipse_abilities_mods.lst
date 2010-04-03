@@ -7,7 +7,11 @@
 # Ability Name					Category of Ability		Type							Description																																																																																																																																																																												Save checks bonus					Bonus to skill				Cost		Source Page
 Augment Bonus ~ Long Practice			CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.General	DESC:may add (Con Mod) to his or her effective (Dex Mod) when using Dex-based skills																																																																																																																																																																						BONUS:SKILL|TYPE.Dexterity|CON	COST:6	SOURCEPAGE:web
 Action Hero ~ Stunts Specialized Defense	CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.General	DESC:Specialized in defensive abilities only (3 CP). temporarily enhances your current abilities by a total of +6 CP. Constant-effect abilities purchased in this fashion work for one minute. Other abilities last for one round. In any case, the extra CP can only be used to enhance abilities related to your current talents and must be approved by the Game Master. They may, however, exceed the normal purchase limits. "Stunts" may be Corrupted or Specialized under the usual rules. Popular uses of this ability include taking an extra Standard Action (Reflex Training), gaining an extra use of any "uses-per-time period" ability (Bonus Uses), or automatically stabilizing your condition (Grant of Aid). "Taking 20" when this is not normally allowed (Luck), making a mighty effort (Hysteria), instantly refreshing a spell slot (Invocation), or "throwing off" mental influences (Immunity; the influence is gone for good if the power in question has a specified duration, but comes back after a minute if it's permanent) are also popular														COST:3	SOURCEPAGE:web
-Augment Bonus ~ Paladin Grace			CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.General	DESC: + Cha bonus to all saves																																																																																																																																																																								BONUS:CHECKS|Fortitude,Reflex,Will|CHA							COST:18	SOURCEPAGE:web
+Augment Bonus ~ Paladin Grace					CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.General	DESC: + Cha bonus to all saves																																																																																																																																																																								BONUS:CHECKS|Fortitude,Reflex,Will|CHA							COST:18	SOURCEPAGE:web
+Augment Bonus / Improved ~ Dex applies to Attack	COST:12	CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.General	BONUS:COMBAT|TOHIT|DEX
+
+Blessing / Specialized for Beneficial Cleric Spells	CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.General	COST:3
+
 
 #Block: Votera Addons
 Shapeshift	KEY:Shapeshift (Votera)	CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:Grants the ability to transform into an innocuous, small or tiny, form (Shapeshift with Shrinking and 4x Bonus Uses. Specialized: only to assume a specified innocuous form, 7 CP).
@@ -31,6 +35,10 @@ Psychic Ability Apport Arrows										KEY:Psychic Ability ~ Apport Arrows	OUTPU
 
 
 Immunity ~ Natural Law (The restriction of Innate Enchantments to 12 CP in total)													CATEGORY:Special Ability	TYPE:EclipseAbilityOutput												DESC:(Common / Major / Minor [may exceed the normal limits on Innate Enchantment by up to 12 CP], 6 CP).
+Immunity / All Divination Magic		CATEGORY:Special Ability	COST:24	TYPE:Abilities.General.EclipseAbilityOutput.BBEG	DESC:(24 CP) Immune to all Divination Magics, including scrying and commune spells. Major,Legendary.
+Immunity / L5 Divination Magic		CATEGORY:Special Ability	COST:6	TYPE:Abilities.General.EclipseAbilityOutput		DESC:(6 CP) Immune to L5 Divination Magics. Major, Trivial, Major.
+Immunity / L3 Divination Magic		CATEGORY:Special Ability	COST:4	TYPE:Abilities.General.EclipseAbilityOutput		DESC:(4 CP) Immune to L3 Divination Magics. Major,Trivial, .
+Immunity / L1 Divination Magic		CATEGORY:Special Ability	COST:2	TYPE:Abilities.General.EclipseAbilityOutput		DESC:(2 CP) Immune to L1 Divination Magics. Major,Legendary.
 
 
 # Bonus Familiar HP Work-around
@@ -43,4 +51,65 @@ Companion Bonus HP ~ Con Bonus	BONUS:VAR|FamiliarBonusHP|(TL-1)*CON													
 
 Companion Bonus HP ~ Input HP String																				CATEGORY:Special Ability	TYPE:BonusHPAll.Companion.Ability.General																																			STACK:NO	MULT:YES	CHOOSE:STRING|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|24|28|36|54|72		BONUS:VAR|FamiliarBonusHP|CHOICE
 Companion Bonus HP ~ Input HP User Input																				CATEGORY:Special Ability	TYPE:BonusHPAll.Companion.Ability.General																																			STACK:NO	MULT:YES	CHOOSE:USERINPUT|TITLE="Enter ONLY the Number of Bonus HP Including CON bonus No Symbols"	BONUS:VAR|FamiliarBonusHP|CHOICE
+
+#
+#Innate Enchantment ~ Arcanist	
+#Innate Enchantment / Force Shield I ~ Personal			KEY:Innate Enchantment ~ Force Shield I ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:COMBAT|AC|4|TYPE=Shield
+
+
+#L1 Enchantment Examples
+Innate Enchantment / Force Armor I					KEY:Innate Enchantment ~ Force Armor I ~ Personal Only (1400gp)			COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:COMBAT|AC|4|TYPE=Armor
+Innate Enchantment / Enhanced Attribute (+2 Strength)		KEY:Innate Enchantment ~ Strength Boost +2 ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|STR|2|TYPE=Enchantment
+Innate Enchantment / Enhanced Attribute (+2 Dexterity)	KEY:Innate Enchantment ~ Dexterity Boost +2 ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|DEX|2|TYPE=Enchantment
+Innate Enchantment / Enhanced Attribute (+2 Constitution)	KEY:Innate Enchantment ~ Constitution Boost +2 ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|CON|2|TYPE=Enchantment
+Innate Enchantment / Enhanced Attribute (+2 Intelligence)	KEY:Innate Enchantment ~ Intelligence Boost +2 ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|INT|2|TYPE=Enchantment
+Innate Enchantment / Enhanced Attribute (+2 Wisdom)		KEY:Innate Enchantment ~ Wisdom Boost +2 ~ Personal Only (1400gp)			COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|WIS|2|TYPE=Enchantment
+Innate Enchantment / Enhanced Attribute (+2 Charisma)		KEY:Innate Enchantment ~ Charisma Boost +2 ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|CHA|2|TYPE=Enchantment
+Innate Enchantment / Ranged Strike +2 ~ Personal		KEY:Innate Enchantment ~ Ranged Strike +2 ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:Ranged Strike. Allows the user to "fire" melee attacks with a 100' range increment, using the same statistics. (1400 GP)
+Innate Enchantment / Inspiring Word					KEY:Innate Enchantment ~ Inspiring Word							COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput				DESC:provides a +1 Morale Bonus on saves, attacks, checks, and damage (Unlimited Use-Activated, L1 at CL1, Personal Only, 1400 GP). Dragons are always pretty self-confident.	BONUS:COMBAT|TOHIT,DAMAGE|1|TYPE=Morale	BONUS:CHECKS|ALL|1|TYPE=Morale	BONUS:SKILL|TYPE.AdeptChoice|1|TYPE=Morale
+Innate Enchantment / Haste (1400)					KEY:Innate Enchantment ~ Haste ~ Personal Only (1400gp)				COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:You move and attack more quickly than usual, gaining one extra attack at your full BAB when taking the full attack option and a +30 foot Enhancement bonus to all of your movement rates, although this may not more than double any one of them.	BONUS:MOVEADD|TYPE.Walk|30|TYPE=Enhancement	BONUS:MOVEADD|TYPE.Fly|30|PREMOVE:1,Fly=1|TYPE=Enhancement	BONUS:MOVEADD|TYPE.Burrow|30|PREMOVE:1,Burrow=1|TYPE=Enhancement	BONUS:MOVEADD|TYPE.Swim|30|PREMOVE:1,Swim=1|TYPE=Enhancement	BONUS:MOVEADD|TYPE.Glide|30|PREMOVE:1,Glide=1|TYPE=Enhancement	BONUS:MOVEADD|TYPE.Climb|30|PREMOVE:1,Climb=1|TYPE=Enhancement	
+Innate Enchantment / Alter Self (1400)				KEY:Innate Enchantment ~ Alter Self ~ Personal Only (1400gp)			COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:As spell
+Innate Enchantment / Immortal Vigor I				KEY:Innate Enchantment ~ Immortal Vigor I ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:Gain 2d6 + (Con Bonus x2) worth of HP. In this case 12+CON.	BONUS:HP|CURRENTMAX|12+(CON*2)
+
+Innate Enchantment / Expertise (+2 Competence skills & checks)	KEY:Innate Enchantment ~ Expertise ~ Personal Only (1400gp)		COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:As spell	BONUS:SKILL|TYPE.AdeptChoice|2|TYPE=Competence
+Innate Enchantment / Fortune's Favor (+2 Luck skills & checks)	KEY:Innate Enchantment ~ Fortunes Favor ~ Personal Only (1400gp)	COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:As spell	BONUS:SKILL|TYPE.AdeptChoice|2|TYPE=Luck
+#Innate Enchantment / Inspiring Word (+1 Morale Bonus on saves, checks, attacks, and damage, 1400)	KEY:Innate Enchantment ~ 	COST:1400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:As spell
+
+#L1 1/day
+Innate Enchantment / Magic Missile 1/day	KEY:Innate Enchantment ~ Magic Missile ~ one day	COST:400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:As spell	SPELLS:Innate|CASTERLEVEL=1|Magic Missile
+Innate Enchantment / Burning Hands 1/day	KEY:Innate Enchantment ~ Burning Hands ~ one day	COST:400	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:As spell	SPELLS:Innate|CASTERLEVEL=1|Burning Hands,INT+11
+
+
+
+
+
+
+
+
+
+#Non-Personal
+Innate Enchantment ~ Force Armor I ~ General (2000gp)			COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:COMBAT|AC|4|TYPE=Armor
+Innate Enchantment ~ Force Shield I ~ General (2000gp)		COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:COMBAT|AC|4|TYPE=Shield
+Innate Enchantment ~ Strength Boost +2 ~ General (2000gp)		COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|STR|2|TYPE=Enchantment
+Innate Enchantment ~ Dexterity Boost +2 ~ General (2000gp)		COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|DEX|2|TYPE=Enchantment
+Innate Enchantment ~ Constitution Boost +2 ~ General (2000gp)	COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|CON|2|TYPE=Enchantment
+Innate Enchantment ~ Intelligence Boost +2 ~ General (2000gp)	COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|INT|2|TYPE=Enchantment
+Innate Enchantment ~ Wisdom Boost +2 ~ General (2000gp)		COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|WIS|2|TYPE=Enchantment
+Innate Enchantment ~ Charisma Boost +2 ~ General (2000gp)		COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput			BONUS:STAT|CHA|2|TYPE=Enchantment
+Innate Enchantment ~ Ranged Strike ~ General (2000gp)			COST:2000	CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput								DESC:Ranged Strike. Allows the user to “fire” melee attacks with a 100' range increment, using the same statistics. (1400 GP)
+
+
+
+
+
+#L0 Enchantment Examples
+Innate Enchantment / Detect Magic						COST:700		CATEGORY:Special Ability		TYPE:InnateEnchantmentChoice.EclipseAbilityOutput	KEY:Innate Enchantment ~ Detect Magic	DESC:(+700) At-will personal use at L1 caster level.
+
+
+
+
+
+
+
+
 

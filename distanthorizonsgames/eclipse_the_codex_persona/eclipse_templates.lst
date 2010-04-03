@@ -5,6 +5,13 @@ SOURCELONG:Eclipse - The Codex Persona	SOURCESHORT:Eclipse	SOURCEWEB:http://www.
 # Template Name		Visible
 All Eclipse Automatic	VISIBLE:NO
 
+#Spirit Weapon Fix		VISIBLE:DISPLAY	CHOOSE:NUMBER|MIN=1|MAX=15|TITLE=Spirit Weapon Fix	BONUS:VAR|SpiritWeaponRangedToHit|%CHOICE|PREAPPLY:ANYPC	BONUS:VAR|SpiritWeaponMeleeToHit|%CHOICE|PREAPPLY:ANYPC
+
+Spirit Weapon Fix +6	VISIBLE:DISPLAY	BONUS:VAR|SpiritWeaponRangedToHit|8	BONUS:VAR|SpiritWeaponRangedBonusDamage|1
+#+2 Martial Arts, +2 Comp Bonus to Bows, +1 Weapon Focus, +1 Inspiring Word (Hit and Damage)
+
+
+
 # From Votera
 Wind Guardian Template	DESC:(95 CP/+2 ECL)	LEVELADJUSTMENT:2	BONUS:MOVEADD|TYPE.Walk|20	MOVE:Fly,60	ABILITY:Special Ability|AUTOMATIC|Shapeshift (Votera)|Damage Reduction ~ 8|Cloaking (Votera)	BONUS:STAT|WIS|4
 
@@ -14,7 +21,7 @@ Magical Beast HD		VISIBLE:DISPLAY	HITDIE:10
 
 ###Block: Matches Level
 # Template Name						Visible		Template																		Define				Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool														Save checks bonus							Combat bonus																							Bonus to HP						Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR				Choose													Class Skill					Ability																										Move
-01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY																				DEFINE:CharacterPoints|0																	BONUS:ABILITYPOOL|Character Points|24+(24*TL)	BONUS:ABILITYPOOL|Character Points|CharacterPoints
+01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY																				DEFINE:CharacterPoints|0																	BONUS:VAR|CharacterPoints|24	BONUS:VAR|CharacterPoints|24*TL	BONUS:ABILITYPOOL|Character Points|CharacterPoints
 01 Adept Skills (Half Cost Bypass)																									DEFINE:SkillBuyBypass|1
 
 01 Class Skills Eclipse Point Buy			VISIBLE:DISPLAY																																																																																																																																																	CSKILL:TYPE.NormalSkill
@@ -32,7 +39,7 @@ Positive Level (+2)																																																BONUS:ABILITY
 
 
 ### Companion Templates and Associated Stuff
-Warbeasts							VISIBLE:DISPLAY	TEMPLATE:CHOOSE:Warbeast ~ Walk|Warbeast ~ Fly|Warbeast ~ Swim|Warbeast ~ Climb|Warbeast ~ Burrow																																																																											BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC														BONUS:STAT|STR|4|TYPE=Warbeast	BONUS:STAT|CON,WIS|2|TYPE=Warbeast								CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Warbeast HD								ABILITY:Special Ability|AUTOMATIC|Opportunist (Free Aid Another)|Immunity (Training Time)|Mastery (Ride, Spot, Listen)|Armor ~ Light|Armor ~ Medium|Armor ~ Heavy
+Warbeasts							VISIBLE:DISPLAY	TEMPLATE:CHOOSE:Warbeast ~ Walk|Warbeast ~ Fly|Warbeast ~ Swim|Warbeast ~ Climb|Warbeast ~ Burrow																																																																											BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC														BONUS:STAT|STR|4|TYPE=Warbeast	BONUS:STAT|CON,WIS|2|TYPE=Warbeast								CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Warbeast HD								ABILITY:Special Ability|AUTOMATIC|Opportunist (Free Aid Another)|Immunity (Training Time)|Mastery ~ Ride Spot and Listen|Armor ~ Light|Armor ~ Medium|Armor ~ Heavy
 #
 Warbeast ~ Walk						VISIBLE:DISPLAY																									PREMOVE:1,Walk=1																																																																																																																												ABILITY:Special Ability|AUTOMATIC|Celerity(Walk)
 Warbeast ~ Fly						VISIBLE:DISPLAY																									PREMOVE:1,Fly=1																																																																																																																												ABILITY:Special Ability|AUTOMATIC|Celerity(Fly)
