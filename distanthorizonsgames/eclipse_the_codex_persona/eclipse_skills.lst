@@ -1,58 +1,58 @@
-# CVS $Revision$ $Author$ -- Sat Nov  7 21:09:55 2009 -- reformated by prettylst.pl v1.39 (build 10232)
+# CVS $Revision$ $Author$ -- Thu Apr  8 08:48:12 2010 -- reformated by prettylst.pl v1.39 (build 10232)
 SOURCELONG:Eclipse - The Codex Persona	SOURCESHORT:Eclipse	SOURCEWEB:http://www.lulu.com/content/435647
 #Original Entry: Andrew Maitland
 
 
 ###Block: Eclipse Based Skills --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Skill Name			Output Name						Key Stat	Untrained?		Skill Penalty Apply	Exclusive?		Type					Visible		Source Page		Bonus to Ability Pool										Bonus to skill														Bonus to skill rank																				Modify VAR
-Knowledge (Lore)												USEUNTRAINED:YES					EXCLUSIVE:YES	TYPE:AdeptChoice.Lore
+# Skill Name	Untrained?		Exclusive?		Type
+Knowledge (Lore)	USEUNTRAINED:YES	EXCLUSIVE:YES	TYPE:AdeptChoice.Lore
 
 
 ###Block: Martial Arts Styles --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Skill Name				Output Name					Key Stat	Untrained?		Required Ability							Required Text						Bonus to Ability Pool
-Martial Arts																	TYPE:AdeptChoice.MartialArt.NormalSkill		USEUNTRAINED:NO																																			BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL","Martial Arts")|TYPE=MartialArts
+# Skill Name				Output Name							Key Stat	Untrained?		Skill Penalty Apply	Type								Visible		Required Ability							Required Text						Source Page		Bonus to Ability Pool														Bonus to skill														Bonus to skill rank																				Modify VAR
+Martial Arts														USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArt.NormalSkill																																																																																	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL","Martial Arts")|TYPE=MartialArts
 
 
 #
 #Martial Arts ~ Basic						OUTPUTNAME:Martial Arts (Basic)					TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																																			BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Basic")|TYPE=MartialArts
-Martial Arts ~ Adamantine Fist				OUTPUTNAME:Martial Arts (Adamantine Fist)		KEYSTAT:STR	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO										PRETEXT:Improved Unarmed Strike or equivalent	BONUS:ABILITYPOOL|Adamantine Fist|1+skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")/2		BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")|TYPE=MartialArts
-Martial Arts ~ Cangmarg						OUTPUTNAME:Martial Arts (Cangmarg Martial Art)	KEYSTAT:DEX	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO	PREABILITY:1,CATEGORY=Special Ability,Shapeshift									BONUS:ABILITYPOOL|Canmarg Martial Art|1+skillinfo("TOTAL", "Martial Arts ~ Cangmarg")/2			BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Cangmarg")|TYPE=MartialArts
-Martial Arts ~ Street Fighting				OUTPUTNAME:Martial Arts (Street Fighting)		KEYSTAT:DEX	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Street Fighting Art|1+skillinfo("TOTAL", "Martial Arts ~ Street Fighting")/2		BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Street Fighting")|TYPE=MartialArts
-Martial Arts ~ Bladesinger Style				OUTPUTNAME:Martial Arts (Bladesinger Style)	KEYSTAT:DEX	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Bladesinger Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")|TYPE=MartialArts
-Martial Arts ~ Katana Senkou					OUTPUTNAME:Martial Arts (Katana Senkou)		KEYSTAT:DEX	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Katana Senkou Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")|TYPE=MartialArts
+Martial Arts ~ Adamantine Fist	OUTPUTNAME:Martial Arts (Adamantine Fist)		KEYSTAT:STR	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts													PRETEXT:Improved Unarmed Strike or equivalent				BONUS:ABILITYPOOL|Adamantine Fist|1+skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")|TYPE=MartialArts
+Martial Arts ~ Cangmarg			OUTPUTNAME:Martial Arts (Cangmarg Martial Art)	KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts				PREABILITY:1,CATEGORY=Special Ability,Shapeshift												BONUS:ABILITYPOOL|Canmarg Martial Art|1+skillinfo("TOTAL", "Martial Arts ~ Cangmarg")/2																																										BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Cangmarg")|TYPE=MartialArts
+Martial Arts ~ Street Fighting	OUTPUTNAME:Martial Arts (Street Fighting)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Street Fighting Art|1+skillinfo("TOTAL", "Martial Arts ~ Street Fighting")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Street Fighting")|TYPE=MartialArts
+Martial Arts ~ Bladesinger Style	OUTPUTNAME:Martial Arts (Bladesinger Style)	KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Bladesinger Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")/2																																								BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")|TYPE=MartialArts
+Martial Arts ~ Katana Senkou		OUTPUTNAME:Martial Arts (Katana Senkou)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Katana Senkou Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")/2																																								BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")|TYPE=MartialArts
 
 # Cheat Skills - For Martial Arts
-Martial Arts ~ Str Based					OUTPUTNAME:Martial Arts (Strength Based)		KEYSTAT:STR	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Martial Arts Str Style|1+skillinfo("TOTAL", "Martial Arts ~ Str Based")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Str Based")|TYPE=MartialArts
-Martial Arts ~ Dex Based					OUTPUTNAME:Martial Arts (Dexterity Based)		KEYSTAT:DEX	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Martial Arts Dex Style|1+skillinfo("TOTAL", "Martial Arts ~ Con Based")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Dex Based")|TYPE=MartialArts
-Martial Arts ~ Con Based					OUTPUTNAME:Martial Arts (Constitution Based)	KEYSTAT:CON	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Martial Arts Con Style|1+skillinfo("TOTAL", "Martial Arts ~ Dex Based")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Con Based")|TYPE=MartialArts
-Martial Arts ~ Int Based					OUTPUTNAME:Martial Arts (Intelligence Based)	KEYSTAT:INT	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Martial Arts Int Style|1+skillinfo("TOTAL", "Martial Arts ~ Int Based")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Int Based")|TYPE=MartialArts
-Martial Arts ~ Wis Based					OUTPUTNAME:Martial Arts (Wisdom Based)		KEYSTAT:WIS	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Martial Arts Wis Style|1+skillinfo("TOTAL", "Martial Arts ~ Wis Based")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Wis Based")|TYPE=MartialArts
-Martial Arts ~ Cha Based					OUTPUTNAME:Martial Arts (Charisma Based)		KEYSTAT:CHA	TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																		BONUS:ABILITYPOOL|Martial Arts Cha Style|1+skillinfo("TOTAL", "Martial Arts ~ Cha Based")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Cha Based")|TYPE=MartialArts
+Martial Arts ~ Str Based		OUTPUTNAME:Martial Arts (Strength Based)		KEYSTAT:STR	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Martial Arts Str Style|1+skillinfo("TOTAL", "Martial Arts ~ Str Based")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Str Based")|TYPE=MartialArts
+Martial Arts ~ Dex Based		OUTPUTNAME:Martial Arts (Dexterity Based)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Martial Arts Dex Style|1+skillinfo("TOTAL", "Martial Arts ~ Con Based")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Dex Based")|TYPE=MartialArts
+Martial Arts ~ Con Based		OUTPUTNAME:Martial Arts (Constitution Based)	KEYSTAT:CON	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Martial Arts Con Style|1+skillinfo("TOTAL", "Martial Arts ~ Dex Based")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Con Based")|TYPE=MartialArts
+Martial Arts ~ Int Based		OUTPUTNAME:Martial Arts (Intelligence Based)	KEYSTAT:INT	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Martial Arts Int Style|1+skillinfo("TOTAL", "Martial Arts ~ Int Based")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Int Based")|TYPE=MartialArts
+Martial Arts ~ Wis Based		OUTPUTNAME:Martial Arts (Wisdom Based)		KEYSTAT:WIS	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Martial Arts Wis Style|1+skillinfo("TOTAL", "Martial Arts ~ Wis Based")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Wis Based")|TYPE=MartialArts
+Martial Arts ~ Cha Based		OUTPUTNAME:Martial Arts (Charisma Based)		KEYSTAT:CHA	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																								BONUS:ABILITYPOOL|Martial Arts Cha Style|1+skillinfo("TOTAL", "Martial Arts ~ Cha Based")/2																																									BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Cha Based")|TYPE=MartialArts
 
 ####
 
-Rune Casting												USEUNTRAINED:NO	ACHECK:YES						TYPE:AdeptChoice.RuneCasting.NormalSkill				SOURCEPAGE:p.97																																																					BONUS:VAR|RuneCasterMagicLvls|skillinfo("TOTAL","Rune Casting")/2
-Rune Casting.MOD																																														BONUS:SKILL|Spellcraft (Rune Casting)|2	BONUS:SKILL|Spellcraft (Rune Casting)|Spellcraft.MISC	BONUS:SKILLRANK|Spellcraft (Rune Casting)|SKILLRANK=Spellcraft|PREVARGT:var("Spellcraft (Rune Casting).MISC"),var("Spellcraft.MISC")
+Rune Casting														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																						SOURCEPAGE:p.97																																																									BONUS:VAR|RuneCasterMagicLvls|skillinfo("TOTAL","Rune Casting")/2
+Rune Casting.MOD																																																																					BONUS:SKILL|Spellcraft (Rune Casting)|2	BONUS:SKILL|Spellcraft (Rune Casting)|Spellcraft.MISC	BONUS:SKILLRANK|Spellcraft (Rune Casting)|SKILLRANK=Spellcraft|PREVARGT:var("Spellcraft (Rune Casting).MISC"),var("Spellcraft.MISC")
 
-Spellcraft (Rune Casting)								KEYSTAT:INT	USEUNTRAINED:NO													VISIBLE:EXPORT
+Spellcraft (Rune Casting)										KEYSTAT:INT	USEUNTRAINED:NO													VISIBLE:EXPORT
 
 ###Block:
-# Skill Name					Classes	Type		Visible		Bonus to skill															Modify VAR
-Mystic Artist Skill				CLASSES:ALL	TYPE:None	VISIBLE:DISPLAY																		BONUS:VAR|MysticArtist|skillinfo("TOTAL", "Mystic Artist Skill")
+# Skill Name					Classes	Type		Visible	Bonus to skill																Modify VAR
+Mystic Artist Skill				CLASSES:ALL	TYPE:None	VISIBLE:NO																			BONUS:VAR|MysticArtist|skillinfo("TOTAL", "Mystic Artist Skill")
 #COMMENT: This skill controls the Mystic Artist Free Purchases
 
 #Block: Mystic Artist Subs
-Perform (Act).MOD												BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Act)")|TYPE=PerformSkill
-Perform (Comedy).MOD											BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Comedy)")|TYPE=PerformSkill
-Perform (Dance).MOD											BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Dance)")|TYPE=PerformSkill
-Perform (Keyboard Instruments).MOD									BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Keyboard Instruments)")|TYPE=PerformSkill
-Perform (Oratory).MOD											BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Oratory)")|TYPE=PerformSkill
-Perform (Percussion Instruments).MOD								BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Percussion Instruments)")|TYPE=PerformSkill
-Perform (String Instruments).MOD									BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (String Instruments)")|TYPE=PerformSkill
-Perform (Wind Instruments).MOD									BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Wind Instruments)")|TYPE=PerformSkill
-Perform (Sing).MOD											BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Sing)")|TYPE=PerformSkill
-Perform (Atrocities).MOD										BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL", "Perform (Atrocities)")|TYPE=PerformSkill
+Perform (Act).MOD											BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Act)")|TYPE=PerformSkill
+Perform (Comedy).MOD										BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Comedy)")|TYPE=PerformSkill
+Perform (Dance).MOD										BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Dance)")|TYPE=PerformSkill
+Perform (Keyboard Instruments).MOD								BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Keyboard Instruments)")|TYPE=PerformSkill
+Perform (Oratory).MOD										BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Oratory)")|TYPE=PerformSkill
+Perform (Percussion Instruments).MOD							BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Percussion Instruments)")|TYPE=PerformSkill
+Perform (String Instruments).MOD								BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (String Instruments)")|TYPE=PerformSkill
+Perform (Wind Instruments).MOD								BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Wind Instruments)")|TYPE=PerformSkill
+Perform (Sing).MOD										BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL","Perform (Sing)")|TYPE=PerformSkill
+Perform (Atrocities).MOD									BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL", "Perform (Atrocities)")|TYPE=PerformSkill
 
 ###Block:
 #Dweomer - buy feat to access skills
@@ -60,89 +60,89 @@ Perform (Atrocities).MOD										BONUS:SKILL|Mystic Artist Skill|skillinfo("TOT
 
 ###Block: Thaumaturgy - buy feat to access skills
 #Block: Necromancy
-# Skill Name					Untrained?		Skill Penalty Apply	Type								Source Page
-Necromancy ~ Channeling				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
-Necromancy ~ Entropic Manipulation		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
-Necromancy ~ Gates of Death			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
-Necromancy ~ Life Force Transference	USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
-Necromancy ~ One With Death			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
-Necromancy ~ Spirit Binding			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
-Necromancy ~ Summoning				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+# Skill Name							Untrained?		Skill Penalty Apply	Type														Source Page
+Thaumaturgy (Necromancy ~ Channeling)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+Thaumaturgy (Necromancy ~ Entropic Manipulation)	USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+Thaumaturgy (Necromancy ~ Gates of Death)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+Thaumaturgy (Necromancy ~ Life Force Transference)	USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+Thaumaturgy (Necromancy ~ One With Death)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+Thaumaturgy (Necromancy ~ Spirit Binding)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
+Thaumaturgy (Necromancy ~ Summoning)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyNecromancy.NormalSkill.OccultSkill		SOURCEPAGE:p.103
 
 #Block: Weather Control
-Weather Control ~ Cold				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Heat				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Lightning			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Ocean Control		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Personalization		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Rain				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Weather Sense		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
-Weather Control ~ Wind				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Cold)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Heat)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Lightning)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Ocean Control)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Personalization)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Rain)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Weather Sense)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
+Thaumaturgy (Weather Control ~ Wind)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWeatherControl.NormalSkill.OccultSkill	SOURCEPAGE:p.103
 
 #Block: Psychokinesis ~ p.104
-Psychokinesis ~ Capacitance			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Electrokinesis		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Nucleokinesis			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Pyrotics			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Reconstruction		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Stasis Fields			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Telekinesis			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Psychokinesis ~ Vibration			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill	SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Capacitance)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Electrokinesis)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Nucleokinesis)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Pyrotics)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Reconstruction)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Stasis Fields)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Telekinesis)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Psychokinesis ~ Vibration)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyPsychokinesis.NormalSkill.OccultSkill		SOURCEPAGE:p.104
 
 #Block: Telepathy
-Telepathy ~ Astral Form				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Constructs				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Disruption				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Illusion				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Links					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Presence				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Projection				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
-Telepathy ~ Void					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Astral Form)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Constructs)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Disruption)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Illusion)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Links)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Presence)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Projection)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
+Thaumaturgy (Telepathy ~ Void)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyTelepathy.NormalSkill.OccultSkill		SOURCEPAGE:p.104
 
 #Block: Warping
-Warping ~ Dimensional Warping			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Gravitic Warping			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Overlay					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Spatial Warping			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Stabilization				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Temporal Warping			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Transference				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Warping ~ Warp Detection			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Dimensional Warping)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Gravitic Warping)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Overlay)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Spatial Warping)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Stabilization)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Temporal Warping)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Transference)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Warping ~ Warp Detection)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyWarping.NormalSkill.OccultSkill			SOURCEPAGE:p.105
 
 #Block: Healing
-Healing ~ Environmental Healing		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Healing ~ Life Transference			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Healing ~ Mental Healing			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Healing ~ Physical Healing			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Healing ~ Shapeshifting				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Healing ~ Spiritual Healing			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
-Healing ~ Stabilization				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-Healing ~ Transformation			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (Healing ~ Environmental Healing)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Healing ~ Life Transference)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Healing ~ Mental Healing)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Healing ~ Physical Healing)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Healing ~ Shapeshifting)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Healing ~ Spiritual Healing)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.105
+Thaumaturgy (Healing ~ Stabilization)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (Healing ~ Transformation)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyHealing.NormalSkill.OccultSkill			SOURCEPAGE:p.106
 
 #Block: Extra-Sensory Perception
-ESP ~ Analytic Probe				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Aura Sight					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Awareness					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Clairsentience				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Dowsing					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Hypersenses					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Intuition					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
-ESP ~ Psychic Awareness				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Analytic Probe)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Aura Sight)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Awareness)					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Clairsentience)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Dowsing)					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Hypersenses)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Intuition)					USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
+Thaumaturgy (ESP ~ Psychic Awareness)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyESP.NormalSkill.OccultSkill			SOURCEPAGE:p.106
 
 #Block: Mysticism
-Mysticism ~ Amplification			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Bestowal				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Imbuement				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Linking				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Nullification			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Permanency				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Psi-Armor				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
-Mysticism ~ Willcrystal				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Amplification)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Bestowal)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Imbuement)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Linking)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Nullification)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Permanency)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Psi-Armor)				USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
+Thaumaturgy (Mysticism ~ Willcrystal)			USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Thaumaturgy.ThaumaturgyMysticism.NormalSkill.OccultSkill		SOURCEPAGE:p.106
 
 
 ###Block:
 # Theurgical Verbs ~
-# Skill Name				Untrained?		Skill Penalty Apply	Type					Source Page
+# Skill Name				Untrained?		Skill Penalty Apply	Type											Source Page
 Theurgical Verb (Creation)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Theurgy.TheurgicalVerb.NormalSkill.OccultSkill	SOURCEPAGE:p.107
 Theurgical Verb (Control)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Theurgy.TheurgicalVerb.NormalSkill.OccultSkill	SOURCEPAGE:p.107
 Theurgical Verb (Destruction)		USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.Theurgy.TheurgicalVerb.NormalSkill.OccultSkill	SOURCEPAGE:p.107
