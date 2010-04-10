@@ -1,50 +1,42 @@
-# CVS $Revision$ $Author$ -- Wed Apr  7 19:56:35 2010 -- reformated by prettylst.pl v1.39 (build 10232)
+# CVS $Revision$ $Author$ -- Fri Apr  9 23:33:37 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:DHG - The Practical Enchanter	SOURCESHORT:dhg_tpe	SOURCEDATE:01-2001
 #Original Entry: Andrew Maitland
 
+###Block: Talents
+# Template Name				Visible		Level Adjustment		Bonus to Ability Pool
+Use the Talent System			VISIBLE:DISPLAY					BONUS:ABILITYPOOL|Talent Pool|1
+#
+ECL Penalty One				VISIBLE:NO		LEVELADJUSTMENT:1
+ECL Penalty Two				VISIBLE:NO		LEVELADJUSTMENT:2
+ECL Penalty Three				VISIBLE:NO		LEVELADJUSTMENT:3
+ECL Penalty Nine				VISIBLE:NO		LEVELADJUSTMENT:9
+ECL Penalty Twelve			VISIBLE:NO		LEVELADJUSTMENT:12
+#
+Buy Off ECL Penalty ~ Level 1					LEVELADJUSTMENT:-1
+Buy Off ECL Penalty ~ Level 2					LEVELADJUSTMENT:-2
+Buy Off ECL Penalty ~ Level 3					LEVELADJUSTMENT:-3
+Buy Off ECL Penalty ~ Level 9					LEVELADJUSTMENT:-9
+Buy Off ECL Penalty ~ Level 12				LEVELADJUSTMENT:-12
+
 
 ###Block: Permanent Starting Wealth Level
-# Template Name					Template																																																																														Bonus to Ability Pool				Modify VAR				Ability
-01 Starting Wealth Level ~ Destitute																																																																																BONUS:ABILITYPOOL|Wealth Level Choice|1						
-02 Starting Wealth Level ~ Poor																																																																																	BONUS:ABILITYPOOL|Wealth Level Choice|1
-03 Starting Wealth Level ~ Common																																																																																	BONUS:ABILITYPOOL|Wealth Level Choice|1
-04 Starting Wealth Level ~ Well Off																																																																																	BONUS:ABILITYPOOL|Wealth Level Choice|1
-05 Starting Wealth Level ~ Affluent																																																																																	BONUS:ABILITYPOOL|Wealth Level Choice|1
-06 Starting Wealth Level ~ Wealthly																																																																																	BONUS:ABILITYPOOL|Wealth Level Choice|1
-07 Starting Wealth Level ~ Imperial																																																																																	BONUS:ABILITYPOOL|Wealth Level Choice|1
+# Template Name			Visible		Level Adjustment		Bonus to Ability Pool
+Use Wealth Templates		VISIBLE:DISPLAY					BONUS:ABILITYPOOL|Wealth Level Choice|2
 
-# Wealth Level Bonuses
-Wealthy Template Chooser			TEMPLATE:CHOOSE:Wealthy Level ~ One|Wealthy Level ~ Two|Wealthy Level ~ Three|Wealthy Level ~ Four|Wealthy Level ~ Five|Wealthy Level ~ Six|Wealthy Level ~ Seven|Wealthy Level ~ Eight|Wealthy Level ~ Nine|Wealthy Level ~ Ten|Wealthy Level ~ Eleven|Wealthy Level ~ Twelve|Wealthy Level ~ Thirteen|Wealthy Level ~ Fourteen|Wealthy Level ~ Fifthteen|Wealthy Level ~ Sixteen|Wealthy Level ~ Seventeen|Wealthy Level ~ Eighteen|Wealthy Level ~ Nineteen|Wealthy Level ~ Twenty
 #
-Wealthy Level ~ One																																																																																										BONUS:VAR|WealthyLv|TL
-Wealthy Level ~ Two																																																																																										BONUS:VAR|WealthyLv|TL-1
-Wealthy Level ~ Three																																																																																										BONUS:VAR|WealthyLv|TL-2
-Wealthy Level ~ Four																																																																																										BONUS:VAR|WealthyLv|TL-3
-Wealthy Level ~ Five																																																																																										BONUS:VAR|WealthyLv|TL-4
-Wealthy Level ~ Six																																																																																										BONUS:VAR|WealthyLv|TL-5
-Wealthy Level ~ Seven																																																																																										BONUS:VAR|WealthyLv|TL-6
-Wealthy Level ~ Eight																																																																																										BONUS:VAR|WealthyLv|TL-7
-Wealthy Level ~ Nine																																																																																										BONUS:VAR|WealthyLv|TL-8
-Wealthy Level ~ Ten																																																																																										BONUS:VAR|WealthyLv|TL-9
-Wealthy Level ~ Eleven																																																																																										BONUS:VAR|WealthyLv|TL-10
-Wealthy Level ~ Twelve																																																																																										BONUS:VAR|WealthyLv|TL-11
-Wealthy Level ~ Thirteen																																																																																									BONUS:VAR|WealthyLv|TL-12
-Wealthy Level ~ Fourteen																																																																																									BONUS:VAR|WealthyLv|TL-13
-Wealthy Level ~ Fifthteen																																																																																									BONUS:VAR|WealthyLv|TL-14
-Wealthy Level ~ Sixteen																																																																																										BONUS:VAR|WealthyLv|TL-15
-Wealthy Level ~ Seventeen																																																																																									BONUS:VAR|WealthyLv|TL-16
-Wealthy Level ~ Eighteen																																																																																									BONUS:VAR|WealthyLv|TL-17
-Wealthy Level ~ Nineteen																																																																																									BONUS:VAR|WealthyLv|TL-18
-Wealthy Level ~ Twenty																																																																																										BONUS:VAR|WealthyLv|TL-19
+Poor Wealth ECL Modifier	VISIBLE:NO		LEVELADJUSTMENT:-1
 
+# COMMENT: This is to remove 1 level to match the ability description. The player
+#		Must add the two classes, but this makes it effectively only a +1 ECL.
 
 ###Block: Wealth Level affects on Companions
+# COMMENT: Intended to be added directly to the companion - Mount / Familiar
 
 # Template Name							Define											Bonus to Ability Pool																			Add to base move			Modify VAR
-02 Companion Bonus ~ Wealthy Template ~ Mount		DEFINE:CompanionMaxLvls|0	DEFINE:MinGranted|2	DEFINE:StatMax|0	BONUS:ABILITYPOOL|Companion Stat Increase|1	BONUS:ABILITYPOOL|Extra Creature Level|1								BONUS:MOVEADD|TYPE.Walk|5	BONUS:VAR|CompanionMaxLvls|8	BONUS:VAR|StatMax|3
-02 Companion Bonus ~ Wealthy Template ~ Familiar	DEFINE:CompanionMaxLvls|0	DEFINE:StatMax|0					BONUS:ABILITYPOOL|Companion Stat Increase|1	BONUS:ABILITYPOOL|Extra Creature Level|1	BONUS:ABILITYPOOL|Companion Bonus HP|1	BONUS:MOVEADD|TYPE.Walk|5	BONUS:VAR|CompanionMaxLvls|4	BONUS:VAR|StatMax|2
-02 Companion Bonus ~ Imperial Template ~ Mount		DEFINE:CompanionMaxLvls|0	DEFINE:MinGranted|3	DEFINE:StatMax|0	BONUS:ABILITYPOOL|Companion Stat Increase|1	BONUS:ABILITYPOOL|Extra Creature Level|1								BONUS:MOVEADD|TYPE.Walk|10	BONUS:VAR|CompanionMaxLvls|12	BONUS:VAR|StatMax|4
-02 Companion Bonus ~ Imperial Template ~ Familiar	DEFINE:CompanionMaxLvls|0	DEFINE:MinGranted|3	DEFINE:StatMax|0	BONUS:ABILITYPOOL|Companion Stat Increase|1	BONUS:ABILITYPOOL|Extra Creature Level|1	BONUS:ABILITYPOOL|Companion Bonus HP|1	BONUS:MOVEADD|TYPE.Walk|10	BONUS:VAR|CompanionMaxLvls|6	BONUS:VAR|StatMax|3
+02 Companion Bonus ~ Wealthy Template ~ Mount		DEFINE:CompanionMaxLvls|0	DEFINE:MinGranted|2	DEFINE:StatMax|0	BONUS:ABILITYPOOL|Companion Stat Increase|6	BONUS:ABILITYPOOL|Extra Creature Level|1								BONUS:MOVEADD|TYPE.Walk|5	BONUS:VAR|CompanionMaxLvls|8	BONUS:VAR|StatMax|3
+02 Companion Bonus ~ Wealthy Template ~ Familiar	DEFINE:CompanionMaxLvls|0	DEFINE:StatMax|0					BONUS:ABILITYPOOL|Companion Stat Increase|6	BONUS:ABILITYPOOL|Extra Creature Level|1	BONUS:ABILITYPOOL|Companion Bonus HP|1	BONUS:MOVEADD|TYPE.Walk|5	BONUS:VAR|CompanionMaxLvls|4	BONUS:VAR|StatMax|2
+02 Companion Bonus ~ Imperial Template ~ Mount		DEFINE:CompanionMaxLvls|0	DEFINE:MinGranted|3	DEFINE:StatMax|0	BONUS:ABILITYPOOL|Companion Stat Increase|6	BONUS:ABILITYPOOL|Extra Creature Level|1								BONUS:MOVEADD|TYPE.Walk|10	BONUS:VAR|CompanionMaxLvls|12	BONUS:VAR|StatMax|4
+02 Companion Bonus ~ Imperial Template ~ Familiar	DEFINE:CompanionMaxLvls|0	DEFINE:MinGranted|3	DEFINE:StatMax|0	BONUS:ABILITYPOOL|Companion Stat Increase|6	BONUS:ABILITYPOOL|Extra Creature Level|1	BONUS:ABILITYPOOL|Companion Bonus HP|1	BONUS:MOVEADD|TYPE.Walk|10	BONUS:VAR|CompanionMaxLvls|6	BONUS:VAR|StatMax|3
 
 ###Block: Additional Magical Beast or Dragon Type Class Levels - For Companions or misc.
 # Template Name		Visible		Var. Min. Value				Var. Must Be Lower	Add Levels
@@ -75,6 +67,4 @@ Dragon Lvl 10		VISIBLE:DISPLAY	PREVARGTEQ:CompanionMaxLvls,10					ADDLEVEL:Drago
 Dragon Lvl 11		VISIBLE:DISPLAY	PREVARGTEQ:CompanionMaxLvls,11					ADDLEVEL:Dragon|11
 Dragon Lvl 12		VISIBLE:DISPLAY	PREVARGTEQ:CompanionMaxLvls,12					ADDLEVEL:Dragon|12
 
-
-
-#FamiliarBonusHP
+#EOF
