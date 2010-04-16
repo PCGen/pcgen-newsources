@@ -21,7 +21,7 @@ Magical Beast HD		HITDIE:10		VISIBLE:DISPLAY
 
 ###Block: Matches Level
 # Template Name						Visible		Template																		Define				Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR										Choose													Class Skill					Ability																											Move
-01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY																				DEFINE:CharacterPoints|0																	BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																					BONUS:VAR|CharacterPoints|24	BONUS:VAR|CharacterPoints|24*TL
+01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY																				DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0																BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																					BONUS:VAR|CharacterPoints|24	BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")
 01 Adept Skills (Half Cost Bypass)																									DEFINE:SkillBuyBypass|1
 
 01 Class Skills Eclipse Point Buy			VISIBLE:DISPLAY																																																																																																																																															CSKILL:TYPE.NormalSkill
@@ -36,6 +36,15 @@ Positive Level (+2)																																																BONUS:ABILITY
 02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY	TEMPLATE:Positive Level (+2)																																																																																																																																																ABILITY:Special Ability|VIRTUAL|Companion ~ Might
 #	BONUS:COMBAT|BAB|2		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|AC|2	BONUS:ABILITYPOOL|Character Points|12
 02 Companion Bonus ~ Great Form																																																																BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC								BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC								BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC																																ABILITY:Special Ability|VIRTUAL|Companion ~ Great Form
+
+
+# Template Levels - Grant Points to a Separate Pool for easier Selections
+Eclipse ~ Template Level +1			BONUS:ABILITYPOOL|Template Character Points|32		LEVELADJUSTMENT:1
+Eclipse ~ Template Level +2			BONUS:ABILITYPOOL|Template Character Points|32*2	LEVELADJUSTMENT:2
+Eclipse ~ Template Level +3			BONUS:ABILITYPOOL|Template Character Points|32*3	LEVELADJUSTMENT:3
+Eclipse ~ Template Level +4			BONUS:ABILITYPOOL|Template Character Points|32*4	LEVELADJUSTMENT:4
+
+
 
 
 ### Companion Templates and Associated Stuff
