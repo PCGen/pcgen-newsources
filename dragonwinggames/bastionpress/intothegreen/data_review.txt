@@ -1,0 +1,74 @@
+Stuff below is for double checks.  I'm fixing the obvious stuff in the set as I go.
+Anyone have issues with a SORUCESHORT:IntoGreen ?  ittg would make me guess a lot....
+Side note: The _full picture is a flip of the picture in the cover .gif.  Intentional?  Since we aren't using Green_full.jpg, 
+	do we need it in the folder?  Did I miss how it is referenced?
+
+PCCs:  One PCC per folder...  I haven't moved it, but that needs to be done before moving into the main repository.  
+	Not moved mainly because it looks like the 3.5 version stuff is incomplete.
+
+/intothegreen/35:
+
+_races_35e:
+This looks like 3e races, even with 3.5 lines commented out.  (Old Wilderness Lore skill, etc.)
+
+_kits_35e:
+None of the skills filled out.....
+
+/intothegreen:
+
+_equipment:
+1) Assuming COST:25 on Lover's Horn and Kaleidoscope.  Bad tag syntax..  Ended with COST null, and a 25: tag at the end 
+	of the line. for both.
+2) Poisons: ":" in the SPROP, which can cause problems on export.  
+ -- We probably need to use an ASPECT bit on these (RSRD is bad on that as well)..  Need OS / Data FReqs for that.
+3) Do we really want "Herbalist (DC 20)" for an SPROP???  That's going a bit far.  
+	I don't mind an ASPECT for those that want it, but an extra line for every item in the list for that?  Imagine 
+	that on the RSRD alchemy items.
+4) Point of TYPE:Facegear.Mask ?  If it is TYPE:Eyegear, that's all we need.  Are we using the extra TYPEs for something?
+	Same thing for Headgear.Helm ....
+
+_equipmods:
+Missing SOURCEPAGE info.
+
+_spells:
+1) Will "Forest Invisibility" be getting fleshed out?  I'm assuming a PL issue there...  It would be nice to have a SOURCEPAGE 
+	to the page that makes the reference....
+2) Not sure we need the DESCs in a separate .MOD.  They aren't extremely descriptive, and it looks like we have pub. approval.
+3) Added Spell Type.
+
+_abilities:
+1) Missing some TIMES= parameters in SPELLS tags.  If these are 1/day, we should have it set to TIMES=1.
+  -(Line 27): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=9|Awaken|Control Plants|Detect Animals or Plants|Diminish Plants|Entangle|Plant Growth|Spike Growth|Spike Stones"
+  -(Line 33): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=13|Control Weather|Summon Nature's Ally VII"
+  -(Line 100): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=10|Dominate Animal|Snare|Spike Growth"
+  -(Line 124): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=7|Divination"
+  -(Line 154): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=12|Control Weather"
+  -(Line 159): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=4|Charm Person|Forest Invisibility"
+  -(Line 165): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=15|Plant Growth"
+  -(Line 175): the TIMES= parameter is missing in "SPELLS:Innate|CASTERLEVEL=16|Plane Shift"
+2) Missing SOURCEPAGE on all of them, it looks like.
+3) From the looks of it, some of these can be merged with the standard SRD abilies... Pounce, Improved Grab, Fast Healing, 
+	Fire Vulnerability, etc.
+	Might have to clarify the Turn Resistance bit, since those aren't Turn Undead...
+4) I haven't thoroughly checked lately the BONUS:PCLEVEL tag in a while, but last time I checked, anything above 1 caused 
+	inconsistant behavior, especially on loading a character.  I recommend moving to specific Race entries for those.
+	(Maakantu and Elderwitch)
+
+_kits:
+1) Some of the Kits are incomplete (mostly Skills stuff)
+
+_classes: 
+1) SOURCEPAGE for the Plant Fey should be for a Sidebar or the first race that uses it.  Missing in the file.
+
+_templates_deseases:
+1) Were we planning on adding Cold, etc. to the 3e set?
+2) The diseases are missing a negative modifier, I think.  Diseases usually have bad effects on the characters, right?  
+	Is there something esle beyond those that I'm missing?
+
+
+Analysis: /35e fails Data review - none of it conforms to RSRD, and the PCC needs to get implemented in the same folder.
+		Rest is mostly ready to go for Alpha releases (in /alpha).  My concern there is the incomplete Kits.
+		Doesn't feel ready for a OOC.
+		- Tir Gwaith
+
+
