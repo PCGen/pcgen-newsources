@@ -7,11 +7,8 @@ STARTPACK:Arboreal Nemesis	TYPE:Default	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PR
 RACE:Arboreal Nemesis	PRERACE:1,%
 ALIGN:NE
 STAT:STR=11|DEX=10|CON=11|INT=10|WIS=11|CHA=10
-#Skills: Bluff +9, Hide –9*, Intimidate +13, Knowledge (Nature) +9, Listen +9, Sense Motive +9, Spot +8, Wilderness Lore +9
-#*An arboreal nemesis has a +16 racial bonus to Hide checks made in forested areas.
 #STR=29|DEX=8|CON=21|INT=14|WIS=15|CHA=12
 SKILL:Bluff				RANK:8
-#SKILL:Hide				RANK:0
 SKILL:Intimidate			RANK:13
 SKILL:Knowledge (Nature)	RANK:7
 SKILL:Listen			RANK:7
@@ -30,8 +27,8 @@ STAT:STR=10|DEX=11|CON=11|INT=10|WIS=10|CHA=10
 #Skills: Dark woodsmen gain a +10 competence bonus to Move Silently and Hide checks made while within their protected area.
 #Skills: Hide +2*, Move Silently +2*, Wilderness Lore +6
 #STAT:STR=14|DEX=11|CON=15|INT=10|WIS=14|CHA=10
-#SKILL:Hide			RANK:
-#SKILL:Move Silently	RANK:
+SKILL:Hide			RANK:2
+SKILL:Move Silently	RANK:2
 SKILL:Wilderness Lore	RANK:4
 FEAT:Track
 GEAR:Greataxe	SIZE:PC	LOCATION:Primary Hand
@@ -59,7 +56,6 @@ STAT:STR=10|DEX=10|CON=10|INT=10|WIS=10|CHA=11
 ##Skills: Hide +0*, Listen +3, Move Silently +3*, Spot +3, Wilderness Lore +2*
 ##Skills: *Greenfeeders receive a +10 competence bonus to any Wilderness Lore checks made when tracking an injured creature by scent. They also have a +4 racial bonus to all Hide and Move Silently checks made while in a forest
 ALIGN:CN
-#SKILL:Hide			RANK:
 SKILL:Listen		RANK:3
 SKILL:Move Silently	RANK:2
 SKILL:Spot			RANK:3
@@ -71,10 +67,13 @@ RACE:Grovenger	PRERACE:1,%
 STAT:STR=10|DEX=10|CON=11|INT=10|WIS=10|CHA=11
 #Skills: Animal Empathy +12, Handle Animal +12, Hide +8, Knowledge (nature) +10, Listen +13, Move Silently +9, Wilderness Lore +9
 #STR=30|DEX=8|CON=21|INT=10|WIS=16|CHA=15
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
+SKILL:Animal Empathy		RANK:9
+SKILL:Handle Animal		RANK:9
+SKILL:Hide				RANK:9
+SKILL:Knowledge (Nature)	RANK:10
+SKILL:Listen			RANK:10
+SKILL:Move Silently		RANK:10
+SKILL:Wilderness Lore		RANK:9
 #SKILL:	RANK:
 FEAT:Cleave
 FEAT:Iron Will
@@ -87,16 +86,18 @@ RACE:Horned Man	PRERACE:1,%
 STAT:STR=11|DEX=11|CON=10|INT=10|WIS=10|CHA=10
 #Skills: Animal Empathy +12, Hide +5, Intimidate +6, Listen +16, Move Silently +5, Sense Motive +8, Spot +16, Wilderness Lore +16
 #STR=17|DEX=15|CON=20|INT=12|WIS=18|CHA=16
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
+SKILL:Animal Empathy	RANK:8
+SKILL:Hide			RANK:2
+SKILL:Intimidate		RANK:3
+SKILL:Listen		RANK:12
+SKILL:Move Silently	RANK:3
+SKILL:Sense Motive	RANK:4
+SKILL:Spot			RANK:12
+SKILL:Wilderness Lore	RANK:12
 FEAT:Power Attack
 FEAT:Track
 FEAT:Weapon Focus (Shortspear)
-#Attacks: Huge shortspear +8 melee; or huge shortspear +7 ranged
-#Damage: Huge shortspear 2d6+5 plus 1d6 temporary Wisdom melee; or huge shortspear 2d6+3 plus 1d6 temporary Wisdom ranged
+GEAR:Shortspear	SIZE:PC	LOCATION:Primary Hand
 ALIGN:TN
 
 
@@ -108,11 +109,12 @@ RACE:Makesh	PRERACE:1,%
 STAT:STR=10|DEX=13|CON=10|INT=12|WIS=10|CHA=8
 #Skills: Climb +2, Hide +2, Listen +3, Move Silently +2, Spot +3, Wilderness Lore +1
 #STR=10|DEX=13|CON=10|INT=12|WIS=10|CHA=8
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
+#SKILL:Climb		RANK:
+#SKILL:Hide			RANK:
+#SKILL:Listen		RANK:
+#SKILL:Move Silently	RANK:
+#SKILL:Spot			RANK:
+#SKILL:Wilderness Lore	RANK:
 FEAT:Alertness
 GEAR:Studded Leather	SIZE:PC	LOCATION:Equipped
 GEAR:Flail (Light)	SIZE:PC	LOCATION:Primary Hand
@@ -124,11 +126,11 @@ RACE:Shadow Stalker	PRERACE:1,%
 STAT:STR=10|DEX=10|CON=10|INT=10|WIS=10|CHA=10
 #Skills: Climb +6, Listen +4, Move Silently +11, Hide +8, Spot +9
 #STR=18|DEX=16|CON=16|INT=10|WIS=10|CHA=6
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
+SKILL:Climb			RANK:2
+SKILL:Listen		RANK:4
+SKILL:Move Silently	RANK:8
+SKILL:Hide			RANK:5
+SKILL:Spot			RANK:9
 FEAT:Improved Initiative
 FEAT:Weapon Focus (Claw)
 
@@ -136,17 +138,32 @@ FEAT:Weapon Focus (Claw)
 STARTPACK:Ubi	TYPE:Default	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Ubi],[!PRERACE:1,%]
 RACE:Ubi	PRERACE:1,%
 STAT:STR=10|DEX=10|CON=11|INT=11|WIS=10|CHA=10
-#Skills: Alchemy + 8, Bluff +6, Craft (any one, skill focus) +11, Craft (any additional one) + 6, Disable Device +5, Escape Artist +5, Hide +9, Listen +3, Move Silently +8, Open Lock +8, Search +6, Sense Motive +3, Spot +4, Use Magic Device +5, Use Rope +9
 #STR=10|DEX=18|CON=11|INT=17|WIS=12|CHA=14
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
+#Skills: Alchemy + 8, Bluff +6, Craft (any one, skill focus) +11, Craft (any additional one) + 6, Disable Device +5,
+# Escape Artist +5, Hide +9, Listen +3, Move Silently +8, Open Lock +8, Search +6, Sense Motive +3, Spot +4, 
+# Use Magic Device +5, Use Rope +9
+#SKILL:Alchemy		RANK:
+#SKILL:Bluff		RANK:
+#SKILL:Disable Device	RANK:
+#SKILL:Escape Artist	RANK:
+#SKILL:Hide			RANK:
+#SKILL:Listen		RANK:
+#SKILL:Move Silently	RANK:
+#SKILL:Open Lock		RANK:
+#SKILL:Search		RANK:
+#SKILL:Sense Motive	RANK:
+#SKILL:Spot			RANK:
+#SKILL:Use Magic Device	RANK:
+#SKILL:Use Rope		RANK:
+#SKILL:Craft|Craft	RANK:	
 FEAT:Exotic Weapon Proficiency (Crossbow (Hand))
-FEAT:Skill focus (any one Craft)
+#FEAT:Skill Focus
+# Supposed to be a Craft
 GEAR:Dagger			SIZE:PC	LOCATION:Primary Hand
 GEAR:Crossbow (Hand)	SIZE:PC	LOCATION:Carried
+# NO way to just choose a Craft Skill and then a Second One without the possibility of overlap; corner case
+# NO way to just choose a Skill Focus in a Craft Skill that was chosen.
+
 
 ###Block: Bayowulf-------------------------------
 STARTPACK:Bayowulf	TYPE:Default	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Bayowulf],[!PRERACE:1,%]
@@ -155,14 +172,18 @@ ALIGN:NE
 STAT:STR=10|DEX=11|CON=10|INT=11|WIS=11|CHA=10
 #Skills: Climb +5, Hide +6, Jump +6, Listen +6, Move Silently +10, Spot +4, Swim +12, Wilderness Lore +1*.
 #STR=18|DEX=15|CON=18|INT=9|WIS=13|CHA=10
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
-#SKILL:	RANK:
+#SKILL:Climb		RANK:1
+#SKILL:Hide			RANK:2
+#SKILL:Jump			RANK:2
+#SKILL:Listen		RANK:3
+#SKILL:Move Silently	RANK:
+#SKILL:Spot			RANK:3
+#SKILL:Swim			RANK:
+
 FEAT:Blind-Fight
 FEAT:Weapon Focus (Bite)
-#Skills: Bayowulfs receive a +2 racial bonus to Hide, Listen, Move Silently and Swim skill checks. They also benefit from a +4 racial bonus to Wilderness Lore skill checks while tracking by scent.
+#Skills: Bayowulfs receive a +2 racial bonus to Hide, Listen, Move Silently and Swim skill checks.
+# They also benefit from a +4 racial bonus to Wilderness Lore skill checks while tracking by scent.
 
 ###Block: Bloodfrog-------------------------------
 STARTPACK:Bloodfrog	TYPE:Default	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Bloodfrog],[!PRERACE:1,%]
