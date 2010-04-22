@@ -12,16 +12,23 @@ Spirit Weapon Fix +6				VISIBLE:DISPLAY												BONUS:VAR|SpiritWeaponRangedT
 
 
 
-# From Votera
-Wind Guardian Template							LEVELADJUSTMENT:2	BONUS:MOVEADD|TYPE.Walk|20	BONUS:STAT|WIS|4														ABILITY:Special Ability|AUTOMATIC|Shapeshift (Votera)|Damage Reduction ~ 8|Cloaking (Votera)	MOVE:Fly,60	DESC:(95 CP/+2 ECL)
 
+#COMMENT: HD Setting Templates for odd Cases. THESE will override actual HD of All Character Levels - Should only be used for Companions using special Templates.
 Magical Beast HD		HITDIE:10		VISIBLE:DISPLAY
+Dragon HD			HITDIE:12		VISIBLE:DISPLAY
 
 # From Web Blog
 
 ###Block: Matches Level
 # Template Name						Visible		Template																		Define				Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR										Choose													Class Skill					Ability																											Move
-01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY																				DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0																BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																					BONUS:VAR|CharacterPoints|24	BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")
+01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY	TEMPLATE:CHOOSE:First Level Eclipse|Multiclass Eclipse																			DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0																BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																						
+#COMMENT: This Template chooses whether the Character is a True Eclipse or a Multiclass and controls how many "Character Points" the character gets (24 or 48 at 1st level)
+First Level Eclipse					VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
+Multiclass Eclipse					VISIBLE:DISPLAY	PREPCLEVEL:MIN=2	BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")	
+
+
+
+
 01 Adept Skills (Half Cost Bypass)																									DEFINE:SkillBuyBypass|1
 
 01 Class Skills Eclipse Point Buy			VISIBLE:DISPLAY																																																																																																																																															CSKILL:TYPE.NormalSkill
@@ -29,13 +36,21 @@ Magical Beast HD		HITDIE:10		VISIBLE:DISPLAY
 #CSKILL:TYPE.Strength|TYPE.Dexterity|TYPE.Constitution|TYPE.Intelligence|TYPE.Wisdom|TYPE.Charisma|Speak Language
 01 Class Skills Martial Art				VISIBLE:DISPLAY																																																																																																																																															CSKILL:Martial Arts|TYPE.MartialArt
 
+
+###Block: Templates Applied to the Companion - Would be nice if we had a Feature that could Apply this from the Master PC
+# 02 Comp Bonus Might grants the Positive Level (+2) - and since we can't assign from master, grant a virtual 'ability' that will display in character points showing the companion has this.
+02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY	TEMPLATE:Positive Level (+2)																																																																																																																																																ABILITY:Character Points|VIRTUAL|Companion ~ Might
+
+# This needs to be taken so the TEMP BONUS may be used. Increases Size and all associated bonuses.
+02 Companion Bonus ~ Great Form																																																																BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC								BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC								BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC																																ABILITY:Character Points|VIRTUAL|Companion ~ Great Form
+
+
+# Positive Levels grant +1 to AC, To Hit, and Saves along with 6 CP
 Positive Level (+1)																																																BONUS:ABILITYPOOL|Character Points|6			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|1	BONUS:COMBAT|BAB|1	BONUS:COMBAT|AC|1
 Positive Level (+2)																																																BONUS:ABILITYPOOL|Character Points|12			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|BAB|2	BONUS:COMBAT|AC|2
-
-
-02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY	TEMPLATE:Positive Level (+2)																																																																																																																																																ABILITY:Special Ability|VIRTUAL|Companion ~ Might
-#	BONUS:COMBAT|BAB|2		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|AC|2	BONUS:ABILITYPOOL|Character Points|12
-02 Companion Bonus ~ Great Form																																																																BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC								BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC								BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC																																ABILITY:Special Ability|VIRTUAL|Companion ~ Great Form
+Positive Level (+3)																																																BONUS:ABILITYPOOL|Character Points|18			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|3	BONUS:COMBAT|BAB|3	BONUS:COMBAT|AC|3
+Positive Level (+4)																																																BONUS:ABILITYPOOL|Character Points|24			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|4	BONUS:COMBAT|BAB|4	BONUS:COMBAT|AC|4
+Positive Level (+5)																																																BONUS:ABILITYPOOL|Character Points|30			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|5	BONUS:COMBAT|BAB|5	BONUS:COMBAT|AC|5
 
 
 # Template Levels - Grant Points to a Separate Pool for easier Selections
@@ -48,6 +63,7 @@ Eclipse ~ Template Level +4			BONUS:ABILITYPOOL|Template Character Points|32*4	L
 
 
 ### Companion Templates and Associated Stuff
+# Warbeast Chooses a movement mode - supposed to the prime movement mode, I wonder if there is a way to prioritize movement modes?
 Warbeasts							VISIBLE:DISPLAY	TEMPLATE:CHOOSE:Warbeast ~ Walk|Warbeast ~ Fly|Warbeast ~ Swim|Warbeast ~ Climb|Warbeast ~ Burrow																																																																			BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC														BONUS:STAT|STR|4|TYPE=Warbeast	BONUS:STAT|CON,WIS|2|TYPE=Warbeast														CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Warbeast HD								ABILITY:Special Ability|AUTOMATIC|Opportunist (Free Aid Another)|Immunity (Training Time)|Mastery ~ Ride Spot and Listen|Armor ~ Light|Armor ~ Medium|Armor ~ Heavy
 #
 Warbeast ~ Walk						VISIBLE:DISPLAY																									PREMOVE:1,Walk=1																																																																																																																										ABILITY:Special Ability|AUTOMATIC|Celerity(Walk)
@@ -64,17 +80,30 @@ Warbeast II ~ Swim					VISIBLE:DISPLAY																									PREMOVE:1,Swim=1	
 Warbeast II ~ Climb					VISIBLE:DISPLAY																									PREMOVE:1,Climb=1								PRETEMPLATE:1,Warbeast ~ Climb																																																																																																													ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Climb)
 Warbeast II ~ Burrow					VISIBLE:DISPLAY																									PREMOVE:1,Burrow=1							PRETEMPLATE:1,Warbeast ~ Burrow																																																																																																													ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Burrow)
 
+# This allows for extra HD for Familiars or any companion for that matter, designed to work with the Wealth Templates and a workaround for unusual designs
 Companion Bonus HP					VISIBLE:DISPLAY																																									BONUS:ABILITYPOOL|Companion Bonus HP|1
 
 # Atherian Birthrights
-
 The Dragon-Born																																																	BONUS:ABILITYPOOL|Innate Enchantment Choice|12																																																	BONUS:SKILL|Knowledge (The Planes)|1															BONUS:VAR|CharacterPoints|6																											ABILITY:Special Ability|AUTOMATIC|Fast Learner (+1)|Immunity ~ Natural Law (The restriction of Innate Enchantments to 12 CP in total)
+
+
+# This is a Testing of the Move 'Fly' Aspect. Works with the RSRD set.
 Eclipse Fly Move																																																																																																																																																													ABILITY:Special Ability|AUTOMATIC|Maneuverability(Average)																			MOVE:Fly,80
 
-Josh's Military Life Package				VISIBLE:YES																																																																																																																																																						ABILITY:Character Points|AUTOMATIC|Legionary|Weapon Prof ~ All Simple Weapons|Armor ~ Light
-#Simple Weapon and Light Armor Profs., along with Legionary
 
-# Thunderdwarf Stat Bonus Mechanism
+#COMMENT: Example of GM Granted Packages (typically 12 CP of GM assigned abilities)
+Josh's Military Life Package				VISIBLE:YES																																																																																																																																																						ABILITY:Character Points|AUTOMATIC|Legionary|Weapon Prof ~ All Simple Weapons|Armor ~ Light
+
+
+# Need to move all the Web Blog stuff into a 'Web Enhancement'. Also need to note which items are in the new 'Eclipse II' release.
+
+#
+# Votera - Example of Template from Web Blog
+Wind Guardian Template							LEVELADJUSTMENT:2	BONUS:MOVEADD|TYPE.Walk|20	BONUS:STAT|WIS|4														ABILITY:Special Ability|AUTOMATIC|Shapeshift (Votera)|Damage Reduction ~ 8|Cloaking (Votera)	MOVE:Fly,60	DESC:(95 CP/+2 ECL)
+
+
+
+# Thunderdwarf Stat Bonus Mechanism * Move to Web Blog/EII set
 STR1TO20																																						PRESTAT:1,STR=1	!PRESTAT:1,STR=2																																																																						BONUS:STAT|STR|19
 STR2TO20																																						PRESTAT:1,STR=2	!PRESTAT:1,STR=3																																																																						BONUS:STAT|STR|18
 STR3TO20																																						PRESTAT:1,STR=3	!PRESTAT:1,STR=4																																																																						BONUS:STAT|STR|17
