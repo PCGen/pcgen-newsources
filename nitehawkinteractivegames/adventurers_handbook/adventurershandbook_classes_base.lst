@@ -16,17 +16,14 @@ CLASS:Bounty Hunter	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Diplomacy|Gather Informat
 1																						AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
 ###Block:Level Progression
 1															AUTO:FEAT|Track
-#1	1st Favored Prey
+1	BONUS:ABILITYPOOL|Favored Prey Choice|CL/5
 2															AUTO:FEAT|Endurance
 3															AUTO:FEAT|Improved Unarmed Combat
-#5	2nd Favored Prey
+5	BONUS:ABILITYPOOL|Favored Prey Choice|CL/5
 8					ABILITY:Special Ability|AUTOMATIC|Base of Operations
 10	BONUS:VAR|Reputation|1	ABILITY:Special Ability|AUTOMATIC|Swift Tracker|Reputation
-#10	3rd Favored Prey
 15					ABILITY:Special Ability|AUTOMATIC|Camouflage
-#15	4th Favored Prey
 20	BONUS:VAR|Reputation|1
-#20	5th Favored Prey
 
 
 # Class Name	Hit Dice	Source Page
@@ -39,10 +36,6 @@ CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outca
 1	BONUS:ABILITYPOOL|Outcast Exotic Weapon|1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency|Simple Weapon Proficiency
 1																								AUTO:FEAT|Armor Proficiency (Light)
 ###Block: Level Progression
-1
-2
-3
-4
 5	CAST:1		KNOWN:0		BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=0|INT
 6	CAST:1		KNOWN:0
 7	CAST:1,1		KNOWN:1,0		BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=1|INT
@@ -60,34 +53,123 @@ CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outca
 19	CAST:4,4,4,3,2	KNOWN:3,3,2,2,1
 20	CAST:5,4,4,4,3	KNOWN:3,3,3,2,2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#COMMENT: Can't implement BAB progression properly, third iteration wonky.
+#		Not liking the wonky progression.
+CLASS:Shaman (Alternate)	HD:6		BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|var("ShamanBAB")|TYPE=Base.REPLACE	SOURCEPAGE:p.42	
+CLASS:Shaman (Alternate)	PREALIGN:LG,LN,TN,NG,CG
+CLASS:Shaman (Alternate)	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Knowledge (Dreams)|Knowledge (Nature)|Knowledge (Spirits)|Spellcraft|Survival
+CLASS:Shaman (Alternate)	SPELLSTAT:WIS	BONUS:SPELLCASTER|Shaman (Alternate)|CL	
+1		ABILITY:Special Ability|AUTOMATIC|Animal Companion|Dance of the Shaman|Interpret Dream|Wild Empathy|Turn Undead	BONUS:VAR|DanceOfTheShamanBonus|2		DEFINE:ShamanBAB|0
+2		ABILITY:Special Ability|AUTOMATIC|Woodland Stride	BONUS:VAR|ShamanBAB|1
+3		BONUS:VAR|ShamanBAB|1
+4		BONUS:VAR|ShamanBAB|1
+5		ABILITY:Special Ability|AUTOMATIC|Trackless Step|War Summoning	BONUS:VAR|DanceOfTheShamanBonus|(CL/5)*2
+6		BONUS:VAR|ShamanBAB|1
+7		BONUS:VAR|ShamanBAB|1
+9		ABILITY:Special Ability|AUTOMATIC|Commune with Nature	BONUS:VAR|ShamanBAB|1
+10		BONUS:VAR|ShamanBAB|1
+12		BONUS:VAR|ShamanBAB|1
+14		BONUS:VAR|ShamanBAB|1
+16		BONUS:VAR|ShamanBAB|1
+17		ABILITY:Special Ability|AUTOMATIC|Astral Projection
+18		ABILITY:Special Ability|AUTOMATIC|Ageless Being	BONUS:VAR|ShamanBAB|1
+20		ABILITY:Special Ability|AUTOMATIC|Improved Astral Projection	BONUS:VAR|ShamanBAB|1
+#Block: Spell Progression
+1	CAST:1,4,1
+2	CAST:2,4,2
+3	CAST:3,4,2,1
+4	CAST:4,4,3,2
+5	CAST:5,5,3,2,1
+6	CAST:6,5,3,2,2
+7	CAST:7,5,3,3,2,1
+8	CAST:8,5,4,3,2,2
+9	CAST:9,5,4,3,3,2,1
+10	CAST:10,6,4,3,3,2,2
+11	CAST:11,6,4,3,3,3,2,1
+12	CAST:12,6,5,4,3,3,2,2
+13	CAST:13,6,5,4,4,3,3,2,1
+14	CAST:14,6,5,4,4,3,3,2,2
+15	CAST:15,6,5,5,4,4,3,2,2,1
+16	CAST:16,6,6,5,4,4,3,3,2,2
+17	CAST:17,6,6,5,5,4,4,3,3,2,1
+18	CAST:18,6,7,5,5,4,4,3,3,2,2
+19	CAST:19,6,7,6,5,5,4,3,3,3,2
+20	CAST:20,6,8,6,5,5,4,4,3,3,2
 #1		#
 #2		#
 #3		#
 #4		#
 #5		#
-#6 		#
-#7 		#
+#6		#
+#7		#
 #8		#
-#9 		#
+#9		#
+#10		#
+#11		#
+#12		#
+#13		#
+#14		#
+#15		#
+#16		#
+#17		#
+#18		#
+#19		#
+#20		#
+
+#CLASS:Witch			SOURCEPAGE:p.48
+#1		#
+#2		#
+#3		#
+#4		#
+#5		#
+#6		#
+#7		#
+#8		#
+#9		#
+#10		#
+#11		#
+#12		#
+#13		#
+#14		#
+#15		#
+#16		#
+#17		#
+#18		#
+#19		#
+#20		#
+
+#CLASS:Mentalist		SOURCEPAGE:p.53
+#1		#
+#2		#
+#3		#
+#4		#
+#5		#
+#6		#
+#7		#
+#8		#
+#9		#
+#10		#
+#11		#
+#12		#
+#13		#
+#14		#
+#15		#
+#16		#
+#17		#
+#18		#
+#19		#
+#20		#
+
+#CLASS:Psionist		SOURCEPAGE:p.57
+#1		#
+#2		#
+#3		#
+#4		#
+#5		#
+#6		#
+#7		#
+#8		#
+#9		#
 #10		#
 #11		#
 #12		#
@@ -101,20 +183,24 @@ CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outca
 #20		#
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#CLASS:Shaman		SOURCEPAGE:p.42
-#CLASS:Witch			SOURCEPAGE:p.48
-#CLASS:Mentalist		SOURCEPAGE:p.53
-#CLASS:Psionist		SOURCEPAGE:p.57
+#1		#
+#2		#
+#3		#
+#4		#
+#5		#
+#6		#
+#7		#
+#8		#
+#9		#
+#10		#
+#11		#
+#12		#
+#13		#
+#14		#
+#15		#
+#16		#
+#17		#
+#18		#
+#19		#
+#20		#
 
