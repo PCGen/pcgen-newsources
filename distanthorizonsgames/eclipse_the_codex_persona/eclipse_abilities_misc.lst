@@ -1,6 +1,29 @@
 # CVS $Revision$ $Author$ -- Thu Apr  8 08:48:12 2010 -- reformated by prettylst.pl v1.39 (build 10232)
 
 
+# No Level Progression to associate
+Rune Caster								KEY:Rune Caster Base											CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:RuneCasterMagicLvls|0	DEFINE:PointBuyRuneCasterLvl|0	DEFINE:PointBuyRuneCasterCasterLvl|0				DESC:RuneCaster Level %1, Casterlevel is %2|RuneCasterMagicLvls|PointBuyRuneCasterCasterLvl+CasterLevelAll																					BONUS:DC|ALLSPELLS|INT																																																																																																														SOURCEPAGE:p.97
+Hexcrafter								KEY:Hexcrafter Base											CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:HexcrafterMagicLvls|0	DEFINE:PointBuyHexcrafterLvl|0	DEFINE:PointBuyHexcrafterCasterLvl|0				DESC:Hexcrafter Casterlevel is %2|HexcrafterMagicLvls|PointBuyHexcrafterCasterLvl+CasterLevelAll																						BONUS:DC|ALLSPELLS|INT	BONUS:VAR|HexcrafterMagicLvls|count("ABILITIES","CATEGORY=Special Ability","NAME=Sorcery Magic Level")																																																																																												SOURCEPAGE:p.11
+Dweomerist								KEY:Dweomerist Base											CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:DweomeristMagicLvls|0	DEFINE:PointBuyDweomeristLvl|0	DEFINE:PointBuyDweomeristCasterLvl|0				DESC:Dweomerist Casterlevel is %2|DweomeristMagicLvls|PointBuyDweomeristCasterLvl+CasterLevelAll																						BONUS:DC|ALLSPELLS|INT	BONUS:VAR|DweomeristMagicLvls|count("ABILITIES","CATEGORY=Special Ability","NAME=Sorcery Magic Level")																																																																																												SOURCEPAGE:p.11
+Theurgist								KEY:Theurgist Base											CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:TheurgistMagicLvls|0	DEFINE:PointBuyTheurgistLvl|0	DEFINE:PointBuyTheurgistCasterLvl|0						DESC:Theurgist Casterlevel is %2|TheurgistMagicLvls|PointBuyTheurgistCasterLvl+CasterLevelAll																							BONUS:DC|ALLSPELLS|INT	BONUS:VAR|TheurgistMagicLvls|count("ABILITIES","CATEGORY=Special Ability","NAME=Sorcery Magic Level")																																																																																													SOURCEPAGE:p.11
+Thaumaturgist							KEY:Thaumaturgist Base											CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:ThaumaturgistMagicLvls|0	DEFINE:PointBuyThaumaturgistLvl|0	DEFINE:PointBuyThaumaturgistCasterLvl|0			DESC:Thaumaturgist Casterlevel is %2|ThaumaturgistMagicLvls|PointBuyThaumaturgistCasterLvl+CasterLevelAll																					BONUS:DC|ALLSPELLS|INT	BONUS:VAR|ThaumaturgistMagicLvls|count("ABILITIES","CATEGORY=Special Ability","NAME=Sorcery Magic Level")																																																																																												SOURCEPAGE:p.11
+
+
+
+
+Base Caster Level ~ Specialized ~ Rune Caster																CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Rune Caster Base																																																																																																																	COST:3	SOURCEPAGE:p.11
+
+Base Caster Level ~ Specialized ~ Hexcrafter																CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Hexcrafter Base																																																																																																																	COST:3	SOURCEPAGE:p.11
+Base Caster Level ~ Specialized ~ Dweomerist																CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Dweomerist Base																																																																																																																	COST:3	SOURCEPAGE:p.11
+Base Caster Level ~ Specialized ~ Theurgist																CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Theurgist Base																																																																																																																	COST:3	SOURCEPAGE:p.11
+Base Caster Level ~ Specialized ~ Thaumaturgist																CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Thaumaturgist Base																																																																																																																	COST:3	SOURCEPAGE:p.11
+
+
+
+
+
+
+
 ###Block: Skill Rank Purchase - Standard Buy
 # Ability Name		Unique Key			Output Name							Category of Ability	Type				Stackable?	Multiple?	Choose									Selections	Bonus to skill rank	Cost
 ~ Adept Skill Buy		KEY:Adept Skill Buy	OUTPUTNAME:~ Adept Skill Buy Choice			CATEGORY:Skill Buy	TYPE:SkillBuy.HalfCost	STACK:YES	MULT:YES	CHOOSE:SKILLSNAMED|TYPE=AdeptChoice					SELECT:2	BONUS:SKILLRANK|%LIST|1	COST:1

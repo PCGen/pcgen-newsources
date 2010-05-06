@@ -11,6 +11,12 @@ Spirit Weapon Fix +6				VISIBLE:DISPLAY												BONUS:VAR|SpiritWeaponRangedT
 #+2 Martial Arts, +2 Comp Bonus to Bows, +1 Weapon Focus, +1 Inspiring Word (Hit and Damage)
 
 
+# These Are used to Emulate a Character of Lower than 1st Level. You need to REMOVE THE TEMPLATE if you plan on being higher than 0th level.
+Eclipse Character Level -2			VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse	BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	HD:1	
+# Has only 1 HP
+Eclipse Character Level -1			VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse	BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	HD:1
+Eclipse Character Level 0			VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse											HD:3
+# 0th level has 24 CP
 
 
 #COMMENT: HD Setting Templates for odd Cases. THESE will override actual HD of All Character Levels - Should only be used for Companions using special Templates.
@@ -23,7 +29,7 @@ Dragon HD			HITDIE:12		VISIBLE:DISPLAY
 # Template Name						Visible		Template																		Define				Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR										Choose													Class Skill					Ability																											Move
 01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY	TEMPLATE:CHOOSE:First Level Eclipse|Multiclass Eclipse																			DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0																BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																						
 #COMMENT: This Template chooses whether the Character is a True Eclipse or a Multiclass and controls how many "Character Points" the character gets (24 or 48 at 1st level)
-First Level Eclipse					VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
+First Level Eclipse					VISIBLE:DISPLAY	PREMULT:1,[PREPCLEVEL:MAX=1],[PREVARGTEQ:EclipseClass,1]	BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
 Multiclass Eclipse					VISIBLE:DISPLAY	PREPCLEVEL:MIN=2	BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")	
 
 
