@@ -21,12 +21,14 @@ Relic Purchase ~4		KEY:Relic ~ Four	CATEGORY:Special Ability	TYPE:EclipseAbiliti
 
 ###Comment: Use this for all abilities granted to every character of the point buy system
 # Ability Name		Unique Key		Category of Ability		Type								Define					Stackable?	Multiple?	Choose		Ability																																									Bonus to Ability Pool																Modify VAR																								Cost
-All Automatic Abilities				CATEGORY:Special Ability																			ABILITY:Internal Abilities|AUTOMATIC|Disadvantage Counter|Pact Tracker|Class Skills|Martial Arts Tracker|Magic Level Tracker	ABILITY:Special Ability|AUTOMATIC|Warcraft Output	ABILITY:Special Ability|AUTOMATIC|Martial Arts Is a Class Skill|PRECSKILL:1,Martial Arts	BONUS:ABILITYPOOL|Character Points|count("ABILITIES","CATEGORY=Special Ability","NAME=A Character Creation 5")*TL
+All Automatic Abilities				CATEGORY:Special Ability																			ABILITY:Internal Abilities|AUTOMATIC|Disadvantage Counter|Pact Tracker|Class Skills|Martial Arts Tracker|Magic Level Tracker	ABILITY:Special Ability|AUTOMATIC|Warcraft Output	ABILITY:Special Ability|AUTOMATIC|Martial Arts Is a Class Skill|PRECSKILL:1,Martial Arts	
 #
 Pact Tracker					CATEGORY:Internal Abilities									DEFINE:PactLevel|0																																																																							BONUS:VAR|PactLevel|2	BONUS:VAR|PactLevel|1|PREPCLEVEL:MIN=3	BONUS:VAR|PactLevel|1|PREPCLEVEL:MIN=7	BONUS:VAR|PactLevel|1|PREPCLEVEL:MIN=12
 Class Skills					CATEGORY:Internal Abilities																																																																BONUS:ABILITYPOOL|Character Class Skill Choice|15
 Martial Arts Tracker				CATEGORY:Internal Abilities									DEFINE:MartialArtsSkillCounter|0																																																		BONUS:ABILITYPOOL|Martial Art Techniques|MartialArtsSkillCounter
 Magic Level Tracker				CATEGORY:Internal Abilities									DEFINE:EclipseMagicLvlMax|0	DEFINE:CasterLevelAll|0																																																																					BONUS:VAR|EclipseMagicLvlMax|var("EclipseClassLvl")+2
+
+	
 
 # Additional trackers
 Witchcraft Tracker				CATEGORY:Internal Abilities	DEFINE:WitchcraftPowerPoints|(STRSCORE+DEXSCORE+CONSCORE)/3	DEFINE:WitchcraftWillDC|CHA+13	BONUS:ABILITYPOOL|Witchcraft Abilities|3|PREABILITY:2,CATEGORY=Special Ability,Witchcraft	BONUS:ABILITYPOOL|Witchcraft Abilities|4|PREABILITY:3,CATEGORY=Special Ability,Witchcraft	BONUS:ABILITYPOOL|Advanced Witchcraft Ability|6*count("ABILITIES","NAME=Witchcraft / Advanced","CATEGORY=Special Ability")
