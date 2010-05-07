@@ -1,316 +1,317 @@
-# CVS $Revision$ $Author$ -- Thu Apr  8 08:48:12 2010 -- reformated by prettylst.pl v1.39 (build 10232)
+# CVS $Revision$ $Author$ -- Fri May  7 14:06:38 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Eclipse - The Codex Persona	SOURCESHORT:Eclipse	SOURCEWEB:http://www.lulu.com/content/435647
 #Original Entry: Andrew Maitland
 
-# Template Name		Hit Dice Size	Visible		Level Adjustment	Add to base move			Stat bonus		Modify VAR												Ability															Move		Description
-All Eclipse Automatic				VISIBLE:NO
+# Template Name			Hit Dice Size	Visible		Required Non-Monster Lvl	Bonus to HP						Modify VAR															Hit Dice
+All Eclipse Automatic					VISIBLE:NO
 
 #Spirit Weapon Fix		VISIBLE:DISPLAY	CHOOSE:NUMBER|MIN=1|MAX=15|TITLE=Spirit Weapon Fix	BONUS:VAR|SpiritWeaponRangedToHit|%CHOICE|PREAPPLY:ANYPC	BONUS:VAR|SpiritWeaponMeleeToHit|%CHOICE|PREAPPLY:ANYPC
 
-Spirit Weapon Fix +6				VISIBLE:DISPLAY												BONUS:VAR|SpiritWeaponRangedToHit|8	BONUS:VAR|SpiritWeaponRangedBonusDamage|1
+Spirit Weapon Fix +6					VISIBLE:DISPLAY													BONUS:VAR|SpiritWeaponRangedToHit|8	BONUS:VAR|SpiritWeaponRangedBonusDamage|1
 #+2 Martial Arts, +2 Comp Bonus to Bows, +1 Weapon Focus, +1 Inspiring Word (Hit and Damage)
 
 
 # These Are used to Emulate a Character of Lower than 1st Level. You need to REMOVE THE TEMPLATE if you plan on being higher than 0th level.
-Eclipse Character Level -2			VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse	BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	HD:1	
+Eclipse Character Level -2				VISIBLE:DISPLAY	PREPCLEVEL:MAX=1			BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse	HD:1
 # Has only 1 HP
-Eclipse Character Level -1			VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse	BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	HD:1
-Eclipse Character Level 0			VISIBLE:DISPLAY	PREPCLEVEL:MAX=1	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse											HD:3
+Eclipse Character Level -1				VISIBLE:DISPLAY	PREPCLEVEL:MAX=1			BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse	HD:1
+Eclipse Character Level 0				VISIBLE:DISPLAY	PREPCLEVEL:MAX=1										BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:First Level Eclipse						HD:3
 # 0th level has 24 CP
 
 
 #COMMENT: HD Setting Templates for odd Cases. THESE will override actual HD of All Character Levels - Should only be used for Companions using special Templates.
-Magical Beast HD		HITDIE:10		VISIBLE:DISPLAY
-Dragon HD			HITDIE:12		VISIBLE:DISPLAY
+Magical Beast HD			HITDIE:10		VISIBLE:DISPLAY
+Dragon HD				HITDIE:12		VISIBLE:DISPLAY
 
 # From Web Blog
 
 ###Block: Matches Level
-# Template Name						Visible		Template																		Define				Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR										Choose													Class Skill					Ability																											Move
-01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY	TEMPLATE:CHOOSE:First Level Eclipse|Multiclass Eclipse																			DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0																BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																						
+# Template Name						Visible		Template									Define									Multiple Requirements								Bonus to Ability Pool						Modify VAR									Class Skill
+01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY	TEMPLATE:CHOOSE:First Level Eclipse|Multiclass Eclipse	DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0												BONUS:ABILITYPOOL|Character Points|CharacterPoints
 #COMMENT: This Template chooses whether the Character is a True Eclipse or a Multiclass and controls how many "Character Points" the character gets (24 or 48 at 1st level)
-First Level Eclipse					VISIBLE:DISPLAY	PREMULT:1,[PREPCLEVEL:MAX=1],[PREVARGTEQ:EclipseClassLvl,TL]	BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
-Multiclass Eclipse					VISIBLE:DISPLAY	PREMULT:1,[PREPCLEVEL:MIN=2],[PREVARLT:EclipseClassLvl,TL]		BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")	
+First Level Eclipse					VISIBLE:DISPLAY																					PREMULT:1,[PREPCLEVEL:MAX=1],[PREVARGTEQ:EclipseClassLvl,TL]										BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
+Multiclass Eclipse					VISIBLE:DISPLAY																					PREMULT:1,[PREPCLEVEL:MIN=2],[PREVARLT:EclipseClassLvl,TL]											BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")
 
 
 
 
-01 Adept Skills (Half Cost Bypass)																									DEFINE:SkillBuyBypass|1
+01 Adept Skills (Half Cost Bypass)																DEFINE:SkillBuyBypass|1
 
-01 Class Skills Eclipse Point Buy			VISIBLE:DISPLAY																																																																																																																																															CSKILL:TYPE.NormalSkill
+01 Class Skills Eclipse Point Buy			VISIBLE:DISPLAY																																																			CSKILL:TYPE.NormalSkill
 #01 Class Skills Eclipse Psychic			CSKILL:
 #CSKILL:TYPE.Strength|TYPE.Dexterity|TYPE.Constitution|TYPE.Intelligence|TYPE.Wisdom|TYPE.Charisma|Speak Language
-01 Class Skills Martial Art				VISIBLE:DISPLAY																																																																																																																																															CSKILL:Martial Arts|TYPE.MartialArt
+01 Class Skills Martial Art				VISIBLE:DISPLAY																																																			CSKILL:Martial Arts|TYPE.MartialArt
 
 
 ###Block: Templates Applied to the Companion - Would be nice if we had a Feature that could Apply this from the Master PC
 # 02 Comp Bonus Might grants the Positive Level (+2) - and since we can't assign from master, grant a virtual 'ability' that will display in character points showing the companion has this.
-02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY	TEMPLATE:Positive Level (+2)																																																																																																																																																ABILITY:Character Points|VIRTUAL|Companion ~ Might
+# Template Name						Visible		Level Adjustment	Template																		Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Add to base move			Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR				Choose													Ability																											Move		Description
+02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY				TEMPLATE:Positive Level (+2)																																																																																																																																				ABILITY:Character Points|VIRTUAL|Companion ~ Might
 
 # This needs to be taken so the TEMP BONUS may be used. Increases Size and all associated bonuses.
-02 Companion Bonus ~ Great Form																																																																BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC								BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC								BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC																																ABILITY:Character Points|VIRTUAL|Companion ~ Great Form
+02 Companion Bonus ~ Great Form																																																														BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC													BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC								BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC																				ABILITY:Character Points|VIRTUAL|Companion ~ Great Form
 
 
 # Positive Levels grant +1 to AC, To Hit, and Saves along with 6 CP
-Positive Level (+1)																																																BONUS:ABILITYPOOL|Character Points|6			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|1	BONUS:COMBAT|BAB|1	BONUS:COMBAT|AC|1
-Positive Level (+2)																																																BONUS:ABILITYPOOL|Character Points|12			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|BAB|2	BONUS:COMBAT|AC|2
-Positive Level (+3)																																																BONUS:ABILITYPOOL|Character Points|18			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|3	BONUS:COMBAT|BAB|3	BONUS:COMBAT|AC|3
-Positive Level (+4)																																																BONUS:ABILITYPOOL|Character Points|24			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|4	BONUS:COMBAT|BAB|4	BONUS:COMBAT|AC|4
-Positive Level (+5)																																																BONUS:ABILITYPOOL|Character Points|30			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|5	BONUS:COMBAT|BAB|5	BONUS:COMBAT|AC|5
+Positive Level (+1)																																														BONUS:ABILITYPOOL|Character Points|6			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|1	BONUS:COMBAT|BAB|1	BONUS:COMBAT|AC|1
+Positive Level (+2)																																														BONUS:ABILITYPOOL|Character Points|12			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|BAB|2	BONUS:COMBAT|AC|2
+Positive Level (+3)																																														BONUS:ABILITYPOOL|Character Points|18			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|3	BONUS:COMBAT|BAB|3	BONUS:COMBAT|AC|3
+Positive Level (+4)																																														BONUS:ABILITYPOOL|Character Points|24			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|4	BONUS:COMBAT|BAB|4	BONUS:COMBAT|AC|4
+Positive Level (+5)																																														BONUS:ABILITYPOOL|Character Points|30			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|5	BONUS:COMBAT|BAB|5	BONUS:COMBAT|AC|5
 
 
 # Template Levels - Grant Points to a Separate Pool for easier Selections
-Eclipse ~ Template Level +1			BONUS:ABILITYPOOL|Template Character Points|32		LEVELADJUSTMENT:1
-Eclipse ~ Template Level +2			BONUS:ABILITYPOOL|Template Character Points|32*2	LEVELADJUSTMENT:2
-Eclipse ~ Template Level +3			BONUS:ABILITYPOOL|Template Character Points|32*3	LEVELADJUSTMENT:3
-Eclipse ~ Template Level +4			BONUS:ABILITYPOOL|Template Character Points|32*4	LEVELADJUSTMENT:4
+Eclipse ~ Template Level +1							LEVELADJUSTMENT:1																																				BONUS:ABILITYPOOL|Template Character Points|32
+Eclipse ~ Template Level +2							LEVELADJUSTMENT:2																																				BONUS:ABILITYPOOL|Template Character Points|32*2
+Eclipse ~ Template Level +3							LEVELADJUSTMENT:3																																				BONUS:ABILITYPOOL|Template Character Points|32*3
+Eclipse ~ Template Level +4							LEVELADJUSTMENT:4																																				BONUS:ABILITYPOOL|Template Character Points|32*4
 
 
 
 
 ### Companion Templates and Associated Stuff
 # Warbeast Chooses a movement mode - supposed to the prime movement mode, I wonder if there is a way to prioritize movement modes?
-Warbeasts							VISIBLE:DISPLAY	TEMPLATE:CHOOSE:Warbeast ~ Walk|Warbeast ~ Fly|Warbeast ~ Swim|Warbeast ~ Climb|Warbeast ~ Burrow																																																																			BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC														BONUS:STAT|STR|4|TYPE=Warbeast	BONUS:STAT|CON,WIS|2|TYPE=Warbeast														CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Warbeast HD								ABILITY:Special Ability|AUTOMATIC|Opportunist (Free Aid Another)|Immunity (Training Time)|Mastery ~ Ride Spot and Listen|Armor ~ Light|Armor ~ Medium|Armor ~ Heavy
+Warbeasts							VISIBLE:DISPLAY				TEMPLATE:CHOOSE:Warbeast ~ Walk|Warbeast ~ Fly|Warbeast ~ Swim|Warbeast ~ Climb|Warbeast ~ Burrow																																																														BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC																			BONUS:STAT|STR|4|TYPE=Warbeast	BONUS:STAT|CON,WIS|2|TYPE=Warbeast								CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Warbeast HD		ABILITY:Special Ability|AUTOMATIC|Opportunist (Free Aid Another)|Immunity (Training Time)|Mastery ~ Ride Spot and Listen|Armor ~ Light|Armor ~ Medium|Armor ~ Heavy
 #
-Warbeast ~ Walk						VISIBLE:DISPLAY																									PREMOVE:1,Walk=1																																																																																																																										ABILITY:Special Ability|AUTOMATIC|Celerity(Walk)
-Warbeast ~ Fly						VISIBLE:DISPLAY																									PREMOVE:1,Fly=1																																																																																																																										ABILITY:Special Ability|AUTOMATIC|Celerity(Fly)
-Warbeast ~ Swim						VISIBLE:DISPLAY																									PREMOVE:1,Swim=1																																																																																																																										ABILITY:Special Ability|AUTOMATIC|Celerity(Swim)
-Warbeast ~ Climb						VISIBLE:DISPLAY																									PREMOVE:1,Climb=1																																																																																																																										ABILITY:Special Ability|AUTOMATIC|Celerity(Climb)
-Warbeast ~ Burrow						VISIBLE:DISPLAY																									PREMOVE:1,Burrow=1																																																																																																																									ABILITY:Special Ability|AUTOMATIC|Celerity(Burrow)
+Warbeast ~ Walk						VISIBLE:DISPLAY																							PREMOVE:1,Walk=1																																																																																																																			ABILITY:Special Ability|AUTOMATIC|Celerity(Walk)
+Warbeast ~ Fly						VISIBLE:DISPLAY																							PREMOVE:1,Fly=1																																																																																																																			ABILITY:Special Ability|AUTOMATIC|Celerity(Fly)
+Warbeast ~ Swim						VISIBLE:DISPLAY																							PREMOVE:1,Swim=1																																																																																																																			ABILITY:Special Ability|AUTOMATIC|Celerity(Swim)
+Warbeast ~ Climb						VISIBLE:DISPLAY																							PREMOVE:1,Climb=1																																																																																																																			ABILITY:Special Ability|AUTOMATIC|Celerity(Climb)
+Warbeast ~ Burrow						VISIBLE:DISPLAY																							PREMOVE:1,Burrow=1																																																																																																																		ABILITY:Special Ability|AUTOMATIC|Celerity(Burrow)
 
-Warbeasts ~ Upgraded					VISIBLE:DISPLAY	TEMPLATE:CHOOSE:Warbeast II ~ Walk|Warbeast II ~ Fly|Warbeast II ~ Swim|Warbeast II ~ Climb|Warbeast II ~ Burrow																PRETEMPLATE:1,Warbeasts																																														BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC																																							CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Upgraded Warbeast HD							ABILITY:Special Ability|AUTOMATIC|Growth|Upgraded Warbeast
+Warbeasts ~ Upgraded					VISIBLE:DISPLAY				TEMPLATE:CHOOSE:Warbeast II ~ Walk|Warbeast II ~ Fly|Warbeast II ~ Swim|Warbeast II ~ Climb|Warbeast II ~ Burrow											PRETEMPLATE:1,Warbeasts																																														BONUS:HP|CURRENTMAX|LIST|PREAPPLY:PC																																						CHOOSE:NUMBER|MIN=1|MAX=8|TITLE=Roll 1d8 and pick a number for Upgraded Warbeast HD	ABILITY:Special Ability|AUTOMATIC|Growth|Upgraded Warbeast
 #
-Warbeast II ~ Walk					VISIBLE:DISPLAY																									PREMOVE:1,Walk=1								PRETEMPLATE:1,Warbeast ~ Walk																																																																																																														ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Walk)
-Warbeast II ~ Fly						VISIBLE:DISPLAY																									PREMOVE:1,Fly=1								PRETEMPLATE:1,Warbeast ~ Fly																																																																																																														ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Fly)
-Warbeast II ~ Swim					VISIBLE:DISPLAY																									PREMOVE:1,Swim=1								PRETEMPLATE:1,Warbeast ~ Swim																																																																																																														ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Swim)
-Warbeast II ~ Climb					VISIBLE:DISPLAY																									PREMOVE:1,Climb=1								PRETEMPLATE:1,Warbeast ~ Climb																																																																																																													ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Climb)
-Warbeast II ~ Burrow					VISIBLE:DISPLAY																									PREMOVE:1,Burrow=1							PRETEMPLATE:1,Warbeast ~ Burrow																																																																																																													ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Burrow)
+Warbeast II ~ Walk					VISIBLE:DISPLAY																							PREMOVE:1,Walk=1								PRETEMPLATE:1,Warbeast ~ Walk																																																																																																							ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Walk)
+Warbeast II ~ Fly						VISIBLE:DISPLAY																							PREMOVE:1,Fly=1								PRETEMPLATE:1,Warbeast ~ Fly																																																																																																							ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Fly)
+Warbeast II ~ Swim					VISIBLE:DISPLAY																							PREMOVE:1,Swim=1								PRETEMPLATE:1,Warbeast ~ Swim																																																																																																							ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Swim)
+Warbeast II ~ Climb					VISIBLE:DISPLAY																							PREMOVE:1,Climb=1								PRETEMPLATE:1,Warbeast ~ Climb																																																																																																						ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Climb)
+Warbeast II ~ Burrow					VISIBLE:DISPLAY																							PREMOVE:1,Burrow=1							PRETEMPLATE:1,Warbeast ~ Burrow																																																																																																						ABILITY:Special Ability|AUTOMATIC|Celerity ~ Improved(Burrow)
 
 # This allows for extra HD for Familiars or any companion for that matter, designed to work with the Wealth Templates and a workaround for unusual designs
-Companion Bonus HP					VISIBLE:DISPLAY																																									BONUS:ABILITYPOOL|Companion Bonus HP|1
+Companion Bonus HP					VISIBLE:DISPLAY																																							BONUS:ABILITYPOOL|Companion Bonus HP|1
 
 # Atherian Birthrights
-The Dragon-Born																																																	BONUS:ABILITYPOOL|Innate Enchantment Choice|12																																																	BONUS:SKILL|Knowledge (The Planes)|1															BONUS:VAR|CharacterPoints|6																											ABILITY:Special Ability|AUTOMATIC|Fast Learner (+1)|Immunity ~ Natural Law (The restriction of Innate Enchantments to 12 CP in total)
+The Dragon-Born																																															BONUS:ABILITYPOOL|Innate Enchantment Choice|12																																																						BONUS:SKILL|Knowledge (The Planes)|1															BONUS:VAR|CharacterPoints|6															ABILITY:Special Ability|AUTOMATIC|Fast Learner (+1)|Immunity ~ Natural Law (The restriction of Innate Enchantments to 12 CP in total)
 
 
 # This is a Testing of the Move 'Fly' Aspect. Works with the RSRD set.
-Eclipse Fly Move																																																																																																																																																													ABILITY:Special Ability|AUTOMATIC|Maneuverability(Average)																			MOVE:Fly,80
+Eclipse Fly Move																																																																																																																																																				ABILITY:Special Ability|AUTOMATIC|Maneuverability(Average)																			MOVE:Fly,80
 
 
 #COMMENT: Example of GM Granted Packages (typically 12 CP of GM assigned abilities)
-Josh's Military Life Package				VISIBLE:YES																																																																																																																																																						ABILITY:Character Points|AUTOMATIC|Legionary|Weapon Prof ~ All Simple Weapons|Armor ~ Light
+Josh's Military Life Package				VISIBLE:YES																																																																																																																																													ABILITY:Character Points|AUTOMATIC|Legionary|Weapon Prof ~ All Simple Weapons|Armor ~ Light
 
 
 # Need to move all the Web Blog stuff into a 'Web Enhancement'. Also need to note which items are in the new 'Eclipse II' release.
 
 #
 # Votera - Example of Template from Web Blog
-Wind Guardian Template							LEVELADJUSTMENT:2	BONUS:MOVEADD|TYPE.Walk|20	BONUS:STAT|WIS|4														ABILITY:Special Ability|AUTOMATIC|Shapeshift (Votera)|Damage Reduction ~ 8|Cloaking (Votera)	MOVE:Fly,60	DESC:(95 CP/+2 ECL)
+Wind Guardian Template								LEVELADJUSTMENT:2																																																																																						BONUS:MOVEADD|TYPE.Walk|20														BONUS:STAT|WIS|4																															ABILITY:Special Ability|AUTOMATIC|Shapeshift (Votera)|Damage Reduction ~ 8|Cloaking (Votera)													MOVE:Fly,60	DESC:(95 CP/+2 ECL)
 
 
 
 # Thunderdwarf Stat Bonus Mechanism * Move to Web Blog/EII set
-STR1TO20																																						PRESTAT:1,STR=1	!PRESTAT:1,STR=2																																																																						BONUS:STAT|STR|19
-STR2TO20																																						PRESTAT:1,STR=2	!PRESTAT:1,STR=3																																																																						BONUS:STAT|STR|18
-STR3TO20																																						PRESTAT:1,STR=3	!PRESTAT:1,STR=4																																																																						BONUS:STAT|STR|17
-STR4TO20																																						PRESTAT:1,STR=4	!PRESTAT:1,STR=5																																																																						BONUS:STAT|STR|16
-STR5TO20																																						PRESTAT:1,STR=5	!PRESTAT:1,STR=6																																																																						BONUS:STAT|STR|15
-STR6TO20																																						PRESTAT:1,STR=6	!PRESTAT:1,STR=7																																																																						BONUS:STAT|STR|14
-STR7TO20																																						PRESTAT:1,STR=7	!PRESTAT:1,STR=8																																																																						BONUS:STAT|STR|13
-STR8TO20																																						PRESTAT:1,STR=8	!PRESTAT:1,STR=9																																																																						BONUS:STAT|STR|12
-STR9TO20																																						PRESTAT:1,STR=9	!PRESTAT:1,STR=10																																																																						BONUS:STAT|STR|11
-STR10TO20																																						PRESTAT:1,STR=10	!PRESTAT:1,STR=11																																																																						BONUS:STAT|STR|10
-STR11TO20																																						PRESTAT:1,STR=11	!PRESTAT:1,STR=12																																																																						BONUS:STAT|STR|9
-STR12TO20																																						PRESTAT:1,STR=12	!PRESTAT:1,STR=13																																																																						BONUS:STAT|STR|8
-STR13TO20																																						PRESTAT:1,STR=13	!PRESTAT:1,STR=14																																																																						BONUS:STAT|STR|7
-STR14TO20																																						PRESTAT:1,STR=14	!PRESTAT:1,STR=15																																																																						BONUS:STAT|STR|6
-STR15TO20																																						PRESTAT:1,STR=15	!PRESTAT:1,STR=16																																																																						BONUS:STAT|STR|5
-STR16TO20																																						PRESTAT:1,STR=16	!PRESTAT:1,STR=17																																																																						BONUS:STAT|STR|4
-STR17TO20																																						PRESTAT:1,STR=17	!PRESTAT:1,STR=18																																																																						BONUS:STAT|STR|3
-STR18TO20																																						PRESTAT:1,STR=18	!PRESTAT:1,STR=19																																																																						BONUS:STAT|STR|2
-STR19TO20																																						PRESTAT:1,STR=19	!PRESTAT:1,STR=20																																																																						BONUS:STAT|STR|1
+STR1TO20																																				PRESTAT:1,STR=1	!PRESTAT:1,STR=2																																																																											BONUS:STAT|STR|19
+STR2TO20																																				PRESTAT:1,STR=2	!PRESTAT:1,STR=3																																																																											BONUS:STAT|STR|18
+STR3TO20																																				PRESTAT:1,STR=3	!PRESTAT:1,STR=4																																																																											BONUS:STAT|STR|17
+STR4TO20																																				PRESTAT:1,STR=4	!PRESTAT:1,STR=5																																																																											BONUS:STAT|STR|16
+STR5TO20																																				PRESTAT:1,STR=5	!PRESTAT:1,STR=6																																																																											BONUS:STAT|STR|15
+STR6TO20																																				PRESTAT:1,STR=6	!PRESTAT:1,STR=7																																																																											BONUS:STAT|STR|14
+STR7TO20																																				PRESTAT:1,STR=7	!PRESTAT:1,STR=8																																																																											BONUS:STAT|STR|13
+STR8TO20																																				PRESTAT:1,STR=8	!PRESTAT:1,STR=9																																																																											BONUS:STAT|STR|12
+STR9TO20																																				PRESTAT:1,STR=9	!PRESTAT:1,STR=10																																																																											BONUS:STAT|STR|11
+STR10TO20																																				PRESTAT:1,STR=10	!PRESTAT:1,STR=11																																																																											BONUS:STAT|STR|10
+STR11TO20																																				PRESTAT:1,STR=11	!PRESTAT:1,STR=12																																																																											BONUS:STAT|STR|9
+STR12TO20																																				PRESTAT:1,STR=12	!PRESTAT:1,STR=13																																																																											BONUS:STAT|STR|8
+STR13TO20																																				PRESTAT:1,STR=13	!PRESTAT:1,STR=14																																																																											BONUS:STAT|STR|7
+STR14TO20																																				PRESTAT:1,STR=14	!PRESTAT:1,STR=15																																																																											BONUS:STAT|STR|6
+STR15TO20																																				PRESTAT:1,STR=15	!PRESTAT:1,STR=16																																																																											BONUS:STAT|STR|5
+STR16TO20																																				PRESTAT:1,STR=16	!PRESTAT:1,STR=17																																																																											BONUS:STAT|STR|4
+STR17TO20																																				PRESTAT:1,STR=17	!PRESTAT:1,STR=18																																																																											BONUS:STAT|STR|3
+STR18TO20																																				PRESTAT:1,STR=18	!PRESTAT:1,STR=19																																																																											BONUS:STAT|STR|2
+STR19TO20																																				PRESTAT:1,STR=19	!PRESTAT:1,STR=20																																																																											BONUS:STAT|STR|1
 
-DEX1TO20																																						PRESTAT:1,DEX=1	!PRESTAT:1,DEX=2																																																																						BONUS:STAT|DEX|19
-DEX2TO20																																						PRESTAT:1,DEX=2	!PRESTAT:1,DEX=3																																																																						BONUS:STAT|DEX|18
-DEX3TO20																																						PRESTAT:1,DEX=3	!PRESTAT:1,DEX=4																																																																						BONUS:STAT|DEX|17
-DEX4TO20																																						PRESTAT:1,DEX=4	!PRESTAT:1,DEX=5																																																																						BONUS:STAT|DEX|16
-DEX5TO20																																						PRESTAT:1,DEX=5	!PRESTAT:1,DEX=6																																																																						BONUS:STAT|DEX|15
-DEX6TO20																																						PRESTAT:1,DEX=6	!PRESTAT:1,DEX=7																																																																						BONUS:STAT|DEX|14
-DEX7TO20																																						PRESTAT:1,DEX=7	!PRESTAT:1,DEX=8																																																																						BONUS:STAT|DEX|13
-DEX8TO20																																						PRESTAT:1,DEX=8	!PRESTAT:1,DEX=9																																																																						BONUS:STAT|DEX|12
-DEX9TO20																																						PRESTAT:1,DEX=9	!PRESTAT:1,DEX=10																																																																						BONUS:STAT|DEX|11
-DEX10TO20																																						PRESTAT:1,DEX=10	!PRESTAT:1,DEX=11																																																																						BONUS:STAT|DEX|10
-DEX11TO20																																						PRESTAT:1,DEX=11	!PRESTAT:1,DEX=12																																																																						BONUS:STAT|DEX|9
-DEX12TO20																																						PRESTAT:1,DEX=12	!PRESTAT:1,DEX=13																																																																						BONUS:STAT|DEX|8
-DEX13TO20																																						PRESTAT:1,DEX=13	!PRESTAT:1,DEX=14																																																																						BONUS:STAT|DEX|7
-DEX14TO20																																						PRESTAT:1,DEX=14	!PRESTAT:1,DEX=15																																																																						BONUS:STAT|DEX|6
-DEX15TO20																																						PRESTAT:1,DEX=15	!PRESTAT:1,DEX=16																																																																						BONUS:STAT|DEX|5
-DEX16TO20																																						PRESTAT:1,DEX=16	!PRESTAT:1,DEX=17																																																																						BONUS:STAT|DEX|4
-DEX17TO20																																						PRESTAT:1,DEX=17	!PRESTAT:1,DEX=18																																																																						BONUS:STAT|DEX|3
-DEX18TO20																																						PRESTAT:1,DEX=18	!PRESTAT:1,DEX=19																																																																						BONUS:STAT|DEX|2
-DEX19TO20																																						PRESTAT:1,DEX=19	!PRESTAT:1,DEX=20																																																																						BONUS:STAT|DEX|1
+DEX1TO20																																				PRESTAT:1,DEX=1	!PRESTAT:1,DEX=2																																																																											BONUS:STAT|DEX|19
+DEX2TO20																																				PRESTAT:1,DEX=2	!PRESTAT:1,DEX=3																																																																											BONUS:STAT|DEX|18
+DEX3TO20																																				PRESTAT:1,DEX=3	!PRESTAT:1,DEX=4																																																																											BONUS:STAT|DEX|17
+DEX4TO20																																				PRESTAT:1,DEX=4	!PRESTAT:1,DEX=5																																																																											BONUS:STAT|DEX|16
+DEX5TO20																																				PRESTAT:1,DEX=5	!PRESTAT:1,DEX=6																																																																											BONUS:STAT|DEX|15
+DEX6TO20																																				PRESTAT:1,DEX=6	!PRESTAT:1,DEX=7																																																																											BONUS:STAT|DEX|14
+DEX7TO20																																				PRESTAT:1,DEX=7	!PRESTAT:1,DEX=8																																																																											BONUS:STAT|DEX|13
+DEX8TO20																																				PRESTAT:1,DEX=8	!PRESTAT:1,DEX=9																																																																											BONUS:STAT|DEX|12
+DEX9TO20																																				PRESTAT:1,DEX=9	!PRESTAT:1,DEX=10																																																																											BONUS:STAT|DEX|11
+DEX10TO20																																				PRESTAT:1,DEX=10	!PRESTAT:1,DEX=11																																																																											BONUS:STAT|DEX|10
+DEX11TO20																																				PRESTAT:1,DEX=11	!PRESTAT:1,DEX=12																																																																											BONUS:STAT|DEX|9
+DEX12TO20																																				PRESTAT:1,DEX=12	!PRESTAT:1,DEX=13																																																																											BONUS:STAT|DEX|8
+DEX13TO20																																				PRESTAT:1,DEX=13	!PRESTAT:1,DEX=14																																																																											BONUS:STAT|DEX|7
+DEX14TO20																																				PRESTAT:1,DEX=14	!PRESTAT:1,DEX=15																																																																											BONUS:STAT|DEX|6
+DEX15TO20																																				PRESTAT:1,DEX=15	!PRESTAT:1,DEX=16																																																																											BONUS:STAT|DEX|5
+DEX16TO20																																				PRESTAT:1,DEX=16	!PRESTAT:1,DEX=17																																																																											BONUS:STAT|DEX|4
+DEX17TO20																																				PRESTAT:1,DEX=17	!PRESTAT:1,DEX=18																																																																											BONUS:STAT|DEX|3
+DEX18TO20																																				PRESTAT:1,DEX=18	!PRESTAT:1,DEX=19																																																																											BONUS:STAT|DEX|2
+DEX19TO20																																				PRESTAT:1,DEX=19	!PRESTAT:1,DEX=20																																																																											BONUS:STAT|DEX|1
 
-CON1TO20																																						PRESTAT:1,CON=1	!PRESTAT:1,CON=2																																																																						BONUS:STAT|CON|19
-CON2TO20																																						PRESTAT:1,CON=2	!PRESTAT:1,CON=3																																																																						BONUS:STAT|CON|18
-CON3TO20																																						PRESTAT:1,CON=3	!PRESTAT:1,CON=4																																																																						BONUS:STAT|CON|17
-CON4TO20																																						PRESTAT:1,CON=4	!PRESTAT:1,CON=5																																																																						BONUS:STAT|CON|16
-CON5TO20																																						PRESTAT:1,CON=5	!PRESTAT:1,CON=6																																																																						BONUS:STAT|CON|15
-CON6TO20																																						PRESTAT:1,CON=6	!PRESTAT:1,CON=7																																																																						BONUS:STAT|CON|14
-CON7TO20																																						PRESTAT:1,CON=7	!PRESTAT:1,CON=8																																																																						BONUS:STAT|CON|13
-CON8TO20																																						PRESTAT:1,CON=8	!PRESTAT:1,CON=9																																																																						BONUS:STAT|CON|12
-CON9TO20																																						PRESTAT:1,CON=9	!PRESTAT:1,CON=10																																																																						BONUS:STAT|CON|11
-CON10TO20																																						PRESTAT:1,CON=10	!PRESTAT:1,CON=11																																																																						BONUS:STAT|CON|10
-CON11TO20																																						PRESTAT:1,CON=11	!PRESTAT:1,CON=12																																																																						BONUS:STAT|CON|9
-CON12TO20																																						PRESTAT:1,CON=12	!PRESTAT:1,CON=13																																																																						BONUS:STAT|CON|8
-CON13TO20																																						PRESTAT:1,CON=13	!PRESTAT:1,CON=14																																																																						BONUS:STAT|CON|7
-CON14TO20																																						PRESTAT:1,CON=14	!PRESTAT:1,CON=15																																																																						BONUS:STAT|CON|6
-CON15TO20																																						PRESTAT:1,CON=15	!PRESTAT:1,CON=16																																																																						BONUS:STAT|CON|5
-CON16TO20																																						PRESTAT:1,CON=16	!PRESTAT:1,CON=17																																																																						BONUS:STAT|CON|4
-CON17TO20																																						PRESTAT:1,CON=17	!PRESTAT:1,CON=18																																																																						BONUS:STAT|CON|3
-CON18TO20																																						PRESTAT:1,CON=18	!PRESTAT:1,CON=19																																																																						BONUS:STAT|CON|2
-CON19TO20																																						PRESTAT:1,CON=19	!PRESTAT:1,CON=20																																																																						BONUS:STAT|CON|1
+CON1TO20																																				PRESTAT:1,CON=1	!PRESTAT:1,CON=2																																																																											BONUS:STAT|CON|19
+CON2TO20																																				PRESTAT:1,CON=2	!PRESTAT:1,CON=3																																																																											BONUS:STAT|CON|18
+CON3TO20																																				PRESTAT:1,CON=3	!PRESTAT:1,CON=4																																																																											BONUS:STAT|CON|17
+CON4TO20																																				PRESTAT:1,CON=4	!PRESTAT:1,CON=5																																																																											BONUS:STAT|CON|16
+CON5TO20																																				PRESTAT:1,CON=5	!PRESTAT:1,CON=6																																																																											BONUS:STAT|CON|15
+CON6TO20																																				PRESTAT:1,CON=6	!PRESTAT:1,CON=7																																																																											BONUS:STAT|CON|14
+CON7TO20																																				PRESTAT:1,CON=7	!PRESTAT:1,CON=8																																																																											BONUS:STAT|CON|13
+CON8TO20																																				PRESTAT:1,CON=8	!PRESTAT:1,CON=9																																																																											BONUS:STAT|CON|12
+CON9TO20																																				PRESTAT:1,CON=9	!PRESTAT:1,CON=10																																																																											BONUS:STAT|CON|11
+CON10TO20																																				PRESTAT:1,CON=10	!PRESTAT:1,CON=11																																																																											BONUS:STAT|CON|10
+CON11TO20																																				PRESTAT:1,CON=11	!PRESTAT:1,CON=12																																																																											BONUS:STAT|CON|9
+CON12TO20																																				PRESTAT:1,CON=12	!PRESTAT:1,CON=13																																																																											BONUS:STAT|CON|8
+CON13TO20																																				PRESTAT:1,CON=13	!PRESTAT:1,CON=14																																																																											BONUS:STAT|CON|7
+CON14TO20																																				PRESTAT:1,CON=14	!PRESTAT:1,CON=15																																																																											BONUS:STAT|CON|6
+CON15TO20																																				PRESTAT:1,CON=15	!PRESTAT:1,CON=16																																																																											BONUS:STAT|CON|5
+CON16TO20																																				PRESTAT:1,CON=16	!PRESTAT:1,CON=17																																																																											BONUS:STAT|CON|4
+CON17TO20																																				PRESTAT:1,CON=17	!PRESTAT:1,CON=18																																																																											BONUS:STAT|CON|3
+CON18TO20																																				PRESTAT:1,CON=18	!PRESTAT:1,CON=19																																																																											BONUS:STAT|CON|2
+CON19TO20																																				PRESTAT:1,CON=19	!PRESTAT:1,CON=20																																																																											BONUS:STAT|CON|1
 
-INT1TO20																																						PRESTAT:1,INT=1	!PRESTAT:1,INT=2																																																																						BONUS:STAT|INT|19
-INT2TO20																																						PRESTAT:1,INT=2	!PRESTAT:1,INT=3																																																																						BONUS:STAT|INT|18
-INT3TO20																																						PRESTAT:1,INT=3	!PRESTAT:1,INT=4																																																																						BONUS:STAT|INT|17
-INT4TO20																																						PRESTAT:1,INT=4	!PRESTAT:1,INT=5																																																																						BONUS:STAT|INT|16
-INT5TO20																																						PRESTAT:1,INT=5	!PRESTAT:1,INT=6																																																																						BONUS:STAT|INT|15
-INT6TO20																																						PRESTAT:1,INT=6	!PRESTAT:1,INT=7																																																																						BONUS:STAT|INT|14
-INT7TO20																																						PRESTAT:1,INT=7	!PRESTAT:1,INT=8																																																																						BONUS:STAT|INT|13
-INT8TO20																																						PRESTAT:1,INT=8	!PRESTAT:1,INT=9																																																																						BONUS:STAT|INT|12
-INT9TO20																																						PRESTAT:1,INT=9	!PRESTAT:1,INT=10																																																																						BONUS:STAT|INT|11
-INT10TO20																																						PRESTAT:1,INT=10	!PRESTAT:1,INT=11																																																																						BONUS:STAT|INT|10
-INT11TO20																																						PRESTAT:1,INT=11	!PRESTAT:1,INT=12																																																																						BONUS:STAT|INT|9
-INT12TO20																																						PRESTAT:1,INT=12	!PRESTAT:1,INT=13																																																																						BONUS:STAT|INT|8
-INT13TO20																																						PRESTAT:1,INT=13	!PRESTAT:1,INT=14																																																																						BONUS:STAT|INT|7
-INT14TO20																																						PRESTAT:1,INT=14	!PRESTAT:1,INT=15																																																																						BONUS:STAT|INT|6
-INT15TO20																																						PRESTAT:1,INT=15	!PRESTAT:1,INT=16																																																																						BONUS:STAT|INT|5
-INT16TO20																																						PRESTAT:1,INT=16	!PRESTAT:1,INT=17																																																																						BONUS:STAT|INT|4
-INT17TO20																																						PRESTAT:1,INT=17	!PRESTAT:1,INT=18																																																																						BONUS:STAT|INT|3
-INT18TO20																																						PRESTAT:1,INT=18	!PRESTAT:1,INT=19																																																																						BONUS:STAT|INT|2
-INT19TO20																																						PRESTAT:1,INT=19	!PRESTAT:1,INT=20																																																																						BONUS:STAT|INT|1
+INT1TO20																																				PRESTAT:1,INT=1	!PRESTAT:1,INT=2																																																																											BONUS:STAT|INT|19
+INT2TO20																																				PRESTAT:1,INT=2	!PRESTAT:1,INT=3																																																																											BONUS:STAT|INT|18
+INT3TO20																																				PRESTAT:1,INT=3	!PRESTAT:1,INT=4																																																																											BONUS:STAT|INT|17
+INT4TO20																																				PRESTAT:1,INT=4	!PRESTAT:1,INT=5																																																																											BONUS:STAT|INT|16
+INT5TO20																																				PRESTAT:1,INT=5	!PRESTAT:1,INT=6																																																																											BONUS:STAT|INT|15
+INT6TO20																																				PRESTAT:1,INT=6	!PRESTAT:1,INT=7																																																																											BONUS:STAT|INT|14
+INT7TO20																																				PRESTAT:1,INT=7	!PRESTAT:1,INT=8																																																																											BONUS:STAT|INT|13
+INT8TO20																																				PRESTAT:1,INT=8	!PRESTAT:1,INT=9																																																																											BONUS:STAT|INT|12
+INT9TO20																																				PRESTAT:1,INT=9	!PRESTAT:1,INT=10																																																																											BONUS:STAT|INT|11
+INT10TO20																																				PRESTAT:1,INT=10	!PRESTAT:1,INT=11																																																																											BONUS:STAT|INT|10
+INT11TO20																																				PRESTAT:1,INT=11	!PRESTAT:1,INT=12																																																																											BONUS:STAT|INT|9
+INT12TO20																																				PRESTAT:1,INT=12	!PRESTAT:1,INT=13																																																																											BONUS:STAT|INT|8
+INT13TO20																																				PRESTAT:1,INT=13	!PRESTAT:1,INT=14																																																																											BONUS:STAT|INT|7
+INT14TO20																																				PRESTAT:1,INT=14	!PRESTAT:1,INT=15																																																																											BONUS:STAT|INT|6
+INT15TO20																																				PRESTAT:1,INT=15	!PRESTAT:1,INT=16																																																																											BONUS:STAT|INT|5
+INT16TO20																																				PRESTAT:1,INT=16	!PRESTAT:1,INT=17																																																																											BONUS:STAT|INT|4
+INT17TO20																																				PRESTAT:1,INT=17	!PRESTAT:1,INT=18																																																																											BONUS:STAT|INT|3
+INT18TO20																																				PRESTAT:1,INT=18	!PRESTAT:1,INT=19																																																																											BONUS:STAT|INT|2
+INT19TO20																																				PRESTAT:1,INT=19	!PRESTAT:1,INT=20																																																																											BONUS:STAT|INT|1
 
-WIS1TO20																																						PRESTAT:1,WIS=1	!PRESTAT:1,WIS=2																																																																						BONUS:STAT|WIS|19
-WIS2TO20																																						PRESTAT:1,WIS=2	!PRESTAT:1,WIS=3																																																																						BONUS:STAT|WIS|18
-WIS3TO20																																						PRESTAT:1,WIS=3	!PRESTAT:1,WIS=4																																																																						BONUS:STAT|WIS|17
-WIS4TO20																																						PRESTAT:1,WIS=4	!PRESTAT:1,WIS=5																																																																						BONUS:STAT|WIS|16
-WIS5TO20																																						PRESTAT:1,WIS=5	!PRESTAT:1,WIS=6																																																																						BONUS:STAT|WIS|15
-WIS6TO20																																						PRESTAT:1,WIS=6	!PRESTAT:1,WIS=7																																																																						BONUS:STAT|WIS|14
-WIS7TO20																																						PRESTAT:1,WIS=7	!PRESTAT:1,WIS=8																																																																						BONUS:STAT|WIS|13
-WIS8TO20																																						PRESTAT:1,WIS=8	!PRESTAT:1,WIS=9																																																																						BONUS:STAT|WIS|12
-WIS9TO20																																						PRESTAT:1,WIS=9	!PRESTAT:1,WIS=10																																																																						BONUS:STAT|WIS|11
-WIS10TO20																																						PRESTAT:1,WIS=10	!PRESTAT:1,WIS=11																																																																						BONUS:STAT|WIS|10
-WIS11TO20																																						PRESTAT:1,WIS=11	!PRESTAT:1,WIS=12																																																																						BONUS:STAT|WIS|9
-WIS12TO20																																						PRESTAT:1,WIS=12	!PRESTAT:1,WIS=13																																																																						BONUS:STAT|WIS|8
-WIS13TO20																																						PRESTAT:1,WIS=13	!PRESTAT:1,WIS=14																																																																						BONUS:STAT|WIS|7
-WIS14TO20																																						PRESTAT:1,WIS=14	!PRESTAT:1,WIS=15																																																																						BONUS:STAT|WIS|6
-WIS15TO20																																						PRESTAT:1,WIS=15	!PRESTAT:1,WIS=16																																																																						BONUS:STAT|WIS|5
-WIS16TO20																																						PRESTAT:1,WIS=16	!PRESTAT:1,WIS=17																																																																						BONUS:STAT|WIS|4
-WIS17TO20																																						PRESTAT:1,WIS=17	!PRESTAT:1,WIS=18																																																																						BONUS:STAT|WIS|3
-WIS18TO20																																						PRESTAT:1,WIS=18	!PRESTAT:1,WIS=19																																																																						BONUS:STAT|WIS|2
-WIS19TO20																																						PRESTAT:1,WIS=19	!PRESTAT:1,WIS=20																																																																						BONUS:STAT|WIS|1
+WIS1TO20																																				PRESTAT:1,WIS=1	!PRESTAT:1,WIS=2																																																																											BONUS:STAT|WIS|19
+WIS2TO20																																				PRESTAT:1,WIS=2	!PRESTAT:1,WIS=3																																																																											BONUS:STAT|WIS|18
+WIS3TO20																																				PRESTAT:1,WIS=3	!PRESTAT:1,WIS=4																																																																											BONUS:STAT|WIS|17
+WIS4TO20																																				PRESTAT:1,WIS=4	!PRESTAT:1,WIS=5																																																																											BONUS:STAT|WIS|16
+WIS5TO20																																				PRESTAT:1,WIS=5	!PRESTAT:1,WIS=6																																																																											BONUS:STAT|WIS|15
+WIS6TO20																																				PRESTAT:1,WIS=6	!PRESTAT:1,WIS=7																																																																											BONUS:STAT|WIS|14
+WIS7TO20																																				PRESTAT:1,WIS=7	!PRESTAT:1,WIS=8																																																																											BONUS:STAT|WIS|13
+WIS8TO20																																				PRESTAT:1,WIS=8	!PRESTAT:1,WIS=9																																																																											BONUS:STAT|WIS|12
+WIS9TO20																																				PRESTAT:1,WIS=9	!PRESTAT:1,WIS=10																																																																											BONUS:STAT|WIS|11
+WIS10TO20																																				PRESTAT:1,WIS=10	!PRESTAT:1,WIS=11																																																																											BONUS:STAT|WIS|10
+WIS11TO20																																				PRESTAT:1,WIS=11	!PRESTAT:1,WIS=12																																																																											BONUS:STAT|WIS|9
+WIS12TO20																																				PRESTAT:1,WIS=12	!PRESTAT:1,WIS=13																																																																											BONUS:STAT|WIS|8
+WIS13TO20																																				PRESTAT:1,WIS=13	!PRESTAT:1,WIS=14																																																																											BONUS:STAT|WIS|7
+WIS14TO20																																				PRESTAT:1,WIS=14	!PRESTAT:1,WIS=15																																																																											BONUS:STAT|WIS|6
+WIS15TO20																																				PRESTAT:1,WIS=15	!PRESTAT:1,WIS=16																																																																											BONUS:STAT|WIS|5
+WIS16TO20																																				PRESTAT:1,WIS=16	!PRESTAT:1,WIS=17																																																																											BONUS:STAT|WIS|4
+WIS17TO20																																				PRESTAT:1,WIS=17	!PRESTAT:1,WIS=18																																																																											BONUS:STAT|WIS|3
+WIS18TO20																																				PRESTAT:1,WIS=18	!PRESTAT:1,WIS=19																																																																											BONUS:STAT|WIS|2
+WIS19TO20																																				PRESTAT:1,WIS=19	!PRESTAT:1,WIS=20																																																																											BONUS:STAT|WIS|1
 
-CHA1TO20																																						PRESTAT:1,CHA=1	!PRESTAT:1,CHA=2																																																																						BONUS:STAT|CHA|19
-CHA2TO20																																						PRESTAT:1,CHA=2	!PRESTAT:1,CHA=3																																																																						BONUS:STAT|CHA|18
-CHA3TO20																																						PRESTAT:1,CHA=3	!PRESTAT:1,CHA=4																																																																						BONUS:STAT|CHA|17
-CHA4TO20																																						PRESTAT:1,CHA=4	!PRESTAT:1,CHA=5																																																																						BONUS:STAT|CHA|16
-CHA5TO20																																						PRESTAT:1,CHA=5	!PRESTAT:1,CHA=6																																																																						BONUS:STAT|CHA|15
-CHA6TO20																																						PRESTAT:1,CHA=6	!PRESTAT:1,CHA=7																																																																						BONUS:STAT|CHA|14
-CHA7TO20																																						PRESTAT:1,CHA=7	!PRESTAT:1,CHA=8																																																																						BONUS:STAT|CHA|13
-CHA8TO20																																						PRESTAT:1,CHA=8	!PRESTAT:1,CHA=9																																																																						BONUS:STAT|CHA|12
-CHA9TO20																																						PRESTAT:1,CHA=9	!PRESTAT:1,CHA=10																																																																						BONUS:STAT|CHA|11
-CHA10TO20																																						PRESTAT:1,CHA=10	!PRESTAT:1,CHA=11																																																																						BONUS:STAT|CHA|10
-CHA11TO20																																						PRESTAT:1,CHA=11	!PRESTAT:1,CHA=12																																																																						BONUS:STAT|CHA|9
-CHA12TO20																																						PRESTAT:1,CHA=12	!PRESTAT:1,CHA=13																																																																						BONUS:STAT|CHA|8
-CHA13TO20																																						PRESTAT:1,CHA=13	!PRESTAT:1,CHA=14																																																																						BONUS:STAT|CHA|7
-CHA14TO20																																						PRESTAT:1,CHA=14	!PRESTAT:1,CHA=15																																																																						BONUS:STAT|CHA|6
-CHA15TO20																																						PRESTAT:1,CHA=15	!PRESTAT:1,CHA=16																																																																						BONUS:STAT|CHA|5
-CHA16TO20																																						PRESTAT:1,CHA=16	!PRESTAT:1,CHA=17																																																																						BONUS:STAT|CHA|4
-CHA17TO20																																						PRESTAT:1,CHA=17	!PRESTAT:1,CHA=18																																																																						BONUS:STAT|CHA|3
-CHA18TO20																																						PRESTAT:1,CHA=18	!PRESTAT:1,CHA=19																																																																						BONUS:STAT|CHA|2
-CHA19TO20																																						PRESTAT:1,CHA=19	!PRESTAT:1,CHA=20																																																																						BONUS:STAT|CHA|1
+CHA1TO20																																				PRESTAT:1,CHA=1	!PRESTAT:1,CHA=2																																																																											BONUS:STAT|CHA|19
+CHA2TO20																																				PRESTAT:1,CHA=2	!PRESTAT:1,CHA=3																																																																											BONUS:STAT|CHA|18
+CHA3TO20																																				PRESTAT:1,CHA=3	!PRESTAT:1,CHA=4																																																																											BONUS:STAT|CHA|17
+CHA4TO20																																				PRESTAT:1,CHA=4	!PRESTAT:1,CHA=5																																																																											BONUS:STAT|CHA|16
+CHA5TO20																																				PRESTAT:1,CHA=5	!PRESTAT:1,CHA=6																																																																											BONUS:STAT|CHA|15
+CHA6TO20																																				PRESTAT:1,CHA=6	!PRESTAT:1,CHA=7																																																																											BONUS:STAT|CHA|14
+CHA7TO20																																				PRESTAT:1,CHA=7	!PRESTAT:1,CHA=8																																																																											BONUS:STAT|CHA|13
+CHA8TO20																																				PRESTAT:1,CHA=8	!PRESTAT:1,CHA=9																																																																											BONUS:STAT|CHA|12
+CHA9TO20																																				PRESTAT:1,CHA=9	!PRESTAT:1,CHA=10																																																																											BONUS:STAT|CHA|11
+CHA10TO20																																				PRESTAT:1,CHA=10	!PRESTAT:1,CHA=11																																																																											BONUS:STAT|CHA|10
+CHA11TO20																																				PRESTAT:1,CHA=11	!PRESTAT:1,CHA=12																																																																											BONUS:STAT|CHA|9
+CHA12TO20																																				PRESTAT:1,CHA=12	!PRESTAT:1,CHA=13																																																																											BONUS:STAT|CHA|8
+CHA13TO20																																				PRESTAT:1,CHA=13	!PRESTAT:1,CHA=14																																																																											BONUS:STAT|CHA|7
+CHA14TO20																																				PRESTAT:1,CHA=14	!PRESTAT:1,CHA=15																																																																											BONUS:STAT|CHA|6
+CHA15TO20																																				PRESTAT:1,CHA=15	!PRESTAT:1,CHA=16																																																																											BONUS:STAT|CHA|5
+CHA16TO20																																				PRESTAT:1,CHA=16	!PRESTAT:1,CHA=17																																																																											BONUS:STAT|CHA|4
+CHA17TO20																																				PRESTAT:1,CHA=17	!PRESTAT:1,CHA=18																																																																											BONUS:STAT|CHA|3
+CHA18TO20																																				PRESTAT:1,CHA=18	!PRESTAT:1,CHA=19																																																																											BONUS:STAT|CHA|2
+CHA19TO20																																				PRESTAT:1,CHA=19	!PRESTAT:1,CHA=20																																																																											BONUS:STAT|CHA|1
 #
 
 
 
-STR1TO16																																						PRESTAT:1,STR=1	!PRESTAT:1,STR=2																																																																						BONUS:STAT|STR|15
-STR2TO16																																						PRESTAT:1,STR=2	!PRESTAT:1,STR=3																																																																						BONUS:STAT|STR|14
-STR3TO16																																						PRESTAT:1,STR=3	!PRESTAT:1,STR=4																																																																						BONUS:STAT|STR|13
-STR4TO16																																						PRESTAT:1,STR=4	!PRESTAT:1,STR=5																																																																						BONUS:STAT|STR|12
-STR5TO16																																						PRESTAT:1,STR=5	!PRESTAT:1,STR=6																																																																						BONUS:STAT|STR|11
-STR6TO16																																						PRESTAT:1,STR=6	!PRESTAT:1,STR=7																																																																						BONUS:STAT|STR|10
-STR7TO16																																						PRESTAT:1,STR=7	!PRESTAT:1,STR=8																																																																						BONUS:STAT|STR|9
-STR8TO16																																						PRESTAT:1,STR=8	!PRESTAT:1,STR=9																																																																						BONUS:STAT|STR|8
-STR9TO16																																						PRESTAT:1,STR=9	!PRESTAT:1,STR=10																																																																						BONUS:STAT|STR|7
-STR10TO16																																						PRESTAT:1,STR=10	!PRESTAT:1,STR=11																																																																						BONUS:STAT|STR|6
-STR11TO16																																						PRESTAT:1,STR=11	!PRESTAT:1,STR=12																																																																						BONUS:STAT|STR|5
-STR12TO16																																						PRESTAT:1,STR=12	!PRESTAT:1,STR=13																																																																						BONUS:STAT|STR|4
-STR13TO16																																						PRESTAT:1,STR=13	!PRESTAT:1,STR=14																																																																						BONUS:STAT|STR|3
-STR14TO16																																						PRESTAT:1,STR=14	!PRESTAT:1,STR=15																																																																						BONUS:STAT|STR|2
-STR15TO16																																						PRESTAT:1,STR=15	!PRESTAT:1,STR=16																																																																						BONUS:STAT|STR|1
+STR1TO16																																				PRESTAT:1,STR=1	!PRESTAT:1,STR=2																																																																											BONUS:STAT|STR|15
+STR2TO16																																				PRESTAT:1,STR=2	!PRESTAT:1,STR=3																																																																											BONUS:STAT|STR|14
+STR3TO16																																				PRESTAT:1,STR=3	!PRESTAT:1,STR=4																																																																											BONUS:STAT|STR|13
+STR4TO16																																				PRESTAT:1,STR=4	!PRESTAT:1,STR=5																																																																											BONUS:STAT|STR|12
+STR5TO16																																				PRESTAT:1,STR=5	!PRESTAT:1,STR=6																																																																											BONUS:STAT|STR|11
+STR6TO16																																				PRESTAT:1,STR=6	!PRESTAT:1,STR=7																																																																											BONUS:STAT|STR|10
+STR7TO16																																				PRESTAT:1,STR=7	!PRESTAT:1,STR=8																																																																											BONUS:STAT|STR|9
+STR8TO16																																				PRESTAT:1,STR=8	!PRESTAT:1,STR=9																																																																											BONUS:STAT|STR|8
+STR9TO16																																				PRESTAT:1,STR=9	!PRESTAT:1,STR=10																																																																											BONUS:STAT|STR|7
+STR10TO16																																				PRESTAT:1,STR=10	!PRESTAT:1,STR=11																																																																											BONUS:STAT|STR|6
+STR11TO16																																				PRESTAT:1,STR=11	!PRESTAT:1,STR=12																																																																											BONUS:STAT|STR|5
+STR12TO16																																				PRESTAT:1,STR=12	!PRESTAT:1,STR=13																																																																											BONUS:STAT|STR|4
+STR13TO16																																				PRESTAT:1,STR=13	!PRESTAT:1,STR=14																																																																											BONUS:STAT|STR|3
+STR14TO16																																				PRESTAT:1,STR=14	!PRESTAT:1,STR=15																																																																											BONUS:STAT|STR|2
+STR15TO16																																				PRESTAT:1,STR=15	!PRESTAT:1,STR=16																																																																											BONUS:STAT|STR|1
 
-DEX1TO16																																						PRESTAT:1,DEX=1	!PRESTAT:1,DEX=2																																																																						BONUS:STAT|DEX|15
-DEX2TO16																																						PRESTAT:1,DEX=2	!PRESTAT:1,DEX=3																																																																						BONUS:STAT|DEX|14
-DEX3TO16																																						PRESTAT:1,DEX=3	!PRESTAT:1,DEX=4																																																																						BONUS:STAT|DEX|13
-DEX4TO16																																						PRESTAT:1,DEX=4	!PRESTAT:1,DEX=5																																																																						BONUS:STAT|DEX|12
-DEX5TO16																																						PRESTAT:1,DEX=5	!PRESTAT:1,DEX=6																																																																						BONUS:STAT|DEX|11
-DEX6TO16																																						PRESTAT:1,DEX=6	!PRESTAT:1,DEX=7																																																																						BONUS:STAT|DEX|10
-DEX7TO16																																						PRESTAT:1,DEX=7	!PRESTAT:1,DEX=8																																																																						BONUS:STAT|DEX|9
-DEX8TO16																																						PRESTAT:1,DEX=8	!PRESTAT:1,DEX=9																																																																						BONUS:STAT|DEX|8
-DEX9TO16																																						PRESTAT:1,DEX=9	!PRESTAT:1,DEX=10																																																																						BONUS:STAT|DEX|7
-DEX10TO16																																						PRESTAT:1,DEX=10	!PRESTAT:1,DEX=11																																																																						BONUS:STAT|DEX|6
-DEX11TO16																																						PRESTAT:1,DEX=11	!PRESTAT:1,DEX=12																																																																						BONUS:STAT|DEX|5
-DEX12TO16																																						PRESTAT:1,DEX=12	!PRESTAT:1,DEX=13																																																																						BONUS:STAT|DEX|4
-DEX13TO16																																						PRESTAT:1,DEX=13	!PRESTAT:1,DEX=14																																																																						BONUS:STAT|DEX|3
-DEX14TO16																																						PRESTAT:1,DEX=14	!PRESTAT:1,DEX=15																																																																						BONUS:STAT|DEX|2
-DEX15TO16																																						PRESTAT:1,DEX=15	!PRESTAT:1,DEX=16																																																																						BONUS:STAT|DEX|1
+DEX1TO16																																				PRESTAT:1,DEX=1	!PRESTAT:1,DEX=2																																																																											BONUS:STAT|DEX|15
+DEX2TO16																																				PRESTAT:1,DEX=2	!PRESTAT:1,DEX=3																																																																											BONUS:STAT|DEX|14
+DEX3TO16																																				PRESTAT:1,DEX=3	!PRESTAT:1,DEX=4																																																																											BONUS:STAT|DEX|13
+DEX4TO16																																				PRESTAT:1,DEX=4	!PRESTAT:1,DEX=5																																																																											BONUS:STAT|DEX|12
+DEX5TO16																																				PRESTAT:1,DEX=5	!PRESTAT:1,DEX=6																																																																											BONUS:STAT|DEX|11
+DEX6TO16																																				PRESTAT:1,DEX=6	!PRESTAT:1,DEX=7																																																																											BONUS:STAT|DEX|10
+DEX7TO16																																				PRESTAT:1,DEX=7	!PRESTAT:1,DEX=8																																																																											BONUS:STAT|DEX|9
+DEX8TO16																																				PRESTAT:1,DEX=8	!PRESTAT:1,DEX=9																																																																											BONUS:STAT|DEX|8
+DEX9TO16																																				PRESTAT:1,DEX=9	!PRESTAT:1,DEX=10																																																																											BONUS:STAT|DEX|7
+DEX10TO16																																				PRESTAT:1,DEX=10	!PRESTAT:1,DEX=11																																																																											BONUS:STAT|DEX|6
+DEX11TO16																																				PRESTAT:1,DEX=11	!PRESTAT:1,DEX=12																																																																											BONUS:STAT|DEX|5
+DEX12TO16																																				PRESTAT:1,DEX=12	!PRESTAT:1,DEX=13																																																																											BONUS:STAT|DEX|4
+DEX13TO16																																				PRESTAT:1,DEX=13	!PRESTAT:1,DEX=14																																																																											BONUS:STAT|DEX|3
+DEX14TO16																																				PRESTAT:1,DEX=14	!PRESTAT:1,DEX=15																																																																											BONUS:STAT|DEX|2
+DEX15TO16																																				PRESTAT:1,DEX=15	!PRESTAT:1,DEX=16																																																																											BONUS:STAT|DEX|1
 
-CON1TO16																																						PRESTAT:1,CON=1	!PRESTAT:1,CON=2																																																																						BONUS:STAT|CON|15
-CON2TO16																																						PRESTAT:1,CON=2	!PRESTAT:1,CON=3																																																																						BONUS:STAT|CON|14
-CON3TO16																																						PRESTAT:1,CON=3	!PRESTAT:1,CON=4																																																																						BONUS:STAT|CON|13
-CON4TO16																																						PRESTAT:1,CON=4	!PRESTAT:1,CON=5																																																																						BONUS:STAT|CON|12
-CON5TO16																																						PRESTAT:1,CON=5	!PRESTAT:1,CON=6																																																																						BONUS:STAT|CON|11
-CON6TO16																																						PRESTAT:1,CON=6	!PRESTAT:1,CON=7																																																																						BONUS:STAT|CON|10
-CON7TO16																																						PRESTAT:1,CON=7	!PRESTAT:1,CON=8																																																																						BONUS:STAT|CON|9
-CON8TO16																																						PRESTAT:1,CON=8	!PRESTAT:1,CON=9																																																																						BONUS:STAT|CON|8
-CON9TO16																																						PRESTAT:1,CON=9	!PRESTAT:1,CON=10																																																																						BONUS:STAT|CON|7
-CON10TO16																																						PRESTAT:1,CON=10	!PRESTAT:1,CON=11																																																																						BONUS:STAT|CON|6
-CON11TO16																																						PRESTAT:1,CON=11	!PRESTAT:1,CON=12																																																																						BONUS:STAT|CON|5
-CON12TO16																																						PRESTAT:1,CON=12	!PRESTAT:1,CON=13																																																																						BONUS:STAT|CON|4
-CON13TO16																																						PRESTAT:1,CON=13	!PRESTAT:1,CON=14																																																																						BONUS:STAT|CON|3
-CON14TO16																																						PRESTAT:1,CON=14	!PRESTAT:1,CON=15																																																																						BONUS:STAT|CON|2
-CON15TO16																																						PRESTAT:1,CON=15	!PRESTAT:1,CON=16																																																																						BONUS:STAT|CON|1
+CON1TO16																																				PRESTAT:1,CON=1	!PRESTAT:1,CON=2																																																																											BONUS:STAT|CON|15
+CON2TO16																																				PRESTAT:1,CON=2	!PRESTAT:1,CON=3																																																																											BONUS:STAT|CON|14
+CON3TO16																																				PRESTAT:1,CON=3	!PRESTAT:1,CON=4																																																																											BONUS:STAT|CON|13
+CON4TO16																																				PRESTAT:1,CON=4	!PRESTAT:1,CON=5																																																																											BONUS:STAT|CON|12
+CON5TO16																																				PRESTAT:1,CON=5	!PRESTAT:1,CON=6																																																																											BONUS:STAT|CON|11
+CON6TO16																																				PRESTAT:1,CON=6	!PRESTAT:1,CON=7																																																																											BONUS:STAT|CON|10
+CON7TO16																																				PRESTAT:1,CON=7	!PRESTAT:1,CON=8																																																																											BONUS:STAT|CON|9
+CON8TO16																																				PRESTAT:1,CON=8	!PRESTAT:1,CON=9																																																																											BONUS:STAT|CON|8
+CON9TO16																																				PRESTAT:1,CON=9	!PRESTAT:1,CON=10																																																																											BONUS:STAT|CON|7
+CON10TO16																																				PRESTAT:1,CON=10	!PRESTAT:1,CON=11																																																																											BONUS:STAT|CON|6
+CON11TO16																																				PRESTAT:1,CON=11	!PRESTAT:1,CON=12																																																																											BONUS:STAT|CON|5
+CON12TO16																																				PRESTAT:1,CON=12	!PRESTAT:1,CON=13																																																																											BONUS:STAT|CON|4
+CON13TO16																																				PRESTAT:1,CON=13	!PRESTAT:1,CON=14																																																																											BONUS:STAT|CON|3
+CON14TO16																																				PRESTAT:1,CON=14	!PRESTAT:1,CON=15																																																																											BONUS:STAT|CON|2
+CON15TO16																																				PRESTAT:1,CON=15	!PRESTAT:1,CON=16																																																																											BONUS:STAT|CON|1
 
-INT1TO16																																						PRESTAT:1,INT=1	!PRESTAT:1,INT=2																																																																						BONUS:STAT|INT|15
-INT2TO16																																						PRESTAT:1,INT=2	!PRESTAT:1,INT=3																																																																						BONUS:STAT|INT|14
-INT3TO16																																						PRESTAT:1,INT=3	!PRESTAT:1,INT=4																																																																						BONUS:STAT|INT|13
-INT4TO16																																						PRESTAT:1,INT=4	!PRESTAT:1,INT=5																																																																						BONUS:STAT|INT|12
-INT5TO16																																						PRESTAT:1,INT=5	!PRESTAT:1,INT=6																																																																						BONUS:STAT|INT|11
-INT6TO16																																						PRESTAT:1,INT=6	!PRESTAT:1,INT=7																																																																						BONUS:STAT|INT|10
-INT7TO16																																						PRESTAT:1,INT=7	!PRESTAT:1,INT=8																																																																						BONUS:STAT|INT|9
-INT8TO16																																						PRESTAT:1,INT=8	!PRESTAT:1,INT=9																																																																						BONUS:STAT|INT|8
-INT9TO16																																						PRESTAT:1,INT=9	!PRESTAT:1,INT=10																																																																						BONUS:STAT|INT|7
-INT10TO16																																						PRESTAT:1,INT=10	!PRESTAT:1,INT=11																																																																						BONUS:STAT|INT|6
-INT11TO16																																						PRESTAT:1,INT=11	!PRESTAT:1,INT=12																																																																						BONUS:STAT|INT|5
-INT12TO16																																						PRESTAT:1,INT=12	!PRESTAT:1,INT=13																																																																						BONUS:STAT|INT|4
-INT13TO16																																						PRESTAT:1,INT=13	!PRESTAT:1,INT=14																																																																						BONUS:STAT|INT|3
-INT14TO16																																						PRESTAT:1,INT=14	!PRESTAT:1,INT=15																																																																						BONUS:STAT|INT|2
-INT15TO16																																						PRESTAT:1,INT=15	!PRESTAT:1,INT=16																																																																						BONUS:STAT|INT|1
+INT1TO16																																				PRESTAT:1,INT=1	!PRESTAT:1,INT=2																																																																											BONUS:STAT|INT|15
+INT2TO16																																				PRESTAT:1,INT=2	!PRESTAT:1,INT=3																																																																											BONUS:STAT|INT|14
+INT3TO16																																				PRESTAT:1,INT=3	!PRESTAT:1,INT=4																																																																											BONUS:STAT|INT|13
+INT4TO16																																				PRESTAT:1,INT=4	!PRESTAT:1,INT=5																																																																											BONUS:STAT|INT|12
+INT5TO16																																				PRESTAT:1,INT=5	!PRESTAT:1,INT=6																																																																											BONUS:STAT|INT|11
+INT6TO16																																				PRESTAT:1,INT=6	!PRESTAT:1,INT=7																																																																											BONUS:STAT|INT|10
+INT7TO16																																				PRESTAT:1,INT=7	!PRESTAT:1,INT=8																																																																											BONUS:STAT|INT|9
+INT8TO16																																				PRESTAT:1,INT=8	!PRESTAT:1,INT=9																																																																											BONUS:STAT|INT|8
+INT9TO16																																				PRESTAT:1,INT=9	!PRESTAT:1,INT=10																																																																											BONUS:STAT|INT|7
+INT10TO16																																				PRESTAT:1,INT=10	!PRESTAT:1,INT=11																																																																											BONUS:STAT|INT|6
+INT11TO16																																				PRESTAT:1,INT=11	!PRESTAT:1,INT=12																																																																											BONUS:STAT|INT|5
+INT12TO16																																				PRESTAT:1,INT=12	!PRESTAT:1,INT=13																																																																											BONUS:STAT|INT|4
+INT13TO16																																				PRESTAT:1,INT=13	!PRESTAT:1,INT=14																																																																											BONUS:STAT|INT|3
+INT14TO16																																				PRESTAT:1,INT=14	!PRESTAT:1,INT=15																																																																											BONUS:STAT|INT|2
+INT15TO16																																				PRESTAT:1,INT=15	!PRESTAT:1,INT=16																																																																											BONUS:STAT|INT|1
 
-CHA1TO16																																						PRESTAT:1,CHA=1	!PRESTAT:1,CHA=2																																																																						BONUS:STAT|CHA|15
-CHA2TO16																																						PRESTAT:1,CHA=2	!PRESTAT:1,CHA=3																																																																						BONUS:STAT|CHA|14
-CHA3TO16																																						PRESTAT:1,CHA=3	!PRESTAT:1,CHA=4																																																																						BONUS:STAT|CHA|13
-CHA4TO16																																						PRESTAT:1,CHA=4	!PRESTAT:1,CHA=5																																																																						BONUS:STAT|CHA|12
-CHA5TO16																																						PRESTAT:1,CHA=5	!PRESTAT:1,CHA=6																																																																						BONUS:STAT|CHA|11
-CHA6TO16																																						PRESTAT:1,CHA=6	!PRESTAT:1,CHA=7																																																																						BONUS:STAT|CHA|10
-CHA7TO16																																						PRESTAT:1,CHA=7	!PRESTAT:1,CHA=8																																																																						BONUS:STAT|CHA|9
-CHA8TO16																																						PRESTAT:1,CHA=8	!PRESTAT:1,CHA=9																																																																						BONUS:STAT|CHA|8
-CHA9TO16																																						PRESTAT:1,CHA=9	!PRESTAT:1,CHA=10																																																																						BONUS:STAT|CHA|7
-CHA10TO16																																						PRESTAT:1,CHA=10	!PRESTAT:1,CHA=11																																																																						BONUS:STAT|CHA|6
-CHA11TO16																																						PRESTAT:1,CHA=11	!PRESTAT:1,CHA=12																																																																						BONUS:STAT|CHA|5
-CHA12TO16																																						PRESTAT:1,CHA=12	!PRESTAT:1,CHA=13																																																																						BONUS:STAT|CHA|4
-CHA13TO16																																						PRESTAT:1,CHA=13	!PRESTAT:1,CHA=14																																																																						BONUS:STAT|CHA|3
-CHA14TO16																																						PRESTAT:1,CHA=14	!PRESTAT:1,CHA=15																																																																						BONUS:STAT|CHA|2
-CHA15TO16																																						PRESTAT:1,CHA=15	!PRESTAT:1,CHA=16																																																																						BONUS:STAT|CHA|1
+CHA1TO16																																				PRESTAT:1,CHA=1	!PRESTAT:1,CHA=2																																																																											BONUS:STAT|CHA|15
+CHA2TO16																																				PRESTAT:1,CHA=2	!PRESTAT:1,CHA=3																																																																											BONUS:STAT|CHA|14
+CHA3TO16																																				PRESTAT:1,CHA=3	!PRESTAT:1,CHA=4																																																																											BONUS:STAT|CHA|13
+CHA4TO16																																				PRESTAT:1,CHA=4	!PRESTAT:1,CHA=5																																																																											BONUS:STAT|CHA|12
+CHA5TO16																																				PRESTAT:1,CHA=5	!PRESTAT:1,CHA=6																																																																											BONUS:STAT|CHA|11
+CHA6TO16																																				PRESTAT:1,CHA=6	!PRESTAT:1,CHA=7																																																																											BONUS:STAT|CHA|10
+CHA7TO16																																				PRESTAT:1,CHA=7	!PRESTAT:1,CHA=8																																																																											BONUS:STAT|CHA|9
+CHA8TO16																																				PRESTAT:1,CHA=8	!PRESTAT:1,CHA=9																																																																											BONUS:STAT|CHA|8
+CHA9TO16																																				PRESTAT:1,CHA=9	!PRESTAT:1,CHA=10																																																																											BONUS:STAT|CHA|7
+CHA10TO16																																				PRESTAT:1,CHA=10	!PRESTAT:1,CHA=11																																																																											BONUS:STAT|CHA|6
+CHA11TO16																																				PRESTAT:1,CHA=11	!PRESTAT:1,CHA=12																																																																											BONUS:STAT|CHA|5
+CHA12TO16																																				PRESTAT:1,CHA=12	!PRESTAT:1,CHA=13																																																																											BONUS:STAT|CHA|4
+CHA13TO16																																				PRESTAT:1,CHA=13	!PRESTAT:1,CHA=14																																																																											BONUS:STAT|CHA|3
+CHA14TO16																																				PRESTAT:1,CHA=14	!PRESTAT:1,CHA=15																																																																											BONUS:STAT|CHA|2
+CHA15TO16																																				PRESTAT:1,CHA=15	!PRESTAT:1,CHA=16																																																																											BONUS:STAT|CHA|1
 
 
