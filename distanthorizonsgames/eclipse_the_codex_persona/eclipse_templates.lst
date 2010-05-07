@@ -29,8 +29,8 @@ Dragon HD			HITDIE:12		VISIBLE:DISPLAY
 # Template Name						Visible		Template																		Define				Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR										Choose													Class Skill					Ability																											Move
 01 Point Buy Master Template for All Levels	VISIBLE:DISPLAY	TEMPLATE:CHOOSE:First Level Eclipse|Multiclass Eclipse																			DEFINE:CharacterPoints|0	DEFINE:EclipseClassLvl|0																BONUS:ABILITYPOOL|Character Points|CharacterPoints																																																																						
 #COMMENT: This Template chooses whether the Character is a True Eclipse or a Multiclass and controls how many "Character Points" the character gets (24 or 48 at 1st level)
-First Level Eclipse					VISIBLE:DISPLAY	PREMULT:1,[PREPCLEVEL:MAX=1],[PREVARGTEQ:EclipseClass,1]	BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
-Multiclass Eclipse					VISIBLE:DISPLAY	PREPCLEVEL:MIN=2	BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")	
+First Level Eclipse					VISIBLE:DISPLAY	PREMULT:1,[PREPCLEVEL:MAX=1],[PREVARGTEQ:EclipseClassLvl,TL]	BONUS:VAR|CharacterPoints|24+(24*var("EclipseClassLvl"))
+Multiclass Eclipse					VISIBLE:DISPLAY	PREMULT:1,[PREPCLEVEL:MIN=2],[PREVARLT:EclipseClassLvl,TL]		BONUS:VAR|CharacterPoints|24*var("EclipseClassLvl")	
 
 
 
