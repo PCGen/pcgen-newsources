@@ -9,17 +9,15 @@ Dweomerist							KEY:Dweomerist Base	CATEGORY:Special Ability	TYPE:SpellCasterOu
 Theurgist							KEY:Theurgist Base	CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:TheurgistMagicLvls|0	DEFINE:PointBuyTheurgistLvl|0	DEFINE:PointBuyTheurgistCasterLvl|0				DESC:Theurgist Casterlevel is %2|TheurgistMagicLvls|PointBuyTheurgistCasterLvl+CasterLevelAll																			BONUS:DC|ALLSPELLS|INT	BONUS:VAR|TheurgistMagicLvls|count("ABILITIES","CATEGORY=Special Ability","NAME=Sorcery Magic Level")				SOURCEPAGE:p.11
 Thaumaturgist						KEY:Thaumaturgist Base	CATEGORY:Special Ability	TYPE:SpellCasterOutput				DEFINE:ThaumaturgistMagicLvls|0	DEFINE:PointBuyThaumaturgistLvl|0	DEFINE:PointBuyThaumaturgistCasterLvl|0	DESC:Thaumaturgist Casterlevel is %2|ThaumaturgistMagicLvls|PointBuyThaumaturgistCasterLvl+CasterLevelAll																	BONUS:DC|ALLSPELLS|INT	BONUS:VAR|ThaumaturgistMagicLvls|count("ABILITIES","CATEGORY=Special Ability","NAME=Sorcery Magic Level")			SOURCEPAGE:p.11
 
-
-
-
+# Base Caster Level Increase Only, no Progression
 Base Caster Level ~ Specialized ~ Rune Caster					CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Rune Caster Base																							COST:3	SOURCEPAGE:p.11
-
 Base Caster Level ~ Specialized ~ Hexcrafter					CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Hexcrafter Base																							COST:3	SOURCEPAGE:p.11
 Base Caster Level ~ Specialized ~ Dweomerist					CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Dweomerist Base																							COST:3	SOURCEPAGE:p.11
 Base Caster Level ~ Specialized ~ Theurgist					CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Theurgist Base																							COST:3	SOURCEPAGE:p.11
 Base Caster Level ~ Specialized ~ Thaumaturgist					CATEGORY:Special Ability	TYPE:CasterLevel.EclipseAbilityOutput																																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Thaumaturgist Base																							COST:3	SOURCEPAGE:p.11
 
-
+#Comment: Review these to make sure they are working, no testing for the out side magic progression classes yet.
+#Comment: Different measuring standard, don't need the Initial, but will need to make sure they are getting called from the correct abilities.
 
 
 
@@ -31,14 +29,6 @@ Base Caster Level ~ Specialized ~ Thaumaturgist					CATEGORY:Special Ability	TYP
 ~ Full Skill Buy	KEY:Full Skill Buy	OUTPUTNAME:~ Skill Buy Choice		CATEGORY:Skill Buy	TYPE:SkillBuy.FullCost	STACK:YES	MULT:YES	CHOOSE:SKILLSNAMED|TYPE=AdeptChoice			BONUS:SKILLRANK|%LIST|1	COST:1
 
 
-###Block: Web Templates
-# Ability Name				Unique Key					Category of Ability		Type					Description
-Warbeast											CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:(95 CP/+2 ECL companion template) are trained and bred for combat and riding – usually with the aid of magic, psychic powers, or advanced technology. They're faster, tougher, and more alert than ordinary creatures. They may also be larger, since, to be most effective as a mount, a creature generally needs to be at least one size category larger than the rider. [NOTE, to get the +1d8 HD upgrade go to Temp Mods and apply this]
-Immunity (Training Time)								CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:(Uncommon, Minor, Minor, 2 CP). Warbeasts can be trained quickly and easily.
-Opportunist (Free Aid Another)							CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:May take a free "aid another" action each round as long as it is working with it's owner/trainer. Specialized/such actions are restricted to Ride, Spot, Listen, or Attack checks (3 CP).
-Mastery (Ride, Spot, Listen)		KEY:Mastery ~ Ride Spot and Listen	CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:Specialized/only while aiding their rider or owner, (3 CP).
-#
-Upgraded Warbeast										CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:If the creature needs to be larger to be ridden, throw in +1 level of Growth (48 CP), +1d8 Hit Die (12 CP), and +10' to its primary movement mode (3 CP) – and an additional +2 ECL – per size category it needs to be enlarged. [NOTE, to get the +1d8 HD upgrade go to Temp Mods and apply this]
 
 #######################################
 ###		SPIRIT WEAPONS		###
