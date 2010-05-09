@@ -32,10 +32,24 @@ Martial Arts ~ Cha Based		OUTPUTNAME:Martial Arts (Charisma Based)		KEYSTAT:CHA	
 
 ####
 
-Rune Casting														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																						SOURCEPAGE:p.97																																																									BONUS:VAR|RuneCasterMagicLvls|skillinfo("TOTAL","Rune Casting")/2
-Rune Casting.MOD																																																																					BONUS:SKILL|Spellcraft (Rune Casting)|2	BONUS:SKILL|Spellcraft (Rune Casting)|Spellcraft.MISC	BONUS:SKILLRANK|Spellcraft (Rune Casting)|SKILLRANK=Spellcraft|PREVARGT:var("Spellcraft (Rune Casting).MISC"),var("Spellcraft.MISC")
+# Comment: Base Items - Each Rune is separate.
+#[Rune] Casting														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																						SOURCEPAGE:p.97																																																									BONUS:VAR|RuneCasterMagicLvls|skillinfo("TOTAL","Rune Casting")/2		ABILITY:Special Ability|AUTOMATIC|Rune Caster Base
+#[Rune] Casting.MOD																																																																					BONUS:SKILL|Spellcraft (Rune Casting)|2	BONUS:SKILL|Spellcraft (Rune Casting)|Spellcraft.MISC	BONUS:SKILLRANK|Spellcraft (Rune Casting)|SKILLRANK=Spellcraft|PREVARGT:var("Spellcraft (Rune Casting).MISC"),var("Spellcraft.MISC")
+#[Rune] Mastery														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill
 
-Spellcraft (Rune Casting)										KEYSTAT:INT	USEUNTRAINED:NO													VISIBLE:EXPORT
+# Specific Runes:
+Rune Casting (Illusion)														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+Rune Casting (Light)														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+Rune Casting (Exorcism)														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+Rune Casting (Transmutation)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+
+#
+Rune Mastery (Illusion)														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+Rune Mastery (Light)														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+Rune Mastery (Exorcism)														USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+Rune Mastery (Transmutation)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill	SOURCEPAGE:p.97
+
+#Spellcraft (Rune Casting)										KEYSTAT:INT	USEUNTRAINED:NO													VISIBLE:EXPORT
 
 ###Block: Mystic Artist Skill
 # Skill Name			Classes	Type					Bonus to skill														Modify VAR
