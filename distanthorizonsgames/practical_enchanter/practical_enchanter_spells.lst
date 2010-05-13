@@ -3,6 +3,10 @@ SOURCELONG:DHG - The Practical Enchanter	SOURCESHORT:dhg_tpe	SOURCEDATE:01-2001
 #Original Entry: Andrew Maitland
 
 #COMMENT: Due to the CLASSES:ALL= factor, need to enable or disable taking these spells, as GM's might only want Wizards but not Clerics and Paladins gaining spells.
+#		Implemented the Bypass by a simple Template; again, open to any other solution.
+#COMMENT: Some of these are Regular Spells, and some are "template" spells, where the caster builds a variant from the template.
+#		This source does not define individual classes, they are simply Level=x. It is up to the GM to allow or disallow spells
+#		Only improvement that can be added here is adding temp bonuses.
 
 # Spell Name					Unique Key							Classes of caster						School							Sub-School			Spell Descriptors						Type				Components														Casting Time									Range																																							Item		Target Area or Effect																																			Duration																										Save Info												Spell Resistance					Required Skill				Description																		Combat bonus						Bonus to HP								Choose										Source Page		Ability
 Force Armor														PRETEMPLATE:1,01 - The Practical Enchanter Spell Access	CLASSES:ALL=0						SCHOOL:Conjuration					SUBSCHOOL:Creation	DESCRIPTOR:Force										COMPS:V, S, F													CASTTIME:One standard action							RANGE:Touch																																								TARGETAREA:Creature touched																																		DURATION:(CASTERLEVEL) hours (D)																						SAVEINFO:Will negates (Harmless)								SPELLRES:No												DESC:Provides an armor bonus that affects incorporeal attackers.	DESC:+2							BONUS:COMBAT|AC|2|TYPE=Armor|PREAPPLY:ANYPC																					SOURCEPAGE:p.11
@@ -584,7 +588,18 @@ Image Link		PRETEMPLATE:1,01 - The Practical Enchanter Spell Access	CLASSES:ALL=
 
 Summon Weapon	PRETEMPLATE:1,01 - The Practical Enchanter Spell Access	CLASSES:ALL=1	SCHOOL:Evocation	DESCRIPTOR:Force	COMPS:V, S	CASTTIME:1 standard action	RANGE:Persnal	ITEM:Potion	TARGETAREA:Magic weapon of force	DURATION:(CASTERLEVEL) minutes [D]	SAVEINFO:None	SPELLRES:Yes		DESC:Creates a temporary weapon of force.						SOURCEPAGE:p.211
 
-#Practical Magic (Various Spells): Technically Hedge Magic is a feat, but it includes a variety of village magic spells. [132]
+
+###############################################################
+###			Hedge Mage Spells					###
+###############################################################
+
+#COMMENT: Paul added short versions of the spell descriptors. 
+#TODO: Add Short version of Descriptions, have that by default, then add a PREVAR to toggle between Short and Long Descriptions.
+#COMMENT: These also have a Template Gatekeeper, technically anyone may learn these spells; but again, they are restricted to prevent automatic
+#		Inclusion with Auto Gain Casters
+
+#From Page 132, the Feat - Practical Magic (Various Spells): Technically Hedge Magic is a feat, but it includes a variety of village magic spells. [132]
+# Here are the full versions of those spells as supplied by the Publisher.
 
 
 ###Block: Hedge Mage Feat Level 0 Spells gained - Reference From Webblog for complete details.
