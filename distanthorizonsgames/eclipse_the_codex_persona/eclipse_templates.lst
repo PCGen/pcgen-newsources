@@ -1,30 +1,30 @@
-# CVS $Revision$ $Author$ -- Fri May  7 14:06:38 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision$ $Author$ -- Fri May 14 13:22:07 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Eclipse - The Codex Persona	SOURCESHORT:Eclipse	SOURCEWEB:http://www.lulu.com/content/435647
 #Original Entry: Andrew Maitland
 
-# Template Name			Hit Dice Size	Visible		Required Non-Monster Lvl	Bonus to HP						Modify VAR															Hit Dice
-All Eclipse Automatic					VISIBLE:NO
+# Template Name				Hit Dice Size	Visible		Level Adjustment		Required Non-Monster Lvl	Bonus to HP						Modify VAR
+All Eclipse Automatic						VISIBLE:NO
 
 #Spirit Weapon Fix		VISIBLE:DISPLAY	CHOOSE:NUMBER|MIN=1|MAX=15|TITLE=Spirit Weapon Fix	BONUS:VAR|SpiritWeaponRangedToHit|%CHOICE|PREAPPLY:ANYPC	BONUS:VAR|SpiritWeaponMeleeToHit|%CHOICE|PREAPPLY:ANYPC
 
-Spirit Weapon Fix +6					VISIBLE:DISPLAY													BONUS:VAR|SpiritWeaponRangedToHit|8	BONUS:VAR|SpiritWeaponRangedBonusDamage|1
+Spirit Weapon Fix +6						VISIBLE:DISPLAY																	BONUS:VAR|SpiritWeaponRangedToHit|8	BONUS:VAR|SpiritWeaponRangedBonusDamage|1
 #+2 Martial Arts, +2 Comp Bonus to Bows, +1 Weapon Focus, +1 Inspiring Word (Hit and Damage)
 
 
 # These Are used to Emulate a Character of Lower than 1st Level. You need to REMOVE THE TEMPLATE if you plan on being higher than 0th level.
-Eclipse Character Level -2				VISIBLE:DISPLAY	PREPCLEVEL:MAX=1			BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:1,First Level Eclipse	HITDIE:1	LEVELADJUSTMENT:-3
+Eclipse Character Level -2		HITDIE:1		VISIBLE:DISPLAY	LEVELADJUSTMENT:-3	PREPCLEVEL:MAX=1			BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:1,First Level Eclipse
 # Has only 1 HP
-Eclipse Character Level -1				VISIBLE:DISPLAY	PREPCLEVEL:MAX=1			BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:1,First Level Eclipse	HITDIE:1	LEVELADJUSTMENT:-2
-Eclipse Character Level 0				VISIBLE:DISPLAY	PREPCLEVEL:MAX=1										BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:1,First Level Eclipse						HITDIE:2	LEVELADJUSTMENT:-1
+Eclipse Character Level -1		HITDIE:1		VISIBLE:DISPLAY	LEVELADJUSTMENT:-2	PREPCLEVEL:MAX=1			BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=13	BONUS:VAR|CharacterPoints|-24	BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:1,First Level Eclipse
+Eclipse Character Level 0		HITDIE:2		VISIBLE:DISPLAY	LEVELADJUSTMENT:-1	PREPCLEVEL:MAX=1										BONUS:VAR|CharacterPoints|-24|PRETEMPLATE:1,First Level Eclipse
 # 0th level has 24 CP
 
 # Adding these as simple workarounds for existing characters, or GM's requiring Modification.
-Eclipse Character ~ Grant 24 CP			VISIBLE:DISPLAY	BONUS:VAR|CharacterPoints|24
-Eclipse Character ~ Remove 24 CP			VISIBLE:DISPLAY	BONUS:VAR|CharacterPoints|-24
+Eclipse Character ~ Grant 24 CP				VISIBLE:DISPLAY																	BONUS:VAR|CharacterPoints|24
+Eclipse Character ~ Remove 24 CP				VISIBLE:DISPLAY																	BONUS:VAR|CharacterPoints|-24
 
 #COMMENT: HD Setting Templates for odd Cases. THESE will override actual HD of All Character Levels - Should only be used for Companions using special Templates.
-Magical Beast HD			HITDIE:10		VISIBLE:DISPLAY
-Dragon HD				HITDIE:12		VISIBLE:DISPLAY
+Magical Beast HD				HITDIE:10		VISIBLE:DISPLAY
+Dragon HD					HITDIE:12		VISIBLE:DISPLAY
 
 # From Web Blog
 
@@ -48,38 +48,38 @@ Multiclass Eclipse					VISIBLE:DISPLAY																					PREMULT:1,[PREPCLEVEL
 
 ###Block: Templates Applied to the Companion - Would be nice if we had a Feature that could Apply this from the Master PC
 # 02 Comp Bonus Might grants the Positive Level (+2) - and since we can't assign from master, grant a virtual 'ability' that will display in character points showing the companion has this.
-# Template Name						Visible		Level Adjustment	Template																		Required Movement Rate	Required Stat	Prohibited Stat	Required Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Bonus to HP						Add to base move			Adjust PC Size				Bonus to skill					Stat bonus													Modify VAR				Choose													Ability																											Move		Description
-02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY				TEMPLATE:Positive Level (+2)																																																																																																																																				ABILITY:Character Points|VIRTUAL|Companion ~ Might
+# Template Name						Visible		Level Adjustment	Template				Bonus to Ability Pool						Save checks bonus							Combat bonus																							Adjust PC Size				Stat bonus													Ability															Move
+02 Companion Bonus ~ Might (+2 Positive Levels)	VISIBLE:DISPLAY				TEMPLATE:Positive Level (+2)																																																																ABILITY:Character Points|VIRTUAL|Companion ~ Might
 
 # This needs to be taken so the TEMP BONUS may be used. Increases Size and all associated bonuses.
-02 Companion Bonus ~ Great Form																																																														BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC													BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC								BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC																				ABILITY:Character Points|VIRTUAL|Companion ~ Great Form
+02 Companion Bonus ~ Great Form																																BONUS:COMBAT|AC|4|TYPE=NaturalArmorEnhancement|PREAPPLY:PC	BONUS:COMBAT|AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT|-1|TYPE=Size|PREAPPLY:PC	BONUS:SIZEMOD|NUMBER|1|PREAPPLY:PC	BONUS:STAT|STR|8|TYPE=Size|PREAPPLY:PC	BONUS:STAT|CON|4|TYPE=Size|PREAPPLY:PC	ABILITY:Character Points|VIRTUAL|Companion ~ Great Form
 
 
 # Positive Levels grant +1 to AC, To Hit, and Saves along with 6 CP
-Positive Level (+1)																																														BONUS:ABILITYPOOL|Character Points|6			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|1	BONUS:COMBAT|BAB|1	BONUS:COMBAT|AC|1
-Positive Level (+2)																																														BONUS:ABILITYPOOL|Character Points|12			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|BAB|2	BONUS:COMBAT|AC|2
-Positive Level (+3)																																														BONUS:ABILITYPOOL|Character Points|18			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|3	BONUS:COMBAT|BAB|3	BONUS:COMBAT|AC|3
-Positive Level (+4)																																														BONUS:ABILITYPOOL|Character Points|24			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|4	BONUS:COMBAT|BAB|4	BONUS:COMBAT|AC|4
-Positive Level (+5)																																														BONUS:ABILITYPOOL|Character Points|30			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|5	BONUS:COMBAT|BAB|5	BONUS:COMBAT|AC|5
+Positive Level (+1)																BONUS:ABILITYPOOL|Character Points|6			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|1	BONUS:COMBAT|BAB|1	BONUS:COMBAT|AC|1
+Positive Level (+2)																BONUS:ABILITYPOOL|Character Points|12			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|2	BONUS:COMBAT|BAB|2	BONUS:COMBAT|AC|2
+Positive Level (+3)																BONUS:ABILITYPOOL|Character Points|18			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|3	BONUS:COMBAT|BAB|3	BONUS:COMBAT|AC|3
+Positive Level (+4)																BONUS:ABILITYPOOL|Character Points|24			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|4	BONUS:COMBAT|BAB|4	BONUS:COMBAT|AC|4
+Positive Level (+5)																BONUS:ABILITYPOOL|Character Points|30			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|5	BONUS:COMBAT|BAB|5	BONUS:COMBAT|AC|5
 
 
 # Template Levels - Grant Points to a Separate Pool for easier Selections - These are for template level creation.
-Eclipse ~ Template Level +1							LEVELADJUSTMENT:1																																				BONUS:ABILITYPOOL|Template Character Points|32
-Eclipse ~ Template Level +2							LEVELADJUSTMENT:2																																				BONUS:ABILITYPOOL|Template Character Points|32*2
-Eclipse ~ Template Level +3							LEVELADJUSTMENT:3																																				BONUS:ABILITYPOOL|Template Character Points|32*3
-Eclipse ~ Template Level +4							LEVELADJUSTMENT:4																																				BONUS:ABILITYPOOL|Template Character Points|32*4
+Eclipse ~ Template Level +1							LEVELADJUSTMENT:1						BONUS:ABILITYPOOL|Template Character Points|32
+Eclipse ~ Template Level +2							LEVELADJUSTMENT:2						BONUS:ABILITYPOOL|Template Character Points|32*2
+Eclipse ~ Template Level +3							LEVELADJUSTMENT:3						BONUS:ABILITYPOOL|Template Character Points|32*3
+Eclipse ~ Template Level +4							LEVELADJUSTMENT:4						BONUS:ABILITYPOOL|Template Character Points|32*4
 
 
 # This allows for extra HD for Familiars or any companion for that matter, designed to work with the Wealth Templates and a workaround for unusual designs
-Companion Bonus HP					VISIBLE:DISPLAY																																							BONUS:ABILITYPOOL|Companion Bonus HP|1
+Companion Bonus HP					VISIBLE:DISPLAY									BONUS:ABILITYPOOL|Companion Bonus HP|1
 
 
 # This is a Testing of the Move 'Fly' Aspect. Works with the RSRD set.
-Eclipse Fly Move																																																																																																																																																				ABILITY:Special Ability|AUTOMATIC|Maneuverability(Average)																			MOVE:Fly,80
+Eclipse Fly Move																																																																																ABILITY:Special Ability|AUTOMATIC|Maneuverability(Average)							MOVE:Fly,80
 
 
 #COMMENT: Example of GM Granted Packages (typically 12 CP of GM assigned abilities)
-Josh's Military Life Package				VISIBLE:YES																																																																																																																																													ABILITY:Character Points|AUTOMATIC|Legionary|Weapon Prof ~ All Simple Weapons|Armor ~ Light
+Josh's Military Life Package				VISIBLE:YES																																																																									ABILITY:Character Points|AUTOMATIC|Legionary|Weapon Prof ~ All Simple Weapons|Armor ~ Light
 
 
 # Need to move all the Web Blog stuff into a 'Web Enhancement'. Also need to note which items are in the new 'Eclipse II' release.
