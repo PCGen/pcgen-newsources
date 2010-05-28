@@ -55,7 +55,13 @@ Bonus Uses C	KEY:Bonus Uses ~ Three	OUTPUTNAME:Bonus Uses +3	CATEGORY:Special Ab
 Bonus Uses B	KEY:Bonus Uses ~ Two	OUTPUTNAME:Bonus Uses +2	CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput	STACK:YES	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Abilities	COST:3	SOURCEPAGE:p.22	BENEFIT:(+3 CP). Bonus Uses increases the number of times the user may indulge in a times-per-day (or other appropriate period) ability by +2. At GMO, the character may add a relevant attribute modifier to the number of uses instead. Bonus Uses may be purchased repeatedly.
 Bonus Uses A	KEY:Bonus Uses ~ One	OUTPUTNAME:Bonus Uses +1	CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput	STACK:YES	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Abilities	COST:2	SOURCEPAGE:p.22	BENEFIT:(+2 CP). Bonus Uses increases the number of times the user may indulge in a times-per-day (or other appropriate period) ability by +1. At GMO, the character may add a relevant attribute modifier to the number of uses instead. Bonus Uses may be purchased repeatedly.
 
+Package Deal (6 CP)	KEY:Package Deal ~ Six		!PREABILITY:1,CATEGORY=Special Ability,Package Deal ~ Twelve	CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:-6	SOURCEPAGE:p.18	
+Package Deal (12 CP)	KEY:Package Deal ~ Twelve	!PREABILITY:1,CATEGORY=Special Ability,Package Deal ~ Six		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:-12	SOURCEPAGE:p.18	
 
+Unique Training I		KEY:Unique Training I		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:-6	SOURCEPAGE:p.18	DESC:Grants 6 CP for Unique Training
+Unique Training II	KEY:Unique Training II		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:-6	SOURCEPAGE:p.18	DESC:Grants 6 CP for Unique Training
+
+Unique Training		KEY:Unique Training		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:0	SOURCEPAGE:p.18	CHOOSE:NUMBER|MIN=1,MAX=100|TITLE="Select Correct CP Bonus"	MULT:YES	BONUS:ABILITYPOOL|Character Points|UniqueTraining	DEFINE:UniqueTraining|0	BONUS:VAR|UniqueTraining|%CHOICE|PREAPPLY:PC	DESC:Select the Number of CP you gain from the Temp Bonus Mod Tab by applying this	BENEFIT:Adds +1d6 CP, up to a maximum of +(2 x Intelligence) CP over a character's lifetime.
 
 
 ###Block: Corrupted increases ability by 50% or decreases the cost by 2/3rds; Specialized Doubles the power or half the cost
