@@ -61,17 +61,19 @@ Package Deal (12 CP)	KEY:Package Deal ~ Twelve	!PREABILITY:1,CATEGORY=Special Ab
 Unique Training I		KEY:Unique Training I		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:-6	SOURCEPAGE:p.18	DESC:Grants 6 CP for Unique Training
 Unique Training II	KEY:Unique Training II		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:-6	SOURCEPAGE:p.18	DESC:Grants 6 CP for Unique Training
 
-Unique Training		KEY:Unique Training		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:0	SOURCEPAGE:p.18	CHOOSE:NUMBER|MIN=1,MAX=100|TITLE="Select Correct CP Bonus"	MULT:YES	BONUS:ABILITYPOOL|Character Points|UniqueTraining	DEFINE:UniqueTraining|0	BONUS:VAR|UniqueTraining|%CHOICE|PREAPPLY:PC	DESC:Select the Number of CP you gain from the Temp Bonus Mod Tab by applying this	BENEFIT:Adds +1d6 CP, up to a maximum of +(2 x Intelligence) CP over a character's lifetime.
+Unique Training		KEY:Unique Training		CATEGORY:Special Ability	TYPE:General.Extras.EclipseAbilityOutput		COST:0	SOURCEPAGE:p.18	CHOOSE:NUMBER|MIN=1|MAX=100|TITLE=Select Correct CP Bonus	MULT:YES	BONUS:ABILITYPOOL|Character Points|UniqueTraining	DEFINE:UniqueTraining|0	BONUS:VAR|UniqueTraining|%CHOICE|PREAPPLY:PC	DESC:Select the Number of CP you gain from the Temp Bonus Mod Tab by applying this	BENEFIT:Adds +1d6 CP, up to a maximum of +(2 x Intelligence) CP over a character's lifetime.
 
 
 ###Block: Corrupted increases ability by 50% or decreases the cost by 2/3rds; Specialized Doubles the power or half the cost
+# COMMENT: DISABLED THIS SECTION DUE TO ARCH ISSUE RE:TYPE SAFETY.
+
 # Ability Name			Unique Key							Category of Ability		Type											Stackable?	Multiple?	Choose							Bonus to Ability Pool				Cost		Source Page
-Corrupted for Decreased Cost	KEY:Corrupted ~ Decreased Cost ~ Six to Four	CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable	BONUS:ABILITYPOOL|Character Points|2	COST:0	SOURCEPAGE:p.22
-Corrupted for increased power	KEY:Corrupted ~ Increase Power			CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable								COST:0	SOURCEPAGE:p.22
+#Corrupted for Decreased Cost	KEY:Corrupted ~ Decreased Cost ~ Six to Four	CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable	BONUS:ABILITYPOOL|Character Points|2	COST:0	SOURCEPAGE:p.22
+#Corrupted for increased power	KEY:Corrupted ~ Increase Power			CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable								COST:0	SOURCEPAGE:p.22
 
-Specialized for double power	KEY:Specialized ~ Double Power			CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable								COST:0	SOURCEPAGE:p.22
-Specialized for half cost	KEY:Specialized ~ Half Cost ~ Six to Three	CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable	BONUS:ABILITYPOOL|Character Points|3	COST:0	SOURCEPAGE:p.22
-
+#Specialized for double power	KEY:Specialized ~ Double Power			CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable								COST:0	SOURCEPAGE:p.22
+#Specialized for half cost	KEY:Specialized ~ Half Cost ~ Six to Three	CATEGORY:Special Ability	TYPE:General.Corrupt Bypass.Special Ability.EclipseAbilityOutput	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=Corruptable	BONUS:ABILITYPOOL|Character Points|3	COST:0	SOURCEPAGE:p.22
+# COMMENT: Severe Error in 5.17.2-DEV - CHOOSE:ABILITY is looking for Abilities with MULT:YES
 
 ###Block: Hit Die
 #COMMENT:Eclipse you buy HD each level, unable to simulate that, so instead it will be a recurring cost I set up.
