@@ -2,163 +2,200 @@
 SOURCELONG:Advanced Player's Guide	SOURCESHORT:PFAPG	SOURCEWEB:http://paizo.com/store/downloads/pathfinder/pathfinderRPG/v5748btpy8fo1	SOURCEDATE:2010-08
 # Original Entry by: Stefan Radermacher
 
+
+##
+## Block: Base Class Special Abilities
+##
+
+#
+# Alchemist Special Abilities
+#
+# Ability Name	Unique Key				Category of Ability			Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+
+
+#
+# Cavalier Special Abilities
+#
+# Ability Name	Unique Key				Category of Ability			Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+
+
+#
+# Inquisitor Special Abilities
+#
+# Ability Name	Unique Key				Category of Ability			Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+
+
+#
 #Oracle Special Abilities
-# Ability Name	Unique Key				Category of Ability		Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Oracle's Curse						CATEGORY:Special Ability	TYPE:Extraordinary		VISIBLE:YES		SOURCEPAGE:p.43		
-Oracle's Mystery
+#
+# Ability Name	Unique Key				Category of Ability			Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+Orisons			KEY:Orisons ~ Oracle	CATEGORY:Special Ability	TYPE:SpecialQuality												DESC:You can prepare a number of orisons, or 0-level spells. These spells are cast like any other spells, but they are not expended when used and may be used again.																																			SOURCEPAGE:p.45
+Oracle's Curse						CATEGORY:Special Ability		TYPE:SpecialQuality.Extraordinary		VISIBLE:YES		BONUS:ABILITYPOOL|Oracle Curse|1	SOURCEPAGE:p.43		
+Oracle's Mystery					CATEGORY:Special Ability		TYPE:SpecialQuality						VISIBLE:YES		BONUS:ABILITYPOOL|Oracle Mystery|1		DEFINE:OracleMysteryLevel|0		BONUS:VAR|OracleMysteryLevel|1	BONUS:VAR|OracleMysteryLevel|1|PRECLASS:1,Oracle=3		BONUS:VAR|OracleMysteryLevel|1|PRECLASS:1,Oracle=7		BONUS:VAR|OracleMysteryLevel|1|PRECLASS:1,Oracle=11		BONUS:VAR|OracleMysteryLevel|1|PRECLASS:1,Oracle=15		BONUS:VAR|OracleMysteryLevel|1|PRECLASS:1,Oracle=19
 
-#Oracular Mysteries
-# Ability Name	Unique Key						Category of Ability			Type									Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Battle Mystery	KEY:Battle Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.45
-Bone Mystery	KEY:Bone Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.46
-Flame Mystery	KEY:Flame Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.47
-Heavens Mystery	KEY:Heavens Mystery ~ Oracle	CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.47
-Life Mystery	KEY:Life Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.48
-Lore Mystery	KEY:Lore Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.49
-Nature Mystery	KEY:Nature Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.50
-Stone Mystery	KEY:Stone Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.51
-Waves Mystery	KEY:Waves Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.52
-Wind Mystery	KEY:Winds Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracularMystery		VISIBLE:YES		SOURCEPAGE:p.53
+# Oracle Curses
+# Ability Name	Unique Key						Category of Ability			Type									Visible			Source Page						Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Aspects								Description of the Benefits
+Clouded Vision	KEY:Clouded Vision ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.OracleCurse.Sense	VISIBLE:YES		SOURCEPAGE:p.43				VISION:Darkvision (30')		VISION:Blindsense (30')|PRECLASS:1,Oracle=10		VISION:Blindsight (15')|PRECLASS:1,Oracle=15		DESC:Your eyes are obscured, making it difficult for you to see.		BONUS:VISION|Darkvision|60|PRECLASS:1,Oracle=5
+Deaf			KEY:Deaf ~ Oracle				CATEGORY:Special Ability	TYPE:SpecialQuality.OracleCurse.Sense	VISIBLE:YES		SOURCEPAGE:p.44				BONUS:SKILL|Perception|3|PRECLASS:1,Oracle=5		ABILITY:Special Ability|AUTOMATIC|Scent|PRECLASS:1,Oracle=10		VISION:Tremorsense (30')|PRECLASS:1,Oracle=15								DESC:You cannot hear and suffer all of the usual penalties for being deafened. You cast all of your spells as if they were modified by the Silent Spell feat.
+Haunted			KEY:Haunted ~ Oracle			CATEGORY:Special Ability	TYPE:SpecialQuality.OracleCurse			VISIBLE:YES		SOURCEPAGE:p.44
+Lame			KEY:Lame ~ Oracle				CATEGORY:Special Ability	TYPE:SpecialQuality.OracleCurse			VISIBLE:YES		SOURCEPAGE:p.44
+Wasting			KEY:Wasting ~ Oracle			CATEGORY:Special Ability	TYPE:SpecialQuality.OracleCurse			VISIBLE:YES		SOURCEPAGE:p.44
+Tongues			KEY:Tongues ~ Oracle			CATEGORY:Special Ability	TYPE:SpecialQuality.OracleCurse			VISIBLE:YES		SOURCEPAGE:p.44
 
-#Oracular Revelations: Battle
+# Oracle Mysteries
+# Ability Name	Unique Key						Category of Ability			Type									Visible			Source Page						BonusRequired Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+Battle Mystery	KEY:Battle Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.45		BONUS:ABILITYPOOL|Battle Mystery Revelation|OracleMysteryLevel		ABILITY:Special Ability|AUTOMATIC|Battle Mystery ~ Avatar of Battle|PRECLASS:1,Oracle=20
+Bone Mystery	KEY:Bone Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.46		BONUS:ABILITYPOOL|Bone Mystery Revelation|OracleMysteryLevel				ABILITY:Special Ability|AUTOMATIC|Bone Mystery ~ Master of Death|PRECLASS:1,Oracle=20
+Flame Mystery	KEY:Flame Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.47		BONUS:ABILITYPOOL|Flame Mystery Revelation|OracleMysteryLevel			ABILITY:Special Ability|AUTOMATIC|Flame Mystery ~ Master of Fire|PRECLASS:1,Oracle=20
+Heavens Mystery	KEY:Heavens Mystery ~ Oracle	CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.47		BONUS:ABILITYPOOL|Heavens Mystery Revelation|OracleMysteryLevel	ABILITY:Special Ability|AUTOMATIC|Heavens Mystery ~ Perfect Harmony|PRECLASS:1,Oracle=20
+Life Mystery	KEY:Life Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.48		BONUS:ABILITYPOOL|Life Mystery Revelation|OracleMysteryLevel
+Lore Mystery	KEY:Lore Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.49		BONUS:ABILITYPOOL|Lore Mystery Revelation|OracleMysteryLevel
+Nature Mystery	KEY:Nature Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.50		BONUS:ABILITYPOOL|Nature Mystery Revelation|OracleMysteryLevel
+Stone Mystery	KEY:Stone Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.51		BONUS:ABILITYPOOL|Stone Mystery Revelation|OracleMysteryLevel
+Waves Mystery	KEY:Waves Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.52		BONUS:ABILITYPOOL|Waves Mystery Revelation|OracleMysteryLevel
+Wind Mystery	KEY:Winds Mystery ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialAbility.OracleMystery		VISIBLE:YES		SOURCEPAGE:p.53		BONUS:ABILITYPOOL|Wind Mystery Revelation|OracleMysteryLevel
+
+# Oracle Revelations: Battle
 # Ability Name			Unique Key									Category of Ability			Type						Visible										Required Ability																																															Required Stat					Source Page			Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Battlecry				KEY:Battle Mystery ~ Battlecry				CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Battlefield Clarity		KEY:Battle Mystery ~ Battlefield Clarity	CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Combat Healer			KEY:Battle Mystery ~ Combat Healer			CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Iron Skin				KEY:Battle Mystery ~ Iron Skin				CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Maneuver Mastery		KEY:Battle Mystery ~ Maneuver Mastery		CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Resiliency				KEY:Battle Mystery ~ Resiliency				CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Skill at Arms			KEY:Battle Mystery ~ Skill at Arms			CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
-Surprising Charge		KEY:Battle Mystery ~ Surprising Charge		CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
-War Sight				KEY:Battle Mystery ~ War Sight				CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
-Weapon Mastery			KEY:Battle Mystery ~ Weapon Mastery			CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
-Avatar of Battle		KEY:Battle Mystery ~ Avatar of Battle		CATEGORY:Special Ability	TYPE:BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
+Battlecry				KEY:Battle Mystery ~ Battlecry				CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Battlefield Clarity		KEY:Battle Mystery ~ Battlefield Clarity	CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Combat Healer			KEY:Battle Mystery ~ Combat Healer			CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Iron Skin				KEY:Battle Mystery ~ Iron Skin				CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Maneuver Mastery		KEY:Battle Mystery ~ Maneuver Mastery		CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Resiliency				KEY:Battle Mystery ~ Resiliency				CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Skill at Arms			KEY:Battle Mystery ~ Skill at Arms			CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.45
+Surprising Charge		KEY:Battle Mystery ~ Surprising Charge		CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
+War Sight				KEY:Battle Mystery ~ War Sight				CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
+Weapon Mastery			KEY:Battle Mystery ~ Weapon Mastery			CATEGORY:Special Ability	TYPE:SpecialAbility.BattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
+Avatar of Battle		KEY:Battle Mystery ~ Avatar of Battle		CATEGORY:Special Ability	TYPE:SpecialAbility.FinalBattleRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Battle Mystery ~ Oracle																				SOURCEPAGE:p.46
 
-#Oracular Revelations: Bone
+# Oracle Revelations: Bone
 # Ability Name			Unique Key								Category of Ability			Type					Visible				Required Ability																																												Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Armor of Bones			KEY:Bone Mystery ~ Armor of Bones		CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Bleeding Wounds			KEY:Bone Mystery ~ Bleeding Wounds		CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Death's Touch			KEY:Bone Mystery ~ Death's Touch		CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Near Death				KEY:Bone Mystery ~ Near Death			CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Raise Dead				KEY:Bone Mystery ~ Raise Dead			CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Resist Life				KEY:Bone Mystery ~ Resist Life			CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Soul Siphon				KEY:Bone Mystery ~ Soul Siphon			CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Spirit Walk				KEY:Bone Mystery ~ Spirit Walk			CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Undead Servitude		KEY:Bone Mystery ~ Undead Servitude		CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Voice of the Grave		KEY:Bone Mystery ~ Voice of the Grave	CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
-Master of Death			KEY:Bone Mystery ~ Master of Death		CATEGORY:Special Ability	TYPE:BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.47
+Armor of Bones			KEY:Bone Mystery ~ Armor of Bones		CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Bleeding Wounds			KEY:Bone Mystery ~ Bleeding Wounds		CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Death's Touch			KEY:Bone Mystery ~ Death's Touch		CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Near Death				KEY:Bone Mystery ~ Near Death			CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Raise Dead				KEY:Bone Mystery ~ Raise Dead			CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Resist Life				KEY:Bone Mystery ~ Resist Life			CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Soul Siphon				KEY:Bone Mystery ~ Soul Siphon			CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Spirit Walk				KEY:Bone Mystery ~ Spirit Walk			CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Undead Servitude		KEY:Bone Mystery ~ Undead Servitude		CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Voice of the Grave		KEY:Bone Mystery ~ Voice of the Grave	CATEGORY:Special Ability	TYPE:SpecialAbility.BoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.46
+Master of Death			KEY:Bone Mystery ~ Master of Death		CATEGORY:Special Ability	TYPE:SpecialAbility.FinalBoneRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Bone Mystery ~ Oracle																				SOURCEPAGE:p.47
 
-#Oracular Revelations: Flame
+# Oracle Revelations: Flame
 # Ability Name		Unique Key							Category of Ability			Type					Visible				Required Ability																																													Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Burning Magic		KEY:Flame Mystery ~ Burning Magic	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Cinder Dance		KEY:Flame Mystery ~ Cinder Dance	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Fire Breath			KEY:Flame Mystery ~ Fire Breath		CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Fire Storm			KEY:Flame Mystery ~ Fire Storm		CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Form of Flame		KEY:Flame Mystery ~ Form of Flame	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Gaze of Flames		KEY:Flame Mystery ~ Gaze of Flames	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Heat Aura			KEY:Flame Mystery ~ Heat Aura		CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Molten Skin			KEY:Flame Mystery ~ Molten Skin		CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Touch of Flame		KEY:Flame Mystery ~ Touch of Flame	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Wings of Fire		KEY:Flame Mystery ~ Wings of Fire	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
-Master of Fire		KEY:Flame Mystery ~ Master of Fire	CATEGORY:Special Ability	TYPE:FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Burning Magic		KEY:Flame Mystery ~ Burning Magic	CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Cinder Dance		KEY:Flame Mystery ~ Cinder Dance	CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Fire Breath			KEY:Flame Mystery ~ Fire Breath		CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Fire Storm			KEY:Flame Mystery ~ Fire Storm		CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Form of Flame		KEY:Flame Mystery ~ Form of Flame	CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Gaze of Flames		KEY:Flame Mystery ~ Gaze of Flames	CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Heat Aura			KEY:Flame Mystery ~ Heat Aura		CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Molten Skin			KEY:Flame Mystery ~ Molten Skin		CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Touch of Flame		KEY:Flame Mystery ~ Touch of Flame	CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Wings of Fire		KEY:Flame Mystery ~ Wings of Fire	CATEGORY:Special Ability	TYPE:SpecialAbility.FlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
+Master of Fire		KEY:Flame Mystery ~ Master of Fire	CATEGORY:Special Ability	TYPE:SpecialAbility.FinalFlameRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Flame Mystery ~ Oracle																				SOURCEPAGE:p.47
 
-#Oracular Revelations: Heavens
-# Ability Name				Unique Key				Category of Ability			Type					Visible				Required Ability																																															Required Stat						Source Page						Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Awesome Display							CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Coat of Many Stars						CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Dweller in Darkness						CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Guiding Star							CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Interstellar Void						CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Lure of the Heavens						CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Mantle of Moonlight						CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Moonlight Bridge						CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Spray of Shooting Stars					CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Star Chart								CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
-Perfect Harmony with the Universe		CATEGORY:Special Ability	TYPE:HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+# Oracle Revelations: Heavens
+# Ability Name				Unique Key										Category of Ability			Type					Visible				Required Ability																																															Required Stat						Source Page						Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+Awesome Display				KEY:Heavens Mystery ~ Awesome Display			CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Coat of Many Stars			KEY:Heavens Mystery ~ Coat of Many Stars		CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Dweller in Darkness			KEY:Heavens Mystery ~ Dweller in Darkness		CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Guiding Star				KEY:Heavens Mystery ~ Guiding Star				CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Interstellar Void			KEY:Heavens Mystery ~ Interstellar Void			CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Lure of the Heavens			KEY:Heavens Mystery ~ Lure of the Heavens		CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Mantle of Moonlight			KEY:Heavens Mystery ~ Mantle of Moonlight		CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Moonlight Bridge			KEY:Heavens Mystery ~ Moonlight Bridge			CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Spray of Shooting Stars		KEY:Heavens Mystery ~ Spray of Shooting Stars	CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Star Chart					KEY:Heavens Mystery ~ Star Chart				CATEGORY:Special Ability	TYPE:SpecialAbility.HeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
+Perfect Harmony				KEY:Heavens Mystery ~ Perfect Harmony			CATEGORY:Special Ability	TYPE:SpecialAbility.FinalHeavensRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Heavens Mystery ~ Oracle																				SOURCEPAGE:p.48
 
-#Oracular Revelations: Life
+# Oracle Revelations: Life
 # Ability Name	Unique Key				Category of Ability			Type					Visible				Required Ability																																												Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Channel									CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.48
-Combat Healer							CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Delay Affliction						CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Energy Body								CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Enhanced Cures							CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Healing Hands							CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Life Link								CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Lifesense								CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Safe Curing								CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Spirit Boost							CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
-Perfect Channel for Life Energy			CATEGORY:Special Ability	TYPE:LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Channel									CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.48
+Combat Healer							CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Delay Affliction						CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Energy Body								CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Enhanced Cures							CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Healing Hands							CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Life Link								CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Lifesense								CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Safe Curing								CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Spirit Boost							CATEGORY:Special Ability	TYPE:SpecialAbility.LifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
+Perfect Channel for Life Energy			CATEGORY:Special Ability	TYPE:SpecialAbility.FinalLifeRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Life Mystery ~ Oracle																				SOURCEPAGE:p.49
 
-#Oracular Revelations: Lore
+# Oracle Revelations: Lore
 # Ability Name	Unique Key				Category of Ability			Type					Visible				Required Ability																																												Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Arcane Archivist						CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.49
-Automatic Writing						CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.49
-Brain Drain								CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.49
-Focused Trance							CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
-Lore Keeper								CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
-Mental Acuity							CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
-Sidestep Secret							CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
-Spontaneous Symbology					CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
-Think On It								CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
-Final Revelation						CATEGORY:Special Ability	TYPE:LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Arcane Archivist						CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.49
+Automatic Writing						CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.49
+Brain Drain								CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.49
+Focused Trance							CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Lore Keeper								CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Mental Acuity							CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Sidestep Secret							CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Spontaneous Symbology					CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Think On It								CATEGORY:Special Ability	TYPE:SpecialAbility.LoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
+Final Revelation						CATEGORY:Special Ability	TYPE:SpecialAbility.FinalLoreRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Lore Mystery ~ Oracle																				SOURCEPAGE:p.50
 
-#Oracular Revelations: Nature
+# Oracle Revelations: Nature
 # Ability Name	Unique Key				Category of Ability			Type					Visible				Required Ability																																														Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Bonded Mount							CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
-Erosion Touch							CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
-Friend to the Animals					CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
-Life Leach								CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
-Natural Divination						CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
-Nature's Whispers						CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
-Speak with Animals						CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
-Spirit of Nature						CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
-Transcendental Bond						CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
-Undo Artifice							CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
-Intrinsic Secrets of Life				CATEGORY:Special Ability	TYPE:NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Bonded Mount							CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
+Erosion Touch							CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
+Friend to the Animals					CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
+Life Leach								CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.50
+Natural Divination						CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Nature's Whispers						CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Speak with Animals						CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Spirit of Nature						CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Transcendental Bond						CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Undo Artifice							CATEGORY:Special Ability	TYPE:SpecialAbility.NatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
+Intrinsic Secrets of Life				CATEGORY:Special Ability	TYPE:SpecialAbility.FinalNatureRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Nature Mystery ~ Oracle																				SOURCEPAGE:p.51
 
-#Oracular Revelations: Stone
+# Oracle Revelations: Stone
 # Ability Name	Unique Key				Category of Ability			Type					Visible				Required Ability																																													Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Acid Skin								CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.51
-Clobbering Strike						CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.51
-Crystal Sight							CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Earth Glide								CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Mighty Pebble							CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Rock Throwing							CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Shard Explosion							CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Steelbreaker Skin						CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Stone Stability							CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Touch of Acid							CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
-Master of Acid and Earth				CATEGORY:Special Ability	TYPE:StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Acid Skin								CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.51
+Clobbering Strike						CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.51
+Crystal Sight							CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Earth Glide								CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Mighty Pebble							CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Rock Throwing							CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Shard Explosion							CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Steelbreaker Skin						CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Stone Stability							CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Touch of Acid							CATEGORY:Special Ability	TYPE:SpecialAbility.StoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
+Master of Acid and Earth				CATEGORY:Special Ability	TYPE:SpecialAbility.FinalStoneRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Stone Mystery ~ Oracle																				SOURCEPAGE:p.52
 
-#Oracular Revelations: Waves
+# Oracle Revelations: Waves
 # Ability Name	Unique Key				Category of Ability			Type					Visible				Required Ability																																													Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Blizzard								CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.52
-Fluid Nature							CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.52
-Fluid Travel							CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Freezing Spell							CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Ice Armor								CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Icy Skin								CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Punitive Transformation					CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Water Form								CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Water Sight								CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Wintry Touch							CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
-Master of Cold and Water				CATEGORY:Special Ability	TYPE:WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Blizzard								CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.52
+Fluid Nature							CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.52
+Fluid Travel							CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Freezing Spell							CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Ice Armor								CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Icy Skin								CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Punitive Transformation					CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Water Form								CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Water Sight								CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Wintry Touch							CATEGORY:Special Ability	TYPE:SpecialAbility.WavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
+Master of Cold and Water				CATEGORY:Special Ability	TYPE:SpecialAbility.FinalWavesRevelation	VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Waves Mystery ~ Oracle																				SOURCEPAGE:p.53
 
-#Oracular Revelations: Wind
+# Oracle Revelations: Wind
 # Ability Name	Unique Key				Category of Ability			Type					Visible				Required Ability																																												Required Stat						Source Page					Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
-Air Barrier								CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
-Gaseous Form							CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
-Invisibility							CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
-Lightning Breath						CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
-Spark Skin								CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
-Touch of Electricity					CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
-Vortex Spells							CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
-Wind Sight								CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
-Wings of Air							CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
-Master of Air and Electricity			CATEGORY:Special Ability	TYPE:WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
+Air Barrier								CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
+Gaseous Form							CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
+Invisibility							CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
+Lightning Breath						CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.53
+Spark Skin								CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
+Touch of Electricity					CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
+Vortex Spells							CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
+Wind Sight								CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
+Wings of Air							CATEGORY:Special Ability	TYPE:SpecialAbility.WindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
+Master of Air and Electricity			CATEGORY:Special Ability	TYPE:SpecialAbility.FinalWindRevelation		VISIBLE:YES		PREABILITY:1,CATEGORY=Special Ability,Wind Mystery ~ Oracle																				SOURCEPAGE:p.54
 
-# Summoner
+#
+# Summoner Special Abilities
+#
 # Ability Name	Unique Key				Category of Ability		Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
 Cantrips			KEY:Cantrips ~ Summoner		CATEGORY:Special Ability	TYPE:SpecialQuality																DESC:You have learned a number of cantrips, or 0-level spells. These spells are cast like any other spells, but they do not consume any slots and may be used again.
 Summon Monster		KEY:Summon Monster ~ Summoner	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike					DEFINE:SMLevel|0	DEFINE:SMTimes|0	DEFINE:SMDuration|0	DESC:Summon Monster %1 (Sp) ~ (%2 per day) cast as a standard action and the creatures remain for %3 minutes (instead of %3 rounds).|SMLevel|SMTimes|SMDuration
@@ -180,9 +217,12 @@ Gate				KEY:Gate ~ Summoner		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellL
 
 Summoner								CATEGORY:Special Ability	TYPE:FavoredClass				VISIBLE:DISPLAY																																																																																																																																																																																																																																		STACK:NO	MULT:NO	BONUS:ABILITYPOOL|Favored Class Bonus|var("CL=Summoner")
 
+#Witch Special Abilities
+# Ability Name	Unique Key				Category of Ability			Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
 
 
-
+##
+## Block: Base Core Class Modifications
 
 ###Block: Bard class features, modified
 # Ability Name								Type
@@ -195,21 +235,6 @@ CATEGORY=Special Ability|Well-Versed.MOD			TYPE:BardWellVersed
 CATEGORY=Special Ability|Lore Master.MOD			TYPE:BardLoremaster
 CATEGORY=Special Ability|Jack of All Trades.MOD		TYPE:BardJackOfAllTrades
 
-###Block: Elf Racial Trait abilities, modified
-# Ability Name							Type
-CATEGORY=Special Ability|Elven Magic.MOD			TYPE:ElfRacialTrait.ElfMagic			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Elven Magic],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfMagic]							MULT:NO
-CATEGORY=Special Ability|Elven Immunities ~ Elf.MOD	TYPE:ElfRacialTrait.ElfImmunities		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Elven Immunities ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfImmunities]	MULT:NO
-CATEGORY=Special Ability|Weapon Familiarity ~ Elf.MOD	TYPE:ElfRacialTrait.ElfWeaponFamiliarity	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfWeaponFamiliarity]	MULT:NO
-
-###Block: Elf Racial Trait abilities, new
-# Ability Name		Unique Key					Category of Ability		Type														Multiple Requirements																							Innate Spells									Description																																																																											Automatically Gained Weapon Prof.		Bonus to DC				Bonus to skill					Source Page		Aspects
-Desert Runner		KEY:Desert Runner ~ Elf			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ElfRacialTrait.ElfMagic					PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Desert Runner ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfMagic]																		DESC:Some elves thrive in the deepest deserts, forever roaming across burned and parched lands. Elves with this racial trait receive a +4 racial bonus on Constitution checks and Fortitude saves to avoid fatigue, exhaustion, or ill effects from running, forced marches, starvation, thirst, or hot or cold environments.																																										SOURCEPAGE:p.13	ASPECT:SaveBonus|+4 racial bonus on Fortitude saves to avoid fatigue, exhaustion, or ill effects from running, forced marches, starvation, thirst, or hot or cold environments
-Dreamspeaker		KEY:Dreamspeaker ~ Elf			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ElfRacialTrait.ElfImmunities				PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Dreamspeaker ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfImmunities]						SPELLS:Innate|TIMES=1|CASTERLEVEL=TL|Dream|PRESTAT:1,CHA=15		DESC:A few elves have the ability to tap into the power of sleep, dreams, and prescient reverie. Elves with this racial trait add +1 to saving throw DCs for spells of the divination school and sleep effects they cast. In addition, elves with a Charisma of 15 or higher may use dream once per day as a spell-like ability.																													BONUS:DC|SCHOOL.Divination|1								SOURCEPAGE:p.13
-Eternal Grudge		KEY:Eternal Grudge ~ Elf		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.ElfRacialTrait.ElfMagic					PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Eternal Grudge ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfMagic]																		DESC:Elves with this racial trait grew up in secluded, isolationist communities where generations-old slights and quarrels linger as eternal blood feuds. They receive a +1 bonus on attack rolls against humanoids of the dwarf and orc subtypes due to special training against these hated foes.																																														SOURCEPAGE:p.13
-Lightbringer		KEY:Lightbringer ~ Elf			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ElfRacialTrait.ElfImmunities.ElfMagic			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Lightbringer ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfImmunities,TYPE.ElfMagic]				SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Light|PRESTAT:1,INT=10	DESC:Many elves revere the sun, moon, and stars, but some are literally infused with the radiant power of the heavens. Elves with this racial trait are immune to light-based blindness and dazzle effects, and are treated as one level higher when determining the effects of any light-based spell or effect they cast (including spell-like and supernatural abilities). Elves with Intelligence 10 or higher may use light at will as a spell-like ability.																				SOURCEPAGE:p.13
-Silent Hunter		KEY:Silent Hunter ~ Elf			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ElfRacialTrait.ElfMagic					PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Silent Hunter ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfMagic]																		DESC:Elves are renowned for their subtlety and skill. Elves with this racial trait reduce the penalty for using Stealth while moving by 5 and can make Stealth checks while running at a -20 penalty (this number includes the penalty reduction from this racial trait).																																																		SOURCEPAGE:p.13
-Spirit of the Waters	KEY:Spirit of the Waters ~ Elf	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ElfRacialTrait.ElfMagic.ElfWeaponFamiliarity	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spirit of the Waters ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfMagic,TYPE.ElfWeaponFamiliarity]												DESC:Some elves have adapted to life in tune with the sea or along the reedy depths of wild rivers and lakes. They gain a +4 racial bonus on Swim checks, can always take 10 while swimming, and may choose Aquan as a bonus language. They are proficient with longspear, trident, and net.																												AUTO:WEAPONPROF|Longspear|Net|Trident						BONUS:SKILL|Swim|4|TYPE=Racial		SOURCEPAGE:p.13
-Woodcraft			KEY:Woodcraft ~ Elf			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ElfRacialTrait.ElfMagic					PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Woodcraft ~ Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ElfMagic]																		DESC:Elves know the deep secrets of the wild like no others, especially those of the forests. Elves with this racial trait gain a +1 bonus on Knowledge (nature) and Survival checks. In forest terrain, these bonuses improve to +2.																																																	BONUS:SKILL|Knowledge (Nature),Survival|1	SOURCEPAGE:p.13
 #
 Arcane Strike	KEY:Arcane Strike ~ Arcane Duelist	CATEGORY:Special Ability	TYPE:Internal	AUTO:FEAT|Arcane Strike
 Rallying Cry	KEY:Rallying Cry ~ Arcane Duelist	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.BardCountersong
