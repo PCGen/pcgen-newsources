@@ -220,6 +220,29 @@ Summoner								CATEGORY:Special Ability	TYPE:FavoredClass				VISIBLE:DISPLAY			
 
 #Witch Special Abilities
 # Ability Name	Unique Key				Category of Ability			Type										Visible		Required Ability							Required Stat	Define				Description																																Multiple?	Choose											Virtual Feat		Bonus to Ability Pool				Modify VAR							Source Page		Aspects								Description of the Benefits
+####Witch
+Cantrips		KEY:Cantrips ~ Witch			CATEGORY:Special Ability	TYPE:SpecialQuality						DESC:You can prepare a number of cantrips, or 0-level spells, each day. These spells are cast like any other spell, but they are not expended when cast and may be used again.																																																																																												SOURCEPAGE:p.65
+Witch Weapon Proficiencies		CATEGORY:Special Ability	TYPE:Special	VISIBLE:NO	AUTO:WEAPONPROF|TYPE.Simple
+
+###Block: Witch Hexes
+#TODO: Benefits and bonuses for hexes other than Cauldron, Evil Eye and Flight  
+# Ability Name	Category of Ability		Type				Visible		Source Page
+Blight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:The witch can curse an animal, plant creature, or plot of land, causing it to wither and die.	VISIBLE:YES		SOURCEPAGE:p.66
+Cackle		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch can cackle madly as a move action. Any creature that is within 30 feet that is under the effects of an agony hex, charm hex, evil eye hex, fortune hex, or misfortune hex caused by the witch has the duration of that hex extended by 1 round.	VISIBLE:YES		SOURCEPAGE:p.66
+Cauldron		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.WitchHex	DESC:The witch receives Brew Potion as a bonus feat and a +4 insight bonus on Craft (alchemy) skill checks.	VFEAT:Brew Potion	BONUS:SKILL|Craft(alchemy)|4|TYPE=Insight	VISIBLE:YES		SOURCEPAGE:p.66
+Charm		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch can charm an animal or humanoid creature within 30 feet by beckoning and speaking soothing words.	VISIBLE:YES		SOURCEPAGE:p.66
+Coven		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.WitchHex	DESC:The witch counts as a hag for the purpose of joining a hag's coven.	VISIBLE:YES		SOURCEPAGE:p.66
+Disguise		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch can change her appearance for a number of hours equal to her class level, as if using disguise self.	VISIBLE:YES		SOURCEPAGE:p.66
+Evil Eye		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:The witch can cause doubt to creep into the mind of a foe within 30 feet that she can see.	BENEFIT:You can cause doubt in the mind of a foe within 30 feet that you can see. The target takes a %1 penalty on one of the following (witch’s choice): AC, ability checks, attack rolls, saving throws, or skill checks. This hex lasts for %2 rounds. A Will save reduces this to just 1 round. At 8th level the penalty increases to -4.|WitchEvilEyePenalty|3+INT	VISIBLE:YES		DEFINE:WitchEvilEyePenalty|-2	BONUS:VAR|WitchEvilEyePenalty|-2|PREVARGTEQ:WitchLVL,8	SOURCEPAGE:p.66
+Flight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:The witch grows lighter as she gains power, eventually gaining the ability to fly.	BENEFIT:You grow lighter as you gain power, eventually gaining the ability to fly. You can use feather fall at will and gain a +4 racial bonus on Swim checks.	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=1|Feather Fall	BONUS:SKILL|Swim|4|TYPE=Racial	SPELLS:Innate|TIMES=1|CASTERLEVEL=1|Levitate|PREVARGTEQ:WitchLVL,3	SAB:Fly, as per the spell, for % minutes per day. These minutes do not need to be consecutive, but they must be spent in 1-minute increments.|WitchLVL|PREVARGTEQ:WitchLVL,5	VISIBLE:YES		SOURCEPAGE:p.66
+Fortune		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:The witch can grant a creature within 30 feet a bit of good luck for 1 round.	VISIBLE:YES		SOURCEPAGE:p.66
+Healing		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch can soothe the wounds of those she touches.	VISIBLE:YES		SOURCEPAGE:p.66
+Misfortune		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:The witch can cause a creature within 30 feet to suffer grave misfortune for 1 round.	VISIBLE:YES		SOURCEPAGE:p.66
+Slumber		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch can cause a creature within 30 feet to fall into a deep, magical sleep, as per the spell sleep.	VISIBLE:YES		SOURCEPAGE:p.66
+Tongues	KEY:Tongues ~ Hex		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch with this hex can understand any spoken language.		VISIBLE:YES		SOURCEPAGE:p.67
+Ward		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.WitchHex	DESC:A witch can use this hex to place a protective ward over one creature.	VISIBLE:YES		SOURCEPAGE:p.67
+
+###Block: Witch Spirit guides
 
 
 ##
