@@ -1,0 +1,21 @@
+# CVS $Revision: 12348 $ $Author: eddyanthony $ -- Mon Aug 23 15:56:36 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Serpent's Skull Player's Guide	SOURCESHORT:KPG	SOURCEWEB:http://paizo.com/pathfinder/adventurePath/theSerpentsSkull/v5748btpy8g6d	SOURCEDATE:2010-08
+# Original Entry by: Stefan Radermacher
+
+###Block: Conditional Skills for output only
+# Skill Name				Key Stat	Untrained?		Classes	Type			Visible
+Knowledge (History/Mwangi Expanse)	KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT
+Knowledge (Local/Sargava)		KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT
+Knowledge (Nature/Jungle)		KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT
+Survival (Find food)			KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT
+
+###Block: Skill .MODs
+# Skill Name		Bonus to skill											Bonus to skill rank
+Knowledge (History).MOD	BONUS:SKILL|Knowledge (History/Mwangi Expanse)|SKILL.Knowledge (History).MISC	BONUS:SKILLRANK|Knowledge (History/Mwangi Expanse)|SKILLRANK=Knowledge (History)|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Knowledge (History/Mwangi Expanse).MISC"),var("SKILL.Knowledge (History).MISC")
+Knowledge (Local).MOD	BONUS:SKILL|Knowledge (Local/Sargava)|SKILL.Knowledge (Local).MISC		BONUS:SKILLRANK|Knowledge (Local/Sargava)|SKILLRANK=Knowledge (Local)|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Knowledge (Local/Sargava).MISC"),var("SKILL.Knowledge (Local).MISC")
+Knowledge (Nature).MOD	BONUS:SKILL|Knowledge (Nature/Jungle)|SKILL.Knowledge (Nature).MISC		BONUS:SKILLRANK|Knowledge (Nature/Jungle)|SKILLRANK=Knowledge (Nature)|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Knowledge (Nature/Jungle).MISC"),var("SKILL.Knowledge (Nature).MISC")
+Survival.MOD		BONUS:SKILL|Survival (Find food)|SKILL.Survival.MISC					BONUS:SKILLRANK|Survival (Find food)|SKILLRANK=Survival|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Survival (Find food).MISC"),var("SKILL.Survival.MISC")
+
+#
+# End
+#
