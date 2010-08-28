@@ -18,15 +18,17 @@ SOURCELONG:Advanced Player's Guide	SOURCESHORT:PFAPG	SOURCEWEB:http://paizo.com/
 
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-#CLASS:Cavalier	HD:8		TYPE:Base.PC	ABB:Cav		MAXLEVEL:20	SOURCEPAGE:p.32	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+CLASS:Cavalier	HD:10		TYPE:Base.PC	ABB:Cav		MAXLEVEL:20	SOURCEPAGE:p.32	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
-#CLASS:Cavalier	STARTSKILLPTS:2	CSKILL:Appraise|Bluff|TYPE.Craft|Fly|Intimidate|Knowledge (Arcana)|TYPE.Profession|Spellcraft|Use Magic Device
-# Class Name	Spell Stat		Spell Type		Memorize	Caster level
-#CLASS:Cavalier	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Sorcerer|CL
+CLASS:Cavalier	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE.Craft|Diplomacy|Handle Animal|Intimidate|TYPE.Profession|Ride|Sense Motive|Swim
 ###Block:Proficiencies
-#1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency
+1												AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
 ###Block: Level progression
+1	ABILITY:Special Ability|AUTOMATIC|Challenge ~ Cavalier|Mount ~ Cavalier|Order ~ Cavalier|Tactician ~ Cavalier	BONUS:VAR|CavalierChallengeLVL|CL	BONUS:VAR|CavalierChallengeTimes|1+(CL/3)
+3	ABILITY:Special Ability|AUTOMATIC|Cavalier's Charge ~ Cavalier	
 
+6	BONUS:ABILITYPOOL|Cavalier Feat|CL/6
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 #CLASS:Inquisitor	HD:8		TYPE:Base.PC	ABB:Sor		MAXLEVEL:20	SOURCEPAGE:p.38	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
