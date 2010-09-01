@@ -11,10 +11,10 @@ CLASS:Alchemist	HD:8		TYPE:Base.PC	ABB:Alc		MAXLEVEL:20	SOURCEPAGE:p.26	BONUS:CH
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Alchemist	STARTSKILLPTS:4	CSKILL:Appraise|TYPE.Craft|Disable Device|Fly|Heal|Knowledge (Arcana)|Knowledge (Nature)|Perception|TYPE.Profession|Sleight of Hand|Spellcraft|Survival|Use Magic Device
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
-CLASS:Alchemist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Alchemist|CL
+CLASS:Alchemist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Alchemist|CL	BONUS:VAR|AlchemistLVL|CL	DEFINE:AlchemistLVL|0
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1	AUTO:WEAPONPROF|Bomb	AUTO:FEAT|Armor Proficiency (Light)
+1	AUTO:WEAPONPROF|Bomb	AUTO:FEAT|Armor Proficiency (Light)	
 ###Block: Level progression
 1	AUTO:FEAT|Brew Potion
 1	ABILITY:Special Ability|AUTOMATIC|Bomb ~ Alchemist			BONUS:VAR|BombDC|(CL/2)+INT+10	BONUS:VAR|BombsUseableTimes|CL+INT	BONUS:VAR|BombDamageNumber|(CL+1)/2	BONUS:VAR|BombDamageBonus|INT
@@ -78,12 +78,13 @@ CLASS:Cavalier	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE.Craft|Diplomacy|Handle An
 6	BONUS:ABILITYPOOL|Cavalier Feat|CL/6
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-CLASS:Inquisitor	HD:8		TYPE:Base.PC	ABB:Inq		MAXLEVEL:20	SOURCEPAGE:p.38	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Inquisitor	HD:8		TYPE:Base.PC	ABB:Inq	EXCLASS:Ex-Inquisitor	MAXLEVEL:20	SOURCEPAGE:p.38	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Inquisitor	STARTSKILLPTS:6	CSKILL:Bluff|Climb|TYPE.Craft|Diplomacy|Disguise|Heal|Intimidate|Knowledge (Arcana)|Knowledge (Dungeoneering)|Knowledge (Nature)|Knowledge (Planes)|Knowledge (Religion)|Perception|TYPE.Profession|Ride|Sense Motive|Spellcraft|Stealth|Survival|Swim
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Inquisitor	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:NO	BONUS:CASTERLEVEL|Inquisitor|CL	
-#BONUS:DOMAIN|NUMBER|1
+#
+CLASS:Inquisitor	PREVARLT:ExInquisitor,1	DEFINE:ExInquisitor|0
 #COMMENT: Unable to enact properly for the Domain, Inquisitor does not get a domain slot, or bonus spells from it
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
@@ -136,6 +137,26 @@ CLASS:Inquisitor	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:NO	BONUS:CASTERLEVEL|In
 19	CAST:9,5,5,5,5,5,4	KNOWN:6,6,6,6,5,5,4
 20	CAST:9,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
 
+CLASS:Ex-Inquisitor	HD:8		TYPE:Base.PC	ABB:Inq	MAXLEVEL:20	SOURCEPAGE:p.38	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Ex-Inquisitor	STARTSKILLPTS:6	CSKILL:Bluff|Climb|TYPE.Craft|Diplomacy|Disguise|Heal|Intimidate|Knowledge (Arcana)|Knowledge (Dungeoneering)|Knowledge (Nature)|Knowledge (Planes)|Knowledge (Religion)|Perception|TYPE.Profession|Ride|Sense Motive|Spellcraft|Stealth|Survival|Swim
+#Block:
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1												AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+1	AUTO:WEAPONPROF|Crossbow (Hand)|Longbow|Crossbow (Repeating Heavy)|Crossbow (Repeating Light)|Shortbow|DEITYWEAPONS
+#Block:
+1	ABILITY:Special Ability|AUTOMATIC|Monster Lore ~ Inquisitor
+1	ABILITY:Special Ability|AUTOMATIC|Stern Gaze ~ Inquisitor
+2	ABILITY:Special Ability|AUTOMATIC|Cunning Initiative ~ Inquisitor
+2	ABILITY:Special Ability|AUTOMATIC|Detect Alignment ~ Inquisitor
+2	ABILITY:Special Ability|AUTOMATIC|Track ~ Inquisitor
+3	ABILITY:Special Ability|AUTOMATIC|Solo Tactics ~ Inquisitor
+5	ABILITY:Special Ability|AUTOMATIC|Bane ~ Inquisitor
+5	ABILITY:Special Ability|AUTOMATIC|Discern Lies ~ Inquisitor
+11	ABILITY:Special Ability|AUTOMATIC|Stalwart ~ Inquisitor
+12	ABILITY:Special Ability|AUTOMATIC|Greater Bane ~ Inquisitor
+14	ABILITY:Special Ability|AUTOMATIC|Exploit Weakness ~ Inquisitor
+17	ABILITY:Special Ability|AUTOMATIC|Slayer ~ Inquisitor
+
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Oracle	HD:8		TYPE:Base.PC	ABB:Ocl		MAXLEVEL:20	SOURCEPAGE:p.42	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2		BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
@@ -183,6 +204,7 @@ CLASS:Summoner	STARTSKILLPTS:2	CSKILL:TYPE.Craft|Fly|Handle Animal|TYPE.Knowledg
 CLASS:Summoner	SPELLSTAT:CHA	SPELLTYPE:Arcane	BONUS:CASTERLEVEL|Summoner|CL
 ###Block:Proficiencies
 1																							ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies		AUTO:FEAT|Simple Weapon Proficiency|Armor Proficiency (Light)
+#
 1									BONUS:VAR|EidolonLevel|CL										ABILITY:Special Ability|AUTOMATIC|Cantrips ~ Summoner|Eidolon|Life Link
 1									BONUS:VAR|SMDuration|CL	BONUS:VAR|SMLevel|min(9,(CL+1)/2)	BONUS:VAR|SMTimes|CHA+3	ABILITY:Special Ability|AUTOMATIC|Summon Monster ~ Summoner
 1	CAST:0,1			KNOWN:4,2
