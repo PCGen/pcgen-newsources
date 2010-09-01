@@ -7,14 +7,50 @@ SOURCELONG:Advanced Player's Guide	SOURCESHORT:PFAPG	SOURCEWEB:http://paizo.com/
 ##
 
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-CLASS:Alchemist	HD:8		TYPE:Base.PC	ABB:Alc		MAXLEVEL:20	SOURCEPAGE:p.26	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+CLASS:Alchemist	HD:8		TYPE:Base.PC	ABB:Alc		MAXLEVEL:20	SOURCEPAGE:p.26	BONUS:CHECKS|BASE.Will|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
-#CLASS:Alchemist	STARTSKILLPTS:2	CSKILL:Appraise|Bluff|TYPE.Craft|Fly|Intimidate|Knowledge (Arcana)|TYPE.Profession|Spellcraft|Use Magic Device
+CLASS:Alchemist	STARTSKILLPTS:4	CSKILL:Appraise|TYPE.Craft|Disable Device|Fly|Heal|Knowledge (Arcana)|Knowledge (Nature)|Perception|TYPE.Profession|Sleight of Hand|Spellcraft|Survival|Use Magic Device
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
-#CLASS:Alchemist	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Sorcerer|CL
+CLASS:Alchemist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Alchemist|CL
 ###Block:Proficiencies
-#1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1	AUTO:WEAPONPROF|Bomb	AUTO:FEAT|Armor Proficiency (Light)
 ###Block: Level progression
+1	AUTO:FEAT|Brew Potion
+1	ABILITY:Special Ability|AUTOMATIC|Bomb ~ Alchemist			BONUS:VAR|BombDC|(CL/2)+INT+10	BONUS:VAR|BombsUseableTimes|CL+INT	BONUS:VAR|BombDamageNumber|(CL+1)/2	BONUS:VAR|BombDamageBonus|INT
+1	ABILITY:Special Ability|AUTOMATIC|Mutagen ~ Alchemist
+1	ABILITY:Special Ability|AUTOMATIC|Throw Anything ~ Alchemist
+2	ABILITY:Special Ability|AUTOMATIC|Discovery ~ Alchemist		BONUS:ABILITYPOOL|Alchemist Discovery|min((CL/2),18)	BONUS:VAR|DiscoveryDC|INT+(CL/2)+10
+2	ABILITY:Special Ability|AUTOMATIC|Poison Resistance ~ Alchemist
+2	ABILITY:Special Ability|AUTOMATIC|Poison Use ~ Alchemist
+3	ABILITY:Special Ability|AUTOMATIC|Swift Alchemy ~ Alchemist
+6	ABILITY:Special Ability|AUTOMATIC|Swift Poisoning ~ Alchemist
+14	ABILITY:Special Ability|AUTOMATIC|Persistent Mutagen ~ Alchemist
+18	ABILITY:Special Ability|AUTOMATIC|Instant Alchemy ~ Alchemist
+20	ABILITY:Special Ability|AUTOMATIC|Grand Discovery ~ Alchemist	BONUS:ABILITYPOOL|Alchemist Grand Discovery|1	BONUS:ABILITYPOOL|Alchemist Discovery|2
+#Block: Spellcasting
+1	CAST:0,1
+2	CAST:0,2
+3	CAST:0,3
+4	CAST:0,3,1
+5	CAST:0,4,2
+6	CAST:0,4,3
+7	CAST:0,4,3,1
+8	CAST:0,4,4,2
+9	CAST:0,5,4,3
+10	CAST:0,5,4,3,1
+11	CAST:0,5,4,4,2
+12	CAST:0,5,5,4,3
+13	CAST:0,5,5,4,3,1
+14	CAST:0,5,5,4,4,2
+15	CAST:0,5,5,5,4,3
+16	CAST:0,5,5,5,4,3,1
+17	CAST:0,5,5,5,4,4,2
+18	CAST:0,5,5,5,5,4,3
+19	CAST:0,5,5,5,5,5,4
+20	CAST:0,5,5,5,5,5,5
+
+
 
 
 CLASS:Antipaladin	HD:8		TYPE:Base.PC	ABB:Apal		MAXLEVEL:20				
