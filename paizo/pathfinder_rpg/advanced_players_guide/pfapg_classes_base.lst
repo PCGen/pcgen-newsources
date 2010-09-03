@@ -51,11 +51,6 @@ CLASS:Alchemist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:
 20	CAST:0,5,5,5,5,5,5
 
 
-
-
-CLASS:Antipaladin	HD:8		TYPE:Base.PC	ABB:Apal		MAXLEVEL:20				
-
-
 # Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Cavalier	HD:10		TYPE:Base.PC	ABB:Cav	ALLOWBASECLASS:NO	MAXLEVEL:20	SOURCEPAGE:p.32	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
@@ -286,6 +281,54 @@ CLASS:Eidolon (Ref/Will)	OUTPUTNAME:Eidolon	HD:10		TYPE:Monster.Companion	MAXLEV
 CLASS:Eidolon (Ref/Will)	PRERACETYPE:Eidolon
 # Class Name			Skill Pts/Lvl	Add INT to Skill Points?	Class Skill
 CLASS:Eidolon (Ref/Will)	STARTSKILLPTS:6	MODTOSKILLS:YES			CSKILL:Bluff|TYPE.Craft|Knowledge (Planes)|Perception|Sense Motive|Stealth
+
+
+CLASS:Antipaladin		HD:10			TYPE:Base.PC	ABB:Apal	EXCLASS:Ex-Antipaladin	MAXLEVEL:20		SOURCEPAGE:p.118		BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	DEFINE:AntipaladinLVL|CL
+CLASS:Antipaladin		STARTSKILLPTS:2	CSKILL:Bluff|TYPE.Craft|Disguise|Handle Animal|Intimidate|Knowledge (Religion)|TYPE.Profession|Ride|Sense Motive|Spellcraft|Stealth
+CLASS:Antipaladin		PREALIGN:1,CE
+CLASS:Antipaladin		SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Antipaladin|CL	MEMORIZE:NO	KNOWNSPELLS:LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency
+1												AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+###Block: Level progression
+1	ABILITY:Special Ability|AUTOMATIC|Aura of Evil|Detect Good|Smite Good										BONUS:VAR|SmiteGoodTimes|CL/3+1
+2	ABILITY:Special Ability|AUTOMATIC|Touch of Corruption ~ Antipaladin|Unholy Resilience ~ Antipaladin
+3	ABILITY:Special Ability|AUTOMATIC|Aura of Cowardice ~ Antipaladin|Cruelty ~ Antipaladin|Plague Bringer ~ Antipaladin		BONUS:VAR|AntipaladinCruelty|CL/3
+4	ABILITY:Special Ability|AUTOMATIC|Channel Negative Energy
+5	ABILITY:Special Ability|AUTOMATIC|Fiendish Boon ~ Antipaladin
+8	ABILITY:Special Ability|AUTOMATIC|Aura of Despair ~ Antipaladin
+11	ABILITY:Special Ability|AUTOMATIC|Aura of Vengeance ~ Antipaladin
+14	ABILITY:Special Ability|AUTOMATIC|Aura of Sin ~ Antipaladin
+17	ABILITY:Special Ability|AUTOMATIC|Aura of Depravity ~ Antipaladin
+20	ABILITY:Special Ability|AUTOMATIC|Unholy Champion ~ Antipaladin
+###Block: Spell Casting Progression
+4	CAST:0,0
+5	CAST:0,1
+6	CAST:0,1
+7	CAST:0,1,0
+8	CAST:0,1,1
+9	CAST:0,2,1
+10	CAST:0,2,1,0
+11	CAST:0,2,1,1
+12	CAST:0,2,2,1
+13	CAST:0,3,2,1,0
+14	CAST:0,3,2,1,1
+15	CAST:0,3,2,2,1
+16	CAST:0,3,3,2,1
+17	CAST:0,4,3,2,1
+18	CAST:0,4,3,2,2
+19	CAST:0,4,3,3,2
+20	CAST:0,4,4,3,3
+
+# Ex-Antipaladin
+CLASS:Ex-Antipaladin	VISIBLE:NO
+CLASS:Ex-Antipaladin	HD:10				TYPE:Base.PC	ABB:Apal	EXCLASS:Ex-Antipaladin	MAXLEVEL:20		SOURCEPAGE:p.118		BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	DEFINE:AntipaladinLVL|CL
+CLASS:Ex-Antipaladin	STARTSKILLPTS:2	CSKILL:Bluff|TYPE.Craft|Disguise|Handle Animal|Intimidate|Knowledge (Religion)|TYPE.Profession|Ride|Sense Motive|Spellcraft|Stealth
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency
+1												AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Shield Proficiency
+
+
 
 
 ##
