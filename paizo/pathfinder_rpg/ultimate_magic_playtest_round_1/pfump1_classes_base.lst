@@ -1,0 +1,38 @@
+# CVS $Revision: 13015 $ $Author: amaitland $ -- Mon Sep 20 20:39:05 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Ultimate Magic Playtest, Round 1	SOURCESHORT:PFUMP1	SOURCEWEB:http://paizo.com/store/downloads/pathfinder/pathfinderRPG/v5748btpy8gte	SOURCEDATE:2010-09
+# Original Entry by: Stefan Radermacher
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Magus		HD:8		TYPE:Base.PC	ABB:Mag		MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Magus		STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Fly|Intimidate|Knowledge (Arcana)|Knowledge (Dungeoneering)|Knowledge (Planes)|TYPE.Profession|Ride|Spellcraft|Swim|Use Magic Device
+# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
+CLASS:Magus		SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Magus|CL
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency
+###Block: Level progression
+1	CAST:3,1											BONUS:VAR|MagusArmorProficiencyLVL|CL	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency ~ Magus|Cantrips ~ Magus|Spellstrike ~ Magus
+2	CAST:4,2																		ABILITY:Special Ability|AUTOMATIC|Spell Combat ~ Magus
+3	CAST:4,3											BONUS:VAR|MagusArcanaLVL|CL			ABILITY:Special Ability|AUTOMATIC|Magus Arcana ~ Magus
+4	CAST:4,3,1											BONUS:VAR|MagusArcaneWeaponLVL|CL		ABILITY:Special Ability|AUTOMATIC|Arcane Weapon ~ Magus
+5	CAST:4,4,2			BONUS:ABILITYPOOL|Magus Bonus Feat|(CL+1)/6
+6	CAST:5,4,3
+7	CAST:5,4,3,1
+8	CAST:5,4,4,2																	ABILITY:Special Ability|AUTOMATIC|Improved Spell Combat ~ Magus
+9	CAST:5,5,4,3
+10	CAST:5,5,4,3,1										BONUS:VAR|MagusFighterTrainingLVL|CL	ABILITY:Special Ability|AUTOMATIC|Fighter Training ~ Magus
+11	CAST:5,5,4,4,2
+12	CAST:5,5,5,4,3
+13	CAST:5,5,5,4,3,1
+14	CAST:5,5,5,4,4,2																	ABILITY:Special Ability|AUTOMATIC|Greater Spell Combat ~ Magus
+15	CAST:5,5,5,5,4,3
+16	CAST:5,5,5,5,4,3,1																ABILITY:Special Ability|AUTOMATIC|Counterstrike ~ Magus
+17	CAST:5,5,5,5,4,4,2
+18	CAST:5,5,5,5,5,4,3
+19	CAST:5,5,5,5,5,5,4																ABILITY:Special Ability|AUTOMATIC|Weapon Bond ~ Magus
+20	CAST:5,5,5,5,5,5,5																ABILITY:Special Ability|AUTOMATIC|True Magus ~ Magus
+
+#
+# End
+#
+
