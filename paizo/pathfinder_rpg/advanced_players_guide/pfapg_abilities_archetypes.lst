@@ -780,17 +780,31 @@ Invisibility Trick	KEY:Urban Ranger ~ Invisibility Trick	CATEGORY:Special Abilit
 
 
 #Block: Ranger Combat Styles ----------------------------------------------------------------------------------------------------------------------------------
-Crossbow		KEY:Ranger Combat Style ~ Crossbow			CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleCrossbowAllowed,1		DEFINE:RangerCombatStyleCrossbowAllowed|0			BONUS:VAR|RangerCombatStyleCrossbowAllowed|RangerDefaultCombatStyle
-Mounted Combat	KEY:Ranger Combat Style ~ Mounted Combat		CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleMountedCombatAllowed,1	DEFINE:RangerCombatStyleMountedCombatAllowed|0		BONUS:VAR|RangerCombatStyleMountedCombatAllowed|RangerDefaultCombatStyle
-Natural Weapon	KEY:Ranger Combat Style ~ Natural Weapon		CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleNaturalWeaponAllowed,1	DEFINE:RangerCombatStyleNaturalWeaponAllowed|0		BONUS:VAR|RangerCombatStyleNaturalWeaponAllowed|RangerDefaultCombatStyle
-Two-Handed Weapon	KEY:Ranger Combat Style ~ Two-Handed Weapon	CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleTwoHandedWeaponAllowed,1	DEFINE:RangerCombatStyleTwoHandedWeaponAllowed|0	BONUS:VAR|RangerCombatStyleTwoHandedWeaponAllowed|RangerDefaultCombatStyle
-Weapon and Shield	KEY:Ranger Combat Style ~ Weapon and Shield	CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleWeaponAndShieldAllowed,1	DEFINE:RangerCombatStyleWeaponAndShieldAllowed|0	BONUS:VAR|RangerCombatStyleWeaponAndShieldAllowed|RangerDefaultCombatStyle
+Crossbow		KEY:Ranger Combat Style ~ Crossbow			CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleCrossbowAllowed,1
+Mounted Combat	KEY:Ranger Combat Style ~ Mounted Combat		CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleMountedCombatAllowed,1
+Natural Weapon	KEY:Ranger Combat Style ~ Natural Weapon		CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleNaturalWeaponAllowed,1
+Two-Handed Weapon	KEY:Ranger Combat Style ~ Two-Handed Weapon	CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleTwoHandedWeaponAllowed,1
+Weapon and Shield	KEY:Ranger Combat Style ~ Weapon and Shield	CATEGORY:Special Ability	TYPE:RangerCombatStyle	VISIBLE:DISPLAY	PREVARGTEQ:RangerCombatStyleWeaponAndShieldAllowed,1
 
-# Changes
-CATEGORY=Special Ability|Archery.MOD		PREVARGTEQ:RangerCombatStyleArcheryAllowed,1	DEFINE:RangerCombatStyleArcheryAllowed|0		BONUS:VAR|RangerCombatStyleArcheryAllowed|RangerDefaultCombatStyle
-CATEGORY=Special Ability|Two-Weapon Combat.MOD	PREVARGTEQ:RangerCombatStyleTwoWeaponAllowed,1	DEFINE:RangerCombatStyleTwoWeaponAllowed|0	BONUS:VAR|RangerCombatStyleTwoWeaponAllowed|RangerDefaultCombatStyle
+# Master Changes
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleArcheryAllowed|0			BONUS:VAR|RangerCombatStyleArcheryAllowed|RangerDefaultCombatStyle
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleTwoWeaponAllowed|0		BONUS:VAR|RangerCombatStyleTwoWeaponAllowed|RangerDefaultCombatStyle
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleWeaponAndShieldAllowed|0	BONUS:VAR|RangerCombatStyleWeaponAndShieldAllowed|RangerDefaultCombatStyle
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleTwoHandedWeaponAllowed|0	BONUS:VAR|RangerCombatStyleTwoHandedWeaponAllowed|RangerDefaultCombatStyle
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleNaturalWeaponAllowed|0		BONUS:VAR|RangerCombatStyleNaturalWeaponAllowed|RangerDefaultCombatStyle
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleMountedCombatAllowed|0		BONUS:VAR|RangerCombatStyleMountedCombatAllowed|RangerDefaultCombatStyle
+CATEGORY=Special Ability|Combat Style.MOD	DEFINE:RangerCombatStyleCrossbowAllowed|0			BONUS:VAR|RangerCombatStyleCrossbowAllowed|RangerDefaultCombatStyle
 
-# Combat Styles May Be Disabled by BONUS:VAR|<ranger_combat_style_var_name>|-1
+# Main Core Combat Styles
+CATEGORY=Special Ability|Archery.MOD		PREVARGTEQ:RangerCombatStyleArcheryAllowed,1
+CATEGORY=Special Ability|Two-Weapon Combat.MOD	PREVARGTEQ:RangerCombatStyleTwoWeaponAllowed,1
+
+
+
+
+
+
+# Combat Styles May Be Disabled by BONUS:VAR|<ranger_combat_style_var_name>|-2
 #	RangerCombatStyleArcheryAllowed
 #	RangerCombatStyleTwoWeaponAllowed
 #	RangerCombatStyleCrossbowAllowed
