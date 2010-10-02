@@ -1,22 +1,22 @@
-# CVS $Revision: $ $Author: $ -- Fri Sep 17 16:17:23 2010 -- reformated by prettylst.pl v1.38 (build 6875)
+# CVS $Revision: $ $Author: $ -- Sat Oct  2 07:51:20 2010 -- reformated by prettylst.pl v1.38 (build 6875)
 
 #Guardian Amulet Servitor
-# Ability Name		Category of Ability		Type						Visible	Innate Spells								Combat bonus
-Cure Minor Wounds		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	SPELLS:Innate|TIMES=1|Cure Minor Wounds
-Guard				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											BONUS:COMBAT|AC|2|TYPE=Deflection|PREAPPLY:PC
+# Ability Name		Unique Key		Category of Ability		Type						Visible	Innate Spells								Description																										Combat bonus
+Cure Minor Wounds					CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	SPELLS:Innate|TIMES=1|Cure Minor Wounds				DESC:1/day may cast Cure Minor Wounds on master
+Guard				KEY:GUARD~GAS	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											DESC:+2 deflection bonus to AC within five feet of master																		BONUS:COMBAT|AC|2|TYPE=Deflection|PREAPPLY:PC
 
 #Greater Killer Amulet Servitor
-Activation Attack		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	VISIBLE:YES
-Haste				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		VISIBLE:YES	SPELLS:Innate|TIMES=1|TIMEUNIT=Combat|CASTERLEVEL=16|Haste
-Soulbind			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		VISIBLE:YES	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=16|Soul Bind,21
+Activation Attack					CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	VISIBLE:YES
+Haste				KEY:HASTE~KAS	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		VISIBLE:YES	SPELLS:Innate|TIMES=1|TIMEUNIT=Combat|CASTERLEVEL=16|Haste	DESC:1/combat may cast Haste upon itself
+Soul Bind						CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		VISIBLE:YES	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=16|Soul Bind,21	DESC:May cast soul bind upon a slain victim
 
 #Golem Armor
-Closed Environment	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES
-Heightened Senses		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES
-Magic Immunity		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES
-Soul Gem			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES
-Spikes			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES
-Synchronize			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES
+Closed Environment				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											DESC:Provides the wearer with all of the immunities of the construct type and the magical immunities of the golem
+Heightened Senses					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											DESC:Provides the wearer with a +10 circumstance bonus to Listen and Spot checks, as well as darkvision 60 feet									BONUS:VISION|Darkvision|60|PREAPPLY:ANYPC	BONUS:SKILL|Listen,Spot|10|PREAPPLY:ANYPC
+Magic Immunity					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											DESC:Immune to all spells, spell-like abilities, and supernatural effects
+Soul Gem						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES											DESC:May be controlled by the spirit of a creature bound into a gemstone
+Spikes			KEY:SPIKES~GA	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											DESC:Can launch a deadly spike from magazines on its wrists
+Synchronize						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											DESC:golem sizes its cavity to fit to exactly fit wearer
 
 #Silver Steed of Inarial
-Self Repair			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		VISIBLE:YES
+Self Repair						CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		VISIBLE:YES											DESC:Can heal itself burning gems at the rate of 100 gp worth of gems per hit point regained
