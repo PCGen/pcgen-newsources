@@ -2,12 +2,16 @@
 SOURCELONG:Eclipse - The Codex Persona	SOURCESHORT:Eclipse	SOURCEWEB:http://www.lulu.com/content/435647
 #Original Entry: Andrew Maitland
 
+### Skills Test Section
+
+#Test Skill Ranks Max			TYPE:Testing.MaxRank			BONUS:VAR|TestSkillRank|skillinfo("TOTALRANK","Test Skill Ranks Max)	DEFINE:TestSkillRank|0		PREVARLT:TestSkillRank,TestSkillRankMAX		DEFINE:TestSkillRankMAX|MaxRank+
 
 ###Block: Eclipse Based Skills --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Skill Name	Untrained?		Exclusive?		Type
 Knowledge (Lore)	USEUNTRAINED:YES	EXCLUSIVE:YES	TYPE:AdeptChoice.Lore
 
+Secrets		USEUNTRAINED:NO				TYPE:AdeptChoice.NormalSkill.Secrets	KEYSTAT:INT
 
 ###Block: Martial Arts Styles --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Skill Name				Output Name							Key Stat	Untrained?		Skill Penalty Apply	Type								Required Ability							Required Text						Source Page		Bonus to Ability Pool														Modify VAR
@@ -16,11 +20,13 @@ Martial Arts													USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArt.NormalS
 
 #
 #Martial Arts ~ Basic						OUTPUTNAME:Martial Arts (Basic)					TYPE:AdeptChoice.MartialArtsStyle.MartialArts	USEUNTRAINED:NO																																			BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Basic")|TYPE=MartialArts
-Martial Arts ~ Adamantine Fist	OUTPUTNAME:Martial Arts (Adamantine Fist)		KEYSTAT:STR	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts										PRETEXT:Improved Unarmed Strike or equivalent				BONUS:ABILITYPOOL|Adamantine Fist|1+skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")/2		BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Adamantine Fist")|TYPE=MartialArts
-Martial Arts ~ Cangmarg			OUTPUTNAME:Martial Arts (Cangmarg Martial Art)	KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts	PREABILITY:1,CATEGORY=Special Ability,Shapeshift												BONUS:ABILITYPOOL|Canmarg Martial Art|1+skillinfo("TOTAL", "Martial Arts ~ Cangmarg")/2			BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Cangmarg")|TYPE=MartialArts			BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Cangmarg")|TYPE=MartialArts
-Martial Arts ~ Street Fighting	OUTPUTNAME:Martial Arts (Street Fighting)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Street Fighting Art|1+skillinfo("TOTAL", "Martial Arts ~ Street Fighting")/2		BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Street Fighting")|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Street Fighting")|TYPE=MartialArts
-Martial Arts ~ Bladesinger Style	OUTPUTNAME:Martial Arts (Bladesinger Style)	KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Bladesinger Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Blade Singer Style")|TYPE=MartialArts
-Martial Arts ~ Katana Senkou		OUTPUTNAME:Martial Arts (Katana Senkou)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Katana Senkou Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")/2	BONUS:VAR|MartialArtsSkillCounter|skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")|TYPE=MartialArts			BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Katana Senkou")|TYPE=MartialArts
+Martial Arts ~ Adamantine Fist	OUTPUTNAME:Martial Arts (Adamantine Fist)		KEYSTAT:STR	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts										PRETEXT:Improved Unarmed Strike or equivalent				BONUS:ABILITYPOOL|Adamantine Fist|1+skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")/2		BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Adamantine Fist")/2|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Adamantine Fist")|TYPE=MartialArts
+Martial Arts ~ Cangmarg			OUTPUTNAME:Martial Arts (Cangmarg Martial Art)	KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts	PREABILITY:1,CATEGORY=Special Ability,Shapeshift												BONUS:ABILITYPOOL|Canmarg Martial Art|1+skillinfo("TOTAL", "Martial Arts ~ Cangmarg")/2			BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Cangmarg")/2|TYPE=MartialArts			BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Cangmarg")|TYPE=MartialArts
+Martial Arts ~ Street Fighting	OUTPUTNAME:Martial Arts (Street Fighting)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Street Fighting Art|1+skillinfo("TOTAL", "Martial Arts ~ Street Fighting")/2		BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Street Fighting")/2|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Street Fighting")|TYPE=MartialArts
+Martial Arts ~ Bladesinger Style	OUTPUTNAME:Martial Arts (Bladesinger Style)	KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Bladesinger Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")/2	BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Bladesinger Style")/2|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Blade Singer Style")|TYPE=MartialArts
+Martial Arts ~ Katana Senkou		OUTPUTNAME:Martial Arts (Katana Senkou)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Katana Senkou Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")/2	BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Katana Senkou")/2|TYPE=MartialArts			BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Katana Senkou")|TYPE=MartialArts
+Martial Arts ~ Arnis-Barang		OUTPUTNAME:Martial Arts (Arnis-Barang)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Arnis-Barang Style Art|1+skillinfo("TOTAL", "Martial Arts ~ Arnis-Barang")/2		BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Arnis-Barang")/2|TYPE=MartialArts			BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Arnis-Barang")|TYPE=MartialArts
+Martial Arts ~ Spellweaving		OUTPUTNAME:Martial Arts (Spellweaving)		KEYSTAT:DEX	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																																						BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Spellweaving")/2|TYPE=MartialArts			BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Spellweaving")|TYPE=MartialArts		ABILITY:Special Ability|AUTOMATIC|MA ~ Spellweaver
 
 # Cheat Skills - For Martial Arts
 Martial Arts ~ Str Based	SORTKEY:Martial Arts_1a	OUTPUTNAME:Martial Arts (Strength Based)		KEYSTAT:STR	USEUNTRAINED:NO					TYPE:AdeptChoice.MartialArtsStyle.MartialArts																					BONUS:ABILITYPOOL|Martial Arts Str Style|1+skillinfo("TOTAL", "Martial Arts ~ Str Based")/2		BONUS:VAR|MartialArtsSkillCounter|1+skillinfo("TOTAL", "Martial Arts ~ Str Based")/2|TYPE=MartialArts		BONUS:VAR|MartialArtsSkillTotal|skillinfo("TOTAL","Martial Arts ~ Str Based")|TYPE=MartialArts
@@ -49,7 +55,22 @@ Rune Mastery (Light)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.R
 Rune Mastery (Exorcism)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
 Rune Mastery (Transmutation)												USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
 
-#Spellcraft (Rune Casting)										KEYSTAT:INT	USEUNTRAINED:NO													VISIBLE:EXPORT
+
+# Additional
+Rune Casting (Lunar)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
+Rune Casting (Conjuration)												USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
+Rune Casting (Weather)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
+
+
+Rune Mastery (Lunar)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
+Rune Mastery (Conjuration)												USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
+Rune Mastery (Weather)													USEUNTRAINED:NO	ACHECK:YES			TYPE:AdeptChoice.RuneCasting.NormalSkill																			SOURCEPAGE:p.97
+
+
+
+
+
+Spellcraft (Rune Casting)										KEYSTAT:INT	USEUNTRAINED:NO													VISIBLE:EXPORT
 
 ###Block: Mystic Artist Skill
 # Skill Name			Classes	Type					Bonus to skill														Modify VAR
@@ -57,7 +78,6 @@ Mystic Artist Skill		CLASSES:ALL	TYPE:None	VISIBLE:DISPLAY																			BON
 #COMMENT: This skill controls the Mystic Artist Free Purchases
 #COMMENT: VISIBLE:NO not valid
 #Block: Mystic Artist Subs
-
 
 
 Perform (Atrocities)			USEUNTRAINED:NO	TYPE:Charisma.Perform.Sample
