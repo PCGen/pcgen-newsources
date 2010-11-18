@@ -21,7 +21,7 @@ Relic Purchase / Fourth Relic				KEY:Relic ~ Four	CATEGORY:Special Ability	TYPE:
 
 ###Comment: Use this for all abilities granted to every character of the point buy system
 # Ability Name			Unique Key		Category of Ability		Type								Visible	Define																					Stackable?	Multiple?	Choose					Selections	Ability																																													Bonus to Ability Pool																																																Modify VAR																																	Class Skill			Cost		Source Page
-All Automatic Abilities					CATEGORY:Special Ability																																													ABILITY:Internal Abilities|AUTOMATIC|Disadvantage Counter|Pact Tracker|Class Skills|Martial Arts Tracker|Magic Level Tracker	ABILITY:Special Ability|AUTOMATIC|Warcraft Output	ABILITY:Internal Abilities|AUTOMATIC|Martial Arts Is a Class Skill|PRECSKILL:1,Martial Arts		ABILITY:Special Ability|AUTOMATIC|		
+All Automatic Abilities					CATEGORY:Special Ability																																													ABILITY:Internal Abilities|AUTOMATIC|Disadvantage Counter|Pact Tracker|Class Skills|Martial Arts Tracker|Magic Level Tracker	ABILITY:Special Ability|AUTOMATIC|Warcraft Output	ABILITY:Internal Abilities|AUTOMATIC|Martial Arts Is a Class Skill|PRECSKILL:1,Martial Arts		ABILITY:Special Ability|AUTOMATIC|Character Points Total
 
 #
 Pact Tracker						CATEGORY:Internal Abilities											DEFINE:PactLevel|0																																																																																																																																BONUS:VAR|PactLevel|2	BONUS:VAR|PactLevel|1|PREPCLEVEL:MIN=3	BONUS:VAR|PactLevel|1|PREPCLEVEL:MIN=7	BONUS:VAR|PactLevel|1|PREPCLEVEL:MIN=12
@@ -29,18 +29,47 @@ Class Skills						CATEGORY:Internal Abilities																																			
 Martial Arts Tracker					CATEGORY:Internal Abilities											DEFINE:MartialArtsSkillCounter|0	DEFINE:MartialArtsSkillTotal|0																																																																										BONUS:ABILITYPOOL|Martial Art Techniques|MartialArtsSkillCounter	
 Magic Level Tracker					CATEGORY:Internal Abilities											DEFINE:EclipseMagicLvlMax|0	DEFINE:CasterLevelAll|0																																																																																																																											BONUS:VAR|EclipseMagicLvlMax|var("EclipseClassLvl")+2
 Rune Casting Activated					CATEGORY:Internal			BONUS:ABILITYPOOL|Rune Casting Stat Choice|1
-Character Points Total					CATEGORY:Special Ability	TYPE:ExclipseAbilityOutput	DESC:Character Points Total %1|CharacterPointsTotal	BENEFIT:Character Points Total %1|CharacterPointsTotal	DEFINE:CharacterPointsTotal|0	
+Character Points Total	KEY:Character Points Total	SORTKEY:01_A			CATEGORY:Special Ability	TYPE:EclipseAbilityOutput	DESC:Character Points Total %1|CharacterPointsTotal	BENEFIT:Character Points Total %1|CharacterPointsTotal	DEFINE:CharacterPointsTotal|0	
+#CharacterPointsTotal var is to track TOTAL CP the character should have, but not including points deducted from HD. This gives
+#	a clean picture of the Total CP. This Does Include Bonuses and Penalties
 
-CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Dabbler deducts %1 CP|2*var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Dabbler (-2)
+
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Bonus Feats have added %1 CP|CPBonusFeat|PREVARGTEQ:CPBonusFeat,1
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Disadvantages have added %1 CP|var("Disadvantage Points")|PREABILITY:1,CATEGORY=Special Ability,TYPE.Disadvantage
+
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Duties adds %1 CP|2*var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Duties (+2)
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Fast Learner adds %1 CP|var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Fast Learner (+1)
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Fast Learner adds %1 CP|2*var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Fast Learner (Other)
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Fast Learner adds %1 CP|2*var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Fast Learner (Specialized)
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Fast Learner adds %1 CP|2*(2+var("EclipseClassLvl"))|PREABILITY:1,CATEGORY=Special Ability,Fast Learner Level Zero
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Restrictions adds %1 CP|count("ABILITIES","CATEGORY=Special Ability","NAME=Character Creation Restrictions"))|PREABILITY:1,CATEGORY=Special Ability,Eclipse Restrictions
 
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Very Limited Spell List adds %1 CP|var("EclipseClassLvl")*1/2|PREABILITY:1,CATEGORY=Special Ability,Very Limited Spell List (+1/2 CP)
 CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Untrained deducts %1 CP|6*var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Untrained (-6)
-CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Restrictions adds %1 CP|count("ABILITIES","CATEGORY=Special Ability","NAME=Character Creation Restrictions"))|PREABILITY:1,CATEGORY=Special Ability,Eclipse Restrictions
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:Dabbler deducts %1 CP|2*var("EclipseClassLvl")|PREABILITY:1,CATEGORY=Special Ability,Dabbler (-2)
+
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 0 adds %1 CP|4*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d0"))|PREABILITY:1,CATEGORY=Internal,HD Taken d0
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 2 adds %1 CP|2*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d2"))|PREABILITY:1,CATEGORY=Internal,HD Taken d2
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 4 is 0 CP|PREABILITY:1,CATEGORY=Internal,HD Taken d4
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 6 deducts %1 CP|2*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d6"))|PREABILITY:1,CATEGORY=Internal,HD Taken d6
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 8 deducts %1 CP|4*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d8"))|PREABILITY:1,CATEGORY=Internal,HD Taken d8
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 10 deducts %1 CP|6*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d10"))|PREABILITY:1,CATEGORY=Internal,HD Taken d10
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 12 deducts %1 CP|8*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d12"))|PREABILITY:1,CATEGORY=Internal,HD Taken d12
+CATEGORY=Special Ability|Character Points Total.MOD	BENEFIT:HD 20 deducts %1 CP|16*count("ABILITIES","CATEGORY=Internal","NAME=HD Taken d20"))|PREABILITY:1,CATEGORY=Internal,HD Taken d20
+
+
+
+HD Taken d0				CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d2				CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d4				CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d6				CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d8				CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d10			CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d12			CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+HD Taken d20			CATEGORY:Internal	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+
+
+
 
 # Additional trackers
 Shapeshift Tracker					CATEGORY:Internal Abilities											DEFINE:ShapeshiftGrowth|0	DEFINE:ShapeshiftShrink|0																																																																																																																										BONUS:VAR|ShapeshiftGrowth|1*count("ABILITIES","CATEGORY=Special Ability","NAME=Shapeshift / Growth")	BONUS:VAR|ShapeshiftShrink|1*count("ABILITIES","CATEGORY=Special Ability","NAME=Shapeshift / Shrink")

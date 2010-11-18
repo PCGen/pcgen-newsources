@@ -4,7 +4,8 @@
 # Ability Name							Category of Ability		Ability									Bonus to Ability Pool
 CATEGORY=Special Ability|All Automatic Abilities.MOD						ABILITY:Internal Abilities|AUTOMATIC|RSRD Feat Gain Bypass
 # This Removes the Level Based FEAT and Replaces it with 6 CP automatically. Assuming characters gain 1 at 1st level, and 1 every 3rd level. Also figured in the Human Racial Bonus.
-RSRD Feat Gain Bypass						CATEGORY:Internal Abilities											BONUS:ABILITYPOOL|FEAT|-(TL/3)	BONUS:ABILITYPOOL|FEAT|-1|PRERACE:1,Human	BONUS:ABILITYPOOL|FEAT|-1	BONUS:ABILITYPOOL|Character Points|6	BONUS:ABILITYPOOL|Character Points|6*(TL/3)	BONUS:ABILITYPOOL|Character Points|6|PRERACE:1,Human
+RSRD Feat Gain Bypass						CATEGORY:Internal Abilities											BONUS:ABILITYPOOL|FEAT|-(TL/3)	BONUS:ABILITYPOOL|FEAT|-1|PRERACE:1,Human	BONUS:ABILITYPOOL|FEAT|-1	BONUS:ABILITYPOOL|Character Points|var("CPBonusFeat")	BONUS:VAR|CPBonusFeat|6	BONUS:VAR|CPBonusFeat|6*(TL/3)	BONUS:VAR|CPBonusFeat|6|PRERACE:1,Human	DEFINE:CPBonusFeat|0	BONUS:VAR|CharacterPointsTotal|var("CPBonusFeat")
+
 
 #COMMENT: Inital to set up; Base to Display and Hold DEFINES? 
 
@@ -18,7 +19,6 @@ RSRD Feat Gain Bypass						CATEGORY:Internal Abilities											BONUS:ABILITYPO
 
 
 
-###Block: Base Caster Level
 #COMMENT: These are used to set up the Caster Class. They have Both the ADD and BONUS:PCLEVEL. Establish the DEFINES. These are Free to Buy as they are only required to "Set Up". Until the Rest is Bought they'll still be level 0.
 # Ability Name				Sort Key					Unique Key					Category of Ability		Type					Define					Add 						Caster level								Caster level bonus									Modify VAR																																				Cost
 Initial Paladin Magic Level		SORTKEY:Magic_Level_01_Paladin		KEY:Initial Paladin Magic Level	CATEGORY:Special Ability	TYPE:MagicLevels.BaseLevel	DEFINE:PaladinCasterLevel|0		ADD:SPELLCASTER|Paladin			BONUS:CASTERLEVEL|Paladin|PaladinCasterLevel			BONUS:PCLEVEL|Paladin|var("PaladinMagicLvls")-1	BONUS:PCLEVEL|Paladin|3	BONUS:VAR|PaladinCasterLevel|-var("PaladinMagicLvls")				BONUS:VAR|PaladinCasterLevel|var("PointBuyPaladinCasterLvl")+var("CasterLevelAll")					COST:0
@@ -120,6 +120,7 @@ Wilder Magic Level						SORTKEY:Magic_Level_02_Psy_C									CATEGORY:Special Ab
 
 
 z Wizard Specialist Forbidden Schools	KEY:Wizard Specialist Forbidden Schools	SORTKEY:Magic_Level_03_Wizard	OUTPUTNAME:Wizard Specialist Forbidden Schools	CATEGORY:Special Ability	TYPE:MagicLevels																																														DEFINE:ForbidIllusion|0	DEFINE:ForbidEnchantment|0	DEFINE:ForbidConjuration|0	DEFINE:ForbidEvocation|0	DEFINE:ForbidNecromancy|0	DEFINE:ForbidAbjuration|0	DEFINE:ForbidDivination|0	DEFINE:ForbidTransmutation|0	STACK:YES	MULT:YES	CHOOSE:STRING|ForbidIllusion|ForbidEnchantment|ForbidConjuration|ForbidEvocation|ForbidNecromancy|ForbidAbjuration|ForbidDivination|ForbidTransmutation	SELECT:1																		BONUS:VAR|%LIST|1	COST:0
+
 
 
 
