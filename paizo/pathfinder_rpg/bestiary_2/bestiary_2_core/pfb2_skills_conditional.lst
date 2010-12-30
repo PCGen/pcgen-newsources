@@ -1,0 +1,15 @@
+# CVS $Revision: 12957 $ $Author: zaister $ -- Wed Nov 10 10:50:53 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8ddb	SOURCEDATE:2010-12
+# Original Entry by: Stefan Radermacher
+
+###Block: Conditional Skills for output only
+# Skill Name		Key Stat	Untrained?		Classes	Type			Visible
+Stealth (In deserts)	KEYSTAT:DEX	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT
+
+###Block: Skill .MODs
+# Skill Name	Bonus to skill							Bonus to skill rank
+Stealth.MOD		BONUS:SKILL|Stealth (In deserts)|SKILL.Stealth.MISC	BONUS:SKILLRANK|Stealth (In deserts)|SKILLRANK=Stealth|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),var("SKILL.Stealth.MISC")
+
+#
+# End
+#
