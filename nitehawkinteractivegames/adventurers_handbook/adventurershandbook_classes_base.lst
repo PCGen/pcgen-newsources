@@ -12,7 +12,7 @@ CLASS:Bounty Hunter	PREALIGN:LN,LE,TN,NE,CN,CE	PRESTAT:2,CHA=13,CON=13
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Bounty Hunter	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Diplomacy|Gather Information|Hide|Intimidate|Jump|Knowledge (Trapmaking)|Listen|Move Silently|Ride|Use Rope|Spot|Search|Sense Motive|Swim|Survival
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies|Bounty Hunter Profciencies	AUTO:FEAT|Martial Weapon Proficiency|Simple Weapon Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies|Bounty Hunter Profciencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
 1																						AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
 ###Block:Level Progression
 1															AUTO:FEAT|Track
@@ -29,11 +29,11 @@ CLASS:Bounty Hunter	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Diplomacy|Gather Informat
 # Class Name	Hit Dice	Source Page
 CLASS:Outcast	HD:6		SOURCEPAGE:p.38
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Outcast	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Concentration|TYPE.Craft|Disable Device|Disguise|Handle Animal|Hide|Intimidate|Jump|TYPE.Knowledge|Listen|Move Silently|Open Lock|TYPE.Profession|Sailing|Search|Sense Motive|Speak Language|Spellcraft|Spot|Swim|Tumble|Use Magic Device|Use Rope|Survival
+CLASS:Outcast	STARTSKILLPTS:6	CSKILL:Balance|Bluff|Climb|Concentration|TYPE=Craft|Disable Device|Disguise|Handle Animal|Hide|Intimidate|Jump|TYPE=Knowledge|Listen|Move Silently|Open Lock|TYPE=Profession|Sailing|Search|Sense Motive|Speak Language|Spellcraft|Spot|Swim|Tumble|Use Magic Device|Use Rope|Survival
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outcast|CL
 ###Block:Proficiencies
-1	BONUS:ABILITYPOOL|Outcast Exotic Weapon|1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency|Simple Weapon Proficiency
+1	BONUS:ABILITYPOOL|Outcast Exotic Weapon|1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
 1																								AUTO:FEAT|Armor Proficiency (Light)
 ###Block: Level Progression
 5	CAST:1		KNOWN:0		BONUS:SPELLKNOWN|CLASS=Outcast;LEVEL=0|INT
@@ -53,30 +53,32 @@ CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outca
 19	CAST:4,4,4,3,2	KNOWN:3,3,2,2,1
 20	CAST:5,4,4,4,3	KNOWN:3,3,3,2,2
 
-#COMMENT: Need to implement the Weapon and Armor Profs, usual implementation.
-
 #COMMENT: Can't implement BAB progression properly, third iteration wonky.
 #		Not liking the wonky progression.
 CLASS:Shaman (Alternate)	HD:6	EXCLASS:Ex-Shamans	TYPE:Base.PC	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|var("ShamanBAB")|TYPE=Base.REPLACE	SOURCEPAGE:p.42	
 CLASS:Shaman (Alternate)	PREALIGN:LG,LN,TN,NG,CG
-CLASS:Shaman (Alternate)	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Knowledge (Dreams)|Knowledge (Nature)|Knowledge (Spirits)|Spellcraft|Survival
+CLASS:Shaman (Alternate)	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE=Craft|Diplomacy|Handle Animal|Heal|Knowledge (Dreams)|Knowledge (Nature)|Knowledge (Spirits)|Spellcraft|Survival
 CLASS:Shaman (Alternate)	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:SPELLCASTER|Shaman (Alternate)|CL	
-1		ABILITY:Special Ability|AUTOMATIC|Animal Companion|Dance of the Shaman|Interpret Dream|Wild Empathy|Turn Undead|All Automatic Proficiencies	BONUS:VAR|DanceOfTheShamanBonus|2		DEFINE:ShamanBAB|0		AUTO:FEAT|Simple Weapon Proficiency
-1																																						AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
-2		ABILITY:Special Ability|AUTOMATIC|Woodland Stride	BONUS:VAR|ShamanBAB|1
+###Block:Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
+#Shamans are proficient with all simple weapons, but may not use any edged weapons unless allowed or required by their deity. They are proficient with light and medium armors but are restricted to only padded, leather, studded leather, bone, or hide. They are skilled with shields but must use only wooden ones.
+###Block: Level Progression
+1									ABILITY:Special Ability|AUTOMATIC|Animal Companion|Dance of the Shaman|Interpret Dream|Wild Empathy|Turn Undead|All Automatic Proficiencies	BONUS:VAR|DanceOfTheShamanBonus|2		DEFINE:ShamanBAB|0		
+2		BONUS:VAR|ShamanBAB|1				ABILITY:Special Ability|AUTOMATIC|Woodland Stride	
 3		BONUS:VAR|ShamanBAB|1
 4		BONUS:VAR|ShamanBAB|1
-5		ABILITY:Special Ability|AUTOMATIC|Trackless Step|War Summoning	BONUS:VAR|DanceOfTheShamanBonus|(CL/5)*2
+5		BONUS:VAR|DanceOfTheShamanBonus|(CL/5)*2	ABILITY:Special Ability|AUTOMATIC|Trackless Step|War Summoning
 6		BONUS:VAR|ShamanBAB|1
 7		BONUS:VAR|ShamanBAB|1
-9		ABILITY:Special Ability|AUTOMATIC|Commune with Nature	BONUS:VAR|ShamanBAB|1
+9		BONUS:VAR|ShamanBAB|1				ABILITY:Special Ability|AUTOMATIC|Commune with Nature
 10		BONUS:VAR|ShamanBAB|1
 12		BONUS:VAR|ShamanBAB|1
 14		BONUS:VAR|ShamanBAB|1
 16		BONUS:VAR|ShamanBAB|1
-17		ABILITY:Special Ability|AUTOMATIC|Astral Projection
-18		ABILITY:Special Ability|AUTOMATIC|Ageless Being	BONUS:VAR|ShamanBAB|1
-20		ABILITY:Special Ability|AUTOMATIC|Improved Astral Projection	BONUS:VAR|ShamanBAB|1
+17									ABILITY:Special Ability|AUTOMATIC|Astral Projection
+18		BONUS:VAR|ShamanBAB|1				ABILITY:Special Ability|AUTOMATIC|Ageless Being
+20		BONUS:VAR|ShamanBAB|1				ABILITY:Special Ability|AUTOMATIC|Improved Astral Projection
 #Block: Spell Progression
 1	CAST:4,1
 2	CAST:4,2
@@ -115,13 +117,11 @@ CLASS:Ex-Shamans	HD:6	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BO
 18		BONUS:VAR|ShamanBAB|1
 20		BONUS:VAR|ShamanBAB|1
 
-
-
-
 CLASS:Witch	HD:4	TYPE:Base.PC	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	SOURCEPAGE:p.48
 CLASS:Witch	PREALIGN:LN,NG,TN,CN,NE
 CLASS:Witch	STARTSKILLPTS:2	CSKILL:Bluff|Concentration|Craft (Alchemy)|Craft (Apothecary)|Diplomacy|Heal|Intimidate|Knowledge (Cultures)|Listen|Scry|Search|Seduction|Spellcraft|Spot|Star Reading|Survival|Witchcraft
 CLASS:Witch	SPELLSTAT:INT	SPELLTYPE:Arcane	BONUS:SPELLCASTER|Witch|CL
+###Block:Proficiencies
 1		ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
 #Block: Level Progression
 1		ABILITY:Special Ability|AUTOMATIC|Summon Familiar|Scribe Scroll|Empowered Charm	AUTO:FEAT|Scribe Scroll	BONUS:VAR|EmpoweredCharmBonus|2	DEFINE:EmpoweredCharmBonus|0	BONUS:ABILITYPOOL|Witch Favored Race|1
@@ -155,11 +155,12 @@ CLASS:Witch	SPELLSTAT:INT	SPELLTYPE:Arcane	BONUS:SPELLCASTER|Witch|CL
 
 CLASS:Mentalist	TYPE:Base.PC	HD:8	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude|CL/2+2		SOURCEPAGE:p.53
 CLASS:Mentalist	!PREALIGN:CG,CN,CE
-CLASS:Mentalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Balance|Climb|Concentration|TYPE.Craft|Jump|Spot|Stabilize Self|Swim|Tumble|Use Psionic Device
-1	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies
+CLASS:Mentalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Balance|Climb|Concentration|TYPE=Craft|Jump|Spot|Stabilize Self|Swim|Tumble|Use Psionic Device
+###Block:Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency Output	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies
 1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
 1	AUTO:FEAT|Shield Proficiency
-#Armor and Weapons: A Mentalist is profi cient with simple and martial weapons in addition to all light and medium armor as well as shields.
+###Block: Level Progression
 1	ABILITY:Special Ability|AUTOMATIC|Mentalist Power Points|Mentalist Powers Known	BONUS:VAR|MentalistAltLvl|CL	BONUS:VAR|MentalistPowerPoints|CL*var("MentalistPowerPointsVariable")|TYPE=Base	BONUS:VAR|MentalistPowersKnown|CL+1
 1	BONUS:ABILITYPOOL|Mentalist Feat|(CL/3)+1
 2	BONUS:ABILITYPOOL|Mentalist Exotic Weapon|1
@@ -168,35 +169,12 @@ CLASS:Mentalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Balance|Climb|Concentration|
 
 
 CLASS:Psionist (Alternate)	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	SOURCEPAGE:p.57
-CLASS:Psionist (Alternate)	STARTSKILLPTS:4	CSKILL:Autohypnosis|Balance|Bluff|Concentration|TYPE.Craft|Diplomacy|Knowledge (Psionics)|Listen|Psicraft|Remote View|Sense Motive|Stabilize Self|Tumble
+CLASS:Psionist (Alternate)	STARTSKILLPTS:4	CSKILL:Autohypnosis|Balance|Bluff|Concentration|TYPE=Craft|Diplomacy|Knowledge (Psionics)|Listen|Psicraft|Remote View|Sense Motive|Stabilize Self|Tumble
 #Block: Base
 1	ABILITY:Special Ability|AUTOMATIC|Psionist Alt ~ Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Armor Proficiency (Light)
 #Block: Starting
 1	ABILITY:Special Ability|AUTOMATIC|Psionist Power Points|Psionist Alt ~ Powers Known|Psionist Alt ~ Bonus Language	BONUS:VAR|PsionistAltLvl|CL	BONUS:VAR|PsionicPowerPointsAlt|CL*var("PSPPowerPointsVariable")|TYPE=Base
 #Block: Level Progression
-1		ABILITY:Special Ability|AUTOMATIC|PsiCrystal|Psionist Alt ~ Bonus Language	BONUS:VAR|PsiBonusLang|1	BONUS:ABILITYPOOL|Psionist Feat Choice|PsiBonusFeat
-5			BONUS:VAR|PsiBonusLang|CL/5
-6			BONUS:VAR|PsiBonusFeat|CL/6
-
-
-#1		#
-#2		#
-#3		#
-#4		#
-#5		#
-#6		#
-#7		#
-#8		#
-#9		#
-#10		#
-#11		#
-#12		#
-#13		#
-#14		#
-#15		#
-#16		#
-#17		#
-#18		#
-#19		#
-#20		#
-
+1	BONUS:VAR|PsiBonusLang|1	ABILITY:Special Ability|AUTOMATIC|PsiCrystal|Psionist Alt ~ Bonus Language	BONUS:ABILITYPOOL|Psionist Feat Choice|PsiBonusFeat
+5	BONUS:VAR|PsiBonusLang|CL/5
+6	BONUS:VAR|PsiBonusFeat|CL/6
