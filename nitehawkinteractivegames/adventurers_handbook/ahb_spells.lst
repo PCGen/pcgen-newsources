@@ -1,6 +1,6 @@
 # CVS $Revision$ $Author$ -- Thu Jan 28 10:02:54 2010 -- reformated by prettylst.pl v1.39 (build 10232)
 SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
-#Original Entry by: Tir Gwaith
+#Original Entry by: Tir Gwaith and Andrew Maitland
 
 
 # Spell Name				Classes of caster									Domains granting the spell	School				Sub-School			Spell Descriptors			Components			Casting Time			Range					Target Area or Effect											Duration								Save Info						Spell Resistance		Cost		XP Cost	Source Page
@@ -43,6 +43,37 @@ Temporary Permanency			CLASSES:Sorcerer,Wizard,Witch=4											SCHOOL:Universa
 Tent						CLASSES:Bard,Sorcerer,Wizard=3|Druid,Outcast,Ranger,Shaman=2						SCHOOL:Conjuration		SUBSCHOOL:Creation						COMPS:V, S			CASTTIME:5 minutes		RANGE:Touch				TARGETAREA:Campsite											DURATION:(6+CASTERLEVEL) hours				SAVEINFO:None					SPELLRES:No							SOURCEPAGE:110
 Tribal Mask					CLASSES:Shaman=3														SCHOOL:Transmutation											COMPS:V, S, F		CASTTIME:1 standard action	RANGE:Personal			TARGETAREA:You												DURATION:(CASTERLEVEL) hours																				SOURCEPAGE:111
 Turn Haunting				CLASSES:Cleric,Shaman=9								DOMAINS:Death=9			SCHOOL:Necromancy												COMPS:V, S, M, DF		CASTTIME:30 minutes		RANGE:Touch				TARGETAREA:(100*CASTERLEVEL) yard radius								DURATION:Instantaneous						SAVEINFO:None					SPELLRES:Yes		COST:1500			SOURCEPAGE:111
+
+# New School Atomicancy Spells
+Densification			SOURCEPAGE:p.112	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Sorcerer,Wizard=6						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Long		TARGETAREA:(CASTERLEVEL/5) creatures, no two of which can be more than 20' apart	DURATION:(CASTERLEVEL) rounds	SAVEINFO:Fortitude negates	SPELLRES:Yes	DESC:Increases body weight.
+Delayed Fusion			SOURCEPAGE:p.113	SCHOOL:Atomicancy	SUBSCHOOL:Energy					CLASSES:Sorcerer,Wizard=9						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Long					DURATION:See text	DESC:Delivers 1d6/level points of explosive damage to a large area up to 5 rounds later.
+Delayed Static Shock		SOURCEPAGE:p.113	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Bard=1|Sorcerer,Wizard=1					COMPS:V, S		CASTTIME:1 standard action	RANGE:Touch		TARGETAREA:1 item	DURATION:Until discharged	SAVEINFO:None	SPELLRES:Yes (harmless)	DESC:Delivers a delayed shock to the target.
+Energy Swarm			SOURCEPAGE:p.113	SCHOOL:Atomicancy	SUBSCHOOL:Energy					CLASSES:Sorcerer,Wizard=8						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Medium	TARGETAREA:1 creature	DURATION:(CASTERLEVEL) rounds	SAVEINFO:None	SPELLRES:Yes (see below)	DESC:Bursts of energy deliver 1d8 points of damage per round and require Concentration checks.
+Freeze Light			SOURCEPAGE:p.114	SCHOOL:Atomicancy	SUBSCHOOL:Energy	DESCRIPTOR:Light		CLASSES:Bard,Druid,Outcast,Ranger,Sorcerer,Wizard,Witch=2	COMPS:V, S		CASTTIME:1 standard action	RANGE:25 ft.	TARGETAREA:25 ft. radius emanation from center of spell	DURATION:(CASTERLEVEL) hours	SAVEINFO:None	SPELLRES:None	DESC:Freezes the movement of light within a 25 ft. radius.
+Fusion				SOURCEPAGE:p.114	SCHOOL:Atomicancy	SUBSCHOOL:Energy					CLASSES:Sorcerer,Wizard=8						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Long					TARGETAREA:1 creature plus (CASTERLEVEL*10) ft. radius spread from target	DURATION:Instantaneous	SAVEINFO:Fortitude half or Reflex quarter (see below)	SPELLRES:Yes	DESC:Delivers 1d6/level points of explosive damage in a large area.
+Intense Static Shock		SOURCEPAGE:p.114	SCHOOL:Atomicancy	SUBSCHOOL:Alter	DESCRIPTOR:Electricity	CLASSES:Bard=2|Sorcerer,Wizard=2					COMPS:S		CASTTIME:1 standard action	RANGE:Long	TARGETAREA:1 creature	DURATION:Instantaneous	SAVEINFO:None	SPELLRES:Yes	DESC:Delivers a damaging static shock of 2d4+2 points of electrical damage.
+Magnetism				SOURCEPAGE:p.115	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Sorcerer,Wizard=1						COMPS:V, S		CASTTIME:1 standard action	RANGE:(20+(CASTERLEVEL*10)) ft.	TARGETAREA:1 item or creature	DURATION:(2+(CASTERLEVEL)) minutes	SAVEINFO:Will negates	SPELLRES:Yes	DESC:Makes the target magnetic.
+Mercury Release			SOURCEPAGE:p.115	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Sorcerer,Wizard=7						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Long	TARGETAREA:One creature	DURATION:Instantaneous	SAVEINFO:Fortitude negates (harmless)	SPELLRES:Yes (harmless)	DESC:Removes all mercury from a body.
+Negative Pulse			SOURCEPAGE:p.115	SCHOOL:Atomicancy	SUBSCHOOL:Energy					CLASSES:Sorcerer,Wizard=4						COMPS:V, S		CASTTIME:1 standard action	RANGE:Long	TARGETAREA:40 ft. radius spread	DURATION:Instantaneous (see below)	SAVEINFO:Reflex half	SPELLRES:Yes	DESC:Sends a wave of negative energy to deal 3d4+4 points of damage, + temporary Constitution drain; heals undead and outsiders of 3d4+4 hp.
+Positive Pulse			SOURCEPAGE:p.116	SCHOOL:Atomicancy	SUBSCHOOL:Energy					CLASSES:Sorcerer,Wizard=4						COMPS:V, S		CASTTIME:1 standard action	RANGE:Long	TARGETAREA:40 ft. radius spread	DURATION:Instantaneous (see below)	SAVEINFO:Reflex half	SPELLRES:Yes	DESC:Sends a wave of positive energy to deal 3d4+4 points of damage to outsiders and undead.
+Protection From Atomicancy	SOURCEPAGE:p.116	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Cleric,Sorcerer,Wizard=3					COMPS:V, S, DF	CASTTIME:1 standard action	RANGE:Touch	TARGETAREA:Creature touched	DURATION:(CASTERLEVEL*10) minutes or until discharged	SAVEINFO:Fortitude negates (harmless)	SPELLRES:Yes (harmless)	DESC:Absorb 12 points/level of damage from atomicancy (energy) spells.
+Protonic Passage			SOURCEPAGE:p.116	SCHOOL:Atomicancy	SUBSCHOOL:Energy					CLASSES:Sorcerer,Wizard=5						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:30 ft.	TARGETAREA:1 creature	DURATION:(CASTERLEVEL*10) minutes	SAVEINFO:Fortitude negates	SPELLRES:Yes	DESC:The target is drained of energy causing 5d6 points of damage + temporary Consititution and Strength drain.
+Quantum Release			SOURCEPAGE:p.117	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Sorcerer,Wizard=3						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Touch	TARGETAREA:Item touched/ up to (CASTERLEVEL)' x (CASTERLEVEL)' x (CASTERLEVEL)' cube	DURATION:(CASTERLEVEL) minutes	SAVEINFO:Will (harmless)	SPELLRES:Yes (harmless)	DESC:Breaks down inorganic objects into small bubbles.
+Resist Atomicancy			SOURCEPAGE:p.117	SCHOOL:Atomicancy	SUBSCHOOL:Alter					CLASSES:Cleric,Sorcerer,Wizard=2					COMPS:V, S, DF	CASTTIME:1 standard action	RANGE:Touch	TARGETAREA:Creature touched	DURATION:(CASTERLEVEL*10) minutes	SAVEINFO:Fortitude negates (harmless)	SPELLRES:Yes (harmless)	DESC:Ignores 10 (or more) points of damage/attack from atomicancy (energy) spells.
+Static Shock			SOURCEPAGE:p.118	SCHOOL:Atomicancy	SUBSCHOOL:Alter	DESCRIPTOR:Electricity	CLASSES:Bard,Sorcerer,Wizard=0					COMPS:S		CASTTIME:1 standard action	RANGE:Medium	TARGETAREA:1 creature	DURATION:Instantaneous	SAVEINFO:Special (see below)	SPELLRES:Yes (harmless)	DESC:Delivers a surprising shock to the target
+Touch of Quick Silver		SOURCEPAGE:p.118	SCHOOL:Atomicancy	SUBSCHOOL:Alter	DESCRIPTOR:Death|Evil	CLASSES:Sorcerer,Wizard=7						COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Long	TARGETAREA:1 creature	DURATION:Instantaneous	SAVEINFO:Fortitude negates	SPELLRES:Yes		DESC:Poisons a target with mercury
+
+
+# New Domain Animal Spirit Spells
+Birds of a Feather	SOURCEPAGE:p.119	SCHOOL:Transmutation	DOMAINS:Animal Spirit=4	CLASSES:Druid=4|Shaman=4	COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLEVEL*10) minutes	DESC:Grants the power of flight while summoning birds of prey.
+Call of the Pack		SOURCEPAGE:p.119	SCHOOL:Transmutation	DOMAINS:Animal Spirit=7	CLASSES:Druid=7|Shaman=7	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:8 hours [D]			DESC:Summons 3d4+4 wolves, plus the caster gains a +2 natural armor bonus to AC, Scent and Trip abilities and movement rate of 50 ft.
+Claws of the Wolverine	SOURCEPAGE:p.120	SCHOOL:Transmutation	DOMAINS:Animal Spirit=2	CLASSES:Druid=2|Shaman=2	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLEVEL*15) minutes	DESC:Provides bone claws dealing 2d4 points of damage
+Eagle Sight			SOURCEPAGE:p.120	SCHOOL:Transmutation	DOMAINS:Animal Spirit=3	CLASSES:Druid=3|Shaman=3	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLEVEL*10) minutes	DESC:+20 insight bonus to Spot skill checks
+Mole Sense			SOURCEPAGE:p.120	SCHOOL:Transmutation	DOMAINS:Animal Spirit=1	CLASSES:Druid=1|Shaman=1	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLEVEL*10) minutes	DESC:Grants the user the Tremorsense ability and the ability to determine direction at will when underground.
+Spirit of the Grizzly	SOURCEPAGE:p.121	SCHOOL:Transmutation	DOMAINS:Animal Spirit=9	CLASSES:Druid=9|Shaman=9	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:Until discharged [D]		DESC:The caster is surrounded by a spiritual bear, which the caster controls as if it were him.
+Spirit of the Night	SOURCEPAGE:p.121	SCHOOL:Transmutation	DOMAINS:Animal Spirit=5	CLASSES:Druid=5|Shaman=5	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLEVEL*10) minutes	DESC:+10 insight bonus to Listen, Spot, Hide, Move Silently and Survival plus the Low-Light Vision ability
+Spirit of the Predator	SOURCEPAGE:p.121	SCHOOL:Transmutation	DOMAINS:Animal Spirit=6	CLASSES:Druid=6|Shaman=6	COMPS:V, S		CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLEVEL*10) minutes	DESC:+10 insight bonus to Listen, Spot and Survival skill checks, caster gains the Evasion and Scent ability and the caster's movement rate is doubled.
+Spirit of the Sea		SOURCEPAGE:p.122	SCHOOL:Transmutation	DOMAINS:Animal Spirit=8	CLASSES:Druid=8|Shaman=8	COMPS:V, S, M, F	CASTTIME:1 standard action	RANGE:Personal	TARGETAREA:You	DURATION:(CASTERLVEL) hour [D]	DESC:The caster gains Water Breathing, Keen Scent abilities for underwater, + 30 insight bonus to Spot and Swim, checks when in the water, and a movement rate of 60 ft when swimming. Summons number of HD of sea animals equal to the caster's level.
 
 
 #Block: Shaman Spells
@@ -225,7 +256,7 @@ Summon Nature's Ally IX.MOD			CLASSES:Shaman=9
 Turn Haunting.MOD			CLASSES:Shaman=9
 
 # Witch Spells
-#0 – level: 
+#0  level: 
 Acid Splash.MOD			CLASSES:Witch=0
 Charming Flare.MOD			CLASSES:Witch=0
 Dancing Lights.MOD			CLASSES:Witch=0
