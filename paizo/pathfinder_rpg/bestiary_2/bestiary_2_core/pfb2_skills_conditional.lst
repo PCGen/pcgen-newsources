@@ -1,14 +1,16 @@
-# CVS $Revision: 12957 $ $Author: zaister $ -- Wed Nov 10 10:50:53 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision: 12957 $ $Author: zaister $ -- Thu Jan 13 14:10:01 2011 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8ddb	SOURCEDATE:2010-12
 # Original Entry by: Stefan Radermacher
 
 ###Block: Conditional Skills for output only
-# Skill Name		Key Stat	Untrained?		Classes	Type			Visible
-Stealth (In deserts)	KEYSTAT:DEX	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT
+# Skill Name			Key Stat	Untrained?		Classes	Type			Visible
+Disguise (As Medium humanoid)	KEYSTAT:CHA	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Disguise (As Medium humanoid).MISC"),SKILL.Disguise.MISC
+Stealth (In deserts)		KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),SKILL.Stealth.MISC
 
 ###Block: Skill .MODs
-# Skill Name	Bonus to skill							Bonus to skill rank
-Stealth.MOD		BONUS:SKILL|Stealth (In deserts)|SKILL.Stealth.MISC	BONUS:SKILLRANK|Stealth (In deserts)|SKILLRANK=Stealth|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),var("SKILL.Stealth.MISC")
+# Skill Name	Bonus to skill									Bonus to skill rank
+Disguise.MOD	BONUS:SKILL|Disguise (As Medium humanoid)|SKILL.Disguise.MISC	BONUS:SKILLRANK|Disguise (As Medium humanoid)|skillinfo("TOTALRANK","Disguise")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Disguise (As Medium humanoid).MISC"),SKILL.Disguise.MISC
+Stealth.MOD		BONUS:SKILL|Stealth (In deserts)|SKILL.Stealth.MISC			BONUS:SKILLRANK|Stealth (In deserts)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),SKILL.Stealth.MISC
 
 #
 # End
