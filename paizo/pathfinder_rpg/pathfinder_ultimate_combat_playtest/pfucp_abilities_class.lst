@@ -1,11 +1,31 @@
 SOURCELONG:Ultimate Combat Playtest		SOURCESHORT:PFUCP		SOURCEWEB:http://paizo.com/pathfinderRPG/v5748btpy8igw		SOURCEDATE:2011-01
 # Original Entry by: Eric Smith (Maredudd)
 
+###Block: Weapon Proficiencies
+# Ability Name						Category of Ability			Type			Visible			Serves As			Automatically Gained Weapon Prof.																									Ability
+All Firearm Weapon Proficiencies	CATEGORY:Special Ability	TYPE:Special	VISIBLE:NO							AUTO:WEAPONPROF|TYPE.Firearm
+
 ###Block: Gunslinger Abilities
-# Ability Name		Unique Key					Category of Ability		Type									Visible	Define																									Description																	Ability							Bonus to Ability Pool					Save checks bonus							Combat bonus					Add to base move															Stat bonus																	Modify VAR																																	Damage Reduction	Source Page		Description of the Benefits
-#Fast Movement		KEY:Fast Movement ~ Barbarian		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ModifyMovement																													DESC:Your land speed is faster than the norm for your race by +10 feet.																																							BONUS:MOVEADD|TYPE=Walk|10|PREVARLT:ENCUMBERANCE,2,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),1																																																								SOURCEPAGE:p.31	BENEFIT:Your land speed is faster than the norm for your race by +10 feet. This benefit applies only when you are wearing no armor, light armor, or medium armor, and not carrying a heavy load.
+# Ability Name		Unique Key		Category of Ability			Type								Visible			Define								Source Page			Description						Starting Kit											Ability							Bonus to Ability Pool					Save checks bonus							Combat bonus					Add to base move															Stat bonus																	Modify VAR																																	Damage Reduction	Source Page		Description of the Benefits
+Firearm								CATEGORY:Internal			TYPE:Internal		VISIBLE:NO																												KIT:1|Gunslinger Pistol Starter Kit|Gunslinger Musket Starter Kit
+Grit								CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES		DEFINE:MaxGrit|0					SOURCEPAGE:p.2		DESC:TBD				BONUS:VAR|MaxGrit|WIS
 Deeds
-Firearms
-Grit
-Brave and Tough
-Gun Training
+Brave and Tough						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES		DEFINE:BraveandToughSaveBonus|0		SOURCEPAGE:p.3		DESC:You gains a +%1 bonus on Fortitude saving throws, and a +%2 bonus on Will saving throws against fear.|BraveandToughSaveBonus|BraveandToughSaveBonus	BONUS:VAR|BraveandToughSaveBonus|1+(CL-1)/4		BONUS:CHECKS|Fortitude|BraveandToughSaveBonus
+Gun Training						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											SOURCEPAGE:p.5		DESC:TBD		MULT:YES	CHOOSE:WEAPONPROFS|LIST		BONUS:WEAPONPROF=%LIST|TOHIT|1		BONUS:WEAPONPROF=%LIST|DAMAGE|DEX	BENEFIT:You gain a +1 bonus on all attack rolls you make using the selected weapon.
+True Grit							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES											SOURCEPAGE:p.5		DESC:You pick two deeds that you have access to and that you must spend grit to perform for 1 less grit point (minimum 0). If the number of grit points to perform the deed is reduced to 0, you can perform this deed as long as you have at least 1 grit point.
+
+## Deeds
+# Ability Name		Unique Key		Category of Ability			Type					Visible			Prereq		Define								Source Page			Description						Starting Kit											Ability							Bonus to Ability Pool					Save checks bonus							Combat bonus					Add to base move															Stat bonus																	Modify VAR																																	Damage Reduction	Source Page		Description of the Benefits
+Leap for Cover						CATEGORY:Special Ability	TYPE:GunslingerDeed		VISIBLE:YES		PRECLASS:1,
+Deadeye
+Quick Clear
+Pistol-whip
+Gunslinger Initiative
+Covering Shot
+Targeting
+Bleeding Wound
+Utility Shot
+Startling Shot
+Expert Loading
+Stunning Shot
+Deadly Shot
