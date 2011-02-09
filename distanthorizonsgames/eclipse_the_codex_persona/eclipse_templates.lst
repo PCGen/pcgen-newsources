@@ -83,10 +83,10 @@ Positive Level (+5)																BONUS:ABILITYPOOL|Character Points|30			BONUS
 
 
 # Template Levels - Grant Points to a Separate Pool for easier Selections - These are for template level creation.
-Eclipse ~ Template Level +1							LEVELADJUSTMENT:1						BONUS:ABILITYPOOL|Template Character Points|32
-Eclipse ~ Template Level +2							LEVELADJUSTMENT:2						BONUS:ABILITYPOOL|Template Character Points|32*2
-Eclipse ~ Template Level +3							LEVELADJUSTMENT:3						BONUS:ABILITYPOOL|Template Character Points|32*3
-Eclipse ~ Template Level +4							LEVELADJUSTMENT:4						BONUS:ABILITYPOOL|Template Character Points|32*4
+Eclipse ~ Template Level +1							LEVELADJUSTMENT:1						BONUS:ABILITYPOOL|Template Character Points|32*2
+Eclipse ~ Template Level +2							LEVELADJUSTMENT:2						BONUS:ABILITYPOOL|Template Character Points|32*3
+Eclipse ~ Template Level +3							LEVELADJUSTMENT:3						BONUS:ABILITYPOOL|Template Character Points|32*4
+Eclipse ~ Template Level +4							LEVELADJUSTMENT:4						BONUS:ABILITYPOOL|Template Character Points|32*5
 
 
 # This allows for extra HD for Familiars or any companion for that matter, designed to work with the Wealth Templates and a workaround for unusual designs
@@ -110,7 +110,12 @@ Shapeshift // Dire Two Sizes		VISIBLE:NO			BONUS:SIZEMOD|NUMBER|2|PREAPPLY:ANYPC
 
 Spirit Fetch Template		ABILITY:Special Ability|AUTOMATIC|TYPE.SpiritFetchTemplate
 
+# If an Ability grants bonuses to a Skill, that SHOULD affect Rune Casting, this can be used to make up
+Bonus to Rune Casting ~ Intelligence	BONUS:SKILL|TYPE.RuneCasting|INT	DESC:Allow Intelligence to Bonus Rune Casting if being granted somehow
+Bonus to Rune Casting ~ Wisdom		BONUS:SKILL|TYPE.RuneCasting|WIS	DESC:Allow Wisdom to Bonus Rune Casting if being granted somehow
+Bonus to Rune Casting ~ Charisma		BONUS:SKILL|TYPE.RuneCasting|CHA	DESC:Allow Charisma to Bonus Rune Casting if being granted somehow
 
+Bonus to Wisdom Skills ~ Charisma		BONUS:SKILL|TYPE.Wisdom|CHA
 
 HD4L1		VISIBLE:NO	LEVELADJUSTMENT:-1
 HD4L2		VISIBLE:NO	LEVELADJUSTMENT:-1
