@@ -1,0 +1,21 @@
+SOURCELONG:Psionics Unleashed	SOURCESHORT:PsU	SOURCEWEB:TBD
+
+#Psionic			VISIBLE:EXPORT	ABILITY:Special Ability|AUTOMATIC|Psionic	SUBRACE:YES	RACESUBTYPE:Psionic
+#** Removed and Replaced with IsPsionic variable, since the template was inappropriately removed.  Use tags below instead.
+#** DEFINE:IsPsionic|0	BONUS:VAR|IsPsionic|1	ABILITY:Special Ability|AUTOMATIC|Psionic
+Psionically Focused	VISIBLE:DISPLAY	BONUS:VAR|PsionicFocusActive|1|PREAPPLY:PC	PREVARGTEQ:TotalPowerPoints,1	TEMPDESC:Character is psionically focused.
+Activate Size Changing	VISIBLE:DISPLAY	ABILITY:Special Ability|AUTOMATIC|Size Changing	ABILITY:Special Ability|AUTOMATIC|CM Size Changing
+
+###BLOCK: Racial Subtype Templates
+Aberrant	VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Aberrant
+Insectoid	VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Insectoid
+Maenad	VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Maenad
+Xeph		VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Xeph
+
+
+###BLOCK: Dromite Chitin
+Dromite Chitin			VISIBLE:NO	TEMPLATE:CHOOSE:Cold Resist Chitin|Electricity Resist Chitin|Fire Resist Chitin|Sonic Resist Chitin	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
+Cold Resist Chitin		VISIBLE:NO	BONUS:VAR|ColdResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Cold
+Fire Resist Chitin		VISIBLE:NO	BONUS:VAR|FireResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Fire
+Electricity Resist Chitin	VISIBLE:NO	BONUS:VAR|ElectricityResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance To Electricity
+Sonic Resist Chitin		VISIBLE:NO	BONUS:VAR|SonicResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Sonic
