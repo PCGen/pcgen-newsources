@@ -1,5 +1,5 @@
-# CVS $Revision$ $Author$ -- Sun Jan 24 17:22:31 2010 -- reformated by prettylst.pl v1.39 (build 10232)
-SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
+# CVS $Revision$ $Author$ -- Fri Apr 22 17:00:42 2011 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Adventurer's Handbook	SOURCESHORT:AHB	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
 #Original Entry by: Tir Gwaith
 
 # At some point, prob. good idea to combine the different Weapon Familiarity objects with multiple TYPEs.
@@ -23,8 +23,12 @@ Raised in Dwarven community															CATEGORY:Special Ability	TYPE:Internal
 Not raised in Dwarven community														CATEGORY:Special Ability	TYPE:Internal.HalfDwarfEarlyLife	VISIBLE:DISPLAY																																																																																									SOURCEPAGE:p.15
 
 ###Block: Kiriton abilities
-# Ability Name		Output Name															Category of Ability		Type				Visible	Bonus to skill																																															Source Page		Temporary effect description
-Kiriton Artistic Skills	OUTPUTNAME:+1 racial bonus to Craft focusing on artistic pursuits such as artistry or sculpting	CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:YES	BONUS:SKILL|Craft (Armorsmithing),Craft (Blacksmithing),Craft (Metalworking),Craft (Stonemasonry),Craft (Stoneworking),Craft (Weaponsmithing),Craft (Gemcutting),Craft (Lapidary),Craft (Stonemasonry),Craft (Whitesmithing)|1|TYPE=Racial	BONUS:SKILL|TYPE.Craft|1|TYPE=Racial|PREAPPLY:PC	SOURCEPAGE:p.14	TEMPDESC:Adjusts Craft skill bonuses by 1
+# Ability Name		Output Name															Category of Ability		Type				Visible	Move		Ability																											Bonus to skill																																															Modify VAR				Source Page		Temporary effect description
+Kiriton Artistic Skills	OUTPUTNAME:+1 racial bonus to Craft focusing on artistic pursuits such as artistry or sculpting	CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:YES																															BONUS:SKILL|Craft (Armorsmithing),Craft (Blacksmithing),Craft (Metalworking),Craft (Stonemasonry),Craft (Stoneworking),Craft (Weaponsmithing),Craft (Gemcutting),Craft (Lapidary),Craft (Stonemasonry),Craft (Whitesmithing)|1|TYPE=Racial	BONUS:SKILL|TYPE.Craft|1|TYPE=Racial|PREAPPLY:PC						SOURCEPAGE:p.14	TEMPDESC:Adjusts Craft skill bonuses by 1
+Kiriton Flight																		CATEGORY:Special Ability	TYPE:Racial							ABILITY:Special Ability|AUTOMATIC|Kiriton Flight (Good)|PREVAREQ:KiritonFlightMan,0	ABILITY:Special Ability|AUTOMATIC|Kiriton Flight (Poor)|PREVAREQ:KiritonFlightMan,1
+#
+Kiriton Flight (Good)																	CATEGORY:Special Ability							MOVE:Fly,40																																																																														BONUS:VAR|Maneuverability|4
+Kiriton Flight (Poor)																	CATEGORY:Special Ability							MOVE:Fly,20																																																																														BONUS:VAR|Maneuverability|2
 
 
 ###Block: Sslithrak abilities

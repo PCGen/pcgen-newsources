@@ -1,5 +1,5 @@
-# CVS $Revision$ $Author$ -- Sat Jan 23 08:38:36 2010 -- reformated by prettylst.pl v1.39 (build 10232)
-SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
+# CVS $Revision$ $Author$ -- Fri Apr 22 15:38:49 2011 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Adventurer's Handbook	SOURCESHORT:AHB	SOURCEWEB:http://www.nitehawk-games.biz/products/ahb.html	SOURCEDATE:06-2005
 #Original Entry by: Tir-Gwaith
 
 #Not implemented at this time:
@@ -12,7 +12,8 @@ SOURCELONG:The Adventurer's Handbook	SOURCESHORT:AdHb	SOURCEWEB:http://www.niteh
 #	If you have 5 or more ranks of Knowledge (Agriculture), you get a +2 bonus on all Knowledge (Nature) checks involving plants.
 #	If you have 5 or more ranks of Dragon Lore, you get a +2 bonus on  Ride checks when riding a dragon-type creature.
 #	If you have 5 or more ranks of Use Rope, you get a +2 bonus on strapping in  Ride checks.
-
+#
+#	Conditionals that might be useful, but can be skipped for a first pass.
 
 ###Block: New skills
 # Skill Name		Key Stat	Untrained?		Skill Penalty Apply	Exclusive?		Classes			Type			Source Page		Bonus to skill
@@ -27,33 +28,34 @@ Witchcraft			KEYSTAT:INT	USEUNTRAINED:NO												TYPE:Intelligence	SOURCEPAGE
 
 
 ###Block: Craft/Knowledge/Profession subskills
-# Skill Name			Key Stat	Untrained?		Type					Source Page		Bonus to skill
-Craft (Apothecary)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.68	BONUS:SKILL|Craft (Alchemy)|SynergyBonus|PRESKILL:1,Craft (Apothecary)=5
-Craft (Cooking)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.70	BONUS:SKILL|Profession (Chef)|SynergyBonus|PRESKILL:1,Craft (Cooking)=5
-Craft (Gemcutting)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.70	BONUS:SKILL|Craft (Lapidary)|SynergyBonus|PRESKILL:1,Craft (Gemcutting)=5
-Craft (Lapidary)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.70
-Craft (Whitesmithing)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.71	BONUS:SKILL|Craft (Blacksmithing)|SynergyBonus|PRESKILL:1,Craft (Whitesmithing)=5
-Craft (Whittling)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.71	BONUS:SKILL|Craft (Carpentry)|SynergyBonus|PRESKILL:1,Craft (Whittling)=5
+# Skill Name				Key Stat	Untrained?		Type					Source Page		Bonus to skill
+Craft (Apothecary)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.68	BONUS:SKILL|Craft (Alchemy)|SynergyBonus|PRESKILL:1,Craft (Apothecary)=5
+Craft (Cooking)				KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.70	BONUS:SKILL|Profession (Chef)|SynergyBonus|PRESKILL:1,Craft (Cooking)=5
+Craft (Gemcutting)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.70	BONUS:SKILL|Craft (Lapidary)|SynergyBonus|PRESKILL:1,Craft (Gemcutting)=5
+Craft (Lapidary)				KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.70
+Craft (Whitesmithing)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.71	BONUS:SKILL|Craft (Blacksmithing)|SynergyBonus|PRESKILL:1,Craft (Whitesmithing)=5
+Craft (Whittling)				KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Craft		SOURCEPAGE:p.71	BONUS:SKILL|Craft (Carpentry)|SynergyBonus|PRESKILL:1,Craft (Whittling)=5
 #
-Knowledge (Agriculture)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73	BONUS:SKILL|Profession (Farmer)|SynergyBonus|PRESKILL:1,Knowledge (Agriculture)=5
-Knowledge (Dreams)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73
-Knowledge (Dragons)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73	BONUS:SKILL|Dragon Lore|SynergyBonus|PRESKILL:1,Knowledge (Dragons)=5
-Knowledge (Food Preparation)	KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73	BONUS:SKILL|Craft (Cooking),Profession (Chef)|SynergyBonus|PRESKILL:1,Knowledge (Food Preparation)=5
-Knowledge (Gemstones)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74
-Knowledge (Seas and Oceans)	KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74	BONUS:SKILL|Sailing|SynergyBonus|PRESKILL:1,Knowledge (Seas and Oceans)=5
-Knowledge (Spirits)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74	BONUS:SKILL|Knowledge (Incorporeal Undead)|SynergyBonus|PRESKILL:1,Knowledge (Spirits)
-Knowledge (Undead)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74
-Knowledge (Spices and Herbs)	KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.132
+Knowledge (Agriculture)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73	BONUS:SKILL|Profession (Farmer)|SynergyBonus|PRESKILL:1,Knowledge (Agriculture)=5
+Knowledge (Dreams)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73
+Knowledge (Dragons)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73	BONUS:SKILL|Dragon Lore|SynergyBonus|PRESKILL:1,Knowledge (Dragons)=5
+Knowledge (Food Preparation)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.73	BONUS:SKILL|Craft (Cooking),Profession (Chef)|SynergyBonus|PRESKILL:1,Knowledge (Food Preparation)=5
+Knowledge (Gemstones)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74
+Knowledge (Seas and Oceans)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74	BONUS:SKILL|Sailing|SynergyBonus|PRESKILL:1,Knowledge (Seas and Oceans)=5
+Knowledge (Spirits)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74	BONUS:SKILL|Knowledge (Incorporeal Undead)|SynergyBonus|PRESKILL:1,Knowledge (Spirits)
+Knowledge (Undead)			KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.74
+Knowledge (Spices and Herbs)		KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.132
+Knowledge (any specific foods)	KEYSTAT:INT	USEUNTRAINED:NO	TYPE:Intelligence.Knowledge	SOURCEPAGE:p.132
 #
-Profession (Bartender)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.75
-Profession (Bouncer)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.75
-Profession (Chef)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
-Profession (Cooper)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
-Profession (Farmer)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
-Profession (Guide)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76	BONUS:SKILL|Tactics|SynergyBonus|PRESKILL:1,Profession (Guide)=5
-Profession (Innkeeper)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76	BONUS:SKILL|Profession (Bartender)|SynergyBonus|PRESKILL:1,Profession (Innkeeper)=5
-Profession (Soldier)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76	BONUS:SKILL|Tactics,Profession (Bouncer)|SynergyBonus|PRESKILL:1,Profession (Soldier)=5
-Profession (Teamster)		KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
+Profession (Bartender)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.75
+Profession (Bouncer)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.75
+Profession (Chef)				KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
+Profession (Cooper)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
+Profession (Farmer)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
+Profession (Guide)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76	BONUS:SKILL|Tactics|SynergyBonus|PRESKILL:1,Profession (Guide)=5
+Profession (Innkeeper)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76	BONUS:SKILL|Profession (Bartender)|SynergyBonus|PRESKILL:1,Profession (Innkeeper)=5
+Profession (Soldier)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76	BONUS:SKILL|Tactics,Profession (Bouncer)|SynergyBonus|PRESKILL:1,Profession (Soldier)=5
+Profession (Teamster)			KEYSTAT:WIS	USEUNTRAINED:NO	TYPE:Wisdom.Profession		SOURCEPAGE:p.76
 
 ###Block:.MODs
 # Skill Name			Source Page		Bonus to skill
