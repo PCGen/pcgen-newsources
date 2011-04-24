@@ -12,7 +12,7 @@ CLASS:Bounty Hunter	PREALIGN:LN,LE,TN,NE,CN,CE	PRESTAT:2,CHA=13,CON=13
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Bounty Hunter	STARTSKILLPTS:4	CSKILL:Bluff|Climb|Diplomacy|Gather Information|Hide|Intimidate|Jump|Knowledge (Trapmaking)|Listen|Move Silently|Ride|Use Rope|Spot|Search|Sense Motive|Swim|Survival
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies|Bounty Hunter Profciencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies|Bounty Hunter Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
 1																						AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
 ###Block:Level Progression
 1																							AUTO:FEAT|Track
@@ -56,14 +56,16 @@ CLASS:Outcast	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Outca
 #COMMENT: Can't implement BAB progression properly, third iteration wonky.
 #		Not liking the wonky progression.
 
+CLASS:Shaman	VISIBLE:NO
+
 # Class Name			Hit Dice	Type			Ex Class			Source Page		Save checks bonus											Combat bonus							Bonus
-CLASS:Shaman (Alternate)	HD:6		TYPE:Base.PC	EXCLASS:Ex-Shamans	SOURCEPAGE:p.42	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|var("ShamanBAB")|TYPE=Base.REPLACE	BONUS:SPELLCASTER|Shaman (Alternate)|CL
+CLASS:Shaman (Alternate)	HD:6		TYPE:Base.PC	EXCLASS:Ex-Shamans	SOURCEPAGE:p.42	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|var("ShamanBAB")|TYPE=Base.REPLACE	BONUS:CASTERLEVEL|Shaman (Alternate)|CL
 # Class Name			Required AL
 CLASS:Shaman (Alternate)	PREALIGN:LG,LN,TN,NG,CG
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Shaman (Alternate)	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE=Craft|Diplomacy|Handle Animal|Heal|Knowledge (Dreams)|Knowledge (Nature)|Knowledge (Spirits)|Spellcraft|Survival
 # Class Name			Spell Stat		Spell Type
-CLASS:Shaman (Alternate)	SPELLSTAT:WIS	SPELLTYPE:Divine
+CLASS:Shaman (Alternate)	SPELLSTAT:WIS	SPELLTYPE:Divine	SPELLLIST:1|Shaman
 ###Block:Proficiencies
 1	AUTO:FEAT|Simple Weapon Proficiency
 1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
@@ -81,7 +83,7 @@ CLASS:Shaman (Alternate)	SPELLSTAT:WIS	SPELLTYPE:Divine
 12						BONUS:VAR|ShamanBAB|1
 14						BONUS:VAR|ShamanBAB|1
 16						BONUS:VAR|ShamanBAB|1
-17																	ABILITY:Special Ability|AUTOMATIC|Astral Projection
+17																	ABILITY:Special Ability|AUTOMATIC|Astral Projection ~ Shaman
 18						BONUS:VAR|ShamanBAB|1								ABILITY:Special Ability|AUTOMATIC|Ageless Being
 20						BONUS:VAR|ShamanBAB|1								ABILITY:Special Ability|AUTOMATIC|Improved Astral Projection
 #Block: Spell Progression
@@ -124,17 +126,18 @@ CLASS:Ex-Shamans	HD:6		SOURCEPAGE:p.42	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BA
 20	BONUS:VAR|ShamanBAB|1
 
 # Class Name	Hit Dice	Type			Source Page		Save checks bonus											Combat bonus					Bonus
-CLASS:Witch		HD:4		TYPE:Base.PC	SOURCEPAGE:p.48	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE	BONUS:SPELLCASTER|Witch|CL
+CLASS:Witch		HD:4		TYPE:Base.PC	SOURCEPAGE:p.48	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE	BONUS:CASTERLEVEL|Witch|CL
 # Class Name	Required AL
 CLASS:Witch		PREALIGN:LN,NG,TN,CN,NE
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Witch		STARTSKILLPTS:2	CSKILL:Bluff|Concentration|Craft (Alchemy)|Craft (Apothecary)|Diplomacy|Heal|Intimidate|Knowledge (Cultures)|Listen|Scry|Search|Seduction|Spellcraft|Spot|Star Reading|Survival|Witchcraft
+CLASS:Witch		STARTSKILLPTS:2	CSKILL:Bluff|Concentration|Craft (Alchemy)|Craft (Apothecary)|Diplomacy|Heal|Intimidate|Knowledge (Cultures)|Listen|Search|Seduction|Spellcraft|Spot|Star Reading|Survival|Witchcraft
+#Scry|
 # Class Name	Spell Stat		Spell Type
 CLASS:Witch		SPELLSTAT:INT	SPELLTYPE:Arcane
 ###Block:Proficiencies
 1																								ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies				AUTO:FEAT|Simple Weapon Proficiency
 #Block: Level Progression
-1						BONUS:ABILITYPOOL|Witch Favored Race|1	BONUS:VAR|EmpoweredCharmBonus|2	DEFINE:EmpoweredCharmBonus|0	ABILITY:Special Ability|AUTOMATIC|Summon Familiar|Scribe Scroll|Empowered Charm	AUTO:FEAT|Scribe Scroll
+1						BONUS:ABILITYPOOL|Witch Favored Race|1	BONUS:VAR|EmpoweredCharmBonus|2	DEFINE:EmpoweredCharmBonus|0	ABILITY:Special Ability|AUTOMATIC|Summon Familiar|Empowered Charm				AUTO:FEAT|Scribe Scroll
 3																																						AUTO:FEAT|Brew Potion
 5						BONUS:ABILITYPOOL|Witch Favored Race|CL/5	BONUS:VAR|EmpoweredCharmBonus|CL/5
 13																								ABILITY:Special Ability|AUTOMATIC|Improved Brewing
@@ -164,11 +167,12 @@ CLASS:Witch		SPELLSTAT:INT	SPELLTYPE:Arcane
 
 
 # Class Name	Hit Dice	Type			Source Page		Save checks bonus											Combat bonus
-CLASS:Mentalist	HD:8		TYPE:Base.PC	SOURCEPAGE:p.53	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Mentalist	HD:8		TYPE:Base.PC	SOURCEPAGE:p.53	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL
 # Class Name	Restricted AL
 CLASS:Mentalist	!PREALIGN:CG,CN,CE
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Mentalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Balance|Climb|Concentration|TYPE=Craft|Jump|Spot|Stabilize Self|Swim|Tumble|Use Psionic Device
+CLASS:Mentalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Balance|Climb|Concentration|TYPE=Craft|Jump|Spot|Swim|Tumble|Use Psionic Device
+#Stabilize Self|
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency Output
 1																	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)
@@ -184,12 +188,13 @@ CLASS:Mentalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Balance|Climb|Concentration|
 # Class Name			Source Page		Save checks bonus											Combat bonus
 CLASS:Psionist (Alternate)	SOURCEPAGE:p.57	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
 # Class Name			Skill Pts/Lvl	Class Skill
-CLASS:Psionist (Alternate)	STARTSKILLPTS:4	CSKILL:Autohypnosis|Balance|Bluff|Concentration|TYPE=Craft|Diplomacy|Knowledge (Psionics)|Listen|Psicraft|Remote View|Sense Motive|Stabilize Self|Tumble
+CLASS:Psionist (Alternate)	STARTSKILLPTS:4	CSKILL:Autohypnosis|Balance|Bluff|Concentration|TYPE=Craft|Diplomacy|Knowledge (Psionics)|Listen|Psicraft|Remote View|Sense Motive|Tumble
+#Stabilize Self|
 #Block: Base
 1																												ABILITY:Special Ability|AUTOMATIC|Psionist Alt ~ Proficiencies									AUTO:FEAT|Simple Weapon Proficiency|Armor Proficiency (Light)
 #Block: Starting
 1										BONUS:VAR|PsionistAltLvl|CL	BONUS:VAR|PsionicPowerPointsAlt|CL*var("PSPPowerPointsVariable")|TYPE=Base	ABILITY:Special Ability|AUTOMATIC|Psionist Power Points|Psionist Alt ~ Powers Known|Psionist Alt ~ Bonus Language
 #Block: Level Progression
-1	BONUS:ABILITYPOOL|Psionist Feat Choice|PsiBonusFeat	BONUS:VAR|PsiBonusLang|1														ABILITY:Special Ability|AUTOMATIC|PsiCrystal|Psionist Alt ~ Bonus Language
+1	BONUS:ABILITYPOOL|Psionist Feat Choice|PsiBonusFeat	BONUS:VAR|PsiBonusLang|1														ABILITY:Special Ability|AUTOMATIC|Psionist Alt ~ Bonus Language									AUTO:FEAT|Psicrystal Affinity
 5										BONUS:VAR|PsiBonusLang|CL/5
 6										BONUS:VAR|PsiBonusFeat|CL/6
