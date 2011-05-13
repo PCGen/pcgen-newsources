@@ -1,0 +1,75 @@
+# CVS $Revision$ $Author$ -- Thu Feb 22 13:04:59 2007 -- reformated by prettylst.pl v1.36 (build 2045)
+SOURCELONG:Untapped Potential: New Horizons in Psionics	SOURCESHORT:UTP	SOURCEWEB:http://www.dreamscarredpress.com
+
+### Marksman Class Features ###
+#
+Wind Reader	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:WindReaderDuration|0	DEFINE:WindReaderBonus|0	VISIBLE:YES	DESC:+%1 attack for %2 round(s).|WindReaderBonus|WindReaderDuration
+
+Evade Arrows	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DEFINE:EvadeArrowsBonus|0	BONUS:VAR|EvadeArrowsBonus|WIS/2|PREVARGTEQ:WIS,0	DESC:Dodge bonus +%1|EvadeArrowsBonus
+
+Cover Fire	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DEFINE:CoverFireDC|10	DESC:Concentration check or Reflex Save DC %1|CoverFireDC
+
+Marksman Signature Style Tree	CATEGORY:Special Ability	TYPE:Internal	VISIBLE:NO	DEFINE:MarksmanSignatureStyleTreeLVL|0	BONUS:ABILITYPOOL|Marksman Signature Style|1|PREVARGTEQ:MarksmanSignatureStyleTreeLVL,7	BONUS:ABILITYPOOL|Marksman Signature Style|1|PREVARGTEQ:MarksmanSignatureStyleTreeLVL,11	BONUS:ABILITYPOOL|Marksman Signature Style|1|PREVARGTEQ:MarksmanSignatureStyleTreeLVL,15	BONUS:ABILITYPOOL|Marksman Signature Style|1|PREVARGTEQ:MarksmanSignatureStyleTreeLVL,19	SOURCEPAGE:pages 24-26
+
+Crossbow Signature Style	CATEGORY:Special Ability	TYPE:SpecialQuality.MarksmanSignatureStyle	VISIBLE:YES	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	DEFINE:MarksmanCrossbowStyleTier|0	BONUS:VAR|MarksmanCrossbowStyleTier|1	ABILITY:Special Ability|AUTOMATIC|Augmented Shot|PREVARGTEQ:MarksmanCrossbowStyleTier,1	ABILITY:Special Ability|AUTOMATIC|Unstoppable Force|PREVARGTEQ:MarksmanCrossbowStyleTier,2	ABILITY:Special Ability|AUTOMATIC|Call the Shot|PREVARGTEQ:MarksmanCrossbowStyleTier,3	ABILITY:Special Ability|AUTOMATIC|One Shot One Kill|PREVARGTEQ:MarksmanCrossbowStyleTier,4	DESC:Crossbow-using marksmen are consummate snipers, able to deliver immensely powerful single shots, often from great distance. Impeccably patient, crossbow specialists are frequently loners, or at least maintain an aloof image.
+
+Bow Signature Style	CATEGORY:Special Ability	TYPE:SpecialQuality.MarksmanSignatureStyle	VISIBLE:YES	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	DEFINE:MarksmanBowStyleTier|0	BONUS:VAR|MarksmanCrossbowStyleTier|1	ABILITY:Special Ability|AUTOMATIC|Force-charged Fletching|PREVARGTEQ:MarksmanBowStyleTier,1	ABILITY:Special Ability|AUTOMATIC|Lightning Draw|PREVARGTEQ:MarksmanBowStyleTier,2	ABILITY:Special Ability|AUTOMATIC|Burst Arrows|PREVARGTEQ:MarksmanBowStyleTier,3	ABILITY:Special Ability|AUTOMATIC|Rain of Arrows|PREVARGTEQ:MarksmanBowStyleTier,4	DESC:Bowyer marksmen are notoriously good at attacking large areas at once, and are most frequently found in military service. A unit of archers led by marksmen could hold off an entire advancing army.
+
+Thrown Weapon Signature Style	CATEGORY:Special Ability	TYPE:SpecialQuality.MarksmanSignatureStyle	VISIBLE:YES	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	DEFINE:MarksmanThrownStyleTier|0	BONUS:VAR|MarksmanThrownStyleTier|1	ABILITY:Special Ability|AUTOMATIC|Ricochet|PREVARGTEQ:MarksmanThrownStyleTier,1	ABILITY:Special Ability|AUTOMATIC|Push by Proxy|PREVARGTEQ:MarksmanThrownStyleTier,2	ABILITY:Special Ability|AUTOMATIC|Psychoportative Momentum Mastery|PREVARGTEQ:MarksmanThrownStyleTier,3	ABILITY:Special Ability|AUTOMATIC|Psychokinetic Momentum Mastery|PREVARGTEQ:MarksmanThrownStyleTier,4	DESC:Marksmen who follow the thrown weapon style are usually the subject of many tales amongst the common folk, but history isn't clear whether this is because few warriors normally choose throwing weapons or because thrown-weapon marksmen are frequently show-offs. In either case, the mockery stops once the marksman demonstrates his prowess in controlling the field of battle.
+
+Augmented Shot	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:Extra Damage +%1d8|MarksmanCrossbowStyleTier
+
+Unstoppable Force	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DESC:If your crossbow bolt would deal enough damage to a target to make it drop, you may choose to have the bolt continue on a straight line through your target's location until it hits another target.
+
+Call the Shot	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DESC:If you spend a full-round action sighting your target, you can deliver a single, precisely aimed bolt to a critical part of the target's anatomy.
+
+One Shot One Kill	OUTPUTNAME:One Shot, One Kill	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DEFINE:OneShotOneKillDC|10+(MarksmanSignatureStyleLVL/2)+WIS	DESC:Fortitude Save DC %1|OneShotOneKillDC
+
+Force-charged Fletching	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:You may channel psychokinetic force through your arrows, overwhelming your opponents.
+
+Lightning Draw	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DESC:Bowyer marksmen eventually learn to fire their bows far faster than nearly anyone else without significantly reducing their accuracy.
+
+Burst Arrows	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DEFINE:BurstArrowsDC|10+(MarksmanSignatureStyleLVL/2)+WIS	DESC:Reflex Save DC %1|BurstArrowsDC
+
+Rain of Arrows	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DEFINE:RainOfArrowsPerDay|WIS	DESC:%1 times per day|RainOfArrowsPerDay
+
+Ricochet	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DEFINE:RicochetPerDay|1+WIS	DESC:%1 times per day|RicochetPerDay
+
+Push by Proxy	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DESC:Through a combination of exceptional throwing talent and raw strength (of arm or of will), you may attempt to rearrange your foes with your thrown weapons.
+
+Psychoportative Momentum Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:While you are psionically focused, every weapon you throw may, at your option, be treated as a teleporting weapon.
+
+Psychokinetic Momentum Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	VISIBLE:YES	DESC:Your weapons’ psychokinetic properties are augmented many-fold.
+
+
+### Society Mind Class Features ###
+#
+
+Worldthought Network	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DEFINE:NetRange|0	DEFINE:NetLevel|0	DESC:Network range 30 ft.|PREVAREQ:NetRange,1	DESC:Network range %1 ft.|25+(5*NetLevel)|PREVAREQ:NetRange,2	DESC:Network range %1 ft.|100+(10*NetLevel)|PREVAREQ:NetRange,3	DESC:Network range %1 ft.|400+(40*NetLevel)|PREVAREQ:NetRange,4	DESC:Network range %1 miles.|0+NetLevel|PREVAREQ:NetRange,5	DESC:Network range of any distance within the same plane.|PREVAREQ:NetRange,6	DESC:Network range of any distance, even over planar and dimensional boundaries.|PREVAREQ:NetRange,7	SOURCEPAGE:pages 30-31
+
+Cooperative Healing	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:Whenever a willing member of the society mind's worldthought network could regain lost hit points or ability damage, that member may choose to redirect any or all of that healing to one or more other willing members of the network as a free action.	SOURCEPAGE:page 31
+
+Social Insight	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:As long as a society mind of 2nd level or higher maintains psionic focus, they gain a superintuitive understanding of interpersonal interactions.	SOURCEPAGE:page 31
+
+Spirit of Many	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:A society mind gains special abilities when manifesting powers with the Network descriptor.	SOURCEPAGE:page 31
+
+Soulbinding Gaze	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DEFINE:SoulbindingGazeML|0	DEFINE:SoulbindingGazeDC|10	DESC:Range %1 ft., Save DC %2.|25+(5*SoulbindingGazeML)|SoulbindingGazeDC	SOURCEPAGE:pages 31-32
+
+Telepathy (Worldthought)	OUTPUTNAME:Telepathy	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:When a society mind reaches 3rd level, all willing members of his worldthought network (including the society mind himself) can communicate with each other telepathically, even if they do not share a common language.	SOURCEPAGE:pages 32-33
+
+Network Sense	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DEFINE:NetworkSenseBonus|0	DESC:At 5th level, the society mind's network awareness improves, gaining a passive form of clairsentience. Network Sense Bonus: +%1|NetworkSenseBonus	SOURCEPAGE:page 33
+
+Mystic Echo	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:At 8th level, the society mind gains the ability to copy non-permanent magical and psionic effects within his network.	SOURCEPAGE:page 33
+
+Inner Language	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:At 11th level, a society mind becomes able to perceive the connections between minds during communication, picking up on the mental energies generated by conversation.	SOURCEPAGE:page 33
+
+Subconscious Gaze	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:At 14th level, the society mind's soulbinding gaze improves dramatically, working off of the same subconscious connections that provide his powers. Save DC %1|SoulbindingGazeDC-5	SOURCEPAGE:page 33
+
+Divert Concentration	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:As a move action, a society mind of 17th level or higher can choose to expend his psionic focus and transfer the bulk of the responsibilities for concentrating on a single power to a touched willing member of his worldthought network.	SOURCEPAGE:pages 33-34
+
+Efficient Network	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	VISIBLE:YES	DESC:At 20th level, the society mind's mastery over his worldthought network and the closely associated Network powers reaches legendary proportions.	SOURCEPAGE:page 34
+
+#### Proficiencies
+Marksman Weapon Proficiencies		CATEGORY:Special Ability	TYPE:Internal	VISIBLE:NO	AUTO:WEAPONPROF|TYPE.Martial.Light|TYPE.Martial.Thrown|TYPE.Martial.Ranged
+
+Buckler Proficiency			CATEGORY:Special Ability	TYPE:SpecialQuality	VISIBLE:YES	AUTO:SHIELDPROF|SHIELDTYPE.Buckler	DESC:You can use a buckler and take only standard penalties.

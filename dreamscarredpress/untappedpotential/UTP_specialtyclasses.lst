@@ -1,0 +1,20 @@
+SOURCELONG:Dreamscarred Press - Untapped Potential: New Horizons in Psionics	SOURCESHORT:UTP	SOURCEWEB:http://www.DreamscarredPress.com
+
+# Original Entry by: <your name>.
+
+# Racial Specialty Levels
+CLASS:Fighter.MOD	HASSUBSTITUTIONLEVEL:YES	SOURCEPAGE:TESTs
+# using a PRETEXT, normal PRExxx seem to work fine.  For testing the loading issue, this can be ignored.
+SUBSTITUTIONCLASS:Test Sub Fighter		PRETEXT:Test - any PRExxx works here fine
+# changing HD, has to be on SUBSTITUTIONLEVEL lines, not SUBSTITUTIONCLASS lines.  Took a while to figure that out.
+SUBSTITUTIONLEVEL:1	HD:8
+# Have to grant everything shared from primary class, which is different from SUBCLASS.
+#   In this case, weapon Proficiencies
+SUBSTITUTIONLEVEL:1	FEATAUTO:Simple Weapon Proficiency|Martial Weapon Proficiency|All Automatic Proficiencies|All Martial Weapon Proficiencies
+SUBSTITUTIONLEVEL:1	FEATAUTO:Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)
+SUBSTITUTIONLEVEL:1	FEATAUTO:Shield Proficiency|Tower Shield Proficiency
+# Odd number of skill points just to make it easy to test.  Skills of TYPE knowledge proves CSKILL works perfectly.
+SUBSTITUTIONLEVEL:1	STARTSKILLPTS:3	CSKILL:Bluff|Tumble|TYPE.Knowledge
+
+# Orginizational Specialty Levels
+
