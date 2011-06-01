@@ -1,0 +1,17 @@
+SOURCELONG:Adventurer's Handbook: Genius Guide Volume 1	SOURCESHORT:SGGAH	SOURCEDATE:2010-04
+# Original Entry by: Paul Shipley (elro the onk)
+
+###Block: Templates for unbreathing subtype
+# Template Name		Visible	
+Unbreathing Subtype	VISIBLE:YES	PRERACE:1,RACETYPE=Magical Beast,RACETYPE=Humanoid	!PRERACE:1,RACESUBTYPE=Fire	DEFINE:ColdResistanceBonus|0	BONUS:VAR|ColdResistanceBonus|TL	ABILITY:Special Ability|AUTOMATIC|Still Breath ~ Unbreathing|Undead-like ~ Unbreathing|Healing Resistance ~ Unbreathing
+
+###Block: Headbutt template to add headbutt attack
+Head Butt	TEMPLATE:CHOOSE:Headbutt ~ Tiny|Headbutt ~ Small|Headbutt ~ Medium|Headbutt ~ Large|Headbutt ~ Huge|Headbutt ~ Gargantuan|Headbutt ~ Colossal
+# Template Name		Visible	!PREEQUIP			Required Size	Natural Attacks
+Headbutt ~ Tiny		VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:T		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1
+Headbutt ~ Small		VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:S		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d2
+Headbutt ~ Medium		VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:M		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d3
+Headbutt ~ Large		VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:L		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d4
+Headbutt ~ Huge		VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:H		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d6
+Headbutt ~ Gargantuan	VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:G		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d8
+Headbutt ~ Colossal	VISIBLE:NO	!PREEQUIP:1,Head Butt	PRESIZEEQ:C		NATURALATTACKS:Headbutt,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,2d6

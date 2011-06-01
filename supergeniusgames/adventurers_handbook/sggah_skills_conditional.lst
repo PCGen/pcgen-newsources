@@ -1,0 +1,10 @@
+SOURCELONG:Adventurer's Handbook: Genius Guide Volume 1	SOURCESHORT:SGGAH	SOURCEDATE:2010-04
+# Original Entry by: Paul Shipley (elro the onk)
+
+###Block: Conditional Skills for output only
+# Skill Name			Key Stat	Untrained?		Classes		Type			Visible		Source Page
+Spellcraft (Favored Spell)	KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:Archon	TYPE:SkillUse	VISIBLE:EXPORT	SOURCEPAGE:p.12
+
+###Block: Skill .MODs
+# Skill Name	Bonus to skill									Bonus to skill rank
+Spellcraft.MOD	BONUS:SKILL|Spellcraft (Favored Spell)|SKILL.Spellcraft.MISC	BONUS:SKILLRANK|Spellcraft (Favored Spell)|skillinfo("TOTALRANK","Spellcraft")|TYPE=SkillGranted|PRERULE:1,DISPLAYSKILLUSE|PREVARNEQ:var("SKILL.Spellcraft (Favored Spell).MISC"),var("SKILL.Spellcraft.MISC")
