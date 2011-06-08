@@ -1,4 +1,7 @@
 SOURCELONG:Psionics Unleashed	SOURCESHORT:PsU
+#Original Entry: Douglas Limmer
+#SRD Original Entry: Arknight
+#SRD updated entry - TaluronIscandar
 
 ###Block: General Feats
 Autonomous		TYPE:General	DESC:+2 on Autohypnosis and Knowledge (Psionics) checks	BONUS:SKILL|Autohypnosis|if(skillinfo("RANK","Autohypnosis")>=10,4,2)	BONUS:SKILL|Knowledge (Psionics)|if(skillinfo("RANK","Knowledge (Psionics)")>=10,4,2)	SOURCEPAGE:p. 42
@@ -55,7 +58,7 @@ Psionic Fist			TYPE:Psionic	PRESTAT:1,STR=13	PREVARGT:IsPsionic,0	DESC:Unarmed a
 Psionic Meditation		TYPE:Psionic	PRESKILL:1,Autohypnosis=4	PRESTAT:1,WIS=13	PREVARGT:IsPsionic,0	DESC:Become psionically focused as a move action	SOURCEPAGE:p. 51
 Psionic Shot			TYPE:Psionic	PREFEAT:1,Point-Blank Shot	PREVARGT:IsPsionic,0	DESC:Ranged weapon deals extra damage	SOURCEPAGE:p. 51	BONUS:COMBAT|DAMAGE.Ranged|1*PsionicFocusActive
 #**#This feat should add to non-weapon ranged attacks.
-Psionic Talent			TYPE:Psionic	PREVARGT:IsPsionic,0	DESC:Gain additional power points	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Psionic Talent Power Points	SOURCEPAGE:p. 51
+Psionic Talent			TYPE:Psionic	PREVARGT:IsPsionic,0	DESC:Gain additional power points	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Psionic Talent Power Points	BONUS:VAR|PsionicTalentCount|1	SOURCEPAGE:p. 51
 Psionic Weapon			TYPE:Psionic	PRESTAT:1,STR=13	PREVARGT:IsPsionic,0	DESC:Melee weapons deal extra damage	SOURCEPAGE:p. 51	BONUS:COMBAT|DAMAGE.Melee|1*PsionicFocusActive
 #**#This might also add to unarmed attacks/natural weapons when it shouldn't.
 Return Shot				TYPE:Psionic	PREMULT:1,[PREATT:6],[PREVARGTEQ:PrereqBAB,6]	PREFEAT:3,Fell Shot,Point-Blank Shot,Psionic Shot	PREVARGT:IsPsionic,0	DESC:Deflect range attacks back at attacker	SOURCEPAGE:p. 52
@@ -66,6 +69,9 @@ Talented				TYPE:Psionic	PREFEAT:1,Overchannel	PREVARGT:IsPsionic,0	DESC:Take no
 Unavoidable Strike		TYPE:Psionic	PREMULT:1,[PREATT:6],[PREVARGTEQ:PrereqBAB,6]	PREFEAT:1,Psionic Fist	PRESTAT:1,STR=13	PREVARGT:IsPsionic,0	DESC:Resolve unarmed attack or natural weapon attack as a touch attack	SOURCEPAGE:p. 53
 Up the Walls			TYPE:Psionic	PRESTAT:1,WIS=13	PREVARGT:IsPsionic,0	DESC:Run on walls and ceilings	SOURCEPAGE:p. 53
 Wounding Attack			TYPE:Psionic	PREMULT:1,[PREATT:8],[PREVARGTEQ:PrereqBAB,8]	PREVARGT:IsPsionic,0	DESC:Wound opponents with your attack	SOURCEPAGE:p. 53
+
+#Ghost Psionic Talent used for Naturally Psionic ability
+Ghost Psionic Talent	OUTPUTNAME:Psionic Talent	TYPE:Psionic	VISIBLE:EXPORT	PRESTAT:1,STR=999	DESC:Gain additional power points	SOURCEPAGE:p. 51	SERVESAS:ABILITY=FEAT|Psionic Talent
 
 ###Block: Metapsionics
 Burrowing Power		TYPE:Metapsionic						PREVARGT:IsPsionic,0	PRESKILL:1,Spellcraft=8	DESC:Bypass barrier with power	SOURCEPAGE:p. 42

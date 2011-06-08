@@ -1,8 +1,8 @@
 SOURCELONG:Psionics Unleashed	SOURCESHORT:PsU	SOURCEWEB:TBD
+# Original Entry by: Douglas Limmer
+# SRD Original Entry by: Arknight
+# SRD update by: TaluronIscandar
 
-#Psionic			VISIBLE:EXPORT	ABILITY:Special Ability|AUTOMATIC|Psionic	SUBRACE:YES	RACESUBTYPE:Psionic
-#** Removed and Replaced with IsPsionic variable, since the template was inappropriately removed.  Use tags below instead.
-#** DEFINE:IsPsionic|0	BONUS:VAR|IsPsionic|1	ABILITY:Special Ability|AUTOMATIC|Psionic
 Psionically Focused	VISIBLE:DISPLAY	BONUS:VAR|PsionicFocusActive|1|PREAPPLY:PC	PREVARGTEQ:TotalPowerPoints,1	TEMPDESC:Character is psionically focused.
 Activate Size Changing	VISIBLE:DISPLAY	ABILITY:Special Ability|AUTOMATIC|Size Changing	ABILITY:Special Ability|AUTOMATIC|CM Size Changing
 
@@ -12,10 +12,21 @@ Insectoid	VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Insectoid
 Maenad	VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Maenad
 Xeph		VISIBLE:NO		SOURCEPAGE:TBD	RACESUBTYPE:Xeph
 
+###BLOCK: Natural attack templates for use with abilities and powers
+Bite 1d8	VISIBLE:DISPLAY	NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing,*1,1d8
+Bite 2d8	VISIBLE:DISPLAY	NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing,*1,2d8
+Bite 3d8	VISIBLE:DISPLAY	NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing,*1,3d8
+Bite 4d8	VISIBLE:DISPLAY	NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing,*1,4d8
+Bite 5d8	VISIBLE:DISPLAY	NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing,*1,5d8
+#Bites may be Bludgeoning.Slashing.Piercing
+
+#Psionic			VISIBLE:EXPORT	ABILITY:Special Ability|AUTOMATIC|Psionic	SUBRACE:YES	RACESUBTYPE:Psionic
+#** Removed and Replaced with IsPsionic variable, since the template was inappropriately removed.  Use tags below instead.
+#** DEFINE:IsPsionic|0	BONUS:VAR|IsPsionic|1	ABILITY:Special Ability|AUTOMATIC|Psionic
 
 ###BLOCK: Dromite Chitin
-Dromite Chitin			VISIBLE:NO	TEMPLATE:CHOOSE:Cold Resist Chitin|Electricity Resist Chitin|Fire Resist Chitin|Sonic Resist Chitin	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE
-Cold Resist Chitin		VISIBLE:NO	BONUS:VAR|ColdResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Cold
-Fire Resist Chitin		VISIBLE:NO	BONUS:VAR|FireResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Fire
-Electricity Resist Chitin	VISIBLE:NO	BONUS:VAR|ElectricityResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance To Electricity
-Sonic Resist Chitin		VISIBLE:NO	BONUS:VAR|SonicResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Sonic
+#** Removed and replaced with an ABILITYPOOL
+#Cold Resist Chitin		VISIBLE:NO	BONUS:VAR|ColdResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Cold
+#Fire Resist Chitin		VISIBLE:NO	BONUS:VAR|FireResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Fire
+#Electricity Resist Chitin	VISIBLE:NO	BONUS:VAR|ElectricityResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance To Electricity
+#Sonic Resist Chitin		VISIBLE:NO	BONUS:VAR|SonicResistanceBonus|5		ABILITY:Special Ability|AUTOMATIC|Resistance To Sonic
