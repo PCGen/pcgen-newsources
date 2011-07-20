@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Thu May 12 16:01:20 2011 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision: $ $Author: $ -- Thu Jul  7 13:01:32 2011 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Ultimate Magic	SOURCESHORT:PFUM	SOURCEWEB:http://paizo.com/pathfinderRPG/v5748btpy8g7s	SOURCEDATE:2011-05
 # Original Entry by: Stefan Radermacher and Eric Smith (Maredudd)
 
@@ -10,27 +10,44 @@ CLASS:Magus		STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Fly|Intimidate|Knowledge (A
 CLASS:Magus		SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Magus|CL
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency Output
-###Block: Level progression
-1	CAST:3,1											BONUS:VAR|MagusArmorProficiencyLVL,MagusArcanePoolLVL|CL	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency ~ Magus|Cantrips ~ Magus|Arcane Pool ~ Magus|Spell Combat ~ Magus
-2	CAST:4,2																					ABILITY:Special Ability|AUTOMATIC|Spellstrike ~ Magus
-3	CAST:4,3											BONUS:VAR|MagusArcanaLVL|CL						ABILITY:Special Ability|AUTOMATIC|Magus Arcana ~ Magus
-4	CAST:4,3,1																					ABILITY:Special Ability|AUTOMATIC|Spell Recall ~ Magus
-5	CAST:4,4,2			BONUS:ABILITYPOOL|Magus Bonus Feat|(CL+1)/6
+###Block: Class features
+1									BONUS:VAR|MagusArmorProficiencyLVL|CL	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArmorProficiency
+1									BONUS:VAR|MagusArcanePoolLVL|CL		ABILITY:Special Ability|AUTOMATIC|Arcane Pool ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanePool
+1																ABILITY:Special Ability|AUTOMATIC|Spell Combat ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.SpellCombat
+1																ABILITY:Special Ability|AUTOMATIC|Cantrips ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.Cantrips
+2																ABILITY:Special Ability|AUTOMATIC|Spellstrike ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.Spellstrike
+3									BONUS:VAR|MagusArcanaLVL|CL			ABILITY:Special Ability|AUTOMATIC|Magus Arcana ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.MagusArcana
+4																ABILITY:Special Ability|AUTOMATIC|Spell Recall ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.SpellRecall
+5	BONUS:ABILITYPOOL|Magus Bonus Feat|(CL+1)/6
+7																ABILITY:Special Ability|AUTOMATIC|Knowledge Pool ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.KnowledgePool
+8																ABILITY:Special Ability|AUTOMATIC|Improved Spell Combat ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.ImprovedSpellCombat
+10									BONUS:VAR|MagusFighterTrainingLVL|CL	ABILITY:Special Ability|AUTOMATIC|Fighter Training ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.FighterTraining
+11																ABILITY:Special Ability|AUTOMATIC|Improved Spell Recall ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.ImprovedSpellRecall
+14																ABILITY:Special Ability|AUTOMATIC|Greater Spell Combat ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.GreaterSpellCombat
+16																ABILITY:Special Ability|AUTOMATIC|Counterstrike ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.Counterstrike
+19																ABILITY:Special Ability|AUTOMATIC|Greater Spell Access ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.GreaterSpellAccess
+20																ABILITY:Special Ability|AUTOMATIC|True Magus ~ Magus|!PREABILITY:1,CATEGORY=Archetype,TYPE.TrueMagus
+###Block: Spell progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,3
+4	CAST:4,3,1
+5	CAST:4,4,2
 6	CAST:5,4,3
-7	CAST:5,4,3,1																				ABILITY:Special Ability|AUTOMATIC|Knowledge Pool ~ Magus
-8	CAST:5,4,4,2																				ABILITY:Special Ability|AUTOMATIC|Improved Spell Combat ~ Magus
+7	CAST:5,4,3,1
+8	CAST:5,4,4,2
 9	CAST:5,5,4,3
-10	CAST:5,5,4,3,1										BONUS:VAR|MagusFighterTrainingLVL|CL				ABILITY:Special Ability|AUTOMATIC|Fighter Training ~ Magus
-11	CAST:5,5,4,4,2																				ABILITY:Special Ability|AUTOMATIC|Improved Spell Recall ~ Magus
+10	CAST:5,5,4,3,1
+11	CAST:5,5,4,4,2
 12	CAST:5,5,5,4,3
 13	CAST:5,5,5,4,3,1
-14	CAST:5,5,5,4,4,2																				ABILITY:Special Ability|AUTOMATIC|Greater Spell Combat ~ Magus
+14	CAST:5,5,5,4,4,2
 15	CAST:5,5,5,5,4,3
-16	CAST:5,5,5,5,4,3,1																			ABILITY:Special Ability|AUTOMATIC|Counterstrike ~ Magus
+16	CAST:5,5,5,5,4,3,1
 17	CAST:5,5,5,5,4,4,2
 18	CAST:5,5,5,5,5,4,3
-19	CAST:5,5,5,5,5,5,4																			ABILITY:Special Ability|AUTOMATIC|Greater Spell Access ~ Magus
-20	CAST:5,5,5,5,5,5,5																			ABILITY:Special Ability|AUTOMATIC|True Magus ~ Magus
+19	CAST:5,5,5,5,5,5,4
+20	CAST:5,5,5,5,5,5,5
 
 #
 # End

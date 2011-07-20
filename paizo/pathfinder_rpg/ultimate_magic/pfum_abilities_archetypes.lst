@@ -1,16 +1,15 @@
-# CVS $Revision: $ $Author: $ -- Fri Jul 15 15:57:20 2011 -- reformated by prettylst.pl v1.39 (build )
+# CVS $Revision: $ $Author: $ -- Thu Jul  7 13:11:55 2011 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Ultimate Magic	SOURCESHORT:PFUM	SOURCEWEB:http://paizo.com/pathfinderRPG/v5748btpy8g7s	SOURCEDATE:2011-05
 # Original Entry by: Stefan Radermacher and Eric Smith (Maredudd)
 
 ###Block: Magus archetypes
-# Ability Name	Unique Key					Category of Ability	Type				Required Class		Multiple Requirements																			Description																																																																	Ability												Modify VAR													Cost		Source Page
-Bladebound		KEY:Magus Archetype ~ Bladebound	CATEGORY:Archetype	TYPE:Archetype.Magus	PRECLASS:1,Magus=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Magus Archetype ~ Bladebound],[!PREABILITY:1,CATEGORY=Archetype,TYPE.MagusArcanaLvl3]	DESC:A select group of magi are called to carry a black blade - a sentient weapon of often unknown and possibly unknowable purpose. These weapons become valuable tools and allies, as both the magus and weapon typically crave arcane power, but as a black blade becomes more aware, its true motivations manifest, and as does its ability to inf luence its wielder with its ever-increasing ego.	ABILITY:Special Ability|AUTOMATIC|Black Blade ~ Bladebound|PRECLASS:1,Magus=3	BONUS:VAR|MagusArcanePool|max(MagusArcanePoolLVL/3,1)-max(MagusArcanePoolLVL/2,1)	COST:0	SOURCEPAGE:p.47
-
+# Ability Name	Unique Key					Category of Ability	Type								Required Class		Multiple Requirements																			Description																																																																	Ability												Cost		Source Page
+Bladebound		KEY:Magus Archetype ~ Bladebound	CATEGORY:Archetype	TYPE:Archetype.MagusArchetype.MagusArcanaLvl3	PRECLASS:1,Magus=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Magus Archetype ~ Bladebound],[!PREABILITY:1,CATEGORY=Archetype,TYPE.MagusArcanaLvl3]	DESC:A select group of magi are called to carry a black blade - a sentient weapon of often unknown and possibly unknowable purpose. These weapons become valuable tools and allies, as both the magus and weapon typically crave arcane power, but as a black blade becomes more aware, its true motivations manifest, and as does its ability to inf luence its wielder with its ever-increasing ego.	ABILITY:Special Ability|AUTOMATIC|Black Blade ~ Bladebound|PRECLASS:1,Magus=3	COST:0	SOURCEPAGE:p.47
 
 ###Block: Magus Archetypes abilities
 # Bladebound
-# Ability Name	Unique Key				Category of Ability		Type						Description																																								Bonus to Ability Pool			Source Page
-Black Blade		KEY:Black Blade ~ Bladebound	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:You gains a powerful sentient weapon called a black blade, whose weapon type is chosen by the magus. A magus with this class feature cannot take the familiar magus arcana, and cannot have a familiar of any kind, even from another class.	BONUS:ABILITYPOOL|Magus Arcana|-1	SOURCEPAGE:p.47
+# Ability Name	Unique Key				Category of Ability		Type						Description																																								Bonus to Ability Pool			Modify VAR													Source Page
+Black Blade		KEY:Black Blade ~ Bladebound	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:You gains a powerful sentient weapon called a black blade, whose weapon type is chosen by the magus. A magus with this class feature cannot take the familiar magus arcana, and cannot have a familiar of any kind, even from another class.	BONUS:ABILITYPOOL|Magus Arcana|-1	BONUS:VAR|MagusArcanePool|max(MagusArcanePoolLVL/3,1)-max(MagusArcanePoolLVL/2,1)	SOURCEPAGE:p.47
 
 
 ###Block: Cleric Archetypes
@@ -22,3 +21,7 @@ Undead Lord		KEY:Cleric Archetype ~ Undead Lord	CATEGORY:Archetype	TYPE:Archetyp
 # Ability Name	Unique Key					Category of Ability		Type						Description
 Corpse Companion	KEY:Corpse Companion ~ Undead Lord	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:With a ritual requiring 8 hours, an undead lord can animate a single skeleton or zombie of %1 HD or less. This corpse companion automatically follows her commands and does not need to be controlled by her. She cannot have more than one corpse companion at a time. It does not count against the number of HD of undead controlled by other methods. She can use this ability to create a variant skeleton such as a bloody or burning skeleton of %2 HD or less. She can dismiss her companion as a standard action, which destroys it.|classlevel("Cleric")|classlevel("Cleric")/2
 Unlife Healer	KEY:Unlife Healer ~ Undead Lord	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:The undead lord’s spells, spell-like abilities, and supernatural abilities used to heal undead are Empowered.|!PRECLASS:1,Cleric=16	DESC:The undead lord’s spells, spell-like abilities, and supernatural abilities used to heal undead are Empowered and Maximized.|PRECLASS:1,Cleric=16
+
+#
+# End
+#
