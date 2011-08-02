@@ -1,0 +1,103 @@
+SOURCELONG:Book of Drakes	SOURCESHORT:BoD	SOURCEWEB:http://www.koboldquarterly.com/k/front-page9778.php	SOURCEDATE:2011-06
+# Original Entry by: Eric C. Smith
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+###
+###Block: Alternate Classes: Abilities
+###
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Drake Tamer Abilities
+# Ability Name			Unique Key		Category of Ability		Type								Required Ability								Multiple Requirements													Var. Min. Value			Var. Must Be Lower		Define										Description																												Stackable?	Multiple?	Choose		Add to base move						Bonus to skill									Modify VAR																Vision						Source Page		Description of the Benefits
+Cantrips				KEY:Cantrips ~ Drake Tamer		CATEGORY:Special Ability	TYPE:SpecialQuality		DESC:You have learned a number of cantrips, or0-level spells. They are cast like any other spells, but they may be cast any number of times per day. Cantrips prepared using 1st- and higher-level spell slots, due to metamagic feats, for example, consume spell slots as normal.		SOURCEPAGE:pg.18
+Dragon Friend			KEY:Dragon Friend ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:DragonFriendBonus|0	DESC:You know how to deal with all types of dragons, adding %1 to all Charisma-based skill checks when interacting with creatures of the dragon type.|DragonFriendBonus		SOURCEPAGE:pg.18		BONUS:VAR|DragonFriendBonus|CL/2
+Drake Companion			KEY:Drake Companion ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		DEFINE:DrakeLevel|0	FOLLOWERS:Drake Companion|1	COMPANIONLIST:Drake Companion|RACETYPE=Dragon	DESC:You have gained a drake companion.
+Empathic Link			KEY:Empathic Link ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.Communicate		DESC:You have an empathic link with your drake companion out to one mile. This link can communicate feelings and emotions but not complex or coherent thoughts or sensory input. The drake tamer has the same connection to an item or place that her companion does.
+Share Spells			KEY:Share Spells ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You may cast a spell with a target of “you” on your drake companion (as a touch spell) instead of on yourself. You may cast spells on the drake even if the spells do not normally affect creatures of the dragon type.	SOURCEPAGE:pg.18
+Drake Flank				KEY:Drake Flank ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:You effectively team up with her drake companion, gaining an additional +2 bonus to hit when you flanks with your drake. The drake is also considered to have an effective reach of 5 feet, regardless of its size, when it is flanking with you.		SOURCEPAGE:pg.18
+## Summon Drake Block
+Summon Drake			KEY:Summon Drake ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:SummonDrakeTimes|0	DEFINE:SummonDrakeCR|0	DEFINE:SummonDrakeDuration|0	SOURCEPAGE:pg.18		BONUS:VAR|SummonDrakeTimes|3+CHA	BONUS:VAR|SummonDrakeCR|DrakeTamerLVL/2		BONUS:VAR|SummonDrakeDuration|DrakeTamerLVL
+## Summon Drake Description Piecws
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:You may call a drake for a short period of time. %1 times a day you can summon a CR %2 drake as a standard action. |SumonDrakeTimes|SummonDrakeCR	
+## Summon Drake Duration
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:The drake remains for %1 round(s). |SummonDrakeDuration|!PRECLASS:1,Drake Tamer=10
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:The drake remains for %1 minutes(s). |SummonDrakeDuration|PRECLASS:1,Drake Tamer=10
+## Summon Drake Spell Like
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster I. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,2],[PREVARLT:DrakeTamerLVL,4]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster II. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,4],[PREVARLT:DrakeTamerLVL,6]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster III. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,6],[PREVARLT:DrakeTamerLVL,8]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster IV. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,8],[PREVARLT:DrakeTamerLVL,10]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster V. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,10],[PREVARLT:DrakeTamerLVL,12]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster VI. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,12],[PREVARLT:DrakeTamerLVL,14]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster VII. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,14],[PREVARLT:DrakeTamerLVL,16]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster VIII. |PREMULT:2,[PREVARGTEQ:DrakeTamerLVL,16],[PREVARLT:DrakeTamerLVL,18]
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:Otherwise, this ability functions as summon monster IX. |PREVARGTEQ:DrakeTamerLVL,18
+## Summon Drake Final description
+CATEGORY=Special Ability|Summon Drake ~ Drake Tamer.MOD	DESC:The drake tamer may only summon one drake at a time with this ability. If she uses the ability again, any existing summon drake effect immediately ends.
+## fin
+Deliver Touch Spells	KEY:Deliver Touch Spells ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:DeliverTouchSpellDuration|0	DESC:You can imbue your drake to deliver spells with a range of touch. If you and your drake are in physical contact when you cast the spell, you can designate your companion as “carrying” the spell. The drake carries the spell for %1 rounds and can deliver the touch spell just as you would. If you casts another spell before the touch is delivered, the touch spell dissipates.|DeliverTouchSpellDuration	SOURCEPAGE:pg.18		BONUS:VAR|DeliverTouchSpellDuration|CHA
+Drake Feature			KEY:Drake Feature ~ Drake Tamer		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:DrakeFeatureBonus|0	DESC:You take on some of the aspects of your companion. You may spend %1 feature points on yourself but only to duplicate an ability possessed by your companion.|DrakeFeatureBonus		SOURCEPAGE:pg.18	BONUS:ABILITYPOOL|Drake Feature|DrakeFeatureBonus
+Drake Devotion			KEY:Drake Devotion ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality,Extraordinary	DESC:You gains a morale bonus to Will saves against enchantment spells and effects.		SOURCEPAGE:pg.18	BONUS:CHECKS|Will|4|TYPE=Morale
+Drake Apportation		KEY:Drake Apportation ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You can magically cross long distances with your drake companion. This ability requires line of sight and works exactly like the dimension door spell, save that the drake tamer or her drake companion must arrive within five feet of the other. Alternatively, this ability can transpose the drake tamer and her companion, provided there is room at the respective destinations. At 18th level, this ability functions exactly like greater teleport, with the added ability to exchange places.
+Drake Telepathy			KEY:Drake Telepathy ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.Communicate	DESC:The drake tamer learns to improve on her empathic contact with her companion. At 9th level, she can communicate with her drake telepathically up to 1 mile away. At 14th level, this ability has an unlimited range, as long as both are on the same plane.	SOURCEPAGE:pg.19
+Scry on Drake			KEY:Scry on Drake ~ Drake Tamer		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You can scry on any of your drake companions (as if casting the scrying spell) a total of twice per day.	SOURCEPAGE:pg.19
+Drake Diplomat			KEY:Drake Diplomat ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:DrakeDiplomatDC|0	DESC:A creature of the dragon type must make a Will save (DC %1) to attack you, as long as you do not attack the dragon.	SOURCEPAGE:pg.19	BONUS:VAR|DrakeDiplomatDC|10+(HD/2)+CHA
+Dual Drake				KEY:Dual Drake ~ Drake Tamer		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You share a complete connection with your drake. As a standard action, you can assume the drake’s shape, copying all of its abilities. Your Strength, Dexterity, and Constitution scores change to match the base scores of you drake. The new form absorbs your clothing and gear. Any items with continuous effects continue to function in the new form. You gains your drake’s abilities while losing your own natural attacks and all racial traits, with the exception of bonus feats, skills, and languages. You can keep this form for %1 minutes per day. This duration need not be consecutive, but it must be spent in 1-minute increments. Ending this effect requires a free action.|DrakeTamerLVL	SOURCEPAGE:pg.19
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+###
+###Block: Core Class Abilities
+###
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##Barbarian Abilities
+# Ability Name			Unique Key		Category of Ability		Type								Required Ability								Multiple Requirements													Var. Min. Value			Var. Must Be Lower		Define										Description																												Stackable?	Multiple?	Choose		Add to base move						Bonus to skill									Modify VAR																Vision						Source Page		Description of the Benefits
+Breath of Rage							CATEGORY:Special Ability	TYPE:RagePower.SpecialAttack.Supernatural		PRECLASS:1,Barbarian=8		DEFINE:RageBreathDice|0		DEFINE:RageBreathDC|0		DESC:You may make a breath weapon attack once per rage.		SOURCEPAGE:pg.13		BENEFIT:You may make a breath weapon attack once per rage. This attack does %1d6 damage and can take the form of a 30-foot line of electricity or a 15-foot cone of acid, cold, or fire. Targets receive a Reflex save (DC %2) for half damage.|RageBreathDice|RageBreathDC			BONUS:VAR|RageBreathDice|RagePowersLVL		BONUS:VAR|RageBreathDC|CL/2+CON+10
+
+##Block: Bard Abilities
+# Ability Name				Unique Key			Category of Ability		Type								Visible	Define										Description																																																																																									Ability																																																																																																																																																																																																																																																																																																Bonus to Ability Pool									Bonus to skill							Modify VAR											Class Skill	Source Page		Aspects
+Becalming Performance							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.BardicPerformance		DEFINE:BecalmingPerformanceDC|0		DESC:You can use this ability to induce a state of euphoria (Will negates, DC %1) in all creatures within 90 feet.|BecalmingPerformanceDC		BONUS:VAR|BecalmingPerformanceDC|CL/2+CHA+10			SOURCEPAGE:pg.13	BENEFIT:You can use this ability to induce a state of euphoria in all creatures within 90 feet. Each creature within range receives a Will save (DC %1) to negate the effect. If a creature fails, it will cease any hostile actions (including combat) while the bard maintains the performance. The affected creatures have a Friendly reaction to all creatures within the effect’s area. Any attack on an affected creature allows a new saving throw against the effect. Becalming performance is a mind-affecting, enchantment (charm) ability, and it relies on audio and visual components.|BecalmingPerormanceDC
+
+##Block: Cleric (Drake) Subdomain Abilities
+# Ability Name			Unique Key			Category of Ability		Type								Visible	Define										Description																																																																																									Ability																																																																																																																																																																																																																																																																																																Bonus to Ability Pool									Bonus to skill							Modify VAR											Class Skill	Source Page		Aspects
+## TODO: Add Companion List
+Drake Companion			KEY:Drake Companion ~ Drake Subdomain		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.DomainPower			DEFINE:FMLevel|0	DESC:You gain a drake companion. The cleric gains the Improved Familiar feat, which allows him to acquire a pseudodragon (or equivalent drake) as a familiar. All the benefits and restrictions of Improved Familiar apply. Additionally, the cleric is treated as having a wizard class level equal to his cleric level -3.		FOLLOWERS:Drake Companion|1		COMPANIONLIST:Companion Drake|RACETYPE=Companion			SOURCEPAGE:pg.14
+
+##Block: Drakeshape Druid Architype
+# Ability Name	Unique Key						Category of Ability	Type																											Required Class		Multiple Requirements																																														Description																																																														Ability																																																																																																Cost		Source Page
+Drakeshape Druid	KEY:Druid Architype ~ Drakeshape Druid		CATEGORY:Archetype	TYPE:Architype.DruidWildShape		PRECLASS:1,Druid=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Druid Archetype ~ Drakeshape Druid],[!PREABILITY:1,CATEGORY=Archetype,TYPE.DruidWildShape]		DESC:A druid with this focus chooses to emulate drakes as material manifestation of natural elements.
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##
+##Block: APG Base Class Abilities
+##
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Alternate Alchemist Mutagens
+
+
+## Alternate Cavalier Abilities
+# Order of the Drake --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Order of the Drake														CATEGORY:Special Ability	TYPE:CavalierOrder.SpecialQuality																																																				DEFINE:OrderChallengeBonus|0																																																DESC:Whenever a order of the drake cavalier uses Disable Device to open a lock, he receives a bonus on the check equal to 1/2 his cavalier level (minimum +1).																																																																																																																																																																																																																																																																																																									ABILITY:Special Ability|AUTOMATIC|Unfetter Ally ~ Cavalier|PRECLASS:1,Cavalier=2	ABILITY:Special Ability|AUTOMATIC|Strength of Freedom ~ Cavalier|PRECLASS:1,Cavalier=8	ABILITY:Special Ability|AUTOMATIC|Tyranny's End ~ Cavalier|PRECLASS:1,Cavalier=15																																																																																																																																																																		BONUS:VAR|OrderChallengeBonus|1+CavalierLVL/4																																																																																																																																															CSKILL:Disable Device|Escape Artist
+CATEGORY=Special Ability|Challenge ~ Cavalier.MOD																																																																																																																											DESC:he receives a +1 morale bonus on all melee attack rolls against the target of his challenge whenever the target is grappling another creature or on the round after the target casts a spell which restricts movement. This bonus increases by +1 for per four cavalier levels.|PREABILITY:1,CATEGORY=Special Ability,Order of the Drake
+#
+Unfetter Ally				KEY:Unfetter Ally ~ Cavalier				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		DEFINE:CavalierUnfetterAllyBonus|0	SOURCEPAGE:14		BONUS:VAR|CavalierUnfetterAllyBonus|2*(floor((CL-2)/6)+2)	DESC:You can, as a standard action, shout encouragement to an ally which grants that ally a +%1 competence bonus to CMD against grapples and a +2 competence bonus to Escape Artist checks. These bonuses last until the end of the cavalier’s next turn.|CavalierUnfetterAllyBonus|CavalierUnfetterAllyBonus
+Strength of Freedom			KEY:Strength of Freedom ~ Cavalier			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary											SOURCEPAGE:14		DESC:You have a +5 morale bonus to Strength checks made to break an object intended to restrain, capture, or imprison another.
+Tyranny's End				KEY:Tyranny's End ~ Cavalier				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:14		DESC:You have become a true terror to all who would restrict others’ liberties. Your weapon’s critical threat range improves by 1 (this stacks with other effects that improve threat range), and any threat rolled against an enemy you know to be a despot, slaver, etc., is automatically confirmed as a critical hit.
+
+
+
+
+
+
+
+
+
+
+
+##
+##Block: Spell Effect Trigger Abilities
+##
+#Ability Name
+Drake Form I Activate		KEY:Drake Form I Activate ~ Spell Ability		CATEGORY:Internal	TYPE:SpellEffect	TEMPLATE:Drake Form I		SOURCEPAGE:pg.24
+Drake Form II Activate		KEY:Drake Form II Activate ~ Spell Ability		CATEGORY:Internal	TYPE:SpellEffect	TEMPLATE:Drake Form II		SOURCEPAGE:pg.24
+Drake Form III Activate		KEY:Drake Form III Activate ~ Spell Ability		CATEGORY:Internal	TYPE:SpellEffect	TEMPLATE:Drake Form III		SOURCEPAGE:pg.24
+Drake Form IV Activate		KEY:Drake Form IV Activate ~ Spell Ability		CATEGORY:Internal	TYPE:SpellEffect	TEMPLATE:Drake Form IV		SOURCEPAGE:pg.24

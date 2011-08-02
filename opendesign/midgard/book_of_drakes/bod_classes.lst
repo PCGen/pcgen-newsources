@@ -1,0 +1,91 @@
+SOURCELONG:Book of Drakes	SOURCESHORT:BoD	SOURCEWEB:http://www.koboldquarterly.com/k/front-page9778.php	SOURCEDATE:2011-06
+# Original Entry by: Eric C. Smith
+
+##
+## Block: Alternate Classes
+##
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
+CLASS:Drake Tamer	HD:8		TYPE:Base.PC	ABB:DrTmr		MAXLEVEL:20	SOURCEPAGE:p.17					BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Drake Tamer	STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Handle Animal|Intimidate|Knowledge (Arcana)|Linguistics|Perception|Ride|Sense Motive
+# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
+CLASS:Drake Tamer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Drake Tamer|CL		SPELLLIST:1|Summoner	PROHIBITSPELL:DESCRIPTOR.Eidolon
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1	AUTO:FEAT|Armor Proficiency (Light)
+###Block: Class Features
+1		DEFINE:DrakeTamerLVL|0	BONUS:VAR|DrakeTamerLVL|CL				ABILITY:Special Ability|AUTOMATIC|Cantrips ~ Drake Tamer
+1								BONUS:VAR|DrakeLevel|CL					ABILITY:Special Ability|AUTOMATIC|Dragon Friend ~ Drake Tamer
+1																		ABILITY:Special Ability|AUTOMATIC|Drake Companion ~ Drake Tamer
+1																		ABILITY:Special Ability|AUTOMATIC|Share Spells ~ Drake Tamer
+1																		ABILITY:Special Ability|AUTOMATIC|Empathic Link ~ Drake Tamer
+2																		ABILITY:Special Ability|AUTOMATIC|Drake Flank ~ Drake Tamer
+2																		ABILITY:Special Ability|AUTOMATIC|Summon Drake ~ Drake Tamer
+3																		ABILITY:Special Ability|AUTOMATIC|Deliver Touch Spells ~ Drake Tamer
+4								BONUS:VAR|DrakeFeatureBonus|2			ABILITY:Special Ability|AUTOMATIC|Drake Feature ~ Drake Tamer
+6																		ABILITY:Special Ability|AUTOMATIC|Drake Devotion ~ Drake Tamer
+8																		ABILITY:Special Ability|AUTOMATIC|Drake Apportation ~ Drake Tamer
+10								BONUS:VAR|DrakeFeatureBonus|5
+12																		ABILITY:Special Ability|AUTOMATIC|Scry on Drake ~ Drake Tamer
+14																		ABILITY:Special Ability|AUTOMATIC|Drake Telepathy ~ Drake Tamer
+16								BONUS:VAR|DrakeFeatureBonus|5			ABILITY:Special Ability|AUTOMATIC|Drake Diplomat ~ Drake Tamer
+20																		ABILITY:Special Ability|AUTOMATIC|Dual Drake ~ Drake Tamer
+###Block: Spellcasting
+1	CAST:0,1			KNOWN:4,2
+2	CAST:0,2			KNOWN:5,3
+3	CAST:0,3			KNOWN:6,4
+4	CAST:0,3,1			KNOWN:6,4,2
+5	CAST:0,4,2			KNOWN:6,4,3
+6	CAST:0,4,3			KNOWN:6,4,4
+7	CAST:0,4,3,1		KNOWN:6,5,4,2
+8	CAST:0,4,4,2		KNOWN:6,5,4,3
+9	CAST:0,5,4,3		KNOWN:6,5,4,4
+10	CAST:0,5,4,3,1		KNOWN:6,5,5,4,2
+11	CAST:0,5,4,4,2		KNOWN:6,6,5,4,3
+12	CAST:0,5,5,4,3		KNOWN:6,6,5,4,4
+13	CAST:0,5,5,4,3,1		KNOWN:6,6,5,5,4,2
+14	CAST:0,5,5,4,4,2		KNOWN:6,6,6,5,4,3
+15	CAST:0,5,5,5,4,3		KNOWN:6,6,6,5,4,4
+16	CAST:0,5,5,5,4,3,1	KNOWN:6,6,6,5,5,4,2
+17	CAST:0,5,5,5,4,4,2	KNOWN:6,6,6,6,5,4,3
+18	CAST:0,5,5,5,5,4,3	KNOWN:6,6,6,6,5,4,4
+19	CAST:0,5,5,5,5,5,4	KNOWN:6,6,6,6,5,5,4
+20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
+
+
+
+##
+## Block: Master of Drake Forms Prestige Class
+##
+
+
+
+
+
+
+##
+## Block: Drake Companion Class
+##
+
+# Class Name								Hit Dice	Type					Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
+#CLASS:Drake Companion	OUTPUTNAME:Drake	HD:12		TYPE:Monster.Companion	ABB:DC			MAXLEVEL:20	SOURCEPAGE:pg,		ABILITY:Special Ability|AUTOMATIC|Dragon Traits|PREVAREQ:NoTypeTraits,0			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+#CLASS:Drake Companion	STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Handle Animal|Intimidate|Knowledge (Arcana)|Linguistics|Perception|Ride|Sense Motive
+# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
+#CLASS:Drake Companion	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Drake Tamer|CL		SPELLLIST:1|Summoner	PROHIBITSPELL:DESCRIPTOR.Eidolon
+###Block: Level Advancement
+#1	BONUS:SKILLPOINTS|NUMBER|-3|PRELEVELMAX:1	AUTO:FEAT|CMB Output
+
+
+
+
+
+
+
+
+
+##
+## Block: Core Class Modification
+##
+

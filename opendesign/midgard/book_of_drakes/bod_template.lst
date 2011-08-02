@@ -1,0 +1,78 @@
+SOURCELONG:Book of Drakes	SOURCESHORT:BoD	SOURCEWEB:http://www.koboldquarterly.com/k/front-page9778.php	SOURCEDATE:2011-06
+# Original Entry by: Eric C. Smith
+
+##
+##Block: Base Drake Templates
+##
+# Template Name			Visible	Template		Bonuses						Stat bonus
+
+##
+##Block: Drake Form Templates
+##
+# Template Name			Visible	Template	Size		Bonuses								Stat bonus								Movement		Bonuses							Ability																Vision						Natural Attacks																	Description
+Drake Form I			VISIBLE:YES			SIZE:S		BONUS:STAT|DEX|4|TYPE=Size			BONUS:COMBAT|AC|2|TYPE=NaturalArmor		MOVE:Fly,40		BONUS:VAR|Maneuverability|2		ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability|Telepathy	VISION:Darkvision (60')		NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,1,1d6	DESC:You have taken the form of a Small lesser dragon.
+Drake Form II			VISIBLE:YES			SIZE:M		BONUS:STAT|STR,DEX,CON|2|TYPE=Size	BONUS:COMBAT|AC|3|TYPE=NaturalArmor		MOVE:Fly,60		BONUS:VAR|Maneuverability|2		ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability|Telepathy	VISION:Darkvision (60')		NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,1,1d8	DESC:You have taken the form of a Medium lesser dragon.
+Drake Form III			VISIBLE:YES			SIZE:L		BONUS:STAT|STR,CON|4|TYPE=Size		BONUS:COMBAT|AC|4|TYPE=NaturalArmor		MOVE:Fly,90		BONUS:VAR|Maneuverability|2		ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability|Telepathy	VISION:Darkvision (90')		NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,1,2d6	DESC:You have taken the form of a Large lesser dragon.
+Drake Form IV			VISIBLE:YES			SIZE:L		BONUS:STAT|STR,CON|6|TYPE=Size		BONUS:COMBAT|AC|6|TYPE=NaturalArmor		MOVE:Fly,120	BONUS:VAR|Maneuverability|2		ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability|Telepathy	VISION:Darkvision (120')	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,12d8				DESC:You have taken the form of a Large lesser dragon.
+
+#--------------------------------------------------------------------------------------------------------------
+##
+##Block: Subtype Templates
+##
+# Template Name			Visible	Template		Sourcepage				Racesubtype				Bonuses						Stat bonus
+Esoteric				VISIBLE:NO				SOURCEPAGE:pg.5			RACESUBTYPE:Esoteric
+Geographic				VISIBLE:NO				SOURCEPAGE:pg.5			RACESUBTYPE:Geographic
+Material				VISIBLE:NO				SOURCEPAGE:pg.5			RACESUBTYPE:Material
+
+
+###
+###Block: Builder templates
+###
+## Tiny Drake Natural Attacks
+# Template Name		Key							Visible	Required Size		Natural Attacks
+Bite				KEY:Bite ~ Tiny Drake		VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d3
+Claws				KEY:Claw ~ Tiny Drake		VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Claws,Weapon.Natural.Melee.Finesseable.Bludgeoning.Slashing,*2,1d2
+Wings				KEY:Wing ~ Tiny Drake		VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Wings,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d2				BONUS:WEAPONPROF=Wings|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Wings|TOHIT|-5		BONUS:WEAPONPROF=Wings|TOHIT|3|PREFEAT:1,Multiattack
+Tail Slap			KEY:Tail Slap ~ Tiny Drake	VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d3				BONUS:WEAPONPROF=Tail Slap|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tail Slap|TOHIT|-5		BONUS:WEAPONPROF=Tail Slap|TOHIT|3|PREFEAT:1,Multiattack
+Tentacles			KEY:Tentacle ~ Tiny Drake	VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Tentacles,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d2				BONUS:WEAPONPROF=Tentacles|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tentacles|TOHIT|-5		BONUS:WEAPONPROF=Tentacles|TOHIT|3|PREFEAT:1,Multiattack
+Slam				KEY:Slam ~ Tiny Drake		VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Slam,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d2
+Sting				KEY:Sting ~ Tiny Drake		VISIBLE:NO	PRESIZEEQ:T		NATURALATTACKS:Sting,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d2
+## Small Drake Natural Attacks
+# Template Name			Visible	Required Size	Natural Attacks
+Bite				KEY:Bite ~ Small Drake		VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d4
+Claws				KEY:Claw ~ Small Drake		VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Claws,Weapon.Natural.Melee.Finesseable.Bludgeoning.Slashing,*2,1d3
+Wings				KEY:Wing ~ Small Drake		VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Wings,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d3				BONUS:WEAPONPROF=Wings|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Wings|TOHIT|-5		BONUS:WEAPONPROF=Wings|TOHIT|3|PREFEAT:1,Multiattack
+Tail Slap			KEY:Tail Slap ~ Small Drake	VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d4				BONUS:WEAPONPROF=Tail Slap|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tail Slap|TOHIT|-5		BONUS:WEAPONPROF=Tail Slap|TOHIT|3|PREFEAT:1,Multiattack
+Tentacles			KEY:Tentacle ~ Small Drake	VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Tentacles,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d3				BONUS:WEAPONPROF=Tentacles|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tentacles|TOHIT|-5		BONUS:WEAPONPROF=Tentacles|TOHIT|3|PREFEAT:1,Multiattack
+Slam				KEY:Slam ~ Small Drake		VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Slam,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d3
+Sting				KEY:Sting ~ Small Drake		VISIBLE:NO	PRESIZEEQ:S		SIZE:S	NATURALATTACKS:Sting,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d3
+## Medium Drake Natural Attacks
+# Template Name			Visible	Required Size	Natural Attacks
+Bite				KEY:Bite ~ Medium Drake		VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d6
+Claws				KEY:Claw ~ Medium Drake		VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Claws,Weapon.Natural.Melee.Finesseable.Bludgeoning.Slashing,*2,1d4
+Wings				KEY:Wing ~ Medium Drake		VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Wings,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d4				BONUS:WEAPONPROF=Wings|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Wings|TOHIT|-5		BONUS:WEAPONPROF=Wings|TOHIT|3|PREFEAT:1,Multiattack
+Tail Slap			KEY:Tail Slap ~ Medium Drake	VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d6				BONUS:WEAPONPROF=Tail Slap|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tail Slap|TOHIT|-5		BONUS:WEAPONPROF=Tail Slap|TOHIT|3|PREFEAT:1,Multiattack
+Tentacles			KEY:Tentacle ~ Medium Drake	VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Tentacles,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d4				BONUS:WEAPONPROF=Tentacles|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tentacles|TOHIT|-5		BONUS:WEAPONPROF=Tentacles|TOHIT|3|PREFEAT:1,Multiattack
+Slam				KEY:Slam ~ Medium Drake		VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Slam,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d4
+Sting				KEY:Sting ~ Medium Drake		VISIBLE:NO	PRESIZEEQ:M		NATURALATTACKS:Sting,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d4
+## Large Drake Natural Attacks
+# Template Name			Visible	Required Size	Natural Attacks
+Bite				KEY:Bite ~ Large Drake		VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d8
+Claws				KEY:Claw ~ Large Drake		VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Claws,Weapon.Natural.Melee.Finesseable.Bludgeoning.Slashing,*2,1d6
+Wings				KEY:Wing ~ Large Drake		VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Wings,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d6				BONUS:WEAPONPROF=Wings|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Wings|TOHIT|-5		BONUS:WEAPONPROF=Wings|TOHIT|3|PREFEAT:1,Multiattack
+Tail Slap			KEY:Tail Slap ~ Large Drake	VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d8				BONUS:WEAPONPROF=Tail Slap|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tail Slap|TOHIT|-5		BONUS:WEAPONPROF=Tail Slap|TOHIT|3|PREFEAT:1,Multiattack
+Tentacles			KEY:Tentacle ~ Large Drake	VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Tentacles,Weapon.Natural.Melee.Finesseable.Bludgeoning,*2,1d6				BONUS:WEAPONPROF=Tentacles|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tentacles|TOHIT|-5		BONUS:WEAPONPROF=Tentacles|TOHIT|3|PREFEAT:1,Multiattack
+Slam				KEY:Slam ~ Large Drake		VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Slam,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d6
+Sting				KEY:Sting ~ Large Drake		VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Sting,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d6
+## Huge Drake Natural Attacks
+# Template Name			Visible	Required Size	Natural Attacks
+Bite				KEY:Bite ~ Huge Drake		VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,1d10
+Tail Slap			KEY:Tail Slap ~ Huge Drake	VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d10				BONUS:WEAPONPROF=Tail Slap|DAMAGE|-(STR/2)	BONUS:WEAPONPROF=Tail Slap|TOHIT|-5		BONUS:WEAPONPROF=Tail Slap|TOHIT|3|PREFEAT:1,Multiattack
+
+
+##
+##Block: Drake Ability Templates
+##
+# Template Name			Visible	Template		Bonuses																																			Stat bonus
+Unfold (Enlarge)		VISIBLE:NO				BONUS:COMBAT|DAMAGESIZE|1|PREAPPLY:PC	BONUS:COMBAT|TOHIT,AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT.GRAPPLE|5|TYPE=Size|PREAPPLY:PC		BONUS:STAT|STR|2|TYPE=Size|PREAPPLY:PC	BONUS:STAT|DEX|-1*(min(2,DEXSCORE-1))|TYPE=Size|PREAPPLY:PC	BONUS:WIELDCATEGORY|ALL|1|PREAPPLY:PC		TEMPDESC:Applies the effects of increasing the drakes size.
+Unfold (Reduce)			VISIBLE:NO				BONUS:COMBAT|DAMAGESIZE|-1|PREAPPLY:PC	BONUS:COMBAT|TOHIT,AC|1|TYPE=Size|PREAPPLY:PC	BONUS:SIZEMOD|NUMBER|-1|TYPE=Temporary|PREAPPLY:PC		BONUS:STAT|STR|-1*(min(2,STRSCORE-1))|TYPE=Size|PREAPPLY:PC	BONUS:STAT|DEX|2|TYPE=Size|PREAPPLY:PC		TEMPDESC:Applies the effects of reducing the drakes size.
