@@ -58,24 +58,35 @@ CLASS:Drake Tamer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|D
 ##
 ## Block: Master of Drake Forms Prestige Class
 ##
-
-
-
-
+# Class Name					Hit Dice	Type			Abbreviation	Max Level	Source Page			Save checks bonus																		Combat bonus
+CLASS:Master of Drake Foems		HD:6		TYPE:PC.Prestige	ABB:MoDF	MAXLEVEL:10	SOURCEPAGE:pg.19	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3		BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name					Required Skill									Req. Known Spell		Req. Spell Type		Var. Min. Value
+CLASS:Master of Drake Foems		PRESKILL:2,Fly=4,Knowledge (Arcana)=5	PRETEXT:Must have shapechanged, willingly or unwillingly, into a draconic form.
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Master of Drake Foems		STARTSKILLPTS:2	CSKILL:Bluff|Disguise|Fly|Intimidate|Knowledge (Arcana)|Perception|Sense Motive
+###Block: Progression
+1	BONUS:VAR|DrakeshapeTimes|1+(CL-2)/3	BONUS:VAR|DrakeFormDuration|10*CL	ABILITY:Special Ability|AUTOMATIC|Drakeshape ~ Master of Drake Form|Dragon Tongue ~ Master of Drake Form
+2																				ABILITY:Special Ability|AUTOMATIC|Dragonhide ~ Master of Drake Forms|Draconic Vision ~ Master of Drake Forms|Familiar Downplay ~ Master of Drake Forms
+3	BONUS:ABILITYPOOL|Drake Bonus Feats|1										ABILITY:Special Ability|AUTOMATIC|Draconic Resistances ~ Master of Drake Forms
+4																				ABILITY:Special Ability|AUTOMATIC|Drake Bite ~ Master of Drake Forms|Two is Better Than One ~ Master of Drake Forms
+5	BONUS:ABILITYPOOL|Drake Bonus Feats|1										ABILITY:Special Ability|AUTOMATIC|Flight ~ Master of Drake Forms
+6																				ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Master of Drake Forms
+7	BONUS:ABILITYPOOL|Drake Bonus Feats|1
+8
+9	BONUS:ABILITYPOOL|Drake Bonus Feats|1
+10																				ABILITY:Special Ability|AUTOMATIC|Apotheosis ~ Master of Drake Forms
 
 
 ##
 ## Block: Drake Companion Class
 ##
-
-# Class Name								Hit Dice	Type					Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
-#CLASS:Drake Companion	OUTPUTNAME:Drake	HD:12		TYPE:Monster.Companion	ABB:DC			MAXLEVEL:20	SOURCEPAGE:pg,		ABILITY:Special Ability|AUTOMATIC|Dragon Traits|PREVAREQ:NoTypeTraits,0			BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name								Hit Dice	Type					Abbreviation	Max Level	Source Page			Define			Save checks bonus											Combat bonus
+CLASS:Drake Companion	OUTPUTNAME:Drake	HD:12		TYPE:Monster.Companion	ABB:DC			MAXLEVEL:20	SOURCEPAGE:pg.18	ABILITY:Special Ability|AUTOMATIC|Dragon Traits|PREVAREQ:NoTypeTraits,0		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
-#CLASS:Drake Companion	STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Handle Animal|Intimidate|Knowledge (Arcana)|Linguistics|Perception|Ride|Sense Motive
-# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
-#CLASS:Drake Companion	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Drake Tamer|CL		SPELLLIST:1|Summoner	PROHIBITSPELL:DESCRIPTOR.Eidolon
+CLASS:Drake Companion	STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Handle Animal|Intimidate|Knowledge (Arcana)|Linguistics|Perception|Ride|Sense Motive
 ###Block: Level Advancement
-#1	BONUS:SKILLPOINTS|NUMBER|-3|PRELEVELMAX:1	AUTO:FEAT|CMB Output
+1												AUTO:FEAT|CMB Output
+1	BONUS:SKILLPOINTS|NUMBER|-3|PRELEVELMAX:1
 
 
 
