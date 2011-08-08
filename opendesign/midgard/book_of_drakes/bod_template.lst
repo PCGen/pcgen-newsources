@@ -76,3 +76,11 @@ Tail Slap			KEY:Tail Slap ~ Huge Drake	VISIBLE:NO	PRESIZEEQ:L		NATURALATTACKS:Ta
 # Template Name			Visible	Template		Bonuses																																			Stat bonus
 Unfold (Enlarge)		VISIBLE:NO				BONUS:COMBAT|DAMAGESIZE|1|PREAPPLY:PC	BONUS:COMBAT|TOHIT,AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT.GRAPPLE|5|TYPE=Size|PREAPPLY:PC		BONUS:STAT|STR|2|TYPE=Size|PREAPPLY:PC	BONUS:STAT|DEX|-1*(min(2,DEXSCORE-1))|TYPE=Size|PREAPPLY:PC	BONUS:WIELDCATEGORY|ALL|1|PREAPPLY:PC		TEMPDESC:Applies the effects of increasing the drakes size.
 Unfold (Reduce)			VISIBLE:NO				BONUS:COMBAT|DAMAGESIZE|-1|PREAPPLY:PC	BONUS:COMBAT|TOHIT,AC|1|TYPE=Size|PREAPPLY:PC	BONUS:SIZEMOD|NUMBER|-1|TYPE=Temporary|PREAPPLY:PC		BONUS:STAT|STR|-1*(min(2,STRSCORE-1))|TYPE=Size|PREAPPLY:PC	BONUS:STAT|DEX|2|TYPE=Size|PREAPPLY:PC		TEMPDESC:Applies the effects of reducing the drakes size.
+
+
+##
+##Block: Master of Drake Forms Ability Templates
+##
+# Template Name			Visible	Template		Bonuses																																			Stat bonus
+Drake Flight			VISIBLE:NO		MOVE:Fly,0		BONUS:VAR|Maneuverability|3		ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability		BONUS:MOVEADD|TYPE.Fly|DrakeFlightSpeed|PREAPPLY:PC
+Drake Apotheosis		VISIBLE:NO		NATURALATTACKS:Claws,Weapon.Natural.Melee.Finesseable.Bludgeoning.Slashing,*1,1d6|PREVARGTEQ:ApotheosisApply|1
