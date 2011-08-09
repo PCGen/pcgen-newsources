@@ -1,16 +1,15 @@
 SOURCELONG:Book of Drakes	SOURCESHORT:BoD	SOURCEWEB:http://www.koboldquarterly.com/k/front-page9778.php	SOURCEDATE:2011-06
 # Original Entry by: Eric C. Smith
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-###
-###Block: Alternate Classes: Abilities
-###
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Block: Alternate Classes: Abilities
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Drake Tamer Abilities
 # Ability Name			Unique Key		Category of Ability		Type								Required Ability								Multiple Requirements													Var. Min. Value			Var. Must Be Lower		Define										Description																												Stackable?	Multiple?	Choose		Add to base move						Bonus to skill									Modify VAR																Vision						Source Page		Description of the Benefits
 Cantrips				KEY:Cantrips ~ Drake Tamer		CATEGORY:Special Ability	TYPE:SpecialQuality		DESC:You have learned a number of cantrips, or0-level spells. They are cast like any other spells, but they may be cast any number of times per day. Cantrips prepared using 1st- and higher-level spell slots, due to metamagic feats, for example, consume spell slots as normal.		SOURCEPAGE:pg.18
 Dragon Friend			KEY:Dragon Friend ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:DragonFriendBonus|0	DESC:You know how to deal with all types of dragons, adding %1 to all Charisma-based skill checks when interacting with creatures of the dragon type.|DragonFriendBonus		SOURCEPAGE:pg.18		BONUS:VAR|DragonFriendBonus|CL/2
-Drake Companion			KEY:Drake Companion ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		DEFINE:DrakeLevel|0	FOLLOWERS:Drake Companion|1	COMPANIONLIST:Drake Companion|RACETYPE=Dragon	DESC:You have gained a drake companion.
+Drake Companion			KEY:Drake Companion ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		DEFINE:DrakeLevel|0	FOLLOWERS:Drake Companion|1	COMPANIONLIST:Drake Companion|RACESUBTYPE=CompanionDrake	DESC:You have gained a drake companion.		SOURCEPAGE:pg.17
 Empathic Link			KEY:Empathic Link ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.Communicate		DESC:You have an empathic link with your drake companion out to one mile. This link can communicate feelings and emotions but not complex or coherent thoughts or sensory input. The drake tamer has the same connection to an item or place that her companion does.
 Share Spells			KEY:Share Spells ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You may cast a spell with a target of “you” on your drake companion (as a touch spell) instead of on yourself. You may cast spells on the drake even if the spells do not normally affect creatures of the dragon type.	SOURCEPAGE:pg.18
 Drake Flank				KEY:Drake Flank ~ Drake Tamer	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:You effectively team up with her drake companion, gaining an additional +2 bonus to hit when you flanks with your drake. The drake is also considered to have an effective reach of 5 feet, regardless of its size, when it is flanking with you.		SOURCEPAGE:pg.18
@@ -44,11 +43,10 @@ Drake Diplomat			KEY:Drake Diplomat ~ Drake Tamer	CATEGORY:Special Ability	TYPE:
 Dual Drake				KEY:Dual Drake ~ Drake Tamer		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You share a complete connection with your drake. As a standard action, you can assume the drake’s shape, copying all of its abilities. Your Strength, Dexterity, and Constitution scores change to match the base scores of you drake. The new form absorbs your clothing and gear. Any items with continuous effects continue to function in the new form. You gains your drake’s abilities while losing your own natural attacks and all racial traits, with the exception of bonus feats, skills, and languages. You can keep this form for %1 minutes per day. This duration need not be consecutive, but it must be spent in 1-minute increments. Ending this effect requires a free action.|DrakeTamerLVL	SOURCEPAGE:pg.19
 
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-###
-###Block: Prestige Class: Abilities
-###
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Block: Prestige Class: Abilities
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Master of Drake Forms Abilities
 # Ability Name			Unique Key									Category of Ability			Type									Define Variables											Bonus Var	Description																												Stackable?	Multiple?	Choose		Add to base move						Bonus to skill									Modify VAR																Vision						Source Page		Description of the Benefits
 Drakeshape				KEY:Drakeshape ~ Master of Drake Forms		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		DEFINE:DrakeshapeTimes|0	DEFINE:DrakeshapeDuration|0					DESC:Changing shape into a variety of drakes comes easily to you.		DESC:You cast Drake Form I %1 time(s) per day with a duration of %2 continuous minutes.|DrakeshapeTimes|DrakeshapeDuration|!PRECLASS:1,Master of Drake Forms=4		DESC:You cast Drake Form II %1 time(s) per day with a duration of %2 continuous minutes.|DrakeshapeTimes|DrakeshapeDuration|PREMULT:2,[PRECLASS:1,Master of Drake Forms=4],[!PRECLASS:1,Master of Drake Forms=7]		DESC:You cast Drake Form III %1 time(s) per day with a duration of %2 continuous minutes.|DrakeshapeTimes|DrakeshapeDuration|PREMULT:2,[PRECLASS:1,Master of Drake Forms=7],[!PRECLASS:1,Master of Drake Forms=10]		DESC:You cast Drake Form IV %1 time(s) per day with a duration of %2 continuous minutes.|DrakeshapeTimes|DrakeshapeDuration|PRECLASS:1,Master of Drake Forms=10		SOURCEPAGE:pg.19
@@ -80,12 +78,18 @@ Extended Darkvision		KEY:Extended Darkvision ~ Draconic Vision	CATEGORY:Special 
 ## COMMENT: Need clarification on 2nd level bonus. If the character has Darkvision but not Low-Light vision does the character automatically get an extened Darkvision?
 ##
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-###
-###Block: Core Class Abilities
-###
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-##Barbarian Abilities
+
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Block: Companion Drake Class Abilities
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Ability Name			Unique Key					Category of Ability			Type					Prerequisites							Vision					Description																												Stackable?	Multiple?	Choose		Add to base move						Bonus to skill									Modify VAR																Vision						Source Page		Description of the Benefits
+Young Drake											CATEGORY:Special Ability	TYPE:Internal			TEMPLATE:Young Creature		!PREVARGTEQ:DrakeLevel,2
+
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Block: Core Class Abilities
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Block: Barbarian Abilities
 # Ability Name			Unique Key		Category of Ability		Type								Required Ability								Multiple Requirements													Var. Min. Value			Var. Must Be Lower		Define										Description																												Stackable?	Multiple?	Choose		Add to base move						Bonus to skill									Modify VAR																Vision						Source Page		Description of the Benefits
 Breath of Rage							CATEGORY:Special Ability	TYPE:RagePower.SpecialAttack.Supernatural		PRECLASS:1,Barbarian=8		DEFINE:RageBreathDice|0		DEFINE:RageBreathDC|0		DESC:You may make a breath weapon attack once per rage.		SOURCEPAGE:pg.13		BENEFIT:You may make a breath weapon attack once per rage. This attack does %1d6 damage and can take the form of a 30-foot line of electricity or a 15-foot cone of acid, cold, or fire. Targets receive a Reflex save (DC %2) for half damage.|RageBreathDice|RageBreathDC			BONUS:VAR|RageBreathDice|RagePowersLVL		BONUS:VAR|RageBreathDC|CL/2+CON+10
 
@@ -102,16 +106,19 @@ Drake Companion			KEY:Drake Companion ~ Drake Subdomain		CATEGORY:Special Abilit
 # Ability Name	Unique Key						Category of Ability	Type																											Required Class		Multiple Requirements																																														Description																																																														Ability																																																																																																Cost		Source Page
 Drakeshape Druid	KEY:Druid Architype ~ Drakeshape Druid		CATEGORY:Archetype	TYPE:Architype.DruidWildShape		PRECLASS:1,Druid=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Druid Archetype ~ Drakeshape Druid],[!PREABILITY:1,CATEGORY=Archetype,TYPE.DruidWildShape]		DESC:A druid with this focus chooses to emulate drakes as material manifestation of natural elements.
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-##
-##Block: APG Base Class Abilities
-##
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Block: APG Base Class Abilities
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Alternate Alchemist Mutagens
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Alternate Cavalier Abilities
-# Order of the Drake --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Order of the Drake --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Order of the Drake														CATEGORY:Special Ability	TYPE:CavalierOrder.SpecialQuality																																																				DEFINE:OrderChallengeBonus|0																																																DESC:Whenever a order of the drake cavalier uses Disable Device to open a lock, he receives a bonus on the check equal to 1/2 his cavalier level (minimum +1).																																																																																																																																																																																																																																																																																																									ABILITY:Special Ability|AUTOMATIC|Unfetter Ally ~ Cavalier|PRECLASS:1,Cavalier=2	ABILITY:Special Ability|AUTOMATIC|Strength of Freedom ~ Cavalier|PRECLASS:1,Cavalier=8	ABILITY:Special Ability|AUTOMATIC|Tyranny's End ~ Cavalier|PRECLASS:1,Cavalier=15																																																																																																																																																																		BONUS:VAR|OrderChallengeBonus|1+CavalierLVL/4																																																																																																																																															CSKILL:Disable Device|Escape Artist
 CATEGORY=Special Ability|Challenge ~ Cavalier.MOD																																																																																																																											DESC:he receives a +1 morale bonus on all melee attack rolls against the target of his challenge whenever the target is grappling another creature or on the round after the target casts a spell which restricts movement. This bonus increases by +1 for per four cavalier levels.|PREABILITY:1,CATEGORY=Special Ability,Order of the Drake
 #
