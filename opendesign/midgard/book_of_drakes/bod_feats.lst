@@ -17,11 +17,14 @@ Willful Companion Drake									TYPE:General	PRESTAT:1,CHA=13	PREPCLEVEL:MIN=5		
 
 ###Block: Modified Feats
 # Feat Name						Type
-Flyby Attack.MOD				TYPE:DrakeBonusFeat
-Hover.MOD						TYPE:DrakeBonusFeat
-Improved Natural Armor.MOD		TYPE:DrakeBonusFeat
-Wingover.MOD					TYPE:DrakeBonusFeat
+Flyby Attack.MOD				TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+Hover.MOD						TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+Improved Natural Armor.MOD		TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+Wingover.MOD					TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
 
+#Flyby Attack					KEY:Flyby Attack ~ Master of Drake Forms		TYPE:DrakeBonusFeat																																PREMOVE:1,Fly=1																														DESC:When flying you can take a move action and another standard action at any point during the move. The creature cannot take a second move action during a round when it makes a flyby attack.																																																																																																								SOURCEPAGE:p.315
+#Hover							KEY:Hover ~ Master of Drake Forms				TYPE:DrakeBonusFeat																																PREMOVE:1,Fly=1																														DESC:You can halt your movement while flying, allowing you to hover without needing to make a Fly skill check.	DESC:Hovering within 20 feet of the ground in an area with lots of loose debris creates a hemispherical cloud with a radius of 60 feet. The winds generated can snuff torches, small campfires, exposed lanterns, and other small, open flames of non-magical origin. Clear vision within the cloud is limited to 10 feet. Creatures have concealment at 15 to 20 feet (20%% miss chance). At 25 feet or more, creatures have total concealment (50%% miss chance, and opponents cannot use sight to locate the creature).|PRESIZEGTEQ:L																															SOURCEPAGE:p.315
+#Wingover						KEY:Wingover ~ Master of Drake Forms			TYPE:DrakeBonusFeat																																PREMOVE:1,Fly=1																														DESC:Once each round, when flying, you can turn up to 180 degrees as a free action without making a Fly skill check. This free turn does not consume any additional movement from the creature.																																																																																																									SOURCEPAGE:p.316
 
 ##
 ## EOF
