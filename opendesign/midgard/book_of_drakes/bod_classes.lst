@@ -1,35 +1,37 @@
+# CVS $Revision: $ $Author: $ -- Wed Aug 10 23:25:54 2011 -- reformated by prettylst.pl v1.39 (build 15052)
 SOURCELONG:Book of Drakes	SOURCESHORT:BoD	SOURCEWEB:http://www.koboldquarterly.com/k/front-page9778.php	SOURCEDATE:2011-06
 # Original Entry by: Eric C. Smith
 
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Block: Alternate Classes
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
-CLASS:Drake Tamer	HD:8		TYPE:Base.PC	ABB:DrTmr		MAXLEVEL:20	SOURCEPAGE:p.17					BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Group of Prohibited Spells		Save checks bonus											Combat bonus
+CLASS:Drake Tamer	HD:8		TYPE:Base.PC	ABB:DrTmr		MAXLEVEL:20	SOURCEPAGE:p.17	PROHIBITSPELL:DESCRIPTOR.Eidolon	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Drake Tamer	STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Handle Animal|Intimidate|Knowledge (Arcana)|Linguistics|Perception|Ride|Sense Motive
-# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
-CLASS:Drake Tamer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Drake Tamer|CL		SPELLLIST:1|Summoner	PROHIBITSPELL:DESCRIPTOR.Eidolon
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level				Use Spell List
+CLASS:Drake Tamer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Drake Tamer|CL	SPELLLIST:1|Summoner
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1	AUTO:FEAT|Armor Proficiency (Light)
+1												AUTO:FEAT|Armor Proficiency (Light)
 ###Block: Class Features
-1								BONUS:VAR|DrakeLevel|CL					ABILITY:Special Ability|AUTOMATIC|Cantrips ~ Drake Tamer
-1																		ABILITY:Special Ability|AUTOMATIC|Dragon Friend ~ Drake Tamer
-1																		ABILITY:Special Ability|AUTOMATIC|Drake Companion ~ Drake Tamer
-1																		ABILITY:Special Ability|AUTOMATIC|Share Spells ~ Drake Tamer
-1																		ABILITY:Special Ability|AUTOMATIC|Empathic Link ~ Drake Tamer
-2																		ABILITY:Special Ability|AUTOMATIC|Drake Flank ~ Drake Tamer
-2																		ABILITY:Special Ability|AUTOMATIC|Summon Drake ~ Drake Tamer
-3																		ABILITY:Special Ability|AUTOMATIC|Deliver Touch Spells ~ Drake Tamer
-4								BONUS:VAR|DrakeFeatureBonus|2			ABILITY:Special Ability|AUTOMATIC|Drake Feature ~ Drake Tamer
-6																		ABILITY:Special Ability|AUTOMATIC|Drake Devotion ~ Drake Tamer
-8																		ABILITY:Special Ability|AUTOMATIC|Drake Apportation ~ Drake Tamer
-10								BONUS:VAR|DrakeFeatureBonus|5
-12																		ABILITY:Special Ability|AUTOMATIC|Scry on Drake ~ Drake Tamer
-14																		ABILITY:Special Ability|AUTOMATIC|Drake Telepathy ~ Drake Tamer
-16								BONUS:VAR|DrakeFeatureBonus|5			ABILITY:Special Ability|AUTOMATIC|Drake Diplomat ~ Drake Tamer
-20																		ABILITY:Special Ability|AUTOMATIC|Dual Drake ~ Drake Tamer
+1	BONUS:VAR|DrakeLevel|CL		ABILITY:Special Ability|AUTOMATIC|Cantrips ~ Drake Tamer
+1						ABILITY:Special Ability|AUTOMATIC|Dragon Friend ~ Drake Tamer
+1						ABILITY:Special Ability|AUTOMATIC|Drake Companion ~ Drake Tamer
+1						ABILITY:Special Ability|AUTOMATIC|Share Spells ~ Drake Tamer
+1						ABILITY:Special Ability|AUTOMATIC|Empathic Link ~ Drake Tamer
+2						ABILITY:Special Ability|AUTOMATIC|Drake Flank ~ Drake Tamer
+2						ABILITY:Special Ability|AUTOMATIC|Summon Drake ~ Drake Tamer
+3						ABILITY:Special Ability|AUTOMATIC|Deliver Touch Spells ~ Drake Tamer
+4	BONUS:VAR|DrakeFeatureBonus|2	ABILITY:Special Ability|AUTOMATIC|Drake Feature ~ Drake Tamer
+6						ABILITY:Special Ability|AUTOMATIC|Drake Devotion ~ Drake Tamer
+8						ABILITY:Special Ability|AUTOMATIC|Drake Apportation ~ Drake Tamer
+10	BONUS:VAR|DrakeFeatureBonus|5
+12						ABILITY:Special Ability|AUTOMATIC|Scry on Drake ~ Drake Tamer
+14						ABILITY:Special Ability|AUTOMATIC|Drake Telepathy ~ Drake Tamer
+16	BONUS:VAR|DrakeFeatureBonus|5	ABILITY:Special Ability|AUTOMATIC|Drake Diplomat ~ Drake Tamer
+20						ABILITY:Special Ability|AUTOMATIC|Dual Drake ~ Drake Tamer
 ###Block: Spellcasting
 1	CAST:0,1			KNOWN:4,2
 2	CAST:0,2			KNOWN:5,3
@@ -57,34 +59,36 @@ CLASS:Drake Tamer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|D
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Block: Master of Drake Forms Prestige Class
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Class Name					Hit Dice	Type			Abbreviation	Max Level	Source Page			Save checks bonus																		Combat bonus
-CLASS:Master of Drake Forms		HD:6		TYPE:PC.Prestige	ABB:MoDF	MAXLEVEL:10	SOURCEPAGE:pg.19	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3		BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
-# Class Name					Required Skill									Req. Known Spell		Req. Spell Type		Var. Min. Value
-CLASS:Master of Drake Forms		PRESKILL:2,Fly=4,Knowledge (Arcana)=5	PRETEXT:Must have shapechanged, willingly or unwillingly, into a draconic form.
-# Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Master of Drake Forms		STARTSKILLPTS:2	CSKILL:Bluff|Disguise|Fly|Intimidate|Knowledge (Arcana)|Perception|Sense Motive
+
+# Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus
+CLASS:Master of Drake Forms	HD:6		TYPE:PC.Prestige	ABB:MoDF		MAXLEVEL:10	SOURCEPAGE:pg.19	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name			Required Skill					Required Text
+CLASS:Master of Drake Forms	PRESKILL:2,Fly=4,Knowledge (Arcana)=5	PRETEXT:Must have shapechanged, willingly or unwillingly, into a draconic form.
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Master of Drake Forms	STARTSKILLPTS:2	CSKILL:Bluff|Disguise|Fly|Intimidate|Knowledge (Arcana)|Perception|Sense Motive
 ###Block: Progression
-1	BONUS:VAR|DrakeshapeTimes|1+(CL-1)/3	BONUS:VAR|DrakeshapeDuration|10*CL	ABILITY:Special Ability|AUTOMATIC|Drakeshape ~ Master of Drake Forms|Dragon Tongue ~ Master of Drake Forms
-2	BONUS:ABILITYPOOL|Draconic Vision|1											ABILITY:Special Ability|AUTOMATIC|Dragonhide ~ Master of Drake Forms|Draconic Vision ~ Master of Drake Forms|Familiar Downplay ~ Master of Drake Forms
-3	BONUS:ABILITYPOOL|Drake Bonus Feat|1										ABILITY:Special Ability|AUTOMATIC|Draconic Resistances ~ Master of Drake Forms
-4											BONUS:VAR|DrakeBiteTimes|CL			ABILITY:Special Ability|AUTOMATIC|Drake Bite ~ Master of Drake Forms|Two is Better Than One ~ Master of Drake Forms
-5	BONUS:ABILITYPOOL|Drake Bonus Feat|1										ABILITY:Special Ability|AUTOMATIC|Flight ~ Master of Drake Forms
-6																				ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Master of Drake Forms
+1								BONUS:VAR|DrakeshapeTimes|1+(CL-1)/3	BONUS:VAR|DrakeshapeDuration|10*CL														ABILITY:Special Ability|AUTOMATIC|Drakeshape ~ Master of Drake Forms|Dragon Tongue ~ Master of Drake Forms
+2	BONUS:ABILITYPOOL|Draconic Vision|1																												ABILITY:Special Ability|AUTOMATIC|Dragonhide ~ Master of Drake Forms|Draconic Vision ~ Master of Drake Forms|Familiar Downplay ~ Master of Drake Forms
+3	BONUS:ABILITYPOOL|Drake Bonus Feat|1																											ABILITY:Special Ability|AUTOMATIC|Draconic Resistances ~ Master of Drake Forms
+4								BONUS:VAR|DrakeBiteTimes|CL																						ABILITY:Special Ability|AUTOMATIC|Drake Bite ~ Master of Drake Forms|Two is Better Than One ~ Master of Drake Forms
+5	BONUS:ABILITYPOOL|Drake Bonus Feat|1																											ABILITY:Special Ability|AUTOMATIC|Flight ~ Master of Drake Forms
+6																																		ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Master of Drake Forms
 7	BONUS:ABILITYPOOL|Drake Bonus Feat|1
 8	BONUS:ABILITYPOOL|Draconic Vision|1
 9	BONUS:ABILITYPOOL|Drake Bonus Feat|1
-10																				ADD:ABILITY|1|Special Ability|VIRTUAL|Apotheosis ~ Master of Drake Forms
+10																					ADD:ABILITY|1|Special Ability|VIRTUAL|Apotheosis ~ Master of Drake Forms
 
 
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Block: Drake Companion Class
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Class Name								Hit Dice	Type					Abbreviation	Max Level	Source Page			Define			Save checks bonus											Combat bonus
-CLASS:Drake Companion	OUTPUTNAME:Drake	HD:12		TYPE:Monster.Companion	ABB:DC			MAXLEVEL:20	SOURCEPAGE:pg.50	ABILITY:Special Ability|AUTOMATIC|Dragon Traits|PREVAREQ:NoTypeTraits,0		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name	Skill Pts/Lvl	Class Skill
+
+# Class Name		Output Name		Hit Dice	Type				Abbreviation	Max Level	Source Page		Ability											Save checks bonus								Combat bonus
+CLASS:Drake Companion	OUTPUTNAME:Drake	HD:12		TYPE:Monster.Companion	ABB:DC		MAXLEVEL:20	SOURCEPAGE:pg.50	ABILITY:Special Ability|AUTOMATIC|Dragon Traits|PREVAREQ:NoTypeTraits,0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Drake Companion	STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Handle Animal|Intimidate|Knowledge (Arcana)|Linguistics|Perception|Ride|Sense Motive
 ###Block: Level Advancement
-1												AUTO:FEAT|CMB Output
+1	AUTO:FEAT|CMB Output
 
 
 

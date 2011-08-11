@@ -1,26 +1,27 @@
+# CVS $Revision: $ $Author: $ -- Wed Aug 10 23:25:54 2011 -- reformated by prettylst.pl v1.39 (build 15052)
 SOURCELONG:Book of Drakes	SOURCESHORT:BoD	SOURCEWEB:http://www.koboldquarterly.com/k/front-page9778.php	SOURCEDATE:2011-06
 # Original Entry by: Eric C. Smith
 
 ###Block: General Feats
-# Feat Name				Output Name						Type			Required Size		Required Ability																	Req. Att.	Required Class				Required Feat											Required Lvl	Multiple Requirements														Required Skill					Required Stat		Var. Min. Value						Define															Description																																						Stackable?	Multiple?	Choose															Selections	Automatically Gained Armor Prof.	Automatically Gained Shield Prof.							Automatically Gained Weapon Prof.				Virtual Feat												Add Spell Lvl	Bonus to Ability Pool		Save checks bonus			Combat bonus																								Bonus to DC						Bonus to HP				Misc bonus									Add to base move																							Bonus to skill																								Modify VAR																																														Weapon prof. bonus								Weapon prop. bonus																							Source Page		Description of the Benefits
-Cling Attack											TYPE:Combat		PRESIZELTEQ:T															SOURCEPAGE:pg.11	DESC:You attach yourself to larger enemies allowing you to attack up close and personal.
-Companion Aid											TYPE:General																			SOURCEPAGE:pg.12	DESC:Your companion creature helps you more than is typical.
-Companion Friend										TYPE:General																			SOURCEPAGE:pg.12	DESC:You’ve become adept at working with willful companions.
-Drake Dart												TYPE:Combat		PRESKILL:1,Acrobatics=2		PREFEAT:1,Dodge								SOURCEPAGE:pg.12	DESC:By imitating a drake’s quickness, you give yourself a better chance to avoid attacks of opportunity provoked by movement.
-Ease of Form											TYPE:General	PRETEXT:Ability to shapechange into two different types of creatures.	SOURCEPAGE:pg.12	DESC:You are comfortable changing shape into a favorite creature.
-Exceptional Relationship								TYPE:General	PREFEAT:1,Willful Companion Drake	PRESTAT:1,CHA=15	PREPCLEVEL:MIN=11	SOURCEPAGE:pg.12	DESC:You no longer have to make Diplomacy checks with your drake
-Foe Climb												TYPE:Combat		PREFEAT:3,Cling Attack,Dodge,Mobility	PRESIZELTEQ:T					SOURCEPAGE:pg.12	DESC:You can scale larger opponents.
-Shared Companion										TYPE:General	PRETEXT:At least one character must have a companion creature or familiar	SOURCEPAGE:pg.12	DESC:You treat another character’s companion as if it were your own.
-Tooth and Claw Form										TYPE:Combat		PREFEAT:1,Improved Unarmed Strike	PREATT:1							SOURCEPAGE:pg.12	DESC:Striking with speed and grace, you fight like a dragon.
-Willful Companion Drake									TYPE:General	PRESTAT:1,CHA=13	PREPCLEVEL:MIN=5									SOURCEPAGE:pg.13	DESC:You gain a companion drake, though it doesn’t regard you as its master.
+# Feat Name				Type			Req. Att.	Required Feat					Required Non-Monster Lvl	Maximum Size	Required Skill		Required Stat	Required Text											Description																					Source Page
+Cling Attack			TYPE:Combat																PRESIZELTEQ:T																					DESC:You attach yourself to larger enemies allowing you to attack up close and personal.								SOURCEPAGE:pg.11
+Companion Aid			TYPE:General																																						DESC:Your companion creature helps you more than is typical.												SOURCEPAGE:pg.12
+Companion Friend			TYPE:General																																						DESC:You’ve become adept at working with willful companions.												SOURCEPAGE:pg.12
+Drake Dart				TYPE:Combat				PREFEAT:1,Dodge													PRESKILL:1,Acrobatics=2																	DESC:By imitating a drake’s quickness, you give yourself a better chance to avoid attacks of opportunity provoked by movement.	SOURCEPAGE:pg.12
+Ease of Form			TYPE:General																									PRETEXT:Ability to shapechange into two different types of creatures.		DESC:You are comfortable changing shape into a favorite creature.												SOURCEPAGE:pg.12
+Exceptional Relationship	TYPE:General			PREFEAT:1,Willful Companion Drake		PREPCLEVEL:MIN=11										PRESTAT:1,CHA=15														DESC:You no longer have to make Diplomacy checks with your drake												SOURCEPAGE:pg.12
+Foe Climb				TYPE:Combat				PREFEAT:3,Cling Attack,Dodge,Mobility						PRESIZELTEQ:T																					DESC:You can scale larger opponents.																SOURCEPAGE:pg.12
+Shared Companion			TYPE:General																									PRETEXT:At least one character must have a companion creature or familiar	DESC:You treat another character’s companion as if it were your own.											SOURCEPAGE:pg.12
+Tooth and Claw Form		TYPE:Combat		PREATT:1	PREFEAT:1,Improved Unarmed Strike																														DESC:Striking with speed and grace, you fight like a dragon.												SOURCEPAGE:pg.12
+Willful Companion Drake		TYPE:General										PREPCLEVEL:MIN=5										PRESTAT:1,CHA=13														DESC:You gain a companion drake, though it doesn’t regard you as its master.										SOURCEPAGE:pg.13
 
 
 ###Block: Modified Feats
-# Feat Name						Type
-Flyby Attack.MOD				TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
-Hover.MOD						TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
-Improved Natural Armor.MOD		TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
-Wingover.MOD					TYPE:DrakeBonusFeat			PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+# Feat Name				Type				Clear Prereq.	Multiple Requirements
+Flyby Attack.MOD			TYPE:DrakeBonusFeat	PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+Hover.MOD				TYPE:DrakeBonusFeat	PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+Improved Natural Armor.MOD	TYPE:DrakeBonusFeat	PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
+Wingover.MOD			TYPE:DrakeBonusFeat	PRE:.CLEAR		PREMULT:1,[PREMOVE:1,Fly=1],[PRECLASS:1,Master of Drake Forms=3]
 
 #Flyby Attack					KEY:Flyby Attack ~ Master of Drake Forms		TYPE:DrakeBonusFeat																																PREMOVE:1,Fly=1																														DESC:When flying you can take a move action and another standard action at any point during the move. The creature cannot take a second move action during a round when it makes a flyby attack.																																																																																																								SOURCEPAGE:p.315
 #Hover							KEY:Hover ~ Master of Drake Forms				TYPE:DrakeBonusFeat																																PREMOVE:1,Fly=1																														DESC:You can halt your movement while flying, allowing you to hover without needing to make a Fly skill check.	DESC:Hovering within 20 feet of the ground in an area with lots of loose debris creates a hemispherical cloud with a radius of 60 feet. The winds generated can snuff torches, small campfires, exposed lanterns, and other small, open flames of non-magical origin. Clear vision within the cloud is limited to 10 feet. Creatures have concealment at 15 to 20 feet (20%% miss chance). At 25 feet or more, creatures have total concealment (50%% miss chance, and opponents cannot use sight to locate the creature).|PRESIZEGTEQ:L																															SOURCEPAGE:p.315
