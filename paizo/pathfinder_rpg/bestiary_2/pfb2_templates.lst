@@ -1,2 +1,25 @@
 # CVS $Revision: $ $Author: $ -- Thu Dec 30 15:56:14 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8hif	SOURCEDATE:2010-12
+
+# Original Entry: Distant Scholar
+# Original Entry Date: 2 August 2011
+
+###Block: Zombie (Juju) template
+# Needs Code Work: This template seems to try to use the Juju Zombie Flight twice, for some unknown reason.  It seems to be related to the KIT tag.
+Zombie (Juju)	HITDIE:8|CLASS.TYPE=Monster	CR:1	DR:5/Magic and Slashing	BONUS:DR|Magic|5|PRELEVEL:MIN=11	BONUS:DR|Slashing|5|PRELEVEL:MIN=11	TEMPLATE:Undead	SOURCEPAGE:p.291	DEFINE:NoTypeTraits|1	!PRERACE:1,RACETYPE=Undead	BONUS:COMBAT|AC|3|TYPE=NaturalArmor.STACK	BONUS:SKILL|Climb|8|TYPE=Racial	BONUS:STAT|DEX|2	BONUS:STAT|STR|4	BONUS:VAR|ChannelResistance|4	ABILITY:Special Ability|AUTOMATIC|Channel Resistance|Immunity to Cold|Immunity to Electricity|Undead Traits|Immunity to Electricity|Resistance to Fire|Immunity to Magic Missile ~ Juju Zombie	BONUS:VAR|FireResistanceBonus|10	SUBRACE:YES	RACETYPE:Undead	TEMPLATE:Juju Zombie Slam	TEMPLATE:Juju Zombie Flight	BONUS:WEAPONPROF=Slam|DAMAGE|max(0,STR/2)	AUTO:FEAT|Improved Initiative|Toughness	KIT:1|LE|NE|CE
+
+Juju Zombie Slam		VISIBLE:YES	TEMPLATE:CHOOSE:Juju Zombie Slam ~ F|Juju Zombie Slam ~ D|Juju Zombie Slam ~ T|Juju Zombie Slam ~ S|Juju Zombie Slam ~ M|Juju Zombie Slam ~ L|Juju Zombie Slam ~ H|Juju Zombie Slam ~ G|Juju Zombie Slam ~ C
+Juju Zombie Slam ~ F	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,1d1	PRESIZEEQ:F
+Juju Zombie Slam ~ D	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,1d2	PRESIZEEQ:D
+Juju Zombie Slam ~ T	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,1d3	PRESIZEEQ:T
+Juju Zombie Slam ~ S	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,1d4	PRESIZEEQ:S
+Juju Zombie Slam ~ M	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,1d6	PRESIZEEQ:M
+Juju Zombie Slam ~ L	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,1d8	PRESIZEEQ:L
+Juju Zombie Slam ~ H	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,2d6	PRESIZEEQ:H
+Juju Zombie Slam ~ G	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,2d8	PRESIZEEQ:G
+Juju Zombie Slam ~ C	VISIBLE:YES	NATURALATTACKS:Slam,Weapon.Natural.Melee.Bludgeoning,*1,4d6	PRESIZEEQ:C
+
+Juju Zombie Flight		VISIBLE:YES	TEMPLATE:CHOOSE:Juju Zombie No Flight|Juju Zombie Winged Flight|Juju Zombie Magical Flight
+Juju Zombie No Flight		VISIBLE:YES	!PREMOVE:1,Fly=1
+Juju Zombie Winged Flight	VISIBLE:YES	BONUS:VAR|Maneuverability|-Maneuverability	PREMOVE:1,Fly=1
+Juju Zombie Magical Flight	VISIBLE:YES	PREMOVE:1,Fly=1

@@ -1,2 +1,41 @@
 # CVS $Revision: $ $Author: $ -- Thu Dec 30 15:56:14 2010 -- reformated by prettylst.pl v1.39 (build 11455)
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8hif	SOURCEDATE:2010-12
+
+# Original Entry: Distant Scholar
+# Original Entry Date: 1 August 2011
+
+###Block: Xacarba Abilities
+Redirect Spell	KEY:Redirect Spell ~ Xacarba	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural	DESC:Spells within 30 ft. must be cast defensively; choose the spell's target as a swift action if that fails.	SOURCEPAGE:p.288
+
+Change Shape	KEY:Change Shape ~ Xacarba	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You have the ability to assume the appearance of a humanoid with one serpentine trait, but retains most of your own physical qualities.	SOURCEPAGE:p.288	BENEFIT:You have the ability to assume the appearance of a humanoid with one serpentine feature, but retain most of your own physical qualities. You cannot change shape to a form more than one size category smaller or larger than your original form. This ability functions as alter self, but you do not adjust your ability scores (although you gain any other abilities of the creature you mimic).  Since one serpentine feature is retained, the bonus to Disguise checks is negated.
+
+Poison	KEY:Poison ~ Xacarba	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural	DESC:Can choose from three types of poison with bite.	ASPECT:Ability Benefit|(Choice of three types)	ABILITY:Special Ability|AUTOMATIC|Poison ~ Fiendish Bile|Poison ~ Mysterious Blood|Poison ~ Vile Disjunction
+
+Poison (Fiendish Bile)	KEY:Poison ~ Fiendish Bile	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural	DEFINE:PoisonSaveDC|10+(HD/2)+CON	DESC:Bite-injury; save Fort DC %1; frequency 1/round for 6 rounds; effect 1d4 Str damage, also 2d8 damage if good-aligned; cure 2 consecutive saves.|PoisonSaveDC	BONUS:VAR|PoisonSaveDC|2|PREFEAT:1,Ability Focus (Poison)	SOURCEPAGE:p.288	ASPECT:Ability Benefit|(Fort DC %1; 1/round for 6 rounds; 1d4 Str damage, also 2d8 damage if good; 2 consecutive saves)|PoisonSaveDC
+
+Poison (Mysterious Blood)	KEY:Poison ~ Mysterious Blood	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural	DEFINE:PoisonSaveDC|10+(HD/2)+CON	DESC:Bite-injury; save Fort DC %1; frequency 1/round for 6 rounds; effect 1d4 Dex and 1d4 Wis damage plus confusion for 1 round; cure 2 consecutive saves.|PoisonSaveDC	BONUS:VAR|PoisonSaveDC|2|PREFEAT:1,Ability Focus (Poison)	SOURCEPAGE:p.288	ASPECT:Ability Benefit|(Fort DC %1; 1/round for 6 rounds; 1d4 Dex and Wis damage, confused 1 round; 2 consecutive saves)|PoisonSaveDC
+
+Poison (Vile Disjunction)	KEY:Poison ~ Vile Disjunction	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural	DEFINE:PoisonSaveDC|10+(HD/2)+CON	DESC:Bite-injury; save Fort DC %1; frequency 1/round for 6 rounds; effect targeted greater dispel magic (CL 18th) on creature; cure 2 consecutive saves.|PoisonSaveDC	BONUS:VAR|PoisonSaveDC|2|PREFEAT:1,Ability Focus (Poison)	SOURCEPAGE:p.288	ASPECT:Ability Benefit|(Fort DC %1; 1/round for 6 rounds; targeted greater dispel magic (CL 18); 2 consecutive saves)|PoisonSaveDC
+
+###Block: Xtabay Abilities
+Devour	KEY:Devour ~ Xtabay	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:As a full-round action, the xtabay may occupy the same square as a sleeping creature; the creature must make DC %1 Fortitude save or take 1d2 Con damage; victim can attempt DC %1 Will save to awaken.|DevourSaveDC	DEFINE:DevourSaveDC|10+CON	BONUS:VAR|DevourSaveDC|2|PREFEAT:1,Ability Focus (Devour)	SOURCEPAGE:p.289
+
+Soporific Pollen	KEY:Soporific Pollen ~ Xtabay	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:As a standard action, each creature within 10-ft. radius falls asleep for 1d3 minutes (DC %1 Will).|SoporificPollenSaveDC	DEFINE:SoporificPollenSaveDC|10+CON	BONUS:VAR|SoporificPollenSaveDC|2|PREFEAT:1,Ability Focus (Soporific Pollen)	SOURCEPAGE:p.289
+
+Acid Sting	KEY:Acid Sting ~ Xtabay	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:A xtabay's sting does an additional 1d2 acid damage.	SOURCEPAGE:p.289	ASPECT:Ability Benefit|(1d2)
+
+###Block: Yrthak Abilities
+Blind		KEY:Blind ~ Yrthak		CATEGORY:Special Ability	TYPE:Weakness.Extraordinary	DESC:Can only see within 5 ft., and even then targets get concealment.  Invulnerable to all sight-based effects and attacks.	SOURCEPAGE:p.289	ABILITY:Special Ability|AUTOMATIC|Immunity to Gaze Attacks ~ Yrthak|Immunity to Visual Effects and Illusions ~ Yrthak|Immunity to Sight-Based Attacks ~ Yrthak
+
+Immunity to Gaze Attacks	KEY:Immunity to Gaze Attacks ~ Yrthak	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Immunity	DESC:You are never subject to gaze attacks.	SOURCEPAGE:p.290	ASPECT:Immunity|Gaze Attacks
+
+Immunity to Visual Effects and Illusions	KEY:Immunity to Visual Effects and Illusions ~ Yrthak	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Immunity	DESC:You are never subject to visual effects and illusions.	SOURCEPAGE:p.290	ASPECT:Immunity|Visual Effects and Illusions
+
+Immunity to Sight-Based Attacks	KEY:Immunity to Sight-Based Attacks ~ Yrthak	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Immunity	DESC:You are never subject to sight-based attacks.	SOURCEPAGE:p.290	ASPECT:Immunity|Sight-Based Attacks
+
+Explosion	KEY:Explosion ~ Yrthak		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DESC:Create explosion from large solid nonmagical object within 60 ft.; deal 2d6 piercing damage to all within 10 ft. of center.	SOURCEPAGE:p.289
+
+Sonic Lance	KEY:Sonic Lance ~ Yrthak	CATEGORY:Special Ability	TYPE:Extraordinary	DESC:Shoot 60-ft. ray for 8d6 sonic damage 1/round.
+
+###Block: Zombie (Juju) Abilities
+Immunity to Magic Missile	KEY:Immunity to Magic Missile ~ Juju Zombie	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Immunity	DESC:You are never affected by magic missiles.	SOURCEPAGE:p.291	ASPECT:Immunity|Magic Missile
