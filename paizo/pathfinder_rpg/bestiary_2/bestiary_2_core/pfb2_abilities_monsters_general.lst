@@ -1,8 +1,20 @@
-# CVS $Revision: 13408 $ $Author: amaitland $ -- Mon Oct 18 11:40:55 2010 -- reformated by prettylst.pl v1.39 (build 11455)
+# CVS $Revision: 13408 $ $Author: amaitland $ -- Mon Aug 15 01:09:39 2011 -- reformated by prettylst.pl v1.39 (build )
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8ddb	SOURCEDATE:2010-12
-# Original Entry by: Stefan Radermacher
+# Original Entry by: Stefan Radermacher and Douglas Limmer
 
 # Ability Name	Unique Key			Category of Ability		Type								Define				Description																																		Modify VAR				Source Page		Aspects																											Description of the Benefits
+Amorphous		CATEGORY:Special Ability	TYPE:Extraordinary.Defensive	DESC:Your body is malleable and shapeless.																																																																																																												SOURCEPAGE:p.294	BENEFIT:Your body is malleable and shapeless. You are immune to precision damage (like sneak attacks) and critical hits, and can move through an area as small as one-quarter of your space without squeezing or one eighth of your space when squeezing.
+Compression	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:The creature can move through an area as small as one-quarter its space without squeezing or one-eighth its space when squeezing.	SOURCEPAGE:p.295
+Hold Breath						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary								DESC:The creature can hold its breath for %1 minutes before it risks drowning.|6*CONSCORE																										SOURCEPAGE:p.298
+
+Freeze		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:The creature can hold itself so still it appears to be an inanimate object of the appropriate shape (a statue, patch of fungus, and so on).  The creature can take 20 on its Stealth check to hide in plain sight as this kind of inanimate object.	SOURCEPAGE:p.297
+
+Immunity to Confusion and Insanity Effects	CATEGORY:Special Ability	TYPE:Extraordinary.Immunity	DESC:You are never subject to confusion or insanity effects.	SOURCEPAGE:p.298	ASPECT:Immunity|Confusion and Insanity Effects
+
+Lifesense		CATEGORY:Special Ability	TYPE:Sense.Supernatural	DESC:The creature notices and locates living creatures within 60 feet, just as if it possessed the blindsight ability.	SOURCEPAGE:p.298
+
+Negative Energy Affinity	CATEGORY:Special Ability	TYPE:Defensive.Extraordinary	DESC:The creature is alive, but reacts to positive and negative energy as if it were undead - positive energy harms it, negative energy heals it.	SOURCEPAGE:p.299
+
 No Breath						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary								DESC:A creature with this ability does not breathe, and is immune to effects that require breathing (such as inhaled poison). This does not give immunity to cloud or gas attacks that do not require breathing.						SOURCEPAGE:p.299
 
 Regeneration	KEY:Regeneration ~ Fire	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ModifyHP	DEFINE:RegenerationRate|0	DESC:You are difficult to kill.																																			SOURCEPAGE:p.303	ASPECT:Ability Benefit|%1 (fire)|RegenerationRate																				BENEFIT:You are difficult to kill. You heal damage at %1 points per round, as with fast healing, but you cannot die as long as your regeneration is still functioning (although you still fall unconscious when their hit points are below 0). Acid or fire causes your regeneration to stop functioning on the round following the attack. During this round, you cannot heal any damage and can die normally. Attack forms that don't deal hit point damage are not healed by regeneration. Regeneration also does not restore hit points lost from starvation, thirst, or suffocation. You can regrow lost portions of you body and can reattach severed limbs or body parts if they are brought together within 1 hour of severing. Severed parts that are not reattached wither and die normally.|RegenerationRate
@@ -10,6 +22,9 @@ Regeneration	KEY:Regeneration ~ Fire	CATEGORY:Special Ability	TYPE:SpecialQualit
 
 Telepathy		KEY:Telepathy ~ Miles	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.Communicate	DEFINE:TelepathyMilesRange|1	DESC:You can mentally communicate with any other creature within %1 miles that has a language.|TelepathyMilesRange																BONUS:VAR|TelepathyRange|100	SOURCEPAGE:p.305	ASPECT:Ability Benefit|%1 mile|TelepathyMilesRange|PREVAREQ:TelepathyMilesRange,1	ASPECT:Ability Benefit|%1 miles|TelepathyMilesRange|PREVARGT:TelepathyMilesRange,1	BENEFIT:You can mentally communicate with any other creature within %1 mile that has a language. It is possible to address multiple creatures at once telepathically, although maintaining a telepathic conversation with more than one creature at a time is just as difficult as simultaneously speaking and listening to multiple people at the same time.|TelepathyMilesRange|PREVAREQ:TelepathyMilesRange,1	BENEFIT:You can mentally communicate with any other creature within %1 miles that has a language. It is possible to address multiple creatures at once telepathically, although maintaining a telepathic conversation with more than one creature at a time is just as difficult as simultaneously speaking and listening to multiple people at the same time.|TelepathyMilesRange|PREVARGT:TelepathyMilesRange,1
 # Default TelepathyMilesRange is 1, adjust with BONUS:VAR|TelepathyMilesRange|x
+
+Undersized Weapons	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:The creature uses manufactured weapons as if it were one size category smaller than the creature's actual size.	BONUS:WEAPONPROF=TYPE.Simple|TOHIT|2	BONUS:WEAPONPROF=TYPE.Martial|TOHIT|2	BONUS:WEAPONPROF=TYPE.Exotic|TOHIT|2	BONUS:WIELDCATEGORY|ALL|1	SOURCEPAGE:p.303
+
 
 ###Block: Simple Template Abilities
 # Ability Name	Unique Key					Category of Ability		Type						Define																Description																																					Modify VAR																		Source Page

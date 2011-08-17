@@ -6,11 +6,12 @@ SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompan
 # Skill Name			Key Stat	Untrained?		Classes	Type			Visible
 Disguise (As Medium humanoid)	KEYSTAT:CHA	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Disguise (As Medium humanoid).MISC"),SKILL.Disguise.MISC
 Stealth (In deserts)		KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),SKILL.Stealth.MISC
+Stealth (In sand)			KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Stealth (In sand).MISC"),SKILL.Stealth.MISC
 
 ###Block: Skill .MODs
 # Skill Name	Bonus to skill									Bonus to skill rank
 Disguise.MOD	BONUS:SKILL|Disguise (As Medium humanoid)|SKILL.Disguise.MISC	BONUS:SKILLRANK|Disguise (As Medium humanoid)|skillinfo("TOTALRANK","Disguise")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Disguise (As Medium humanoid).MISC"),SKILL.Disguise.MISC
-Stealth.MOD		BONUS:SKILL|Stealth (In deserts)|SKILL.Stealth.MISC			BONUS:SKILLRANK|Stealth (In deserts)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),SKILL.Stealth.MISC
+Stealth.MOD		BONUS:SKILL|Stealth (In deserts)|SKILL.Stealth.MISC			BONUS:SKILLRANK|Stealth (In deserts)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (In deserts).MISC"),SKILL.Stealth.MISC		BONUS:SKILL|Stealth (In sand)|SKILL.Stealth.MISC			BONUS:SKILLRANK|Stealth (In sand)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (In sand).MISC"),SKILL.Stealth.MISC
 
 #
 # End
