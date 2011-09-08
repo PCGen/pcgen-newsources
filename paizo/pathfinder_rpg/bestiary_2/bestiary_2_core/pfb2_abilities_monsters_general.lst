@@ -1,4 +1,4 @@
-# CVS $Revision: 13408 $ $Author: amaitland $ -- Sat Sep  3 17:29:33 2011 -- reformated by prettylst.pl v1.39 (build )
+# CVS $Revision: 13408 $ $Author: amaitland $ -- Thu Sep  8 18:10:03 2011 -- reformated by prettylst.pl v1.39 (build )
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8ddb	SOURCEDATE:2010-12
 # Original Entry by: Stefan Radermacher and Douglas Limmer
 
@@ -44,7 +44,7 @@ Negative Energy Affinity										CATEGORY:Special Ability	TYPE:Defensive.Extrao
 
 Never Surprised or Flat-Footed									CATEGORY:Special Ability	TYPE:Defensive.Supernatural																						DESC:This creature is never surprised or flat-footed.																																																																																																																																																																																																																										SOURCEPAGE:p.222
 No Breath													CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																					DESC:A creature with this ability does not breathe, and is immune to effects that require breathing (such as inhaled poison). This does not give immunity to cloud or gas attacks that do not require breathing.																																																																																																																																																																																																SOURCEPAGE:p.299
-
+No Combat Maneuvers											CATEGORY:Special Ability									VISIBLE:NO	DEFINE:NoCombatManeuvers|1
 Ooze Traits							KEY:Ooze Traits ~ Not Blind		CATEGORY:Special Ability									VISIBLE:NO																																																																																																																																																									ABILITY:Special Ability|AUTOMATIC|Ooze Traits Output|PRERULE:1,DISPLAYTYPETRAITS	ABILITY:Special Ability|AUTOMATIC|Immunity to Critical Hits|Immunity to Flanking|Immunity to Sneak Attacks|Immunity to Poison|Immunity to Sleep|Immunity to Paralysis|Immunity to Polymorph|Immunity to Stunning																																										SOURCEPAGE:p.309
 
 Regeneration						KEY:Regeneration ~ Acid/Cold		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ModifyHP			DEFINE:RegenerationRate|0												DESC:You are difficult to kill.																																																																																																																																																																																																																													SOURCEPAGE:p.303	ASPECT:Ability Benefit|%1 (acid or cold)|RegenerationRate																			BENEFIT:You are difficult to kill. You heal damage at %1 points per round, as with fast healing, but you cannot die as long as your regeneration is still functioning (although you still fall unconscious when their hit points are below 0). Acid or cold damage causes your regeneration to stop functioning on the round following the attack. During this round, you cannot heal any damage and can die normally. Attack forms that don't deal hit point damage are not healed by regeneration. Regeneration also does not restore hit points lost from starvation, thirst, or suffocation. You can regrow lost portions of you body and can reattach severed limbs or body parts if they are brought together within 1 hour of severing. Severed parts that are not reattached wither and die normally.|RegenerationRate
@@ -88,9 +88,17 @@ Amorphous			KEY:Amorphous Anatomy ~ Protean	CATEGORY:Special Ability	TYPE:Defens
 Change Shape		KEY:Change Shape ~ Protean		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:A protean's form is not fixed.  Once per day as a standard action, a protean may change shape into any Small, Medium, or Large animal, elemental, giant, humanoid, magical beast, monstrous humanoid, ooze, plant, or vermin.  A protean can resume its true form as a free action, and when it does so, it gainst the effects of a heal spell (CL %1).|TL																							SOURCEPAGE:p.308
 
 ###Block: Animal Companion Abilities
-# Stingray
-# Ability Name	Unique Key			Category of Ability		Type						Define				Description																				Modify VAR
-Poison		KEY:Poison ~ Stingray	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordiary	DEFINE:StingrayPoisonDC|0	DESC:Sting - injury; save Fort DC %1; frequency 1/round for 4 rounds; effect 1d2 Dex and 1 Con; cure 1 save.|StingrayPoisonDC	BONUS:VAR|StingrayPoisonDC|10+TL/2+CON	BONUS:VAR|StingrayPoisonDC|2|PREFEAT:1,Ability Focus (Poison)
+#Block: Arsinoitherium
+# Ability Name					Unique Key			Category of Ability		Type						Visible	Define				Description																				Modify VAR																	Natural Attacks
+Arsinoitherium Companion Natural Attack					CATEGORY:Special Ability							VISIBLE:NO																																													NATURALATTACKS:Gore,Weapon.Natural.Melee.Finesseable.Bludgeoning,*1,1d8
+
+#Block: Gylptodon
+Gylptodon Companion Natural Attack						CATEGORY:Special Ability							VISIBLE:NO																																													NATURALATTACKS:Claw,Weapon.Natural.Melee.Finesseable.Slashing,*2,1d8
+
+#Block: Stingray
+# Ability Name					Unique Key			Category of Ability		Type						Visible	Define				Description																				Modify VAR																	Natural Attacks
+Poison						KEY:Poison ~ Stingray	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordiary			DEFINE:StingrayPoisonDC|0	DESC:Sting - injury; save Fort DC %1; frequency 1/round for 4 rounds; effect 1d2 Dex and 1 Con; cure 1 save.|StingrayPoisonDC	BONUS:VAR|StingrayPoisonDC|10+TL/2+CON	BONUS:VAR|StingrayPoisonDC|2|PREFEAT:1,Ability Focus (Poison)
+
 
 ###Block: Improved Familiar Abilities
 
