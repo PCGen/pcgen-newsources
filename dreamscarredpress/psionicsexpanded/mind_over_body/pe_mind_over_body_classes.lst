@@ -1,19 +1,19 @@
-# CVS $Revision: $ $Author: $ -- Thu Jun 30 07:42:27 2011 -- reformated by prettylst.pl v1.39 (build )
+# CVS $Revision: $ $Author: $ -- Sat Sep 10 08:17:14 2011 -- reformated by prettylst.pl v1.39 (build 15052)
 SOURCELONG:Psionics Expanded - Mind over Body	SOURCESHORT:PEMoB	SOURCEWEB:http://dreamscarredpress.com/dragonfly/Store/product/pid=72.html	SOURCEDATE:2011-06
 #Original Entry: Douglas Limmer
 
 # Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
-CLASS:Vitalist	HD:6		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p. 2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Vitalist	HD:6		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Vitalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|TYPE.Craft|Diplomacy|Heal|Intimidate|Knowledge (History)|Knowledge (Local)|Knowledge (Psionics)|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Sense Motive|Spellcraft|Survival
 # Class Name	Spell Stat		Stat for Bonus Spells	Spell Type		Memorize	Caster level
 CLASS:Vitalist	SPELLSTAT:WIS	BONUSSPELLSTAT:NONE	SPELLTYPE:PSIONIC	MEMORIZE:NO	BONUS:CASTERLEVEL|Vitalist|CL
 
-## Proficiencies
+#Block: Proficiencies
 1																																																													ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies		AUTO:FEAT|Simple Weapon Proficiency
 1																																																																									AUTO:FEAT|Armor Proficiency (Light)
 
-## Psionic Ability
+#Block: Psionic Ability
 1												BONUS:VAR|VitalistML|CL	BONUS:VAR|VitalistML|var("BL=Vitalist")	BONUS:VAR|IsPsionic|1																						DEFINE:VitalistML|0	DEFINE:IsPsionic|0						ABILITY:Special Ability|AUTOMATIC|Psionic
 1												BONUS:VAR|VitalistPL|VitalistML																															DEFINE:VitalistPL|0
 1												BONUS:VAR|BasePowerPoints|2	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:VitalistPL,2	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:VitalistPL,3	BONUS:VAR|BasePowerPoints|6|PREVARGTEQ:VitalistPL,4
@@ -23,7 +23,7 @@ CLASS:Vitalist	SPELLSTAT:WIS	BONUSSPELLSTAT:NONE	SPELLTYPE:PSIONIC	MEMORIZE:NO	B
 1												BONUS:VAR|BasePowerPoints|29|PREVARGTEQ:VitalistPL,17	BONUS:VAR|BasePowerPoints|30|PREVARGTEQ:VitalistPL,18	BONUS:VAR|BasePowerPoints|31|PREVARGTEQ:VitalistPL,19	BONUS:VAR|BasePowerPoints|32|PREVARGTEQ:VitalistPL,20
 1												BONUS:VAR|BonusPowerPoints|(WIS*VitalistPL)/2|TYPE=VitalistBonusPP
 
-## Class Info
+#Block: Class Info
 1	KNOWN:0,2				BONUS:ABILITYPOOL|Vitalist Method|1	BONUS:VAR|MethodLVL|CL																																	DEFINE:MethodLVL|0
 1												BONUS:VAR|CollectiveLVL|CL																																DEFINE:CollectiveLVL|0										ABILITY:Special Ability|AUTOMATIC|Collective
 1						BONUS:ABILITYPOOL|Knack|2																																																			ABILITY:Special Ability|AUTOMATIC|Collective Healing|Medic Powers
@@ -60,11 +60,12 @@ SUBCLASSLEVEL:1	BONUS:VAR|PsychometabolismDisciplineLVL|CL	ABILITY:Special Abili
 # Metamorph
 
 # Class Name	Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus						Modify VAR
-CLASS:Metamorph	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p. 19	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Metamorph	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.19	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Required Feat				Required Skill							Req. Known Spell
 CLASS:Metamorph	PREFEAT:1,Improved Metamorphosis	PRESKILL:2,Autohypnosis=5,Knowledge (Psionics)=5	PRESPELL:1,Metamorphosis
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Metamorph	STARTSKILLPTS:2	CSKILL:Autohypnosis|Climb|Fly|Knowledge (Nature)|Knowledge (Psionics)|Spellcraft|Swim
+#Block:  Level Progression
 1	BONUS:VAR|AlterMetamorphosisLVL|CL
 1	BONUS:VAR|MindBladeLVL|(CL*4)/5
 1	BONUS:VAR|NaturalShifter|1						ABILITY:Special Ability|AUTOMATIC|Natural Shifter|Supernatural Shift
