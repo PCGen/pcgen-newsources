@@ -1,0 +1,43 @@
+SOURCELONG:Paths of Power	SOURCESHORT:PoP
+# Original Entry: Andrew Maitland
+# Original Entry Date: 2011/09/11
+
+
+Buy Path of Power		TYPE:PathOfPower	COST:1	BONUS:ABILITYPOOL|Path of Power Choice|1	MULT:YES	CHOOSE:NOCHOICE	STACK:YES
+# COMMENT: Used to purchase a Path of Power
+
+# COMMENT: Need something that the user manually adds once to grant the base hidden class. - See Eclipse for Example.
+
+
+###Block: Actual Feats
+Armored Caster	SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREFEAT:1,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
+Domain Ability	SOURCEPAGE:p.7	TYPE:General	DESC:Your mystical studies have granted you an innate talent.	PRETEXT:Having expended a Feat on a domain path.	BENEFIT:You gain the granted power for the domain as well as access to its spells.
+#Special: Prestige or Exclusive domain abilities may cost two Feats to acquire at the option of the game master.
+Path Master		SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You become a semi-spontaneous caster.	PRETEXT:Knowing at least three paths.	BENEFIT:You may invest your spell slots in paths rather than in individual spells. You may then expend those spell levels in casting any spell on the path that you can handle. For example, a 8'th level wizard with the Pyrotics path could invest two fourth level spell slots in it, and then use them to cast Fireball and Burning Hands twice each, or any other combination of Pyrotic spells of up to level four - the maximum level of spell which he or she can cast - which adds up to eight spell levels or less.
+Psionic Ability	SOURCEPAGE:p.7	TYPE:General	DESC:You have acquired limited psionic abilities	CHOOSE:PCSTAT|INT|WIS|CHA	MULT:YES	BENEFIT:You gain a base power score and the ability to power effects from whatever paths you have bought with Feats according to the chart below, limited by both your level and by the number of feats you have invested in psionic ability. You gain bonus power points as noted in prerequisites, above. Special: This feat may be taken more than once, with the benefits shown above. In low-magic settings, Feat-based magic may be the only available system.
+# COMMENT: The user must select Int, Wis, or Chr to derive their bonus power points and save DC's from. 
+#		Bonus power points are equal to your (ability score modifier) x (the number of times you've taken the Psionic Ability Feat).
+#		A character must have a minimum ability score of (10 + the level of the power in question) to manifest a power and cannot 
+#		spend more points (base plus augmentations) manifesting a power then their caster level.
+# COMMENT: Not Sure how to implement this <needs more thought>
+Shielded Caster	SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You may perform somatic components while using a shield.	PREFEAT:1,Shield Proficiency	PRESPELLCAST:Arcane	BENEFIT:You may cast spells which have somatic components without risking arcane spell failure while using one arm to hold a shield as long as your other hand is free.
+Skillfullness	SOURCEPAGE:p.7	TYPE:General	MULT:YES	CHOOSE:NOCHOICE	STACK:YES	DESC:You gain six skill points which may be expended normally.	PRESTAT:1,INT=10	BENEFIT:You gain +6 skill points to be expended normally per your current class. This does not allow you to surpass normal limits on class or cross-class skills. Normal: Skill points are strictly dependent on class levels. Special: This Feat may be taken repeatedly.
+# COMMENT: Unable to grant 6 Skill Points - Needs Code Work.
+Spell Ability	SOURCEPAGE:p.8	TYPE:General	DESC:You have acquired limited spellcasting abilities.	CHOOSE:PCSTAT|INT|WIS|CHA	MULT:YES	
+# COMMENT: See Psionic Ability Above, same problem, how to grant spellcasting via a feat???
+#Prerequisites: The user must select Int, Wis, or Chr to derive bonus spells and save DC's from. A character must have a minimum ability score of (10 + the level of the spell in question) to cast a spell.	BENEFIT:You gain spell "slots" according to the chart below, limited by both your level and by the number of feats you have invested in spell ability. The caster level is equal to your character level. The character must memorize spells until the third Feat is invested, at which point she becomes a spontaneous caster. These spell slots may be used to cast spells from any path you have acquired by spending Feats. Additional L5 and L6 spells (Still once per week each) may be purchased at +1 Feat each up to a maximum of 4 each and a total of fifteen Feats. Normal: Spellcasting abilities are derived from class levels, rather than Feats. Special: As shown above, this feat may be taken more than once. Characters may select either Divine or Arcane magic when this Feat is taken. If Divine, their choices of spell lists will be limited by whatever entity grants their powers, but they may use up to medium armor and still cast spells without failure. If Arcane they are subject to spell failure, although they may take the Armored Caster Feat. In low-magic settings, Feat-based magic may be the only available system.
+
+
+
+DEFINE:ArcaneCasterLvlZero|0
+DEFINE:ArcaneCasterLvlOne|0
+DEFINE:ArcaneCasterLvlTwo|0
+DEFINE:ArcaneCasterLvlThree|0
+DEFINE:ArcaneCasterLvlFour|0
+DEFINE:ArcaneCasterLvlFive|0
+DEFINE:ArcaneCasterLvlSix|0
+DEFINE:ArcaneCasterLvlSeven|0
+DEFINE:ArcaneCasterLvlEight|0
+DEFINE:ArcaneCasterLvlNine|0
+
+
