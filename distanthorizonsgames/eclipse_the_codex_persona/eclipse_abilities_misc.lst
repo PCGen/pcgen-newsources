@@ -184,8 +184,15 @@ Damage Reduction ~ Energy 35				KEY:Damage Reduction ~ Energy 35				OUTPUTNAME:E
 
 
 Finesse / Wisdom replaces Dexterity for Reflex	KEY:Finesse ~ Wisdom replaces Dexterity for Reflex	OUTPUTNAME:Finesse (Wisdom replaces Dexterity for Reflex)	CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	DESC:(6 CP). A character with Finesse may replace one attribute modifier with another in some fairly common situation, such as for a particular saving throw.																																																																										BONUS:CHECKS|Reflex|-DEX	BONUS:CHECKS|Reflex|WIS				COST:6	SOURCEPAGE:p.32
+Finesse / Dex replaces Str for Damage	KEY:Finesse ~ Dex replaces Str for Damage		CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	DESC:(6 CP). A character with Finesse may replace one attribute modifier with another in some fairly common situation, such as for a particular saving throw.																																																																										BONUS:COMBAT|DAMAGE.Melee,DAMAGE.Ranged|-STR	BONUS:COMBAT|DAMAGE.Melee,DAMAGE.Ranged|DEX				COST:6	SOURCEPAGE:p.32
+Finesse / Dex replaces Str for To Hit	KEY:Finesse ~ Dex replaces Str for Hit		CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	DESC:(6 CP). A character with Finesse may replace one attribute modifier with another in some fairly common situation, such as for a particular saving throw.																																																																										BONUS:COMBAT|TOHIT.Melee|-STR	BONUS:COMBAT|TOHIT.Melee|DEX				COST:6	SOURCEPAGE:p.32
 
+Augmented Magic ~ +1 Caster Level to Electricity Based Spells	COST:3	CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	KEY:Augmented Magic ~ Electricity Descriptor	BONUS:CASTERLEVEL|DESCRIPTOR.Electricity|1	DESC:+1 Caster Level for Electricity based Spells
+Augmented Magic ~ +1 to Damage Die for Electricity Based Spells	COST:3	CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	KEY:Augmented Magic ~ Electricity Damage		DESC:[Not Calculated] Grants an additional die of damage for Electiricity based spells 
 #
+Self-Development ~ +2 to Stat		KEY:Self-Development ~ Choose Stat +2	CHOOSE:PCSTAT|ALL		CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	BONUS:STAT|%LIST|2	MULT:YES	STACK:YES	COST:12	DESC:[Half-Cost] Self-Development +2 to chosen stat(s) each time taken.
+
+
 
 Immunity / Divination					KEY:Immunity ~ Divination					OUTPUTNAME:Immunity to Divination (3rd level)			CATEGORY:Special Ability	TYPE:General.EclipseAbilityOutput.Abilities.Corruptable	DESC:Common, Minor, Minor/effects of up to level three, 4 CP																																																																																																						COST:4	SOURCEPAGE:p.34
 
@@ -233,7 +240,7 @@ Augmented Bonus / Int to Dex for AC												KEY:Augmented Bonus ~ INT adds to
 Augmented Bonus / Wis to Dex for AC												KEY:Augmented Bonus ~ WIS adds to AC										CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																																								BONUS:COMBAT|AC|WIS|TYPE=Ability.STACK																																		COST:6	SOURCEPAGE:p.25	BENEFIT:Adds WIS bonus to AC.
 Augmented Bonus / Cha to Dex for AC												KEY:Augmented Bonus ~ CHA adds to AC										CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																																								BONUS:COMBAT|AC|CHA|TYPE=Ability.STACK																																		COST:6	SOURCEPAGE:p.25	BENEFIT:Adds CHA bonus to AC.
 
-Augment Bonus (INT boosts Performance Skill; specialized for double effect - to inspire minions only)	KEY:Augmented Bonus ~ INT adds to Perform										CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																																																												BONUS:SKILL|Perform (Atrocities)|INT*2|TYPE=AugmentedBonus	BONUS:SKILL|Mystic Artist Skill|INT*2|TYPE=AugmentedBonus	COST:6	SOURCEPAGE:p.25	BENEFIT:(+6 CP) Adds INT bonus to Perform (Atrocities).
+Augment Bonus (INT boosts Performance Skill; specialized for double effect - to inspire minions only)	KEY:Augmented Bonus ~ INT adds to Perform										CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																																																												BONUS:SKILL|Perform (Atrocities)|INT*2|TYPE=AugmentedBonus	BONUS:VAR|MysticArtistSkillTotal|INT*2|TYPE=AugmentedBonus	COST:6	SOURCEPAGE:p.25	BENEFIT:(+6 CP) Adds INT bonus to Perform (Atrocities).
 Augment Bonus ~ Paladin Grace													KEY:Augmented Bonus ~ CHA adds to All Saves									CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput				DESC: + Cha bonus to all saves																																								BONUS:CHECKS|Fortitude,Reflex,Will|CHA																																									COST:18	SOURCEPAGE:web
 Augment Bonus / Improved ~ Dex applies to Attack									KEY:Augmented Bonus ~ DEX adds to Attacks										CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																																								BONUS:COMBAT|TOHIT|DEX|TYPE=ExtraStat																																		COST:12
 
@@ -249,6 +256,7 @@ Augmented Bonus / Add Cha Stat to Chosen Skills										KEY:Augmented Bonus ~ S
 
 
 Augmented Bonus / Add Cha Stat to Wis Skills										KEY:Augmented Bonus ~ Cha adds to Wis Skills									CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																STACK:YES	MULT:YES	CHOOSE:NOCHOICE																																						BONUS:SKILL|TYPE=Wisdom|CHA																COST:6	SOURCEPAGE:p.25	BENEFIT:Adds Cha Selection to Wisdom Skills.
+Augmented Bonus / Add Dex Stat to Damage											KEY:Augmented Bonus ~ Dex adds to Damage										CATEGORY:Special Ability	TYPE:AugmentedBonus.EclipseAbilityOutput																																																																												BONUS:COMBAT|DAMAGE.Piercing,DAMAGE.Slashing,DAMAGE.Bludgeoning|DEX|TYPE=AugmentBonus																	COST:6	SOURCEPAGE:p.25	BENEFIT:Adds Dex to Damage.
 
 Immunity / Dimension Hop uses manifester level	KEY:Immunity ~ Dimension Hop			CATEGORY:Special Ability	TYPE:Abilities.EclipseAbilityOutput		COST:12				BONUS:VAR|DimensionHopRange|10*(TL-1)
 

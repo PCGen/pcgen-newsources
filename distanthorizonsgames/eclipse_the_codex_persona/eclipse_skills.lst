@@ -74,14 +74,14 @@ Spellcraft (Rune Casting)										KEYSTAT:INT	USEUNTRAINED:NO															VIS
 
 ###Block: Mystic Artist Skill
 # Skill Name			Untrained?		Classes	Type					Visible		Bonus to skill														Modify VAR
-Mystic Artist Skill					CLASSES:ALL	TYPE:None				VISIBLE:DISPLAY																	BONUS:VAR|MysticArtist|skillinfo("TOTAL", "Mystic Artist Skill")
+Mystic Artist Skill					CLASSES:ALL	TYPE:None				VISIBLE:DISPLAY																	BONUS:VAR|MysticArtistSkillTotal|skillinfo("TOTAL", "Mystic Artist Skill")|TYPE=PerformSkill
 #COMMENT: This skill controls the Mystic Artist Free Purchases
 #COMMENT: VISIBLE:NO not valid
 #Block: Mystic Artist Subs
 
 
 Perform (Atrocities)		USEUNTRAINED:NO			TYPE:Charisma.Perform.Sample
-Perform (Atrocities).MOD														BONUS:SKILL|Mystic Artist Skill|skillinfo("TOTAL", "Perform (Atrocities)")|TYPE=PerformSkill
+Perform (Atrocities).MOD														BONUS:VAR|MysticArtistSkillTotal|skillinfo("TOTAL", "Perform (Atrocities)")|TYPE=PerformSkill
 
 ###Block:
 #Dweomer - buy feat to access skills
