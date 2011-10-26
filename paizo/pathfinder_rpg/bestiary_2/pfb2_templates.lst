@@ -1,8 +1,8 @@
 # CVS $Revision: $ $Author: $ -- Mon Oct 24 18:44:18 2011 -- reformated by prettylst.pl v1.39 (build )
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8hif	SOURCEDATE:2010-12
 
-# Original Entry: Distant Scholar
-# Original Entry Date: 2 August 2011
+# ORIGINAL ENTRY: Distant Scholar
+# ORIGINAL ENTRY DATE: 2011/08/02
 
 ###Block: Void Zombie template
 # Template Name	Challenge Rating	Visible	Source Page		Required Template			Weapon prof. bonus												Ability									Natural Attacks
@@ -38,7 +38,7 @@ Weretiger_CON	VISIBLE:NO	DEFINE:LOCK.CON|19	!PRESTAT:1,CON=19
 
 
 ###Block: Ogrekin template
-#TODO: Minimum CR 2
+# NEEDS DATA WORK: Minimum CR 2
 # Template Name	Challenge Rating	Source Page		Required Race		Bonus to Ability Pool															Combat bonus					Stat bonus									Race Subtype	Vision		PRESIZE
 Ogrekin		CR:1			SOURCEPAGE:p.204	PRERACE:1,Humanoid	BONUS:ABILITYPOOL|Ogrekin Beneficial Deformity|1	BONUS:ABILITYPOOL|Ogrekin Disadvantageous Deformity|1	BONUS:COMBAT|AC|3|TYPE=NaturalArmor.STACK	BONUS:STAT|STR|6	BONUS:STAT|CON|4	BONUS:STAT|INT,CHA|-2	RACESUBTYPE:Giant	VISION:Low-light	PRESIZE:M
 
@@ -68,28 +68,35 @@ Petitioner Bite ~ G	VISIBLE:NO																																		PRESIZEEQ:G		NAT
 Petitioner Bite ~ C	VISIBLE:NO																																		PRESIZEEQ:C		NATURALATTACKS:Bite,Weapon.Natural.Melee.Bludgeoning.Finesseable,*1,4d6
 
 ###Block: Ravener template
-#TODO: Change DR from /magic to /good - not possible?
-#TODO: Combining the template's increased crit range and the Improved Critical feat isn't working correctly.
-#COMMENT: There are a bunch of small differences between the bestiary's version and PCGen's version:
-#         Bestiary has Dex 8; PCGen has Dex 6 - which affects AC, Init, etc.
-#         Bestiary has 337 hp; PCGen has 328 hp
-#         Bestiary has +23 Will save; PCGen has +24 Will save
-#         Bestiary has 57 CMD; PCGen has 60 (PCGen uses lower Dex, deflection bonus to AC)
-#         Bestiary has -1 damage to all melee attacks (except wings) compared with PCGen
-#         Bestiary has -1 on Bluff, Diplomacy, Fly, and Intimidate compared with PCGen
-#         Bestiary doesn't list the ravener's low-light vision
-#         PCGen gives Knowledge (Religion) as a class skill; are dragons limited to 2 knowledges for class skills?
+# NEEDS CODE WORK: Change DR from /magic to /good - not possible?
+# NEEDS DATA WORK: Combining the template's increased crit range and the
+# NEEDS DATA WORK:   Improved Critical feat isn't working correctly.
+# COMMENT: There are a bunch of small differences between the bestiary's 
+# COMMENT:   version and PCGen's version:
+# COMMENT:      Bestiary has Dex 8; PCGen has Dex 6 - with cascading effects.
+# COMMENT:      Bestiary has 337 hp; PCGen has 328 hp
+# COMMENT:      Bestiary has +23 Will save; PCGen has +24 Will save
+# COMMENT:      Bestiary has 57 CMD; PCGen has 60 
+# COMMENT:        (PCGen uses lower Dex, deflection bonus to AC)
+# COMMENT:      Bestiary has -1 damage to all melee attacks (except wings) 
+# COMMENT:        compared with PCGen
+# COMMENT:      Bestiary has -1 on Bluff, Diplomacy, Fly, Intimidate vs PCGen.
+# COMMENT:      Bestiary doesn't list the ravener's low-light vision.
+# COMMENT:      PCGen gives Knowledge (Religion) as a class skill; 
+# COMMENT:        are dragons limited to 2 knowledges for class skills?
 # Template Name	Hit Dice Size			Challenge Rating	Template		Source Page		Required AL		Required Race	Var. Must Be Grater		Combat bonus						Bonus to skill								Stat bonus							Modify VAR				Ability																																		Main Race Type	Vision
 Ravener		HITDIE:8|CLASS.TYPE=Monster	CR:2			TEMPLATE:Undead	SOURCEPAGE:p.230	PREALIGN:LE,NE,CE	PRERACE:1,Dragon	PREVARGT:DragonAgeCatagory,9	BONUS:COMBAT|AC|max(1,CHA/2)|TYPE=Deflection	BONUS:SKILL|Intimidate,Perception,Stealth|8|TYPE=Racial	BONUS:STAT|STR,INT,WIS|4	BONUS:STAT|CHA|6	BONUS:VAR|ChannelResistance|4	ABILITY:Special Ability|AUTOMATIC|Channel Resistance|Soul Ward ~ Ravener|Critical Hits ~ Ravener|Breath Weapon ~ Ravener|Cowering Fear ~ Ravener|Soul Consumption ~ Ravener|Soul Magic ~ Ravener|Undead Traits	RACETYPE:Undead	VISION:Darkvision (240')|Blindsense (120')
 
 ###Block: Spriggan Size Alteration template
-# Comment: BONUS:COMBAT|TOHIT|4 should be BONUS:WEAPON|TOHIT|4, but I couldn't get that to work.
+# NEEDS DATA WORK: BONUS:COMBAT|TOHIT|4 should be BONUS:WEAPON|TOHIT|4,
+# NEEDS DATA WORK:   but I couldn't get that to work.
 # Template Name			Size		Face/Space	Reach		Define				Combat bonus							Add to base move			Stat bonus								Wield Category bonus
 Spriggan Size Alteration	SIZE:L	FACE:10	REACH:10	DEFINE:SizeAlterationActive|1	BONUS:COMBAT|TOHIT|4	BONUS:COMBAT|DAMAGESIZE|2	BONUS:MOVEADD|TYPE.Walk|10	BONUS:STAT|STR|12	BONUS:STAT|DEX|-2	BONUS:STAT|CON|6	BONUS:WIELDCATEGORY|ALL|2
 
 
 ###Block: Worm that Walks template
-# Comment: Need to remove Natural Armor bonus from AC, remove previous DR, remove previous natural attacks
+# NEEDS DATA WORK: Need to remove Natural Armor bonus from AC, remove 
+# NEEDS DATA WORK:   previous DR, remove previous natural attacks
 # Template Name			Hit Dice Size			Challenge Rating	Visible	Damage Reduction	Template																																								Source Page		Required AL		Required Class			Required Size	Combat bonus					Bonus to skill						Stat bonus			Modify VAR				Ability																																									Automatically Gained Feat	Main Race Type	Vision						Natural Attacks
 Worm that Walks			HITDIE:8|CLASS.TYPE=Monster	CR:2					DR:15/-		TEMPLATE:Worm that Walks Slam																																					SOURCEPAGE:p.286	PREALIGN:LE,NE,CE	PRECLASS:1,SPELLCASTER=1				BONUS:COMBAT|AC|max(2,WIS)|TYPE=Insight	BONUS:SKILL|Perception,Sense Motive,Stealth|8	BONUS:STAT|DEX,CON|4	BONUS:VAR|FastHealingRate|CR	ABILITY:Special Ability|AUTOMATIC|Worm that Walks Traits|Fast Healing|Immunity to Disease|Immunity to Paralysis|Immunity to Poison|Immunity to Sleep|Grab|Discorporate ~ Worm that Walks|Squirming Embrace ~ Worm that Walks|Tenacious ~ Worm that Walks	AUTO:FEAT|Diehard			RACETYPE:Vermin	VISION:Darkvision (60')|Blindsight (30')
 
@@ -112,7 +119,8 @@ Whale Tail Slap	VISIBLE:NO	BONUS:WEAPONPROF=Tail Slap|DAMAGE|STR/2	NATURALATTACK
 Whale Bite		VISIBLE:NO	BONUS:WEAPONPROF=Bite|DAMAGE|STR/2		NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Bludgeoning.Piercing.Slashing,*1,4d6
 
 ###Block: Zombie (Juju) template
-# Needs Code Work: This template seems to try to use the Juju Zombie Flight twice, for some unknown reason.  It seems to be related to the KIT tag.
+# NEEDS CODE WORK: This template seems to try to use the Juju Zombie Flight 
+# NEEDS CODE WORK:   twice, for some unknown reason.
 # Template Name			Hit Dice Size			Challenge Rating	Visible	Damage Reduction		Template																																		Source Page		Define			Required Movement Rate	Prohibited Movement Rate	Prohibited Race			Required Size	Combat bonus					Damage reduction										Bonus to skill				Stat bonus					Modify VAR										Weapon prof. bonus				Ability																															Automatically Gained Feat			Apply Kit		Subrace	Main Race Type	Natural Attacks
 Zombie (Juju)			HITDIE:8|CLASS.TYPE=Monster	CR:1					DR:5/Magic and Slashing	TEMPLATE:Undead	TEMPLATE:Juju Zombie Slam	TEMPLATE:Juju Zombie Flight																							SOURCEPAGE:p.291	DEFINE:NoTypeTraits|1										!PRERACE:1,RACETYPE=Undead				BONUS:COMBAT|AC|3|TYPE=NaturalArmor.STACK	BONUS:DR|Magic|5|PRELEVEL:MIN=11	BONUS:DR|Slashing|5|PRELEVEL:MIN=11	BONUS:SKILL|Climb|8|TYPE=Racial	BONUS:STAT|DEX|2	BONUS:STAT|STR|4	BONUS:VAR|ChannelResistance|4	BONUS:VAR|FireResistanceBonus|10	BONUS:WEAPONPROF=Slam|DAMAGE|max(0,STR/2)	ABILITY:Special Ability|AUTOMATIC|Channel Resistance|Immunity to Cold|Immunity to Electricity|Undead Traits|Immunity to Electricity|Resistance to Fire|Immunity to Magic Missile ~ Juju Zombie	AUTO:FEAT|Improved Initiative|Toughness	KIT:1|LE|NE|CE	SUBRACE:YES	RACETYPE:Undead
 

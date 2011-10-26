@@ -1,6 +1,8 @@
 # CVS $Revision: 13408 $ $Author: amaitland $ -- Sat Oct 22 14:51:19 2011 -- reformated by prettylst.pl v1.39 (build )
 SOURCELONG:Bestiary 2	SOURCESHORT:PFB2	SOURCEWEB:http://paizo.com/store/byCompany/p/paizoPublishingLLC/pathfinder/pathfinderRPG/v5748btpy8hif	SOURCEDATE:2010-12
-# Original Entry by: Stefan Radermacher and Douglas Limmer
+
+# ORIGINAL ENTRY: Stefan Radermacher and Douglas Limmer
+# ORIGINAL ENTRY DATE: Unknown
 
 ###Block: Gar [and Gar (Giant)] abilities - moved to pfb2_abilities_monsters_general.lst for animal companion
 ###Block: Marsh Giant abilities - none!
@@ -144,9 +146,11 @@ Pain			KEY:Pain ~ Howler			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordi
 Quill Defense	KEY:Quill Defense ~ Howler	CATEGORY:Special Ability	TYPE:Defensive.Extraordinary						DESC:Any creature that strikes a howler with a non-reach melee weapon, unarmed strike, or natural weapon takes 1d4+1 points of piercing damage from the howler's quills and suffers from the howler's pain attack.																																																																												SOURCEPAGE:p.159
 
 ###Block: Ifrit Abilities
-# Comment: Need to be able to add 1/2 (?) to the damage of the Fire Bolt ~ Fire Domain ability (pfcr_abilities_class.lst).  There's no way to do it as of now.
-#  Ash subdomain - add 10 ft. of length to the wall and 1 to minutes/day of wall of ashes
-#  Smoke subdomain - no changes needed; cleric level doesn't come into play for cloud of smoke
+# NEEDS DATA WORK: Need to be able to add 1/2 (?) to the damage of the 
+# NEEDS DATA WORK: Fire Bolt ~ Fire Domain ability.
+# NEEDS DATA WORK: Ash subdomain - add 10 ft. of length to the wall and 
+# NEEDS DATA WORK:   1 to minutes/day of wall of ashes
+# COMMENT: Smoke subdomain - no changes needed
 # Ability Name					Unique Key					Category of Ability		Type						Visible	Define				Innate Spells								Description																																						Ability																							Caster level																																									Bonus to DC															Bonus to spell cast/day																																																																																																																																								Modify VAR																																										Source Page
 Elemental Affinity				KEY:Elemental Affinity ~ Ifrit	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																		DESC:Ifrit sorcerers with the elemental (fire) bloodline treat their Charisma score as 2 points higher for all sorcerer class abilities.  Ifrit clerics with the Fire domain cast their domain powers and spells at +1 caster level.	ABILITY:Special Ability|AUTOMATIC|Elemental Affinity Bonus Spells ~ Ifrit|PREABILITY:1,CATEGORY=Special Ability,Elemental Bloodline (Fire)	BONUS:CASTERLEVEL|DOMAIN.Fire|1|PREMULT:2,[PRECLASS:1,Cleric=1],[PREDOMAIN:1,Fire]	BONUS:CASTERLEVEL|DOMAIN.Ash|1|PREMULT:2,[PRECLASS:1,Cleric=1],[PREDOMAIN:1,Ash]	BONUS:CASTERLEVEL|DOMAIN.Smoke|1|PREMULT:2,[PRECLASS:1,Cleric=1],[PREDOMAIN:1,Smoke]	BONUS:DC|CLASS.Sorcerer|1|PREABILITY:1,CATEGORY=Special Ability,Elemental Bloodline (Fire)																																																																																																																																												BONUS:VAR|BloodlinePowerTimes|1|PREMULT:2,[PRECLASS:1,Sorcerer=1],[PREABILITY:1,CATEGORY=Special Ability,Elemental Ray (Fire)]	BONUS:VAR|ElementalBlastDC|1|PREMULT:2,[PRECLASS:1,Sorcerer=1],[PREABILITY:1,CATEGORY=Special Ability,Elemental Blast (Fire)]	SOURCEPAGE:p.160
 Elemental Affinity Bonus Spells ~ Ifrit							CATEGORY:Special Ability							VISIBLE:NO																																																																																																																																										BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=1|1|PREMULT:2,[PREVARGT:CHASCORE,10],[PREVAREQ:(CHA%4),0]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=2|1|PREMULT:2,[PREVARGT:CHASCORE,10],[PREVAREQ:(CHA%4),1]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=3|1|PREMULT:2,[PREVARGT:CHASCORE,10],[PREVAREQ:(CHA%4),2]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=4|1|PREMULT:2,[PREVARGT:CHASCORE,10],[PREVAREQ:(CHA%4),3]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=5|1|PREMULT:2,[PREVARGT:CHA,0],[PREVAREQ:(CHA%4),0]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=6|1|PREMULT:2,[PREVARGT:CHA,1],[PREVAREQ:(CHA%4),1]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=7|1|PREMULT:2,[PREVARGT:CHA,2],[PREVAREQ:(CHA%4),2]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=8|1|PREMULT:2,[PREVARGT:CHA,3],[PREVAREQ:(CHA%4),3]	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=9|1|PREMULT:2,[PREVARGT:CHA,4],[PREVAREQ:(CHA%4),0]
