@@ -2,6 +2,7 @@
 SOURCELONG:Ultimate Magic	SOURCESHORT:PFUM	SOURCEWEB:http://paizo.com/pathfinderRPG/v5748btpy8g7s	SOURCEDATE:2011-05
 # Original Entry by: Stefan Radermacher and Eric Smith (Maredudd)
 
+# ------------------------------
 ###Block: Magus archetypes
 # Ability Name	Unique Key					Category of Ability	Type								Required Class		Multiple Requirements																			Description																																																																	Ability												Cost		Source Page
 Bladebound		KEY:Magus Archetype ~ Bladebound	CATEGORY:Archetype	TYPE:Archetype.MagusArchetype.MagusArcanaLvl3	PRECLASS:1,Magus=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Magus Archetype ~ Bladebound],[!PREABILITY:1,CATEGORY=Archetype,TYPE.MagusArcanaLvl3]	DESC:A select group of magi are called to carry a black blade - a sentient weapon of often unknown and possibly unknowable purpose. These weapons become valuable tools and allies, as both the magus and weapon typically crave arcane power, but as a black blade becomes more aware, its true motivations manifest, and as does its ability to inf luence its wielder with its ever-increasing ego.	ABILITY:Special Ability|AUTOMATIC|Black Blade ~ Bladebound|PRECLASS:1,Magus=3	COST:0	SOURCEPAGE:p.47
@@ -12,6 +13,7 @@ Bladebound		KEY:Magus Archetype ~ Bladebound	CATEGORY:Archetype	TYPE:Archetype.M
 Black Blade		KEY:Black Blade ~ Bladebound	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:You gains a powerful sentient weapon called a black blade, whose weapon type is chosen by the magus. A magus with this class feature cannot take the familiar magus arcana, and cannot have a familiar of any kind, even from another class.	BONUS:ABILITYPOOL|Magus Arcana|-1	BONUS:VAR|MagusArcanePool|max(MagusArcanePoolLVL/3,1)-max(MagusArcanePoolLVL/2,1)	SOURCEPAGE:p.47
 
 
+# ------------------------------
 ###Block: Cleric Archetypes
 # Ability Name	Unique Key						Category of Ability		Type										Required Class		Multiple Requirements																			Description																																									Automatically Gained Feat	Ability																												Bonus to Ability Pool								Add domain number		Cost		Source Page
 Undead Lord		KEY:Cleric Archetype ~ Undead Lord		CATEGORY:Archetype		TYPE:Archetype.ClericDomain						PRECLASS:1,Cleric=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Cleric Archetype ~ Undead Lord],[!PREABILITY:1,CATEGORY=Archetype,TYPE.ClericDomain]	DESC:An undead lord is a cleric focused on using necromancy to control undead. Her flock is the walking dead and her choir the keening spirits of the damned. This unliving congregation is the manifestation of her unceasing love affair with death.	AUTO:FEAT|Command Undead	ABILITY:Special Ability|AUTOMATIC|Corpse Companion ~ Undead Lord|PRECLASS:1,Cleric=1	ABILITY:Special Ability|AUTOMATIC|Unlife Healer ~ Undead Lord|PRECLASS:1,Cleric=8	BONUS:ABILITYPOOL|Undead Lord Bonus Feat|1|PRECLASS:1,Cleric=10	BONUS:DOMAIN|NUMBER|-1	COST:0	SOURCEPAGE:p.32
@@ -22,6 +24,7 @@ Corpse Companion	KEY:Corpse Companion ~ Undead Lord		CATEGORY:Special Ability	TY
 Unlife Healer	KEY:Unlife Healer ~ Undead Lord		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:Your spells, spell-like abilities, and supernatural abilities used to heal undead are Empowered.|!PRECLASS:1,Cleric=16	DESC:The undead lord's spells, spell-like abilities, and supernatural abilities used to heal undead are Empowered and Maximized.|PRECLASS:1,Cleric=16
 	
 
+# ------------------------------
 # Summoner
 Broodmaster		KEY:Summoner Archetype ~ Broodmaster	CATEGORY:Archetype		TYPE:Archetype.SummonerEidolon.SummonerLifeLink.SummonerLifeBond.SummonerMergeForms				PRECLASS:1,Summoner=1		PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Summoner Archetype ~ Broodmaster],[!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerEidolon,TYPE.SummonerLifeLink,TYPE.SummonerLifeBond,TYPE.SummonerMergeForms]				DESC:A broodmaster forges a link with multiple smaller eidolons that make up his brood.																				ABILITY:Special Ability|AUTOMATIC|Eidolon Brood ~ Broodmaster|PRECLASS:1,Summoner=2		ABILITY:Special Ability|AUTOMATIC|Brood Link ~ Broodmaster|PRECLASS:1,Summoner=2		ABILITY:Special Ability|AUTOMATIC|Larger Brood ~ Broodmaster|PRECLASS:1,Summoner=8		ABILITY:Special Ability|AUTOMATIC|Brood Bond ~ Broodmaster|PRECLASS:1,Summoner=14	ABILITY:Special Ability|AUTOMATIC|Merge Forms ~ Broodmaster|PRECLASS:1,Summoner=16	COST:0	SOURCEPAGE:p.78
 Evolutionist	KEY:Summoner Archetype ~ Evolutionist	CATEGORY:Archetype		TYPE:Archetype.SummonerMakersCall.SummonerTransposition.SummonerGreaterShieldAlly				PRECLASS:1,Summoner=1		PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Summoner Archetype ~ Evolutionist],[!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerMakersCall,TYPE.SummonerTransposition,TYPE.SummonerGreaterShieldAlly]					DESC:An evolutionist possesses greater power over his eidolon's form, and is able to evolve his eidolon and its abilities to meet any challenge or face any threat as it comes up, seemingly on a whim.	ABILITY:Special Ability|AUTOMATIC|Mutate Eidolon ~ Evolutionist|PRECLASS:1,Summoner=6	ABILITY:Special Ability|AUTOMATIC|Evolve Base Form ~ Evolutionist|PRECLASS:1,Summoner=8	ABILITY:Special Ability|AUTOMATIC|Transmogrify ~ Evolutionist|PRECLASS:1,Summoner=12															COST:0	SOURCEPAGE:p.79
@@ -51,6 +54,20 @@ Shielded Meld		KEY:Shielded Meld ~ Synthesist		CATEGORY:Special Ability	TYPE:Spe
 Maker's Jump		KEY:Maker's Jump ~ Synthesist			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike	DESC:Whenever the synthesist is fused with his eidolon, the synthesist can cast dimension door as a spell-like ability using his caster level. This ability only affects the fused synthesist and eidolon. The synthesist can use this ability once per day at 6th level, plus one additional time per day for every six levels beyond 6th. 
 Greater Shielded Meld	KEY:Greater Shielded Meld ~ Synthesist	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:Whenever the synthesist is fused with his eidolon, he gains a +4 shield bonus to his Armor Class and a +4 circumstance bonus on his saving throws.
 Split Forms			KEY:Split Forms ~ Synthesist			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:As a swift action, the synthesist and his fused eidolon can split into two creatures: the synthesist and the eidolon. Both have the same evolutions. The synthesist emerges in a square adjacent to the eidolon if possible. All effects and spells currently targeting the fused synthesist-eidolon affect both the synthesist and the eidolon.  The synthesist can use this ability for a number of rounds per day equal to his summoner level. He can end this effect at any time as a full-round action. For the duration of this effect, the eidolon functions as a normal eidolon of the summoner's class level. 
+
+# ------------------------------
+# Witch
+Hedge Witch			KEY:Witch Archetype ~ Hedge Witch		CATEGORY:Archetype		TYPE:Archetype.Hex4.Hex8	DESC:Among witches, there are those who devote themselves to the care of others and restrict their practices to the healing arts. They often take the place of clerics in rural communities and may wander the countryside servicing the needs of several small communities.	ABILITY:Special Ability|AUTOMATIC|Spontaneous Healing ~ Hedge Witch	ABILITY:Special Ability|AUTOMATIC|Empathic Healing ~ Hedge Witch	COST:0
+
+# Hedge Witch
+Spontaneous Healing	KEY:Spontaneous Healing ~ Hedge Witch	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:A hedge witch can channel stored spell energy into healing spells that she did not prepare ahead of time. The witch can 'lose' any prepared spell that is not an orison in order to cast any cure spell of the same spell level or lower, even if she doesn’t know that cure spell. 
+Empathic Healing		KEY:Empathic Healing ~ Hedge Witch		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:A hedge witch can minister to a diseased or poisoned target, redirecting the affliction into herself. For a poisoned target, the witch must tend to him as a standard action; he makes his next saving throw against the poison as normal, but the witch suffers the effects of the failed save instead of the poisoned creature. For a diseased target, the witch must tend to the sick person for an hour; he makes his next saving throw against the disease as normal, but the witch suffers the effects of the failed save instead of the diseased creature. The witch does not actually become poisoned or diseased (and is not contagious and does not need to be cured), but suffers the effects of the affliction as if she had been. The witch normally uses this ability to extend the life of someone near death, giving him time to recover. This ability has no effect if the witch is immune to disease or poison. 
+
+
+
+
+
+
 #
 # End
 #
