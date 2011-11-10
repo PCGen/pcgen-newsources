@@ -1,0 +1,18 @@
+# CVS $Revision: $ $Author: $ -- Thu Jun 30 07:42:27 2011 -- reformated by prettylst.pl v1.39 (build )
+
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2011/11/04
+
+### Block: Determines whether a Constructor gets Advanced Construct or Boost Construct
+Improved Constructs Determination	VISIBLE:NO	TEMPLATE:CHOOSE:Get Advanced Constructs|Get Boost Construct|Get Bonus Psionic Feat
+Get Advanced Constructs			VISIBLE:NO	!PREFEAT:1,Advanced Constructs	AUTO:FEAT|Advanced Constructs
+Get Boost Construct			VISIBLE:NO	!PREFEAT:1,Boost Construct		AUTO:FEAT|Boost Construct
+Get Bonus Psionic Feat			VISIBLE:NO	PREFEAT:2,Advanced Construct,Boost Construct	BONUS:ABILITYPOOL|Bonus Psionic Feat|1
+
+### Block: Template to activate Advanced Construct abilities
+Advanced Construct	PRERACE:1,Astral Construct%
+
+### Block: Determines Psicrystal Bond choice
+Psicrystal Bond Choice	VISIBLE:NO	TEMPLATE:CHOOSE:Get Psicrystal Affinity|Get Improved Psicrystal
+Get Psicrystal Affinity	VISIBLE:NO	!PREFEAT:1,Psicrystal Affinity	AUTO:FEAT|Psicrystal Affinity
+Get Improved Psicrystal	VISIBLE:NO	PREFEAT:1,Psicrystal Affinity		AUTO:FEAT|Improved Psicrystal
