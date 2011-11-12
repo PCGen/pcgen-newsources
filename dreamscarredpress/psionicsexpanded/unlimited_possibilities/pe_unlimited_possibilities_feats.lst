@@ -6,7 +6,6 @@
 # NEEDS DATA WORK: This doesn't actually add any talents yet.
 # Feat Name				Type					Required Ability												Required Class				Required Feat			Prohibited Feat				Multiple Requirements								Required Skill			Req. Known Spell			Req. Spell Type			Required Text								Var. Must Be Grater																	Define							Description																	Stackable?	Multiple?	Choose									Modify VAR					Source Page
 Access Psionic Talent		TYPE:Psionic																																		PREMULT:1,[PRESPELLCAST:TYPE=Psionic],[PREFEAT:1,Unlocked Talent]																										PREVARGT:IsPsionic,0																	DEFINE:BonusPsionicTalents|0				DESC:You are abile to manifest minor psionic abilities; gain %1 psionic talents.|BonusPsionicTalents		STACK:YES	MULT:YES	CHOOSE:NOCHOICE								BONUS:VAR|BonusPsionicTalents|5	SOURCEPAGE:p.13
-# NEEDS DATA WORK: New astral construct menu options not yet implemented.
 Advanced Constructs		TYPE:Psionic																																																		PRESPELL:1,Astral Construct																PREVARGT:IsPsionic,0																									DESC:You gain additional menu options for astral constructs.																												SOURCEPAGE:p.13
 Burning Power			TYPE:Metapsionic																																																																																																		DESC:Do extra damage with acid or fire power.																															SOURCEPAGE:p.14
 Concussive Power			TYPE:Metapsionic																																																																																																		DESC:Disorient with sonic power.																																	SOURCEPAGE:p.14
@@ -35,12 +34,12 @@ Persistent Power			TYPE:Metapsionic																																													
 Piercing Power			TYPE:Metapsionic																																																																																																		DESC:Power affects target as if target had 5 smaller SR.																													SOURCEPAGE:p.16
 Redirect Power			TYPE:Metapsionic																																																																																																		DESC:You can redirect a failed power to a different target.																													SOURCEPAGE:p.16
 Rime Power				TYPE:Metapsionic																																																																																																		DESC:Entangle creatures with cold power.																																SOURCEPAGE:p.16
+# COMMENT: This looks like a job for BASESPELLSTAT, but it doesn't work.
 Selective Power			TYPE:Metapsionic																																													PRESKILL:1,Spellcraft=10																																									DEFINE:SelectivePowerTargets|max(INT,WIS,CHA)	DESC:Choose %1 targets to exclude from power.|SelectivePowerTargets																											SOURCEPAGE:p.17
-#	DEFINE:SelectivePowerTargets|BASESPELLSTAT
 Shared Power			TYPE:Metapsionic																																																																																																		DESC:Manifest personal power as a 30-ft. ray, or with the Network descriptor.																										SOURCEPAGE:p.17
 Sickening Power			TYPE:Metapsionic																																																																																																		DESC:Sicken creatures with power.																																	SOURCEPAGE:p.17
 Thundering Power			TYPE:Metasionic																																																																																																		DESC:Deafen creatures with damaging power.																															SOURCEPAGE:p.17
 Toppling Power			TYPE:Metapsionic																																																																																																		DESC:Knock creatures prone with force power.																															SOURCEPAGE:p.17
-# NEEDS CODE WORK: Doesn't add power to the powers known list.  May not have a powers known list.
-#Unlocked Talent		TYPE:General	DESC:You gain 2 power points and one 1st-level power.	SOURCEPAGE:p.17	PREFEAT:1,Wild Talent	BONUS:VAR|BonusPowerPoints|2	MULT:YES	CHOOSE:NUMCHOICES=1|SPELLS|SPELLTYPE=Psionic[LEVELMIN=1;LEVELMAX=1]
+# NEEDS CODE WORK: Doesn't add power to the powers known list.
+# NEEDS CODE WORK:   The character may not have a powers known list.
 Unlocked Talent			TYPE:General																							PREFEAT:1,Wild Talent		!PREFEAT:1,Unlocked Talent																																																																		DESC:You gain 2 power points and one 1st-level power.												MULT:YES	CHOOSE:SPELLS|SPELLTYPE=Psionic[LEVELMIN=1;LEVELMAX=1]	BONUS:VAR|BonusPowerPoints|2		SOURCEPAGE:p.17
