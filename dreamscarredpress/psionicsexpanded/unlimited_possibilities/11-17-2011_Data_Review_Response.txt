@@ -1,18 +1,38 @@
-> *_powers:
-> This makes no sense - 'Conceal Thoughts.COPY=Conceal Thoughts	KEY:Conceal Thoughts Talent'  Rinse Repeat. If you want to do something that SHOULD be
-> Conceal Thoughts.COPY=Conceal Thoughts Talent
-> Conceal Thoughts Talent.MOD  <> New Things; instead it looks like you're making an entirely new ability. Suggestion - Just make the new Ability and skip the .COPY. 
+An Alpha Data Review is meant to verify a set is in working order by both loading without errors and reviewing with a cursory eyeball look over of the actual code to make sure it's written properly and as intended. The Data Monkey doing the review does not verify or validate the code in the set is proper against the source book. That occurs in the Full Release Review (It's a more labor intensive task and does require the source book). Nothing in the review should be construed as giving grief or picking on the monkey that wrote it. It's only meant to assure a quality set is being put out. It's also a second set of eyes and an experience monkey giving advice and feedback to the data monkey. Please don't construe the written words with any emotion that was never there to begin with. 
 
-This makes perfect sense to me.  The Conceal Thoughts 0-level power (or "spell" in PCGen terms) is almost exactly like the already-existing Conceal Thoughts 1st-level power.  Why not use copy, since it's nearly exactly the same?  For someone who isn't using the 0-level "Talents" rules, Conceal Thoughts still needs to be available as a 1st-level power.  Since the two can't have exactly the same name, the KEY: tag is needed.
+
+Now, let's tackle what I wrote and your responses:
+
+Me - *_powers:
+This makes no sense - 'Conceal Thoughts.COPY=Conceal Thoughts	KEY:Conceal Thoughts Talent'  Rinse Repeat. If you want to do something that SHOULD be
+Conceal Thoughts.COPY=Conceal Thoughts Talent
+Conceal Thoughts Talent.MOD  <> New Things; instead it looks like you're making an entirely new ability. Suggestion - Just make the new Ability and skip the .COPY. 
+
+You -This makes perfect sense to me.  The Conceal Thoughts 0-level power (or "spell" in PCGen terms) is almost exactly like the already-existing Conceal Thoughts 1st-level power.  Why not use copy, since it's nearly exactly the same?  For someone who isn't using the 0-level "Talents" rules, Conceal Thoughts still needs to be available as a 1st-level power.  Since the two can't have exactly the same name, the KEY: tag is needed.
 
 If we are to use .COPY on a line by itself, and then later .MOD it, why does .COPY have the additional functionality?
 
 If we are to make a new ability and skip the .COPY when two abilities are very close to each other, why have .COPY at all?
 
+#AM - Name.COPY=Name <> KEY:blah is going to alter the same ability since you're making a duplicate. You just made the original change to KEY name Blah. What you want to do is Name.COPY=New Key Name
+
+In this case, I really think copying the actual data would be a better approach to this. However, my main point is you aren't copying, you're essentially MODDING the original spell/Ability. The use for .COPY is 'Name.COPY=NewName' your use is 'Name.COPY=Name' and then altering the same name to 'NewName'. I understand your intent, but I don't think the code works that way. I could be wrong, as I'm not the Java coder who coded it, but I believe what is happening is this:
+
+SpellName.COPY=SpellName <> KEY:NewSpellName <> All the other stuff
+
+Is doing this:
+SpellName.MOD <> KEY:NewSpellName <> All the other stuff
+Which means you've altered the original SpellName to the point it doesn't exist. I *could* be wrong, but in this case I don't believe so. Hence the recommendation that copying the entire spell and making your slight changes would be a better method - You keep the "Name" the same and use a KEY to make it different.
+
+
+Since COPY is meant to simply copy the same ability and rename it to something else, your usage won't follow the PF Standard to use the Main Name and have it identified by a KEY. COPY was made a long time ago, and it's use is very limited in the sets that still use it.
+
 
 > *_Equipmods is blank, why do we have a blank file?
 
 I removed the file; I don't know why you still saw it.  Maybe I don't know how to remove files with SVN.
+
+#AM - I know that feeling, SVN can be difficult sometimes.
 
 
 
@@ -21,11 +41,14 @@ I removed the file; I don't know why you still saw it.  Maybe I don't know how t
 > *_class: Split this into a 'MOD' file for the existing classes with mods.
 
 I will do this.
+#AM - Thanks. I saw it in the last commit.
 
 
 > *_abilities_favored_class:  I'm not sure this will work as intended 'BONUS:COMBAT|AC|0.25|TYPE=Armor.STACK' did it actually work for you? If Not, I recommend 'BONUS:COMBAT|AC|BonusAstralSuitAC|TYPE=Armor.STACK' and then DEFINE:BonusAstralSuitAC|0 and BONUS:VAR|BonusAstralSuitAC|count("ABILITIES","CATEGORY=Special Ability","KEY=Bonus Astral Suit AC")/4
 
 I don't remember if I actually tested this ability.  I'm not sure why I'm getting grief for this; most, if not all, of the similar abilities in the APG don't do anything at all.  I guess I'll follow the current model and remove the attempt at functionality.
+
+#AM - I'm not giving grief, it's a data review, part of the review is noticing what is coded up and making sure it will work. The similar abilities in the APG have been slowly been worked on to add the missing functionality. I'm not suggesting to remove the functionality, I just want to make sure the intended functionality works. If it works as written, then awesome and great job, but if not I'd like it to work, hence the suggested alternative to have it work. Note I asked if it did work first, I didn't have time to test it myself, second I suggested an alternative to assist in making it work IF it didn't work. 
 
 
 > *_equipment: Path choice could be by abilitypool as a suggestion, otherwise you'll have to code an item per path.
@@ -38,8 +61,17 @@ See next response.
 I know I have a CHOICE ability that is messing up the saved character.  I thought I put that in the comments.
 Adding an abilitypool for these items (the equipment and the craftsman ability) seems, at best, awkward.  For the item, it would mean that anyone who wants to add a new warrior's path would have to know (and remember) that the item exists, and to add a new ability for the ability pool.  For the Craftsman ability, it would mean that anyone who adds a new Craft skill would have to add a new ability; for such writers, they might not even realize that psionics exists!
 
+#AM - I understand the concerns, it was a suggestion to get the ability to work. The equipment would need a new item per path or you would need to use a hack workaround (Yeah, some solutions are better than others). I'm offering suggestions, if none work then simply say so and open a Feature Request with Code and COMMENT what JIRA it requires to work. 
+
+Feats/Abilities with a CHOOSE tag fires if added manually, which in a Class requires an Abilitypool or the older method of ADD. ADD:ABILITY has issues, so it'd have to be ADD:FEAT. If there is more that is required to make it work let me know. If the ability is added via the ABILITY tag and it contains a CHOICE then you MUST have the CHOICE preselected otherwise you'll encounter the saved character issue.
+
 
 > * alternate race traits:
 > Lots of entries about having issue saving after a choose, which choose is failing and do you a JIRA for the bug?
 
 These have (or I assumed would have) the same issue that Craftsman has above; I assumed there was already a JIRA for it since otherwise I wouldn't have recognized what was going on.  I'll see if I can track down which one it is.
+
+#AM - A JIRA would help, since this is a 5.17 set, it might require the newer syntax to work, but I don't know what you tried and what had failed for you, so I can't suggest alternatives. 
+
+
+Cheers,
