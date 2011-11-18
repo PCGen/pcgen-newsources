@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Sat Nov 12 13:14:44 2011 -- reformated by prettylst.pl v1.39 (build )
+# CVS $Revision: $ $Author: $ -- Fri Nov 18 18:07:01 2011 -- reformated by prettylst.pl v1.39 (build )
 SOURCELONG:Psionics Expanded - Unlimited Possibilities	SOURCESHORT:PEUP	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2011-09
 # ORIGINAL ENTRY: Douglas Limmer
 # ORIGINAL ENTRY DATE: 2011/10/26
@@ -11,10 +11,10 @@ CLASS:Aegis		HD:10		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:CHECKS
 CLASS:Aegis		STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Climb|TYPE.Craft|Fly|Intimidate|Knowledge (Engineering)|Knowledge (Psionics)|TYPE.Profession|Spellcraft|Swim|Use Magic Device
 
 #Block: Proficiencies
-1																																					ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:ARMORPROF|Astral Suit	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency Output	AUTO:FEAT|Armor Proficiency (Light)	AUTO:FEAT|Shield Proficiency
+1																																						ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:ARMORPROF|Astral Suit	AUTO:FEAT|Simple Weapon Proficiency|Martial Weapon Proficiency Output	AUTO:FEAT|Armor Proficiency (Light)	AUTO:FEAT|Shield Proficiency
 
 #Block: Psionic Ability
-1	BONUS:VAR|IsPsionic|1																								DEFINE:IsPsionic|0						ABILITY:Special Ability|AUTOMATIC|Psionic
+1	BONUS:VAR|IsPsionic|1																								DEFINE:IsPsionic|0							ABILITY:Special Ability|AUTOMATIC|Psionic
 1	BONUS:VAR|AegisLVL|CL																								DEFINE:AegisLVL|0
 1	BONUS:VAR|AegisPL|AegisLVL	BONUS:VAR|AegisPL|var("BL=Aegis")																	DEFINE:AegisPL|0
 1	BONUS:VAR|BasePowerPoints|1	BONUS:VAR|BasePowerPoints|1|PREVARGTEQ:AegisPL,2	BONUS:VAR|BasePowerPoints|1|PREVARGTEQ:AegisPL,3
@@ -31,49 +31,15 @@ CLASS:Aegis		STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Climb|TYPE.Craft|Fly
 1	BONUS:VAR|AegisDRLVL|AegisLVL																							DEFINE:AegisDRLVL|0
 
 #Block: Class Info
-1																																					ABILITY:Special Ability|AUTOMATIC|Astral Repair ~ Aegis|Form Astral Suit ~ Aegis
-2	BONUS:VAR|CraftsmanBonus|floor((CL+2)/4)	BONUS:VAR|AegisDR|floor((AegisDRLVL+4)/3)																							ABILITY:Special Ability|AUTOMATIC|Damage Reduction ~ Aegis
-#	ADD:ABILITY|Special Ability|NORMAL|Craftsman ~ Aegis
-3	BONUS:VAR|ReconfigureTimes|floor((CL-1)/2)																													ABILITY:Special Ability|AUTOMATIC|Reconfigure ~ Aegis|Invigorating Suit ~ Aegis
-4	BONUS:VAR|AugmentSuitMax|floor(CL/4)																														ABILITY:Special Ability|AUTOMATIC|Augment Suit ~ Aegis
+1																																						ABILITY:Special Ability|AUTOMATIC|Astral Repair ~ Aegis|Form Astral Suit ~ Aegis
+2	BONUS:VAR|CraftsmanBonus|floor((CL+2)/4)	BONUS:VAR|AegisDR|floor((AegisDRLVL+4)/3)																		ADD:FEAT|Craftsman Skill Bonus	ABILITY:Special Ability|AUTOMATIC|Damage Reduction ~ Aegis|Craftsman ~ Aegis
+3	BONUS:VAR|ReconfigureTimes|floor((CL-1)/2)																														ABILITY:Special Ability|AUTOMATIC|Reconfigure ~ Aegis|Invigorating Suit ~ Aegis
+4	BONUS:VAR|AugmentSuitMax|floor(CL/4)																															ABILITY:Special Ability|AUTOMATIC|Augment Suit ~ Aegis
 5																																ADD:FEAT|Master Craftsman
-12	BONUS:VAR|CannibalizeTimes|floor((CL-10)/2)																													ABILITY:Special Ability|AUTOMATIC|Cannibalize Suit ~ Aegis
-20																																					ABILITY:Special Ability|AUTOMATIC|Perfect Merger ~ Aegis
+12	BONUS:VAR|CannibalizeTimes|floor((CL-10)/2)																														ABILITY:Special Ability|AUTOMATIC|Cannibalize Suit ~ Aegis
+20																																						ABILITY:Special Ability|AUTOMATIC|Perfect Merger ~ Aegis
 
 
-###Block: Modifications to prestige classes for Aegis
-#Block: Psionics Unleashed
-
-# Class Name		Modify VAR
-CLASS:Cerebremancer.MOD	BONUS:VAR|AegisCL|CL	BONUS:VAR|AegisDRLVL|CL
-
-# Class Name		Modify VAR
-CLASS:Elocater.MOD	BONUS:VAR|AegisCL|(CL*3/4)	BONUS:VAR|AegisDRLVL|(CL*3/4)
-
-# Class Name		Modify VAR
-CLASS:Metamind.MOD	BONUS:VAR|AegisCL|(CL*3/4)	BONUS:VAR|AegisDRLVL|(CL*3/4)
-
-# Class Name			Modify VAR
-CLASS:Phrenic Slayer.MOD	BONUS:VAR|AegisCL|(CL-1)	BONUS:VAR|AegisDRLVL|(CL-1)
-
-# Class Name			Modify VAR
-CLASS:Psion Uncarnate.MOD	BONUS:VAR|AegisCL|(CL*2/3)	BONUS:VAR|AegisDRLVL|(CL*2/3)
-
-# Class Name						Modify VAR
-CLASS:Psychic Fist (Add to Manifesting).MOD	BONUS:VAR|AegisCL|(CL*4/5)	BONUS:VAR|AegisDRLVL|(CL*4/5)
-
-# Class Name		Modify VAR
-CLASS:Thrallherd.MOD	BONUS:VAR|AegisCL|max(8,(CL-1))	BONUS:VAR|AegisDRLVL|max(8,(CL-1))
-
-# Class Name				Modify VAR
-CLASS:War Mind (Warrior's Path).MOD	BONUS:VAR|AegisCL|CL	BONUS:VAR|AegisDRLVL|CL
-
-#Block: Mind over Body
-
-# Class Name		Modify VAR
-CLASS:Metamorph.MOD	BONUS:VAR|AegisCL|(CL*4/5)	BONUS:VAR|AegisDRLVL|(CL*4/5)
-
-#Block: Find the Mark - none!
 
 ###Block: Constructor
 
