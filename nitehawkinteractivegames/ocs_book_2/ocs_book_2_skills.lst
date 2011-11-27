@@ -1,0 +1,63 @@
+SOURCELONG:Ocastia Campaign Setting - Book 2 - Player's Guide	SOURCESHORT:OCS_PG	
+# ORIGINAL ENTRY BY: Andrew Maitland
+# ORIGINAL ENTRY DATE: 2011-11-26
+
+###Block: Skills
+Craft (Brewing)				KEYSTAT:INT
+Craft (Embroidery)			KEYSTAT:INT
+Craft (Glassblowing)			KEYSTAT:INT
+Craft (Locksmithing)			KEYSTAT:INT
+Craft (Scrimshaw)				KEYSTAT:INT
+Craft (Shipmaking)			KEYSTAT:INT
+Craft (Tailor)				KEYSTAT:INT
+Dragon Handling				KEYSTAT:WIS	USEUNTRAINED:NO
+Knowledge (Librarian)			KEYSTAT:INT	USEUNTRAINED:NO
+Knowledge (Weaponology)			KEYSTAT:INT	USEUNTRAINED:NO
+
+# Requires the synergy bonuses below this point
+Perform (Juggling/Awe)			KEYSTAT:CHA	
+Perform (Juggling/Manuevers)		KEYSTAT:DEX	
+Profession (Barrister)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Beggar)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Bookkepper)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Driver)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Fisher)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Harlot)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Herder)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Lumberjack)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Magistrate)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Miller)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Miner)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Porter)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Sailor)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Scribe)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Siege Engineer)		KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Smelter)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Tanner)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Teamster)			KEYSTAT:WIS	USEUNTRAINED:NO
+Profession (Woodcutter)			KEYSTAT:WIS	USEUNTRAINED:NO
+
+Speak Language					USEUNTRAINED:NO
+Spot				KEYSTAT:WIS
+Weaponcraft			KEYSTAT:INT	USEUNTRAINED:NO
+
+
+###Block: Skill Synergy Mods
+Craft (Brewing).MOD		BONUS:SKILL|Profession (Bartender)|2|TYPE=Synergy|PRESKILL:1,Craft (Brewing)=5
+Craft (Embroidery).MOD		BONUS:SKILL|Profession (Tailor)|2|TYPE=Synergy|PRESKILL:1,Craft (Embroidery)=5
+Craft (Locksmithing).MOD	BONUS:SKILL|Open Locks|2|TYPE=Synergy|PRESKILL:1,Craft (Brewing)=5
+Craft (Shipmaking).MOD		BONUS:SKILL|Craft (Carpentry),Craft (Woodworking)|2|TYPE=Synergy|PRESKILL:1,Craft (Shipmaking)=5
+Craft (Tailor).MOD		BONUS:SKILL|Craft (Embroidery)|2|TYPE=Synergy|PRESKILL:1,Craft (Tailor)=5
+#
+Craft (Whittling).MOD		BONUS:SKILL|Craft (Scrimshaw)|2|TYPE=Synergy|PRESKILL:1,Craft (Whittling)=5
+Craft (Sculpture).MOD		BONUS:SKILL|Craft (Scrimshaw)|2|TYPE=Synergy|PRESKILL:1,Craft (Sculpture)=5
+
+Craft (Carpentry).MOD		BONUS:SKILL|Craft (Shipmaking)|2|TYPE=Synergy|PRESKILL:1,Craft (Carpentry)=5
+Craft (Woodworking).MOD		BONUS:SKILL|Craft (Shipmaking)|2|TYPE=Synergy|PRESKILL:1,Craft (Woodworking)=5
+
+Knowledge (Dragons).MOD		BONUS:SKILL|Dragon Handling|2|TYPE=Synergy|PRESKILL:1,Knowledge (Dragons)=5
+Dragon Lore.MOD			BONUS:SKILL|Dragon Handling|2|TYPE=Synergy|PRESKILL:1,Dragon Lore=5
+Diplomacy.MOD			BONUS:SKILL|Dragon Handling|2|TYPE=Synergy|PRESKILL:1,Diplomacy=5
+
+Knowledge (Weaponology).MOD	BONUS:SKILL|Craft (Weaponsmithing),Weaponcraft|2|TYPE=Synergy|PRESKILL:1,Knowledge (Weaponology)=5
+Weaponcraft.MOD			BONUS:SKILL|Knowledge (Weaponology)|2|TYPE=Synergy|PRESKILL:1,Weaponcraft=5
