@@ -2,10 +2,13 @@ SOURCELONG:Paths of Power	SOURCESHORT:PoP
 # Original Entry: Andrew Maitland
 # Original Entry Date: 2011/09/11
 
+#COMMENT:   Psionic Ability & Spell Ability both have their own progressions and special abilities - 
+#		We need to be able to do the following:
+#		1. Grant a hidden Class and level it up and down behind the scenes - this can be done with ADD:CLASS and BONUS:PCLEVEL
+#		2. Alter the Spells the class grants - I think this can be done with Var Names 
 
 Buy Path of Power		TYPE:PathOfPower	COST:1	BONUS:ABILITYPOOL|Path of Power Choice|1	MULT:YES	CHOOSE:NOCHOICE	STACK:YES
 # COMMENT: Used to purchase a Path of Power
-
 # COMMENT: Need something that the user manually adds once to grant the base hidden class. - See Eclipse for Example.
 
 
@@ -29,15 +32,45 @@ Spell Ability	SOURCEPAGE:p.8	TYPE:General	DESC:You have acquired limited spellca
 
 
 
-DEFINE:ArcaneCasterLvlZero|0
-DEFINE:ArcaneCasterLvlOne|0
-DEFINE:ArcaneCasterLvlTwo|0
-DEFINE:ArcaneCasterLvlThree|0
-DEFINE:ArcaneCasterLvlFour|0
-DEFINE:ArcaneCasterLvlFive|0
-DEFINE:ArcaneCasterLvlSix|0
-DEFINE:ArcaneCasterLvlSeven|0
-DEFINE:ArcaneCasterLvlEight|0
-DEFINE:ArcaneCasterLvlNine|0
+	DEFINE:ArcaneCasterLvlZero|0
+	DEFINE:ArcaneCasterLvlOne|0
+	DEFINE:ArcaneCasterLvlTwo|0
+	DEFINE:ArcaneCasterLvlThree|0
+	DEFINE:ArcaneCasterLvlFour|0
+	DEFINE:ArcaneCasterLvlFive|0
+	DEFINE:ArcaneCasterLvlSix|0
 
-
+BONUS:VAR|ArcaneCasterLvlZero|1
+BONUS:VAR|ArcaneCasterLvlZero|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlZero|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,2
+BONUS:VAR|ArcaneCasterLvlZero|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
+#
+BONUS:VAR|ArcaneCasterLvlOne|1|PREPCLEVEL:MIN=3|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlOne|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlOne|1|PREPCLEVEL:MIN=10|PREVARGTEQ:SpellAbilityFeatCount,4
+BONUS:VAR|ArcaneCasterLvlOne|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
+#	
+BONUS:VAR|ArcaneCasterLvlTwo|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlTwo|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlTwo|1|PREPCLEVEL:MIN=11|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlTwo|1|PREPCLEVEL:MIN=15|PREVARGTEQ:SpellAbilityFeatCount,1
+#
+BONUS:VAR|ArcaneCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#
+BONUS:VAR|ArcaneCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+BONUS:VAR|ArcaneCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#
+BONUS:VAR|ArcaneCasterLvlFive|1|PREPCLEVEL:MIN=16|PREVARGTEQ:SpellAbilityFeatCount,7
+BONUS:VAR|ArcaneCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,8
+BONUS:VAR|ArcaneCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,10
+BONUS:VAR|ArcaneCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,11
+#
+BONUS:VAR|ArcaneCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,9
+BONUS:VAR|ArcaneCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,12
+BONUS:VAR|ArcaneCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,13
+BONUS:VAR|ArcaneCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,14
