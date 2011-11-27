@@ -104,3 +104,11 @@ FOLLOWER:CompanionLvl=20	TYPE:Animal Companion																																		
 # Class of the Master		Type				Ability																	Define					Combat bonus				Modify VAR
 FOLLOWER:OtherCompanionLvl=1	TYPE:Other Companion	ABILITY:Special Ability|AUTOMATIC|Character Points For Companions|Animal Tricks and Training|Bonus Tricks	DEFINE:CompanionTransferenceValue|0	BONUS:COMBAT|AC|CompanionCPLvl	BONUS:VAR|CompanionCPLvl|CompanionTransferenceValue	BONUS:VAR|BonusTricks|20
 FOLLOWER:OtherCompanionLvl=2	TYPE:Other Companion																			DEFINE:OtherCompanionLvl|0								BONUS:VAR|CompanionCPLvl|2*var("OtherCompanionLvl")
+
+# Implement a Method to grant additional HD
+FOLLOWER:ExtraHD=1		TYPE:Familiar.Special Mount.Animal Companion	HD:1	PREMULT:1,[PRETEMPLATE:1,Companion Extra HD ~ 1],[PREVARGTEQ:CompanionExtraHD,1]
+FOLLOWER:ExtraHD=2		TYPE:Familiar.Special Mount.Animal Companion	HD:1	PREMULT:1,[PRETEMPLATE:1,Companion Extra HD ~ 2],[PREVARGTEQ:CompanionExtraHD,2]
+FOLLOWER:ExtraHD=3		TYPE:Familiar.Special Mount.Animal Companion	HD:1	PREMULT:1,[PRETEMPLATE:1,Companion Extra HD ~ 3],[PREVARGTEQ:CompanionExtraHD,3]
+FOLLOWER:ExtraHD=4		TYPE:Familiar.Special Mount.Animal Companion	HD:1	PREMULT:1,[PRETEMPLATE:1,Companion Extra HD ~ 4],[PREVARGTEQ:CompanionExtraHD,4]
+
+###EOF
