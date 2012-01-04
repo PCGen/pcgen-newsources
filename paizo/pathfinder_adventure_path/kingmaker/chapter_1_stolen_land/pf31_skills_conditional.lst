@@ -1,0 +1,19 @@
+# CVS $Revision: 14405 $ $Author: zaister $ -- Thu Apr 14 12:28:50 2011 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Stolen Land	SOURCESHORT:PF31	SOURCEWEB:http://paizo.com/pathfinder/adventurePath/kingmaker/v5748btpy8dhc	SOURCEDATE:2010-03
+# Original Entry by: Stefan Radermacher
+
+###Block: Conditional Skills for output only
+# Skill Name			Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
+Stealth (In grass or brush)	KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Stealth (In grass or brush).MISC"),SKILL.Stealth.MISC
+Stealth (Amid mud and rocks)	KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Stealth (Amid mud and rocks).MISC"),SKILL.Stealth.MISC
+Stealth (In dense vegetation)	KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Stealth (In dense vegetation).MISC"),SKILL.Stealth.MISC
+
+###Block: Skill .MODs
+# Skill Name	Bonus to skill								Bonus to skill rank
+Stealth.MOD		BONUS:SKILL|Stealth (In grass or brush)|SKILL.Stealth.MISC	BONUS:SKILLRANK|Stealth (In grass or brush)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (In grass or brush).MISC"),SKILL.Stealth.MISC
+Stealth.MOD		BONUS:SKILL|Stealth (Amid mub and rocks)|SKILL.Stealth.MISC	BONUS:SKILLRANK|Stealth (Amid mud and rocks)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (Amid mud and rocks).MISC"),SKILL.Stealth.MISC
+Stealth.MOD		BONUS:SKILL|Stealth (In dense vegetation)|SKILL.Stealth.MISC	BONUS:SKILLRANK|Stealth (In dense vegetation)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (In dense vegetation).MISC"),SKILL.Stealth.MISC
+
+#
+# End
+#
