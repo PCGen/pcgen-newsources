@@ -1,0 +1,103 @@
+SOURCELONG:Ocastia Campaign Setting - Book 2 - Player's Guide	SOURCESHORT:OCS_PG	
+# ORIGINAL ENTRY BY: Andrew Maitland
+# ORIGINAL ENTRY DATE: 2011-11-26
+
+# Races
+
+Default	CATEGORY:Internal		DEFINE:RacialStatStr|0	DEFINE:RacialStatDex|0	DEFINE:RacialStatCon|0	DEFINE:RacialStatInt|0	DEFINE:RacialStatWis|0	DEFINE:RacialStatCha|0
+
+BONUS:VAR|DeminHumanProgression|1|PREPCLEVEL:MIN=2
+BONUS:VAR|DeminHumanProgression|1|PREPCLEVEL:MIN=4
+BONUS:VAR|DeminHumanProgression|1|PREPCLEVEL:MIN=6
+
+
+# Half-Dragons (Dragonkin)
+Half-Dragon (Dwarf)	LEVELADJUSTMENT:1	SIZE:M	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	ABILITY:Internal|AUTOMATIC|Default	BONUS:ABILITYPOOL|Remove Racial Ability|	DEFINE:DraconicDiscretionaryAbilityCount|0	
+Half-Dragon (Elf)		LEVELADJUSTMENT:1	SIZE:M	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	
+Half-Dragon (Gnome)	LEVELADJUSTMENT:1	SIZE:S	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	
+Half-Dragon (Halfling)	LEVELADJUSTMENT:1	SIZE:S	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	
+Half-Dragon (Half-Elf)	LEVELADJUSTMENT:1	SIZE:M	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	
+Half-Dragon (Human)	LEVELADJUSTMENT:1	SIZE:M	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	
+Half-Dragon (Magir)	LEVELADJUSTMENT:1	SIZE:M	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial		BONUS:ABILITYPOOL|Half-Dragon Parentage Choice|1	
+
+# Foul Dwarves
+Dwarf (Foul)	OUTPUTNAME:[NAME] Dwarf		BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial	
+	BONUS:VAR|RacialStatCon|2	BONUS:VAR|RacialStatCha|-4
+	SIZE:M
+	MOVE:Walk,20
+	BONUS:VISION|Darkvision|DarkvisionRange	BONUS:VAR|DarkvisionRange|120
+	ABILITY:Special Ability|AUTOMATIC|Stonecunning|Weapon Familiarity ~ Dwarven|Spell Resistance|Power Resistance|Immune to Magical and Alchemical Poisons|+2 Racial Bonus On Saving Throws Against Natural Poison|+2 racial bonus on saving throws against spells and spell-like effects|+1 racial bonus on attack rolls against elves orcs and goblinoids|+4 dodge bonus to Armor Class against monsters of the giant type|+2 racial bonus on Appraise checks that are related to stone or metal items|+2 racial bonus on Craft checks that are related to stone or metal|+4 racial bonus on Move Silently checks
+	BONUS:VAR|SpellResistance|5+TL	BONUS:VAR|PowerResistance|5+TL	
+	SPELLS:Innate|TIMEUNIT=Day|TIMES=1|CASTERLEVEL=TL|Detect Thoughts
+	AUTO:FEAT|Blind-Fight
+	LANGAUTO:Common,Dwarven
+	LANGBONUS:Giant,Gnome,Goblin,Orc,Terran,Nightcommon
+	FAVCLASS:Rogue
+	LEVELADJUSTMENT:2
+
+Dwarf (Hammer)	OUTPUTNAME:[NAME] Dwarf
+	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+	BONUS:VAR|RacialStatDex|-2	BONUS:VAR|RacialStatCon|2	BONUS:VAR|RacialStatCha|-2
+	SIZE:M
+	MOVE:Walk,20
+	BONUS:VISION|Darkvision|DarkvisionRange	BONUS:VAR|DarkvisionRange|60
+	ABILITY:Special Ability|AUTOMATIC|Stonecunning|Weapon Familiarity ~ Dwarven|Stability|+2 Racial Bonus On Saving Throws Against Poison|+2 racial bonus on saving throws against spells and spell-like effects|+1 racial bonus on attack rolls against orcs and goblinoids|+4 dodge bonus to Armor Class against monsters of the giant type|+2 racial bonus on Appraise checks that are related to stone or metal items|+2 racial bonus on Craft checks that are related to stone or metal|+2 racial bonus on Craft (Lapidary) checks that are related to stone or metal
+	LANGAUTO:Common,Dwarven
+	LANGBONUS:Giant,Gnome,Goblin,Orc,Terran,Nightcommon
+	FAVCLASS:Fighter
+
+Dwarf (Ice)	OUTPUTNAME:[NAME] Dwarf
+	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+	BONUS:VAR|RacialStatCon|2	BONUS:VAR|RacialStatCha|-4
+	SIZE:M
+	MOVE:Walk,20
+	VISION:Low-Light	ABILITY:Special Ability|AUTOMATIC|Low-Light	
+	ABILITY:Special Ability|AUTOMATIC|Icecunning|Weapon Familiarity ~ Dwarven|Stability ~ Ice Dwarf|+2 Racial Bonus On Saving Throws Against Poison|+2 racial bonus on saving throws against spells and spell-like effects|+4 dodge bonus to Armor Class against monsters of the giant type|+2 racial bonus on Appraise checks that are related to stone or metal items|+2 racial bonus on Craft checks that are related to stone or metal
+	AUTO:FEAT|Weapon Focus (Pick (Heavy))
+	LANGAUTO:Common,Dwarven
+	LANGBONUS:Elven,Giant,Gnome,Goblin,Orc,Terran
+	FAVCLASS:Barbarian
+
+Dwarf (Iron)
+	OUTPUTNAME:[NAME] Dwarf
+	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+	BONUS:VAR|RacialStatStr|4	BONUS:VAR|RacialStatDex|-2	BONUS:VAR|RacialStatCon|2	BONUS:VAR|RacialStatCha|-4
+	SIZE:M
+	MOVE:Walk,20
+	BONUS:VISION|Darkvision|DarkvisionRange	BONUS:VAR|DarkvisionRange|60
+	ABILITY:Special Ability|AUTOMATIC|Improved Stonecunning|Weapon Familiarity ~ Dwarven|Stability ~ Ice Dwarf|+2 Racial Bonus On Saving Throws Against Poison|+2 racial bonus on saving throws against spells and spell-like effects|+1 racial bonus on attack rolls against orcs and goblinoids|+4 dodge bonus to Armor Class against monsters of the giant type|+2 racial bonus on Appraise checks that are related to stone or metal items|+2 racial bonus on Craft checks that are related to stone or metal
+	LANGAUTO:Common,Dwarven
+	LANGBONUS:Giant,Gnome,Goblin,Orc,Terran,Nightcommon
+	FAVCLASS:Fighter
+
+###Block: Elves
+
+Elf (Cavern)	OUTPUTNAME:[NAME] Elf
+	BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+	BONUS:VAR|RacialStatDex|2	BONUS:VAR|RacialStatCon|-2
+	SIZE:M
+	MOVE:Walk,30
+	ABILITY:Special Ability|AUTOMATIC|Immune to Sleep Spells and Effects|+2 racial saving throw bonus against enchantment spells and effects|Low-Light
+
+	
+#	AUTO:FEAT|Martial Weapon Proficiency (
+	VISION:Low-Light	
+
+Elf (Draconic)	OUTPUTNAME:[NAME] Elf
+BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+BONUS:STAT|STR|RacialStatStr|TYPE=Racial	BONUS:STAT|DEX|RacialStatDex|TYPE=Racial	BONUS:STAT|CON|RacialStatCon|TYPE=Racial	BONUS:STAT|INT|RacialStatInt|TYPE=Racial	BONUS:STAT|WIS|RacialStatWis|TYPE=Racial	BONUS:STAT|CHA|RacialStatCha|TYPE=Racial
+
+
+
+
+
+
+
+
+
+
+
