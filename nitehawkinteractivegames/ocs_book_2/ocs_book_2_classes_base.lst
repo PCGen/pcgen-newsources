@@ -5,7 +5,7 @@ SOURCELONG:Ocastia Campaign Setting - Book 2 - Player's Guide	SOURCESHORT:OCS_PG
 #CLASSES
 
 # Crusader
-CLASS:Crusader	HD:10		TYPE:Base.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	SOURCEPAGE:p.38
+CLASS:Crusader	HD:10		TYPE:Base.PC	EXCLASS:Ex-Crusader	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	SOURCEPAGE:p.38
 CLASS:Crusader	!PREALIGN:LG
 CLASS:Crusader	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE=Craft|Diplomacy|Handle Animal|Intimidate|Jump|Knowledge (Nobility and Royalty)|Knowledge (Religion)|Ride|Sense Motive|Tactics
 1	ABILITY:Special Ability|AUTOMATIC|<all simple & martial weapons>|<All Armor and shields>
@@ -13,27 +13,74 @@ CLASS:Crusader	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE=Craft|Diplomacy|H
 1	ABILITY:Special Ability|AUTOMATIC|Equipment ~ Crusader|Tithe ~ Crusader	BONUS:ABILITYPOOL|Crusader Weapon Specialization|1
 2	ABILITY:Special Ability|AUTOMATIC|Divine Sympathy ~ Crusader|Strike Heathen ~ Crusader	BONUS:VAR|StrikeHeathenTimes|CL-1/6+1
 3	ABILITY:Special Ability|AUTOMATIC|Unshakable Faith ~ Crusader
-4	ABILITY:Special Ability|AUTOMATIC|Domain ~ Crusader			BONUS:VAR|DomainCount|1
+4	ABILITY:Special Ability|AUTOMATIC|Domain ~ Crusader					BONUS:VAR|CrusaderDomainLvl|CL-3
 5	ABILITY:Special Ability|AUTOMATIC|Tactician ~ Crusader				BONUS:VAR|TacticianCount|1
 6	ABILITY:Special Ability|AUTOMATIC|Divine Weapon ~ Crusader				BONUS:VAR|DivineWeaponBonus|CL-3/3
 
+10	ABILITY:Special Ability|AUTOMATIC|Leadership ~ Crusader
 
+20	ABILITY:Special Ability|AUTOMATIC|Sainthood ~ Crusader
+
+CLASS:Ex-Crusader	VISIBLE:NO	HD:10		TYPE:Base.PC		BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	SOURCEPAGE:p.38
+CLASS:Ex-Crusader	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE=Craft|Diplomacy|Handle Animal|Intimidate|Jump|Knowledge (Nobility and Royalty)|Knowledge (Religion)|Ride|Sense Motive|Tactics
+1	ABILITY:Special Ability|AUTOMATIC|<all simple & martial weapons>|<All Armor and shields>
 
 
 # Dragon Lord
-CLASS:Dragon Lord
+CLASS:Dragon Lord	HD:10		TYPE:Base.PC	EXCLASS:Ex-Dragon Lord	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	SOURCEPAGE:p.41
+CLASS:Dragon Lord	PREALIGN:TN
+CLASS:Dragon Lord	STARTSKILLPTS:4	CSKILL:Climb (Str), Concentration (Con), Craft (Int), Dragon Lore (Int)*, Gather Information (Cha), Handle Animal (Cha), Hide (Dex), Intimidate (Cha), Jump (Str), Knowledge (dragons) (Int)*, Listen (Wis), Move Silently (Dex), Ride (Dex), Search (Int), Spellcraft (Int), Spot (Wis), and Swim (Str).
+CLASS:Dragon Lord		SPELLSTAT:INT	MEMORIZE:YES	BONUS:CASTERLEVEL|Dragon Lord|CL
+1	ABILITY:Special Ability|AUTOMATIC|<all simple & martial weapons>|<All Armor>
+# Class Progression
+1	ABILITY:Special Ability|AUTOMATIC|Homage ~ Dragon Lord	BONUS:ABILITYPOOL|Dragon Lord Exotic Weapon Proficiency Feat|
+5	ABILITY:Special Ability|AUTOMATIC|Wyrmrage ~ Dragon Lord		BONUS:ABILITYPOOL|Dragon Lord Feat|CL/5		BONUS:VAR|DragonLordWrymRageTimes|1
+6	ABILITY:Special Ability|AUTOMATIC|Bonus language ~ Draconic|Dragon Academia ~ Dragon Lord
+8	ABILITY:Special Ability|AUTOMATIC|Leadership
+10	ABILITY:Special Ability|AUTOMATIC|Calm Dragon				BONUS:VAR|DragonLordCalmDragonHD|5
+12	ABILITY:Special Ability|AUTOMATIC|Resistance ~ Dragon Lord (Cold and Chlorine)	BONUS:VAR|DragonLordWrymRageTimes|1
+14	ABILITY:Special Ability|AUTOMATIC|Reputation ~ Dragon Lord			BONUS:VAR|DragonLordReputationBonus|1
+15	ABILITY:Special Ability|AUTOMATIC|Resistance ~ Dragon Lord (Acid)			BONUS:VAR|DragonLordCalmDragonHD|2
+17	BONUS:VAR|DragonLordReputationBonus|1
+18	ABILITY:Special Ability|AUTOMATIC|Resistance ~ Dragon Lord (Lightning)
+19	BONUS:VAR|DragonLordWrymRageTimes|1
+20	ABILITY:Special Ability|AUTOMATIC|Resistance ~ Dragon Lord (Fire)	BONUS:VAR|DragonLordReputationBonus|1	BONUS:VAR|DragonLordCalmDragonHD|3
+# Casting Progression
+7	CAST:0,0
+8	CAST:0,0
+9	CAST:0,1
+10	CAST:0,1
+11	CAST:0,1,0
+12	CAST:0,1,0
+13	CAST:0,1,1
+14	CAST:0,1,1,0
+15	CAST:0,1,1,1
+16	CAST:0,1,1,1
+17	CAST:0,2,1,1,0
+18	CAST:0,2,1,1,1
+19	CAST:0,2,2,1,1
+20	CAST:0,2,2,2,1
+
+CLASS:Ex-Dragon Lord	HD:10		TYPE:Base.PC	EXCLASS:Ex-Dragon Lord	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	SOURCEPAGE:p.41
+CLASS:Ex-Dragon Lord	STARTSKILLPTS:4	CSKILL:
+1	ABILITY:Special Ability|AUTOMATIC|<all simple & martial weapons>|<All Armor>
+
+
 # Highwayman
+CLASS:Highwayman		SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 CLASS:Highwayman
+
+
 # Mystic Knight
-CLASS:Mystic Knight
+CLASS:Mystic Knight	SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 # Oracle
-CLASS:Oracle
+CLASS:Oracle		SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 # Wordsmiths
-CLASS:Wordsmiths
+CLASS:Wordsmiths		SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 ## Elocutionist
-CLASS:Elocutionist
+CLASS:Elocutionist	SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 ## Murmur
-CLASS:Murmur
+CLASS:Murmur		SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 ## Utter Master
-CLASS:Utter Master
+CLASS:Utter Master	SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 
