@@ -107,8 +107,8 @@ Darkness (2/day)																CATEGORY:Special Ability	TYPE:SpellLike.Draconic
 Fast Healing 1d4+1 hp (every ten rounds)				KEY:Fast Healing Ten Rounds ~ Half-Dragon		CATEGORY:Special Ability	TYPE:Extraordinary.DraconicDiscretionary.HalfSilverAdDiscretionary
 Charm Reptiles (2/day, as charm animals, but reptiles)	KEY:Charm Reptiles ~ Half-Dragon			CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfSilverAdDiscretionary
 Curse Water (2/day)															CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfSilverAdDiscretionary
-CATEGORY=Special Ability|Dragon Fear (2/day).MOD										CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfSilverAdDiscretionary
-CATEGORY=Special Ability|60-foot Darkvision.MOD.										CATEGORY:Special Ability	TYPE:Extraordinary.DraconicDiscretionary.HalfSilverAdDiscretionary
+CATEGORY=Special Ability|Dragon Fear (2/day).MOD															TYPE:HalfSilverAdDiscretionary
+CATEGORY=Special Ability|60-foot Darkvision.MOD																TYPE:HalfSilverAdDiscretionary
 
 # Half-Yellow Ad
 Immune To Electricity						CATEGORY:Special Ability	TYPE:Extraordinary.DraconicDiscretionary.HalfYellowAdDiscretionary
@@ -116,36 +116,39 @@ Spider Climb (stone surfaces only; 1/day)			CATEGORY:Special Ability	TYPE:SpellL
 Ventriloquism (2/day)						CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfYellowAdDiscretionary
 Stone Shape (2/day)						CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfYellowAdDiscretionary
 Modify Memory (1/day)						CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfYellowAdDiscretionary
-CATEGORY=Special Ability|Dragon Fear (2/day).MOD	CATEGORY:Special Ability	TYPE:SpellLike.DraconicDiscretionary.HalfYellowAdDiscretionary
-CATEGORY=Special Ability|60-foot Darkvision.MOD.	CATEGORY:Special Ability	TYPE:Extraordinary.DraconicDiscretionary.HalfYellowAdDiscretionary
+CATEGORY=Special Ability|Dragon Fear (2/day).MOD						TYPE:HalfYellowAdDiscretionary
+CATEGORY=Special Ability|60-foot Darkvision.MOD							TYPE:HalfYellowAdDiscretionary
 
-#
-
-# Dwarves
+# Common Abilities
 Darkvision		KEY:Darkvision		CATEGORY:Internal			TYPE:Internal	BONUS:VISION|Darkvision|DarkvisionRange	DEFINE:DarkvisionRange|0
 #
 Darkvision		KEY:Darkvision ~ 120	CATEGORY:Special Ability	TYPE:RacialTrait		BONUS:VAR|DarkvisionRange|120|TYPE=Base		ABILITY:Internal|AUTOMATIC|Darkvision
 Darkvision		KEY:Darkvision ~ 60	CATEGORY:Special Ability	TYPE:RacialTrait		BONUS:VAR|DarkvisionRange|60|TYPE=Base		ABILITY:Internal|AUTOMATIC|Darkvision
+Darkvision		KEY:Darkvision ~ 30	CATEGORY:Special Ability	TYPE:RacialTrait		BONUS:VAR|DarkvisionRange|30|TYPE=Base		ABILITY:Internal|AUTOMATIC|Darkvision
+
+Spell Resistance and Power Resistance	CATEGORY:Special Ability	ABILITY:Special Ability|AUTOMATIC|Spell Resistance|Power Resistance
+
+Spell Resistance	CATEGORY:Special Ability	TYPE:RacialTrait.SpecialQuality	SR:SpellResistance		DESC:%1|SpellResistance	DEFINE:SpellResistance|0
+Power Resistance	CATEGORY:Special Ability	TYPE:RacialTrait.SpecialQuality	DEFINE:PowerResistance|0	DESC:%1|PowerResistance
+
+### Dwarves
 
 # Foul Dwarf
-
-Stonecunning	CATEGORY:Special Ability	TYPE:RacialTrait
-Weapon Familiarity ~ Dwarven	CATEGORY:Special Ability	TYPE:RacialTrait
-Spell Resistance	CATEGORY:Special Ability	TYPE:RacialTrait
-Power Resistance	CATEGORY:Special Ability	TYPE:RacialTrait
-Immune to Magical and Alchemical Poisons	CATEGORY:Special Ability	TYPE:RacialTrait
-+2 Racial Bonus On Saving Throws Against Natural Poison	CATEGORY:Special Ability	TYPE:RacialTrait
-+2 racial bonus on saving throws against spells and spell-like effects	CATEGORY:Special Ability	TYPE:RacialTrait
-+1 racial bonus on attack rolls against elves orcs and goblinoids	CATEGORY:Special Ability	TYPE:RacialTrait
-+4 dodge bonus to Armor Class against monsters of the giant type	CATEGORY:Special Ability	TYPE:RacialTrait
+Stonecunning											CATEGORY:Special Ability	TYPE:RacialTrait
+Weapon Familiarity ~ Dwarven									CATEGORY:Special Ability	TYPE:RacialTrait
+Immune to Magical and Alchemical Poisons							CATEGORY:Special Ability	TYPE:RacialTrait
++2 Racial Bonus On Saving Throws Against Natural Poison				CATEGORY:Special Ability	TYPE:RacialTrait
++2 racial bonus on saving throws against spells and spell-like effects		CATEGORY:Special Ability	TYPE:RacialTrait
++1 racial bonus on attack rolls against elves orcs and goblinoids			CATEGORY:Special Ability	TYPE:RacialTrait
++4 dodge bonus to Armor Class against monsters of the giant type			CATEGORY:Special Ability	TYPE:RacialTrait
 +2 racial bonus on Appraise checks that are related to stone or metal items	CATEGORY:Special Ability	TYPE:RacialTrait
-+2 racial bonus on Craft checks that are related to stone or metal	CATEGORY:Special Ability	TYPE:RacialTrait
-+4 racial bonus on Move Silently checks	CATEGORY:Special Ability	TYPE:RacialTrait
++2 racial bonus on Craft checks that are related to stone or metal		CATEGORY:Special Ability	TYPE:RacialTrait
++4 racial bonus on Move Silently checks							CATEGORY:Special Ability	TYPE:RacialTrait
 
 # Hammer Dwarf
-Stonecunning	CATEGORY:Special Ability	TYPE:RacialTrait
-Weapon Familiarity ~ Dwarven	CATEGORY:Special Ability	TYPE:RacialTrait
-Stability	CATEGORY:Special Ability	TYPE:RacialTrait
+Stonecunning											CATEGORY:Special Ability	TYPE:RacialTrait
+Weapon Familiarity ~ Dwarven						CATEGORY:Special Ability	TYPE:RacialTrait
+Stability									CATEGORY:Special Ability	TYPE:RacialTrait
 +2 Racial Bonus On Saving Throws Against Poison	CATEGORY:Special Ability	TYPE:RacialTrait
 +2 racial bonus on saving throws against spells and spell-like effects	CATEGORY:Special Ability	TYPE:RacialTrait
 +1 racial bonus on attack rolls against orcs and goblinoids	CATEGORY:Special Ability	TYPE:RacialTrait
