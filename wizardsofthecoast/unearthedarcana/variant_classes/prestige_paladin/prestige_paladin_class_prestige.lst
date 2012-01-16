@@ -5,7 +5,7 @@ SOURCELONG:Unearthed Arcana	SOURCESHORT:UA	SOURCEDATE:2004-02
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Ex Class				Source Page		Save checks bonus											Combat bonus
 CLASS:Prestige Paladin	HD:8		TYPE:PC.Prestige	ABB:PPal		MAXLEVEL:15	EXCLASS:Ex Prestige Paladin	SOURCEPAGE:p.71	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:CHECKS|BASE.Fortitude|2+CL/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Required Ability							Required AL		Req. Att.	Required Feat			Required Skill											Req. Known Spell				Required Text
-CLASS:Prestige Paladin	PREABILITY:1,CATEGORY=Special Ability,Turn Undead	PREALIGN:1,LG	PREATT:4	PREFEAT:1,Mounted Combat	PRESKILL:3,Knowledge (Religion)=2,Knowledge(Nobility and Royalty)=2,Ride=4	PRESPELL:1,Protection from Evil	PRETEXT:Must be able to cast Protection from Evil as a Divine Spell
+CLASS:Prestige Paladin	PREABILITY:1,CATEGORY=Special Ability,Turn Undead	PREALIGN:LG	PREATT:4	PREFEAT:1,Mounted Combat	PRESKILL:3,Knowledge (Religion)=2,Knowledge(Nobility and Royalty)=2,Ride=4	PRESPELL:1,Protection from Evil	!PRECLASS:2,Paladin,Ex Paladin	PRETEXT:Must be able to cast Protection from Evil as a Divine Spell
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Prestige Paladin	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy|Handle Animal|Heal|Knowledge (Nobility and royalty)|Knowledge (Religion)|TYPE.Profession|Ride|Sense Motive
 ###Block:Proficiencies
@@ -21,7 +21,8 @@ CLASS:Prestige Paladin	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Diplomacy
 2										BONUS:VAR|LayOnHandsLVL|CL+3	BONUS:VAR|SMLevel|CL+3
 2																												ABILITY:Special Ability|AUTOMATIC|Divine Grace|Lay on Hands|Special Mount
 3																												ABILITY:Special Ability|AUTOMATIC|Aura of Courage|Divine Health
-4										BONUS:VAR|RemoveDisease|CL/4														ABILITY:Special Ability|AUTOMATIC|Remove Disease
+#NB: offset bonus included in removedisease ability
+4										BONUS:VAR|RemoveDisease|CL/4-(RemoveDiseaseLVL/3-1)										ABILITY:Special Ability|AUTOMATIC|Remove Disease
 #spellcasting progression
 1																								ADD:SPELLCASTER|Divine
 3																								ADD:SPELLCASTER|Divine
