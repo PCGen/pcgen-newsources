@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Mon Dec 12 20:25:02 2011 -- reformated by prettylst.pl v1.39 (build )
+# CVS $Revision: $ $Author: $ -- Sun Apr 22 08:08:02 2012 -- reformated by prettylst.pl v1.39 (build )
 # Eidolon Evolution Bonus from Extra Evolution feat
 # Class of the Master		Type			Define																									Bonus to Ability Pool				Modify VAR
 FOLLOWER:EidolonExtraEP=1	TYPE:Eidolon																											BONUS:ABILITYPOOL|Eidolon Evolution|1
@@ -22,6 +22,7 @@ FOLLOWER:FamiliarEP=8		TYPE:Familiar																											BONUS:ABILITYPOOL
 FOLLOWER:FamiliarEP=9		TYPE:Familiar																											BONUS:ABILITYPOOL|Eidolon Evolution|1
 
 ###Block:Pack Members for Druid Pack Lord archetype
+# Class of the Master		Type				Hit Dice	Ability															Automatically Gained Feat	Define							Bonus to Ability Pool					Combat bonus					Stat bonus			Modify VAR							Main Race Type
 FOLLOWER:PackMember1LVL=1	TYPE:Pack Member 1			ABILITY:Special Ability|AUTOMATIC|Link|Share Spells|Bonus Tricks|Animal Tricks and Training						DEFINE:MasterLevel|0	DEFINE:BonusTricks|0																				BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1	RACETYPE:Animal
 FOLLOWER:PackMember1LVL=2	TYPE:Pack Member 1	HD:1																																																		BONUS:VAR|MasterLevel|1
 FOLLOWER:PackMember1LVL=3	TYPE:Pack Member 1			ABILITY:Special Ability|AUTOMATIC|Evasion																															BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK	BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
@@ -444,22 +445,25 @@ FOLLOWER:PackMember20LVL=20	TYPE:Pack Member 20	HD:1																												
 
 
 ###Block: Black Blade abilities
-FOLLOWER:BBLevel=3	TYPE:Black Blade	COPYMASTERCHECK:MASTER	ABILITY:Special Ability|AUTOMATIC|Ego ~ Black Blade|Senses ~ Black Blade|Black Blade Arcane Pool|Enhancement Bonus ~ Black Blade
-FOLLOWER:BBLevel=3	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|5	ABILITY:Special Ability|AUTOMATIC|Black Blade Strike|Telepathy ~ Black Blade|Unbreakable ~ Black Blade
-FOLLOWER:BBLevel=5	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|3	BONUS:SKILLRANK|Knowledge (Arcana)|INT	ABILITY:Special Ability|AUTOMATIC|Energy Attunement ~ Black Blade
-FOLLOWER:BBLevel=7	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1						BONUS:VAR|BBEgo|2
-FOLLOWER:BBLevel=9	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|2								ABILITY:Special Ability|AUTOMATIC|Teleport Blade ~ Black Blade
-FOLLOWER:BBLevel=11	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1						BONUS:VAR|BBEgo|2
-FOLLOWER:BBLevel=13	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|2								ABILITY:Special Ability|AUTOMATIC|Transfer Arcana ~ Black Blade
-FOLLOWER:BBLevel=15	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1						BONUS:VAR|BBEgo|2
-FOLLOWER:BBLevel=17	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|4								ABILITY:Special Ability|AUTOMATIC|Spell Defense ~ Black Blade
-FOLLOWER:BBLevel=19	TYPE:Black Blade	BONUS:STAT|INT,WIS,CHA|1						BONUS:VAR|BBEgo|2	ABILITY:Special Ability|AUTOMATIC|Life Drinker ~ Black Blade
+# Class of the Master	Type			Ability																					Copy Masters Checks	Bonus to skill rank				Stat bonus				Modify VAR
+FOLLOWER:BBLevel=3	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Ego ~ Black Blade|Senses ~ Black Blade|Black Blade Arcane Pool|Enhancement Bonus ~ Black Blade	COPYMASTERCHECK:MASTER
+FOLLOWER:BBLevel=3	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Black Blade Strike|Telepathy ~ Black Blade|Unbreakable ~ Black Blade																BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|5
+FOLLOWER:BBLevel=5	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Energy Attunement ~ Black Blade																BONUS:SKILLRANK|Knowledge (Arcana)|INT	BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|3
+FOLLOWER:BBLevel=7	TYPE:Black Blade																																		BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEgo|2
+FOLLOWER:BBLevel=9	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Teleport Blade ~ Black Blade																							BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|2
+FOLLOWER:BBLevel=11	TYPE:Black Blade																																		BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEgo|2
+FOLLOWER:BBLevel=13	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Transfer Arcana ~ Black Blade																							BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|2
+FOLLOWER:BBLevel=15	TYPE:Black Blade																																		BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEgo|2
+FOLLOWER:BBLevel=17	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Spell Defense ~ Black Blade																							BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEnhancement|1	BONUS:VAR|BBEgo|4
+FOLLOWER:BBLevel=19	TYPE:Black Blade	ABILITY:Special Ability|AUTOMATIC|Life Drinker ~ Black Blade																							BONUS:STAT|INT,WIS,CHA|1	BONUS:VAR|BBEgo|2
 
+# Race of familiar		Type			Virtual Feat
 MASTERBONUSRACE:Black Blade	TYPE:Black Blade	VFEAT:Alertness
 
 
 ###Block: Beast-Bonded Witch feat tranfer
 # COMMENT: I'm assuming 10 feats is enough.
+# Class of the Master			Type			Bonus Number of Feats
 FOLLOWER:BeastBondedFeatTransfer=1	TYPE:Familiar	BONUS:FEAT|POOL|1
 FOLLOWER:BeastBondedFeatTransfer=2	TYPE:Familiar	BONUS:FEAT|POOL|2
 FOLLOWER:BeastBondedFeatTransfer=3	TYPE:Familiar	BONUS:FEAT|POOL|3
@@ -471,21 +475,23 @@ FOLLOWER:BeastBondedFeatTransfer=8	TYPE:Familiar	BONUS:FEAT|POOL|8
 FOLLOWER:BeastBondedFeatTransfer=9	TYPE:Familiar	BONUS:FEAT|POOL|9
 FOLLOWER:BeastBondedFeatTransfer=10	TYPE:Familiar	BONUS:FEAT|POOL|10
 
-###Block: New Familiars
-###Block: Specific Familiars
-#FOLLOWER:FMLevel=1	TYPE:Familiar	PRERACE:1,Familiar (Thrush)	KIT:1|Thrush Familiar Language
 
+###Block: New Familiars
 ###Block:Familiar Bonuses to Master
-#MASTERBONUSRACE:Familiar (Blue-Ringed Octopus)	TYPE:Familiar										BONUS:SKILL|Swim|3		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Donkey Rat)		TYPE:Familiar	BONUS:CHECKS|Fortitude|2										VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Fox)			TYPE:Familiar	BONUS:CHECKS|Reflex|2											VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Goat)			TYPE:Familiar										BONUS:SKILL|Survival|3		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Greensting Scorpion)	TYPE:Familiar						BONUS:COMBAT|INITIATIVE|2					VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Hedgehog)			TYPE:Familiar	BONUS:CHECKS|Will|2											VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (House Centipede)	TYPE:Familiar										BONUS:SKILL|Stealth|3		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (King Crab)		TYPE:Familiar										BONUS:VAR|CMB_Grapple|2		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Pig)			TYPE:Familiar										BONUS:SKILL|Diplomacy|3		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Scarlet Spider)		TYPE:Familiar										BONUS:SKILL|Climb|3		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Thrush)			TYPE:Familiar										BONUS:SKILL|Diplomacy|3		VFEAT:Alertness
-#MASTERBONUSRACE:Familiar (Turtle)			TYPE:Familiar						BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE		VFEAT:Alertness
-#
+# Race of familiar					Type			Save checks bonus			Combat bonus						Bonus to skill		Modify VAR			Virtual Feat
+MASTERBONUSRACE:Familiar (Blue-Ringed Octopus)	TYPE:Familiar														BONUS:SKILL|Swim|3					VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Donkey Rat)		TYPE:Familiar	BONUS:CHECKS|Fortitude|2																	VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Fox (UM))			TYPE:Familiar	BONUS:CHECKS|Reflex|2																		VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Goat)			TYPE:Familiar														BONUS:SKILL|Survival|3					VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Greensting Scorpion)	TYPE:Familiar						BONUS:COMBAT|INITIATIVE|2												VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Hedgehog)			TYPE:Familiar	BONUS:CHECKS|Will|2																		VFEAT:Alertness
+MASTERBONUSRACE:Familiar (House Centipede)	TYPE:Familiar														BONUS:SKILL|Stealth|3					VFEAT:Alertness
+MASTERBONUSRACE:Familiar (King Crab)		TYPE:Familiar																		BONUS:VAR|CMB_Grapple|2	VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Pig)			TYPE:Familiar														BONUS:SKILL|Diplomacy|3					VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Scarlet Spider)		TYPE:Familiar														BONUS:SKILL|Climb|3					VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Thrush)			TYPE:Familiar														BONUS:SKILL|Diplomacy|3					VFEAT:Alertness
+MASTERBONUSRACE:Familiar (Turtle)			TYPE:Familiar						BONUS:COMBAT|AC|1|TYPE=NaturalArmor.REPLACE									VFEAT:Alertness
+
+###Block: Abilities for specific types of familiars
+# Class of the Master	Type			Required Race			Apply Kit
+FOLLOWER:FMLevel=1	TYPE:Familiar	PRERACE:1,Familiar (Thrush)	KIT:1|Thrush Familiar Language
