@@ -67,15 +67,54 @@ CLASS:Ex-Dragon Lord	STARTSKILLPTS:4	CSKILL:
 
 
 # Highwayman
-CLASS:Highwayman		SOURCEPAGE:p.45	HD:8	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
+CLASS:Highwayman		SOURCEPAGE:p.45	HD:8	TYPE:Base.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3
 CLASS:Highwayman		!PREALIGN:LG,LE,LN
 CLASS:Highwayman		STARTSKILLPTS:8	CSKILL:Appraise (Int), Bluff (Cha), Climb (Str), Craft (Int), Diplomacy (Cha), Disable Device (Int), Disguise (Cha), Escape Artist (Dex), Hide (Dex), Intimidate (Cha), Jump (Str), Knowledge (geography) (Int), Knowledge (local) (Int), Knowledge (nature) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Ride (Dex), Search (Int), Seduction (Cha)*, Sense Motive (Wis), Sleight of Hand (Dex), Spot (Wis), Survival (Wis), Swim (Str), and Use Rope
+#
 
+1	Ambush|Track
+2	Ambush Sense|Trapfinding	BONUS:VAR|HighwayManAmbushSenseBonus|1
+4	Uncanny Dodge
+5	BONUS:VAR|HighwayManAmbushSenseBonus|1
+7	Leadership
+8	Improved Uncanny Dodge	BONUS:VAR|HighwayManAmbushSenseBonus|1
+9	Swift Tracker
+10	BONUS:ABILITYPOOL|Highway Man Special Ability|1
+11	BONUS:VAR|HighwayManAmbushSenseBonus|1
+13	BONUS:ABILITYPOOL|Highway Man Special Ability|1
+14	BONUS:VAR|HighwayManAmbushSenseBonus|1
+16	BONUS:ABILITYPOOL|Highway Man Special Ability|1
+17	BONUS:VAR|HighwayManAmbushSenseBonus|1
+19	BONUS:ABILITYPOOL|Highway Man Special Ability|1
+20	BONUS:VAR|HighwayManAmbushSenseBonus|1
 
 # Mystic Knight
-CLASS:Mystic Knight	SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
+CLASS:Mystic Knight	EXCLASS:Ex-Mystic Knight	SOURCEPAGE:p.56	HD:8	TYPE:Base.PC	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/2+2
+CLASS:Mystic Knight	!PREALIGN:CG,CN,CE,LE,NE
+CLASS:Mystic Knight	STARTSKILLPTS:6	CSKILL:Balance (Dex), Concentration (Con), Craft (Int), Diplomacy (Cha), Heal (Wis), Hide (Dex), Intimidate (Cha), Jump (Str), Knowledge (the planes) (Int), Knowledge (arcana) (Int), Listen (Wis), Move Silently (Dex), Search (Int), Sense Motive (Wis), Spot (Wis), Survival (Wis), and Tumble
+
+1	Intuitive Defense|Essence Finger|Weapon Focus
+2	Bonded Weapon|Navitus Flemen
+4	Bladed Defender +1, power bond I
+5	Navitus Flemen, Skill Focus
+7	Essence hand, power bond II
+8	Bladed defender +2, Navitus Flemen
+10	Skill Focus
+11	Energy bond I, Navitus Flemen
+12	Bladed defender +3
+13	Essence manipulation
+14	Navitus Flemen
+15	Energy bond II, Skill Focus
+16	Bladed defender +4
+17	Navitus Flemen
+19	Essence mastery, Navitus Flemen
+20	Bladed defender +5, Navitus Flemen mastery, Skill Focus
+
+CLASS:Ex-Mystic Knight	SOURCEPAGE:p.61	HD:8	TYPE:Base.PC	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/2+2
+CLASS:Ex-Mystic Knight	STARTSKILLPTS:6	CSKILL:Balance (Dex), Concentration (Con), Craft (Int), Diplomacy (Cha), Heal (Wis), Hide (Dex), Intimidate (Cha), Jump (Str), Knowledge (the planes) (Int), Knowledge (arcana) (Int), Listen (Wis), Move Silently (Dex), Search (Int), Sense Motive (Wis), Spot (Wis), Survival (Wis), and Tumble
+
 # Oracle
-CLASS:Oracle		SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
+CLASS:Oracle		SOURCEPAGE:p.63	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 # Wordsmiths
 CLASS:Wordsmiths		SOURCEPAGE:p.	HD:	TYPE:Base.PC	BONUS:COMBAT|BAB||TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|	BONUS:CHECKS|BASE.Reflex|	BONUS:CHECKS|BASE.Will|
 ## Elocutionist
