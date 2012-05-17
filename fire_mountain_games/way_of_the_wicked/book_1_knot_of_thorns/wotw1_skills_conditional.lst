@@ -1,0 +1,15 @@
+# CVS $Revision: 16199 $ $Author: amaitland $ -- Thu May 17 12:46:54 2012 -- reformated by prettylst.pl v1.39 (build 16265)
+SOURCELONG:Way of the Wicked, Book 1: Knot of Thorns	SOURCESHORT:WotW1	SOURCEWEB:http://paizo.com/products/btpy8q8e?Way-of-the-Wicked-Book-One-Knot-of-Thorns	SOURCEDATE:2012-02
+# Original Entry by: Stefan Radermacher
+
+###Block: Conditional skills (for output only)
+# Skill Name		Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
+Linguistics (Forgery)	KEYSTAT:INT	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Linguistics (Forgery).MISC"),SKILL.Linguistics.MISC
+
+###Block: Skill .MODs
+# Skill Name	Bonus to skill								Bonus to skill rank
+Linguistics.MOD	BONUS:SKILL|Linguistics (Forgery)|SKILL.Linguistics.MISC	BONUS:SKILLRANK|Linguistics (Forgery)|skillinfo("TOTALRANK", "Linguistics")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Linguistics (Forgery).MISC"),SKILL.Linguistics.MISC
+
+#
+# End
+#
