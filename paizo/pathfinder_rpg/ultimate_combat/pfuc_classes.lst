@@ -20,6 +20,24 @@ CLASS:Gunslinger		STARTSKILLPTS:4	CSKILL:Acrobatics|Bluff|Climb|Craft|Handle Ani
 20	ABILITY:Special Ability|AUTOMATIC|True Grit ~ Gunslinger
 
 
+###Block: Ninja
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Ninja	HD:8		TYPE:Base.PC	ABB:Nin		MAXLEVEL:20	SOURCEPAGE:p.26	DEFINE:NinjaLvl|CL		BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Ninja	STARTSKILLPTS:8	CSKILL:Acrobatics|Appraise|Bluff|Climb|TYPE.Craft|Diplomacy|Disable Device|Disguise|Escape Artist|Intimidate|Knowledge (Local)|Knowledge (Nobility)|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Stealth|Swim|Use Magic Device
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	ABILITY:Special Ability|AUTOMATIC|Ninja Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.NinjaWeaponProficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1																																	AUTO:FEAT|Armor Proficiency (Light)
+###Block: Level progression
+1											BONUS:VAR|NinjaSneakAttackLVL|CL												ABILITY:Special Ability|AUTOMATIC|Poison Use|Sneak Attack|Ninja Sneak Attack
+2											BONUS:VAR|KiPoolLVL|NinjaTrickLVL|CL																	ABILITY:Special Ability|AUTOMATIC|Ninja Trick
+3											BONUS:VAR|NinjaTrapSenseLVL|CL												ABILITY:Special Ability|AUTOMATIC|Trap Sense|Ninja Trap Sense
+3											BONUS:VAR|NinjaNoTraceLVL|CL												ABILITY:Special Ability|AUTOMATIC|No Trace
+4											BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|CL/4	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
+6																							ABILITY:Special Ability|AUTOMATIC|Light Steps
+8											BONUS:VAR|ImprovedUncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|CL/4	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
+20																							ABILITY:Special Ability|AUTOMATIC|Hidden Master
+
 ###Block: Samurai
 
 CLASS:Samurai		HD:10		TYPE:Base.PC	ABB:Gnslr		MAXLEVEL:20	SOURCEPAGE:p.9	BONUS:CHECKS|BASE.Will|CL/3	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
