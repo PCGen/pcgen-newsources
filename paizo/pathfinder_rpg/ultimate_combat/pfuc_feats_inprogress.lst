@@ -222,21 +222,26 @@ Crane Wing	SOURCEPAGE:p.	TYPE:Combat
 
 Crusader's Fist	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You pour divine energy into the enemy you strike.
-	PRETEXT:Lay on hands class feature or touch of corruption class feature, Improved Unarmed Strike	PREATT:6
+	PREABILITY:1,CATEGORY:Special Ability,Lay on Hands,Touch of Corruption ~ Antipaladin
+	PREFEAT:1,Improved Unarmed Strike
+	PREATT:6
 	BENEFIT:When you attack with an unarmed strike and hit a creature that you can harm with your lay on hands or touch of corruption feature, you can use a swift action to expend a daily use of that feature to deal its normal damage as if you had hit with the feature's normal touch attack. This extra damage is not multiplied if you scored a critical hit.
 
+# Ugh, dunno how to make it select the deity's favored melee weapon
 Crusader's Flurry	SOURCEPAGE:p.	TYPE:General
 	DESC:You learned to use your deity's favored weapon as part of your martial arts form.
+	PREABILITY:2,CATETGORY:Special Ability,Channel Energy,Flurry of Blows
+	PREFEAT:Weapon Focus
 	PRETEXT:Channel energy class feature, flurry of blows class feature, Weapon Focus with your deity's favored melee weapon.
 	BENEFIT:You can use your deity's favored weapon as if it were a monk weapon.
 
 Crushing Blow	SOURCEPAGE:p.	TYPE:Combat
 	DESC:Your focus allows you to smash your enemy's defenses.
-	PRETEXT:Improved Unarmed Strike, Stunning Fist.
+	PREFEAT:2,Improved Unarmed Strike,Stunning Fist
 	BENEFIT:You can make a Stunning Fist attempt as a full-round action. If successful, instead of stunning your target, you reduce the target's AC by an amount equal to your Wisdom modifier for 1 minute. This penalty does not stack with other penalties applied due to Crushing Blow.
 
 Deadly Finish	SOURCEPAGE:p.	TYPE:Combat
-	DESC:Your attacks don't just fell your opponents-they kill them outright.
+	DESC:Your attacks don't just fell your opponents; they kill them outright.
 	PREATT:11
 	BENEFIT:When you hit with a melee attack and reduce your opponent to -1 or fewer hit points, you can force that opponent to succeed at a Fortitude save (DC 15 + the damage your attack dealt) or die.
 
@@ -246,132 +251,170 @@ Death from Above	SOURCEPAGE:p.	TYPE:Combat
 
 Death or Glory	SOURCEPAGE:p.	TYPE:Combat
 	DESC:Even when facing a larger foe, you aren't afraid to take great risks in order to finish the fight.
-	PRETEXT:Str 13, Power Attack,	PREATT:6
+	PRESTAT:1,STR=13
+	PREFEAT:1,Power Attack
+	PREATT:6
 	BENEFIT:Against a creature of size Large or larger, you can make a single melee attack as a full-round action, gaining a +4 bonus on the attack roll, damage roll, and critical confirmation roll. You gain an additional +1 on this bonus at base attack bonus +11, +16, and +20 (for a maximum of +7 at base attack +20). After you resolve your attack, the opponent you attack can spend an immediate action to make a single melee attack against you with the same bonuses. &nl; [Special]You can combine the full-round action attack this feat allows with the benefit of Vital Strike, Improved Vital Strike, or Greater Vital Strike.
 
 Deathless Initiate	SOURCEPAGE:p.	TYPE:Combat
 	DESC:For you, impending death is a call to wrath.
-	PRETEXT:Str 13, Con 13, orc or half-orc, Diehard, Endurance,	PREATT:6
+	PRESTAT:2,STR=13,CON=13
+	PRERACE:1,Orc,RACESUBTYPE=Orc
+	PREFEAT:2,Diehard,Endurance
+	PREATT:6
 	BENEFIT:You are not staggered while using the Diehard feat, but if you take a move and a standard action or a fullround action while you are at 0 or fewer hit points you take 1 point of damage. Further, while using the Diehard feat, you gain a +2 bonus on melee attacks and damage rolls.
 
 Deathless Master	SOURCEPAGE:p.	TYPE:Combat
 	DESC:Even if you suffer a grievous wound, you can shrug off the damage and continue your relentless assault.
-	PRETEXT:Str 13, Con 15, orc or half-orc, Deathless Initiate, Diehard, Endurance, Ironhide**, base attack bonus +9.
+	PRESTAT:12,STR=13,CON=15
+	PRERACE:1,Orc,RACESUBTYPE=Orc
+	PREFEAT:4,Deathless Initiate,Diehard,Endurance,Ironhide
+	PREATT:9
 	BENEFIT:When you are at 0 or fewer hit points, you do not lose 1 hit point when you take an action.
 
 Deathless Zealot	SOURCEPAGE:p.	TYPE:Combat
 	DESC:Only the most serious wounds can stop you.
-	PRETEXT:Str 13, Con 17, orc or half-orc, Deathless Initiate, Deathless Master, Diehard, Endurance, Ironhide**, base attack bonus +12.
+	PRESTAT:12,STR=13,CON=17
+	PRERACE:1,Orc,RACESUBTYPE=Orc
+	PREFEAT:4,Deathless Master,Deathless Initiate,Diehard,Endurance,Ironhide
+	PREATT:12
 	BENEFIT:Whenever a creature rolls to confirm a critical hit against you, it must roll twice and take the lowest result.
 
 Deceptive Exchange	SOURCEPAGE:p.	TYPE:General
 	DESC:You trick an adversary into grabbing an object you hand them, even in the midst of combat.
-	PRETEXT:Int 13, Combat Expertise, Improved Feint.
+	PRESTAT:1,INT=13
+	PREFEAT:2,Combat Expertise,Improved Feint
 	BENEFIT:If you successfully feint an opponent, you can trick that opponent into accepting a one-handed object you are holding instead of denying that opponent its Dexterity bonus to AC against your next attack. The opponent must have appendages capable of holding the object you offer, and it must have one such appendage free to take the object. &nl; [Special]An alchemist who has the delayed bomb alchemist discovery can use this feat to hand an enemy a delayed bomb. Such a delayed bomb detonates at the end of the alchemist's turn. If the bomb is in a creature's square at the end of the alchemist's turn, the bomb deals that creature a direct hit.
 
 Defensive Weapon Training	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You know how to defend yourself against a certain class of weaponry.
-	PRETEXT:Int 13,	PREATT:5
+	PRESTAT:1,INT=13
+	PREATT:5
 	BENEFIT:Choose a weapon group from the fighter's weapon training class ability list (except natural weapons). You gain a +2 dodge bonus on AC when an opponent attacks you using a weapon from that group. If you also have the weapon training class feature in the selected group, your dodge bonus from this feat increases to +3. &nl; [Special]You can select this feat more than once. Its effects do not stack. Each time you select this feat, it applies to a different weapon group.
 
 Deft Shootist Deed	SOURCEPAGE:p.	TYPE:Grit
 	DESC:You keep an eye out while focusing on your weapon, allowing you to avoid attacks while shooting and reloading firearms.
-	PRETEXT:Grit class feature or Amateur Gunslinger feat, Dodge, Mobility.
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit ~ Gunslinger],[PREFEAT:1,Amateur Gunslinger]
+	PREFEAT:2,Dodge,Mobility
 	BENEFIT:As long as you have at least 1 grit point, you do not provoke attacks of opportunity when shooting or reloading a firearm.
 
 Destructive Dispel	SOURCEPAGE:p.	TYPE:General
 	DESC:When you dispel an enemy's magical defenses, those defenses crash down with debilitating effects.
-	PRETEXT:Ability to cast dispel magic or greater dispel magic, caster level 11th.
+	PRESPELL:1,Dispel Magic, Dispel Magic (Greater)
+	PRECLASS:1,SPELLCASTER=11
 	BENEFIT:When you successfully make a targeted dispel check against an opponent, that opponent must succeed at a Fortitude save (DC equals the DC of the spell used to dispel) or be stunned until the start of your next turn. If the save succeeds, the opponent is instead sickened until the start of your next turn.
 
 Devastating Strike	SOURCEPAGE:p.	TYPE:Combat
 	DESC:Pitting all of your strength and resolve against your enemy, you deliver a strike that is impossible to ignore.
-	PRETEXT:Vital Strike,	PREATT:9
+	PREFEAT:1,Vital Strike
+	PREATT:9
 	BENEFIT:Whenever you use Vital Strike, Improved Vital Strike, or Greater Vital Strike, you gain a +2 bonus on each extra weapon damage dice roll those feats grant (+6 maximum). This bonus damage is multiplied on a critical hit.
 
 Dimensional Agility	SOURCEPAGE:p.	TYPE:General
 	DESC:Teleportation does not faze you.
+	PREMULT:1,[PRESPELL:1,Dimension Door],[PREABILITY:1,CATEGORY=Special Ability,Abundant Step]
 	PRETEXT:Ability to use the abundant step class feature or cast dimension door.
 	BENEFIT:After using abundant step or casting dimension door, you can take any actions you still have remaining on your turn. You also gain a +4 bonus on Concentration checks when casting teleportation spells.
 
 Dimensional Assault	SOURCEPAGE:p.	TYPE:General
 	DESC:You have been trained to use magical movement as part of your combat tactics.
-	PRETEXT:Ability to use the abundant step class feature or cast dimension door, Dimensional Agility.
+	PREMULT:1,[PRESPELL:1,Dimension Door],[PREABILITY:1,CATEGORY=Special Ability,Abundant Step]
+	PREFEAT:1,Dimensional Agility
 	BENEFIT:As a full-round action, you use abundant step or cast dimension door as a special charge. Doing so allows you to teleport up to double your current speed (up to the maximum distance allowed by the spell or ability) and to make the attack normally allowed on a charge.
 
 Dimensional Dervish	SOURCEPAGE:p.	TYPE:General
 	DESC:You teleport with a mere thought, savaging your opponents as you flash in and out of reality.
-	PRETEXT:Ability to use the abundant step class feature or cast dimension door, Dimensional Agility, Dimensional Assault,	PREATT:6
+	PREMULT:1,[PRESPELL:1,Dimension Door],[PREABILITY:1,CATEGORY=Special Ability,Abundant Step]
+	PREFEAT:2,Dimensional Agility,Dimensional Assault
+	PREATT:6
 	BENEFIT:You can take a full-attack action, activating abundant step or casting dimension door as a swift action. If your do, you can teleport up to twice your speed (up to the maximum distance allowed by the spell or ability), dividing this teleportation into increments you use before your first attack, between each attack, and after your last attack. You must teleport at least 5 feet each time you teleport. &nl; [Special]A monk can use additional points from his ki pool to increase his speed before determining the total speed for this teleportation.
 
 Dimensional Maneuvers
 	DESC:Your rapid teleportation makes your combat maneuvers more difficult to avoid.
+	PREMULT:1,[PRESPELL:1,Dimension Door],[PREABILITY:1,CATEGORY=Special Ability,Abundant Step]
+	PREFEAT:3,Dimensional Agility,Dimensional Assault,Dimensional Dervish
+	PREATT:9
 	PRETEXT:Ability to use the abundant step class feature or cast dimension door, Dimensional Agility, Dimensional Assault, Dimensional Dervish, base attack bonus +9.
 	BENEFIT:While using the Dimensional Dervish feat, you gain a +4 bonus on combat maneuver checks to bull rush, disarm, reposition, or trip an opponent.
 
 Dimensional Savant	SOURCEPAGE:p.	TYPE:General
 	DESC:You flash into and out of reality so quickly it is impossible to tell exactly where you are at any given time.
-	PRETEXT:Dimensional Agility, Dimensional Assault, Dimensional Dervish, ability to use the abundant step class feature or cast dimension door,	PREATT:9
+	PREMULT:1,[PRESPELL:1,Dimension Door],[PREABILITY:1,CATEGORY=Special Ability,Abundant Step]
+	PREFEAT:3,Dimensional Agility,Dimensional Assault,Dimensional Dervish
+	PREATT:9
+	PRETEXT:Dimensional Agility, Dimensional Assault, Dimensional Dervish, ability to use the abundant step class feature or cast dimension door, base attack bonus +9
 	BENEFIT:While using the Dimensional Dervish feat, you provide flanking from all squares you attack from. Flanking starts from the moment you make an attack until the start of your next turn. You can effectively flank with yourself and with multiple allies when using this feat.
 
+# There are monsters that have this ability, for example the Siren. The Siren's ability should count as Bardic Performance
 Discordant Voice	SOURCEPAGE:p.	TYPE:General
 	DESC:By singing out a precise tone, you cause discordant vibrations to run through allies' weapons.
-	PRETEXT:Bardic performance class feature, Perform (oratory or sing) 10 ranks.
+	PREABILITY:1,CATEGORY=Special Ability,Bardic Performance
+	PRESKILL:1,Perform (Oratory)=10,Perform (Sing)=10
 	BENEFIT:Whenever you are using bardic performance to create a spell-like or supernatural effect, allies within 30 feet of you deal an extra 1d6 points of sonic damage with successful weapon attacks. This damage stacks with other energy damage a weapon might deal. Projectile weapons bestow this extra damage on their ammunition, but the extra damage is dealt only if the projectile hits a target within 30 feet of you.
 
 Disengaging Feint	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You can feint to disengage from combat.
-	PRETEXT:Int 13, Combat Expertise, Improved Feint.
+	PRESTAT:1,INT=13
+	PREFEAT:2,Combat Expertise,Improved Feint
 	BENEFIT:As a standard action, use Bluff to feint against an opponent. Instead of denying that opponent his Dexterity bonus to AC, a successful feint allows you to move up to your speed without provoking an attack of opportunity from the opponent you feinted for leaving the square you start in.
 
 Disengaging Flourish	SOURCEPAGE:p.	TYPE:Combat
 	DESC:Distracting your opponents gives you the opportunity to make a swift retreat.
-	PRETEXT:Int 13, Combat Expertise, Disengaging Feint, Improved Feint.
+	PRESTAT:1,INT=13
+	PREFEAT:3,Combat Expertise,Disengaging Feint,Improved Feint
 	BENEFIT:As a standard action, make a Bluff check against each opponent that currently threatens you. If you succeed against at least one opponent, you can move up to your speed. This movement does not provoke attacks of opportunity from any opponent you succeeded at feinting against.
 
 Disengaging Shot	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You make one last attack before beating a hasty retreat.
-	PRETEXT:Int 13, Combat Expertise, Disengaging Feint, Dodge, Improved Feint, Mobility.
+	PRESTAT:1,INT=13
+	PREFEAT:5,Combat Expertise,Disengaging Feint,Dodge,Improved Feint,Mobility
 	BENEFIT:Whenever you use Disengaging Feint or Disengaging Flourish, you can make a single melee attack against one opponent you succeeded at feinting against. That opponent is denied his Dexterity bonus to AC against this attack.
 
 Disorienting Maneuver	SOURCEPAGE:p.	TYPE:General
 	DESC:Your erratic movements disorient your opponent.
-	PRETEXT:Dodge, Acrobatics 5 ranks.
+	PREFEAT:1,Dodge
+	PRESKILL:1,Acrobatics=5
 	BENEFIT:If you successfully use Acrobatics to tumble through an opponent's space, you gain a +2 circumstance bonus on attack rolls against that opponent until the start of your next turn. If you choose to make a trip attempt against that opponent, you gain a +4 circumstance bonus on your combat maneuver check. This bonus on trip also lasts until the start of your next turn.
 
 Dispel Synergy	SOURCEPAGE:p.	TYPE:General
 	DESC:By tearing away an opponent's magical defenses, you leave your enemy vulnerable, making it difficult for him to resist your spells.
-	PRETEXT:Spellcraft 5 ranks.
+	PRESKILL:1,Spellcraft=5
 	BENEFIT:If you successfully dispel an ongoing magical effect on an opponent, that opponent takes a -2 penalty on saving throws against your spells until the end of your next turn.
 
 Dispelling Critical	SOURCEPAGE:p.	TYPE:Critical
 	DESC:Your blows attack the physical and arcane forms of your enemies at the same time.
-	PRETEXT:Arcane Strike, ability to cast dispel magic.		PREATT:11
+	PREFEAT:1,Arcane Strike
+	PRESPELL:1,Dispel Magic
+	PREATT:11
 	BENEFIT:If you have dispel magic prepared or can cast it spontaneously, when you score a critical hit against an opponent, you may use a swift action to cast dispel magic to make a targeted dispel against that opponent.
 
 Dispelling Fist	SOURCEPAGE:p.	TYPE:General
 	DESC:By focusing on your knowledge of magic and spells that negate its powers, you use your bare hands to rip magical defenses from your enemy.
-	PRETEXT:Improved Unarmed Strike, base attack bonus +11, ability to cast dispel magic, caster level 7th.
+	PREFEAT:1,
+	PREATT:11
+	PRESPELL:1,Dispel Magic
+	PRECLASS:1,SPELLCASTER=7
 	BENEFIT:If you have dispel magic prepared or can cast it spontaneously, you can cast it as a swift action after hitting an opponent with an unarmed strike. Treat this as a targeted dispel against the opponent you hit.
 
 Disposable Weapon	SOURCEPAGE:p.	TYPE:General
 	DESC:You ignore the limitations of your equipment, striking harder despite the damage it does to your weapon.
-	PRETEXT:Base attack bonus +1, proficient with weapon.
+	PREATT:1
 	BENEFIT:Whenever you use a melee or thrown weapon with the fragile weapon special quality to score a critical threat against an opponent, you can give your weapon the broken condition to automatically conf irm the critical hit.
 
 Disruptive Recall	SOURCEPAGE:p.	TYPE:General
 	DESC:You can disrupt an enemy caster's spells to fuel your own arcane power.
-	PRETEXT:Spell recall class feature, Spellcraft 5 ranks.
+	PRESKILL:1,Spellcraft=5
+	PREABILITY:1,CATEGORY=Special Ability,Spell Recall ~ Magus
 	BENEFIT:When you use a melee attack to successfully disrupt an arcane spellcaster's spell, you can immediately use your spell recall class feature to regain a magus spell you have already cast. This ability functions as if you had expended a number of points from your arcane pool equal to the level of the spell you disrupted, up to the maximum level spell you can cast.
 
 Distance Thrower	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You are accurate with thrown weapons at longer ranges than normal.
-	PRETEXT:Str 13.
+	PRESTAT:1,STR=13
 	BENEFIT:With a thrown weapon, you reduce your penalty on ranged attack rolls due to range by 2.
 
 Djinni Spin	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You can surround yourself with the power of the storm, spinning like a hurricane to unleash a violent blast of electrical energy.
-	PRETEXT:Con 15, Wis 17, Djinni Style, Djinni Spirit, Elemental Fist**, Improved Unarmed Strike, base attack bonus +13 or monk level 11th.
+	PREMULT:1,[PREMULT:3,[PRESTAT:2,CON=15,WIS=17],[PREFEAT:1,Djinni Style,Djinni Spirit,Elemental Fist,Improved Unarmed Strike],[PREATT:13]],[PRECLASS:1,Monk=11]
 	BENEFIT:While using Djinni Style, as a standard action you can spend two Elemental Fist (Advanced Player's Guide 158) attempts to surround yourself with a whirlwind of electrified air. Creatures adjacent to you take your unarmed strike damage plus the electricity damage from your Elemental Fist and are deafened for 1d4 rounds. A successful Fortitude save (DC 10 + 1/2 your character level + your Wis modifier) reduces the damage by half and prevents a target from being deafened.
 
 Djinni Spirit	SOURCEPAGE:p.	TYPE:Combat
@@ -386,7 +429,8 @@ Djinni Style	SOURCEPAGE:p.	TYPE:Combat.Style
 
 Domain Strike	SOURCEPAGE:p.	TYPE:Combat
 	DESC:You unleash a domain power upon your enemy as part of your unarmed strike.
-	PRETEXT:Domain class feature, Improved Unarmed Strike.
+	PREFEAT:1,Improved Unarmed Strike
+	PREABILITY:1,CATEGORY=Special Ability,Domains
 	BENEFIT:When you gain this feat, choose one domaingranted power that you can use to affect no more than one opponent. If you make a successful unarmed strike against an opponent, in addition to dealing your unarmed strike damage, you can use a swift action to deliver the effects of the chosen granted power to that opponent. Doing so provokes no attacks of opportunity. &nl; [Special]You can take this feat multiple times. Each time you take it, you apply it to a different qualifying domain power.
 
 Double Bane	SOURCEPAGE:p.	TYPE:General
