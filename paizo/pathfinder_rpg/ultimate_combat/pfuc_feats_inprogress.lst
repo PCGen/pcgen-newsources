@@ -12,7 +12,7 @@ Adept Champion
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can alter your smite ability, channeling the power of your deity into divine inspiration that grants you greater aptitude for performing combat maneuvers.
-	PREABILITY:!,CATEGORY=Special Ability,Smite Evil
+	PREABILITY:1,CATEGORY=Special Ability,Smite Evil
 	PREATT:5
 	PRETEXT:Smite evil class feature, base attack bonus +5.
 	BENEFIT:While using your smite evil class feature, as a swift action at the start of your turn, you can forgo the bonus on damage rolls and instead gain half that bonus as a bonus on combat maneuver checks against the target of your smite. The effects of your smite evil feature return to normal at the start of your next turn.
@@ -106,7 +106,6 @@ Body Shield
 # TODO: PREABILITY: DR?  Qwep?
 Bolstered Resilience
 	DESC:You can dramatically increase your damage reduction in exchange for its temporary loss.
-	PREABILITY:
 	PRETEXT:Damage reduction.
 	BENEFIT:As an immediate action, you can double your DR against a single attack, to a maximum of DR 20. The type of the DR remains unchanged. If the attack you are guarding against is not successful, the increased damage reduction persists until you are hit with an attack or until the start of your next turn, whichever happens first. At the start of your next turn, you become fatigued. You cannot use this feat while you are fatigued.
 
@@ -133,8 +132,7 @@ Break Guard
 	TYPE:Combat
 	DESC:You can use one of your two weapons to occupy your opponent's defenses while attacking with the other.
 	PREABILITY:2,DEX=15,INT=13
-	PREFEAT:Combat Expertise,Improved Disarm,Two-Weapon Fighting
-	PRETEXT:Dex 15, Int 13, Combat Expertise, Improved Disarm, Two-Weapon Fighting.
+	PREFEAT:3,Combat Expertise,Improved Disarm,Two-Weapon Fighting
 	BENEFIT:While wielding two weapons, whenever you successfully use one weapon to disarm an opponent, you can spend a swift action to attack the opponent you attempted to disarm using your other weapon.
 
 Broken Wing Gambit
@@ -279,7 +277,7 @@ Crane Wing
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You move with the speed and finesse of an avian hunter, your sweeping blocks and graceful motions allowing you to def lect melee attacks with ease.
-	PREMULT:1,[PREMULT:2,[PREFEAT:3,Crane Style,Dodge,Improved Unarmed Strike],[PREATT:5]],[Monk=5]
+	PREMULT:1,[PREMULT:2,[PREFEAT:3,Crane Style,Dodge,Improved Unarmed Strike],[PREATT:5]],[PRECLASS:1,Monk=5]
 	BENEFIT:Once per round while using Crane Style, when you have at least one hand free and are either fighting defensively or using the total defense action, you can def lect one melee weapon attack that would normally hit you. You expend no action to def lect the attack, but you must be aware of it and not flat-footed. An attack so def lected deals no damage to you.
 
 Crusader's Fist
@@ -297,7 +295,7 @@ Crusader's Flurry
 	TYPE:General
 	DESC:You learned to use your deity's favored weapon as part of your martial arts form.
 	PREABILITY:2,CATETGORY:Special Ability,Channel Energy,Flurry of Blows
-	PREFEAT:Weapon Focus
+	PREFEAT:1,Weapon Focus
 	PRETEXT:Channel energy class feature, flurry of blows class feature, Weapon Focus with your deity's favored melee weapon.
 	BENEFIT:You can use your deity's favored weapon as if it were a monk weapon.
 
@@ -670,7 +668,7 @@ Elusive Redirection
 	DESC:You can redirect an attack back at your assailant or into an adjacent enemy.
 	PREABILITY:1,Elusive Target
 	PREFEAT:2,Combat Expertise, Improved Unarmed Strike
-	PRECLASS:PRECLASS:1,Monk=12
+	PRECLASS:1,Monk=12
 	BENEFIT:When you successfully use your elusive target class feature to avoid taking damage, you can spend an immediate action and an additional point from your ki pool to redirect that attack back at your attacker or toward any other opponent adjacent to you and your attacker. This attack uses the same attack roll as the original attack, but it targets the opponent you choose.
 
 Enfilading Fire
