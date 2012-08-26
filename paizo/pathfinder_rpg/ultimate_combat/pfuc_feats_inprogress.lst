@@ -25,7 +25,7 @@ False Opening
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:When you make a ranged attack while threatened, you can fool your opponent into thinking he has an opening.
-	PRESTAT:1,DEX=13,
+	PRESTAT:1,DEX=13
 	PREFEAT:2,Dodge,Weapon Focus (TYPE=Ranged)
 	PREFEAT:1,Close Quarters Thrower,Point-Blank Master
 	BENEFIT:Choose a ranged weapon or a thrown weapon. When you make a ranged attack using that weapon, you can choose to provoke an attack of opportunity from one or more opponents who threaten you. You gain a +4 dodge bonus against such attacks. An opponent that makes such an attack and misses you loses his Dexterity bonus to AC against you until the end of your turn.
@@ -313,127 +313,151 @@ Improved Impaling Critical
 	SOURCEPAGE::p.
 	TYPE:Combat.Critical
 	DESC:When you impale a target, you hinder its movement and can cause severe bleeding.
-	PRETEXT:Impaling Critical, Critical Focus, Weapon Specialization with selected piercing melee weapon, base attack bonus +13
+	PREFEAT:2,Critical Focus,Impaling Critical
+	PREFEAT:1,Weapon Specialization (TYPE=Piercing)
+	PREATT:13
 	BENEFIT:While you are using Impaling Critical to impale an opponent, and you are still holding onto that weapon, that opponent must succeed at a grapple combat maneuver check against you to pull your weapon out. If you have let go of your weapon, the impaled opponent must spend a standard action to remove the weapon. Until the opponent pulls the weapon out, his speed in all modes is halved and his maneuverability, if any, is reduced by one step. When the weapon comes out, instead of dealing the damage normal for Impaling Critical, you can deal bleed damage equal to your weapon's damage dice result once per round at the start of that opponent's turn.
 
 Improved Rending Fury
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Honing the deadliness of your claws, you are a living hurricane of rending fury.
-	PRETEXT:Rending Fury,, rend special attack.		PREATT:9
+	PREFEAT:1,Rending Fury
+	PREATTACK:9
+	PREABILITY:1,CATEGORY=Special Ability,Rend
 	BENEFIT:Whenever you successfully rend an opponent, you deal an extra 1d6 damage. This damage is not multiplied on a critical hit.
-
 
 Improved Snap Shot
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can take advantage of your opponent's vulnerabilities from a greater distance, and without exposing yourself.
-	PRETEXT:Dex 15, Point-Blank Shot, Rapid Shot, Snap Shot, Weapon Focus,	PREATT:9
+	PRESTAT:15
+	PREFEAT:4,Point-Blank Shot, Rapid Shot, Snap Shot, Weapon Focus
+	PREATT:9
 	BENEFIT:You threaten an additional 10 feet with Snap Shot. &nl; [Normal] Making a ranged attack provokes attacks of opportunity.
 
 Improved Stalwart
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can roll with the punches while simultaneously striking back at your attackers.
-	PRETEXT:Diehard, Endurance, Stalwart, base attack bonus +11
+	PREFEAT:3,Diehard, Endurance, Stalwart
+	PREATT:11
 	BENEFIT:Double the DR you gain from Stalwart, to a maximum of DR 10/-.
 
 Improved Two-Weapon Feint
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your primary weapon keeps a foe off balance, allowing you to slip your off-hand weapon past his defenses.
-	PRETEXT:Dex 17, Int 13, Combat Expertise, Improved Two-Weapon Fighting, Two-Weapon Fighting, base attack bonus +6
+	PRESTAT:2,DEX=17,INT=1
+	PREFEAT:3,Combat Expertise, Improved Two-Weapon Fighting, Two-Weapon Fighting
+	PREATT:6
 	BENEFIT:While using Two-Weapon Fighting to make melee attacks, you can forgo your first primary-hand melee attack to make a Bluff check to feint an opponent. If you successfully feint, that opponent is denied his Dexterity bonus to AC until the end of your turn.
 
 Improved Whip Mastery
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You are able to entangle opponents with the coils of your whip.
-	PRETEXT:Weapon Focus (whip), Whip Mastery, base attack bonus +5
+	PREFEAT:2,Weapon Focus (whip),Whip Mastery
+	PREATT:5
 	BENEFIT:While wielding a whip, you threaten the area of your natural reach plus 5 feet. You can also use a whip to grasp an unattended Small or Tiny object within your whip's reach and pull that object into your square. To do so, you must hit AC 10 with a melee touch attack. Further, you can use the whip to grasp onto an object within your whip's reach, using 5 feet of your whip as if it were a grappling hook, allowing you to use the rest of your whip to swing on like a rope. As a free action, you can release the object your whip is grasping, but you cannot use the whip to attack while the whip is grasping an object.
 
 Instant Judgment
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your hastiest condemnations can have power.
-	PRETEXT:Second judgment class feature
+	PREABILITY:1,CATEGORY=Special Ability,Second Judgment ~ Inquisitor
 	BENEFIT:You can spend an immediate action to pronounce a judgment or change an active judgment. &nl; [Normal] Pronouncing or changing a judgment requires a swift action.
 
 Intimidating Bane
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your bane weapon strikes fear into your enemies.
-	PRETEXT:Bane class feature, Dazzling Display, Weapon Focus, character level 8th
+	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor	PREFEAT:1,Dazzling Display,Weapon Focus
+	PRELEVEL:MIN=8
 	BENEFIT:Whenever you use Dazzling Display while your bane feature is active, you gain a +2 bonus on the Intimidate check that Dazzling Display allows against creatures of the type your bane weapon currently affects. Such creatures remain shaken while your bane feature is still active and effective against their creature type.
 
 Janni Rush
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:When you leap to the attack, your blows are like bolts from on high.
-	PRETEXT:Improved Unarmed Strike, Janni Style, Janni Tempest, PRESKILL:1,Acrobatics=8, PRESKILL:1,Perform (dance)=8
+	PREFEAT:3,Improved Unarmed Strike, Janni Style, Janni Tempest
+	PRESKILL:2,Acrobatics=8,Perform (dance)=8
 	BENEFIT:While using Janni Style, you are always considered to have a running start when jumping. Further, if you jump as part of a charge and make an unarmed strike against the designated opponent, a hit allows you to roll the unarmed strike's damage dice twice and add the results together before adding modifiers (such as from Strength) or extra dice (such as precision-based damage or dice from weapon abilities). The extra damage dice are not multiplied on a successful critical hit.
 
 Janni Style
 	SOURCEPAGE::p.
 	TYPE:Combat.Style
 	DESC:Your whirling fighting technique makes you difficult to hit.
-	PRETEXT:Improved Unarmed Strike, PRESKILL:1,Acrobatics=3, PRESKILL:1,Perform (dance)=3
+	PREFEAT:1,Improved Unarmed Strike
+	PRESKILL:2,Acrobatics=3,Perform (dance)=3
 	BENEFIT:While using this style, you take only a -1 penalty to AC for charging. Further, opponents that flank you gain only a +1 bonus on attack rolls against you.
 
 Janni Tempest
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your gale of attacks easily throws your opponents off balance.
-	PRETEXT:Improved Unarmed Strike, Janni Style, PRESKILL:1,Acrobatics=5, PRESKILL:1,Perform (dance)=5
+	PREFEAT:2,Improved Unarmed Strike, Janni Style
+	PRESKILL:2,Acrobatics=5,Perform (dance)=5
 	BENEFIT:While you are using the Janni Style feat, whenever you make an unarmed attack and hit an opponent, you gain a +4 bonus on checks made to bull rush or trip that opponent, as long as the combat maneuver is your next attack by the end of your turn. You do not provoke an attack of opportunity from the target of the maneuver.
 
 Jawbreaker
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You deliver a powerful strike to the mouth, breaking teeth and bone.
-	PRETEXT:Improved Unarmed Strike, Stunning Fist, PRESKILL:1,Heal=6
+	PREFEAT:2,Improved Unarmed Strike, Stunning Fist
+	PRESKILL:1,Heal=6
 	BENEFIT:When you make a successful Stunning Fist attempt against an opponent that is grappled, helpless, or stunned, instead of imparting any other Stunning Fist effect, you can cripple that opponent's mouth, dealing normal unarmed strike damage and 1d4 points of bleed damage. Until the bleed damage ends, the target is unable to use its mouth to attack, speak clearly, and employ verbal spell components. A creature that is immune to critical hits or that has no discernible mouth is immune to the effects of this feat.
 
 Kirin Path
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You turn knowledge of your enemy into a flawless defense.
-	PRETEXT:Int 13, Kirin Strike, Kirin Style, Improved Unarmed Strike, PRESKILL:1,Knowledge (arcana)=12, Knowledge (dungeoneering, local, nature, planes, PRESKILL:1,or religion)=5
+	PRESTAT:1,INT=13
+	PREFEAT:3,Kirin Strike, Kirin Style, Improved Unarmed Strike
+	PRESKILL:1,Knowledge (arcana)=12	PRESKILL:1,Knowledge (dungeoneering)=5,Knowledge (local)=5,Knowledge (nature)=5,Knowledge (planes)=5,Knowledge (religion)=5
 	BENEFIT:Whenever you make a Knowledge check to identify a creature, even when using Kirin Style, you can take 10 even if stress and distractions would normally prevent you from doing so. While using Kirin Style against a creature you have identified using that feat, if the creature ends its turn within your threatened area, you can spend a use of your attacks of opportunity that round to move up to 5 feet times your Intelligence modifier (minimum 1). You must end your move in a square threatened by the creature. This move does not provoke attacks of opportunity.
 
 Kirin Strike
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You have read the texts of the perfect way, and know how identify to your enemies' weak spot.
-	PRETEXT:Int 13, Kirin Style, Improved Unarmed Strike, PRESKILL:1,Knowledge (arcana)=9, Knowledge (dungeoneering, local, nature, planes, PRESKILL:1,or religion)=3
+	PRESTAT:1,INT=13
+	PREFEAT:2,Kirin Style, Improved Unarmed Strike
+	PRESKILL:1,Knowledge (arcana)=9
+	PRESKILL:1,Knowledge (dungeoneering)=3,Knowledge (local)=3,Knowledge (nature)=3,Knowledge (planes)=3,Knowledge (religion)=3
 	BENEFIT:You gain a +2 insight bonus on Knowledge checks made to identify creatures, including the one Kirin Style allows. While using Kirin Style against a creature you have identified using that feat, as a swift action after you have hit a creature with a melee or ranged attack, you can add twice your Intelligence modifier in damage (minimum 2).
 
 Kirin Style
 	SOURCEPAGE::p.
 	TYPE:Combat.Style
 	DESC:Your study and your grace allows you to exploit your enemies' weaknesses.
-	PRETEXT:Improved Unarmed Strike, PRESKILL:1,Knowledge (arcana)=6, Knowledge (dungeoneering, local, nature, planes, PRESKILL:1,or religion)=1
+	PREFEAT:1,Improved Unarmed Strike
+	PRESKILL:1,Knowledge (arcana)=6
+	PRESKILL:1,Knowledge (dungeoneering)=1,Knowledge (local)=1,Knowledge (nature)=1,Knowledge (planes)=1,Knowledge (religion)=1
 	BENEFIT:While using this style, you can spend a swift action to make a Knowledge check to identify a single creature (DC 15 + the creature's CR for this purpose). If you succeed at the check, while using this style, you gain a +2 bonus on saving throws against that creature's attacks, as well as a +2 dodge bonus to AC against that creature's attacks of opportunity. These bonuses last for as long as you use this style. If you cease combat with the creature during this time and resume it later, you can attempt the check again.
 
 Knockout Artist
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can throw devastating knockout punches.
-	PRETEXT:Sneak attack class feature, Improved Unarmed Strike
+	PREABILITY:1,CATEGORY=Special Ability,Sneak Attack
+	PREFEAT:1,Improved Unarmed Strike
 	BENEFIT:When you use your unarmed strike to deal nonlethal damage and sneak attack damage to an opponent denied his Dexterity bonus to AC, you gain a +1 bonus on the damage roll per each sneak attack damage die you roll.
 
 Landing Roll
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You have learned the technique of rolling safely away when an enemy trips you.
-	PRETEXT:Dex 13, Dodge, Mobility
+	PRESTAT:1,DEX=13
+	PREFEAT:2,Dodge,Mobility
 	BENEFIT:If you are tripped, you can spend an immediate action to move 5 feet without provoking an attack of opportunity. This does not count as taking a 5-foot step. You fall prone after this movement.
 
 Leaping Shot Deed
 	SOURCEPAGE::p.
 	TYPE:Grit
 	DESC:You leap through the air, guns blazing.
-	PRETEXT:Dex 13, grit class feature or Amateur Gunslinger feat, Dodge, Mobility,	PREATT:4
+	PRETEXT:Dex 13, grit class feature or Amateur Gunslinger feat, Dodge, Mobility
+	PREATT:4
 	BENEFIT:You gain a +2 bonus on Acrobatics checks made to jump. As a full-round action, you can move up to your speed and make firearm attacks at your highest base attack bonus with each loaded firearm you are wielding. You can make these attacks at any point during your movement, and if you are wielding two firearms, you can make the attacks at different points during the movement. At the end of this movement, you fall prone. This deed costs 1 grit point to perform.
 
 Mantis Style
@@ -482,7 +506,8 @@ Master Combat Performer
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You are a master of the techniques and weapons of the arena and the stage.
-	PRETEXT:Performing Combatant or at least three performance feats,	PREATT:6
+	PRETEXT:Performing Combatant or at least three performance feats
+	PREATT:6
 	BENEFIT:You can make performance combat checks as a free action. You are proficient in all weapons with the performance special quality.
 
 Master Siege Engineer
@@ -511,14 +536,14 @@ Menacing Bane
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You are deadly when you team up with allies against a single foe.
-	PRETEXT:Bane class feature
+	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
 	BENEFIT:You can use your bane class feature to imbue a melee weapon with the menacing special weapon ability (Advanced Player's Guide 288) instead of bane. You can spend a swift action to switch between the two special weapon abilities. Doing so otherwise works according to your bane class feature. &nl; [Special]If you have the Double Bane feat, you can imbue each weapon you wield with either bane or menacing. No single weapon can have both.
 
 Merciful Bane
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can use your bane ability to inflict nonlethal damage.
-	PRETEXT:Bane class feature
+	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
 	BENEFIT:While a weapon you wield is under the effect of your bane class feature, you can spend a swift action to switch between dealing lethal or nonlethal damage with bane. While your bane effect allows you to deal nonlethal damage in this way, you take no penalty on your attack roll for using a lethal weapon to deal nonlethal damage. &nl; [Normal] When using a lethal weapon to deal nonlethal damage, you take a -4 penalty on attack rolls.
 
 Mocking Dance
@@ -607,14 +632,16 @@ Net Maneuvering
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:With sweeping movements and brute force, you can use your net to put foes at a disadvantage.
-	PRETEXT:Exotic Weapon Proficiency (net), Net Adept,	PREATT:3
+	PRETEXT:Exotic Weapon Proficiency (net), Net Adept
+	PREATT:3
 	BENEFIT:In melee, you can use a net to trip or disarm opponents instead of entangling them. You gain a +2 bonus on disarm checks made to use a net in this way. Further, if you have an opponent entangled in your net, you can attempt to drag or reposition that opponent as long as he is within your net's reach or you control the trailing rope on your net.
 
 Net Trickery
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You have become very proficient at using your net to hinder your enemies.
-	PRETEXT:Exotic Weapon Proficiency (net), Net Adept, Net Maneuvering,	PREATT:6
+	PRETEXT:Exotic Weapon Proficiency (net), Net Adept, Net Maneuvering
+	PREATT:6
 	BENEFIT:In place of one of your melee attacks, you can use your net to attempt a dirty trick combat maneuver to blind an opponent (Advance Player's Guide 320). If you have an opponent entangled in your net, you can attempt to trip that opponent as long as he is within your net's reach or you control the trailing rope on your net. You also gain a +2 bonus on drag and reposition combat maneuver checks you make using your net.
 
 Nightmare Fist
@@ -758,7 +785,8 @@ Quick Dirty Trick
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can perpetrate a dirty trick and deliver an attack before your opponent is the wiser.
-	PRETEXT:Int 13, Combat Expertise, Improved Dirty Trick,	PREATT:6
+	PRETEXT:Int 13, Combat Expertise, Improved Dirty Trick
+	PREATT:6
 	BENEFIT:On your turn, you can perform a single dirty trick combat maneuver (Advanced Players Guide 320) in place of one of your melee attacks. You must choose the melee attack with the highest base attack bonus to make the dirty trick combat maneuver. &nl; [Normal] A dirty trick combat maneuver is a standard action.
 
 Quick Drag
@@ -772,7 +800,8 @@ Quick Reposition
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your opponent becomes an unwitting dance partner, following your lead while you fight.
-	PRETEXT:Int 13, Combat Expertise, Improved Reposition,	PREATT:6
+	PRETEXT:Int 13, Combat Expertise, Improved Reposition
+	PREATT:6
 	BENEFIT:On your turn, you can perform a single reposition combat maneuver (Advanced Players Guide 320) in place of one of your melee attacks. You must choose the melee attack with the highest base attack bonus to make the reposition. &nl; [Normal] A reposition combat maneuver is a standard action.
 
 Quick Steal
@@ -807,7 +836,8 @@ Raging Throw
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You expend some of your rage to throw one opponent at another.
-	PRETEXT:Str 13, Con 13, rage class feature, Improved Bull Rush, Power Attack,	PREATT:6
+	PRETEXT:Str 13, Con 13, rage class feature, Improved Bull Rush, Power Attack
+	PREATT:6
 	BENEFIT:While raging, when you attempt a bull rush combat maneuver, you can spend 1 additional round of your rage as a swift action to add your Constitution bonus on your combat maneuver check to the bull rush. Further, if you bull rush an opponent into a square another creature occupies or into a solid object, the opponent and the creature or object take bludgeoning damage equal to your Strength modifier + your Constitution modifier.
 
 Rapid Grappler
@@ -835,14 +865,16 @@ Rebuffing Reduction
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your damage reduction can turn the force of blows back on your enemies.
-	PRETEXT:Str 13, damage reduction, Improved Bull Rush, Power Attack,	PREATT:1
+	PRETEXT:Str 13, damage reduction, Improved Bull Rush, Power Attack
+	PREATT:1
 	BENEFIT:Whenever an opponent that is adjacent to you fails to penetrate your DR with a melee attack, you can spend an immediate action to attempt a bull rush combat maneuver against that opponent. If you succeed, you cannot move with the opponent. &nl; [Normal] A bull rush combat maneuver is a standard action.
 
 Rending Fury
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You easily tear your enemies limb from limb with your natural attacks.
-	PRETEXT:Base attack bonus +6, rend special attack
+	PREATTACK:6
+	PREABILITY:1,CATEGORY=Special Ability,Rend
 	BENEFIT:You deal rend damage if you hit with half the normal natural attacks your rend requires. For example, a troll that has this feat can rend when it hits with one claw attack, while a girallon that has this feat must hit one target with two claw attacks to rend. You can only make this rend attack once per round.
 
 Revelation Strike
@@ -1021,7 +1053,8 @@ Sling Flail
 	SOURCEPAGE::p.119
 	TYPE:Combat
 	DESC:You can use your loaded sling to effectively strike at nearby foes.
-	PRETEXT:Weapon Focus (sling),	PREATT:1
+	PRETEXT:Weapon Focus (sling)
+	PREATT:1
 	BENEFIT:You can make melee attacks using your loaded sling, using that weapon's normal statistics but treating it as a flail. Using a sling in this way does not expend mundane ammunition, but magical or masterwork ammunition loses its special properties after a single hit. &nl; [Special]Any feats you have that apply when you use a flail also apply when you use a loaded sling as a melee weapon.
 
 Snake Fang
@@ -1049,7 +1082,8 @@ Snap Shot
 	SOURCEPAGE::p.119
 	TYPE:Combat
 	DESC:With a ranged weapon, you can take advantage of any opening in your opponent's defenses.
-	PRETEXT:Dex 13, Point-Blank Shot, Rapid Shot, Weapon Focus,	PREATT:6
+	PRETEXT:Dex 13, Point-Blank Shot, Rapid Shot, Weapon Focus
+	PREATT:6
 	BENEFIT:While wielding a ranged weapon with which you have Weapon Focus, you threaten squares within 5 feet of you. You can make attacks of opportunity with that ranged weapon. You do not provoke attacks of opportunity when making a ranged attack as an attack of opportunity. &nl; [Normal] While wielding a ranged weapon, you threaten no squares and can make no attacks of opportunity with that weapon.
 
 # 120
@@ -1077,7 +1111,8 @@ Snapping Turtle Style
 
 Sneaking Precision
 	DESC:Your knowledge of your enemies' vulnerable spots is especially punishing.
-	PRETEXT:Sneak attack class feature, Critical Focus, any critical feat,	PREATT:9
+	PRETEXT:Sneak attack class feature, Critical Focus, any critical feat
+	PREATT:9
 	BENEFIT:Whenever you successfully sneak attack an opponent for a second time on your turn, you can spend a swift action to apply the effects of one critical feat you know to that opponent.
 
 Sorcerous Strike
@@ -1089,7 +1124,7 @@ Sorcerous Strike
 
 Spell Bane
 	DESC:While your bane weapon is active, creatures that your bane affects find it more difficult to resist your spells.
-	PRETEXT:Bane class feature
+	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
 	BENEFIT:While your bane class feature is affecting a creature type, the saving throw's DCs for your spells increase by +2 for creatures of that type.
 
 Spinning Throw
@@ -1108,14 +1143,16 @@ Stage Combatant
 	SOURCEPAGE::p.120
 	TYPE:Combat
 	DESC:You are a master of stage and nonlethal combats.
-	PRETEXT:Weapon Focus,	PREATT:5
+	PRETEXT:Weapon Focus
+	PREATT:5
 	BENEFIT:When you make an attack with a weapon that you have Weapon Focus in, you take no penalty on the attack roll when you are attempting to make an attack that deals no damage or nonlethal damage. &nl; [Normal] When making attacks that deal no damage or nonlethal damage, you take a -4 penalty on attack rolls.
 
 #121
 
 Stalwart
 	DESC:You adopt a defensive stance that allows you to absorb and redirect hits.
-	PRETEXT:Diehard, Endurance,	PREATT:4
+	PRETEXT:Diehard, Endurance
+	PREATT:4
 	BENEFIT:While using the total defense action, fighting defensively action, or Combat Expertise, you can forgo the dodge bonus to AC you would normally gain to instead gain an equivalent amount of DR, to a maximum of DR 5/-, until the start of your next turn. This damage reduction stacks with DR you gain from class features, such as the barbarian's, but not with DR from any other source. If you are denied your Dexterity bonus to AC, you are also denied this DR.
 
 Stealth Synergy
@@ -1159,7 +1196,8 @@ Sword and Pistol
 	SOURCEPAGE::p.122
 	TYPE:Combat
 	DESC:You effortlessly pair melee and ranged weaponry.
-	PRETEXT:Dex 13, Point-Blank Shot, Rapid Shot, Snap Shot, Two-Weapon Fighting,	PREATT:6
+	PRETEXT:Dex 13, Point-Blank Shot, Rapid Shot, Snap Shot, Two-Weapon Fighting
+	PREATT:6
 	BENEFIT:When you use the Two-Weapon Fighting feat while wielding a melee weapon and a crossbow or firearm, your attacks with the crossbow or firearm provoke no attacks of opportunity from foes that you threaten with your melee weapon. &nl; [Normal] Making a ranged attack provokes attacks of opportunity.
 
 Tandem Trip
@@ -1172,7 +1210,8 @@ Target of Opportunity
 	SOURCEPAGE::p.122
 	TYPE:Combat.Teamwork
 	DESC:You and your allies pelt your enemies with a deadly barrage of missiles.
-	PRETEXT:Point-Blank Shot,	PREATT:6
+	PRETEXT:Point-Blank Shot
+	PREATT:6
 	BENEFIT:When an ally who also has this feat makes a ranged attack and hits an opponent within 30 feet of you, you can spend an immediate action to make a single ranged attack against that opponent. Your ranged weapon must be in hand, loaded, and ready to be fired or thrown for you to make the ranged attack.
 
 Team Pickpocketing
@@ -1267,7 +1306,8 @@ Whip Mastery
 	SOURCEPAGE::p.123
 	TYPE:Combat
 	DESC:Your superior expertise with this weapon does not provoke attacks of opportunity from your enemies.
-	PRETEXT:Weapon Focus (whip),	PREATT:2
+	PRETEXT:Weapon Focus (whip)
+	PREATT:2
 	BENEFIT:You no longer provoke attacks of opportunity when attacking with a whip. You can deal lethal damage with a whip, although you can still deal nonlethal damage when you want. Further, you can deal damage with a whip despite a creature's armor bonus or natural armor bonus. &nl; [Normal] Attacking with a whip provokes attacks of opportunity as if you used a ranged weapon. A whip deals no damage to a creature that has an armor bonus of +1 or natural armor bonus of +3.
 
 # 124
