@@ -67,10 +67,11 @@ Field Repair
 	TYPE:General
 	DESC:You can repair your broken weapon or armor to serviceability even without the benefits of artisan tools.
 	PRESKILL:1,Craft=4
-	BENEFIT:If you are trained in a Craft skill appropriate to a broken item, you can repair that item with no raw material cost and no penalty on your Craft skill check for using improvised tools. If you spend a day, the item regains 1 hit point plus one-quarter of its original hit points. Alternatively, if the item gained the broken condition because it is a firearm that has misf ired or a siege engine that suffered a mishap, or has the broken condition because it has the fragile weapon quality (or some similar quality), you can make a Craft check with the DC it takes to craft that item (see Table 2-2, below). If the check succeeds, the item loses the broken condition. &nl; [Normal] Improvised tools impose a -2 penalty on Craft checks. Items require raw materials to repair.
+	BENEFIT:If you are trained in a Craft skill appropriate to a broken item, you can repair that item with no raw material cost and no penalty on your Craft skill check for using improvised tools. If you spend a day, the item regains 1 hit point plus one-quarter of its original hit points. Alternatively, if the item gained the broken condition because it is a firearm that has misfired or a siege engine that suffered a mishap, or has the broken condition because it has the fragile weapon quality (or some similar quality), you can make a Craft check with the DC it takes to craft that item (see Table 2-2, below). If the check succeeds, the item loses the broken condition. &nl; [Normal] Improvised tools impose a -2 penalty on Craft checks. Items require raw materials to repair.
 
 # TODO: There are loads of Naga and Serpentfolk that are not in one specific subtype
 # TODO: There are loads of different constrict abilities
+# TODO: Constrict damage
 Final Embrace
 	SOURCEPAGE::p.
 	TYPE:Combat
@@ -78,6 +79,7 @@ Final Embrace
 	PRESTAT:2,STR=13,INT=3
 	PREMULT:1,[PRERACE:1,Naga,Serpentfolk],[PREABILITY:1,CATEGORY=Special Ability,Constrict]
 	PREATT:3
+	ABILITY:Special Ability|AUTOMATIC|Constrict|Grab
 	BENEFIT:You gain the constrict and grab special attacks. Your constrict attack deals damage equal to your unarmed strike or primary natural weapon melee attack. Further, you can grab and constrict opponents up to your size. &nl; [Normal] You can grab and constrict creatures one size smaller than you.
 
 Final Embrace Horror
@@ -90,6 +92,7 @@ Final Embrace Horror
 	PREATT:6
 	BENEFIT:A creature that takes damage from your constrict attack is also shaken until the start of your next turn.
 
+# TODO: Double damage dice
 Final Embrace Master
 	SOURCEPAGE::p.
 	TYPE:Combat
@@ -166,12 +169,12 @@ Greater Whip Mastery
 	PREATT:8
 	BENEFIT:You are so quick with your whip that you never drop it due to a failed disarm or trip combat maneuver attempt. Further, you gain the ability to grapple using your whip. To do so, use the normal grapple rules with the following changes. &nl;Attack - You cannot use your whip to attack while you are using it to grapple an opponent. &nl;Damage - When dealing damage to your grappled opponent, you deal your whip's weapon damage rather than your unarmed strike damage. &nl;Free Hands - You take no penalty on your combat maneuver check for having fewer than two hands free when you use your whip to grapple. &nl;Reach - Rather than pulling your grappled opponent adjacent to you when you successfully grapple and when you move the grapple, you must keep him within your whip's reach minus his own reach to maintain the grapple. If the difference in reach is less than 0, such as is the case for a Medium whip wielder and a Gargantuan creature, you cannot grapple that opponent with your whip. If you have to pull a creature adjacent to you to grapple it with your whip, you still provoke an attack of opportunity from that opponent unless you have the Improved Grapple feat. &nl;Tie Up - While adjacent to your opponent, you can attempt to use your whip to tie him up. If you do so to an opponent you have grappled rather than pinned, you take only a -5 penalty on the combat maneuver check rather than the normal -10.
 
-# TODO: PREWEAPONPROF with deities favored weapon?
 Guided Hand
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your deity blesses any strike you make with that deity's favored weapon.
 	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
+	PREWEAPONPROF:1,DEITYWEAPON
 	PREFEAT:1,Channel Smite
 	BENEFIT:With your deity's favored weapon, you can use your Wisdom modifier instead of your Strength or Dexterity modifier on attack rolls.
 
@@ -194,8 +197,9 @@ Harmonic Sage
 	DESC:Your thorough understanding of acoustics in artificial surroundings allows you to improve the power of your bardic performance.
 	PREABILITY:1,CATEGORY=Special Ability,Bardic Performance
 	PRESKILL:1,Knowledge (engineering)=5
-	BENEFIT:While inside an artif icial structure, you can spend a free action to make a DC 15 Knowledge (engineering) check when you begin your bardic performance. Success on this check allows you to do one of the following. &nl;Self-Harmonize - By performing over the acoustic reverberations of your performance, you increase the DC of your bardic performance effects +1. &nl;Reverberation - You can choose to have the effect of your current bardic performance continue for 1 round after you cease maintaining it, regardless of why you cease maintaining it. You can still have no more than one bardic performance in effect at one time. &nl; [Normal] A bardic performance lasts only as long as you maintain it.
+	BENEFIT:While inside an artificial structure, you can spend a free action to make a DC 15 Knowledge (engineering) check when you begin your bardic performance. Success on this check allows you to do one of the following. &nl;Self-Harmonize - By performing over the acoustic reverberations of your performance, you increase the DC of your bardic performance effects +1. &nl;Reverberation - You can choose to have the effect of your current bardic performance continue for 1 round after you cease maintaining it, regardless of why you cease maintaining it. You can still have no more than one bardic performance in effect at one time. &nl; [Normal] A bardic performance lasts only as long as you maintain it.
 
+# TODO: Add Gnome fey aspect when it is coded up
 Haunted Gnome
 	SOURCEPAGE::p.
 	TYPE:Combat
@@ -230,7 +234,7 @@ Hero's Display
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:With a dramatic flourish you display your weapons to the crowd. Onlookers are elated, and your enemies are demoralized.
-	PREFEAT:2,PRETEXT:Dazzling Display, Weapon Focus
+	PREFEAT:2,Dazzling Display, Weapon Focus
 	BENEFIT:When you spend a swift action to make a performance combat check, you present the weapon in which you have Weapon Focus in a triumphant display. You gain a +2 bonus on the performance combat check and make an Intimidate check to demoralize all foes within 30 feet who can see your display.
 
 Hex Strike
@@ -241,6 +245,7 @@ Hex Strike
 	PREFEAT:1,Improved Unarmed Strike
 	BENEFIT:When you gain this feat, choose one hex that you can use to affect no more than one opponent. If you make a successful unarmed strike against an opponent, in addition to dealing your unarmed strike damage, you can use a swift action to deliver the effects of the chosen hex to that opponent. Doing so does not provoke attacks of opportunity. &nl; [Special]You can take this feat multiple times. Each time you take it, you apply it to a different qualifying hex.
 
+# TODO: Give bonus to effective druid level
 Horse Master
 	SOURCEPAGE::p.
 	TYPE:Combat
@@ -372,7 +377,7 @@ Intimidating Bane
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your bane weapon strikes fear into your enemies.
-	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor	PREFEAT:1,Dazzling Display,Weapon Focus
+	PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor	PREFEAT:1,Dazzling Display,Weapon Focus
 	PRELEVEL:MIN=8
 	BENEFIT:Whenever you use Dazzling Display while your bane feature is active, you gain a +2 bonus on the Intimidate check that Dazzling Display allows against creatures of the type your bane weapon currently affects. Such creatures remain shaken while your bane feature is still active and effective against their creature type.
 
@@ -456,8 +461,11 @@ Leaping Shot Deed
 	SOURCEPAGE::p.
 	TYPE:Grit
 	DESC:You leap through the air, guns blazing.
-	PRETEXT:Dex 13, grit class feature or Amateur Gunslinger feat, Dodge, Mobility
+	PRESTAT:1,DEX=13
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit],[PREFEAT:1,Amateur Gunslinger]
+	PREFEAT:2,Dodge,Mobility
 	PREATT:4
+	BONUS:SKILL|Acrobatics (Jump)|2
 	BENEFIT:You gain a +2 bonus on Acrobatics checks made to jump. As a full-round action, you can move up to your speed and make firearm attacks at your highest base attack bonus with each loaded firearm you are wielding. You can make these attacks at any point during your movement, and if you are wielding two firearms, you can make the attacks at different points during the movement. At the end of this movement, you fall prone. This deed costs 1 grit point to perform.
 
 Mantis Style
@@ -474,8 +482,11 @@ Mantis Torment
 	DESC:Your knowledge of the mysteries of anatomy allows you to cause debilitating pain with a simple touch.
 	PRESKILL:1,Heal=9
 	PREFEAT:4,Improved Unarmed Strike, Mantis Style, Mantis Wisdom, Stunning Fist
+	BONUS:VAR|StunningFistAttack|1
 	BENEFIT:You gain one additional Stunning Fist attempt per day. While using Mantis Style, you make an unarmed attack that expends two daily attempts of your Stunning Fist. If you hit, your opponent must succeed at a saving throw against your Stunning Fist or become dazzled and staggered with crippling pain until the start of your next turn, and at that point the opponent becomes fatigued.
 
+# TODO: Count half all non-monk levels as monk levels.
+# TODO: Maybe take all class levels and substract StunningFistMonkLVL (TL - StunningFistMonkLVL)
 Mantis Wisdom
 	SOURCEPAGE::p.
 	TYPE:Combat
@@ -496,14 +507,16 @@ Marid Spirit
 	TYPE:Combat
 	DESC:You can manipulate cold energy to protect yourself and freeze your foes.
 	PREMULT:1,[PREMULT:3,[PRESTAT:2,CON=15,WIS=15],[PREFEAT:3,Elemental Fist,Marid Style,Improved Unarmed Strike],[PREATT:11]],[PRECLASS:1,Monk=9]
-	BENEFIT:You gain one additional Elemental Fist (Advanced Player's Guide 158) attempt per day. While using Marid Style, you gain cold resistance equal to your base attack bonus, or monk level plus base attack bonus gained from levels in classes other than monk, whichever is higher. While denied your Dexterity bonus to AC you are also denied this resistance. Creatures that take cold damage from your Elemental Fist attack must succeed at a Fortitude save (DC 10 + 1/2 your character level + your Wis modif ier) or become entangled in ice for 1d4 rounds. The ice has hit points equal to three times your base attack bonus or monk level, whichever is higher, and a break DC of 15 + your base attack bonus or monk level, whichever is higher. Destroying or breaking the ice ends the entangled condition.
+	BONUS:VAR|ElementalFistUses|1
+	BENEFIT:You gain one additional Elemental Fist attempt per day. While using Marid Style, you gain cold resistance equal to your base attack bonus, or monk level plus base attack bonus gained from levels in classes other than monk, whichever is higher. While denied your Dexterity bonus to AC you are also denied this resistance. Creatures that take cold damage from your Elemental Fist attack must succeed at a Fortitude save (DC 10 + 1/2 your character level + your Wis modifier) or become entangled in ice for 1d4 rounds. The ice has hit points equal to three times your base attack bonus or monk level, whichever is higher, and a break DC of 15 + your base attack bonus or monk level, whichever is higher. Destroying or breaking the ice ends the entangled condition.
 
 Marid Style
 	SOURCEPAGE::p.
 	TYPE:Combat.Style
 	DESC:You conjure tendrils of icy water to strike your enemies from a distance.
 	PREMULT:1,[PREMULT:3,[PRESTAT:2,CON=13,WIS=15],[PREFEAT:2,Elemental Fist,Improved Unarmed Strike],[PREATT:9]],[PRECLASS:1,Monk=5]
-	BENEFIT:You gain one additional Elemental Fist (Advanced Player's Guide 158) attempt per day. While using this style and Elemental Fist to deal cold damage, you gain a bonus on cold damage rolls equal to your Wisdom modifier, and your reach with your unarmed strike increases by 5 feet.
+	BONUS:VAR|ElementalFistUses|1
+	BENEFIT:You gain one additional Elemental Fist attempt per day. While using this style and Elemental Fist to deal cold damage, you gain a bonus on cold damage rolls equal to your Wisdom modifier, and your reach with your unarmed strike increases by 5 feet.
 
 Master Combat Performer
 	SOURCEPAGE::p.
@@ -558,6 +571,7 @@ Mocking Dance
 	PRESKILL:1,Acrobatics=4,Perform (dance)=4
 	BENEFIT:When you spend a swift action to make a performance combat check, before making that check you can either move 5 feet without provoking attacks of opportunity, or you can move your speed and provoke attacks of opportunity. You cannot end this move in a space where you threaten an enemy. If you do move at least 5 feet, you gain a +2 bonus on the performance combat check.
 
+# TODO: Calculate bonus to unarmed strike damage
 Monastic Legacy
 	SOURCEPAGE::p.
 	TYPE:Combat
@@ -573,6 +587,7 @@ Monkey Moves
 	PRESTAT:1,WIS=13
 	PREFEAT:2,Improved Unarmed Strike,Monkey Style
 	PRESKILL:2,Acrobatics=8,Climb=8
+	BONUS:SKILL|Climb|MAX(0,WIS)
 	BENEFIT:While using Monkey Style, you gain a Wisdom bonus on Climb checks. You can also can climb and crawl at half your speed; you can take a 5-foot step by jumping, crawling, or climbing; and you retain your Dexterity bonus to AC while climbing. Further, while using Monkey Style, when you use your unarmed strike to hit an opponent twice or more on your turn, you can spend a swift action to take a 5-foot step even if you have moved this round. &nl; [Normal] You climb at one-quarter your speed, and you lose your Dexterity bonus to AC while doing so. A 5-foot step is made using your normal movement modes, and you can take one only if you have not otherwise moved this round.
 
 Monkey Shine
@@ -591,6 +606,7 @@ Monkey Style
 	PRESTAT:1,WIS=13
 	PRETEXT:4,Improved Unarmed Strike
 	PRESKILL:2,Acrobatics=5,Climb=5
+	BONUS:SKILL|Acrobatics|MAX(0,WIS)
 	BENEFIT:You add your Wisdom bonus on Acrobatics checks. While using this style, you take no penalty on melee attack rolls or to AC while prone. Further, you can crawl and stand up from lying prone without provoking attacks of opportunity, and you can stand up as a swift action if you succeed at a DC 20 Acrobatics check. &nl; [Normal] You take a -4 penalty on attack rolls and AC against melee attacks while prone. Standing up is a standard action that provokes attacks of opportunity.
 
 # TODO: Mmm, only works on Darkvision gained through racial traits. I'll code this through PREVISION first. (Henk)
@@ -1008,7 +1024,7 @@ Shaitan Earthblast
 	TYPE:Combat
 	DESC:With a forceful stomp you release a blast of acid from the earth to burn your enemies.
 	PRETEXT:Con 15, Wis 17, Elemental Fist**, Improved Unarmed Strike, Shaitan Skin, Shaitan Style, base attack bonus +13 or monk level 11th
-	BENEFIT:While using the Shaitan Style feat, as a standard action, you can spend two Elemental Fist (Advanced Player's Guide 158) attempts to unleash a 20-foot column of acid that has a 5-foot radius and erupts from a point of origin within 30 feet of you. Creatures caught in the column take your unarmed strike damage plus the acid damage from your Elemental Fist and are staggered for 1 round. A successful Reflex save (DC 10 + 1/2 your character level + your Wis modif ier) reduces the damage by half and prevents a target from being staggered.
+	BENEFIT:While using the Shaitan Style feat, as a standard action, you can spend two Elemental Fist (Advanced Player's Guide 158) attempts to unleash a 20-foot column of acid that has a 5-foot radius and erupts from a point of origin within 30 feet of you. Creatures caught in the column take your unarmed strike damage plus the acid damage from your Elemental Fist and are staggered for 1 round. A successful Reflex save (DC 10 + 1/2 your character level + your Wis modifier) reduces the damage by half and prevents a target from being staggered.
 
 
 
@@ -1324,7 +1340,7 @@ Twin Thunders Master
 	TYPE:Combat
 	DESC:With thunderous simultaneous strikes, you can batter a mighty giant into submission.
 	PREMULT:1,[PREMULT:3,[PRERACE:1,Dwarf,Gnome],[PREABILITY:1,CATEGORY=Special Ability,TYPE=DwarfDefensiveTraining,TYPE=Defensive Training ~ Gnome],[PREFEAT:2,Improved Two-Weapon Fighting,Two-Weapon Fighting]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows],[PREFEAT:3,Twin Thunders,Twin Thunders Flurry,Weapon Focus],[PREATT:9]]
-	BENEFIT:Whenever you deal an opponent extra damage with the Twin Thunders feat, that opponent is shaken for 1 round. You also force that opponent to succeed at a Fortitude saving throw (DC 10 + half your level + your Str modif ier) or become staggered for 1 round. If you use this feat to render staggered an opponent that is already staggered, you daze that opponent instead. In a similar way, you can stun an opponent that is already dazed.
+	BENEFIT:Whenever you deal an opponent extra damage with the Twin Thunders feat, that opponent is shaken for 1 round. You also force that opponent to succeed at a Fortitude saving throw (DC 10 + half your level + your Str modifier) or become staggered for 1 round. If you use this feat to render staggered an opponent that is already staggered, you daze that opponent instead. In a similar way, you can stun an opponent that is already dazed.
 
 Two-Handed Thrower
 	SOURCEPAGE::p.123
