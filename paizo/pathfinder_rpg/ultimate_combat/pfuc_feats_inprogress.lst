@@ -20,67 +20,84 @@ Expert Driver
 	PRETEXT:Skilled Driver with the selected vehicle type
 	BENEFIT:You can make an accelerate, decelerate, or turn action as a move action instead of a standard action. Furthermore, when stopping a vehicle, you subtract 10 feet from the roll to determine how many feet the vehicle moves forward before it stops.
 
+# TODO: Weapon Focus with selected weapon
 False Opening
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:When you make a ranged attack while threatened, you can fool your opponent into thinking he has an opening.
-	PRETEXT:Dex 13, Dodge, Close Quarters Thrower or Point-Blank Master, Weapon Focus with selected ranged weapon
+	PRESTAT:1,DEX=13,
+	PREFEAT:2,Dodge,Weapon Focus (TYPE=Ranged)
+	PREFEAT:1,Close Quarters Thrower,Point-Blank Master
 	BENEFIT:Choose a ranged weapon or a thrown weapon. When you make a ranged attack using that weapon, you can choose to provoke an attack of opportunity from one or more opponents who threaten you. You gain a +4 dodge bonus against such attacks. An opponent that makes such an attack and misses you loses his Dexterity bonus to AC against you until the end of your turn.
 
 Feint Partner
 	SOURCEPAGE::p.
 	TYPE:Combat.Teamwork
 	DESC:A little diversion is all you need to slip through your foe's defenses.
-	PRETEXT:PRESKILL:1,Bluff=1
+	PRESKILL:1,Bluff=1
 	BENEFIT:Whenever an ally who also has this feat successfully feints an opponent, that opponent also loses his Dexterity bonus to AC against the next attack you make against him before the end of the feinting ally's next turn.
 
 Felling Escape
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Through the use of fluid contortions and manipulations of leverage, you can throw your opponent to the ground after escaping a grapple.
-	PRETEXT:Int 13, Combat Expertise, Improved Trip
+	PRESTAT:1,INT=13
+	PREFEAT:2,Combat Expertise,Improved Trip
 	BENEFIT:When you break an opponent's grapple with a combat maneuver check or Escape Artist check, you can spend a swift action to make a trip attempt against that opponent.
 
 Felling Smash
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You commit all your focus to a devastating blow, trying to crush your opponent to the ground.
-	PRETEXT:Int 13, Str 13, Combat Expertise, Improved Trip, Power Attack,	PREATT:6
+	PRESTAT:2,INT=13,STR=13
+	PREFEAT:3,Combat Expertise, Improved Trip, Power Attack
+	PREATT:6
 	BENEFIT:If you use the attack action to make a single melee attack at your highest base attack bonus while using Power Attack and you hit an opponent, you can spend a swift action to attempt a trip combat maneuver against that opponent.
 
+# TODO: maybe present a chooser?
 Feral Combat Training
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You were taught a style of martial arts that relies on the natural weapons from your racial ability or class feature.
-	PRETEXT:Improved Unarmed Strike, Weapon Focus with selected natural weapon
+	PREFEAT:2,Improved Unarmed Strike,Weapon Focus (TYPE=Natural)
 	BENEFIT:Choose one of your natural weapons. While using the selected natural weapon, you can apply the effects of feats that have Improved Unarmed Strike as a prerequisite, as well as effects that augment an unarmed strike. &nl; [Special]If you are a monk, you can use the selected natural weapon with your flurry of blows class feature.
 
 Field Repair
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can repair your broken weapon or armor to serviceability even without the benefits of artisan tools.
-	PRETEXT:PRESKILL:1,Craft=4
+	PRESKILL:1,Craft=4
 	BENEFIT:If you are trained in a Craft skill appropriate to a broken item, you can repair that item with no raw material cost and no penalty on your Craft skill check for using improvised tools. If you spend a day, the item regains 1 hit point plus one-quarter of its original hit points. Alternatively, if the item gained the broken condition because it is a firearm that has misf ired or a siege engine that suffered a mishap, or has the broken condition because it has the fragile weapon quality (or some similar quality), you can make a Craft check with the DC it takes to craft that item (see Table 2-2, below). If the check succeeds, the item loses the broken condition. &nl; [Normal] Improvised tools impose a -2 penalty on Craft checks. Items require raw materials to repair.
 
+# TODO: There are loads of Naga and Serpentfolk that are not in one specific subtype
+# TODO: There are loads of different constrict abilities
 Final Embrace
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your coils are particularly deadly, allowing you to constrict opponents of your size or smaller.
-	PRETEXT:Str 13, Int 3; naga, serpentfolk, or creature that has the constrict special attack; base attack bonus +3
+	PRESTAT:2,STR=13,INT=3
+	PREMULT:1,[PRERACE:1,Naga,Serpentfolk],[PREABILITY:1,CATEGORY=Special Ability,Constrict]
+	PREATT:3
 	BENEFIT:You gain the constrict and grab special attacks. Your constrict attack deals damage equal to your unarmed strike or primary natural weapon melee attack. Further, you can grab and constrict opponents up to your size. &nl; [Normal] You can grab and constrict creatures one size smaller than you.
 
 Final Embrace Horror
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your constricting attack has become stronger and more lethal.
-	PRETEXT:Str 15, Int 3; naga, serpentfolk, or creature that has the constrict special attack; Ability Focus (constrict); Final Embrace;	PREATT:6
+	PRESTAT:2,STR=15,INT=3
+	PREMULT:1,[PRERACE:1,Naga,Serpentfolk],[PREABILITY:1,CATEGORY=Special Ability,Constrict]
+	PREFEAT:2,Ability Focus (constrict),Final Embrace
+	PREATT:6
 	BENEFIT:A creature that takes damage from your constrict attack is also shaken until the start of your next turn.
 
 Final Embrace Master
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Few creatures can survive the crushing horror of your Final Embrace.
-	PRETEXT:Str 17, Int 3; naga, serpentfolk, or creature that has the constrict special attack; Ability Focus (constrict); Final Embrace; Final Embrace Horror; base attack bonus +9
+	PRESTAT:2,STR=17,INT=3
+	PREMULT:1,[PRERACE:1,Naga,Serpentfolk],[PREABILITY:1,CATEGORY=Special Ability,Constrict]
+	PREFEAT:2,Ability Focus (constrict),Final Embrace,Final Embrace Horror
+	PREATT:9
 	BENEFIT:Double the number of damage dice for your constrict special attack.
 
 Flanking Foil
