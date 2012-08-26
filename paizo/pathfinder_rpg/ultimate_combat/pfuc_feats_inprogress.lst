@@ -464,28 +464,31 @@ Mantis Style
 	SOURCEPAGE::p.
 	TYPE:Combat.Style
 	DESC:You have learned to target vital areas with crippling accuracy.
-	PRETEXT:Improved Unarmed Strike, Stunning Fist, PRESKILL:1,Heal=3
+	PREFEAT:2,Improved Unarmed Strike, Stunning Fist
+	PRESKILL:1,Heal=3
 	BENEFIT:You gain one additional Stunning Fist attempt per day. While using this style, you gain a +2 bonus to the DC of effects you deliver with your Stunning Fist.
 
 Mantis Torment
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your knowledge of the mysteries of anatomy allows you to cause debilitating pain with a simple touch.
-	PRETEXT:PRESKILL:1,Heal=9, Improved Unarmed Strike, Mantis Style, Mantis Wisdom, Stunning Fist
+	PRESKILL:1,Heal=9
+	PREFEAT:4,Improved Unarmed Strike, Mantis Style, Mantis Wisdom, Stunning Fist
 	BENEFIT:You gain one additional Stunning Fist attempt per day. While using Mantis Style, you make an unarmed attack that expends two daily attempts of your Stunning Fist. If you hit, your opponent must succeed at a saving throw against your Stunning Fist or become dazzled and staggered with crippling pain until the start of your next turn, and at that point the opponent becomes fatigued.
 
 Mantis Wisdom
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your knowledge of vital areas allows you to land debilitating strikes with precision.
-	PRETEXT:Improved Unarmed Strike, Mantis Style, Stunning Fist, PRESKILL:1,Heal=6
+	PREFEAT:3,Improved Unarmed Strike, Mantis Style, Stunning Fist
+	PRESKILL:1,Heal=6
 	BENEFIT:Treat half your levels in classes other than monk as monk levels for determining effects you can apply to a target of your Stunning Fist per the Stunning Fist monk class feature. You can also use a standard action and a successful melee touch attack to remove any Stunning Fist effect you have applied to a target. While using Mantis Style, you gain a +2 bonus on unarmed attack rolls with which you are using Stunning Fist attempts.
 
 Marid Coldsnap
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can summon a torrent of water to blast your enemies, chilling them to the bone.
-	PRETEXT:Con 15, Wis 17, Elemental Fist**, Marid Spirit, Marid Style, Improved Unarmed Strike, base attack bonus +13 or monk level 11th
+	PREMULT:1,[PREMULT:3,[PRESTAT:2,CON=15,WIS=17],[PREFEAT:4,Elemental Fist,Marid Spirit,Marid Style,Improved Unarmed Strike],[PREATT:13]],[PRECLASS:1,Monk=11]
 	BENEFIT:While using Marid Style, as a standard action, you can spend two Elemental Fist (Advanced Player's Guide 158) attempts to unleash a 30-foot line of frigid water. Creatures caught in the line take your unarmed strike damage plus the cold damage from your Elemental Fist attack and are entangled in ice as per the Marid Spirit feat. A successful Reflex save (DC 10 + 1/2 your character level + your Wis modifier) reduces the damage by half and prevents a target from becoming entangled.
 
 Marid Spirit
@@ -506,7 +509,7 @@ Master Combat Performer
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You are a master of the techniques and weapons of the arena and the stage.
-	PRETEXT:Performing Combatant or at least three performance feats
+	PREMULT:1,[PREFEAT:1,Performing Combatant],[PREFEAT:3,TYPE=Performance]
 	PREATT:6
 	BENEFIT:You can make performance combat checks as a free action. You are proficient in all weapons with the performance special quality.
 
@@ -522,117 +525,143 @@ Masterful Display
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:You craft a special victory performance that causes the crowd to go wild.
-	PRETEXT:Dazzling Display, any two performance feats
+	PREFEAT:1,Dazzling Display
+	PREFEAT:2,TYPE=Performance
 	BENEFIT:Choose the effects of any two performance feats you have. When you make a performance combat check, you gain the benefits of those two feats, but you only gain a +2 bonus on the performance combat check.
 
 Maximized Spellstrike
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You deal brutal damage against opponents caught unawares.
-	PRETEXT:Maximized magic magus arcana, weapon expertise class feature or Quick Draw
+	PREABILITY:1,CATEGORY=Special Ability,Maximized Magic ~ Magus Arcana
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Expertise],[PREFEAT:1,Quick Draw]
 	BENEFIT:When you make a melee attack and successfully use your spellstrike ability against an opponent denied his Dexterity bonus to AC, you can spend 3 points from your arcane pool to maximize the spell delivered through your spellstrike as if using the Maximize Spell metamagic feat.
 
 Menacing Bane
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You are deadly when you team up with allies against a single foe.
-	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
+	PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
 	BENEFIT:You can use your bane class feature to imbue a melee weapon with the menacing special weapon ability (Advanced Player's Guide 288) instead of bane. You can spend a swift action to switch between the two special weapon abilities. Doing so otherwise works according to your bane class feature. &nl; [Special]If you have the Double Bane feat, you can imbue each weapon you wield with either bane or menacing. No single weapon can have both.
 
 Merciful Bane
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can use your bane ability to inflict nonlethal damage.
-	PRETEXT:PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
+	PREABILITY:1,CATEGORY=Special Ability,Bane ~ Inquisitor
 	BENEFIT:While a weapon you wield is under the effect of your bane class feature, you can spend a swift action to switch between dealing lethal or nonlethal damage with bane. While your bane effect allows you to deal nonlethal damage in this way, you take no penalty on your attack roll for using a lethal weapon to deal nonlethal damage. &nl; [Normal] When using a lethal weapon to deal nonlethal damage, you take a -4 penalty on attack rolls.
 
 Mocking Dance
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:You do a little dance that mocks your foe and entertains the crowd.
-	PRETEXT:PRESKILL:1,Acrobatics=4PRESKILL:1, or Perform (dance)=4
+	PRESKILL:1,Acrobatics=4,Perform (dance)=4
 	BENEFIT:When you spend a swift action to make a performance combat check, before making that check you can either move 5 feet without provoking attacks of opportunity, or you can move your speed and provoke attacks of opportunity. You cannot end this move in a space where you threaten an enemy. If you do move at least 5 feet, you gain a +2 bonus on the performance combat check.
 
 Monastic Legacy
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your formal unarmed training continues to bolster your training in other areas.
-	PRETEXT:Still mind class feature, Improved Unarmed Strike
+	PREABILITY:1,CATEGORY=Special Ability,Still Mind
+	PREFEAT:1,Improved Unarmed Strike
 	BENEFIT:Add half the levels you have in classes other than monk to your monk level to determine your effective monk level for your base unarmed strike damage. This feat does not make levels in classes other than monk count toward any other monk class features.
 
 Monkey Moves
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You scramble around your foes, moving and striking in an erratic fashion.
-	PRETEXT:Wis 13, Improved Unarmed Strike, Monkey Style, PRESKILL:1,Acrobatics=8, PRESKILL:1,Climb=8
+	PRESTAT:1,WIS=13
+	PREFEAT:2,Improved Unarmed Strike,Monkey Style
+	PRESKILL:2,Acrobatics=8,Climb=8
 	BENEFIT:While using Monkey Style, you gain a Wisdom bonus on Climb checks. You can also can climb and crawl at half your speed; you can take a 5-foot step by jumping, crawling, or climbing; and you retain your Dexterity bonus to AC while climbing. Further, while using Monkey Style, when you use your unarmed strike to hit an opponent twice or more on your turn, you can spend a swift action to take a 5-foot step even if you have moved this round. &nl; [Normal] You climb at one-quarter your speed, and you lose your Dexterity bonus to AC while doing so. A 5-foot step is made using your normal movement modes, and you can take one only if you have not otherwise moved this round.
 
 Monkey Shine
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You combine acrobatics and opportunity to devastating effect against your opponent.
-	PRETEXT:Wis 13, Improved Unarmed Strike, Monkey Moves, Monkey Style, Stunning Fist, PRESKILL:1,Acrobatics=11, PRESKILL:1,Climb=11
+	PRESTAT:1,WIS=13
+	PRETEXT:4,Improved Unarmed Strike,Monkey Moves,Monkey Style,Stunning Fist
+	PRESKILL:2,Acrobatics=11,Climb=11
 	BENEFIT:While using Monkey Style, if you successfully deliver a Stunning Fist attempt, in addition to the normal effect of Stunning Fist, you can spend a free action to enter a square adjacent to you that is within your opponent's space. This movement does not provoke attacks of opportunity. While you are in your opponent's space, you gain a +4 dodge bonus to AC and a +4 bonus on melee attack rolls against that opponent. If otherwise unhindered, the opponent can move away from you, but if he does, he provokes an attack of opportunity from you even if his choice of movement does not normally do so. &nl; [Normal] You cannot enter an opponent's space.
 
 Monkey Style
 	SOURCEPAGE::p.
 	TYPE:Combat.Style
 	DESC:Your unarmed fighting style is nimble and unpredictable, full of ground rolls and short leaps.
-	PRETEXT:Wis 13, Improved Unarmed Strike, PRESKILL:1,Acrobatics=5, PRESKILL:1,Climb=5
+	PRESTAT:1,WIS=13
+	PRETEXT:4,Improved Unarmed Strike
+	PRESKILL:2,Acrobatics=5,Climb=5
 	BENEFIT:You add your Wisdom bonus on Acrobatics checks. While using this style, you take no penalty on melee attack rolls or to AC while prone. Further, you can crawl and stand up from lying prone without provoking attacks of opportunity, and you can stand up as a swift action if you succeed at a DC 20 Acrobatics check. &nl; [Normal] You take a -4 penalty on attack rolls and AC against melee attacks while prone. Standing up is a standard action that provokes attacks of opportunity.
 
+# TODO: Mmm, only works on Darkvision gained through racial traits. I'll code this through PREVISION first. (Henk)
 Moonlight Stalker
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You are adept at using shadows to conceal your attacks.
-	PRETEXT:Int 13, Blind-Fight, Combat Expertise, PRESKILL:1,Bluff=3, darkvision or low-light vision racial trait
+	PRESTAT:1,INT=13
+	PREFEAT:2,Blind-Fight,Combat Expertise
+	PRESKILL:1,Bluff=3
+	PREVISION:1,Darkvision,Low-Light
 	BENEFIT:While you have concealment from an opponent, you gain a +2 bonus on attack and damage rolls against that opponent.
 
+# TODO: Mmm, only works on Darkvision gained through racial traits. I'll code this through PREVISION first. (Henk)
 Moonlight Stalker Feint
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You strike through the shadows so quickly that your opponent can barely react to your attacks.
-	PRETEXT:Int 13, Blind-Fight, Combat Expertise, Moonlight Stalker, PRESKILL:1,Bluff=6, darkvision or lowlight vision racial trait
+	PRESTAT:1,INT=13
+	PREFEAT:2,Blind-Fight,Combat Expertise,Moonlight Stalker
+	PRESKILL:1,Bluff=6
+	PREVISION:1,Darkvision,Low-Light
 	BENEFIT:Once per round, against an opponent from whom you have concealment, you can spend a swift action to make a Bluff check to feint. &nl; [Normal] Feinting is a standard action.
 
 Moonlight Stalker Master (Combat)
 	DESC:You leave your opponents swinging at shadows while you slide elusively through the darkness.
-	PRETEXT:Int 13, Blind-Fight, Combat Expertise, Improved Feint, Moonlight Stalker, Moonlight Stalker Feint, PRESKILL:1,Bluff=9, darkvision or low-light vision racial trait
+	PRESTAT:1,INT=13
+	PREFEAT:2,Blind-Fight,Combat Expertise,Moonlight Stalker,Moonlight Stalker Feint
+	PRESKILL:1,Bluff=9
+	PREVISION:1,Darkvision,Low-Light
 	BENEFIT:While you have concealment, your opponents' miss chance against you increases by 10%. If an opponent misses you due to your concealment, you can spend an immediate action to move 5 feet, this movement does not provoke attacks of opportunity and does not count as a 5-foot step.
 
 Murderer's Circle
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:After savaging your foe, you circle like a hunter ready for the kill.
-	PRETEXT:Dodge, PRESKILL:1,Acrobatics=4
+	PREFEAT:1,Dodge
+	PRESKILL:1,Acrobatics=4
 	BENEFIT:When you spend a swift action to make a performance combat check after scoring a critical hit or performing a combat maneuver, and you are adjacent to the target of the critical hit or combat maneuver, you can move to any other space that is adjacent to the target without provoking attacks of opportunity. You must have a clear path to that space and the ability to reach it by spending a move action. If you end this move in any space other than the one where you started, you gain a +2 bonus on the performance combat check.
 
 Neckbreaker
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:With a quick jerk, you snap an enemy's neck.
-	PRETEXT:Bonebreaker, Greater Grapple, Improved Grapple, Improved Unarmed Strike, Jawbreaker, Stunning Fist, PRESKILL:1,Heal=12
+	PREFEAT:6,Bonebreaker,Greater Grapple,Improved Grapple,Improved Unarmed Strike,Jawbreaker,Stunning Fist
+	PRESKILL:1,Heal=12
 	BENEFIT:If you have an opponent your size or smaller helpless or pinned, after you initiate or maintain a grapple, you can make a Stunning Fist attempt at a -5 penalty on the attack roll. If you succeed, you wrench that opponent's neck, dealing 2d6 Strength or Dexterity damage. If the targeted ability score is reduced to 0, any remaining damage is dealt to that opponent's Constitution score. A creature that is immune to critical hits or that has no discernible head and neck is immune to the effects of this feat.
 
 Net Adept
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You have trained to use the net as a melee weapon.
-	PRETEXT:Exotic Weapon Proficiency (net), base attack bonus +1
+	PREWEAPONPROF:1,Net
+	PREATT:1
 	BENEFIT:You can treat a net as a one-handed melee reach weapon with a 10-foot reach. Further, you take no penalty on melee attack rolls for using an unfolded net, and you can use one full-round action or two move actions to fold a net. &nl; [Normal] A net is a ranged weapon that imposes a -4 penalty on ranged attack rolls if it is unfolded. Folding a net takes a proficient user 2 rounds.
 
 Net and Trident
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your skill with lighter weapons allows you to wield one alongside your net.
-	PRETEXT:Dex 15, Exotic Weapon Proficiency (net), Net Adept, Two-Weapon Fighting
+	PRESTT:1,Dex 15
+	PREWEAPONPROF:1,Net
+	PREFEAT:2,Net Adept,Two-Weapon Fighting
 	BENEFIT:You can treat a net as a one-handed ranged weapon, allowing you to wield a light or one-handed melee weapon and still make ranged attacks with your net. When you use your light or one-handed melee weapon to attack an entangled opponent, you gain a +2 bonus on damage rolls and on attack rolls to confirm a critical hit. &nl; [Normal] A net is a two-handed ranged weapon.
 
 Net Maneuvering
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:With sweeping movements and brute force, you can use your net to put foes at a disadvantage.
-	PRETEXT:Exotic Weapon Proficiency (net), Net Adept
+	PREWEAPONPROF:1,Net
+	PREFEAT:1,Net Adept
 	PREATT:3
 	BENEFIT:In melee, you can use a net to trip or disarm opponents instead of entangling them. You gain a +2 bonus on disarm checks made to use a net in this way. Further, if you have an opponent entangled in your net, you can attempt to drag or reposition that opponent as long as he is within your net's reach or you control the trailing rope on your net.
 
@@ -640,36 +669,47 @@ Net Trickery
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You have become very proficient at using your net to hinder your enemies.
-	PRETEXT:Exotic Weapon Proficiency (net), Net Adept, Net Maneuvering
+	PREWEAPONPROF:1,Net
+	PREFEAT:2,Net Adept,Net Maneuvering
 	PREATT:6
 	BENEFIT:In place of one of your melee attacks, you can use your net to attempt a dirty trick combat maneuver to blind an opponent (Advance Player's Guide 320). If you have an opponent entangled in your net, you can attempt to trip that opponent as long as he is within your net's reach or you control the trailing rope on your net. You also gain a +2 bonus on drag and reposition combat maneuver checks you make using your net.
 
+# TODO: Many, many possibilities of creating magical darkness?
+# TODO: Let's keep it at being able to cast darkness and friends
 Nightmare Fist
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You are even more deadly in magical darkness.
-	PRETEXT:Improved Unarmed Strike, PRESKILL:1,Intimidate=1, ability to create magical darkness
+	PREFEAT:1,Improved Unarmed Strike
+	PRESKILL:1,Intimidate=1
+	PRESPELL:1,Darkness,Deeper Darkness
 	BENEFIT:While fighting within an area of magical darkness, you gain a +2 bonus on damage rolls with unarmed strikes, or a +4 bonus against opponents that are shaken, frightened, or panicked. You also gain a +2 morale bonus on Acrobatics and Intimidate checks.
 
 Nightmare Striker
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your faerie fire not only illuminates your foes, but it also shows you their weaknesses.
-	PRETEXT:Improved Unarmed Strike, Nightmare Fist, Nightmare Weaver, Stunning Fist, PRESKILL:1,Heal=5, ability to cast faerie fire
+	PREFEAT:4,Improved Unarmed Strike,Nightmare Fist,Nightmare Weaver,Stunning Fist
+	PRESKILL:1,Heal=5
+	PRESPELL:1,Faerie Fire
 	BENEFIT:While a faerie fire you have cast (not one cast from a spell completion or spell trigger item) outlines an opponent, the DC for that opponent to resist your Stunning Fist attempts increases by +2. If you hit an opponent with a Stunning Fist attempt, and that opponent fails her saving throw, you can render the target shaken for 1d2 rounds plus 1 round for every 5 by which the opponent failed her save.
 
+# This requires the spell Darkness, unline Nightmare Fist
 Nightmare Weaver
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can use your ability to create magical darkness to terrorize enemies.
-	PRETEXT:Improved Unarmed Strike, Nightmare Fist, PRESKILL:1,Intimidate=2, ability to cast darkness
+	PREFEAT:2,Improved Unarmed Strike,Nightmare Fist
+	PRESKILL:1,Intimidate=2
+	PRESPELL:1,Darkness
 	BENEFIT:By spending a full-round action to cast darkness, you can also make Intimidate checks to demoralize all foes in the spell's initial area. &nl; [Special]This feat counts as Dazzling Display for purposes of qualifying for Deadly Stroke and Shatter Defenses.
 
 No Name
 	SOURCEPAGE::p.
 	TYPE:Grit
 	DESC:You don't need an elaborate disguise to keep your identity under wraps.
-	PRETEXT:Grit class feature or Amateur Gunslinger feat, PRESKILL:1,Bluff=4
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit],[PREFEAT:1,Amateur Gunslinger]
+	PRESKILL:1,Bluff=4
 	BENEFIT:You often rely on surprise and misdirection in your social dealings. You gain a +2 bonus on Bluff checks, and you can spend 1 grit point to gain a +10 bonus on Disguise checks for 10 minutes per your gunslinger level (minimum 10 minutes). This deed does not actually change your appearance, but rather allows you to hide your identity in other ways.
 
 Opening Volley
@@ -682,35 +722,40 @@ Pack Attack
 	SOURCEPAGE::p.
 	TYPE:Combat.Teamwork
 	DESC:You are skilled at surrounding your enemies.
-	PRETEXT:Base attack bonus +1
+	PREATT:1
 	BENEFIT:When you are adjacent to an ally with this feat, the first time you melee attack an opponent, you can spend an immediate action to take a 5-foot step, even if you have otherwise moved this round. &nl; [Normal] You can take a 5-foot step only if you have not otherwise moved in a round.
 
 Panther Claw
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You unleash a rapid series of blows on foes that attempt to attack you when you move.
-	PRETEXT:Wis 15, Combat Reflexes, Improved Unarmed Strike, Panther Style
+	PRESTAT:1,WIS=15
+	PREFEAT:3,Combat Reflexes,Improved Unarmed Strike,Panther Style
 	BENEFIT:While using Panther Style, you can spend a free action, instead of spending a swift action, to make a retaliatory unarmed strike. You can make a number of retaliatory unarmed strikes on your turn equal to your Wisdom modifier.
 
 Panther Parry
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your vicious strikes impair your foe's ability to attack you when you move.
-	PRETEXT:Wis 15, Combat Reflexes, Improved Unarmed Strike, Panther Claw, Panther Style
+	PRESTAT:1,WIS=15
+	PREFEAT:4,Combat Reflexes, Improved Unarmed Strike, Panther Claw, Panther Style
 	BENEFIT:While using Panther Style, your retaliatory unarmed strikes are resolved before the triggering attacks. If your retaliatory unarmed strike deals damage to an opponent, that opponent takes a -2 penalty on attack and damage rolls with the triggering attack of opportunity.
 
 Panther Style
 	SOURCEPAGE::p.
 	TYPE:Combat.Style
 	DESC:You can strike back at enemies who attack you when you move.
-	PRETEXT:Wis 13, Combat Reflexes, Improved Unarmed Strike
+	PRESRTAT:1,WIS=13
+	PREFEAT:2,Combat Reflexes,Improved Unarmed Strike
 	BENEFIT:While using this style, when an opponent makes an attack of opportunity against you for moving through a threatened square, you can spend a swift action to make a retaliatory unarmed strike attack against that opponent. Your attack is resolved after the triggering attack of opportunity.
 
 Passing Trick
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Slipping past a foe gives you the chance to feint.
-	PRETEXT:Int 13, Combat Expertise, Dodge, Improved Feint, Mobility, size Small or smaller
+	PRESTAT:1,INT=13
+	PREFEAT:4,Combat Expertise,Dodge,Improved Feint,Mobility
+	PRESIZELTEQ:S
 	BENEFIT:Whenever you make a successful Acrobatics check to move through an opponent's space, you can spend a swift action to make a Bluff check against that opponent to feint in combat. &nl; [Special]If you have the Underfoot feat and the opponent is larger than you, you gain a +2 bonus on the Bluff check this feat allows.
 
 Performance Weapon Mastery
@@ -723,14 +768,16 @@ Performing Combatant
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You treat every combat as a performance, bringing flare and showmanship.
-	PRETEXT:Dazzling Display, any one performance feat
+	PREFEAT:1,Dazzling Display
+	PREFEAT:1,TYPE=Performance
 	BENEFIT:You can make performance combat checks in any combat. When making a performance check outside of performance combat, you can pick a single performance feat to use. You automatically gain any bonus on the performance combat check the feat grants, and then you make a DC 20 performance combat check. On a success, you gain the full effect of the performance feat you chose.
 
 Pin Down
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You easily block enemy escapes.
-	PRETEXT:Combat Reflexes, fighter level 11th
+	PREFEAT:1,Combat Reflexes
+	PRECLASS:1,Fighter=11
 	BENEFIT:Whenever an opponent you threaten takes a 5-foot step or uses the withdraw action, that opponent provokes an attack of opportunity from you. If the attack hits, you deal no damage, but the targeted creature is prevented from making the move action that granted a 5-foot step or the withdraw action and does not move.
 
 Pinning Knockout
@@ -751,21 +798,26 @@ Pinpoint Poisoner
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You deftly use specially prepared needles to apply poison for maximum effect.
-	PRETEXT:Poison use class feature, PRESKILL:1,Craft (alchemy)=6, Adder Strike, Improved Unarmed Strike, Two- Weapon Fighting or flurry of blows class feature
+	PREABILITY:1,CATEGORY=Special Ability,Poison Use%
+	PRESKILL:1,Craft (alchemy)=6
+	PREFEAT:2,Adder Strike,Improved Unarmed Strike
+	PREMULT:1,[PREFEAT:1,Two- Weapon Fighting],[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows]
 	BENEFIT:When you use Adder Strike, you can instead poison up to two blowgun darts that you can then use to strike your opponent in melee. (Drawing such darts is a free action.) While holding these darts, you can spend a standard action to attack with one or a full-attack action to attack with both. Such attacks are considered melee touch attacks that deal 1d2 damage plus any bonuses you gain on your normal unarmed strike damage, and they deliver the poison. You can instead throw such darts as if they were shuriken, making your ranged attack rolls against the target's AC. &nl; [Normal] Applying poison to a weapon or single piece of ammunition is a standard action.
 
 Planar Wild Shape
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You can infuse your wild shape with planar strength.
-	PRETEXT:Wild shape class feature, PRESKILL:1,Knowledge (planes)=5
+	PREABILITY:1,CATEGORY=Special Ability,Wild Shape
+	PRESKILL:1,Knowledge (planes)=5
 	BENEFIT:When you use wild shape to take the form of an animal, you can expend an additional daily use of your wild shape class feature to add the celestial template or fiendish template to your animal form. (Good druids must use the celestial template, while evil druids must use the fiendish template.) If your form has the celestial template and you score a critical threat against an evil creature while using your form's natural weapons, you gain a +2 bonus on the attack roll to confirm the critical hit. The same bonus applies if your form has the fiendish template and you score a critical threat against a good creature.
 
 Prone Shooter
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:While prone, you use the ground to stabilize your aim while using a crossbow or firearm.
-	PRETEXT:Weapon Focus (crossbow or firearm), base attack bonus +1
+	PREFEAT:1,Weapon Focus (TYPE=Crossbow),Weapon Focus (TYPE=Firearm)
+	PREATT:1
 	BENEFIT:If you have been prone since the end of your last turn, you can ignore the penalty the prone condition imposes on ranged attack rolls you make using a crossbow or firearm with which you have Weapon Focus. &nl; [Special]If you have the Prone Slinger feat, Weapon Focus (sling) satisfies this feat's Weapon Focus prerequisite, and you can apply this feat's benefit to attack rolls you make using a sling with which you have Weapon Focus.
 
 Prone Slinger
