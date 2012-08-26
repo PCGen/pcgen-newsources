@@ -28,7 +28,10 @@ False Opening
 	PRESTAT:1,DEX=13
 	PREFEAT:2,Dodge,Weapon Focus (TYPE=Ranged)
 	PREFEAT:1,Close Quarters Thrower,Point-Blank Master
+	CHOOSE:WEAPONPROFICIENCY|TYPE=Ranged,PC,FEAT=Weapon Focus
 	BENEFIT:Choose a ranged weapon or a thrown weapon. When you make a ranged attack using that weapon, you can choose to provoke an attack of opportunity from one or more opponents who threaten you. You gain a +4 dodge bonus against such attacks. An opponent that makes such an attack and misses you loses his Dexterity bonus to AC against you until the end of your turn.
+	MULT:NO
+	STACK:NO
 
 Feint Partner
 	SOURCEPAGE::p.
@@ -54,13 +57,16 @@ Felling Smash
 	PREATT:6
 	BENEFIT:If you use the attack action to make a single melee attack at your highest base attack bonus while using Power Attack and you hit an opponent, you can spend a swift action to attempt a trip combat maneuver against that opponent.
 
-# TODO: maybe present a chooser?
+# TODO: Check the chooser to see if it works
 Feral Combat Training
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You were taught a style of martial arts that relies on the natural weapons from your racial ability or class feature.
 	PREFEAT:2,Improved Unarmed Strike,Weapon Focus (TYPE=Natural)
+	CHOOSE:WEAPONPROFICIENCY|TYPE=Natural,PC,FEAT=Weapon Focus
 	BENEFIT:Choose one of your natural weapons. While using the selected natural weapon, you can apply the effects of feats that have Improved Unarmed Strike as a prerequisite, as well as effects that augment an unarmed strike. &nl; [Special]If you are a monk, you can use the selected natural weapon with your flurry of blows class feature.
+	MULT:NO
+	STACK:NO
 
 Field Repair
 	SOURCEPAGE::p.
@@ -534,13 +540,17 @@ Master Siege Engineer
 	PRESKILL:1,Knowledge (engineering)=10
 	BENEFIT:If you are the crew lead on a siege engine, your crew can use move actions to load a siege engine. When you spend actions to aim a siege engine, you and your crew can use move actions instead of full-round actions to aim the siege engine (page 160). &nl; [Normal] Full-round actions are required to load and aim siege engines.
 
+# TODO: Check the chooser. It should require you to choose two feats
 Masterful Display
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:You craft a special victory performance that causes the crowd to go wild.
 	PREFEAT:1,Dazzling Display
 	PREFEAT:2,TYPE=Performance
+	CHOOSE:FEAT|TYPE=Performance,PC
 	BENEFIT:Choose the effects of any two performance feats you have. When you make a performance combat check, you gain the benefits of those two feats, but you only gain a +2 bonus on the performance combat check.
+	MULT:NO
+	STACK:NO
 
 Maximized Spellstrike
 	SOURCEPAGE::p.
@@ -890,21 +900,24 @@ Raging Deathblow
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Every killing blow gives you a surge of vitality, further fueling your rage.
-	PRETEXT:Greater rage class feature
+	PREABILITY:1,CATEGORY=Special Ability,Greater Rage
 	BENEFIT:While raging, whenever your attack reduces your opponent to -1 or fewer hit points, you gain 1 extra round of rage for that day. If that attack was a critical hit, you gain 1 additional extra round of rage for that day. Whenever you rest to renew your total number of rounds of rage per day, any extra rounds you still have from this feat are lost.
 
 Raging Hurler
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:An opponent can do little to evade your wrathful pitching of weapons and objects.
-	PRETEXT:Rage class feature, Throw Anything
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	PREFEAT:1,Throw Anything
 	BENEFIT:While raging, you can throw a two-handed weapon as a standard action, and you double the range increment for weapons you throw. If you also have the Quick Draw feat, you can throw two-handed weapons at your full normal rate of attacks. Further, you can pick up an unattended object that you can use as a improvised weapon within your reach as part of the attack action to throw that item.
 
 Raging Throw
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You expend some of your rage to throw one opponent at another.
-	PRETEXT:Str 13, Con 13, rage class feature, Improved Bull Rush, Power Attack
+	PRESTAT:2,STR=13,CON=13
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	PREFEAT:2,Improved Bull Rush, Power Attack
 	PREATT:6
 	BENEFIT:While raging, when you attempt a bull rush combat maneuver, you can spend 1 additional round of your rage as a swift action to add your Constitution bonus on your combat maneuver check to the bull rush. Further, if you bull rush an opponent into a square another creature occupies or into a solid object, the opponent and the creature or object take bludgeoning damage equal to your Strength modifier + your Constitution modifier.
 
@@ -919,21 +932,27 @@ Rapid Reload
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Choose a type of crossbow (hand, light, heavy) or a single type of one-handed or two-handed firearm that you are proficient with. You can reload such a weapon quickly.
-	PRETEXT:Weapon Proficiency (crossbow type chosen) or Exotic Weapon Proficiency (firearm)
+	CHOOSE:WEAPONPROFICIENCY|TYPE=Crossbow,PC|TYPE=Firewarm,PC
 	BENEFIT:The time required for you to reload your chosen type of weapon is reduced to a free action (for a hand or light crossbow), a move action (for heavy crossbow or onehanded firearm), or a standard action (two-handed firearm). Reloading a crossbow or firearm still provokes attacks of opportunity. If you have selected this feat for a hand crossbow or light crossbow, you may fire that weapon as many times in a full-attack action as you could attack if you were using a bow. &nl; [Normal] A character without this feat needs a move action to reload a hand or light crossbow, a standard action to reload a one-handed firearm, or a full-round action to load a heavy crossbow or a two-handed firearm. &nl; [Special]You can gain Rapid Reload multiple times. Each time you take the feat, it applies to a new type of crossbow or a new type of firearm.
+	MULT:YES
+	STACK:NO
 
 Rebounding Leap
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your riding and lancing expertise allows you to enter and leave the saddle with great speed.
-	PRETEXT:Leaping lance class feature, PRESKILL:1,Acrobatics=5, PRESKILL:1,Ride=11
+	PREABILITY:1,CATEGORY=Special Ability,Leaping Lance
+	PRESKILL:2,Acrobatics=5,Ride=11
 	BENEFIT:When you succeed at the Acrobatics check to jump as part of your leaping lance class feature, you can remount your steed as a swift action.
 
+# TODO PREDR on ANY DR.
 Rebuffing Reduction
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your damage reduction can turn the force of blows back on your enemies.
-	PRETEXT:Str 13, damage reduction, Improved Bull Rush, Power Attack
+	PRESTAT:1,STR=13
+	PRETEXT:Str 13
+	PREFEAT:2,Improved Bull Rush, Power Attack
 	PREATT:1
 	BENEFIT:Whenever an opponent that is adjacent to you fails to penetrate your DR with a melee attack, you can spend an immediate action to attempt a bull rush combat maneuver against that opponent. If you succeed, you cannot move with the opponent. &nl; [Normal] A bull rush combat maneuver is a standard action.
 
@@ -945,88 +964,96 @@ Rending Fury
 	PREABILITY:1,CATEGORY=Special Ability,Rend
 	BENEFIT:You deal rend damage if you hit with half the normal natural attacks your rend requires. For example, a troll that has this feat can rend when it hits with one claw attack, while a girallon that has this feat must hit one target with two claw attacks to rend. You can only make this rend attack once per round.
 
+# PS: Depends on Oracle's Mystery instead of a revelation class feature. This works the same as Extra Revelation
+# We'll leave the chooser. It's too difficult
 Revelation Strike
 	SOURCEPAGE::p.
 	TYPE:Combat
-	DESC:Your unarmed strike brings a revelation down upon your foe. 	PRETEXT:Revelation class feature, Improved Unarmed Strike.
+	DESC:Your unarmed strike brings a revelation down upon your foe.
+	PREABILITY:1,CATEGORY=Special Ability,Oracle's Mystery
+	PREFEAT:1,Improved Unarmed Strike.
 	BENEFIT:When you gain this feat, choose one revelation that you can use to affect no more than one opponent. If you make a successful unarmed strike against an opponent, in addition to dealing your unarmed strike damage, you can use a swift action to deliver the effects of the chosen revelation to that opponent. Doing so provokes no attacks of opportunity. &nl; [Special]You can take this feat multiple times. Each time you take it, you apply it to a different qualifying revelation.
 
 Rhetorical Flourish
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You rapidly change topics and employ confusing rhetoric to distract people from your true intent.
-	PRETEXT:Cha 13, Persuasive
+	PRESTAT:1,CHA=13
+	PREFEAT:1,Persuasive
 	BENEFIT:When using the Diplomacy skill to make a request or change a creature's attitude, you can use verbal misdirection. To do so, make a Bluff check against that creature. If you succeed, you gain a +4 bonus on your next Diplomacy check against that creature if the check is made within the next minute. If you fail by 5 or more, you instead take a -2 penalty on your next Diplomacy check against that creature. Alternatively, you can use this feat to retry a single failed Diplomacy check against a creature. You take a -4 penalty on your Bluff check when using Rhetorical Flourish in this way. If you succeed, rather than gaining this feat's normal bonus, you can retry your last Diplomacy check against the creature if that check was made in the past minute.
 
 Ricochet Shot Deed
 	SOURCEPAGE::p.
 	TYPE:Grit
 	DESC:You can ricochet a firearm shot off the wall and still hit your target.
-	PRETEXT:Grit class feature or Amateur Gunslinger feat, Blind-Fight
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit],[PREFEAT:1,Amateur Gunslinger]
+	PREFEAT:1,Blind-Fight
 	BENEFIT:You can fire a shot at a wall or piece of solid terrain, and have it ricochet off. When you do, use the square immediately in front of the wall or piece of solid terrain to determine line of sight to a target, and this square is considered the new origin square of the attack. Use that square to determine the effects of cover, and your own square to determine the effects of concealment. You can make this shot as long as you have at least 1 grit point. When making this shot, you can spend 1 grit point to ignore the effects of all cover or concealment. You must choose to spend the grit point before you make the attack roll.
 
 Righteous Healing
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your healing spells are more potent when you have a judgment active.
-	PRETEXT:Judgment class feature
+	PREABILITY:1,CATEGORY=Special Ability,TYPE=InquisitorJudgment
 	BENEFIT:If you cast a cure spell while you have a judgment active, each target regains 1 extra hit point from the cure spell + 1 hit point per three inquisitor levels you possess.
 
 Sap Adept
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You know just where to hit to knock the sense out of your foe.
-	PRETEXT:Sneak attack +1d6
+	PREVARGTEQ:SneakAttack,1
 	BENEFIT:Whenever you use a bludgeoning weapon to deal nonlethal sneak attack damage, you gain a bonus on your damage roll equal to twice the number of sneak attack damage dice you rolled.
 
 Sap Master
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You knock the sense out of foes with a well-timed surprise attack.
-	PRETEXT:Sneak attack +3d6, Sap Adept
+	PREVARGTEQ:SneakAttack,3
 	BENEFIT:Whenever you use a bludgeoning weapon to deal nonlethal sneak attack damage to a flat-footed opponent, roll your sneak attack dice twice, totaling the results as your nonlethal sneak attack damage for that attack.
 
 Savage Display
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:With your victory and a roar, you push yourself on with increased savagery.
-	PRETEXT:Dazzling Display
+	PREFEAT:1,Dazzling Display
 	BENEFIT:When you spend a swift action to make a performance combat check, you gain a +2 bonus on your performance combat check and gain a +1d6 bonus on damage rolls until the end of your next turn. This extra damage is not precision damage.
 
+# Leave the chooser. It's too complex.
 School Strike
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You focus the secrets of your school of wizardry into your unarmed strike.
-	PRETEXT:Wizard school class feature, Improved Unarmed Strike
+	PREABILITY:1,CATEGORY=Special Ability,TYPE.ArcaneSchool
+	PREFEAT:1,Improved Unarmed Strike
 	BENEFIT:When you gain this feat, choose one arcane school power that you can use to affect no more than one opponent. If you make a successful unarmed strike against an opponent, in addition to dealing your unarmed strike damage, you can use a swift action to deliver the effects of the chosen school power to that opponent. Doing so provokes no attacks of opportunity. &nl; [Special]You can take this feat multiple times. Each time you take it, you apply it to a different qualifying arcane school power.
 
 Sea Legs
 	DESC:You have a sailor's instincts for moving about while aboard seagoing vessels.
-	PRETEXT:PRESKILL:1,Profession (sailor)=5
+	PRESKILL:1,Profession (sailor)=5
+	BONUS:SKILL|Acrobatics,Climb,Swim|2
 	BENEFIT:You gain a +2 bonus on Acrobatics, Climb, and Swim checks.
 
 Secret Stash Deed
 	SOURCEPAGE::p.
 	TYPE:Grit
 	DESC:You are so skilled at stashing small packets of firearm ammunition and black powder on your person that you sometimes surprise yourself when you find them.
-	PRETEXT:Grit class feature or Amateur Gunslinger feat, PRESKILL:1,Sleight of Hand=1
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit],[PREFEAT:1,Amateur Gunslinger]
+	PRESKILL:1,Sleight of Hand=1
 	BENEFIT:Spend 1 grit point while in combat to recover either 1 bullet and 1 dose of black powder or 1 alchemical cartridge from a hidden stash on your person that you had, until now, forgotten about. If the bullet and black powder or the alchemical cartridges are normal shot, you do not need to pay for the ammunition. If you want to recover any other kind of ammunition, you must pay for it with gold pieces from your character's wealth. The grit cost of this deed cannot be decreased by the Signature Deed feat, the true grit class feature, or any other similar effect that reduces the number of grit points you spend to use a deed. You also gain a +4 bonus on any Sleight of Hand checks made while gambling.
 
 Seize the Moment
 	SOURCEPAGE::p.
 	TYPE:Combat.Teamwork
 	DESC:You and your allies are poised to pounce whenever one of you scores a telling blow.
-	PRETEXT:Combat Reflexes, Improved Critical
+	PREFEAT:2,Combat Reflexes, Improved Critical
 	BENEFIT:When an ally who also has this feat confirms a critical hit against an opponent that you also threaten, you can make an attack of opportunity against that opponent.
 
 Shaitan Earthblast
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:With a forceful stomp you release a blast of acid from the earth to burn your enemies.
-	PRETEXT:Con 15, Wis 17, Elemental Fist**, Improved Unarmed Strike, Shaitan Skin, Shaitan Style, base attack bonus +13 or monk level 11th
+	PREMULT:1,[PREMULT:3,[PRESTAT:2,CON=15,WIS=17],[PREFEAT:4,Elemental Fist,Improved Unarmed Strike,Shaitan Skin,Shaitan Style],[PREATT:13]],[PRECLASS:1,Monk=11]
 	BENEFIT:While using the Shaitan Style feat, as a standard action, you can spend two Elemental Fist (Advanced Player's Guide 158) attempts to unleash a 20-foot column of acid that has a 5-foot radius and erupts from a point of origin within 30 feet of you. Creatures caught in the column take your unarmed strike damage plus the acid damage from your Elemental Fist and are staggered for 1 round. A successful Reflex save (DC 10 + 1/2 your character level + your Wis modifier) reduces the damage by half and prevents a target from being staggered.
-
-
 
 Shaitan Skin
 	SOURCEPAGE::p.
@@ -1048,25 +1075,28 @@ Shake It Off
 	DESC:You support your allies and help them recover from crippling effects.
 	BENEFIT:When you are adjacent to one or more allies who also have this feat, you gain a +1 bonus on saving throws per such ally (maximum +4).
 
+# TODO: Implement PRETEXT. This can be a spell, but can also be a spell-like ability or an extraordinary or supernatural ability
 Shapeshifter Foil
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your command of shapeshifting magic can disrupt similar effects in others.
-	PRETEXT:PRESKILL:1,Knowledge (arcana)=5PRESKILL:1, or Knowledge (nature)=5, ability to use any polymorph effect
+	PRESKILL:1,Knowledge (arcana)=5,Knowledge (nature)=5
+	PRETEXT:Ability to use any polymorph effect
 	BENEFIT:A creature you deal damage to has difficulty using or maintaining polymorph effects until the end your next turn. To use a polymorph effect it must make a concentration check (DC 15 + twice the level of the effect). If you deal damage to an opponent under a polymorph effect, that opponent must succeed at a Will saving throw (DC 10 + 1/2 your character level + your Wisdom modifier) or be forced back to its original form. If you score a critical hit against such an opponent, no saving throw is allowed.
 
 Shapeshifting Hunter
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You blend your knowledge of foes and your shapeshifting abilities together.
-	PRETEXT:Favored enemy class feature, wild shape class feature
+	PREABILITY:1,CATEGORY=Special Ability,TYPE=FavoredEnemy
+	PREABILITY:1,CATEGORY=Special Ability,Wild Shape
 	BENEFIT:Your levels of druid stack with your ranger levels for determining when you select your next favored enemy. Also, your ranger levels stack with your druid levels in determining the number of times per day you can use your wild shape class feature, up to a maximum of eight times per day.
 
 Shared Judgment
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You extend the benefits of your judgment to an ally.
-	PRETEXT:Second judgment class feature
+	PREABILITY:1,CATEGORY=Special Ability,Second Judgment ~ Inquisitor
 	BENEFIT:You can pronounce a single judgment and extend its effects to one adjacent ally instead of pronouncing a second judgment. Similarly, once you have the third judgment class feature, you can pronounce a single judgment and extend its effects to two adjacent allies instead of pronouncing a second and third judgment. Alternatively, once you have the third judgment class feature, you can pronounce two judgments and extend the effects of one judgment to one adjacent ally instead of pronouncing a third judgment. Once an ally has gained the effects of your judgment, he need not remain adjacent to you to continue gaining that benefit. You can spend a free action to end this benefit for one or both allies. If your judgment bonus is suspended for you, it is suspended for all allies, but when it resumes, it does so for all allies.
 
 Siege Commander
@@ -1082,7 +1112,6 @@ Siege Engineer
 	DESC:You are proficient with all siege weaponry.
 	PRESKILL:1,Knowledge (engineering)=5,Profession (siege engineer)=5
 	PREWEAPONPROF:1,TYPE.Siege
-	PRETEXT:proficiency with one siege engine
 	BENEFIT:You are considered to be proficient with all siege weapons. Also, when you are crew lead for a siege engine, you do not generate mishaps on the roll of a natural 1. &nl; [Normal] Each siege engine is an exotic weapon.
 
 Siege Gunner
