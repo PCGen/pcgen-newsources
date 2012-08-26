@@ -106,60 +106,73 @@ Flanking Foil
 	DESC:Fighting multiple foes is easy for you.
 	BENEFIT:Whenever you hit an adjacent opponent with a melee attack, until the start of your next turn, that opponent does not gain any flanking bonus on attack rolls while it is flanking you and cannot deal sneak attack damage to you. It can still provide a flank for its allies.
 
+# TODO: Could be more efficient with ALL, but is not in the docs?
 Fortified Armor Training
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You have learned to let your armor bear the brunt of the worst attacks.
-	PRETEXT:Proficient with armor or shield
+	PREPROFWITHSHIELD:1,TYPE.Tower,TYPE.Light,TYPE.Heavy
+	PREPROFWITHARMOR:1,TYPE.Light,TYPE.Medium,TYPE.Heavy
 	BENEFIT:If an opponent scores a critical hit against you, you can turn the critical hit into a normal hit. If you do, either your armor or your shield gains the broken condition (your choice).
 
 Furious Finish
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You channel all of your rage into one massive blow to crush your enemy.
-	PRETEXT:Rage class feature, Vital Strike, base attack bonus +6
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	PREFEAT:1,Vital Strike
+	PREATT:6
 	BENEFIT:While raging, when you use the Vital Strike feat, you can choose not to roll your damage dice and instead deal damage equal to the maximum roll possible on those damage dice. If you do, your rage immediately ends, and you are fatigued (even if you would not normally be).
 
 Gory Finish
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:By drawing upon wells of savagery, you can slay your foe in creative and horrifyingly gruesome manners, intimidating nearby foes.
-	PRETEXT:Dazzling Display, Weapon Focus
+	PREFEAT:2,Dazzling Display,Weapon Focus
 	BENEFIT:When you use the attack action, you can use a weapon with which you have Weapon Focus to make a single attack at your highest base attack bonus. If you reduce your target to negative hit points, you can spend a swift action to make an Intimidate check to demoralize all foes within 30 feet who could see your attack.
 
 Greater Channel Smite
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:You empower your weapon with the might of your deity, which you discharge as you strike your foes.
-	PRETEXT:Channel energy class feature, Channel Smite,	PREATT:8
+	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
+	PREFEAT:1,Channel Smite
+	PREATT:8
 	BENEFIT:Before making any melee attacks on your turn, you can use a swift action to expend one daily use of your channel energy class feature. The dice from your channel energy feature form a pool of damage dice you can access to further damage creatures normally harmed by the energy you are channeling-undead for positive energy, living creatures for negative energy. Prior to making each melee attack, allocate dice from the pool to be used as extra damage dice if you hit. Your target can make a Will save, as normal, to halve this extra damage. This extra damage is not multiplied when you score a critical hit. If you miss, the extra damage dice remain in your pool, but any dice left unexpended at the end of your turn are wasted.
 
 Greater Rending Fury
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:When your claws latch on to an opponent, the effect is bloody and horrific.
-	PRETEXT:Improved Rending Fury, Rending Fury, base attack bonus +12, rend special attack
+	PREFEAT:2,Improved Rending Fury,Rending Fury
+	PREATTACK:12
+	PREABILITY:1,CATEGORY=Special Ability,Rend
 	BENEFIT:Whenever you rend an opponent, you deal 1d6 bleed damage to that opponent. This is an addition to the effects of the rend.
 
 Greater Snap Shot
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can prey on any gap in your foe's guard with impunity, and with even greater range.
-	PRETEXT:Dex 17, Improved Snap Shot, Point-Blank Shot, Rapid Shot, Snap Shot,	PREATT:12
+	PRESTAT:1,DEX=17
+	PREFEAT:4,Improved Snap Shot,Point-Blank Shot,Rapid Shot,Snap Shot
+	PREATT:12
 	BENEFIT:Whenever you make an attack of opportunity using a ranged weapon and hit, you gain a +2 bonus on the damage roll and a +2 bonus on rolls to confirm a critical hit with that attack. These bonuses increase to +4 when you have base attack bonus of +16, and to +6 when you have base attack bonus +20.
 
 Greater Whip Mastery
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can use a whip to make combat maneuvers with ease.
-	PRETEXT:Improved Whip Mastery, Weapon Focus (whip), Whip Mastery,	PREATT:8
+	PREFEAT:3,Improved Whip Mastery, Weapon Focus (whip), Whip Mastery
+	PREATT:8
 	BENEFIT:You are so quick with your whip that you never drop it due to a failed disarm or trip combat maneuver attempt. Further, you gain the ability to grapple using your whip. To do so, use the normal grapple rules with the following changes. &nl;Attack - You cannot use your whip to attack while you are using it to grapple an opponent. &nl;Damage - When dealing damage to your grappled opponent, you deal your whip's weapon damage rather than your unarmed strike damage. &nl;Free Hands - You take no penalty on your combat maneuver check for having fewer than two hands free when you use your whip to grapple. &nl;Reach - Rather than pulling your grappled opponent adjacent to you when you successfully grapple and when you move the grapple, you must keep him within your whip's reach minus his own reach to maintain the grapple. If the difference in reach is less than 0, such as is the case for a Medium whip wielder and a Gargantuan creature, you cannot grapple that opponent with your whip. If you have to pull a creature adjacent to you to grapple it with your whip, you still provoke an attack of opportunity from that opponent unless you have the Improved Grapple feat. &nl;Tie Up - While adjacent to your opponent, you can attempt to use your whip to tie him up. If you do so to an opponent you have grappled rather than pinned, you take only a -5 penalty on the combat maneuver check rather than the normal -10.
 
+# TODO: PREWEAPONPROF with deities favored weapon?
 Guided Hand
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your deity blesses any strike you make with that deity's favored weapon.
-	PRETEXT:Channel energy class feature, Channel Smite, proficiency with your deity's favored weapon
+	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
+	PREFEAT:1,Channel Smite
 	BENEFIT:With your deity's favored weapon, you can use your Wisdom modifier instead of your Strength or Dexterity modifier on attack rolls.
 
 Gunsmithing
@@ -172,105 +185,128 @@ Hammer the Gap
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You repeatedly strike the same location, causing increasing amounts of damage.
-	PRETEXT:Base attack bonus +6
+	PREATT:6
 	BENEFIT:When you take a full-attack action, each consecutive hit against the same opponent deals extra damage equal to the number of previous consecutive hits you have made against that opponent this turn. This damage is multiplied on a critical hit.
 
 Harmonic Sage
 	SOURCEPAGE::p.
 	TYPE:General
 	DESC:Your thorough understanding of acoustics in artificial surroundings allows you to improve the power of your bardic performance.
-	PRETEXT:Bardic performance class feature, PRESKILL:1,Knowledge (engineering)=5
+	PREABILITY:1,CATEGORY=Special Ability,Bardic Performance
+	PRESKILL:1,Knowledge (engineering)=5
 	BENEFIT:While inside an artif icial structure, you can spend a free action to make a DC 15 Knowledge (engineering) check when you begin your bardic performance. Success on this check allows you to do one of the following. &nl;Self-Harmonize - By performing over the acoustic reverberations of your performance, you increase the DC of your bardic performance effects +1. &nl;Reverberation - You can choose to have the effect of your current bardic performance continue for 1 round after you cease maintaining it, regardless of why you cease maintaining it. You can still have no more than one bardic performance in effect at one time. &nl; [Normal] A bardic performance lasts only as long as you maintain it.
 
 Haunted Gnome
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You use your gnome magic to take on an eerie illusory appearance.
-	PRETEXT:Cha 13, gnome magic racial trait, PRESKILL:1,Knowledge (arcana)=1
+	PRESTAT:1,CHA=13
+	PREABILITY:1,CATEGORY=Special Ability,Gnome Magic ~ Gnome
+	PRESKILL:1,Knowledge (arcana)=1
 	BENEFIT:You add haunted fey aspect (page 230) to your list of gnome magic spell-like abilities, and you can use this spell-like ability twice per day.
 
 Haunted Gnome Assault
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Discharging your disturbing glamer as you strike a telling blow, you haunt a foe with lingering fear.
-	PRETEXT:Cha 13, gnome magic racial trait, Haunted Gnome, PRESKILL:1,Knowledge (arcana)=3
+	PRESTAT:1,CHA=13
+	PREABILITY:1,CATEGORY=Special Ability,Gnome Magic ~ Gnome
+	PREFEAT:1,Haunted Gnome
+	PRESKILL:1,Knowledge (arcana)=3
 	BENEFIT:You gain one use of your gnome magic that is independent of your gnome magic spell-like abilities. When you wish to cast a gnome magic spell-like ability for which you have no daily uses remaining, you can expend this independent use to do so. Further, while you are under the effect of haunted fey aspect (page 230), you can discharge that spell as a free action after you hit an opponent with a charge attack or score a critical hit against an opponent. If you do, that opponent becomes shaken for 1 round.
 
 Haunted Gnome Shroud
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Your disturbing glamer expands to make your exact location hard to pinpoint.
-	PRETEXT:Cha 13, gnome magic racial trait, Haunted Gnome, Haunted Gnome Assault, PRESKILL:1,Knowledge (arcana)=6
+	PRESTAT:1,CHA=13
+	PREABILITY:1,CATEGORY=Special Ability,Gnome Magic ~ Gnome
+	PREFEAT:2,Haunted Gnome,Haunted Gnome Assault
+	PRESKILL:1,Knowledge (arcana)=6
 	BENEFIT:You gain another independent use of your gnome magic like that which Haunted Gnome Assault grants. Further, while you are under the effect of haunted fey aspect, you also have concealment (20% miss chance) against an opponent until that opponent deals you damage.
 
+# TODO: The selector
 Hero's Display
 	SOURCEPAGE::p.
 	TYPE:Combat.Performance
 	DESC:With a dramatic flourish you display your weapons to the crowd. Onlookers are elated, and your enemies are demoralized.
-	PRETEXT:Dazzling Display, Weapon Focus, and proficiency with the selected weapon
+	PREFEAT:2,PRETEXT:Dazzling Display, Weapon Focus
 	BENEFIT:When you spend a swift action to make a performance combat check, you present the weapon in which you have Weapon Focus in a triumphant display. You gain a +2 bonus on the performance combat check and make an Intimidate check to demoralize all foes within 30 feet who can see your display.
 
 Hex Strike
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Chanting and cursing, you put a hex on your enemy as part of your unarmed strike.
-	PRETEXT:Hex class feature, Improved Unarmed Strike
+	PREABILITY:1,CATEGORY=Special Ability,TYPE.WitchHex
+	PREFEAT:1,Improved Unarmed Strike
 	BENEFIT:When you gain this feat, choose one hex that you can use to affect no more than one opponent. If you make a successful unarmed strike against an opponent, in addition to dealing your unarmed strike damage, you can use a swift action to deliver the effects of the chosen hex to that opponent. Doing so does not provoke attacks of opportunity. &nl; [Special]You can take this feat multiple times. Each time you take it, you apply it to a different qualifying hex.
 
 Horse Master
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You blend horsemanship skills from disparate traditions into a seamless mounted combat technique.
-	PRETEXT:Expert trainer class feature (Advanced Player's Guide 33), PRESKILL:1,Ride=6
+	PREABILITY:1,CATEGORY=Special Ability,Expert Trainer ~ Cavalier
+	PRESKILL:1,Ride=6
 	BENEFIT:Use your character level to determine your effective druid level for determining the powers and abilities of your mount. &nl; [Normal] You use your cavalier level to determine your effective druid level for determining the powers and abilities of your mount.
 
 Impact Critical Shot
 	SOURCEPAGE::p.
 	TYPE:Combat.Critical
 	DESC:With a series of ranged attacks, you bring your foes to their knees or force them to move.
-	PRETEXT:Dex 13, Point-Blank Shot, base attack bonus +9
+	PRESTAT:1,DEX=13
+	PREFEAT:1,Point-Blank Shot
+	PREATT:9
 	BENEFIT:Whenever you score a critical hit with a ranged attack, in addition to the normal damage your attack deals, if your confirmation roll exceeds your opponent's CMD, you can push your opponent back as if from the bull rush combat maneuver or knock that target prone as if from a trip combat maneuver. If you choose to bull rush, you cannot move with the target. Your maneuver does not provoke an attack of opportunity. &nl; [Normal] You must perform a bull rush combat maneuver to bull rush an opponent, and you must perform a trip combat maneuver to trip an opponent.
 
+# TODO: Selector for piercing weapon
 Impaling Critical
 	SOURCEPAGE::p.
 	TYPE:Combat.Critical
 	DESC:Your critical hits can skewer your foes.
-	PRETEXT:Critical Focus, Weapon Specialization with selected piercing melee weapon,	PREATT:11
+	PREFEAT:1,Critical Focus
+	PREFEAT:1,Weapon Specialization (TYPE=Piercing)
+	PREATT:11
 	BENEFIT:Whenever you score a critical hit with the selected piercing melee weapon, you can impale your opponent on your weapon. While your opponent is impaled in this way, each time he starts his turn, you deal damage equal to your weapon's damage dice plus the extra damage dice from your weapon's properties. As an immediate action, you can pull your weapon out of your opponent. If your opponent is ever outside your reach, you must spend a free action to let go of your weapon or pull it out of him. Your opponent can also spend a move action to pull your weapon out. When the weapon comes out, your opponent takes damage as if starting his turn impaled. While you impale your opponent with your weapon, you cannot use it to attack, and you must hold on to it.
 
 Improved Back to Back
 	SOURCEPAGE::p.
 	TYPE:Teamwork
 	DESC:After much practice, you and an ally have become adept at fighting in close proximity to one another.
-	PRETEXT:Back to Back, PRESKILL:1,Perception=5
+	PREFEAT:1,Back to Back
+	PRESKILL:1,Perception=5
 	BENEFIT:While you are adjacent to an ally who is flanked and also has this feat, you can spend a swift action to gain a +2 bonus to AC against all flankers until the start of your next turn.
 
 Improved Charging Hurler
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:Every muscle in your body adds its force to your thrown weapons.
-	PRETEXT:Charging Hurler, Point-Blank Shot
+	PREFEAT:2,Charging Hurler, Point-Blank Shot
 	BENEFIT:When you use Charging Hurler, your target can be at any range up to your weapon's maximum range. If your target is within 30 feet, you gain a +2 bonus on damage rolls. &nl; [Normal] Using Charging Hurler requires you to end your movement within 30 feet of your opponent.
 
 Improved Cleaving Finish
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:You can cut down many opponents in a single strike.
-	PRETEXT:Str 13, Cleave, Cleaving Finish, Great Cleave, Power Attack,	PREATT:6
+	PRESTAT:1,STR=13
+	PREFEAT:4,Cleave, Cleaving Finish, Great Cleave, Power Attack
+	PREATT:6
 	BENEFIT:You can use Cleaving Finish any number of times per round.
 
 Improved Devastating Strike
 	SOURCEPAGE::p.
 	TYPE:Combat
 	DESC:The fury and power channeled through your attack is enough to kill a lesser being outright.
-	PRETEXT:Devastating Strike, Vital Strike, base attack bonus +13
+	PREFEAT:2,Devastating Strike, Vital Strike
+	PREATT:13
 	BENEFIT:Whenever you use Vital Strike, Improved Vital Strike, or Greater Vital Strike, you gain a bonus on attack rolls to confirm a critical hit equal to the bonus on damage rolls you gain from Devastating Strike.
 
 Improved Feint Partner
 	SOURCEPAGE::p.
 	TYPE:Combat.Teamwork
 	DESC:Knowledge of your companions' tricks and techniques allow you to take even greater advantage of your allies' feints.
-	PRETEXT:PRESKILL:1,Bluff=1, Combat Ref lexes, Feint Partner, base attack bonus +6
+	PRESKILL:1,Bluff=1
+	PREFEAT:2,Combat Reflexes,Feint Partner
+	PREATT:6
 	BENEFIT:Whenever an ally who also has this feat successfully feints against an opponent, that opponent provokes an attack of opportunity from you.
 
 Improved Impaling Critical
