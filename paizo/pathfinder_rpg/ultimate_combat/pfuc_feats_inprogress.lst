@@ -557,7 +557,7 @@ Maximized Spellstrike
 	TYPE:General
 	DESC:You deal brutal damage against opponents caught unawares.
 	PREABILITY:1,CATEGORY=Special Ability,Maximized Magic ~ Magus Arcana
-	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Expertise],[PREFEAT:1,Quick Draw]
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Expertise ~ Samurai],[PREFEAT:1,Quick Draw]
 	BENEFIT:When you make a melee attack and successfully use your spellstrike ability against an opponent denied his Dexterity bonus to AC, you can spend 3 points from your arcane pool to maximize the spell delivered through your spellstrike as if using the Maximize Spell metamagic feat.
 
 Menacing Bane
@@ -605,7 +605,7 @@ Monkey Shine
 	TYPE:Combat
 	DESC:You combine acrobatics and opportunity to devastating effect against your opponent.
 	PRESTAT:1,WIS=13
-	PRETEXT:4,Improved Unarmed Strike,Monkey Moves,Monkey Style,Stunning Fist
+	PREFEAT:4,Improved Unarmed Strike,Monkey Moves,Monkey Style,Stunning Fist
 	PRESKILL:2,Acrobatics=11,Climb=11
 	BENEFIT:While using Monkey Style, if you successfully deliver a Stunning Fist attempt, in addition to the normal effect of Stunning Fist, you can spend a free action to enter a square adjacent to you that is within your opponent's space. This movement does not provoke attacks of opportunity. While you are in your opponent's space, you gain a +4 dodge bonus to AC and a +4 bonus on melee attack rolls against that opponent. If otherwise unhindered, the opponent can move away from you, but if he does, he provokes an attack of opportunity from you even if his choice of movement does not normally do so. &nl; [Normal] You cannot enter an opponent's space.
 
@@ -614,7 +614,7 @@ Monkey Style
 	TYPE:Combat.Style
 	DESC:Your unarmed fighting style is nimble and unpredictable, full of ground rolls and short leaps.
 	PRESTAT:1,WIS=13
-	PRETEXT:4,Improved Unarmed Strike
+	PREFEAT:1,Improved Unarmed Strike
 	PRESKILL:2,Acrobatics=5,Climb=5
 	BONUS:SKILL|Acrobatics|MAX(0,WIS)
 	BENEFIT:You add your Wisdom bonus on Acrobatics checks. While using this style, you take no penalty on melee attack rolls or to AC while prone. Further, you can crawl and stand up from lying prone without provoking attacks of opportunity, and you can stand up as a swift action if you succeed at a DC 20 Acrobatics check. &nl; [Normal] You take a -4 penalty on attack rolls and AC against melee attacks while prone. Standing up is a standard action that provokes attacks of opportunity.
@@ -827,7 +827,7 @@ Pinpoint Poisoner
 	PREABILITY:1,CATEGORY=Special Ability,Poison Use%
 	PRESKILL:1,Craft (alchemy)=6
 	PREFEAT:2,Adder Strike,Improved Unarmed Strike
-	PREMULT:1,[PREFEAT:1,Two- Weapon Fighting],[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows]
+	PREMULT:1,[PREFEAT:1,Two-Weapon Fighting],[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows]
 	BENEFIT:When you use Adder Strike, you can instead poison up to two blowgun darts that you can then use to strike your opponent in melee. (Drawing such darts is a free action.) While holding these darts, you can spend a standard action to attack with one or a full-attack action to attack with both. Such attacks are considered melee touch attacks that deal 1d2 damage plus any bonuses you gain on your normal unarmed strike damage, and they deliver the poison. You can instead throw such darts as if they were shuriken, making your ranged attack rolls against the target's AC. &nl; [Normal] Applying poison to a weapon or single piece of ammunition is a standard action.
 
 Planar Wild Shape
@@ -962,7 +962,6 @@ Rebuffing Reduction
 	TYPE:Combat
 	DESC:Your damage reduction can turn the force of blows back on your enemies.
 	PRESTAT:1,STR=13
-	PRETEXT:Str 13
 	PREFEAT:2,Improved Bull Rush, Power Attack
 	PREATT:1
 	BENEFIT:Whenever an opponent that is adjacent to you fails to penetrate your DR with a melee attack, you can spend an immediate action to attempt a bull rush combat maneuver against that opponent. If you succeed, you cannot move with the opponent. &nl; [Normal] A bull rush combat maneuver is a standard action.
@@ -1138,7 +1137,8 @@ Signature Deed
 	SOURCEPAGE:p.119
 	TYPE:Grit
 	DESC:You are known for performing a particular deed, and can perform it with greater ease.
-	PRETEXT:Grit class feature, gunslinger level 11th
+	PREABILITY:1,CATEGORY=Special Ability,Grit
+	PRECLASS:1,Gunslinger=11
 	BENEFIT:Pick a deed that you have access to and that you must spend grit to perform. You can perform this deed for 1 fewer grit point (minimum 0). If the amount of grit needed to perform the deed is reduced to 0, you can perform this deed for the normal action cost as long as you have at least 1 grit point.
 
 # TODO: How to choose a vehicle?
@@ -1152,14 +1152,18 @@ Slayer's Knack
 	SOURCEPAGE:p.119
 	TYPE:General
 	DESC:You know how to battle your favored enemies with such efficacy that any weapon you wield against them becomes more deadly.
-	PRETEXT:Favored enemy class feature, base attack bonus +6
+	PREABILITY:1,CATEGORY=Special Ability,TYPE=FavoredEnemy
+	CHOOSE:ABILITY|Special Ability|TYPE=FavoredEnemy
+	PREATT:6
 	BENEFIT:When you take this feat, choose one of your favored enemy types. Against enemies of that type, the threat range of any weapon you wield is doubled. This effect does not stack with any other effect that expands a weapon's threat range. &nl; [Special]You can take this feat multiple times. Each time you take it, you choose a different favored enemy type.
+	MULT:YES
+	STACK:NO
 
 Sling Flail
 	SOURCEPAGE:p.119
 	TYPE:Combat
 	DESC:You can use your loaded sling to effectively strike at nearby foes.
-	PRETEXT:Weapon Focus (sling)
+	PREFEAT:1,Weapon Focus (sling)
 	PREATT:1
 	BENEFIT:You can make melee attacks using your loaded sling, using that weapon's normal statistics but treating it as a flail. Using a sling in this way does not expend mundane ammunition, but magical or masterwork ammunition loses its special properties after a single hit. &nl; [Special]Any feats you have that apply when you use a flail also apply when you use a loaded sling as a melee weapon.
 
@@ -1167,7 +1171,8 @@ Snake Fang
 	SOURCEPAGE:p.119
 	TYPE:Combat
 	DESC:You can unleash attacks against an opponent that has dropped its guard.
-	PRETEXT:Combat Reflexes, Improved Unarmed Strike, Snake Sidewind, Snake Style, PRESKILL:1,Acrobatics=6, PRESKILL:1,Sense Motive=9
+	PREFEAT:4,Combat Reflexes,Improved Unarmed Strike,Snake Sidewind,Snake Style
+	PRESKILL:2,Acrobatics=6,Sense Motive=9
 	BENEFIT:While using the Snake Style feat, when an opponent's attack misses you, you can make an unarmed strike against that opponent as an attack of opportunity. If this attack of opportunity hits, you can spend an immediate action to make another unarmed strike against the same opponent.
 
 Snake Sidewind
@@ -1216,7 +1221,6 @@ Snapping Turtle Style
 	TYPE:Combat.Style
 	DESC:Your deft unarmed style allows you to shield your body from harm.
 	PREMULT:1,[PREMULT:2,[PREFEAT:1,Improved Unarmed Strike],[PREATT:1]],[PRECLASS:1,Monk=1]
-	PRETEXT:Improved Unarmed Strike, base attack bonus +1 or monk level 1st
 	BENEFIT:While using the Snapping Turtle Style feat with at least one hand free, you gain a +1 shield bonus to AC.
 
 Sneaking Precision
@@ -1330,7 +1334,7 @@ Team Pickpocketing
 	SOURCEPAGE:p.122
 	TYPE:Teamwork
 	DESC:You distract a mark with friendly conversation while your partner robs the victim blind.
-	PRETEXT:PRESKILL:1,Bluff=1, PRESKILL:1,Sleight of Hand=1
+	PRESKILL:2,Bluff=1,Sleight of Hand=1
 	BENEFIT:Whenever an ally with this feat succeeds a Bluff check to feint an opponent, if you are adjacent to that creature, you can spend an immediate action to make a Sleight of Hand check to pickpocket that opponent and gain a +4 bonus on that attempt.
 
 Tiger Claws
@@ -1369,7 +1373,6 @@ Twin Thunders
 	PRERACE:1,Dwarf,RACESUBTYPE=Dwarf,Gnome,RACESUBTYPE=Gnome
 	PREABILITY:1,CATEGORY=Special Ability,Defensive Training ~ Dwarf,Defensive Training ~ Gnome
 	PREMULT:1,[PREFEAT:1,Two-Weapon Fighting],[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows]
-	PRETEXT:Dwarf or gnome, defensive training racial trait, Two-Weapon Fighting or flurry of blows class feature, Weapon Focus with both wielded weapons
 	BENEFIT:Once per round, when wielding a bludgeoning weapon for which you have Weapon Focus in each hand against a creature with the giant subtype, if you hit the creature with your off-hand weapon after you hit with your primary weapon, roll the damage dice for your off-hand weapon twice and add the results together before adding any bonuses. Such extra weapon damage dice are not multiplied on a critical hit.
 
 Twin Thunders Flurry
@@ -1380,49 +1383,54 @@ Twin Thunders Flurry
 	PREABILITY:1,CATEGORY=Special Ability,Defensive Training ~ Dwarf,Defensive Training ~ Gnome
 	PREMULT:1,[PREFEAT:2,Improved Two-Weapon Fighting,Two-Weapon Fighting],[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows]
 	PREFEAT:1,Twin Thunders
-	PRETEXT:Dwarf or gnome; defensive training racial trait; Improved Two-Weapon Fighting and Two-Weapon Fighting, or flurry of blows class feature; Twin Thunders; Weapon Focus with both wielded weapons; base attack bonus +6
 	PREATT:6
 	BENEFIT:You can trip a creature with the giant subtype of up to Huge size, and you gain a +2 bonus on damage rolls against creatures of the giant subtype. Further, each time you hit a creature of the giant subtype with your offhand weapon after you hit that creature with your primary weapon, you can deal the extra off-hand weapon damage Twin Thunders grants you.
 
 Twin Thunders Master
 	SOURCEPAGE:p.123
 	TYPE:Combat
+	PRERACE:1,Dwarf,RACESUBTYPE=Dwarf,Gnome,RACESUBTYPE=Gnome
+	PREABILITY:1,CATEGORY=Special Ability,Defensive Training ~ Dwarf,Defensive Training ~ Gnome
+	PREMULT:1,[PREFEAT:2,Improved Two-Weapon Fighting,Two-Weapon Fighting],[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows]
+	PREFEAT:1,Twin Thunders,Twin Thunders Flurry
+	PREATT:9
 	DESC:With thunderous simultaneous strikes, you can batter a mighty giant into submission.
-	PREMULT:1,[PREMULT:3,[PRERACE:1,Dwarf,Gnome],[PREABILITY:1,CATEGORY=Special Ability,TYPE=DwarfDefensiveTraining,TYPE=Defensive Training ~ Gnome],[PREFEAT:2,Improved Two-Weapon Fighting,Two-Weapon Fighting]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Flurry of Blows],[PREFEAT:3,Twin Thunders,Twin Thunders Flurry,Weapon Focus],[PREATT:9]]
 	BENEFIT:Whenever you deal an opponent extra damage with the Twin Thunders feat, that opponent is shaken for 1 round. You also force that opponent to succeed at a Fortitude saving throw (DC 10 + half your level + your Str modifier) or become staggered for 1 round. If you use this feat to render staggered an opponent that is already staggered, you daze that opponent instead. In a similar way, you can stun an opponent that is already dazed.
 
 Two-Handed Thrower
 	SOURCEPAGE:p.123
 	TYPE:Combat
 	DESC:You hurl weapons with both hands and with great force, sometimes using a whirling technique to send your weapon flying through the air at tremendous speeds.
-	PRETEXT:Str 15
+	PRESTAT:1,STR=15
 	BENEFIT:Whenever you use two hands to throw a onehanded or two-handed weapon, you gain a bonus on damage rolls equal to 1-1/2 times your Strength bonus. Using two hands to throw any weapon requires only a standard action for you. If you also have the Quick Draw feat, you can throw two-handed weapons at your full normal rate of attacks. &nl; [Normal] You add your Strength bonus on thrown weapon damage, regardless of available hands. Throwing a twohanded weapon is a full-round action.
 
 Two-Weapon Feint
 	SOURCEPAGE:p.123
 	TYPE:Combat
 	DESC:You use one weapon to distract your enemy while slipping another past his defenses.
-	PRETEXT:Dex 15, Int 13, Combat Expertise, Two- Weapon Fighting
+	PRESTAT:2,DEX=15,INT=13
+	PREFEAT:2,Combat Expertise,Two-Weapon Fighting
 	BENEFIT:While using Two-Weapon Fighting to make melee attacks, you can forgo your first primary-hand melee attack to make a Bluff check to feint an opponent.
 
 Vicious Stomp
 	SOURCEPAGE:p.123
 	TYPE:Combat
 	DESC:You take advantage of the moment to brutally kick an enemy when he is down.
-	PRETEXT:Combat Reflexes, Improved Unarmed Strike
+	PREFEAT:2,Combat Reflexes,Improved Unarmed Strike
 	BENEFIT:Whenever an opponent falls prone adjacent to you, that opponent provokes an attack of opportunity from you. This attack must be an unarmed strike.
 
 Wave Strike
 	SOURCEPAGE:p.123
 	TYPE:Combat
 	DESC:You present a serene facade until you unsheathe your weapon and strike in one fluid motion.
-	PRETEXT:Weapon expertise class feature or Quick Draw, PRESKILL:1,Bluff=1
+	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Expertise ~ Samurai],[PREFEAT:1,Quick Draw]
+	PRESKILL:1,Bluff=1
 	BENEFIT:If on your first turn of combat you draw a melee weapon to attack an opponent within your reach, you can spend a swift action to make a Bluff check to feint against that opponent.
 
 Whip Mastery
 	SOURCEPAGE:p.123
 	TYPE:Combat
 	DESC:Your superior expertise with this weapon does not provoke attacks of opportunity from your enemies.
-	PRETEXT:Weapon Focus (whip)
+	PREFEAT:1,Weapon Focus (whip)
 	PREATT:2
 	BENEFIT:You no longer provoke attacks of opportunity when attacking with a whip. You can deal lethal damage with a whip, although you can still deal nonlethal damage when you want. Further, you can deal damage with a whip despite a creature's armor bonus or natural armor bonus. &nl; [Normal] Attacking with a whip provokes attacks of opportunity as if you used a ranged weapon. A whip deals no damage to a creature that has an armor bonus of +1 or natural armor bonus of +3.
