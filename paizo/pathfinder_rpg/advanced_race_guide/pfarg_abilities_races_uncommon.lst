@@ -1,7 +1,58 @@
 # CVS $Revision: $ $Author: $ -- Thu Aug  2 19:19:21 2012 -- reformated by prettylst.pl v1.39 (build )
 SOURCELONG:Advanced Race Guide	SOURCESHORT:PFARG	SOURCEWEB:http://paizo.com/products/btpy8rv2?Pathfinder-Roleplaying-Game-Advanced-Race-Guide	SOURCEDATE:2012-06
-# ORIGINAL ENTRY: none
-# ORIGINAL ENTRY DATE: none
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2012/09/03
+
+###Block: Default Changeling Abilities (POOL=4)
+CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision	KEY:Darkvision ~ Changeling
+CATEGORY=Special Ability|Darkvision ~ Changeling.MOD																TYPE:ChangelingRacialTrait.ChangelingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingDarkvision]																																																																											SOURCEPAGE:p.184
+Hag Racial Trait											KEY:Hag Racial Trait ~ Changeling			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.ChangelingRacialTrait.ChangelingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Hag Racial Trait ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingHagRacialTrait]																																DESC:Changelings inherits a trait from her mother.																								BONUS:ABILITYPOOL|Hag Racial Trait|1	SOURCEPAGE:p.184
+Claws										KEY:Claws ~ Changeling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.ChangelingRacialTrait.ChangelingRacialDefault		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Claws ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingClaws]	DESC:Changelings get two claw attacks.		NATURALATTACKS:Claw,Weapon.Natural.Melee.Finesseable,*2,1d4	SOURCEPAGE:p.184
+Natural Armor										KEY:Natural Armor ~ Changeling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.ChangelingRacialTrait.ChangelingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Natural Armor ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingNaturalArmor]	BONUS:COMBAT|AC|1|TYPE=NaturalArmor	DESC:Changelings have a +1 natural armor bonus.		SOURCEPAGE:p.184
+
+###Block: Set up Changeling default abilities
+# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
+CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Changeling Racial Trait Default|PRERACE:1,Changeling
+
+#Changeling Racial Trait Default
+Changeling Racial Trait Default					CATEGORY:Internal																										BONUS:ABILITYPOOL|Changeling Racial Trait|-5
+CATEGORY=Internal|Changeling Racial Trait Default.MOD					ABILITY:Changeling Racial Trait|AUTOMATIC|Darkvision ~ Changeling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingDarkvision
+CATEGORY=Internal|Changeling Racial Trait Default.MOD					ABILITY:Changeling Racial Trait|AUTOMATIC|Hag Racial Trait ~ Changeling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingHagRacialTrait
+CATEGORY=Internal|Changeling Racial Trait Default.MOD					ABILITY:Changeling Racial Trait|AUTOMATIC|Claws ~ Changeling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingClaws
+CATEGORY=Internal|Changeling Racial Trait Default.MOD					ABILITY:Changeling Racial Trait|AUTOMATIC|Natural Armor ~ Changeling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingNaturalArmor
+
+###Block: Alternate Changeling Abilities
+# COMMENT: All alternate abilities in the ARG can be done with Hag Racial Trait choices below.
+
+###Block: Hag Racial Trait Abilities
+Hulking Changeling (Annis Hag)	KEY:Annis Hag Hulking Changeling ~ Changeling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:You gain a +1 racial bonus to melee damage.	SOURCEPAGE:p.184	BONUS:COMBAT|DAMAGE.Melee|1|TYPE=Racial
+# COMMENT: Create a specialty skill?
+Green Widow (Green Hag)			KEY:Green Hag Green Widow ~ Changeling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:You gain a +2 racial bonus on Bluff checks against creatures that are sexually attracted to you.	SOURCEPAGE:p.184
+Sea Lungs (Sea Hag)			KEY:Sea Hag Sea Lungs ~ Changeling			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:You may hold your breath for %1 rounds before you risk drowning.|SeaLungsDuration	DEFINE:SeaLungDuration|3*CONSCORE	SOURCEPAGE:p.184
+Mist Child (Annis Hag)			KEY:Annis Hag Mist Child ~ Changeling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:When you have concealment or total concealment, the miss chance against you increases by 5%%.	SOURCEPAGE:p.184
+Object of Desire (Green Hag)		KEY:Green Hag Object of Desire ~ Changeling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:Add +1 to your caster level when casting charm person or charm monster.	SOURCEPAGE:p.184	BONUS:CASTERLEVEL|SPELL.Charm Person|1	BONUS:CASTERLEVEL|SPELL.Charm Monster|1
+Ocean's Daughter (Sea Hag)		KEY:Sea Hag Ocean's Daughter ~ Changeling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:You gain a +1 trait bonus on Skill checks, and automatically succeed at Swim checks made to avoid nonlethal damage from swimming.	SOURCEPAGE:p.184
+
+
+###Block: Alternate Changeling Abilities
+# Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																										Define										Description																														Template		Bonus to skill							Cost		Source Page
+#CATEGORY=Special Ability|Racial Trait ~ Celestial Crusader.COPY|Celestial Crusader	KEY:Celestial Crusader ~ Changeling
+#CATEGORY=Special Ability|Celestial Crusader ~ Changeling.MOD																TYPE:ChangelingRacialTrait.ChangelingCelestialResistance.ChangelingSkilled						PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Celestial Crusader ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingCelestialResistance,TYPE.ChangelingSkilled]																																																							COST:0	SOURCEPAGE:p.184
+#CATEGORY=Special Ability|Racial Trait ~ Deathless Spirit.COPY|Deathless Spirit	KEY:Deathless Spirit ~ Changeling
+#CATEGORY=Special Ability|Deathless Spirit ~ Changeling.MOD																TYPE:ChangelingRacialTrait.ChangelingCelestialResistance								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Deathless Spirit ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingCelestialResistance]																																																											COST:0	SOURCEPAGE:p.184
+#CATEGORY=Special Ability|Racial Trait ~ Exalted Resistance.COPY|Exalted Resistance	KEY:Exalted Resistance ~ Changeling
+#CATEGORY=Special Ability|Exalted Resistance ~ Changeling.MOD																TYPE:ChangelingRacialTrait.ChangelingCelestialResistance								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Exalted Resistance ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingCelestialResistance]																																																										COST:0	SOURCEPAGE:p.184
+#CATEGORY=Special Ability|Racial Trait ~ Halo.COPY|Halo					KEY:Halo ~ Changeling
+#CATEGORY=Special Ability|Halo ~ Changeling.MOD																		TYPE:ChangelingRacialTrait.ChangelingDarkvision										PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Halo ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingDarkvision]																																																														COST:0	SOURCEPAGE:p.184
+#CATEGORY=Special Ability|Racial Trait ~ Heavenborn.COPY|Heavenborn			KEY:Heavenborn ~ Changeling
+#CATEGORY=Special Ability|Heavenborn ~ Changeling.MOD																	TYPE:ChangelingRacialTrait.ChangelingSkilled.ChangelingSLA								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Heavenborn ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingSkilled,TYPE.ChangelingSLA]																																																											COST:0	SOURCEPAGE:p.184
+#CATEGORY=Special Ability|Racial Trait ~ Immortal Spark.COPY|Immortal Spark		KEY:Immortal Spark ~ Changeling
+#CATEGORY=Special Ability|Immortal Spark ~ Changeling.MOD																	TYPE:ChangelingRacialTrait.ChangelingSkilled.ChangelingSLA								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Immortal Spark ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingSkilled,TYPE.ChangelingSLA]																																																										COST:0	SOURCEPAGE:p.184
+#Incorruptible												KEY:Incorruptible ~ Changeling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.ChangelingRacialTrait.ChangelingSLA				PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Incorruptible ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingSLA]								DEFINE:IncorruptibleTimes|1	DEFINE:IncorruptibleDuration|TL	DESC:You can cast corruption resistance against evil %1/day as a spell-like ability.  If cast on yourself, the duration increases to %2 hours.|IncorruptibleTimes|IncorruptibleDuration													COST:0	SOURCEPAGE:p.184
+#Scion of Humanity												KEY:Scion of Humanity ~ Changeling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.ChangelingRacialTrait.ChangelingCelestialLanguage	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Scion of Humanity ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingCelestialLanguage]																DESC:You count as an outsider (native) and a humanoid (human) for any effect related to race.  You can pass for human without using the Disguise skill.						TEMPLATE:Human										COST:0	SOURCEPAGE:p.184
+# COMMENT: How to do extra languages?
+#Truespeaker													KEY:Truespeaker ~ Changeling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.ChangelingRacialTrait.ChangelingSkilled			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Truespeaker ~ Changeling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.ChangelingSkilled]																		DESC:+2 racial bonus on Linguistics and Sense Motive checks, and learn one additional language each time you take a rank in Linguistics.												BONUS:SKILL|Linguistics,Sense Motive|2|TYPE=Racial	COST:0	SOURCEPAGE:p.184
+
 
 #
 # End
