@@ -1,0 +1,1243 @@
+# CVS $Revision: $ $Author:tripleduck $ -- Wed Sep 12 17:06:00 2012 -- built by hand
+SOURCELONG:Advanced Race Guide	SOURCESHORT:PFARG	SOURCEWEB:http://paizo.com/products/btpy8rv2?Pathfinder-Roleplaying-Game-Advanced-Race-Guide	SOURCEDATE:2012-06
+# ORIGINAL ENTRY: none
+# ORIGINAL ENTRY DATE: none
+
+#  All items in this file must be reviewed before included in the pfarg_feats file
+Angel Wings
+	TYPE:General
+	PRERACE:1,Aasimar
+	PRELEVEL:MIN=10
+	PREFEAT:1,Angelic Blood
+	DESC:Feathered wings sprout from your back.
+	BENEFIT:You gain a pair of gleaming feathered wings that grant a fly speed of 30 feet (average maneuverability) if wearing light armor or unencumbered, or 20 feet (poor maneuverability) with a medium or heavy load or medium or heavy armor. Fly is a class skill for you.
+
+Angelic Blood
+	TYPE:General
+	PRERACE:1,Aasimar
+	PRESTAT:1,CON=13
+	DESC:Your blood is infused with holy power.
+	BENEFIT:You gain a +2 bonus on saving throws against effects with the evil descriptor and on Constitution checks to stabilize when you are reduced to negative hit points (but not dead). Furthermore, each time you take bleed or blood drain damage, each undead creature or creature with the evil subtype that is currently adjacent to you also takes 1 point of damage.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Angelic Flesh
+	TYPE:General
+	PRERACE:1,Aasimar
+	PREFEAT:1,Angelic Blood
+	DESC:Your skin shines like burnished metal.
+	BENEFIT:You take a �2 penalty on Disguise and Stealth checks but gain one of the following benefits, depending on the metallic affinity of your flesh (choose one). &nl; [Brazen] You gain fire resistance 5 and a +2 bonus on saves against fire effects. &nl; [Golden] You gain a +2 bonus on saves against blindness, dazzling, patterns, and effects with the light descriptor. When you cast spells or use spell-like abilities that are from the illusion (pattern) subschool or have the light descriptor, you do so at +1 caster level. &nl; [Silver] You gain a +2 bonus on saves against paralysis, petrification, and poison, and your unarmed strikes or natural weapons count as silver for the purpose of overcoming damage reduction. &nl; [Steel] You gain a +1 natural armor bonus to AC, and your unarmed strikes or natural weapons count as cold iron for the purpose of overcoming damage reduction.
+
+Celestial Servant
+	TYPE:General
+	PRERACE:1,Aasimar
+	PREABILITY:1,CATEGORY=Special Ability,Nature's Bond ~ Animal Companion,Special Mount,Companion ~ Hunter's Bond,Arcane Bond ~ Familiar
+	DESC:Rather than being a normal animal or beast, your companion or familiar hails from the heavenly realms.
+	BENEFIT:Your animal companion, familiar, or mount gains the celestial template and becomes a magical beast, though you may still treat it as an animal when using Handle Animal, wild empathy, or any other spells or class abilities that specifically affect animals.
+
+Channel Force
+	TYPE:General
+	PRERACE:1,Aasimar
+	PREMULT:1,[PREVARGTEQ:OracleChannelDice,2],[PREVARGTEQ:ClericChannelPositiveEnergyDice,2],[PREVARGTEQ:PaladinChannelDice,2]
+	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
+	DESC:Your channel is bolstered by your faith, allowing you to move and damage your foes.
+	BENEFIT:When you channel energy to deal damage, you may choose to affect only a single target within 30 feet. In addition to dealing damage, if that single target fails its saving throw, you may pull or push (Pathfinder RPG Bestiary 303) the target up to 5 feet for every 2d6 points of channel energy damage you are capable of dealing.
+
+Greater Channel Force
+	TYPE:General
+	PRERACE:1,Aasimar
+	PREMULT:1,[PREVARGTEQ:OracleChannelDice,6],[PREVARGTEQ:ClericChannelPositiveEnergyDice,6],[PREVARGTEQ:PaladinChannelDice,6]
+	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
+	PREFEAT:2,Channel Force,Improved Channel Force
+	DESC:Your eruptions of divine power move your enemies.
+	BENEFIT:When using Improved Channel Force, you can affect all creatures in a 30-foot-radius burst.
+
+#  TODO: fix pretext
+Heavenly Radiance
+	TYPE:General
+	PRERACE:1,Aasimar
+	PRETEXT:daylight spell-like ability,sufficiently high level (see below)
+	DESC:Your heavenly light can be used in a variety of ways.
+	BENEFIT:You gain one additional use per day of daylight. Choose one spell from the table below; by expending a use of daylight, you may use this spell as a spell-like ability. To select a spell, you must meet the minimum character level for its listing in the table. The save DC for this spell is Charisma-based.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Black Cat
+	TYPE:General
+	PRERACE:1,Catfolk
+	DESC:Bad luck befalls those who dare to cross you.
+	BENEFIT:Once per day as an immediate action, when you are hit by a melee attack, you can force the opponent who made the attack to reroll it with a �4 penalty. The opponent must take the result of the second attack roll. This is a supernatural ability. &nl; [Special] If you take this feat and don't already have all black fur, your fur turns completely black when you takes this feat.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Catfolk Exemplar
+	TYPE:General
+	PRERACE:1,Catfolk
+	DESC:Your feline traits are more defined and prominent than those of other members of your race.
+	BENEFIT:You can take the Aspect of the Beast feat even if you do not meet the normal prerequisites. Furthermore, your catlike nature manifests in one of the following ways. You choose the manifestation when you take this feat, and cannot change it later. &nl; [Enhanced Senses (Ex)] If you have low-light vision, you gain the scent catfolk racial trait. If you have the scent racial trait, you gain low-light vision. &nl; [Fast Sprinter (Ex)] You gain a 10-foot racial bonus to your speed when using the charge, run, or withdraw actions. If you have the sprinter racial trait, your racial bonus to speed when using the charge, run, or withdraw action increases to a 20-foot bonus. &nl; [Sharp Claws (Ex)] If you do not have the cat's claws racial trait or the claws of the beast manifestation from the Aspect of the Beast feat , you gain the cat's claws racial trait. If you have either the cat's claws racial trait or the claws of the beast manifestation, your claw damage increases to 1d6. &nl; [Special] You can take this feat multiple times. Its effects do not stack. Each time you select it, you must choose a different manifestation.
+
+#  TODO: fix pretext
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Claw Pounce 
+	TYPE:Combat
+	PREATT:10
+	PRERACE:1,Catfolk
+	PREFEAT:1,Nimble Striker
+	PRESTAT:2,STR=13,DEX=15
+	PRETEXT:cat's claws racial trait or Aspect of the Beast (claws of the beast manifestation)
+	DESC:You can charge and make an attack with your paws.
+	BENEFIT:When you make a charge, you can make a full attack with your claws. &nl; [Normal] Charging is a special full-round action that limits you to a single attack.
+
+Feline Grace
+	TYPE:General
+	PRERACE:1,Catfolk
+	PRESTAT:1,DEX=13
+	DESC:Your innate grace allows you to get out of the stickiest situations.
+	BENEFIT:You gain a +2 bonus to your CMD against bull rush, grapple, overrun, repositioning, and trip combat maneuvers.
+
+Nimble Striker 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Catfolk
+	PREABILITY:1,CATEGORY=Special Ability,Sprinter
+	PRESTAT:1,DEX=13
+	DESC:You were born to charge your enemies and nobody does it better.
+	BENEFIT:You do not take a �2 penalty to AC when you use the Cleave feat, Lunge feat, or when you charge.
+
+Blood Drinker
+	TYPE:General
+	PRERACE:1,Dhampir
+	DESC:Consuming blood reinvigorates you.
+	BENEFIT:Choose one humanoid subtype, such as "goblinoid" (this subtype cannot be "dhampir"). You have acquired a taste for the blood of creatures with this subtype. Whenever you drink fresh blood from such a creature, you gain 5 temporary hit points and a +1 bonus on checks and saves based on Constitution. The effects last 1 hour. If you feed multiple times, you continue to gain hit points to a maximum of 5 temporary hit points for every three Hit Dice you have, but the +1 bonus on Constitution-based skill checks and saving throws does not stack. Normally, you can only drink blood from an opponent who is helpless, grappled, paralyzed, pinned, unconscious, or similarly disabled. If you have a bite attack, you can drink blood automatically as part of your bite attack; otherwise, you must first cut your target by dealing 1 hit point of damage with a slashing or piercing weapon (though you may feed upon a creature with severe wounds or a bleed effect without cutting it first). Once you cut the target, you can drink from its wound as a standard action. Drinking blood deals 2 points of Constitution damage to the creature you feed upon. The blood must come from a living creature of the specified humanoid subtype. It cannot come from a dead or summoned creature. Feeding on unwilling intelligent creatures is an evil act.
+
+Blood Feaster
+	TYPE:General
+	PREATT:6
+	PRERACE:1,Dhampir
+	PREFEAT:1,Blood Drinker
+	DESC:Consuming blood gives you superhuman strength.
+	BENEFIT:If you use your Blood Drinker feat to drain 4 or more points of Constitution from a living creature, you gain a +2 bonus on damage rolls and a +1 bonus on Strength-based skill checks. This bonus lasts for a number of rounds equal to 1/2 your Hit Dice.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Blood Salvage
+	TYPE:General
+	PRERACE:1,Dhampir
+	PREFEAT:1,Blood Drinker
+	DESC:You do not need to drink blood from a living creature to gain healing benefits.
+	BENEFIT:You can use your Blood Drinker feat on a dead creature of the appropriate humanoid subtype. The creature must have died less than 6 hours beforehand. &nl; [Normal] You only benefit from the Blood Drinker feat if you consume fresh blood from a living creature.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Diverse Palate
+	TYPE:General
+	PRERACE:1,Dhampir
+	PREFEAT:1,Blood Drinker
+	DESC:Your taste for blood is broader than that of other dhampirs.
+	BENEFIT:Choose a humanoid subtype or the monstrous humanoid type. You may use your Blood Drinker feat on creatures of this subtype or type. &nl; [Special] You can take this feat multiple times. Each time you select it, choose a new humanoid subtype or the monstrous humanoid.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Natural Charmer
+	TYPE:General
+	PRERACE:1,Dhampir
+	PRESTAT:1,CHA=17
+	DESC:You possess some of the dominating powers of your vampire progenitor.
+	BENEFIT:You can take 20 on any Charisma-based skills to charm, convince, persuade, or seduce humanoids whose attitude is at least friendly to you. Taking 20 still requires 20 times the normal time to perform the skill. &nl; [Normal] You cannot take 20 on any check where you incur penalties for failure.
+
+#  TODO: fix pretext
+Drow Nobility
+	TYPE:General
+	PRERACE:1,Drow
+	PRETEXT:Able to use drow spell-like abilities
+	DESC:Your blood courses with power, granting you greater spell-like abilities.
+	BENEFIT:You may use detect magic as a spell-like ability at will, and add feather fall and levitate to the spell-like abilities that you may use once each per day. Your caster level is equal to your character level.
+
+#  TODO: fix pretext
+Greater Drow Nobility
+	TYPE:General
+	PRERACE:1,Drow
+	PREFEAT:2,Drow Nobility,Improved Drow Nobility
+	PRESTAT:1,CHA=13
+	PRETEXT:able to use drow spell-like abilities
+	DESC:You have mastered the lesser spell-like abilities of the drow, demonstrating true nobility.
+	BENEFIT:Your detect magic spell-like ability is now constant. You may use your dancing lights, deeper darkness, faerie fire, feather fall, and levitate spell-like abilities at will.
+
+#  TODO: fix pretext
+Improved Drow Nobility
+	TYPE:General
+	PRERACE:1,Drow
+	PREFEAT:1,Drow Nobility
+	PRESTAT:1,CHA=13
+	PRETEXT:able to use drow spell-like abilities
+	DESC:Your magical heritage is more potent than that of your peers, as demonstrated by your superior spell-like abilities.
+	BENEFIT:You may use your dancing lights, faerie fire, feather fall, and levitate spell-like abilities twice per day. Your darkness spell-like ability instead becomes deeper darkness, which you may use twice per day.
+
+#  TODO: fix pretext
+Improved Umbral Scion
+	TYPE:General
+	PRERACE:1,Drow
+	PREFEAT:4,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility,Umbral Scion
+	PRESTAT:2,CHA=13,WIS=13
+	PRETEXT:able to use drow spell-like abilities
+	DESC:You are a master of drow noble magic.
+	BENEFIT:You may use dispel magic, divine favor, and suggestion once per day as spell-like abilities. Your caster level is equal to your character level.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Noble Spell Resistance
+	TYPE:General
+	PRELEVEL:MIN=13
+	PRERACE:1,Drow
+	PREFEAT:1,Greater Drow Nobility
+	PRESTAT:2,CHA=13,WIS=13
+	DESC:Your ascension is complete; you have the spell resistance approaching that of a demon.
+	BENEFIT:Your spell resistance is equal to 11 + your character level. &nl; [Special] You receive a +1 circumstance bonus on Diplomacy and Intimidate checks made against any drow.
+
+Shadow Caster
+	TYPE:GeneralPRECLASS:1,SPELLCASTER=1
+	PRERACE:1,Drow
+	DESC:Your command over shadow and darkness create longer-lasting spell effects.
+	BENEFIT:When you cast spells of the shadow subschool or spells with the darkness descriptor, you are considered two levels higher when determining the duration of those spells.
+
+Spider Step
+	TYPE:General
+	PRELEVEL:MIN=3
+	PRERACE:1,Drow
+	DESC:You tread where only arachnids dare.
+	BENEFIT:You can cast spider climb once per day as a spell-like ability, using your character level as the caster level. Furthermore, you gain a +4 bonus on saving throws against the web special attacks of spiders and the effects of web and other similar spells (such as the web cloud spell).
+
+#  TODO: fix pretext
+Spider Summoner
+	TYPE:General
+	PRERACE:1,Drow
+	PRETEXT:Ability to cast summon monster or summon nature's ally spells
+	DESC:You gain the ability to summon powerful spiders.
+	BENEFIT:When casting either a summon monster spell or a summon nature's ally spell, your options increase. Depending on the level of the spell, you can summon the spiders listed below.  [Summon Monster: 1st level�giant crab spider*; 4th level�giant black widow*; 5th level�ogre spider*; 7th level�giant tarantula*] [Summon Nature's Ally: 1st level�giant crab spider; 4th level�giant black widow; 5th level�ogre spider; 7th level�giant tarantula]  Creatures marked with an asterisk (*) are summoned with the celestial template if you are good, and the fiendish template if you are evil. If you are neutral, you may choose which template to apply to the creature. Furthermore, when you summon spiders using summon monster or summon nature's ally, the DC of the summoned monster's poison and web effects increases by 2.
+
+#  TODO: fix pretext
+Umbral Scion
+	TYPE:General
+	PRERACE:1,Drow
+	PREFEAT:3,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility
+	PRESTAT:2,CHA=13,WIS=13
+	PRETEXT:able to use drow spell-like abilities
+	DESC:New spell-like abilities are unlocked for you as you rise to ascendency among the drow people.
+	BENEFIT:Select one of the following: dispel magic, divine favor, or suggestion. You may use this spell once per day as a spell-like ability. Your caster level is equal to your character level.
+
+Dark Sight
+	TYPE:General
+	PRERACE:1,Fetchling
+	PREFEAT:1,Gloom Sight
+	DESC:With further modification, your eyes can pierce the gloom of even magical darkness.
+	BENEFIT:You gain the ability to see up to 15 feet clearly in magical darkness, such as that created by the deeper darkness spell.
+
+Gloom Sight
+	TYPE:General
+	PRERACE:1,Fetchling
+	DESC:With a combination of strange shadow magic and chirurgery, your eyes are permanently modified to see farther in darkness.
+	BENEFIT:You gain darkvision 90 ft., but gain the light sensitivity weakness.
+
+Gloom Strike 
+	TYPE:Combat
+	PRERACE:1,Fetchling
+	PREFEAT:1,Blind-Fight
+	DESC:Few creatures are as accustomed to fighting in the shadows as you.
+	BENEFIT:When you are within an area of dim light or darkness, you gain a +1 bonus on attack rolls against enemies that are also within dim light or darkness.
+
+Improved Dark Sight
+	TYPE:General
+	PRERACE:1,Fetchling
+	PREFEAT:2,Dark Sight,Gloom Sight
+	DESC:With further modification, your eyes see clearly in not only normal darkness, but in magical darkness as well.
+	BENEFIT:You gain the see in darkness ability and lose the light sensitivity weakness, but gain the light blindness weakness.
+
+#  TODO: fix pretext
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Shadow Ghost
+	TYPE:General
+	PRERACE:1,Fetchling
+	PRETEXT:shadow walk spell-like ability
+	DESC:You can move between the Shadow Plane and the Material Plane more often.
+	BENEFIT:You gain the ability to use shadow walk an additional time each day. &nl; [Special] You may select this feat multiple times. Its effects stack.
+
+#  TODO: fix pretext
+Shadow Walker
+	TYPE:General
+	PRERACE:1,Fetchling
+	PRETEXT:shadow walk spell-like ability
+	DESC:You can pierce the veil between the Shadow Plane and the Material Plane more often, and to greater effect.
+	BENEFIT:You can expend one use of your shadow walk spell-like ability to use dimension door as a spell-like ability. Your start and end locations for this ability must be in dim light or darkness.
+
+Burn! Burn! Burn!
+	TYPE:General
+	PRESKILL:1,Disable Device=1
+	PRERACE:1,Goblin
+	DESC:You take the goblin love of arson and fire play to a whole new level.
+	BENEFIT:You deal an extra 1d4 points of fire damage when you attack with fire from an alchemical or nonmagical source (such as with alchemical fire or torches) and gain a +4 competence bonus on Reflex saving throws made to avoid catching on fire or to put yourself out when on fire. Additional damage caused by this feat does not apply to magical attacks (such as an alchemist's bomb) or to splash damage.
+
+Fire Hand 
+	TYPE:Combat
+	PRERACE:1,Goblin
+	DESC:Born with a torch in your hand, you have a gift with anything that burns.
+	BENEFIT:You can wield a torch as a weapon without taking the nonproficient penalty and gain a +1 bonus on attack rolls with melee weapons that deal fire damage.
+
+Fire Tamer
+	TYPE:General
+	PRERACE:1,Goblin
+	DESC:You know your way around even magical fire.
+	BENEFIT:You gain a +2 bonus on saves against spells with the fire descriptor. Additionally, your scars mark you as a talented fire tamer, granting you a +2 circumstance bonus on Diplomacy and Intimidate checks when dealing with other goblins.
+
+Flame Heart
+	TYPE:General
+	PRELEVEL:MIN=5
+	PRERACE:1,Goblin
+	PREFEAT:1,Fire Tamer
+	DESC:You have mastered fire magic and alchemy.
+	BENEFIT:You gain fire resistance 5. When casting spells with the fire descriptor or throwing alchemist bombs that deal fire damage, treat your caster level or alchemist level as if you were 1 level higher.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Goblin Gunslinger 
+	TYPE:Combat
+	PRERACE:1,Goblin
+	DESC:You have learned how to fire the big guns.
+	BENEFIT:You can wield Medium firearms without taking the penalty for an inappropriately sized weapon. &nl; [Normal] You take a �2 penalty when using an inappropriately sized weapon.
+
+Tangle Feet 
+	TYPE:Combat
+	PRERACE:1,Goblin
+	PRESIZELTEQ:S
+	PREFEAT:3,Dodge,Mobility,Underfoot
+	DESC:Creatures who cross your path find themselves tripping over their own feet.
+	BENEFIT:When you successfully make an Acrobatics check to avoid provoking an attack of opportunity from a larger opponent when you move through its threatened area or its space, you can make that opponent lose its balance until the end of its next turn as a free action. While that creature's balance is lost, if it attempts to move, it must make a successful DC 15 Acrobatics check or fall prone, wasting the move action. You can only affect one creature with this effect each round.
+
+#  TODO: fix pretext
+Deafening Explosion
+	TYPE:General
+	PRERACE:1,Hobgoblin
+	PRETEXT:Bomb class feature
+	DESC:Your bombs explode with deafening force.
+	BENEFIT:You may reduce your bomb damage by one die to give it the ability to deafen the creature struck by it. The bomb must deal fire, force, or sonic damage. If a creature takes a direct hit from your bomb, it must make a saving throw against the bomb's DC or be deafened for 1 minute. This deafening is in addition to any other effects the bomb would normally have.
+
+Demoralizing Lash 
+	TYPE:Combat
+	PREATT:1
+	PRESKILL:1,Intimidate=1
+	PRERACE:1,Hobgoblin
+	DESC:You cow your enemies with the lash of a whip.
+	BENEFIT:To use this feat, you must use a whip (or another weapon in the flails fighter weapon group) to attack a foe demoralized by an Intimidate check. If the attack hits, you extend the duration the creature is shaken by 1 round. This feat has no effect on creatures whose shaken conditions are from sources other than Intimidate checks.
+
+Focusing Blow 
+	TYPE:Teamwork
+	PRERACE:1,Hobgoblin
+	PREFEAT:1,Hobgoblin Discipline
+	DESC:You and your allies work together to shake off mental effects.
+	BENEFIT:An ally who also has this feat can deal damage to you in order to break an ongoing mind-affecting effect that allows a saving throw. The ally must cause at least 5 points of damage to you with an attack, spell, or other ability. You then reroll your saving throw, with a +1 bonus for every 5 additional points of damage the attack caused. If your save is successful, the mind-affecting effect ends. Only damage actually dealt counts for purposes of this feat; nonlethal damage and damage reduced or eliminated by damage reduction, resistances, and so on does not qualify.
+
+Hobgoblin Discipline
+	TYPE:General
+	PREATT:1
+	PRERACE:1,Hobgoblin
+	DESC:The presence of other hobgoblins bolsters your resolve.
+	BENEFIT:While you are within 30 feet of at least two other hobgoblins, you gain a +1 morale bonus on saving throws.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Taskmaster 
+	TYPE:Combat
+	PRESKILL:1,Intimidate=5
+	PRERACE:1,Hobgoblin
+	PREFEAT:1,Demoralizing Lash
+	DESC:You intimidate weaker allies into reckless ferocity.
+	BENEFIT:As a standard action, you spur an ally, who must have fewer Hit Dice than yourself, to reckless effort. For 1 minute, the ally gains a +1 morale bonus on attack rolls, weapon damage rolls, and Will saves against mind-affecting effects. However, the ally also takes a �2 penalty to AC and on skill checks. To affect an unwilling ally, you must succeed at an Intimidate check with the same DC used to demoralize your ally. &nl; [Special] If you have 10 or more ranks in Intimidate, the morale bonus increases to +2.
+
+Blazing Aura 
+	TYPE:Combat
+	PRELEVEL:MIN=13
+	PRERACE:1,Ifrit
+	PREFEAT:2,Inner Flame,Scorching Weapons
+	DESC:An inferno rages inside you, causing your body to radiate intense heat.
+	BENEFIT:When you use Scorching Weapons, on your turn as a free action, you may create an aura of heat that lasts for 1 round. This aura deals 1d6 points of fire damage to any creature that begins its turn adjacent to you.
+
+Blistering Feint 
+	TYPE:Combat
+	PRERACE:1,Ifrit
+	PREFEAT:2,Combat Expertise,Improved Feint
+	DESC:Your foes flinch from the heat of your weapon, giving you an opportunity to slip past their defenses.
+	BENEFIT:You gain a +2 bonus on feint checks made while wielding a weapon that deals fire damage. Anytime you successfully feint a creature while using such a weapon, you may deal its fire damage to the enemy.
+
+Elemental Jaunt
+	TYPE:General
+	PRERACE=1,Ifrit,Oread,Sylph,Undine
+	PRELEVEL:MIN=15
+	DESC:The spirits of your ancestral home call to you, beckoning you to return.
+	BENEFIT:Once per day, you can cast plane shift as a spell-like ability with a caster level equal to your level to transport yourself and willing targets to an elemental plane that is appropriate to your race (ifrits to the Plane of Fire, oreads to the Plane of Earth, sylphs to the Plane of Air, and undines to the Plane of Water). While on that plane, you (but not anyone transported with you) are treated as though under the effect of the spell planar adaptation.
+
+Firesight
+	TYPE:General
+	PRERACE:1,Ifrit
+	DESC:Fire no longer blinds you, and smoke conceals nothing from your gaze.
+	BENEFIT:You can see through fire and smoke without penalty, ignoring any cover or concealment bonuses from fire and smoke. This does not allow you to see anything you could not otherwise see (for example, invisible creatures are still invisible). You are immune to the dazzled condition.
+
+Inner Flame 
+	TYPE:Combat
+	PRELEVEL:MIN=7
+	PRERACE:1,Ifrit
+	PREFEAT:1,Scorching Weapons
+	DESC:Your body generates so much heat that your mere touch scorches your enemies.
+	BENEFIT:Your bonus on saves against fire attacks and spells with the fire descriptor or light descriptor increases to +4. When you use Scorching Weapons, the affected weapons deal an additional 1d6 points of fire damage instead of 1, and when you are grappling, you deal this damage to your grappling opponent on your turn.
+
+Scorching Weapons 
+	TYPE:Combat
+	PRERACE:1,Ifrit
+	DESC:Elemental fire stirs within your body, boiling your blood and rendering you resistant to flame.
+	BENEFIT:You gain a +2 bonus on saving throws against fire attacks and spells with the fire descriptor or light descriptor. As a swift action, you can make up to two held manufactured metallic weapons become red-hot for 1 round, dealing 1 additional point of fire damage with a successful hit. This does not stack with other effects that add fire damage to weapons, such as the flaming weapon special ability.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Draconic Aspect
+	TYPE:General
+	PRERACE:1,Kobold
+	DESC:You possess some of the qualities of your dragon ancestors.
+	BENEFIT:Your scales take on the color and some of the resistances of one of the chromatic dragons. Choose one of the following chromatic dragon types: black (acid), blue (electricity), green (acid), red (fire), or white (cold). Your scales take on the color of that dragon, and you gain resistance 5 to the dragon color's corresponding energy type. &nl; [Special] If you have the dragon-scaled racial trait, your scale color does not change and you gain a +1 natural armor bonus instead.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Draconic Breath
+	TYPE:General
+	PRERACE:1,Kobold
+	PREFEAT:1,Draconic Aspect
+	DESC:You possess draconic defenses and a draconic breath weapon.
+	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You gain a breath weapon that is determined by your scale coloration by either the Draconic Aspect feat or the dragon-scaled racial trait. Using a breath weapon is a standard action that does not provoke attacks of opportunity. You can use your breath weapon once per day. Creatures within the area of your breath weapon who succeed at a Reflex saving throw (DC 10 + your character level + your Constitution modifier) take only half damage. &nl; [Black (Su)] You breathe a 30-foot line of acid that deals 2d6 points of acid damage. &nl; [Blue (Su)] You breathe a 30-foot line of electricity that deals 2d6 points of electricity damage. &nl; [Green (Su)] You breathe a 15-foot cone of acid that deals 2d6 points of acid damage. &nl; [Red (Su)] You breathe a 15-foot cone of fire that deals 2d6 points of fire damage. &nl; [White (Su)] You breathe a 15-foot cone of cold that deals 2d6 points of cold damage. &nl; [Special] Kobold sorcerers with either the Draconic or Kobold bloodline can use their Charisma modifier instead of their Constitution to determine the number of times per day they can use this breath weapon and the DC of this breath weapon.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Draconic Glide
+	TYPE:General
+	PRERACE:1,Kobold
+	PREFEAT:1,Draconic Aspect
+	DESC:You possess draconic defenses and wings that allow you to glide.
+	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You grow a pair of wings that you can use to fall and glide at a safe pace. You can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling safely, you may make an additional DC 15 Fly check to glide, moving 5 feet laterally for every 20 feet you fall. &nl; [Special] If you have the gliding wings racial trait, instead of the above abilities, your base speed increases to 30 feet.
+
+Draconic Paragon
+	TYPE:General
+	PREFEAT:1,Draconic Breath,Draconic Glide
+	PRELEVEL:MIN=10
+	PRERACE:1,Kobold
+	PREFEAT:1,Draconic Aspect
+	DESC:You can shrug off sleep and paralysis effects as well as any dragon, and your draconic aspects improve.
+	BENEFIT:You gain an additional +2 bonus against sleep and paralysis effects. You can use your breath weapon twice per day and your breath weapon damage increases to 4d6 points of energy damage. Your wings from the Draconic Glide feat grow stronger, granting you a fly speed of 20 feet (average maneuverability).
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Kobold Ambusher 
+	TYPE:Combat
+	PRESKILL:1,Stealth=4
+	PRERACE:1,Kobold
+	DESC:You are adept at moving fast and staying hidden.
+	BENEFIT:You take no penalty on Stealth checks when you move up to your full speed. You can use the run or charge action and remain hidden, taking a �10 penalty on the check to do so. &nl; [Normal] When moving greater than half speed up to your full speed, you take a �5 penalty on Stealth checks. When you are able to run or charge while using Stealth, you take a �20 penalty on the Stealth check.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Kobold Sniper 
+	TYPE:Combat
+	PRESKILL:1,Stealth=1
+	PRERACE:1,Kobold
+	DESC:You snipe quickly, making it harder for others to find the location of your attack.
+	BENEFIT:When you are sniping, you only take a �10 penalty on your Stealth checks to stay hidden. &nl; [Normal] You take a �20 penalty on your Stealth check to maintain your obscured location while sniping.
+
+Tail Terror 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Kobold
+	DESC:You have strengthened your tail enough to make slap attacks with it.
+	BENEFIT:You can make a tail slap attack with your tail. This is a secondary natural attack that deals 1d4 points of bludgeoning damage. Furthermore, you can augment your tail slap attack with a kobold tail attachment. For the purpose of weapon feats, you are considered proficient with all kobold tail attachments.
+
+Born Alone
+	TYPE:General
+	PRERACE:1,Orc
+	DESC:You are so tough and vicious that you killed and ate the rest of your litter while still in the womb.
+	BENEFIT:Whenever you kill or knock unconscious an opponent with a melee attack, you gain temporary hit points equal to your Constitution bonus (minimum 1) until your next turn. These temporary hit points do not stack. You do not gain this bonus if the opponent is helpless or has less than half your Hit Dice.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Bullying Blow 
+	TYPE:Combat
+	PRESKILL:1,Intimidate=1
+	PRERACE:1,Orc
+	DESC:With a simple hit, you more easily intimidate an opponent.
+	BENEFIT:As a standard action, you may make a melee attack with a �2 penalty on the attack roll. If the attack damages your opponent, you may make an Intimidate check to demoralize that opponent as a free action. &nl; [Normal] Intimidating an opponent is a standard action.
+
+Ferocious Action
+	TYPE:General
+	PRERACE:1,Orc
+	PREABILITY:1,CATEGORY=Special Ability,Ferocity
+	DESC:You ferocity is quick but shorter lived.
+	BENEFIT:When you fall to 0 hit points or fewer, you lose 2 hit points each round, but you are not staggered. If you are in a rage (such as that caused by the barbarian rage class feature), you instead only lose 1 hit point per round.
+
+Foment the Blood
+	TYPE:General
+	PRERACE:1,Orc
+	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
+	DESC:You can unleash a wave of energy that drives orcs into a frenzy.
+	BENEFIT:When you channel energy, instead of creating its normal effect, you can give orcs a bonus on weapon damage and critical hit confirmation rolls until your next turn. This bonus is equal to the number of dice your channeled energy normally heals or harms. Your channel has its normal effect on other creatures in the area.
+
+Grudge Fighter 
+	TYPE:Combat
+	PRERACE:1,Orc
+	DESC:You feel great anger at anyone who dares to attack you, and this fury makes your own attacks that much stronger.
+	BENEFIT:You gain a +1 morale bonus on attack and damage rolls made against any creature that attacked you in the current combat.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Orc Weapon Expertise 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Orc
+	DESC:You can do more with the weapons orcs favor the most.
+	BENEFIT:When you take this feat, choose one of the benefits below. Whenever you wield a weapon that has "orc" in its name, you gain the benefit you chose so long as you are actually proficient with that weapon.     This feat has no effect if you are not proficient with the weapon you're using. &nl; [Bully] Gain a +1 bonus on damage rolls against creatures at least one size smaller than you. &nl; [Defender] Gain a +1 shield bonus to your AC (or +2 if wielding a two-handed weapon). &nl; [Disrupter] Add +3 to opponents' concentration checks to cast a spell within your threatened area. This only applies if you are aware of the enemy's location and are capable of taking an attack of opportunity. If you have already used all of your available attacks of opportunity for the round, this increase does not apply. &nl; [Killer] Gain a +2 competence bonus on attack rolls made to confirm critical hits. &nl; [Thug] Deal +1 point of nonlethal damage with the weapon. &nl; [Trickster] Gain a +2 bonus on a single type of combat maneuver check that you can perform with that weapon. &nl; [Special] You can gain this feat multiple times. Each time you take this feat, you must choose a different benefit. You may only apply one of these benefits per round (chosen as a free action at the start of your turn).
+
+Resolute Rager
+	TYPE:General
+	PRERACE:1,Orc
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	DESC:Fear passes quickly while you are raging.
+	BENEFIT:While raging, when under the effect of a fear effect that allows a saving throw, you can make a new saving throw against that fear effect at the start of each of your turns before acting. If you make the new save, the fear effect ends.
+
+Reverse-Feint 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Orc
+	PREFEAT:1,Toughness
+	DESC:You can goad an opponent into attacking you in order to make your counter attack all the more powerful.
+	BENEFIT:As a move action, you can leave a gap in your defenses for one adjacent opponent to use. If the opponent attacks you on its next turn, it gains a +4 bonus on its attack roll. Whether or not the opponent successfully hits, you may attack it as an immediate action with a single melee attack, gaining a +2 bonus on your attack roll.
+
+Trap Wrecker
+	TYPE:General
+	PRESKILL:1,Disable Device=1
+	PRERACE:1,Orc
+	PREFEAT:1,Power Attack
+	DESC:You can smash traps instead of disarming them.
+	BENEFIT:You can attempt to disarm a trap by striking it with a melee weapon instead of making a Disable Device check. As a full-round action, make a melee attack against an Armor Class equal to the trap's Disable Device DC. If you miss, the trap activates. If you hit, roll damage. If this damage is at least half the trap's Disable Device DC, you disable the trap. If this damage is less than half the trap's Disable Device DC, the trap activates. You can only attempt this on nonmagical traps. You must be able to reach some part of the trap with your attack in order to use this feat. At the GM's discretion, some traps may not be susceptible to this feat.
+
+Dwarf Blooded
+	TYPE:General
+	PRERACE:1,Oread
+	DESC:You have dwarven blood coursing through your veins.
+	BENEFIT:Your dwarven heritage manifests in two ways. First, your speed is never modified by armor or encumbrance, as the dwarf slow and steady racial trait. Second, you gain the stonecunning dwarf racial trait.
+
+Echoes of Stone
+	TYPE:General
+	PRERACE:1,Oread
+	DESC:Your senses are keener among the rocks and stones.
+	BENEFIT:You gain a +4 racial bonus on Perception checks underground, and on Survival checks to avoid becoming lost in caverns and rocky areas.
+
+Murmurs of Earth
+	TYPE:General
+	PRELEVEL:MIN=9
+	PRERACE:1,Oread
+	PREFEAT:1,Echoes of Stone
+	DESC:The earth opens up her secrets to your perceptions.
+	BENEFIT:You gain a limited form of tremorsense. As a move action, you become aware of all creatures within 15 feet that are in contact with the ground at that moment.
+
+Oread Burrower
+	TYPE:General
+	PRELEVEL:MIN=9
+	PRERACE:1,Oread
+	PREFEAT:1,Stony Step
+	DESC:The ground parts for you at the slightest touch, allowing you to dig with great speed.
+	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
+
+Oread Earth Glider
+	TYPE:General
+	PRELEVEL:MIN=13
+	PRERACE:1,Oread
+	PREFEAT:2,Oread Burrower,Stony Step
+	DESC:The earth welcomes you, showing you the secret paths through sand and soil.
+	BENEFIT:You gain the earth glide universal monster ability and can use it to travel at your full base speed through sand, dirt, clay, gravel, or similar materials. If protected against fire damage, you can even burrow through lava. You can burrow through solid stone at 1/2 your base speed.
+
+Stony Step
+	TYPE:General
+	PRERACE:1,Oread
+	DESC:The earth recognizes its kinship with you and does not impede your movement.
+	BENEFIT:Whenever you move, you may move through 5 feet of earth- or stone-based difficult terrain (rubble, stone stairs, and so on) each round as if it were normal terrain. The effects of this feat stack with similar feats such as Acrobatic Steps and Nimble Moves. This feat allows you to take a 5-foot step into this kind of difficult terrain.
+
+Burrowing Teeth
+	TYPE:General
+	PRERACE:1,Ratfolk
+	PREFEAT:2,Sharpclaw,Tunnel Rat
+	DESC:You have teeth and claws that suit you well to digging.
+	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
+
+Sharpclaw 
+	TYPE:Combat
+	PRERACE:1,Ratfolk
+	DESC:Your nails are large and strong.
+	BENEFIT:You gain two claw attacks. These are primary natural attacks that deal 1d4 points of damage.
+
+Tunnel Rat
+	TYPE:General
+	PRERACE:1,Ratfolk
+	PREABILITY:1,CATEGORY=Special Ability,Swarming
+	DESC:You are a master of fighting in confined spaces.
+	BENEFIT:You count as one size smaller than normal for the purpose of squeezing.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Blood Beak 
+	TYPE:Combat
+	PREATT:5
+	PRERACE:1,Tengu
+	PREABILITY:1,CATEGORY=Special Ability,Natural Weapon
+	DESC:Your bleed attack is bloody and dangerous.
+	BENEFIT:Increase the damage of your beak attack to 1d6. Furthermore, when you confirm a critical hit with your beak attack, you also deal 1 point of bleed damage. &nl; [Special] The bleed effect from this feat stacks with that of the Bleeding Critical feat and similar effects, adding 1 point to your bleed damage.
+
+Carrion Feeder
+	TYPE:General
+	PRERACE:1,Tengu
+	DESC:Like many scavengers, you can stomach foods that would make weaker creatures ill.
+	BENEFIT:You gain a +2 racial bonus on saving throws against diseases and ingested poisons (but not other poisons). You receive a +2 bonus on Survival skill checks to find food for yourself (and only yourself).
+
+Long-Nose Form
+	TYPE:General
+	PRELEVEL:MIN=3
+	PRERACE:1,Tengu
+	DESC:You can shift into the form of a human with an unusually long nose.
+	BENEFIT:Once per day, you can assume the form of a human whose nose is the length of your beak. This spell-like ability functions as alter self with a caster level equal to your level. While in this form you gain the scent ability and a +2 bonus to your Strength score. Because your long nose in this form clearly indicates you are not fully human, you do not gain the normal bonus to Disguise checks for using a polymorph effect (however, you could possibly explain the nose as an unfortunate curse or deformity, or hide it with an item such as a plague doctor's mask).
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Scavenger's Eye
+	TYPE:General
+	PRERACE:1,Tengu
+	DESC:Your gaze is naturally drawn to valuable glittering objects.
+	BENEFIT:You gain a +2 bonus on Appraise checks. You may determine the most valuable item in a hoard as a standard action and gain an additional +2 bonus on the Appraise check to do so. In addition, if you fail an Appraise check by 5 or more, you treat the check as if you had failed by less than 5. &nl; [Normal] Determining the most valuable object in a treasure hoard takes 1 full-round action.
+
+Tengu Raven Form
+	TYPE:General
+	PRELEVEL:MIN=7
+	PRERACE:1,Tengu
+	PREFEAT:1,Tengu Wings
+	DESC:You can shift into the form of a giant black raven.
+	BENEFIT:Once per day, you can take the form of a Large black bird resembling a raven, granting you a fly speed of 60 feet (good maneuverability), a +4 size bonus to your Strength, a �2 penalty to your Dexterity, and a +4 natural armor bonus. This spell-like ability otherwise functions as beast shape II with a caster level equal to your level.
+
+Tengu Wings
+	TYPE:General
+	PRELEVEL:MIN=5
+	PRERACE:1,Tengu
+	DESC:You can grow wings that allow you to fly.
+	BENEFIT:Once per day, you can sprout a pair of giant black crow's wings, granting you a fly speed of 30 feet (average maneuverability). This spell-like ability otherwise functions as beast shape I (though you do not gain any other benefits of that spell) with a caster level equal to your level.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Armor of the Pit
+	TYPE:General
+	PRERACE:1,Tiefling
+	DESC:Your fiendish traits take the form of a protective scaly skin.
+	BENEFIT:You gain a +2 natural armor bonus. &nl; [Special] If you have the scaled skin racial trait, you instead gain resistance 5 to two of the following energy types that you don't have resistance to already: cold, electricity, and fire.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Expanded Fiendish Resistance
+	TYPE:General
+	PRERACE:1,Tiefling
+	DESC:You gain extra fiendish resistances.
+	BENEFIT:Pick one of the following energy types that you do not already have resistance to: acid, cold, electricity, or fire. You gain resistance 5 to that energy type. &nl; [Special] You can take this feat multiple times. Each time you do, pick another energy type you do not have resistance to. You gain resistance 5 to that energy type.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Fiend Sight
+	TYPE:General
+	PREVISION:1,Darkvision=60
+	PRERACE:1,Tiefling
+	DESC:Your eyes develop keener sight in dim light and darkness.
+	BENEFIT:You gain low-light vision and your darkvision improves to 120 ft. &nl; [Special] You can take this feat twice. When you take it a second time, you gain the see in darkness universal monster ability.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Grasping Tail
+	TYPE:General
+	PRERACE:1,Tiefling
+	DESC:Your tail becomes more useful.
+	BENEFIT:You can use your tail to grab stowed items. While you cannot wield weapons with your tail, you can use it to retrieve small, stowed objects carried on your person as a swift action. &nl; [Special] If you have the prehensile tail racial trait, you can use your tail to grab unattended items within 5 feet as a swift action as well as to grab stowed objects carried on your person; you can hold such objects with your tail, though you cannot manipulate them with your tail (other than to put them in your hand).
+
+Aquatic Ancestry
+	TYPE:General
+	PRERACE:1,Undine
+	DESC:You favor your outsider ancestry and are better adapted to life in the water.
+	BENEFIT:You gain the amphibious special quality. Your swim speed increases by +10 feet.
+
+#  TODO: fix pretext
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Hydraulic Maneuver
+	TYPE:General
+	PRERACE:1,Undine
+	PRETEXT:Hydraulic push spell-like ability
+	DESC:You can use your hydraulic push to disarm or trip.
+	BENEFIT:You may use hydraulic push to attempt a bull rush, disarm, dirty trick (blind or dazzle, see ), or trip combat maneuver. Each time you use hydraulic push, you must decide which of the allowed combat maneuvers you want to perform. You may use this feat with your hydraulic push racial spell-like ability, your class-granted use of hydraulic push, or any hydraulic push spells you cast, but not with magic items or other external sources that use that spell. &nl; [Normal] Hydraulic push can only be used to make a bull rush combat maneuver.
+
+Steam Caster
+	TYPE:General
+	PRERACE:1,Undine
+	DESC:You imbue your fire spells with elemental water, transforming them into powerful gouts of steam.
+	BENEFIT:You may increase the casting time of a fire spell to a full-round action, infusing it with elemental power (spells with a casting time of 1 full-round action or longer do not have an increased casting time). The spell is treated as if it had the water descriptor. All fire effects of the altered spell instead manifest as superheated steam. The altered spell works normally underwater without requiring a caster level check. Unlike fire, the steam cannot ignite objects or set creatures on fire. As the spell still deals fire damage, fire resistance or immunity still applies to the spell's effects.
+
+#  TODO: fix pretext
+Triton Portal
+	TYPE:General
+	PRELEVEL:MIN=5
+	PRERACE:1,Undine
+	PRETEXT:hydraulic push spell-like ability
+	DESC:You can channel your inner magic to summon allies.
+	BENEFIT:Once per day, you may expend your racial hydraulic push ability to instead cast summon nature's ally III as a spell-like ability with a caster level equal to your character level. This use of the ability can only summon a Small water elemental or 1d3 dolphins. Using this ability is a full-round action.
+
+Water Skinned
+	TYPE:General
+	PRERACE:1,Undine
+	DESC:Your touch extinguishes small flames.
+	BENEFIT:As a standard action, you can extinguish a small nonmagical fire with a touch, affecting anything up to the size of a large campfire. This ability does not affect fires with a total area greater than 5 square feet. Touching the fire in this way does not harm you.
+
+Airy Step
+	TYPE:General
+	PRERACE:1,Sylph
+	DESC:The air responds to your innate elemental nature, protecting you from harm and cushioning your falls.
+	BENEFIT:You gain a +2 bonus on saving throws against effects with the air or electricity descriptors and effects that deal electricity damage. You may ignore the first 30 feet of any fall when determining falling damage.
+
+Cloud Gazer
+	TYPE:General
+	PRERACE:1,Sylph
+	DESC:Your insight into your elemental heritage gives you a clarity of sight few humans possess.
+	BENEFIT:You can see through fog, mist, and clouds, without penalty, ignoring any cover or concealment bonuses from such effects. If the effect is created by magic, this feat instead triples the distance you can see without penalty.
+
+Inner Breath
+	TYPE:General
+	PRELEVEL:MIN=11
+	PRERACE:1,Sylph
+	DESC:Your body is suffused with elemental air that provides for all your respiratory needs.
+	BENEFIT:You no longer need to breathe. You are immune to effects that require breathing (such as inhaled poison). This does not give you immunity to cloud or gas attacks that do not require breathing, such as cloudkill.
+
+Wings of Air
+	TYPE:General
+	PRELEVEL:MIN=9
+	PRERACE:1,Sylph
+	PREFEAT:1,Airy Step
+	DESC:The winds lift you, carrying you where you want to go.
+	BENEFIT:Your bonus on saves against effects with the air or electricity descriptors and effects that deal electricity damage increases to +4. In addition, you gain a supernatural fly speed equal to your base speed (good maneuverability). You may only fly with this ability when wearing light armor or no armor.
+
+Brewmaster
+	TYPE:General
+	PRESKILL:1,Craft (alchemy)=1
+	PRESKILL:1,Profession (brewer)=1
+	PRERACE:1,Dwarf
+	DESC:You can concoct potent brews.
+	BENEFIT:You gain a +2 bonus on Craft (alchemy) and Profession (brewer) checks, and you add +1 to the DC of any ingested poison you create.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Cleave Through 
+	TYPE:Combat
+	PREATT:11
+	PRERACE:1,Dwarf
+	PREFEAT:2,Cleave,Power Attack
+	PRESTAT:1,STR=13
+	DESC:You are ferocious at hewing smaller opponents.
+	BENEFIT:When using Cleave or Great Cleave, if your initial attack hits, you may take a single 5-foot step as a free action before making your additional attacks. If doing so places a creature within your threatened area, that creature becomes a legal target for your additional Cleave attack(s) as long as it meets all the other prerequisites. &nl; [Normal] You may only make additional attacks with Cleave against creatures you threaten when you make your initial attack.
+
+Cloven Helm 
+	TYPE:Combat
+	PREATT:11
+	PRERACE:1,Dwarf
+	PREFEAT:2,Dented Helm,Hard-Headed
+	DESC:Your helm turns aside lethal blows.
+	BENEFIT:When wearing a helmet, you add +1 to your AC against critical hit confirmation rolls; this benefit stacks with Dented Helm. When you use Dented Helm to deflect a critical hit, you may apply all damage from the critical hit to your helmet before applying any damage to yourself. If you take no damage, any additional effects, such as critical feats or poison, are negated.
+
+Dented Helm 
+	TYPE:Combat
+	PREATT:6
+	PRERACE:1,Dwarf
+	PREFEAT:1,Hard-Headed
+	DESC:Your helm protects you from hard hits.
+	BENEFIT:When wearing a helmet, you add +1 to your AC against critical hit confirmation rolls. When a critical hit is confirmed against you, as an immediate action, you can apply half of the damage from the attack to your helmet rather than yourself, applying hardness as normal. If the damage destroys your helmet, any leftover damage is applied to you. After using this feat, you are staggered until the end of your next turn. You may not use this feat if your helmet has the broken condition or the attack ignores armor bonuses to AC.
+
+Giant Killer 
+	TYPE:Combat
+	PREATT:11
+	PRERACE:1,Dwarf
+	PREFEAT:5,Cleave,Goblin Cleaver,Orc Hewer,Power Attack,Strike Back
+	PRESTAT:1,STR=13
+	DESC:Your cleaving strokes menace giants and larger foes.
+	BENEFIT:This functions as Goblin Cleaver, but your additional attacks can be made against creatures one size category larger than you or smaller. In addition, any such attacks made against humanoids (giant) gain a +2 circumstance bonus on attack rolls.
+
+Goblin Cleaver 
+	TYPE:Combat
+	PRERACE:1,Dwarf
+	PREFEAT:2,Cleave,Power Attack
+	PRESTAT:1,STR=13
+	DESC:You are ferocious at hewing smaller opponents.
+	BENEFIT:When using Cleave or Great Cleave, if your initial attack hits, you may take your additional attacks against any creature smaller than you that you threaten; your targets need not be adjacent to one another. Additional attacks you make against humanoids (goblinoid) gain a +2 circumstance bonus on attack rolls.
+
+Hard-Headed 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Dwarf
+	DESC:Your thick skull is almost a weapon unto itself.
+	BENEFIT:You gain a +1 bonus on attack rolls and combat maneuver checks made using a helmet. You receive a +2 bonus on saves against spells and special abilities that cause you to become staggered or stunned.
+
+#  TODO: fix pretext
+Ledge Walker
+	TYPE:General
+	PRERACE:1,Dwarf
+	PRESTAT:1,DEX=13
+	PRETEXT:mountaineer or stability racial trait
+	DESC:You negotiate tiny ledges like a mountain goat.
+	BENEFIT:You can move at full speed while using Acrobatics to balance on narrow surfaces, and you gain a +4 bonus on Climb checks to catch yourself or another creature while falling. You also gain a +4 bonus on saving throws against effects that would cause you to fall prone (such as earthquakes). This bonus does not apply to your CMD against bull rush or trip attacks.
+
+Orc Hewer 
+	TYPE:Combat
+	PRERACE:1,Dwarf
+	PREFEAT:3,Cleave,Goblin Cleaver,Power Attack
+	PRESTAT:1,STR=13
+	DESC:You are ferocious at hewing your enemies, especially orcs.
+	BENEFIT:This feat functions as Goblin Cleaver, but your additional attacks can be made against creatures your size or smaller. In addition, any such attacks that you make against humanoids (orc) gain a +2 circumstance bonus on attack rolls.
+
+Shatterspell 
+	TYPE:Combat
+	PRERACE:1,DwarfPRECLASS:1,Fighter=10
+	PREFEAT:2,Disruptive,Spellbreaker
+	DESC:Your mighty blows shatter your enemy's magic.
+	BENEFIT:As a standard action, you can attempt to sunder an ongoing spell effect as if you had the spell sunder rage power (Ultimate Combat 28). You may use this feat once per day, plus one additional time per day for every 5 points by which your base attack bonus exceeds +10.
+
+Toxic Recovery
+	TYPE:General
+	PRERACE:1,Dwarf
+	PREABILITY:1,CATEGORY=Special Ability,Hardy
+	DESC:Your system recuperates from the effects of poisons with astonishing speed.
+	BENEFIT:Whenever you succeed at a saving throw against poison, you heal 1 point of ability damage of the type dealt by the poison. Whenever you heal ability damage naturally or magically, you heal 1 additional point of ability damage. This feat has no effect on penalties to ability scores or ability drain.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Attuned to the Wild
+	TYPE:General
+	PRERACE:1,Elf
+	DESC:You share a strong mystic connection with one type of wilderness terrain.
+	BENEFIT:Select one type of terrain from the ranger class's favored terrain class feature (except urban). While you are in your selected terrain type, your natural healing rate (the amount of hit points and ability damage you heal from a full night's rest) doubles. &nl; [Special] You can take this feat multiple times. Its effects do not stack. Each time you take it, it applies to a different terrain type.
+
+Elven Battle Training 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Elf
+	DESC:You have been specially trained to wield a variety of traditional elven weapons.
+	BENEFIT:You have received special training with traditional elven weapons (longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and any weapon with the word "elven" in its name). You receive a +2 bonus to your CMD against disarm and sunder maneuvers directed at one of these weapons you are wielding. In addition, if you are wielding one of these melee weapons, you may make an additional attack of opportunity each round (this bonus stacks with Combat Reflexes).
+
+Guardian of the Wild
+	TYPE:General
+	PRERACE:1,Elf
+	PREFEAT:1,Attuned to the Wild
+	DESC:Your mystic connection with the wilderness enhances your ability to react to threats.
+	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 dodge bonus to Armor Class. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
+
+Mage of the Wild
+	TYPE:General
+	PRERACE:1,Elf
+	PREFEAT:1,Attuned to the Wild
+	DESC:Your mystic connection with the wilderness enhances your spellcasting.
+	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 bonus on caster level checks, concentration checks, and, Knowledge (arcana) and Spellcraft checks. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
+
+Spirit of the Wild
+	TYPE:General
+	PRERACE:1,Elf
+	PREFEAT:2,Attuned to the Wild,Guardian of the Wild
+	DESC:Your mystic connection with one type of wilderness has grown even stronger.
+	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +4 bonus on Perception checks made to act in the surprise round of combat. If you act in the surprise round, you gain blindsense out to a range of 30 feet during the surprise round. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one terrain type.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Casual Illusionist
+	TYPE:General
+	PRERACE:1,Gnome
+	PREABILITY:1,CATEGORY=Special Ability,Gnome Magic
+	DESC:You can use your innate magic to create minor illusions that augment your efforts at trickery and deceit.
+	BENEFIT:As long as you have at least one spell-like ability unused from your gnome magic racial trait, you gain a +2 racial bonus on all Bluff, Disguise, and Sleight of Hand checks you make. At 10th level, these bonuses increase to +4. &nl; [Special] This feat counts as the Deceitful feat for the purposes of all prerequisites.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Expanded Resistance
+	TYPE:General
+	PRERACE:1,Gnome
+	PREABILITY:1,CATEGORY=Special Ability,Illusion Resistance
+	DESC:You have expanded your natural resistance to magic to encompass different kinds of magic.
+	BENEFIT:Select one school of magic other than illusion. You gain a +2 racial bonus on saving throws against spells or effects from the selected school. &nl; [Special] You may select this feat more than once. Its effects do not stack. Each time you select it, it applies to a different school of magic.
+
+Gnome Weapon Focus 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,GnomePREWEAPONPROF:1,TYPE.Martial
+	DESC:Your extensive training with traditional gnome weapons gives you an advantage.
+	BENEFIT:You gain a +1 bonus on attack rolls with gnome weapons (weapons with "gnome" in the title).
+
+Great Hatred 
+	TYPE:Combat
+	PRERACE:1,Gnome
+	PREABILITY:1,CATEGORY=Special Ability,Hatred
+	DESC:Your rage burns with vast intensity.
+	BENEFIT:You gain an additional +1 bonus on melee and thrown weapon attacks against targets of your hatred racial trait.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Vast Hatred 
+	TYPE:Combat
+	PRERACE:1,Gnome
+	PREABILITY:1,CATEGORY=Special Ability,Hatred
+	DESC:Your rage stretches beyond normal bounds.
+	BENEFIT:Select two creature types (and subtypes where appropriate) from the list of potential favored enemies from the ranger class ability. Your +1 attack bonus from the hatred racial trait applies to creatures of the selected types (and subtypes). &nl; [Special] You may take this feat more than once. Its benefits do not stack. Each time you select this feat, you select two additional creature types to which your hatred racial trait applies.
+
+Discerning Eye
+	TYPE:General
+	PRERACE=1,Elf,Half-Elf
+	PREABILITY:1,CATEGORY=Special Ability,Keen Senses
+	DESC:You are not easily fooled by illusions and forgeries.
+	BENEFIT:You receive a +2 racial bonus on saving throws against illusion spells and effects and a +2 bonus on Linguistic checks to detect forgeries. You can use the Linguistic skill to detect forgeries untrained.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Elven Spirit
+	TYPE:General
+	PRERACE:1,Half-elf
+	DESC:Although you are of mixed heritage, you are closer to your elven relatives and the magic in their blood flows freely in your veins.
+	BENEFIT:You possess the elven magic racial trait of the elves, granting you a +2 racial bonus on caster level checks made to overcome spell resistance. In addition, you receive a +2 racial bonus on Spellcraft checks made to identify the properties of magic items. Alternatively, you can instead gain any one racial trait that elves can exchange for the elven magic racial trait. &nl; [Special] You can only take this feat at 1st level. If you take this feat, you cannot take the Human Spirit feat.
+
+Exile's Path
+	TYPE:General
+	PRERACE:1,Half-elf
+	DESC:A lifetime spent shunned by others and eschewing your heritage makes you resistant to efforts to pry inside of your mind.
+	BENEFIT:Once per day, when you fail a Will save against an enchantment spell or effect, you may reroll that saving throw, but must take the reroll result even if it's worse.
+
+Half-Drow Paragon
+	TYPE:General
+	PRERACE:1,Half-elf
+	PREABILITY:2,CATEGORY=Special Ability,Drow-Blooded,Drow Magic
+	DESC:Your drow blood is particularly strong.
+	BENEFIT:You count as a drow for any effects that relate to race. Furthermore, the spell-like abilities granted to you by your drow magic racial trait count as drow spell-like abilities for the purposes of any feat prerequisites.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Human Spirit
+	TYPE:General
+	PRERACE:1,Half-elf
+	DESC:Your blood burns with the passion and unyielding quest for self-improvement displayed so prominently by your human relatives.
+	BENEFIT:You receive 1 bonus skill rank. Whenever you gain another Hit Die, you gain an additional skill rank. You cannot gain more than four skill ranks in this way. &nl; [Special] You can only take this feat at 1st level. If you take this feat, you cannot take the Elven Spirit feat.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Multitalented Mastery
+	TYPE:General
+	PRELEVEL:MIN=5
+	PRERACE:1,Half-elf
+	PREABILITY:1,CATEGORY=Special Ability,Multitalented
+	DESC:You are adept at numerous disciplines.
+	BENEFIT:All of your classes are considered favored classes. You gain either +1 hit point or +1 skill point whenever you take a level in any class. Apply these bonuses retroactively for all class levels that have not yet gained one of these bonuses. &nl; [Normal] Half-elves with the multitalented racial trait have two favored classes.
+
+Neither Elf nor Human
+	TYPE:General
+	PRELEVEL:MIN=11
+	PRERACE:1,Half-elf
+	PREFEAT:2,Exile's Path,Seen and Unseen
+	DESC:You have removed yourself from your heritage so thoroughly that even magic does not recognize you.
+	BENEFIT:You are not considered elven or human for the purpose of harmful spells or effects based on your type, like a bane weapon or a ranger's favored enemy class feature.
+
+Seen and Unseen
+	TYPE:General
+	PRELEVEL:MIN=5
+	PRERACE:1,Half-elf
+	PREFEAT:1,Exile's Path
+	DESC:Your anonymity makes you difficult to find through magical or mundane means, and you have learned how to combat both of your progenitor races.
+	BENEFIT:You gain a +2 bonus on all saving throws against scrying or divination effects. Additionally, you gain a +2 bonus on all Stealth checks, and elves, half-elves, and humans take a �4 penalty on all efforts to track you through the Survival skill.
+
+Shared Manipulation
+	TYPE:General
+	PRERACE:1,Half-elf
+	PRESTAT:1,CHA=13
+	DESC:You can subtly bolster allies' ability to misdirect and infuriate their enemies.
+	BENEFIT:As a move action, you can grant all friendly creatures within 30 feet who can see or hear you a +2 bonus on Bluff or Intimidate checks (choose which skill to affect each time you use this ability) for a number of rounds equal to your Charisma modifier (minimum 1 round).
+
+Beast Rider
+	TYPE:General
+	PREABILITY:1,CATEGORY=Special Ability,Nature's Bond ~ Animal Companion,Special Mount,Companion ~ Hunter's Bond
+	PRELEVEL:MIN=7
+	PRERACE=1,Orc,Half-Orc
+	DESC:You gain the service of a monstrous companion or mount.
+	BENEFIT:Select one of the following creature types: elephant, pteranodon, rhinoceros, stegosaurus, or triceratops. Add this creature type to your list of possible animal companions or mounts. When summoning a creature of the selected type to serve as a mount or companion, treat your effective druid level as if it were two levels higher (to a maximum of your character level). If the creature is large enough for you to ride, it gains the combat training general purpose (see Handle Animal) at no cost.
+
+Blood Vengeance
+	TYPE:General
+	PRERACE=1,Orc,Half-Orc
+	!PREALIGN:LG,LN,LE
+	DESC:Seeing an ally fall in combat fills you with a raging and murderous fury.
+	BENEFIT:Whenever one of your allies is reduced to negative hit points or killed, you may enter a state similar to but less powerful than a barbarian's rage as a free action on your next turn. If you have the rage class feature and are already raging, your morale bonuses to Strength and Constitution increase by +2 for the duration of your rage. If you do not have the rage class feature, or you have no more rage rounds left, this weaker rage gives you all the benefits and penalties of a barbarian's rage, except your morale bonus to Strength and Constitution is only +2. In either case, this state lasts for 4 rounds. As with a barbarian's rage, when this weaker rage ends, you are fatigued; if another ally falls before this duration ends, the weaker rage lasts for an additional 4 rounds. This feat does not allow you to enter a rage if you are fatigued. You may only use this feat if the fallen ally had at least as many Hit Dice as you (excluding conjured or summoned allies).
+
+Destroyer's Blessing 
+	TYPE:Combat
+	PRERACE=1,Orc,Half-Orc
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	DESC:Breaking things adds to your power.
+	BENEFIT:When you are raging and you succeed at a sunder combat maneuver, you regain 1 round of rage. If the sunder attempt causes the object to gain the broken condition, you heal 1 hit point. You can only gain these benefits once per round.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Ferocious Resolve
+	TYPE:General
+	PRERACE:1,Half-orc
+	PREABILITY:1,CATEGORY=Special Ability,Orc Ferocity
+	PRESTAT:1,CON=13
+	DESC:Your orc heritage allows you to fight on.
+	BENEFIT:You gain the ferocity universal monster ability, allowing you to continue fighting at negative hit points. When using this ability, you gain a +2 bonus on Intimidate checks. &nl; [Normal] A half-orc with the orc ferocity racial trait can fight for 1 more round after he is brought below 0 hit points.
+
+Ferocious Summons
+	TYPE:General
+	PRERACE=1,Orc,Half-Orc
+	PREFEAT:2,Augment Summoning,Spell Focus(Conjuration)
+	DESC:Your summoned creatures gain your ferocity.
+	BENEFIT:Creatures you summon gain the ferocity universal monster ability.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Ferocious Tenacity 
+	TYPE:Combat
+	PRERACE=1,Orc,Half-Orc
+	PREABILITY:2,CATEGORY=Special Ability,Ferocity,Rage
+	DESC:You spit in the face of death.
+	BENEFIT:Once per day when raging, if you are hit by an attack that would deal enough hit points of damage to kill you (negative hit points equal to your Constitution score), as an immediate action you may expend 1 or more rounds of rage to negate some of this damage and keep yourself alive. Each round of rage you spend reduces the attack's damage by 1 point, but cannot reduce the damage taken below 1 hit point. For example, if you are raging, have a raging Constitution score of 18, are currently at 2 hit points, and take 20 hit points of damage from a hit (which is enough to bring you to �18 hit points, thereby killing you), you may spend 1 round of rage to reduce the damage by 1 hit point (leaving you perilously close to death at �17 hit points); if you spend 17 rounds of rage, you reduce the damage to 1 (the minimum), leaving you with 1 hit point. &nl; [Note] If this damage still makes you fall unconscious, your rage ends just like it normally would, lowering your Constitution to its normal value and reducing your hit point total as normal. Therefore, it is possible to use this feat to prevent yourself from instantly dying, yet you still die because your negative hit points exceed your normal Constitution score�take your normal Constitution into account when deciding how many rounds of rage to spend with this feat.
+
+Gore Fiend
+	TYPE:General
+	PRERACE=1,Orc,Half-Orc
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	DESC:Horrible wounds, whether on yourself or your enemies, make your blood sing.
+	BENEFIT:When you are raging and you confirm a critical hit with a melee weapon or a critical hit is confirmed on you (whether by a melee weapon, spell, or ranged weapon), you regain 1 round of rage (up to your maximum for the day). You can only gain this benefit once per round.
+
+Horde Charge 
+	TYPE:Teamwork
+	PREATT:1
+	PRERACE=1,Orc,Half-Orc
+	DESC:When you charge with an ally, you are more deadly.
+	BENEFIT:When charging during the same round as an ally with this feat, you gain a +2 bonus on attack and damage rolls in addition to the normal bonus for charging. If you can make multiple attacks on a charge, this bonus only applies to the first attack.
+
+Improved Surprise Follow-Through 
+	TYPE:Combat
+	PREATT:8
+	PREFEAT:4,Cleave,Great Cleave,Power Attack,Surprise Follow-Through
+	PRESTAT:1,STR=13
+	DESC:You follow up an attack with a surprising series of sweeping blows.
+	BENEFIT:When using Great Cleave, each opponent you attack on your turn (other than the first) is denied his Dexterity bonus against you.
+
+Resilient Brute
+	TYPE:General
+	PRERACE=1,Orc,Half-Orc
+	DESC:You absorb punishment others find deadly.
+	BENEFIT:Once per day, when a creature confirms a critical hit against you, you may treat half the damage as nonlethal damage. You cannot use this ability if you are immune to nonlethal damage. When your base attack bonus reaches +10, you may use this ability an additional time per day.
+
+Surprise Follow-Through 
+	TYPE:Combat
+	PREATT:1
+	PREFEAT:2,Cleave,Power Attack
+	PRESTAT:1,STR=13
+	DESC:When striking one opponent, you catch its ally off guard.
+	BENEFIT:When using Cleave or Great Cleave, the second foe you attack on your turn is denied its Dexterity bonus against you.
+
+Sympathetic Rage 
+	TYPE:Combat
+	PRERACE=1,Orc,Half-Orc
+	!PREALIGN:LG,LN,LE
+	DESC:Seeing an ally rage fills you with your own fury.
+	BENEFIT:Whenever you are adjacent to an ally who is raging, you may choose to enter a similar but less powerful rage as a free action on your turn. This weaker rage gives you all the benefits and penalties of a barbarian's rage, except your morale bonus to Strength and Constitution is only +2. There is no limit to how long you can rage, as long as you remain adjacent to a raging ally (for example, you could take a 5-foot step away from one raging ally toward another raging ally and maintain your rage). As with a barbarian's rage, when this weaker rage ends, you are fatigued. You cannot use this feat if you are fatigued.
+
+Tenacious Survivor
+	TYPE:General
+	PRERACE=1,Orc,Half-Orc
+	PREFEAT:2,Diehard,Endurance
+	PRESTAT:1,CON=13
+	DESC:Your spirit lingers long after any other's would have passed on.
+	BENEFIT:When you are killed by hit point damage, your soul lingers in your body for a number of rounds equal to your Constitution bonus. You are still dead, but a creature can make a DC 10 Heal check as a standard action to realize that you can still be saved. You can be healed by magic as if you were alive. If you are healed enough hit points that you would no longer be dead, you are alive again, but you gain one permanent negative level.
+
+Thrill of the Kill
+	TYPE:General
+	PRERACE=1,Orc,Half-Orc
+	PREABILITY:1,CATEGORY=Special Ability,Rage
+	DESC:Killing fuels your rage.
+	BENEFIT:When you are raging and your attack reduces an enemy to negative hit points or kills it, you regain 1 round of rage. You may only use this feat if the fallen enemy had at least as many Hit Dice as you. You can only gain this benefit once per round.
+
+Adaptive Fortune
+	TYPE:General
+	PRELEVEL:MIN=10
+	PRERACE:1,Halfling
+	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
+	PREFEAT:1,Fortunate One
+	DESC:Your luck takes on almost legendary proportions.
+	BENEFIT:Increase the number of times per day you can use the adaptable luck racial trait by 1. Furthermore, when you use adaptable luck, increase the luck bonus for each type of use by 2.
+
+Blundering Defense 
+	TYPE:Combat
+	PRERACE:1,Halfling
+	PREFEAT:1,Cautious Fighter
+	DESC:Your feverish and sometimes comical defensive techniques offer enough distraction to aid allies.
+	BENEFIT:Whenever you fight defensively or use the total defense action, allies gain a luck bonus to AC and CMD equal to 1/2 the dodge bonus you gain from the action you are taking. Allies only gain this bonus while they are adjacent to you.
+
+Cautious Fighter 
+	TYPE:Combat
+	PRERACE:1,Halfling
+	DESC:You care more about survival than victory.
+	BENEFIT:When fighting defensively or using total defense, your dodge bonus to AC increases by 2.
+
+Courageous Resolve
+	TYPE:General
+	PRERACE:1,Halfling
+	PREABILITY:2,CATEGORY=Special Ability,Craven,Fearless
+	DESC:Even when others run, you tend to stand your ground.
+	BENEFIT:If you have the fearless racial trait, your racial bonus on saving throws against fear effects increases to +4. If you have the craven racial trait, you still take the �2 penalty on fear saves, but you can gain the benefit of morale bonuses on saving throws against fear effects.
+
+Desperate Swing 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Halfling
+	PREFEAT:1,Cautious Fighter
+	DESC:You land your most telling blows in desperate situations.
+	BENEFIT:Once per day, you can make a single melee attack while taking the total defense action. You take a �4 penalty on attack rolls when making this attack. You also gain a +4 bonus on critical confirmation rolls made while fighting defensively or making an attack of opportunity using this feat.
+
+Fortunate One
+	TYPE:General
+	PRERACE:1,Halfling
+	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
+	DESC:You have an even greater knack than most halflings for adaptable luck.
+	BENEFIT:The number of times per day you can use the adaptable luck racial trait increases by 1.
+
+Improved Low Blow 
+	TYPE:Combat
+	PREATT:4
+	PRERACE:1,Halfling
+	PREABILITY:1,CATEGORY=Special Ability,Low-blow
+	DESC:You are adept at hitting larger opponents where it hurts.
+	BENEFIT:Your bonus to confirm critical hits against opponents larger than yourself improves to +2. Furthermore, once per day, after you fail to hit with a critical hit confirmation roll, you can reroll the confirmation roll, but must take the new result even if it is worse.
+
+Lucky Healer
+	TYPE:General
+	PRERACE:1,Halfling
+	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
+	DESC:Your luck allows you to draw from magical healing far more efficiently than most.
+	BENEFIT:Spend a use of your adaptive luck racial trait to reroll the damage healed from a single magical healing effect (such as a spell with "cure" in the title or channel energy). You regain a number of hit points equal to the new roll or the original roll, whichever is greater. Other creatures healed by the effect do not gain this benefit.
+
+Lucky Strike 
+	TYPE:Combat
+	PREATT:5
+	PRERACE:1,Halfling
+	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
+	DESC:Your luck increases the potency of your weapon attacks.
+	BENEFIT:Spend a use of your adaptive luck racial trait to reroll the damage from a single weapon attack. You deal damage equal to the new damage roll, or the original roll, whichever is greater.
+
+Risky Striker 
+	TYPE:Combat
+	PREATT:1
+	PRERACE:1,Halfling
+	DESC:You can make yourself a little more vulnerable to larger creatures in order to land a devastating blow.
+	BENEFIT:You can choose to take a �1 penalty to AC to gain a +2 bonus on melee damage rolls against creatures two or more size categories larger than you. When your base attack bonus reaches +4 and every four levels thereafter, the damage increases by 2. The bonus damage is multiplied in the case of a critical hit. You can only choose to use this feat when you declare that you are making an attack action or a full-attack action with a melee weapon. The effects last until your next turn.
+
+Sure and Fleet
+	TYPE:General
+	PRERACE:1,Halfling
+	PREABILITY:1,CATEGORY=Special Ability,Fleet Of Foot
+	DESC:You are both fast and careful.
+	BENEFIT:You gain a +2 racial bonus on Acrobatics and Climb checks.
+
+Surprise Strike 
+	TYPE:Combat
+	PREATT:6
+	PRERACE:1,Halfling
+	PREFEAT:2,Cautious Fighter,Desperate Swing
+	DESC:You actually seem to do more damage when frantically trying to avoid your enemies.
+	BENEFIT:Once per day, when fighting defensively or making an attack of opportunity while taking the total defense action with the Desperate Swing feat, you take no penalty on the attack roll.
+
+Uncanny Defense 
+	TYPE:Combat
+	PREATT:3
+	PRERACE:1,Halfling
+	PREFEAT:1,Cautious Fighter
+	DESC:Your instinct for self-preservation gives you many advantages.
+	BENEFIT:While fighting defensively or taking the total defense action, you gain a bonus on your Reflex saving throws and to your CMD equal to 1/2 of the dodge bonus to AC you gained from taking that action.
+
+Bestow Luck
+	TYPE:General
+	PRERACE:1,Human
+	PREFEAT:2,Defiant Luck,Inexplicable Luck
+	DESC:You are extremely lucky and sometimes your allies are as well.
+	BENEFIT:You gain an extra use per day of your Defiant Luck ability. You can also use your Inexplicable Luck ability to grant an ally that can see and hear its benefit as an immediate action.
+
+Critical Versatility 
+	TYPE:CombatPRECLASS:1,Fighter=11
+	PRERACE:1,Human
+	DESC:An open mind and combat training grant versatility to your critical hits.
+	BENEFIT:Once per day, you can spend 1 hour practicing maneuvers to gain one single critical feat that you meet the prerequisites for. You gain the benefits of the chosen critical feat until you choose to practice a different critical feat.
+
+Dauntless Destiny
+	TYPE:General
+	PRESKILL:1,Intimidate=10
+	PRERACE:1,Human
+	PREFEAT:1,Fearless Curiosity
+	PRESTAT:1,CHA=13
+	DESC:Your ability to avert disaster is impressive.
+	BENEFIT:You gain a +1 bonus on saving throws against effects with the emotion descriptor; this bonus stacks with those granted by Fearless Curiosity and Intimidating Confidence. In addition, once per day you may reroll a natural 1 on a saving throw or an attack roll. If your reroll results in a successful saving throw or attack roll, as a free action you can make an Intimidate check to demoralize the target of your attack or the creature that forced you to make a saving throw, as long as the creature is within 30 feet and can see and hear you. This effect does not apply on saving throws against traps or other objects. This does not stack with other effects that allow you to reroll a saving throw or an attack roll. You may only make one reroll.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Defiant Luck
+	TYPE:General
+	PRERACE:1,Human
+	DESC:You can sometimes defiantly shrug off spells and attacks that would kill a lesser creature.
+	BENEFIT:Once per day, after you roll a natural 1 on a saving throw or a critical hit is confirmed against you, you can either reroll that saving throw, or force the creature that confirmed the critical hit against you to reroll the critical confirmation roll. This does not stack with other effects that allow you to reroll a saving throw or an attack roll. You may only make one reroll. &nl; [Special] If you are using the optional hero point system, you can also spend 1 hero point when a critical hit is confirmed against you to have the opponent reroll the critical hit confirmation roll.
+
+Fast Learner
+	TYPE:General
+	PRERACE:1,Human
+	PRESTAT:1,INT=13
+	DESC:You progress gain extra versatility.
+	BENEFIT:When you gain a level in a favored class, you gain both +1 hit point and +1 skill rank instead of choosing either one or the other benefit or you can choose an alternate class reward.
+
+Fearless Curiosity
+	TYPE:General
+	PRERACE:1,Human
+	PRESTAT:1,CHA=13
+	DESC:Your desire to see and experience the world overrides healthy caution.
+	BENEFIT:You gain a +1 bonus on saving throws against effects with the emotion descriptor. In addition, for any round in which you begin your turn affected by a fear effect, you gain a new save at the beginning of your turn to reduce the severity of the fear effect, from panicked to frightened, frightened to shaken, and shaken to unaffected.
+
+Heroic Will
+	TYPE:General
+	PRECHECKBASE:1,Will=4
+	PRERACE:1,Human
+	PREFEAT:1,Iron Will
+	DESC:Your indomitable will breaks free from mental shackles.
+	BENEFIT:Once per day as a standard action, you may attempt a new saving throw against a harmful condition requiring a Will save that is affecting you. If you are dominated, controlled, or cannot take an action because of the effect against which you are trying to make a new saving throw, you can make this saving throw at the start of the turn as no action, but on a success, your turn ends. You cannot use this feat to remove instantaneous effects, effects that do not require a Will save, or effects that do not allow a saving throw.
+
+Huntmaster
+	TYPE:General
+	PREABILITY:1,CATEGORY=Special Ability,Nature's Bond ~ Animal Companion,Special Mount,Companion ~ Hunter's Bond
+	PRESKILL:1,Handle Animal=1
+	PRERACE:1,Human
+	DESC:You are an expert trainer of horses, hounds, falcons, or hunting cats.
+	BENEFIT:If you have the animal companion class feature, pick one of the following types of animal companions that this feat affects: bird, dog, small cat, or horse. If you have the divine bond (mount) or mount class feature, this feat always affects horses. You gain a +2 bonus on Handle Animal and Knowledge (nature) checks with creatures of that type of animal. Furthermore, you are treated as one level higher when determining the abilities of your animal companion or mount, as long as it is of the chosen type.
+
+Improved Improvisation
+	TYPE:General
+	PRERACE:1,Human
+	PREFEAT:2,Fast Learner,Improvisation
+	PRESTAT:1,INT=13
+	DESC:You are masterful in your improvisation.
+	BENEFIT:Your nonproficiency penalty with weapons, armor, and shields is halved. In addition, the bonus on all skill checks for skills you have no ranks in increases to +4 instead of +2.
+
+Improvisation
+	TYPE:General
+	PRERACE:1,Human
+	PREFEAT:1,Fast Learner
+	PRESTAT:1,INT=13
+	DESC:You can figure out how to do almost anything.
+	BENEFIT:You gain a +2 bonus on all skill checks for skills you have no ranks in. Furthermore, you can use all trained skills untrained.
+
+Inexplicable Luck
+	TYPE:General
+	PRERACE:1,Human
+	PREFEAT:1,Defiant Luck
+	DESC:Others are often dumfounded by your luck.
+	BENEFIT:Once per day, as a free action before a roll is made, you gain a +8 bonus on any single d20 roll. You can also use this ability after the roll is made, but if you do, this bonus is reduced to +4.
+
+Intimidating Confidence
+	TYPE:General
+	PRESKILL:1,Intimidate=5
+	PRERACE:1,Human
+	PREFEAT:1,Fearless Curiosity
+	PRESTAT:1,CHA=13
+	DESC:You have boundless faith in your success.
+	BENEFIT:You gain a +1 bonus on saving throws against effects with the emotion descriptor; this bonus stacks with the bonus granted by Fearless Curiosity. When you confirm a critical hit, as a free action you can make an Intimidate check to demoralize one creature you threaten. If you have the Dazzling Display feat, you can make Intimidate checks to demoralize all creatures you threaten instead. You gain a +2 bonus on this check if your weapon has a �3 critical modifier, or +4 if it has a �4 critical modifier.
+
+Martial Mastery 
+	TYPE:CombatPRECLASS:1,Fighter=16
+	PRERACE:1,Human
+	PREFEAT:1,Martial Versatility
+	DESC:You broaden your study of weapons to encompass multiple similar weapons.
+	BENEFIT:Each combat feat you have that applies to a specific weapon (e.g., Weapon Focus) can be used with all weapons in the same weapon group.
+
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+Martial Versatility 
+	TYPE:CombatPRECLASS:1,Fighter=4
+	PRERACE:1,Human
+	DESC:You further broaden your study of weapons to encompass multiple similar weapons.
+	BENEFIT:Choose one combat feat you know that applies to a specific weapon (e.g., Weapon Focus). You can use that feat with any weapon within the same weapon group. &nl; [Special] You may take this feat more than once. Each time it applies to a different feat.
+
+
+#
+# End
+#
