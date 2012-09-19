@@ -4,7 +4,7 @@ Shape Change	KEY:Starting Shape Change ~ Imp Companion	CATEGORY:Special Ability	
 Bonus Tricks	KEY:Bonus Tricks ~ Imp Companion	CATEGORY:Special Ability	TYPE:SpecialQuality	DEFINE:ImpCompBonusTricks|0	DESC:The Imp Companion has %1 other choices of bonus tricks. It can choose one alternate form, spell-like ability or telepathy per trick.|ImpCompBonusTricks	BONUS:ABILITYPOOL|Imp Companion Trick|var("ImpCompBonusTricks")	ASPECT:Ability Benefit|%1|ImpCompBonusTricks
 Link	KEY:Link ~ Imp Companion	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:The diabolist has an empathic link with her imp to a 1 mile distance. The diabolist can communicate emphatically with the imp, but cannot see through its eyes. Because of the link's limited nature, only general emotions can be shared. The diabolist has the same connection to an item or place that her imp does.
 Share Spells	KEY:Share Spells ~ Imp Companion	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:The diabolist may cast a spell with a target of “You” on her imp (as a touch spell) instead of on herself. A diabolist may cast spells on her imp even if the spells do not normally affect creatures of the imp's type (outsider).
-Poison	KEY:Poison ~ Imp Companion	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DEFINE:PoisonDC|10+(HD/2)+CON	DESC:Sting--injury; save Fort DC %1; frequency 1/round for 6 rounds; effect 1d2 Dex; cure 1 save.|PoisonDC	BONUS:VAR|PoisonDC|2|PREFEAT:1,Ability Focus (Poison)	SOURCEPAGE:p.78	ASPECT:Ability Benefit|(DC %1)|PoisonDC^M
+Poison	KEY:Poison ~ Imp Companion	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary	DEFINE:PoisonDC|10+(HD/2)+CON	DESC:Sting - injury; save Fort DC %1; frequency 1/round for 5 minutes; effect 1d2 Dex; cure 1 save.|PoisonDC	BONUS:VAR|PoisonDC|2|PREFEAT:1,Ability Focus (Poison)	SOURCEPAGE:p.78	ASPECT:Ability Benefit|(DC %1)|PoisonDC^M
 
 
 
@@ -12,7 +12,7 @@ Poison	KEY:Poison ~ Imp Companion	CATEGORY:Special Ability	TYPE:SpecialAttack.Ex
 
 ## Telepathy
 ## TODO: Grant telepathy as a language. Take this from core/core_bestiary
-Telepathy	KEY:Imp Companion Trick ~ Telepathy	CATEGORY:Special Ability	TYPE:SpecialQuality.SuperNatural.ImpCompTrick	DESC:The imp gains telepathy with a range of 50 feet, allowing it to communicate with any intelligent creature.		BENEFIT:The imp gains telepathy with a range of 50 feet, allowing it to communicate with any intelligent creature.
+Telepathy	KEY:Imp Companion Trick ~ Telepathy	CATEGORY:Special Ability	TYPE:Internal.ImpCompTrick		ABILITY:Special Ability|AUTOMATIC|Telepathy	BONUS:VAR|TelepathyRange|-50		DESC:The imp gains telepathy with a range of 50 feet, allowing it to communicate with any intelligent creature.		BENEFIT:The imp gains telepathy with a range of 50 feet, allowing it to communicate with any intelligent creature.
 
 ## Alternate forms
 Alternate Form (Boar)	KEY:Imp Companion Trick ~ Alternate Form (Boar)	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike.ImpCompTrick.ImpCompStartTrick	!PREABILITY:1,CATEGORY=Special Ability,Imp Companion Trick ~ Alternate Form (Boar)	DESC:The Imp can assume the form of a boar as if using beast shape I.	BENEFIT:The Imp can assume the form of boar as if using beast shape I.
