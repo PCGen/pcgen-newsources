@@ -14,16 +14,11 @@
 #	PREABILITY:1,CATEGORY=Special Ability,Smite Evil
 #	PREATT:5
 #	BENEFIT:While using your smite evil class feature, as a swift action at the start of your turn, you can forgo the bonus on damage rolls and instead gain half that bonus as a bonus on combat maneuver checks against the target of your smite. The effects of your smite evil feature return to normal at the start of your next turn.
-
-# TODO. Hard.
-Amateur Gunslinger
-	SOURCEPAGE:p.89
-	TYPE:Combat
-	DESC:Although you are not a gunslinger, you have and can use grit.
-	!PREABILITY:1,CATEGORY=Special Ability,Grit
-	PRETEXT:You have no levels in a class that has the grit class feature
-	BENEFIT:You gain a small amount of grit and the ability to perform a single 1st-level deed from the gunslinger deed class feature. At the start of the day, you gain 1 grit point, though throughout the day you can gain grit points up to a maximum of your Wisdom modifier (%1) (minimum 1). You can regain grit using the rules for the gunslinger's grit class feature (see page 9). You can spend this grit to perform the 1st-level deed you chose upon taking this feat, and any other deed you have gained through feats or magic items. &nl; [Special]If you gain levels in a class that grants the grit class feature, you can immediately trade this feat for the Extra Grit feat.|WIS
-
+#
+#
+# TODO:Selection of 1st level grit doesn't work
+#Amateur Gunslinger	TYPE:Combat	!PREABILITY:1,CATEGORY=Special Ability,Grit ~ Gunslinger	DESC:Although you are not a gunslinger, you have and can use grit.	BENEFIT:You gain a small amount of grit and the ability to perform a single 1st-level deed from the gunslinger deed class feature. At the start of the day, you gain 1 grit point, though throughout the day you can gain grit points up to a maximum of your Wisdom modifier (%1) (minimum 1). You can regain grit using the rules for the gunslinger's grit class feature (see page 9). You can spend this grit to perform the 1st-level deed you chose upon taking this feat, and any other deed you have gained through feats or magic items. &nl; [Special]If you gain levels in a class that grants the grit class feature, you can immediately trade this feat for the Extra Grit feat.|WIS	BONUS:VAR|GritPoints|1|TYPE=Base.REPLACE	BONUS:VAR|GritMax|MAX(1,WIS)|TYPE=Base.REPLACE	SELECT:1	CHOOSE:ABILITY|Special Ability|PC[TYPE=DeedsLvl1]	SOURCEPAGE:p.89
+#
 #Arc Slinger
 #	SOURCEPAGE:p.89
 #	TYPE:Combat
@@ -31,7 +26,6 @@ Amateur Gunslinger
 #	PREFEAT:1,Point-Blank Shot
 #	PREWEAPONPROF:1,Sling,Sling Staff (Halfling)
 #	BENEFIT:When using a sling or sling staff, you reduce your penalty on ranged attack rolls due to range by 2. Point-Blank Shot's damage bonus applies within the first normal range increment of your sling (50 feet) or sling staff (80 feet).
-
 #Back to Back
 #	SOURCEPAGE:p.89
 #	TYPE:Teamwork
@@ -935,14 +929,14 @@ Horse Master
 #	BENEFIT:Whenever you score a critical hit with a ranged attack, in addition to the normal damage your attack deals, if your confirmation roll exceeds your opponent's CMD, you can push your opponent back as if from the bull rush combat maneuver or knock that target prone as if from a trip combat maneuver. If you choose to bull rush, you cannot move with the target. Your maneuver does not provoke an attack of opportunity. &nl; [Normal] You must perform a bull rush combat maneuver to bull rush an opponent, and you must perform a trip combat maneuver to trip an opponent.
 
 # TODO: Selector for piercing weapon
-Impaling Critical
-	SOURCEPAGE:p.105
-	TYPE:Combat.Critical
-	DESC:Your critical hits can skewer your foes.
-	PREFEAT:1,Critical Focus
-	PREFEAT:1,Weapon Specialization (TYPE=Piercing)
-	PREATT:11
-	BENEFIT:Whenever you score a critical hit with the selected piercing melee weapon, you can impale your opponent on your weapon. While your opponent is impaled in this way, each time he starts his turn, you deal damage equal to your weapon's damage dice plus the extra damage dice from your weapon's properties. As an immediate action, you can pull your weapon out of your opponent. If your opponent is ever outside your reach, you must spend a free action to let go of your weapon or pull it out of him. Your opponent can also spend a move action to pull your weapon out. When the weapon comes out, your opponent takes damage as if starting his turn impaled. While you impale your opponent with your weapon, you cannot use it to attack, and you must hold on to it.
+#Impaling Critical
+#	SOURCEPAGE:p.105
+#	TYPE:Combat.Critical
+#	DESC:Your critical hits can skewer your foes.
+#	PREFEAT:1,Critical Focus
+#	PREFEAT:1,Weapon Specialization (TYPE=Piercing)
+#	PREATT:11
+#	BENEFIT:Whenever you score a critical hit with the selected piercing melee weapon, you can impale your opponent on your weapon. While your opponent is impaled in this way, each time he starts his turn, you deal damage equal to your weapon's damage dice plus the extra damage dice from your weapon's properties. As an immediate action, you can pull your weapon out of your opponent. If your opponent is ever outside your reach, you must spend a free action to let go of your weapon or pull it out of him. Your opponent can also spend a move action to pull your weapon out. When the weapon comes out, your opponent takes damage as if starting his turn impaled. While you impale your opponent with your weapon, you cannot use it to attack, and you must hold on to it.
 
 #Improved Back to Back
 #	SOURCEPAGE:p.105
@@ -1134,7 +1128,7 @@ Impaling Critical
 #	TYPE:Grit
 #	DESC:You leap through the air, guns blazing.
 #	PRESTAT:1,DEX=13
-#	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit],[PREFEAT:1,Amateur Gunslinger]
+#	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit ~ Gunslinger],[PREFEAT:1,Amateur Gunslinger]
 #	PREFEAT:2,Dodge,Mobility
 #	PREATT:4
 #	BONUS:SKILL|Acrobatics (Jump)|2
@@ -1163,7 +1157,7 @@ Mantis Wisdom
 	SOURCEPAGE:p.108
 	TYPE:Combat
 	DESC:Your knowledge of vital areas allows you to land debilitating strikes with precision.
-	PREFEAT:3,Improved Unarmed Strike, Mantis Style, Stunning Fist
+	PREFEAT:3,Improved Unarmed Strike,Mantis Style,Stunning Fist
 	PRESKILL:1,Heal=6
 	BENEFIT:Treat half your levels in classes other than monk as monk levels for determining effects you can apply to a target of your Stunning Fist per the Stunning Fist monk class feature. You can also use a standard action and a successful melee touch attack to remove any Stunning Fist effect you have applied to a target. While using Mantis Style, you gain a +2 bonus on unarmed attack rolls with which you are using Stunning Fist attempts.
 
@@ -1190,7 +1184,7 @@ Mantis Wisdom
 #	BONUS:VAR|ElementalFistUses|1
 #	BENEFIT:You gain one additional Elemental Fist attempt per day. While using this style and Elemental Fist to deal cold damage, you gain a bonus on cold damage rolls equal to your Wisdom modifier, and your reach with your unarmed strike increases by 5 feet.
 #
-Master Combat Performer
+#Master Combat Performer
 #	SOURCEPAGE:p.109
 #	TYPE:Combat
 #	DESC:You are a master of the techniques and weapons of the arena and the stage.
@@ -1402,7 +1396,7 @@ Nightmare Weaver
 #	SOURCEPAGE:p.112
 #	TYPE:Grit
 #	DESC:You don't need an elaborate disguise to keep your identity under wraps.
-#	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit],[PREFEAT:1,Amateur Gunslinger]
+#	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Grit ~ Gunslinger],[PREFEAT:1,Amateur Gunslinger]
 #	PRESKILL:1,Bluff=4
 #	BENEFIT:You often rely on surprise and misdirection in your social dealings. You gain a +2 bonus on Bluff checks, and you can spend 1 grit point to gain a +10 bonus on Disguise checks for 10 minutes per your gunslinger level (minimum 10 minutes). This deed does not actually change your appearance, but rather allows you to hide your identity in other ways.
 
