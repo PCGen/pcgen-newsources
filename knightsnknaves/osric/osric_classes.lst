@@ -1,0 +1,90 @@
+SOURCELONG:OSRIC - Old School Reference & Index Compilation		SOURCESHORT:OSRIC	SOURCEWEB:http://www.knights-n-knaves.com/osric/
+#Original Entry: Andrew Maitland
+
+#TODO: Restrict Con Bonus to only certain levels. Likely best method to add it to each class instead of global like a regular d20 game
+
+###Block: Assassin ------------------------------------------------------------------------------------------------------------
+CLASS:Assassin	PRESTAT:5,STR=12,DEX=12,CON=6,INT=11,WIS=6	PREALIGN:LE,NE,CE	MAXLEVEL:15
+1:REPEATLEVEL:1|SKIP=0|MAX=15	HITDIE:6
+1	AUTO:ARMORPROF|Leather|Studded Leather	AUTO:SHIELDPROF|Shield
+1	BONUS:ABILITYPOOL|Weapon Proficiencies|3
+4:REPEATLEVEL:4|SKIP=0|MAX=15		BONUS:ABILITYPOOL|Weapon Proficiencies|1
+1	ABILITY:Special Ability|AUTOMATIC|Backstab|Assassination|Disguise|Poison|Thief Abilities		BONUS:VAR|Backstab|2
+9	ABILITY:Special Ability|AUTOMATIC|Languages
+12	ABILITY:Special Ability|AUTOMATIC|Read Scrolls
+### Combat
+5	BONUS:COMBAT|BAB|1	BONUS:VAR|Backstab|1
+9	BONUS:COMBAT|BAB|3	BONUS:VAR|Backstab|1
+13	BONUS:COMBAT|BAB|2	BONUS:VAR|Backstab|1
+
+###Block: Cleric ------------------------------------------------------------------------------------------------------------
+
+CLASS:Cleric	PRESTAT:6,STR=6,DEX=3,CON=6,INT=6,WIS=9,CHA=6
+1	BONUS:ABILITYPOOL|Weapon Proficiencies|2	
+1:REPEATLEVEL:1|SKIP=0|MAX=9	HITDIE:8
+3:REPEATLEVEL:3|SKIP=0|MAX=20		BONUS:ABILITYPOOL|Weapon Proficiencies|1
+1	ABILITY:Special Ability|AUTOMATIC|Turning Undead
+#
+
+4:REPEATLEVEL:3|SKIP=0|MAX=18		BONUS:COMBAT|BAB|2
+19		BONUS:COMBAT|BAB|1
+
+
+
+###Block: Druid ------------------------------------------------------------------------------------------------------------
+
+CLASS:Druid	PRESTAT:6,STR=6,DEX=6,CON=6,INT=6,WIS=12,CHA=15	PREALIGN:NG,NE,TN,CN,LN	MAXLEVEL:14
+1	BONUS:ABILITYPOOL|Weapon Proficiencies|2	
+1:REPEATLEVEL:1|SKIP=0|MAX=9	HITDIE:8
+3:REPEATLEVEL:3|SKIP=0|MAX=20		BONUS:ABILITYPOOL|Weapon Proficiencies|1
+1	ABILITY:Special Ability|AUTOMATIC|Druids' Cant|Saving Throw Bonus
+3		ABILITY:Special Ability|AUTOMATIC|Druid's Knowledge|Wilderness Movement
+7	ABILITY:Special Ability|AUTOMATIC|Immunity to Fey Charm|Shapeshift
+
+4:REPEATLEVEL:3|SKIP=0|MAX=14		BONUS:COMBAT|BAB|2
+
+
+
+###Block: Unfinished
+CLASS:Fighter	PRESTAT:6,STR=9,DEX=6,CON=7,INT=3,WIS=6,CHA=6
+1	ABILITY:Special Ability|AUTOMATIC|Bonus Attacks|Fighting the Unskilled|Weapon Specialisation
+1:REPEATLEVEL:1|SKIP=0|MAX=9	HITDIE:10
+10:REPEATLEVEL:1	BONUS:HP|CURRENTMAX|3	BONUS:HP|CURRENTMAX|-CON|PRESTAT:1,CON=15	BONUS:HP|CURRENTMAX|+Con|!PRESTAT:1,CON=8
+
+
+
+CLASS:Illusionist
+
+CLASS:Magic User
+1	BONUS:ABILITYPOOL|Weapon Proficiencies|1
+1:REPEATLEVEL:1|SKIP=0|MAX=11	HITDIE:4
+5:REPEATLEVEL:5|SKIP=0|MAX=20		BONUS:ABILITYPOOL|Weapon Proficiencies|1
+
+CLASS:Paladin
+1	BONUS:ABILITYPOOL|Weapon Proficiencies|3	
+1:REPEATLEVEL:1|SKIP=0|MAX=9	HITDIE:10
+2:REPEATLEVEL:2|SKIP=0|MAX=20		BONUS:ABILITYPOOL|Weapon Proficiencies|1
+
+CLASS:Ranger
+1	BONUS:ABILITYPOOL|Weapon Proficiencies|2	
+1	BONUS:HP|CURRENTMAX|8
+1:REPEATLEVEL:1|SKIP=0|MAX=11	HITDIE:8
+11	BONUS:HP|CURRENTMAX|-8
+2:REPEATLEVEL:2|SKIP=0|MAX=20		BONUS:ABILITYPOOL|Weapon Proficiencies|1
+
+
+CLASS:Thief
+
+
+###Block: Multiclassing
+CLASS:Cleric_Assassin	
+CLASS:Cleric_Fighter
+CLASS:Cleric_Thief
+CLASS:Cleric_Ranger
+CLASS:Cleric_Magic User
+CLASS:Fighter_Assassin
+CLASS:Fighter_Thief
+CLASS:Fighter_Magic User
+CLASS:Magic User_Thief
+CLASS:Cleric_Fighter_Magic User
+CLASS:Fighter_Magic User_Thief
