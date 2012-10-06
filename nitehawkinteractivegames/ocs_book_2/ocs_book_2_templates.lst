@@ -11,3 +11,28 @@ Claws ~ 1d3	PREVAREQ:ClawsSize,3	VISIBLE:NO	NATURALATTACKS:Claws,Weapon.Natural.
 Claws ~ 1d4	PREVAREQ:ClawsSize,4	VISIBLE:NO	NATURALATTACKS:Claws,Weapon.Natural.Melee.Slashing,*2,1d4
 Claws ~ 1d6	PREVAREQ:ClawsSize,6	VISIBLE:NO	NATURALATTACKS:Claws,Weapon.Natural.Melee.Slashing,*2,1d6
 Claws ~ 1d8	PREVAREQ:ClawsSize,8	VISIBLE:NO	NATURALATTACKS:Claws,Weapon.Natural.Melee.Slashing,*2,1d8
+
+
+Run Feat Evalution	VISIBLE:NO	TEMPLATE:CHOOSE:Has Run Feat|Does Not Have Run Feat
+#
+Has Run Feat		PREFEAT:1,Run	VISIBLE:NO	BONUS:SKILL|Jump (Running Start)|8	
+Does Not Have Run Feat	!PREFEAT:1,Run	VISIBLE:NO	AUTO:FEAT|Run
+
+Bond With Nature Feat Evaluation	VISIBLE:NO	TEMPLATE:CHOOSE:Has Bond With Nature Feat|Does Not Have Bond With Nature Feat
+#
+Has Bond With Nature Feat		VISIBLE:NO	
+Does Not Have Bond With Nature Feat	VISIBLE:NO	AUTO:FEAT|Bond with Nature
+
+
+Racetype now Outsider	VISIBLE:NO	RACETYPE:Outsider
+
+Run Evaluation Feral Raider	TEMPLATE:CHOOSE:Has Run Feat ~ Feral Raider|No Run Feat ~ Feral Raider
+#
+Has Run Feat ~ Feral Raider		BONUS:ABILITYPOOL|Feral Raider Run Substitution|1
+No Run Feat ~ Feral Raider		AUTO:FEAT|Run
+
+
+
+
+
+
