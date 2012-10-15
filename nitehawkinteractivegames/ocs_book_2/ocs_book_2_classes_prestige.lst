@@ -12,7 +12,7 @@ CLASS:Arcane Juggler	STARTSKILLPTS:6	CSKILL:Balance|Concentration|TYPE=Craft|Dip
 #all simple weapons|as well as with the shuriken. The juggler is proficient with light armor|is not proficient with shields
 ###Block:
 1	ABILITY:Special Ability|AUTOMATIC|Arcane Juggle ~ Arcane Juggler|Deflect Arrows ~ Arcane Juggler|Performer ~ Arcane Juggler
-2	ABILITY:Special Ability|AUTOMATIC|Juggling Throw ~ Arcane Juggler|Improved Arcane Juggle ~ Arcane Juggler
+2	ABILITY:Special Ability|AUTOMATIC|Juggling Throw ~ Arcane Juggler|Improved Arcane Juggle ~ Arcane Juggler|Juggling Tumble ~ Arcane Juggler
 3	ABILITY:Special Ability|AUTOMATIC|Juggling Step ~ Arcane Juggler|Rapid Load ~ Arcane Juggler		DEFINE:JugglingThrowBonus|0
 4	ABILITY:Special Ability|AUTOMATIC|Arcane Door ~ Arcane Juggler
 ###Block:
@@ -273,7 +273,7 @@ CLASS:Holy Terror	STARTSKILLPTS:4	CSKILL:Climb|Concentration|Diplomacy|Dragon Lo
 
 ###Block:
 # ~ Horok Guardian
-CLASS:Horok Guardian	SOURCEPAGE:p.110	HD:8	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|(CL/2)+2	BONUS:CHECKS|BASE.Reflex|(CL/2)+2	BONUS:CHECKS|BASE.Will|CL/3
+CLASS:Horok Guardian	SOURCEPAGE:p.110	HD:8	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|(CL/2)+2	BONUS:CHECKS|BASE.Reflex|(CL/2)+2	BONUS:CHECKS|BASE.Will|CL/3	DEFINE:HorokGuardianLvl|CL
 CLASS:Horok Guardian	PREATT:5	PRESKILL:3,Listen=4,Sense Motive=2,Spot=6	PREFEAT:3,Alertness,Dodge,Endurance	PRERACE:1,Horok
 CLASS:Horok Guardian	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE=Craft|Intimidate|Listen|TYPE=Profession|Search|Sense Motive|Spellcraft|Spot|Survival
 ###Block:
@@ -285,10 +285,8 @@ CLASS:Horok Guardian	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE=Craft|Intim
 2		ABILITY:Special Ability|AUTOMATIC|Defensiveness Awareness ~ Horok Guardian
 3		ABILITY:Special Ability|AUTOMATIC|Improved Alertness ~ Horok Guardian
 4		ABILITY:Special Ability|AUTOMATIC|Resist Charm ~ Horok Guardian
-#5		ABILITY:Special Ability|AUTOMATIC|Thrown Weapon +2
 6		ABILITY:Special Ability|AUTOMATIC|Wise Ways ~ Horok Guardian
 7		ABILITY:Special Ability|AUTOMATIC|Clairaudience\Clairvoyance ~ Horok Guardian
-#9		ABILITY:Special Ability|AUTOMATIC|Thrown Weapon (Improved Critical)
 10		ABILITY:Special Ability|AUTOMATIC|Detect Poison ~ Horok Guardian
 ###Block:
 1	BONUS:VAR|HorokGuardianThrownWeaponLvl|1
@@ -350,7 +348,8 @@ CLASS:Knight of Manunzul	STARTSKILLPTS:4	CSKILL:Balance|Climb|Jump|Knowledge (un
 5	ABILITY:Special Ability|AUTOMATIC|Weapon of Disruption ~ Knight of Manunzul
 ###Block:
 1	BONUS:ABILITYPOOL|Knight of Manunzul Bonus Feat|CL
-
+###Block:
+1	BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL|TYPE=Level.REPLACE
 
 ###Block:
 # ~ Living Compass
@@ -409,7 +408,7 @@ CLASS:Monolith Sentinel	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE=
 #Weapon and Armor Proficiency: A monolith guard is proficient with all simple and martial weapons|all types of armor|shields
 ###Block:
 1	ABILITY:Special Ability|AUTOMATIC|Armored Gestures ~ Monolith Sentinel|Defensive Stance ~ Monolith Sentinel	DEFINE:MonolithSentinelDefensiveStanceTimes|0	DEFINE:MonolithSentinelArmoredGesturesLvl|0
-2	ABILITY:Special Ability|AUTOMATIC|Incredible Reaction ~ Monolith Sentinel|Uncanny Dodge		DEFINE:MonolithSentinelIncredibleReaction|0
+2	ABILITY:Special Ability|AUTOMATIC|Incredible Reaction ~ Monolith Sentinel|Uncanny Dodge|Uncanny Dodge ~ Base		DEFINE:MonolithSentinelIncredibleReaction|0
 4	ABILITY:Special Ability|AUTOMATIC|Defensive Roll ~ Monolith Sentinel
 ###Block:
 1	BONUS:VAR|MonolithSentinelArmoredGesturesLvl|(CL+1)/2
@@ -424,7 +423,7 @@ CLASS:Monolith Sentinel	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE=
 
 ###Block:
 # ~ Mystic Teacher
-CLASS:Mystic Teacher	SOURCEPAGE:p.125	HD:6	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|(CL/2)+2
+CLASS:Mystic Teacher	SOURCEPAGE:p.125	HD:6	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|(CL/2)+2	DEFINE:MysticTeacherLvl|CL
 CLASS:Mystic Teacher	PREALIGN:LG,NG,CG	PREATT:8	PREMULT:2,[PRESKILL:1,Knowledge (Dragons)=4,Knowledge (Weaponology)=4,Knowledge (Arcana)=4,Knowledge (Architecture and Engineering)=4,Knowledge (Dungeoneering)=4,Knowledge (Geography)=4,Knowledge (History)=4,Knowledge (Local)=4,Knowledge (Nobility and Royalty)=4,Knowledge (The Planes)=4],[PRESKILL:2,Knowledge (nature)=4,Knowledge (religion)=4]	PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,TYPE.NavitusFlemenMending],[PREABILITY:1,CATEGORY=Special Ability,TYPE.NavitusFlemenSensing],[PREABILITY:1,CATEGORY=Special Ability,TYPE.NavitusFlemenControlling]	PRETEXT:Knowledge (Any)=4 plus Knowledge (Nature) and Knowledge (Religion)
 CLASS:Mystic Teacher	STARTSKILLPTS:6	CSKILL:Concentration|TYPE=Craft|Diplomacy|Gather Information|Heal|TYPE=Knowledge|Spellcraft|Tactics
 ###Block:
@@ -516,7 +515,7 @@ CLASS:Shakasan	STARTSKILLPTS:6	CSKILL:Balance|Climb|Hide|Intimidate|Jump|Listen|
 
 ###Block:
 # ~ Troubadour
-CLASS:Troubadour	SOURCEPAGE:p.135	HD:6	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|(CL/2)+2	BONUS:CHECKS|BASE.Will|(CL/2)+2
+CLASS:Troubadour	SOURCEPAGE:p.135	HD:6	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|(CL/2)+2	BONUS:CHECKS|BASE.Will|(CL/2)+2	DEFINE:TroubadourLvl|CL
 CLASS:Troubadour		!PREALIGN:LG,LN,LE	PREMULT:5,[PRESKILL:1,Diplomacy=4],[PRESKILL:1,Perform (Act)=6,Perform (Comedy)=6,Perform (Dance)=6],[PRESKILL:1,Perform (Oratory)=8,Perform (Sing)=8],[PRESKILL:1,Perform (Keyboard)=8,Perform (Wind)=8],[PRESKILL:1,Perform (Percussion)=8,Perform (String)=8]	PREFEAT:1,Persuasive	PRELANG:3,ANY
 CLASS:Troubadour	STARTSKILLPTS:8	CSKILL:Appraise|Balance|Bluff|Concentration|TYPE=Craft|Diplomacy|Disguise|Gather Information|Intimidate|TYPE=Knowledge|Listen|Perform|TYPE=Profession|Ride|Seduction|Sense Motive|Sleight of Hand|Speak Language (n/a)|Spellcraft|Spot|Survival|Use Magic Device
 ###Block:
@@ -539,7 +538,7 @@ CLASS:Watchman	SOURCEPAGE:p.139	HD:10	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=
 CLASS:Watchman	!PREALIGN:LE,NE,CE	PREATT:3	PRESKILL:1,Knowledge (undead)=3	PREFEAT:2,Alertness,Blind-Fight	PRETEXT:Special Must complete a 3-month training program
 CLASS:Watchman	STARTSKILLPTS:4	CSKILL:Balance|Climb|Jump|Knowledge (undead)|Listen|Ride|Search|Spot
 #Weapon and Armor Proficiency: Watchmen are skilled with all martial and simple weapons. They are proficient with light armor|are proficient with all shields
-1	ABILITY:Special Ability|AUTOMATIC|Combat Reflexes ~ Watchman|Street Lore	
+1	ABILITY:Special Ability|AUTOMATIC|Combat Reflexes ~ Watchman|Street Lore|Undead Insight ~ Watchman	
 2	ABILITY:Special Ability|AUTOMATIC|Close-Quarter Combat ~ Watchman|Undead Strike ~ Watchman	DEFINE:WatchmanUndeadStrikeBonus|0
 4	ABILITY:Special Ability|AUTOMATIC|Stand Ground ~ Watchman
 10	ABILITY:Special Ability|AUTOMATIC|Magic Weapon ~ Watchman
@@ -552,7 +551,7 @@ CLASS:Watchman	STARTSKILLPTS:4	CSKILL:Balance|Climb|Jump|Knowledge (undead)|List
 
 ###Block:
 # ~ Wereranger
-CLASS:Wereranger	SOURCEPAGE:p.141	HD:10	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|(CL/2)+2	BONUS:CHECKS|BASE.Reflex|(CL/2)+2	BONUS:CHECKS|BASE.Will|CL/3
+CLASS:Wereranger	SOURCEPAGE:p.141	HD:10	TYPE:Prestige.PC	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:CHECKS|BASE.Fortitude|(CL/2)+2	BONUS:CHECKS|BASE.Reflex|(CL/2)+2	BONUS:CHECKS|BASE.Will|CL/3	DEFINE:WererangerLvl|CL
 CLASS:Wereranger	PREALIGN:LG,NG,CG	PREATT:6	PRESKILL:4,Diplomacy=8,Handle Animal=5,Knowledge (nature)=8,Survival=8	PREABILITY:1,CATEGORY=Special Ability,Wild Empathy	PREFEAT:2,Bond with Nature,Track	PRESPELLTYPE:1,Divine=1	PRETEXT:Special Must have lived a minimum of 10 years out in the wilderness, having never entered a community with a population no greater than 30.
 CLASS:Wereranger	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE=Craft|Handle Animal|Hide|Jump|Knowledge (nature)|Listen|Move Silently|Search|Spot|Survival|Swim
 ###Block:
@@ -586,15 +585,11 @@ CLASS:Wyrm Master		PREATT:8	PRESKILL:3,Animal Empathy=8,Handle Animal=8,Knowledg
 CLASS:Wyrm Master	STARTSKILLPTS:4	CSKILL:Bluff|TYPE=Craft|Decipher Script|Diplomacy|Handle Animal|Intimidate|Jump|TYPE=Knowledge|Ride|Sense Motive|Speak Language|Spellcraft|Spot|Survival
 ###Block:
 1	ABILITY:Special Ability|AUTOMATIC|Draconic Friendship ~ Wyrm Master|Dragon Riding ~ Wyrm Master|Forbidden ~ Wyrm Master
-2	ABILITY:Special Ability|AUTOMATIC|Summon Dragon ~ Wyrm Master: Young	DEFINE:WyrmMasterSummonDragonLvl
+2	ABILITY:Special Ability|AUTOMATIC|Summon Dragon ~ Wyrm Master
 3	ABILITY:Special Ability|AUTOMATIC|Lore ~ Wyrm Master
-4	ABILITY:Special Ability|AUTOMATIC|Summon Dragon: Juvenile
 5	ABILITY:Special Ability|AUTOMATIC|Frightful Presence
-6	ABILITY:Special Ability|AUTOMATIC|Summon Dragon: Young Adult
 7	ABILITY:Special Ability|AUTOMATIC|Spell Resistance
-8	ABILITY:Special Ability|AUTOMATIC|Summon Dragon: Adult
-9	ABILITY:Special Ability|AUTOMATIC|Emulate Breath Weapon ~ Wyrm Master
-10	ABILITY:Special Ability|AUTOMATIC|Summon Dragon: Mature Adult
+9	ABILITY:Special Ability|AUTOMATIC|Emulate Breath Weapon ~ Wyrm Master|Draconic Defender ~ Wyrm Master
 ###Block:
 2	BONUS:VAR|WyrmMasterSummonDragonLvl|CL/2
 ###EOF
