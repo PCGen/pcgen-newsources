@@ -164,7 +164,7 @@ Increase Burrow Movement (20)			KEY:Increase Burrow Move XX ~ Drake Build Featur
 
 ## Drake Build Spell-Like Abilities
 # Ability Name	Unique Key				Key													Category of Ability			Type								Serves As							Define																					Description																																								Modify VAR											Source Page		Aspects
-Spell-like Ability (1/day, 1st lvl Spell)				KEY:Spell-like Ability I/I ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:SpelllikeAbility.Spelllike	VISIBLE:DISPLAY 		DEFINE:SLA_CL|HD	STACK:NO	MULT:YES	CHOOSE:SPELLS|ALL[LEVELMIN=1;LEVELMAX=1]	COST:2		SOURCEPAGE:pg.52	DESC:You cast %1 per the spell of the same name 1/day and casterlevel %2.|%CHOICE|SLA_CL
+Spell-like Ability (1/day, 1st lvl Spell)				KEY:Spell-like Ability I/I ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:SpelllikeAbility.Spelllike			DEFINE:SLA_CL|HD	STACK:NO	MULT:YES	CHOOSE:SPELLS|ALL[LEVELMAX=1;LEVELMIN=1]	COST:2		SOURCEPAGE:pg.52	DESC:You cast %1 per the spell of the same name 1/day and casterlevel %2.|%CHOICE|SLA_CL
 
 ## Drake Build Size Mods
 # Ability Name				Unique Key										Category of Ability			Type								Serves As							Define																					Description																																								Modify VAR											Source Page		Aspects
@@ -293,7 +293,7 @@ Charisma Ability Damage (Tentacle/Ex)	KEY:Charisma Ability Damage (Tentacle/Ex) 
 Charisma Ability Damage (Slam/Ex)		KEY:Charisma Ability Damage (Slam/Ex) ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.DrakeCharismaDamage	PREWEAPONPROF:1,Slam	PREVARLT:DrakeSlamAbilityDamage,1	DESC:You deal 1d4 Charisma damage with a successful slam attack.		SOURCEPAGE:pg.53	BONUS:VAR|DrakeSlamAbilityDamage|1	BENEFIT:You deal 1d4 Charisma damage with a successful slam attack. This penalty persists for 1d10 rounds. Creatures struck may make a Fortitude save (DC %2) for half damage.|DrakeSpecialAbilityDC
 Charisma Ability Damage (Sting/Ex)		KEY:Charisma Ability Damage (Sting/Ex) ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.DrakeCharismaDamage	PREWEAPONPROF:1,Sting	PREVARLT:DrakeStingAbilityDamage,1	DESC:You deal 1d4 Charisma damage with a successful sting attack.		SOURCEPAGE:pg.53	BONUS:VAR|DrakeStingAbilityDamage|1	BENEFIT:You deal 1d4 Charisma damage with a successful sting attack. This penalty persists for 1d10 rounds. Creatures struck may make a Fortitude save (DC %2) for half damage.|DrakeSpecialAbilityDC
 
-Constrict				KEY:Constrict ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AdvancedMechanicalFeature		COST:5	DESC:You can crush an opponent, dealing bludgeoning damage, when you make a successful grapple check.	SOURCEPAGE:pg.53	 BENEFIT:You can crush an opponent, dealing bludgeoning damage, when you make a successful grapple check (in addition to any other effects caused by a successful check, including additional damage). The damage dealt by a constrict attack equals the drake’s bite damage.
+Constrict				KEY:Constrict ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AdvancedMechanicalFeature		COST:5	DESC:You can crush an opponent, dealing bludgeoning damage, when you make a successful grapple check.	SOURCEPAGE:pg.53	BENEFIT:You can crush an opponent, dealing bludgeoning damage, when you make a successful grapple check (in addition to any other effects caused by a successful check, including additional damage). The damage dealt by a constrict attack equals the drake’s bite damage.
 
 ## Block: Damage Reduction 5/Weapon Type Drake Feature
 Damage Reduction V (Weapon Damage Type)		KEY:DR 5 ~ WDT ~ Drake Build Feature		CATEGORY:Special Ability	TYPE:DrakeDamageReduction	VISIBLE:DISPLAY	STACK:NO	MULT:YES	CHOOSE:NOCHOICE		BONUS:ABILITYPOOL|Drake Damage Reduction Weapon V|1		COST:4	SOURCEPAGE:pg.53
@@ -428,7 +428,7 @@ Paralysis				KEY:Paralysis Su Outout ~ Drake Build Feature	CATEGORY:Special Abil
 
 Poison					KEY:Poison ~ Drake Build Feature				CATEGORY:Special Ability	TYPE:AdvancedMechanicalFeature	COST:5	BONUS:ABILITYPOOL|Drake Poison Attack|1		DEFINE:DrakePoisonDC|10+HD/2+CON		DESC:A drake with this ability delivers poison with one of its natural melee attacks.
 ## Block: Drake Poison Attacks
-Drake Poison Bite		KEY:Poison Bite ~ Drake Build Feature			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.DrakePoisonAttack.AttackOption		STACK:NO	MULT:YES	CHOOSE:STRING|Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma		DESC:Bite - injury; save Fort DC %1; frequency 1/round for 4 rounds; effect 1d3 %2 damage; cure 1 save.|DrakePoisonDC|%LIST		SOURCEPAGE:pg.54
+Drake Poison Bite		KEY:Poison Bite ~ Drake Build Feature			CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.DrakePoisonAttack.AttackOption		STACK:NO	MULT:YES	CHOOSE:STRING|Charisma|Constitution|Dexterity|Intelligence|Strength|Wisdom		DESC:Bite - injury; save Fort DC %1; frequency 1/round for 4 rounds; effect 1d3 %2 damage; cure 1 save.|DrakePoisonDC|%LIST		SOURCEPAGE:pg.54
 
 Pounce					KEY:Pounce ~ Drake Build Feature	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AdvancedMechanicalFeature	SERVESAS:ABILITY=Special Ability|Pounce	COST:5		DESC:A drake with this special attack can make a full attack at the end of a charge.	SOURCEPAGE:pg.54
 

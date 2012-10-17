@@ -63,12 +63,12 @@ CLASS:Drake Tamer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|D
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus
 CLASS:Master of Drake Forms	HD:6		TYPE:PC.Prestige	ABB:MoDF		MAXLEVEL:10	SOURCEPAGE:pg.19	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name			Required Skill					Required Text
-CLASS:Master of Drake Forms	PRESKILL:2,Fly=4,Knowledge (Arcana)=5	PRETEXT:Must have shapechanged, willingly or unwillingly, into a draconic form.
+CLASS:Master of Drake Forms	PRESKILL:2,Fly=4,Knowledge (Arcana)=5	PRETEXT:Must have shapechanged into a draconic form.
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Master of Drake Forms	STARTSKILLPTS:2	CSKILL:Bluff|Disguise|Fly|Intimidate|Knowledge (Arcana)|Perception|Sense Motive
 ###Block: Progression
-1								BONUS:VAR|DrakeshapeTimes|1+(CL-1)/3	BONUS:VAR|DrakeshapeDuration|10*CL														ABILITY:Special Ability|AUTOMATIC|Drakeshape ~ Master of Drake Forms|Dragon Tongue ~ Master of Drake Forms
-2	BONUS:ABILITYPOOL|Draconic Vision|1																												ABILITY:Special Ability|AUTOMATIC|Dragonhide ~ Master of Drake Forms|Draconic Vision ~ Master of Drake Forms|Familiar Downplay ~ Master of Drake Forms
+1								BONUS:VAR|DrakeshapeTimes|1+(CL-1)/3	BONUS:VAR|DrakeshapeDuration|10*CL														ABILITY:Special Ability|AUTOMATIC|Dragon Tongue ~ Master of Drake Forms|Drakeshape ~ Master of Drake Forms
+2	BONUS:ABILITYPOOL|Draconic Vision|1																												ABILITY:Special Ability|AUTOMATIC|Draconic Vision ~ Master of Drake Forms|Dragonhide ~ Master of Drake Forms|Familiar Downplay ~ Master of Drake Forms
 3	BONUS:ABILITYPOOL|Drake Bonus Feat|1																											ABILITY:Special Ability|AUTOMATIC|Draconic Resistances ~ Master of Drake Forms
 4								BONUS:VAR|DrakeBiteTimes|CL																						ABILITY:Special Ability|AUTOMATIC|Drake Bite ~ Master of Drake Forms|Two is Better Than One ~ Master of Drake Forms
 5	BONUS:ABILITYPOOL|Drake Bonus Feat|1																											ABILITY:Special Ability|AUTOMATIC|Flight ~ Master of Drake Forms
@@ -76,7 +76,7 @@ CLASS:Master of Drake Forms	STARTSKILLPTS:2	CSKILL:Bluff|Disguise|Fly|Intimidate
 7	BONUS:ABILITYPOOL|Drake Bonus Feat|1
 8	BONUS:ABILITYPOOL|Draconic Vision|1
 9	BONUS:ABILITYPOOL|Drake Bonus Feat|1
-10																					ADD:ABILITY|1|Special Ability|VIRTUAL|Apotheosis ~ Master of Drake Forms
+10																					ADD:ABILITY|Special Ability|VIRTUAL|Apotheosis ~ Master of Drake Forms
 
 
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ CLASS:Drake		SERVESAS:CLASS|Dragon	HD:12		TYPE:Monster	MAXLEVEL:NOLIMIT	SOURCEPA
 # Class Name	Reg. Race Type
 CLASS:Drake	PRERACETYPE:Dragon
 # Class Name	Skill Pts/Lvl	Add INT to Skill Points?	Class Skill
-CLASS:Drake	STARTSKILLPTS:6	MODTOSKILLS:YES			CSKILL:Appraise|Bluff|Climb|TYPE.Craft|Diplomacy|Fly|Heal|Intimidate|TYPE.Knowledge|Linguistics|Perception|Sense Motive|Spellcraft|Stealth|Survival|Swim|Use Magic Device
+CLASS:Drake	STARTSKILLPTS:6	MODTOSKILLS:YES			CSKILL:Appraise|Bluff|Climb|TYPE=Craft|Diplomacy|Fly|Heal|Intimidate|TYPE=Knowledge|Linguistics|Perception|Sense Motive|Spellcraft|Stealth|Survival|Swim|Use Magic Device
 
 
 ## ------------------------------------------------------------------------------------------------------------------------------------------------------------
