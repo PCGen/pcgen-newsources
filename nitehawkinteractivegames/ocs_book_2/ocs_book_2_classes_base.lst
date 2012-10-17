@@ -13,8 +13,11 @@ CLASS:Crusader	HD:10		TYPE:Base.PC	EXCLASS:Ex-Crusader	SOURCEPAGE:p.38	BONUS:CHE
 CLASS:Crusader	!PREALIGN:LG
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Crusader	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE=Craft|Diplomacy|Handle Animal|Intimidate|Jump|Knowledge (Nobility and Royalty)|Knowledge (Religion)|Ride|Sense Motive|Tactics
-1																	ABILITY:Special Ability|AUTOMATIC|<all simple & martial weapons>|<All Armor and shields>
-#
+###Block:
+1	AUTO:WEAPONPROF|TYPE=Simple|TYPE=Martial
+1	AUTO:ARMOR|ARMORTYPE=Light|ARMORTYPE=Medium|ARMORTYPE=Heavy
+1	AUTO:SHIELD|Buckler|Light|Heavy
+###Block:
 1	BONUS:ABILITYPOOL|Crusader Weapon Specialization|1								ABILITY:Special Ability|AUTOMATIC|Equipment ~ Crusader|Tithe ~ Crusader
 2										BONUS:VAR|StrikeHeathenTimes|CL-1/6+1	ABILITY:Special Ability|AUTOMATIC|Divine Sympathy ~ Crusader|Strike Heathen ~ Crusader
 3																	ABILITY:Special Ability|AUTOMATIC|Unshakable Faith ~ Crusader
@@ -41,8 +44,9 @@ CLASS:Dragon Lord	PREALIGN:TN
 CLASS:Dragon Lord	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Dragon Lore|Gather Information|Handle Animal|Hide|Intimidate|Jump|Knowledge (dragons)|Listen|Move Silently|Ride|Search|Spellcraft|Spot|Swim
 # Class Name	Spell Stat		Memorize		Caster level
 CLASS:Dragon Lord	SPELLSTAT:INT	MEMORIZE:YES	BONUS:CASTERLEVEL|Dragon Lord|CL
+###Block:
 1																												ABILITY:Special Ability|AUTOMATIC|<all simple & martial weapons>|<All Armor>
-# Class Progression
+###Block: Class Progression
 1				BONUS:ABILITYPOOL|Dragon Lord Exotic Weapon Proficiency Feat|														ABILITY:Special Ability|AUTOMATIC|Homage ~ Dragon Lord
 5				BONUS:ABILITYPOOL|Dragon Lord Feat|CL/5					BONUS:VAR|DragonLordWrymRageTimes|1								ABILITY:Special Ability|AUTOMATIC|Wyrmrage ~ Dragon Lord
 6																												ABILITY:Special Ability|AUTOMATIC|Bonus language ~ Draconic|Dragon Academia ~ Dragon Lord
@@ -55,7 +59,7 @@ CLASS:Dragon Lord	SPELLSTAT:INT	MEMORIZE:YES	BONUS:CASTERLEVEL|Dragon Lord|CL
 18																												ABILITY:Special Ability|AUTOMATIC|Resistance ~ Dragon Lord (Lightning)
 19															BONUS:VAR|DragonLordWrymRageTimes|1
 20															BONUS:VAR|DragonLordReputationBonus|1	BONUS:VAR|DragonLordCalmDragonHD|3	ABILITY:Special Ability|AUTOMATIC|Resistance ~ Dragon Lord (Fire)
-# Casting Progression
+###Block:Casting Progression
 7	CAST:0,0
 8	CAST:0,0
 9	CAST:0,1
@@ -87,7 +91,7 @@ CLASS:Highwayman	!PREALIGN:LG,LE,LN
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Highwayman	STARTSKILLPTS:8	CSKILL:Appraise (Int), Bluff (Cha), Climb (Str), Craft (Int), Diplomacy (Cha), Disable Device (Int), Disguise (Cha), Escape Artist (Dex), Hide (Dex), Intimidate (Cha), Jump (Str), Knowledge (geography) (Int), Knowledge (local) (Int), Knowledge (nature) (Int), Listen (Wis), Move Silently (Dex), Profession (Wis), Ride (Dex), Search (Int), Seduction (Cha)*, Sense Motive (Wis), Sleight of Hand (Dex), Spot (Wis), Survival (Wis), Swim (Str), and Use Rope
 #
-
+###Block:
 1																ABILITY:Special Ability|AUTOMATIC|Ambush|Track
 2									BONUS:VAR|HighwayManAmbushSenseBonus|1	ABILITY:Special Ability|AUTOMATIC|Ambush Sense|Trapfinding
 4																ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge
@@ -112,7 +116,7 @@ CLASS:Mystic Knight	HD:8		TYPE:Base.PC	EXCLASS:Ex-Mystic Knight	SOURCEPAGE:p.56	
 CLASS:Mystic Knight	!PREALIGN:CG,CN,CE,LE,NE
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Mystic Knight	STARTSKILLPTS:6	CSKILL:Balance|Concentration|TYPE.Craft|Diplomacy|Heal|Hide|Intimidate|Jump|Knowledge (the planes)|Knowledge (arcana)|Listen|Move Silently|Search|Sense Motive|Spot|Survival|Tumble
-
+###Block:
 1	ABILITY:Special Ability|AUTOMATIC|Intuitive Defense|Essence Finger|Weapon Focus
 2	ABILITY:Special Ability|AUTOMATIC|Bonded Weapon|Navitus Flemen
 4	ABILITY:Special Ability|AUTOMATIC|Bladed Defender +1, power bond I
@@ -141,14 +145,16 @@ CLASS:Ex-Mystic Knight	STARTSKILLPTS:6	CSKILL:Balance|Concentration|TYPE.Craft|D
 CLASS:Oracle	HD:4		TYPE:Base.PC	SOURCEPAGE:p.63	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Oracle	STARTSKILLPTS:6	CSKILL:Concentration|TYPE=Craft|Decipher Script|TYPE=Knowledge|TYPE=Profession|Spellcraft|Star Reading|Witchcraft
-Weapon and Armor Proficiency: Oracles are proficient with all simple weapons. They are proficient with leather, studded leather, and hide armor, but not with shields as they tend to interfere with the motions required for divination.
-
+#Weapon and Armor Proficiency: Oracles are proficient with all simple weapons. They are proficient with leather, studded leather, and hide armor, but not with shields as they tend to interfere with the motions required for divination.
 ###Block:
-1	Craft Focus ~ Oracle:
-5					Empower ~ Oracle:
-10								Enlarge ~ Oracle:
-15														Maximize ~ Oracle:
-20											Extend ~ Oracle:
+1	AUTO:WEAPONPROF|TYPE=Simple
+1	AUTO:ARMORPROF|Leather|Studded Leather|Hide
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Craft Focus ~ Oracle
+5	ABILITY:Special Ability|AUTOMATIC|Empower ~ Oracle
+10	ABILITY:Special Ability|AUTOMATIC|Enlarge ~ Oracle
+15	ABILITY:Special Ability|AUTOMATIC|Maximize ~ Oracle
+20	ABILITY:Special Ability|AUTOMATIC|Extend ~ Oracle
 ###Block:
 1	CAST:5,3
 2	CAST:6,4
@@ -176,14 +182,15 @@ Weapon and Armor Proficiency: Oracles are proficient with all simple weapons. Th
 # Class Name		Hit Dice	Type			Source Page		Save checks bonus														Combat bonus
 CLASS:Elocutionist	HD:6		TYPE:Base.PC	SOURCEPAGE:p.65	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Elocutionist	STARTSKILLPTS:4	CSKILL:Concentration (Con), Craft (all)
-(Int), Decipher Script (Int), Diplomacy (Cha),
-Heal (Wis), Knowledge (arcana) (Int), Knowledge
-(history) (Int), Knowledge (librarian) (Int),
-Knowledge (religion) (Int), Perform (any vocal)
-(Cha), Profession (Wis), Sense Motive, Spellcraft
-
-
+CLASS:Elocutionist	STARTSKILLPTS:4	CSKILL:Concentration|TYPE=Craft|Decipher Script|Diplomacy|Heal|Knowledge (arcana)|Knowledge (history)|Knowledge (librarian)|Knowledge (religion)|TYPE=PerformVocal|TYPE=Profession|Sense Motive|Spellcraft
+###Block:
+1	BONUS:DOMAIN|NUMBER|2
+###Block:
+# COMMENT: Won't work as we lack any write up on the deities currently.
+1	BONUS:VAR|AlignmentAuraLVL|CL	ABILITY:Special Ability|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
+1						ABILITY:Special Ability|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
+1						ABILITY:Special Ability|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
+1						ABILITY:Special Ability|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
 ###Block:
 1	CAST:5,3
 2	CAST:6,4
