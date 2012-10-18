@@ -8,16 +8,56 @@ Steadfast		KEY:Steadfast ~ Fanatic		CATEGORY:Special Ability	TYPE:SpecialQuality
 Fantastic Rage	KEY:Fantastic Rage ~ Fanatic	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.78
 
 
+###Block: ~ Mystic Knight
+Intuitive Defense		KEY:Intuitive Defense ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.58
+Essence Finger		KEY:Essence Finger ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.58
+Weapon Focus		KEY:Weapon Focus ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.58
+Bonded Weapon		KEY:Bonded Weapon ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.58
+Navitus Flemen		KEY:Navitus Flemen ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.59	ABILITY:Special Ability|AUTOMATIC|Navitus Flemen
+Navitus Flemen		KEY:Navitus Flemen			CATEGORY:Special Ability		BONUS:ABILITYPOOL|Navitus Flemen|NavitusFlemenCount	DEFINE:NavitusFlemenCount|0
+Bladed Defender		KEY:Bladed Defender ~ Mystic Knight	DESC:+%1|MysticKnightBladedDefenderBonus		DEFINE:MysticKnightBladedDefenderBonus|0	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Power Bond I		KEY:power bond I ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Skill Focus			KEY:Skill Focus ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60	BONUS:ABILITYPOOL|Skill Focus Choice|MysticKnightSkillFocusCount	DEFINE:MysticKnightSkillFocusCount|0
+
+
+Essence Hand		KEY:Essence hand ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Power Bond II		KEY:power bond II ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Energy Bond I		KEY:Energy bond I ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Essence Manipulation	KEY:Essence manipulation ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Energy Bond II		KEY:Energy bond II ~ Mystic Knight			CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Essence Mastery		KEY:Essence Mastery ~ Mystic Knight			CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60
+Navitus Flemen Mastery	KEY:Navitus Flemen mastery ~ Mystic Knight	CATEGORY:Special Ability	TYPE:SpecialQuality	SOURCEPAGE:p.60	BONUS:VAR|NavitusFlemenMasteryCount|1	ABILITY:Special Ability|AUTOMATIC|Navitus Flemen Mastery
+Navitus Flemen Mastery	KEY:Navitus Flemen Mastery	CATEGORY:Special Ability	BONUS:ABILITYPOOL|Navitus Flemen Mastery|NavitusFlemenMasteryCount	DEFINE:NavitusFlemenMasteryCount|
 ###Block:
+Navitus Flemen / Mend Discipline Level 1		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenMend	SOURCEPAGE:p.59
+Navitus Flemen / Mend Discipline Level 2		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenMend	SOURCEPAGE:p.59
+Navitus Flemen / Mend Discipline Level 3		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenMend	SOURCEPAGE:p.59
+Navitus Flemen / Sense Discipline Level 1		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenSense	SOURCEPAGE:p.59
+Navitus Flemen / Sense Discipline Level 2		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenSense	SOURCEPAGE:p.59
+Navitus Flemen / Sense Discipline Level 3		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenSense	SOURCEPAGE:p.59
+Navitus Flemen / Control Discipline Level 1	CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenControl	SOURCEPAGE:p.59
+Navitus Flemen / Control Discipline Level 2	CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenControl	SOURCEPAGE:p.59
+Navitus Flemen / Control Discipline Level 3	CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemen.MavitusFlemenControl	SOURCEPAGE:p.60
+###Block:
+Navitus Flemen / Mend Discipline Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemenMastery	SOURCEPAGE:p.60	PREABILITY:3,CATEGORY=Special Ability,TYPE.MavitusFlemenMend
+Navitus Flemen / Sense Discipline Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemenMastery	SOURCEPAGE:p.61	PREABILITY:3,CATEGORY=Special Ability,TYPE.MavitusFlemenSense
+Navitus Flemen / Control Discipline  Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.NavitusFlemenMastery	SOURCEPAGE:p.61	PREABILITY:3,CATEGORY=Special Ability,TYPE.MavitusFlemenControl
+#
+Mystic Knight Martial Weapon Choice		CATEGORY:Special Ability		MULT:YES	CHOOSE:WEAPONPROFICIENCY|TYPE=Sword,Martial,!PC	AUTO:FEAT|Mystic Knight Martial Weapon Choice (%LIST)	
+Mystic Knight Weapon Focus			CATEGORY:Special Ability		MULT:YES	CHOOSE:WEAPONPROFICIENCY|FEAT=Mystic Knight Martial Weapon Choice
+Mystic Knight Skill Focus			CATEGORY:Special Ability		MULT:YES	CHOOSE:SKILL|CLASS
+###
+Mystic Knight Martial Weapon Choice	VISIBLE:NO		CATEGORY:FEAT	MULT:YES	CHOOSE:WEAPONPROFICIENCY|TYPE=Sword,Martial,!PC
 
 
 ###Block: ~ Oracle
-# Ability Name	Unique Key				Category of Ability		Type						Source Page		(Ex)																																																																																									(Sp)
-Craft Focus		KEY:Craft Focus ~ Oracle	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	SOURCEPAGE:p.63	(Ex): As divination is an intimate act between ones body and soul, an oracle must prepare her own tools by spending 24 hours in meditation with the object she plans to use as her divination focus. The following day, she is exhausted (see special conditions for details on being exhausted) for 24 hours. Some examples of a divination focus are a metal bowl for holding water, a forked stick, rune stones, or a small silver mirror. If a focus is lost or destroyed, an oracle must create a new one before she may use her powers again.
-Empower		KEY:Empower ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.63																																																																																										(Sp): All variable, numeric effects of all divination abilities are increased by one-half. Saving throws and opposed rolls are not affected, nor are abilities without random variables.
-Enlarge		KEY:Enlarge ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.63																																																																																										(Sp): The oracle can alter a divination ability with a range of close, medium, or long to increase its range by 100%. An enlarged ability with a range of close now has a range of 50 ft. + 5 ft./level, while medium-range spells have a range of 200 ft. + 20 ft./level and long-range spells have a range of 800 ft. + 80 ft./level. Abilities whose ranges are not defined by distance, as well as abilities whose ranges are not close, medium, or long, do not have increased ranges. This alteration is made as a free action.
-Maximize		KEY:Maximize ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.63																																																																																										(Sp): All variable, numeric effects of all divination abilities are maximized. Saving throws and opposed rolls are not affected, nor are abilities without random variables. An empowered, maximized divination ability gains the separate benefits of each
+# Ability Name	Unique Key				Category of Ability		Type						Source Page	
+Craft Focus		KEY:Craft Focus ~ Oracle	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	SOURCEPAGE:p.63
+Empower		KEY:Empower ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.63	
+Enlarge		KEY:Enlarge ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.63
+Maximize		KEY:Maximize ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.63
 Extend		KEY:Extend ~ Oracle		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.64
+
 
 ###Block: ~ Utter Master
 # Ability Name			Unique Key							Category of Ability		Type						Define						Description						Automatically Gained Feat	Source Page		(Sp)
@@ -26,10 +66,6 @@ Power Cast				KEY:Power Cast ~ Utter Master				CATEGORY:Special Ability	TYPE:Spe
 Quick Cast				KEY:Quick Cast ~ Utter Master				CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:UtterMasterQuickCastTimes|0		DESC: %1/day|UtterMasterQuickCastTimes						SOURCEPAGE:p.76
 Improved Spell Penetration	KEY:Improved Spell Penetration ~ Utter Master	CATEGORY:Special Ability	TYPE:SpecialQuality																						SOURCEPAGE:p.77
 Superior Spell Knowledge	KEY:Superior Spell Knowledge ~ Utter Master	CATEGORY:Special Ability	TYPE:SpecialQuality																						SOURCEPAGE:p.77
-
-
-
-Divination Ability		KEY:Divination Ability					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike																								(Sp): The oracle is able to use her divination abilities a limited number of times per day. The base daily divination allotment is given on Table 6-5: The Oracle. In addition, she receives bonus divinations per day if she has a high Charisma score. All divination abilities are an innate manifestation of the spell by the same name and do not require any material components other than the divination focus. The Difficulty Class for a saving throw against an oracle's divination is 10 + the divination ability level + the oracle's Wisdom modifier. An oracle is able to use any ability from the list without preparing it ahead of time.
 
 
 ### ~ Murmur

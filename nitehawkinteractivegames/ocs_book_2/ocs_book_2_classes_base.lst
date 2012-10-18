@@ -117,22 +117,25 @@ CLASS:Mystic Knight	!PREALIGN:CG,CN,CE,LE,NE
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Mystic Knight	STARTSKILLPTS:6	CSKILL:Balance|Concentration|TYPE.Craft|Diplomacy|Heal|Hide|Intimidate|Jump|Knowledge (the planes)|Knowledge (arcana)|Listen|Move Silently|Search|Sense Motive|Spot|Survival|Tumble
 ###Block:
-1	ABILITY:Special Ability|AUTOMATIC|Intuitive Defense|Essence Finger|Weapon Focus
-2	ABILITY:Special Ability|AUTOMATIC|Bonded Weapon|Navitus Flemen
-4	ABILITY:Special Ability|AUTOMATIC|Bladed Defender +1, power bond I
-5	ABILITY:Special Ability|AUTOMATIC|Navitus Flemen, Skill Focus
-7	ABILITY:Special Ability|AUTOMATIC|Essence hand, power bond II
-8	ABILITY:Special Ability|AUTOMATIC|Bladed defender +2, Navitus Flemen
-10	ABILITY:Special Ability|AUTOMATIC|Skill Focus
-11	ABILITY:Special Ability|AUTOMATIC|Energy bond I, Navitus Flemen
-12	ABILITY:Special Ability|AUTOMATIC|Bladed defender +3
-13	ABILITY:Special Ability|AUTOMATIC|Essence manipulation
-14	ABILITY:Special Ability|AUTOMATIC|Navitus Flemen
-15	ABILITY:Special Ability|AUTOMATIC|Energy bond II, Skill Focus
-16	ABILITY:Special Ability|AUTOMATIC|Bladed defender +4
-17	ABILITY:Special Ability|AUTOMATIC|Navitus Flemen
-19	ABILITY:Special Ability|AUTOMATIC|Essence mastery, Navitus Flemen
-20	ABILITY:Special Ability|AUTOMATIC|Bladed defender +5, Navitus Flemen mastery, Skill Focus
+1	AUTO:WEAPONPROF:TYPE=Simple
+###Block:
+4	BONUS:VAR|MysticKnightBladedDefenderBonus|CL/4
+2	BONUS:VAR|NavitusFlemenCount|CL+1/3
+5	BONUS:VAR|MysticKnightSkillFocusCount|CL/5
+###Block:
+1	BONUS:ABILITYPOOL|Weapon Focus|1
+1	BONUS:ABILITYPOOL|Mystic Knight Martial Weapon Choice|1
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Intuitive Defense ~ Mystic Knight|Essence Finger ~ Mystic Knight|Weapon Focus ~ Mystic Knight
+2	ABILITY:Special Ability|AUTOMATIC|Bonded Weapon ~ Mystic Knight|Navitus Flemen ~ Mystic Knight
+4	ABILITY:Special Ability|AUTOMATIC|Bladed Defender ~ Mystic Knight|power bond I ~ Mystic Knight
+5	ABILITY:Special Ability|AUTOMATIC|Skill Focus ~ Mystic Knight
+7	ABILITY:Special Ability|AUTOMATIC|Essence hand ~ Mystic Knight|power bond II ~ Mystic Knight
+11	ABILITY:Special Ability|AUTOMATIC|Energy bond I ~ Mystic Knight
+13	ABILITY:Special Ability|AUTOMATIC|Essence manipulation ~ Mystic Knight
+15	ABILITY:Special Ability|AUTOMATIC|Energy bond II ~ Mystic Knight
+19	ABILITY:Special Ability|AUTOMATIC|Essence mastery ~ Mystic Knight
+20	ABILITY:Special Ability|AUTOMATIC|Navitus Flemen mastery ~ Mystic Knight
 
 # Class Name		Hit Dice	Type			Source Page		Save checks bonus															Combat bonus
 CLASS:Ex-Mystic Knight	HD:8		TYPE:Base.PC	SOURCEPAGE:p.61	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
