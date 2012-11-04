@@ -8,6 +8,7 @@ STAT:STR=10|DEX=11|CON=10|INT=10|WIS=10|CHA=10
 RACE:Eagle (Altai White-Shoulders)	!PRERACE:1,%
 #ALIGN:
 #Skills and Feats: Listen +2, Spot +16,
+#Listen WIS+2
 SKILL:Spot	RANK:6
 FEAT:Improved Natural Attack (Talons)
 FEAT:Multiattack
@@ -18,7 +19,8 @@ STAT:STR=10|DEX=11|CON=10|INT=10|WIS=10|CHA=10
 RACE:Eagle (Hovd Yellow)	!PRERACE:1,%
 #ALIGN:
 #Str 10, Dex 15, Con 12, Int 2, Wis 18, Cha 6; Skills and Feats: Listen+6, Spot +20,
-SKILL:Spot	RANK:6
+SKILL:Listen	RANK:2
+SKILL:Spot		RANK:6
 FEAT:Alertness
 FEAT:Flyby Attack
 
@@ -26,7 +28,7 @@ FEAT:Flyby Attack
 STARTPACK:Eagle (Valley Black)	TYPE:Eagle Companion	VISIBLE:NO	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Eagle (Valley Black)]
 STAT:STR=10|DEX=11|CON=10|INT=10|WIS=10|CHA=10
 RACE:Eagle (Valley Black)	!PRERACE:1,%
-#ALIGN:
+ALIGN:TN
 #Str 10, Dex 19, Con 12, Int 2, Wis 14, Cha 6; Skills and Feats: Listen+2, Spot +16,
 SKILL:Spot	RANK:6
 FEAT:Weapon Finesse
@@ -36,8 +38,8 @@ FEAT:Wingover
 STARTPACK:Eagle (Cross)	TYPE:Eagle Companion	VISIBLE:NO	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Eagle (Cross)]
 STAT:STR=10|DEX=11|CON=10|INT=10|WIS=10|CHA=10
 RACE:Eagle (Cross)	!PRERACE:1,%
-#ALIGN:
-#Str 14, Dex 13, Con 18, Int 2, Wis 14, Cha 6; Skills and Feats:
+ALIGN:TN
+#Str 14, Dex 13, Con 18, Int 2, Wis 14, Cha 6; Skills and Feats:	3 ANimal Lvs. 4+2= 6
 #Listen+2, Spot +16, 6 SP
 SKILL:Spot	RANK:6
 FEAT:Endurance
@@ -51,13 +53,13 @@ STARTPACK:Ymandragoran Thrall (Lesser)	TYPE:Default	VISIBLE:NO	EQUIPBUY:0	PREMUL
 STAT:STR=11|DEX=11|CON=11|INT=11|WIS=10|CHA=10
 RACE:Ymandragoran Thrall (Lesser)	!PRERACE:1,%
 #Str 17, Dex 12, Con 15, Int 9, Wis 8, Cha 6
-#Intimidate +7, Listen +7, Spot +7
-#SKILL:Intimidate	RANK:
-#SKILL:Listen	RANK:
-#SKILL:Spot		RANK:
+#Intimidate +7, Listen +7, Spot +7	MAX RANK 6
+SKILL:Intimidate	RANK:6
+SKILL:Listen	RANK:6
+SKILL:Spot		RANK:6
 FEAT:Alertness
 FEAT:Skill Focus (Intimidate)
-#3x4@1st =12 +3 each level
+#3x4@1st =12 +3 each level = 18
 GEAR:Flesh Shield	SIZE:PC	LOCATION:Equipped
 GEAR:Flesh Sword	SIZE:PC	LOCATION:Primary
 
@@ -66,15 +68,15 @@ GEAR:Flesh Sword	SIZE:PC	LOCATION:Primary
 STARTPACK:Ymandragoran Thrall	TYPE:Default	VISIBLE:NO	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Ymandragoran Thrall]
 STAT:STR=10|DEX=11|CON=11|INT=11|WIS=10|CHA=10
 RACE:Ymandragoran Thrall	!PRERACE:1,%
-#Str 18, Dex 12, Con 15, Int 9, Wis 8, Cha 6
+#Str 18, Dex 12, Con 15, Int 9, Wis 8, Cha 6	MAX RANK 9
 #Intimidate +10, Listen +10, Spot +10
-#SKILL:Intimidate	RANK:
-#SKILL:Listen	RANK:
-#SKILL:Spot		RANK:
+SKILL:Intimidate	RANK:9
+SKILL:Listen	RANK:9
+SKILL:Spot		RANK:9
 FEAT:Alertness
 FEAT:Skill Focus (Intimidate)
 FEAT:Power Attack
-#3x4@1st =12 +3 each level
+#3x4@1st =12 +3 each level	TOTAL:16	5*3=15 =27
 GEAR:Flesh Shield	SIZE:PC	LOCATION:Equipped
 GEAR:Flesh Sword	SIZE:PC	LOCATION:Primary
 
@@ -82,11 +84,11 @@ GEAR:Flesh Sword	SIZE:PC	LOCATION:Primary
 STARTPACK:Ymandragoran Thrall (Greater)	TYPE:Default	VISIBLE:NO	EQUIPBUY:0	PREMULT:1,[!PRERACE:1,%],[PRERACE:1,Ymandragoran Thrall (Greater)]
 STAT:STR=10|DEX=10|CON=10|INT=11|WIS=10|CHA=10
 RACE:Ymandragoran Thrall (Greater)	!PRERACE:1,%
-#Str 26, Dex 10, Con 20, Int 9, Wis 8, Cha 6
-#Intimidate +13, Listen +13, Spot +13
-#SKILL:Intimidate	RANK:
-#SKILL:Listen	RANK:
-#SKILL:Spot		RANK:
+#Str 26, Dex 10, Con 20, Int 9, Wis 8, Cha 6	
+#Intimidate +13, Listen +13, Spot +13		MAX RANK 12
+SKILL:Intimidate	RANK:12
+SKILL:Listen	RANK:12
+SKILL:Spot		RANK:12
 FEAT:Alertness
 FEAT:Skill Focus (Intimidate)
 FEAT:Power Attack
@@ -94,7 +96,7 @@ FEAT:Cleave
 GEAR:Flesh Shield	SIZE:PC	LOCATION:Equipped
 GEAR:Flesh Sword	SIZE:PC	LOCATION:Primary
 
-#3x4@1st =12 +3 each level
+#3x4@1st =12 +3 each level	3*8=24 =36  PERFECT!  
 
 ###Block: Clockwork Construct Default Stats
 STARTPACK:Clockwork Construct	TYPE:Default	VISIBLE:NO	EQUIPBUY:0
@@ -102,7 +104,7 @@ STAT:STR=11|DEX=11|CON=10|INT=11|WIS=10|CHA=11
 
 
 STARTPACK:Myrantian Assassin-Golem	TYPE:Default	VISIBLE:NO	EQUIPBUY:0
-#	Abilities: Str 17, Dex 24, Con —, Int 18, Wis 10, Cha 11
+#	Abilities: Str 17, Dex 24, Con , Int 18, Wis 10, Cha 11
 STAT:STR=11|DEX=10|CON=10|INT=10|WIS=10|CHA=11
 #Skills: Balance +14, Climb +10, Escape Artist +20, Hide +20, Jump +10, Listen +7, Move Silently +20, Open Lock +14, Spot +7, Tumble +20
 FEAT:Combat Expertise
