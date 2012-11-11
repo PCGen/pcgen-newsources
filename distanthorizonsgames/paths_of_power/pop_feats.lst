@@ -13,7 +13,7 @@ Buy Path of Power		TYPE:PathOfPower	COST:1	BONUS:ABILITYPOOL|Path of Power Choic
 
 
 ###Block: Actual Feats
-Armored Caster	SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREFEAT:1,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
+Armored Caster	SOURCEPAGE:p.7	KEY:Armored Caster ~ PoP	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREFEAT:1,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
 Domain Ability	SOURCEPAGE:p.7	TYPE:General	DESC:Your mystical studies have granted you an innate talent.	PRETEXT:Having expended a Feat on a domain path.	BENEFIT:You gain the granted power for the domain as well as access to its spells.
 #Special: Prestige or Exclusive domain abilities may cost two Feats to acquire at the option of the game master.
 Path Master		SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You become a semi-spontaneous caster.	PRETEXT:Knowing at least three paths.	BENEFIT:You may invest your spell slots in paths rather than in individual spells. You may then expend those spell levels in casting any spell on the path that you can handle. For example, a 8'th level wizard with the Pyrotics path could invest two fourth level spell slots in it, and then use them to cast Fireball and Burning Hands twice each, or any other combination of Pyrotic spells of up to level four - the maximum level of spell which he or she can cast - which adds up to eight spell levels or less.
@@ -32,45 +32,45 @@ Spell Ability	SOURCEPAGE:p.8	TYPE:General	DESC:You have acquired limited spellca
 
 
 
-	DEFINE:SpellAbilityCasterLvlZero|0
-	DEFINE:SpellAbilityCasterLvlOne|0
-	DEFINE:SpellAbilityCasterLvlTwo|0
-	DEFINE:SpellAbilityCasterLvlThree|0
-	DEFINE:SpellAbilityCasterLvlFour|0
-	DEFINE:SpellAbilityCasterLvlFive|0
-	DEFINE:SpellAbilityCasterLvlSix|0
+#	DEFINE:SpellAbilityCasterLvlZero|0
+#	DEFINE:SpellAbilityCasterLvlOne|0
+#	DEFINE:SpellAbilityCasterLvlTwo|0
+#	DEFINE:SpellAbilityCasterLvlThree|0
+#	DEFINE:SpellAbilityCasterLvlFour|0
+#	DEFINE:SpellAbilityCasterLvlFive|0
+#	DEFINE:SpellAbilityCasterLvlSix|0
 
-BONUS:VAR|SpellAbilityCasterLvlZero|1
-BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,2
-BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
+#BONUS:VAR|SpellAbilityCasterLvlZero|1
+#BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,2
+#BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
 #
-BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=3|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=10|PREVARGTEQ:SpellAbilityFeatCount,4
-BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
+#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=3|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=10|PREVARGTEQ:SpellAbilityFeatCount,4
+#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
 #	
-BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=11|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=15|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=11|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=15|PREVARGTEQ:SpellAbilityFeatCount,1
 #
-BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
 #
-BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
 #
-BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=16|PREVARGTEQ:SpellAbilityFeatCount,7
-BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,8
-BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,10
-BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,11
+#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=16|PREVARGTEQ:SpellAbilityFeatCount,7
+#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,8
+#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,10
+#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,11
 #
-BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,9
-BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,12
-BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,13
-BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,14
+#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,9
+#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,12
+#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,13
+#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,14
