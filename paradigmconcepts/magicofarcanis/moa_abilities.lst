@@ -7,10 +7,10 @@ SOURCELONG:Magic of Arcanis	SOURCESHORT:MoA	SOURCEWEB:http://www.paradigmconcept
 Altherian Craftsman									CATEGORY:Special Ability																																			AUTO:FEAT|Altherian Craftsman
 Sharp Intellect										CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality
 Dedication											CATEGORY:Special Ability							DEFINE:DedicationBonus|0	DESC:%1|DedicationBonus																									ADD:ABILITY|Special Ability|NORMAL|Dedication Output Choice
-Dedication Output Choice	OUTPUTNAME:Dedication				CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality						DESC:%1|DedicationBonus	STACK:NO	MULT:YES	CHOOSE:SKILLSNAMED|Alchemy|Armorsmith|Flintlocks|Trapmaking|Weaponsmithing	SELECT:1																BONUS:SKILL|%LIST|DedicationBonus	BONUS:SKILL|Knowledge (Architecture and Engineering)|DedicationBonus
+Dedication Output Choice	OUTPUTNAME:Dedication				CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality						DESC:%1|DedicationBonus	STACK:NO	MULT:YES	CHOOSE:SKILLSNAMED|Alchemy|Armorsmith|Flintlocks|Craft (Trapmaking)|Craft (Weaponsmithing)	SELECT:1																BONUS:SKILL|%LIST|DedicationBonus	BONUS:SKILL|Knowledge (Architecture and Engineering)|DedicationBonus
 Craft Clockwork Companion								CATEGORY:Special Ability	TYPE:SpecialQuality																																																																					FOLLOWERS:Clockwork Companion|1	COMPANIONLIST:Clockwork Companion|RACETYPE=Clockwork Construct
 #Trapfinding								CATEGORY:Special Ability
-Exploit Flaw										CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality	DEFINE:ExploitFlawBonus|0																																																									BONUS:VAR|ExploitFlawBonus|2
+#Exploit Flaw										CATEGORY:Special Ability	TYPE:Extraordinary.SpecialQuality	DEFINE:ExploitFlawBonus|0																																																									BONUS:VAR|ExploitFlawBonus|2
 Master Craftsman										CATEGORY:Special Ability																																								ADD:FEAT|Master Craftsman
 Forge Gears and Magic		OUTPUTNAME:Forge, Gears, and Magic		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Eschew Requirements		OUTPUTNAME:Eschew Spell Requirements	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
@@ -24,9 +24,9 @@ Instant Inspection	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 # Ability Name			Category of Ability		Type										Required Ability							Multiple?	Choose		Automatically Gained Feat	Bonus to skill
 Aura of Faith			CATEGORY:Special Ability
 Hedge Mage's Education		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Summon Familiar			CATEGORY:Special Ability
+#Summon Familiar			CATEGORY:Special Ability
 Intution				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																								BONUS:SKILL|Spot,Listen,Sense Motive|1|TYPE=Insight
-Poison Use				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Poison Use				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Brew Potion				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																			AUTO:FEAT|Brew Potion
 Adaptable Magic			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Hedge Mage's Lore			CATEGORY:Special Ability
@@ -56,7 +56,7 @@ Wyrd Mastery			CATEGORY:Special Ability	TYPE:HedgeMageLoreGreater.SpecialQuality
 ###Block: Shaman -----------------------------------------------------------------------------------------------------
 # Ability Name					Output Name		Category of Ability		Type										Required Ability																			Var. Min. Value			Define									Description						Clone Movement		Automatically Gained Feat	Ability							Save checks bonus		Combat bonus					Add to base move															Bonus to skill										Modify VAR							Weapon prof. bonus
 Spirit Calling								CATEGORY:Special Ability
-Channeling									CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Channeling									CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Between Worlds								CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																															DEFINE:BetweenWorlds|0																																			BONUS:COMBAT|INITIATIVE|-1																				BONUS:SKILL|Listen,Spot|var("BetweenWorlds")
 Spirit Guide								CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Edge of Perception							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural																															DEFINE:EdgeOfPerception|0																																																																						BONUS:VAR|BetweenWorlds|var("EdgeOfPerception")
@@ -142,7 +142,7 @@ Quicker Than The Mind	CATEGORY:Special Ability	TYPE:SpecialQuality
 
 ###Block: Warder -----------------------------------------------------------------------------
 
-#Track				CATEGORY:Special Ability	TYPE:SpecialQuality
+Track				CATEGORY:Special Ability	TYPE:SpecialQuality
 
 # Ability Name			Category of Ability		Type							Required Ability									Restricted Ability																						Var. Max. Value			Define																											Description						Stackable?	Multiple?	Choose													Selections	Add 											Modify VAR
 Homeland Defense			CATEGORY:Special Ability	TYPE:SpecialQuality																																													DEFINE:Aquatic|0	DEFINE:Desert|0	DEFINE:Forest|0	DEFINE:Hill|0	DEFINE:Marsh|0	DEFINE:Mountains|0	DEFINE:Plains|0	DEFINE:Aquatic|0	DEFINE:Urban|0
@@ -150,16 +150,16 @@ Homeland Defense			CATEGORY:Special Ability	TYPE:SpecialQuality																	
 #!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice I
 Homeland Defense Choice I	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality																																										DEFINE:HomelandDefenseBonus1|0																							DESC:%2 +%1|HomelandDefenseBonus1|%LIST			MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain					SELECT:1
 #ADD:ABILITY|Special Ability|NORMAL|TYPE.HomelandDefenseTerrain
-Homeland Defense Choice II	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice I	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice II																				DEFINE:HomelandDefenseBonus2|0																							DESC:%2 +%1|HomelandDefenseBonus2|%LIST	STACK:NO	MULT:YES															SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
+Homeland Defense Choice II	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice I	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice II																				DEFINE:HomelandDefenseBonus2|0																							DESC:%2 +%1|HomelandDefenseBonus2|%LIST	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain														SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
 #MULT:YES	STACK:YES	CHOOSE:STRING|Aquatic|Desert|Forest|Hill|Marsh|Mountains|Plains|Underground|Urban	SELECT:1
 #CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain
-Homeland Defense Choice III	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice II	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice III																			DEFINE:HomelandDefenseBonus3|0																							DESC:%2 +%1|HomelandDefenseBonus3|%LIST	STACK:NO	MULT:YES															SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
+Homeland Defense Choice III	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice II	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice III																			DEFINE:HomelandDefenseBonus3|0																							DESC:%2 +%1|HomelandDefenseBonus3|%LIST	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain														SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
 #MULT:YES	STACK:YES	CHOOSE:STRING|Aquatic|Desert|Forest|Hill|Marsh|Mountains|Plains|Underground|Urban	SELECT:1
 #CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain
-Homeland Defense Choice IV	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice III	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice IV																				DEFINE:HomelandDefenseBonus4|0																							DESC:%2 +%1|HomelandDefenseBonus4|%LIST	STACK:NO	MULT:YES															SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
+Homeland Defense Choice IV	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice III	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice IV																				DEFINE:HomelandDefenseBonus4|0																							DESC:%2 +%1|HomelandDefenseBonus4|%LIST	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain														SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
 #MULT:YES	STACK:YES	CHOOSE:STRING|Aquatic|Desert|Forest|Hill|Marsh|Mountains|Plains|Underground|Urban	SELECT:1
 #CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain
-Homeland Defense Choice V	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice IV	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice V																				DEFINE:HomelandDefenseBonus5|0																							DESC:%2 +%1|HomelandDefenseBonus5|%LIST	STACK:NO	MULT:YES															SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
+Homeland Defense Choice V	CATEGORY:Special Ability	TYPE:HomelandDefenseFeat.SpecialQuality	PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice IV	!PREABILITY:1,CATEGORY=Special Ability,Homeland Defense Choice V																				DEFINE:HomelandDefenseBonus5|0																							DESC:%2 +%1|HomelandDefenseBonus5|%LIST	STACK:NO	MULT:YES	CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain														SELECT:1	ADD:ABILITY|Special Ability|NORMAL|TYPE=HomelandDefenseTerrain
 #MULT:YES	STACK:YES	CHOOSE:STRING|Aquatic|Desert|Forest|Hill|Marsh|Mountains|Plains|Underground|Urban	SELECT:1
 #CHOOSE:ABILITY|Special Ability|TYPE=HomelandDefenseTerrain
 
@@ -187,15 +187,15 @@ Urban					CATEGORY:Special Ability	TYPE:HomelandDefenseTerrain																		
 ###Block: Bound Guardian
 #Empathic Link		CATEGORY:Special Ability	TYPE:Supernatural
 # Ability Name		Category of Ability		Type						Define
-Parry				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:BoundGuardianParry|0
+Parry		KEY:Parry ~ Bound Guardian		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:BoundGuardianParry|0
 Alertness			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Bodyguard			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Riposte			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:BoundGuardianRiposte|0
-#Share Spells		CATEGORY:Special Ability	TYPE:Supernatural
-Uncanny Dodge		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Riposte	KEY:Riposte ~ Bound Guardian		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:BoundGuardianRiposte|0
+Share Spells	KEY:Share Spells ~ Bound Guardian	CATEGORY:Special Ability	TYPE:Supernatural
+#Uncanny Dodge		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Bound Evasion		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Stabilize			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Improved Uncanny Dodge	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Stabilize		KEY:Stabilize ~ Bound Guardian	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Improved Uncanny Dodge	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 ###Block: Magister --------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type									Required Class
@@ -204,17 +204,17 @@ Master Spell Focus		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Nurion's Wards			CATEGORY:Special Ability	TYPE:SpecialQuality
 
 #Nurions Teachings
-Arcane Fire				CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
-Arcane Shield			CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
-Arcane Reach			CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
-Arcane Transference		CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
-Intensify Spells			CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
-Mastery of Counterspelling	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
-Mastery of Elements		CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
-Mastery of Shaping		CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
-Spell Power				CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
-Spell-Like Ability		CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
-Undying				CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings			PRECLASS:1,Magister=5
+Arcane Fire				KEY:Arcane Fire ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
+Arcane Shield			KEY:Arcane Shield ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
+Arcane Reach			KEY:Arcane Reach ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
+Arcane Transference		KEY:Arcane Transference ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings.Supernatural
+Intensify Spells			KEY:Intensify Spells ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
+Mastery of Counterspelling	KEY:Mastery of Counterspelling ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
+Mastery of Elements		KEY:Mastery of Elements ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
+Mastery of Shaping		KEY:Mastery of Shaping ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
+Spell Power				KEY:Spell Power ~ Nurions Teachings		CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
+Spell-Like Ability		KEY:Spell-Like Ability ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings
+Undying				KEY:Undying ~ Nurions Teachings	CATEGORY:Special Ability	TYPE:SpecialQuality.NurionsTeachings			PRECLASS:1,Magister=5
 
 ###Block: Via Sapientia ----------------------------------------------------------------------------------------------------------------------------
 
@@ -251,15 +251,15 @@ Sapienti Ability IV -Seeds and Whispers		CATEGORY:Special Ability	TYPE:SpecialQu
 
 #Sapienti of Evocation
 Specialization Mastery - Evocation			CATEGORY:Special Ability	TYPE:SpecialQuality
-Sapienti Ability I -Empowered Evocation		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Sapienti Ability II -Evocation Breakthrough	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Sapienti Ability I - Empowered Evocation		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Sapienti Ability II - Evocation Breakthrough	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Sapienti Ability III - Force Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Sapienti Ability IV -Mastery of Shaping		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Sapienti Ability IV - Mastery of Shaping		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 #Sapienti of Illusion
 Specialization Mastery - Illusion			CATEGORY:Special Ability	TYPE:SpecialQuality
 Sapienti Ability I - Chains of Disbelief		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Sapienti Ability II -Master of Shadows		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+Sapienti Ability II - Master of Shadows		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Sapienti Ability III - Lord of Shadows		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.SpellLike
 Sapienti Ability IV - Mindgames			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Supernatural
 
@@ -282,13 +282,13 @@ Sapienti Ability IV - Split Mind			CATEGORY:Special Ability	TYPE:SpecialQuality.
 
 ###Block: Tears of Almeric -------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type						Save checks bonus
-Arcane Reserve			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Arcane Reserve		KEY:Arcane Reserve ~ Tears of Almeric	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Quickened Spell Resistance	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Quicken Escape			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Improved Iron Will		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	BONUS:CHECKS|Will|2|TYPE=Inherent
 Improved Lightning Reflexes	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	BONUS:CHECKS|Reflex|2|TYPE=Inherent
-Inner Strength			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Evasion				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Inner Strength			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Evasion				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Potence				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Shield the Defenseless		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 
@@ -330,7 +330,7 @@ Control Greater Surge	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 
 ###Block: Arcane Infiltrator ---------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type
-Arcane Reserve			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Arcane Reserve		KEY:Arcane Reserve ~ Arcane Infiltrator	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Trail					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Arcane Subterfuge			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Hidden Advantage			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
@@ -388,7 +388,7 @@ Craft Esters Salves	OUTPUTNAME:Craft Esters & Salves	CATEGORY:Special Ability	TY
 Imbue Fetish								CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Detect Spirits								CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Detect Undead
 Speak with Spirits							CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=var("CL=The Ehtzara")|Divination
-Frightful Presence							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Frightful Presence							CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Curse of Retort								CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Rite of Devouring								CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Taboos									CATEGORY:Special Ability	TYPE:SpecialQuality
@@ -396,7 +396,7 @@ Ehtzara Proficiencies							CATEGORY:Special Ability																					AUTO:WE
 
 ###Block: Discipulus Geometricus --------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type
-Arcane Reserve			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Arcane Reserve		KEY:Arcane Reserve ~ Discipulus Geometricus	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Lesser Rune Casting		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Ritualistic Casting		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Sculpt Greater Runic Item	CATEGORY:Special Ability	TYPE:SpecialQuality
@@ -412,7 +412,7 @@ Military Training		CATEGORY:Special Ability	TYPE:SpecialQuality
 Arcane Accuracy		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Arcane Alacrity		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Arcane Defense		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Arcane Strike		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
+#Arcane Strike		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Arcane Power		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Improved Armored Caster	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
@@ -422,12 +422,12 @@ Improved Armored Caster	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordina
 # Ability Name	Output Name									Category of Ability		Type						Define			Virtual Feat		Bonus to skill					Modify VAR
 Focused Fury											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Armored Caster											CATEGORY:Special Ability	TYPE:SpecialQuality							VFEAT:Armored Caster
-Additional Rage											CATEGORY:Special Ability	TYPE:SpecialQuality			DEFINE:AdditionalRage|0												BONUS:VAR|RageTimes|AdditionalRage
+Additional Rage		KEY:Additional Rage ~ Magus Irascortum									CATEGORY:Special Ability	TYPE:SpecialQuality			DEFINE:AdditionalRage|0												BONUS:VAR|RageTimes|AdditionalRage
 Channel Rage	OUTPUTNAME:Channel Rage, Greater|PREVAREQ:ChannelRage,1	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:ChannelRage|0
 Enhanced Focus											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary									BONUS:SKILL|Concentration|max(CHA,0)
-Perfected Control											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Perfected Control											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	STACK:YES	CHOOSE:NOCHOICE	MULT:YES
 Arcane Strength											CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Perfected Control											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Perfected Control											CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 
 ###Block: The Master-Smith ------------------------------------------------------------------------------------------------
@@ -456,20 +456,18 @@ Master Craftsman (Weaponsmithing) Bonus	CATEGORY:Special Ability	PREFEAT:1,Maste
 ###Block: Savant -----------------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type
 Practiced Spellcaster		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Ritualistic Casting		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Metamagic Mastery			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Bonus Metamagic Feat		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-#At levels 2, 4, 6, and 8, the Savant gains a bonus metamagic feat for which he meets the requirements.
+#Ritualistic Casting		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Metamagic Mastery			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Bonus Metamagic Feat		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary			BONUS:ABILITYPOOL|Savant Feat|BonusFeatSavantCount	DEFINE:BonusFeatSavantCount|0
 Metaphysical Understanding	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Quickened Metamagic		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Eldritch Rending			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Metamagical Grand Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 
 
-
 ###Block: Song Master of Cadic -------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type						Stat bonus
-Bardic Music			CATEGORY:Special Ability	TYPE:SpecialQuality
+#Bardic Music			CATEGORY:Special Ability	TYPE:SpecialQuality
 Songs					CATEGORY:Special Ability	TYPE:SpecialQuality
 Song of Heart's Fire		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	BONUS:STAT|STR,DEX|4|TYPE=Morale}PREAPPLY:ANYPC
 Song of Darkness' Vengeance	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -509,7 +507,7 @@ Mastery of the Earth	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 # Ability Name				Output Name				Category of Ability		Type						Innate Spells
 Going it Solo									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Detect Secret Doors								CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	SPELLS:Innate|TIMES=ATWILL|Detect Secret Doors
-#Trap Sense				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+Trap Sense				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 #Hide in Plain Sight		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 #Improved Evasion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Greater Dispel									CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -523,7 +521,7 @@ Wind Dance				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		DEFINE:Win
 Air Domain				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Rain Chant				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Storms Embrace			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Storm Domain			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Storm Domain			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Bend the Storm to Thy Will	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Sudden Storm			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Furious Storm of Vengeance	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -532,11 +530,11 @@ Furious Storm of Vengeance	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLik
 # Ability Name		Category of Ability		Type						Automatically Gained Armor Prof.	Automatically Gained Shield Prof.	Automatically Gained Weapon Prof.
 Afatkuq Proficiencies	CATEGORY:Special Ability							AUTO:ARMORPROF|ARMORTYPE=Light	AUTO:SHIELDPROF|Totem Shield		AUTO:WEAPONPROF|Club|Dagger|Dart|Quarterstaff|Scimitar|Sickle|Shortspear|Sling|Spear
 Craft Totem Shield	CATEGORY:Special Ability	TYPE:SpecialQuality
-Dedication			CATEGORY:Special Ability	TYPE:SpecialQuality
+Dedication			KEY:Dedication ~ Afatkuq	CATEGORY:Special Ability	TYPE:SpecialQuality
 Surgery			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Healing Surgery		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Cleansing Surgery		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Brew Potion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Brew Potion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Restorative Surgery	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 Ancestral Dream		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Spiritual Surgery		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
@@ -563,7 +561,7 @@ Sense Undead				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 You Are Mine				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Skeletal Minion				CATEGORY:Special Ability	TYPE:SpecialQuality
 Eschew Necromantic Spell Component	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Rebuke Corporeal Undead			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Rebuke Corporeal Undead			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Secrets of Necromancy			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Chosen of Neroth				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Legion of the Dead			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:LegionOfDead|0
@@ -582,7 +580,7 @@ Soul Link				CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
 #Share Spells			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 #Share Saving Throws		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 #Improved Evasion			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-#Command				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
+Command				CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Spirit Form				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																																																							VISION:Darkvision (60')	SR:25		DR:10/magic
 As The Wind				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 The Sky Watches			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:TheSkyWatches|0		DESC:%1|TheSkyWatches
@@ -600,7 +598,7 @@ Sworn Servant of Althares				CATEGORY:Special Ability	TYPE:SpecialQuality
 #Uncanny Dodge						CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 #Evasion							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 The Word of Altheres					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
-Improved Uncanny Dodge					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Improved Uncanny Dodge					CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Altheres' Grace						CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural													ABILITY:Special Ability|VIRTUAL|Monk AC|!PRECLASS:1,Monk=1	ABILITY:Special Ability|VIRTUAL|Monk AC Bonus|PRECLASS:1,Monk=1
 #COMMENT: using preclass monk to avoid a loop. They either gain the monk ability if it's not already possessed OR a +2 insight bonus to AC if they possess the Monk AC ability.
 Altheres' Guidance					CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -665,7 +663,7 @@ Arcane Style			OUTPUTNAME:Improved Arcane Style|PREVAREQ:ArcaneStyleLvl,1							
 Absorb Charges																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Eldritch Storm																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Arcane Mind																																		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural
-Improved Tracking																																	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Improved Tracking																																	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Arcane Healing																																	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 Sorcerer King's Blessing																															CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Spell Thief																																		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
@@ -732,7 +730,7 @@ Riposte								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
 Knockback								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
 Standstill								CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary
 Fast Healing 5							CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
-Guard									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
+#Guard									CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary
 Stabilize								CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike
 
 ###Block: Additional Spells allowed
