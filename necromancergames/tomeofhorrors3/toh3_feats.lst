@@ -4,15 +4,56 @@ SOURCELONG:Tome of Horrors III	SOURCESHORT:ToH3	SOURCEDATE:2007-03
 
 
 # Feat Name				Output Name						Type			Req. Att.	Prohibited Feat							Req. Movement	Required Race			Required Stat	Required Text								Special Ability															Define						Description																											Stackable?	Multiple?	Choose		Bonus to HP				Bonus to skill				Modify VAR
-Align SpellLike Ability		OUTPUTNAME:Align Spell-Like Ability		TYPE:General																							PRETEXT:Spell-like ability at caster level 4th or higher.																									DESC:The creature can use a spell-like ability tuned to either law, chaos, good or evil.
-Death's Blessing										TYPE:General															PRERACE:1,RACETYPE=Undead	PRESTAT:1,CHA=13																																			DESC:The undead creature gains bonus hit points.																											BONUS:HP|CURRENTMAX|TL*CHA
-Enlarge Spell Like Ability	OUTPUTNAME:Enlarge Spell-Like Ability	TYPE:General																							PRETEXT:Spell-like ability at caster level 4th or higher.																									DESC:The creature can use a spell-like ability to a range farther than normal.
-Extend Spell Like Ability	OUTPUTNAME:Extend Spell-Like Ability	TYPE:General																							PRETEXT:Spell-like ability at caster level 4th or higher.																									DESC:The creature can use a spell-like ability that lasts longer than normal.
-Improved Constriction									TYPE:General	PREATT:4																					PRETEXT:Constriction special attack.																												DESC:The creature's constriction attack is deadlier than normal.
-Improved Flight										TYPE:General												PREMOVE:1,Fly=1																																											DESC:The creature has more control over flying than normal.																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Menacing											TYPE:General																				PRESTAT:1,STR=13																																																																											BONUS:SKILL|Intimidate|(STR-CHA)
-Maximize Spell Like Ability	OUTPUTNAME:Maximize Spell-Like Ability	TYPE:General																							PRETEXT:Spell-like ability at caster level 8th or higher.																									DESC:The creature can use a spell-like ability to maximum effect.
-Resistance to Negative Energy								TYPE:General			!PREFEAT:2,CHECKMULT,Resistance to Negative Energy																						SAB: Resistance % to any damage-dealing/healing negative energy effect.|NegativeEnergyResistanceTOH	DEFINE:NegativeEnergyResistanceTOH|0	DESC:The creature gains resistance to the effects of negative energy (such as that delivered by inflict spells, some undead, or exposure to negative energy creatures).	STACK:YES	MULT:YES	CHOOSE:NOCHOICE												BONUS:VAR|NegativeEnergyResistanceTOH|5
-Resistance to Positive Energy								TYPE:General			!PREFEAT:2,CHECKMULT,Resistance to Negative Energy																						SAB: Resistance % to any damage-dealing/healing positive energy effect.|PositiveEnergyResistanceTOH	DEFINE:PositiveEnergyResistanceTOH|0	DESC:The creature gains resistance to the effects of positive energy (such as that delivered by cure spells or exposure to positive energy creatures).			STACK:YES	MULT:YES	CHOOSE:NOCHOICE												BONUS:VAR|PositiveEnergyResistanceTOH|5
-Strength of the Grave									TYPE:General	PREATT:2													PRERACE:1,RACETYPE=Undead																																						DESC:Undead that have been turned can attempt to recover and negate the turning effect.
-Swim By Attack			OUTPUTNAME:Swim-By Attack			TYPE:General												PREMOVE:1,Swim=1																																											DESC:The creature can attack while swimming.
+Align Spell-Like Ability	SOURCEPAGE:p.234	TYPE:General																							PRETEXT:Spell-like ability at caster level 4th or higher.																									DESC:The creature can use a spell-like ability tuned to either law, chaos, good or evil.
+Death's Blessing			SOURCEPAGE:p.234							TYPE:General															PRERACE:1,RACETYPE=Undead	PRESTAT:1,CHA=13																																			DESC:The undead creature gains bonus hit points.																											BONUS:HP|CURRENTMAX|TL*CHA
+Enlarge Spell-Like Ability	SOURCEPAGE:p.234	TYPE:General																							PRETEXT:Spell-like ability at caster level 4th or higher.																									DESC:The creature can use a spell-like ability to a range farther than normal.
+Extend Spell-Like Ability	SOURCEPAGE:p.234	TYPE:General																							PRETEXT:Spell-like ability at caster level 4th or higher.																									DESC:The creature can use a spell-like ability that lasts longer than normal.
+Improved Constriction		SOURCEPAGE:p.234							TYPE:General	PREATT:4																					PRETEXT:Constriction special attack.																												DESC:The creature's constriction attack is deadlier than normal.
+235
+Improved Flight			SOURCEPAGE:p.235							TYPE:General												PREMOVE:1,Fly=1																																											DESC:The creature has more control over flying than normal.																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Menacing				SOURCEPAGE:p.235							TYPE:General																				PRESTAT:1,STR=13																																																																											BONUS:SKILL|Intimidate|(STR-CHA)
+Maximize Spell-Like Ability	SOURCEPAGE:p.235	TYPE:General																							PRETEXT:Spell-like ability at caster level 8th or higher.																									DESC:The creature can use a spell-like ability to maximum effect.
+Resistance to Negative Energy	SOURCEPAGE:p.235							TYPE:General			!PREFEAT:2,CHECKMULT,Resistance to Negative Energy																						SAB: Resistance % to any damage-dealing/healing negative energy effect.|NegativeEnergyResistanceTOH	DEFINE:NegativeEnergyResistanceTOH|0	DESC:The creature gains resistance to the effects of negative energy (such as that delivered by inflict spells, some undead, or exposure to negative energy creatures).	STACK:YES	MULT:YES	CHOOSE:NOCHOICE												BONUS:VAR|NegativeEnergyResistanceTOH|5
+Resistance to Positive Energy	SOURCEPAGE:p.235							TYPE:General			!PREFEAT:2,CHECKMULT,Resistance to Negative Energy																						SAB: Resistance % to any damage-dealing/healing positive energy effect.|PositiveEnergyResistanceTOH	DEFINE:PositiveEnergyResistanceTOH|0	DESC:The creature gains resistance to the effects of positive energy (such as that delivered by cure spells or exposure to positive energy creatures).			STACK:YES	MULT:YES	CHOOSE:NOCHOICE												BONUS:VAR|PositiveEnergyResistanceTOH|5
+Strength of the Grave		SOURCEPAGE:p.235							TYPE:General	PREATT:2													PRERACE:1,RACETYPE=Undead																																						DESC:Undead that have been turned can attempt to recover and negate the turning effect.
+Swim-By Attack			SOURCEPAGE:p.235			TYPE:General												PREMOVE:1,Swim=1																																											DESC:The creature can attack while swimming.
+
+
+##
+Healing Shift
+When a therianthrope shifts forms, it heals a
+limited amount of damage.
+Prerequisites: Therianthrope.
+Benefit: When a therianthrope changes forms,
+it immediately heals a number of hit points equal
+to its total character level (Hit Dice plus any class
+levels). This does not function if the therianthrope
+is slain (and reverts back to its animal form). This
+feat is usable once per day.
+Normal: Therianthropes do not regain lost hit
+points for changing forms.
+
+Quicken Shift
+A therianthrope can change forms slightly faster
+than normal.
+Prerequisites: Therianthrope, Int 13+.
+Benefit: When a therianthrope changes forms it
+does so as a move action.
+Normal: Changing forms is a standard action.
+
+# Domain
+Serpent Domain
+Granted Power: Rebuke or command animals
+(snakes only) as an evil cleric rebukes or commands
+undead. This ability can be used a number of times
+per day equal to 3 + your Charisma modifier.
+Serpent Domain Spells
+1. Magic Fang
+2. Summon Swarm (snakes only)
+3. Greater Magic Fang
+4. Charm Monster
+5. Animal Growth
+6. Ott's Irresistible Dance
+7. Creeping Doom (tiny snakes)
+8. Animal Shapes (snake form only)
+9. Summon Nature's Ally IX (snakes only)
