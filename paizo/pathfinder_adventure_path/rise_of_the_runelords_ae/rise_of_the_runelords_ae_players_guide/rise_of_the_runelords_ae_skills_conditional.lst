@@ -1,0 +1,24 @@
+SOURCELONG:Rise of the Runelords (AE) Player's Guide	SOURCESHORT:RLAE	SOURCEWEB:http://paizo.com/products/btpy8tgl?Pathfinder-Adventure-Path-Rise-of-the-Runelords-Anniversary-Edition-Players-Guide		SOURCEDATE:2012-07
+# Original Entry by: David R. Bender
+
+###Block: Conditional Skills for output only
+# Skill Name					Key Stat	Untrained?			Classes	Type				Visible			Req. Rule (in options)		Prohibited Var. Value
+Bluff (Giant subtype)			KEYSTAT:CHA	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Giant subtype).MISC"),var("SKILL.Bluff.MISC")
+Perception (Giant subtype)		KEYSTAT:WIS	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Perception (Giant subtype).MISC"),var("SKILL.Perception.MISC")
+Sense Motive (Giant subtype)	KEYSTAT:WIS	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Sense Motive (Giant subtype).MISC"),var("SKILL.Sense Motive.MISC")
+Appraise (Treasure Hoard)		KEYSTAT:INT	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Appraise (Treasure Hoard).MISC"),SKILL.Appraise.MISC
+
+#Survival (Find Food)				KEYSTAT:WIS	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Survival (Find Food).MISC"),SKILL.Survival.MISC
+
+###Block: Skill .MODs
+# Skill Name		Bonus to skill																Bonus to skill rank
+Bluff.MOD			BONUS:SKILL|Bluff (Giant subtype)|var("SKILL.Bluff.MISC")					BONUS:SKILLRANK|Bluff (Giant subtype)|skillinfo("TOTALRANK","Bluff")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Bluff (Giant subtype).MISC"),var("SKILL.Bluff.MISC")
+Perception.MOD		BONUS:SKILL|Perception (Giant subtype)|var("SKILL.Perception.MISC")			BONUS:SKILLRANK|Perception (Giant subtype)|skillinfo("TOTALRANK","Perception")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Perception (Giant subtype).MISC"),var("SKILL.Perception.MISC")
+Sense Motive.MOD	BONUS:SKILL|Sense Motive (Giant subtype)|var("SKILL.Sense Motive.MISC")		BONUS:SKILLRANK|Sense Motive (Giant subtype)|skillinfo("TOTALRANK","Sense Motive")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Sense Motive (Giant subtype).MISC"),var("SKILL.Sense Motive.MISC")
+Appraise.MOD		BONUS:SKILL|Appraise (Treasure Hoard)|SKILL.Appraise.MISC						BONUS:SKILLRANK|Appraise (Treasure Hoard)|skillinfo("TOTALRANK","Appraise")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Appraise (Treasure Hoard).MISC"),SKILL.Appraise.MISC
+
+#Survival.MOD		BONUS:SKILL|Survival (Find Food)|SKILL.Survival.MISC						BONUS:SKILLRANK|Survival (Find Food)|skillinfo("TOTALRANK","Survival")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Survival (Find Food).MISC"),SKILL.Survival.MISC
+
+#
+# End
+#
