@@ -15,49 +15,49 @@ Troll styptic								TYPE:Goods.Alchemical.Consumable		COST:100			SOURCEPAGE:p.4
 
 ###Block:Ioun Stones
 # Equipment Name							Output Name				Type						Cost			Source Page			Ability				Caster level						Save checks bonus				Combat bonus					Bonus to skill						Stat bonus					Special Property
-Ioun Stone (Amber Spindle)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:5000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-Ioun Stone (Amber Spindle - Cracked: Fortitude)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.46		BONUS:CHECKS|Fortitude|min(5,AmberStoneStack)|TYPE=Resistance	SPROP:Adds a +1 Fortitude Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-Ioun Stone (Amber Spindle - Cracked: Reflex)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.46		BONUS:CHECKS|Reflex|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Reflex Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-Ioun Stone (Amber Spindle - Cracked: Will)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.46		BONUS:CHECKS|Will|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Will Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-Ioun Stone (Amber Spindle - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:25000		SOURCEPAGE:p.47		BONUS:CHECKS|ALL|min(3,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +3 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+Ioun Stone (Amber Spindle)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:5000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+Ioun Stone (Amber Spindle - Cracked ~ Fortitude)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.46		BONUS:CHECKS|Fortitude|min(5,AmberStoneStack)|TYPE=Resistance	SPROP:Adds a +1 Fortitude Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+Ioun Stone (Amber Spindle - Cracked ~ Reflex)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.46		BONUS:CHECKS|Reflex|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Reflex Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+Ioun Stone (Amber Spindle - Cracked ~ Will)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.46		BONUS:CHECKS|Will|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Will Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+Ioun Stone (Amber Spindle - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:25000		SOURCEPAGE:p.47		BONUS:CHECKS|ALL|min(3,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +3 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
 
 Ioun Stone (Clear Spindle - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:1000		SOURCEPAGE:p.46		SPROP:Sustains user on half the normal food or water
 Ioun Stone (Clear Spindle - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:2000		SOURCEPAGE:p.47		SPROP:Sustains user without food, but it must consume twice the normal water
 
-Ioun Stone (Crimson Sphere)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:24000		SOURCEPAGE:p.44		BONUS:STAT|INT|min(6,2*CrimsonStoneStack)|TYPE=Enhancement	DEFINE:VAR|CrimsonStoneStack|0	BONUS:VAR|CrimsonStoneStack|1
-Ioun Stone (Crimson Sphere - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:12000		SOURCEPAGE:p.46		BONUS:STAT|INT|min(6,2*CrimsonStoneStack)|TYPE=Enhancement	DEFINE:VAR|CrimsonStoneStack|0	DEFINE:VAR|CrimsonStoneCStack|0	BONUS:VAR|CrimsonStoneCStack|1	BONUS:VAR|CrimsonStoneStack|(CrimsonStoneCStack/2)
-Ioun Stone (Crimson Sphere - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:16000		SOURCEPAGE:p.47		BONUS:STAT|INT|min(4,2*CrimsonStoneFStack)|TYPE=Enhancement	DEFINE:VAR|CrimsonStoneFStack|0	BONUS:VAR|CrimsonStoneFStack|1
+Ioun Stone (Crimson Sphere)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:24000		SOURCEPAGE:p.44		BONUS:STAT|INT|min(6,2*CrimsonStoneStack)|TYPE=Enhancement	DEFINE:CrimsonStoneStack|0	BONUS:VAR|CrimsonStoneStack|1
+Ioun Stone (Crimson Sphere - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:12000		SOURCEPAGE:p.46		BONUS:STAT|INT|min(6,2*CrimsonStoneStack)|TYPE=Enhancement	DEFINE:CrimsonStoneStack|0	DEFINE:CrimsonStoneCStack|0	BONUS:VAR|CrimsonStoneCStack|1	BONUS:VAR|CrimsonStoneStack|(CrimsonStoneCStack/2)
+Ioun Stone (Crimson Sphere - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:16000		SOURCEPAGE:p.47		BONUS:STAT|INT|min(4,2*CrimsonStoneFStack)|TYPE=Enhancement	DEFINE:CrimsonStoneFStack|0	BONUS:VAR|CrimsonStoneFStack|1
 
-Ioun Stone (Dark Blue Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:400		SOURCEPAGE:p.46		BONUS:SKILL|Perception,Sense Motive|1|TYPE=Competence
-Ioun Stone (Dark Blue Rhomboid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:300		SOURCEPAGE:p.47		BONUS:SKILL|Perception|2|TYPE=Competence		BONUS:COMBAT|INITIATIVE|-1
+Ioun Stone (Dark blue Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:400		SOURCEPAGE:p.46		BONUS:SKILL|Perception,Sense Motive|1|TYPE=Competence
+Ioun Stone (Dark blue Rhomboid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:300		SOURCEPAGE:p.47		BONUS:SKILL|Perception|2|TYPE=Competence		BONUS:COMBAT|INITIATIVE|-1
 
-Ioun Stone (Deep Red Sphere - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.46		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Dexterity	BONUS:SKILL|LIST|1
-Ioun Stone (Deep Red Sphere - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.47		BONUS:STAT|DEX|2|TYPE=Enhancement		BONUS:STAT|CON|-2|Type=Enhancement
+Ioun Stone (Deep red Sphere - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.46		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Dexterity	BONUS:SKILL|LIST|1
+Ioun Stone (Deep red Sphere - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.47		BONUS:STAT|DEX|2|TYPE=Enhancement		BONUS:STAT|CON|-2|Type=Enhancement
 
-Ioun Stone (Dull Gray Stone)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:25		SOURCEPAGE:p.44
-Ioun Stone (Dull Gray Stone - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:25		SOURCEPAGE:p.44
-Ioun Stone (Dull Gray Stone - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:25		SOURCEPAGE:p.44
+Ioun Stone (Dull gray Stone)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:25		SOURCEPAGE:p.44
+Ioun Stone (Dull gray Stone - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:25		SOURCEPAGE:p.44
+Ioun Stone (Dull gray Stone - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:25		SOURCEPAGE:p.44
 
-Ioun Stone (Dusty Rose Prism - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:500		SOURCEPAGE:p.46		BONUS:COMBAT|INITIATIVE|1|TYPE=Competence
+Ioun Stone (Dusty rose Prism - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:500		SOURCEPAGE:p.46		BONUS:COMBAT|INITIATIVE|1|TYPE=Competence
 # NB: table conflicts with text - text has precedence
-Ioun Stone (Dusty Rose Prism - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:4000		SOURCEPAGE:p.47		BONUS:COMBAT|AC|1|TYPE=Insight	BONUS:STAT|STR|-2
+Ioun Stone (Dusty rose Prism - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:4000		SOURCEPAGE:p.47		BONUS:COMBAT|AC|1|TYPE=Insight	BONUS:STAT|STR|-2
 
 Ioun Stone (Emerald Ellipsoid)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:20000		SOURCEPAGE:p.44		BONUS:HP|CURRENTMAX|5|TYPE=Temporary
-Ioun Stone (Emerald Ellipsoid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:2000		SOURCEPAGE:p.47		BONUS:HP|CURRENTMAX|min(5,EmeraldStoneCStack)|TYPE=Temporary	DEFINE:VAR|EmeraldStoneCStack|0	BONUS:VAR|EmeraldStoneCStack|1
-Ioun Stone (Emerald Ellipsoid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:10000		SOURCEPAGE:p.47		BONUS:HP|CURRENTMAX|min(25,5*EmeraldStoneStack)|TYPE=Temporary	VFEAT:Negative Levels	BONUS:VAR|NegLevels|EmeraldStoneStack	DEFINE:VAR|EmeraldStoneStack|0	BONUS:VAR|EmeraldStoneStack|1
+Ioun Stone (Emerald Ellipsoid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:2000		SOURCEPAGE:p.47		BONUS:HP|CURRENTMAX|min(5,EmeraldStoneCStack)|TYPE=Temporary	DEFINE:EmeraldStoneCStack|0	BONUS:VAR|EmeraldStoneCStack|1
+Ioun Stone (Emerald Ellipsoid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:10000		SOURCEPAGE:p.47		BONUS:HP|CURRENTMAX|min(25,5*EmeraldStoneStack)|TYPE=Temporary	ABILITY:Special Ability|AUTOMATIC|Negative Levels	BONUS:VAR|NegLevels|EmeraldStoneStack	DEFINE:EmeraldStoneStack|0	BONUS:VAR|EmeraldStoneStack|1
 
 Ioun Stone (Gamboge Nodule)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:54000		SOURCEPAGE:p.44		SPROP:Immunity to poison
 Ioun Stone (Gamboge Nodule - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:1500		SOURCEPAGE:p.47		SPROP:Immunity to one kind of poison
-Ioun Stone (Gamboge Nodule - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:40000		SOURCEPAGE:p.47		SPROP:Immunity to poison, -4 penalty against curses and diseases	ASPECT:SaveBonus|-4 penalty against curses and diseases
+Ioun Stone (Gamboge Nodule - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:40000		SOURCEPAGE:p.47		SPROP:Immunity to poison			ABILITY:Special Ability|AUTOMATIC|Flawed Gamboge Nodule Ability
 
-Ioun Stone (Incandescent Blue Sphere - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200	SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Wisdom	BONUS:SKILL|LIST|1|TYPE=Competence
-Ioun Stone (Incandescent Blue Sphere - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:7200	SOURCEPAGE:p.47		BONUS:STAT|WIS|2|TYPE=Enhancement		BONUS:SKILL|Perception|-2
+Ioun Stone (Incandescent blue Sphere - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Wisdom	BONUS:SKILL|LIST|1|TYPE=Competence
+Ioun Stone (Incandescent blue Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:7200		SOURCEPAGE:p.47		BONUS:STAT|WIS|2|TYPE=Enhancement		BONUS:SKILL|Perception|-2
 
 Ioun Stone (Iridescent Spindle - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:500		SOURCEPAGE:p.47		SPROP:+4 competence bonus to Constitution checks to hold breath
 Ioun Stone (Iridescent Spindle - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:12000		SOURCEPAGE:p.47		SPROP:Sustains user without air but the creature is always staggered
 
-Ioun Stone (Lavender and Green Ellipsoid - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:10000	SOURCEPAGE:p.47		EQMOD:CHARGED_ITEM_10|CHARGES[10]		SPROP:Absorbs spells of 2nd level or lower
-Ioun Stone (Lavender and Green Ellipsoid - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:36000	SOURCEPAGE:p.47		EQMOD:CHARGED_ITEM_50|CHARGES[50]		SPROP:Absorbs spells of 6th level or lower, but user takes 2 points/spell level in damage
+Ioun Stone (Lavender and green Ellipsoid - Cracked)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:10000		SOURCEPAGE:p.47		EQMOD:CHARGED_ITEM_10|CHARGES[10]		SPROP:Absorbs spells of 2nd level or lower
+Ioun Stone (Lavender and green Ellipsoid - Flawed)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:36000		SOURCEPAGE:p.47		EQMOD:CHARGED_ITEM_50|CHARGES[50]		SPROP:Absorbs spells of 6th level or lower, but user takes 2 points/spell level in damage
 
 Ioun Stone (Mossy Disk)						OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounKnow		COST:5000	SOURCEPAGE:p.44		SPROP:+5 competence bonus on one Knowledge skill
 Ioun Stone (Mossy Disk - Cracked)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounKnow.Cracked	COST:200	SOURCEPAGE:p.47		SPROP:+1 competence bonus on one Knowledge skill
@@ -67,52 +67,52 @@ Ioun Stone (Mulberry Pentacle)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondr
 Ioun Stone (Mulberry Pentacle - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:400		SOURCEPAGE:p.47		BONUS:SKILL|Bluff,Diplomacy|1|TYPE=Competence
 Ioun Stone (Mulberry Pentacle - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:8700		SOURCEPAGE:p.50		BONUS:SKILL|Bluff,Diplomacy|5|TYPE=Competence	BONUS:CHECKS|Will|-2
 
-Ioun Stone (Nacreous Gray Sphere)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:10000		SOURCEPAGE:p.44		SPROP:Immune to aging
-Ioun Stone (Nacreous Gray Sphere - Cracked: Str)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Immune to Strength damage from aging
-Ioun Stone (Nacreous Gray Sphere - Cracked: Dex)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Immune to Dexterity damage from aging
-Ioun Stone (Nacreous Gray Sphere - Cracked: Con)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Immune to Constitution damage from aging
-Ioun Stone (Nacreous Gray Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:1000		SOURCEPAGE:p.50		SPROP:Protects against the appearance of aging
+Ioun Stone (Nacreous gray Sphere)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:10000		SOURCEPAGE:p.44		SPROP:Immune to aging
+Ioun Stone (Nacreous gray Sphere - Cracked ~ Str)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Immune to Strength damage from aging
+Ioun Stone (Nacreous gray Sphere - Cracked ~ Dex)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Immune to Dexterity damage from aging
+Ioun Stone (Nacreous gray Sphere - Cracked ~ Con)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Immune to Constitution damage from aging
+Ioun Stone (Nacreous gray Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:1000		SOURCEPAGE:p.50		SPROP:Protects against the appearance of aging
 
-Ioun Stone (Onyx Rhomboid)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:24000		SOURCEPAGE:p.44		BONUS:STAT|CON|min(6,2*OnyxStoneStack)|TYPE=Enhancement	DEFINE:VAR|OnyxStoneStack|0	BONUS:VAR|OnyxStoneStack|1
-Ioun Stone (Onyx Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:12000		SOURCEPAGE:p.47		BONUS:STAT|CON|min(6,2*OnyxStoneStack)|TYPE=Enhancement	DEFINE:VAR|OnyxStoneStack|0	DEFINE:VAR|OnyxStoneCStack|0	BONUS:VAR|CrimsonStoneCStack|1	BONUS:VAR|OnyxStoneStack|(OnyxStoneCStack/2)
-Ioun Stone (Onyx Rhomboid - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:16000		SOURCEPAGE:p.50		BONUS:STAT|CON|min(4,2*OnyxStoneFStack)|TYPE=Enhancement	DEFINE:VAR|OnyxStoneFStack|0	BONUS:VAR|OnyxStoneFStack|1
+Ioun Stone (Onyx Rhomboid)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:24000		SOURCEPAGE:p.44		BONUS:STAT|CON|min(6,2*OnyxStoneStack)|TYPE=Enhancement	DEFINE:OnyxStoneStack|0	BONUS:VAR|OnyxStoneStack|1
+Ioun Stone (Onyx Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:12000		SOURCEPAGE:p.47		BONUS:STAT|CON|min(6,2*OnyxStoneStack)|TYPE=Enhancement	DEFINE:OnyxStoneStack|0	DEFINE:OnyxStoneCStack|0	BONUS:VAR|CrimsonStoneCStack|1	BONUS:VAR|OnyxStoneStack|(OnyxStoneCStack/2)
+Ioun Stone (Onyx Rhomboid - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:16000		SOURCEPAGE:p.50		BONUS:STAT|CON|min(4,2*OnyxStoneFStack)|TYPE=Enhancement	DEFINE:OnyxStoneFStack|0	BONUS:VAR|OnyxStoneFStack|1
 
-Ioun Stone (Opalescent White Pyramid)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounWeapon			COST:10000	SOURCEPAGE:p.44	SPROP:Proficiency with one weapon
-Ioun Stone (Opalescent White Pyramid - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounWpnFam.Cracked	COST:1500	SOURCEPAGE:p.47	SPROP:Weapon familiarity with one exotic weapon
-Ioun Stone (Opalescent White Pyramid - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounWeapon.Flawed	COST:3000	SOURCEPAGE:p.50	BONUS:STAT|DEX|-2	SPROP:Proficiency with one weapon
+Ioun Stone (Opalescent white Pyramid)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounWeapon			COST:10000	SOURCEPAGE:p.44	SPROP:Proficiency with one weapon
+Ioun Stone (Opalescent white Pyramid - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounWpnFam.Cracked	COST:1500	SOURCEPAGE:p.47	SPROP:Weapon familiarity with one exotic weapon
+Ioun Stone (Opalescent white Pyramid - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.IounWeapon.Flawed	COST:3000	SOURCEPAGE:p.50	BONUS:STAT|DEX|-2	SPROP:Proficiency with one weapon
 
 Ioun Stone (Orange Prism - Cracked)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:10000		SOURCEPAGE:p.47		SPROP:Add one 0-level spell to user's spells known or prepared
 Ioun Stone (Orange Prism - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:25000		SOURCEPAGE:p.50		BONUS:CASTERLEVEL|TYPE.Arcane,TYPE.Divine|1	BONUS:STAT|var(SPELLSTAT)|-2
 
-Ioun Stone (Pale Blue Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Strength	BONUS:SKILL|LIST|1
-Ioun Stone (Pale Blue Rhomboid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|STR|2|TYPE=Enhancement		BONUS:STAT|CON|-2
+Ioun Stone (Pale blue Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Strength	BONUS:SKILL|LIST|1
+Ioun Stone (Pale blue Rhomboid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|STR|2|TYPE=Enhancement		BONUS:STAT|CON|-2
 
-Ioun Stone (Pale Green Prism - Cracked: Attacks)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:4000	SOURCEPAGE:p.47		BONUS:COMBAT|TOHIT|1|TYPE=Competence
-Ioun Stone (Pale Green Prism - Cracked: Saves)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:4000	SOURCEPAGE:p.47		BONUS:CHECKS|ALL|1|TYPE=Competence
-Ioun Stone (Pale Green Prism - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:28000	SOURCEPAGE:p.50		BONUS:CHECKS|ALL|1|TYPE=Morale		BONUS:COMBAT|TOHIT|1|TYPE=Morale		BONUS:SKILL|ALL|1|TYPE=Morale
+Ioun Stone (Pale green Prism - Cracked ~ Attacks)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:4000		SOURCEPAGE:p.47		BONUS:COMBAT|TOHIT|1|TYPE=Competence
+Ioun Stone (Pale green Prism - Cracked ~ Saves)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:4000		SOURCEPAGE:p.47		BONUS:CHECKS|ALL|1|TYPE=Competence
+Ioun Stone (Pale green Prism - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:28000		SOURCEPAGE:p.50		BONUS:CHECKS|ALL|1|TYPE=Morale		BONUS:COMBAT|TOHIT|1|TYPE=Morale		BONUS:SKILL|ALL|1|TYPE=Morale
 
-Ioun Stone (Pale Lavender Ellipsoid - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:2500		SOURCEPAGE:p.47		EQMOD:CHARGED_ITEM_5|CHARGES[5]		SPROP:Absorbs spells of 1st level or lower
-Ioun Stone (Pale Lavender Ellipsoid - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:18000		SOURCEPAGE:p.50		EQMOD:CHARGED_ITEM_20|CHARGES[20]		SPROP:Absorbs spells of 3rd level or lower, but user takes 2 points/spell level in damage
+Ioun Stone (Pale lavender Ellipsoid - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:2500		SOURCEPAGE:p.47		EQMOD:CHARGED_ITEM_5|CHARGES[5]		SPROP:Absorbs spells of 1st level or lower
+Ioun Stone (Pale lavender Ellipsoid - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:18000		SOURCEPAGE:p.50		EQMOD:CHARGED_ITEM_20|CHARGES[20]		SPROP:Absorbs spells of 3rd level or lower, but user takes 2 points/spell level in damage
 
-Ioun Stone (Pale Ruby Trillian)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:5000		SOURCEPAGE:p.44		BONUS:SKILL|Stealth|5|TYPE=Competence
-Ioun Stone (Pale Ruby Trillian - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		BONUS:SKILL|Stealth|1|TYPE=Competence
-Ioun Stone (Pale Ruby Trillian - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:1600		SOURCEPAGE:p.50		BONUS:SKILL|Stealth|5|TYPE=Competence	BONUS:STAT|DEX|-2
+Ioun Stone (Pale ruby Trillian)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:5000		SOURCEPAGE:p.44		BONUS:SKILL|Stealth|5|TYPE=Competence
+Ioun Stone (Pale ruby Trillian - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		BONUS:SKILL|Stealth|1|TYPE=Competence
+Ioun Stone (Pale ruby Trillian - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:1600		SOURCEPAGE:p.50		BONUS:SKILL|Stealth|5|TYPE=Competence	BONUS:STAT|DEX|-2
 
-Ioun Stone (Pearly White Spindle - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Regenerate 1 point of damage per hour
-Ioun Stone (Pearly White Spindle - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:18000		SOURCEPAGE:p.50		SPROP:Regenerate 4 points of damage per hour
+Ioun Stone (Pearly white Spindle - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:3400		SOURCEPAGE:p.47		SPROP:Regenerate 1 point of damage per hour
+Ioun Stone (Pearly white Spindle - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:18000		SOURCEPAGE:p.50		SPROP:Regenerate 4 points of damage per hour
 
-Ioun Stone (Pink and Green Sphere - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Charisma	BONUS:SKILL|LIST|1
-Ioun Stone (Pink and Green Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|CHA|2|TYPE=Enhancement		BONUS:STAT|CON|-2
+Ioun Stone (Pink and green Sphere - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Charisma	BONUS:SKILL|LIST|1
+Ioun Stone (Pink and green Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|CHA|2|TYPE=Enhancement		BONUS:STAT|CON|-2
 
 Ioun Stone (Pink Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:1400		SOURCEPAGE:p.47		SPROP:+4 to one type of check affected by the Endurance feat
 Ioun Stone (Pink Rhomboid - Flawed)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|CON|2|TYPE=Enhancement		BONUS:STAT|DEX|-2
 
-Ioun Stone (Scarlet and Blue Sphere - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Intelligence	BONUS:SKILL|LIST|1
-Ioun Stone (Scarlet and Blue Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|INT|2|TYPE=Enhancement		BONUS:STAT|CON|-2
+Ioun Stone (Scarlet and blue Sphere - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		CHOOSE:NUMCHOICES=1|SKILL|TYPE.Intelligence	BONUS:SKILL|LIST|1
+Ioun Stone (Scarlet and blue Sphere - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:6000		SOURCEPAGE:p.50		BONUS:STAT|INT|2|TYPE=Enhancement		BONUS:STAT|CON|-2
 
-Ioun Stone (Scarlet and Green Cabochon)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:10000		SOURCEPAGE:p.44		ABILITY:FEAT|VIRTUAL|Endurance
-Ioun Stone (Scarlet and Green Cabochon - Cracked)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:1400		SOURCEPAGE:p.47		SPROP:+4 to one type of check affected by the Endurance feat
-Ioun Stone (Scarlet and Green Cabochon - Flawed)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:8000		SOURCEPAGE:p.50		ABILITY:FEAT|VIRTUAL|Endurance	SPROP:User treats fatigued as sickened, and exhausted as nauseated
+Ioun Stone (Scarlet and green Cabochon)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:10000		SOURCEPAGE:p.44		ABILITY:FEAT|VIRTUAL|Endurance
+Ioun Stone (Scarlet and green Cabochon - Cracked)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:1400		SOURCEPAGE:p.47		SPROP:+4 to one type of check affected by the Endurance feat
+Ioun Stone (Scarlet and green Cabochon - Flawed)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:8000		SOURCEPAGE:p.50		ABILITY:FEAT|VIRTUAL|Endurance	SPROP:User treats fatigued as sickened, and exhausted as nauseated
 
 Ioun Stone (Turquoise Sphere)					OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun		COST:6000		SOURCEPAGE:p.44		BONUS:SKILL|Ride|5|TYPE=Competence	SPROP:Any horse or pony you ride gains the benefits of the Fleet feat
 Ioun Stone (Turquoise Sphere - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:200		SOURCEPAGE:p.47		BONUS:SKILL|Ride|1|TYPE=Competence
@@ -122,8 +122,8 @@ Ioun Stone (Vermilion Rhomboid)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wond
 Ioun Stone (Vermilion Rhomboid - Cracked)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:400		SOURCEPAGE:p.47		BONUS:SKILL|Acrobatics,Swim|1|TYPE=Competence
 Ioun Stone (Vermilion Rhomboid - Flawed)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:8000		SOURCEPAGE:p.50		BONUS:SKILL|Acrobatics,Swim|5|TYPE=Competence	BONUS:STAT|CON|-2
 
-Ioun Stone (Vibrant Purple Prism - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:2000		SOURCEPAGE:p.47		SPROP:Stores one level of spells, as a ring of spell storing (minor)
-Ioun Stone (Vibrant Purple Prism - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:36000		SOURCEPAGE:p.50		SPROP:Stores three levels of spells, as a ring of spell storing (minor), but casting time increased to at least one round
+Ioun Stone (Vibrant purple Prism - Cracked)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Cracked	COST:2000		SOURCEPAGE:p.47		SPROP:Stores one level of spells, as a ring of spell storing (minor)
+Ioun Stone (Vibrant purple Prism - Flawed)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.Ioun.Flawed	COST:36000		SOURCEPAGE:p.50		SPROP:Stores three levels of spells, as a ring of spell storing (minor), but casting time increased to at least one round
 
 ###Block:Wayfinders
 # Equipment Name			Output Name					Type							Cost		Weight	Source Page		Special Property
@@ -150,16 +150,16 @@ Ioun Stone (Sepia Ellipsoid)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.I
 # by elro - suggest it would be MUCH EASIER for users to SPROP as necessary - there are a few default suggestions under Method I (p.52) but many more random ones (p.53)
 # huge amount of coding effort & equipment clutter for not much value IMHO - commenting the (half-finished) stuff below out!
 
-#Ioun Stone (Amber Spindle Slotted)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:5000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Resonant)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:5000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Cracked Slotted Fortitude)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Fortitude|min(5,AmberStoneStack)|TYPE=Resistance	SPROP:Adds a +1 Fortitude Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Cracked Resonant Fortitude)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Fortitude|min(5,AmberStoneStack)|TYPE=Resistance	SPROP:Adds a +1 Fortitude Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Cracked Slotted Reflex)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Reflex|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Reflex Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Cracked Resonant Reflex)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Reflex|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Reflex Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Cracked Slotted Will)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Will|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Will Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Cracked Resonant Will)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Will|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Will Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Flawed Slotted)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:25000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(3,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +3 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
-#Ioun Stone (Amber Spindle Flawed Resonant)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:25000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(3,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +3 bonus.		DEFINE:VAR|AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Slotted)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:5000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Resonant)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:5000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Cracked Slotted Fortitude)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Fortitude|min(5,AmberStoneStack)|TYPE=Resistance	SPROP:Adds a +1 Fortitude Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Cracked Resonant Fortitude)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Fortitude|min(5,AmberStoneStack)|TYPE=Resistance	SPROP:Adds a +1 Fortitude Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Cracked Slotted Reflex)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Reflex|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Reflex Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Cracked Resonant Reflex)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Reflex|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Reflex Resistance bonus.  Multiple stones stack up to +5 bonus.	DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Cracked Slotted Will)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Will|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Will Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Cracked Resonant Will)	OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:3400		SOURCEPAGE:p.44		BONUS:CHECKS|Will|min(5,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Will Resistance bonus.  Multiple stones stack up to +5 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Flawed Slotted)			OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:25000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(3,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +3 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
+#Ioun Stone (Amber Spindle Flawed Resonant)		OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:25000		SOURCEPAGE:p.44		BONUS:CHECKS|ALL|min(3,AmberStoneStack)|TYPE=Resistance		SPROP:Adds a +1 Resistance bonus.  Multiple stones stack up to +3 bonus.		DEFINE:AmberStoneStack|0	BONUS:VAR|AmberStoneStack|1
 
 #Ioun Stone (Clear Spindle Slotted)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:4000		SOURCEPAGE:p.520		SPROP:Sustains creature without food or water
 #Ioun Stone (Clear Spindle Resonant)				OUTPUTNAME:Ioun Stone, [NAME]	TYPE:Magic.Wondrous.SlottedIoun	COST:4000		SOURCEPAGE:p.520		SPROP:Sustains creature without food or water, Protection from possession and mental control as Protection from Evil.

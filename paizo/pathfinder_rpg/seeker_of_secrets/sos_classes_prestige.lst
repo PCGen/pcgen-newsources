@@ -1,22 +1,21 @@
 ﻿SOURCELONG:Seekers of Secrets	SOURCESHORT:SOS	SOURCEWEB:http://paizo.com/store/downloads/pathfinder/pathfinderChronicles/pathfinderRPG/v5748btpy8az2	SOURCEDATE:2009-10
-# Original Entry by: Terry Milnes
+# Original Entry by: Terry Milnes & Paul Shipley (elro the onk)
 
-# Class Name				Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-CLASS:Pathfinder Delver			HD:8		TYPE:PC.Prestige	ABB:PD		MAXLEVEL:10	SOURCEPAGE:p.58	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-# Class Name				Required Skill
-CLASS:Pathfinder Delver			PRESKILL:4,Acrobatics=5,Disable Device=4,Knowledge (History)=4,Perception=5
-# Class Name				Skill Pts/Lvl	Class Skill
-CLASS:Pathfinder Delver			STARTSKILLPTS:8	CSKILL:Acrobatics|Appraise|Bluff|Climb|Diplomacy|Disable Device|Escape Artist|TYPE.Knowledge|Linguistics|Perception|Sense Motive|Sleight of Hand|Stealth|Survival|Swim|Use Magic Device
-1																		ABILITY:Special Ability|AUTOMATIC|Bardic Knowledge ~ Pathfinder Delver|Master Explorer ~ Pathfinder Delver
-2																		ABILITY:Special Ability|AUTOMATIC|Surefooted ~ Pathfinder Delver|Trap Sense ~ Pathfinder Delver
-3	BONUS:VAR|BalancedScaleBottomlessBagLVL,BalancedScaleAccessTheVaultLVL|CL					ABILITY:Special Ability|AUTOMATIC|Guardbreaker ~ Pathfinder Delver|Thrilling Escape ~ Pathfinder Delver
-4																		ABILITY:Special Ability|AUTOMATIC|Resourceful Disabler ~ Pathfinder Delver|Vigilant Combatant ~ Pathfinder Delver
-5																		ABILITY:Special Ability|AUTOMATIC|Left for Dead ~ Pathfinder Delver|Trap Sense ~ Pathfinder Delver
-6																		ABILITY:Special Ability|AUTOMATIC|Fortunate Soul ~ Pathfinder Delver
-7																		ABILITY:Special Ability|AUTOMATIC|Thrilling Escape ~ Pathfinder Delver
-8																		ABILITY:Special Ability|AUTOMATIC|Trap Sense ~ Pathfinder Delver
-9																		ABILITY:Special Ability|AUTOMATIC|Thrilling Escape ~ Pathfinder Delver
-10																		ABILITY:Special Ability|AUTOMATIC|Fortunate Soul ~ Pathfinder Delver|Nick of Time ~ Pathfinder Delver
+# Class Name			Hit Dice	Type			Abbrev	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Pathfinder Delver		HD:8		TYPE:PC.Prestige	ABB:PaD	MAXLEVEL:10	SOURCEPAGE:p.58	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name			Required Skill											Required Text
+CLASS:Pathfinder Delver		PRESKILL:4,Acrobatics=5,Disable Device=4,Knowledge (History)=4,Perception=5	PRETEXT:Must have recovered an object of historical significance from an ancient ruin or similar location
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Pathfinder Delver		STARTSKILLPTS:8	CSKILL:Acrobatics|Appraise|Bluff|Climb|Diplomacy|Disable Device|Escape Artist|TYPE.Knowledge|Linguistics|Perception|Sense Motive|Sleight of Hand|Stealth|Survival|Swim|Use Magic Device
+1	ABILITY:Special Ability|AUTOMATIC|Bardic Knowledge|Master Explorer ~ PaD			BONUS:VAR|BardicKnowledgeLVL|CL	BONUS:VAR|PaDSkillBonus|CL/2
+2	ABILITY:Special Ability|AUTOMATIC|Surefooted ~ PaD|Trap Sense ~ Rogue				BONUS:VAR|RogueTrapSenseLVL|CL+1
+3	ABILITY:Special Ability|AUTOMATIC|Guardbreaker ~ PaD|Thrilling Escape ~ PaD			BONUS:VAR|PaDEscapeTimes|1
+4	ABILITY:Special Ability|AUTOMATIC|Resourceful Disabler ~ PaD|Vigilant Combatant ~ PaD	BONUS:VAR|PaDInitiative|CL/2
+5	ABILITY:Special Ability|AUTOMATIC|Left for Dead ~ PaD
+6	ABILITY:Special Ability|AUTOMATIC|Fortunate Soul ~ PaD						BONUS:VAR|PaDFortunateTimes|1
+7																BONUS:VAR|PaDEscapeTimes|1
+9	ABILITY:Special Ability|AUTOMATIC|True Seeing ~ PaD							BONUS:VAR|PaDEscapeTimes|1	BONUS:VAR|PaDTrueSeeingLvl|CL
+10	ABILITY:Special Ability|AUTOMATIC|Nick of Time ~ PaD							BONUS:VAR|PaDFortunateTimes|1
 
 #
 # End
