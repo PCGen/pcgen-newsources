@@ -1,0 +1,14 @@
+SOURCELONG:Inner Sea World Guide	SOURCESHORT:ISWG	SOURCEWEB:http://paizo.com/store/games/roleplayingGames/p/pathfinderRPG/paizo/pathfinderChronicles/v5748btpy8ief	SOURCEDATE:2011-03
+# Original Entry by: Paul Shipley
+
+###Block: Conditional skills (for output only)
+# Skill Name				Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
+Linguistics (Create forgeries)	KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Linguistics (Create forgeries).MISC"),var("SKILL.Linguistics.MISC")
+
+###Block: Skill .MODs
+# Skill Name	Bonus to skill											Bonus to skill rank
+Linguistics.MOD	BONUS:SKILL|Linguistics (Create forgeries)|var("SKILL.Linguistics.MISC")	BONUS:SKILLRANK|Linguistics (Create forgeries)|skillinfo("TOTALRANK", Linguistics)|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Linguistics (Create forgeries).MISC"),var("SKILL.Linguistics.MISC")
+
+#
+# End
+#
