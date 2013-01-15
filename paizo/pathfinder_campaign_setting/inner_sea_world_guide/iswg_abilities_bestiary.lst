@@ -2,28 +2,30 @@ SOURCELONG:Inner Sea World Guide	SOURCESHORT:ISWG	SOURCEWEB:http://paizo.com/sto
 # Original Entry by: Paul Shipley
 
 #Aluum
-Immunity to Magic			KEY:Immunity to Magic ~ Aluum			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.307	DESC:Immunity to Magic
-Paralysis				KEY:Paralysis ~ Aluum				CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SOURCEPAGE:p.307	DESC:Paralysis
-Soul Shriek				KEY:Soul Shriek ~ Aluum				CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SOURCEPAGE:p.307	DESC:Soul Shriek
+Immunity to Magic			KEY:Immunity to Magic ~ Aluum			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Immunity	SOURCEPAGE:p.307	DESC:An aluum is immune to any spell or spell-like ability that allows spell resistance. In addition, certain spells and effects function differently against the creature. A magical attack that uses negative energy deals no damage, but speeds up the aluum's attacks and movment as if it were under the effects of a haste spell for 1d6 rounds. A magical attack that uses positive energy slows the aluum as if by a slow spell for 1d6 rounds and dispels any haste effects currently affecting it. Magic jar confuses the creature for 1d6 rounds.	ASPECT:Immunity|Magic
+Paralysis				KEY:Paralysis ~ Aluum				CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural			SOURCEPAGE:p.307	DESC:The touch of an aluum paralyzes living creatures that fail a DC %1 Fortitude save for 1d4 minutes.|10+TL/2+CON
+Soul Shriek				KEY:Soul Shriek ~ Aluum				CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural			SOURCEPAGE:p.307	DESC:As a free action every 1d4 rounds, the aluum's enslaved souls may emit a keening wail in a 15-ft. cone. Creatures in the cone take 10d6 points of sonic damage and are stunned for 1 round. A DC %1 Will save halves the damage and negates the stun effect. This is a sonic mind-affecting effect.|8+TL/2+CON
 
 #Calikang
-Defensive Slam			KEY:Defensive Slam ~ Calikang			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.308	DESC:Defensive Slam
-Energy Absorption			KEY:Energy Absorption ~ Calikang		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		SOURCEPAGE:p.308	DESC:Energy Absorption
-Breath Weapon			KEY:Breath Weapon ~ Calikang			CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SOURCEPAGE:p.308	DESC:Breath Weapon
-Suspend Animation			KEY:Suspend Animation ~ Calikang		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		SOURCEPAGE:p.308	DESC:Suspend Animation
+Fast Healing			KEY:Fast Healing ~ Calikang			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ModifyHp	SOURCEPAGE:p.308	DESC:A calikang regains hit points at %1 per round. Fast healing does not restore hit points lost from starvation, thirst, or suffocation, nor does it allow a creature to regrow lost body parts or allow lost body parts to be reattached. Fast healing continues to function (even at negative hit points) until a creature dies, at which point the effects of fast healing end immediately.|FastHealingRate	DEFINE:FastHealingRate|0	BONUS:VAR|FastHealingRate|5	ASPECT:Ability Benefit|%1|FastHealingRate
+Defensive Slam			KEY:Defensive Slam ~ Calikang			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary			SOURCEPAGE:p.308	DESC:A calikang gains a cumulative +1 shield bonus to its AC for each of its arms that does not wield a manufactured weapon, to a maximum of +4 for four hands. A calikang can make slam attacks with these arms without losing this AC bonus.	BONUS:COMBAT|AC|FreeHandsCount|TYPE=Shield	DEFINE:FreeHandsCount|0	BONUS:VAR|FreeHandsCount|4|PREEQUIP:1,TYPE=DefHands4	BONUS:VAR|FreeHandsCount|3|PREEQUIP:1,TYPE=DefHands3	BONUS:VAR|FreeHandsCount|2|PREEQUIP:1,TYPE=DefHands2	BONUS:VAR|FreeHandsCount|1|PREEQUIP:1,TYPE=DefHands1
+Energy Absorption			KEY:Energy Absorption ~ Calikang		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural			SOURCEPAGE:p.308	DESC:A spell that inflicts energy damage that is defeated by the calikang's SR or immunity to electricity is absorbed into its body, healing it for an amount of damage equal to the absorbed spell's caster level and granting an additional daily use of its breath weapon.
+Breath Weapon			KEY:Breath Weapon ~ Calikang			CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural			SOURCEPAGE:p.308	DESC:%1-ft. line, %2d6 energy damage, Reflex DC %3 half, usable %4/day. A calikang can choose what kind of energy damage its breath weapon inflicts when it uses this ability. Calikangs are particularly adept at using electricity in this manner, and inflict %5 additional points of damage when they elect to inflict electricity damage with their breath weapon.|BreathWeaponLine|BreathWeaponDice|BreathWeaponDC|BreathWeaponTimes|HD	DEFINE:BreathWeaponDC|10+(HD/2)+CON	DEFINE:BreathWeaponDice|14	DEFINE:BreathWeaponLine|60	DEFINE:BreathWeaponTimes|1	BONUS:VAR|BreathWeaponDC|2|PREFEAT:1,Ability Focus (Breath Weapon)	ASPECT:Ability Benefit|(%1-ft. line, %3d6 energy damage, Reflex DC %4 half, usable %4/day)|BreathWeaponLine|BreathWeaponDice|BreathWeaponDC|BreathWeaponTimes
+Suspend Animation			KEY:Suspend Animation ~ Calikang		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural			SOURCEPAGE:p.308	DESC:As a full-round action, a calikang can enter a state of suspended animation, freezing in place and becoming motionless. It remains aware of its surroundings. In this state, the calikang is immune to disease, inhaled toxins, poison, starvation, and thirst, and receives a +4 bonus on all Fortitude saves. The calikang can exit this state as an immediate action - if it does so to attack a foe or initiate combat, it gains a +4 insight bonus on its Initiative check.
 
 #Charau-ka
 Shrieking Frenzy			KEY:Shrieking Frenzy ~ Charau-ka		CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SOURCEPAGE:p.309	DESC:Shrieking Frenzy
 Thrown-Weapon Mastery		KEY:Thrown-Weapon Mastery ~ Charau-ka	CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary		SOURCEPAGE:p.309	DESC:Thrown-Weapon Mastery
 
 #Daughter of Urgathoa
-Desecrate				KEY:Desecrate ~ Daughter of Urgathoa	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike			SOURCEPAGE:p.310	DESC:Desecrate
-Disease				KEY:Disease ~ Daughter of Urgathoa		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural		SOURCEPAGE:p.310	DESC:Disease
+Desecrate				KEY:Desecrate ~ Daughter of Urgathoa	CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike.Aura		SOURCEPAGE:p.310	DESC:Desecrate
+Disease				KEY:Disease ~ Daughter of Urgathoa		CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SOURCEPAGE:p.310	DESC:Disease
 Great Claw				KEY:Great Claw ~ Daughter of Urgathoa	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.310	DESC:Great Claw
 Spells				KEY:Spells ~ Daughter of Urgathoa		CATEGORY:Special Ability	TYPE:SpecialQuality				SOURCEPAGE:p.310	DESC:Spells
 
 #Gillman
 Enchantment Resistance		KEY:Enchantment Resistance ~ Gillman	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.311	DESC:Enchantment Resistance
+Servitor				KEY:Servitor ~ Gillman				CATEGORY:Special Ability	TYPE:SpecialQuality				SOURCEPAGE:p.311	DESC:Servitor
 Water Dependent			KEY:Water Dependent ~ Gillman			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.311	DESC:Water Dependent
 
 #Sandpoint Devil
@@ -39,11 +41,18 @@ Spines				KEY:Spines ~ Spine Dragon			CATEGORY:Special Ability	TYPE:SpecialAttac
 #Strix
 Hatred				KEY:Hatred ~ Strix				CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary		SOURCEPAGE:p.313	DESC:Hatred
 Nocturnal				KEY:Nocturnal ~ Strix				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.313	DESC:Nocturnal
+Suspicious				KEY:Suspicious ~ Strix				CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.313	DESC:Suspicious
 
 #Treerazer
+Regeneration			KEY:Regeneration ~ Treerazer			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary		SOURCEPAGE:p.314	DESC:Regeneration
 Aura of Corruption		KEY:Aura of Corruption ~ Treerazer		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.Aura	SOURCEPAGE:p.314	DESC:Aura of Corruption
 Defoliation				KEY:Defoliation ~ Treerazer			CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural		SOURCEPAGE:p.314	DESC:Defoliation
 Nascent Demon Lord Traits	KEY:Nascent Demon Lord Traits ~ Treerazer	CATEGORY:Special Ability	TYPE:SpecialQuality				SOURCEPAGE:p.314	DESC:Nascent Demon Lord Traits
+
+#Constant Spell-like Abilities
+Desecrate				KEY:Desecrate ~ Constant			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike.Aura		SOURCELONG:Core Rulebook	SOURCESHORT:PFCR	SOURCEPAGE:p.265	DESC:You can use desecrate, as per the spell, as a constant ability. Constant spell-like abilities function at all times but can be dispelled. Constant spell-like abilities can be reactivated a as a swift action.	DEFINE:SLA_CL|0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=SLA_CL|Desecrate,12+CHA
+Magic Weapon			KEY:Magic Weapon ~ Constant			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike			SOURCELONG:Core Rulebook	SOURCESHORT:PFCR	SOURCEPAGE:p.310	DESC:You can use magic weapon, as per the spell, as a constant ability. Constant spell-like abilities function at all times but can be dispelled. Constant spell-like abilities can be reactivated a as a swift action.	DEFINE:SLA_CL|0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=SLA_CL|Magic Weapon,11+CHA
+Water Breathing			KEY:Water Breathing ~ Constant		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike			SOURCELONG:Core Rulebook	SOURCESHORT:PFCR	SOURCEPAGE:p.368	DESC:You can use water breathing, as per the spell, as a constant ability. Constant spell-like abilities function at all times but can be dispelled. Constant spell-like abilities can be reactivated a as a swift action.	DEFINE:SLA_CL|0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=SLA_CL|Water Breathing,13+CHA
 
 #
 # End
