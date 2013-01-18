@@ -3,10 +3,14 @@ SOURCELONG:Inner Sea World Guide	SOURCESHORT:ISWG	SOURCEWEB:http://paizo.com/sto
 
 ###Block: Conditional skills (for output only)
 # Skill Name				Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
+Bluff (Fool someone/Pass messages)	KEYSTAT:CHA	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Fool someone/Pass messages).MISC"),var("SKILL.Bluff.MISC")
+Handle Animal (Birds of prey)		KEYSTAT:CHA	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Handle Animal (Birds of prey).MISC"),var("SKILL.Handle Animal.MISC")
 Linguistics (Create forgeries)	KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Linguistics (Create forgeries).MISC"),var("SKILL.Linguistics.MISC")
 
 ###Block: Skill .MODs
 # Skill Name	Bonus to skill											Bonus to skill rank
+Bluff.MOD		BONUS:SKILL|Bluff (Fool someone/Pass messages)|var("SKILL.Bluff.MISC")		BONUS:SKILLRANK|Bluff (Fool someone/Pass messages)|var("SKILL.Bluff.RANK")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Bluff (Fool someone/Pass messages).MISC"),var("SKILL.Bluff.MISC")
+Handle Animal.MOD	BONUS:SKILL|Handle Animal (Birds of prey)|var("SKILL.Handle Animal.MISC")	BONUS:SKILLRANK|Handle Animal (Birds of prey)|var("SKILL.Handle Animal.RANK")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Handle Animal (Birds of prey).MISC"),var("SKILL.Handle Animal.MISC")
 Linguistics.MOD	BONUS:SKILL|Linguistics (Create forgeries)|var("SKILL.Linguistics.MISC")	BONUS:SKILLRANK|Linguistics (Create forgeries)|var("SKILL.Linguistics.RANK")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Linguistics (Create forgeries).MISC"),var("SKILL.Linguistics.MISC")
 
 #
