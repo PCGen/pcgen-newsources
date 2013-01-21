@@ -72,71 +72,37 @@ CLASS:Dread		STARTSKILLPTS:6	CSKILL:Acrobatics|Autohypnosis|Bluff|Climb|TYPE.Cra
 20	ABILITY:Special Ability|AUTOMATIC|Fear Incarnate ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadFearIncarnate
 
 
-###Block: Psion Advanced Disciplines
-#Block: Insight Advanced Discipline
-#CLASS:Psion.MOD
-#SUBCLASS:Insight	COST:0	PROHIBITCOST:0	SPELLLIST:2|Seer|Psion	CSKILL:Autohypnosis|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Spellcraft|Diplomacy|Perception
-#SUBCLASSLEVEL:1	BONUS:VAR|ClairsentienceDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Insight Advanced Discipline
+###Block: Adaptive Warrior prestige class
+CLASS:Adaptive Warrior	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.37	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Adaptive Warrior	PREFEAT:2,Combat Expertise,Improved Feint	PRESKILL:2,Autohypnosis=5,Sense Motive=5	PREVARGT:TotalPowerPoints,0	PREATT:5
+CLASS:Adaptive Warrior	STARTSKILLPTS:2	CSKILL:Acrobatics|Bluff|Intimidate|Perception|Sense Motive
 
-#Block:Jaunting Advanced Discipline
-#SUBCLASS:Jaunting	COST:0	PROHIBITCOST:0	SPELLLIST:2|Nomad|Psion		CSKILL:Autohypnosis|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Spellcraft|Climb|Fly|Survival|Swim
-#SUBCLASSLEVEL:1	BONUS:VAR|PsychoportationDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Jaunting Advanced Discipline
+1	ABILITY:Internal|AUTOMATIC|Weapon and Armor Proficiencies ~ Adaptive Warrior
+1	ABILITY:Special Ability|AUTOMATIC|Counter Fighting Style ~ Adaptive Warrior
+1	ABILITY:Special Ability|AUTOMATIC|Examine Technique ~ Adaptive Warrior
+2	ABILITY:Special Ability|AUTOMATIC|Mimic Skill ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+3	ABILITY:Special Ability|AUTOMATIC|Mimic Proficiency ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+4	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+5	ABILITY:Special Ability|AUTOMATIC|Block Attack ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+6	ABILITY:Special Ability|AUTOMATIC|Accelerated Combat ~ Adaptive Warrior
+7	ABILITY:Special Ability|AUTOMATIC|Extended Memory ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+8	ABILITY:Special Ability|AUTOMATIC|Extended Examination ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+9	ABILITY:Special Ability|AUTOMATIC|Mimic Feat ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+10	ABILITY:Special Ability|AUTOMATIC|Combine Fighting Styles ~ Adaptive Warrior	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
 
 
-###Block: Sighted Seeker prestige class
-#CLASS:Sighted Seeker	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.27	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
-#CLASS:Sighted Seeker	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Sighted Seeker|CL
-#CLASS:Sighted Seeker	PREMULT:1,[PREFEAT:1,Skill Focus(Survival)],[PREABILITY:1,CATEGORY=Special Ability,Track]	PRESKILL:3,Diplomacy=2,Perception=5,Survival=2	PREVARGT:TotalPowerPoints,0	PREATT:4
-#CLASS:Sighted Seeker	STARTSKILLPTS:6	CSKILL:Diplomacy|Knowledge (Local)|Knowledge (Nature)|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Stealth|Survival
-#CLASS:Sighted Seeker	ALLOWBASECLASS:NO
+# COMMENT: TKWm needs to KNOW Far Hand or Telekinetic Force, not just have them on its power list.
 
-#SUBCLASS:Sighted Seeker (Own Manifesting)	COST:0	PROHIBITCOST:0
-#	SPELLLIST:1|Sighted Seeker
-#SUBCLASS:Sighted Seeker (Own Manifesting)	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Sighted Seeker (Own Manifesting)|CL
+###Block: Telekinetic Weaponmaster prestige class
+CLASS:Telekinetic Weaponmaster	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:5	SOURCEPAGE:p.39	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Telekinetic Weaponmaster	PREFEAT:2,Psionic Meditation,Psionic Weapon	PREATT:5	PRESPELL:1,Far Hand,Telekinetic Force
+CLASS:Telekinetic Weaponmaster	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Intimidate
 
-#Block: Psionic Ability
-#SUBCLASSLEVEL:1	BONUS:VAR|IsPsionic|1																								DEFINE:IsPsionic|0							ABILITY:Special Ability|AUTOMATIC|Psionic
-#SUBCLASSLEVEL:1	BONUS:VAR|SightedSeekerLVL|CL																								DEFINE:SightedSeekerLVL|0
-#SUBCLASSLEVEL:1	BONUS:VAR|SightedSeekerPL|SightedSeekerLVL	BONUS:VAR|SightedSeekerPL|var("BL=Sighted Seeker")																	DEFINE:SightedSeekerPL|0
-#SUBCLASSLEVEL:1	BONUS:VAR|BasePowerPoints|2	BONUS:VAR|BasePowerPoints|3|PREVARGTEQ:SightedSeekerPL,2	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:SightedSeekerPL,3
-#SUBCLASSLEVEL:1	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:SightedSeekerPL,4	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:SightedSeekerPL,5	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:SightedSeekerPL,6
-#SUBCLASSLEVEL:1	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:SightedSeekerPL,7	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:SightedSeekerPL,8	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:SightedSeekerPL,9
-#SUBCLASSLEVEL:1	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:SightedSeekerPL,10
-#SUBCLASSLEVEL:1	BONUS:VAR|BonusPowerPoints|(WIS*SightedSeekerPL)/2|TYPE=SightedSeekerBonusPP
-
-#SUBCLASSLEVEL:1	BONUS:VAR|SightedSeekerCL|SightedSeekerLVL	BONUS:VAR|SightedSeekerCL|var("BL=Sighted Seeker")																	DEFINE:SightedSeekerCL|0
-
-#Block: Powers Known
-#SUBCLASSLEVEL:1	KNOWN:0,1
-#SUBCLASSLEVEL:2	KNOWN:0,3
-#SUBCLASSLEVEL:3	KNOWN:0,4
-#SUBCLASSLEVEL:4	KNOWN:0,4,1
-#SUBCLASSLEVEL:5	KNOWN:0,4,2
-#SUBCLASSLEVEL:6	KNOWN:0,4,3
-#SUBCLASSLEVEL:7	KNOWN:0,4,3,1
-#SUBCLASSLEVEL:8	KNOWN:0,4,3,3
-#SUBCLASSLEVEL:9	KNOWN:0,4,3,3,1
-#SUBCLASSLEVEL:10	KNOWN:0,4,3,3,2
-
-#SUBCLASS:Sighted Seeker (Advance Manifesting)	COST:0	PROHIBITCOST:0
-#SUBCLASSLEVEL:2	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-#SUBCLASSLEVEL:3	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-#SUBCLASSLEVEL:4	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-#SUBCLASSLEVEL:6	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-#SUBCLASSLEVEL:7	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-#SUBCLASSLEVEL:8	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-#SUBCLASSLEVEL:10	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
-
-#1	ABILITY:Special Ability|AUTOMATIC|Favored Prey ~ Sighted Seeker
-#1	ABILITY:Internal|AUTOMATIC|Urban Tracking ~ Sighted Seeker|Weapon and Armor Proficiencies ~ Sighted Seeker
-#2	ABILITY:Special Ability|AUTOMATIC|Passive Seeking ~ Sighted Seeker
-#3	ABILITY:Special Ability|AUTOMATIC|Mark Prey ~ Sighted Seeker
-#4	ABILITY:Special Ability|AUTOMATIC|Prescient Tactics ~ Sighted Seeker
-#5	ABILITY:Special Ability|AUTOMATIC|Seeker's Analysis ~ Sighted Seeker
-#7	ABILITY:Special Ability|AUTOMATIC|Sighted Analysis ~ Sighted Seeker
-#8	ABILITY:Internal|AUTOMATIC|Hypercognition ~ Sighted Seeker
-#9	ABILITY:Special Ability|AUTOMATIC|The Sight ~ Sighted Seeker
-#10	ABILITY:Internal|AUTOMATIC|Metafaculty ~ Sighted Seeker
+1	ABILITY:Special Ability|AUTOMATIC|Telekinetic Reach ~ Telekinetic Weaponmaster
+2	ABILITY:Special Ability|AUTOMATIC|Telekinetic Throw ~ Telekinetic Weaponmaster	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+3	ABILITY:Special Ability|AUTOMATIC|Telekinetic Block ~ Telekinetic Weaponmaster	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+4	ABILITY:Special Ability|AUTOMATIC|Dual Kinetic Mastery ~ Telekinetic Weaponmaster	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+5	ABILITY:Special Ability|AUTOMATIC|Telekinetic Whirlwind ~ Telekinetic Weaponmaster	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
 
 #
 # End
