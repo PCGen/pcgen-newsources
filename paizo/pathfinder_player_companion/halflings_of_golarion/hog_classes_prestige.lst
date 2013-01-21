@@ -1,5 +1,6 @@
 SOURCELONG:Halflings of Golarion	SOURCESHORT:HoG	SOURCEWEB:http://paizo.com/products/btpy8i8p?Pathfinder-Player-Companion-Halflings-of-Golarion	SOURCEDATE:2010-12
-#Author: Eric C. Smith (maredudd AT blackroot DOT org)
+#ORIGINAL ENTRY: Eric C. Smith (maredudd AT blackroot DOT org)
+#ORIGINAL ENTRY DATE: 2012/12/29
 
 
 # Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus
@@ -8,7 +9,8 @@ CLASS:Opportunist	HD:8		TYPE:PC.Prestige	ABB:Opp		MAXLEVEL:5	SOURCEPAGE:pg.28	BO
 CLASS:Opportunist	PRERACE:1,Halfling	PRESKILL:2,Stealth=5,Perception=5	PREFEAT:1,Defensive Combat Training
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Opportunist	STARTSKILLPTS:6	CSKILL:Acrobatics|Bluff|Climb|Diplomacy|Disable Device|Disguise|Escape Artist|Linguistics|Perception|TYPE=Perform|Sense Motive|Sleight of Hand|Stealth|Swim
-1	DEFINE:OpportunistLvl|CL	DEFINE:ExceptionallyLuckyBonus|floor(OpportunistLvl/2)
+1	DEFINE:OpportunistLvl|0		DEFINE:ExceptionallyLuckyBonus|0
+1	BONUS:VAR|OpportunistLvl|CL	BONUS:VAR|ExceptionallyLuckyBonus|floor(OpportunistLvl/2)
 ###Block: Normal Level Progression
 1												ABILITY:Special Ability|AUTOMATIC|Exploitive Maneuver ~ Opp
 1												ABILITY:Rogue Talent|AUTOMATIC|Trap Spotter
