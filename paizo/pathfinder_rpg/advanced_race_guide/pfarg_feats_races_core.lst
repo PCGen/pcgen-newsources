@@ -16,79 +16,33 @@ Goblin Cleaver			TYPE:Combat		PRERACE:1,Dwarf			PREFEAT:2,Cleave,Power Attack	PR
 Hard-Headed				TYPE:Combat		PRERACE:1,Dwarf			PREATT:1	DESC:Your thick skull is almost a weapon unto itself.	SOURCEPAGE:p.18	BENEFIT:You gain a +1 bonus on attack rolls and combat maneuver checks made using a helmet. You receive a +2 bonus on saves against spells and special abilities that cause you to become staggered or stunned.
 
 #  TODO: fix pretext
-Ledge Walker
-	TYPE:General
-	PRERACE:1,Dwarf
-	PRESTAT:1,DEX=13
-	PRETEXT:mountaineer or stability racial trait
-	DESC:You negotiate tiny ledges like a mountain goat.
-	SOURCEPAGE:p.18
-	BENEFIT:You can move at full speed while using Acrobatics to balance on narrow 
-	surfaces, and you gain a +4 bonus on Climb checks to catch yourself or another 
-	creature while falling. You also gain a +4 bonus on saving throws against effects 
-	that would cause you to fall prone (such as earthquakes). This bonus does not apply 
-	to your CMD against bull rush or trip attacks.
+Ledge Walker			TYPE:General	PRERACE:1,Dwarf		PRESTAT:1,DEX=13	PREABILITY:1,CATEGORY=Special Ability,Mountaineer ~ Dwarf,Stability ~ Dwarf		DESC:You negotiate tiny ledges like a mountain goat.	SOURCEPAGE:p.18		BENEFIT:You can move at full speed while using Acrobatics to balance on narrow 	surfaces, and you gain a +4 bonus on Climb checks to catch yourself or another 	creature while falling. You also gain a +4 bonus on saving throws against effects that would cause you to fall prone (such as earthquakes). This bonus does not apply to your CMD against bull rush or trip attacks.
+Orc Hewer 				TYPE:Combat		PRERACE:1,Dwarf		PRESTAT:1,STR=13	PREFEAT:3,Cleave,Goblin Cleaver,Power Attack	DESC:You are ferocious at hewing your enemies, especially orcs.		SOURCEPAGE:p.18		BENEFIT:This feat functions as Goblin Cleaver, but your additional attacks can be made against creatures your size or smaller. In addition, any such attacks that you make against humanoids (orc) gain a +2 circumstance bonus on attack rolls.
+Shatterspell			TYPE:Combat		PRERACE:1,Dwarf		PRECLASS:1,Fighter=10	PREFEAT:2,Disruptive,Spellbreaker	DESC:Your mighty blows shatter your enemy's magic.	SOURCEPAGE:p.18		BENEFIT:As a standard action, you can attempt to sunder an ongoing spell effect as if you had the spell sunder rage power. You may use this feat once per day, plus one additional time per day for every 5 points by which your base attack bonus exceeds +10.
+Toxic Recovery			TYPE:General	PRERACE:1,Dwarf		PREABILITY:1,CATEGORY=Special Ability,Hardy		DESC:Your system recuperates from the effects of poisons with astonishing speed.	SOURCEPAGE:p.18		BENEFIT:Whenever you succeed at a saving throw against poison, you heal 1 point of ability damage of the type dealt by the poison. Whenever you heal ability damage naturally or magically, you heal 1 additional point of ability damage. This feat has no effect on penalties to ability scores or ability drain.
 
-Orc Hewer 
-	TYPE:Combat
-	PRERACE:1,Dwarf
-	PREFEAT:3,Cleave,Goblin Cleaver,Power Attack
-	PRESTAT:1,STR=13
-	DESC:You are ferocious at hewing your enemies, especially orcs.
-	SOURCEPAGE:p.18
-	BENEFIT:This feat functions as Goblin Cleaver, but your additional attacks can be made against creatures your size or smaller. In addition, any such attacks that you make against humanoids (orc) gain a +2 circumstance bonus on attack rolls.
+###
+##Block: Elven Feats
+# Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
+Attuned to the Wild		TYPE:General	PRERACE:1,Elf	MULT:YES	STACK:NO	CHOOSE:USERINPUT|1|TITLE=Wilderness Terrain Choice (not urban)	DESC:You share a strong mystic connection with one type of wilderness terrain.		SOURCEPAGE:p.28		BENEFIT:While you are in %1 terrain, your natural healing rate doubles.
 
-Shatterspell 
-	TYPE:Combat
-	PRERACE:1,DwarfPRECLASS:1,Fighter=10
-	PREFEAT:2,Disruptive,Spellbreaker
-	DESC:Your mighty blows shatter your enemy's magic.
-	SOURCEPAGE:p.18
-	BENEFIT:As a standard action, you can attempt to sunder an ongoing spell effect as if you had the spell sunder rage power (Ultimate Combat 28). You may use this feat once per day, plus one additional time per day for every 5 points by which your base attack bonus exceeds +10.
+Elven Battle Training 	TYPE:Combat		PRERACE:1,Elf	PREATT:1	DESC:You have been specially trained to wield a variety of traditional elven weapons.	SOURCEPAGE:p.28		BENEFIT:You have received special training with traditional elven weapons (longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and any weapon with the word "elven" in its name). You receive a +2 bonus to your CMD against disarm and sunder maneuvers directed at one of these weapons you are wielding. In addition, if you are wielding one of these melee weapons, you may make an additional attack of opportunity each round (this bonus stacks with Combat Reflexes).
 
-Toxic Recovery
-	TYPE:General
-	PRERACE:1,Dwarf
-	PREABILITY:1,CATEGORY=Special Ability,Hardy
-	DESC:Your system recuperates from the effects of poisons with astonishing speed.
-	SOURCEPAGE:p.18
-	BENEFIT:Whenever you succeed at a saving throw against poison, you heal 1 point of ability damage of the type dealt by the poison. Whenever you heal ability damage naturally or magically, you heal 1 additional point of ability damage. This feat has no effect on penalties to ability scores or ability drain.
-
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Attuned to the Wild
-	TYPE:General
-	PRERACE:1,Elf
-	DESC:You share a strong mystic connection with one type of wilderness terrain.
-	BENEFIT:Select one type of terrain from the ranger class's favored terrain class feature (except urban). While you are in your selected terrain type, your natural healing rate (the amount of hit points and ability damage you heal from a full night's rest) doubles. &nl; [Special] You can take this feat multiple times. Its effects do not stack. Each time you take it, it applies to a different terrain type.
-
-Elven Battle Training 
-	TYPE:Combat
-	PREATT:1
-	PRERACE:1,Elf
-	DESC:You have been specially trained to wield a variety of traditional elven weapons.
-	BENEFIT:You have received special training with traditional elven weapons (longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and any weapon with the word "elven" in its name). You receive a +2 bonus to your CMD against disarm and sunder maneuvers directed at one of these weapons you are wielding. In addition, if you are wielding one of these melee weapons, you may make an additional attack of opportunity each round (this bonus stacks with Combat Reflexes).
-
-Guardian of the Wild
-	TYPE:General
-	PRERACE:1,Elf
-	PREFEAT:1,Attuned to the Wild
-	DESC:Your mystic connection with the wilderness enhances your ability to react to threats.
+Guardian of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:1,Attuned to the Wild
+	DESC:Your mystic connection with the wilderness enhances your ability to react to threats.	SOURCEPAGE:p.28
 	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 dodge bonus to Armor Class. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
 
-Mage of the Wild
-	TYPE:General
-	PRERACE:1,Elf
-	PREFEAT:1,Attuned to the Wild
-	DESC:Your mystic connection with the wilderness enhances your spellcasting.
-	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 bonus on caster level checks, concentration checks, and, Knowledge (arcana) and Spellcraft checks. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
+Mage of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:1,Attuned to the Wild
+	DESC:Your mystic connection with the wilderness enhances your spellcasting.		SOURCEPAGE:p.28
+	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 bonus on caster level checks, concentration checks, and, Knowledge (Arcana) and Spellcraft checks. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
 
-Spirit of the Wild
-	TYPE:General
-	PRERACE:1,Elf
-	PREFEAT:2,Attuned to the Wild,Guardian of the Wild
-	DESC:Your mystic connection with one type of wilderness has grown even stronger.
+Spirit of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:2,Attuned to the Wild,Guardian of the Wild
+	DESC:Your mystic connection with one type of wilderness has grown even stronger.	SOURCEPAGE:p.28
 	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +4 bonus on Perception checks made to act in the surprise round of combat. If you act in the surprise round, you gain blindsense out to a range of 30 feet during the surprise round. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one terrain type.
 
+###
+##Block: Gnome Feats
+# Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Casual Illusionist
 	TYPE:General
@@ -127,6 +81,9 @@ Vast Hatred
 	DESC:Your rage stretches beyond normal bounds.
 	BENEFIT:Select two creature types (and subtypes where appropriate) from the list of potential favored enemies from the ranger class ability. Your +1 attack bonus from the hatred racial trait applies to creatures of the selected types (and subtypes). &nl; [Special] You may take this feat more than once. Its benefits do not stack. Each time you select this feat, you select two additional creature types to which your hatred racial trait applies.
 
+###
+##Block: Half-Elven Feats
+# Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
 Discerning Eye
 	TYPE:General
 	PRERACE=1,Elf,Half-Elf
@@ -193,6 +150,9 @@ Shared Manipulation
 	DESC:You can subtly bolster allies' ability to misdirect and infuriate their enemies.
 	BENEFIT:As a move action, you can grant all friendly creatures within 30 feet who can see or hear you a +2 bonus on Bluff or Intimidate checks (choose which skill to affect each time you use this ability) for a number of rounds equal to your Charisma modifier (minimum 1 round).
 
+###
+##Block: Half-Orc Feats
+# Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
 Beast Rider
 	TYPE:General
 	PREABILITY:1,CATEGORY=Special Ability,Nature's Bond ~ Animal Companion,Special Mount,Companion ~ Hunter's Bond
@@ -297,6 +257,9 @@ Thrill of the Kill
 	DESC:Killing fuels your rage.
 	BENEFIT:When you are raging and your attack reduces an enemy to negative hit points or kills it, you regain 1 round of rage. You may only use this feat if the fallen enemy had at least as many Hit Dice as you. You can only gain this benefit once per round.
 
+###
+##Block: Halfling Feats
+# Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
 Adaptive Fortune
 	TYPE:General
 	PRELEVEL:MIN=10
@@ -394,6 +357,9 @@ Uncanny Defense
 	DESC:Your instinct for self-preservation gives you many advantages.
 	BENEFIT:While fighting defensively or taking the total defense action, you gain a bonus on your Reflex saving throws and to your CMD equal to 1/2 of the dodge bonus to AC you gained from taking that action.
 
+###
+##Block: Human Feats
+# Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
 Bestow Luck
 	TYPE:General
 	PRERACE:1,Human
