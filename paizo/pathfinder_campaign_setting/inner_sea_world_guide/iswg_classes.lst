@@ -4,8 +4,8 @@ CLASS:Harrower	HD:6		TYPE:PC.Prestige	ABB:Har		MAXLEVEL:10	SOURCEPAGE:p.276	BONU
 CLASS:Harrower	!PREALIGN:TN	PREFEAT:1,Harrowed	PRESPELLSCHOOL:3,Divination=0	PRESPELLTYPE:1,Arcane=3,Divine=3	PRETEXT:Must own a Harrow deck	PRESKILL:1,Knowledge (Arcana)=5,Knowledge (Religion)=5	PRESKILL:1,TYPE.Perform=5
 # Class Name	Skill Pts/Lvl
 CLASS:Harrower	STARTSKILLPTS:2	CSKILL:Bluff|TYPE=Craft|Diplomacy|Knowledge (Arcana)|Knowledge (Local)|Knowledge (Planes)|Knowledge (Religion)|TYPE=Perform|TYPE=Profession|Spellcraft|Use Magic Device
-# Class Name	Define Vars	
-CLASS:Harrower	DEFINE:HarrowerLvl|CL
+# Class Name	Define Vars			
+CLASS:Harrower	DEFINE:HarrowerLvl|CL	NAMEISPI:YES
 ###Block: Ability Progression
 1	ADD:SPELLCASTER|ANY	ABILITY:Special Ability|AUTOMATIC|Blessing of the Harrow
 2	ADD:SPELLCASTER|ANY	ABILITY:Special Ability|AUTOMATIC|Harrow Casting|Tower of Intelligence
@@ -25,7 +25,7 @@ CLASS:Hellknight	PREALIGN:LG,LN,LE	PREATT:5	PREFEAT:1,Armor Proficiency (Heavy)	
 # Class Name	Skill Pts/Lvl	Class Skills
 CLASS:Hellknight	STARTSKILLPTS:2	CSKILL:Intimidate|Knowledge (Local)|Perception|Ride|Sense Motive
 # Class Name	Define Vars	
-CLASS:Hellknight	DEFINE:HellknightLvl|CL
+CLASS:Hellknight	DEFINE:HellknightLvl|CL	NAMEISPI:YES
 ###Block: Level Progression
 1	ABILITY:Special Ability|AUTOMATIC|Aura of Law					BONUS:VAR|AuraLawLVL|TL-AlignmentAuraLVL	
 1	ABILITY:Special Ability|AUTOMATIC|Detect Chaos ~ HK|Smite Chaos ~ HK	BONUS:VAR|HKSmiteTimes|(CL+2)/3					BONUS:ABILITYPOOL|Hellknight Order|1
@@ -68,7 +68,7 @@ CLASS:Red Mantis Assassin	STARTSKILLPTS:6	CSKILL:Acrobatics|Appraise|Bluff|Climb
 # Class Name			Spell Stat		Spell Type		Memorize	Spellist				Prohibit												Bonus
 CLASS:Red Mantis Assassin	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	SPELLLIST:2|Sorcerer|Wizard	PROHIBITED:Abjuration,Conjuration,Divination,Enchantment,Evocation,Necromancy	BONUS:CASTERLEVEL|Red Mantis Assassin|CL
 # Class Name			Define Vars	
-CLASS:Red Mantis Assassin	DEFINE:RedMantisLvl|CL
+CLASS:Red Mantis Assassin	DEFINE:RedMantisLvl|CL	NAMEISPI:YES
 ###Block: Weapon & Armor Proficiencies
 1	ABILITY:Class Ability|AUTOMATIC|RMA Weapon Proficiencies
 1	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
@@ -96,3 +96,5 @@ CLASS:Red Mantis Assassin	DEFINE:RedMantisLvl|CL
 9	CAST:0,5,4,3	KNOWN:0,5,4,4
 10	CAST:0,5,4,3,1	KNOWN:0,5,5,4,2
 
+CLASS:Druid.MOD
+1	PROHIBITSPELL:DESCRIPTOR.Fire|PREFEAT:1,Shade of the Uskwood
