@@ -1,13 +1,9 @@
 SOURCELONG:Adventurer's Handbook: Genius Guide Volume 1	SOURCESHORT:SGGAH	SOURCEDATE:2010-04
 # Original Entry by: Paul Shipley (elro the onk)
 
-##
-###Block: Base Class Special Abilities
-##
+###Block: Archon
 
 # Archon Special Abilities
-#
-# Ability Name			Unique Key						Category of Ability		Type									Source Page												Description																						Benefits
 Armored Casting			KEY:Armored Casting ~ Archon			CATEGORY:Special Ability	TYPE:SpecialQuality						SOURCEPAGE:p.8											DESC:You can cast archon spells while wearing light armor and use a shield without incurring the normal arcane spell failure chance.
 Cantrips				KEY:Cantrips ~ Archon				CATEGORY:Special Ability	TYPE:SpecialQuality						SOURCEPAGE:p.9											DESC:You can prepare a number of cantrips, or 0-level spells, each day. These spells are cast like any other spells, but they are not expended when cast and may be used again.
 Martial Weapon Proficiency	KEY:Martial Weapon Proficiency ~ Archon	CATEGORY:Special Ability	TYPE:Special.ArchonWeaponProf					SOURCEPAGE:p.8	MULT:YES	CHOOSE:WEAPONPROFICIENCY|!PC|TYPE.Martial		DESC:You are proficient in additional martial weapons.														AUTO:WEAPONPROF|%LIST
@@ -23,8 +19,6 @@ Force of the Hexsword		KEY:Force of the Hexsword Damage ~ Archon	CATEGORY:Specia
 Dominion of the Dusk Knight	KEY:Dominion of the Dusk Knight ~ Archon	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary				SOURCEPAGE:p.12											DESC:As a full round action, you may make a single attack and cast a single spell with a casting time of 1 standard action.
 
 # Archon Rivenspells
-#
-# Ability Name	Unique Key				Category of Ability		Type									Source Page																	Description
 Rivenspell / Anchor		KEY:Anchor ~ Archon		CATEGORY:Special Ability	TYPE:SpecialAttack.ArchonRivenspell.Supernatural	SOURCEPAGE:p.9														DESC:As part of the swift action sacrificing a spell to power this effect, you may target a single target you can see within 30 feet. The target must make a Will save (DC %1 + riven spell level). On a failed save, the creature cannot take any action that moves it to a new space for one round per level of the spell that powers this ability. The target can still be moved by the actions of others.|10+INT
 Rivenspell / Arcane Bulwark	KEY:Arcane Bulwark ~ Archon	CATEGORY:Special Ability	TYPE:SpecialQuality.ArchonRivenspell.Supernatural	SOURCEPAGE:p.9	PREABILITY:1,CATEGORY=Special Ability,Shield ~ Archon					DESC:You imbue a suit of armor you are wearing with one of the following abilities: light fortification, slick, or shadow. This ability functions as the magic armor special ability of the same name. The armor retains the special ability for one minute per level of the spell used to power this ability, or it is removed from the archon wearing it.
 CATEGORY=Special Ability|Arcane Bulwark ~ Archon.MOD	DESC:You imbue a suit of armor you are wearing with one of the following abilities: light fortification, moderate fortification, slick, improved slick, shadow, improved shadow, energy resistance, ghost touch, invulnerability, or spell resistance (13). This ability functions as the magic armor special ability of the same name. The armor retains the special ability for one minute per level of the spell used to power this ability, or it is removed from the archon wearing it.|PREVARGTEQ:ArchonLvl,9
@@ -44,9 +38,9 @@ Rivenspell / Shield		KEY:Shield ~ Archon		CATEGORY:Special Ability	TYPE:SpecialQ
 Rivenspell / Smite		KEY:Smite ~ Archon		CATEGORY:Special Ability	TYPE:SpecialQuality.ArchonRivenspell.Supernatural	SOURCEPAGE:p.12														DESC:You gain an insight bonus to attack and damage on your next attack roll (made before the end of your next turn). The bonus is equal to the level of spell sacrificed to empower the rivenspell.
 Rivenspell / Vigor		KEY:Vigor ~ Archon		CATEGORY:Special Ability	TYPE:SpecialQuality.ArchonRivenspell.Supernatural	SOURCEPAGE:p.12														DESC:You gain 2 temporary hit points per level of the spell used to empower this rivenspell. Multiple uses of the vigor rivenspell do not stack, each use resets the number of temporary hit points based on its level.
 
+###Block: Death Mage
+
 # Death Mage Special Abilities
-#
-# Ability Name		Unique Key						Category of Ability		Type						Source Page																													Description
 Armored Casting		KEY:Armored Casting ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality			SOURCEPAGE:p.16																												DESC:You can cast death mage spells while wearing light armor and use a shield without incurring the normal arcane spell failure chance.
 Cantrips			KEY:Cantrips ~ Death Mage			CATEGORY:Special Ability	TYPE:SpecialQuality			SOURCEPAGE:p.17																												DESC:You can prepare a number of cantrips, or 0-level spells, each day. These spells are cast like any other spells, but they are not expended when cast and may be used again.
 Voice of the Dead		KEY:Voice of the Dead ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	SOURCEPAGE:p.20	AUTO:LANG|Voice of the Dead																							DESC:You can speak in the language of the dead. You may use this language to understand and be understood by undead creatures (all of which know the voice of the dead as a language, even if it is not listed). Additionally, language is no longer a barrier when you use a speak with dead spell.
@@ -56,8 +50,6 @@ Deathly Abeyance		KEY:Deathly Abeyance ~ Death Mage		CATEGORY:Special Ability	TY
 Final Guide			KEY:Final Guide ~ Death Mage			CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.23	DEFINE:DeathMageFinalDeathTimeout|0	BONUS:VAR|DeathMageFinalDeathTimeout|DeathMageLvl													DESC:Once per day, you can restore a creature to life within %1 rounds of the creature's death. This functions like the resurrection spell except there is no material component and the casting time is 1 full round. Once a creature has been restored to life by this ability, the creature cannot benefit from this ability again (from any death mage) until it gains an additional class level or hit die.|DeathMageFinalDeathTimeout
 
 # Death Mage Pale Roads
-#
-# Ability Name	Unique Key				Category of Ability		Type							Source Page		Ability															8th level ability															Description
 Corpse Mage		KEY:Corpse Mage ~ Death Mage	CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMagePaleRoad	SOURCEPAGE:p.17	ABILITY:Special Ability|AUTOMATIC|Dirge of Command ~ Corpse Mage						ABILITY:Special Ability|AUTOMATIC|Army of the Dead ~ Corpse Mage|PREVARGTEQ:DeathMageLvl,8		DESC:The spirits you hear all follow the pale road of the undead. You command loyal, unliving minions.
 Ghoul Mage		KEY:Ghoul Mage ~ Death Mage	CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMagePaleRoad	SOURCEPAGE:p.18	ABILITY:Special Ability|AUTOMATIC|Eat the Dead ~ Ghoul Mage|Sickening Touch ~ Ghoul Mage		ABILITY:Special Ability|AUTOMATIC|Ghast Touch ~ Ghoul Mage|PREVARGTEQ:DeathMageLvl,8			DESC:You draw power from the dead and undead and use it to weaken or paralyze the living.
 Reaper Mage		KEY:Reaper Mage ~ Death Mage	CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMagePaleRoad	SOURCEPAGE:p.19	ABILITY:Special Ability|AUTOMATIC|Deny Death ~ Reaper Mage|Reap ~ Reaper Mage				ABILITY:Special Ability|AUTOMATIC|Protection from Undead ~ Reaper Mage|PREVARGTEQ:DeathMageLvl,8	DESC:You are opposed to the undead in all ways. Your denial of the powers of death make you heartier.
@@ -65,8 +57,6 @@ Shadow Mage		KEY:Shadow Mage ~ Death Mage	CATEGORY:Special Ability	TYPE:SpecialQ
 Tomb Mage		KEY:Tomb Mage ~ Death Mage	CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMagePaleRoad	SOURCEPAGE:p.18	ABILITY:Special Ability|AUTOMATIC|Calm of the Grave ~ Tomb Mage|Terrible Visage ~ Tomb Mage	ABILITY:Special Ability|AUTOMATIC|Word of Pain ~ Tomb Mage|PREVARGTEQ:DeathMageLvl,8			DESC:You are a master of the fear and pain the living feel when confronted by or approaching death.
 
 # Death Mage Pale Road Abilities
-#
-# Ability Name		Unique Key						Category of Ability		Type						Source Page						Description
 Dirge of Command		KEY:Dirge of Command ~ Corpse Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike		SOURCEPAGE:p.17					DESC:You may attempt to control undead creatures you encounter. This functions as the command undead spell, except it only functions on undead with no more than %1 hit dice. You may use this power %2 times per day.|DeathMageLvl|DeathMagePaleRoadTimes
 Army of the Dead		KEY:Army of the Dead ~ Corpse Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	SOURCEPAGE:p.17					DESC:You may have a number of undead minions who are totally loyal to you, similar to the Leadership feat.
 Eat the Dead		KEY:Eat the Dead ~ Ghoul Mage			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	SOURCEPAGE:p.18					DESC:As a full round action that provokes an attack of opportunity, you can eat part of an adjacent creature of the abberration, animal, dragon, fey, humanoid, magical beast, monstrous humanoid, corporeal undead, or vermin type that diead no longer than %1 rounds ago. This allows you to regain one hit point for every hit die or level possessed by the creature you feast upon. After using this power, you gain a +%2 morale bonus to all attack rolls, saving throws and skill checks for %3 minutes. You may use this power %4 times per day.|DeathMageLvl|1+(DeathMageLvl+1)/11|DeathMageLvl|DeathMagePaleRoadTimes
@@ -86,16 +76,12 @@ Terrible Visage		KEY:Terrible Visage ~ Tomb Mage		CATEGORY:Special Ability	TYPE:
 Word of Pain		KEY:Word of Pain ~ Tomb Mage			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	SOURCEPAGE:p.18					DESC:As a standard action, you may say a terrible word of pain to a creature that is able to hear you, and is within 30 feet. The target must make a Fortitude save (DC%1) or be overcome by wracking pain. The pain is so intense that the target becomes confused for %2 rounds. The target receives a new Will save at the end of each of its turns. You may use the word of pain %3 times per day.|DeathMagePaleRoadDC|DeathMageLvl|DeathMageLvl/4-1
 
 # Death Mage Death Bonds
-#
-# Ability Name	Unique Key							Category of Ability		Type							Source Page		Ability																										Description
 Unbreathing Companion	KEY:Unbreathing Companion ~ Death Mage	CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMageDeathBond	SOURCEPAGE:p.20	DEFINE:UBLevel|0		BONUS:VAR|UBLevel|DeathMageLvl-2		FOLLOWERS:Unbreathing Companion|1	COMPANIONLIST:Unbreathing Companion|RACETYPE=Companion	DESC:You gain an unbreathing companion.
 Death Domain		KEY:Death Domain ~ Death Mage			CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMageDeathBond	SOURCEPAGE:p.20	DEFINE:DomainLVL|0	DEFINE:DomainPowerTimes|0	BONUS:VAR|DomainLVL|DeathMageLvl	BONUS:VAR|DomainPowerTimes|3+WIS							DESC:You gain access to the Death domain.
 Repose Domain		KEY:Repose Domain ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMageDeathBond	SOURCEPAGE:p.20	DEFINE:DomainLVL|0	DEFINE:DomainPowerTimes|0	BONUS:VAR|DomainLVL|DeathMageLvl	BONUS:VAR|DomainPowerTimes|3+WIS							DESC:You gain access to the Repose domain.
 Fetish			KEY:Fetish ~ Death Mage				CATEGORY:Special Ability	TYPE:SpecialQuality.DeathMageDeathBond	SOURCEPAGE:p.20	DEFINE:DeathMageFetishTimes|0	BONUS:VAR|DeathMageFetishTimes|DeathMageLvl/5	BONUS:ABILITYPOOL|Death Mage Fetish Power|2+(DeathMageLvl-3)/2				DESC:You create a fetish which confers powers as long as you have it in your hand. A fetish's powers can only be used to target creatures of a type to which the fetish is attuned. There is no limit to the number of creature types to which a fetish can be attuned.
 
 # Death Magic Fetish Powers
-#
-# Ability Name	Unique Key							Category of Ability		Type							Source Page		Pre							Description
 Angry Spirits		KEY:Angry Spirits ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.SpellLike.DeathMageFetishPower	SOURCEPAGE:p.21	PREVARGTEQ:DeathMageLvl,7	DESC:You may use angry spirits against as a standard action. This functions as the bestow curse spell, but it can only target a creature your fetish is attuned to. You may use this ability %1 times per day.|DeathMageFetishTimes
 Death Focus			KEY:Death Focus ~ Death Mage			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DeathMageFetishPower	SOURCEPAGE:p.21						DESC:All creatures your fetish is attuned to suffer a -1 penalty to saving throws against your death mage spells and abilities.
 Death Mask			KEY:Death Mask ~ Death Mage			CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DeathMageFetishPower	SOURCEPAGE:p.21						DESC:You can create a temporary fetish by painting symbols on your face and body. This takes one minute, and requires pigments and stains you can gather at no cost. The temporary fetish lasts for %1 hours. During this time, you do not have to hold your fetish to access its powers.|DeathMageLvl
@@ -123,5 +109,148 @@ Sympathetic Strike	KEY:Sympathetic Strike ~ Death Mage		CATEGORY:Special Ability
 Veil of Ancestors		KEY:Veil of Ancestors ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DeathMageFetishPower	SOURCEPAGE:p.23	PREVARGTEQ:DeathMageLvl,7	DESC:You may use a veil of ancestors on yourself as a standard action. This functions as the invisibility spell, but only creatures your fetish is attuned to are unable to see you. You may do this %1 times per day.|3+WIS
 Warding Spirits		KEY:Warding Spirits ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DeathMageFetishPower	SOURCEPAGE:p.23						DESC:You gain a +%1 luck bonus to AC against attacks made by target your fetish is attuned to.|min(DeathMageLvl,CHA)
 Whispering Spirits	KEY:Whispering Spirits ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DeathMageFetishPower	SOURCEPAGE:p.23						DESC:You gain a +4 bonus to all Knowledge and Sense Motive checks regarding creatures your fetish is attuned to.
+
+###Block: Magister
+
+# Magister Simple abilities (!)
+Magister Weapon Proficiency					CATEGORY:Special Ability	TYPE:Special.ClassAbility	VISIBLE:NO	AUTO:WEAPONPROF|Club|Dagger|Crossbow (Light)|Quarterstaff
+Armored Casting	KEY:Armored Casting ~ Magister	CATEGORY:Special Ability	TYPE:SpecialQuality		SOURCEPAGE:p.26	DESC:You can cast class spells while wearing light armor without incurring the normal arcane spell failure chance (even if casting a spell from an arcane spell list). However, a magister wearing medium or heavy armor incurs a chance of spell failure if the spell in question has a somatic component (even if casting a spell from a divine spell list).
+
+# Magister Basic Spell Setup
+Cantrips/Orisons	KEY:Cantrips/Orisons ~ Magister	CATEGORY:Special Ability	TYPE:SpecialQuality		SOURCEPAGE:p.28	DESC:You learn a number of cantrips and orisons, or 0-level spells. These spells are cast like any other spell, but they do not consume any slots and may be used again.
+Spells ~ Magister							CATEGORY:Special Ability	TYPE:Internal	DEFINE:Magister0Spells|0	DEFINE:Magister1Spells|0	DEFINE:Magister2Spells|0	DEFINE:Magister3Spells|0	DEFINE:Magister4Spells|0	DEFINE:Magister5Spells|0	DEFINE:Magister6Spells|0	DEFINE:Magister7Spells|0	DEFINE:Magister8Spells|0	DEFINE:Magister9Spells|0	DEFINE:MagisterArcaneMod|0	DEFINE:MagisterDivineMod|0
+Charisma Bonus I ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=1|max(floor((CHA+3)/4),0)-max(floor((WIS+3)/4),0)
+Charisma Bonus II ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=2|max(floor((CHA+2)/4),0)-max(floor((WIS+2)/4),0)
+Charisma Bonus III ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=3|max(floor((CHA+1)/4),0)-max(floor((WIS+1)/4),0)
+Charisma Bonus IV ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=4|max(floor(CHA/4),0)-max(floor(WIS/4),0)
+Charisma Bonus V ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=5|max(floor((CHA-1)/4),0)-max(floor((WIS-1)/4),0)
+Charisma Bonus VI ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=6|max(floor((CHA-2)/4),0)-max(floor((WIS-2)/4),0)
+Charisma Bonus VII ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=7|max(floor((CHA-3)/4),0)-max(floor((WIS-3)/4),0)
+Charisma Bonus VIII ~ Magister				CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=8|max(floor((CHA-4)/4),0)-max(floor((WIS-4)/4),0)
+Charisma Bonus IX ~ Magister					CATEGORY:Special Ability	TYPE:Internal	BONUS:SPELLCAST|CLASS=Magister;LEVEL=9|max(floor((CHA-5)/4),0)-max(floor((WIS-5)/4),0)
+
+# Magister Power Sources
+Arcane Magister					CATEGORY:Special Ability	TYPE:SpecialQuality.MagisterPowerSource	SOURCEPAGE:p.27	DESC:Your primary spell list is an arcane class.	BONUS:ABILITYPOOL|Magister Primary List|1	BONUS:VAR|MagisterDivineMod|1
+Divine Magister					CATEGORY:Special Ability	TYPE:SpecialQuality.MagisterPowerSource	SOURCEPAGE:p.27	DESC:Your primary spell list is an divine class.	BONUS:ABILITYPOOL|Magister Primary List|1	BONUS:VAR|MagisterArcaneMod|1
+
+# Magister Spell Lists
+Magister Spell List ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:SpecialQuality.MagisterSpellList	PREABILITY:1,CATEGORY=Special Ability,Arcane Magister	SOURCEPAGE:p.27	DESC:Your primary spell list is that of a sorcerer/wizard.
+Magister Spell List ~ Death Mage		CATEGORY:Special Ability	TYPE:SpecialQuality.MagisterSpellList	PREABILITY:1,CATEGORY=Special Ability,Arcane Magister	SOURCEPAGE:p.27	DESC:Your primary spell list is that of a death mage.
+Magister Spell List ~ Cleric			CATEGORY:Special Ability	TYPE:SpecialQuality.MagisterSpellList	PREABILITY:1,CATEGORY=Special Ability,Divine Magister	SOURCEPAGE:p.27	DESC:Your primary spell list is that of a cleric.
+Magister Spell List ~ Druid			CATEGORY:Special Ability	TYPE:SpecialQuality.MagisterSpellList	PREABILITY:1,CATEGORY=Special Ability,Divine Magister	SOURCEPAGE:p.27	DESC:Your primary spell list is that of a druid.
+
+# Magister Spells Known
+
+# Primary Lists
+Magister Primary 0 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell0	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]
+Magister Primary 1 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell1	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Primary 2 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell2	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Primary 3 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell3	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Primary 4 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell4	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Primary 5 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell5	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=5;LEVELMAX=5]
+Magister Primary 6 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell6	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=6;LEVELMAX=6]
+Magister Primary 7 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell7	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=7;LEVELMAX=7]
+Magister Primary 8 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell8	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=8;LEVELMAX=8]
+Magister Primary 9 Spell ~ Sorcerer/Wizard	CATEGORY:Special Ability	TYPE:MagisterSpell9	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=9;LEVELMAX=9]
+Magister Primary 0 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell0	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]
+Magister Primary 1 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell1	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Primary 2 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell2	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Primary 3 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell3	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Primary 4 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell4	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Primary 5 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell5	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=5;LEVELMAX=5]
+Magister Primary 6 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell6	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=6;LEVELMAX=6]
+Magister Primary 7 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell7	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=7;LEVELMAX=7]
+Magister Primary 8 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell8	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=8;LEVELMAX=8]
+Magister Primary 9 Spell ~ Death Mage		CATEGORY:Special Ability	TYPE:MagisterSpell9	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=9;LEVELMAX=9]
+Magister Primary 0 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell0	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]
+Magister Primary 1 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell1	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Primary 2 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell2	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Primary 3 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell3	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Primary 4 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell4	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Primary 5 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell5	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=5;LEVELMAX=5]
+Magister Primary 6 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell6	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=6;LEVELMAX=6]
+Magister Primary 7 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell7	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=7;LEVELMAX=7]
+Magister Primary 8 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell8	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=8;LEVELMAX=8]
+Magister Primary 9 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpell9	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=9;LEVELMAX=9]
+Magister Primary 0 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell0	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]
+Magister Primary 1 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell1	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Primary 2 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell2	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Primary 3 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell3	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Primary 4 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell4	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Primary 5 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell5	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=5;LEVELMAX=5]
+Magister Primary 6 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell6	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=6;LEVELMAX=6]
+Magister Primary 7 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell7	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=7;LEVELMAX=7]
+Magister Primary 8 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell8	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=8;LEVELMAX=8]
+Magister Primary 9 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpell9	PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid			MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=9;LEVELMAX=9]
+
+# Other Devoted Casting Lists
+Magister Other 0 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO0	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]	PREABILITY:1,CATEGORY=Special Ability,Arcane Magister
+Magister Other 1 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO1	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=1-MagisterArcaneMod;LEVELMAX=1-MagisterArcaneMod]
+Magister Other 2 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO2	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=2-MagisterArcaneMod;LEVELMAX=2-MagisterArcaneMod]
+Magister Other 3 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO3	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=3-MagisterArcaneMod;LEVELMAX=3-MagisterArcaneMod]
+Magister Other 4 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO4	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=4-MagisterArcaneMod;LEVELMAX=4-MagisterArcaneMod]
+Magister Other 5 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO5	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=5-MagisterArcaneMod;LEVELMAX=5-MagisterArcaneMod]
+Magister Other 6 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO6	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=6-MagisterArcaneMod;LEVELMAX=6-MagisterArcaneMod]
+Magister Other 7 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO7	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=7-MagisterArcaneMod;LEVELMAX=7-MagisterArcaneMod]
+Magister Other 8 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO8	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=8-MagisterArcaneMod;LEVELMAX=8-MagisterArcaneMod]
+Magister Other 9 Spell ~ Sorcerer/Wizard		CATEGORY:Special Ability	TYPE:MagisterSpellO9	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Sorcerer/Wizard	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Wizard[KNOWN=NO;LEVELMIN=9-MagisterArcaneMod;LEVELMAX=9-MagisterArcaneMod]
+Magister Other 0 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO0	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]	PREABILITY:1,CATEGORY=Special Ability,Arcane Magister
+Magister Other 1 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO1	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=1-MagisterArcaneMod;LEVELMAX=1-MagisterArcaneMod]
+Magister Other 2 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO2	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=2-MagisterArcaneMod;LEVELMAX=2-MagisterArcaneMod]
+Magister Other 3 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO3	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=3-MagisterArcaneMod;LEVELMAX=3-MagisterArcaneMod]
+Magister Other 4 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO4	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=4-MagisterArcaneMod;LEVELMAX=4-MagisterArcaneMod]
+Magister Other 5 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO5	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=5-MagisterArcaneMod;LEVELMAX=5-MagisterArcaneMod]
+Magister Other 6 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO6	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=6-MagisterArcaneMod;LEVELMAX=6-MagisterArcaneMod]
+Magister Other 7 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO7	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=7-MagisterArcaneMod;LEVELMAX=7-MagisterArcaneMod]
+Magister Other 8 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO8	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=8-MagisterArcaneMod;LEVELMAX=8-MagisterArcaneMod]
+Magister Other 9 Spell ~ Death Mage			CATEGORY:Special Ability	TYPE:MagisterSpellO9	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Death Mage		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Death Mage[KNOWN=NO;LEVELMIN=9-MagisterArcaneMod;LEVELMAX=9-MagisterArcaneMod]
+Magister Other 0 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO0	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]	PREABILITY:1,CATEGORY=Special Ability,Divine Magister
+Magister Other 1 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO1	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=1-MagisterDivineMod;LEVELMAX=1-MagisterDivineMod]
+Magister Other 2 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO2	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=2-MagisterDivineMod;LEVELMAX=2-MagisterDivineMod]
+Magister Other 3 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO3	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=3-MagisterDivineMod;LEVELMAX=3-MagisterDivineMod]
+Magister Other 4 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO4	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=4-MagisterDivineMod;LEVELMAX=4-MagisterDivineMod]
+Magister Other 5 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO5	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=5-MagisterDivineMod;LEVELMAX=5-MagisterDivineMod]
+Magister Other 6 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO6	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=6-MagisterDivineMod;LEVELMAX=6-MagisterDivineMod]
+Magister Other 7 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO7	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=7-MagisterDivineMod;LEVELMAX=7-MagisterDivineMod]
+Magister Other 8 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO8	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=8-MagisterDivineMod;LEVELMAX=8-MagisterDivineMod]
+Magister Other 9 Spell ~ Cleric			CATEGORY:Special Ability	TYPE:MagisterSpellO9	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Cleric		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Cleric[KNOWN=NO;LEVELMIN=9-MagisterDivineMod;LEVELMAX=9-MagisterDivineMod]
+Magister Other 0 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO0	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]	PREABILITY:1,CATEGORY=Special Ability,Divine Magister
+Magister Other 1 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO1	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=1-MagisterDivineMod;LEVELMAX=1-MagisterDivineMod]
+Magister Other 2 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO2	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=2-MagisterDivineMod;LEVELMAX=2-MagisterDivineMod]
+Magister Other 3 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO3	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=3-MagisterDivineMod;LEVELMAX=3-MagisterDivineMod]
+Magister Other 4 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO4	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=4-MagisterDivineMod;LEVELMAX=4-MagisterDivineMod]
+Magister Other 5 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO5	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=5-MagisterDivineMod;LEVELMAX=5-MagisterDivineMod]
+Magister Other 6 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO6	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=6-MagisterDivineMod;LEVELMAX=6-MagisterDivineMod]
+Magister Other 7 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO7	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=7-MagisterDivineMod;LEVELMAX=7-MagisterDivineMod]
+Magister Other 8 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO8	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=8-MagisterDivineMod;LEVELMAX=8-MagisterDivineMod]
+Magister Other 9 Spell ~ Druid			CATEGORY:Special Ability	TYPE:MagisterSpellO9	!PREABILITY:1,CATEGORY=Special Ability,Magister Spell List ~ Druid		MULT:YES	CHOOSE:SPELLS|CLASSLIST=Druid[KNOWN=NO;LEVELMIN=9-MagisterDivineMod;LEVELMAX=9-MagisterDivineMod]
+
+# Other Non-Devoted Casting Lists
+Magister Other 2 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO2	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]
+Magister Other 3 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Other 4 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO4	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Other 5 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO5	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Other 6 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO6	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Other 7 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO7	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=5;LEVELMAX=5]
+Magister Other 8 Spell ~ Bard				CATEGORY:Special Ability	TYPE:MagisterSpellO8	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Bard[KNOWN=NO;LEVELMIN=6;LEVELMAX=6]
+Magister Other 3 Spell ~ Paladin			CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Paladin[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Other 4 Spell ~ Paladin			CATEGORY:Special Ability	TYPE:MagisterSpellO4	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Paladin[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Other 5 Spell ~ Paladin			CATEGORY:Special Ability	TYPE:MagisterSpellO5	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Paladin[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Other 6 Spell ~ Paladin			CATEGORY:Special Ability	TYPE:MagisterSpellO6	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Paladin[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Other 3 Spell ~ Ranger			CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Ranger[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Other 4 Spell ~ Ranger			CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Ranger[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Other 5 Spell ~ Ranger			CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Ranger[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Other 6 Spell ~ Ranger			CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Ranger[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Other 2 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO2	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=0;LEVELMAX=0]
+Magister Other 3 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO3	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=1;LEVELMAX=1]
+Magister Other 4 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO4	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=2;LEVELMAX=2]
+Magister Other 5 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO5	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=3;LEVELMAX=3]
+Magister Other 6 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO6	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=4;LEVELMAX=4]
+Magister Other 7 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO7	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=5;LEVELMAX=5]
+Magister Other 8 Spell ~ Archon			CATEGORY:Special Ability	TYPE:MagisterSpellO8	MULT:YES	CHOOSE:SPELLS|CLASSLIST=Archon[KNOWN=NO;LEVELMIN=6;LEVELMAX=6]
+
+# Magister Mystic Bond
+Mystic Bond		KEY:Mystic Bond ~ Magister		CATEGORY:Special Ability	TYPE:SpecialQuality		SOURCEPAGE:p.28	DESC:Mystic Bond
+
 
 # EOF
