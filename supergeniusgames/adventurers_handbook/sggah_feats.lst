@@ -5,7 +5,7 @@ SOURCELONG:Adventurer's Handbook: Genius Guide Volume 1	SOURCESHORT:SGGAH	SOURCE
 # Feat Name						Type						Source Page		Description												Requirements																											Bonus								Description of the Benefits
 Acrobatic Dodge					TYPE:Combat					SOURCEPAGE:p.52	DESC:Avoid attacks with an Acrobatics check.						PRESTAT:1,DEX=15				PREFEAT:1,Acrobatic																				
 Anchor						TYPE:Combat					SOURCEPAGE:p.52	DESC:You are difficult to flank or move around.										PREATT:1																								
-Arcane Shield ~ Genius Guide			TYPE:Combat.ModifyAC			SOURCEPAGE:p.52	DESC:Gain a bonus to your shield or armor.												PRESPELLCAST:TYPE=Arcane																			OUTPUTNAME:Arcane Shield
+Arcane Shield ~ Genius Guide			TYPE:Combat.ModifyAC.Magister		SOURCEPAGE:p.52	DESC:Gain a bonus to your shield or armor.												PRESPELLCAST:TYPE=Arcane																			OUTPUTNAME:Arcane Shield
 Armor Focus (Heavy)				TYPE:Combat					SOURCEPAGE:p.52	DESC:Gain DR 2/- in heavy armor.								PRESTAT:1,CON=13				PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Heavy],[PREFEAT:1,Armor Proficiency (Heavy)]	OUTPUTNAME:Armor Focus, Heavy		DR:0/-	BONUS:DR|-|2|PREEQUIP:1,TYPE=Armor.Heavy
 Armor Focus (Medium)				TYPE:Combat					SOURCEPAGE:p.52	DESC:Gain DR 1/- in medium armor.								PRESTAT:1,CON=13				PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]															OUTPUTNAME:Armor Focus, Medium
 Avoid the Arcane					TYPE:Combat					SOURCEPAGE:p.52	DESC:Make a Ref save in place of a Fort or Will save.					PRESTAT:1,DEX=13				PREFEAT:1,Lightning Reflexes		!PRECLASS:1,SPELLCASTER=1													
@@ -40,40 +40,40 @@ Weapon Trickery					TYPE:Combat					SOURCEPAGE:p.73	DESC:Misdirect foes to allow
 Web of Steel					TYPE:Combat					SOURCEPAGE:p.73	DESC:Gain an armor bonus from wielding a weapon.					PRESTAT:2,INT=13,DEX=15	PREATT:1	PREFEAT:3,Dodge,Combat Expertise,Weapon Focus																MULT:YES	CHOOSE:WEAPONPROFICIENCY|FEAT=Weapon Focus	BONUS:COMBAT|AC|max(2+(TL/2)-AC.Armor,0)|TYPE=Dodge|PREVARLT:var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.MEDIUM]"),1,var("COUNT[EQTYPE.ARMOR.EQUIPPED.IS.HEAVY]"),1|PREMULT:1,[PREEQUIPPRIMARY:1,%LIST],[PREEQUIPSECONDARY:1,%LIST],[PREEQUIPBOTH:1,%LIST]
 
 ###Block: Spellcaster Feats
-# Feat Name				Type		Source Page		Description															Requirements															Stack/Mult?	Choose												Bonus								Description of the Benefits
-Battle Mage					TYPE:General	SOURCEPAGE:p.	DESC:Gain spells you can only use if you've been in combat.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=BattleMage[LEVELMAX=MAXCASTABLE]		
-Blood Mage					TYPE:General	SOURCEPAGE:p.	DESC:Learn spells you can only cast after taking damage.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=BloodMage[LEVELMAX=MAXCASTABLE]		
-Caustic Hex					TYPE:General	SOURCEPAGE:p.57	DESC:Reduce an acid spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Acid=0																												
-Chill Hex					TYPE:General	SOURCEPAGE:p.58	DESC:Reduce a cold spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Cold=0																												
-Cold Focus					TYPE:General	SOURCEPAGE:p.	DESC:Add +2 to the DC for all saving throws against spells you cast with the [cold] descriptor.	PRESPELLDESCRIPTOR:1,Cold=0																												
+# Feat Name					Type				Source Page		Description															Requirements															Stack/Mult?	Choose												Bonus								Description of the Benefits
+Battle Mage					TYPE:General		SOURCEPAGE:p.	DESC:Gain spells you can only use if you've been in combat.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=BattleMage[LEVELMAX=MAXCASTABLE]		
+Blood Mage					TYPE:General		SOURCEPAGE:p.	DESC:Learn spells you can only cast after taking damage.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=BloodMage[LEVELMAX=MAXCASTABLE]		
+Caustic Hex					TYPE:General		SOURCEPAGE:p.57	DESC:Reduce an acid spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Acid=0																												
+Chill Hex					TYPE:General		SOURCEPAGE:p.58	DESC:Reduce a cold spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Cold=0																												
+Cold Focus					TYPE:General		SOURCEPAGE:p.	DESC:Add +2 to the DC for all saving throws against spells you cast with the [cold] descriptor.	PRESPELLDESCRIPTOR:1,Cold=0																												
 #PRESTAT:1,SPELLSTAT is throwing an error
-#Effective Caster				TYPE:General	SOURCEPAGE:p.	DESC:Increase your effective caster level for areas and number of targets.				PRESTAT:1,SPELLSTAT=17																													
-Effective Caster				TYPE:General	SOURCEPAGE:p.	DESC:Increase your effective caster level for areas and number of targets.				PRETEXT:Spellcasting attribute 17																													
-Esoteric Schooling			TYPE:General	SOURCEPAGE:p.	DESC:Learn a 0-level spell from another class.									PRESPELLTYPE:1,Arcane=0,Divine=0												MULT:YES	CHOOSE:SPELLS|ALL[LEVELMAX=0]									
-Extra Spell Slots				TYPE:General	SOURCEPAGE:p.	DESC:Gain two additional spell slots.										PRECLASS:1,SPELLCASTER=3													STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER							
-Extra Spells Known			TYPE:General	SOURCEPAGE:p.	DESC:Gain two additional spells known.										PRECLASS:1,SPELLCASTER=3	PRESPELLCAST:MEMORIZE=N	PRETEXT:spontaneous spellcasting class level 3	STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER							
-#Far Caster					TYPE:General	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining range.						PRESTAT:1,SPELLSTAT=13																													
-Far Caster					TYPE:General	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining range.						PRETEXT:Spellcasting attribute 13																													
-Jolt Hex					TYPE:General	SOURCEPAGE:p.63	DESC:Reduce an electricity spell's save DC to gain a secondary effect.					PRESPELLDESCRIPTOR:3,Electricity=0																											
-#Lasting Caster				TYPE:General	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining duration.					PRESTAT:1,SPELLSTAT=15																													
-Lasting Caster				TYPE:General	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining duration.					PRETEXT:Spellcasting attribute 15																													
-Meditative Incantation			TYPE:General	SOURCEPAGE:p.65	DESC:Take 15 minutes to open a prepared spell slot.								PRESTAT:1,INT=13																														
-Mounted Caster				TYPE:General	SOURCEPAGE:p.65	DESC:Cast while riding without concentration checks.								PREFEAT:1,Mounted Combat	PRESKILL:1,Ride=1																									
-Necrothurge					TYPE:General	SOURCEPAGE:p.	DESC:Learn spells you can only cast after killing someone.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=Necrothurge[LEVELMAX=MAXCASTABLE]		
-Plait Incantation				TYPE:General	SOURCEPAGE:p.66	DESC:Ready to use a spell to increase another caster's spell power.					PRECLASS:1,SPELLCASTER=1	PREFEAT:1,Spell Focus																								
-Scorch Hex					TYPE:General	SOURCEPAGE:p.67	DESC:Reduce a fire spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Fire=0																												
-Secret Spell				TYPE:General	SOURCEPAGE:p.68	DESC:Cast a spell stealthily.												PRESKILL:2,Bluff=5,Spellcraft=5																											
-Sidewinder Hex				TYPE:General	SOURCEPAGE:p.69	DESC:Cast a spell that fakes what target it's headed for.							PRESKILL:1,Bluff=3																													
-Signature Spell				TYPE:General	SOURCEPAGE:p.69	DESC:Sacrifice a prepared spell to cast your signature spell.						PREMULT:1,[PREFEAT:1,Spell Mastery],[PREDOMAIN:1,ANY]									MULT:YES	CHOOSE:SPELLS|ALL[KNOWN=YES]									
+#Effective Caster				TYPE:General.Magister	SOURCEPAGE:p.	DESC:Increase your effective caster level for areas and number of targets.				PRESTAT:1,SPELLSTAT=17																													
+Effective Caster				TYPE:General.Magister	SOURCEPAGE:p.	DESC:Increase your effective caster level for areas and number of targets.				PRETEXT:Spellcasting attribute 17																													
+Esoteric Schooling			TYPE:General		SOURCEPAGE:p.	DESC:Learn a 0-level spell from another class.									PRESPELLTYPE:1,Arcane=0,Divine=0												MULT:YES	CHOOSE:SPELLS|ALL[LEVELMAX=0]									
+Extra Spell Slots				TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain two additional spell slots.										PRECLASS:1,SPELLCASTER=3													STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER							
+Extra Spells Known			TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain two additional spells known.										PRECLASS:1,SPELLCASTER=3	PRESPELLCAST:MEMORIZE=N	PRETEXT:spontaneous spellcasting class level 3	STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER							
+#Far Caster					TYPE:General.Magister	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining range.						PRESTAT:1,SPELLSTAT=13																													
+Far Caster					TYPE:General.Magister	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining range.						PRETEXT:Spellcasting attribute 13																													
+Jolt Hex					TYPE:General		SOURCEPAGE:p.63	DESC:Reduce an electricity spell's save DC to gain a secondary effect.					PRESPELLDESCRIPTOR:3,Electricity=0																											
+#Lasting Caster				TYPE:General.Magister	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining duration.					PRESTAT:1,SPELLSTAT=15																													
+Lasting Caster				TYPE:General.Magister	SOURCEPAGE:p.	DESC:Increase your effective caster level for determining duration.					PRETEXT:Spellcasting attribute 15																													
+Meditative Incantation			TYPE:General		SOURCEPAGE:p.65	DESC:Take 15 minutes to open a prepared spell slot.								PRESTAT:1,INT=13																														
+Mounted Caster				TYPE:General		SOURCEPAGE:p.65	DESC:Cast while riding without concentration checks.								PREFEAT:1,Mounted Combat	PRESKILL:1,Ride=1																									
+Necrothurge					TYPE:General		SOURCEPAGE:p.	DESC:Learn spells you can only cast after killing someone.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=Necrothurge[LEVELMAX=MAXCASTABLE]		
+Plait Incantation				TYPE:General.Magister	SOURCEPAGE:p.66	DESC:Ready to use a spell to increase another caster's spell power.					PRECLASS:1,SPELLCASTER=1	PREFEAT:1,Spell Focus																								
+Scorch Hex					TYPE:General		SOURCEPAGE:p.67	DESC:Reduce a fire spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Fire=0																												
+Secret Spell				TYPE:General		SOURCEPAGE:p.68	DESC:Cast a spell stealthily.												PRESKILL:2,Bluff=5,Spellcraft=5																											
+Sidewinder Hex				TYPE:General		SOURCEPAGE:p.69	DESC:Cast a spell that fakes what target it's headed for.							PRESKILL:1,Bluff=3																													
+Signature Spell				TYPE:General		SOURCEPAGE:p.69	DESC:Sacrifice a prepared spell to cast your signature spell.						PREMULT:1,[PREFEAT:1,Spell Mastery],[PREDOMAIN:1,ANY]									MULT:YES	CHOOSE:SPELLS|ALL[KNOWN=YES]									
 #TODO: Make Spell Bluff restrict to only legal spell selections
-Spell Bluff ~ Genius Guide		TYPE:General	SOURCEPAGE:p.70	DESC:Fool observers about what spell you are casting.								PREFEAT:1,Secret Spell	PRESKILL:2,Bluff=5,Spellcraft=5																							
-Spell Finesse				TYPE:General	SOURCEPAGE:p.	DESC:Change your spellcasting ability.																																										
-Spell Flare					TYPE:General	SOURCEPAGE:p.70	DESC:Cast a spell with an impressive display, demoralizing observers.					PREFEAT:1,Spell Focus																													
-Spell Specialization ~ Genius Guide	TYPE:General	SOURCEPAGE:p.	DESC:Deal +2 damage with spells that require ranged touch attacks.					PRECLASS:1,SPELLCASTER=4	PREFEAT:1,Weapon Focus(Ray)																							
-Summon Defenders				TYPE:General	SOURCEPAGE:p.	DESC:Conjured creatures gain +2 to AC and saves.								PREFEAT:1,Augment Summoning																												
-Synergistic Training			TYPE:General	SOURCEPAGE:p.	DESC:Increase your caster levels in a second class.								PRECLASS:1,SPELLCASTER=1	PRECLASS:2,ANY										MULT:YES	CHOOSE:CLASS|SPELLCASTER									
-Trickster Mage				TYPE:General	SOURCEPAGE:p.	DESC:Learn spells you can only cast when you have deceived someone.					PRECLASS:1,SPELLCASTER=5	PRESTAT:1,CHA=13										MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=TricksterMage[LEVELMAX=MAXCASTABLE]	
-Woodwose					TYPE:General	SOURCEPAGE:p.	DESC:Learn spells you can only cast in natural environments.						PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=Woodwose[LEVELMAX=MAXCASTABLE]		
+Spell Bluff ~ Genius Guide		TYPE:General		SOURCEPAGE:p.70	DESC:Fool observers about what spell you are casting.								PREFEAT:1,Secret Spell	PRESKILL:2,Bluff=5,Spellcraft=5																							
+Spell Finesse				TYPE:General		SOURCEPAGE:p.	DESC:Change your spellcasting ability.																																										
+Spell Flare					TYPE:General		SOURCEPAGE:p.70	DESC:Cast a spell with an impressive display, demoralizing observers.					PREFEAT:1,Spell Focus																													
+Spell Specialization ~ Genius Guide	TYPE:General		SOURCEPAGE:p.	DESC:Deal +2 damage with spells that require ranged touch attacks.					PRECLASS:1,SPELLCASTER=4	PREFEAT:1,Weapon Focus(Ray)																							
+Summon Defenders				TYPE:General		SOURCEPAGE:p.	DESC:Conjured creatures gain +2 to AC and saves.								PREFEAT:1,Augment Summoning																												
+Synergistic Training			TYPE:General		SOURCEPAGE:p.	DESC:Increase your caster levels in a second class.								PRECLASS:1,SPELLCASTER=1	PRECLASS:2,ANY										MULT:YES	CHOOSE:CLASS|SPELLCASTER									
+Trickster Mage				TYPE:General		SOURCEPAGE:p.	DESC:Learn spells you can only cast when you have deceived someone.					PRECLASS:1,SPELLCASTER=5	PRESTAT:1,CHA=13										MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=TricksterMage[LEVELMAX=MAXCASTABLE]	
+Woodwose					TYPE:General		SOURCEPAGE:p.	DESC:Learn spells you can only cast in natural environments.						PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=Woodwose[LEVELMAX=MAXCASTABLE]		
 
 ###Block: Channeling Feats
 # Feat Name				Type			Source Page		Description													Requirements																			Bonus								Description of the Benefits
@@ -83,45 +83,68 @@ Elemental Warding			TYPE:General	SOURCEPAGE:p.59	DESC:Grant energy resistance to
 Improved Elemental Warding	TYPE:General	SOURCEPAGE:p.63	DESC:Grant your allies elemental resistance.							PREFEAT:1,Elemental Warding	PREABILITY:1,CATEGORY=Special Ability,Channel Energy,Power Over Undead ~ Necromancy School	
 
 ###Block: New Class Feature Feats
-# Feat Name				Type		Source Page		Description																		Requirements										Stack/Mult?			Choose		Bonus								Description of the Benefits
-Extra Rivenspell		TYPE:General	SOURCEPAGE:p.	DESC:Gain one additional rivenspell ability.												PRECLASS:1,Archon=1									STACK:YES	MULT:YES	CHOOSE:NOCHOICE	
-Extra Tactics		TYPE:General	SOURCEPAGE:p.	DESC:Gain 6 more battle tactics per day.													PREABILITY:1,CATEGORY=Special Ability,Battle Tactics ~ War Master		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	
-Greater Rivenspell	TYPE:General	SOURCEPAGE:p.	DESC:Gain more energy from a spell you rive than most archons.									PRECLASS:1,Archon=4																
-Improved Bond		TYPE:General	SOURCEPAGE:p.	DESC:Calculate your second bond at your full class level.										PREPCLEVEL:MIN=5	PREFEAT:1,Second Bond	PREVARGTEQ:BondQualify,1								
-Increased Spell Maximum	TYPE:General	SOURCEPAGE:p.	DESC:Learn a greater number of spells.													PRECLASS:1,Archon=1									STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Magus's Channel Energy	TYPE:General	SOURCEPAGE:p.	DESC:Gain the supernatural ability to channel positive energy like a cleric.							PRECLASS:1,Magus=5	PRESPELLTYPE:1,Cleric=9												
-Magus's Companion		TYPE:General	SOURCEPAGE:p.	DESC:Gain an animal companion.														PRECLASS:1,Magus=5	PRESPELLTYPE:1,Druid=9												
-Magus's Familiar		TYPE:General	SOURCEPAGE:p.	DESC:Gain a familiar.																PRECLASS:1,Magus=5	PRESPELLTYPE:1,Wizard=9												
-#TODO: Make Magus' Focus allow selection of a specific level of a specific spell list
-Magus's Focus		TYPE:General	SOURCEPAGE:p.	DESC:Pick 1 level of spells from another spell list. Those spells are one level closer to their normal level.	PRECLASS:1,Magus=1									STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Magus's Performance	TYPE:General	SOURCEPAGE:p.	DESC:Gain the bardic performance abilities of countersong, distraction, fascinate, and inspire courage.		PRECLASS:1,Magus=9	PRESPELLTYPE:1,Bard=7												
-Second Bond			TYPE:General	SOURCEPAGE:p.	DESC:Gain a second class bond.														PREPCLEVEL:MIN=5	PREVARGTEQ:BondQualify,1												
+# Feat Name				Type				Source Page		Description																		Requirements										Stack/Mult?			Choose		Bonus								Description of the Benefits
+Extra Rivenspell			TYPE:General		SOURCEPAGE:p.	DESC:Gain one additional rivenspell ability.												PRECLASS:1,Archon=1									STACK:YES	MULT:YES	CHOOSE:NOCHOICE	
+Extra Tactics			TYPE:General		SOURCEPAGE:p.	DESC:Gain 6 more battle tactics per day.													PREABILITY:1,CATEGORY=Special Ability,Battle Tactics ~ War Master		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	
+Greater Rivenspell		TYPE:General		SOURCEPAGE:p.	DESC:Gain more energy from a spell you rive than most archons.									PRECLASS:1,Archon=4																
+Improved Bond			TYPE:General		SOURCEPAGE:p.	DESC:Calculate your second bond at your full class level.										PREPCLEVEL:MIN=5	PREFEAT:1,Second Bond	PREVARGTEQ:BondQualify,1								
+Increased Spell Maximum		TYPE:General		SOURCEPAGE:p.	DESC:Learn a greater number of spells.													PRECLASS:1,Archon=1									STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Magister's Channel Energy	TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain the supernatural ability to channel positive energy like a cleric.							PRECLASS:1,Magus=5	PRESPELLTYPE:1,Cleric=9												
+Magister's Companion		TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain an animal companion.														PRECLASS:1,Magus=5	PRESPELLTYPE:1,Druid=9												
+Magister's Familiar		TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain a familiar.																PRECLASS:1,Magus=5	PRESPELLTYPE:1,Wizard=9												
+#TODO: Make Magister's Focus allow selection of a specific level of a specific spell list
+Magister's Focus			TYPE:General.Magister	SOURCEPAGE:p.	DESC:Pick 1 level of spells from another spell list. Those spells are one level closer to their normal level.	PRECLASS:1,Magus=1									STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Magister's Performance		TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain the bardic performance abilities of countersong, distraction, fascinate, and inspire courage.		PRECLASS:1,Magus=9	PRESPELLTYPE:1,Bard=7												
+Second Bond				TYPE:General		SOURCEPAGE:p.	DESC:Gain a second class bond.														PREPCLEVEL:MIN=5	PREVARGTEQ:BondQualify,1												
 
 ###Block: General Feats
-# Feat Name				Type			Source Page		Description														Requirements																Stack/Mult?	Choose				Bonus								Description of the Benefits
-Arcane Defense			TYPE:General	SOURCEPAGE:p.	DESC:+2 bonus to saves against one school of magic.																									MULT:YES	CHOOSE:SCHOOLS|ALL			
-Bravado				TYPE:General	SOURCEPAGE:p.57	DESC:Use Bluff to demoralize foes.										PRESKILL:1,Bluff=5																						
-Bushwhack				TYPE:General	SOURCEPAGE:p.57	DESC:Conceal allies with Stealth.										PRESKILL:2,Perception=5,Stealth=5																				
-Catch!				TYPE:General	SOURCEPAGE:p.57	DESC:Toss an object to a foe, in hopes he'll catch it and drop his weapons.			PREFEAT:1,Deceitful		PRESKILL:2,Bluff=1,Intimidate=1															
-Cloak Fighting			TYPE:General	SOURCEPAGE:p.58	DESC:Use a cloak to gain concealment as a move action.						PRESKILL:1,Perform(Dance)	PREWEAPONPROF:1,Flail (Dire),Flail,Flail (Heavy),Nunchaku,Chain (Spiked),Whip								
-Double Bluff			TYPE:General	SOURCEPAGE:p.59	DESC:Create a new Bluff to explain a failed Bluff.							PREFEAT:1,Deceitful																						
-Established Persona		TYPE:General	SOURCEPAGE:p.59	DESC:Gain bonuses to pass yourself off as a specific persona.					PRESKILL:1,Disguise=2															MULT:YES	SELECT:1	CHOOSE:USERINPUT|TITLE="Persona"	
-Extra Cohort			TYPE:General	SOURCEPAGE:p.	DESC:Gain an additional cohort.										PREFEAT:1,Leadership																						
-False Blow				TYPE:General	SOURCEPAGE:p.61	DESC:Use a fake attack to cover a Sleight of Hand check.						PREATT:1				PREFEAT:1,Deceitful																	
-Feign Death				TYPE:General	SOURCEPAGE:p.61	DESC:Play dead.													PRESTAT:1,CON=13			PRESKILL:1,Bluff=5																	
-Grim Determination		TYPE:General	SOURCEPAGE:p.62	DESC:Gain temporary hit points once a day.								PREATT:2				PREFEAT:1,Self Sufficient	!PRECLASS:1,SPELLCASTER=1											
-Knife Trick				TYPE:General	SOURCEPAGE:p.63	DESC:Draw and attack with a light weapon using Sleight of Hand.																														
-Master Artificer			TYPE:General	SOURCEPAGE:p.	DESC:+4 to checks to create items, create items faster.						PREFEAT:2,TYPE=ItemCreation	PRESKILL:1,Craft=5																	
-Muffle				TYPE:General	SOURCEPAGE:p.65	DESC:Silence the targets of your grapples.								PRESTAT:1,DEX=13			PREFEAT:2,Improved Grapple,Improved Unarmed Strike												
-Patois				TYPE:General	SOURCEPAGE:p.66	DESC:Communicate in languages you don't know.								PRESTAT:1,INT=13			PRESKILL:1,Linguistics=5																
-Physical Adept			TYPE:General	SOURCEPAGE:p.66	DESC:Gain an extra standard action.										PREFEAT:1,Athletic		!PRECLASS:1,SPELLCASTER=1																
-Resolute				TYPE:General	SOURCEPAGE:p.67	DESC:Reduce the level of most fear effects to shaken.							PREFEAT:1,Iron Will																						
-Self Delusion			TYPE:General	SOURCEPAGE:p.	DESC:Add Charisma to Will saves, rather than Wisdom.							PRESTAT:1,CHA=13																							
-Sensitive				TYPE:General	SOURCEPAGE:p.68	DESC:Use Spellcraft rather than Perception to notice some magic effects and creatures.	PRESKILL:1,Spellcraft=5																						
-Subtle				TYPE:General	SOURCEPAGE:p.70	DESC:Your actions are difficult to notice.																																	
-Thieves' Cant			TYPE:General	SOURCEPAGE:p.71	DESC:Send and receive secret messages.									PRECSKILL:1,Bluff																							
-Tougher Than Thaumaturgy	TYPE:General	SOURCEPAGE:p.	DESC:Make a Fort save rather than a Ref or Will save.							PRESTAT:1,CON=13			PREFEAT:1,Great Fortitude	!PRECLASS:1,SPELLCASTER=1											
-Wall Runner				TYPE:General	SOURCEPAGE:p.72	DESC:Run up along walls.											PRESTAT:1,WIS=13			PREFEAT:2,Acrobatic Steps,Nimble Moves														
+# Feat Name				Type				Source Page		Description														Requirements																Stack/Mult?	Choose				Bonus								Description of the Benefits
+Arcane Defense			TYPE:General.Magister	SOURCEPAGE:p.	DESC:+2 bonus to saves against one school of magic.																									MULT:YES	CHOOSE:SCHOOLS|ALL			
+Bravado				TYPE:General		SOURCEPAGE:p.57	DESC:Use Bluff to demoralize foes.										PRESKILL:1,Bluff=5																						
+Bushwhack				TYPE:General		SOURCEPAGE:p.57	DESC:Conceal allies with Stealth.										PRESKILL:2,Perception=5,Stealth=5																				
+Catch!				TYPE:General		SOURCEPAGE:p.57	DESC:Toss an object to a foe, in hopes he'll catch it and drop his weapons.			PREFEAT:1,Deceitful		PRESKILL:2,Bluff=1,Intimidate=1															
+Cloak Fighting			TYPE:General		SOURCEPAGE:p.58	DESC:Use a cloak to gain concealment as a move action.						PRESKILL:1,Perform(Dance)	PREWEAPONPROF:1,Flail (Dire),Flail,Flail (Heavy),Nunchaku,Chain (Spiked),Whip								
+Double Bluff			TYPE:General		SOURCEPAGE:p.59	DESC:Create a new Bluff to explain a failed Bluff.							PREFEAT:1,Deceitful																						
+Established Persona		TYPE:General		SOURCEPAGE:p.59	DESC:Gain bonuses to pass yourself off as a specific persona.					PRESKILL:1,Disguise=2															MULT:YES	SELECT:1	CHOOSE:USERINPUT|TITLE="Persona"	
+Extra Cohort			TYPE:General		SOURCEPAGE:p.	DESC:Gain an additional cohort.										PREFEAT:1,Leadership																						
+False Blow				TYPE:General		SOURCEPAGE:p.61	DESC:Use a fake attack to cover a Sleight of Hand check.						PREATT:1				PREFEAT:1,Deceitful																	
+Feign Death				TYPE:General		SOURCEPAGE:p.61	DESC:Play dead.													PRESTAT:1,CON=13			PRESKILL:1,Bluff=5																	
+Grim Determination		TYPE:General		SOURCEPAGE:p.62	DESC:Gain temporary hit points once a day.								PREATT:2				PREFEAT:1,Self Sufficient	!PRECLASS:1,SPELLCASTER=1											
+Knife Trick				TYPE:General		SOURCEPAGE:p.63	DESC:Draw and attack with a light weapon using Sleight of Hand.																														
+Master Artificer			TYPE:General		SOURCEPAGE:p.	DESC:+4 to checks to create items, create items faster.						PREFEAT:2,TYPE=ItemCreation	PRESKILL:1,Craft=5																	
+Muffle				TYPE:General		SOURCEPAGE:p.65	DESC:Silence the targets of your grapples.								PRESTAT:1,DEX=13			PREFEAT:2,Improved Grapple,Improved Unarmed Strike												
+Patois				TYPE:General		SOURCEPAGE:p.66	DESC:Communicate in languages you don't know.								PRESTAT:1,INT=13			PRESKILL:1,Linguistics=5																
+Physical Adept			TYPE:General		SOURCEPAGE:p.66	DESC:Gain an extra standard action.										PREFEAT:1,Athletic		!PRECLASS:1,SPELLCASTER=1																
+Resolute				TYPE:General		SOURCEPAGE:p.67	DESC:Reduce the level of most fear effects to shaken.							PREFEAT:1,Iron Will																						
+Self Delusion			TYPE:General		SOURCEPAGE:p.	DESC:Add Charisma to Will saves, rather than Wisdom.							PRESTAT:1,CHA=13																							
+Sensitive				TYPE:General		SOURCEPAGE:p.68	DESC:Use Spellcraft rather than Perception to notice some magic effects and creatures.	PRESKILL:1,Spellcraft=5																						
+Subtle				TYPE:General		SOURCEPAGE:p.70	DESC:Your actions are difficult to notice.																																	
+Thieves' Cant			TYPE:General		SOURCEPAGE:p.71	DESC:Send and receive secret messages.									PRECSKILL:1,Bluff																							
+Tougher Than Thaumaturgy	TYPE:General		SOURCEPAGE:p.	DESC:Make a Fort save rather than a Ref or Will save.							PRESTAT:1,CON=13			PREFEAT:1,Great Fortitude	!PRECLASS:1,SPELLCASTER=1											
+Wall Runner				TYPE:General		SOURCEPAGE:p.72	DESC:Run up along walls.											PRESTAT:1,WIS=13			PREFEAT:2,Acrobatic Steps,Nimble Moves														
+
+#Block: .MODs for Magister bonus feats
+#Core
+Arcane Armor Training.MOD		TYPE:Magister
+Arcane Armor Mastery.MOD		TYPE:Magister
+Arcane Strike.MOD				TYPE:Magister
+Armor Proficiency (Medium).MOD	TYPE:Magister
+Augment Summoning.MOD			TYPE:Magister
+Combat Casting.MOD			TYPE:Magister
+Eschew Materials.MOD			TYPE:Magister
+Greater Spell Focus.MOD			TYPE:Magister
+Greater Spell Penetration.MOD		TYPE:Magister
+Improved Counterspell.MOD		TYPE:Magister
+Magical Aptitude.MOD			TYPE:Magister
+Spell Focus.MOD				TYPE:Magister
+Spell Penetration.MOD			TYPE:Magister
+
+#Block: .MODs for MagisterMetamagic
+#Core
+Enlarge Spell.MOD				TYPE:MagisterMetamagic
+Extend Spell.MOD				TYPE:MagisterMetamagic
+Silent Spell.MOD				TYPE:MagisterMetamagic
+Still Spell.MOD				TYPE:MagisterMetamagic
 
 #
 # End
