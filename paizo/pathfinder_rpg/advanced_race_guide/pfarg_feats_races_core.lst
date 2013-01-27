@@ -1,5 +1,6 @@
 SOURCELONG:Advanced Race Guide	SOURCESHORT:PFARG	SOURCEWEB:http://paizo.com/products/btpy8rv2?Pathfinder-Roleplaying-Game-Advanced-Race-Guide	SOURCEDATE:2012-06
 # ORIGINAL ENTRY: Eric C Smith (maredudd)
+# ORIGINAL ENTRY DATE: 12/12/2012
 
 
 ###
@@ -43,42 +44,21 @@ Spirit of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:2,Attuned to the Wild,Guar
 ###
 ##Block: Gnome Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Casual Illusionist
-	TYPE:General
-	PRERACE:1,Gnome
-	PREABILITY:1,CATEGORY=Special Ability,Gnome Magic
-	DESC:You can use your innate magic to create minor illusions that augment your efforts at trickery and deceit.
-	BENEFIT:As long as you have at least one spell-like ability unused from your gnome magic racial trait, you gain a +2 racial bonus on all Bluff, Disguise, and Sleight of Hand checks you make. At 10th level, these bonuses increase to +4. &nl; [Special] This feat counts as the Deceitful feat for the purposes of all prerequisites.
+Casual Illusionist	TYPE:General	PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Gnome Magic	SERVESAS:ABILITY=FEAT|Deceitful
+	DESC:You can use your innate magic to create minor illusions that augment your efforts at trickery and deceit.	SOURCEPAGE:p.37
+	BENEFIT:As long as you have at least one spell-like ability unused from your gnome magic racial trait, you gain a +2 racial bonus on all Bluff, Disguise, and Sleight of Hand checks you make.|PREPCLEVEL:MAX=9		BENEFIT:As long as you have at least one spell-like ability unused from your gnome magic racial trait, you gain a +4 racial bonus on all Bluff, Disguise, and Sleight of Hand checks you make.|PREPCLEVEL:MIN=10
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Expanded Resistance
-	TYPE:General
-	PRERACE:1,Gnome
-	PREABILITY:1,CATEGORY=Special Ability,Illusion Resistance
-	DESC:You have expanded your natural resistance to magic to encompass different kinds of magic.
+#  TODO: School chooser needs to be reworked in this feat to allow for selection of any school except the School of Illusion.
+Expanded Resistance		TYPE:General	PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Illusion Resistance	MULT:YES	STACK:NO	CHOOSE:SCHOOLS|ALL
+	DESC:You have expanded your natural resistance to magic to encompass different kinds of magic.		SOUREPAGE:p.37
 	BENEFIT:Select one school of magic other than illusion. You gain a +2 racial bonus on saving throws against spells or effects from the selected school. &nl; [Special] You may select this feat more than once. Its effects do not stack. Each time you select it, it applies to a different school of magic.
 
-Gnome Weapon Focus 
-	TYPE:Combat
-	PREATT:1
-	PRERACE:1,GnomePREWEAPONPROF:1,TYPE.Martial
-	DESC:Your extensive training with traditional gnome weapons gives you an advantage.
-	BENEFIT:You gain a +1 bonus on attack rolls with gnome weapons (weapons with "gnome" in the title).
+Gnome Weapon Focus	TYPE:Combat		PREATT:1	PRERACE:1,GnomePREWEAPONPROF:1,TYPE.Martial		BONUS:WEAPONPROF=Gnome|TOHIT|1		DESC:Your extensive training with traditional gnome weapons gives you an advantage.	SOURCEPAGE:p.37		BENEFIT:You gain a +1 bonus on attack rolls with gnome weapons (weapons with "gnome" in the title).
+Great Hatred	TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Hatred	BONUS:VAR|GnomeHatredBonus|1	DESC:Your rage burns with vast intensity.	SOURCEPAGE:p.37		BENEFIT:You gain an additional +1 bonus on melee and thrown weapon attacks against targets of your hatred racial trait.
 
-Great Hatred 
-	TYPE:Combat
-	PRERACE:1,Gnome
-	PREABILITY:1,CATEGORY=Special Ability,Hatred
-	DESC:Your rage burns with vast intensity.
-	BENEFIT:You gain an additional +1 bonus on melee and thrown weapon attacks against targets of your hatred racial trait.
-
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Vast Hatred 
-	TYPE:Combat
-	PRERACE:1,Gnome
-	PREABILITY:1,CATEGORY=Special Ability,Hatred
-	DESC:Your rage stretches beyond normal bounds.
+#  TODO: Need to work out hated creature type selection mechanic and then update benefit as appropriate.
+Vast Hatred		TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Hatred
+	DESC:Your rage stretches beyond normal bounds.	SOURCEPAGE:p.37
 	BENEFIT:Select two creature types (and subtypes where appropriate) from the list of potential favored enemies from the ranger class ability. Your +1 attack bonus from the hatred racial trait applies to creatures of the selected types (and subtypes). &nl; [Special] You may take this feat more than once. Its benefits do not stack. Each time you select this feat, you select two additional creature types to which your hatred racial trait applies.
 
 ###
