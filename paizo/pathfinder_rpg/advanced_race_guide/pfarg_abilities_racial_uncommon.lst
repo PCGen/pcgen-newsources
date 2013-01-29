@@ -34,34 +34,8 @@ Object of Desire (Green Hag)		KEY:Green Hag Object of Desire ~ Changeling	CATEGO
 Ocean's Daughter (Sea Hag)		KEY:Sea Hag Ocean's Daughter ~ Changeling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HagRacialTrait	DESC:You gain a +1 trait bonus on Skill checks, and automatically succeed at Swim checks made to avoid nonlethal damage from swimming.	SOURCEPAGE:p.184
 
 
-###Block: Default Duergar Abilities (POOL=7)
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 120 ft.COPY|Superior Darkvision	KEY:Superior Darkvision ~ Duergar
-CATEGORY=Special Ability|Superior Darkvision ~ Duergar.MOD																TYPE:DuergarRacialTrait.DuergarRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,SuperiorDarkvision ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSuperiorDarkvision]																																																																											SOURCEPAGE:p.186
-Steady			KEY:Steady ~ Duergar			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DuergarRacialTrait.DuergarRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Steady ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSteady]	DESC:Duergars' speed is never modified by armor or encumbrance.		SOURCEPAGE:p.184	UNENCUMBEREDMOVE:HeavyLoad|HeavyArmor
-CATEGORY=Special Ability|Racial Trait ~ Duergar Immunities.COPY|Duergar Immunities	KEY:Duergar Immunities ~ Duergar
-CATEGORY=Special Ability|Duergar Immunities ~ Duergar.MOD																TYPE:DuergarRacialTrait.DuergarRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Duergar Immunities ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarImmunities]																																																																											SOURCEPAGE:p.186
-CATEGORY=Special Ability|Racial Trait ~ Stability.COPY|Stability	KEY:Stability ~ Duergar
-CATEGORY=Special Ability|Stability ~ Duergar.MOD																TYPE:DuergarRacialTrait.DuergarRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Stability ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarStability]																																																																											SOURCEPAGE:p.186
-# COMMENT: Make the SLA self only?
-Spell-Like Ability (Invisibility)	KEY:SLA Invisibility ~ Duergar	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.DuergarRacialTrait.DuergarRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability (Invisibility) ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSLAInvisibility]		DESC:You can cast invisibility %1/day, affecting only yourself.|DuergarInvisibilityTimes		DEFINE:DuergarInvisibilityTimes|1		SOURCEPAGE:p.186	SPELLS:Innate|TIMES=DuergarInvisibilityTimes|CASTERLEVEL=TL|Invisibility
-Spell-Like Ability (Enlarge Person)	KEY:SLA Enlarge Person ~ Duergar	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.DuergarRacialTrait.DuergarRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability (Enlarge Person) ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSLAEnlargePerson]	DESC:You can cast enlarge person %1/day, affecting only yourself.|DuergarEnlargePersonTimes		DEFINE:DuergarEnlargePersonTimes|1	SOURCEPAGE:p.186	SPELLS:Innate|TIMES=DuergarEnlarge PersonTimes|CASTERLEVEL=TL|Enlarge Person
-CATEGORY=Special Ability|Racial Trait ~ Light Sensitivity.COPY|Light Sensitivity	KEY:Light Sensitivity ~ Duergar
-CATEGORY=Special Ability|Light Sensitivity ~ Duergar.MOD																TYPE:DuergarRacialTrait.DuergarRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Light Sensitivity ~ Duergar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarLightSensitivity]																																																																											SOURCEPAGE:p.186
 
 
-###Block: Set up Duergar default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Duergar Racial Trait Default|PRERACE:1,Duergar
-
-#Duergar Racial Trait Default
-Duergar Racial Trait Default					CATEGORY:Internal																										BONUS:ABILITYPOOL|Duergar Racial Trait|-7
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|Superior Darkvision ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSuperiorDarkvision
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|Steady ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSteady
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|Duergar Immunities ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarDuergarImmunities
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|Stability ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarStability
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|SLA Invisibility ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSLAInvisibility
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|SLA Enlarge Person ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarSLAEnlargePerson
-CATEGORY=Internal|Duergar Racial Trait Default.MOD					ABILITY:Duergar Racial Trait|AUTOMATIC|Light Sensitivity ~ Duergar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DuergarLightSensitivity
 
 ###Block: Alternate Duergar Abilities
 # COMMENT: Duergar can take appropriate Dwarf alternate racial traits.  This needs to be added.
@@ -152,23 +126,7 @@ CATEGORY=Special Ability|Racial Trait ~ Gregarious.COPY|Gregarious	KEY:Gregariou
 CATEGORY=Special Ability|Gregarious ~ Kitsune.MOD								TYPE:KitsuneRacialTrait.KitsuneAgile								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Gregarious ~ Kitsune],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KitsuneAgile]																																	COST:0	SOURCEPAGE:p.192
 
 
-###Block: Default Merfolk Abilities (POOL=4)
-CATEGORY=Special Ability|Racial Trait ~ Low-Light Vision.COPY|Low-Light Vision	KEY:Low-Light Vision ~ Merfolk
-CATEGORY=Special Ability|Low-Light Vision ~ Merfolk.MOD								TYPE:MerfolkRacialTrait.MerfolkRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Low-Light Vision ~ Merfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkLowLightVision]																							SOURCEPAGE:p.194
-Amphibious		KEY:Amphibious ~ Merfolk			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.MerfolkRacialTrait.MerfolkRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Amphibious ~ Merfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkAmphibious]		DESC:Merfolk are amphibious, but prefer not to spend long periods out of the water.		SOURCEPAGE:p.194
-Armor			KEY:Armor ~ Merfolk				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.MerfolkRacialTrait.MerfolkRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Armor ~ Merfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkArmor]	DESC:Merfolk have a +2 natural armor bonus.		SOURCEPAGE:p.194	BONUS:COMBAT|AC|2|TYPE=NaturalArmor
-Legless		KEY:Legless ~ Merfolk				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.MerfolkRacialTrait.MerfolkRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Legless ~ Merfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkLegless]		DESC:Merfolk cannot be tripped.		SOURCEPAGE:p.194	ABILITY:Special Ability|AUTOMATIC|Can't Be Tripped
 
-###Block: Set up Merfolk default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Merfolk Racial Trait Default|PRERACE:1,Merfolk
-
-#Merfolk Racial Trait Default
-Merfolk Racial Trait Default					CATEGORY:Internal																										BONUS:ABILITYPOOL|Merfolk Racial Trait|-4
-CATEGORY=Internal|Merfolk Racial Trait Default.MOD					ABILITY:Merfolk Racial Trait|AUTOMATIC|Low-Light Vision ~ Merfolk|!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkLowLightVision
-CATEGORY=Internal|Merfolk Racial Trait Default.MOD					ABILITY:Merfolk Racial Trait|AUTOMATIC|Amphibious ~ Merfolk|!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkAmphibious
-CATEGORY=Internal|Merfolk Racial Trait Default.MOD					ABILITY:Merfolk Racial Trait|AUTOMATIC|Armor ~ Merfolk|!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkArmor
-CATEGORY=Internal|Merfolk Racial Trait Default.MOD					ABILITY:Merfolk Racial Trait|AUTOMATIC|Legless ~ Merfolk|!PREABILITY:1,CATEGORY=Special Ability,TYPE.MerfolkLegless
 
 ###Block: Alternate Merfolk Abilities
 # Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																										Define										Description																														Template		Bonus to skill							Cost		Source Page
@@ -309,34 +267,6 @@ Icewalk		KEY:Icewalk ~ Suli		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQ
 Shockshield		KEY:Shockshield ~ Suli		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialAttack.SuliRacialTrait.SuliElementalAssault.SuliEnergyResistance	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Shockshield ~ Suli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SuliElementalAssault,TYPE.SuliEnergyResistance]		DESC:Your energy assault can only deal electricity damage; can shock melee attackers for 1d6 electricity damage.	COST:0	SOURCEPAGE:p.202	ABILITY:Special Ability|AUTOMATIC|Resistance to Electricity	DEFINE:ElectricityResistanceBonus|5
 
 
-###Block: Default Svirfneblin Abilities (POOL=8)
-CATEGORY=Special Ability|Racial Trait ~ Defensive Training Greater.COPY|Defensive Training	KEY:Defensive Training ~ Svirfneblin
-CATEGORY=Special Ability|Defensive Training ~ Svirfneblin.MOD						TYPE:SvirfneblinRacialTrait.SvirfneblinRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Defensive Training ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinDefensiveTraining]																							SOURCEPAGE:p.204
-Senses		KEY:Senses ~ Svirfneblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SvirfneblinRacialTrait.SvirfneblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Senses ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinSenses]	DESC:Svirfneblin have darkvision 120 ft. and low-light vision.		SOURCEPAGE:p.204	VISION:Darkvision (120')	VISION:Low-Light
-Fortunate		KEY:Fortunate ~ Svirfneblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SvirfneblinRacialTrait.SvirfneblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fortunate ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinFortunate]	DESC:Svirfneblin have a +2 racial bonus on all saving throws.	SOURCEPAGE:p.204	BONUS:CHECKS|Fortitude,Reflex,Will|2|TYPE=Racial
-# COMMENT: Make/use specialty skill.
-Skilled		KEY:Skilled ~ Svirfneblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SvirfneblinRacialTrait.SvirfneblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Skilled ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinSkilled]	DESC:Svirfneblin have a +2 racial bonus Stealth, Craft (Alchemy), and Perception; Stealth gets +4 underground.		SOURCEPAGE:p.204	BONUS:SKILL|Stealth,Craft (Alchemy),Perception|2|TYPE=Racial
-Hatred		KEY:Hatred ~ Svirfneblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SvirfneblinRacialTrait.SvirfneblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Hatred ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinHatred]	DESC:Svirfneblin have a +1 racial bonus on attack rolls against dwarves and reptilian humanoids.		SOURCEPAGE:p.204
-Spell Resistance	KEY:Spell Resistance ~ Svirfneblin	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SvirfneblinRacialTrait.SvirfneblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell Resistance ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinSpellResistance]	DESC:You have SR %1.|SvirfneblinSR	DEFINE:SvirfneblinSR|11+TL		SOURCEPAGE:p.204	SR:SvirfneblinSR
-CATEGORY=Special Ability|Racial Trait ~ Svirfneblin Magic.COPY|Svirfneblin Magic	KEY:Svirfneblin Magic ~ Svirfneblin
-CATEGORY=Special Ability|Svirfneblin Magic ~ Svirfneblin.MOD								TYPE:SvirfneblinRacialTrait.SvirfneblinRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Svirfneblin Magic ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinMagic]																							SOURCEPAGE:p.204
-CATEGORY=Special Ability|Racial Trait ~ Stonecunning.COPY|Stonecunning	KEY:Stonecunning ~ Svirfneblin
-CATEGORY=Special Ability|Stonecunning ~ Svirfneblin.MOD								TYPE:SvirfneblinRacialTrait.SvirfneblinRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Stonecunning ~ Svirfneblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinStonecunning]																							SOURCEPAGE:p.204
-
-###Block: Set up Svirfneblin default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Svirfneblin Racial Trait Default|PRERACE:1,Svirfneblin
-
-#Svirfneblin Racial Trait Default
-Svirfneblin Racial Trait Default					CATEGORY:Internal																										BONUS:ABILITYPOOL|Svirfneblin Racial Trait|-8
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Defensive Training ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinDefensiveTraining
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Senses ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinSenses
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Fortunate ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinFortunate
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Skilled ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinSkilled
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Hatred ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinHatred
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Spell Resistance ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinSpellResistance
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Stonecunning ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinStonecunning
-CATEGORY=Internal|Svirfneblin Racial Trait Default.MOD					ABILITY:Svirfneblin Racial Trait|AUTOMATIC|Svirfneblin Magic ~ Svirfneblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SvirfneblinMagic
 
 ###Block: Alternate Svirfneblin Abilities
 # Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																										Define										Description																														Template		Bonus to skill							Cost		Source Page
