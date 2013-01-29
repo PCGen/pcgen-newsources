@@ -3,26 +3,6 @@ SOURCELONG:Advanced Race Guide	SOURCESHORT:PFARG	SOURCEWEB:http://paizo.com/prod
 # ORIGINAL ENTRY: Douglas Limmer
 # ORIGINAL ENTRY DATE: 2012/07/28
 
-###Block: Default Aasimar Abilities (POOL=5)
-# Ability Name											Unique Key					Category of Ability		Type															Multiple Requirements																							Define															Innate Spells									Description														Ability																Automatic Languages	Bonus to skill						Source Page
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision	KEY:Darkvision ~ Aasimar
-CATEGORY=Special Ability|Darkvision ~ Aasimar.MOD																TYPE:AasimarRacialTrait.AasimarRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Aasimar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarDarkvision]																																																																											SOURCEPAGE:p.85
-Skilled												KEY:Skilled ~ Aasimar			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AasimarRacialTrait.AasimarRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Skilled ~ Aasimar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarSkilled]																																DESC:Aasimars have a +2 racial bonus on Diplomacy and Perception checks.																								BONUS:SKILL|Diplomacy,Perception|2|TYPE=Racial	SOURCEPAGE:p.85
-Spell-Like Ability										KEY:Spell-Like Ability ~ Aasimar	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.AasimarRacialTrait.AasimarRacialDefault		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Aasimar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarSLA]				DEFINE:AasimarDaylightTimes|1												SPELLS:Innate|TIMES=AasimarDaylightTimes|CASTERLEVEL=TL|Daylight	DESC:Aasimars can use daylight %1/day as a spell-like ability.|AasimarDaylightTimes																															SOURCEPAGE:p.85
-Celestial Resistance										KEY:Celestial Resistance ~ Aasimar	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AasimarRacialTrait.AasimarRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Celestial Resistance ~ Aasimar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarCelestialResistance]	DEFINE:AcidResistanceBonus|5	DEFINE:ColdResistanceBonus|5	DEFINE:ElectricityResistanceBonus|5												DESC:Aasimars have acid resistance 5, cold resistance 5, and electricity resistance 5.	ABILITY:Special Ability|AUTOMATIC|Resistance to Acid|Resistance to Cold|Resistance to Electricity													SOURCEPAGE:p.85
-Celestial Language										KEY:Celestial Language ~ Aasimar	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AasimarRacialTrait.AasimarRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Celestial Language ~ Aasimar],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarCelestialLanguage]																													DESC:Aasimars speak Celestial.																											LANGAUTO:Celestial									SOURCEPAGE:p.85
-
-###Block: Set up Aasimar default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Aasimar Racial Trait Default|PRERACE:1,Aasimar
-
-#Aasimar Racial Trait Default
-Aasimar Racial Trait Default					CATEGORY:Internal																										
-CATEGORY=Internal|Aasimar Racial Trait Default.MOD					ABILITY:Aasimar Racial Trait|AUTOMATIC|Darkvision ~ Aasimar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarDarkvision
-CATEGORY=Internal|Aasimar Racial Trait Default.MOD					ABILITY:Aasimar Racial Trait|AUTOMATIC|Skilled ~ Aasimar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarSkilled
-CATEGORY=Internal|Aasimar Racial Trait Default.MOD					ABILITY:Aasimar Racial Trait|AUTOMATIC|Spell-Like Ability ~ Aasimar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarSLA
-CATEGORY=Internal|Aasimar Racial Trait Default.MOD					ABILITY:Aasimar Racial Trait|AUTOMATIC|Celestial Resistance ~ Aasimar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarCelestialResistance
-CATEGORY=Internal|Aasimar Racial Trait Default.MOD					ABILITY:Aasimar Racial Trait|AUTOMATIC|Celestial Language ~ Aasimar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AasimarCelestialLanguage
 
 ###Block: Alternate Aasimar Abilities
 # Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																										Define										Description																														Template		Bonus to skill							Cost		Source Page
@@ -117,35 +97,7 @@ Fangs			KEY:Fangs ~ Dhampir			CATEGORY:Special Ability	TYPE:RacialTraits.Special
 Vampiric Empathy	KEY:Vampiric Empathy ~ Dhampir	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DhampirRacialTrait.DhampirManipulative			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Vampiric Empathy ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirManipulative]			DEFINE:VampiricEmpathyCL|TL/2	DESC:You can communicate with bats, rats, and wolves as if under a speak with animals spell (caster level %1).  You gain a +2 racial bonus on Diplomacy checks dealing with these animals.  When you begin the exchange, animals begin with a starting attitude of indifferent.|VampiricEmpathyCL	COST:0	SOURCEPAGE:p.97
 
 
-###Block: Default Drow Abilities (POOL=8)
-# Ability Name													Unique Key					Category of Ability		Type														Multiple Requirements																					Define			Innate Spells												Description														Automatically Gained Weapon Prof.				Bonus to skill					Source Page
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 120 ft.COPY|Darkvision			KEY:Darkvision ~ Drow
-CATEGORY=Special Ability|Darkvision ~ Drow.MOD																			TYPE:DrowRacialTrait.DrowRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowDarkvision]																																																				SOURCEPAGE:p.103
-CATEGORY=Special Ability|Racial Trait ~ Elven Immunities.COPY|Drow Immunities			KEY:Drow Immunities ~ Drow
-CATEGORY=Special Ability|Drow Immunities ~ Drow.MOD																		TYPE:DrowRacialTrait.DrowRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Drow Immunities ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowImmunities]																																																			SOURCEPAGE:p.103
-Keen Senses														KEY:Keen Senses ~ Drow			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DrowRacialTrait.DrowRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Keen Senses ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowKeenSenses]																					DESC:Drow gain a +2 racial bonus on Perception checks.															BONUS:SKILL|Perception|2|TYPE=Racial	SOURCEPAGE:p.103
-Poison Use														KEY:Poison Use ~ Drow			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DrowRacialTrait.DrowRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Poison Use ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowPoisonUse]																					DESC:Drow never risk accidentally poisoning themselves.																						SOURCEPAGE:p.103
-CATEGORY=Special Ability|Racial Trait ~ Spell Resistance Lesser.COPY|Spell Resistance	KEY:Spell Resistance ~ Drow
-CATEGORY=Special Ability|Spell Resistance ~ Drow.MOD																		TYPE:DrowRacialTrait.DrowRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell Resistance ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowSpellResistance]																																																		SOURCEPAGE:p.103
-Spell-Like Abilities												KEY:Spell-Like Abilities ~ Drow	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.DrowRacialTrait.DrowRacialDefault		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowSLAs]		DEFINE:DrowSLATimes|1	SPELLS:Innate|TIMES=DrowSLATimes|CASTERLEVEL=TL|Dancing Lights|Darkness|Faerie Fire	DESC:Drow can use dancing lights, darkness, and faerie fire, each %1/day.|DrowSLATimes																	SOURCEPAGE:p.103
-CATEGORY=Special Ability|Racial Trait ~ Light Blindness.COPY|Light Blindness			KEY:Light Blindness ~ Drow
-CATEGORY=Special Ability|Light Blindness ~ Drow.MOD																		TYPE:DrowRacialTrait.DrowRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Light Blindness ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowLightBlindness]																																																			SOURCEPAGE:p.103
-Weapon Familiarity												KEY:Weapon Familiarity ~ Drow		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DrowRacialTrait.DrowRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowWeaponFamiliarity]																			DESC:Drow are proficient with the hand crossbow, rapier, and short sword.			AUTO:WEAPONPROF|Crossbow (Hand)|Rapier|Sword (Short)								SOURCEPAGE:p.103
 
-###Block: Set up Drow default abilities
-# Ability Name						Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD					ABILITY:Internal|AUTOMATIC|Drow Racial Trait Default|PRERACE:1,Drow
-
-#Drow Racial Trait Default
-Drow Racial Trait Default				CATEGORY:Internal																								BONUS:ABILITYPOOL|Drow Racial Trait|-8
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Darkvision ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowDarkvision
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Drow Immunities ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowImmunities
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Keen Senses ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowKeenSenses
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Poison Use ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowPoisonUse
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Spell Resistance ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowSpellResistance
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Spell-Like Abilities ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowSLAs
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Light Blindness ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowLightBlindness
-CATEGORY=Internal|Drow Racial Trait Default.MOD					ABILITY:Drow Racial Trait|AUTOMATIC|Weapon Familiarity ~ Drow|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowWeaponFamiliarity
 
 ###Block: Alternate Drow Abilities
 # Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																								Description																						Stackable?	Multiple?	Choose				Bonus to skill				Cost		Source Page
@@ -200,22 +152,7 @@ Subtle Manipulator									KEY:Subtle Manipulator ~ Fetchling	CATEGORY:Special A
 World Walker										KEY:World Walker ~ Fetchling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.FetchlingRacialTrait.FetchlingSkilled	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,World Walker ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSkilled]																													DESC:You gain a +2 racial bonus on Stealth checks, and +1 on Knowledge (Nature) and Knowledge (Local) checks.											BONUS:SKILL|Stealth|2|TYPE=Racial	BONUS:SKILL|Knowledge (Local),Knowledge(Nature)|1|TYPE=Racial	COST:0	SOURCEPAGE:p.109
 
 
-###Block: Default Goblin Abilities (POOL=3)
-# Ability Name											Unique Key			Category of Ability		Type															Multiple Requirements																				Description										Add to base move			Bonus to skill					Source Page
-Fast													KEY:Fast ~ Goblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GoblinRacialTrait.GoblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fast ~ Goblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinFast]			DESC:Goblins have a base speed of 30 ft.					BONUS:MOVEADD|TYPE.Walk|10								SOURCEPAGE:p.115
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision	KEY:Darkvision ~ Goblin
-CATEGORY=Special Ability|Darkvision ~ Goblin.MOD														TYPE:GoblinRacialTrait.GoblinRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Goblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinDarkvision]																								SOURCEPAGE:p.115
-Skilled												KEY:Skilled ~ Goblin	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GoblinRacialTrait.GoblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Skilled ~ Goblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinSkilled]		DESC:Goblins gain a +4 racial bonus on Ride and Stealth checks.						BONUS:SKILL|Ride,Stealth|4|TYPE=Racial	SOURCEPAGE:p.115
 
-###Block: Set up Goblin default abilities
-# Ability Name							Category of Ability	Ability																			Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Goblin Racial Trait Default|PRERACE:1,Goblin
-
-#Goblin Racial Trait Default
-Goblin Racial Trait Default					CATEGORY:Internal																						BONUS:ABILITYPOOL|Goblin Racial Trait|-3
-CATEGORY=Internal|Goblin Racial Trait Default.MOD					ABILITY:Goblin Racial Trait|AUTOMATIC|Darkvision ~ Goblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinDarkvision
-CATEGORY=Internal|Goblin Racial Trait Default.MOD					ABILITY:Goblin Racial Trait|AUTOMATIC|Fast ~ Goblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinFast
-CATEGORY=Internal|Goblin Racial Trait Default.MOD					ABILITY:Goblin Racial Trait|AUTOMATIC|Skilled ~ Goblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinSkilled
 
 ###Block: Alternate Goblin Abilities
 # Ability Name		Unique Key					Output Name					Category of Ability		Type														Multiple Requirements																					Description																					Move			Automatically Gained Weapon Prof.		Bonus to skill						Change Weapon Prof. Category		Cost		Source Page		Natural Attacks
@@ -244,6 +181,7 @@ CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Hobgo
 Hobgoblin Racial Trait Default				CATEGORY:Internal																								BONUS:ABILITYPOOL|Hobgoblin Racial Trait|-2
 CATEGORY=Internal|Hobgoblin Racial Trait Default.MOD					ABILITY:Hobgoblin Racial Trait|AUTOMATIC|Darkvision ~ Hobgoblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinDarkvision
 CATEGORY=Internal|Hobgoblin Racial Trait Default.MOD					ABILITY:Hobgoblin Racial Trait|AUTOMATIC|Sneaky ~ Hobgoblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinSneaky
+
 
 ###Block: Alternate Hobgoblin Abilities
 # Ability Name										Unique Key					Category of Ability		Type															Multiple Requirements																					Description																					Stackable?	Multiple?	Choose						Automatically Gained Weapon Prof.	Combat bonus				Add to base move		Bonus to skill									Modify VAR							Cost		Source Page
@@ -294,27 +232,6 @@ CATEGORY=Special Ability|Hypnotic ~ Ifrit.MOD																	TYPE:IfritRacialTr
 Wildfire Heart												KEY:Wildfire Heart ~ Ifrit	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.IfritRacialTrait.IfritEnergyResistance	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Wildfire Heart ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritEnergyResistance]																		DESC:Gain a +4 racial bonus on initiative.																										BONUS:COMBAT|INITIATIVE|4|TYPE=Racial											COST:0	SOURCEPAGE:p.127
 
 
-###Block: Default Kobold Abilities (POOL=5)
-# Ability Name											Unique Key				Category of Ability		Type															Multiple Requirements																				Description																											Combat bonus				Add to base move			Bonus to skill											Class Skill				Source Page
-Normal Speed											KEY:Normal Speed ~ Kobold	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.KoboldRacialTrait.KoboldRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Normal Speed ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldNormalSpeed]	DESC:Kobolds have a base speed of 30 feet.																											BONUS:MOVEADD|TYPE.Walk|10																			SOURCEPAGE:p.133
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision	KEY:Darkvision ~ Kobold
-CATEGORY=Special Ability|Darkvision ~ Kobold.MOD															TYPE:KoboldRacialTrait.KoboldRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldDarkvision]																																																										SOURCEPAGE:p.133
-Armor													KEY:Armor ~ Kobold		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.KoboldRacialTrait.KoboldRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Armor ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldArmor]			DESC:Kobolds have a +1 natural armor bonus.																					BONUS:COMBAT|AC|1|TYPE=Natural																								SOURCEPAGE:p.133
-Crafty												KEY:Crafty ~ Kobold		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.KoboldRacialTrait.KoboldRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Crafty ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldCrafty]			DESC:Kobolds gain a +2 racial bonus on Craft (Trapmaking), Perception, and Profession (Miner) checks.  Craft (Traps) and Stealth are always class skills for a kobold.												BONUS:SKILL|Craft (Trapmaking),Perception,Profession (Miner)|2|TYPE=Racial	CSKILL:Craft (Traps)|Stealth	SOURCEPAGE:p.133
-CATEGORY=Special Ability|Racial Trait ~ Light Sensitivity.COPY|Weakness		KEY:Weakness ~ Kobold
-CATEGORY=Special Ability|Weakness ~ Kobold.MOD																TYPE:KoboldRacialTrait.KoboldRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weakness ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldWeakness]																																																											SOURCEPAGE:p.133
-
-###Block: Set up Kobold default abilities
-# Ability Name							Category of Ability	Ability																				Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Kobold Racial Trait Default|PRERACE:1,Kobold
-
-#Kobold Racial Trait Default
-Kobold Racial Trait Default					CATEGORY:Internal																							BONUS:ABILITYPOOL|Kobold Racial Trait|-5
-CATEGORY=Internal|Kobold Racial Trait Default.MOD					ABILITY:Kobold Racial Trait|AUTOMATIC|Normal Speed ~ Kobold|!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldNormalSpeed
-CATEGORY=Internal|Kobold Racial Trait Default.MOD					ABILITY:Kobold Racial Trait|AUTOMATIC|Darkvision ~ Kobold|!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldDarkvision
-CATEGORY=Internal|Kobold Racial Trait Default.MOD					ABILITY:Kobold Racial Trait|AUTOMATIC|Armor ~ Kobold|!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldArmor
-CATEGORY=Internal|Kobold Racial Trait Default.MOD					ABILITY:Kobold Racial Trait|AUTOMATIC|Crafty ~ Kobold|!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldCrafty
-CATEGORY=Internal|Kobold Racial Trait Default.MOD					ABILITY:Kobold Racial Trait|AUTOMATIC|Weakness ~ Kobold|!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldWeakness
 
 ###Block: Alternate Kobold Abilities
 # Ability Name											Unique Key					Category of Ability		Type													Multiple Requirements																			Define					Description																Ability									Bonus to skill							Class Skill				Cost		Source Page
@@ -329,30 +246,7 @@ CATEGORY=Special Ability|Gliding Wings ~ Kobold.MOD																TYPE:KoboldRa
 Jester												KEY:Jester ~ Kobold			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.KoboldRacialTrait.KoboldCrafty	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Jester ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldCrafty]								DESC:Gain a +2 racial bonus on Diplomacy and Perform checks; Diplomacy and Perform are class skills.											BONUS:SKILL|Diplomacy,TYPE.Perform|2|TYPE=Racial	CSKILL:Diplomacy|TYPE.Perform	COST:0	SOURCEPAGE:p.133
 
 
-###Block: Default Orc Abilities (POOL=5)
-# Ability Name												Unique Key				Category of Ability		Type														Multiple Requirements																					Description					Automatic Languages	Source Page
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision		KEY:Darkvision ~ Orc
-CATEGORY=Special Ability|Darkvision ~ Orc.MOD																	TYPE:OrcRacialTrait.OrcRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcDarkvision]													SOURCEPAGE:p.139
-CATEGORY=Special Ability|Racial Trait ~ Light Sensitivity.COPY|Light Sensitivity	KEY:Light Sensitivity ~ Orc
-CATEGORY=Special Ability|Light Sensitivity ~ Orc.MOD																TYPE:OrcRacialTrait.OrcRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Light Sensitivity ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcLightSensitivity]											SOURCEPAGE:p.139
-CATEGORY=Special Ability|Racial Trait ~ Ferocity.COPY|Ferocity				KEY:Ferocity ~ Orc
-CATEGORY=Special Ability|Ferocity ~ Orc.MOD																	TYPE:OrcRacialTrait.OrcRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Ferocity ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcFerocity]														SOURCEPAGE:p.139
-# COMMENT: Check to see if the existing ability is precisely correct.
-#Weapon Familiarity					KEY:Weapon Familiarity ~ Orc				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OrcRacialTrait.OrcRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcWeaponFamiliarity]			DESC:Orcs are proficient with greataxes and falchions, and treat any weapon with orc in it as a martial weapon.		SOURCEPAGE:p.139	AUTO:WEAPONPROF|Greataxe|Falchion	CHANGEPROF:TYPE.Orc=Martial
-CATEGORY=Special Ability|Weapon Familiarity ~ Orc.MOD																TYPE:OrcRacialTrait.OrcRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcWeaponFamiliarity]											SOURCEPAGE:p.139
-Automatic Languages											KEY:Automatic Languages ~ Orc	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OrcRacialTrait.OrcRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcAutomaticLanguages]	DESC:Orcs can speak Orc and Common.	LANGAUTO:Orc,Common	SOURCEPAGE:p.139
 
-###Block: Set up Orc default abilities
-# Ability Name						Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD					ABILITY:Internal|AUTOMATIC|Orc Racial Trait Default|PRERACE:1,Orc
-
-#Orc Racial Trait Default
-Orc Racial Trait Default				CATEGORY:Internal																								BONUS:ABILITYPOOL|Orc Racial Trait|-5
-CATEGORY=Internal|Orc Racial Trait Default.MOD					ABILITY:Orc Racial Trait|AUTOMATIC|Darkvision ~ Orc|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcDarkvision
-CATEGORY=Internal|Orc Racial Trait Default.MOD					ABILITY:Orc Racial Trait|AUTOMATIC|Light Sensitivity ~ Orc|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcLightSensitivity
-CATEGORY=Internal|Orc Racial Trait Default.MOD					ABILITY:Orc Racial Trait|AUTOMATIC|Ferocity ~ Orc|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcFerocity
-CATEGORY=Internal|Orc Racial Trait Default.MOD					ABILITY:Orc Racial Trait|AUTOMATIC|Weapon Familiarity ~ Orc|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcWeaponFamiliarity
-CATEGORY=Internal|Orc Racial Trait Default.MOD					ABILITY:Orc Racial Trait|AUTOMATIC|Automatic Languages ~ Orc|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcAutomaticLanguages
 
 ###Block: Alternate Orc Abilities
 # Ability Name	Unique Key			Category of Ability		Type																		Multiple Requirements																							Description																Combat bonus			Class Skill		Cost		Source Page
@@ -469,28 +363,7 @@ CATEGORY=Special Ability|Weather Savvy ~ Sylph.MOD																	TYPE:SylphRac
 Whispering Wind												KEY:Whispering Wind ~ Sylph		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SylphRacialTrait.SylphSLA			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Whispering Wind ~ Sylph],[!PREABILITY:1,CATEGORY=Special Abiltiy,TYPE.SylphSLA]																					DESC:Gain +4 racial bonus on Stealth.																											BONUS:SKILL|Stealth|4|TYPE=Racial	COST:0	SOURCEPAGE:p.157
 
 
-###Block: Default Tengu Abilities (POOL=5)
-# Ability Name												Unique Key				Category of Ability		Type														Multiple Requirements																					Description							Bonus to skill						Source Page		Natural Attacks
-CATEGORY=Special Ability|Racial Trait ~ Low-Light Vision.COPY|Low-Light Vision	KEY:Low-Light Vision ~ Tengu
-CATEGORY=Special Ability|Low-Light Vision ~ Tengu.MOD																TYPE:TenguRacialTrait.TenguRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Low-Light Vision ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguLowLightVision]																	SOURCEPAGE:p.163
-Sneaky													KEY:Sneaky ~ Tengu		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TenguRacialTrait.TenguRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Sneaky ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguSneaky]				DESC:+2 racial bonus on Perception and Stealth.	BONUS:SKILL|Perception,Stealth|2|TYPE=Racial	SOURCEPAGE:p.163
-CATEGORY=Special Ability|Racial Trait ~ Gifted Linguist.COPY|Gifted Linguist		KEY:Gifted Linguist ~ Tengu
-CATEGORY=Special Ability|Gifted Linguist ~ Tengu.MOD																TYPE:TenguRacialTrait.TenguRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Gifted Linguist ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguGiftedLinguist]																	SOURCEPAGE:p.163
-CATEGORY=Special Ability|Racial Trait ~ Swordtrained.COPY|Swordtrained			KEY:Swordtrained ~ Tengu
-CATEGORY=Special Ability|Swordtrained ~ Tengu.MOD																TYPE:TenguRacialTrait.TenguRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Swordtrained ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguSwordtrained]																		SOURCEPAGE:p.163
-Natural Attack												KEY:Natural Attack ~ Tengu	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TenguRacialTrait.TenguRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Natural Attack ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguNaturalAttack]		DESC:You have a 1d3 bite attack.											SOURCEPAGE:p.163	NATURALATTACKS:Bite,Weapon.Natural.Melee.Finesseable.Piercing,*1,1d3
 
-###Block: Set up Tengu default abilities
-# Ability Name							Category of Ability	Ability																				Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Tengu Racial Trait Default|PRERACE:1,Tengu
-
-#Tengu Racial Trait Default
-Tengu Racial Trait Default					CATEGORY:Internal																							BONUS:ABILITYPOOL|Tengu Racial Trait|-5
-CATEGORY=Internal|Tengu Racial Trait Default.MOD					ABILITY:Tengu Racial Trait|AUTOMATIC|Low-Light Vision ~ Tengu|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguLowLightVision
-CATEGORY=Internal|Tengu Racial Trait Default.MOD					ABILITY:Tengu Racial Trait|AUTOMATIC|Sneaky ~ Tengu|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguSneaky
-CATEGORY=Internal|Tengu Racial Trait Default.MOD					ABILITY:Tengu Racial Trait|AUTOMATIC|Gifted Linguist ~ Tengu|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguGiftedLinguist
-CATEGORY=Internal|Tengu Racial Trait Default.MOD					ABILITY:Tengu Racial Trait|AUTOMATIC|Swordtrained ~ Tengu|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguSwordtrained
-CATEGORY=Internal|Tengu Racial Trait Default.MOD					ABILITY:Tengu Racial Trait|AUTOMATIC|Natural Attack ~ Tengu|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguNaturalAttack
 
 ###Block: Alternate Tengu Abilities
 # Ability Name											Unique Key					Category of Ability		Type														Multiple Requirements																						Serves As							Define							Description																						Choose						Selections						Automatically Gained Weapon Prof.	Cost		Source Page		Natural Attacks
@@ -502,32 +375,6 @@ Exotic Weapon Training										KEY:Exotic Weapon Training ~ Tengu	CATEGORY:Spec
 Glide													KEY:Glide ~ Tengu				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TenguRacialTrait.TenguGiftedLinguist	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Glide ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguGiftedLinguist]																				DESC:Make DC 15 Fly check to fall safely any distance; make additional DC 15 Fly check to move 5 ft. laterally for every 20 ft. fallen.																					COST:0	SOURCEPAGE:p.163
 
 
-###Block: Default Tiefling Abilities (POOL=6)
-# Ability Name											Unique Key					Category of Ability		Type															Multiple Requirements																							Define															Innate Spells									Description																							Ability																Bonus to Ability Pool				Bonus to skill					Source Page		Auto
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision	KEY:Darkvision ~ Tiefling
-CATEGORY=Special Ability|Darkvision ~ Tiefling.MOD																TYPE:TieflingRacialTrait.TieflingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingDarkvision]																																																																																						SOURCEPAGE:p.169
-Skilled												KEY:Skilled ~ Tiefling			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TieflingRacialTrait.TieflingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Skilled ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingSkilled]																																DESC:Tieflings have a +2 racial bonus on Bluff and Stealth checks.																																					BONUS:SKILL|Bluff,Stealth|2|TYPE=Racial	SOURCEPAGE:p.169
-Spell-Like Ability										KEY:Spell-Like Ability ~ Tiefling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.TieflingRacialTrait.TieflingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingSLA]				DEFINE:TieflingDarknessTimes|1											SPELLS:Innate|TIMES=TieflingDarknessTimes|CASTERLEVEL=TL|Darkness	DESC:Tieflings can use darkness %1/day as a spell-like ability.|TieflingDarknessTimes																																									SOURCEPAGE:p.169
-Fiendish Resistance										KEY:Fiendish Resistance ~ Tiefling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TieflingRacialTrait.TieflingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fiendish Resistance ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishResistance]	DEFINE:FireResistanceBonus|5	DEFINE:ColdResistanceBonus|5	DEFINE:ElectricityResistanceBonus|5												DESC:Tieflings have cold resistance 5, electricity resistance 5, and fire resistance 5.										ABILITY:Special Ability|AUTOMATIC|Resistance to Fire|Resistance to Cold|Resistance to Electricity															SOURCEPAGE:p.169
-# COMMENT: Tricky to implement.
-Fiendish Sorcery											KEY:Fiendish Sorcery ~ Tiefling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TieflingRacialTrait.TieflingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fiendish Sorcery ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishSorcery]																													DESC:Tiefling sorcerers with the Abyssal or Infernal bloodlines treat their Charisma score as 2 points higher for all sorcerer class abilities.																																SOURCEPAGE:p.169
-Fiendish Language											KEY:Fiendish Language ~ Tiefling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TieflingRacialTrait.TieflingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fiendish Language ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishLanguage]																													DESC:Tieflings speak either Abyssal or Infernal.																																	BONUS:ABILITYPOOL|Tiefling Language|1								SOURCEPAGE:p.169
-#Block: Language Choices for Tiefling
-Abyssal												KEY:Abyssal ~ Tiefling Language	CATEGORY:Special Ability	TYPE:TieflingLanguageTrait																																																																																																																										AUTO:LANG|Abyssal
-Infernal												KEY:Infernal ~ Tiefling Language	CATEGORY:Special Ability	TYPE:TieflingLanguageTrait																																																																																																																										AUTO:LANG|Infernal
-
-###Block: Set up Tiefling default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Tiefling Racial Trait Default|PRERACE:1,Tiefling
-
-#Tiefling Racial Trait Default
-Tiefling Racial Trait Default					CATEGORY:Internal																										BONUS:ABILITYPOOL|Tiefling Racial Trait|-6
-CATEGORY=Internal|Tiefling Racial Trait Default.MOD					ABILITY:Tiefling Racial Trait|AUTOMATIC|Darkvision ~ Tiefling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingDarkvision
-CATEGORY=Internal|Tiefling Racial Trait Default.MOD					ABILITY:Tiefling Racial Trait|AUTOMATIC|Skilled ~ Tiefling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingSkilled
-CATEGORY=Internal|Tiefling Racial Trait Default.MOD					ABILITY:Tiefling Racial Trait|AUTOMATIC|Spell-Like Ability ~ Tiefling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingSLA
-CATEGORY=Internal|Tiefling Racial Trait Default.MOD					ABILITY:Tiefling Racial Trait|AUTOMATIC|Fiendish Resistance ~ Tiefling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishResistance
-CATEGORY=Internal|Tiefling Racial Trait Default.MOD					ABILITY:Tiefling Racial Trait|AUTOMATIC|Fiendish Sorcery ~ Tiefling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishSorcery
-CATEGORY=Internal|Tiefling Racial Trait Default.MOD					ABILITY:Tiefling Racial Trait|AUTOMATIC|Fiendish Language ~ Tiefling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishLanguage
 
 ###Block: Alternate Tiefling Abilities
 # Ability Name											Unique Key					Category of Ability		Type																Multiple Requirements																										Define					Description												Ability									Combat bonus				Cost		Source Page		Natural Attacks
