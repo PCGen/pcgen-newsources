@@ -167,20 +167,6 @@ Tree Runner			KEY:Tree Runner ~ Goblin								CATEGORY:Special Ability	TYPE:Raci
 Weapon Familiarity	KEY:Weapon Familiarity ~ Goblin							CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GoblinRacialTrait.GoblinSkilled	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Goblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinSkilled]		DESC:You are proficient with the dogslicer and horsechopper, and treat any weapon with the word goblin in it as a martial weapon.				AUTO:WEAPONPROF|Dogslicer|Horsechopper									CHANGEPROF:TYPE.Goblin=Martial	COST:0	SOURCEPAGE:p.115
 
 
-###Block: Default Hobgoblin Abilities (POOL=2)
-# Ability Name											Unique Key				Category of Ability		Type																Multiple Requirements																					Description									Bonus to skill				Source Page
-CATEGORY=Special Ability|Racial Trait ~ Darkvision 60 ft.COPY|Darkvision	KEY:Darkvision ~ Hobgoblin
-CATEGORY=Special Ability|Darkvision ~ Hobgoblin.MOD															TYPE:HobgoblinRacialTrait.HobgoblinRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Hobgoblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinDarkvision]																	SOURCEPAGE:p.121
-Sneaky												KEY:Sneaky ~ Hobgoblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.HobgoblinRacialTrait.HobgoblinRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Sneaky ~ Hobgoblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinSneaky]			DESC:Hobgoblins gain a +4 racial bonus on Stealth checks.	BONUS:SKILL|Stealth|4|TYPE=Racial	SOURCEPAGE:p.121
-
-###Block: Set up Hobgoblin default abilities
-# Ability Name							Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Hobgoblin Racial Trait Default|PRERACE:1,Hobgoblin
-
-#Hobgoblin Racial Trait Default
-Hobgoblin Racial Trait Default				CATEGORY:Internal																								BONUS:ABILITYPOOL|Hobgoblin Racial Trait|-2
-CATEGORY=Internal|Hobgoblin Racial Trait Default.MOD					ABILITY:Hobgoblin Racial Trait|AUTOMATIC|Darkvision ~ Hobgoblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinDarkvision
-CATEGORY=Internal|Hobgoblin Racial Trait Default.MOD					ABILITY:Hobgoblin Racial Trait|AUTOMATIC|Sneaky ~ Hobgoblin|!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinSneaky
 
 
 ###Block: Alternate Hobgoblin Abilities
