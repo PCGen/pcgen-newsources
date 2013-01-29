@@ -26,20 +26,10 @@ Toxic Recovery			TYPE:General	PRERACE:1,Dwarf		PREABILITY:1,CATEGORY=Special Abi
 ##Block: Elven Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
 Attuned to the Wild		TYPE:General	PRERACE:1,Elf	MULT:YES	STACK:NO	CHOOSE:USERINPUT|1|TITLE=Wilderness Terrain Choice (not urban)	DESC:You share a strong mystic connection with one type of wilderness terrain.		SOURCEPAGE:p.28		BENEFIT:While you are in %1 terrain, your natural healing rate doubles.
-
 Elven Battle Training 	TYPE:Combat		PRERACE:1,Elf	PREATT:1	DESC:You have been specially trained to wield a variety of traditional elven weapons.	SOURCEPAGE:p.28		BENEFIT:You have received special training with traditional elven weapons (longbows, composite longbows, longswords, rapiers, shortbows, composite shortbows, and any weapon with the word "elven" in its name). You receive a +2 bonus to your CMD against disarm and sunder maneuvers directed at one of these weapons you are wielding. In addition, if you are wielding one of these melee weapons, you may make an additional attack of opportunity each round (this bonus stacks with Combat Reflexes).
-
-Guardian of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:1,Attuned to the Wild
-	DESC:Your mystic connection with the wilderness enhances your ability to react to threats.	SOURCEPAGE:p.28
-	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 dodge bonus to Armor Class. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
-
-Mage of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:1,Attuned to the Wild
-	DESC:Your mystic connection with the wilderness enhances your spellcasting.		SOURCEPAGE:p.28
-	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 bonus on caster level checks, concentration checks, and, Knowledge (Arcana) and Spellcraft checks. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
-
-Spirit of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:2,Attuned to the Wild,Guardian of the Wild
-	DESC:Your mystic connection with one type of wilderness has grown even stronger.	SOURCEPAGE:p.28
-	BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +4 bonus on Perception checks made to act in the surprise round of combat. If you act in the surprise round, you gain blindsense out to a range of 30 feet during the surprise round. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one terrain type.
+Guardian of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:1,Attuned to the Wild	DESC:Your mystic connection with the wilderness enhances your ability to react to threats.	SOURCEPAGE:p.28		BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 dodge bonus to Armor Class. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
+Mage of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:1,Attuned to the Wild	DESC:Your mystic connection with the wilderness enhances your spellcasting.		SOURCEPAGE:p.28		BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +2 bonus on caster level checks, concentration checks, and, Knowledge (Arcana) and Spellcraft checks. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one of the terrain types.
+Spirit of the Wild	TYPE:General	PRERACE:1,Elf	PREFEAT:2,Attuned to the Wild,Guardian of the Wild	DESC:Your mystic connection with one type of wilderness has grown even stronger.	SOURCEPAGE:p.28		BENEFIT:When you are in a terrain type you have selected the Attuned to the Wild feat for, you gain a +4 bonus on Perception checks made to act in the surprise round of combat. If you act in the surprise round, you gain blindsense out to a range of 30 feet during the surprise round. If you are in an area that qualifies as more than one kind of terrain, these bonuses do not stack; you receive the bonus for only one terrain type.
 
 ###
 ##Block: Gnome Feats
@@ -50,7 +40,8 @@ Casual Illusionist	TYPE:General	PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special A
 
 #  TODO: School chooser needs to be reworked in this feat to allow for selection of any school except the School of Illusion.
 Expanded Resistance		TYPE:General	PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Illusion Resistance	MULT:YES	STACK:NO	CHOOSE:SCHOOLS|Abjuration|Conjuration|Divination|Enchantment|Evocation|Necromancy|Transmutation		DESC:You have expanded your natural resistance to magic to encompass different kinds of magic.		SOUREPAGE:p.37	BENEFIT:Select one school of magic other than illusion. You gain a +2 racial bonus on saving throws against spells or effects from the school of %1.|%CHOICE
-Gnome Weapon Focus	TYPE:Combat		PREATT:1	PRERACE:1,GnomePREWEAPONPROF:1,TYPE.Martial		BONUS:WEAPONPROF=Gnome|TOHIT|1		DESC:Your extensive training with traditional gnome weapons gives you an advantage.	SOURCEPAGE:p.37		BENEFIT:You gain a +1 bonus on attack rolls with gnome weapons (weapons with "gnome" in the title).
+
+Gnome Weapon Focus	TYPE:Combat		PREATT:1	PRERACE:1,Gnome		PREWEAPONPROF:1,TYPE.Martial		BONUS:WEAPONPROF=Gnome|TOHIT|1		DESC:Your extensive training with traditional gnome weapons gives you an advantage.	SOURCEPAGE:p.37		BENEFIT:You gain a +1 bonus on attack rolls with gnome weapons (weapons with "gnome" in the title).
 Great Hatred	TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Hatred	BONUS:VAR|GnomeHatredBonus|1	DESC:Your rage burns with vast intensity.	SOURCEPAGE:p.37		BENEFIT:You gain an additional +1 bonus on melee and thrown weapon attacks against targets of your hatred racial trait.
 
 #  TODO: Need to work out hated creature type selection mechanic and then update benefit as appropriate.
@@ -61,31 +52,18 @@ Vast Hatred		TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability
 ###
 ##Block: Half-Elven Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
-Discerning Eye
-	TYPE:General
-	PRERACE=1,Elf,Half-Elf
-	PREABILITY:1,CATEGORY=Special Ability,Keen Senses
-	DESC:You are not easily fooled by illusions and forgeries.
-	BENEFIT:You receive a +2 racial bonus on saving throws against illusion spells and effects and a +2 bonus on Linguistic checks to detect forgeries. You can use the Linguistic skill to detect forgeries untrained.
+Discerning Eye	TYPE:General	PRERACE=1,Elf,Half-Elf	PREABILITY:1,CATEGORY=Special Ability,Keen Senses	DESC:You are not easily fooled by illusions and forgeries.	SOURCEPAGE:p.46		BENEFIT:You receive a +2 racial bonus on saving throws against illusion spells and effects and a +2 bonus on Linguistic checks to detect forgeries. You can use the Linguistic skill to detect forgeries untrained.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Elven Spirit
-	TYPE:General
-	PRERACE:1,Half-elf
-	DESC:Although you are of mixed heritage, you are closer to your elven relatives and the magic in their blood flows freely in your veins.
-	BENEFIT:You possess the elven magic racial trait of the elves, granting you a +2 racial bonus on caster level checks made to overcome spell resistance. In addition, you receive a +2 racial bonus on Spellcraft checks made to identify the properties of magic items. Alternatively, you can instead gain any one racial trait that elves can exchange for the elven magic racial trait. &nl; [Special] You can only take this feat at 1st level. If you take this feat, you cannot take the Human Spirit feat.
-
-Exile's Path
-	TYPE:General
-	PRERACE:1,Half-elf
-	DESC:A lifetime spent shunned by others and eschewing your heritage makes you resistant to efforts to pry inside of your mind.
-	BENEFIT:Once per day, when you fail a Will save against an enchantment spell or effect, you may reroll that saving throw, but must take the reroll result even if it's worse.
+Elven Spirit	TYPE:General	PRERACE:1,Half-elf	PREPCLEVEL:MAX=1	!PREFEAT:1,Human Spirit		DESC:Although you are of mixed heritage, you are closer to your elven relatives and the magic in their blood flows freely in your veins.	SOURCEPAGE:p.46		BENEFIT:You possess the elven magic racial trait of the elves, granting you a +2 racial bonus on caster level checks made to overcome spell resistance. In addition, you receive a +2 racial bonus on Spellcraft checks made to identify the properties of magic items. Alternatively, you can instead gain any one racial trait that elves can exchange for the elven magic racial trait.
+Exile's Path	TYPE:General	PRERACE:1,Half-elf	DESC:A lifetime spent shunned by others and eschewing your heritage makes you resistant to efforts to pry inside of your mind.	SOURCEPAGE:p.47		BENEFIT:Once per day, when you fail a Will save against an enchantment spell or effect, you may reroll that saving throw, but must take the reroll result even if it's worse.
 
 Half-Drow Paragon
 	TYPE:General
 	PRERACE:1,Half-elf
 	PREABILITY:2,CATEGORY=Special Ability,Drow-Blooded,Drow Magic
 	DESC:Your drow blood is particularly strong.
+	SOURCEPAGE:p.47
 	BENEFIT:You count as a drow for any effects that relate to race. Furthermore, the spell-like abilities granted to you by your drow magic racial trait count as drow spell-like abilities for the purposes of any feat prerequisites.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
