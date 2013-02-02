@@ -123,6 +123,11 @@ Thieves' Cant			TYPE:General		SOURCEPAGE:p.71	DESC:Send and receive secret messa
 Tougher Than Thaumaturgy	TYPE:General		SOURCEPAGE:p.	DESC:Make a Fort save rather than a Ref or Will save.							PRESTAT:1,CON=13			PREFEAT:1,Great Fortitude	!PRECLASS:1,SPELLCASTER=1											
 Wall Runner				TYPE:General		SOURCEPAGE:p.72	DESC:Run up along walls.											PRESTAT:1,WIS=13			PREFEAT:2,Acrobatic Steps,Nimble Moves														
 
+#Block: PREAPPLYs
+Combat Expertise (Exotic Weapon Style)	VISIBLE:NO	BONUS:COMBAT|AC|ExoticExpertiseModifier|TYPE=Dodge|PREAPPLY:PC	BONUS:COMBAT|TOHIT,MELEE|-ExoticExpertiseModifier|PREAPPLY:PC	BONUS:VAR|CMB|-ExoticExpertiseModifier|PREAPPLY:PC	BONUS:VAR|CMD|ExoticExpertiseModifier|PREAPPLY:PC	DEFINE:ExoticExpertiseModifier|0	BONUS:VAR|ExoticExpertiseModifier|(BAB/4)+1	TEMPDESC:When wielding an exotic weapon in which you are proficient, you can choose to take a -%1 penalty on melee attack rolls and combat maneuver checks to gain a +%1 dodge bonus to your Armor Class. You can only choose to use this feat when you declare that you are making an attack or a full-attack action with a melee weapon. The effects of this feat last until your next turn.|ExoticExpertiseModifier
+Two-Weapon Style	KEY:Shadow TWS I		VISIBLE:NO	BONUS:COMBAT|AC|ShadowTWACBonus|TYPE=Dodge|PREAPPLY:PC	BONUS:VAR|CMB|ShadowTWCMBBonus|TYPE=Insight|PREAPPLY:PC									TEMPDESC:When fighting with two light weapons, you gain a +%1 Dodge bonus to AC and a +%2 insight bonus to your CMB.|ShadowTWACBonus|ShadowTWCMBBonus
+Two-Weapon Style	KEY:Shadow TWS II		VISIBLE:NO	BONUS:COMBAT|AC|ShadowTWACBonus|TYPE=Dodge|PREAPPLY:PC	BONUS:VAR|CMB|ShadowTWCMBBonus|TYPE=Insight|PREAPPLY:PC	BONUS:SKILL|Bluff (Feint)|ShadowAssassinLvl/2	TEMPDESC:When fighting with two light weapons, you gain a +%1 Dodge bonus to AC, a +%2 insight bonus to your CMB, and a +%3 bonus to Bluff checks made to feint.|ShadowTWACBonus|ShadowTWCMBBonus|ShadowAssassinLvl/2
+
 #Block: .MODs for Magister bonus feats
 #Core
 Arcane Armor Training.MOD		TYPE:Magister
