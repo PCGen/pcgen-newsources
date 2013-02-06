@@ -1304,9 +1304,8 @@ DREAM SPECTRE (NIGHTMARE CREATURE)
 	MONSTERCLASS:x:13d8+26 (84 hp)
 Initiative: +7
 	MOVE:Fly 60 ft. (12 squares) (perfect)
-Armor Class: 16 (+3 Dex, +3 deflection), touch 16, flatfooted
-13
-Base Attack/Grapple: +13/0
+
+
 Attack: Incorporeal touch +17 melee (1d4 plus
 1d4 Cha)
 	NATURALATTACKS:Incorporeal touch +17 melee (1d4 plus
@@ -1392,9 +1391,8 @@ Construct (Air, Extraplanar)
 	MONSTERCLASS:x:30d10+40 (205 hp)
 Initiative: +11
 	MOVE:Fly 100 ft. (perfect) (20 squares)
-Armor Class: 30 (-2 size, +11 Dex, +11 natural), touch
-19, flat-footed 19
-Base Attack/Grapple: +22/+38
+	BONUS:COMBAT|AC|11 natural
+
 Attack: Slam +28 melee (4d6+8) or wind blast
 +28 melee (2d6+12, see text)
 	NATURALATTACKS:2 slams +28 melee (4d6+8) or wind blast
@@ -1418,20 +1416,18 @@ Treasure: None
 	KIT:1|TN
 	HITDICEADVANCEMENT:31-60 HD (Huge); 61-90 HD (Gargantuan)
 
-	RACETYPE:Elemental
- CONSTRUCT, EARTH
+Elemental CONSTRUCT, EARTH
 	SIZE:H
-Construct (Earth, Extraplanar)
+	RACETYPE:Construct
+	RACESUBTYPE:Earth|Extraplanar
 	MONSTERCLASS:x:30d10+40 (205 hp)
-Initiative: -1
-	MOVE:30 ft. (6 squares)
-Armor Class: 25 (-2 size, -1 Dex, +18 natural), touch
-7, flat-footed 26
-Base Attack/Grapple: +22/+44
+	MOVE:Walk,30
+	BONUS:COMBAT|AC|18 natural
+
 Attack: Slam +34 melee (6d6+14)
 	NATURALATTACKS:2 slams +34 melee (6d6+14)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
 
 Special Attacks: Earth mastery, pound, trample 6d6+21
 Special Qualities: Construct traits, damage reduction 10/
@@ -1447,23 +1443,20 @@ Organization: Solitary
 	CR:15
 Treasure: None
 	KIT:1|TN
-	HITDICEADVANCEMENT:31-60 HD (Huge);
-61-90 HD (Gargantuan)
+	HITDICEADVANCEMENT:31-60 HD (Huge); 61-90 HD (Gargantuan)
 
-	RACETYPE:Elemental
- CONSTRUCT, FIRE
+Elemental CONSTRUCT, FIRE
 	SIZE:H
-Construct (Extraplanar, Fire)
+	RACETYPE:Construct
+	RACESUBTYPE:Extraplanar|Fire
 	MONSTERCLASS:x:30d10+40 (205 hp)
-Initiative: +9
-	MOVE:60 ft. (12 squares)
-Armor Class: 28 (-2 size, +9 Dex, +11 natural), touch
-17, flat-footed 19
-Base Attack/Grapple: +22/+38
+	MOVE:Walk,60
+	BONUS:COMBAT|AC|11 natural
+
 Attack: Slam +28 melee (4d6+8)
 	NATURALATTACKS:2 slams +28 melee (4d6+8)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
 
 Special Attacks: Burn, fiery aura
 Special Qualities: Construct traits, damage reduction 10/
@@ -1481,24 +1474,19 @@ Organization: Solitary
 	CR:15
 Treasure: None
 	KIT:1|TN
-	HITDICEADVANCEMENT:31-60 HD
-(Huge); 61-90
-HD (Gargantuan)
+	HITDICEADVANCEMENT:31-60 HD (Huge); 61-90 HD (Gargantuan)
 
-	RACETYPE:Elemental
- CONSTRUCT, WATER
+Elemental CONSTRUCT, WATER
 	SIZE:H
 Construct (Extraplanar, Water)
 	MONSTERCLASS:x:30d10+40 (205 hp)
-Initiative: +7
-	MOVE:30 ft. (6 squares), swim 120 ft.
-Armor Class: 27 (-2 size, +7 Dex, +12 natural), touch
-15, flat-footed 20
-Base Attack/Grapple: +22/+41
+	MOVE:Walk,30,Swim,120
+	BONUS:COMBAT|AC|12 natural
+
 Attack: Slam +31 melee (5d6+11)
 	NATURALATTACKS:2 slams +31 melee (5d6+11)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
 
 Special Attacks: Drown, drench, engulf, water mastery
 Special Qualities: Construct traits, damage reduction
@@ -1523,28 +1511,21 @@ FETCH
 	RACETYPE:Undead
  (Cold)
 	MONSTERCLASS:x:3d12+6 (25 hp)
-Initiative: +2
 	MOVE:30 ft. (6 squares)
-Armor Class: 15 (+2 Dex, +3 natural), touch 12, flatfooted
-13
-Base Attack/Grapple: +1/+5
+	BONUS:COMBAT|AC|3 natural
+
 Attack: Claw +6 melee (1d4+4 plus 1d4 cold)
 	NATURALATTACKS:2 claws +6 melee (1d4+4 plus 1d4 cold)
 FACE:5
 REACH:5
 
 Special Attacks: Freezing touch
-Special Qualities: Darkvision 60 ft., immunity to cold,
-	RACETYPE:Undead
- traits, vulnerability to fire
-Saves: Fort +1, Ref +3, Will +4
-Abilities: Str 18, Dex 15, Con -, Int 10, Wis 12, Cha
-15
-Skills: Hide +8, Intimidate +5, Listen +4, Move
-Silently +8, Spot +7
+Special Qualities: Darkvision 60 ft., immunity to cold, vulnerability to fire
+
+Abilities: Str 18, Dex 15, Con -, Int 10, Wis 12, Cha 15
+Skills: Hide +8, Intimidate +5, Listen +4, Move Silently +8, Spot +7
 Feats: Death's Blessing, Weapon Focus (claw)
-Environment: Cold plains, hills, and mountains
-Organization: Solitary
+
 	CR:2
 Treasure: None
 Alignment: Always lawful evil
@@ -1555,11 +1536,10 @@ FORGOTTEN ONE
 	RACETYPE:Fey
 
 	MONSTERCLASS:x:3d6 (10 hp)
-Initiative: +5
+
 	MOVE:20 ft. (4 squares)
-Armor Class: 21 (+4 size, +5 Dex, +2 natural),
-touch 19, flat-footed 16
-Base Attack/Grapple: +1/-15
+	BONUS:COMBAT|AC|2 natural
+
 Attack: Shortspear +10 melee (1d2-
 4 plus poison) or shortspear
 +10 ranged (1d3-4 plus poison)
@@ -1595,11 +1575,8 @@ FYE
 	RACETYPE:Undead
  (Incorporeal)
 	MONSTERCLASS:x:5d12 (32 hp)
-Initiative: +4
 	MOVE:Fly 50 ft. (perfect) (10 squares)
-Armor Class: 17 (+4 Dex, +3 deflection), touch 17, flatfooted
-13
-Base Attack/Grapple: +2/-
+
 Attack: Incorporeal touch +6 melee (1d6 plus
 possession)
 	NATURALATTACKS:Incorporeal touch +6 melee (1d6 plus
@@ -1609,15 +1586,12 @@ REACH:5
 
 Special Attacks: Aura of despair, possession
 Special Qualities: Darkvision 60 ft., incorporeal traits,
-	RACETYPE:Undead
- traits
-Saves: Fort +1, Ref +5, Will +6
-Abilities: Str -, Dex 18, Con -, Int -, Wis 14,
-Cha 16
+
+
+Abilities: Str -, Dex 18, Con -, Int -, Wis 14, Cha 16
 Skills: -
 Feats: -
-Environment: Any
-Organization: Solitary
+
 	CR:4
 Treasure: None
 Alignment: Usually neutral
@@ -1628,75 +1602,49 @@ GARGOYLE, FUNGUS
 	RACETYPE:Plant
  (Fungus)
 	MONSTERCLASS:x:5d8+20 (42 hp)
-Initiative: +2
 	MOVE:40 ft. (8 squares), fly 60 ft. (average)
-Armor Class: 17 (+2 Dex, +5 natural), touch 12, flatfooted
-15
-Base Attack/Grapple: +3/+6
-Attack: Claw +6 melee (1d6+3)
+	BONUS:COMBAT|AC|5 natural
+
 	NATURALATTACKS:2 claws +6 melee (1d6+3)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Breath weapon, sickening aura
 Special Qualities: Damage reduction 10/
 slashing or piercing, lowlight
-vision, 	RACETYPE:Plant
- traits,
-resistance to fire 5
-Saves: Fort +8, Ref +3, Will +1
-Abilities: Str 16, Dex 14, Con 18, Int
-6, Wis 11, Cha 7
-Skills: Hide +4*, Listen +6, Spot
-+6
+vision, resistance to fire 5
+
+Abilities: Str 16, Dex 14, Con 18, Int 6, Wis 11, Cha 7
+Skills: Hide +4*, Listen +6, Spot +6
 Feats: Multiattack, Power Attack
-Environment: Any
-Organization: Solitary, pair, or patch (5-10)
+
 	CR:5
 Treasure: None
 Alignment: Usually neutral (evil tendencies)
-	HITDICEADVANCEMENT:6-12 HD (Medium); 13-15 HD
-(Large)
+	HITDICEADVANCEMENT:6-12 HD (Medium); 13-15 HD (Large)
 
 GENIE, ABASHEEN
 	SIZE:L
 	RACETYPE:Outsider
  (Air, Extraplanar)
 	MONSTERCLASS:x:10d8+10 (55 hp)
-Initiative: +7
 	MOVE:20 ft. (4 squares), fly 50 ft. (perfect)
-Armor Class: 18 (-1 size, +3 Dex, + 6 natural), touch 12,
-flat-footed 15
-Base Attack/Grapple: +10/+17
+	BONUS:COMBAT|AC| 6 natural
+
 Attack: Slam +12 melee (1d8+3)
 	NATURALATTACKS:2 slams +12 melee (1d8+3)
 Space/Reach: 10 ft./10 ft.
 Special Attacks: Air mastery, spell-like abilities
-Special Qualities: Darkvision 60 ft., 	RACETYPE:Outsider
- traits, plane
-shift, telepathy 100 ft.
-Saves: Fort +8, Ref +12, Will +13
-Abilities: Str 16, Dex 17, Con 12, Int 20, Wis 18,
-Cha 17
-Skills: Appraise +18, Bluff +16, Craft (any
-one) +18, Diplomacy +20, Disguise +3
-(+5 acting), Forgery +18, Gather Information
-+16, Intimidate +18,
-Knowledge (the planes) +18, Listen
-+17, Search +18, Sense
-Motive +17, Spot +17, Survival
-+4 (+6 on other planes)
-(+6 following tracks), Use
-Magic Device +16
-Feats: Combat Casting, Improved Initiative, Iron
-Will, Lightning Reflexes
-Environment: Elemental Plane of Air
-Organization: Solitary or company (2-5)
+Special Qualities: Darkvision 60 ft., plane shift, telepathy 100 ft.
+
+Abilities: Str 16, Dex 17, Con 12, Int 20, Wis 18, Cha 17
+Skills: Appraise +18, Bluff +16, Craft (any one) +18, Diplomacy +20, Disguise +3 (+5 acting), Forgery +18, Gather Information +16, Intimidate +18, Knowledge (the planes) +18, Listen +17, Search +18, Sense Motive +17, Spot +17, Survival +4 (+6 on other planes) (+6 following tracks), Use Magic Device +16
+Feats: Combat Casting, Improved Initiative, Iron Will, Lightning Reflexes
+
 	CR:7
 Treasure: Standard
 	KIT:1|TN
-	HITDICEADVANCEMENT:11-20 HD (Large); 21-30 HD
-(Huge)
+	HITDICEADVANCEMENT:11-20 HD (Large); 21-30 HD (Huge)
 Level Adjustment: +5
 
 GENIE, HAWANAR
@@ -1704,35 +1652,20 @@ GENIE, HAWANAR
 	RACETYPE:Outsider
  (Air, Extraplanar, Fire)
 	MONSTERCLASS:x:13d8+26 (84 hp)
-Initiative: +8
+
 	MOVE:20 ft. (4 squares), fly 50 ft. (perfect)
-Armor Class: 20 (-1 size, +4 Dex, +7 natural), touch 13,
-flat-footed 16
-Base Attack/Grapple: +13/+25
+	BONUS:COMBAT|AC|7 natural
+
 Attack: Slam +20 melee (1d8+8 plus 1d8 fire)
 	NATURALATTACKS:2 slams +20 melee (1d8+8 plus 1d8 fire)
 Space/Reach: 10 ft./10 ft.
-Special Attacks: Air mastery, heat, holocone, spell-like
-abilities
-Special Qualities: Darkvision 60 ft., immunity to acid, immunity
-to fire, plane shift, telepathy 100
-ft., vulnerability to cold
+Special Attacks: Air mastery, heat, holocone, spell-like abilities
+Special Qualities: Darkvision 60 ft., immunity to acid, immunity to fire, plane shift, telepathy 100 ft., vulnerability to cold
 Saves: Fort +10, Ref +12, Will +10
-Abilities: Str 27, Dex 18, Con 14, Int 14, Wis 15, Cha
-15
-Skills: Bluff +18, Concentration +18, Craft (any
-one) +18, Diplomacy +22, Disguise +2 (+4
-acting), Intimidate +4, Knowledge (any
-one) +18, Listen +18, Move Silently +20,
-Sense Motive +18, Spellcraft +18, Spot
-+18
-Feats: Combat Casting, Combat Reflexes, Dodge,
-Improved InitiativeB, Mobility, Quicken
-Spell-Like Ability (scorching ray)
-Environment: Elemental Plane of Air or Elemental Plane
-of Fire
-Organization: Solitary, company (2-4), or band (6-
-15)
+Abilities: Str 27, Dex 18, Con 14, Int 14, Wis 15, Cha 15
+Skills: Bluff +18, Concentration +18, Craft (any one) +18, Diplomacy +22, Disguise +2 (+4 acting), Intimidate +4, Knowledge (any one) +18, Listen +18, Move Silently +20, Sense Motive +18, Spellcraft +18, Spot +18
+Feats: Combat Casting, Combat Reflexes, Dodge, Improved InitiativeB, Mobility, Quicken Spell-Like Ability (scorching ray)
+
 	CR:9
 Treasure: Standard
 Alignment: Usually lawful neutral
@@ -1743,11 +1676,9 @@ GENIE, MARID
 	RACETYPE:Outsider
  (Extraplanar, Water)
 	MONSTERCLASS:x:12d8+24 (78 hp)
-Initiative: +8
 	MOVE:20 ft. (4 squares), swim 60 ft.
-Armor Class: 19 (-1 size, +4 Dex, +6 natural), touch 13,
-flat-footed 15
-Base Attack/Grapple: +12/+22
+	BONUS:COMBAT|AC|6 natural
+
 Attack: Slam +17 melee (1d8+6)
 	NATURALATTACKS:2 slams +17 melee (1d8+6)
 Space/Reach: 10 ft./10 ft.
@@ -1767,9 +1698,7 @@ Silently +19, Sense Motive +17, Spellcraft
 Feats: Alertness, Combat Casting, Combat Reflexes,
 Dodge, Improved InitiativeB,
 Power Attack
-Environment: Elemental Plane of Water
-Organization: Solitary, company (2-4), or band (6-
-15)
+
 	CR:9
 Treasure: Standard coins; double goods; standard
 items
@@ -1781,32 +1710,25 @@ GHOUL, DUST
 	RACETYPE:Undead
  (Air, Earth, Extraplanar)
 	MONSTERCLASS:x:10d12 (65 hp)
-Initiative: +7
-	MOVE:40 ft. (8 squares), fly 40 ft. (perfect),
-burrow 20 ft.
-Armor Class: 21 (+3 Dex, +8 natural), touch 13, flatfooted
-18
-Base Attack/Grapple: +5/+11
+
+	MOVE:40 ft. (8 squares), fly 40 ft. (perfect),burrow 20 ft.
+	BONUS:COMBAT|AC|8 natural
+
 Attack: Claw +11 melee (1d6+6, 19-20/x3)
-	NATURALATTACKS:2 claws +11 melee (1d6+6, 19-20/x3) and
-bite +9 melee (1d8+3)
-FACE:5
-REACH:5
+	NATURALATTACKS:2 claws +11 melee (1d6+6, 19-20/x3) and bite +9 melee (1d8+3)
+	FACE:5
+	REACH:5
 
 Special Attacks: Animate dust, augmented critical, paralyzing
 shriek
 Special Qualities: Darkvision 60 ft., earth mastery, limited
 flight, undead traits, +4 turn resistance
-Saves: Fort +5, Ref +8, Will +9
-Abilities: Str 22, Dex 16, Con -, Int 14, Wis 14,
-Cha 16
+
+Abilities: Str 22, Dex 16, Con -, Int 14, Wis 14, Cha 16
 Skills: Balance +16, Climb +16, Hide +15, Jump
-+20, Listen +13, Move Silently +14, Spot
-+13
-Feats: Great Fortitude, Improved Initiative,
-Lightning Reflexes, Multiattack
-Environment: Plane of Molten Skies
-Organization: Solitary, gang (2-5), or pack (6-12)
++20, Listen +13, Move Silently +14, Spot +13
+Feats: Great Fortitude, Improved Initiative, Lightning Reflexes, Multiattack
+
 	CR:8
 Treasure: None
 	KIT:1|CE
@@ -1814,13 +1736,12 @@ Treasure: None
 
 GIANT, BRONZE
 	SIZE:H
-Giant
+	RACETYPE:Giant
 	MONSTERCLASS:x:16d8+112 (184 hp)
-Initiative: +1
+
 	MOVE:40 ft. (8 squares)
-Armor Class: 23 (-2 size, +1 Dex, +14 natural), touch 9,
-flat-footed 22
-Base Attack/Grapple: +12/+31
+	BONUS:COMBAT|AC|14 natural
+
 Attack: Slam +21 melee (1d8+11) or longsword +21
 melee (3d6+11, 19-20/x2) or spear +11
 ranged (3d6+11, crit x3) or rock +12
@@ -1829,29 +1750,16 @@ ranged (2d8+11)
 +21/+16/+11 melee (3d6+11, 19-20/x2)
 or spear +11 ranged (3d6+11, crit x3) or
 rock +12 ranged (2d8+11)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
 
 Special Attacks: Rock throwing, sardonic laugh
-Special Qualities: Damage reduction 10/-, darkvision 60
-ft,. low-light vision, resistance
-to fire 20
-Saves: Fort +17, Ref +8,
-Will +9
-Abilities: Str 33, Dex 13, Con
-25, Int 10, Wis 14,
-Cha 14
-Skills: Listen +23, Spot
-+23
-Feats: Alertness, Awesome
-Blow,
-Improved Bull Rush,
-Iron Will, Lightning
-Reflexes, Power Attack
-Environment: Temperate mountains
-and coastal islands
-Organization: Solitary or family (2-
-4)
+Special Qualities: Damage reduction 10/-, darkvision 60 ft,. low-light vision, resistance to fire 20
+
+Abilities: Str 33, Dex 13, Con 25, Int 10, Wis 14, Cha 14
+Skills: Listen +23, Spot +23
+Feats: Alertness, Awesome Blow, Improved Bull Rush, Iron Will, Lightning Reflexes, Power Attack
+
 	CR:11
 Treasure: Standard
 Alignment: Usually neutral
@@ -1860,13 +1768,11 @@ character class
 
 GIANT, JACK-IN-IRONS
 	SIZE:H
-Giant
+	RACETYPE:Giant
 	MONSTERCLASS:x:27d8+162 (283 hp)
-Initiative: +1
 	MOVE:40 ft. (8 squares)
-Armor Class: 24 (-2 size, +1 Dex, +15 natural), touch 9,
-flat-footed 23
-Base Attack/Grapple: +20/+41
+	BONUS:COMBAT|AC|15 natural
+
 Attack: Spiked greatclub +32 melee (3d8+19) or
 great chain +32 melee (2d8+13)
 	NATURALATTACKS:Spiked greatclub +32/+27/+22/+17 melee
@@ -1899,11 +1805,10 @@ GIANT, SMOKE
 	SIZE:L
 Giant (Air, Extraplanar, Fire)
 	MONSTERCLASS:x:8d8+32 (68 hp)
-Initiative: +2
+
 	MOVE:40 ft. (8 squares)
-Armor Class: 17 (-1 size, +2 Dex, +6 natural), touch 11,
-flat-footed 15
-Base Attack/Grapple: +6/+16
+	BONUS:COMBAT|AC|6 natural
+
 Attack: Heavy mace +11 melee (2d6+6) or rock
 +8 ranged (1d6+6 plus 1d6 fire)
 	NATURALATTACKS:Heavy mace +11/+5 melee (2d6+6) or
@@ -1935,11 +1840,10 @@ GIANT, SEA
 	SIZE:L
 Giant (Aquatic)
 	MONSTERCLASS:x:14d8+70 (133 hp)
-Initiative: +6
+
 	MOVE:40 ft. (8 squares), swim 30 ft.
-Armor Class: 21 (-1 size, +2 Dex, +10 natural), touch 11,
-flat-footed 19
-Base Attack/Grapple: +10/+23
+	BONUS:COMBAT|AC|10 natural
+
 Attack: Slam +18 melee (1d6+9) or rock +12
 ranged (2d8+9)
 	NATURALATTACKS:2 slams +18 melee (1d6+9) or rock +12
@@ -1970,33 +1874,21 @@ Level Adjustment: +5
 GNARLWOOD
 	SIZE:H
 	RACETYPE:Plant
-
 	MONSTERCLASS:x:11d8+66 (115 hp)
-Initiative: +4
 	MOVE:30 ft. (6 squares)
-Armor Class: 23 (-2 size, +15 natural), touch 8, flatfooted
-23
-Base Attack/Grapple: +8/+26
-Attack: Claw +17 melee (2d6+10)
-	NATURALATTACKS:4 claws +17 melee (2d6+10)
-FACE:15
-REACH:15
+	BONUS:COMBAT|AC|15 natural
 
-Special Attacks: Animate dead, rend 4d6+15, spell-like
-abilities, unhallowed aura
-Special Qualities: Damage reduction 10/slashing and good,
-low-light vision, 	RACETYPE:Plant
- traits, SR 19, vulnerability
-to fire
-Saves: Fort +13, Ref +3, Will +5
-Abilities: Str 31, Dex 10, Con 23, Int 6, Wis 14, Cha
-14
+	NATURALATTACKS:4 claws +17 melee (2d6+10)
+	FACE:15
+	REACH:15
+
+Special Attacks: Animate dead, rend 4d6+15, spell-like abilities, unhallowed aura
+Special Qualities: Damage reduction 10/slashing and good, low-light vision, SR 19, vulnerability to fire
+
+Abilities: Str 31, Dex 10, Con 23, Int 6, Wis 14, Cha 14
 Skills: Hide -6, Listen +8, Spot +8
-Feats: Cleave, Improved Initiative, Power Attack,
-Weapon Focus (claw)
-Environment: Temperate forests
-Organization: Solitary or band (2-4 plus 1d6 skeletons
-or zombies per gnarlwood)
+Feats: Cleave, Improved Initiative, Power Attack, Weapon Focus (claw)
+
 	CR:10
 Treasure: 50% standard
 	KIT:1|TN evil
@@ -2007,11 +1899,9 @@ GNASHER LIZARD
 	RACETYPE:Magical Beast
 
 	MONSTERCLASS:x:9d10+45 (94 hp)
-Initiative: +6
 	MOVE:30 ft. (6 squares)
-Armor Class: 19 (-1 size, +2 Dex, +8 natural), touch 11,
-flat-footed 17
-Base Attack/Grapple: +9/+20
+	BONUS:COMBAT|AC|8 natural
+
 Attack: Bite +16 melee (1d8+10)
 	NATURALATTACKS:Bite +16 melee (1d8+10)
 Space/Reach: 10 ft./5 ft.
@@ -2036,26 +1926,19 @@ GOHL (HYDRA CLOUD)
 	RACETYPE:Aberration
 
 	MONSTERCLASS:x:12d8+66 (120 hp)
-Initiative: +3
 	MOVE:Fly 30 ft. (good) (6 squares)
-Armor Class: 26 (-1 size, +3 Dex, +14 natural), touch
-12, flat-footed 23
-Base Attack/Grapple: +9/+18
+	BONUS:COMBAT|AC|14 natural
+
 Attack: Tentacle +13 melee (1d6+5)
-	NATURALATTACKS:6 tentacles +13 melee (1d6+5) and 3 bites
-+8 melee (1d8+2 plus 1d8 acid)
+	NATURALATTACKS:6 tentacles +13 melee (1d6+5) and 3 bites +8 melee (1d8+2 plus 1d8 acid)
 Space/Reach: 10 ft./10 ft.
 Special Attacks: Acid, constrict 1d6+5, improved grab
-Special Qualities: All-around vision, damage reduction 10/
-silver, darkvision 60 ft.
-Saves: Fort +9, Ref +7, Will +9
-Abilities: Str 20, Dex 17, Con 21, Int 6, Wis 12, Cha
-6
+Special Qualities: All-around vision, damage reduction 10/silver, darkvision 60 ft.
+
+Abilities: Str 20, Dex 17, Con 21, Int 6, Wis 12, Cha 6
 Skills: Listen +7, Search +2, Spot +12
-Feats: Alertness, Power Attack, Toughness (x2),
-Weapon Focus (bite)
-Environment: Underground
-Organization: Solitary
+Feats: Alertness, Power Attack, Toughness (x2), Weapon Focus (bite)
+
 	CR:9
 Treasure: Standard
 	KIT:1|CE
@@ -2064,13 +1947,10 @@ Treasure: Standard
 GOLDEN CAT
 	SIZE:S
 	RACETYPE:Magical Beast
-
 	MONSTERCLASS:x:2d10 (11 hp)
-Initiative: +2
 	MOVE:20 ft. (4 squares), climb 10 ft.
-Armor Class: 15 (+1 size, +2 Dex, +2 natural), touch 13,
-flat-footed 13
-Base Attack/Grapple: +2/-3
+	BONUS:COMBAT|AC|2 natural
+
 Attack: Bite +5 melee (1d3-1)
 	NATURALATTACKS:Bite +5 melee (1d3-1) and 2 claws +0
 melee (1d2-1)
@@ -2079,13 +1959,11 @@ REACH:5
 
 Special Attacks: Luck/unluck
 Special Qualities: Darkvision 60 ft., scent, telepathy 100 ft.
-Saves: Fort +3, Ref +5, Will +1
+
 Abilities: Str 8, Dex 15, Con 10, Int 2, Wis 12, Cha 6
-Skills: Balance +10, Climb +10, Hide +10, Jump
-+10, Listen +4, Move Silently +6, Spot +3
+Skills: Balance +10, Climb +10, Hide +10, Jump +10, Listen +4, Move Silently +6, Spot +3
 Feats: Weapon Finesse
-Environment: Any temperate
-Organization: Solitary
+
 	CR:1
 Treasure: None
 	KIT:1|TN
@@ -2095,11 +1973,9 @@ GOLEM, FLAGSTONE
 	SIZE:L
 Construct
 	MONSTERCLASS:x:8d10+30 (74 hp)
-Initiative: +1
 	MOVE:30 ft. (6 squares)
-Armor Class: 22 (-1 size, +1 Dex, +12 natural), touch 10,
-flat-footed 21
-Base Attack/Grapple: +6/+16
+	BONUS:COMBAT|AC|+12 natural
+
 Attack: Slam +11 melee (3d8+6)
 	NATURALATTACKS:2 slams +11 melee (3d8+6)
 Space/Reach: 10 ft./10 ft.
@@ -2123,28 +1999,19 @@ GOLEM, GELATINOUS
 	SIZE:L
 Construct
 	MONSTERCLASS:x:16d10+30 (118 hp)
-Initiative: +0
 	MOVE:20 ft. (4 squares)
-Armor Class: 21 (-1 size, +12 natural), touch 9, flatfooted
-21
-Base Attack/Grapple: +12/+22
+	BONUS:COMBAT|AC|+12 natural
+
 Attack: Slam +18 melee (2d6+6 plus 2d6 acid)
 	NATURALATTACKS:2 slams +18 melee (2d6+6 plus 2d6 acid)
 Space/Reach: 10 ft./10 ft.
 Special Attacks: Acid, engulf, paralysis
-Special Qualities: Construct traits, damage reduction 10/
-bludgeoning and magic, darkvision 60 ft.,
-immunity to electricity, immunity to magic,
-low-light vision, transparent
-Saves: Fort +7, Ref +7, Will +7
-Abilities: Str 22, Dex 10, Con -, Int 3, Wis 11, Cha
-1
+Special Qualities: Construct traits, damage reduction 10/bludgeoning and magic, darkvision 60 ft., immunity to electricity, immunity to magic, low-light vision, transparent
+
+Abilities: Str 22, Dex 10, Con -, Int 3, Wis 11, Cha 1
 Skills: Listen +11, Spot +12
-Feats: Alertness, Great Fortitude, Iron Will,
-Lightning Reflexes, Power Attack,
-Weapon Focus (slam)
-Environment: Any
-Organization: Solitary
+Feats: Alertness, Great Fortitude, Iron Will, Lightning Reflexes, Power Attack, Weapon Focus (slam)
+
 	CR:10
 Treasure: None
 	KIT:1|TN
@@ -2154,43 +2021,32 @@ GOLEM, MUMMY
 	SIZE:M
 Construct
 	MONSTERCLASS:x:10d10+20 (75 hp)
-Initiative: +0
 	MOVE:20 ft. (4 squares)
-Armor Class: 20 (+10 natural), touch 10, flat-footed
-20
-Base Attack/Grapple: +7/+15
+	BONUS:COMBAT|AC|+10 natural
+
 Attack: Slam +15 melee (1d8+8)
 	NATURALATTACKS:2 slams +15 melee (1d8+8)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Constrict 1d8+8, improved grab, strangulation
-Special Qualities: Construct traits, damage reduction 10/
-magic and slashing or piercing, darkvision
-60 ft., immunity to cold, low-light vision,
-vulnerability to fire
-Saves: Fort +3, Ref +3, Will +3
-Abilities: Str 26, Dex 10, Con -, Int -, Wis 11,
-Cha 1
+Special Qualities: Construct traits, damage reduction 10/magic and slashing or piercing, darkvision 60 ft., immunity to cold, low-light vision, vulnerability to fire
+
+Abilities: Str 26, Dex 10, Con -, Int -, Wis 11, Cha 1
 Skills: -
 Feats: -
-Environment: Any
-Organization: Solitary
 	CR:6
 Treasure: None
 	KIT:1|TN
-	HITDICEADVANCEMENT:11-20 HD (Medium); 21-
-30 HD (Large)
+	HITDICEADVANCEMENT:11-20 HD (Medium); 21-30 HD (Large)
 
 GOLEM, WITCH-DOLL
 	SIZE:L
 Construct
 	MONSTERCLASS:x:12d10+30 (96 hp)
-Initiative: +0
 	MOVE:30 ft. (6 squares)
-Armor Class: 19 (-1 size, +10 natural), touch 9, flatfooted
-19
-Base Attack/Grapple: +9/+19
+	BONUS:COMBAT|AC|+10 natural
+
 Attack: Slam +14 melee (2d8+6) or Large
 needle +14 melee (1d8+9)
 	NATURALATTACKS:2 slams +14 melee (2d8+6)
@@ -2198,50 +2054,32 @@ or 	SIZE:L
 needle +14 melee
 (1d8+9)
 Space/Reach: 10 ft./10 ft.
-Special Attacks: Extra damage against foe, find
-target, linked attack, witch-doll link
-Special Qualities: Construct traits, damage reduction
-10/adamantine, darkvision 60 ft.,
-immunity to magic, low-light vision,
-resist magic, vulnerability to
-fire
-Saves: Fort +4, Ref +4, Will +5
-Abilities: Str 23, Dex 11, Con -, Int -, Wis
-12, Cha 10
+Special Attacks: Extra damage against foe, find target, linked attack, witch-doll link
+Special Qualities: Construct traits, damage reduction 10/adamantine, darkvision 60 ft., immunity to magic, low-light vision, resist magic, vulnerability to fire
+Abilities: Str 23, Dex 11, Con -, Int -, Wis 12, Cha 10
 Skills: -
 Feats: Ability Focus (witch-doll link)B
-Environment: Any
-Organization: Solitary
 	CR:11
 Treasure: None
 	KIT:1|TN
-	HITDICEADVANCEMENT:13-24 HD (Large);
-25-36 HD (Huge)
+	HITDICEADVANCEMENT:13-24 HD (Large);25-36 HD (Huge)
 
 GRAY NISP
 	SIZE:L
 	RACETYPE:Fey
  (Aquatic)
 	MONSTERCLASS:x:8d6+56 (84 hp)
-Initiative: +3
 	MOVE:10 ft. (2 squares), swim 80 ft.
-Armor Class: 24 (-1 size, +3 Dex, +12 natural), touch
-12, flat-footed 21
-Base Attack/Grapple: +4/+14
-Attack: Claw +10 melee (1d6+6)
-	NATURALATTACKS:2 claws +10 melee (1d6+6) and bite +5
-melee (1d8+3)
+	BONUS:COMBAT|AC|+12 natural
+
+	NATURALATTACKS:2 claws +10 melee (1d6+6) and bite +5 melee (1d8+3)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Rend 2d6+9, spell-like abilities
 Special Qualities: Keen scent, low light vision, water dependent
-Saves: Fort +9, Ref +9, Will +6
-Abilities: Str 22, Dex 17, Con 24, Int 3, Wis 11, Cha
-10
+
+Abilities: Str 22, Dex 17, Con 24, Int 3, Wis 11, Cha 10
 Skills: Hide +5, Listen +8, Spot +8, Swim +18
-Feats: Alertness, Power Attack, Weapon Focus
-(claw)
-Environment: Temperate and warm aquatic
-Organization: Solitary
+Feats: Alertness, Power Attack, Weapon Focus (claw)
 	CR:8
 Treasure: Standard
 Alignment: Always chaotic neutral
@@ -2256,11 +2094,9 @@ GRIMM
 	RACETYPE:Fey
 
 	MONSTERCLASS:x:18d6+72 (135 hp)
-Initiative: +8
 	MOVE:30 ft. (6 squares)
-Armor Class: 25 (-1 size, +4 Dex, +12 natural), touch
-13, flat-footed 21
-Base Attack/Grapple: +9/+20
+	BONUS:COMBAT|AC|+12 natural
+
 Attack: Claw +15 melee (1d8+7)
 	NATURALATTACKS:2 claws +15 melee (1d8+7) and bite +10
 melee (2d6+3)
@@ -2269,21 +2105,11 @@ Special Attacks: Aura of evil, blur, devour, improved grab,
 spell-like abilities
 Special Qualities: Damage reduction 15/silver and good,
 ethereal jaunt, fast healing 5, low-light
-vision, SR 21 (SR 25 against 	RACETYPE:Fey
- magic)
-Saves: Fort +12, Ref +15, Will +13
-Abilities: Str 25, Dex 19, Con 19, Int 12, Wis 14, Cha
-20
-Skills: Bluff +26, Diplomacy +30, Disguise +5
-(+7 acting), Escape Artist +14, Heal +13,
-Hide +21, Intimidate +7, Listen +23, Sense
-Motive +23, Spot +23, Use Rope +4 (+6
-with bindings)
-Feats: Blind-Fight, Combat Reflexes, Diehard,
-Endurance, Great Fortitude, Improved
-Initiative, Power Attack
-Environment: Temperate mountains
-Organization: Solitary
+vision, SR 21 (SR 25 against Fey  magic)
+
+Abilities: Str 25, Dex 19, Con 19, Int 12, Wis 14, Cha 20
+Skills: Bluff +26, Diplomacy +30, Disguise +5 (+7 acting), Escape Artist +14, Heal +13, Hide +21, Intimidate +7, Listen +23, Sense Motive +23, Spot +23, Use Rope +4 (+6 with bindings)
+Feats: Blind-Fight, Combat Reflexes, Diehard, Endurance, Great Fortitude, Improved Initiative, Power Attack
 	CR:13
 Treasure: Standard
 	KIT:1|TN evil
@@ -2292,13 +2118,10 @@ Treasure: Standard
 GRONK
 	SIZE:L
 	RACETYPE:Monstrous Humanoid
-
 	MONSTERCLASS:x:4d8+12 (30 hp)
-Initiative: +0
 	MOVE:40 ft. (8 squares)
-Armor Class: 13 (-1 size, +4 natural), touch 9, flatfooted
-13
-Base Attack/Grapple: +4/+14
+	BONUS:COMBAT|AC|+4 natural
+
 Attack: Slam +9 melee (1d6+6) or greatclub +9
 melee (2d8+9)
 	NATURALATTACKS:2 slams +9 melee (1d6+6) and horn +4
@@ -2307,15 +2130,10 @@ melee (1d8+3); or greatclub +9 melee
 Special Attacks: -
 Special Qualities: Darkvision 60 ft., scent
 Space/Reach: 10 ft./10 ft.
-Saves: Fort +6, Ref +4, Will +4
-Abilities: Str 22, Dex 10, Con 16, Int 8, Wis 11, Cha
-9
-Skills: Spot +4, Survival +3 (+7 when tracking
-by scent)
+Abilities: Str 22, Dex 10, Con 16, Int 8, Wis 11, Cha 9
+Skills: Spot +4, Survival +3 (+7 when tracking by scent)
 Feats: Great Fortitude, Power Attack, TrackB
-Environment: Cold plains
-Organization: Solitary, band (2-5), or nomadic pack
-(6-30)
+
 	CR:3
 Treasure: Standard
 Alignment: Usually chaotic neutral
@@ -2327,17 +2145,14 @@ HAG, PIT
 	RACETYPE:Monstrous Humanoid
  (Chaotic, Evil, Extraplanar)
 	MONSTERCLASS:x:16d8+64 (136 hp)
-Initiative: +7
 	MOVE:40 ft. (8 squares)
-Armor Class: 24 (+3 Dex, +11 natural), touch 13, flatfooted
-21
-Base Attack/Grapple: +16/+21
+	BONUS:COMBAT|AC|+11 natural
 Attack: Pitchfork +21 melee (1d8+5) or claw +21
 melee (1d6+5)
 	NATURALATTACKS:Pitchfork +21 melee (1d8+5) or 2 claws
 +21 melee (1d6+5)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Aura of affliction, rend, spells
 Special Qualities: Damage reduction 10/cold iron, darkvision
@@ -2355,9 +2170,7 @@ Feats: Alertness, Combat Casting, En	SIZE:L
 Spell,
 Great Fortitude, Improved Initiative,
 Maximize Spell
-Environment: Nine Hells
-Organization: Solitary or covey (1 pit hag plus 2-4
-erinyeses)
+
 	CR:13
 Treasure: Standard
 	KIT:1|CE
@@ -2368,29 +2181,21 @@ HERALD OF TSATHOGGA
 	RACETYPE:Aberration
  (Chaotic, Evil, Extraplanar)
 	MONSTERCLASS:x:16d8+80 (152 hp)
-Initiative: +3
 	MOVE:30 ft. (6 squares), swim 30 ft.
-Armor Class: 23 (-2 size, +3 Dex, +12 natural), touch
-11, flat-footed 20
-Base Attack/Grapple: +12/+27
+	BONUS:COMBAT|AC|+12 natural
+
 Attacks: Tentacle +18 melee (1d8+7)
 	NATURALATTACKS:10 tentacles +18 melee (1d8+7) and bite
 +15 melee (2d6+3)
 Space/Reach: 15 ft./10 ft.
 Special Attacks: Bellow, improved grab, paralysis, swallow
 whole
-Special Qualities: Damage reduction 10/good, darkvision
-60 ft., resistance to sonic 15, regeneration
-10
+Special Qualities: Damage reduction 10/good, darkvision 60 ft., resistance to sonic 15, regeneration 10
 Saves: Fort +10, Ref +8, Will +13
-Abilities: Str 24, Dex 16, Con 20, Int 7, Wis 16, Cha
-12
+Abilities: Str 24, Dex 16, Con 20, Int 7, Wis 16, Cha 12
 Skills: Listen +13, Spot +13, Swim +18
-Feats: Alertness, Blind-Fight, Cleave,
-Multiattack, Power Attack, Weapon Focus
-(tentacle)
-Environment: Warm marshes
-Organization: Solitary
+Feats: Alertness, Blind-Fight, Cleave, Multiattack, Power Attack, Weapon Focus (tentacle)
+
 	CR:15
 Treasure: Standard
 	KIT:1|CE
@@ -2399,27 +2204,17 @@ Treasure: Standard
 HORSEFLY, GIANT
 	SIZE:L
 	RACETYPE:Vermin
-
 	MONSTERCLASS:x:4d8+8 (26 hp)
-Initiative: +2
 	MOVE:20 ft. (4 squares), fly 60 ft. (good)
-Armor Class: 15 (-1 size, +2 Dex, +4 natural), touch 11,
-flat-footed 13
-Base Attack/Grapple: +3/+11
-Attack: Bite +6 melee (1d6+6)
+	BONUS:COMBAT|AC|+4 natural
 	NATURALATTACKS:Bite +6 melee (1d6+6)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Blood drain, improved grab
-Special Qualities: Darkvision 60 ft., tremorsense 60 ft.,
-	RACETYPE:Vermin
- traits
-Saves: Fort +6, Ref +3, Will +2
-Abilities: Str 18, Dex 14, Con 14, Int -, Wis 12, Cha
-7
+Special Qualities: Darkvision 60 ft., tremorsense 60 ft.
+
+Abilities: Str 18, Dex 14, Con 14, Int -, Wis 12, Cha 7
 Skills: Spot +5
 Feats: -
-Environment: Temperate or warm forests and marshes
-Organization: Solitary, pair, or nest (10-20)
 	CR:3
 Treasure: None
 	KIT:1|TN
@@ -2431,35 +2226,20 @@ Treasure: None
 INHPIDIAN, RATTLER
 	SIZE:M
 	RACETYPE:Monstrous Humanoid
- (Reptilian)
-	MONSTERCLASS:x:6d8+18 (45 hp)
-Initiative: +2
-	MOVE:30 ft. (6 squares), climb 20 ft., swim 20
-ft.
-Armor Class: 18 (+2 Dex, +6 natural), touch 12, flatfooted
-16
-Base Attack/Grapple: +6/+10
-Attack: Snake-hand bite +11 melee (1d6+4 plus
-poison)
-	NATURALATTACKS:2 snake-hand bites +11 melee (1d6+4 plus
-poison)
-FACE:5
-REACH:5
+	RACESUBTYPE:Reptilian
+	MONSTERCLASS:Monstrous Humanoid:6
+	MOVE:Walk,30,Climb,20,Swim,20
+	BONUS:COMBAT|AC|6 natural
+	NATURALATTACKS:2 snake-hand bites +11 melee (1d6+4 plus poison)
+	FACE:5
+	REACH:5
 
 Special Attacks: Death rattle, poison
 Special Qualities: Darkvision 60 ft.
-Saves: Fort +5, Ref +7, Will +7
-Abilities: Str 18, Dex 15, Con 16, Int 12, Wis 14, Cha
-14
-Skills: Climb +12, Diplomacy +10, Hide +5, Intimidate
-+8, Listen +7, Search +5, Spot
-+11, Swim +12
-Feats: Blind-Fight, Power Attack, Weapon Focus
-(snake-hand)
-Environment: Warm forests and plains
-Organization: Solitary or band (1 rattler plus 2-5 common
-inphidians and 1 cobra-back
-inphidian)
+
+Abilities: Str 18, Dex 15, Con 16, Int 12, Wis 14, Cha 14
+Skills: Climb +12, Diplomacy +10, Hide +5, Intimidate +8, Listen +7, Search +5, Spot +11, Swim +12
+Feats: Blind-Fight, Power Attack, Weapon Focus (snake-hand)
 	CR:4
 Treasure: Standard
 Alignment: Usually neutral evil
@@ -2470,37 +2250,23 @@ KUAH-LIJ
 	SIZE:M
 Humanoid (Kuah-Lij)
 	MONSTERCLASS:x:1d8 (4 hp)
-Initiative: +1
 	MOVE:30 ft. (6 squares)
-Armor Class: 11 (+1 Dex), touch 11, flat-footed 10
-Base Attack/Grapple: +1/+0
+
 Attack: Dagger +0 melee (1d4) or light crossbow
 +2 ranged (1d8)
 	NATURALATTACKS:Dagger +0 melee (1d4) or light crossbow
 +2 ranged (1d8)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
-Special Attacks: -
 Special Qualities: Kuah-lij traits, low-light vision
-Saves: Fort +4, Ref +1, Will +1
-Abilities: Str 8, Dex 13, Con 14, Int 17, Wis 12, Cha
-8
-Skills: Craft (any one) +12, Knowledge (any two)
-+7, Knowledge (any one) +7, Listen +5,
-Swim +3
+Abilities: Str 8, Dex 13, Con 14, Int 17, Wis 12, Cha 8
+Skills: Craft (any one) +12, Knowledge (any two) +7, Knowledge (any one) +7, Listen +5, Swim +3
 Feats: Skill Focus (any one Craft skill)
-Environment: Any land
-Organization: Company (2-4), squad (11-20 plus 1
-leader of 3rd-6th level and 2 3rd-level
-lieutenants), or band (30-50 plus 1 3rdlevel
-sergeant per 10 adults, 2 5th-level
-lieutenants, and 1 7th-level captain)
 	CR:1/2
 Treasure: 50% coins; standard goods; double items
 Alignment: Usually lawful neutral
 	HITDICEADVANCEMENT:By character class
-Level Adjustment: +0
 
 Lantern Goat 116
 
@@ -2511,36 +2277,18 @@ Advanced Lantern Goat 116
 LICH SHADE
 	SIZE:M
 	RACETYPE:Undead
-
 	MONSTERCLASS:x:11d12 (71 hp)
-Initiative: +5
 	MOVE:30 ft. (6 squares)
-Armor Class: 14 (+1 Dex, +3 natural), touch 11, flatfooted
-13
-Base Attack/Grapple: +5/+8
-Attack: Claw +8 melee (1d6+3 plus chill)
+	BONUS:COMBAT|AC|+3 natural
 	NATURALATTACKS:2 claws +8 melee (1d6+3 plus chill)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Chill, death throes, spell leech
-Special Qualities: Damage reduction 15/bludgeoning and
-magic, darkvision 60 ft., resistance to cold
-and electricity 10, SR 22, spell sense, +2
-turn resistance, undead traits
-Saves: Fort +5, Ref +4, Will +10
-Abilities: Str 16, Dex 13, Con -, Int 20, Wis 16, Cha
-14
-Skills: Concentration +14, Craft (any one) +19, Decipher
-Script +19, Diplomacy +4, Knowledge
-(any one) +19, Knowledge (arcana) +19, Listen
-+17, Move Silently +3, Sense Motive +19,
-Spellcraft +21, Spot +17
-Feats: Ability Focus (spell leech), Craft Wondrous
-Item, Great Fortitude, Improved
-Initiative
-Environment: Any
-Organization: Solitary
+Special Qualities: Damage reduction 15/bludgeoning and magic, darkvision 60 ft., resistance to cold and electricity 10, SR 22, spell sense, +2 turn resistance
+Abilities: Str 16, Dex 13, Con -, Int 20, Wis 16, Cha 14
+Skills: Concentration +14, Craft (any one) +19, Decipher Script +19, Diplomacy +4, Knowledge (any one) +19, Knowledge (arcana) +19, Listen +17, Move Silently +3, Sense Motive +19, Spellcraft +21, Spot +17
+Feats: Ability Focus (spell leech), Craft Wondrous Item, Great Fortitude, Improved Initiative
 	CR:9
 Treasure: Double standard
 	KIT:1|TN evil
@@ -2549,72 +2297,36 @@ Treasure: Double standard
 LIGHTNING TREANT
 	SIZE:H
 	RACETYPE:Plant
-
 	MONSTERCLASS:x:12d8+84 (138 hp)
-Initiative: +3
 	MOVE:40 ft. (8 squares)
-Armor Class: 22 (-2 size, -1 Dex, +15 natural), touch
-7, flat-footed 22
-Base Attack/Grapple: +9/+26
-Attack: Slam +16 melee (2d8+9)
+	BONUS:COMBAT|AC|+15 natural
 	NATURALATTACKS:2 slams +16 melee (2d8+9)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
+Special Attacks: Double damage against objects, Spelllike abilities
+Special Qualities: Damage reduction 10/slashing, electric healing, fast healing 10, immunity to electricity, low-light vision, resistance to fire 10
 
-Special Attacks: Double damage against objects, Spelllike
-abilities,
-Special Qualities: Damage reduction 10/slashing, electric
-healing, fast healing 10, immunity to electricity,
-	RACETYPE:Plant
- traits, low-light vision,
-resistance to fire 10
-Saves: Fort +15, Ref +3, Will +7
-Abilities: Str 28, Dex 9, Con 24, Int 11, Wis 17, Cha
-11
-Skills: Hide +1*, Knowledge (nature) +12, Survival
-+13 (+15 above ground)
-Feats: Cleave, Improved Initiative, Improved
-Sunder, Power Attack, Track
-Environment: Temperate forests
-Organization: Solitary, pair, or grove (4-8)
+Abilities: Str 28, Dex 9, Con 24, Int 11, Wis 17, Cha 11
+Skills: Hide +1*, Knowledge (nature) +12, Survival +13 (+15 above ground)
+Feats: Cleave, Improved Initiative, Improved Sunder, Power Attack, Track
 	CR:8
 Treasure: Standard
 Alignment: Usually neutral evil
-	HITDICEADVANCEMENT:13-17 HD (Huge), 18-24 HD
-(Gargantuan)
+	HITDICEADVANCEMENT:13-17 HD (Huge), 18-24 HD (Gargantuan)
 
 LIVING LAKE
 	SIZE:C
-Ooze
+	RACETYPE:Ooze
 	MONSTERCLASS:x:30d10+360 (525 hp)
-Initiative: +4
 	MOVE:30 ft. (6 squares)
-Armor Class: 22 (-8 size, +20 natural), touch 2, flatfooted
-22
-Base Attack/Grapple: +22/+55
-Attack: Slam +31 melee (3d8+17)
+	BONUS:COMBAT|AC|+20 natural
 	NATURALATTACKS:4 (or more) slams +31 melee (3d8+17)
 Space/Reach: 100 ft./20 ft.
 Special Attacks: Crush, engulf, improved grab, spells
-Special Qualities: Blindsight 60 ft., ooze traits, SR 36,
-tremorsense 120 ft.
-Saves: Fort +22, Ref +12, Will +18
-Abilities: Str 45, Dex 10, Con 35, Int 16, Wis 22,
-Cha 16
-Skills: Concentration +45, Hide +17, Knowledge
-(any one) +36, Knowledge (nature) +36,
-Listen +8, Move Silently +33, Spot +8,
-Survival +6 (+8 aboveground)
-Feats: Alertness, Augment Summoning, Combat
-Casting, Empower Spell,
-Improved Initiative, Improved
-Natural Attack
-(slam), Iron Will, Lightning
-Reflexes, Power Attack,
-Quicken Spell, Weapon Focus
-(slam)
-Environment: Any land
-Organization: Solitary
+Special Qualities: Blindsight 60 ft., ooze traits, SR 36, tremorsense 120 ft.
+Abilities: Str 45, Dex 10, Con 35, Int 16, Wis 22, Cha 16
+Skills: Concentration +45, Hide +17, Knowledge (any one) +36, Knowledge (nature) +36, Listen +8, Move Silently +33, Spot +8, Survival +6 (+8 aboveground)
+Feats: Alertness, Augment Summoning, Combat Casting, Empower Spell, Improved Initiative, Improved Natural Attack (slam), Iron Will, Lightning Reflexes, Power Attack, Quicken Spell, Weapon Focus (slam)
 	CR:22
 Treasure: Double standard
 Alignment: Usually neutral
@@ -2625,29 +2337,17 @@ LYTHIC
 	RACETYPE:Elemental
  (Earth, Extraplanar)
 	MONSTERCLASS:x:6d8+12 (39 hp)
-Initiative: +1
 	MOVE:30 ft. (6 squares), burrow 20 ft.
-Armor Class: 18 (+1 Dex, +7 natural), touch 11, flatfooted
-17
-Base Attack/Grapple: +4/+7
-Attack: Slam +7 melee (1d6+3)
+	BONUS:COMBAT|AC|+7 natural
 	NATURALATTACKS:2 slams +7 melee (1d6+3)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Fury of the earth
-Special Qualities: Blend with stone, darkvision 60 ft., earth
-glide, elemental traits, tremorsense 100
-ft.
-Saves: Fort +7, Ref +3, Will +2
-Abilities: Str 17, Dex 12, Con 15, Int 11, Wis 11, Cha
-11
-Skills: Hide +5*, Listen +7, Move Silently +8,
-Spot +7
-Feats: Alertness, Power Attack, Skill Focus
-(Move Silently)
-Environment: Elemental Plane of Earth
-Organization: Solitary or gang (2-5)
+Special Qualities: Blend with stone, darkvision 60 ft., earth glide, elemental traits, tremorsense 100 ft.
+Abilities: Str 17, Dex 12, Con 15, Int 11, Wis 11, Cha 11
+Skills: Hide +5*, Listen +7, Move Silently +8, Spot +7
+Feats: Alertness, Power Attack, Skill Focus (Move Silently)
 	CR:4
 Treasure: Standard
 	KIT:1|TN
@@ -2656,31 +2356,17 @@ Treasure: Standard
 MANTIDRAKE
 	SIZE:L
 	RACETYPE:Magical Beast
-
 	MONSTERCLASS:x:9d10+45 (94 hp)
-Initiative: +2
 	MOVE:30 ft. (6 squares), fly 50 ft. (clumsy)
-Armor Class: 19 (-1 size, +2 Dex, +8 natural), touch 11,
-flat-footed 17
-Base Attack/Grapple: +9/+20
-Attack: Claw +15 melee (2d4+7) or 6 spikes +11
-ranged (1d8+3, 19-20/x2)
-	NATURALATTACKS:2 claws +15 melee (2d4+7) and bite +13
-melee (1d8+3) or 6 spikes +11 ranged
-(1d8+3, 19-20/x2)
+	BONUS:COMBAT|AC|+8 natural
+	NATURALATTACKS:2 claws +15 melee (2d4+7) and bite +13 melee (1d8+3) or 6 spikes +11 ranged (1d8+3, 19-20/x2)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Breath weapon, spikes
 Special Qualities: Darkvision 60 ft., immunity to energy, immunity
 to sleep and paralysis, low-light vision, scent
-Saves: Fort +11, Ref +8, Will +5
-Abilities: Str 24, Dex 15, Con 21, Int 9, Wis 14, Cha
-13
-Skills: Intimidate +4, Listen +10, Spot +10, Survival
-+3
-Feats: Flyby Attack, Multiattack, Power Attack,
-TrackB, Weapon Focus (spikes)
-Environment: Any (see text)
-Organization: Solitary or pair
+Abilities: Str 24, Dex 15, Con 21, Int 9, Wis 14, Cha 13
+Skills: Intimidate +4, Listen +10, Spot +10, Survival +3
+Feats: Flyby Attack, Multiattack, Power Attack, TrackB, Weapon Focus (spikes)
 	CR:8
 Treasure: Standard
 Alignment: Usually lawful evil
@@ -2695,31 +2381,17 @@ MEMORY CHILD
 	RACETYPE:Outsider
  (Extraplanar)
 	MONSTERCLASS:x:8d8+19 (55 hp)
-Initiative: +2
 	MOVE:30 ft. (6 squares)
-Armor Class: 16 (+1 size, +2 Dex, +3 natural), touch 13,
-flat-footed 14
-Base Attack/Grapple: +8/+4
-Attack: Touch +9 melee (1d4 plus thought consumption)
+	BONUS:COMBAT|AC|+3 natural
 	NATURALATTACKS:Touch +9 melee (1d4 plus thought consumption)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Mind flood, thought consumption
-Special Qualities: Damage reduction 10/silver, darkvision 60
-ft., 	RACETYPE:Outsider
- traits, telepathy 100 ft.
-Saves: Fort +8, Ref +8, Will +10
+Special Qualities: Damage reduction 10/silver, darkvision 60 ft., telepathy 100 ft.
 Abilities: Str 10, Dex 14, Con 14, Int 12, Wis 15, Cha 11
-Skills: Diplomacy +5, Disguise +6, Gather Information
-+11, Hide +17, Knowledge (any two)
-+12, Knowledge (the planes) +12, Listen
-+4, Move Silently +13, Perform (oratory)
-+11, Perform (storytelling) +11, Spot +4,
-Survival +2 (+4 on other planes)
+Skills: Diplomacy +5, Disguise +6, Gather Information +11, Hide +17, Knowledge (any two) +12, Knowledge (the planes) +12, Listen +4, Move Silently +13, Perform (oratory) +11, Perform (storytelling) +11, Spot +4, Survival +2 (+4 on other planes)
 Feats: Alertness, Iron Will, Toughness
-Environment: Any
-Organization: Solitary or gang (2-4)
 	CR:6
 Treasure: Standard
 	KIT:1|TN
@@ -2730,31 +2402,18 @@ MEPHIT, LIGHTNING
 	RACETYPE:Outsider
  (Air, Electricity, Extraplanar)
 	MONSTERCLASS:x:3d8 (13 hp)
-Initiative: +7
 	MOVE:30 ft. (6 squares), fly 60 ft. (perfect)
-Armor Class: 17 (+1 size, +3 Dex, +3 natural), touch 14,
-flat-footed 14
-Base Attack/Grapple: +3/-1
-Attack: Claw +4 melee (1d3 plus 1d4 electricity)
+	BONUS:COMBAT|AC|+3 natural
 	NATURALATTACKS:2 claws +4 melee (1d3 plus 1d4 electricity)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
-Special Attacks: Breath weapon, spell-like abilities, summon
-mephit
-Special Qualities: Damage reduction 5/magic, darkvision 60
-ft., fast healing 2, immunity to electricity
-Saves: Fort +3, Ref +6, Will +3
+Special Attacks: Breath weapon, spell-like abilities, summon mephit
+Special Qualities: Damage reduction 5/magic, darkvision 60 ft., fast healing 2, immunity to electricity
+
 Abilities: Str 10, Dex 17, Con 10, Int 6, Wis 11, Cha 15
-Skills: Bluff +8, Escape Artist +9, Hide +13, Diplomacy
-+4, Disguise +2 (+4 acting),
-Intimidate +4, Listen +6, Move Silently
-+9, Spot +6, Use Rope +3 (+5 with bindings)
+Skills: Bluff +8, Escape Artist +9, Hide +13, Diplomacy +4, Disguise +2 (+4 acting), Intimidate +4, Listen +6, Move Silently +9, Spot +6, Use Rope +3 (+5 with bindings)
 Feats: Dodge, Improved Initiative
-Environment: Quasi-Elemental Plane of Lightning
-Organization: Solitary (1), gang (2-4 mephits of mixed
-types), or mob (5-12 mephits of mixed
-types)
 	CR:3
 Treasure: Standard
 Alignment: Usually neutral
@@ -2766,31 +2425,19 @@ MEPHIT, SMOKE
 	RACETYPE:Outsider
  (Air, Extraplanar, Fire)
 	MONSTERCLASS:x:3d8 (13 hp)
-Initiative: +6
 	MOVE:30 ft. (6 squares), fly 50 ft. (perfect)
-Armor Class: 16 (+1 size, +2 Dex, +3 natural), touch 13,
-flat-footed 14
-Base Attack/Grapple: +3/-1
-Attack: Claw +4 melee (1d3)
-	NATURALATTACKS:2 claws +4 melee (1d3)
-FACE:5
-REACH:5
+	BONUS:COMBAT|AC|+3 natural
 
-Special Attacks: Breath weapon, spell-like abilities, summon
-mephit
+	NATURALATTACKS:2 claws +4 melee (1d3)
+	FACE:5
+	REACH:5
+
+Special Attacks: Breath weapon, spell-like abilities, summon mephit
 Special Qualities: Damage reduction 5/magic, darkvision 60
-ft., fast healing 2, 	RACETYPE:Outsider
- traits, immunity
-to fire, vulnerability to cold
-Saves: Fort +3, Ref +5, Will +4
+ft., fast healing 2,  immunity to fire, vulnerability to cold
 Abilities: Str 10, Dex 14, Con 10, Int 6, Wis 11, Cha 15
-Skills: Bluff +8, Escape Artist +8, Hide +12, Diplomacy
-+4, Disguise +2, (+4 acting), Intimidate
-+4, Listen +6, Move Silently +8, Spot +6,
-Use Rope +2 (+4 with bindings)
+Skills: Bluff +8, Escape Artist +8, Hide +12, Diplomacy +4, Disguise +2, (+4 acting), Intimidate +4, Listen +6, Move Silently +8, Spot +6, Use Rope +2 (+4 with bindings)
 Feats: Dodge, Improved Initiative
-Environment: Plane of Molten Skies
-Organization: Solitary, gang (2-4) or mob (5-12)
 	CR:3
 Treasure: Standard
 Alignment: Usually neutral
@@ -2802,74 +2449,37 @@ MIRE BRUTE
 	RACETYPE:Elemental
  (Earth, Extraplanar, Water)
 	MONSTERCLASS:x:21d8+168 (262 hp)
-Initiative: -1
 	MOVE:20 ft. (4 squares), swim 60 ft.
-Armor Class: 17 (-2 size, -1 Dex, +10 natural), touch 7,
-flat-footed 18
-Base Attack/Grapple: +15/+34
-Attack: Slam +24 melee (3d6+11, 19-20/x2)
+	BONUS:COMBAT|AC|+10 natural
 	NATURALATTACKS:2 slams +24 melee (3d6+11, 19-20/x2)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
 
-Special Attacks: Disgorge 	RACETYPE:Vermin
-, disease, drench, impale,
-improved grab
-Special Qualities: Damage reduction 10/-, darkvision 60
-ft., elemental traits, immunity to fire, resistance
-to cold 15, tremorsense 100 ft.
-Saves: Fort +22, Ref +6, Will +9
+Special Attacks: Disgorge Vermin, disease, drench, impale, improved grab
+Special Qualities: Damage reduction 10/-, darkvision 60 ft., elemental traits, immunity to fire, resistance to cold 15, tremorsense 100 ft.
 Abilities: Str 32, Dex 8, Con 26, Int 6, Wis 11, Cha 10
 Skills: Hide -1*, Listen +8, Spot +8, Swim +23
-Feats: Alertness, Cleave,
-Great Cleave, Great
-Fortitude, Improved
-Critical (slam), Iron
-Will, Power Attack,
-Weapon Focus
-(slam)
-Environment: Temperate
-marshes
-Organization: Solitary
+Feats: Alertness, Cleave, Great Cleave, Great Fortitude, Improved Critical (slam), Iron Will, Power Attack, Weapon Focus (slam)
 	CR:13
 Treasure: None
 	KIT:1|TN evil
-	HITDICEADVANCEMENT:22-42 HD (Huge); 43-63
-HD (Gargantuan)
+	HITDICEADVANCEMENT:22-42 HD (Huge); 43-63 HD (Gargantuan)
 
 MORTUARY CYCLONE
 	SIZE:H
 	RACETYPE:Undead
-
 	MONSTERCLASS:x:31d12+62 (263 hp)
-Initiative: +5
 	MOVE:40 ft. (8 squares)
-Armor Class: 26 (-2 size, +1 Dex, +15 natural, +2 profane),
-touch 11, flat-footed 25
-Base Attack/Grapple: +15/+34
-Attack: Slam +25 melee (2d8+11, 19-20/x2)
+	BONUS:COMBAT|AC|+15 natural	BONUS:COMBAT|AC|+2 profane
 	NATURALATTACKS:Slam +25 melee (2d8+11, 19-20/x2)
-FACE:15
-REACH:15
+	FACE:15
+	REACH:15
 
-Special Attacks: Create spawn, desecrating aura, energy
-drain, necrocone, whirlwind
-Special Qualities: Damage reduction 15/bludgeoning and
-magic, darkvision 60 ft., SR 31, undead
-traits, unholy grace
-Saves: Fort +14, Ref +15, Will +22
-Abilities: Str 33, Dex 12, Con -, Int 11, Wis 12, Cha
-15
-Skills: Intimidate +36, Listen +37, Move Silently
-+35, Spot +37
-Feats: Ability Focus (energy drain), Alertness,
-Cleave, Death's Blessing, Great Fortitude,
-Improved Critical (slam), Improved Initiative,
-Iron Will, Lightning Reflexes, Power
-Attack, Weapon Focus (slam)
-Environment: Any land
-Organization: Solitary or band (10-40 HD of undead
-creatures)
+Special Attacks: Create spawn, desecrating aura, energy drain, necrocone, whirlwind
+Special Qualities: Damage reduction 15/bludgeoning and magic, darkvision 60 ft., SR 31, undead traits, unholy grace
+Abilities: Str 33, Dex 12, Con -, Int 11, Wis 12, Cha 15
+Skills: Intimidate +36, Listen +37, Move Silently +35, Spot +37
+Feats: Ability Focus (energy drain), Alertness, Cleave, Death's Blessing, Great Fortitude, Improved Critical (slam), Improved Initiative, Iron Will, Lightning Reflexes, Power Attack, Weapon Focus (slam)
 	CR:20
 Treasure: None
 Alignment: Usually neutral
@@ -2878,58 +2488,35 @@ Alignment: Usually neutral
 MOSQUITO, GIANT
 	SIZE:S
 	RACETYPE:Vermin
-
 	MONSTERCLASS:x:1d8 (4 hp)
-Initiative: +2
-	MOVE:30 ft. (6 squares), fly
-50 ft. (good)
-Armor Class: 15 (+1 size, +2 Dex,
-+2 natural), touch
-13, flat-footed 13
-Base Attack/Grapple: +0/-4 (+4 when attached)
-Attack: Touch +1 melee (attach)
+	MOVE:30 ft. (6 squares), fly 50 ft. (good)
+	BONUS:COMBAT|AC|+2 natural
 	NATURALATTACKS:Touch +1 melee (attach)
-FACE:5
-REACH:5
-
+	FACE:5
+	REACH:5
 Special Attacks: Attach, blood drain, welt
-Special Qualities: Darkvision 60 ft., scent, 	RACETYPE:Vermin
- traits
-Saves: Fort +2, Ref +2, Will +0
-Abilities: Str 10, Dex 14, Con 10, Int -, Wis 10,
-Cha 2
+Special Qualities: Darkvision 60 ft., scent
+
+Abilities: Str 10, Dex 14, Con 10, Int -, Wis 10, Cha 2
 Skills: Hide +14, Spot +8
 Feats: -
-Environment: Warm marshes
-Organization: Solitary, cluster (2-5), swarm (6-
-30)
 	CR:1/2
 Treasure: None
 	KIT:1|TN
 	HITDICEADVANCEMENT:2 HD (Small); 3 HD (Medium)
-Level Adjustment:
 
 MUDBOG
 	SIZE:L
 Ooze
 	MONSTERCLASS:x:3d10+18 (34 hp)
-Initiative: -5
 	MOVE:10 ft. (2 squares)
-Armor Class: 4 (-1 size, -5 Dex), touch 4, flat-footed
-4
-Base Attack/Grapple: +2/+11
 Attack: - (see text)
 	NATURALATTACKS:- (see text)
 Space/Reach: 10 ft./0 ft.
 Special Attacks: Acid, engulf
-Special Qualities: Blindsight 60 ft., camouflage, resistance
-to fire 10, ooze traits
-Saves: Fort +4, Ref -4, Will -4
+Special Qualities: Blindsight 60 ft., camouflage, resistance to fire 10, ooze traits
 Abilities: Str 20, Dex 1, Con 23, Int -, Wis 1, Cha 1
 Skills: Hide -5*
-Feats: -
-Environment: Any marshes
-Organization: Solitary
 	CR:3
 Treasure: 50% standard
 	KIT:1|TN
@@ -2938,30 +2525,17 @@ Treasure: 50% standard
 MURDER CROW
 	SIZE:M
 	RACETYPE:Undead
-
 	MONSTERCLASS:x:9d12 (59 hp)
-Initiative: +9
 	MOVE:10 ft. (2 squares), fly 70 ft. (average)
-Armor Class: 18 (+5 Dex, +3 natural), touch 15, flatfooted
-13
-Base Attack/Grapple: +4/+5
-Attack: Claw +5 melee (1d4+1)
-	NATURALATTACKS:2 claws +5 melee (1d4+1) and bite +3 melee
-(1d6)
-FACE:5
-REACH:5
-
+	BONUS:COMBAT|AC|+3 natural
+	NATURALATTACKS:2 claws +5 melee (1d4+1) and bite +3 melee (1d6)
+	FACE:5
+	REACH:5
 Special Attacks: Eye-rake
-Special Qualities: Darkvision 60 ft., death throes, undead
-traits
-Saves: Fort +3, Ref +8, Will +8
-Abilities: Str 12, Dex 20, Con -, Int 2, Wis 14, Cha
-10
+Special Qualities: Darkvision 60 ft., death throes, undead traits
+Abilities: Str 12, Dex 20, Con -, Int 2, Wis 14, Cha 10
 Skills: Listen +6, Move Silently +9, Spot +6
-Feats: Dodge, Flyby Attack, Improved Initiative,
-Multiattack
-Environment: Temperate forests
-Organization: Solitary, gang (2-4), or murder (10-90)
+Feats: Dodge, Flyby Attack, Improved Initiative, Multiattack
 	CR:5
 Treasure: None
 	KIT:1|CE
@@ -2973,31 +2547,16 @@ Treasure: None
 ONYX DEER
 	SIZE:L
 	RACETYPE:Magical Beast
-
 	MONSTERCLASS:x:7d10+21 (59 hp)
-Initiative: +6
 	MOVE:40 ft. (8 squares)
-Armor Class: 17 (-1 size, +2 Dex, +6 natural), touch 11,
-flat-footed 15
-Base Attack/Grapple: +7/+15
-Attack: Gore +10 melee (1d8+4) or bite +10 melee
-(1d8+4 plus onyx bite)
-	NATURALATTACKS:Gore +10 melee (1d8+4) and 2 hooves +5
-melee (1d8+2) or bite +10 melee (1d8+4
-plus onyx bite) and 2 hooves +5 melee
-(1d8+2)
+	BONUS:COMBAT|AC|+6 natural
+	NATURALATTACKS:Gore +10 melee (1d8+4) and 2 hooves +5 melee (1d8+2) or bite +10 melee (1d8+4 plus onyx bite) and 2 hooves +5 melee (1d8+2)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Bellow, onyx bite
-Special Qualities: Darkvision 60 ft., immunity to petrification,
-low-light vision, scent
-Saves: Fort +8, Ref +7, Will +3
-Abilities: Str 19, Dex 15, Con 17, Int 5, Wis 12, Cha
-13
+Special Qualities: Darkvision 60 ft., immunity to petrification, low-light vision, scent
+Abilities: Str 19, Dex 15, Con 17, Int 5, Wis 12, Cha 13
 Skills: Listen +12, Spot +10
-Feats: Ability Focus (onyx bite), Improved Initiative,
-Improved Natural Attack (hoof)
-Environment: Temperate and warm forests
-Organization: Solitary, band (2-5), or herd (6-18)
+Feats: Ability Focus (onyx bite), Improved Initiative, Improved Natural Attack (hoof)
 	CR:5
 Treasure: None
 Alignment: Usually neutral
@@ -3007,27 +2566,16 @@ OOZE, AMBER
 	SIZE:D
 Ooze
 	MONSTERCLASS:x:1d10+2 (7 hp)
-Initiative: +0
 	MOVE:10 ft. (2 squares)
-Armor Class: 14 (+4 size), touch 14, flat-footed 14
-Base Attack/Grapple: +0/-15
-Attack: See below
 	NATURALATTACKS:See below
 Space/Reach: 1 ft./0 ft.
 Special Attacks: Ability score drain, infuse, weaken will
 Special Qualities: Blindsight 60 ft., ooze traits
-Saves: Fort +2, Ref -1, Will -5
-Abilities: Str 4, Dex 10, Con 14, Int -, Wis 1, Cha
-1
-Skills: -
-Feats: -
-Environment: Any temperate or warm land
-Organization: Solitary
+Abilities: Str 4, Dex 10, Con 14, Int -, Wis 1, Cha 1
 	CR:1
 Treasure: None
 	KIT:1|TN
-	HITDICEADVANCEMENT:2 HD (	SIZE:T
-); 3 HD (Small)
+	HITDICEADVANCEMENT:2 HD (T); 3 HD (Small)
 
 
 Entropic Ooze 140
@@ -3038,25 +2586,13 @@ OOZE, GLACIAL
 	SIZE:L
 Ooze (Cold)
 	MONSTERCLASS:x:6d10+42 (75 hp)
-Initiative: -5
 	MOVE:20 ft. (4 squares), swim 20 ft.
-Armor Class: 4 (-1 size, -5 Dex), touch 4, flat-footed
-4
-Base Attack/Grapple: +4/+10
-Attack: Slam +5 melee (2d4+3 plus 2d4 cold)
 	NATURALATTACKS:Slam +5 melee (2d4+3 plus 2d4 cold)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Cold, engulf, freeze
-Special Qualities: Blindsight 60 ft., damage reduction 5/
-bludgeoning, immunity to cold, ooze traits,
-transparent, vulnerability to fire
-Saves: Fort +9, Ref -3, Will -3
-Abilities: Str 15, Dex 1, Con 24, Int -, Wis 1, Cha
-1
+Special Qualities: Blindsight 60 ft., damage reduction 5/ bludgeoning, immunity to cold, ooze traits, transparent, vulnerability to fire
+Abilities: Str 15, Dex 1, Con 24, Int -, Wis 1, Cha 1
 Skills: Swim +10
-Feats: -
-Environment: Cold plains
-Organization: Solitary
 	CR:6
 Treasure: None
 	KIT:1|TN
@@ -3066,25 +2602,14 @@ OOZE, METALLIC (HOARD OOZE)
 	SIZE:L
 Ooze
 	MONSTERCLASS:x:7d10+56 (94 hp)
-Initiative: -5
 	MOVE:20 ft. (4 squares), climb 10 ft.
-Armor Class: 4 (-1 size, -5 Dex), touch 4, flat-footed
-4
-Base Attack/Grapple: +5/+12
-Attack: Slam +7 melee (1d8+4 plus 1d6 acid and
-poison)
-	NATURALATTACKS:Slam +7 melee (1d8+4 plus 1d6 acid and
-poison)
+	NATURALATTACKS:Slam +7 melee (1d8+4 plus 1d6 acid andpoison)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Acid, irritating fumes, poison
 Special Qualities: Blindsight 60 ft., ooze traits
 Saves: Fort +4, Ref -3, Will -3
-Abilities: Str 17, Dex 1, Con 26, Int -, Wis 1, Cha
-1
+Abilities: Str 17, Dex 1, Con 26, Int -, Wis 1, Cha1
 Skills: Climb +11
-Feats: -
-Environment: Underground
-Organization: Solitary
 	CR:6
 Treasure: 50% standard
 	KIT:1|TN
@@ -3097,31 +2622,19 @@ PHOOKA
 	RACETYPE:Fey
 
 	MONSTERCLASS:x:4d6+4 (18 hp)
-Initiative: +3
 	MOVE:30 ft. (6 squares)
-Armor Class: 16 (+1 size, +3 Dex, +2 natural), touch 14,
-flat-footed 13
-Base Attack/Grapple: +2/-2
+	BONUS:COMBAT|AC|+2 natural
 Attack: Dagger +6 melee (1d3)
 	NATURALATTACKS:Dagger +6 melee (1d3)
-FACE:5
-REACH:5
+	FACE:5
+	REACH:5
 
 Special Attacks: Alternate form, spell-like abilities
-Special Qualities: Damage reduction 5/cold iron, low-light
-vision, one with nature, SR 16, tree stride
-Saves: Fort +2, Ref +7, Will +6
-Abilities: Str 10, Dex 17, Con 12, Int 13, Wis 15, Cha
-18
-Skills: Bluff +9, Craft (any one) +5, Diplomacy
-+8, Disguise +4 (+6 acting), Escape Artist
-+7, Handle Animal +8, Heal +6, Hide
-+15, Intimidate +6, Knowledge (nature)
-+3, Listen +8, Move Silently +11, Ride +7,
-Spot +8, Survival +6
+Special Qualities: Damage reduction 5/cold iron, low-light vision, one with nature, SR 16, tree stride
+
+Abilities: Str 10, Dex 17, Con 12, Int 13, Wis 15, Cha 18
+Skills: Bluff +9, Craft (any one) +5, Diplomacy +8, Disguise +4 (+6 acting), Escape Artist +7, Handle Animal +8, Heal +6, Hide +15, Intimidate +6, Knowledge (nature) +3, Listen +8, Move Silently +11, Ride +7, Spot +8, Survival +6
 Feats: Alertness, DodgeB, Weapon Finesse
-Environment: Temperate forests
-Organization: Solitary or gang (2-5)
 	CR:3
 Treasure: Standard
 Alignment: Any chaotic
@@ -3133,77 +2646,39 @@ PSIWYRM (DRACO PRESENTIA FACULTAS)
 	RACETYPE:Dragon
  (Psionic)
 	MONSTERCLASS:x:14d12+56 (147 hp)
-Initiative: +7
 	MOVE:40 ft. (8 squares), fly 150 ft. (poor)
-Armor Class: 24 (-1 size, +3 Dex, +12 natural), touch
-12, flat-footed 21
-Base Attack/Grapple: +14/+24
-Attack: Bite +19 melee (2d6+6)
-	NATURALATTACKS:Bite +19 melee (2d6+6) and 2 claws +14
-melee (1d8+3)
+	BONUS:COMBAT|AC|+12 natural
+	NATURALATTACKS:Bite +19 melee (2d6+6) and 2 claws +14 melee (1d8+3)
 Space/Reach: 10 ft./5 ft.
 Special Attacks: Breath weapon, psi-like abilities
-Special Qualities: Damage reduction 15/magic, darkvision
-120 ft., immunity to sleep and paralysis,
-low-light vision, power resistance 23, see
-in darkness, SR 23
+Special Qualities: Damage reduction 15/magic, darkvision 120 ft., immunity to sleep and paralysis, low-light vision, power resistance 23, see in darkness, SR 23
 Saves: Fort +13, Ref +12, Will +11
-Abilities: Str 23, Dex 17, Con 19, Int 15, Wis 15, Cha
-17
-Skills: Balance +15, Concentration +21, Diplomacy
-+17, Escape Artist +15, Intimidate
-+15, Knowledge (any one) +19, Listen
-+18, Sense Motive +15, Search +15, Spot
-+18, Survival +2 (+4 following tracks),
-Use Rope +3 (+5 with bindings)
-Feats: Alertness, Improved Initiative, Power Attack,
-Psionic Endowment, Speed of
-Thought
-Environment: Temperate
-plains
-Organization: Solitary or
-pair
+Abilities: Str 23, Dex 17, Con 19, Int 15, Wis 15, Cha 17
+Skills: Balance +15, Concentration +21, Diplomacy +17, Escape Artist +15, Intimidate +15, Knowledge (any one) +19, Listen +18, Sense Motive +15, Search +15, Spot +18, Survival +2 (+4 following tracks), Use Rope +3 (+5 with bindings)
+Feats: Alertness, Improved Initiative, Power Attack, Psionic Endowment, Speed of Thought
 	CR:12
 Treasure: D o u b l e
 standard
-Alignment: Usually neutral
-evil
-	HITDICEADVANCEMENT:15-28 HD
-(Large); 29-
-42 HD (Huge)
+Alignment: Usually neutral evil
+	HITDICEADVANCEMENT:15-28 HD (Large); 29-42 HD (Huge)
 
 QUANTUM
 	SIZE:H
 	RACETYPE:Aberration
  (Extraplanar)
 	MONSTERCLASS:x:26d8+260 (377 hp)
-Initiative: +4
 	MOVE:Fly 40 ft. (8 squares) (good)
-Armor Class: 32 (-2 size, +4 Dex, +18 natural, +2
-deflection), touch 14, flat-footed 28
-Base Attack/Grapple: +19/+38
+	BONUS:COMBAT|AC|18 natural	BONUS:COMBAT|AC|+2 deflection
 Attack: Tentacle +29 melee (2d6+11)
-	NATURALATTACKS:Quantum attack +27/+27/+27/+27/+27
-melee (2d6+11)
+	NATURALATTACKS:Quantum attack +27/+27/+27/+27/+27 melee (2d6+11)
 FACE:15
 REACH:15
 
 Special Attacks: Disintegration, quantum attack
-Special Qualities: Damage reduction 15/adamantine,
-darkvision 60 ft., quantum form, quantum
-movement, unstable form
-Saves: Fort +18, Ref +14, Will +19
-Abilities: Str 33, Dex 18, Con 30, Int 11, Wis 14, Cha
-14
-Skills: Diplomacy +4, Listen +23, Search +18,
-Sense Motive +16, Spot +19, Survival +2
-(+4 following tracks)
-Feats: Alertness, Awesome Blow, Blind-Fight,
-Cleave, Improved Bull Rush, Iron Will,
-Lightning Reflexes, Power Attack,
-Weapon Focus (tentacle)
-Environment: Any
-Organization: -
+Special Qualities: Damage reduction 15/adamantine, darkvision 60 ft., quantum form, quantum movement, unstable form
+Abilities: Str 33, Dex 18, Con 30, Int 11, Wis 14, Cha 14
+Skills: Diplomacy +4, Listen +23, Search +18, Sense Motive +16, Spot +19, Survival +2 (+4 following tracks)
+Feats: Alertness, Awesome Blow, Blind-Fight, Cleave, Improved Bull Rush, Iron Will, Lightning Reflexes, Power Attack, Weapon Focus (tentacle)
 	CR:20
 Treasure: None
 	KIT:1|TN
@@ -3214,29 +2689,16 @@ Treasure: None
 RAGGOTH
 	SIZE:L
 	RACETYPE:Magical Beast
-
 	MONSTERCLASS:x:10d10+50 (105 hp)
-Initiative: +7
 	MOVE:40 ft. (8 squares)
-Armor Class: 22 (-1 size, +3 Dex, +10 natural), touch
-12, flat-footed 19
-Base Attack/Grapple: +10/+21
-Attack: Claw +16 melee (1d6+7)
-	NATURALATTACKS:4 claws +16 melee (1d6+7) and bite +11
-melee (1d8+3)
+	BONUS:COMBAT|AC|+10 natural
+	NATURALATTACKS:4 claws +16 melee (1d6+7) and bite +11 melee (1d8+3)
 Space/Reach: 10 ft./5 ft.
-Special Attacks: Improved grab, pounce, rake, tormenting
-howl
-Special Qualities: Damage reduction 10/magic, darkvision
-60 ft., low-light vision, scent, stability
-Saves: Fort +12, Ref +10, Will +4
+Special Attacks: Improved grab, pounce, rake, tormenting howl
+Special Qualities: Damage reduction 10/magic, darkvision 60 ft., low-light vision, scent, stability
 Abilities: Str 24, Dex 16, Con 21, Int 6, Wis 12, Cha 14
-Skills: Hide +7, Listen +7, Move Silently +10,
-Spot +7, Survival +8* (+12 tracking by scent)
-Feats: Alertness, Improved Initiative, Power
-Attack, Stealthy, TrackB
-Environment: Temperate forests
-Organization: Solitary or pair
+Skills: Hide +7, Listen +7, Move Silently +10, Spot +7, Survival +8* (+12 tracking by scent)
+Feats: Alertness, Improved Initiative, Power Attack, Stealthy, TrackB
 	CR:8
 Treasure: Standard
 Alignment: Often neutral evil
@@ -3245,72 +2707,37 @@ Alignment: Often neutral evil
 RAWBONES
 	SIZE:M
 	RACETYPE:Undead
-
 	MONSTERCLASS:x:14d12+28 (119 hp)
-Initiative: +2
 	MOVE:30 ft. (6 squares)
-Armor Class: 18 (+2 Dex, +6 natural), touch 12, flatfooted
-16
-Base Attack/Grapple: +7/+11
-Attack: Slam +12 melee (1d8+4) or entrails lash
-+9 ranged (1d4+4)
-	NATURALATTACKS:2 slams +12 melee (1d8+4) or entrails lash
-+9 ranged (1d4+4)
-FACE:5
-REACH:5
+	BONUS:COMBAT|AC|+6 natural
+	NATURALATTACKS:2 slams +12 melee (1d8+4) or entrails lash +9 ranged (1d4+4)
+	FACE:5
+	REACH:5
 
 Special Attacks: Nauseating aura, strangulation, vomit gore
-Special Qualities: Damage reduction 10/magic or silver,
-darkvision 60 ft., immunity to cold, +2
-turn resistance, undead traits
-Saves: Fort +6, Ref +8, Will +10
-Abilities: Str 19, Dex 14, Con -, Int 12, Wis 12, Cha
-14
-Skills: Balance +13, Climb +15, Escape Artist
-+13, Intimidate +15, Listen +14, Move Silently
-+15, Spot +14, Use Rope +2 (+4
-with bindings)
-Feats: Death's Blessing, Great Fortitude, Lightning
-Reflexes, Power Attack, Weapon
-Focus (slam)
-Environment: Any land
-Organization: Solitary or gang (2-4)
+Special Qualities: Damage reduction 10/magic or silver, darkvision 60 ft., immunity to cold, +2 turn resistance, undead traits
+Abilities: Str 19, Dex 14, Con -, Int 12, Wis 12, Cha 14
+Skills: Balance +13, Climb +15, Escape Artist +13, Intimidate +15, Listen +14, Move Silently +15, Spot +14, Use Rope +2 (+4 with bindings)
+Feats: Death's Blessing, Great Fortitude, Lightning Reflexes, Power Attack, Weapon Focus (slam)
 	CR:8
 Treasure: Standard
 Alignment: Always lawful evil
-	HITDICEADVANCEMENT:15-28 HD (Medium); 29-42
-HD (Large)
+	HITDICEADVANCEMENT:15-28 HD (Medium); 29-42 HD (Large)
 
 REIGON
 	SIZE:L
 	RACETYPE:Magical Beast
  (Psionic)
 	MONSTERCLASS:x:5d10+10 (37 hp)
-Initiative: +2
 	MOVE:30 ft. (6 squares), climb 30 ft.
-Armor Class: 15 (-1 size, +2 Dex, +4 natural), touch 11,
-flat-footed 13
-Base Attack/Grapple: +5/+14
-Attack: Claw +9 melee (1d6+5) or club +9 melee
-(1d6+5)
-	NATURALATTACKS:2 claws +9 melee (1d6+5) and bite +4
-melee (1d8+2) or club +9 melee (1d6+5)
-and bite +4 melee (1d8+2)
+	BONUS:COMBAT|AC|+4 natural
+	NATURALATTACKS:2 claws +9 melee (1d6+5) and bite +4 melee (1d8+2) or club +9 melee (1d6+5) and bite +4 melee (1d8+2)
 Space/Reach: 10 ft./10 ft.
 Special Attacks: Psi-like abilities
-Special Qualities: Darkvision 120 ft., power resistance 14,
-scent
-Saves: Fort +6, Ref +6, Will +2
-Abilities: Str 21, Dex 15, Con 14, Int 10, Wis 12, Cha
-10
-Skills: Climb +14, Concentration +7, Listen +7,
-Move Silently +4, Spot +7
+Special Qualities: Darkvision 120 ft., power resistance 14, scent
+Abilities: Str 21, Dex 15, Con 14, Int 10, Wis 12, Cha 10
+Skills: Climb +14, Concentration +7, Listen +7, Move Silently +4, Spot +7
 Feats: Alertness, Power Attack
-Environment: Temperate and cold forests
-Organization: Solitary, gang (2-5), band (6-9), or tribe
-(1 leader of 3rd-5th level, 3 wardens of
-1st-2nd level, 10-30 reigons plus 100%
-noncombatants)
 	CR:4
 Treasure: Standard
 	KIT:1|CE
