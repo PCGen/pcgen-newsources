@@ -69,31 +69,12 @@ Riverfolk		KEY:Riverfolk ~ Gillman		CATEGORY:Special Ability	TYPE:RacialTraits.S
 Slime Hunter	KEY:Slime Hunter ~ Gillman	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.GillmanRacialTrait.GillmanEnchantmentResistance		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Slime Hunter ~ Gillman],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GillmanEnchantmentResistance]		DESC:You gain a +2 racial bonus on saves against aboleth spells, spell-like abilities, and supernatural abilities.	COST:0	SOURCEPAGE:p.188
 Throwback		KEY:Throwback ~ Gillman		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.GillmanRacialTrait.GillmanAmphibious.GillmanSwimSpeed.GillmanAquatic.GillmanWaterDependent		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Throwback ~ Gillman],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GillmanAquatic.GillmanSwimSpeed.GillmanAmphibious.GillmanWaterDependent]		DESC:You gain the human subtype.	COST:0	SOURCEPAGE:p.188	TEMPLATE:Human
 
-
-###Block: Default Grippli Abilities (POOL=4)
-Darkvision	KEY:Darkvision ~ Grippli					CATEGORY:Special Ability								TYPE:GrippliRacialTrait.GrippliRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliDarkvision]																							SOURCEPAGE:p.190
-Camouflage			KEY:Camouflage ~ Grippli			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GrippliRacialTrait.GrippliRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Camouflage ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliCamouflage]		DESC:Gripplis receive a +4 bonus to Stealth checks in marshes and forested areas.		SOURCEPAGE:p.190
-Swamp Stride		KEY:Swamp Stride ~ Grippli			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GrippliRacialTrait.GrippliRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Swamp Stride ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliSwampStride]	DESC:Gripplis can move through non-magical difficult terrain at normal speed in swamps.		SOURCEPAGE:p.190
-Weapon Familiarity	KEY:Weapon Familiarity ~ Grippli		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GrippliRacialTrait.GrippliRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliWeaponFamiliarity]		DESC:Gripplis are proficient with nets.		SOURCEPAGE:p.190	AUTO:WEAPONPROF|Net
-
-###Block: Set up Grippli default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Grippli Racial Trait Default|PRERACE:1,Grippli
-
-#Grippli Racial Trait Default
-Grippli Racial Trait Default					CATEGORY:Internal
-CATEGORY=Internal|Grippli Racial Trait Default.MOD					ABILITY:Grippli Racial Trait|AUTOMATIC|Darkvision ~ Grippli|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliDarkvision
-CATEGORY=Internal|Grippli Racial Trait Default.MOD					ABILITY:Grippli Racial Trait|AUTOMATIC|Swamp Stride ~ Grippli|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliSwampStride
-CATEGORY=Internal|Grippli Racial Trait Default.MOD					ABILITY:Grippli Racial Trait|AUTOMATIC|Camouflage ~ Grippli|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliCamouflage
-CATEGORY=Internal|Grippli Racial Trait Default.MOD					ABILITY:Grippli Racial Trait|AUTOMATIC|Weapon Familiarity ~ Grippli|!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliWeaponFamiliarity
-
 ###Block: Alternate Grippli Abilities
 # Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																										Define										Description																														Template		Bonus to skill							Cost		Source Page
 Glider		KEY:Glider ~ Grippli		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GrippliRacialTrait.GrippliSwampStride	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Glider ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliSwampStride]	DESC:Can treat falling distance as half, can steer while falling.		COST:0	SOURCEPAGE:p.190
 Jumper	KEY:Jumper ~ Grippli			CATEGORY:Special Ability								TYPE:GrippliRacialTrait.GrippliCamouflage								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Jumper ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliCamouflage]																																	COST:0	SOURCEPAGE:p.190
 Princely		KEY:Princely ~ Grippli		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.GrippliRacialTrait.GrippliSwampStride.GrippliWeaponFamiliarity	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Princely ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliSwampStride.GrippliWeaponFamiliarity]	DESC:You gain proficiency with rapiers and +2 racial bonus on Diplomacy and Intimidate.	COST:0	SOURCEPAGE:p.190	BONUS:SKILL|Diplomacy,Intimidate|2|TYPE=Racial	AUTO:WEAPONPROF|Rapier
 Toxic Skin		KEY:Toxic Skin ~ Grippli	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.GrippliRacialTrait.GrippliSwampStride.GrippliCamouflage		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Toxic Skin ~ Grippli],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GrippliSwampStride.GrippliCamouflage]		DESC:You can create a poison (Fort DC %1, 1/round for 6 rounds, 1d2 Dex damage, cure 1 save).|GrippliPoisonDC	COST:0	SOURCEPAGE:p.190	DEFINE:GrippliPoisonDC|10+TL/2+CON	BONUS:VAR|GrippliPoisonDC|2|PREFEAT:1,Ability Focus (Toxic Skin)
-
 
 ###Block: Default Kitsune Abilities (POOL=5)
 Low-Light Vision	KEY:Low-Light Vision ~ Kitsune			CATEGORY:Special Ability								TYPE:KitsuneRacialTrait.KitsuneRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Low-Light Vision ~ Kitsune],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KitsuneLowLightVision]																							SOURCEPAGE:p.192

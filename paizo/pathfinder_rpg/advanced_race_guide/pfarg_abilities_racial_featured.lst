@@ -45,40 +45,11 @@ Curiosity			KEY:Curiosity ~ Catfolk	CATEGORY:Special Ability															TYPE:
 Nimble Faller	KEY:Nimble Faller ~ Catfolk	CATEGORY:Special Ability															TYPE:CatfolkRacialTrait.CatfolkSprinter									PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Nimble Faller ~ Catfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CatfolkSprinter]																									COST:0	SOURCEPAGE:p.91
 Scent							KEY:Scent ~ Catfolk	CATEGORY:Special Ability																TYPE:CatfolkRacialTrait.CatfolkLowLightVision								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Scent ~ Catfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CatfolkLowLightVision]																									COST:0	SOURCEPAGE:p.91
 
-
-###Block: Default Dhampir Abilities (POOL=7)
-# Ability Name														Unique Key						Category of Ability		Type															Multiple Requirements																								Define					Innate Spells											Description															Bonus to skill						Source Page
-Low-Light Vision			KEY:Low-Light Vision ~ Dhampir	CATEGORY:Special Ability																			TYPE:DhampirRacialTrait.DhampirRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Low-Light Vision ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirLowLightVision]																																														SOURCEPAGE:p.97
-Darkvision				KEY:Darkvision ~ Dhampir	CATEGORY:Special Ability																				TYPE:DhampirRacialTrait.DhampirRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirDarkvision]																																																SOURCEPAGE:p.97
-Manipulative														KEY:Manipulative ~ Dhampir			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DhampirRacialTrait.DhampirRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Manipulative ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirManipulative]																							DESC:Dhampirs receive a +2 racial bonus on Bluff and Perception checks.					BONUS:SKILL|Bluff,Perception|2|TYPE=Racial	SOURCEPAGE:p.97
-Undead Resistance			KEY:Undead Resistance ~ Dhampir	CATEGORY:Special Ability																			TYPE:DhampirRacialTrait.DhampirRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Undead Resistance ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirUndeadResistance]																																														SOURCEPAGE:p.97
-Light Sensitivity			KEY:Light Sensitivity ~ Dhampir	CATEGORY:Special Ability																			TYPE:DhampirRacialTrait.DhampirRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Light Sensitivity ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirLightSensitivity]																																														SOURCEPAGE:p.97
-Negative Energy Affinity	KEY:Negative Energy Affinity ~ Dhampir	CATEGORY:Special Ability																		TYPE:DhampirRacialTrait.DhampirRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Negative Energy Affinity ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirNegativeEnergyAffinity]																																												SOURCEPAGE:p.97
-Spell-Like Ability													KEY:Spell-Like Ability ~ Dhampir		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.DhampirRacialTrait.DhampirRacialDefault		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirSLA]					DEFINE:DhampirDetectUndeadTimes|1	SPELLS:Innate|TIMES=DhampirDetectUndeadTimes|CASTERLEVEL=TL|Detect Undead	DESC:Dhampirs can use detect undead %1/day as a spell-like ability.|DhampirDetectUndeadTimes									SOURCEPAGE:p.97
-Resist Level Drain			KEY:Resist Level Drain ~ Dhampir	CATEGORY:Special Ability																			TYPE:DhampirRacialTrait.DhampirRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Resist Level-Drain ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirResistLevelDrain]																																														SOURCEPAGE:p.97
-
-###Block: Set up Dhampir default abilities
-# Ability Name							Category of Ability	Ability																						Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Dhampir Racial Trait Default|PRERACE:1,Dhampir
-
-#Dhampir Racial Trait Default
-Dhampir Racial Trait Default					CATEGORY:Internal
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Low-Light Vision ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirLowLightVision
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Darkvision ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirDarkvision
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Manipulative ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirManipulative
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Undead Resistance ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirUndeadResistance
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Light Sensitivity ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirLightSensitivity
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Spell-Like Ability ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirSLA
-CATEGORY=Internal|Dhampir Racial Trait Default.MOD					ABILITY:Dhampir Racial Trait|AUTOMATIC|Resist Level Drain ~ Dhampir|!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirResistLevelDrain
-
 ###Block: Alternate Dhampir Abilities
 # Ability Name	Unique Key					Category of Ability		Type																	Multiple Requirements																							Define				Description																																																Cost		Source Page
 Dayborn		KEY:Dayborn ~ Dhampir			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DhampirRacialTrait.DhampirLightSensitivity.DhampirSLA	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Dayborn ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirLightSensitivity,TYPE.DhampirSLA]						DESC:You are unhindered by daylight.																																											COST:0	SOURCEPAGE:p.97
 Fangs			KEY:Fangs ~ Dhampir			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialAttack.Extraordinary.DhampirRacialTrait.DhampirSLA					PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fangs ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirSLA]											DESC:Whenever you make a grapple check to damage an opponent, you may bite for 1d3 points of damage as if using a natural bite attack.  As a standard action, you can bite a creature that is bound, helpless, paralyzed, or similarly unable to defend itself.							COST:0	SOURCEPAGE:p.97
 Vampiric Empathy	KEY:Vampiric Empathy ~ Dhampir	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.DhampirRacialTrait.DhampirManipulative			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Vampiric Empathy ~ Dhampir],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DhampirManipulative]			DEFINE:VampiricEmpathyCL|TL/2	DESC:You can communicate with bats, rats, and wolves as if under a speak with animals spell (caster level %1).  You gain a +2 racial bonus on Diplomacy checks dealing with these animals.  When you begin the exchange, animals begin with a starting attitude of indifferent.|VampiricEmpathyCL	COST:0	SOURCEPAGE:p.97
-
-
-
 
 ###Block: Alternate Drow Abilities
 # Ability Name												Unique Key					Category of Ability		Type																Multiple Requirements																								Description																						Stackable?	Multiple?	Choose				Bonus to skill				Cost		Source Page
@@ -89,31 +60,6 @@ Darklands Stalker	KEY:Darklands Stalker ~ Drow	CATEGORY:Special Ability									
 Seducer				KEY:Seducer ~ Drow	CATEGORY:Special Ability																		TYPE:DrowRacialTrait.DrowImmunities											PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Seducer ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowImmunities]																																													COST:0	SOURCEPAGE:p.103
 Surface Infiltrator	KEY:Surface Infiltrator ~ Drow	CATEGORY:Special Ability																TYPE:DrowRacialTrait.DrowDarkvision.DrowLightBlindness							PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Surface Infiltrator ~ Drow],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DrowDarkvision,TYPE.DrowLightBlindness]																																							COST:0	SOURCEPAGE:p.103
 
-
-###Block: Default Fetchling Abilities (POOL=7)
-# Ability Name												Unique Key						Category of Ability		Type																Multiple Requirements																							Define				Innate Spells										Description																	Bonus to skill							Source Page
-Darkvision		KEY:Darkvision ~ Fetchling	CATEGORY:Special Ability																		TYPE:FetchlingRacialTrait.FetchlingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingDarkvision]																																															SOURCEPAGE:p.109
-Low-Light Vision	KEY:Low-Light Vision ~ Fetchling	CATEGORY:Special Ability																	TYPE:FetchlingRacialTrait.FetchlingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Low-Light Vision ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingLowLightVision]																																														SOURCEPAGE:p.109
-Skilled													KEY:Skilled ~ Fetchling				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.FetchlingRacialTrait.FetchlingRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Skilled ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSkilled]																					DESC:Fetchlings gain a +2 racial bonus on Knowledge (planes) and Stealth checks.					BONUS:SKILL|Knowledge (Planes),Stealth|2|TYPE=Racial	SOURCEPAGE:p.109
-Shadow Blending		KEY:Shadow Blending ~ Fetchling	CATEGORY:Special Ability																	TYPE:FetchlingRacialTrait.FetchlingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Shadow Blending ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowBlending]																																														SOURCEPAGE:p.109
-Shadowy Resistance	KEY:Shadowy Resistance ~ Fetchling	CATEGORY:Special Ability																	TYPE:FetchlingRacialTrait.FetchlingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Shadowy Resistance ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowyResistance]																																													SOURCEPAGE:p.109
-Spell-Like Abilities											KEY:Spell-Like Abilities ~ Fetchling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.FetchlingRacialTrait.FetchlingRacialDefault		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSLAs]			DEFINE:FetchlingSLATimes|1	SPELLS:Innate|TIMES=FetchlingSLATimes|CASTERLEVEL=TL|Disguise Self	DESC:Fetchlings can use disguise self %1/day to assume the form of any humanoid creature.|FetchlingSLATimes										SOURCEPAGE:p.103
-Shadow Travel		KEY:Shadow Travel ~ Fetchling	CATEGORY:Special Ability																	TYPE:FetchlingRacialTrait.FetchlingRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Shadow Travel ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowTravel]																																															SOURCEPAGE:p.109
-
-###Block: Set up Fetchling default abilities
-# Ability Name							Category of Ability	Ability																							Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Fetchling Racial Trait Default|PRERACE:1,Fetchling
-
-#Fetchling Racial Trait Default
-Fetchling Racial Trait Default				CATEGORY:Internal
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Darkvision ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingDarkvision
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Low-Light Vision ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingLowLightVision
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Skilled ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSkilled
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Shadow Blending ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowBlending
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Shadowy Resistance ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowyResistance
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Spell-Like Abilities ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSLAs
-CATEGORY=Internal|Fetchling Racial Trait Default.MOD					ABILITY:Fetchling Racial Trait|AUTOMATIC|Shadow Travel ~ Fetchling|!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowTravel
-
 ###Block: Alternate Fetchling Abilities
 # Ability Name										Unique Key					Category of Ability		Type															Multiple Requirements																					Define				Innate Spells																				Description																												Bonus to skill															Cost		Source Page
 Emissary		KEY:Emissary ~ Fetchling	CATEGORY:Special Ability															TYPE:FetchlingRacialTrait.FetchlingSLAs									PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Emissary ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingShadowBlending]																																																																										COST:0	SOURCEPAGE:p.108
@@ -121,9 +67,6 @@ Gloom Shimmer										KEY:Gloom Shimmer ~ Fetchling		CATEGORY:Special Ability	T
 Shadow Magic	KEY:Shadow Magic ~ Fetchling	CATEGORY:Special Ability														TYPE:FetchlingRacialTrait.FetchlingSkilled								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Shadow Magic ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSkilled]																																																																											COST:0	SOURCEPAGE:p.109
 Subtle Manipulator									KEY:Subtle Manipulator ~ Fetchling	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.SpellLike.FetchlingRacialTrait.FetchlingSLAs			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Subtle Manipulator ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSLAs]	DEFINE:FetchlingSLATimes|1	SPELLS:Innate|TIMES=FetchlingSLATimes|CASTERLEVEL=TL|Memory Lapse												DESC:Fetchlings can use memory lapse %1/day.|FetchlingSLATimes																																				COST:0	SOURCEPAGE:p.109
 World Walker										KEY:World Walker ~ Fetchling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.FetchlingRacialTrait.FetchlingSkilled	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,World Walker ~ Fetchling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.FetchlingSkilled]																													DESC:You gain a +2 racial bonus on Stealth checks, and +1 on Knowledge (Nature) and Knowledge (Local) checks.											BONUS:SKILL|Stealth|2|TYPE=Racial	BONUS:SKILL|Knowledge (Local),Knowledge(Nature)|1|TYPE=Racial	COST:0	SOURCEPAGE:p.109
-
-
-
 
 ###Block: Alternate Goblin Abilities
 # Ability Name		Unique Key					Output Name					Category of Ability		Type														Multiple Requirements																					Description																					Move			Automatically Gained Weapon Prof.		Bonus to skill						Change Weapon Prof. Category		Cost		Source Page		Natural Attacks
@@ -137,9 +80,6 @@ Tree Runner			KEY:Tree Runner ~ Goblin								CATEGORY:Special Ability	TYPE:Raci
 # COMMENT: No weapons of type Goblin throws an error.  Make "phantom" weapon with Goblin type?  Make dogslicer and horsechopper Goblin type?
 Weapon Familiarity	KEY:Weapon Familiarity ~ Goblin							CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.GoblinRacialTrait.GoblinSkilled	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Goblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.GoblinSkilled]		DESC:You are proficient with the dogslicer and horsechopper, and treat any weapon with the word goblin in it as a martial weapon.				AUTO:WEAPONPROF|Dogslicer|Horsechopper									CHANGEPROF:TYPE.Goblin=Martial	COST:0	SOURCEPAGE:p.115
 
-
-
-
 ###Block: Alternate Hobgoblin Abilities
 # Ability Name										Unique Key					Category of Ability		Type															Multiple Requirements																					Description																					Stackable?	Multiple?	Choose						Automatically Gained Weapon Prof.	Combat bonus				Add to base move		Bonus to skill									Modify VAR							Cost		Source Page
 Bandy-Legged										KEY:Bandy-Legged ~ Hobgoblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.HobgoblinRacialTrait																												DESC:Gain +2 racial bonus on Climb and Ride, and CMD against bull rush or trip while on solid ground. Lose 10 ft. of base movement.																								BONUS:MOVEADD|Walk|-10	BONUS:SKILL|Climb,Ride|2|TYPE=Racial					BONUS:VAR|CMD_BullRust,CMD_Trip|2|TYPE=Racial	COST:0	SOURCEPAGE:p.120
@@ -151,26 +91,6 @@ Pit Boss											KEY:Pit Boss ~ Hobgoblin		CATEGORY:Special Ability	TYPE:Racia
 Scarred											KEY:Scarred ~ Hobgoblin			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.HobgoblinRacialTrait.HobgoblinDarkvision	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Scarred ~ Hobgoblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinDarkvision]		DESC:You gain a +1 natural armor bonus.																																	BONUS:COMBAT|AC|1|TYPE=NaturalArmor																								COST:0	SOURCEPAGE:p.121
 Slave Hunter										KEY:Slave Hunter ~ Hobgoblin		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.HobgoblinRacialTrait.HobgoblinSneaky		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Slave Hunter ~ Hobgoblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinSneaky]		DESC:You gain a +2 racial bonus on Survival checks and +2 racial bonus on Fortitude saves against disease.																																BONUS:SKILL|Survival|2|TYPE=Racial														COST:0	SOURCEPAGE:p.121
 Unfit												KEY:Unfit ~ Hobgoblin			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.HobgoblinRacialTrait.HobgoblinSneaky		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Unfit ~ Hobgoblin],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HobgoblinSneaky]			DESC:You gain a +1 racial bonus on Bluff and Diplomacy checks and proficiency in a single martial weapon.					STACK:NO	MULT:YES	CHOOSE:WEAPONPROFICIENCY|TYPE=Martial	AUTO:WEAPONPROF|%LIST													BONUS:SKILL|Bluff,Diplomacy|1|TYPE=Racial													COST:0	SOURCEPAGE:p.121
-
-
-###Block: Default Ifrit Abilities (POOL=4)
-# Ability Name											Unique Key					Category of Ability		Type														Multiple Requirements																					Define				Innate Spells									Description																																							Ability								Source Page
-Darkvision	KEY:Darkvision ~ Ifrit	CATEGORY:Special Ability																TYPE:IfritRacialTrait.IfritRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritDarkvision]																																																																				SOURCEPAGE:p.127
-Spell-Like Ability										KEY:Spell-Like Ability ~ Ifrit	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.IfritRacialTrait.IfritRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritSLA]			DEFINE:IfritSLATimes|1		SPELLS:Innate|TIMES=IfritSLATimes|CASTERLEVEL=TL|Burning Hands	DESC:Burning Hands %1/day.|IfritSLATimes																																											SOURCEPAGE:p.127
-Energy Resistance											KEY:Energy Resistance ~ Ifrit		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.IfritRacialTrait.IfritRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Energy Resistance ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritEnergyResistance]	DEFINE:FireResistanceBonus|5												DESC:Ifrits have fire resistance 5.																																			ABILITY:Special Ability|AUTOMATIC|Resistance to Fire	SOURCEPAGE:p.127
-# COMMENT: Tricky to implement.
-Fire Affinity											KEY:Fire Affinity ~ Ifrit		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.IfritRacialTrait.IfritRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fire Affinity ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritFireAffinity]																		DESC:Ifrit sorcerers with the elemental (fire) bloodline treat their Charisma score as 2 higher for all sorcerer spells and class abilities.  Ifrit spellcasters with the Fire domain use their domain powers and spells at +1 caster level.										SOURCEPAGE:p.127
-
-###Block: Set up Ifrit default abilities
-# Ability Name							Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Ifrit Racial Trait Default|PRERACE:1,Ifrit
-
-#Ifrit Racial Trait Default
-Ifrit Racial Trait Default					CATEGORY:Internal
-CATEGORY=Internal|Ifrit Racial Trait Default.MOD					ABILITY:Ifrit Racial Trait|AUTOMATIC|Darkvision ~ Ifrit|!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritDarkvision
-CATEGORY=Internal|Ifrit Racial Trait Default.MOD					ABILITY:Ifrit Racial Trait|AUTOMATIC|Spell-Like Ability ~ Ifrit|!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritSLA
-CATEGORY=Internal|Ifrit Racial Trait Default.MOD					ABILITY:Ifrit Racial Trait|AUTOMATIC|Energy Resistance ~ Ifrit|!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritEnergyResistance
-CATEGORY=Internal|Ifrit Racial Trait Default.MOD					ABILITY:Ifrit Racial Trait|AUTOMATIC|Fire Affinity ~ Ifrit|!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritFireAffinity
 
 ###Block: Alternate Ifrit Abilities
 # COMMENT: Create specialty skill?
@@ -184,8 +104,6 @@ Forge-Hardened												KEY:Forge-Hardened ~ Ifrit	CATEGORY:Special Ability	TY
 Hypnotic				KEY:Hypnotic ~ Ifrit	CATEGORY:Special Ability																	TYPE:IfritRacialTrait.IfritFireAffinity									PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Hypnotic ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritFireAffinity]																																																																						COST:0	SOURCEPAGE:p.127
 Wildfire Heart												KEY:Wildfire Heart ~ Ifrit	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.IfritRacialTrait.IfritEnergyResistance	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Wildfire Heart ~ Ifrit],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.IfritEnergyResistance]																		DESC:Gain a +4 racial bonus on initiative.																										BONUS:COMBAT|INITIATIVE|4|TYPE=Racial											COST:0	SOURCEPAGE:p.127
 
-
-
 ###Block: Alternate Kobold Abilities
 # Ability Name											Unique Key					Category of Ability		Type													Multiple Requirements																			Define					Description																Ability									Bonus to skill							Class Skill				Cost		Source Page
 Beast Bond												KEY:Beast Bond ~ Kobold			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.KoboldRacialTrait.KoboldCrafty	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Beast Bond ~ Kobold],[!PREABILITY:1,CATEGORY=Special Abiltiy,TYPE.KoboldCrafty]							DESC:Gain a +2 racial bonus on Handle Animal and Ride; Handle Animal and Ride are class skills.												BONUS:SKILL|Handle Animal,Ride|2|TYPE=Racial		CSKILL:Handle Animal|Ride	COST:0	SOURCEPAGE:p.132
@@ -197,35 +115,12 @@ Dragon-Scaled (White)										KEY:Dragon-Scaled White ~ Kobold	CATEGORY:Special
 Gliding Wings	KEY:Gliding Wings ~ Kobold	CATEGORY:Special Ability																TYPE:KoboldRacialTrait.KoboldCrafty								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Gliding Wings ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldCrafty]																																																COST:0	SOURCEPAGE:p.133
 Jester												KEY:Jester ~ Kobold			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.KoboldRacialTrait.KoboldCrafty	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Jester ~ Kobold],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.KoboldCrafty]								DESC:Gain a +2 racial bonus on Diplomacy and Perform checks; Diplomacy and Perform are class skills.											BONUS:SKILL|Diplomacy,TYPE.Perform|2|TYPE=Racial	CSKILL:Diplomacy|TYPE.Perform	COST:0	SOURCEPAGE:p.133
 
-
-
-
 ###Block: Alternate Orc Abilities
 # Ability Name	Unique Key			Category of Ability		Type																		Multiple Requirements																							Description																Combat bonus			Class Skill		Cost		Source Page
 Dayrunner		KEY:Dayrunner ~ Orc	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OrcRacialTrait.OrcLightSensitivity					PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Dayrunner ~ Orc],[!PREABILITY:1,CATEGORY=Special Abiltiy,TYPE.OrcLightSensitivity]					DESC:Take a -2 penalty on all ranged attack rolls.									BONUS:COMBAT|TOHIT.RANGED|-2				COST:0	SOURCEPAGE:p.138
 Feral			KEY:Feral ~ Orc		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OrcRacialTrait.OrcWeaponFamiliarity.OrcAutomaticLanguages	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Feral ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcWeaponFamiliarity,TYPE.OrcAutomaticLanguages]	DESC:Get Survival as a class skill; +1 to melee weapon attack and damage when at negative hit points.						CSKILL:Survival	COST:0	SOURCEPAGE:p.138
 Smeller		KEY:Smeller ~ Orc		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OrcRacialTrait.OrcWeaponFamiliarity.OrcFerocity			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Smeller ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcWeaponFamiliarity,TYPE.OrcFerocity]		DESC:You have a half-range version of the scent ability.																COST:0	SOURCEPAGE:p.139
 Squalid		KEY:Squalid ~ Orc		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OrcRacialTrait.OrcFerocity						PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Squalid ~ Orc],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OrcFerocity]						DESC:You get a +2 racial bonus on saves against nausea, sickened, and disease.												COST:0	SOURCEPAGE:p.139
-
-
-###Block: Default Oread Abilities (POOL=4)
-# Ability Name											Unique Key					Category of Ability		Type														Multiple Requirements																					Define				Innate Spells									Description																																							Ability								Source Page
-Darkvision	KEY:Darkvision ~ Oread	CATEGORY:Special Ability																	TYPE:OreadRacialTrait.OreadRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadDarkvision]																																																																				SOURCEPAGE:p.145
-Spell-Like Ability										KEY:Spell-Like Ability ~ Oread	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OreadRacialTrait.OreadRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadSLA]			DEFINE:OreadSLATimes|1		SPELLS:Innate|TIMES=OreadSLATimes|CASTERLEVEL=TL|Magic Stone	DESC:Magic Stone %1/day.|OreadSLATimes																																											SOURCEPAGE:p.145
-Energy Resistance											KEY:Energy Resistance ~ Oread		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OreadRacialTrait.OreadRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Energy Resistance ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadEnergyResistance]	DEFINE:AcidResistanceBonus|5												DESC:Oreads have acid resistance 5.																																			ABILITY:Special Ability|AUTOMATIC|Resistance to Acid	SOURCEPAGE:p.145
-# COMMENT: Tricky to implement.
-Earth Affinity											KEY:Earth Affinity ~ Oread		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.OreadRacialTrait.OreadRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Earth Affinity ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadEarthAffinity]																		DESC:Oread sorcerers with the elemental (earth) bloodline treat their Charisma score as 2 higher for all sorcerer spells and class abilities.  Oread spellcasters with the Earth domain use their domain powers and spells at +1 caster level.										SOURCEPAGE:p.145
-
-###Block: Set up Oread default abilities
-# Ability Name							Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Oread Racial Trait Default|PRERACE:1,Oread
-
-#Oread Racial Trait Default
-Oread Racial Trait Default					CATEGORY:Internal
-CATEGORY=Internal|Oread Racial Trait Default.MOD					ABILITY:Oread Racial Trait|AUTOMATIC|Darkvision ~ Oread|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadDarkvision
-CATEGORY=Internal|Oread Racial Trait Default.MOD					ABILITY:Oread Racial Trait|AUTOMATIC|Spell-Like Ability ~ Oread|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadSLA
-CATEGORY=Internal|Oread Racial Trait Default.MOD					ABILITY:Oread Racial Trait|AUTOMATIC|Energy Resistance ~ Oread|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadEnergyResistance
-CATEGORY=Internal|Oread Racial Trait Default.MOD					ABILITY:Oread Racial Trait|AUTOMATIC|Earth Affinity ~ Oread|!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadEarthAffinity
 
 ###Block: Alternate Oread Abilities
 # COMMENT: Checklist?
@@ -240,7 +135,6 @@ Granite Skin												KEY:Granite Skin ~ Oread		CATEGORY:Special Ability	TYPE:
 Mountain-Born		KEY:Mountain-Born ~ Oread	CATEGORY:Special Ability																	TYPE:OreadRacialTrait.OreadSLA										PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Mountain-Born ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadSLA]																																																									COST:0	SOURCEPAGE:p.144
 Stone in the Blood	KEY:Stone in the Blood ~ Oread	CATEGORY:Special Ability																TYPE:OreadRacialTrait.OreadEarthAffinity									PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Stone in the Blood ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadEarthAffinity]																																																							COST:0	SOURCEPAGE:p.145
 Treacherous Earth	KEY:Treacherous Earth ~ Oread	CATEGORY:Special Ability																TYPE:OreadRacialTrait.OreadSLA										PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Treacherous Earth ~ Oread],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.OreadSLA]																																																									COST:0	SOURCEPAGE:p.145
-
 
 ###Block: Default Ratfolk Abilities (POOL=4)
 # Ability Name											Unique Key				Category of Ability		Type															Multiple Requirements																					Description																Bonus to skill										Source Page
@@ -268,26 +162,6 @@ Scent													KEY:Scent ~ Ratfolk		CATEGORY:Special Ability	TYPE:RacialTrait
 Skulk													KEY:Skulk ~ Ratfolk		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.RatfolkRacialTrait.RatfolkTinker	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Skulk ~ Ratfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.RatfolkTinker]			DESC:Gain a +2 racial bonus on Stealth; take only a -5 penalty on Stealth checks to hide from Bluff-distracted creatures.	BONUS:SKILL|Stealth|2|TYPE=Racial	COST:0	SOURCEPAGE:p.151
 Unnatural			KEY:Unnatural ~ Ratfolk	CATEGORY:Special Ability															TYPE:RatfolkRacialTrait.RatfolkRodentEmpathy							PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Unnatural ~ Ratfolk],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.RatfolkRodentEmpathy]																												COST:0	SOURCEPAGE:p.150
 
-
-###Block: Default Sylph Abilities (POOL=4)
-# Ability Name											Unique Key					Category of Ability		Type														Multiple Requirements																					Define					Innate Spells									Description																																							Ability									Source Page
-Darkvision	KEY:Darkvision ~ Sylph	CATEGORY:Special Ability																	TYPE:SylphRacialTrait.SylphRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Sylph],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphDarkvision]																																																																						SOURCEPAGE:p.157
-Spell-Like Ability										KEY:Spell-Like Ability ~ Sylph	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SylphRacialTrait.SylphRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Sylph],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphSLA]			DEFINE:SylphSLATimes|1			SPELLS:Innate|TIMES=SylphSLATimes|CASTERLEVEL=TL|Feather Fall	DESC:Feather Fall %1/day.|SylphSLATimes																																												SOURCEPAGE:p.157
-Energy Resistance											KEY:Energy Resistance ~ Sylph		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SylphRacialTrait.SylphRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Energy Resistance ~ Sylph],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphEnergyResistance]	DEFINE:ElectricityResistanceBonus|5												DESC:Sylphs have electricity resistance 5.																																	ABILITY:Special Ability|AUTOMATIC|Resistance to Electricity	SOURCEPAGE:p.157
-# COMMENT: Tricky to implement.
-Air Affinity											KEY:Air Affinity ~ Sylph		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SylphRacialTrait.SylphRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Air Affinity ~ Sylph],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphAirAffinity]																			DESC:Sylph sorcerers with the elemental (air) bloodline treat their Charisma score as 2 higher for all sorcerer spells and class abilities.  Sylph spellcasters with the Air domain use their domain powers and spells at +1 caster level.											SOURCEPAGE:p.157
-
-###Block: Set up Sylph default abilities
-# Ability Name							Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Sylph Racial Trait Default|PRERACE:1,Sylph
-
-#Sylph Racial Trait Default
-Sylph Racial Trait Default					CATEGORY:Internal
-CATEGORY=Internal|Sylph Racial Trait Default.MOD					ABILITY:Sylph Racial Trait|AUTOMATIC|Darkvision ~ Sylph|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphDarkvision
-CATEGORY=Internal|Sylph Racial Trait Default.MOD					ABILITY:Sylph Racial Trait|AUTOMATIC|Spell-Like Ability ~ Sylph|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphSLA
-CATEGORY=Internal|Sylph Racial Trait Default.MOD					ABILITY:Sylph Racial Trait|AUTOMATIC|Energy Resistance ~ Sylph|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphEnergyResistance
-CATEGORY=Internal|Sylph Racial Trait Default.MOD					ABILITY:Sylph Racial Trait|AUTOMATIC|Air Affinity ~ Sylph|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphAirAffinity
-
 ###Block: Alternate Sylph Abilities
 # Ability Name												Unique Key					Category of Ability		Type															Multiple Requirements																						Define				Innate Spells										Description																			Ability								Add to base move		Bonus to skill				Cost		Source Page
 Air Insight													KEY:Air Insight ~ Sylph			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SylphRacialTrait.SylphAirAffinity		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Air Insight ~ Sylph],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphAirAffinity]																				DESC:Summon monster and summon nature's ally spells you cast to summon air subtype creatures last 2 rounds longer.																				COST:0	SOURCEPAGE:p.156
@@ -300,9 +174,6 @@ Thunderous Resilience											KEY:Thunderous Resilience ~ Sylph	CATEGORY:Speci
 Weather Savvy		KEY:Weather Savvy ~ Sylph	CATEGORY:Special Ability																	TYPE:SylphRacialTrait.SylphSLA										PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Weather Savvy ~ Sylph],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SylphSLA]																																																												COST:0	SOURCEPAGE:p.157
 Whispering Wind												KEY:Whispering Wind ~ Sylph		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.SylphRacialTrait.SylphSLA			PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Whispering Wind ~ Sylph],[!PREABILITY:1,CATEGORY=Special Abiltiy,TYPE.SylphSLA]																					DESC:Gain +4 racial bonus on Stealth.																											BONUS:SKILL|Stealth|4|TYPE=Racial	COST:0	SOURCEPAGE:p.157
 
-
-
-
 ###Block: Alternate Tengu Abilities
 # Ability Name											Unique Key					Category of Ability		Type														Multiple Requirements																						Serves As							Define							Description																						Choose						Selections						Automatically Gained Weapon Prof.	Cost		Source Page		Natural Attacks
 Carrion Sense	KEY:Carrion Sense ~ Tengu	CATEGORY:Special Ability																TYPE:TenguRacialTrait.TenguGiftedLinguist								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Carrion Sense ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguGiftedLinguist]																																																														COST:0	SOURCEPAGE:p.163
@@ -310,8 +181,6 @@ Claw Attack												KEY:Claw Attack ~ Tengu			CATEGORY:Special Ability	TYPE:R
 # COMMENT: Not yet implemented.
 Exotic Weapon Training										KEY:Exotic Weapon Training ~ Tengu	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TenguRacialTrait.TenguSwordtrained	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Exotic Weapon Training ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguSwordtrained]									DEFINE:ExoticWeaponProficiencyAmount|3+INT	DESC:Gain proficiency in %1 Eastern weapons.|ExoticWeaponProficiencyAmount										MULT:YES	CHOOSE:WEAPONPROFICIENCY|TYPE=Eastern	SELECT:ExoticWeaponProficiencyAmount	AUTO:WEAPONPROF|%LIST			COST:0	SOURCEPAGE:p.163
 Glide													KEY:Glide ~ Tengu				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TenguRacialTrait.TenguGiftedLinguist	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Glide ~ Tengu],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TenguGiftedLinguist]																				DESC:Make DC 15 Fly check to fall safely any distance; make additional DC 15 Fly check to move 5 ft. laterally for every 20 ft. fallen.																					COST:0	SOURCEPAGE:p.163
-
-
 
 ###Block: Alternate Tiefling Abilities
 # Ability Name											Unique Key					Category of Ability		Type																Multiple Requirements																										Define					Description												Ability									Combat bonus				Cost		Source Page		Natural Attacks
@@ -325,28 +194,6 @@ Scaled Skin (Electricity)									KEY:Scaled Skin E ~ Tiefling		CATEGORY:Special
 Scaled Skin (Fire)										KEY:Scaled Skin F ~ Tiefling		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.TieflingRacialTrait.TieflingFiendishResistance	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Scaled Skin ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishResistance]					DEFINE:FireResistanceBonus|5		DESC:You gain fire resistance 5 and a +1 natural armor bonus to AC.		ABILITY:Special Ability|AUTOMATIC|Resistance to Fire		BONUS:COMBAT|AC|1|TYPE=NaturalArmor	COST:0	SOURCEPAGE:p.169
 Soul Seer			KEY:Soul Seer ~ Tiefling	CATEGORY:Special Ability																TYPE:TieflingRacialTrait.TieflingFiendishSorcery.TieflingSLA						PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Soul Seer ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingFiendishSorcery,TYPE.TieflingSLA]																																						COST:0	SOURCEPAGE:p.169
 Vestigial Wings	KEY:Vestigial Wings ~ Tiefling	CATEGORY:Special Ability															TYPE:TieflingRacialTrait.TieflingSkilled										PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Vestigial Wings ~ Tiefling],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.TieflingSkilled]																																									COST:0	SOURCEPAGE:p.169
-
-
-###Block: Default Undine Abilities (POOL=5)
-# Ability Name											Unique Key					Category of Ability		Type															Multiple Requirements																						Define				Innate Spells									Description																																								Ability								Source Page
-Swim				KEY:Swim ~ Undine	CATEGORY:Special Ability																	TYPE:UndineRacialTrait.UndineRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Swim ~ Undine],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineSwim]																																																																							SOURCEPAGE:p.175
-Darkvision	KEY:Darkvision ~ Undine	CATEGORY:Special Ability																TYPE:UndineRacialTrait.UndineRacialDefault								PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Darkvision ~ Undine],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineDarkvision]																																																																					SOURCEPAGE:p.175
-Spell-Like Ability										KEY:Spell-Like Ability ~ Undine	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.UndineRacialTrait.UndineRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Undine],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineSLA]			DEFINE:UndineSLATimes|1		SPELLS:Innate|TIMES=UndineSLATimes|CASTERLEVEL=TL|Hydraulic Push	DESC:Hydraulic Push %1/day.|UndineSLATimes																																											SOURCEPAGE:p.175
-Energy Resistance											KEY:Energy Resistance ~ Undine	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.UndineRacialTrait.UndineRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Energy Resistance ~ Undine],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineEnergyResistance]	DEFINE:ColdResistanceBonus|5												DESC:Undines have cold resistance 5.																																			ABILITY:Special Ability|AUTOMATIC|Resistance to Cold	SOURCEPAGE:p.175
-# COMMENT: Tricky to implement.
-Water Affinity											KEY:Water Affinity ~ Undine		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.UndineRacialTrait.UndineRacialDefault	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Water Affinity ~ Undine],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineWaterAffinity]																		DESC:Undine sorcerers with the elemental (water) bloodline treat their Charisma score as 2 higher for all sorcerer spells and class abilities.  Undine spellcasters with the Water domain use their domain powers and spells at +1 caster level.										SOURCEPAGE:p.175
-
-###Block: Set up Undine default abilities
-# Ability Name							Category of Ability	Ability																					Bonus to Ability Pool
-CATEGORY=Internal|Select Racial Traits.MOD						ABILITY:Internal|AUTOMATIC|Undine Racial Trait Default|PRERACE:1,Undine
-
-#Undine Racial Trait Default
-Undine Racial Trait Default					CATEGORY:Internal
-CATEGORY=Internal|Undine Racial Trait Default.MOD					ABILITY:Undine Racial Trait|AUTOMATIC|Swim ~ Undine|!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineSwim
-CATEGORY=Internal|Undine Racial Trait Default.MOD					ABILITY:Undine Racial Trait|AUTOMATIC|Darkvision ~ Undine|!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineDarkvision
-CATEGORY=Internal|Undine Racial Trait Default.MOD					ABILITY:Undine Racial Trait|AUTOMATIC|Spell-Like Ability ~ Undine|!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineSLA
-CATEGORY=Internal|Undine Racial Trait Default.MOD					ABILITY:Undine Racial Trait|AUTOMATIC|Energy Resistance ~ Undine|!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineEnergyResistance
-CATEGORY=Internal|Undine Racial Trait Default.MOD					ABILITY:Undine Racial Trait|AUTOMATIC|Water Affinity ~ Undine|!PREABILITY:1,CATEGORY=Special Ability,TYPE.UndineWaterAffinity
 
 ###Block: Alternate Undine Abilities
 # Ability Name												Unique Key					Category of Ability		Type															Multiple Requirements																						Define																									Description																																	Template		Ability							Cost		Source Page
