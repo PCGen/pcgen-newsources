@@ -2,13 +2,35 @@ SOURCELONG:Adventurer's Handbook: Genius Guide Volume 1	SOURCESHORT:SGGAH	SOURCE
 # Original Entry by: Paul Shipley (elro the onk)
 
 ###Block: Combat Feats
+# Feat Name						Type						Source Page		Description												Requirements																																																				Description of the Benefits & Bonus
+Acrobatic Dodge					TYPE:Combat					SOURCEPAGE:p.52	DESC:Avoid attacks with an Acrobatics check.						PRESTAT:1,DEX=15				PREFEAT:1,Acrobatic																																													BENEFIT:%1/day, as an immediate action when you would normally be hit with a melee or ranged attack, you may make an Acrobatics check to avoid being hit. The DC is equal to the attack roll. You must take a free 5-ft. step as part of this Acrobatics check. You may only use this feat when you have an armor check penalty of 0, are carrying no more than a light load, and are not wielding a two-handed weapon or shield.|3+DEX
+Anchor						TYPE:Combat					SOURCEPAGE:p.52	DESC:You are difficult to flank or move around.										PREATT:1																																																	BENEFIT:If at least one square adjacent to you is impassible to a foe (a wall, a pit, or similar), that foe cannot flank you. Additionally, as a move action, you can harass any foes within your threatened area. Enemies must treat the spaces you threaten as difficult terrain.
+Arcane Shield 					TYPE:Combat.ModifyAC.Magister		SOURCEPAGE:p.52	DESC:Gain a bonus to your shield or armor.												PRESPELLCAST:TYPE=Arcane																																						KEY:Arcane Shield ~ SGGAH		BENEFIT:As a swift action, you can imbue either your armor or your shield with a fraction of your power. For 1 round, an imbued shield or set of armor gains a +%1 enhancement bonus to its Armor class.|ArcaneShieldBonus	VFEAT:Arcane Shield (Armor)|Arcane Shield (Shield)	DEFINE:ArcaneShieldBonus|0	BONUS:VAR|ArcaneShieldBonus|min((1+(charbonusto("CASTERLEVEL","Wizard")+var("BL=Wizard")+charbonusto("CASTERLEVEL","Sorcerer")+var("BL=Sorcerer")+charbonusto("CASTERLEVEL","Bard")+var("BL=Bard")+charbonusto("CASTERLEVEL","Summoner")+var("BL=Summoner")+charbonusto("CASTERLEVEL","Witch")+var("BL=Witch")+charbonusto("CASTERLEVEL","Magus")+var("BL=Magus")+charbonusto("CASTERLEVEL","Archon")+var("BL=Archon")+charbonusto("CASTERLEVEL","Death Mage")+var("BL=Death Mage")+charbonusto("CASTERLEVEL","Magister")+var("BL=Magister"))/5),5)
+Armor Focus (Heavy)				TYPE:Combat					SOURCEPAGE:p.52	DESC:Gain DR 2/- in heavy armor.								PRESTAT:1,CON=13				PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Heavy],[PREFEAT:1,Armor Proficiency (Heavy)]	OUTPUTNAME:Armor Focus, Heavy		BENEFIT:Whenever you are wearing heavy armor, you gain DR 2/-. This only stacks with the DR gained from the Armor Mastery fighter ability and any DR gained from the material you armor is made from.					DR:0/-	BONUS:DR|-|2|PREEQUIP:1,TYPE=Armor.Heavy
+Armor Focus (Medium)				TYPE:Combat					SOURCEPAGE:p.52	DESC:Gain DR 1/- in medium armor.								PRESTAT:1,CON=13				PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]															OUTPUTNAME:Armor Focus, Medium	BENEFIT:Whenever you are wearing medium armor, you gain DR 1/-. This only stacks with the DR gained from the Armor Mastery fighter ability and any DR gained from the material you armor is made from.				DR:0/-	BONUS:DR|-|1|PREEQUIP:1,TYPE=Armor.Medium
+Avoid the Arcane					TYPE:Combat					SOURCEPAGE:p.52	DESC:Make a Ref save in place of a Fort or Will save.					PRESTAT:1,DEX=13				PREFEAT:1,Lightning Reflexes		!PRECLASS:1,SPELLCASTER=1																																						BENEFIT:1/round, when targeted by a spell or effect that allows a Fortitude save or a Will save, you can instead make a Reflex saving throw. You may use this ability %1/day.|3+DEX
+
+###Block: Spellcaster Feats
+# Feat Name					Type				Source Page		Description															Requirements															Description of the Benefits
+Battle Mage					TYPE:General		SOURCEPAGE:p.55	DESC:Gain spells you can only use if you've been in combat.							PRESTAT:1,STR=13	PRECLASS:1,SPELLCASTER=5										BENEFIT:You may select 6 battle mage spells to become part of your spell list. If you have limited spells known, you do not automatically know these spells, but you may learn three of them for only one spell slot towards your maximum spells known. Each time you successfully hit a foe with a weapon attack not augmented by a spell, you gain one battle mark. Any time you fail an attack roll, you lose one battle mark. You may spend a battle mark to cast one of your known selected spells by spending a spell slot of the same level or higher. Each day when you regain uses of your spells, you lose any unused battle marks.											MULT:YES	CHOOSE:NOCHOICE	BONUS:ABILITYPOOL|Battle Mage Spell|6
+Blood Magic					TYPE:General		SOURCEPAGE:p.56	DESC:Learn spells you can only cast after taking damage.							PRECLASS:1,SPELLCASTER=5													BENEFIT:You may select 6 blood mage spells to become part of your spell list. If you have limited spells known, you do not automatically know these spells, but you may learn three of them for only one spell slot towards your maximum spells known. Each time you take %1+ hp damage from a single blow or source, or have a -2 or greater penalty inflicted on you as a pain effect, you gain one blood mark. Any time you regain hit points through any method, you lose one blood mark. You may spend a blood mark to cast one of your known selected spells by spending a spell slot of the same level or higher. Each day when you regain uses of your spells, you lose any unused blood marks.|TL	MULT:YES	CHOOSE:NOCHOICE	BONUS:ABILITYPOOL|Blood Mage Spell|6
+
+###Block: Channeling Feats
+# Feat Name				Type			Source Page		Description													Requirements																			Description of the Benefits
+Bolster				TYPE:General	SOURCEPAGE:p.56	DESC:Grant targets of your channel energy bonuses to attacks and saves vs. fear.	PREABILITY:1,CATEGORY=Special Ability,Channel Energy													BENEFIT:Any creature healed by a use of your channel energy ability gains a +1 luck bonus on attack and damage rolls, as well as a +%1 resistance bonus to saves against fear. These bonuses last for one round for each die of healing dealt by your channel energy.|max(WIS,1)
+
+###Block: General Feats
+# Feat Name				Type						Source Page		Description														Requirements																Description of the Benefits											Bonus
+Arcane Defense			TYPE:General.Magister.SaveBonus	SOURCEPAGE:p.52	DESC:+2 bonus to saves against one school of magic.																									BENEFIT:Add a +2 bonus to saving throws you make against spells of the %1 school.|%LIST	MULT:YES	CHOOSE:SCHOOLS|ALL	ASPECT:SaveBonus|+2 vs. %1 spells|%LIST
+
+#PREAPPLYs
+Arcane Shield (Armor)	TYPE:Internal	BONUS:COMBAT|AC|ArcaneShieldBonus|TYPE=ArmorEnhancement|PREAPPLY:Armor		TEMPDESC:As a swift action, you can imbue your armor with a fraction of your power. For 1 round, an imbued set of armor gains a +%1 enhancement bonus to its Armor class.|ArcaneShieldBonus
+Arcane Shield (Shield)	TYPE:Internal	BONUS:COMBAT|AC|ArcaneShieldBonus|TYPE=ShieldEnhancement|PREAPPLY:Shield	TEMPDESC:As a swift action, you can imbue your shield with a fraction of your power. For 1 round, an imbued shield gains a +%1 enhancement bonus to its Armor class.|ArcaneShieldBonus
+
+### Unimplemented Feats below this line
+
+###Block: Combat Feats
 # Feat Name						Type						Source Page		Description												Requirements																											Bonus								Description of the Benefits
-Acrobatic Dodge					TYPE:Combat					SOURCEPAGE:p.52	DESC:Avoid attacks with an Acrobatics check.						PRESTAT:1,DEX=15				PREFEAT:1,Acrobatic																				
-Anchor						TYPE:Combat					SOURCEPAGE:p.52	DESC:You are difficult to flank or move around.										PREATT:1																								
-Arcane Shield ~ Genius Guide			TYPE:Combat.ModifyAC.Magister		SOURCEPAGE:p.52	DESC:Gain a bonus to your shield or armor.												PRESPELLCAST:TYPE=Arcane																			OUTPUTNAME:Arcane Shield
-Armor Focus (Heavy)				TYPE:Combat					SOURCEPAGE:p.52	DESC:Gain DR 2/- in heavy armor.								PRESTAT:1,CON=13				PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Heavy],[PREFEAT:1,Armor Proficiency (Heavy)]	OUTPUTNAME:Armor Focus, Heavy		DR:0/-	BONUS:DR|-|2|PREEQUIP:1,TYPE=Armor.Heavy
-Armor Focus (Medium)				TYPE:Combat					SOURCEPAGE:p.52	DESC:Gain DR 1/- in medium armor.								PRESTAT:1,CON=13				PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]	PREMULT:1,[PREPROFWITHARMOR:1,TYPE.Medium],[PREFEAT:1,Armor Proficiency (Medium)]															OUTPUTNAME:Armor Focus, Medium
-Avoid the Arcane					TYPE:Combat					SOURCEPAGE:p.52	DESC:Make a Ref save in place of a Fort or Will save.					PRESTAT:1,DEX=13				PREFEAT:1,Lightning Reflexes		!PRECLASS:1,SPELLCASTER=1													
 Deadly Accuracy					TYPE:Combat					SOURCEPAGE:p.58	DESC:Reroll a 1 on ranged weapon damage.							PRESTAT:1,DEX=15		PREATT:6																								
 Defensive Shot					TYPE:Combat.AttackOption		SOURCEPAGE:p.58	DESC:Make ranged attacks without provoking attacks of opportunity.								PREFEAT:2,Point-Blank Shot,Precise Shot																	
 Deflect Spells					TYPE:Combat					SOURCEPAGE:p.59	DESC:Prevent a spell with a ranged attack roll from hitting you.			PRESTAT:2,DEX=13,WIS=13			PREFEAT:2,Deflect Arrows,Improved Unarmed Strike	PREABILITY:1,CATEGORY=Special Ability,Ki Pool							
@@ -41,8 +63,6 @@ Web of Steel					TYPE:Combat					SOURCEPAGE:p.73	DESC:Gain an armor bonus from w
 
 ###Block: Spellcaster Feats
 # Feat Name					Type				Source Page		Description															Requirements															Stack/Mult?	Choose												Bonus								Description of the Benefits
-Battle Mage					TYPE:General		SOURCEPAGE:p.	DESC:Gain spells you can only use if you've been in combat.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=BattleMage[LEVELMAX=MAXCASTABLE]		
-Blood Mage					TYPE:General		SOURCEPAGE:p.	DESC:Learn spells you can only cast after taking damage.							PRECLASS:1,SPELLCASTER=5													MULT:YES	CHOOSE:NUMCHOICES=6|SPELLS|SPELLTYPE=BloodMage[LEVELMAX=MAXCASTABLE]		
 Caustic Hex					TYPE:General		SOURCEPAGE:p.57	DESC:Reduce an acid spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Acid=0																												
 Chill Hex					TYPE:General		SOURCEPAGE:p.58	DESC:Reduce a cold spell's save DC to gain a secondary effect.						PRESPELLDESCRIPTOR:3,Cold=0																												
 Cold Focus					TYPE:General		SOURCEPAGE:p.	DESC:Add +2 to the DC for all saving throws against spells you cast with the [cold] descriptor.	PRESPELLDESCRIPTOR:1,Cold=0																												
@@ -77,7 +97,6 @@ Woodwose					TYPE:General		SOURCEPAGE:p.	DESC:Learn spells you can only cast in 
 
 ###Block: Channeling Feats
 # Feat Name				Type			Source Page		Description													Requirements																			Bonus								Description of the Benefits
-Bolster				TYPE:General	SOURCEPAGE:p.56	DESC:Grant targets of your channel energy bonuses to attacks and saves vs. fear.	PREABILITY:1,CATEGORY=Special Ability,Channel Energy,Power Over Undead ~ Necromancy School						
 Cleansing				TYPE:General	SOURCEPAGE:p.58	DESC:Grant targets of your channel energy bonuses to saves vs. disease and poison.	PREABILITY:1,CATEGORY=Special Ability,Channel Energy,Power Over Undead ~ Necromancy School						
 Elemental Warding			TYPE:General	SOURCEPAGE:p.59	DESC:Grant energy resistance to targets of your channel energy.				PREABILITY:1,CATEGORY=Special Ability,Channel Energy,Power Over Undead ~ Necromancy School						
 Improved Elemental Warding	TYPE:General	SOURCEPAGE:p.63	DESC:Grant your allies elemental resistance.							PREFEAT:1,Elemental Warding	PREABILITY:1,CATEGORY=Special Ability,Channel Energy,Power Over Undead ~ Necromancy School	
@@ -97,9 +116,6 @@ Magister's Focus			TYPE:General.Magister	SOURCEPAGE:p.	DESC:Pick 1 level of spel
 Magister's Performance		TYPE:General.Magister	SOURCEPAGE:p.	DESC:Gain the bardic performance abilities of countersong, distraction, fascinate, and inspire courage.		PRECLASS:1,Magus=9	PRESPELLTYPE:1,Bard=7												
 Second Bond				TYPE:General		SOURCEPAGE:p.	DESC:Gain a second class bond.														PREPCLEVEL:MIN=5	PREVARGTEQ:BondQualify,1												
 
-###Block: General Feats
-# Feat Name				Type				Source Page		Description														Requirements																Stack/Mult?	Choose				Bonus								Description of the Benefits
-Arcane Defense			TYPE:General.Magister	SOURCEPAGE:p.	DESC:+2 bonus to saves against one school of magic.																									MULT:YES	CHOOSE:SCHOOLS|ALL			
 Bravado				TYPE:General		SOURCEPAGE:p.57	DESC:Use Bluff to demoralize foes.										PRESKILL:1,Bluff=5																						
 Bushwhack				TYPE:General		SOURCEPAGE:p.57	DESC:Conceal allies with Stealth.										PRESKILL:2,Perception=5,Stealth=5																				
 Catch!				TYPE:General		SOURCEPAGE:p.57	DESC:Toss an object to a foe, in hopes he'll catch it and drop his weapons.			PREFEAT:1,Deceitful		PRESKILL:2,Bluff=1,Intimidate=1															
