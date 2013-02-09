@@ -3,6 +3,22 @@ SOURCELONG:Advanced Race Guide	SOURCESHORT:PFARG	SOURCEWEB:http://paizo.com/prod
 # ORIGINAL ENTRY: Gjorbjond
 # ORIGINAL ENTRY DATE: 12/12/12
 
+
+# Dwarf Class Archetypes:
+Exarch			KEY:Inquisitor Archetype ~ Exarch	CATEGORY:Archetype	SOURCEPAGE:p.15	TYPE:Archetype.InquisitorArchetype.InquisitorMonsterLore.InquisitorDetectAlignment.InquisitorBane.InquisitorSecondJudgment.InquisitorGreaterBane.InquisitorThirdJudgment	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Inquisitor Archetype ~ Exarch],[!PREABILITY:1,CATEGORY=Archetype,TYPE.InquisitorMonsterLore,TYPE.InquisitorDetectAlignment,TYPE.InquisitorBane,TYPE.InquisitorSecondJudgment,TYPE.InquisitorGreaterBane,TYPE.InquisitorThirdJudgment]	PRECLASS:1,Inquisitor=1	PRERACE:1,Dwarf%	DESC:The gruff traditionalism of most dwarves finds its apex in those who adhere to a strict orthodoxy rooted in ancient principles and practices and who are not amenable whatsoever to change or innovation.	ABILITY:Special Ability|AUTOMATIC|Spells ~ Exarch|PRECLASS:1,Inquisitor=1	ABILITY:Special Ability|AUTOMATIC|Inflexible Will ~ Exarch|PRECLASS:1,Inquisitor=1	ABILITY:Special Ability|AUTOMATIC|Detect Chaos ~ Exarch|PRECLASS:1,Inquisitor=1	ABILITY:Special Ability|AUTOMATIC|Fearsome Jurist ~ Exarch|PRECLASS:1,Inquisitor=5	ABILITY:Special Ability|AUTOMATIC|Aura of Repetition ~ Exarch|PRECLASS:1,Inquisitor=8	ABILITY:Special Ability|AUTOMATIC|Double Jeopardy ~ Exarch|PRECLASS:1,Inquisitor=12	ABILITY:Special Ability|AUTOMATIC|Aura of Reversion ~ Exarch|PRECLASS:1,Inquisitor=16
+
+# Exarch Abilities:
+Spells			KEY:Spells ~ Exarch			CATEGORY:Special Ability	SOURCEPAGE:p.15	TYPE:ArchetypeAbility.SpecialQuality			DESC:Exarchs cannot cast spells with the chaotic descriptor.
+Inflexible Will		KEY:Inflexible Will ~ Exarch		CATEGORY:Special Ability	SOURCEPAGE:p.15	TYPE:ArchetypeAbility.SpecialQuality.Extraordinary	DESC:At 1st level, an exarch gains a +2 bonus on saving throws against confusion and insanity effects and effects with the chaotic descriptor. This ability replaces monster lore.
+Detect Chaos		KEY:Detect Chaos ~ Exarch		CATEGORY:Special Ability	SOURCEPAGE:p.15	TYPE:ArchetypeAbility.SpecialQuality.SpellLike		DESC:At will, an exarch can use detect chaos. This ability replaces detect alignment.
+Fearsome Jurist		KEY:Fearsome Jurist ~ Exarch		CATEGORY:Special Ability	SOURCEPAGE:p.15	TYPE:ArchetypeAbility.SpecialQuality.Supernatural	DESC:At 5th level, an exarch can imbue one of her weapons with the jurist or menacing weapon special ability as a swift action, and may switch between these properties as a swift action. When using either special ability, her weapon's critical threat range doubles against chaotic creatures. This does not stack with keen edge, Improved Critical, or similar effects. This ability otherwise functions as and replaces bane.
+Aura of Repetition	KEY:Aura of Repetition ~ Exarch	CATEGORY:Special Ability	SOURCEPAGE:p.16	TYPE:ArchetypeAbility.SpecialQuality.Supernatural	DESC:At 8th level, once per day while using her judgment, an exarch can project an aura of repetition, as the Toil subdomain power (Advanced Player's Guide 97). If the exarch takes Artifice (Toil) as her domain, the save DC of her aura increases by 2 but its duration does not increase. This ability replaces her second judgment.
+Double Jeopardy		KEY:Double Jeopardy ~ Exarch		CATEGORY:Special Ability	SOURCEPAGE:p.16	TYPE:ArchetypeAbility.SpecialQuality.Supernatural	DESC:At 12th level, whenever an exarch uses her fearsome jurist ability, she may choose to affect two weapons, with one gaining the jurist weapon special ability and the other the menacing special ability as above. Both special abilities may be combined in a single weapon, whose critical threat range doubles. This does not stack with keen edge, Improved Critical, or similar effects. This ability replaces greater bane.
+Aura of Reversion		KEY:Aura of Reversion ~ Exarch	CATEGORY:Special Ability	SOURCEPAGE:p.16	TYPE:ArchetypeAbility.SpecialQuality.Supernatural	DESC:At 16th level, while using her judgment, an exarch can project a 30-foot-radius emanation for a number of rounds per day equal to her inquisitor level. Any creature other than the exarch that is using a transmutation effect within this aura at the beginning of its turn becomes sickened, or sickened and nauseated if using a polymorph effect, including the change shape ability (Fortitude negates; DC 10 + 1/2 the exarch's level + her Wisdom modifier). Continuous effects from permanent magical items do not cause this effect. Within the aura, dispel checks against transmutation effects gain a +4 bonus. This ability cannot be used simultaneously with aura of repetition. This ability replaces her third judgment.
+
+
+#ABILITY:Special Ability|AUTOMATIC||PRECLASS:1,=
+
 ###Block: Gunslinger Archetype -------------------------
 Experimental Gunsmith	KEY:Gunslinger Archetype ~ Experimental Gunsmith	CATEGORY:Archetype		TYPE:Archetype.GunslingerArchetype.GunslingerFirearmTraining1.GunslingerFirearmTraining2.GunslingerFirearmTraining3.GunslingerFirearmTraining4	PRECLASS:1,Gunslinger=1	PRERACE:1,Gnome%	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Gunslinger Archetype ~ Experimental Gunsmith],[!PREABILITY:1,CATEGORY=Archetype,TYPE.GunslingerFirearmTraining1,TYPE.GunslingerFirearmTraining2,TYPE.GunslingerFirearmTraining3,TYPE.GunslingerFirearmTraining4]	DESC:The Experimental Gunsmith is obsessed with creating the ultimate firearm, and is willing to take risks to work the kinks out of her design.	ABILITY:Special Ability|AUTOMATIC|Experimental Firearm ~ Experimental Gunsmith|PRECLASS:1,Gunslinger=1	ABILITY:Special Ability|AUTOMATIC|Innovations ~ Experimental Gunsmith|PRECLASS:1,Gunslinger=1	COST:0	SOURCEPAGE:p.34
 
@@ -17,6 +33,22 @@ Expanded Chamber	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Expe
 Grapple Launcher	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ExperimentalGunsmithInnovation	DESC:The Experimental Gunsmith's firearm includes a special set of rails that allows her to slide a grappling hook over the barrel and fire it as a full-round action. The grappling hook anchors into anything she successfully hits with an attack roll, and the DC of the Strength check required to pull the grappling hook loose is equal to her attack roll to lodge it in place. A Disable Device check can remove it with a +5 bonus on the check, and a creature struck by the hook can escape it with a combat maneuver check or Escape Artist check with a +5 bonus on the check. The firearm is powerful enough to fire a hook trailing up to 100 feet of rope, but throws off the balance of the Experimental Gunsmith's firearm, reducing its range increment by 50%%.
 Recoilless		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ExperimentalGunsmithInnovation	DESC:The Experimental Gunsmith's firearm includes a series of gears, springs, and pistons designed to reduce its recoil and thus improve accuracy. The range increment of the weapon increases by 10 feet. However, the system is fragile, and easily damaged. Anytime the weapon misfires, this system becomes broken and does not function until the Experimental Gunsmith spends 1 hour repairing it.
 Vial Launcher	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ExperimentalGunsmithInnovation	DESC:The Experimental Gunsmith adds a special tube onto her firearm that can hold 1 vial of alchemical material, such as alchemist's fire, a tanglefoot bag, or a thunderstone. A special trigger allows her to channel the force of black powder into this tube to launch the vial as a ranged attack with half the range increment of her firearm. The Experimental Gunsmith can take this action in place of any single ranged attack, and may use the same attack bonus that she can apply to the firearm. If the alchemical substance has a save DC, it becomes 10 + 1/2 her Experimental Gunsmith level + her Wisdom modifier when she launches the vial from her firearm. This increase only applies to the initial saving throw. If additional saving throws are called for, they are resolved as normal. Reloading the tube is a time-consuming process and requires two full-round actions. If the weapon misfires while loaded with an alchemical substance, it detonates with the Experimental Gunsmith (and the firearm) as the target.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #
 # End
 #
