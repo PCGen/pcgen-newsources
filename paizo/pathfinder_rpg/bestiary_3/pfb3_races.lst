@@ -6,16 +6,14 @@
 ADARO
 	CR:3	
 	XP:800
-NE
+	KIT:1|NE
 	SIZE:M
-	
 	RACETYPE:Monstrous Humanoid
-		RACESUBTYPE:Aquatic
-	
-Init +3; Senses blindsense 30 ft., darkvision 6o ft., low-light
-vision, keen scent; Perception +8
-DEFENSE
-AC 15, touch 13, flat-footed 12 (+3 Dex, +2 natural)
+	RACESUBTYPE:Aquatic
+	VISION:Blindsense (30'),Darkvision (60'),Low-Light Vision,Keen Scent
+
+
+	BONUS:COMBAT|AC|2|TYPE=NaturalArmor
 hp 30 (4d10+8)
 Fort +3, Ref +7, Will +5
 OFFENSE
@@ -23,7 +21,8 @@ OFFENSE
 
 	Meleespear +8 (1d8+4/x3 plus poison), bite +2 (1d6+3)
 Ranged spear +8 (1d8+3/x3)
-Special Attacks rain frenzy
+
+	Special Attacks:rain frenzy
 STATISTICS
 Str 16, Dex 17, Con 14, Int 10, Wis 13, Cha 13
 Base Atk +4; CMB +7; CMD 20
@@ -45,16 +44,18 @@ LE
 	RACETYPE:Monstrous Humanoid
 	
 Init +3; Senses darkvision 60 ft.; Perception +5
-DEFENSE
-AC 17, touch 13, flat-footed 14 (+3 Dex, +4 natural)
+
+	BONUS:COMBAT|AC|4|TYPE=NaturalArmor
 hp 30 (4d10+8)
-Fort +3, Ref +7, Will +5
-DR 5/-; SR 14
-OFFENSE
+
+DR 5/-
+	SR:14
+
 	MOVE:Walk,30,Climb,10 ft.
 
 	Melee2 slams +6 (1d6+2 plus grab)
-Special Attacks grab (Large)
+
+	Special Attacks:grab (Large)
 STATISTICS
 Str 14, Dex 16, Con 15, Int 4, Wis 13, Cha 11
 Base Atk +4; CMB +7 (+15 grapple); CMD 19
@@ -74,16 +75,17 @@ CN
 	humanoid (adlet, cold)
 Init +12; Senses low-light vision, scent; Perception +13
 DEFENSE
-AC 25, touch 20, flat-footed 15 (+8 Dex, +2 dodge, +5 natural)
+	BONUS:COMBAT|AC|2|TYPE=Dodge	BONUS:COMBAT|AC|5|TYPE=NaturalArmor
 hp 127 each (15d8+60)
-Fort +9, Ref +17, Will +8
+
 Immune cold
 Weaknesses vulnerability to fire
-OFFENSE
+
 	MOVE:Walk,40 ft.
 
 	Melee+1 spear +17/+12/+7 (1d8+7/?3), bite +10 (1d6+2 plus 1d6 cold)
-Special Attacks frozen breath
+
+	Special Attacks:frozen breath
 Spell-Like Abilities (CL 10th; concentration +11)
 Constant-pass without trace, ray of frost
 3/day-fog cloud, sleet storm
@@ -105,22 +107,21 @@ AHUIZOTL
 	XP:2,400
 NE
 	SIZE:L
-	
 	RACETYPE:Magical Beast 
-		RACESUBTYPE:Aquatic
-	
+	RACESUBTYPE:Aquatic
+
 Init +7; Senses darkvision 60 ft., low-light vision; Perception +2
 DEFENSE
-AC 19, touch 12, flat-footed 16 (+3 Dex, +7 natural, -1 size)
+	BONUS:COMBAT|AC|7|TYPE=NaturalArmor
 hp 68 (8d10+24)
-Fort +9, Ref +9, Will +4
-OFFENSE
+
 	MOVE:Walk,30,Swim,50 ft.
 
 	Meleebite +12 (2d6+5), claw +12 (1d8+5/19-20 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with tail)
-Special Attacks rake (2 claws +5, 1d4+5)
+
+	Special Attacks:rake (2 claws +5, 1d4+5)
 STATISTICS
 Str 20, Dex 17, Con 17, Int 9, Wis 14, Cha 16
 Base Atk +8; CMB +14 (+18 grapple); CMD 27 (31 vs. trip)
@@ -142,19 +143,22 @@ N
 Init +6; Senses darkvision 60 ft., low-light vision, scent, snow
 vision; Perception +14
 DEFENSE
-AC 29, touch 11, flat-footed 26 (+2 Dex, +1 dodge, +19 natural,
--2 size)
+	BONUS:COMBAT|AC|1 dodge
+	BONUS:COMBAT|AC|19 natural,
+
 hp 189 (18d10+90)
-Fort +16, Ref +13, Will +10
-DR 15/magic; Immune cold
+
+	DR:15/magic
+	Immune cold
 Weaknesses vulnerability to fire
-OFFENSE
+
 	MOVE:Walk,40,Swim,60 ft.
 
 	Meleebite +27 (4d8+15/15-20 plus 4d6 cold and grab)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10
-Special Attacks savage bite, shore storming, swallow whole
+
+	Special Attacks:savage bite, shore storming, swallow whole
 (2d8+15 bludgeoning damage plus 4d6 cold, AC 19, 18 hp)
 Spell-Like Abilities (CL 18th; concentration +16)
 1/day-control weather (windy or cold weather only)
@@ -181,16 +185,18 @@ CE
 Init +5; Senses darkvision 60 ft.; Perception +7
 Aura babble (60 ft., DC 15)
 DEFENSE
-AC 14, touch 14, flat-footed 13 (+3 deflection, +1 Dex)
+	BONUS:COMBAT|AC|3 deflection
+
 hp 30 (4d8+12)
-Fort +4, Ref +4, Will +4
+
 Defensive Abilities channel resistance +2, incorporeal;
 Immune undead traits
-OFFENSE
-	MOVE:Walk,fly 30 ft. (perfect)
+
+	MOVE:Fly 30 ft. (perfect)
 
 	Meleeincorporeal touch +4 (1d4 Wisdom damage)
-Special Attacks babble, touch of insanity
+
+	Special Attacks:babble, touch of insanity
 STATISTICS
 Str -, Dex 12, Con -, Int 11, Wis 11, Cha 16
 Base Atk +3; CMB +4; CMD 17
@@ -209,18 +215,20 @@ NE
 	plant
 Init +5; Senses low-light vision; Perception +17
 Aura calming fragrance (60 ft., DC 24)
-DEFENSE
-AC 27, touch 10, flat-footed 26 (+1 Dex, +17 natural, -1 size)
+
+	BONUS:COMBAT|AC|17 natural, -1 size)
 hp 199 (19d8+114)
-Fort +17, Ref +9, Will +11
-Immune plant traits; SR 24
+
+Immune plant traits
+	SR:24
 OFFENSE
 	MOVE:Walk,40 ft.
 
 	Melee4 vines +20 (1d10+7 plus grab and bleed)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks bleed (2d6), constrict (1d10+10), feed
+
+	Special Attacks:bleed (2d6), constrict (1d10+10), feed
 Spell-Like Abilities (CL 13th; concentration +18)
 At will-charm monster (DC 18), detect thoughts (DC 17),
 suggestion (DC 18)
@@ -245,9 +253,11 @@ NG
 	SIZE:M
 	outsider (native, shapechanger)
 Init +7; Senses low-light vision, scent; Perception +17
-DEFENSE
-AC 25, touch 18, flat-footed 18 (+3 armor, +1 deflection, +6 Dex,
-+1 dodge, +4 natural)
+
+	BONUS:COMBAT|AC|3 armor, 
+	BONUS:COMBAT|AC|1 deflection
+	BONUS:COMBAT|AC|1 dodge
+	BONUS:COMBAT|AC|4|TYPE=NaturalArmor
 hp 139 (10d10+80)
 Fort +13, Ref +14, Will +7
 Defensive Abilities evasion; DR 10/silver
@@ -256,7 +266,8 @@ OFFENSE
 
 	Meleebite +15 (1d6+5 plus grab), 2 claws +15 (1d3+5)
 Ranged +1 keen composite longbow +18/+13 (1d8+6/?3)
-Special Attacks favored enemy (evil outsiders +6, giants +2,
+
+	Special Attacks:favored enemy (evil outsiders +6, giants +2,
 undead +2), pounce, rake (2 claws +15, 1d3+5)
 Spell-Like Abilities (CL 10th; concentration +12)
 At will-charm animal (cats only, DC 13)
@@ -290,16 +301,19 @@ CE
 	
 Init +1; Senses darkvision 60 ft.; Perception +13
 DEFENSE
-AC 20, touch 10, flat-footed 19 (+1 Dex, +10 natural, -1 size)
+	BONUS:COMBAT|AC|10 natural
+
 hp 66 (7d10+28)
-Fort +8, Ref +6, Will +6
-DR 5/bludgeoning; SR 17
-OFFENSE
+
+	DR:5/bludgeoning
+	SR:17
+
 	MOVE:Walk,40 ft.
 
 	Meleebite +13 (1d6+7), 2 claws +13 (1d6+7 plus grab)
-Space 10 ft.;
-	REACH:10Special Attacks rend (2 claws, 2d6+10)
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:rend (2 claws, 2d6+10)
 Spell-Like Abilities (CL 7th; concentration +7)
 3/day-alter self, fog cloud
 STATISTICS
@@ -319,15 +333,17 @@ N
 	vermin
 Init +0; Senses darkvision 60 ft., tremorsense 60 ft.; Perception +0
 DEFENSE
-AC 19, touch 9, flat-footed 19 (+10 natural, -1 size)
+	BONUS:COMBAT|AC|10 natural
+
 hp 60 (8d8+24)
-Fort +9, Ref +2, Will +2
+
 Immune mind-affecting effects
 OFFENSE
 	MOVE:Walk,30,Burrow,10
 	Meleebite +10 (2d8+7 plus grab)
-Space 10 ft.;
-	REACH:5Special Attacks sand trap
+	FACE:10 ft.;
+	REACH:5
+	Special Attacks:sand trap
 STATISTICS
 Str 20, Dex 11, Con 17, Int -, Wis 11, Cha 10
 Base Atk +6; CMB +12 (+16 grapple); CMD 22 (30 vs. trip)
@@ -349,7 +365,7 @@ OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (good)
 
 	Meleebite +12 (2d8+10)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10STATISTICS
 Str 24, Dex 16, Con 19, Int -, Wis 11, Cha 10
 Base Atk +7; CMB +16; CMD 29 (37 vs. trip)
@@ -375,7 +391,9 @@ OFFENSE
 	MOVE:Walk,fly 50 ft. (perfect)
 
 	Melee3 blades +4 (1d4-1)
-Space 2-1/2 ft.; Reach 0Special Attacks wrath
+	FACE:2-1/2
+	REACH:0
+	Special Attacks:wrath
 Spell-Like Abilities (CL 6th;
 concentration +7)
 Constant-detect evil
@@ -408,14 +426,16 @@ AC 23, touch 11, flat-footed 22 (+9 armor, +1 Dex, +3 natural;
 +2 deflection vs. evil)
 hp 76 (8d10+32)
 Fort +10, Ref +3, Will +8; +4 vs. poison, +2 vs. evil
-DR 10/evil; Immune electricity, petrification; SR 18
+DR 10/evil; Immune electricity, petrification
+	SR:18
 OFFENSE
 	MOVE:Walk,40,Fly,90 ft. (average)
 
 	Melee+1 flaming burst greatsword +13/+8 (2d6+5/17-20 plus
 1d6 fire)
 Ranged +1 flaming javelin +10 (1d6+4 plus 1d6 fire)
-Special Attacks flames of faith
+
+	Special Attacks:flames of faith
 Spell-Like Abilities (CL 8th; concentration +11)
 Constant-detect evil, magic circle
 against evil
@@ -453,8 +473,9 @@ DR 10/piercing; Immune plant traits; Resist electricity 10, fire 10
 OFFENSE
 	MOVE:Walk,40
 	Meleeslam +8 (2d8+6)
-Space 10 ft.;
-	REACH:5Special Attacks poison, spores, trample (2d8+6, DC 17)
+	FACE:10 ft.;
+	REACH:5
+	Special Attacks:poison, spores, trample (2d8+6, DC 17)
 STATISTICS
 Str 18, Dex 13, Con 17, Int -, Wis 11, Cha 1
 Base Atk +5; CMB +10; CMD 21 (can't be tripped)
@@ -472,15 +493,17 @@ LE
 Init +3; Senses all-around vision, darkvision 60 ft.; Perception +19
 Aura elusive (30 ft.)
 DEFENSE
-AC 20, touch 14, flat-footed 16 (+3 Dex, +1 dodge, +6 natural)
+AC 20, touch 14, flat-footed 16 (+3 Dex, +1 dodge, +6|TYPE=NaturalArmor
 hp 76 (9d10+27); regeneration 5 (good weapons, good spells)
 Fort +6, Ref +11, Will +9; dual mind, +2 vs. enchantments
 DR 5/good; Immune curse effects, disease, flanking, poison;
-Resist acid 10, electricity 10; SR 18
+Resist acid 10, electricity 10
+	SR:18
 OFFENSE
 	MOVE:Walk,40
 	Melee2 mwk kukris +15/+10 (1d4+5/18-20), 2 claws +9 (1d4+2)
-Special Attacks dance of disaster
+
+	Special Attacks:dance of disaster
 Spell-Like Abilities (CL 6th; concentration +9)
 At will- feather fall, greater teleport (self plus 50 lbs. of
 objects only), spider climb
@@ -512,13 +535,15 @@ AC 23, touch 11, flat-footed 20 (+6 armor, +3 Dex, +6 natural,
 hp 161 (14d10+84); regeneration 5 (good weapons, good spells)
 Fort +15, Ref +9, Will +11; +2 vs. enchantment spells
 DR 10/good; Immune curse effects, disease, poison; Resist
-acid 10, electricity 10; SR 22
+acid 10, electricity 10
+	SR:22
 OFFENSE
 	MOVE:Walk,35,Swim,20
 	Melee2 mwk scimitars +26 (2d6+12/15-20 plus poison), bite
 +19 (2d8+6 plus grab and poison)
-Space 15 ft.;
-	REACH:15Special Attacks dual wielder, infused weapons, swallow whole
+	FACE:15 ft.;
+	REACH:15
+	Special Attacks:dual wielder, infused weapons, swallow whole
 (2d6+12 acid damage, AC 13, 16 hp)
 Spell-Like Abilities (CL 11th; concentration +15)
 At will-greater teleport (self plus 50 lbs. of objects only)
@@ -554,13 +579,15 @@ AC 35, touch 25, flat-footed 26 (+5 deflection, +8 Dex, +1 dodge,
 hp 385 (22d10+264); regeneration 10 (good weapons, good spells)
 Fort +25, Ref +17, Will +20; +2 vs. enchantment spells,
 DR 15/chaotic and good; Immune curse effects, disease, flanking,
-poison, polymorph; Resist acid 10, electricity 10; SR 31
+poison, polymorph; Resist acid 10, electricity 10
+	SR:31
 OFFENSE
 	MOVE:Walk,50,Climb,50,Fly,50 ft. (perfect), swim 50
 	Meleebite +28 (2d6+6 plus grab and poison), 6 claws +33
 (2d6+13 plus curse)
-Space 15 ft.;
-	REACH:15Special Attacks curse of false wisdom, spirit blades (+27,
+	FACE:15 ft.;
+	REACH:15
+	Special Attacks:curse of false wisdom, spirit blades (+27,
 3d6+7/19-20), swallow whole (4d6+19 bludgeoning plus
 4d8+12 acid damage, AC 15, 34 hp)
 Spell-Like Abilities (CL 20th; concentration +30)
@@ -641,18 +668,20 @@ Init +7; Senses all-around vision, darkvision 60 ft.; Perception +23
 Aura elusive (50 ft.)
 DEFENSE
 AC 24, touch 21, flat-footed 16 (+7 Dex, +1 dodge, +3 insight,
-+3 natural)
++3|TYPE=NaturalArmor
 hp 114 (12d10+48); regeneration 5 (good weapons, good spells)
 Fort +12, Ref +11, Will +15
 Defensive Abilities improved evasion; DR 10/good; Immune
 curse effects, disease, flanking, poison; Resist acid 10,
-electricity 10; SR 20
+electricity 10
+	SR:20
 OFFENSE
 	MOVE:Walk,50
 	Meleemwk longsword +20/+15/+10 (1d8+6/19-20), mwk spear
 +19 (1d8+6/3), mwk kukri +19 (1d4+6/18-20) or
 6 slams +18 (1d4+6)
-Special Attacks infused weapons, multiweapon mastery
+
+	Special Attacks:infused weapons, multiweapon mastery
 Spell-Like Abilities (CL 9th; concentration +13)
 At will-disguise self, greater teleport (self plus 50 lbs. of
 objects only), feather fall, see invisibility, spider climb
@@ -688,7 +717,9 @@ OFFENSE
 	MOVE:Walk,20,Fly,50 ft. (good)
 
 	Meleerapier +8 (1d2-2/18-20)
-Space 1 ft.; Reach 0Special Attacks sneak attack +1d6
+	FACE:1
+	REACH:0
+	Special Attacks:sneak attack +1d6
 Spell-Like Abilities (CL 6th; concentration +10)
 Constant-speak with animals
 At will-dancing lights, reduce person (DC 15)
@@ -717,8 +748,9 @@ Fort +6, Ref +6, Will +1
 OFFENSE
 	MOVE:Walk,50
 	Meleebite +5 (1d8+6)
-Space 10 ft.;
-	REACH:10Special Attacks sudden charge
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:sudden charge
 STATISTICS
 Str 18, Dex 17, Con 16, Int 2, Wis 11, Cha 10
 Base Atk +2; CMB +7; CMD 20
@@ -743,8 +775,9 @@ OFFENSE
 	MOVE:Walk,50,Climb,30
 	Meleebite +21 (2d6+11), 2 claws +21 (1d10+11)
 Ranged acid spit +13 touch (10d6 acid)
-Space 15 ft.;
-	REACH:15Special Attacks acid spit, rend (1d10+11)
+	FACE:15 ft.;
+	REACH:15
+	Special Attacks:acid spit, rend (1d10+11)
 Spell-Like Abilities (CL 16th; concentration +23)
 At will-dancing lights, faerie fire
 3/day-daylight, giant vermin, insect plague, repel vermin
@@ -778,12 +811,14 @@ DEFENSE
 AC 15, touch 15, flat-footed 10 (+5 Dex)
 hp 95 (10d10+40)
 Fort +11, Ref +12, Will +8
-DR 10/cold iron; Immune mind-affecting effects, sleep; SR 19
+DR 10/cold iron; Immune mind-affecting effects, sleep
+	SR:19
 OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (perfect)
 
 	Melee2 claws +15 (1d4+2), gore +15 (1d6+2)
-Special Attacks mental drain
+
+	Special Attacks:mental drain
 Spell-Like Abilities (CL 10th; concentration +17)
 At will-invisibility, lullaby, sleep (DC 18)
 3/day-deep slumber (DC 20), dream
@@ -820,12 +855,14 @@ DEFENSE
 AC 15, touch 15, flat-footed 10 (+5 Dex)
 hp 95 (10d10+40)
 Fort +11, Ref +12, Will +8
-DR 10/cold iron; Immune mind-affecting effects, sleep; SR 19
+DR 10/cold iron; Immune mind-affecting effects, sleep
+	SR:19
 OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (perfect)
 
 	Melee2 claws +15 (1d4+2), gore +15 (1d6+2)
-Special Attacks mental drain
+
+	Special Attacks:mental drain
 Spell-Like Abilities (CL 10th; concentration +17)
 At will-invisibility, lullaby, sleep (DC 18)
 3/day-deep slumber (DC 20), dream
@@ -914,9 +951,10 @@ OFFENSE
 	Meleebite +32 (2d8+13 plus grab), 2 claws +32 (2d6+13/19-20),
 tail slap +27 (2d8+19/3 plus pain)
 Ranged 4 quills +26 (1d10+13/19-20)
-Space 20 ft.;
+	FACE:20 ft.;
 	REACH:15 (20 ft. with tail slap)
-Special Attacks bounding charge, brutal tail, gaze, lash out,
+
+	Special Attacks:bounding charge, brutal tail, gaze, lash out,
 pounce, rake (4 claws, +32, 2d6+13/19-20), rend (2 claws,
 2d6+19)
 STATISTICS
@@ -1095,13 +1133,15 @@ AC 25, touch 13, flat-footed 21 (+4 Dex, +12 natural, -1 size)
 hp 168 (16d10+80)
 Fort +15, Ref +14, Will +10
 DR 10/good; Immune electricity, poison, Resist acid 10, cold 10,
-fire 10; SR 23
+fire 10
+	SR:23
 OFFENSE
 	MOVE:Walk,30,Climb,40
 	Meleebite +23 (1d8+4), 2 claws +23 (1d10+8 plus grab), gore +18
 (1d8+8)
-Space 10 ft.;
-	REACH:10Special Attacks devouring grapple, monstrous challenge, onearmed
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:devouring grapple, monstrous challenge, onearmed
 hold
 Spell-Like Abilities (CL 16th; concentration +19)
 Constant-see invisibility
@@ -1185,7 +1225,8 @@ OFFENSE
 	Melee2 claws +14 (1d6+3)
 Ranged +1 composite longbow +20/+15/+10 (1d8+4/19-20/3
 plus 1d6 negative energy and paralysis)
-Special Attacks devour soul, dread howl, infused arrows
+
+	Special Attacks:devour soul, dread howl, infused arrows
 STATISTICS
 Str 17, Dex 22, Con -, Int 11, Wis 10, Cha 15
 Base Atk +11; CMB +14; CMD 31
@@ -1381,7 +1422,8 @@ Defensive Abilities unstoppable; DR 15/epic; Immune
 ability damage, aging, bleed, disease, electricity, energy
 drain, fire, mind-affecting effects, negative levels,
 paralysis, permanent wounds, petrification, poison,
-polymorph; SR 33
+polymorph
+	SR:33
 Weaknesses vulnerable to miracles and wishes
 OFFENSE
 	MOVE:Walk,40,Fly,200 ft. (good)
@@ -1389,7 +1431,9 @@ OFFENSE
 	Meleebite +41 (4d6+16/19-20 plus bleed), 2 talons (2d8+16
 plus bleed), wings +36 (8d8+8)
 Ranged 6 scales +31 (1d10+16/19-20 plus bleed)
-Space 30 ft.; Reach 30Special Attacks bleed (2d6), gale, ruinous, thunderbolt
+	FACE:30
+	REACH:30
+	Special Attacks:bleed (2d6), gale, ruinous, thunderbolt
 Spell-Like Abilities (CL 20th; concentration +22)
 3/day-storm of vengeance (DC 21)
 STATISTICS
@@ -1464,16 +1508,19 @@ Fort +24, Ref +17, Will +14
 Defensive Abilities unstoppable; DR 15/epic; Immune ability
 damage, aging, bleed, cold, disease, energy drain, fire,
 mind-affecting effects, negative levels, paralysis, permanent
-wounds, petrification, poison, polymorph; SR 31
+wounds, petrification, poison, polymorph
+	SR:31
 Weaknesses vulnerable to miracles and wishes
 OFFENSE
 	MOVE:Walk,20,Swim,200
 	Meleebite +39 (6d6+18/19-20 plus grab), 2 claws +39 (3d6+18),
 tail slap +34 (4d6+9 plus trip)
 Ranged water jet +20 (4d8+18/19-20 plus stun and push)
-Space 30 ft.; Reach 20Spell-Like Abilities (CL 20th; concentration +22)
+	FACE:30
+	REACH:20Spell-Like Abilities (CL 20th; concentration +22)
 3/day-tsunami* (DC 21)
-Special Attacks capsize (DC 25), fast swallow, push
+
+	Special Attacks:capsize (DC 25), fast swallow, push
 (water jet, 20 ft.), rend (claws, 3d6+18), ruinous,
 swallow whole (4d6+27 bludgeoning, AC 28, 39 hp)
 * See the Advanced Player's Guide.
@@ -1548,16 +1595,19 @@ Fort +22, Ref +12, Will +12
 Defensive Abilities unstoppable; DR 15/epic; Immune ability
 damage, acid, aging, bleed, disease, energy drain, fire,
 mind-affecting effects, negative levels, paralysis, permanent
-wounds, petrification, poison, polymorph; SR 29
+wounds, petrification, poison, polymorph
+	SR:29
 Weaknesses vulnerable to miracles and wishes
 OFFENSE
 	MOVE:Walk,30,Burrow,30
 	Meleebite +33 (4d6+16 plus grab), gore +33 (4d6+16), 2 stomps
 +28 (2d8+8 plus trip)
 Ranged 4 rocks +15 (3d6+24 plus stun)
-Space 30 ft.; Reach 20Spell-Like Abilities (CL 20th; concentration +22)
+	FACE:30
+	REACH:20Spell-Like Abilities (CL 20th; concentration +22)
 3/day-earthquake (DC 20)
-Special Attacks fast swallow, mighty roar, rock spitting,
+
+	Special Attacks:fast swallow, mighty roar, rock spitting,
 ruinous, swallow whole (4d6+24 bludgeoning and 4d6 fire
 damage, AC 27, 33 hp), trample (2d8+24, DC 38)
 STATISTICS
@@ -1626,7 +1676,7 @@ CE
 	undead
 Init +4; Senses darkvision 60 ft.; Perception +14
 DEFENSE
-AC 20, touch 15, flat-footed 15 (+4 Dex, +1 dodge, +5 natural)
+AC 20, touch 15, flat-footed 15 (+4 Dex, +1 dodge, +5|TYPE=NaturalArmor
 hp 68 (8d8+32)
 Fort +6, Ref +6, Will +9
 DR 10/good or silver; Immune undead traits
@@ -1637,7 +1687,8 @@ OFFENSE
 	Melee1 bite +10 (1d6+3 plus paralysis), 2 claws +9 (1d6+3
 plus paralysis) or
 incorporeal touch +10 (1d4 Con damage)
-Special Attacks paralysis (1d4+1 rounds, DC 18)
+
+	Special Attacks:paralysis (1d4+1 rounds, DC 18)
 Spell-Like Abilities (CL 9th;
 concentration +13)
 At will-bleed, ghost sound (DC 14)
@@ -1715,7 +1766,8 @@ OFFENSE
 	MOVE:Walk,fly 30 ft. (perfect)
 
 	Melee2 incorporeal claws +17 (5d8 plus bleed)
-Special Attacks bleed (1d8), blood drain (1d6 Constitution)
+
+	Special Attacks:bleed (1d8), blood drain (1d6 Constitution)
 Spell-Like Abilities (CL 11th; concentration +17)
 At will-animal trance (DC 18), speak with animals, veil
 (self only, as animal with backward feet; DC 22)
@@ -1819,11 +1871,13 @@ DEFENSE
 AC 23, touch 23, flat-footed 17 (+7 deflection, +5 Dex, +1 dodge)
 hp 93 (17d6+34); terrible rejuvenation 5
 Fort +9, Ref +15, Will +13
-DR 15/cold iron; SR 21
+DR 15/cold iron
+	SR:21
 OFFENSE
 	MOVE:Walk,30
 	Melee2 claws +13 (1d8+8/19-20)
-Special Attacks sneak attack +6d6, striking
+
+	Special Attacks:sneak attack +6d6, striking
 fear
 Spell-Like Abilities (CL 10th;
 concentration +17)
@@ -1939,7 +1993,7 @@ OFFENSE
 	MOVE:Walk,5,Fly,60 ft. (good)
 
 	Melee2 tentacles +13 touch (1d6 electricity plus neural pulse)
-Space 2-1/2 feet; Reach 0Spell-Like Abilities (CL 10th; concentration +14)
+	FACE:2-1/2 feet; Reach 0Spell-Like Abilities (CL 10th; concentration +14)
 Constant-detect thoughts, mage armor
 At will-charm monster (DC 18), dominate animal (DC 17),
 dominate person (DC 19)
@@ -2041,7 +2095,8 @@ Weaknesses vulnerability to suggestion
 OFFENSE
 	MOVE:Walk,20
 	Meleebite +1 (1d3-3)
-Special Attacks fatal faker, specious suggestion
+
+	Special Attacks:fatal faker, specious suggestion
 Spell-Like Abilities (CL 3rd; concentration +3)
 3/day-daze (DC 10), jump, levitate (self only, up to 10 feet)
 STATISTICS
@@ -2122,7 +2177,7 @@ N
 Init -5; Senses blindsight 120 ft.; Perception -5
 Aura subsonic hum (60 ft., DC 22)
 DEFENSE
-AC 17, touch 5, flat-footed 17 (-5 Dex, +12 natural)
+AC 17, touch 5, flat-footed 17 (-5 Dex, +12|TYPE=NaturalArmor
 hp 136 (16d8+64)
 Fort +9, Ref +0, Will +0
 DR 10/-; Immune cold, electricity, ooze traits; Resist fire 20
@@ -2130,7 +2185,8 @@ Weaknesses brittle, vulnerable to sonic
 OFFENSE
 	MOVE:Walk,10,Climb,10
 	Meleeslam +18 (7d8+9/18-20 plus entrap)
-Special Attacks crystallize, entrap (DC 22, 1d10 rounds,
+
+	Special Attacks:crystallize, entrap (DC 22, 1d10 rounds,
 hardness 10, hp 10), razor sharp
 STATISTICS
 Str 22, Dex 1, Con 18, Int -, Wis 1, Cha 1
@@ -2195,7 +2251,7 @@ N
 	construct
 Init -1; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 14, touch 9, flat-footed 14 (-1 Dex, +5 natural)
+AC 14, touch 9, flat-footed 14 (-1 Dex, +5|TYPE=NaturalArmor
 hp 36 (3d10+20)
 Fort +1, Ref +0, Will +1
 DR 5/-; Immune construct traits, magic
@@ -2311,7 +2367,8 @@ OFFENSE
 	MOVE:Walk,30
 	Meleelongsword +3 (1d8+2/19-20)
 Ranged longbow +5 (1d8/3)
-Special Attacks favored enemy (
+
+	Special Attacks:favored enemy (
 	RACETYPE:Magical Beast 
 	s +2)
 STATISTICS
@@ -2391,7 +2448,7 @@ N
 Init +4; Senses blindsense 60 ft., darkvision 60 ft., thoughtsense;
 Perception +15
 DEFENSE
-AC 19, touch 18, flat-footed 15 (+4 deflection, +4 Dex, +1 natural)
+AC 19, touch 18, flat-footed 15 (+4 deflection, +4 Dex, +1|TYPE=NaturalArmor
 hp 76 (9d10+27)
 Fort +6, Ref +8, Will +13
 Defensive Abilities premonition, psychic deflection; Immune
@@ -2399,7 +2456,8 @@ visual effects
 OFFENSE
 	MOVE:Walk,30
 	Meleebite +13 (2d6+3), 2 claws +12 (1d6+3)
-Special Attacks consume thoughts
+
+	Special Attacks:consume thoughts
 Spell-Like Abilities (CL 7th; concentration +11)
 Constant-detect magic, detect thoughts (DC 16),
 read magic
@@ -2502,14 +2560,14 @@ CN
 Init +4; Senses darkvision 60 ft., tentacle sense 10 ft.;
 Perception +1
 DEFENSE
-AC 18, touch 14, flat-footed 14 (+4 Dex, +4 natural)
+AC 18, touch 14, flat-footed 14 (+4 Dex, +4|TYPE=NaturalArmor
 hp 45 (6d10+12)
 Fort +4, Ref +9, Will +6
 OFFENSE
 	MOVE:Walk,30,Swim,40 ft., jet 200
 	Meleemwk spear +11/+6 (1d8+4/?3), 2 tentacles +5 (1d4+1 plus grab)
 Ranged mwk spear +12 (1d8+3/?3)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (10 ft. with tentacles)
 STATISTICS
 Str 16, Dex 19, Con 14, Int 9, Wis 12, Cha 11
@@ -2579,7 +2637,7 @@ N
 	
 Init +0; Senses darkvision 60 ft., low-light vision; Perception +9
 DEFENSE
-AC 15, touch 10, flat-footed 15 (+5 natural)
+AC 15, touch 10, flat-footed 15 (+5|TYPE=NaturalArmor
 hp 30 (4d10+8)
 Fort +3, Ref +4, Will +6
 Immune mind-affecting effects
@@ -2588,7 +2646,8 @@ OFFENSE
 	Melee2 shortspears +8 (1d6+3) or
 2 slams +7 (1d4+3)
 Ranged 2 shortspears +5 (1d6+3)
-Special Attacks lure
+
+	Special Attacks:lure
 STATISTICS
 Str 17, Dex 10, Con 15, Int 15, Wis 14, Cha 12
 Base Atk +4; CMB +7; CMD 17
@@ -2657,13 +2716,14 @@ LE
 	outsider (evil, extraplanar, lawful)
 Init +6; Senses soul scent; Perception +15
 DEFENSE
-AC 18, touch 12, flat-footed 16 (+2 Dex, +6 natural)
+AC 18, touch 12, flat-footed 16 (+2 Dex, +6|TYPE=NaturalArmor
 hp 76 (8d10+32)
 Fort +10, Ref +8, Will +4
 OFFENSE
 	MOVE:Walk,40
 	Melee3 bites +11 (1d6+4 plus cerberus's jaws)
-Special Attacks rend (2 bites, 1d6+4 or 3 bites, 1d6+8)
+
+	Special Attacks:rend (2 bites, 1d6+4 or 3 bites, 1d6+8)
 STATISTICS
 Str 16, Dex 14, Con 19, Int 6, Wis 15, Cha 9
 Base Atk +8; CMB +11; CMD 23 (27 vs. trip)
@@ -2740,7 +2800,7 @@ N
 Init +4; Senses darkvision 60 ft., low-light vision; Perception +12
 Aura unsettling appearance (60 ft., DC 14)
 DEFENSE
-AC 15, touch 10, flat-footed 15 (+5 natural)
+AC 15, touch 10, flat-footed 15 (+5|TYPE=NaturalArmor
 hp 30 (4d8+12); fast healing 2
 Fort +7, Ref +1, Will +6
 Defensive Abilities otherworldly mind; Immune plant traits,
@@ -2749,9 +2809,10 @@ Weaknesses vulnerable to sonic
 OFFENSE
 	MOVE:Walk,30
 	Meleebite +5 (1d6+2), 2 tendrils +3 (1d4+1 plus pull)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (15 ft. with tendrils)
-Special Attacks pull (tendril, 5 ft.), star-shriek
+
+	Special Attacks:pull (tendril, 5 ft.), star-shriek
 Spell-Like Abilities (CL 4th; concentration +6)
 Constant-detect thoughts (DC 14)
 At will-touch of madness (DC 14)
@@ -2938,8 +2999,10 @@ OFFENSE
 	MOVE:Walk,40
 	Melee4 slams +41 (3d6+17)
 Ranged cannon +29/+24/+19/+14 (6d6/?4)
-Space 20 ft.; Reach 20 ft.
-Special Attacks self-destruction, trample (3d6+25, DC 41)
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:self-destruction, trample (3d6+25, DC 41)
 STATISTICS
 Str 45, Dex 20, Con -, Int -, Wis 11, Cha 1
 Base Atk +28; CMB +49; CMD 66
@@ -3011,9 +3074,10 @@ Weaknesses vulnerable to electricity
 OFFENSE
 	MOVE:Walk,30,Swim,60
 	Meleebite +25 (2d6+11), 2 slam +25 (1d8+11 plus grab)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks breath weapon (60-ft. line, 12d8 fire damage,
+
+	Special Attacks:breath weapon (60-ft. line, 12d8 fire damage,
 DC 18 for half, usable every 1d4 rounds, 3/day), grind,
 swallow whole (2d8+16 slashing damage plus 2d6 fire
 damage, AC 17, 20 hp)
@@ -3083,7 +3147,7 @@ N
 	construct (clockwork)
 Init +6; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 16, touch 14, flat-footed 12 (+2 Dex, +2 dodge, +2 natural)
+AC 16, touch 14, flat-footed 12 (+2 Dex, +2 dodge, +2|TYPE=NaturalArmor
 hp 31 (2d10+20); fast healing 2
 Fort +0, Ref +4, Will +0
 Immune construct traits
@@ -3158,7 +3222,7 @@ N
 	construct (clockwork)
 Init +6; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 20, touch 14, flat-footed 16 (+2 Dex, +2 dodge, +6 natural)
+AC 20, touch 14, flat-footed 16 (+2 Dex, +2 dodge, +6|TYPE=NaturalArmor
 hp 64 (8d10+20)
 Fort +2, Ref +6, Will +2
 DR 5/adamantine; Immune construct traits
@@ -3166,7 +3230,8 @@ Weaknesses vulnerable to electricity
 OFFENSE
 	MOVE:Walk,30
 	Melee+1 halberd +18/+13 (1d10+13/?3)
-Special Attacks latch
+
+	Special Attacks:latch
 STATISTICS
 Str 28, Dex 15, Con -, Int -, Wis 11, Cha 1
 Base Atk +8; CMB +17 (+19 disarm); CMD 31 (33
@@ -3239,7 +3304,8 @@ OFFENSE
 	MOVE:Walk,30,Fly,30 ft. (clumsy)
 
 	Meleeslam +3 (1d2)
-Special Attacks record audio, self-destruct
+
+	Special Attacks:record audio, self-destruct
 STATISTICS
 Str 10, Dex 13, Con -, Int -, Wis 11, Cha 1
 Base Atk +1; CMB +0; CMD 12
@@ -3323,7 +3389,8 @@ DEFENSE
 AC 21, touch 13, flat-footed 18 (+8 armor, +3 Dex)
 hp 97 (13d6+52); fast healing 5
 Fort +8, Ref +11, Will +10
-Defensive Abilities implements of ice; Immune cold; SR 19
+Defensive Abilities implements of ice; Immune cold
+	SR:19
 Weaknesses vulnerable to fire and sonic, susceptible to shatter
 OFFENSE
 	MOVE:Walk,30 ft.; icewalking
@@ -3400,8 +3467,10 @@ Immune mind-affecting effects
 OFFENSE
 	MOVE:Walk,30,Swim,40
 	Melee2 claws +16 (2d8+21 plus grab)
-Space 30 ft.; Reach 30 ft.
-Special Attacks constrict (2d8+21)
+	FACE:30
+	REACH:30 ft.
+
+	Special Attacks:constrict (2d8+21)
 STATISTICS
 Str 38, Dex 16, Con 28, Int -, Wis 14, Cha 5
 Base Atk +10; CMB +32 (+36 grapple); CMD 45 (61 vs. trip)
@@ -3453,9 +3522,10 @@ Immune mind-affecting effects
 OFFENSE
 	MOVE:Walk,30,Swim,60
 	Melee2 claws +13 (1d8+9 plus grab)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks constrict (1d8+9), darting claw
+
+	Special Attacks:constrict (1d8+9), darting claw
 STATISTICS
 Str 29, Dex 14, Con 22, Int -, Wis 12, Cha 2
 Base Atk +6; CMB +17 (+21 grapple); CMD 29 (41 vs. trip)
@@ -3510,9 +3580,10 @@ OFFENSE
 	Meleemwk greatclub +24/+19/+14 (3d8+19), gore +17 (1d8+6) or
 gore +23 (1d8+13), 2 slams +23 (2d6+13)
 Ranged rock +11 (2d6+19)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks powerful charge (gore, 4d8+24), rock
+
+	Special Attacks:powerful charge (gore, 4d8+24), rock
 throwing (120 ft.)
 STATISTICS
 Str 36, Dex 13, Con 25, Int 7,
@@ -3591,17 +3662,19 @@ NE
 Init +9; Senses darkvision 60 ft., deathwatch, detect good, true
 seeing; Perception +23
 DEFENSE
-AC 29, touch 16, flat-footed 23 (+5 Dex, +1 dodge, +13 natural)
+AC 29, touch 16, flat-footed 23 (+5 Dex, +1 dodge, +13|TYPE=NaturalArmor
 hp 212 (17d10+119)
 Fort +17, Ref +12, Will +13
 DR 10/good and silver; Immune acid, bleed, death effects,
-disease, poison; Resist cold 10, electricity 10, fire 10; SR 26
+disease, poison; Resist cold 10, electricity 10, fire 10
+	SR:26
 OFFENSE
 	MOVE:Walk,50
 	Meleedaggers +29/+29/+24/+19/+14 (1d4+11/17-20)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:10
-Special Attacks bleed (2d6), chained daggers, trap making
+
+	Special Attacks:bleed (2d6), chained daggers, trap making
 Spell-Like Abilities (CL 16th; concentration +25)
 Constant-air walk, deathwatch, detect good, true seeing
 At will-fear (DC 23), greater teleport (self plus 50 lbs. of
@@ -3680,7 +3753,8 @@ poison; Resist cold 10, electricity 10, fire 10
 OFFENSE
 	MOVE:Walk,30
 	Meleeshort sword +10/+5 (1d4+2/19-20 plus bleed), bite +5 (1d3+1)
-Special Attacks bleed (1d4), sneak attack +1d6
+
+	Special Attacks:bleed (1d4), sneak attack +1d6
 Spell-Like Abilities (CL 7th; concentration +10)
 Constant-detect good, detect magic
 3/day-blur, death knell (DC 15), invisibility, minor image (DC 14)
@@ -3756,9 +3830,10 @@ Immune acid, ooze traits
 OFFENSE
 	MOVE:Walk,20,Climb,20
 	Meleeslam +13 (2d6+6 plus 2d6 acid and grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks constrict (2d6+6 plus 2d6 acid)
+
+	Special Attacks:constrict (2d6+6 plus 2d6 acid)
 STATISTICS
 Str 20, Dex 3, Con 22, Int -, Wis 1, Cha 1
 Base Atk +9; CMB +15 (+19 grapple); CMD 21 (can't be tripped)
@@ -3846,9 +3921,10 @@ Immune undead traits
 OFFENSE
 	MOVE:Walk,30,Climb,20
 	Meleebite +15 (2d8+12)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks web (+9 ranged, DC 15, 11 hp)
+
+	Special Attacks:web (+9 ranged, DC 15, 11 hp)
 STATISTICS
 Str 26, Dex 14, Con -, Int 7, Wis 13, Cha 15
 Base Atk +8; CMB +17; CMD 29 (41 vs. trip)
@@ -3928,8 +4004,10 @@ magic, polymorph, undead traits
 Weaknesses torpor, vorpal susceptibility
 OFFENSE
 	MOVE:Walk,fly 30 ft. (perfect)
-Space 2-1/2 ft.; Reach 0 ft.
-Special Attacks devour soul
+	FACE:2-1/2
+	REACH:0 ft.
+
+	Special Attacks:devour soul
 Spell-Like Abilities (CL 20th; concentration +25)
 Constant-true seeing
 At will-greater bestow curse (DC 21), telekinesis (DC 19),
@@ -4218,18 +4296,20 @@ CE
 Init +11; Senses blindsense 30 ft., darkvision 60 ft., detect
 good, detect magic, see invisibility; Perception +36
 DEFENSE
-AC 32, touch 17, flat-footed 25 (+7 Dex, +15 natural)
+AC 32, touch 17, flat-footed 25 (+7 Dex, +15|TYPE=NaturalArmor
 hp 262 (25d10+125)
 Fort +19, Ref +17, Will +18; +4 vs. divine spells
 DR 15/good and magic; Immune acid, poison; Resist cold 10,
-fire 10; SR 29
+fire 10
+	SR:29
 OFFENSE
 	MOVE:Walk,40,Fly,50 ft. (average)
 
 	Melee+2 unholy morningstar +36/+31/+26/+21 (1d8+11), bite +32
 (2d6+4), claw +32 (1d6+4) or
 bite +34 (2d6+9), 2 claws +34 (1d6+9)
-Special Attacks faith-stealing strike
+
+	Special Attacks:faith-stealing strike
 Spell-Like Abilities (CL 20th; concentration +25)
 Constant-detect good, detect magic, see invisibility
 At will-detect thoughts (DC 17), fear (DC 19), gaseous form,
@@ -4299,17 +4379,19 @@ Init +4; Senses darkvision 120 ft., detect good, detect magic, see
 invisibility; Perception +2
 Aura stench (DC 26, 1d6 rounds)
 DEFENSE
-AC 30, touch 13, flat-footed 27 (+6 armor, +3 Dex, +11 natural)
+AC 30, touch 13, flat-footed 27 (+6 armor, +3 Dex, +11|TYPE=NaturalArmor
 hp 241 (21d10+126)
 Fort +18, Ref +13, Will +14; +4 vs. divine spells
 DR 10/good and magic; Immune acid, poison; Resist cold 10,
-fire 10; SR 27
+fire 10
+	SR:27
 OFFENSE
 	MOVE:Walk,20,Fly,40 ft. (average)
 
 	Meleebite +30 (1d10+9 plus 2d6 acid), 2 claws +30 (2d6+13/19-
 20 plus 2d6 acid and grab)
-Special Attacks acid, dread claws, faithstealing
+
+	Special Attacks:acid, dread claws, faithstealing
 strike
 Spell-Like Abilities (CL 16th; concentration +19)
 Constant-detect good, detect magic, see invisibility
@@ -4379,18 +4461,20 @@ Perception +22
 DEFENSE
 AC 26, touch 13, flatfooted
 23 (+6 armor, +3
-Dex, +7 natural)
+Dex, +7|TYPE=NaturalArmor
 hp 171 (18d10+72)
 Fort +15, Ref +11, Will +12; +4 vs. divine spells
 DR 10/good and magic; Immune acid, poison; Resist
-cold 10, fire 10; SR 24
+cold 10, fire 10
+	SR:24
 OFFENSE
 	MOVE:Walk,40,Fly,40 ft. (average)
 
 	Meleemwk short sword +26/+21/+16/+11
 (1d6+9/19-20), mwk short sword +26/+21/+16 (1d6+4/19-20),
 bite +22 (1d8+4)
-Special Attacks adhesion, faith-stealing strike
+
+	Special Attacks:adhesion, faith-stealing strike
 Spell-Like Abilities (CL 13th; concentration +24)
 Constant-detect good, detect magic
 3/day-dispel magic
@@ -4453,16 +4537,18 @@ CE
 	outsider (chaotic, demon, evil, extraplanar)
 Init +13; Senses darkvision 60 ft., scent; Perception +31
 DEFENSE
-AC 26, touch 19, flat-footed 17 (+9 Dex, +7 natural)
+AC 26, touch 19, flat-footed 17 (+9 Dex, +7|TYPE=NaturalArmor
 hp 168 (16d10+80)
 Fort +15, Ref +19, Will +9
 DR 10/good; Immune electricity, disease, poison; Resist acid 10,
-cold 10, fire 10; SR 23
+cold 10, fire 10
+	SR:23
 OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (good)
 
 	Meleebite +25 (1d6+4 plus siphon), 2 slams +25 (1d4+4)
-Special Attacks droning wings, siphon, sneak attack +4d6
+
+	Special Attacks:droning wings, siphon, sneak attack +4d6
 Spell-Like Abilities (CL 12th; concentration +18)
 Constant-tongues
 At will-contagion (DC 20), invisibility, suggestion (DC 19)
@@ -4562,17 +4648,19 @@ CE
 	outsider (chaotic, demon, evil, extraplanar)
 Init +2; Senses darkvision 60 ft.; Perception +13
 DEFENSE
-AC 18, touch 12, flat-footed 16 (+2 Dex, +6 natural)
+AC 18, touch 12, flat-footed 16 (+2 Dex, +6|TYPE=NaturalArmor
 hp 76 (8d10+32)
 Fort +10, Ref +6, Will +8
 DR 10/cold iron or good; Immune electricity, poison; Resist
-acid 10, cold 10, fire 10; SR 17
+acid 10, cold 10, fire 10
+	SR:17
 OFFENSE
 	MOVE:Walk,30,Fly,50 ft. (average)
 
 	Meleemwk scimitar +14/+9 (1d6+5/18-20) or
 2 slams +13 (1d4+5)
-Special Attacks pain redoubled
+
+	Special Attacks:pain redoubled
 Spell-Like Abilities (CL 8th; concentration +13)
 Constant-tongues
 At will-charm person (DC 16), detect thoughts (DC 17), greater
@@ -4635,17 +4723,19 @@ CE
 	outsider (chaotic, demon, evil, extraplanar)
 Init +2; Senses darkvision 60 ft., see invisibility; Perception +13
 DEFENSE
-AC 19, touch 12, flat-footed 17 (+2 Dex, +7 natural)
+AC 19, touch 12, flat-footed 17 (+2 Dex, +7|TYPE=NaturalArmor
 hp 37 (5d10+10)
 Fort +6, Ref +3, Will +3
 DR 5/cold iron or good; Immune disease, electricity, poison;
-Resist acid 10, cold 10, fire 10; SR 15
+Resist acid 10, cold 10, fire 10
+	SR:15
 OFFENSE
 	MOVE:Walk,30
 	Meleemwk halberd +10 (1d10+4/?3 plus disease), gore +3
 (1d6+2) or
 gore +8 (1d6+4)
-Special Attacks powerful charge (gore, 3d6+4)
+
+	Special Attacks:powerful charge (gore, 3d6+4)
 Spell-Like Abilities (CL 6th; concentration +4)
 Constant-see invisibility, tongues
 3/day-arcane lock, expeditious retreat, protection
@@ -4727,9 +4817,10 @@ OFFENSE
 	Meleemwk falchion +12/+7 (2d6+7/18-20) or
 2 slams +11 (1d6+5)
 Ranged javelin +9 (1d8+5)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks aerial charge, knockdown
+
+	Special Attacks:aerial charge, knockdown
 STATISTICS
 Str 21, Dex 16, Con 17, Int 9, Wis 12, Cha 10
 Base Atk +7; CMB +13; CMD 26
@@ -4804,18 +4895,20 @@ LE
 	outsider (devil, evil, extraplanar, lawful)
 Init +11; Senses darkvision 60 ft., see in darkness; Perception +26
 DEFENSE
-AC 25, touch 18, flat-footed 17 (+7 Dex, +1 dodge, +7 natural)
+AC 25, touch 18, flat-footed 17 (+7 Dex, +1 dodge, +7|TYPE=NaturalArmor
 hp 136 (13d10+65)
 Fort +9, Ref +15, Will +16
 DR 10/good; Immune fire, mind-affecting effects, poison;
-Resist acid 10, cold 10; SR 21
+Resist acid 10, cold 10
+	SR:21
 OFFENSE
 	MOVE:Walk,30
 	Meleebinding contract (whip) +20/+15/+10 (1d4+7 plus bleed),
 gore +11 (2d6+3)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (10 ft. with binding contract)
-Special Attacks binding contract, bleed (1d6), impale (2d8+4)
+
+	Special Attacks:binding contract, bleed (1d6), impale (2d8+4)
 Spell-Like Abilities (CL 13th; concentration +19)
 Constant-tongues
 At will-bestow curse (DC 20), detect thoughts (DC 18),
@@ -4989,9 +5082,10 @@ Fort +8, Ref +6, Will +2
 OFFENSE
 	MOVE:Walk,30
 	Meleebite +8 (1d8+7/19-20)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks tearing bite
+
+	Special Attacks:tearing bite
 STATISTICS
 Str 20, Dex 15, Con 18, Int 1, Wis 12, Cha 3
 Base Atk +3; CMB +9; CMD 21 (25 vs. trip)
@@ -5029,9 +5123,10 @@ Fort +10, Ref +8, Will +4
 OFFENSE
 	MOVE:Walk,30
 	Melee2 claws +13 (1d8+8/?3)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks thumb spikes
+
+	Special Attacks:thumb spikes
 STATISTICS
 Str 27, Dex 14, Con 19, Int 2, Wis 12, Cha 7
 Base Atk +6; CMB +16; CMD 28 (32 vs. trip)
@@ -5093,9 +5188,10 @@ Fort +7, Ref +6, Will +2
 OFFENSE
 	MOVE:Walk,40
 	Meleeslam +8 (2d6+9)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks clobbering charge
+
+	Special Attacks:clobbering charge
 STATISTICS
 Str 22, Dex 15, Con 17, Int 2, Wis 12, Cha 5
 Base Atk +3; CMB +10; CMD 22
@@ -5147,8 +5243,10 @@ Fort +16, Ref +16, Will +9
 OFFENSE
 	MOVE:Walk,40,Swim,30
 	Meleebite +23 (2d8+12/19-20 plus grab), 2 claws +23 (2d6+12)
-Space 20 ft.; Reach 20 ft.
-Special Attacks pounce, swallow whole (2d8+12, AC 18, 17 hp)
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:pounce, swallow whole (2d8+12, AC 18, 17 hp)
 STATISTICS
 Str 34, Dex 15, Con 18, Int 2, Wis 13, Cha 13
 Base Atk +15; CMB +31 (+35 grapple); CMD 43
@@ -5180,14 +5278,15 @@ NE
 	
 Init +1; Senses darkvision 60 ft.; Perception +6
 DEFENSE
-AC 13, touch 11, flat-footed 12 (+1 Dex, +2 natural)
+AC 13, touch 11, flat-footed 12 (+1 Dex, +2|TYPE=NaturalArmor
 hp 15 (2d10+4)
 Fort +2, Ref +4, Will +3
 Defensive Abilities ferocity
 OFFENSE
 	MOVE:Walk,30,Climb,30
 	Melee2 claws +3 (1d4+1)
-Special Attacks leap, rend (2 claws, 1d4+1)
+
+	Special Attacks:leap, rend (2 claws, 1d4+1)
 STATISTICS
 Str 13, Dex 12, Con 15, Int 7, Wis 10, Cha 8
 Base Atk +2; CMB +3; CMD 14
@@ -5270,9 +5369,10 @@ Weaknesses vulnerable to dispel magic
 OFFENSE
 	MOVE:Walk,50
 	Meleetrunk +7 touch (disenchant), 2 hooves +2 (1d6+2)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with trunk)
-Special Attacks power spray
+
+	Special Attacks:power spray
 Spell-Like Abilities (CL 4th; concentration +3)
 Constant-detect magic
 3/day-magic weapon
@@ -5442,15 +5542,17 @@ NE
 	outsider (div, evil, extraplanar)
 Init +2; Senses darkvision 60 ft., see in darkness; Perception +11
 DEFENSE
-AC 18, touch 12, flat-footed 16 (+2 Dex, +6 natural)
+AC 18, touch 12, flat-footed 16 (+2 Dex, +6|TYPE=NaturalArmor
 hp 42 (5d10+15)
 Fort +4, Ref +6, Will +7
 DR 5/cold iron or good; Immune fire, poison; Resist acid 10,
-electricity 10; SR 15
+electricity 10
+	SR:15
 OFFENSE
 	MOVE:Walk,30
 	Melee2 claws +8 (1d6+2)
-Special Attacks cursed gaze, sandstorm
+
+	Special Attacks:cursed gaze, sandstorm
 Spell-Like Abilities (CL 6th; concentration +10)
 At will-bestow curse (DC 16), detect good, detect magic,
 dimension door, minor image (DC 15), spectral hand
@@ -5531,8 +5633,10 @@ OFFENSE
 
 	Meleebite +32 (2d8+12 plus grab/19-20), 2 claws +32 (2d6+12),
 tail slap +30 (2d10+6)
-Space 20 ft.; Reach 20 ft. (25 ft. with tail)
-Special Attacks create ghul, rend (2 claws, 2d6+18), shake
+	FACE:20
+	REACH:20 ft. (25 ft. with tail)
+
+	Special Attacks:create ghul, rend (2 claws, 2d6+18), shake
 faith, swallow whole (6d6+18 plus 4d6 energy damage,
 AC 25, 37 hp), torturous gullet, trample (2d8+18, DC 34)
 Spell-Like Abilities (CL 20th; concentration +28)
@@ -5706,7 +5810,8 @@ Fort +3, Ref +4, Will +4
 DR 10/cold iron or good;
 Immune fire, poison;
 Resist acid 10,
-electricity 10; SR 13
+electricity 10
+	SR:13
 OFFENSE
 	MOVE:Walk,20 ft., fly
 40 ft. (perfect)
@@ -5714,7 +5819,7 @@ OFFENSE
 	Meleebite +9
 (1d4-1 plus
 poison)
-Space 2-1/2 ft.;
+	FACE:2-1/2 ft.;
 Reach 0 ft.
 Spell-Like Abilities
 (CL 6th; concentration +8)
@@ -5812,16 +5917,18 @@ AC 26, touch 11, flat-footed 24 (+2 Dex, +15 natural, -1 size)
 hp 161 (14d10+84)
 Fort +10, Ref +13, Will +11
 Defensive Abilities rough hide; DR 10/cold iron and good;
-Immune fire, poison; Resist acid 10, electricity 10; SR 21
+Immune fire, poison; Resist acid 10, electricity 10
+	SR:21
 OFFENSE
 	MOVE:Walk,30,Swim,80
 	Meleebite +22 (1d8+7/19-20), 2 claws +20 (1d6+7), sting +20
 (1d6+7 plus poison) or
 spear +20/+15/+10 (2d6+7/3 plus poison)
 Ranged spear +15 (2d6+7/3 plus poison)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks boiling sea
+
+	Special Attacks:boiling sea
 Spell-Like Abilities (CL 12th; concentration +14)
 Constant-detect good, detect magic
 At will-control water, curse water, deeper darkness,
@@ -5883,11 +5990,12 @@ NE
 Init +9; Senses darkvision 60 ft., detect good, detect magic, see
 in darkness; Perception +16
 DEFENSE
-AC 23, touch 15, flat-footed 18 (+5 Dex, +8 natural)
+AC 23, touch 15, flat-footed 18 (+5 Dex, +8|TYPE=NaturalArmor
 hp 76 (9d10+27)
 Fort +6, Ref +11, Will +10
 DR 10/cold iron or good; Immune fire, poison, disease; Resist
-acid 10, electricity 10; SR 22
+acid 10, electricity 10
+	SR:22
 OFFENSE
 	MOVE:Walk,30,Fly,50 ft. (good)
 
@@ -5997,14 +6105,16 @@ AC 32, touch 14, flat-footed 27 (+5 Dex, +18 natural, -1 size)
 hp 202 (15d10+120)
 Fort +13, Ref +16, Will +15
 DR 10/cold iron and good; Immune fire, poison; Resist acid 10,
-electricity 10; SR 25
+electricity 10
+	SR:25
 OFFENSE
 	MOVE:Walk,40
 	Melee+1 falchion +23/+18/+13 (2d6+11/15-20) or
 2 claws +21 (1d6+7)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks rain of debris
+
+	Special Attacks:rain of debris
 Spell-Like Abilities (CL 15th; concentration +21)
 At will-comprehend languages, deeper
 darkness, greater teleport (self
@@ -6108,13 +6218,15 @@ AC 27, touch 16, flat-footed 20 (+7 Dex, +11 natural, -1 size)
 hp 150 (12d10+84)
 Fort +11, Ref +15, Will +14
 DR 10/cold iron and good; Immune fire, poison; Resist acid 10,
-electricity 10; SR 23
+electricity 10
+	SR:23
 OFFENSE
 	MOVE:Walk,50
 	Meleebite +21 (1d8+9/19-20), 2 claws +21 (1d8+9 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks consume essence, dusty pelt, rake (2 claws +21,
+
+	Special Attacks:consume essence, dusty pelt, rake (2 claws +21,
 1d8+9)
 Spell-Like Abilities (CL 13th; concentration +18)
 Constant-true seeing
@@ -6217,13 +6329,16 @@ AC 18, touch 16, flat-footed 14 (+3 Dex, +1 dodge,
 +2 natural, +2 size)
 hp 22 (3d12+3)
 Fort +4, Ref +6, Will +5
-Immune paralysis, sleep; SR 13
+Immune paralysis, sleep
+	SR:13
 OFFENSE
 	MOVE:Walk,10,Fly,60 ft. (perfect), swim 30
 	
 	Meleebite +4 (1d3-1)
-Space 2-1/2 ft.; Reach 0 ft.
-Special Attacks breath weapon (5-ft. cone, euphoria, Fort DC 12
+	FACE:2-1/2
+	REACH:0 ft.
+
+	Special Attacks:breath weapon (5-ft. cone, euphoria, Fort DC 12
 negates, usable every 1d4 rounds)
 Spell-Like Abilities (CL 3rd; concentration +6)
 3/day-greater invisibility (self only)
@@ -6536,9 +6651,10 @@ OFFENSE
 
 	Meleebite +17 (2d6+9), 2 claws +16 (1d8+6), gore +16 (1d8+9),
 tail slap +14 (1d8+9)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with bite and gore)
-Special Attacks breath weapon (40-ft. cone, 6d6 piercing
+
+	Special Attacks:breath weapon (40-ft. cone, 6d6 piercing
 damage, DC 19)
 Spell-Like Abilities (CL 11th; concentration +12)
 At will-pass without trace
@@ -6567,15 +6683,17 @@ DEFENSE
 AC 30, touch 8, flat-footed 30 (+22 natural, -2 size)
 hp 229 (17d12+119)
 Fort +16, Ref +10, Will +15
-DR 2/adamantine; Immune paralysis, poison, sleep; SR 25
+DR 2/adamantine; Immune paralysis, poison, sleep
+	SR:25
 OFFENSE
 	MOVE:Walk,40,Burrow,20,Climb,30,Fly,200 ft. (poor)
 
 	Meleebite +25 (2d8+13), 2 claws +24 (2d6+9), gore +24 (2d6+13),
 tail slap +22 (2d6+13)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10 (15 ft. with bite and gore)
-Special Attacks breath weapon (50-ft. cone, 12d6 piercing
+
+	Special Attacks:breath weapon (50-ft. cone, 12d6 piercing
 damage), crush (DC 24, 2d8+13)
 Spell-Like Abilities (CL 17th; concentration +20)
 At will-blight (DC 18), entangle (DC 14), pass without trace
@@ -6612,15 +6730,17 @@ DEFENSE
 AC 39, touch 5, flat-footed 39 (-1 Dex, +34 natural, -4 size)
 hp 387 (25d12+225)
 Fort +22, Ref +13, Will +21
-DR 10/adamantine; Immune paralysis, poison, sleep; SR 30
+DR 10/adamantine; Immune paralysis, poison, sleep
+	SR:30
 OFFENSE
 	MOVE:Walk,40,Burrow,20,Climb,30,Fly,250 ft. (clumsy)
 
 	Meleebite +36 (4d6+19/19-20), 2 claws +34 (2d8+13), gore +34
 (2d8+19), tail slap +32 (2d8+19)
-Space 20 ft.;
+	FACE:20 ft.;
 	REACH:15 (20 ft. with bite and gore)
-Special Attacks breath weapon (60-ft. cone, 20d6 piercing
+
+	Special Attacks:breath weapon (60-ft. cone, 20d6 piercing
 damage, DC 32) crush (DC 32, 2d8+19), destructive
 crush, tail sweep (2d6+19, DC 35)
 Spell-Like Abilities (CL 25th; concentration +30)
@@ -6733,9 +6853,10 @@ OFFENSE
 	MOVE:Walk,40,Fly,200 ft. (poor), swim 60
 	Meleebite +13 (2d6+7), 2 claws +13 (1d8+5), gore +13 (1d8+7),
 tail slap +11 (1d8+7)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with bite and gore)
-Special Attacks breath weapon (40-ft. cone, 6d6 fire damage,
+
+	Special Attacks:breath weapon (40-ft. cone, 6d6 fire damage,
 DC 17), torrent breath
 Spell-Like Abilities (CL 9th; concentration +12)
 At will-create water
@@ -6764,14 +6885,16 @@ DEFENSE
 AC 28, touch 8, flat-footed 28 (+20 natural, -2 size)
 hp 172 (15d12+75)
 Fort +16, Ref +11, Will +14
-DR 5/magic; Immune electricity, paralysis, sleep; SR 23
+DR 5/magic; Immune electricity, paralysis, sleep
+	SR:23
 OFFENSE
 	MOVE:Walk,40,Fly,200 ft. (poor), swim 80
 	Meleebite +22 (2d8+12), 2 claws +22 (2d6+8), gore +21
 (2d6+12), tail slap +19 (2d6+12)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10 (15 ft. with bite and gore)
-Special Attacks breath weapon (50-ft. cone, 12d6 fire damage,
+
+	Special Attacks:breath weapon (50-ft. cone, 12d6 fire damage,
 DC 22), crush (DC 22, 2d8+12), torrent breath
 Spell-Like Abilities (CL 15th; concentration +20)
 At will-call lightning (DC 18), create water, hydraulic push*
@@ -6806,14 +6929,16 @@ DEFENSE
 AC 37, touch 5, flat-footed 37 (-1 Dex, +32 natural, -4 size)
 hp 310 (23d12+161)
 Fort +22, Ref +14, Will +20
-DR 15/magic; Immune electricity, paralysis, sleep; SR 28
+DR 15/magic; Immune electricity, paralysis, sleep
+	SR:28
 OFFENSE
 	MOVE:Walk,40,Fly,250 ft. (clumsy), swim 100
 	Meleebite +33 (4d6+18), 2 claws +32 (2d8+12), gore +32
 (2d8+18), tail slap +29 (2d8+18)
-Space 20 ft.;
+	FACE:20 ft.;
 	REACH:15 (20 ft. with bite and gore)
-Special Attacks breath weapon (60-ft. cone, 20d6 fire
+
+	Special Attacks:breath weapon (60-ft. cone, 20d6 fire
 damage, DC 28), crush (DC 28, 4d6+18), tail sweep
 (DC 28, 2d6+18), torrent breath
 Spell-Like Abilities (CL 23rd; concentration +30)
@@ -6927,9 +7052,10 @@ OFFENSE
 
 	Meleebite +14 (2d6+7), 2 claws +14 (1d8+5), gore +14 (1d8+7),
 tail slap +12 (1d8+7)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with bite and gore)
-Special Attacks breath weapon (40-ft. cone, 6d8 electricity
+
+	Special Attacks:breath weapon (40-ft. cone, 6d8 electricity
 damage, DC 18)
 Spell-Like Abilities (CL 10th; concentration +13)
 At will-detect evil
@@ -6958,15 +7084,17 @@ DEFENSE
 AC 29, touch 8, flat-footed 29 (+21 natural, -2 size)
 hp 184 (16d12+80)
 Fort +15, Ref +12, Will +17
-DR 5/magic; Immune electricity, paralysis, sleep; SR 24
+DR 5/magic; Immune electricity, paralysis, sleep
+	SR:24
 OFFENSE
 	MOVE:Walk,40,Fly,200 ft. (good)
 
 	Meleebite +22 (2d8+12/19-20), 2 claws +22 (2d6+8), gore +22
 (2d6+12), tail slap +20 (2d6+12)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10 (15 ft. with bite and gore)
-Special Attacks breath weapon (50-ft. cone, 12d8 electricity
+
+	Special Attacks:breath weapon (50-ft. cone, 12d8 electricity
 damage, DC 23), crush (DC 23, 2d8+12)
 Spell-Like Abilities (CL 16th; concentration +21)
 At will-detect evil, feather fall, gust of wind (DC 17)
@@ -7005,15 +7133,17 @@ natural, -4 size)
 hp 333 (23d12+184)
 Fort +20, Ref +14, Will +22
 DR 15/magic; Immune electricity,
-paralysis, sleep; SR 29
+paralysis, sleep
+	SR:29
 OFFENSE
 	MOVE:Walk,40,Fly,250 ft. (perfect)
 
 	Meleebite +32 (4d6+18/19-20), 2 claws +31 (2d8+12), gore +31
 (2d8+18), tail slap +29 (2d8+18)
-Space 20 ft.;
+	FACE:20 ft.;
 	REACH:15 (20 ft. with bite and gore)
-Special Attacks breath weapon (60-ft. cone, 20d8 electricity,
+
+	Special Attacks:breath weapon (60-ft. cone, 20d8 electricity,
 DC 28) crush (DC 28; 2d6+18), grounding breath, primal
 lightning, tail sweep (DC 28; 2d6+18),
 Spell-Like Abilities (CL 23th; concentration +30)
@@ -7120,9 +7250,10 @@ OFFENSE
 
 	Meleebite +19 (2d6+10), 2 claws +18 (1d8+7), gore +18 (1d8+10),
 tail slap +16 (1d8+10)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with bite and gore)
-Special Attacks breath weapon (40-ft. cone, 6d6 sonic
+
+	Special Attacks:breath weapon (40-ft. cone, 6d6 sonic
 damage, DC 20), violent retort
 Spell-Like Abilities (CL 12th; concentration +15)
 At will-detect good/evil
@@ -7151,15 +7282,17 @@ DEFENSE
 AC 30, touch 8, flat-footed 30 (+22 natural, -2 size)
 hp 225 (18d12+108)
 Fort +17, Ref +13, Will +18
-DR 5/magic; Immune paralysis, sleep; SR 26
+DR 5/magic; Immune paralysis, sleep
+	SR:26
 OFFENSE
 	MOVE:Walk,50,Fly,200 ft. (poor)
 
 	Meleebite +27 (2d8+15/19-20), 2 claws +26 (2d6+10), gore +26
 (2d6+15), tail slap +24 (2d6+15)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10 (15 ft. with bite and gore)
-Special Attacks breath weapon (40-ft. cone, 12d6 sonic
+
+	Special Attacks:breath weapon (40-ft. cone, 12d6 sonic
 damage, DC 25), crush (DC 25, 2d8+15), violent retort
 Spell-Like Abilities (CL 18th; concentration +22)
 At will-calm emotions, detect good/evil, tongues
@@ -7204,9 +7337,10 @@ OFFENSE
 	Meleebite +37 (4d6+21/19-20), 2 claws +37
 (2d8+14/19-20), gore +36 (2d8+21), tail slap +34
 (2d8+21)
-Space 20 ft.;
+	FACE:20 ft.;
 	REACH:15 (20 ft. with bite and gore)
-Special Attacks breath weapon (60-ft. cone,
+
+	Special Attacks:breath weapon (60-ft. cone,
 20d6 sonic damage, DC 31), crush (DC 31,
 4d6+21), tail sweep (DC 31, 2d6+21),
 violent retort
@@ -7309,7 +7443,7 @@ LE
 	dragon (fire)
 Init +5; Senses dragon senses, smoke vision; Perception +12
 DEFENSE
-AC 21, touch 11, flat-footed 20 (+1 Dex, +10 natural)
+AC 21, touch 11, flat-footed 20 (+1 Dex, +10|TYPE=NaturalArmor
 hp 76 (8d12+24)
 Fort +9, Ref +7, Will +7
 Immune fire, paralysis, sleep
@@ -7318,9 +7452,10 @@ OFFENSE
 	MOVE:Walk,40,Burrow,30,Fly,150 ft. (average)
 
 	Meleebite +14 (1d8+5), 2 claws +13 (1d6+5/19-20), gore +13 (1d6+5)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (10 ft. with bite and gore)
-Special Attacks adamantine claws, breath weapon (60-ft. line,
+
+	Special Attacks:adamantine claws, breath weapon (60-ft. line,
 6d6 fire damage, DC 17)
 Spell-Like Abilities (CL 8th; concentration +9)
 At will-soften earth and stone
@@ -7348,16 +7483,18 @@ DEFENSE
 AC 28, touch 9, flat-footed 28 (+19 natural, -1 size)
 hp 161 (14d12+70)
 Fort +14, Ref +9, Will +12
-DR 5/magic; Immune fire, paralysis, sleep; SR 22
+DR 5/magic; Immune fire, paralysis, sleep
+	SR:22
 Weaknesses vulnerability to cold
 OFFENSE
 	MOVE:Walk,40,Burrow,40,Fly,200 ft. (poor)
 
 	Meleebite +22 (2d6+12), 2 claws +22 (1d8+8/19-20), gore +21
 (1d8+12), tail slap +16 (1d8+12)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with bite and gore)
-Special Attacks adamantine claws, breath weapon (80-ft. line,
+
+	Special Attacks:adamantine claws, breath weapon (80-ft. line,
 12d6 fire damage, DC 22)
 Spell-Like Abilities (CL 14th; concentration +17)
 At will-soften earth and stone, spike stones (DC 17), stone shape
@@ -7392,16 +7529,18 @@ DEFENSE
 AC 38, touch 7, flat-footed 38 (-1 Dex, +31 natural, -2 size)
 hp 297 (22d12+154)
 Fort +20, Ref +12, Will +18
-DR 15/magic; Immune fire, paralysis, sleep; SR 27
+DR 15/magic; Immune fire, paralysis, sleep
+	SR:27
 Weaknesses vulnerability to cold
 OFFENSE
 	MOVE:Walk,40,Burrow,50,Fly,200 ft. (poor)
 
 	Meleebite +30 (2d8+12), 2 claws +29 (2d6+8/19-20), gore +29
 (2d6+12), tail slap +24 (2d6+12)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10 (15 ft. with bite)
-Special Attacks adamantine claws, breath weapon (100-ft. line,
+
+	Special Attacks:adamantine claws, breath weapon (100-ft. line,
 20d6 fire damage, DC 28), crush (DC 28, 2d8+12)
 Spell-Like Abilities (CL 22nd; concentration +27)
 At will-repel metal or stone, soften earth and stone,
@@ -7464,8 +7603,9 @@ OFFENSE
 	MOVE:Walk,40,Fly,30 ft. (poor)
 
 	Meleebite +13 (1d8+5), 2 claws +13 (1d6+5)
-Space 10 ft.;
-	REACH:10Special Attacks roar, pounce
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:roar, pounce
 STATISTICS
 Str 21, Dex 17, Con 17, Int 6, Wis 12, Cha 12
 Base Atk +9; CMB +15; CMD 28 (32 vs. trip)
@@ -7548,8 +7688,9 @@ OFFENSE
 
 	Meleebite +15 (2d6+9/19-20 plus 1d10 electricity), tail slap +9
 (1d8+3 plus push)
-Space 10 ft.;
-	REACH:10Special Attacks dazzling emergence, push (tail slap, 10 ft.),
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:dazzling emergence, push (tail slap, 10 ft.),
 sandstorm breath, savage bite
 STATISTICS
 Str 22, Dex 15, Con 21, Int 8, Wis 11, Cha 12
@@ -7639,8 +7780,9 @@ OFFENSE
 	Meleebite +18 (2d8+10/19-20 plus
 bleed), tail slap +12 (1d10+3
 plus trip)
-Space 10 ft.;
-	REACH:10Special Attacks bleed (1d6),
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:bleed (1d6),
 clinging corrosion, pounce,
 savage bite
 STATISTICS
@@ -7710,14 +7852,15 @@ NE
 Init +7; Senses darkvision 60 ft., low-light vision, scent;
 Perception +7
 DEFENSE
-AC 16, touch 13, flat-footed 13 (+3 Dex, +3 natural)
+AC 16, touch 13, flat-footed 13 (+3 Dex, +3|TYPE=NaturalArmor
 hp 34 (4d12+8)
 Fort +6, Ref +7, Will +4
 Immune paralysis, sleep; Resist acid 20
 OFFENSE
 	MOVE:Walk,20,Fly,60 ft. (average), swim 30
 	Meleebite +7 (2d4+3), tail slap +2 (1d4+1)
-Special Attacks caustic mucus, pounce
+
+	Special Attacks:caustic mucus, pounce
 STATISTICS
 Str 17, Dex 16, Con 15, Int 8, Wis 10, Cha 9
 Base Atk +4; CMB +7; CMD 20
@@ -7790,12 +7933,14 @@ AC 28, touch 28, flat-footed 17 (+7 deflection, +11 Dex)
 hp 207 (18d8+126)
 Fort +13, Ref +17, Will +17
 Defensive Abilities incorporeal, channel resistance +4; DR 10/
-good; Immune undead traits; SR 26
+good; Immune undead traits
+	SR:26
 OFFENSE
 	MOVE:Walk,fly 60 ft. (perfect)
 
 	Meleepain touch +19 touch (7d6)
-Special Attacks malevolence
+
+	Special Attacks:malevolence
 Spell-Like Abilities (CL 18th;
 concentration +25)
 At will-detect thoughts
@@ -7906,8 +8051,9 @@ silver; Immune acid, undead traits
 OFFENSE
 	MOVE:Walk,30
 	Melee2 claws +27 (3d6+11/19-20)
-Space 10 ft.;
-	REACH:10Special Attacks bleed (1 Con drain), rend (2 claws,
+	FACE:10 ft.;
+	REACH:10
+	Special Attacks:bleed (1 Con drain), rend (2 claws,
 3d6+11 plus bleed and seize skin)
 STATISTICS
 Str 32, Dex 20, Con -, Int 9, Wis 11,
@@ -8007,7 +8153,7 @@ CN
 	outsider (extraplanar)
 Init +4; Senses darkvision 60 ft.; Perception +13
 DEFENSE
-AC 26, touch 14, flat-footed 22 (+4 Dex, +12 natural)
+AC 26, touch 14, flat-footed 22 (+4 Dex, +12|TYPE=NaturalArmor
 hp 85 (10d10+30)
 Fort +7, Ref +11, Will +9
 Defensive Abilities evasion
@@ -8017,7 +8163,7 @@ OFFENSE
 	Meleebite +14 (1d6+3 plus 1d6 electricity), gore +14 (1d6+3
 plus 1d6 electricity), slam +14 (1d8+3 plus 1d6 electricity), tail
 slap +12 (1d6+1 plus 1d6 electricity)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (10 ft. with bite)
 STATISTICS
 Str 16, Dex 19, Con 14, Int 7, Wis 10, Cha 11
@@ -8253,7 +8399,8 @@ OFFENSE
 	MOVE:Walk,20,Fly,40 ft. (clumsy)
 
 	Meleebite +4 (1d3-4)
-Space 2-1/2 ft.; Reach 0STATISTICS
+	FACE:2-1/2
+	REACH:0STATISTICS
 Str 3, Dex 15, Con 8, Int 1, Wis 12, Cha 6
 Base Atk +0; CMB +0; CMD 6 (10 vs. trip)
 Feats AcrobaticB, Weapon Finesse
@@ -8285,7 +8432,8 @@ Fort +3, Ref +4, Will +1
 OFFENSE
 	MOVE:Walk,40
 	Meleebite +1 (1d3-1)
-Space 2-1/2 ft.; Reach 0STATISTICS
+	FACE:2-1/2
+	REACH:0STATISTICS
 Str 9, Dex 15, Con 13, Int 2, Wis 12, Cha 6
 Base Atk +0; CMB +0; CMD 9 (13 vs. trip)
 Feats Skill Focus (Perception)
@@ -8342,7 +8490,8 @@ OFFENSE
 	MOVE:Walk,20,Swim,30
 
 	Meleebite +5 (1d3-4)
-Space 2-1/2 ft.; Reach 0
+	FACE:2-1/2
+	REACH:0
 STATISTICS
 Str 3, Dex 16, Con 10, Int 2, Wis 13, Cha 5
 Base Atk +0; CMB +1; CMD 7 (11 vs. trip)
@@ -8395,7 +8544,8 @@ OFFENSE
 	MOVE:Walk,20,Climb,20
 
 	Meleebite +4 (1d3-1)
-Space 2-1/2 ft.; Reach 0
+	FACE:2-1/2
+	REACH:0
 STATISTICS
 Str 8, Dex 15, Con 11, Int 2, Wis 16, Cha 5
 Base Atk +0; CMB +0; CMD 9 (13 vs. trip)
@@ -8422,7 +8572,7 @@ CG
 	fey
 Init +3; Senses low-light vision; Perception +8
 DEFENSE
-AC 16, touch 13, flat-footed 13 (+3 Dex, +3 natural)
+AC 16, touch 13, flat-footed 13 (+3 Dex, +3|TYPE=NaturalArmor
 hp 13 (3d6+3)
 Fort +2, Ref +6, Will +5
 DR 2/cold iron
@@ -8431,7 +8581,8 @@ OFFENSE
 
 	Meleedagger +4 (1d4+2/19-20)
 Ranged shortbow +4 (1d6/?3)
-Special Attacks panpipes
+
+	Special Attacks:panpipes
 Spell-Like Abilities (CL 3rd; concentration +6)
 At will-ghost sound (DC 13)
 1/day-hideous laughter (DC 14), sleep (DC 14)
@@ -8508,7 +8659,7 @@ NE
 	undead
 Init +1; Senses darkvision 60 ft., scent; Perception +6
 DEFENSE
-AC 14, touch 11, flat-footed 13 (+1 Dex, +3 natural)
+AC 14, touch 11, flat-footed 13 (+1 Dex, +3|TYPE=NaturalArmor
 hp 9 (2d8)
 Fort +0, Ref +1, Will +4
 Immune undead traits
@@ -8516,7 +8667,8 @@ OFFENSE
 	MOVE:Walk,30 ft.; four-footed run
 
 	Meleebite +4 (1d6+3 plus feed), 2 claws +5 (1d4+3)
-Special Attacks charging trip, diseased pustules, feed
+
+	Special Attacks:charging trip, diseased pustules, feed
 STATISTICS
 Str 17, Dex 13, Con -, Int 10, Wis 12, Cha 11
 Base Atk +1; CMB +4; CMD 15 (19 vs. trip)
@@ -8594,9 +8746,10 @@ OFFENSE
 	MOVE:Walk,30,Fly,45 ft. (good), swim 15
 
 	Meleebite +4 (1d6+4 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks swallow whole (1d4 bludgeoning damage,
+
+	Special Attacks:swallow whole (1d4 bludgeoning damage,
 AC 11, 2 hp)
 Spell-Like Abilities (CL 3rd; concentration +2)
 3/day-dancing lights
@@ -8791,7 +8944,7 @@ OFFENSE
 	MOVE:Walk,10,Climb,10
 
 	Melee4 slams +7 (1d4+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
 STATISTICS
 Str 16, Dex 8, Con 14, Int 5, Wis 12, Cha 8
@@ -8876,7 +9029,8 @@ OFFENSE
 	MOVE:Walk,5,Fly,20 ft. (perfect)
 
 	Meleesting +5 (1d4 plus acid injection)
-Special Attacks stench spray
+
+	Special Attacks:stench spray
 STATISTICS
 Str 10, Dex 16, Con 11, Int 10, Wis 14, Cha 10
 Base Atk +1; CMB +0; CMD 13
@@ -8948,7 +9102,7 @@ NG
 Init +2; Senses darkvision 60 ft., low-light vision, scent;
 Perception +8
 DEFENSE
-AC 15, touch 12, flat-footed 13 (+2 Dex, +3 natural)
+AC 15, touch 12, flat-footed 13 (+2 Dex, +3|TYPE=NaturalArmor
 hp 17 (2d10+6)
 Fort +6, Ref +5, Will +3
 Defensive Abilities paired protectors, stony defense 2/day;
@@ -8988,9 +9142,10 @@ OFFENSE
 	MOVE:Walk,40
 
 	Meleebite +8 (1d8+6 plus grab), 2 claws +8 (1d6+6)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks pounce, rake (2 claws +7, 1d4+5)
+
+	Special Attacks:pounce, rake (2 claws +7, 1d4+5)
 STATISTICS
 Str 23, Dex 17, Con 17, Int 6, Wis 12, Cha 6
 Base Atk +3; CMB +10 (+14 grapple); CMD 23 (27 vs. trip)
@@ -9150,7 +9305,8 @@ OFFENSE
 	MOVE:Walk,20,Climb,20
 
 	Meleeslam +3 (1d4 plus 1d8 acid)
-Special Attacks acid, stink
+
+	Special Attacks:acid, stink
 STATISTICS
 Str 11, Dex 16, Con 15, Int -, Wis 1, Cha 2
 Base Atk +2; CMB +1; CMD 14 (can't be tripped)
@@ -9222,17 +9378,19 @@ CG
 	outsider (native)
 Init +5; Senses darkvision 60 ft., low-light vision; Perception +20
 DEFENSE
-AC 19, touch 15, flat-footed 14 (+5 Dex, +4 natural)
+AC 19, touch 15, flat-footed 14 (+5 Dex, +4|TYPE=NaturalArmor
 hp 115 (11d10+55)
 Fort +8, Ref +12, Will +9
-DR 10/evil or magic; SR 21
+DR 10/evil or magic
+	SR:21
 OFFENSE
 	MOVE:Walk,30,Fly,80 ft. (good)
 
 	Meleebite +16 (1d6+3), 2 claws +16 (1d4+3), 2 talons +16
 (1d4+3), 2 wings +11 (1d4+1)
 Ranged +1 shock longbow +17/+12/+7 (1d8+4/?3 plus 1d6 electricity)
-Special Attacks hatred, swooping pounce, talon or wing
+
+	Special Attacks:hatred, swooping pounce, talon or wing
 Spells Known (CL 7th; concentration +10)
 3rd (5/day)-displacement, haste
 2nd (7/day)-alter self, protection from
@@ -9301,9 +9459,10 @@ OFFENSE
 
 	Meleebite +16 (2d6+6), 2 claws +16 (1d8+6), 4 tentacles +14
 (1d6+3 and grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks blood drain (1d4 Con), bloodspray
+
+	Special Attacks:blood drain (1d4 Con), bloodspray
 STATISTICS
 Str 22, Dex 17, Con 26, Int 15, Wis 17, Cha 16
 Base Atk +11; CMB +18; CMD 31
@@ -9372,7 +9531,7 @@ CE
 	undead (shapechanger)
 Init +2; Senses darkvision 60 ft.; Perception +15
 DEFENSE
-AC 18, touch 12, flat-footed 16 (+2 Dex, +6 natural)
+AC 18, touch 12, flat-footed 16 (+2 Dex, +6|TYPE=NaturalArmor
 hp 51 (6d8+24)
 Fort +8, Ref +4, Will +7
 DR 5/good; Immune undead traits; Resist fire 10
@@ -9381,7 +9540,8 @@ OFFENSE
 
 	Meleebite +10 (1d6+6), 2 claws
 +10 (1d4+6 plus bleed)
-Special Attacks bleed (1), cursed
+
+	Special Attacks:bleed (1), cursed
 claws, rend (1d6+6)
 STATISTICS
 Str 22, Dex 15, Con -, Int 14, Wis 15,
@@ -9494,9 +9654,10 @@ Melee
 (1d8+5 plus disease) or
 2 slams +20 (1d8+11 plus disease)
 Ranged rock +13 (1d8+16 plus disease)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks disease, rock throwing (120 ft.)
+
+	Special Attacks:disease, rock throwing (120 ft.)
 STATISTICS
 Str 33, Dex 14, Con 23, Int 9, Wis 12, Cha 10
 Base Atk +10; CMB +22; CMD 34
@@ -9581,9 +9742,10 @@ OFFENSE
 	Meleebattleaxe +12/+7 (2d6+9/?3) or
 2 slams +11 (1d8+6)
 Ranged rock +5 (1d8+6)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks rock throwing (100 ft.)
+
+	Special Attacks:rock throwing (100 ft.)
 STATISTICS
 Str 23, Dex 10, Con 17, Int 6, Wis 10, Cha 7
 Base Atk +6; CMB +13; CMD 23
@@ -9662,9 +9824,10 @@ OFFENSE
 	Meleemwk scimitars +16/+16/+11/+11 (1d8+8/15-20) or
 2 slams +16 (1d8+8)
 Ranged rock +11 (1d8+8)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks rock throwing (100 ft.), scimitar training
+
+	Special Attacks:rock throwing (100 ft.), scimitar training
 STATISTICS
 Str 26, Dex 17, Con 21, Int 13, Wis 12, Cha 10
 Base Atk +9; CMB +18; CMD 32 (36 vs. disarm and sunder)
@@ -9739,7 +9902,7 @@ OFFENSE
 
 	Melee2 slams +17 (2d6+8)
 Ranged mwk composite longbow +15/+10/+5 (3d6+8/19-20/?3)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
 STATISTICS
 Str 26, Dex 19, Con 19, Int 10, Wis 14, Cha 11
@@ -9822,9 +9985,10 @@ OFFENSE
 	Meleemwk spear +15/+10 (1d8+7/?3), 2 claws +9 (1d6+2 plus
 grab), sting +9 (1d6+2 plus poison)
 Ranged mwk spear +12 (1d8+5/?3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks constrict (1d6+5)
+
+	Special Attacks:constrict (1d6+5)
 Spell-Like Abilities (CL 10th; concentration +10)
 1/day-summon nature's ally V (1d3 giant scorpions)
 STATISTICS
@@ -9902,9 +10066,10 @@ OFFENSE
 	MOVE:Walk,20,Swim,40
 
 	Meleeslam +9 (2d6+9 plus grab and nausea)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks create spawn, constrict (2d6+9)
+
+	Special Attacks:create spawn, constrict (2d6+9)
 STATISTICS
 Str 16, Dex 1, Con 20, Int -, Wis 1, Cha 1
 Base Atk +4; CMB +11 (+15 grapple); CMD 16 (can't be tripped)
@@ -9981,7 +10146,8 @@ OFFENSE
 	MOVE:Walk,30,Burrow,5,Swim,20 ft.
 
 	Meleebite +2 (1d4+3)
-Special Attacks goblin breath
+
+	Special Attacks:goblin breath
 STATISTICS
 Str 14, Dex 15, Con 14, Int 9, Wis 12, Cha 13
 Base Atk +1; CMB +2; CMD 14 (can't be tripped)
@@ -10093,9 +10259,10 @@ OFFENSE
 	MOVE:Walk,30 ft.
 
 	Meleebite +14 (1d8+4), 2 slams +14 (2d6+4)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks bone prison (ranged touch +12)
+
+	Special Attacks:bone prison (ranged touch +12)
 STATISTICS
 Str 18, Dex 15, Con -, Int -, Wis 10, Cha 1
 Base Atk +11; CMB +16 (+20 disarm or grapple); CMD 28
@@ -10176,9 +10343,10 @@ OFFENSE
 
 	Meleebrass falchion +29 (3d6+11/18-20 plus 2d6 fire), slam
 +29 (2d6+11 plus 2d6 fire)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks breath weapon (DC 20), heat (2d6 fire)
+
+	Special Attacks:breath weapon (DC 20), heat (2d6 fire)
 Spell-Like Abilities (CL 17th; concentration +12)
 Constant-see invisibility
 STATISTICS
@@ -10250,9 +10418,10 @@ OFFENSE
 
 	Melee2 slams +29 (2d10+10)
 Ranged cannon +26/+21 (6d6+7/19-20/?4)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks cannon
+
+	Special Attacks:cannon
 STATISTICS
 Str 30, Dex 24, Con -, Int -, Wis 15, Cha 2
 Base Atk +20; CMB +31; CMD 48
@@ -10328,7 +10497,7 @@ OFFENSE
 	MOVE:Walk,30 ft.
 
 	Melee2 bites +20 (6d6+7 plus petrification)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
 STATISTICS
 Str 25, Dex 13, Con -, Int -, Wis 10, Cha 1
@@ -10405,14 +10574,16 @@ DEFENSE
 AC 28, touch 10, flat-footed 26 (+2 Dex, +18 natural, -2 size)
 hp 212 (17d12+102); regeneration 5 (acid)
 Fort +16, Ref +14, Will +15
-DR 10/lawful; Immune fire, paralysis, poison, sleep; SR 26
+DR 10/lawful; Immune fire, paralysis, poison, sleep
+	SR:26
 OFFENSE
 	MOVE:Walk,30,Fly,100 ft. (poor), swim 50 ft.
 
 	Melee3 bites +24 (2d8+8), 2 claws +23 (1d8+8)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10 (20 ft. with bite)
-Special Attacks breath weapon (40-ft. cone, 5d6 fire, Reflex
+
+	Special Attacks:breath weapon (40-ft. cone, 5d6 fire, Reflex
 DC 24 for half, usable every 1d4 rounds)
 Spell-Like Abilities (CL 15th; concentration +19)
 Constant-true seeing
@@ -10509,18 +10680,20 @@ LE
 Init +5; Senses darkvision 60 ft.; Perception +19
 Aura sacrilegious aura (30 ft., DC 19)
 DEFENSE
-AC 25, touch 11, flat-footed 24 (+10 armor, +1 Dex, +4 natural)
+AC 25, touch 11, flat-footed 24 (+10 armor, +1 Dex, +4|TYPE=NaturalArmor
 hp 139 (10d10+80)
 Fort +13, Ref +6, Will +6; +3 vs. fear
 Defensive Abilities bravery +3, channel resistance +4,
 rejuvenation; DR 10/magic; Immune acid, cold, electricity,
-undead traits; SR 22
+undead traits
+	SR:22
 OFFENSE
 	MOVE:Walk,30 ft.
 
 	Melee+1 greatsword +25/+20 (2d6+19 plus 2d6 acid)
 Ranged composite longbow +14/+9 (1d8+11/?3)
-Special Attacks channel destruction, devastating blast (6d6
+
+	Special Attacks:channel destruction, devastating blast (6d6
 acid, DC 19), undead mastery (DC 19), weapon training
 (heavy blades +2, bows +1)
 STATISTICS
@@ -10684,17 +10857,19 @@ N
 	construct
 Init +2; Senses darkvision 60 ft., low-light vision; Perception +1
 DEFENSE
-AC 20, touch 12, flat-footed 18 (+2 Dex, +8 natural)
+AC 20, touch 12, flat-footed 18 (+2 Dex, +8|TYPE=NaturalArmor
 hp 53 (6d10+20); fast healing 2
 Fort +2, Ref +4, Will +3
-DR 5/adamantine; Immune construct traits; SR 16
+DR 5/adamantine; Immune construct traits
+	SR:16
 Weaknesses faith bound
 OFFENSE
 	MOVE:Walk,40 ft.
 
 	Melee+1 keen scimitar +10/+5 (1d6+5/15-20 plus bleed) or
 slam +9 (1d6+4)
-Special Attacks bleed 2, magic weapon, rest eternal
+
+	Special Attacks:bleed 2, magic weapon, rest eternal
 Spell-Like Abilities (CL 5th; concentration +0)
 1/day-haste (self only)
 STATISTICS
@@ -10872,14 +11047,16 @@ DEFENSE
 AC 15, touch 13, flat-footed 14 (+1 Dex, +2 natural, +2 size)
 hp 7 (1d6+4)
 Fort +1, Ref +3, Will +3
-DR 5/cold iron; Resist cold 10; SR 12
+DR 5/cold iron; Resist cold 10
+	SR:12
 Weaknesses vulnerable to fire and sunlight
 OFFENSE
 	MOVE:Walk,20,Climb,10,Swim,30 ft.
 
 	Melee2 claws +3 (1d3-2)
 Ranged dart +3 (1d2-2)
-Special Attacks congeal water
+
+	Special Attacks:congeal water
 Spell-Like Abilities (CL 1st; concentration +0)
 At will-create water, prestidigitation
 1/day-sleep (DC 10)
@@ -10952,7 +11129,7 @@ CN
 	 (aquatic, extraplanar)
 Init -1; Senses darkvision 60 ft., low-light vision; Perception +1
 DEFENSE
-AC 16, touch 9, flat-footed 16 (-1 Dex, +7 natural)
+AC 16, touch 9, flat-footed 16 (-1 Dex, +7|TYPE=NaturalArmor
 hp 66 (7d10+28)
 Fort +11, Ref +4, Will +5
 OFFENSE
@@ -10960,7 +11137,8 @@ OFFENSE
 
 	Meleebite +11 (1d8+4), 2 tentacles +6 (1d4+2 plus trip)
 Ranged water blast +7 touch (1d8 plus push)
-Special Attacks death flood, push (water blast, 5 ft.)
+
+	Special Attacks:death flood, push (water blast, 5 ft.)
 Spell-Like Abilities (CL 7th; concentration +9)
 At will-control water
 STATISTICS
@@ -11038,14 +11216,17 @@ AC 31, touch 11, flat-footed 26 (+4 Dex, +1 dodge, +20 natural,
 -4 size)
 hp 283 (21d10+168)
 Fort +20, Ref +16, Will +12
-DR 10/magic; SR 27
+DR 10/magic
+	SR:27
 OFFENSE
 	MOVE:Walk,40,Swim,30 ft.
 
 	Meleebite +30 (4d8+13/19-20), 2 stomps +25 (2d6+6), tail slap
 +25 (2d6+6)
-Space 20 ft.; Reach 20 ft.
-Special Attacks impaling bite, thunderous stomp (DC 28),
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:impaling bite, thunderous stomp (DC 28),
 trample (2d6+19, DC 33)
 STATISTICS
 Str 36, Dex 19, Con 26, Int 15, Wis 20, Cha 15
@@ -11128,7 +11309,7 @@ CE
 Init +8; Senses darkvision 60 ft., tremorsense 60 ft.; Perception +18
 Aura broken ground (30 ft., DC 20)
 DEFENSE
-AC 21, touch 15, flat-footed 16 (+4 Dex, +1 dodge, +6 natural)
+AC 21, touch 15, flat-footed 16 (+4 Dex, +1 dodge, +6|TYPE=NaturalArmor
 hp 104 (11d8+55); fast healing 5
 Fort +8, Ref +7, Will +11
 Defensive Abilities channel resistance +2; DR 5/bludgeoning;
@@ -11215,8 +11396,10 @@ OFFENSE
 	MOVE:Walk,5,Fly,40 ft. (good)
 
 	Meleeswarm (3d6 plus distraction and poison)
-Space 10 ft.; Reach 0 ft.
-Special Attacks distraction (DC 18), inhabit
+	FACE:10
+	REACH:0 ft.
+
+	Special Attacks:distraction (DC 18), inhabit
 STATISTICS
 Str 1, Dex 22, Con 14, Int 6, Wis 13, Cha 9
 Base Atk +9; CMB +11; CMD 16 (can't be tripped)
@@ -11404,9 +11587,10 @@ OFFENSE
 	MOVE:Walk,30,Burrow,15 ft.
 
 	Meleebite +11 (1d8+4), 2 claws +11 (1d6+4), tail slap +11 (1d4+4)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks spiked tail, toss
+
+	Special Attacks:spiked tail, toss
 STATISTICS
 Str 19, Dex 14, Con 15, Int 7, Wis 12, Cha 10
 Base Atk +8; CMB +13; CMD 25 (29 vs. trip)
@@ -11492,9 +11676,10 @@ OFFENSE
 	MOVE:Walk,50,Climb,50 ft.
 
 	Melee2 bites +23 (4d10+10 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks channel negative energy (8d6, DC 24,
+
+	Special Attacks:channel negative energy (8d6, DC 24,
 9/day), constrict (4d10+10 plus energy drain),
 energy drain (1 level, DC 26), lifedraining
 coils
@@ -11591,7 +11776,7 @@ CE
 Init +6; Senses darkvision 60 ft.; Perception +5
 Aura faithlessness (30 ft.)
 DEFENSE
-AC 15, touch 12, flat-footed 13 (+2 Dex, +3 natural)
+AC 15, touch 12, flat-footed 13 (+2 Dex, +3|TYPE=NaturalArmor
 hp 16 (3d8+3)
 Fort +2, Ref +3, Will +4
 DR 5/magic or silver; Immune undead traits
@@ -11699,15 +11884,18 @@ DEFENSE
 AC 34, touch 2, flat-footed 34 (+8 armor, +24 natural, -8 size)
 hp 341 (22d10+220); fast healing 10
 Fort +17, Ref +16, Will +22
-Immune blindness, death effects, fire, sonic; SR 30
+Immune blindness, death effects, fire, sonic
+	SR:30
 OFFENSE
 	MOVE:Walk,60 ft. (40 ft. in armor)
 
 	Meleelongsword +29/+24/+19/+14 (6d6+15/17-20) or
 2 slams +29 (2d8+15)
 Ranged rock +18 (2d8+22)
-Space 30 ft.; Reach 30 ft.
-Special Attacks breath weapon (60-ft. cone, 20d6 fire, DC 31,
+	FACE:30
+	REACH:30 ft.
+
+	Special Attacks:breath weapon (60-ft. cone, 20d6 fire, DC 31,
 usable every 1d4 rounds), rock throwing (180 ft.)
 Spell-Like Abilities (CL 20th; concentration +25)
 Constant-true seeing
@@ -11798,7 +11986,7 @@ OFFENSE
 
 	Melee+5 touch (6d6
 negative energy)
-Space 15 ft.; Reach
+	FACE:15 ft.; Reach
 15 ft.
 Special Attacks
 enveloping
@@ -11892,7 +12080,7 @@ NE
 	
 Init +7; Senses blindsense 30 ft., darkvision 60 ft.; Perception +12
 DEFENSE
-AC 21, touch 14, flat-footed 17 (+3 Dex, +1 dodge, +7 natural)
+AC 21, touch 14, flat-footed 17 (+3 Dex, +1 dodge, +7|TYPE=NaturalArmor
 hp 102 (12d8+48)
 Fort +8, Ref +9, Will +11
 Immune disease
@@ -11901,7 +12089,8 @@ OFFENSE
 	MOVE:Walk,20,Swim,60 ft.
 
 	Meleebite +16 (1d8+7 plus disease), 2 claws +16 (1d6+7)
-Special Attacks light lure
+
+	Special Attacks:light lure
 STATISTICS
 Str 24, Dex 16, Con 19, Int 7, Wis 12, Cha 17
 Base Atk +9; CMB +16; CMD 30
@@ -11976,7 +12165,7 @@ Init +3; Senses darkvision 60 ft., low-light vision, scent;
 Perception +7
 DEFENSE
 AC 17, touch 14, flat-footed 13 (+2 armor, +3 Dex, +1 dodge,
-+1 natural)
++1|TYPE=NaturalArmor
 hp 22 (3d10+6)
 Fort +5, Ref +6, Will +2
 DR 5/cold iron
@@ -11985,7 +12174,8 @@ OFFENSE
 
 	Meleemwk battleaxe +6 (1d8+2/?3), bite +0 (1d6+1) or
 bite +5 (1d6+3)
-Special Attacks sleep gaze, weapon intuition
+
+	Special Attacks:sleep gaze, weapon intuition
 STATISTICS
 Str 15, Dex 17, Con 15, Int 12, Wis 12, Cha 12
 Base Atk +3; CMB +5; CMD 19
@@ -12064,7 +12254,7 @@ OFFENSE
 	MOVE:Walk,swim 20 ft.
 
 	Melee2 tentacles +3 (1d3+1 plus poison)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:10
 STATISTICS
 Str 12, Dex 17, Con 16, Int -, Wis 10, Cha 1
@@ -12120,8 +12310,10 @@ OFFENSE
 	MOVE:Walk,swim 30 ft.
 
 	Melee4 tentacles +15 (1d8+8 plus poison)
-Space 15 ft.; Reach 20 ft.
-Special Attacks electricity blast
+	FACE:15
+	REACH:20 ft.
+
+	Special Attacks:electricity blast
 STATISTICS
 Str 26, Dex 19, Con 24, Int -, Wis 12, Cha 1
 Base Atk +9; CMB +19; CMD 33 (can't be tripped)
@@ -12170,7 +12362,7 @@ NE
 	 (shapechanger)
 Init +4; Senses darkvision 60 ft.; Perception +18
 DEFENSE
-AC 27, touch 15, flat-footed 22 (+4 Dex, +1 dodge, +12 natural)
+AC 27, touch 15, flat-footed 22 (+4 Dex, +1 dodge, +12|TYPE=NaturalArmor
 hp 161 (14d10+84)
 Fort +10, Ref +13, Will +14
 DR 10/cold iron and magic; Immune poison
@@ -12178,7 +12370,8 @@ OFFENSE
 	MOVE:Walk,30,Climb,50,Swim,40 ft.
 
 	Meleebite +20 (1d4+6/19-20 plus poison), 2 claws +20 (1d6+6)
-Special Attacks sneak attack +3d6, web (+18 ranged, DC 23, 14 hp)
+
+	Special Attacks:sneak attack +3d6, web (+18 ranged, DC 23, 14 hp)
 Spell-Like Abilities (CL 12th; concentration +19)
 At will-charm person (DC 18), detect thoughts (DC 19)
 3/day-bestow curse (DC 21), suggestion (DC 19)
@@ -12254,15 +12447,17 @@ AC 31, touch 11, flat-footed 28 (+2 Dex, +1 dodge, +20 natural,
 -2 size)
 hp 230 (20d10+120); fast healing 10
 Fort +18, Ref +14, Will +11;
-Defensive Abilities adaptive defense; Immune acid; SR 26
+Defensive Abilities adaptive defense; Immune acid
+	SR:26
 OFFENSE
 	MOVE:Walk,50,Fly,20 ft. (poor)
 
 	Meleebite +31 (3d6+19/19-20/?3 plus grab), 2 talons +31
 (1d8+13)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15 (20 ft. with bite)
-Special Attacks deadly bite, shriek, swallow whole (3d6+19
+
+	Special Attacks:deadly bite, shriek, swallow whole (3d6+19
 bludgeoning plus 2d6 acid damage, AC 20, 23 hp)
 STATISTICS
 Str 37, Dex 15, Con 22, Int 2, Wis 16, Cha 13
@@ -12348,9 +12543,10 @@ OFFENSE
 	MOVE:Walk,40 ft.
 
 	Meleebite +7 (1d6+3), 2 claws +7 (1d3+3), snakes +2 (1d4+1)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5 (10 ft. with snakes)
-Special Attacks breath weapon (30-ft. cone, sleep, Fortitude
+
+	Special Attacks:breath weapon (30-ft. cone, sleep, Fortitude
 DC 15 negates, usable every 1d4 rounds), pounce
 STATISTICS
 Str 17, Dex 15, Con 16, Int 5, Wis 12, Cha 9
@@ -12539,14 +12735,16 @@ hp 348 (24d10+216); fast healing 20
 Fort +25, Ref +17, Will +23
 DR 15/cold iron and bludgeoning; Immune bleed, mindaffecting
 effects, petrification, polymorph; Resist acid 10,
-electricity 10, fire 10; SR 31
+electricity 10, fire 10
+	SR:31
 OFFENSE
 	MOVE:Walk,50,Burrow,40 ft.; earth glide
 
 	Melee+5 quarterstaff +30/+25/+20/+15 (3d6+14), +5 quarterstaff
 +30 (3d6+9) or
 2 slams +29 (2d10+9)
-Space 20 ft.; Reach 20 ft.
+	FACE:20
+	REACH:20 ft.
 Spell-Like Abilities (CL 20th; concentration +30)
 Constant-true seeing, speak with animals, speak with plants,
 stone tell
@@ -12731,7 +12929,8 @@ OFFENSE
 	MOVE:Walk,30 ft.
 
 	Melee2 claws +9 (1d3+2)
-Special Attacks distracting gaze, sneak attack +2d6
+
+	Special Attacks:distracting gaze, sneak attack +2d6
 Spell-Like Abilities (CL 6th; concentration +9)
 At will-speak with plants (trees only), tree shape
 3/day-charm animal (DC 14), entangle (DC 14), tree stride
@@ -12842,7 +13041,8 @@ OFFENSE
 
 	Meleeimprovised weapon +4 (1d4+2/?3)
 Ranged improvised weapon +6 (1d3+2/?3)
-Space 2-1/2 ft.; Reach 0 ft.
+	FACE:2-1/2
+	REACH:0 ft.
 Spell-Like Abilities (CL 6th; concentration +8)
 At will-invisibility (self only), statue (self only)
 3/day-hide from animals, purify food and drink
@@ -12943,7 +13143,7 @@ Init +10; Senses darkvision 60 ft., deathwatch, true seeing;
 Perception +25
 DEFENSE
 AC 30, touch 20, flat-footed 22 (+6 Dex, +2 dodge, +2 insight,
-+10 natural)
++10|TYPE=NaturalArmor
 hp 210 (20d10+100); fast healing 10
 Fort +11, Ref +23, Will +16
 DR 10/cold iron and evil; Immune bleed, mind-affecting effects,
@@ -13023,18 +13223,20 @@ LG
 Init +9; Senses darkvision 60 ft., detect evil, see invisibility;
 Perception +20
 DEFENSE
-AC 23, touch 13, flat-footed 20 (+6 armor, +3 Dex, +4 natural)
+AC 23, touch 13, flat-footed 20 (+6 armor, +3 Dex, +4|TYPE=NaturalArmor
 hp 123 (13d10+52); fast healing 5
 Fort +8, Ref +13, Will +14
 DR 10/cold iron; Immune bleed, mind-affecting effects, petrification,
-polymorph; Resist acid 10, electricity 10, fire 10; SR 21
+polymorph; Resist acid 10, electricity 10, fire 10
+	SR:21
 OFFENSE
 	MOVE:Walk,fly 30 ft. (perfect, 40 ft. without armor)
 
 	Melee+1 holy halberd +18/+13/+8 (1d10+7/?3)
 Ranged +1 holy composite longbow +20/+15/+10
 (1d8+5/?3)
-Special Attacks healing arrow, holy weapons
+
+	Special Attacks:healing arrow, holy weapons
 Spell-Like Abilities (CL 13th; concentration +18)
 Constant-detect evil, see invisibility
 At will-cure light wounds, dimension door
@@ -13110,7 +13312,8 @@ OFFENSE
 	MOVE:Walk,20,Swim,40 ft.
 
 	Melee2 claws +5 (1d3+1 plus grab)
-Special Attacks grab (Medium), rake (2 claws +5, 1d3+1)
+
+	Special Attacks:grab (Medium), rake (2 claws +5, 1d3+1)
 STATISTICS
 Str 12, Dex 17, Con 13, Int 8, Wis 15, Cha 10
 Base Atk +3; CMB +3 (+7 grapple); CMD 16
@@ -13187,7 +13390,7 @@ NE
 Init +2; Senses darkvision 60 ft., low-light vision;
 Perception +10
 DEFENSE
-AC 16, touch 13, flat-footed 13 (+2 Dex, +1 dodge, +3 natural)
+AC 16, touch 13, flat-footed 13 (+2 Dex, +1 dodge, +3|TYPE=NaturalArmor
 hp 26 (4d10+4)
 Fort +2, Ref +6, Will +5
 OFFENSE
@@ -13195,7 +13398,8 @@ OFFENSE
 
 	Meleebite +5 (1d6+1), 2 claws +5 (1d4+1)
 Ranged longbow +6 (1d8/?3)
-Special Attacks rend (2 claws 1d4 +1)
+
+	Special Attacks:rend (2 claws 1d4 +1)
 Spell-Like Abilities (CL 4th; concentration +4)
 Constant-pass without trace
 STATISTICS
@@ -13275,14 +13479,16 @@ DEFENSE
 AC 20, touch 15, flat-footed 14 (+6 Dex, +5 natural, -1 size)
 hp 85 (9d10+36)
 Fort +10, Ref +12, Will +10
-Resist cold 10, electricity 30, fire 10; SR 18
+Resist cold 10, electricity 30, fire 10
+	SR:18
 OFFENSE
 	MOVE:Walk,60,Fly,120 ft. (good)
 
 	Meleegore +14 (1d8+5), 2 hooves +8 (1d6+2)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks breath weapon (15-ft. cone, 5d6 fire damage,
+
+	Special Attacks:breath weapon (15-ft. cone, 5d6 fire damage,
 Reflex DC 18 for half, usable every 1d4 rounds), powerful
 charge (gore, 2d8+14)
 Spell-Like Abilities (CL 9th; concentration +15)
@@ -13362,15 +13568,17 @@ AC 29, touch 11, flat-footed 26 (+3 Dex, +18 natural, -2 size)
 hp 261 (18d12+144)
 Fort +19, Ref +16, Will +13
 DR 10/magic; Immune magic paralysis and sleep; Resist acid 10,
-cold 10, electricity 10, fire 10; SR 26
+cold 10, electricity 10, fire 10
+	SR:26
 OFFENSE
 	MOVE:Walk,40,Fly,160 ft. (average)
 
 	Meleebite +28 (2d6+2), 2 claws +28 (1d8+12), tail slap +26
 (2d6+6), 2 wings +26 (1d8+6)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks wailing dive, breath weapon (50-ft. cone, 14d6
+
+	Special Attacks:wailing dive, breath weapon (50-ft. cone, 14d6
 sonic damage, Reflex DC 20 for half, usable every 1d4 rounds)
 STATISTICS
 Str 34, Dex 17, Con 26, Int 9, Wis 14, Cha 17
@@ -13557,8 +13765,10 @@ OFFENSE
 	MOVE:Walk,20,Fly,50 ft. (perfect)
 
 	Meleegore +4 (1d4-1 plus bleed)
-Space 2-1/2 ft.; Reach 0 ft.
-Special Attacks bleed (1d2), unnerving gaze (30 ft., DC 9)
+	FACE:2-1/2
+	REACH:0 ft.
+
+	Special Attacks:bleed (1d2), unnerving gaze (30 ft., DC 9)
 Spell-Like Abilities (CL 6th; concentration +4)
 Constant-deathwatch
 At will-bleed (DC 8), mage hand, open/close
@@ -13633,18 +13843,20 @@ LE
 	outsider (evil, extraplanar, kyton, lawful)
 Init +12; Senses darkvision 60 ft., true seeing; Perception +34
 DEFENSE
-AC 38, touch 19, flat-footed 29 (+8 Dex, +1 dodge, +19 natural)
+AC 38, touch 19, flat-footed 29 (+8 Dex, +1 dodge, +19|TYPE=NaturalArmor
 hp 310 (20d10+200); regeneration 15 (good weapons and
 spells, silver weapons)
 Fort +22, Ref +16, Will +19
 DR 15/good and silver; Immune cold, fear effects, nonlethal
-damage, pain; SR 31
+damage, pain
+	SR:31
 OFFENSE
 	MOVE:Walk,40,Fly,60 ft. (good)
 
 	Meleebite +30 (2d6+10 plus pain), 2 claws +30 (2d6+10/19-20
 plus grab and pain), 2 wings +25 (1d8+5 plus pain)
-Special Attacks evisceration, unnerving gaze (30 ft., DC 31)
+
+	Special Attacks:evisceration, unnerving gaze (30 ft., DC 31)
 Spell-Like Abilities (CL 20th; concentration +31)
 Constant-true seeing
 At will-greater teleport (self plus 50 lbs. of objects only), inflict
@@ -13826,14 +14038,16 @@ AC 26, touch 13, flat-footed 22 (+3 Dex, +1 dodge, +13 natural,
 hp 147 (14d10+70); regeneration 5 (good weapons and spells,
 silver weapons)
 Fort +14, Ref +9, Will +17
-DR 10/silver or good; Immune cold; SR 23
+DR 10/silver or good; Immune cold
+	SR:23
 OFFENSE
 	MOVE:Walk,40 ft.
 
 	Melee4 claws +20 (1d8+7/19-20 plus bleed)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks bleed (1d6), poison, rend (2 claws, 1d8+7),
+
+	Special Attacks:bleed (1d6), poison, rend (2 claws, 1d8+7),
 surgical strikes, unnerving gaze (30 ft.; DC 22)
 Spell-Like Abilities (CL 14th; concentration +19)
 At will-bleed (DC 15), plane shift (from the Material Plane to
@@ -13913,7 +14127,7 @@ OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (average)
 
 	Melee2 claws +14 (1d8+6), 2 wings +9 (1d6+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
 Special Attacks
 pounce, rake
@@ -14112,7 +14326,8 @@ OFFENSE
 
 	Meleebite +2 (1d6), 2 claws +2 (1d3)
 Ranged puffball +4 (1 plus spores)
-Special Attacks spores
+
+	Special Attacks:spores
 Spell-Like Abilities (CL 4th; concentration +6)
 Constant-pass without trace
 STATISTICS
@@ -14196,7 +14411,8 @@ OFFENSE
 
 	Meleeslam -1 (1d3-2 plus ensnare)
 Ranged seed +3 (1 plus ensnare)
-Special Attacks sneak attack +1d6
+
+	Special Attacks:sneak attack +1d6
 Spell-Like Abilities (CL 2nd; concentration +4)
 Constant-pass without trace
 STATISTICS
@@ -14592,14 +14808,17 @@ hp 290 (20d12+160); regeneration 10 (cold iron)
 Fort +20, Ref +21, Will +17
 Defensive Abilities freedom of movement; DR 15/cold iron;
 Immune acid, curse effects, energy drain, mind-affecting
-effects, negative energy, paralysis, poison, sleep; SR 29
+effects, negative energy, paralysis, poison, sleep
+	SR:29
 OFFENSE
 	MOVE:Walk,40,Climb,40,Fly,100 ft. (average)
 
 	Meleebite +29 (3d8+13/19-20 plus poison), 2 claws +29 (2d6+13),
 tail +24 (3d6+6 plus grab)
-Space 20 ft.; Reach 20 ft.
-Special Attacks breath weapon, constrict (tail, 2d6+19),
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:breath weapon, constrict (tail, 2d6+19),
 death curse
 STATISTICS
 Str 37, Dex 24, Con 26, Int 5, Wis 20, Cha 27
@@ -14687,14 +14906,17 @@ hp 248 (16d12+144); regeneration 10 (cold iron)
 Fort +19, Ref +18, Will +15
 Defensive Abilities freedom of movement; DR 15/cold iron;
 Immune cold, curse effects, mind-affecting effects, paralysis,
-poison, sleep; SR 27
+poison, sleep
+	SR:27
 OFFENSE
 	MOVE:Walk,30,Fly,100 ft. (average), swim 60 ft.
 
 	Meleebite +25 (2d8+13/19-20 plus poison), 2 claws +25 (2d6+13),
 tail +20 (2d6+6 plus grab)
-Space 20 ft.; Reach 20 ft.
-Special Attacks breath weapon, constrict (tail, 2d6+19), death curse
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:breath weapon, constrict (tail, 2d6+19), death curse
 STATISTICS
 Str 36, Dex 23, Con 28, Int 5, Wis 21, Cha 26
 Base Atk +16; CMB +33 (+37 grapple); CMD 49 (can't be tripped)
@@ -14767,14 +14989,17 @@ hp 346 (21d12+210); regeneration 15 (cold iron)
 Fort +22, Ref +21, Will +18
 Defensive Abilities freedom of movement, spines; DR 15/
 cold iron; Immune curse effects, electricity, mind-affecting
-effects, paralysis, poison, sleep; SR 30
+effects, paralysis, poison, sleep
+	SR:30
 OFFENSE
 	MOVE:Walk,40,Fly,100 ft. (average), swim 60 ft.
 
 	Meleebite +29 (3d8+16/19-20 plus poison), 2 claws +29
 (2d6+16), tail +24 (3d6+8 plus grab)
-Space 30 ft.; Reach 30 ft.
-Special Attacks breath weapon, constrict (tail, 3d6+24), death curse
+	FACE:30
+	REACH:30 ft.
+
+	Special Attacks:breath weapon, constrict (tail, 3d6+24), death curse
 STATISTICS
 Str 43, Dex 25, Con 30, Int 6, Wis 23, Cha 28
 Base Atk +21; CMB +45 (+49 grapple); CMD 62 (can't be tripped)
@@ -14857,14 +15082,17 @@ hp 420 (24d12+264); regeneration 20 (cold iron)
 Fort +25, Ref +26, Will +21
 Defensive Abilities freedom of movement; DR 20/cold
 iron; Immune curse effects, fire, mind-affecting effects,
-paralysis, poison, sleep; SR 32
+paralysis, poison, sleep
+	SR:32
 OFFENSE
 	MOVE:Walk,40,Climb,40,Fly,100 ft. (average), swim 60 ft.
 
 	Meleebite +34 (3d8+18/19-20 plus poison), 4 claws +34
 (2d6+18), tail +29 (3d6+9 plus grab)
-Space 30 ft.; Reach 30 ft.
-Special Attacks breath weapon, constrict (tail, 3d6+27), death curse
+	FACE:30
+	REACH:30 ft.
+
+	Special Attacks:breath weapon, constrict (tail, 3d6+27), death curse
 STATISTICS
 Str 46, Dex 30, Con 33, Int 7, Wis 25, Cha 28
 Base Atk +24; CMB +50 (+54 grapple); CMD 70 (can't be tripped)
@@ -14941,7 +15169,7 @@ N
 	animal
 Init +6; Senses low-light vision; Perception +6
 DEFENSE
-AC 14, touch 12, flat-footed 12 (+2 Dex, +2 natural)
+AC 14, touch 12, flat-footed 12 (+2 Dex, +2|TYPE=NaturalArmor
 hp 11 (2d8+2)
 Fort +4, Ref +5, Will +2
 OFFENSE
@@ -15002,9 +15230,10 @@ OFFENSE
 	MOVE:Walk,40,Climb,40 ft.
 
 	Meleebite +6 (2d6+4) or tongue +5 touch (grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10 (15 ft. with tongue)
-Special Attacks tongue, pull (tongue, 5 ft.)
+
+	Special Attacks:tongue, pull (tongue, 5 ft.)
 STATISTICS
 Str 16, Dex 15, Con 18, Int 2, Wis 11, Cha 7
 Base Atk +3; CMB +7 (+11 grapple); CMD 19
@@ -15049,15 +15278,17 @@ DEFENSE
 AC 25, touch 12, flat-footed 21 (+4 Dex, +13 natural, -2 size)
 hp 147 (14d10+70)
 Fort +14, Ref +13, Will +8
-DR 10/nonmagical weapons; SR 27
+DR 10/nonmagical weapons
+	SR:27
 Weaknesses eldritch encrustation
 OFFENSE
 	MOVE:Walk,swim 40 ft.
 
 	Meleebite +22 (4d10+15/19-20 plus grab)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks capsize (DC 25), digest magic, dispelling bite
+
+	Special Attacks:capsize (DC 25), digest magic, dispelling bite
 STATISTICS
 Str 30, Dex 19, Con 20, Int 2, Wis 15, Cha 11
 Base Atk +14; CMB +26 (+30 grapple); CMD 40
@@ -15137,14 +15368,15 @@ N
 	
 Init +3; Senses darkvision 60 ft., low-light vision; Perception +13
 DEFENSE
-AC 20, touch 13, flat-footed 17 (+4 armor, +3 Dex, +3 natural)
+AC 20, touch 13, flat-footed 17 (+4 armor, +3 Dex, +3|TYPE=NaturalArmor
 hp 68 (8d10+24)
 Fort +5, Ref +9, Will +8
 OFFENSE
 	MOVE:Walk,40,Fly,60 ft. (poor)
 
 	Meleemwk scimitar +11/+11/+6/+6 (1d6+3/18-20)
-Special Attacks paired weapons, raptor dive
+
+	Special Attacks:paired weapons, raptor dive
 Spell-Like Abilities (CL 8th; concentration +8)
 Constant-mage armor
 3/day-magic weapon
@@ -15231,7 +15463,8 @@ OFFENSE
 
 	Meleemelee touch +7 (1 plus burn) or
 slam +7 (1d6+2 plus burn)
-Special Attacks burn (1d6, DC 14)
+
+	Special Attacks:burn (1d6, DC 14)
 STATISTICS
 Str 15, Dex 11, Con 15, Int 8, Wis 10, Cha 10
 Base Atk +4; CMB +5; CMD 15
@@ -15331,7 +15564,7 @@ CE
 Init +3; Senses darkvision 60 ft.; Perception +16
 DEFENSE
 AC 20, touch 14, flat-footed 16 (+3 Dex, +1 dodge,
-+6 natural)
++6|TYPE=NaturalArmor
 hp 85 (10d8+40)
 Fort +7, Ref +8, Will +10
 DR 10/good or silver; Immune undead traits
@@ -15340,7 +15573,8 @@ OFFENSE
 	MOVE:Walk,30,Fly,100 ft. (good)
 
 	Meleebite +11 (1d8+4), 2 claws +12 (1d8+4 plus grab)
-Special Attacks blood drain (1d2 Constitution)
+
+	Special Attacks:blood drain (1d2 Constitution)
 Spell-Like Abilities (CL 9th; concentration +13)
 At will-bleed (DC 14), dancing lights, touch of fatigue (DC 14)
 3/day-darkness, deep slumber (DC 17), fear (DC 18)
@@ -15413,7 +15647,7 @@ N
 	animal
 Init +3; Senses low-light vision, scent; Perception +4
 DEFENSE
-AC 15, touch 13, flat-footed 12 (+3 Dex, +2 natural)
+AC 15, touch 13, flat-footed 12 (+3 Dex, +2|TYPE=NaturalArmor
 hp 6 (1d8+2)
 Fort +4, Ref +5, Will +0
 OFFENSE
@@ -15511,9 +15745,10 @@ OFFENSE
 	MOVE:Walk,15,Swim,50 ft.
 
 	Meleebite +10 (2d8+9)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10
-Special Attacks capsize (DC 25)
+
+	Special Attacks:capsize (DC 25)
 STATISTICS
 Str 22, Dex 13, Con 19, Int 2, Wis 12, Cha 6
 Base Atk +5; CMB +13; CMD 24 (28 vs. trip)
@@ -15566,9 +15801,10 @@ OFFENSE
 	MOVE:Walk,40 ft.
 
 	Melee2 hooves +16 (2d8+9)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10
-Special Attacks trample (2d8+13, DC 25)
+
+	Special Attacks:trample (2d8+13, DC 25)
 STATISTICS
 Str 29, Dex 10, Con 21, Int 2, Wis 13, Cha 6
 Base Atk +9; CMB +20 (+22 bull rush); CMD 30 (32 vs. bull
@@ -15623,8 +15859,10 @@ OFFENSE
 	MOVE:Walk,swim 40 ft.
 
 	Meleebite +23 (4d6+15/19-20 plus grab), tail slap +18 (2d8+7)
-Space 20 ft.; Reach 20 ft.
-Special Attacks swallow whole (4d6+15 bludgeoning damage,
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:swallow whole (4d6+15 bludgeoning damage,
 AC 20, 16 hp)
 STATISTICS
 Str 41, Dex 12, Con 21, Int 2, Wis 11, Cha 6
@@ -15677,9 +15915,10 @@ OFFENSE
 	MOVE:Walk,30,Swim,30 ft.
 
 	Meleebite +14 (2d8+12 plus grab and poison)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10
-Special Attacks swallow whole (2d8+12 bludgeoning damage,
+
+	Special Attacks:swallow whole (2d8+12 bludgeoning damage,
 AC 16, 8 hp)
 STATISTICS
 Str 27, Dex 13, Con 19, Int 2, Wis 14, Cha 6
@@ -15735,9 +15974,10 @@ OFFENSE
 
 	Meleebite +20 (2d6+9), 2 slams +20 (1d8+9) or
 tongue +20 (1d6+9 plus grab and pull)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15 (45 ft. with tongue)
-Special Attacks crush (DC 21, 2d8+13), pull (tongue, 5 ft.),
+
+	Special Attacks:crush (DC 21, 2d8+13), pull (tongue, 5 ft.),
 swallow whole (2d6+13 bludgeoning damage, AC 17, 13 hp),
 vile croak
 Spell-Like Abilities (CL 8th; concentration +11)
@@ -15820,14 +16060,16 @@ hp 133 (14d8+70)
 Fort +9, Ref +9, Will +15
 Defensive Abilities amorphous; DR 10/piercing or slashing;
 Immune cold, gaze attacks, illusions, poison; Resist
-electricity 30; SR 22
+electricity 30
+	SR:22
 OFFENSE
 	MOVE:Walk,50,Climb,20 ft.; air walk
 
 	Melee2 claws +15 (1d6+6), 4 tentacles +11 (1d6+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks rend (2 tentacles, 1d6+9 plus Wisdom drain)
+
+	Special Attacks:rend (2 tentacles, 1d6+9 plus Wisdom drain)
 Spell-Like Abilities (CL 11th; concentration +18)
 Constant-air walk
 At will-detect thoughts (DC 19)
@@ -15905,7 +16147,7 @@ NE
 Init +4; Senses darkvision 60 ft., low-light vision, scent;
 Perception +6
 DEFENSE
-AC 16, touch 10, flat-footed 16 (+6 natural)
+AC 16, touch 10, flat-footed 16 (+6|TYPE=NaturalArmor
 hp 37 (5d8+15)
 Fort +7, Ref +1, Will +4
 DR 5/slashing; Immune plant traits; Resist cold 10, fire 10,
@@ -15915,7 +16157,8 @@ OFFENSE
 	MOVE:Walk,20 ft.
 
 	Melee2 claws +6 (1d6+3 plus disease)
-Special Attacks spore cloud
+
+	Special Attacks:spore cloud
 Spell-Like Ability (CL 6th; concentration +6)
 1/day-spore domination (DC 14)
 STATISTICS
@@ -16021,9 +16264,10 @@ OFFENSE
 	MOVE:Walk,40 ft.
 
 	Meleebite +7 (2d6+3 plus poison)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks hypnosis, sneak attack +3d6
+
+	Special Attacks:hypnosis, sneak attack +3d6
 Spells Known (CL 5th; concentration +8)
 2nd (5/day)-invisibility, scorching ray
 1st (7/day)-charm person (DC 14), expeditious retreat, magic
@@ -16102,9 +16346,10 @@ OFFENSE
 	MOVE:Walk,40 ft.
 
 	Melee5 bites +14 (2d6+6 plus bleed)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks bleed (1d6), dual gaze, rend (3 bites, 2d6+9)
+
+	Special Attacks:bleed (1d6), dual gaze, rend (3 bites, 2d6+9)
 Spell-Like Abilities (CL 9th; concentration +13)
 Constant-see invisibility
 Spells Known (CL 9th; concentration +13)
@@ -16188,7 +16433,7 @@ OFFENSE
 	MOVE:Walk,30,Swim,50 ft.
 
 	Meleebite +10 (2d6+5 plus poison), tail slap +5 (1d8+2)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
 Spells Known (CL 7th; concentration +11)
 3rd (5/day)-protection from energy, suggestion (DC 17)
@@ -16268,16 +16513,18 @@ AC 22, touch 11, flat-footed 20 (+6 armor, +2 Dex, +5 natural, -1 size)
 hp 104 (11d10+44)
 Fort +13, Ref +5, Will +10; +2 vs. fear and sorrow effects
 Defensive Abilities soul of sorrow; DR 10/magic; Resist cold 10,
-fire 10; SR 19
+fire 10
+	SR:19
 OFFENSE
 	MOVE:Walk,30 ft.
 
 	Melee+1 longsword +18/+13/+8 (2d6+11/17-20) or
 2 slams +17 (1d6+7)
 Ranged mwk spear +13/+8/+3 (2d6+7/?3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks crushing blow, mortal challenge
+
+	Special Attacks:crushing blow, mortal challenge
 STATISTICS
 Str 25, Dex 15, Con 18, Int 14, Wis 16, Cha 17
 Base Atk +11; CMB +19 (+23 sunder);
@@ -16362,7 +16609,8 @@ DEFENSE
 AC 14, touch 14, flat-footed 11 (+3 Dex, +1 size)
 hp 9 (2d6+2)
 Fort +1, Ref +6, Will +4
-DR 5/cold iron; SR 12
+DR 5/cold iron
+	SR:12
 OFFENSE
 	MOVE:Walk,20,Swim,30 ft.
 
@@ -16458,15 +16706,17 @@ hp 270 (20d6+200); regeneration 10 (cold iron)
 Fort +18, Ref +18, Will +21
 Defensive Abilities death ward, fated, foresight, mind blank,
 never surprised or flat-footed; DR 15/cold iron; Immune
-cold; Resist acid 30, electricity 30, fire 30; SR 29
+cold; Resist acid 30, electricity 30, fire 30
+	SR:29
 OFFENSE
 	MOVE:Walk,40 ft. (30 ft. with armor)
 
 	Meleeshears +21/+21/+16 (1d8+12/15-20 plus energy drain),
 touch +11 (energy drain)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks energy drain (2 levels, DC 30), shift fate, snip thread
+
+	Special Attacks:energy drain (2 levels, DC 30), shift fate, snip thread
 Spell-Like Abilities (CL 18th; concentration +28)
 Constant-death ward, foresight, greater arcane sight, mind
 blank, tongues, true seeing
@@ -16542,9 +16792,10 @@ OFFENSE
 
 	Meleemwk longsword +11 (1d8+9/19-20), bite +10 (1d8+6 plus
 disease), 2 hooves +5 (1d6+3 plus disease)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks breath weapon (30-ft. cone, 10d6 damage plus
+
+	Special Attacks:breath weapon (30-ft. cone, 10d6 damage plus
 disease, Reflex DC 21 for half, usable every 1d4 rounds),
 trample (1d6+7, DC 21)
 Spell-Like Abilities (CL 9th; concentration +14)
@@ -16632,9 +16883,10 @@ OFFENSE
 
 	Meleebite +17 (2d6+6 plus energy drain), bite +17 (1d4+6 plus
 poison), 2 claws +17 (1d6+6)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks energy drain (2 levels, DC 16), pounce
+
+	Special Attacks:energy drain (2 levels, DC 16), pounce
 Spell-Like Abilities (CL 12th; concentration +12)
 3/day-contagion (DC 14), hold person (DC 13)
 1/day-nightmare (DC 15), shout (DC 14), waves of fatigue
@@ -16825,7 +17077,8 @@ AC 29, touch 10, flat-footed 28 (+8 armor, +1 Dex, +11 natural,
 -1 size)
 hp 229 (17d10+136); regeneration 5 (acid or cold)
 Fort +18, Ref +10, Will +15
-Immune fire; SR 26
+Immune fire
+	SR:26
 Weaknesses vulnerability to cold
 OFFENSE
 	MOVE:Walk,40,Fly,60 ft. (good); 30,Fly,40 ft. (good) in armor
@@ -16833,9 +17086,10 @@ OFFENSE
 	Melee+1 katana* +27/+22/+17/+12 (2d6+16/18-20) or
 2 slams +26 (1d10+15)
 Ranged fiery missile +19 touch (4d6 fire plus burn)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks burn (2d6, DC 26), smoke form
+
+	Special Attacks:burn (2d6, DC 26), smoke form
 Spell-Like Abilities (CL 15th; concentration +17)
 Constant-fly
 At will-darkness, invisibility (self only), scorching ray
@@ -16904,16 +17158,18 @@ AC 27, touch 12, flat-footed 24 (+4 armor, +2 Dex, +1 dodge,
 +11 natural, -1 size)
 hp 200 (16d10+112); regeneration 5 (fire or acid)
 Fort +17, Ref +7, Will +12
-Immune cold; SR 25
+Immune cold
+	SR:25
 Weaknesses vulnerability to fire
 OFFENSE
 	MOVE:Walk,50,Fly,50 ft. (perfect)
 
 	Melee4 slams +24 (2d8+9)
 Ranged icy missile +17 (4d6 cold)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks staggering strikes
+
+	Special Attacks:staggering strikes
 Spell-Like Abilities (CL 18th; concentration +22)
 Constant-fly, mage armor
 At will-darkness, invisibility (self only)
@@ -16981,7 +17237,7 @@ LE
 	outsider (human, native, oni, shapechanger)
 Init +3; Senses darkvision 60 ft., low-light vision; Perception +10
 DEFENSE
-AC 19, touch 10, flat-footed 19 (+8 armor, +1 natural)
+AC 19, touch 10, flat-footed 19 (+8 armor, +1|TYPE=NaturalArmor
 hp 42 (5d10+15); regeneration 5 (acid or fire)
 Fort +7, Ref +4, Will +6
 SR 15
@@ -17064,7 +17320,8 @@ OFFENSE
 	MOVE:Walk,10,Fly,30 ft. (good)
 
 	Meleebite +9 (1d4-2), gore +9 (1d4-2 plus poison)
-Special Attacks poison
+
+	Special Attacks:poison
 Spell-Like Abilities (CL 6th; concentration +8)
 Constant-detect magic
 At will-invisibility (self only), mage hand
@@ -17151,16 +17408,18 @@ AC 36, touch 9, flat-footed 35 (+9 armor, +1 Dex, +18 natural,
 -2 size)
 hp 379 (23d10+253); regeneration 15 (fire or good spells)
 Fort +24, Ref +9, Will +21
-Immune cold; SR 31
+Immune cold
+	SR:31
 OFFENSE
 	MOVE:Walk,40,Fly,40 ft. (good); 60,Fly,60 ft. without armor
 
 	Meleemwk greatclub +39/+34/+29/+24 (3d8+25/19-20) or
 2 slams +23 (2d6+25)
 Ranged void missile +23 touch (6d6 plus energy drain)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks commanding voice, energy drain (2 levels,
+
+	Special Attacks:commanding voice, energy drain (2 levels,
 DC 28), void trap
 Spell-Like Abilities (CL 20th; concentration +27)
 Constant-fire shield (chill shield), fly, true seeing
@@ -17340,14 +17599,15 @@ AC 32, touch 11, flat-footed 29 (+6 armor, +3 Dex, +15 natural,
 -2 size)
 hp 297 (22d10+176); regeneration 10 (fire or good spells)
 Fort +21, Ref +10, Will +18
-Defensive Abilities freedom of movement; Immune acid; SR 29
+Defensive Abilities freedom of movement; Immune acid
+	SR:29
 OFFENSE
 	MOVE:Walk,50,Fly,60 ft. (good), swim 60 ft.
 
 	Meleemwk spear +35/+30/+25/+20 (3d6+21/19-20/?3) or
 2 slams +34 (2d6+14)
 Ranged acidic missile +23 (4d6 acid plus nausea)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15 (20 ft. with spear)
 Spell-Like Abilities (CL 18th; concentration +24)
 Constant-fly, freedom of movement, water walk
@@ -17437,7 +17697,7 @@ OFFENSE
 	MOVE:Walk,10,Fly,60 ft. (average)
 
 	Melee2 claws +9 (2d6+5)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:10
 STATISTICS
 Str 20, Dex 15, Con 18, Int 14, Wis 17, Cha 9
@@ -17511,15 +17771,17 @@ Init +9; Senses darkvision 60 ft.; Perception +22
 Aura fear (10 ft., DC 21)
 DEFENSE
 AC 25, touch 19, flat-footed 19 (+2 armor, +5 Dex, +1 dodge,
-+3 luck, +4 natural)
++3 luck, +4|TYPE=NaturalArmor
 hp 127 (15d8+60)
 Fort +9, Ref +10, Will +13
 Defensive Abilities channel resistance +4; DR 10/bludgeoning
-and magic; Immune undead traits; SR 21
+and magic; Immune undead traits
+	SR:21
 OFFENSE
 	MOVE:Walk,30 ft.
 Ranged +1 pistols +15/+15/+10/+10/+5/+5 (1d8+1/19-20/?4)
-Special Attacks pistols, stranger's shot
+
+	Special Attacks:pistols, stranger's shot
 STATISTICS
 Str 17, Dex 21, Con 10, Int 11, Wis 18, Cha 18
 Base Atk +11; CMB +14; CMD 30
@@ -17601,8 +17863,10 @@ OFFENSE
 	MOVE:Walk,10 ft.
 
 	Meleeswarm +10 (2d6 plus distraction and infestation)
-Space 10 ft.; Reach 0 ft.
-Special Attacks distraction (DC 19), infestation
+	FACE:10
+	REACH:0 ft.
+
+	Special Attacks:distraction (DC 19), infestation
 STATISTICS
 Str 1, Dex 15, Con 18, Int -, Wis 10, Cha 1
 Base Atk +7; CMB -; CMD -
@@ -17654,7 +17918,8 @@ OFFENSE
 	MOVE:Walk,20 ft.
 
 	Meleebite +6 (1d6+3 plus poison and grab)
-Special Attacks gnaw, grab (Medium)
+
+	Special Attacks:gnaw, grab (Medium)
 STATISTICS
 Str 14, Dex 12, Con 18, Int -, Wis 10, Cha 1
 Base Atk +3; CMB +4 (+8 grapple); CMD 15
@@ -17706,7 +17971,7 @@ NE
 	undead (augmented humanoid)
 Init +4; Senses darkvision 60 ft.; Perception +16
 DEFENSE
-AC 21, touch 15, flat-footed 16 (+4 Dex, +1 dodge, +6 natural)
+AC 21, touch 15, flat-footed 16 (+4 Dex, +1 dodge, +6|TYPE=NaturalArmor
 hp 35 (5d6+15); fast healing 5
 Fort +4, Ref +5, Will +7
 Defensive Abilities channel resistance +4; DR 5/silver and
@@ -17717,7 +17982,8 @@ OFFENSE
 
 	Meleebite +6 (1d6+4 plus disease), slam +6 (1d4+4 plus grab
 and wither)
-Special Attacks blood drain (1d4 Constitution), create spawn,
+
+	Special Attacks:blood drain (1d4 Constitution), create spawn,
 disease (filth fever, DC 15), hexes (cackle, evil eye, misfortune)
 Witch Spells Prepared (CL 5th; concentration +8)
 3rd-stinking cloud (DC 16)
@@ -17898,13 +18164,15 @@ natural)
 hp 180 (19d10+76)
 Fort +12, Ref +18, Will +17
 DR 10/cold iron and evil; Immune electricity, fire; Resist
-acid 10, cold 10; SR 25
+acid 10, cold 10
+	SR:25
 OFFENSE
 	MOVE:Walk,30,Fly,90 ft. (good)
 
 	Melee+2 flaming burst scimitar +27/+22/+17/+12 (1d6+8/18-20 plus
 1d6 fire), 2 wings +20 (1d6+3 plus burn)
-Special Attacks burn (2d6, DC 23), whirlwind dance
+
+	Special Attacks:burn (2d6, DC 23), whirlwind dance
 Spell-Like Abilities (CL 15th; concentration +23)
 Constant-fire shield (warm shield)
 At will-aid, flame jump, pyrotechnics (DC 20), scorching ray
@@ -17970,7 +18238,7 @@ N
 Init +0; Senses blindsight 30 ft., low-light vision, tremorsense
 60 ft.; Perception +10
 DEFENSE
-AC 15, touch 10, flat-footed 15 (+5 natural)
+AC 15, touch 10, flat-footed 15 (+5|TYPE=NaturalArmor
 hp 30 (4d8+12)
 Fort +7, Ref +1, Will +1
 Defensive Abilities phantom flesh; Immune plant traits
@@ -18067,8 +18335,10 @@ OFFENSE
 
 	Meleeslam +24 (4d6+19 plus 4d6 electricity, 4d6 fire, and grab)
 Ranged 1d4 plasma rays +11 touch (4d6 electricity plus 4d6 fire)
-Space 20 ft.; Reach 20 ft.
-Special Attacks constrict (4d6+19 plus 4d6 electricity
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:constrict (4d6+19 plus 4d6 electricity
 and 4d6 fire), engulf (DC 33, 4d6 electricity
 plus 4d6 fire)
 STATISTICS
@@ -18171,7 +18441,7 @@ Perception +24
 Aura frightful presence (30 ft., DC 26), stench (DC 26,
 1d6 minutes)
 DEFENSE
-AC 29, touch 17, flat-footed 22 (+6 Dex, +1 dodge, +12 natural)
+AC 29, touch 17, flat-footed 22 (+6 Dex, +1 dodge, +12|TYPE=NaturalArmor
 hp 225 (18d10+126); fast healing 10 (see harvester of sorrow)
 Fort +12, Ref +17, Will +14
 Defensive Abilities harvester of sorrow; DR 10/magic;
@@ -18181,7 +18451,8 @@ OFFENSE
 
 	Meleebite +25 (2d6+6 plus 1d4 Cha drain), 2 talons +25 (1d6+6
 plus grab and popobala fever), 2 wings +20 (1d6+3)
-Special Attacks rend (2 talons, 2d6+9)
+
+	Special Attacks:rend (2 talons, 2d6+9)
 Spell-Like Abilities (CL 16th; concentration +22)
 At will-clairaudience/clairvoyance, ghost sound (DC 16),
 ventriloquism (DC 17)
@@ -18310,7 +18581,7 @@ N
 	animal
 Init +1; Senses low-light vision; Perception +6
 DEFENSE
-AC 13, touch 11, flat-footed 12 (+1 Dex, +2 natural)
+AC 13, touch 11, flat-footed 12 (+1 Dex, +2|TYPE=NaturalArmor
 hp 22 (3d8+9)
 Fort +6, Ref +6, Will +2
 Defensive Abilities quills
@@ -18377,7 +18648,8 @@ OFFENSE
 
 	Melee2 claws +14 (1d4+2 plus poison)
 Ranged 2 quills +14 (1d4+2 plus poison)
-Special Attacks sneak attack +3d6, spawn undead
+
+	Special Attacks:sneak attack +3d6, spawn undead
 Spell-Like Abilities (CL 10th; concentration +14)
 Constant-deathwatch, detect good, detect magic
 At will-command undead (DC 16), produce flame
@@ -18584,12 +18856,14 @@ DEFENSE
 AC 19, touch 16, flat-footed 14 (+4 Dex, +1 dodge, +3 natural, +1 size)
 hp 51 (6d10+18)
 Fort +5, Ref +9, Will +6
-DR 5/good or piercing; SR 20
+DR 5/good or piercing
+	SR:20
 OFFENSE
 	MOVE:Walk,30,Climb,20 ft.
 
 	Meleebite +8 (1d6+1 plus bleed), 2 claws +8 (1d4+1)
-Special Attacks bleed 1d4, detect thoughts (DC 15), sneak
+
+	Special Attacks:bleed 1d4, detect thoughts (DC 15), sneak
 attack +1d6
 Spell-Like Abilities (CL 5th; concentration +7)
 1/day-clairaudience/clairvoyance
@@ -18664,16 +18938,18 @@ LE
 Init +13; Senses all-around vision, darkvision 60 ft.; Perception +31
 DEFENSE
 AC 37, touch 24, flat-footed 27 (+4 deflection, +9 Dex, +1 dodge,
-+13 natural)
++13|TYPE=NaturalArmor
 hp 310 (20d10+200)
 Fort +16, Ref +21, Will +18
-DR 20/good and piercing; SR 35
+DR 20/good and piercing
+	SR:35
 OFFENSE
 	MOVE:Walk,40,Fly,30 ft. (good)
 
 	Melee+3 falchion +31/+26/+21/+16 (2d4+15/15-20), 4 bites +23
 (1d6+4)
-Special Attacks detect thoughts (DC 29), extra initiative
+
+	Special Attacks:detect thoughts (DC 29), extra initiative
 Spell-Like Abilities (CL 18th; concentration +27)
 Constant-comprehend languages, tongues
 At will-clairvoyance/clairaudience
@@ -18848,16 +19124,18 @@ LE
 	outsider (native, rakshasa, shapechanger)
 Init +5; Senses darkvision 60 ft.; Perception +10
 DEFENSE
-AC 21, touch 16, flat-footed 15 (+5 Dex, +1 dodge, +5 natural)
+AC 21, touch 16, flat-footed 15 (+5 Dex, +1 dodge, +5|TYPE=NaturalArmor
 hp 94 (9d10+45)
 Fort +8, Ref +11, Will +9
-DR 10/good and piercing; SR 23
+DR 10/good and piercing
+	SR:23
 OFFENSE
 	MOVE:Walk,40 ft.
 
 	Melee7 bites +14 (1d4+2 plus confusion)
 Ranged 6 energy bolts +14 touch (1d8 plus special)
-Special Attacks detect thoughts (DC 18), energy bolts
+
+	Special Attacks:detect thoughts (DC 18), energy bolts
 Spells Known (CL 5th; concentration +9)
 2nd (5/day)-invisibility, scorching ray
 1st (7/day)-charm person (DC 15), jump, mage armor,
@@ -18939,12 +19217,14 @@ DEFENSE
 AC 17, touch 15, flat-footed 14 (+3 Dex, +2 natural, +2 size)
 hp 22 (3d10+6)
 Fort +3, Ref +6, Will +4
-DR 5/good or piercing; SR 17
+DR 5/good or piercing
+	SR:17
 OFFENSE
 	MOVE:Walk,20,Climb,20,Swim,20 ft.
 
 	Meleebite +8 (1d4-2 plus poison)
-Special Attacks detect thoughts (DC 13)
+
+	Special Attacks:detect thoughts (DC 13)
 Spell-Like Abilities (CL 6th; concentration +8)
 Constant-comprehend languages
 1/day-charm person (DC 13), suggestion (DC 15)
@@ -19031,15 +19311,17 @@ AC 28, touch 13, flat-footed 24 (+3 Dex, +1 dodge, +15 natural,
 -1 size)
 hp 225 (18d10+126)
 Fort +18, Ref +9, Will +12
-DR 15/good and piercing; SR 30
+DR 15/good and piercing
+	SR:30
 OFFENSE
 	MOVE:Walk,40 ft.; air walk
 
 	Meleeunarmed strike +24/+19/+14/+9 (2d6+7/19-20),
 bite +19 (1d8+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks detect thoughts (DC 24), martial artist
+
+	Special Attacks:detect thoughts (DC 24), martial artist
 Spell-Like Abilities (CL 15th; concentration +20)
 Constant-air walk, true seeing
 Spells Known (CL 12th; concentration +17)
@@ -19118,7 +19400,8 @@ OFFENSE
 
 	Meleedagger -1 (1d3-2/19-20)
 Ranged light crossbow +3 (1d6/19-20)
-Special Attacks swarming
+
+	Special Attacks:swarming
 STATISTICS
 Str 6, Dex 15, Con 11, Int 14, Wis 10, Cha 9
 Base Atk +0; CMB -3; CMD 9
@@ -19200,18 +19483,20 @@ NE
 	
 Init +10; Senses low-light vision; Perception +22
 DEFENSE
-AC 25, touch 17, flat-footed 18 (+6 Dex, +1 dodge, +8 natural)
+AC 25, touch 17, flat-footed 18 (+6 Dex, +1 dodge, +8|TYPE=NaturalArmor
 hp 150 (20d6+80)
 Fort +12, Ref +18, Will +15
-DR 15/cold iron; Immune fire; SR 23
+DR 15/cold iron; Immune fire
+	SR:23
 OFFENSE
 	MOVE:Walk,30,Swim,60 ft.
 
 	Meleestaggering touch +16 (stagger), 4 tresses +16 (2d6+5
 plus grab)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (15 ft. with tresses)
-Special Attacks beckoning call, constrict (2d6+7), tresses
+
+	Special Attacks:beckoning call, constrict (2d6+7), tresses
 Spell-Like Abilities (CL 20th; concentration +27)
 Constant-blur, water walk
 At will-entangle (DC 18), fog cloud, invisibility
@@ -19282,14 +19567,15 @@ NE
 Init +8; Senses blindsense 60 ft., darkvision 60 ft., scent;
 Perception +14
 DEFENSE
-AC 18, touch 14, flat-footed 14 (+4 Dex, +4 natural)
+AC 18, touch 14, flat-footed 14 (+4 Dex, +4|TYPE=NaturalArmor
 hp 52 (7d10+14)
 Fort +4, Ref +9, Will +6
 OFFENSE
 	MOVE:Walk,30,Fly,40 ft. (good)
 
 	Meleebite +10 (1d6+3 plus bleed), 2 claws +10 (1d6+3 plus grab)
-Special Attacks bleed (1d4), blood drain (1 Constitution), dust
+
+	Special Attacks:bleed (1d4), blood drain (1 Constitution), dust
 cloud, fell shriek, powerful charge (claw, 2d6+6)
 STATISTICS
 Str 16, Dex 18, Con 15, Int 9, Wis 13, Cha 10
@@ -19368,8 +19654,10 @@ OFFENSE
 	MOVE:Walk,10,Fly,30 ft. (perfect)
 
 	Meleebite +1 (1d4-1), tentacle +1 (1d4-1)
-Space 2-1/2 ft.; Reach 2-1/2 ft.
-Special Attacks baleful whinny, lashing strike
+	FACE:2-1/2
+	REACH:2-1/2 ft.
+
+	Special Attacks:baleful whinny, lashing strike
 STATISTICS
 Str 8, Dex 15, Con 17, Int 6, Wis 11, Cha 14
 Base Atk +0; CMB +0; CMD 9 (can't be tripped)
@@ -19452,9 +19740,10 @@ OFFENSE
 	MOVE:Walk,20,Climb,20,Swim,40 ft.
 
 	Melee2 slams +16 (2d8+7 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks constrict (2d8+10), grab (Huge)
+
+	Special Attacks:constrict (2d8+10), grab (Huge)
 STATISTICS
 Str 25, Dex 14, Con 20, Int 2, Wis 11, Cha 15
 Base Atk +9; CMB +17 (+25 grapple); CMD 30 (can't be tripped)
@@ -19529,7 +19818,7 @@ N
 Init +2; Senses darkvision 60 ft., low-light vision, scent;
 Perception +5
 DEFENSE
-AC 14, touch 12, flat-footed 12 (+2 Dex, +2 natural)
+AC 14, touch 12, flat-footed 12 (+2 Dex, +2|TYPE=NaturalArmor
 hp 22 (3d8+9)
 Fort +4, Ref +5, Will +1
 OFFENSE
@@ -19538,7 +19827,8 @@ OFFENSE
 	Meleeclub +8 (1d6+9) or
 slam +8 (1d4+9)
 Ranged rock +5 (1d4+9)
-Special Attacks rock throwing (120 ft.)
+
+	Special Attacks:rock throwing (120 ft.)
 STATISTICS
 Str 22, Dex 15, Con 16, Int 9, Wis 10, Cha 11
 Base Atk +2; CMB +8; CMD 20
@@ -19620,9 +19910,10 @@ OFFENSE
 	MOVE:Walk,50 ft.
 
 	Melee2 claws +13 (1d8+8 plus grab), sting +13 (1d8+8 plus poison)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks constrict (1d8+8), sudden strike
+
+	Special Attacks:constrict (1d8+8), sudden strike
 STATISTICS
 Str 27, Dex 15, Con 20, Int -, Wis 14, Cha 2
 Base Atk +7; CMB +17 (+21 grapple); CMD 29 (41 vs. trip)
@@ -19675,7 +19966,8 @@ OFFENSE
 	MOVE:Walk,30 ft.
 
 	Melee2 claws +2 (1d3), sting +2 (1d3 plus poison)
-Special Attacks pounce
+
+	Special Attacks:pounce
 STATISTICS
 Str 10, Dex 11, Con 14, Int -, Wis 10, Cha 2
 Base Atk +1; CMB +0; CMD 10 (22 vs. trip)
@@ -19716,9 +20008,10 @@ OFFENSE
 	MOVE:Walk,5 ft.
 
 	Meleetentacles +3 (2d6+1 plus grab and poison)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks swallow whole (1d6+1 bludgeoning damage,
+
+	Special Attacks:swallow whole (1d6+1 bludgeoning damage,
 AC 11, 5 hp)
 STATISTICS
 Str 12, Dex 15, Con 18, Int -, Wis 10, Cha 2
@@ -19824,8 +20117,10 @@ OFFENSE
 	MOVE:Walk,40,Swim,80 ft.
 
 	Melee2 slams +22 (4d10+15)
-Space 20 ft.; Reach 20 ft.
-Special Attacks capsize (DC 35), dooming gaze (60 ft., DC 27)
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:capsize (DC 35), dooming gaze (60 ft., DC 27)
 STATISTICS
 Str 30, Dex 11, Con -, Int 13, Wis 18, Cha 23
 Base Atk +16; CMB +30; CMD 40 (can't be tripped)
@@ -19908,8 +20203,10 @@ OFFENSE
 
 	Meleebite +33 (6d10+14/19-20 plus grab), tail slap +33
 (6d8+14/19-20 plus grab)
-Space 20 ft.; Reach 20 ft.
-Special Attacks capsize, constrict (6d8+21), powerful tail,
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:capsize, constrict (6d8+21), powerful tail,
 swallow whole (10d6+21 bludgeoning damage, AC 21, 33 hp)
 STATISTICS
 Str 39, Dex 20, Con 28, Int 2, Wis 17, Cha 11
@@ -19981,7 +20278,7 @@ NE
 	outsider (evil, extraplanar)
 Init +6; Senses darkvision 60 ft.; Perception +10
 DEFENSE
-AC 18, touch 12, flat-footed 16 (+2 Dex, +6 natural)
+AC 18, touch 12, flat-footed 16 (+2 Dex, +6|TYPE=NaturalArmor
 hp 51 (6d10+18)
 Fort +8, Ref +7, Will +5
 Defensive Abilities shadow blend
@@ -19989,7 +20286,8 @@ OFFENSE
 	MOVE:Walk,50 ft.
 
 	Meleebite +10 (1d8+6 plus trip), tail slap +5 (1d6+3)
-Special Attacks bay
+
+	Special Attacks:bay
 STATISTICS
 Str 19, Dex 15, Con 17, Int 4, Wis 12, Cha 13
 Base Atk +6; CMB +10; CMD 22 (26 vs. trip)
@@ -20155,15 +20453,17 @@ AC 24, touch 16, flat-footed 23 (+1 Dex, +6 insight, +8 natural,
 hp 115 (11d10+55); fast healing 5
 Fort +12, Ref +14, Will +11
 Defensive Abilities prescience; DR 10/evil; Resist electricity 10,
-fire 10; SR 20
+fire 10
+	SR:20
 OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (good)
 
 	Meleegore +17 (2d8+7/19-20), 2 hooves +12 (1d6+3), 2 wings
 +12 (1d6+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks trample (2d6+10, DC 22)
+
+	Special Attacks:trample (2d6+10, DC 22)
 Spell-Like Abilities (CL 12th; concentration +18)
 Constant- detect chaos, detect evil, true seeing
 3/day-empowered cure moderate wounds,
@@ -20234,15 +20534,17 @@ hp 275 (22d10+154); fast healing 10
 Fort +20, Ref +12, Will +19
 DR 10/chaotic and silver; Immune ability damage, ability drain,
 cold, death effects, disease, energy drain, negative energy,
-poison; Resist acid 10, fire 10; SR 28
+poison; Resist acid 10, fire 10
+	SR:28
 OFFENSE
 	MOVE:Walk,30,Fly,40 ft. (perfect)
 
 	Melee+3 axiomatic scythe +30/+25/+20/+15 (2d6+10/?4), 2 wings
 +21 (1d8+2)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks destroy soul
+
+	Special Attacks:destroy soul
 Spell-Like Abilities (CL 20th; concentration +29)
 Constant-detect chaos, detect law, tongues, true seeing
 3/day-destruction (DC 26), energy drain, greater
@@ -20315,15 +20617,18 @@ hp 324 (24d10+192)
 Fort +22, Ref +17, Will +14
 Immune ability damage, ability drain, disease, fire, negative
 energy, petrification, poison, sleep; Resist acid 10, cold 10,
-electricity 10; SR 29
+electricity 10
+	SR:29
 OFFENSE
 	MOVE:Walk,40,Fly,120 ft. (good)
 
 	Meleebite +32 (2d8+12 plus 2d6 fire), 2 claws +32 (2d8+12 plus
 2d6 fire), tail slap +30 (1d4+6 plus banishing swipe)
 Ranged glaring ray +23 (20d6 fire)
-Space 20 ft.; Reach 20 ft.
-Special Attacks banishing swipe, glaring ray, radiant feathers
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:banishing swipe, glaring ray, radiant feathers
 Spell-Like Abilities (CL 16th; concentration +22)
 Constant-detect evil, detect magic, tongues
 At will-daylight, zone of truth (DC 18)
@@ -20404,7 +20709,7 @@ N
 Init +5; Senses blindsight 60 ft., darkvision 60 ft., scent;
 Perception +22
 DEFENSE
-AC 26, touch 16, flat-footed 20 (+5 Dex, +1 dodge, +10 natural)
+AC 26, touch 16, flat-footed 20 (+5 Dex, +1 dodge, +10|TYPE=NaturalArmor
 hp 136 (13d8+78)
 Fort +10, Ref +9, Will +10
 DR 10/slashing; Immune cold,
@@ -20419,7 +20724,7 @@ grab), 2 claws +18
 (1d6+9), tail slap
 +14 (1d6+4 plus
 stunning shock)
-Space 5 ft.; Reach
+	FACE:5 ft.; Reach
 5 ft. (10 ft. with
 tail slap)
 Special Attacks
@@ -20521,8 +20826,10 @@ OFFENSE
 	Meleebite +4 (1d3-4), 2 claws +4
 (1d2-4)
 Ranged spray +4 touch (musk)
-Space 2-1/2 ft.; Reach 2-1/2 ft.
-Special Attacks musk
+	FACE:2-1/2
+	REACH:2-1/2 ft.
+
+	Special Attacks:musk
 STATISTICS
 Str 3, Dex 15, Con 9, Int 2, Wis 12, Cha 6
 Base Atk +0; CMB +0; CMD 6
@@ -20575,9 +20882,10 @@ OFFENSE
 	Meleebite +5 (1d8+3), 2 claws +5
 (1d6+3)
 Ranged spray +5 touch (musk)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks musk
+
+	Special Attacks:musk
 STATISTICS
 Str 17, Dex 16, Con 13, Int 2, Wis 12,
 Cha 9
@@ -20634,9 +20942,10 @@ OFFENSE
 	MOVE:Walk,80 ft.; air walk
 
 	Meleebite +19 (1d8+6), 4 hooves +17 (1d8+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks breath weapon (DC 22), powerful charge
+
+	Special Attacks:breath weapon (DC 22), powerful charge
 (hooves, 2d8+12), trample (1d8+9, DC 23)
 Spell-Like Abilities (CL 11th; concentration +12)
 Constant-air walk
@@ -20724,8 +21033,10 @@ OFFENSE
 	MOVE:Walk,20,Climb,20,Swim,20 ft.
 
 	Meleeswarm (1d6 plus distraction)
-Space 10 ft.; Reach 0 ft.
-Special Attacks distraction (DC 12)
+	FACE:10
+	REACH:0 ft.
+
+	Special Attacks:distraction (DC 12)
 STATISTICS
 Str 9, Dex 15, Con 12, Int 1, Wis 12, Cha 2
 Base Atk +2; CMB +2; CMD 11 (can't be tripped)
@@ -20760,8 +21071,10 @@ OFFENSE
 	MOVE:Walk,20,Climb,20,Swim,10 ft.
 
 	Meleeswarm (1d6 plus distraction and poison)
-Space 10 ft.; Reach 0 ft.
-Special Attacks distraction (DC 15)
+	FACE:10
+	REACH:0 ft.
+
+	Special Attacks:distraction (DC 15)
 STATISTICS
 Str 9, Dex 16, Con 17, Int 1, Wis 12, Cha 2
 Base Atk +3; CMB +4; CMD 13 (can't be tripped)
@@ -20911,9 +21224,10 @@ OFFENSE
 	MOVE:Walk,40,Fly,60 ft. (poor)
 
 	Melee2 claws +20 (2d6+8/19-20 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks pounce, rake (2 claws +20, 2d6+8), roar
+
+	Special Attacks:pounce, rake (2 claws +20, 2d6+8), roar
 Spells Prepared (CL 6th; concentration +9)
 3rd-bestow curse (DC 16), searing light, speak with dead
 2nd-bull's strength, calm emotions (DC 15), cure
@@ -21000,9 +21314,10 @@ OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (poor)
 
 	Melee2 claws +15 (1d6+6), gore +16 (2d4+6/19-20)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks swooping charge (gore, 4d6+12)
+
+	Special Attacks:swooping charge (gore, 4d6+12)
 Spell-Like Abilities (CL 10th; concentration +10)
 Constant-speak with animals
 STATISTICS
@@ -21091,9 +21406,10 @@ OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (poor)
 
 	Meleebite +11 (1d10+4), 2 claws +11 (1d6+4)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks pounce, shriek
+
+	Special Attacks:pounce, shriek
 STATISTICS
 Str 19, Dex 14, Con 15, Int 6, Wis 15, Cha 10
 Base Atk +8; CMB +13; CMD 25 (29 vs. trip)
@@ -21231,9 +21547,10 @@ OFFENSE
 	MOVE:Walk,40,Climb,40 ft.
 
 	Meleebite +8 (2d8+7 plus poison)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks web (+5 ranged, DC 16, hp 7)
+
+	Special Attacks:web (+5 ranged, DC 16, hp 7)
 STATISTICS
 Str 21, Dex 15, Con 16, Int -, Wis 12, Cha 2
 Base Atk +5; CMB +12; CMD 24 (36 vs. trip)
@@ -21292,9 +21609,10 @@ OFFENSE
 
 	Meleebite +9 (1d8+5), 2 pincers +4 (1d6+2), sting +9
 (1d6+5 plus poison)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks implant
+
+	Special Attacks:implant
 Spell-Like Abilities (CL 10th; concentration +10)
 Constant-freedom of movement
 STATISTICS
@@ -21373,7 +21691,8 @@ OFFENSE
 
 	Meleeshort sword +0 (1d2-4/19-20)
 Ranged short bow +7 (1d2-4)
-Space 1 ft.; Reach 0 ft.
+	FACE:1
+	REACH:0 ft.
 Spell-Like Abilities (CL 5th; concentration +5)
 Constant-detect evil, detect good
 At will-dancing lights, daze (DC 10)
@@ -21457,9 +21776,10 @@ OFFENSE
 	Meleebite +14 (1d8+6 plus bleed), 2 talons +14 (1d6+6), 2 wings
 +9 (1d6+3 plus bleed)
 Ranged 2 wing razors +10 (1d6+6 plus bleed)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks bleed (1d6), glare, wing razors
+
+	Special Attacks:bleed (1d6), glare, wing razors
 STATISTICS
 Str 22, Dex 15, Con 20, Int 2, Wis 15, Cha 17
 Base Atk +9; CMB +16; CMD 28
@@ -21540,7 +21860,8 @@ OFFENSE
 
 	Meleescimitar +4 (1d6+2/18-20)
 Ranged shortbow +2 (1d6/?3)
-Special Attacks elemental assault, favored enemy (humans +2)
+
+	Special Attacks:elemental assault, favored enemy (humans +2)
 STATISTICS
 Str 15, Dex 12, Con 11, Int 10, Wis 9, Cha 10
 Base Atk +1; CMB +3; CMD 14
@@ -21735,9 +22056,10 @@ OFFENSE
 	MOVE:Walk,40 ft.
 
 	Meleebite +23 (1d8+10 plus grab), 2 claws +23 (1d6+10 plus grab)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks pounce, rake (2 claws +23, 1d6+10), swallow
+
+	Special Attacks:pounce, rake (2 claws +23, 1d6+10), swallow
 whole (suffocation, AC 17, hardness 8, 25 hp)
 STATISTICS
 Str 30, Dex 15, Con -, Int -, Wis 14, Cha 1
@@ -21805,7 +22127,7 @@ N
 	dragon
 Init +2; Senses darkvision 60 ft., low-light vision; Perception +8
 DEFENSE
-AC 15, touch 12, flat-footed 13 (+2 Dex, +3 natural)
+AC 15, touch 12, flat-footed 13 (+2 Dex, +3|TYPE=NaturalArmor
 hp 22 (3d12+3)
 Fort +4, Ref +5, Will +5
 Immune paralysis, sleep
@@ -21813,7 +22135,8 @@ OFFENSE
 	MOVE:Walk,30,Climb,30 ft.
 
 	Meleebite +5 (1d8+3 plus grab)
-Special Attacks poison gasp, pounce, rake (2 claws +5, 1d4+2)
+
+	Special Attacks:poison gasp, pounce, rake (2 claws +5, 1d4+2)
 STATISTICS
 Str 14, Dex 15, Con 12, Int 5, Wis 14, Cha 11
 Base Atk +3; CMB +5 (+9 grapple); CMD 17 (can't be tripped)
@@ -21890,17 +22213,19 @@ N
 Init +7; Senses darkvision 60 ft., low-light vision;
 Perception +8
 DEFENSE
-AC 19, touch 13, flat-footed 16 (+3 Dex, +6 natural)
+AC 19, touch 13, flat-footed 16 (+3 Dex, +6|TYPE=NaturalArmor
 hp 64 (8d10+20)
 Fort +2, Ref +5, Will +2
-DR 5/bludgeoning; Immune construct traits, fire; SR 17
+DR 5/bludgeoning; Immune construct traits, fire
+	SR:17
 OFFENSE
 	MOVE:Walk,30 ft.
 
 	Meleelongsword +10/+5 (1d8+3/19-20), short sword +10
 (1d6+1/19-20) or
 2 slams +11 (1d6+3)
-Special Attacks keen weapons, rank fighting
+
+	Special Attacks:keen weapons, rank fighting
 STATISTICS
 Str 16, Dex 16, Con -, Int 1, Wis 11, Cha 1
 Base Atk +8; CMB +11; CMD 24
@@ -22111,15 +22436,17 @@ AC 33, touch 8, flat-footed 33 (+25 natural, -2 size)
 hp 312 (25d10+175); fast healing 10
 Fort +15, Ref +14, Will +21
 Defensive Abilities merope coat; Immune poison, sonic;
-Resist acid 20; SR 29
+Resist acid 20
+	SR:29
 OFFENSE
 	MOVE:Walk,30,Fly,50 ft. (good)
 
 	Melee+2 axiomatic light mace +35/+30/+25/+20 (2d6+11/19-20),
 sting +27 (2d8+4/19-20 plus poison)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks launch merope, spawn soldiers
+
+	Special Attacks:launch merope, spawn soldiers
 Spell-Like Abilities (CL 20th; concentration +29)
 Constant-detect secret doors, true seeing
 At will-daylight, detect thoughts (DC 21), greater scrying (DC
@@ -22287,16 +22614,18 @@ LN
 Init +5; Senses darkvision 60 ft., detect secret doors, low-light
 vision; Perception +27
 DEFENSE
-AC 25, touch 15, flat-footed 20 (+5 Dex, +10 natural)
+AC 25, touch 15, flat-footed 20 (+5 Dex, +10|TYPE=NaturalArmor
 hp 133 (14d10+56)
 Fort +8, Ref +16, Will +15
-Immune poison, sonic; Resist acid 10; SR 22
+Immune poison, sonic; Resist acid 10
+	SR:22
 OFFENSE
 	MOVE:Walk,30,Fly,60 ft. (good)
 
 	Melee+2 quarterstaff +16/+11/+6 (1d6+4), +2 quarterstaff
 +16/+11 (1d6+3), sting +11 (1d8+3 plus mind sting)
-Special Attacks merope consumption
+
+	Special Attacks:merope consumption
 Spell-Like Abilities (CL 14th; concentration +22)
 Constant-detect secret doors
 At will-calm emotions (DC 20), detect thoughts (DC 20),
@@ -22407,7 +22736,8 @@ OFFENSE
 	Meleesting +10 (1d8+7 plus poison)
 Ranged composite longbow +8 (1d8+5/?3 plus poison) or
 Rapid Shot +6/+6 (1d8+5/?3 plus poison)
-Special Attacks merope consumption
+
+	Special Attacks:merope consumption
 STATISTICS
 Str 20, Dex 17, Con 16, Int 12, Wis 13, Cha 15
 Base Atk +5; CMB +10; CMD 23
@@ -22498,7 +22828,8 @@ AC 42, touch 4, flat-footed 40 (+8 armor, +2 Dex, +30 natural,
 hp 516 (24d10+384); regeneration 10 (epic)
 Fort +30, Ref +12, Will +18
 DR 20/epic and lawful; Immune aging, death effects, disease,
-mind-affecting effects; SR 35
+mind-affecting effects
+	SR:35
 OFFENSE
 	MOVE:Walk,60 ft.; air walk
 
@@ -22506,8 +22837,10 @@ OFFENSE
 whirlwind) or
 slam +37 (4d8+21 plus stun)
 Ranged rock +19/+14/+9/+4 (4d8+31/18-20)
-Space 30 ft.; Reach 30 ft.
-Special Attacks rock throwing (200 ft.), stunning slam
+	FACE:30
+	REACH:30 ft.
+
+	Special Attacks:rock throwing (200 ft.), stunning slam
 Spell-Like Abilities (CL 20th; concentration +27)
 Constant-air walk, spell turning, true seeing
 At will-bestow curse (DC 21), break enchantment, chain
@@ -22672,7 +23005,7 @@ N
 	outsider (extraplanar, water)
 Init +1; Senses all-around vision, darkvision 60 ft.; Perception +14
 DEFENSE
-AC 21, touch 12, flat-footed 19 (+1 Dex, +1 dodge, +9 natural)
+AC 21, touch 12, flat-footed 19 (+1 Dex, +1 dodge, +9|TYPE=NaturalArmor
 hp 51 (6d10+18)
 Fort +8, Ref +6, Will +3
 Resist electricity 10, fire 10
@@ -22680,9 +23013,10 @@ OFFENSE
 	MOVE:Walk,10,Swim,90 ft.
 
 	Meleebite +9 (1d6+3), 2 claws +9 (1d6+3)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5
-Special Attacks ink cloud
+
+	Special Attacks:ink cloud
 STATISTICS
 Str 16, Dex 13, Con 17, Int 10, Wis 12, Cha 9
 Base Atk +6; CMB +9; CMD 21 (29 vs. trip)
@@ -22767,9 +23101,10 @@ OFFENSE
 	MOVE:Walk,20 ft.
 
 	Meleebite +21 (2d6+8 plus grab), 2 slams +16 (1d6+8)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
-Special Attacks swallow whole (no damage [see below], AC 18,
+
+	Special Attacks:swallow whole (no damage [see below], AC 18,
 40 hp), trample (2d6+12, DC 25)
 STATISTICS
 Str 26, Dex 8, Con -, Int -, Wis 12, Cha 1
@@ -22884,9 +23219,10 @@ OFFENSE
 	Meleeclub +20/+15/+10 (2d6+10/19-20), bite +15 (2d6+5 plus
 grab), claw +15 (1d8+5 plus grab)
 Ranged rock +10 (2d8+15)
-Space 15 ft.;
+	FACE:15 ft.;
 	REACH:15
-Special Attacks all-seeing attacks, cacophonous roar, fast
+
+	Special Attacks:all-seeing attacks, cacophonous roar, fast
 swallow, rock throwing (120 ft.), swallow whole (4d6+15
 bludgeoning, AC 21, 21 hp)
 STATISTICS
@@ -22962,7 +23298,7 @@ OFFENSE
 	MOVE:Walk,30,Climb,10 ft.
 
 	Meleebite +5 (1d4+3), 2 claws +5 (1d4+3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10 (15 ft. with claws)
 STATISTICS
 Str 16, Dex 19, Con 16, Int 9, Wis 12, Cha 7
@@ -23032,7 +23368,7 @@ N
 Init +5; Senses darkvision 60 ft., low-light vision, scent;
 Perception +8
 DEFENSE
-AC 15, touch 11, flat-footed 14 (+1 Dex, +4 natural)
+AC 15, touch 11, flat-footed 14 (+1 Dex, +4|TYPE=NaturalArmor
 hp 30 (4d10+8); regeneration 3 (acid or fire)
 Fort +6, Ref +5, Will +1
 OFFENSE
@@ -23127,7 +23463,8 @@ OFFENSE
 	MOVE:Walk,30,Swim,60 ft.
 
 	Meleebite +15 (1d8+10/19-20 plus grab), 2 claws +15 (1d4+5)
-Special Attacks seek target, shearing jaws
+
+	Special Attacks:seek target, shearing jaws
 Spell-Like Abilities (CL 7th; concentration +4)
 3/day-invisibility
 STATISTICS
@@ -23233,7 +23570,8 @@ hp 319 (22d8+220); fast healing 15
 Fort +17, Ref +14, Will +19
 Defensive Abilities channel resistance +4, light to dark; DR 15/
 bludgeoning and good; Immune cold, electricity, undead
-traits; Resist fire 15; SR 30
+traits; Resist fire 15
+	SR:30
 OFFENSE
 	MOVE:Walk,50,Fly,60 ft. (good)
 
@@ -23242,8 +23580,10 @@ energy drain), 2 claws +27 (2d6+14/19-20 plus
 3d6 electricity)
 Ranged eye beam +17 touch (10d6 electricity
 and 10d6 force)
-Space 20 ft.; Reach 20 ft.
-Special Attacks eclipse, energy drain
+	FACE:20
+	REACH:20 ft.
+
+	Special Attacks:eclipse, energy drain
 (2 levels, DC 31)
 Spell-Like Abilities (CL 19th; concentration +29)
 Constant-arcane sight, fly, true seeing
@@ -23340,7 +23680,8 @@ AC 27, touch 19, flat-footed 24 (+8 armor, +6 deflection, +3 Dex)
 hp 168 (16d10+80)
 Fort +10, Ref +13, Will +15
 DR 10/cold iron and lawful; Immune cold, electricity, poison;
-Resist acid 10, fire 10; SR 23
+Resist acid 10, fire 10
+	SR:23
 OFFENSE
 	MOVE:Walk,30,Fly,100 ft. (perfect)
 
@@ -23424,7 +23765,8 @@ OFFENSE
 
 	Meleeflurry of blows +9/+9 (1d8+3/19-20 plus grab), bite +4
 (1d6+4)
-Special Attacks brutal claws, drain chi (DC 15), flurry of blows,
+
+	Special Attacks:brutal claws, drain chi (DC 15), flurry of blows,
 stunning fist (5/day, DC 16)
 STATISTICS
 Str 16, Dex 23, Con -, Int 12, Wis 18, Cha 16
@@ -23596,7 +23938,8 @@ OFFENSE
 
 	Meleequarterstaff +1 (1d6+1) or
 flurry of blows +0/+0 (1d6+1)
-Special Attacks flurry of blows, stunning fist (1/day, DC 13)
+
+	Special Attacks:flurry of blows, stunning fist (1/day, DC 13)
 STATISTICS
 Str 13, Dex 16, Con 10, Int 12, Wis 17, Cha 6
 Base Atk +0; CMB +1; CMD 18
@@ -23679,7 +24022,8 @@ OFFENSE
 
 	Meleekukri +1 (1d4+1/18-20 plus poison)
 Ranged shuriken +3 (1d2+1 plus poison)
-Special Attacks poison (DC 12), sneak attack +1d6
+
+	Special Attacks:poison (DC 12), sneak attack +1d6
 STATISTICS
 Str 13, Dex 17, Con 14, Int 8, Wis 10, Cha 12
 Base Atk +0; CMB +1; CMD 14
@@ -23782,14 +24126,15 @@ CN
 	
 Init +8; Senses darkvision 60 ft.; Perception +14
 DEFENSE
-AC 19, touch 15, flat-footed 14 (+4 Dex, +1 dodge, +4 natural)
+AC 19, touch 15, flat-footed 14 (+4 Dex, +1 dodge, +4|TYPE=NaturalArmor
 hp 51 (6d10+18)
 Fort +5, Ref +9, Will +10
 OFFENSE
 	MOVE:Walk,30,Swim,50 ft.
 
 	Meleeshortspear +9/+4 (1d6+3), bite +2 (1d8+1)
-Special Attacks suffocating water
+
+	Special Attacks:suffocating water
 Spell-Like Abilities (CL 6th; concentration +7)
 3/day- control water, dancing lights, grease (DC 12),
 hydraulic push* (DC 12), water breathing
@@ -23870,9 +24215,10 @@ OFFENSE
 	MOVE:Walk,30,Swim,50 ft.
 
 	Meleebite +8 (1d6+1 plus trip), 4 claws +7 (1d3+1)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (10 ft. with bite)
-Special Attacks blood-freezing howl, pounce
+
+	Special Attacks:blood-freezing howl, pounce
 STATISTICS
 Str 13, Dex 16, Con 14, Int 5, Wis 12, Cha 13
 Base Atk +5; CMB +5; CMD 18 (26 vs. trip)
@@ -23997,7 +24343,7 @@ OFFENSE
 	MOVE:Walk,10,Fly,50 ft. (average)
 
 	Meleebite +9 (2d6+9 plus disease)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:5
 STATISTICS
 Str 22, Dex 15, Con 18, Int 2, Wis 15, Cha 7
@@ -24047,16 +24393,17 @@ N
 	aberration
 Init +4; Senses all-around vision, darkvision 60 ft.; Perception +14
 DEFENSE
-AC 21, touch 10, flat-footed 21 (+11 natural)
+AC 21, touch 10, flat-footed 21 (+11|TYPE=NaturalArmor
 hp 97 (13d8+39)
 Fort +9, Ref +6, Will +10
 OFFENSE
 	MOVE:Walk,5,Burrow,5,Climb,5 ft.
 
 	Meleebite +12 (1d6+3), 8 tentacles +11 (1d4+1 plus grab and pull)
-Space 5 ft.;
+	FACE:5 ft.;
 	REACH:5 (15 ft. with tentacle)
-Special Attacks constrict (tentacle 1d4+3), implant, pull
+
+	Special Attacks:constrict (tentacle 1d4+3), implant, pull
 (tentacle, 5 ft.)
 STATISTICS
 Str 17, Dex 10, Con 17, Int 6, Wis 14, Cha 7
@@ -24149,9 +24496,10 @@ OFFENSE
 	MOVE:Walk,20,Climb,10 ft.
 
 	Melee2 pincers +15 (2d8+9/?3)
-Space 10 ft.;
+	FACE:10 ft.;
 	REACH:10
-Special Attacks amnesia, deadly pincers, mind swap
+
+	Special Attacks:amnesia, deadly pincers, mind swap
 Spell-Like Abilities (CL 15th; concentration +19)
 At will-astral projection (self only), detect thoughts
 (DC 16), hold monster (DC 19), modify memory (DC 18)
@@ -24260,7 +24608,8 @@ OFFENSE
 	MOVE:Walk,fly 30 ft. (perfect)
 
 	Melee2 touches +10 (4d6 cold plus chilling touch)
-Special Attacks chilling touch, fascinating gaze
+
+	Special Attacks:chilling touch, fascinating gaze
 Spell-Like Abilities (CL 10th; concentration +16)
 Constant-blur
 3/day-cone of cold (DC 21), eyebite (comatose
@@ -24370,7 +24719,8 @@ OFFENSE
 	MOVE:Walk,30,Climb,30 ft.
 
 	Meleebite +6 (1d3-2 plus bleed 1), 2 claws +6 (1d2-2)
-Special Attacks bleed 1
+
+	Special Attacks:bleed 1
 Spell-Like Abilities (CL 1st; concentration -2)
 Constant-detect magic, speak with animals
 STATISTICS
@@ -24381,15 +24731,11 @@ Skills Acrobatics +12, Climb +12, Perception +5; Racial
 Modifiers +6 Acrobatics, +6 Climb
 Languages Aklo; speak with animals
 SQ otherworldly touch
-ECOLOGY
-Environment any forest
-Organization solitary, pair, gang (3-14), tribe (15+ plus
-50% noncombatants)
-Treasure incidental
+
+
+
 SPECIAL ABILITIES
-Otherworldly Touch (Ex) A zoog's natural attacks
-can strike incorporeal creatures as if they were
-ghost touch weapons.
+Otherworldly Touch (Ex) A zoog's natural attacks can strike incorporeal creatures as if they were ghost touch weapons.
 Spell Sight (Su) A zoog's eyes radiate normal light
 in a 15-foot cone and increase the light level by
 one step for an additional 15 feet beyond that area.
@@ -24431,11 +24777,10 @@ A spellcaster must have the Improved Familiar feat, be
 chaotic neutral, and have an arcane caster level of 5th or
 higher to gain a zoog familiar.
 288
-Illustration by Eric Braddock
+
+
 Zuvembie
-This withered old corpse has a feral glint in her eyes and clasps a
-rusty axe in her yellow-nailed hands.
-ZUVEMBIE
+
 	CR:4
 	XP:1,200
 NE
@@ -24443,7 +24788,7 @@ NE
 	undead
 Init +2; Senses darkvision 60 ft.; Perception +10
 DEFENSE
-AC 15, touch 13, flat-footed 12 (+2 Dex, +1 dodge, +2 natural)
+AC 15, touch 13, flat-footed 12 (+2 Dex, +1 dodge, +2|TYPE=NaturalArmor
 hp 37 (5d8+15)
 Fort +3, Ref +3, Will +6
 Defensive Abilities channel resistance +4; DR 5/piercing;
@@ -24467,49 +24812,10 @@ Feats Ability Focus (corpse call), Dodge, Toughness
 Skills Bluff +7, Knowledge (arcana) +8, Perception +10,
 Stealth +14; Racial Modifiers +4 Stealth
 Languages Common (can't speak)
-ECOLOGY
-Environment any land
-Organization solitary
-Treasure standard (battleaxe)
-SPECIAL ABILITIES
-Corpse Call (Su) Zuvembies cannot speak, but their strange
-calls and whistles captivate the minds of those who hear
-them. Once per day, a zuvembie may call out, and all
-living creatures with an Intelligence score of 3 or
-higher within a 100-foot spread must succeed at a
-DC 16 Will save or move toward the zuvembie using
-the most direct means possible. If this path leads
-them into a dangerous area such as through fire
-or off a cliff, the creatures receive a second saving
-throw to end the effect before moving into peril.
-Captivated creatures can take no actions other than to defend
-themselves. A victim within 5 feet of the zuvembie simply
-stands and offers no resistance to the zuvembie's attacks.
-This effect continues for as long as the zuvembie
-continues its call as a standard action each round.
-This is a sonic mind-affecting charm effect, and has no effect
-on deaf creatures. The save DC is Charisma-based.
-Tied to the dark forces of nature and unholy magic,
-zuvembies employ fear and the wild creatures of the land
-to take their vengeance upon the living. Zuvembies appear
-to be withered, animate corpses but possess ruthless
-minds and blasphemous vigor. Revenge fuels a zuvembie,
-a hatefulness directed toward those who wronged it in life.
-Yet even when the last one who maligned it lies dead, its
-rage remains, turning against all who live, especially the
-relatives of the target of its original hate.
-Most zuvembies willingly performed the vile rituals to
-attain vengeance through unlife, but the transformation
-can also be wrought upon a helpless victim. The
-method of transforming into a zuvembie involves the
-creation and consumption of a vial of oil of animate
-dead, plus the performance of additional dark rites
-that take a day to perform and cost 3,000 gp. The
-ritual kills the target, who must make a DC 20 Will save.
-Failure results in the victim's death, while success means it
-reanimates as a free-willed zuvembie.
-Zuvembies stand between 5 and 6 feet tall and
-rarely weigh over 100 pounds.
+
+
+
+Corpse Call (Su) Zuvembies cannot speak, but their strange calls and whistles captivate the minds of those who hear them. Once per day, a zuvembie may call out, and all living creatures with an Intelligence score of 3 or higher within a 100-foot spread must succeed at a DC 16 Will save or move toward the zuvembie using the most direct means possible. If this path leads them into a dangerous area such as through fire or off a cliff, the creatures receive a second saving throw to end the effect before moving into peril. Captivated creatures can take no actions other than to defend themselves. A victim within 5 feet of the zuvembie simply stands and offers no resistance to the zuvembie's attacks. This effect continues for as long as the zuvembie continues its call as a standard action each round. This is a sonic mind-affecting charm effect, and has no effect on deaf creatures. The save DC is Charisma-based. Tied to the dark forces of nature and unholy magic, zuvembies employ fear and the wild creatures of the land to take their vengeance upon the living. Zuvembies appear to be withered, animate corpses but possess ruthless minds and blasphemous vigor. Revenge fuels a zuvembie, a hatefulness directed toward those who wronged it in life. Yet even when the last one who maligned it lies dead, its rage remains, turning against all who live, especially the relatives of the target of its original hate. Most zuvembies willingly performed the vile rituals to attain vengeance through unlife, but the transformation can also be wrought upon a helpless victim. The method of transforming into a zuvembie involves the creation and consumption of a vial of oil of animate dead, plus the performance of additional dark rites that take a day to perform and cost 3,000 gp. The ritual kills the target, who must make a DC 20 Will save. Failure results in the victim's death, while success means it reanimates as a free-willed zuvembie..
 
 #Baluchitherium (megafauna) 192
 
