@@ -1,0 +1,164 @@
+# CVS $Revision$ $Author$ -- Thu Feb 22 13:04:59 2007 -- reformated by prettylst.pl v1.36 (build 2045)
+SOURCELONG:Alderac Entertainment Group (AEG) - Empire	SOURCESHORT:Empire	SOURCEWEB:http://alderac.com/d20
+
+########
+######## Noble Base class
+########
+
+CLASS:Noble		KEY:Noble		HD:6		ABB:Nob		BONUS:CHECKS|BASE.Fortitude|,BASE.ReflectCL/3		BONUS:CHECKS|BASE.Willpower|CL/2+2		BONUS:COMBAT|BAB|CL/2		CSKILL:Appraise|Bluff|Diplomacy|Disguise|Forgery|Gather Information|Handle Animal|Intimidate|TYPE.Knowledge|Listen|TYPE.Perform|Ride|Sense Motive|Speak Language|Spot|Swim		STARTSKILLPTS:4
+###Block:Proficiencies
+1	AUTO:WEAPONPROF|TYPE.Martial
+1	AUTO:WEAPONPROF|TYPE.Simple
+1	AUTO:FEAT|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)
+1	AUTO:FEAT|Shield Proficiency|Tower Shield Proficiency
+###Progression
+1	AUTO:FEAT|Iron Will
+1	BONUS:ABILITYPOOL|Realm Feat|CL/5+1
+2	AUTO:FEAT|Strength of Will
+3	AUTO:FEAT|Canny Administrator
+6	AUTO:FEAT|Noble Bearing
+8	AUTO:FEAT|Expert Financier
+12	AUTO:FEAT|Indomitable Will
+13	AUTO:FEAT|Master of Protocol
+18	AUTO:FEAT|Political Master
+20	AUTO:FEAT|Renowned Monarch
+
+########
+######## Hero of the People Prestige class
+########
+
+#Prestige Class - Hero of the People
+# Class Name				Hit Dice	Type					Abbreviation	Max Level		Save checks bonus																Combat bonus
+CLASS:Hero of the People	HD:6		TYPE:PC.Prestige		ABB:HoP			MAXLEVEL:5		BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+# Class Name				Req. Skill													Required Feat															Required Race		Req. Spell Type
+CLASS:Hero of the People	PRESKILL:1,TYPE.Perform=13		PRESKILL:1,Diplomacy=13		PREFEAT:3,Heroic Leader,Inspiring Leader,Leadership
+# Class Name				Skill Pts/Lvl		Class Skill
+CLASS:Hero of the People	STARTSKILLPTS:4		CSKILL:Bluff|Diplomacy|Gather Information|Intimidate|Listen|TYPE.Perform|Search|Sense Motive|Spot
+1	AUTO:FEAT|Will of the People
+2	AUTO:FEAT|Army of the People
+3	AUTO:FEAT|Work of the People
+4	AUTO:FEAT|Army of Fanatics
+5	AUTO:FEAT|Exalted Monarch
+
+########
+######## Political Mastermind Prestige class
+########
+
+#Prestige Class - Political Mastermind
+# Class Name				Hit Dice	Type					Abbreviation	Max Level		Save checks bonus																Combat bonus
+CLASS:Political Mastermind	HD:6		TYPE:PC.Prestige		ABB:PMM			MAXLEVEL:5		BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+# Class Name				Req. Skill													Required Feat															Required Race		Req. Spell Type
+CLASS:Political Mastermind	PRESKILL:1,Diplomacy=13		PRESKILL:1,Gather Information=13	PRESKILL:1,Intimidate=13	PRESKILL:1,Sense Motive=13		PREFEAT:2,Clever Businessman,Leadership		PRESTAT:1,CHA=16
+# Class Name				Skill Pts/Lvl		Class Skill
+CLASS:Political Mastermind	STARTSKILLPTS:4		CSKILL:Bluff|Diplomacy|Forgery|Gather Information|Intimidate|Listen|TYPE.Perform|Search|Sense Motive|Speak Language
+1	AUTO:FEAT|Friends in high places
+2	AUTO:FEAT|Friend in need
+3	AUTO:FEAT|Web of power
+4	AUTO:FEAT|Staunch allies
+5	AUTO:FEAT|Web of power
+
+
+
+
+########
+######## Everything below this line is modifications to classes for a specific reason.
+########
+
+########
+######## Barbarian Empire abilities
+########
+CLASS:Barbarian.MOD
+5	AUTO:FEAT|Ferocious Warlord
+10	AUTO:FEAT|Berserker Lord
+15	AUTO:FEAT|Bloodthirsty Reputation
+20	AUTO:FEAT|Master of the Hordes
+
+########
+######## Bard Empire abilities
+########
+CLASS:Bard.MOD
+5	AUTO:FEAT|Beloved Leader
+10	AUTO:FEAT|Political Operative
+15	AUTO:FEAT|Beloved Monarch
+20	AUTO:FEAT|Exalted Leader
+
+########
+######## Cleric Empire abilities
+########
+CLASS:Cleric.MOD
+5	AUTO:FEAT|Religious Authority
+10	AUTO:FEAT|Divine Blessing
+15	AUTO:FEAT|High Priest
+20	AUTO:FEAT|Divine Monarch
+
+########
+######## Druid Empire abilities
+########
+CLASS:Druid.MOD
+5	AUTO:FEAT|Nature's Bounty
+10	AUTO:FEAT|King of Forest and Field
+15	AUTO:FEAT|Speaker of Trees
+20	AUTO:FEAT|Earth's Sacred Province
+
+########
+######## Fighter Empire abilities
+########
+CLASS:Fighter.MOD
+5	AUTO:FEAT|Martial Training
+10	AUTO:FEAT|Keen Tactician
+15	AUTO:FEAT|Elite Soldiers
+20	AUTO:FEAT|Lord of Battle
+
+########
+######## Monk Empire abilities
+########
+CLASS:Monk.MOD
+5	AUTO:FEAT|Keeper of Order
+10	AUTO:FEAT|Leader of the Way
+15	AUTO:FEAT|Enlightened Rule
+20	AUTO:FEAT|Master of the Order
+
+########
+######## Paladin Empire abilities
+########
+CLASS:Paladin.MOD
+5	AUTO:FEAT|The Good King
+10	AUTO:FEAT|Legion of Honor
+15	AUTO:FEAT|Benevolent Monarch
+20	AUTO:FEAT|Hero King
+
+########
+######## Ranger Empire abilities
+########
+CLASS:Ranger.MOD
+5	AUTO:FEAT|Rugged Frontiersmen
+10	AUTO:FEAT|Ranger Lord
+15	AUTO:FEAT|Friend of the Land
+20	AUTO:FEAT|Wildlands Monarch
+
+########
+######## Rogue Empire abilities
+########
+CLASS:Rogue.MOD
+5	AUTO:FEAT|Black Marketeer
+10	AUTO:FEAT|Friends in Low Places
+15	AUTO:FEAT|Criminal Mastermind
+20	AUTO:FEAT|Kingpin
+
+########
+######## Sorcerer Empire abilities
+########
+CLASS:Sorcerer.MOD
+5	AUTO:FEAT|Call of Magic
+10	AUTO:FEAT|Strength of Will
+15	AUTO:FEAT|Sorcerer Lord
+20	AUTO:FEAT|Draconic Monarch
+
+########
+######## Wizard Empire abilities
+########
+CLASS:Wizard.MOD
+5	AUTO:FEAT|Keeper of Secrets
+10	AUTO:FEAT|Arcane Cabal
+15	AUTO:FEAT|Mystic Tradesman
+20	AUTO:FEAT|Master of Magic
