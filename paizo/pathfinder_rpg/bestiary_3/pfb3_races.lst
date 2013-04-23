@@ -3,56 +3,39 @@
 
 
 #Adaro 7
-ADARO
+# COMMENT: Bite Secondary?
+Adaro	SOURCEPAGE:p.7
 	CR:3	
 	XP:800
 	KIT:1|NE
 	SIZE:M
 	RACETYPE:Monstrous Humanoid
 	RACESUBTYPE:Aquatic
-	VISION:Blindsense (30'),Darkvision (60'),Low-Light Vision,Keen Scent
-
-
+	VISION:Blindsense (30')|Darkvision (60')|Low-Light Vision|Keen Scent
 	BONUS:COMBAT|AC|2|TYPE=NaturalArmor
-hp 30 (4d10+8)
-Fort +3, Ref +7, Will +5
-OFFENSE
-	MOVE:Walk,10,Swim,50 ft.
-
-	Meleespear +8 (1d8+4/x3 plus poison), bite +2 (1d6+3)
-Ranged spear +8 (1d8+3/x3)
-
-	Special Attacks:rain frenzy
-STATISTICS
-Str 16, Dex 17, Con 14, Int 10, Wis 13, Cha 13
-Base Atk +4; CMB +7; CMD 20
-Feats Deadly Aim, Weapon Focus (spear)
-Skills Intimidate +8, Perception +8, Stealth +10, Swim +18
-Languages Aquan, Common; speak with sharks
-SQ amphibious, poison use
-
-
-
+	MONSTERCLASS:Monstrous Humanoid:4
+	MOVE:Walk,10,Swim,50
+	BONUS:STAT|STR,DEX|6
+	BONUS:STAT|CON|4
+	BONUS:STAT|WIS,CHA|2
+	NATURALATTACKS:Bite,Melee.Natural.Piercing,*1,1d6
+	AUTO:LANG|Aquan|Common|Speak with Sharks
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Adaro
 
 #Adherer 8
-ADHERER
+Adherer	SOURCEPAGE:p.8
 	CR:3
 	XP:800
 LE
 	SIZE:M
-	
 	RACETYPE:Monstrous Humanoid
-	
-Init +3; Senses darkvision 60 ft.; Perception +5
-
+	VISION:Darkvision (60')
 	BONUS:COMBAT|AC|4|TYPE=NaturalArmor
-hp 30 (4d10+8)
-
-DR 5/-
+	MONSTERCLASS:Monstrous Humanoid:4
+	DR:5/-
 	SR:14
-
-	MOVE:Walk,30,Climb,10 ft.
-
+	MOVE:Walk,30,Climb,10
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Adherer
 	Melee2 slams +6 (1d6+2 plus grab)
 
 	Special Attacks:grab (Large)
@@ -66,22 +49,22 @@ Perception +5, Stealth +11; Racial Modifiers +2 Craft
 Languages Aklo
 SQ adhesive
 
-#Adlet 9
-ADLET
+Adlet	SOURCEPAGE:p.9
 	CR:10
 	XP:9,600 each
 CN
 	SIZE:M
-	humanoid (adlet, cold)
-Init +12; Senses low-light vision, scent; Perception +13
-DEFENSE
-	BONUS:COMBAT|AC|2|TYPE=Dodge	BONUS:COMBAT|AC|5|TYPE=NaturalArmor
-hp 127 each (15d8+60)
+	RACETYPE:Humanoid
+	RACESUBTYPE:Adlet|Cold
+	VISION:Low-Light Vision
+	BONUS:COMBAT|AC|2|TYPE=Dodge	
+	BONUS:COMBAT|AC|5|TYPE=NaturalArmor
+	MONSTERCLASS:Humanoid:15
 
 Immune cold
-Weaknesses vulnerability to fire
+Weaknesses vulnerability to fire	scent
 
-	MOVE:Walk,40 ft.
+	MOVE:Walk,40
 
 	Melee+1 spear +17/+12/+7 (1d8+7/?3), bite +10 (1d6+2 plus 1d6 cold)
 
@@ -101,8 +84,7 @@ Survival +20, Swim +9; Racial Modifiers +8 Stealth in snow
 Languages Common, Adlet
 SQ arctic stride
 
-#Ahuizotl 10
-AHUIZOTL
+Ahuizotl	SOURCEPAGE:p.10
 	CR:6
 	XP:2,400
 NE
@@ -113,9 +95,9 @@ NE
 Init +7; Senses darkvision 60 ft., low-light vision; Perception +2
 DEFENSE
 	BONUS:COMBAT|AC|7|TYPE=NaturalArmor
-hp 68 (8d10+24)
+	MONSTERCLASS:Magical Beast:8
 
-	MOVE:Walk,30,Swim,50 ft.
+	MOVE:Walk,30,Swim,50
 
 	Meleebite +12 (2d6+5), claw +12 (1d8+5/19-20 plus grab)
 	FACE:10 ft.;
@@ -139,12 +121,12 @@ N
 	SIZE:H
 	
 	RACETYPE:Magical Beast 
-	 (cold, shapechanger)
+	RACESUBTYPE:Cold|Shapechanger
 Init +6; Senses darkvision 60 ft., low-light vision, scent, snow
 vision; Perception +14
-DEFENSE
-	BONUS:COMBAT|AC|1 dodge
-	BONUS:COMBAT|AC|19 natural,
+
+	BONUS:COMBAT|AC|1|TYPE=Dodge
+	BONUS:COMBAT|AC|19|TYPE=NaturalArmor
 
 hp 189 (18d10+90)
 
@@ -152,7 +134,7 @@ hp 189 (18d10+90)
 	Immune cold
 Weaknesses vulnerability to fire
 
-	MOVE:Walk,40,Swim,60 ft.
+	MOVE:Walk,40,Swim,60
 
 	Meleebite +27 (4d8+15/15-20 plus 4d6 cold and grab)
 	FACE:15 ft.;
@@ -216,7 +198,7 @@ NE
 Init +5; Senses low-light vision; Perception +17
 Aura calming fragrance (60 ft., DC 24)
 
-	BONUS:COMBAT|AC|17 natural, -1 size)
+	BONUS:COMBAT|AC|17|TYPE=NaturalArmor, -1 size)
 hp 199 (19d8+114)
 
 Immune plant traits
@@ -301,7 +283,7 @@ CE
 	
 Init +1; Senses darkvision 60 ft.; Perception +13
 DEFENSE
-	BONUS:COMBAT|AC|10 natural
+	BONUS:COMBAT|AC|10|TYPE=NaturalArmor
 
 hp 66 (7d10+28)
 
@@ -333,7 +315,7 @@ N
 	vermin
 Init +0; Senses darkvision 60 ft., tremorsense 60 ft.; Perception +0
 DEFENSE
-	BONUS:COMBAT|AC|10 natural
+	BONUS:COMBAT|AC|10|TYPE=NaturalArmor
 
 hp 60 (8d8+24)
 
@@ -381,7 +363,7 @@ LG
 Init +6; Senses darkvision 60 ft., detect evil, low-light vision;
 Perception +7
 DEFENSE
-AC 16, touch 15, flat-footed 13 (+2 Dex, +1 dodge, +1 natural,
+AC 16, touch 15, flat-footed 13 (+2 Dex, +1 dodge, +1|TYPE=NaturalArmor,
 +2 size)
 hp 16 (3d10)
 Fort +1, Ref +5, Will +4; +4 vs. poison
@@ -422,7 +404,7 @@ Init +1; Senses darkvision 60 ft. detect evil, low-light vision;
 Perception +13
 Aura aura of menace (DC 17)
 DEFENSE
-AC 23, touch 11, flat-footed 22 (+9 armor, +1 Dex, +3 natural;
+AC 23, touch 11, flat-footed 22 (+9 armor, +1 Dex, +3|TYPE=NaturalArmor;
 +2 deflection vs. evil)
 hp 76 (8d10+32)
 Fort +10, Ref +3, Will +8; +4 vs. poison, +2 vs. evil
@@ -466,7 +448,7 @@ N
 	plant
 Init +1; Senses tremorsense 60 ft.; Perception +0
 DEFENSE
-AC 17, touch 10, flat-footed 16 (+1 Dex, +7 natural, -1 size)
+AC 17, touch 10, flat-footed 16 (+1 Dex, +7|TYPE=NaturalArmor, -1 size)
 hp 52 (7d8+21)
 Fort +8, Ref +3, Will +2
 DR 10/piercing; Immune plant traits; Resist electricity 10, fire 10
@@ -530,7 +512,7 @@ LE
 Init +3; Senses darkvision 60 ft., scent; Perception +19
 Aura attraction (50 ft.), elusive (75 ft.)
 DEFENSE
-AC 23, touch 11, flat-footed 20 (+6 armor, +3 Dex, +6 natural,
+AC 23, touch 11, flat-footed 20 (+6 armor, +3 Dex, +6|TYPE=NaturalArmor,
 -2 size)
 hp 161 (14d10+84); regeneration 5 (good weapons, good spells)
 Fort +15, Ref +9, Will +11; +2 vs. enchantment spells
@@ -575,7 +557,7 @@ vision, scent, true seeing; Perception +34
 Aura dimensional lock (20 ft., enemies only), elusive (100 ft.)
 DEFENSE
 AC 35, touch 25, flat-footed 26 (+5 deflection, +8 Dex, +1 dodge,
-+3 insight, +10 natural, -2 size)
++3 insight, +10|TYPE=NaturalArmor, -2 size)
 hp 385 (22d10+264); regeneration 10 (good weapons, good spells)
 Fort +25, Ref +17, Will +20; +2 vs. enchantment spells,
 DR 15/chaotic and good; Immune curse effects, disease, flanking,
@@ -742,7 +724,7 @@ N
 	animal
 Init +3; Senses low-light vision; Perception +9
 DEFENSE
-AC 14, touch 12, flat-footed 11 (+3 Dex, +2 natural, -1 size)
+AC 14, touch 12, flat-footed 11 (+3 Dex, +2|TYPE=NaturalArmor, -1 size)
 hp 22 (3d8+9)
 Fort +6, Ref +6, Will +1
 OFFENSE
@@ -767,7 +749,7 @@ CG
 Init +2; Senses darkvision 60 ft., tremorsense 100 ft.;
 Perception +22
 DEFENSE
-AC 25, touch 10, flat-footed 23 (+2 Dex, +15 natural, -2 size)
+AC 25, touch 10, flat-footed 23 (+2 Dex, +15|TYPE=NaturalArmor, -2 size)
 hp 168 (16d8+96)
 Fort +11, Ref +7, Will +15
 DR 10/magic and slashing; Immune acid; Resist cold 10
@@ -941,7 +923,7 @@ N
 Init +11; Senses blindsense 120 ft., darkvision 120 ft., low-light
 vision, scent; Perception +26
 DEFENSE
-AC 33, touch 13, flat-footed 26 (+7 Dex, +20 natural, -4 size)
+AC 33, touch 13, flat-footed 26 (+7 Dex, +20|TYPE=NaturalArmor, -4 size)
 hp 310 (23d10+184); fast healing 10
 Fort +21, Ref +20, Will +11
 Defensive Abilities quick recovery, quill defense; Immune
@@ -1129,7 +1111,7 @@ CE
 	outsider (chaotic, evil, extraplanar)
 Init +8; Senses darkvision 60 ft.; Perception +22
 DEFENSE
-AC 25, touch 13, flat-footed 21 (+4 Dex, +12 natural, -1 size)
+AC 25, touch 13, flat-footed 21 (+4 Dex, +12|TYPE=NaturalArmor, -1 size)
 hp 168 (16d10+80)
 Fort +15, Ref +14, Will +10
 DR 10/good; Immune electricity, poison, Resist acid 10, cold 10,
@@ -1414,7 +1396,7 @@ N
 Init +9; Senses blindsense 60 ft., darkvision 60 ft.;
 Perception +31
 DEFENSE
-AC 40, touch 8, flat-footed 34 (+5 Dex, +1 dodge, +32 natural,
+AC 40, touch 8, flat-footed 34 (+5 Dex, +1 dodge, +32|TYPE=NaturalArmor,
 -8 size)
 hp 445 (33d10+264); regeneration 20
 Fort +26, Ref +23, Will +16
@@ -1502,7 +1484,7 @@ N
 	 (aquatic, behemoth, water)
 Init -1; Senses blindsense 60 ft., darkvision 60 ft..; Perception +34
 DEFENSE
-AC 37, touch 1, flat-footed 37 (-1 Dex, +36 natural, -8 size)
+AC 37, touch 1, flat-footed 37 (-1 Dex, +36|TYPE=NaturalArmor, -8 size)
 hp 391 (29d10+232); regeneration 20 (fire)
 Fort +24, Ref +17, Will +14
 Defensive Abilities unstoppable; DR 15/epic; Immune ability
@@ -1589,7 +1571,7 @@ N
 Init -2; Senses blindsense 60 ft., darkvision 60 ft., tremorsense
 60 ft.; Perception +27
 DEFENSE
-AC 35, touch 0, flat-footed 35 (-2 Dex, +35 natural, -8 size)
+AC 35, touch 0, flat-footed 35 (-2 Dex, +35|TYPE=NaturalArmor, -8 size)
 hp 337 (25d10+200); regeneration 20
 Fort +22, Ref +12, Will +12
 Defensive Abilities unstoppable; DR 15/epic; Immune ability
@@ -2088,7 +2070,7 @@ N
 	
 Init -2; Senses darkvision 60 ft., low-light vision; Perception +1
 DEFENSE
-AC 12, touch 10, flat-footed 12 (-2 Dex, +2 natural, +2 size)
+AC 12, touch 10, flat-footed 12 (-2 Dex, +2|TYPE=NaturalArmor, +2 size)
 hp 13 (2d10+2)
 Fort +4, Ref +1, Will +3
 Weaknesses vulnerability to suggestion
@@ -2989,7 +2971,7 @@ N
 	construct (clockwork)
 Init +9; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 35, touch 13, flat-footed 28 (+5 Dex, +2 dodge, +22 natural,
+AC 35, touch 13, flat-footed 28 (+5 Dex, +2 dodge, +22|TYPE=NaturalArmor,
 -4 size)
 hp 214 (28d10+60)
 Fort +9, Ref +16, Will +9
@@ -3065,7 +3047,7 @@ N
 	construct (clockwork)
 Init +8; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 28, touch 14, flat-footed 22 (+4 Dex, +2 dodge, +14 natural,
+AC 28, touch 14, flat-footed 22 (+4 Dex, +2 dodge, +14|TYPE=NaturalArmor,
 -2 size)
 hp 128 (16d10+40)
 Fort +5, Ref +11, Will +5
@@ -3460,7 +3442,7 @@ N
 	
 Init +3; Senses darkvision 60 ft.; Perception +10
 DEFENSE
-AC 27, touch 5, flat-footed 24 (+3 Dex, +22 natural, -8 size)
+AC 27, touch 5, flat-footed 24 (+3 Dex, +22|TYPE=NaturalArmor, -8 size)
 hp 189 (14d8+126)
 Fort +18, Ref +7, Will +6
 Immune mind-affecting effects
@@ -3515,7 +3497,7 @@ N
 	
 Init +2; Senses darkvision 60 ft.; Perception +5
 DEFENSE
-AC 20, touch 10, flat-footed 18 (+2 Dex, +10 natural, -2 size)
+AC 20, touch 10, flat-footed 18 (+2 Dex, +10|TYPE=NaturalArmor, -2 size)
 hp 84 (8d8+48)
 Fort +12, Ref +4, Will +3
 Immune mind-affecting effects
@@ -3571,7 +3553,7 @@ CE
 	humanoid (giant)
 Init +1; Senses low-light vision; Perception +22
 DEFENSE
-AC 26, touch 9, flat-footed 25 (+4 armor, +1 Dex, +13 natural,
+AC 26, touch 9, flat-footed 25 (+4 armor, +1 Dex, +13|TYPE=NaturalArmor,
 -2 size)
 hp 195 (17d8+119)
 Fort +12, Ref +6, Will +14
@@ -3745,7 +3727,7 @@ Init +3; Senses darkvision 60 ft., detect good, detect magic;
 Perception +10
 Aura aura of doom (30 ft., DC 18)
 DEFENSE
-AC 17, touch 14, flat-footed 14 (+3 Dex, +3 natural, +1 size)
+AC 17, touch 14, flat-footed 14 (+3 Dex, +3|TYPE=NaturalArmor, +1 size)
 hp 39 (6d10+6)
 Fort +6, Ref +5, Will +6
 DR 5/good or silver; Immune acid, death effects, disease,
@@ -3823,7 +3805,7 @@ N
 	ooze (shapechanger)
 Init -4; Senses Perception -5
 DEFENSE
-AC 10, touch 5, flat-footed 10 (-4 Dex, +5 natural, -1 size)
+AC 10, touch 5, flat-footed 10 (-4 Dex, +5|TYPE=NaturalArmor, -1 size)
 hp 126 (12d8+72)
 Fort +10, Ref +0, Will -1
 Immune acid, ooze traits
@@ -3914,7 +3896,7 @@ N
 Init +6; Senses darkvision 60 ft.; Perception +15
 Aura infestation (5 ft., 1d6 plus poison)
 DEFENSE
-AC 19, touch 11, flat-footed 17 (+2 Dex, +8 natural, -1 size)
+AC 19, touch 11, flat-footed 17 (+2 Dex, +8|TYPE=NaturalArmor, -1 size)
 hp 71 (11d8+22)
 Fort +5, Ref +5, Will +8
 Immune undead traits
@@ -3994,7 +3976,7 @@ NE
 	undead
 Init +7; Senses darkvision 60 ft., true seeing; Perception +27
 DEFENSE
-AC 25, touch 21, flat-footed 21 (+3 Dex, +1 dodge, +4 natural,
+AC 25, touch 21, flat-footed 21 (+3 Dex, +1 dodge, +4|TYPE=NaturalArmor,
 +5 profane, +2 size)
 hp 142 (15d8+75)
 Fort +14, Ref +15, Will +21
@@ -4808,7 +4790,7 @@ N
 	
 Init +3; Senses darkvision 60 ft., scent; Perception +14
 DEFENSE
-AC 18, touch 12, flat-footed 15 (+3 Dex, +6 natural, -1 size)
+AC 18, touch 12, flat-footed 15 (+3 Dex, +6|TYPE=NaturalArmor, -1 size)
 hp 59 (7d10+21)
 Fort +5, Ref +8, Will +8
 OFFENSE
@@ -5076,7 +5058,7 @@ N
 	animal
 Init +6; Senses low-light vision, scent; Perception +6
 DEFENSE
-AC 14, touch 11, flat-footed 12 (+2 Dex, +3 natural, -1 size)
+AC 14, touch 11, flat-footed 12 (+2 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 34 (4d8+16)
 Fort +8, Ref +6, Will +2
 OFFENSE
@@ -5117,7 +5099,7 @@ N
 	animal
 Init +2; Senses low-light vision, scent; Perception +12
 DEFENSE
-AC 19, touch 10, flat-footed 17 (+2 Dex, +9 natural, -2 size)
+AC 19, touch 10, flat-footed 17 (+2 Dex, +9|TYPE=NaturalArmor, -2 size)
 hp 76 (9d8+36)
 Fort +10, Ref +8, Will +4
 OFFENSE
@@ -5182,7 +5164,7 @@ N
 	animal
 Init +2; Senses low-light vision, scent; Perception +8
 DEFENSE
-AC 17, touch 11, flat-footed 15 (+2 Dex, +6 natural, -1 size)
+AC 17, touch 11, flat-footed 15 (+2 Dex, +6|TYPE=NaturalArmor, -1 size)
 hp 37 (5d8+15)
 Fort +7, Ref +6, Will +2
 OFFENSE
@@ -5237,7 +5219,7 @@ N
 	animal
 Init +6; Senses low-light vision, scent; Perception +25
 DEFENSE
-AC 24, touch 8, flat-footed 22 (+2 Dex, +16 natural, -4 size)
+AC 24, touch 8, flat-footed 22 (+2 Dex, +16|TYPE=NaturalArmor, -4 size)
 hp 170 (20d8+80)
 Fort +16, Ref +16, Will +9
 OFFENSE
@@ -5361,7 +5343,7 @@ N
 Init +3; Senses darkvision 60 ft., detect magic, low-light vision;
 Perception +9
 DEFENSE
-AC 15, touch 12, flat-footed 12 (+3 Dex, +3 natural, -1 size)
+AC 15, touch 12, flat-footed 12 (+3 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 30 (4d10+8)
 Fort +6, Ref +7, Will +4
 DR 5/magic
@@ -5622,7 +5604,7 @@ Init +12; Senses darkvision 60 ft., see in darkness, true
 seeing; Perception +34
 Aura hopelessness (30 ft., DC 30)
 DEFENSE
-AC 38, touch 10, flat-footed 34 (+13 armor, +4 Dex, +15 natural,
+AC 38, touch 10, flat-footed 34 (+13 armor, +4 Dex, +15|TYPE=NaturalArmor,
 -4 size)
 hp 372 (24d10+240)
 Fort +18, Ref +22, Will +21
@@ -5803,7 +5785,7 @@ NE
 Init +3; Senses darkvision 60 ft., detect good, detect magic, see
 in darkness; Perception +7
 DEFENSE
-AC 18, touch 15, flat-footed 15 (+3 Dex, +3 natural,
+AC 18, touch 15, flat-footed 15 (+3 Dex, +3|TYPE=NaturalArmor,
 +2 size)
 hp 16 (3d10)
 Fort +3, Ref +4, Will +4
@@ -5913,7 +5895,7 @@ NE
 Init +6; Senses darkvision 60 ft., detect good, detect magic, see
 in darkness; Perception +19
 DEFENSE
-AC 26, touch 11, flat-footed 24 (+2 Dex, +15 natural, -1 size)
+AC 26, touch 11, flat-footed 24 (+2 Dex, +15|TYPE=NaturalArmor, -1 size)
 hp 161 (14d10+84)
 Fort +10, Ref +13, Will +11
 Defensive Abilities rough hide; DR 10/cold iron and good;
@@ -6101,7 +6083,7 @@ NE
 	outsider (div, evil, extraplanar)
 Init +9; Senses darkvision 60 ft., see in darkness; Perception +22
 DEFENSE
-AC 32, touch 14, flat-footed 27 (+5 Dex, +18 natural, -1 size)
+AC 32, touch 14, flat-footed 27 (+5 Dex, +18|TYPE=NaturalArmor, -1 size)
 hp 202 (15d10+120)
 Fort +13, Ref +16, Will +15
 DR 10/cold iron and good; Immune fire, poison; Resist acid 10,
@@ -6214,7 +6196,7 @@ NE
 Init +11; Senses darkvision 60 ft., see in darkness, true seeing;
 Perception +21
 DEFENSE
-AC 27, touch 16, flat-footed 20 (+7 Dex, +11 natural, -1 size)
+AC 27, touch 16, flat-footed 20 (+7 Dex, +11|TYPE=NaturalArmor, -1 size)
 hp 150 (12d10+84)
 Fort +11, Ref +15, Will +14
 DR 10/cold iron and good; Immune fire, poison; Resist acid 10,
@@ -6326,7 +6308,7 @@ Init +3; Senses darkvision 60 ft., low-light
 vision; Perception +8
 DEFENSE
 AC 18, touch 16, flat-footed 14 (+3 Dex, +1 dodge,
-+2 natural, +2 size)
++2|TYPE=NaturalArmor, +2 size)
 hp 22 (3d12+3)
 Fort +4, Ref +6, Will +5
 Immune paralysis, sleep
@@ -6642,7 +6624,7 @@ CE
 	dragon (earth)
 Init +5; Senses dragon senses, tremorsense 60 ft.; Perception +15
 DEFENSE
-AC 22, touch 10, flat-footed 21 (+1 Dex, +12 natural, -1 size)
+AC 22, touch 10, flat-footed 21 (+1 Dex, +12|TYPE=NaturalArmor, -1 size)
 hp 126 (11d12+55)
 Fort +11, Ref +8, Will +8
 Immune paralysis, poison, sleep
@@ -6680,7 +6662,7 @@ CE
 Init +4; Senses dragon senses, tremorsense 60 ft.; Perception +23
 Aura frightful presence (180 ft., DC 21)
 DEFENSE
-AC 30, touch 8, flat-footed 30 (+22 natural, -2 size)
+AC 30, touch 8, flat-footed 30 (+22|TYPE=NaturalArmor, -2 size)
 hp 229 (17d12+119)
 Fort +16, Ref +10, Will +15
 DR 2/adamantine; Immune paralysis, poison, sleep
@@ -6727,7 +6709,7 @@ CE
 Init +3; Senses dragon senses, tremorsense 60 ft.; Perception +33
 Aura frightful presence (300 ft., DC 29)
 DEFENSE
-AC 39, touch 5, flat-footed 39 (-1 Dex, +34 natural, -4 size)
+AC 39, touch 5, flat-footed 39 (-1 Dex, +34|TYPE=NaturalArmor, -4 size)
 hp 387 (25d12+225)
 Fort +22, Ref +13, Will +21
 DR 10/adamantine; Immune paralysis, poison, sleep
@@ -6845,7 +6827,7 @@ CG
 	dragon (water)
 Init +5; Senses dragon senses; Perception +5
 DEFENSE
-AC 21, touch 10, flat-footed 20 (+1 Dex, +11 natural, -1 size)
+AC 21, touch 10, flat-footed 20 (+1 Dex, +11|TYPE=NaturalArmor, -1 size)
 hp 85 (9d12+27)
 Fort +11, Ref +7, Will +9
 Immune electricity, paralysis, sleep
@@ -6882,7 +6864,7 @@ CG
 Init +4; Senses dragon senses; Perception +27
 Aura frightful presence (180 ft., DC 22)
 DEFENSE
-AC 28, touch 8, flat-footed 28 (+20 natural, -2 size)
+AC 28, touch 8, flat-footed 28 (+20|TYPE=NaturalArmor, -2 size)
 hp 172 (15d12+75)
 Fort +16, Ref +11, Will +14
 DR 5/magic; Immune electricity, paralysis, sleep
@@ -6926,7 +6908,7 @@ CG
 Init +3; Senses dragon senses; Perception +37
 Aura frightful presence (300 ft., DC 28)
 DEFENSE
-AC 37, touch 5, flat-footed 37 (-1 Dex, +32 natural, -4 size)
+AC 37, touch 5, flat-footed 37 (-1 Dex, +32|TYPE=NaturalArmor, -4 size)
 hp 310 (23d12+161)
 Fort +22, Ref +14, Will +20
 DR 15/magic; Immune electricity, paralysis, sleep
@@ -7043,7 +7025,7 @@ LG
 	dragon (air)
 Init +1; Senses cloud sight, dragon senses; Perception +22
 DEFENSE
-AC 22, touch 10, flat-footed 21 (+1 Dex, +12 natural, -1 size)
+AC 22, touch 10, flat-footed 21 (+1 Dex, +12|TYPE=NaturalArmor, -1 size)
 hp 95 (10d12+30)
 Fort +10, Ref +10, Will +10
 Immune electricity, paralysis, sleep
@@ -7081,7 +7063,7 @@ LG
 Init +4; Senses cloud sight, dragon senses; Perception +30
 Aura frightful presence (180 ft., DC 23)
 DEFENSE
-AC 29, touch 8, flat-footed 29 (+21 natural, -2 size)
+AC 29, touch 8, flat-footed 29 (+21|TYPE=NaturalArmor, -2 size)
 hp 184 (16d12+80)
 Fort +15, Ref +12, Will +17
 DR 5/magic; Immune electricity, paralysis, sleep
@@ -7241,7 +7223,7 @@ N
 	dragon
 Init +5; Senses dragon senses; Perception +18
 DEFENSE
-AC 23, touch 10, flat-footed 22 (+1 Dex, +13 natural, -1 size)
+AC 23, touch 10, flat-footed 22 (+1 Dex, +13|TYPE=NaturalArmor, -1 size)
 hp 126 (12d12+48)
 Fort +12, Ref +11, Will +13
 Immune paralysis, sleep
@@ -7279,7 +7261,7 @@ N
 Init +4; Senses dragon senses; Perception +26
 Aura frightful presence (180 ft., DC 24)
 DEFENSE
-AC 30, touch 8, flat-footed 30 (+22 natural, -2 size)
+AC 30, touch 8, flat-footed 30 (+22|TYPE=NaturalArmor, -2 size)
 hp 225 (18d12+108)
 Fort +17, Ref +13, Will +18
 DR 5/magic; Immune paralysis, sleep
@@ -7326,7 +7308,7 @@ N
 Init +3; Senses darkvision 60 ft., low-light vision; Perception +42
 Aura frightful presence (300 ft., DC 30)
 DEFENSE
-AC 39, touch 5, flat-footed 39 (-1 Dex, +34 natural, -4 size)
+AC 39, touch 5, flat-footed 39 (-1 Dex, +34|TYPE=NaturalArmor, -4 size)
 hp 377 (26d12+208)
 Fort +23, Ref +16, Will +24
 DR 15/magic; Immune paralysis, sleep;
@@ -7480,7 +7462,7 @@ LE
 Init +4; Senses dragon senses, smoke vision; Perception +20
 Aura frightful presence (180 ft., DC 20)
 DEFENSE
-AC 28, touch 9, flat-footed 28 (+19 natural, -1 size)
+AC 28, touch 9, flat-footed 28 (+19|TYPE=NaturalArmor, -1 size)
 hp 161 (14d12+70)
 Fort +14, Ref +9, Will +12
 DR 5/magic; Immune fire, paralysis, sleep
@@ -7526,7 +7508,7 @@ LE
 Init +3; Senses dragon senses, smoke vision; Perception +30
 Aura frightful presence (300 ft., DC 26)
 DEFENSE
-AC 38, touch 7, flat-footed 38 (-1 Dex, +31 natural, -2 size)
+AC 38, touch 7, flat-footed 38 (-1 Dex, +31|TYPE=NaturalArmor, -2 size)
 hp 297 (22d12+154)
 Fort +20, Ref +12, Will +18
 DR 15/magic; Immune fire, paralysis, sleep
@@ -7596,7 +7578,7 @@ N
 Init +7; Senses darkvision 60 ft., low-light vision, scent;
 Perception +12
 DEFENSE
-AC 20, touch 12, flat-footed 17 (+3 Dex, +8 natural, -1 size)
+AC 20, touch 12, flat-footed 17 (+3 Dex, +8|TYPE=NaturalArmor, -1 size)
 hp 76 (9d10+27)
 Fort +9, Ref +9, Will +4
 OFFENSE
@@ -7679,7 +7661,7 @@ NE
 Init +6; Senses darkvision 60 ft., low-light vision, scent,
 tremorsense 30 ft.; Perception +12
 DEFENSE
-AC 21, touch 11, flat-footed 19 (+2 Dex, +10 natural, -1 size)
+AC 21, touch 11, flat-footed 19 (+2 Dex, +10|TYPE=NaturalArmor, -1 size)
 hp 103 (9d12+45)
 Fort +11, Ref +8, Will +8
 Immune paralysis, sleep; Resist electricity 20
@@ -7770,7 +7752,7 @@ low-light vision, scent;
 Perception +14
 DEFENSE
 AC 23, touch 12, flat-footed 20
-(+3 Dex, +11 natural, -1 size)
+(+3 Dex, +11|TYPE=NaturalArmor, -1 size)
 hp 126 (11d12+55)
 Fort +12, Ref +10, Will +8
 Immune paralysis, sleep; Resist acid 30
@@ -8043,7 +8025,7 @@ CE
 Init +9; Senses darkvision 60 ft.; Perception +25
 Aura frightful presence (60 ft., DC 26)
 DEFENSE
-AC 30, touch 14, flat-footed 25 (+5 Dex, +16 natural, -1 size)
+AC 30, touch 14, flat-footed 25 (+5 Dex, +16|TYPE=NaturalArmor, -1 size)
 hp 209 (22d8+110); fast healing 5
 Fort +12, Ref +12, Will +15
 Defensive Abilities channel resistance +2; DR 15/good and
@@ -8453,7 +8435,7 @@ N
 	animal
 Init +1; Senses low-light vision; Perception +0
 DEFENSE
-AC 13, touch 12, flat-footed 12 (+1 Dex, +1 natural, +1 size)
+AC 13, touch 12, flat-footed 12 (+1 Dex, +1|TYPE=NaturalArmor, +1 size)
 hp 5 (1d8+1)
 Fort +3, Ref +3, Will +0
 OFFENSE
@@ -8511,7 +8493,7 @@ N
 	animal
 Init +1; Senses low-light vision, scent; Perception +5
 DEFENSE
-AC 13, touch 12, flat-footed 12 (+1 Dex, +1 natural,
+AC 13, touch 12, flat-footed 12 (+1 Dex, +1|TYPE=NaturalArmor,
 +1 size)
 hp 6 (1d8+2)
 Fort +6, Ref +3, Will +1
@@ -8537,7 +8519,7 @@ N
 	animal
 Init +2; Senses low-light vision, scent; Perception +3
 DEFENSE
-AC 15, touch 14, flat-footed 13 (+2 Dex, +1 natural, +2 size)
+AC 15, touch 14, flat-footed 13 (+2 Dex, +1|TYPE=NaturalArmor, +2 size)
 hp 4 (1d8)
 Fort +2, Ref +4, Will +3
 OFFENSE
@@ -8737,7 +8719,7 @@ CN
 	fey
 Init +3; Senses low-light vision, scent; Perception +7
 DEFENSE
-AC 15, touch 12, flat-footed 12 (+3 Dex, +3 natural, -1 size)
+AC 15, touch 12, flat-footed 12 (+3 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 22 (3d8+9)
 Fort +6, Ref +8, Will +0; +4 vs. mind-affecting effects
 Defensive Abilities poison skin; DR 5/cold iron; Resist cold 10,
@@ -8935,7 +8917,7 @@ N
 Init -1; Senses blindsense 30 ft., darkvision 60 ft., low-light
 vision, scent, tremorsense 60 ft.; Perception +5
 DEFENSE
-AC 18, touch 8, flat-footed 18 (-1 Dex, +10 natural, -1 size)
+AC 18, touch 8, flat-footed 18 (-1 Dex, +10|TYPE=NaturalArmor, -1 size)
 hp 30 (4d10+8)
 Fort +6, Ref +3, Will +2
 Defensive Abilities retraction, warp magic; Immune poison;
@@ -9022,7 +9004,7 @@ LG
 	aberration
 Init +3; Senses darkvision 60 ft.; Perception +7
 DEFENSE
-AC 18, touch 14, flat-footed 15 (+3 Dex, +4 natural, +1 size)
+AC 18, touch 14, flat-footed 15 (+3 Dex, +4|TYPE=NaturalArmor, +1 size)
 hp 9 (2d8)
 Fort +0, Ref +3, Will +5
 OFFENSE
@@ -9133,7 +9115,7 @@ NG
 Init +7; Senses darkvision 60 ft., low-light vision, scent;
 Perception +8
 DEFENSE
-AC 15, touch 12, flat-footed 12 (+3 Dex, +3 natural, -1 size)
+AC 15, touch 12, flat-footed 12 (+3 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 42 (5d10+15)
 Fort +7, Ref +7, Will +4
 Defensive Abilities paired protectors, stony defense 5/day;
@@ -9450,7 +9432,7 @@ NE
 	aberration
 Init +3; Senses bloodsense, darkvision 30 ft.; Perception +21
 DEFENSE
-AC 26, touch 12, flat-footed 23 (+3 Dex, +14 natural, -1 size)
+AC 26, touch 12, flat-footed 23 (+3 Dex, +14|TYPE=NaturalArmor, -1 size)
 hp 187 (15d8+120)
 Fort +15, Ref +10, Will +12
 Weaknesses vulnerable to sonic
@@ -9642,7 +9624,7 @@ CN
 	humanoid (giant)
 Init +2; Senses low-light vision; Perception +8
 DEFENSE
-AC 25, touch 11, flat-footed 23 (+4 armor, +2 Dex, +10 natural, -1 size)
+AC 25, touch 11, flat-footed 23 (+4 armor, +2 Dex, +10|TYPE=NaturalArmor, -1 size)
 hp 147 (14d8+84)
 Fort +15, Ref +6, Will +5
 Defensive Abilities rock catching; Immune disease, poison
@@ -9731,7 +9713,7 @@ CE
 	humanoid (giant)
 Init +0; Senses darkvision 120 ft., low-light vision; Perception +5
 DEFENSE
-AC 19, touch 9, flat-footed 19 (+4 armor, +6 natural, -1 size)
+AC 19, touch 9, flat-footed 19 (+4 armor, +6|TYPE=NaturalArmor, -1 size)
 hp 67 (9d8+27)
 Fort +9, Ref +3, Will +3
 Defensive Abilities ferocity, rock catching
@@ -9814,7 +9796,7 @@ LN
 Init +3; Senses low-light vision; Perception +9
 DEFENSE
 AC 24, touch 13, flat-footed 20 (+2 armor, +3 Dex, +1 dodge,
-+9 natural, -1 size)
++9|TYPE=NaturalArmor, -1 size)
 hp 123 (13d8+65)
 Fort +9, Ref +11, Will +5
 Defensive Abilities rock catching; Immune fire
@@ -9891,7 +9873,7 @@ N
 	humanoid (giant)
 Init +4; Senses low-light vision; Perception +15
 DEFENSE
-AC 24, touch 16, flat-footed 20 (+4 deflection, +4 Dex, +8 natural,
+AC 24, touch 16, flat-footed 20 (+4 deflection, +4 Dex, +8|TYPE=NaturalArmor,
 -2 size)
 hp 127 (15d8+60)
 Fort +9, Ref +13, Will +7
@@ -9976,7 +9958,7 @@ Init +6; Senses darkvision 60 ft., tremorsense 30 ft.;
 Perception +14
 DEFENSE
 AC 22, touch 12, flat-footed 19 (+2 armor, +2 Dex, +1 dodge,
-+8 natural, -1 size)
++8|TYPE=NaturalArmor, -1 size)
 hp 105 (10d10+50)
 Fort +8, Ref +11, Will +9
 OFFENSE
@@ -10057,7 +10039,7 @@ N
 Init -5; Senses Perception -5
 Aura stench (DC 18, 10 rounds)
 DEFENSE
-AC 16, touch 4, flat-footed 16 (-5 Dex, +12 natural, -1 size)
+AC 16, touch 4, flat-footed 16 (-5 Dex, +12|TYPE=NaturalArmor, -1 size)
 hp 57 (6d8+30)
 Fort +7, Ref -3, Will -3
 Immune acid, bludgeoning and piercing damage, ooze traits;
@@ -10139,7 +10121,7 @@ CE
 	aberration
 Init +2; Senses darkvision 60 ft., scent; Perception +5
 DEFENSE
-AC 14, touch 13, flat-footed 12 (+2 Dex, +1 natural, +1 size)
+AC 14, touch 13, flat-footed 12 (+2 Dex, +1|TYPE=NaturalArmor, +1 size)
 hp 13 (2d8+4)
 Fort +2, Ref +2, Will +4
 OFFENSE
@@ -10250,7 +10232,7 @@ N
 	construct
 Init +6; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 21, touch 11, flat-footed 19 (+2 Dex, +10 natural, -1 size)
+AC 21, touch 11, flat-footed 19 (+2 Dex, +10|TYPE=NaturalArmor, -1 size)
 hp 90 (11d10+30)
 Fort +3, Ref +5, Will +3
 DR 5/adamantine and bludgeoning; Immune construct
@@ -10334,7 +10316,7 @@ N
 Init +0; Senses darkvision 60 ft., low-light vision, see invisibility;
 Perception +1
 DEFENSE
-AC 30, touch 8, flat-footed 30 (+22 natural, -2 size)
+AC 30, touch 8, flat-footed 30 (+22|TYPE=NaturalArmor, -2 size)
 hp 150 (20d10+40)
 Fort +6, Ref +6, Will +7
 DR 15/adamantine; Immune construct traits, fire, magic
@@ -10409,7 +10391,7 @@ N
 	construct
 Init +7; Senses darkvision 60 ft., low-light vision; Perception +2
 DEFENSE
-AC 31, touch 16, flat-footed 24 (+7 Dex, +15 natural, -1 size)
+AC 31, touch 16, flat-footed 24 (+7 Dex, +15|TYPE=NaturalArmor, -1 size)
 hp 140 (20d10+30)
 Fort +6, Ref +13, Will +8
 DR 15/adamantine; Immune construct traits, magic
@@ -10488,7 +10470,7 @@ N
 	construct
 Init +1; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 26, touch 9, flat-footed 25 (+1 Dex, +17 natural, -2 size)
+AC 26, touch 9, flat-footed 25 (+1 Dex, +17|TYPE=NaturalArmor, -2 size)
 hp 122 (15d10+40)
 Fort +5, Ref +6, Will +5
 DR 10/adamantine and bludgeoning; Immune construct
@@ -10571,7 +10553,7 @@ CE
 Init +2; Senses darkvision 60 ft., low-light vision, true seeing;
 Perception +23
 DEFENSE
-AC 28, touch 10, flat-footed 26 (+2 Dex, +18 natural, -2 size)
+AC 28, touch 10, flat-footed 26 (+2 Dex, +18|TYPE=NaturalArmor, -2 size)
 hp 212 (17d12+102); regeneration 5 (acid)
 Fort +16, Ref +14, Will +15
 DR 10/lawful; Immune fire, paralysis, poison, sleep
@@ -11044,7 +11026,7 @@ CE
 	
 Init +5; Senses darkvision 120 ft., low-light vision; Perception +5
 DEFENSE
-AC 15, touch 13, flat-footed 14 (+1 Dex, +2 natural, +2 size)
+AC 15, touch 13, flat-footed 14 (+1 Dex, +2|TYPE=NaturalArmor, +2 size)
 hp 7 (1d6+4)
 Fort +1, Ref +3, Will +3
 DR 5/cold iron; Resist cold 10
@@ -11212,7 +11194,7 @@ CE
 	
 Init +4; Senses darkvision 120 ft., scent; Perception +28
 DEFENSE
-AC 31, touch 11, flat-footed 26 (+4 Dex, +1 dodge, +20 natural,
+AC 31, touch 11, flat-footed 26 (+4 Dex, +1 dodge, +20|TYPE=NaturalArmor,
 -4 size)
 hp 283 (21d10+168)
 Fort +20, Ref +16, Will +12
@@ -11579,7 +11561,7 @@ N
 Init +2; Senses darkvision 60 ft., low-light vision, scent;
 Perception +7
 DEFENSE
-AC 19, touch 11, flat-footed 17 (+2 Dex, +8 natural, -1 size)
+AC 19, touch 11, flat-footed 17 (+2 Dex, +8|TYPE=NaturalArmor, -1 size)
 hp 60 (8d10+16)
 Fort +8, Ref +8, Will +5
 Defensive Abilities ferocity
@@ -11665,7 +11647,7 @@ NE
 Init +9; Senses darkvision 60 ft., lifesense; Perception +17
 Aura desiccation aura (30 ft., DC 16)
 DEFENSE
-AC 31, touch 19, flat-footed 21 (+9 Dex, +1 dodge, +12 natural,
+AC 31, touch 19, flat-footed 21 (+9 Dex, +1 dodge, +12|TYPE=NaturalArmor,
 -1 size)
 hp 230 (20d8+140); fast healing 10
 Fort +14, Ref +17, Will +18
@@ -11881,7 +11863,7 @@ CN
 Init +7; Senses darkvision 120 ft., true seeing; Perception +32
 Aura prismatic aura (30 ft., DC 26)
 DEFENSE
-AC 34, touch 2, flat-footed 34 (+8 armor, +24 natural, -8 size)
+AC 34, touch 2, flat-footed 34 (+8 armor, +24|TYPE=NaturalArmor, -8 size)
 hp 341 (22d10+220); fast healing 10
 Fort +17, Ref +16, Will +22
 Immune blindness, death effects, fire, sonic
@@ -12301,7 +12283,7 @@ N
 	
 Init +4; Senses blindsense 30 ft., darkvision 60 ft.; Perception +1
 DEFENSE
-AC 24, touch 12, flat-footed 20 (+4 Dex, +12 natural, -2 size)
+AC 24, touch 12, flat-footed 20 (+4 Dex, +12|TYPE=NaturalArmor, -2 size)
 hp 138 (12d8+84)
 Fort +15, Ref +8, Will +5
 Defensive Abilities amorphous, DR 10/piercing or slashing;
@@ -12443,7 +12425,7 @@ N
 Init +2; Senses darkvision 60 ft., low-light vision, scent;
 Perception +24
 DEFENSE
-AC 31, touch 11, flat-footed 28 (+2 Dex, +1 dodge, +20 natural,
+AC 31, touch 11, flat-footed 28 (+2 Dex, +1 dodge, +20|TYPE=NaturalArmor,
 -2 size)
 hp 230 (20d10+120); fast healing 10
 Fort +18, Ref +14, Will +11;
@@ -12536,7 +12518,7 @@ NE
 Init +2; Senses darkvision 60 ft., low-light vision, scent;
 Perception +8
 DEFENSE
-AC 17, touch 12, flat-footed 14 (+2 Dex, +1 dodge, +5 natural, -1 size)
+AC 17, touch 12, flat-footed 14 (+2 Dex, +1 dodge, +5|TYPE=NaturalArmor, -1 size)
 hp 42 (5d10+15)
 Fort +7, Ref +6, Will +2
 OFFENSE
@@ -12730,7 +12712,7 @@ N
 Init +11; Senses darkvision 60 ft., tremorsense 60 ft., true
 seeing; Perception +38
 DEFENSE
-AC 34, touch 14, flat-footed 26 (+7 Dex, +1 dodge, +20 natural, -4 size)
+AC 34, touch 14, flat-footed 26 (+7 Dex, +1 dodge, +20|TYPE=NaturalArmor, -4 size)
 hp 348 (24d10+216); fast healing 20
 Fort +25, Ref +17, Will +23
 DR 15/cold iron and bludgeoning; Immune bleed, mindaffecting
@@ -12919,7 +12901,7 @@ N
 	outsider (kami, native)
 Init +1; Senses darkvision 60 ft.; Perception +11
 DEFENSE
-AC 18, touch 14, flat-footed 15 (+1 Dex, +2 dodge, +4 natural, +1 size)
+AC 18, touch 14, flat-footed 15 (+1 Dex, +2 dodge, +4|TYPE=NaturalArmor, +1 size)
 hp 51 (6d10+18); fast healing 3
 Fort +10, Ref +6, Will +4
 DR 5/cold iron; Immune bleed, mind-affecting effects,
@@ -13030,7 +13012,7 @@ LN
 	outsider (kami, native)
 Init +1; Senses darkvision 60 ft.; Perception +11
 DEFENSE
-AC 15, touch 13, flat-footed 14 (+1 Dex, +2 natural, +2 size)
+AC 15, touch 13, flat-footed 14 (+1 Dex, +2|TYPE=NaturalArmor, +2 size)
 hp 19 (3d10+3); fast healing 2
 Fort +4, Ref +2, Will +8
 DR 5/cold iron; Immune bleed, mind-affecting effects,
@@ -13303,7 +13285,7 @@ CN
 	
 Init +3; Senses darkvision 60 ft.; Perception +2
 DEFENSE
-AC 15, touch 14, flat-footed 12 (+3 Dex, +1 natural, +1 size)
+AC 15, touch 14, flat-footed 12 (+3 Dex, +1|TYPE=NaturalArmor, +1 size)
 hp 19 (3d10+3)
 Fort +4, Ref +6, Will +5
 Resist acid 5, cold 5
@@ -13476,7 +13458,7 @@ LG
 Init +6; Senses darkvision 60 ft., detect evil, low-light vision,
 scent; Perception +17
 DEFENSE
-AC 20, touch 15, flat-footed 14 (+6 Dex, +5 natural, -1 size)
+AC 20, touch 15, flat-footed 14 (+6 Dex, +5|TYPE=NaturalArmor, -1 size)
 hp 85 (9d10+36)
 Fort +10, Ref +12, Will +10
 Resist cold 10, electricity 30, fire 10
@@ -13564,7 +13546,7 @@ N
 	dragon
 Init +7; Senses darkvision 60 ft., low-light vision; Perception +23
 DEFENSE
-AC 29, touch 11, flat-footed 26 (+3 Dex, +18 natural, -2 size)
+AC 29, touch 11, flat-footed 26 (+3 Dex, +18|TYPE=NaturalArmor, -2 size)
 hp 261 (18d12+144)
 Fort +19, Ref +16, Will +13
 DR 10/magic; Immune magic paralysis and sleep; Resist acid 10,
@@ -13756,7 +13738,7 @@ LE
 	outsider (evil, extraplanar, kyton, lawful)
 Init +7; Senses darkvision 60 ft., deathwatch; Perception +7
 DEFENSE
-AC 17, touch 15, flat-footed 14 (+3 Dex, +2 natural, +2 size)
+AC 17, touch 15, flat-footed 14 (+3 Dex, +2|TYPE=NaturalArmor, +2 size)
 hp 19 (3d10+3); regeneration 2 (good weapons and spells,
 silver weapons)
 Fort +2, Ref +8, Will +4
@@ -14033,7 +14015,7 @@ LE
 	outsider (evil, extraplanar, kyton, lawful)
 Init +7; Senses darkvision 60 ft.; Perception +23
 DEFENSE
-AC 26, touch 13, flat-footed 22 (+3 Dex, +1 dodge, +13 natural,
+AC 26, touch 13, flat-footed 22 (+3 Dex, +1 dodge, +13|TYPE=NaturalArmor,
 -1 size)
 hp 147 (14d10+70); regeneration 5 (good weapons and spells,
 silver weapons)
@@ -14120,7 +14102,7 @@ Init +5; Senses darkvision 60 ft., low-light vision;
 Perception +15
 Aura magic circle against evil (20 ft.)
 DEFENSE
-AC 21, touch 10, flat-footed 20 (+1 Dex, +11 natural, -1 size)
+AC 21, touch 10, flat-footed 20 (+1 Dex, +11|TYPE=NaturalArmor, -1 size)
 hp 94 (9d10+45)
 Fort +11, Ref +9, Will +8
 OFFENSE
@@ -14589,7 +14571,7 @@ N
 	plant (aquatic, leshy, shapechanger)
 Init +1; Senses darkvision 60 ft., low-light vision; Perception +7
 DEFENSE
-AC 15, touch 12, flat-footed 14 (+1 armor, +1 Dex, +2 natural,
+AC 15, touch 12, flat-footed 14 (+1 armor, +1 Dex, +2|TYPE=NaturalArmor,
 +1 size)
 hp 30 (4d8+12)
 Fort +6, Ref +2, Will +3
@@ -14803,7 +14785,7 @@ CE
 Init +11; Senses darkvision 60 ft., low-light vision, scent, true
 seeing; Perception +24
 DEFENSE
-AC 35, touch 13, flat-footed 28 (+7 Dex, +22 natural, -4 size)
+AC 35, touch 13, flat-footed 28 (+7 Dex, +22|TYPE=NaturalArmor, -4 size)
 hp 290 (20d12+160); regeneration 10 (cold iron)
 Fort +20, Ref +21, Will +17
 Defensive Abilities freedom of movement; DR 15/cold iron;
@@ -14901,7 +14883,7 @@ CE
 Init +10; Senses darkvision 60 ft., low-light vision, scent, true
 seeing; Perception +24
 DEFENSE
-AC 30, touch 12, flat-footed 24 (+6 Dex, +18 natural, -4 size)
+AC 30, touch 12, flat-footed 24 (+6 Dex, +18|TYPE=NaturalArmor, -4 size)
 hp 248 (16d12+144); regeneration 10 (cold iron)
 Fort +19, Ref +18, Will +15
 Defensive Abilities freedom of movement; DR 15/cold iron;
@@ -14984,7 +14966,7 @@ CE
 Init +11; Senses darkvision 60 ft., low-light vision, scent, true
 seeing; Perception +30
 DEFENSE
-AC 34, touch 9, flat-footed 27 (+7 Dex, +25 natural, -8 size)
+AC 34, touch 9, flat-footed 27 (+7 Dex, +25|TYPE=NaturalArmor, -8 size)
 hp 346 (21d12+210); regeneration 15 (cold iron)
 Fort +22, Ref +21, Will +18
 Defensive Abilities freedom of movement, spines; DR 15/
@@ -15077,7 +15059,7 @@ CE
 Init +14; Senses darkvision 60 ft., low-light vision, scent, true
 seeing; Perception +34
 DEFENSE
-AC 37, touch 12, flat-footed 27 (+10 Dex, +25 natural, -8 size)
+AC 37, touch 12, flat-footed 27 (+10 Dex, +25|TYPE=NaturalArmor, -8 size)
 hp 420 (24d12+264); regeneration 20 (cold iron)
 Fort +25, Ref +26, Will +21
 Defensive Abilities freedom of movement; DR 20/cold
@@ -15223,7 +15205,7 @@ N
 	animal
 Init +6; Senses low-light vision; Perception +4
 DEFENSE
-AC 14, touch 11, flat-footed 12 (+2 Dex, +3 natural, -1 size)
+AC 14, touch 11, flat-footed 12 (+2 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 34 (4d8+16)
 Fort +8, Ref +6, Will +1
 OFFENSE
@@ -15275,7 +15257,7 @@ N
 Init +4; Senses darkvision 60 ft., low-light vision, scent;
 Perception +9
 DEFENSE
-AC 25, touch 12, flat-footed 21 (+4 Dex, +13 natural, -2 size)
+AC 25, touch 12, flat-footed 21 (+4 Dex, +13|TYPE=NaturalArmor, -2 size)
 hp 147 (14d10+70)
 Fort +14, Ref +13, Will +8
 DR 10/nonmagical weapons
@@ -15453,7 +15435,7 @@ CN
 Init +0; Senses darkvision 60 ft.; Perception +7
 Aura searing aura (20 ft., DC 14)
 DEFENSE
-AC 17, touch 11, flat-footed 17 (+6 natural, +1 size)
+AC 17, touch 11, flat-footed 17 (+6|TYPE=NaturalArmor, +1 size)
 hp 30 (4d10+8)
 Fort +6, Ref +4, Will +3
 DR 5/magic; Immune elemental traits, fire
@@ -15794,7 +15776,7 @@ N
 	animal
 Init +0; Senses low-light vision, scent; Perception +16
 DEFENSE
-AC 22, touch 8, flat-footed 22 (+14 natural, -2 size)
+AC 22, touch 8, flat-footed 22 (+14|TYPE=NaturalArmor, -2 size)
 hp 114 (12d8+60)
 Fort +15, Ref +8, Will +7
 OFFENSE
@@ -15852,7 +15834,7 @@ N
 	animal
 Init +5; Senses blindsense 60 ft., low-light vision; Perception +25
 DEFENSE
-AC 27, touch 7, flat-footed 26 (+1 Dex, +20 natural, -4 size)
+AC 27, touch 7, flat-footed 26 (+1 Dex, +20|TYPE=NaturalArmor, -4 size)
 hp 161 (17d8+85)
 Fort +17, Ref +11, Will +7
 OFFENSE
@@ -15908,7 +15890,7 @@ N
 	animal
 Init +1; Senses low-light vision, scent; Perception +10
 DEFENSE
-AC 21, touch 9, flat-footed 20 (+1 Dex, +12 natural, -2 size)
+AC 21, touch 9, flat-footed 20 (+1 Dex, +12|TYPE=NaturalArmor, -2 size)
 hp 85 (10d8+40)
 Fort +11, Ref +8, Will +7
 OFFENSE
@@ -15966,7 +15948,7 @@ CE
 	
 Init +2; Senses darkvision 60 ft., low-light vision; Perception +19
 DEFENSE
-AC 24, touch 10, flat-footed 22 (+2 Dex, +14 natural, -2 size)
+AC 24, touch 10, flat-footed 22 (+2 Dex, +14|TYPE=NaturalArmor, -2 size)
 hp 136 (13d10+65); regeneration 5 (acid, cold, or fire)
 Fort +13, Ref +10, Will +8
 OFFENSE
@@ -16054,7 +16036,7 @@ CE
 	aberration
 Init +7; Senses blindsight 90 ft.; Perception +21
 DEFENSE
-AC 25, touch 13, flat-footed 21 (+3 Dex, +1 dodge, +12 natural,
+AC 25, touch 13, flat-footed 21 (+3 Dex, +1 dodge, +12|TYPE=NaturalArmor,
 -1 size)
 hp 133 (14d8+70)
 Fort +9, Ref +9, Will +15
@@ -16256,7 +16238,7 @@ CN
 	aberration
 Init +4; Senses darkvision 60 ft., low-light vision; Perception +14
 DEFENSE
-AC 20, touch 14, flat-footed 15 (+4 Dex, +1 dodge, +6 natural,
+AC 20, touch 14, flat-footed 15 (+4 Dex, +1 dodge, +6|TYPE=NaturalArmor,
 -1 size)
 hp 68 (8d8+32)
 Fort +6, Ref +8, Will +9
@@ -16339,7 +16321,7 @@ LN
 	aberration (shapechanger)
 Init +7; Senses darkvision 60 ft., see invisibility; Perception +27
 DEFENSE
-AC 26, touch 11, flat-footed 23 (+3 Dex, +15 natural, -2 size)
+AC 26, touch 11, flat-footed 23 (+3 Dex, +15|TYPE=NaturalArmor, -2 size)
 hp 133 (14d8+70)
 Fort +9, Ref +9, Will +15
 OFFENSE
@@ -16426,7 +16408,7 @@ N
 	
 Init +6; Senses darkvision 60 ft.; Perception +17
 DEFENSE
-AC 20, touch 15, flat-footed 14 (+6 Dex, +5 natural, -1 size)
+AC 20, touch 15, flat-footed 14 (+6 Dex, +5|TYPE=NaturalArmor, -1 size)
 hp 76 (8d8+40)
 Fort +7, Ref +10, Will +9
 OFFENSE
@@ -16509,7 +16491,7 @@ N
 	outsider (native)
 Init +2; Senses darkvision 60 ft.; Perception +17
 DEFENSE
-AC 22, touch 11, flat-footed 20 (+6 armor, +2 Dex, +5 natural, -1 size)
+AC 22, touch 11, flat-footed 20 (+6 armor, +2 Dex, +5|TYPE=NaturalArmor, -1 size)
 hp 104 (11d10+44)
 Fort +13, Ref +5, Will +10; +2 vs. fear and sorrow effects
 Defensive Abilities soul of sorrow; DR 10/magic; Resist cold 10,
@@ -16701,7 +16683,7 @@ Init +16; Senses all-around vision, blindsight 120 ft., low-light
 vision, greater arcane sight, true seeing; Perception +30
 DEFENSE
 AC 33, touch 21, flat-footed 31 (+7 armor, +2 Dex, +10 insight,
-+5 natural, -1 size)
++5|TYPE=NaturalArmor, -1 size)
 hp 270 (20d6+200); regeneration 10 (cold iron)
 Fort +18, Ref +18, Will +21
 Defensive Abilities death ward, fated, foresight, mind blank,
@@ -16783,7 +16765,7 @@ NE
 Init +7; Senses low-light vision; Perception +17
 Aura frightful presence (30 ft., DC 20)
 DEFENSE
-AC 23, touch 17, flat-footed 15 (+7 Dex, +1 dodge, +6 natural, -1 size)
+AC 23, touch 17, flat-footed 15 (+7 Dex, +1 dodge, +6|TYPE=NaturalArmor, -1 size)
 hp 104 (11d6+66)
 Fort +9, Ref +16, Will +10
 DR 10/cold iron; Immune disease, poison
@@ -16874,7 +16856,7 @@ NE
 	
 Init +9; Senses darkvision 60 ft., low-light vision; Perception +10
 DEFENSE
-AC 24, touch 15, flat-footed 18 (+5 Dex, +1 dodge, +9 natural,
+AC 24, touch 15, flat-footed 18 (+5 Dex, +1 dodge, +9|TYPE=NaturalArmor,
 -1 size)
 hp 126 (12d10+60)
 Fort +13, Ref +13, Will +7
@@ -17073,7 +17055,7 @@ NE
 	outsider (fire, giant, native, oni, shapechanger)
 Init +7; Senses darkvision 60 ft., low-light vision; Perception +23
 DEFENSE
-AC 29, touch 10, flat-footed 28 (+8 armor, +1 Dex, +11 natural,
+AC 29, touch 10, flat-footed 28 (+8 armor, +1 Dex, +11|TYPE=NaturalArmor,
 -1 size)
 hp 229 (17d10+136); regeneration 5 (acid or cold)
 Fort +18, Ref +10, Will +15
@@ -17155,7 +17137,7 @@ CE
 Init +2; Senses darkvision 60 ft., low-light vision; Perception +22
 DEFENSE
 AC 27, touch 12, flat-footed 24 (+4 armor, +2 Dex, +1 dodge,
-+11 natural, -1 size)
++11|TYPE=NaturalArmor, -1 size)
 hp 200 (16d10+112); regeneration 5 (fire or acid)
 Fort +17, Ref +7, Will +12
 Immune cold
@@ -17312,7 +17294,7 @@ NE
 Init +8; Senses darkvision 60 ft., detect magic;
 Perception +7
 DEFENSE
-AC 17, touch 16, flat-footed 13 (+4 Dex, +1 natural,
+AC 17, touch 16, flat-footed 13 (+4 Dex, +1|TYPE=NaturalArmor,
 +2 size)
 hp 19 (3d10+3); fast healing 2
 Fort +2, Ref +7, Will +4
@@ -17404,7 +17386,7 @@ LE
 Init +6; Senses darkvision 60 ft., low-light vision, true seeing;
 Perception +29
 DEFENSE
-AC 36, touch 9, flat-footed 35 (+9 armor, +1 Dex, +18 natural,
+AC 36, touch 9, flat-footed 35 (+9 armor, +1 Dex, +18|TYPE=NaturalArmor,
 -2 size)
 hp 379 (23d10+253); regeneration 15 (fire or good spells)
 Fort +24, Ref +9, Will +21
@@ -17595,7 +17577,7 @@ CE
 	outsider (aquatic, giant, native, oni, shapechanger, water)
 Init +7; Senses darkvision 60 ft., low-light vision; Perception +26
 DEFENSE
-AC 32, touch 11, flat-footed 29 (+6 armor, +3 Dex, +15 natural,
+AC 32, touch 11, flat-footed 29 (+6 armor, +3 Dex, +15|TYPE=NaturalArmor,
 -2 size)
 hp 297 (22d10+176); regeneration 10 (fire or good spells)
 Fort +21, Ref +10, Will +18
@@ -17674,7 +17656,7 @@ N
 	animal
 Init +2; Senses low-light vision; Perception +10
 DEFENSE
-AC 15, touch 13, flat-footed 13 (+2 Dex, +2 natural, +1 size)
+AC 15, touch 13, flat-footed 13 (+2 Dex, +2|TYPE=NaturalArmor, +1 size)
 hp 5 (1d8+1)
 Fort +3, Ref +4, Will +2
 Owl, Giant
@@ -17690,7 +17672,7 @@ LN
 	
 Init +5; Senses low-light vision; Perception +17
 DEFENSE
-AC 18, touch 10, flat-footed 16 (+2 Dex, +8 natural, -2 size)
+AC 18, touch 10, flat-footed 16 (+2 Dex, +8|TYPE=NaturalArmor, -2 size)
 hp 57 (6d10+24)
 Fort +9, Ref +7, Will +5
 OFFENSE
@@ -17910,7 +17892,7 @@ N
 	vermin
 Init +1; Senses blindsense 30 ft.; Perception +0
 DEFENSE
-AC 15, touch 12, flat-footed 14 (+1 Dex, +3 natural, +1 size)
+AC 15, touch 12, flat-footed 14 (+1 Dex, +3|TYPE=NaturalArmor, +1 size)
 hp 34 (4d8+16)
 Fort +8, Ref +2, Will +1
 Immune mind-affecting effects
@@ -18639,7 +18621,7 @@ NE
 Init +4; Senses darkvision 60 ft., deathwatch, detect good,
 detect magic; Perception +13
 DEFENSE
-AC 20, touch 16, flat-footed 15 (+4 Dex, +1 dodge, +4 natural, +1 size)
+AC 20, touch 16, flat-footed 15 (+4 Dex, +1 dodge, +4|TYPE=NaturalArmor, +1 size)
 hp 85 (9d10+36)
 Fort +7, Ref +10, Will +10
 Immune poison
@@ -18853,7 +18835,7 @@ LE
 	outsider (native, rakshasa, shapechanger)
 Init +4; Senses darkvision 60 ft.; Perception +9
 DEFENSE
-AC 19, touch 16, flat-footed 14 (+4 Dex, +1 dodge, +3 natural, +1 size)
+AC 19, touch 16, flat-footed 14 (+4 Dex, +1 dodge, +3|TYPE=NaturalArmor, +1 size)
 hp 51 (6d10+18)
 Fort +5, Ref +9, Will +6
 DR 5/good or piercing
@@ -19214,7 +19196,7 @@ LE
 	outsider (native, rakshasa, shapechanger)
 Init +3; Senses darkvision 60 ft., detect magic; Perception +9
 DEFENSE
-AC 17, touch 15, flat-footed 14 (+3 Dex, +2 natural, +2 size)
+AC 17, touch 15, flat-footed 14 (+3 Dex, +2|TYPE=NaturalArmor, +2 size)
 hp 22 (3d10+6)
 Fort +3, Ref +6, Will +4
 DR 5/good or piercing
@@ -19307,7 +19289,7 @@ LE
 	outsider (native, rakshasa, shapechanger)
 Init +3; Senses darkvision 60 ft., scent, true seeing; Perception +19
 DEFENSE
-AC 28, touch 13, flat-footed 24 (+3 Dex, +1 dodge, +15 natural,
+AC 28, touch 13, flat-footed 24 (+3 Dex, +1 dodge, +15|TYPE=NaturalArmor,
 -1 size)
 hp 225 (18d10+126)
 Fort +18, Ref +9, Will +12
@@ -19731,7 +19713,7 @@ Init +6; Senses blindsense 60 ft., tremorsense 120 ft.;
 Perception +11
 Aura mirage (300 ft., DC 18)
 DEFENSE
-AC 24, touch 12, flat-footed 21 (+2 Dex, +1 dodge, +12 natural,
+AC 24, touch 12, flat-footed 21 (+2 Dex, +1 dodge, +12|TYPE=NaturalArmor,
 -1 size)
 hp 123 (13d8+65)
 Fort +15, Ref +8, Will +4
@@ -19902,7 +19884,7 @@ N
 	vermin
 Init +2; Senses darkvision 60 ft., tremorsense 60 ft.; Perception +6
 DEFENSE
-AC 21, touch 10, flat-footed 19 (+2 Dex, +11 natural, -2 size)
+AC 21, touch 10, flat-footed 19 (+2 Dex, +11|TYPE=NaturalArmor, -2 size)
 hp 95 (10d8+50)
 Fort +12, Ref +5, Will +5
 Immune mind-affecting effects
@@ -19958,7 +19940,7 @@ N
 	vermin
 Init +0; Senses darkvision 60 ft., tremorsense 60 ft.; Perception +4
 DEFENSE
-AC 12, touch 11, flat-footed 12 (+1 natural, +1 size)
+AC 12, touch 11, flat-footed 12 (+1|TYPE=NaturalArmor, +1 size)
 hp 13 (2d8+4)
 Fort +5, Ref +0, Will +0
 Immune mind-affecting effects
@@ -19999,7 +19981,7 @@ N
 	
 Init +2; Senses blindsight 30 ft.; Perception +0
 DEFENSE
-AC 14, touch 11, flat-footed 12 (+2 Dex, +3 natural, -1 size)
+AC 14, touch 11, flat-footed 12 (+2 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 34 (4d8+16)
 Fort +8, Ref +3, Will +1
 Defensive Abilities amorphous; Immune gaze attacks, mindaffecting
@@ -20108,7 +20090,7 @@ NE
 	
 Init +4; Senses blindsight 120 ft.; Perception +33
 DEFENSE
-AC 30, touch 6, flat-footed 30 (+24 natural, -4 size)
+AC 30, touch 6, flat-footed 30 (+24|TYPE=NaturalArmor, -4 size)
 hp 231 (22d8+132)
 Fort +13, Ref +9, Will +19
 DR 10/magic and slashing; Immune cold, electricity, undead
@@ -20193,7 +20175,7 @@ N
 Init +9; Senses darkvision 120 ft., low-light vision;
 Perception +23
 DEFENSE
-AC 34, touch 12, flat-footed 28 (+5 Dex, +1 dodge, +22 natural,
+AC 34, touch 12, flat-footed 28 (+5 Dex, +1 dodge, +22|TYPE=NaturalArmor,
 -4 size)
 hp 333 (23d10+207)
 Fort +22, Ref +20, Will +12
@@ -20448,7 +20430,7 @@ LG
 Init +7; Senses darkvision 60 ft., detect chaos, detect evil, lowlight
 vision, true seeing; Perception +20
 DEFENSE
-AC 24, touch 16, flat-footed 23 (+1 Dex, +6 insight, +8 natural,
+AC 24, touch 16, flat-footed 23 (+1 Dex, +6 insight, +8|TYPE=NaturalArmor,
 -1 size)
 hp 115 (11d10+55); fast healing 5
 Fort +12, Ref +14, Will +11
@@ -20529,7 +20511,7 @@ Init +9; Senses darkvision 60 ft., detect chaos, detect law, true
 seeing; Perception +31
 Aura fear aura (60 ft., DC 30)
 DEFENSE
-AC 31, touch 15, flat-footed 25 (+5 Dex, +1 dodge, +16 natural, -1 size)
+AC 31, touch 15, flat-footed 25 (+5 Dex, +1 dodge, +16|TYPE=NaturalArmor, -1 size)
 hp 275 (22d10+154); fast healing 10
 Fort +20, Ref +12, Will +19
 DR 10/chaotic and silver; Immune ability damage, ability drain,
@@ -20611,7 +20593,7 @@ Init +7; Senses darkvision 60 ft., detect evil, detect magic, lowlight
 vision; Perception +27
 Aura peace (50 ft.)
 DEFENSE
-AC 34, touch 10, flat-footed 30 (+3 Dex, +1 dodge, +24 natural,
+AC 34, touch 10, flat-footed 30 (+3 Dex, +1 dodge, +24|TYPE=NaturalArmor,
 -4 size)
 hp 324 (24d10+192)
 Fort +22, Ref +17, Will +14
@@ -20873,7 +20855,7 @@ N
 	animal
 Init +3; Senses low-light vision, scent; Perception +7
 DEFENSE
-AC 15, touch 12, flat-footed 12 (+3 Dex, +3 natural, -1 size)
+AC 15, touch 12, flat-footed 12 (+3 Dex, +3|TYPE=NaturalArmor, -1 size)
 hp 27 (5d8+5)
 Fort +5, Ref +7, Will +2
 OFFENSE
@@ -20934,7 +20916,7 @@ N
 	
 Init +4; Senses darkvision 60 ft., low-light vision; Perception +16
 DEFENSE
-AC 25, touch 13, flat-footed 21 (+4 Dex, +12 natural, -1 size)
+AC 25, touch 13, flat-footed 21 (+4 Dex, +12|TYPE=NaturalArmor, -1 size)
 hp 147 (14d10+70)
 Fort +14, Ref +15, Will +9
 Immune electricity; Resist cold 10
@@ -21025,7 +21007,7 @@ N
 	animal (swarm)
 Init +6; Senses low-light vision, scent; Perception +9
 DEFENSE
-AC 15, touch 14, flat-footed 13 (+2 Dex, +1 natural, +2 size)
+AC 15, touch 14, flat-footed 13 (+2 Dex, +1|TYPE=NaturalArmor, +2 size)
 hp 16 (3d8+3)
 Fort +4, Ref +7, Will +2
 Defensive Abilities swarm traits
@@ -21063,7 +21045,7 @@ N
 	animal (swarm)
 Init +7; Senses low-light vision, scent; Perception +13
 DEFENSE
-AC 17, touch 15, flat-footed 14 (+3 Dex, +2 natural, +2 size)
+AC 17, touch 15, flat-footed 14 (+3 Dex, +2|TYPE=NaturalArmor, +2 size)
 hp 37 (5d8+15)
 Fort +7, Ref +9, Will +2
 Defensive Abilities swarm traits
@@ -21217,7 +21199,7 @@ CG
 	
 Init +0; Senses darkvision 60 ft., low-light vision; Perception +23
 DEFENSE
-AC 23, touch 9, flat-footed 23 (+14 natural, -1 size)
+AC 23, touch 9, flat-footed 23 (+14|TYPE=NaturalArmor, -1 size)
 hp 123 (13d10+52)
 Fort +12, Ref +8, Will +7
 OFFENSE
@@ -21307,7 +21289,7 @@ N
 	
 Init +0; Senses darkvision 60 ft., low-light vision; Perception +10
 DEFENSE
-AC 20, touch 9, flat-footed 20 (+11 natural, -1 size)
+AC 20, touch 9, flat-footed 20 (+11|TYPE=NaturalArmor, -1 size)
 hp 85 (10d10+30)
 Fort +10, Ref +7, Will +4
 OFFENSE
@@ -21399,7 +21381,7 @@ CE
 	
 Init +2; Senses darkvision 60 ft., low-light vision; Perception +16
 DEFENSE
-AC 17, touch 11, flat-footed 15 (+2 Dex, +6 natural, -1 size)
+AC 17, touch 11, flat-footed 15 (+2 Dex, +6|TYPE=NaturalArmor, -1 size)
 hp 60 (8d10+16)
 Fort +8, Ref +8, Will +4
 OFFENSE
@@ -21539,7 +21521,7 @@ N
 	vermin
 Init +2; Senses darkvision 60 ft., tremorsense 60 ft.; Perception +5
 DEFENSE
-AC 18, touch 10, flat-footed 16 (+2 Dex, +8 natural, -2 size)
+AC 18, touch 10, flat-footed 16 (+2 Dex, +8|TYPE=NaturalArmor, -2 size)
 hp 52 (7d8+21)
 Fort +8, Ref +4, Will +3
 Immune mind-affecting effects
@@ -21600,7 +21582,7 @@ N
 Init +2; Senses darkvision 60 ft., low-light vision, scent;
 Perception +15
 DEFENSE
-AC 18, touch 12, flat-footed 15 (+2 Dex, +1 dodge, +6 natural, -1 size)
+AC 18, touch 12, flat-footed 15 (+2 Dex, +1 dodge, +6|TYPE=NaturalArmor, -1 size)
 hp 52 (5d10+25)
 Fort +9, Ref +6, Will +2
 Defensive Abilities freedom of movement
@@ -21765,7 +21747,7 @@ N
 	
 Init +6; Senses low-light vision; Perception +12
 DEFENSE
-AC 22, touch 11, flat-footed 20 (+2 Dex, +11 natural, -1 size)
+AC 22, touch 11, flat-footed 20 (+2 Dex, +11|TYPE=NaturalArmor, -1 size)
 hp 94 (9d10+45)
 Fort +11, Ref +10, Will +5
 DR 10/magic and adamantine; Immune fire
@@ -21963,7 +21945,7 @@ CN
 Init +3; Senses darkvision 60 ft., detect poison, low-light vision;
 Perception +8
 DEFENSE
-AC 17, touch 13, flat-footed 14 (+3 Dex, +3 natural, +1 shield)
+AC 17, touch 13, flat-footed 14 (+3 Dex, +3|TYPE=NaturalArmor, +1 shield)
 hp 47 (5d10+20)
 Fort +5, Ref +7, Will +6
 OFFENSE
@@ -22046,7 +22028,7 @@ N
 	construct
 Init +2; Senses darkvision 60 ft., low-light vision; Perception +2
 DEFENSE
-AC 28, touch 11, flat-footed 26 (+2 Dex, +17 natural, -1 size)
+AC 28, touch 11, flat-footed 26 (+2 Dex, +17|TYPE=NaturalArmor, -1 size)
 hp 107 (14d10+30)
 Fort +4, Ref +6, Will +6
 DR 10/adamantine; Immune construct traits; Resist acid 10,
@@ -22432,7 +22414,7 @@ LN
 Init +4; Senses darkvision 60 ft., detect secret doors, low-light
 vision, true seeing; Perception +37
 DEFENSE
-AC 33, touch 8, flat-footed 33 (+25 natural, -2 size)
+AC 33, touch 8, flat-footed 33 (+25|TYPE=NaturalArmor, -2 size)
 hp 312 (25d10+175); fast healing 10
 Fort +15, Ref +14, Will +21
 Defensive Abilities merope coat; Immune poison, sonic;
@@ -22823,7 +22805,7 @@ CE
 Init +6; Senses all-around vision, darkvision 120 ft., true seeing;
 Perception +35
 DEFENSE
-AC 42, touch 4, flat-footed 40 (+8 armor, +2 Dex, +30 natural,
+AC 42, touch 4, flat-footed 40 (+8 armor, +2 Dex, +30|TYPE=NaturalArmor,
 -8 size)
 hp 516 (24d10+384); regeneration 10 (epic)
 Fort +30, Ref +12, Will +18
@@ -23093,7 +23075,7 @@ N
 	construct
 Init -1; Senses darkvision 60 ft., low-light vision; Perception +1
 DEFENSE
-AC 24, touch 8, flat-footed 24 (-1 Dex, +16 natural, -1 size)
+AC 24, touch 8, flat-footed 24 (-1 Dex, +16|TYPE=NaturalArmor, -1 size)
 hp 107 (14d10+30)
 Fort +4, Ref +3, Will +5
 DR 5/adamantine; Immune fire, construct traits
@@ -23208,7 +23190,7 @@ CE
 Init +3; Senses all-around vision, low-light vision, scent;
 Perception +26
 DEFENSE
-AC 30, touch 7, flat-footed 30 (-1 Dex, +23 natural, -2 size)
+AC 30, touch 7, flat-footed 30 (-1 Dex, +23|TYPE=NaturalArmor, -2 size)
 hp 216 (16d8+144); regeneration 10 (acid or fire)
 Fort +16, Ref +6, Will +13 (+17 vs. mind-affecting effects)
 Defensive Abilities multiple minds; Immune confusion and
@@ -23290,7 +23272,7 @@ CE
 Init +4 (+8 when climbing trees); Senses darkvision 60 ft., lowlight
 vision, scent; Perception +5
 DEFENSE
-AC 15, touch 13, flat-footed 11 (+4 Dex, +2 natural, -1 size)
+AC 15, touch 13, flat-footed 11 (+4 Dex, +2|TYPE=NaturalArmor, -1 size)
 hp 30 (4d8+12); regeneration 5 (fire)
 Fort +7, Ref +5, Will +4
 Weaknesses fear of fire, vulnerable to fire
@@ -23455,7 +23437,7 @@ N
 	construct
 Init +4; Senses darkvision 60 ft., low-light vision; Perception +0
 DEFENSE
-AC 20, touch 15, flat-footed 16 (+4 Dex, +5 natural, +1 size)
+AC 20, touch 15, flat-footed 16 (+4 Dex, +5|TYPE=NaturalArmor, +1 size)
 hp 59 (9d10+10)
 Fort +3, Ref +7, Will +3
 DR 10/bludgeoning; Immune construct traits
@@ -23565,7 +23547,7 @@ NE
 Init +9; Senses arcane sight, darkvision 60 ft., true seeing;
 Perception +31
 DEFENSE
-AC 35, touch 11, flat-footed 30 (+5 Dex, +24 natural, -4 size)
+AC 35, touch 11, flat-footed 30 (+5 Dex, +24|TYPE=NaturalArmor, -4 size)
 hp 319 (22d8+220); fast healing 15
 Fort +17, Ref +14, Will +19
 Defensive Abilities channel resistance +4, light to dark; DR 15/
@@ -23752,7 +23734,7 @@ LE
 Init +10; Senses blindsight 60 ft. (breathing creatures only),
 darkvision 60 ft.; Perception +22
 DEFENSE
-AC 25, touch 22, flat-footed 18 (+6 Dex, +1 dodge, +3 natural,
+AC 25, touch 22, flat-footed 18 (+6 Dex, +1 dodge, +3|TYPE=NaturalArmor,
 +1 monk, +4 Wis)
 hp 51 (5d8++25); fast healing 5
 Fort +8, Ref +11, Will +9; +2 vs. enchantment
@@ -24208,7 +24190,7 @@ CN
 Init +3; Senses darkvision 60 ft., low-light vision, scent;
 Perception +8
 DEFENSE
-AC 17, touch 14, flat-footed 14 (+3 Dex, +3 natural, +1 size)
+AC 17, touch 14, flat-footed 14 (+3 Dex, +3|TYPE=NaturalArmor, +1 size)
 hp 37 (5d10+10)
 Fort +6, Ref +7, Will +2
 OFFENSE
@@ -24301,7 +24283,7 @@ N
 	animal
 Init +1; Senses low-light vision, scent; Perception +9
 DEFENSE
-AC 13, touch 12, flat-footed 12 (+1 Dex, +1 natural, +1 size)
+AC 13, touch 12, flat-footed 12 (+1 Dex, +1|TYPE=NaturalArmor, +1 size)
 hp 6 (1d8+2)
 Fort +6, Ref +3, Will +1; +4 vs. disease
 OFFENSE
@@ -24336,7 +24318,7 @@ N
 	animal
 Init +2; Senses low-light vision, scent; Perception +13
 DEFENSE
-AC 17, touch 11, flat-footed 15 (+2 Dex, +6 natural, -1 size)
+AC 17, touch 11, flat-footed 15 (+2 Dex, +6|TYPE=NaturalArmor, -1 size)
 hp 42 (5d8+20)
 Fort +10, Ref +6, Will +3; +4 vs. disease
 OFFENSE
@@ -24488,7 +24470,7 @@ LN
 Init +1; Senses all-around vision, blindsense 60 ft., darkvision
 60 ft.; Perception +25
 DEFENSE
-AC 23, touch 10, flat-footed 22 (+1 Dex, +13 natural, -1 size)
+AC 23, touch 10, flat-footed 22 (+1 Dex, +13|TYPE=NaturalArmor, -1 size)
 hp 105 (14d8+42); fast healing 5
 Fort +9, Ref +5, Will +15
 DR 10/magic; Resist acid 10, cold 10, fire 10
