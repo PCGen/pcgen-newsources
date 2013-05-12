@@ -1,39 +1,33 @@
 # CVS $Revision$ $Author$ -- Thu Aug 14 08:36:38 2008 -- reformated by prettylst.pl v1.38 (build 7302)
 SOURCELONG:Unearthed Arcana	SOURCESHORT:UA
 # Original Entry by: Tir-Gwaith
+# Updated by: Andrew Maitland
 
-# Commented out Dwarf - need to modify Dwarf Race to get bonuses different.
-# Commented out Elf - need to modify Dwarf Race to get bonuses different.
-
-## Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-#CLASS:Dwarf Paragon	HD:10		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.33	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-## Class Name		Required Race
-#CLASS:Dwarf Paragon	PRERACE:1,Dwarf
-## Class Name		Skill Pts/Lvl	Class Skill
-#CLASS:Dwarf Paragon	STARTSKILLPTS:2	CSKILL:Appraise|Climb|TYPE.Craft|Intimidate|Jump|Knowledge (Dungeoneering)|TYPE.Profession|Sense Motive|Survival
-####Block: Proficiencies
-#1	ABILITY:Special Ability|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|All Martial Weapon Proficiencies
-#1	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)
-#1	ABILITY:Special Ability|AUTOMATIC|Shield Proficiency
-####Block: Class Features
-#1				ABILITY:Special Ability|AUTOMATIC|Craft Expertise|Improved Stonecunning
-#2				ABILITY:Special Ability|AUTOMATIC|Improved Darkvision|Dwarf Paragon Save Bonus
-#3	BONUS:STAT|CON|2|TYPE=Racial.STACK
+# Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Dwarf Paragon	HD:10		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.33	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	DEFINE:DwarfParagonLVL|CL
+# Class Name		Required Race
+CLASS:Dwarf Paragon	PRERACE:1,Dwarf
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Dwarf Paragon	STARTSKILLPTS:2	CSKILL:Appraise|Climb|TYPE=Craft|Intimidate|Jump|Knowledge (Dungeoneering)|TYPE=Profession|Sense Motive|Survival
+###Block: Class Features
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Dwarf Paragon|Craft Expertise ~ Dwarf Paragon|Improved Stonecunning ~ Dwarf Paragon	AUTO:WEAPONPROF|TYPE=Simple|TYPE=Martial	AUTO:ARMORPROF|ARMORTYPE=Light|ARMORTYPE=Medium|ARMORTYPE=Heavy	AUTO:SHIELDPROF|Buckler|Shield (Light)|Shield (Heavy)
+2	ABILITY:Special Ability|AUTOMATIC|Improved Darkvision ~ Dwarf Paragon|Save Bonus ~ Dwarf Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Dwarf Paragon
 
 
-## Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-#CLASS:Elf Paragon	HD:8		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.35	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
-## Class Name	Multiple Requirements
-#CLASS:Elf Paragon	PREMULT:1,[PRERACE:1,Elf],[PREMULT:2,[PRERACE:1,Half-Elf],[PRECLASS:1,Half Elf Paragon=1,[Human Paragon]=1]]
-## Class Name	Skill Pts/Lvl
-#CLASS:Elf Paragon	STARTSKILLPTS:2	CSKILL:Climb|TYPE.Craft|Diplomacy|Hide|Jump|TYPE.Knowledge|Listen|Move Silently|TYPE.Profession|Spellcraft|Spot|Survival|Swim
-####Block: Proficiencies
-#1	ABILITY:Special Ability|AUTOMATIC|Simple Weapon Proficiency
-#1	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)
-####Block: Class Features
-#1								ABILITY:Special Ability|AUTOMATIC|Elfsight|Resist Enchantments
-#2	BONUS:PCLEVEL|Wizard|1				ADD:FEAT|1|Weapon Focus(Rapier),Weapon Focus(Longsword),Weapon Focus(Shortsword),Weapon Focus(Shortbow),Weapon Focus(Longbow)
-#3	BONUS:PCLEVEL|Wizard|1	BONUS:STAT|INT|2|TYPE=Racial.STACK
+# Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Elf Paragon	HD:8		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.35	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Multiple Requirements
+CLASS:Elf Paragon	PREMULT:1,[PRERACE:1,Elf%],[PREMULT:3,[PRERACE:1,Half-Elf],[PRECLASS:1,Half-Elf Paragon=1],[!PRECLASS:1,Human Paragon=1]]
+# Class Name	Skill Pts/Lvl
+CLASS:Elf Paragon	STARTSKILLPTS:2	CSKILL:Climb|TYPE=Craft|Diplomacy|Hide|Jump|TYPE=Knowledge|Listen|Move Silently|TYPE=Profession|Spellcraft|Spot|Survival|Swim
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Elf Paragon|Elfsight ~ Elf Paragon|Resist Enchantments ~ Elf Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Weapon Focus ~ Elf Paragon|Spells ~ Elf Paragon		
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Elf Paragon
+###Block: Class Features
+2	BONUS:PCLEVEL|Wizard|1
+3	BONUS:PCLEVEL|Wizard|1
 
 
 # Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
@@ -41,51 +35,60 @@ CLASS:Gnome Paragon	HD:6		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAG
 # Class Name		Required Race
 CLASS:Gnome Paragon	PRERACE:1,Gnome
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Gnome Paragon	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE.Craft|Diplomacy|Hide|Jump|TYPE.Knowledge|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Spellcraft|Swim
+CLASS:Gnome Paragon	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE=Craft|Diplomacy|Hide|Jump|TYPE=Knowledge|Listen|Move Silently|TYPE=Perform|TYPE=Profession|Spellcraft|Swim
 ###Block: Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Simple Weapon Proficiency
-1	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Gnome Paragon|Illusion Aptitude ~ Gnome Paragon|Keen Senses ~ Gnome Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Mirror Image ~ Gnome Paragon|Spells ~ Gnome Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Gnome Paragon
 ###Block: Class Features
-1											ABILITY:Special Ability|AUTOMATIC|Illusion Aptitude|Keen Senses
-2	BONUS:PCLEVEL|Bard|1							ABILITY:Special Ability|AUTOMATIC|Gnome Paragon Mirror Image
-3	BONUS:PCLEVEL|Bard|1	BONUS:STAT|CHA|2|TYPE=Racial.STACK
+2	BONUS:PCLEVEL|Bard|1
+3	BONUS:PCLEVEL|Bard|1
 
 
-## Class Name			Output Name					Hit Dice	Type					Abbreviation	Max Level	Subclass?		Source Page		Save checks bonus											Combat bonus
-#CLASS:Half Dragon Paragon	OUTPUTNAME:Half-Dragon Paragon	HD:12		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	HASSUBCLASS:YES	SOURCEPAGE:p.xx	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
-## Class Name			Required Race		Required Template
-#CLASS:Half Dragon Paragon	PRERACE:1,TYPE=Dragon	PRETEMPLATE:Half Dragon
-## Class Name			Skill Pts/Lvl	Class Skill
-#CLASS:Half Dragon Paragon	STARTSKILLPTS:4	CSKILL:Concentration|Diplomacy|Intimidate|TYPE.Knowledge|Listen|Search|Sense Motive|Spot
-#SUBCLASS:Black Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Black)	CSKILL:Hide|Move Silently|Swim
-#SUBCLASS:Blue Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Blue)	CSKILL:Bluff|Hide|Spellcraft
-#SUBCLASS:Brass Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Brass)	CSKILL:Bluff|Gather Information|Survival
-#SUBCLASS:Bronze Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Bronze)	CSKILL:Disguise|Survival|Swim
-#SUBCLASS:Copper Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Copper)	CSKILL:Bluff|Hide|Jump
-#SUBCLASS:Gold Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Gold)	CSKILL:Disguise|Heal|Swim
-#SUBCLASS:Green Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Green)	CSKILL:Bluff|Hide|Move Silently
-#SUBCLASS:Red Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Red)		CSKILL:Appraise|Bluff|Jump
-#SUBCLASS:Silver Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Silver)	CSKILL:Bluff|Jump|TYPE.Perform
-#SUBCLASS:White Half Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (White)	CSKILL:Hide|Move Silently|Swim
-#1														ABILITY:Special Ability|AUTOMATIC|Sorcerous Blood
-#2	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.STACK
-#3								DEFINE:HalfDragonBreathTimes|3
-
+# Class Name			Output Name					Hit Dice	Type					Abbreviation	Max Level	Subclass?		Source Page		Save checks bonus											Combat bonus
+CLASS:Half-Dragon Paragon	OUTPUTNAME:Half-Dragon Paragon	HD:12		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	HASSUBCLASS:YES	SOURCEPAGE:p.xx	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name			Required Race		Required Template
+CLASS:Half-Dragon Paragon	PRERACE:1,TYPE=Dragon	PRETEMPLATE:Half Dragon
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Half-Dragon Paragon	STARTSKILLPTS:4	CSKILL:Concentration|Diplomacy|Intimidate|TYPE=Knowledge|Listen|Search|Sense Motive|Spot
+SUBCLASS:Black Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Black)	CSKILL:Hide|Move Silently|Swim
+SUBCLASS:Blue Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Blue)	CSKILL:Bluff|Hide|Spellcraft
+SUBCLASS:Brass Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Brass)	CSKILL:Bluff|Gather Information|Survival
+SUBCLASS:Bronze Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Bronze)	CSKILL:Disguise|Survival|Swim
+SUBCLASS:Copper Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Copper)	CSKILL:Bluff|Hide|Jump
+SUBCLASS:Gold Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Gold)	CSKILL:Disguise|Heal|Swim
+SUBCLASS:Green Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Green)	CSKILL:Bluff|Hide|Move Silently
+SUBCLASS:Red Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Red)		CSKILL:Appraise|Bluff|Jump
+SUBCLASS:Silver Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (Silver)	CSKILL:Bluff|Jump|TYPE=Perform
+SUBCLASS:White Half-Dragon Paragon	COST:0	PRETEMPLATE:Half Dragon (White)	CSKILL:Hide|Move Silently|Swim
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Half-Dragon Paragon|Sorcerous Blood ~ Half-Dragon Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Natural Armor Increase ~ Half-Dragon Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Half-Dragon Paragon
 
 
 # Class Name		Output Name				Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
-CLASS:Half Orc Paragon	OUTPUTNAME:Half-Orc Paragon	HD:8		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.40	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Half-Elf Paragon	OUTPUTNAME:Half-Elf Paragon	HD:8		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.39	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name		Required Race
-CLASS:Half Orc Paragon	PRERACE:1,Halfling
+CLASS:Half-Elf Paragon	PRERACE:1,Half-Elf
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Half Orc Paragon	STARTSKILLPTS:4	CSKILL:Climb|TYPE.Craft|Handle Animal|Intimidate|Jump|TYPE.Profession|Ride|Survival|Swim
+CLASS:Half-Elf Paragon	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE=Craft|Diplomacy|Hide|Jump|Listen|Move Silently|TYPE=Perform|TYPE=Profession|Swim
 ###Block: Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Simple Weapon Proficiency|Martial Weapon Proficiency|All Martial Weapon Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)
-###Block: Class Features
-1											ABILITY:Special Ability|AUTOMATIC|Monstrous Men
-2							BONUS:VAR|RageTimes|1	ABILITY:Special Ability|AUTOMATIC|Rage
-3	BONUS:STAT|STR|2|TYPE=Racial.STACK
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Half-Elf Paragon|Bonus Feat ~ Half-Elf Paragon|Divided Ancestry ~ Half-Elf Paragon|Elven Vision ~ Half-Elf Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Spells ~ Half-Elf Paragon|Persuasion ~ Half-Elf Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Half-Elf Paragon
+
+
+# Class Name		Output Name				Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Half-Orc Paragon	OUTPUTNAME:Half-Orc Paragon	HD:8		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.40	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required Race
+CLASS:Half-Orc Paragon	PRERACE:1,Halfling
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Half-Orc Paragon	STARTSKILLPTS:4	CSKILL:Climb|TYPE=Craft|Handle Animal|Intimidate|Jump|TYPE=Profession|Ride|Survival|Swim
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Half-Orc Paragon|Divided Ancestry ~ Half-Orc Paragon|Monstrous Mien ~ Half-Orc Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Rage ~ Half-Orc Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Half-Orc Paragon
 
 
 # Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
@@ -93,27 +96,31 @@ CLASS:Halfling Paragon	HD:6		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCE
 # Class Name		Required Race
 CLASS:Halfling Paragon	PRERACE:1,Halfling
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Halfling Paragon	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE.Craft|Diplomacy|Hide|Jump|Listen|Move Silently|TYPE.Perform|TYPE.Profession|Survival|Swim
+CLASS:Halfling Paragon	STARTSKILLPTS:4	CSKILL:Bluff|Climb|TYPE=Craft|Diplomacy|Hide|Jump|Listen|Move Silently|TYPE=Perform|TYPE=Profession|Survival|Swim
 ###Block: Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Simple Weapon Proficiency
-1	ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)
+1	AUTO:ARMORPROF|ARMORTYPE=Light
 ###Block: Class Features
-1	ABILITY:Special Ability|AUTOMATIC|Athletic Prowess|Halfling Paragon Save Bonus
-2	ABILITY:Special Ability|AUTOMATIC|Thrown Weapon Mastery
-3	ABILITY:Special Ability|AUTOMATIC|Halfling Paragon Stat
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Halfling Paragon|Athletic Prowess ~ Halfling Paragon|Save Bonus ~ Halfling Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Thrown Weapon Mastery ~ Halfling Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Halfling Paragon
 
 
 # Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Human Paragon	HD:8		TYPE:PC.Prestige.Paragon	ABB:Par		MAXLEVEL:3	SOURCEPAGE:p.43	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name		Multiple Requirements
-CLASS:Human Paragon	PREMULT:1,[PRERACE:1,Human],[PREMULT:2,[PRERACE:1,Half-Orc],[PRECLASS:1,Half Orc Paragon=1,[Orc Paragon]=1]],[PREMULT:2,[PRERACE:1,Half-Elf],[PRECLASS:1,Half Elf Paragon=1,[Elf Paragon]=1]]
+CLASS:Human Paragon	PREMULT:1,[PRERACE:1,Human],[PREMULT:3,[PRERACE:1,Half-Orc],[PRECLASS:1,Half-Orc Paragon=1],[!PRECLASS:1,Orc Paragon=1]],[PREMULT:3,[PRERACE:1,Half-Elf],[PRECLASS:1,Half-Elf Paragon=1,[!PRECLASS:1,Elf Paragon=1]]]
 # Class Name		Skill Pts/Lvl
 CLASS:Human Paragon	STARTSKILLPTS:4
-###Block: Proficiencies
-1					ABILITY:Special Ability|AUTOMATIC|Simple Weapon Proficiency
-1					ABILITY:Special Ability|AUTOMATIC|Armor Proficiency (Light)
-1	ADD:CLASSSKILLS|10|ANY
+###Block: 
+2	ADD:SPELLCASTER|1|ANY
+3	ADD:SPELLCASTER|1|ANY
 ###Block: Class Features
-1											ADD:ABILITY|1|Special Ability|NORMAL|Adaptive Learning
-2								BONUS:FEAT|POOL|1	ADD:SPELLCASTER|1|ANY
-3	BONUS:ABILITYPOOL|Human Paragon Stat|1				ADD:SPELLCASTER|1|ANY
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Human Paragon|Adaptive Learning ~ Human Paragon
+2	ABILITY:Special Ability|AUTOMATIC|Bonus Feat ~ Human Paragon|Spells ~ Human Paragon
+3	ABILITY:Special Ability|AUTOMATIC|Ability Boost ~ Human Paragon
+
+# Orc Paragon	44
+
+# Tielfing Paragon	45
+
