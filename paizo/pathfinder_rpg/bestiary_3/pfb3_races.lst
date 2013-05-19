@@ -127,7 +127,7 @@ Allip		SOURCEPAGE:p.12
 	BONUS:STAT|CHA|6
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ Allip
 	MOVE:Fly,30
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	AUTO:LANG|Aklo|Common
 	NATURALATTACKS:Incorporeal Touch,Natural.Weapon.Melee,*1,1d4
 
@@ -232,10 +232,10 @@ Giant Adult Ant Lion	KEY:Ant Lion (Adult)	SORTKEY:Ant Lion (Giant Adult)	SOURCEP
 	SIZE:H
 	RACETYPE:Vermin
 	VISION:Darkvision (60')
-	BONUS:COMBAT|AC|8|TYPE=Armor
+	BONUS:COMBAT|AC|8|TYPE=NaturalArmor
 	MONSTERCLASS:Vermin:10
 	MOVE:Walk,30,Fly,60
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 	BONUS:STAT|STR|14
 	BONUS:STAT|DEX|6
 	BONUS:STAT|CON|8
@@ -260,7 +260,7 @@ Harbinger Archon	KEY:Archon (Harbinger)	SORTKEY:Archon	SOURCEPAGE:p.18
 	MONSTERCLASS:Outsider:3
 	DR:5/evil
 	MOVE:Fly,50
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	BONUS:STAT|STR|-4
 	BONUS:STAT|DEX|4
 	BONUS:STAT|CON|0
@@ -287,7 +287,7 @@ Legion Archon	KEY:Archon (Legion)	SORTKEY:Archon	SOURCEPAGE:p.19
 	DR:10/evil
 	SR:18
 	MOVE:Walk,40,Fly,90
-	(average)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|e
 	BONUS:STAT|STR|6
 	BONUS:STAT|DEX|2
 	BONUS:STAT|CON|8
@@ -387,7 +387,7 @@ Asurendra	KEY:Asura (Asurendra)	SORTKEY:Asura	SOURCEPAGE:p.24-25
 	DR:15/chaotic and good
 	SR:31
 	MOVE:Walk,50,Climb,50,Fly,50,Swim,50
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	NATURALATTACKS:Claws,Melee.Weapon.Natural,*6,2d6|Bite,Melee.Weapon.Natural,*1,2d6
 	FACE:15
 	REACH:15
@@ -457,7 +457,7 @@ Atomie	SOURCEPAGE:p.28
 	MONSTERCLASS:Fey:2
 	DR:2/cold iron
 	MOVE:Walk,20,Fly,50
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 	FACE:1
 	REACH:0
 	BONUS:STAT|STR|-4
@@ -526,7 +526,7 @@ Baku	SOURCEPAGE:p.31
 	DR:10/cold iron
 	SR:19
 	MOVE:Walk,30,Fly,60
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d4
 	NATURALATTACKS:Gore,Natural.Melee.Weapon,*1,1d6
 	BONUS:STAT|STR|4
@@ -537,7 +537,7 @@ Baku	SOURCEPAGE:p.31
 	BONUS:STAT|CHA|14
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ Baku
 	AUTO:LANG|Aklo|Celestial|Common
-
+#COMMENT: (20 ft. with Tail Slap)
 Bandersnatch	SOURCEPAGE:p.31
 	CR:17
 	XP:102,400
@@ -548,72 +548,21 @@ Bandersnatch	SOURCEPAGE:p.31
 	BONUS:COMBAT|AC|20|TYPE=NaturalArmor
 	MONSTERCLASS:Magical Beast:23
 	MOVE:Walk,60,Climb,20
-Bite +32 (2d8+13 plus grab), 2 Claws +32 (2d6+13/19-20),
-tail slap +27 (2d8+19/3 plus pain)
-Ranged 4 quills +26 (1d10+13/19-20)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,2d8
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,2d6
+	NATURALATTACKS:Tail Slap,Natural.Melee.Weapon,*1,2d8
+	NATURALATTACKS:Quills,Natural.Ranged.Weapon,*4,1d10
 	FACE:20
-	REACH:15 (20 ft. with tail slap)
+	REACH:15
 	BONUS:STAT|STR|26
 	BONUS:STAT|DEX|14
 	BONUS:STAT|CON|16
 	BONUS:STAT|INT|-8
 	BONUS:STAT|WIS|4
 	BONUS:STAT|CHA|8
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Bandersnatch
 
-32
-
-
-VARIANT BANDERSNATCHES
-Though no bandersnatch is ordinary, some are
-rarer than others. The most famous
-is the frumious bandersnatch,
-brimming with rage so fierce it
-burns. Variant bandersnatches
-may combine two or more
-of the abilities below.
-Confounding Bandersnatch (+1 CR): Confounding
-bandersnatches drip infectious madness from their
-quills and Claws. Poison (Ex) Claws and quills-injury;
-save Fort DC 29
-frequency 1/minute for 6 minutes
-effect
-confused for 1 minute
-cure 2 consecutive saves. The save
-DC is Constitution-based.
-Frumious Bandersnatch (+2 CR): A frumious
-bandersnatch seethes with barely repressed rage and anger.
-If it misses with its Bite attack or falls below half of its hit
-points, it succumbs to such uncontrollable fury that it bursts
-into f lame. While engulfed in these f lames, a frumious
-bandersnatch is affected as by a haste spell (this effect
-cannot be dispelled) and causes an additional 2d6 points
-of fire damage with each of its melee attacks and its quill
-defense ability. The fury lasts for 5 rounds, after which the
-bandersnatch cannot enter a fury again for another 5 rounds.
-A frumious bandersnatch has fire resistance 30.
-Lesser Bandersnatch (-4 CR): Smaller or younger
-bandersnatches are still fearsome predators in their
-own right. A lesser bandersnatch is Huge, with 4 fewer
-Hit Dice than a typical bandersnatch. Reduce its physical
-ability scores by 4 each and its Wisdom and Charisma by
-2 each. A lesser bandersnatch lacks quick recovery and
-deals 1d8+4 points of damage with its quill defense and
-pain abilities. Lesser bandersnatches never have any
-additional variant powers.
-Magicbane Bandersnatch (+3 CR): These bandersnatches
-radiate an antimagic aura in a 20-foot radius. Should
-the aura be brought down, it returns automatically as a
-free action on the bandersnatch's next turn. Magicbane
-bandersnatches lack gaze and quick recovery.
-Primal Bandersnatch (+2 CR): Primal bandersnatches
-have kept their ties to the ancient world of the fey.
-They have the extraplanar subtype,
-SR equal to 11 plus their CR, 
-	DR:10/
-cold iron, and the advanced creature
-simple template.
-
+#Variant Bandersnatches	32
 
 Baregara	SOURCEPAGE:p.33
 	CR:12
@@ -628,8 +577,9 @@ Baregara	SOURCEPAGE:p.33
 	DR:10/good
 	SR:23
 	MOVE:Walk,30,Climb,40
-	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +23 (1d8+4), 2 Claws +23 (1d10+8 plus grab), Gore +18 (1d8+8)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,1d8
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d10
+	NATURALATTACKS:Gore,Natural.Melee.Weapon,*1,1d8
 	FACE:10
 	REACH:10
 	BONUS:STAT|STR|16
@@ -638,10 +588,8 @@ Bite +23 (1d8+4), 2 Claws +23 (1d10+8 plus grab), Gore +18 (1d8+8)
 	BONUS:STAT|INT|4
 	BONUS:STAT|WIS|6
 	BONUS:STAT|CHA|6
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Baregara
 	AUTO:LANG|Abyssal|Celestial|Common|Draconic
-
-
 
 Baykok	SOURCEPAGE:p.34
 	CR:9
@@ -651,17 +599,17 @@ Baykok	SOURCEPAGE:p.34
 	RACETYPE:Undead
 	VISION:Darkvision (60')
 	COMBAT|AC|7|TYPE=NaturalArmor
-	MONSTERCLASS::15d
+	MONSTERCLASS:Undead:15
 	MOVE:Walk,30,Fly,60
-	(good)
-2 Claws +14 (1d6+3)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d6
 	BONUS:STAT|STR|6
 	BONUS:STAT|DEX|12
 	BONUS:STAT|CON|0
 	BONUS:STAT|INT|0
 	BONUS:STAT|WIS|0
 	BONUS:STAT|CHA|4
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Baykok
 	AUTO:LANG|Common
 
 Tempest Behemoth	KEY:Behemoth (Tempest)	SORTKEY:Behemoth	SOURCEPAGE:p.36
@@ -670,18 +618,18 @@ Tempest Behemoth	KEY:Behemoth (Tempest)	SORTKEY:Behemoth	SOURCEPAGE:p.36
 	KIT:1|TN
 	SIZE:C
 	RACETYPE:Magical Beast
-	 (air, behemoth)
+	RACESUBTYPE:Air|Behemoth
 	VISION:Blindsense (60')|Darkvision (60')
 	BONUS:COMBAT|AC|32|TYPE=NaturalArmor
 	MONSTERCLASS::33
-regeneration 20
 	DR:15/epic
 	SR:33
 	MOVE:Walk,40,Fly,200
-	(good)
-Bite +41 (4d6+16/19-20 plus bleed), 2 talons (2d8+16
-plus bleed), wings +36 (8d8+8)
-Ranged 6 scales +31 (1d10+16/19-20 plus bleed)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,1d6
+	NATURALATTACKS:Talons,Natural.Melee.Weapon,*2,2d8
+	NATURALATTACKS:Wings,Natural.Melee.Weapon,*1,8d8
+	NATURALATTACKS:Scales,Natural.Ranged.Weapon,*6,1d10
 	FACE:30
 	REACH:30
 	BONUS:STAT|STR|32
@@ -690,27 +638,24 @@ Ranged 6 scales +31 (1d10+16/19-20 plus bleed)
 	BONUS:STAT|INT|-8
 	BONUS:STAT|WIS|6
 	BONUS:STAT|CHA|4
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Tempest Behemoth
 
 Thalassic Behemoth	KEY:Behemoth (Thalassic)	SORTKEY:Behemoth	SOURCEPAGE:p.37
 	CR:20
 	XP:307,200
 	KIT:1|TN
 	SIZE:C
-	
 	RACETYPE:Magical Beast
-	 (aquatic, behemoth, water)
+	RACESUBTYPE:Aquatic|Behemoth|Water
 	VISION:Blindsense (60')|Darkvision (60')
-
 	BONUS:COMBAT|AC|36|TYPE=NaturalArmor
 	MONSTERCLASS::29
-regeneration 20 (fire)
 	DR:15/epic
 	SR:31
 	MOVE:Walk,20,Swim,200
-Bite +39 (6d6+18/19-20 plus grab), 2 Claws +39 (3d6+18),
-tail slap +34 (4d6+9 plus trip)
-Ranged water jet +20 (4d8+18/19-20 plus stun and push)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,6d6
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,3d6|Tail Slap,Natural.Melee.Weapon,*1,4d6
+	NATURALATTACKS:Water Jet,Natural.Ranged.Weapon,*1,4d8
 	FACE:30
 	REACH:20
 	BONUS:STAT|STR|36
@@ -719,7 +664,7 @@ Ranged water jet +20 (4d8+18/19-20 plus stun and push)
 	BONUS:STAT|INT|-8
 	BONUS:STAT|WIS|6
 	BONUS:STAT|CHA|4
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Thalassic Behemoth
 	AUTO:LANG|Aklo (cannot speak)
 
 Thunder Behemoth	KEY:Behemoth (Thunder)	SORTKEY:Behemoth	SOURCEPAGE:p.38
@@ -732,13 +677,11 @@ Thunder Behemoth	KEY:Behemoth (Thunder)	SORTKEY:Behemoth	SOURCEPAGE:p.38
 	VISION:Blindsense (60')|Darkvision (60')|Tremorsense (60')
 	BONUS:COMBAT|AC|35|TYPE=NaturalArmor
 	MONSTERCLASS:Magical Beast:25
-	regeneration 20
 	DR:15/epic
 	SR:29
 	MOVE:Walk,30,Burrow,30
-Bite +33 (4d6+16 plus grab), Gore +33 (4d6+16), 2 stomps
-+28 (2d8+8 plus trip)
-Ranged 4 rocks +15 (3d6+24 plus stun)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,4d6
+	NATURALATTACKS:Gore,Natural.Melee.Weapon,*1,4d6|Stomps,Natural.Melee.Weapon,*2,2d8
 	FACE:30
 	REACH:20
 	BONUS:STAT|STR|32
@@ -747,7 +690,7 @@ Ranged 4 rocks +15 (3d6+24 plus stun)
 	BONUS:STAT|INT|-8
 	BONUS:STAT|WIS|4
 	BONUS:STAT|CHA|4
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Thunder Behemoth
 	AUTO:LANG|Aklo (cannot speak)
 
 Berbalang	SOURCEPAGE:p.39
@@ -762,18 +705,17 @@ Berbalang	SOURCEPAGE:p.39
 	MONSTERCLASS:Undead:8
 	DR:10/good or silver
 	MOVE:Walk,40,Fly,60
-	(good)
-1 Bite +10 (1d6+3 plus paralysis), 2 Claws +9 (1d6+3
-plus paralysis) or
-incorporeal touch +10 (1d4 Con damage)
-
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,1d6
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d6
+	NATURALATTACKS:Incorporeal Touch,Natural.Melee.Weapon,*1,1d4
 	BONUS:STAT|STR|6
 	BONUS:STAT|DEX|8
 	BONUS:STAT|CON|0
 	BONUS:STAT|INT|2
 	BONUS:STAT|WIS|6
 	BONUS:STAT|CHA|8
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Berbalang
 	AUTO:LANG|Common
 
 Bhuta	SOURCEPAGE:p.40
@@ -787,13 +729,13 @@ Bhuta	SOURCEPAGE:p.40
 	BONUS:COMBAT|AC|1|TYPE=Dodge
 	MONSTERCLASS:Undead:14
 	MOVE:Fly,30
-	(perfect)
-2 incorporeal Claws +17 (5d8 plus bleed)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
+	NATURALATTACKS:Incorporeal Claws,Natural.Melee.Weapon,*2,5d8
 	BONUS:STAT|DEX|14
 	BONUS:STAT|INT|0
 	BONUS:STAT|WIS|-2
 	BONUS:STAT|CHA|12
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Bhuta
 	AUTO:LANG|Common
 
 Bogeyman	SOURCEPAGE:p.41
@@ -801,23 +743,21 @@ Bogeyman	SOURCEPAGE:p.41
 	XP:9,600
 	KIT:1|NE
 	SIZE:M
-	fey
+	RACETYPE:Fey
 	VISION:Low-Light Vision
-		BONUS:COMBAT|AC|
-23, touch 23, flat-footed 17 (+7 deflection, +5 Dex, +1 dodge)
-	MONSTERCLASS::17
-terrible rejuvenation 5
+	BONUS:COMBAT|AC|7|TYPE=Deflection
+	MONSTERCLASS:Fey:17
 	DR:15/cold iron
 	SR:21
 	MOVE:Walk,30
-2 Claws +13 (1d8+8/19-20)
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d8
 	BONUS:STAT|STR|2
 	BONUS:STAT|DEX|10
 	BONUS:STAT|CON|4
 	BONUS:STAT|INT|4
 	BONUS:STAT|WIS|6
 	BONUS:STAT|CHA|14
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Bogeyman
 	AUTO:LANG|Aklo|Common
 
 Brain Ooze	SOURCEPAGE:p.42
@@ -826,13 +766,13 @@ Brain Ooze	SOURCEPAGE:p.42
 	KIT:1|NE
 	SIZE:T
 	RACETYPE:Ooze
-	VISION:blindsight (60')
-		BONUS:COMBAT|AC|
-23, touch 19, flatfooted 18 (+4 armor, +4 Dex, +1 dodge, +2 insight, +2 size)
-	MONSTERCLASS::10
+	VISION:Blindsight (60')
+	BONUS:COMBAT|AC|4|TYPE=Armor
+	BONUS:COMBAT|AC|2|TYPE=Insight
+	MONSTERCLASS:Ooze:10
 	MOVE:Walk,5,Fly,60
-	(good)
-2 tentacles +13 touch (1d6 electricity plus neural pulse)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
+	NATURALATTACKS:Tentacles Touch,Natural.Melee.Weapon,*2,1d6
 	FACE:2.5
 	REACH:0
 	BONUS:STAT|STR|-6
@@ -841,7 +781,7 @@ Brain Ooze	SOURCEPAGE:p.42
 	BONUS:STAT|INT|4
 	BONUS:STAT|WIS|2
 	BONUS:STAT|CHA|8
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Brain Ooze
 	AUTO:LANG|Aklo (cannot speak)
 
 Carbuncle	SOURCEPAGE:p.43
@@ -1974,7 +1914,7 @@ Demilich	SOURCEPAGE:p.65
 	MONSTERCLASS:Undead:15
 	DR:20/-
 	MOVE:Fly,30
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	FACE:2.5
 	REACH:0
 	BONUS:STAT|STR|-4
@@ -2122,7 +2062,7 @@ Fort +15, Ref +11, Will +12
 DR:10/good and magic
 	SR:24
 	MOVE:Walk,40,Fly,40
-	(average)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|e
 	Bite +22 (1d8+4)
 	BONUS:STAT|STR|18
 	BONUS:STAT|DEX|10
@@ -2147,7 +2087,7 @@ Coloxus	KEY:Demon (Coloxus)	SORTKEY:Demon	SOURCEPAGE:p.71
 	DR:10/good
 	SR:23
 	MOVE:Walk,30,Fly,60
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 	Bite +25 (1d6+4 plus siphon), 2 Slams +25 (1d4+4)
 	BONUS:STAT|STR|8
 	BONUS:STAT|DEX|18
@@ -2703,7 +2643,7 @@ OFFENSE
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
 Bite +32 (2d8+12 plus grab/19-20), 2 Claws +32 (2d6+12),
-tail slap +30 (2d10+6)
+Tail Slap +30 (2d10+6)
 	FACE:20
 	REACH:20 ft. (25 ft. with tail)
 
@@ -3298,11 +3238,11 @@ OFFENSE
 	MOVE:Walk,30,Burrow,20,Fly,60 ft. (average)
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +15 (2d6+9/19-20 plus 1d10 electricity), tail slap +9
+Bite +15 (2d6+9/19-20 plus 1d10 electricity), Tail Slap +9
 (1d8+3 plus push)
 	FACE:10
 	REACH:10
-	Special Attacks:dazzling emergence, push (tail slap, 10 ft.),
+	Special Attacks:dazzling emergence, push (Tail Slap, 10 ft.),
 sandstorm breath, savage Bite
 STATISTICS
 	BONUS:STAT|STR|0
@@ -3351,7 +3291,7 @@ OFFENSE
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
 Bite +18 (2d8+10/19-20 plus
-bleed), tail slap +12 (1d10+3
+bleed), Tail Slap +12 (1d10+3
 plus trip)
 	FACE:10
 	REACH:10
@@ -3400,7 +3340,7 @@ Resist acid 20
 OFFENSE
 	MOVE:Walk,20,Fly,60 ft. (average), swim 30
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +7 (2d4+3), tail slap +2 (1d4+1)
+Bite +7 (2d4+3), Tail Slap +2 (1d4+1)
 
 	Special Attacks:caustic mucus, pounce
 STATISTICS
@@ -3591,7 +3531,7 @@ Skills Bluff +13, Climb +11, Fly +16, Knowledge (planes) +6,
 Perception +13, Sense Motive +8, Stealth +12
 	AUTO:LANG|Common
 SQ evolution points (Bite, climb, energy attacks, flight [2], Gore,
-improved natural armor [2], reach [Bite], Slam, tail, tail slap)
+improved natural armor [2], reach [Bite], Slam, tail, Tail Slap)
 ECOLOGY
 Environment any
 Organization solitary
@@ -3666,7 +3606,7 @@ Fort (bad), Ref (good), Will (good)
 Ability Scores Str 12,
 Dex 16, Con 13, Int 7, Wis 10, Cha 11
 Starting Evolutions
-Bite, climb, reach (Bite), tail, tail slap.
+Bite, climb, reach (Bite), tail, Tail Slap.
 An unfettered eidolon begins with 1 Hit Die, a +2
 natural armor bonus, and the evasion ability. As an
 unfettered eidolon's Hit Dice increase (see Evolution
@@ -3771,7 +3711,7 @@ by 20 feet.
 Tail (Ex, 1 EP): Grows a long, powerful tail, gaining a
 +2 racial bonus on Acrobatics checks made to balance on
 a surface.
-Tail Slap (Ex, 1 EP): Gains a tail slap attack (1d6 damage).
+Tail Slap (Ex, 1 EP): Gains a Tail Slap attack (1d6 damage).
 The eidolon must have a tail to take this evolution.
 Weapon Training (Ex, 2 or 4 EP): Gains Simple Weapon
 Proficiency as a bonus feat. For 2 additional EP, it gains
@@ -6591,7 +6531,7 @@ vermin (extraplanar, swarm)
 Immune swarm traits, weapon damage
 Resist fire 10
 	MOVE:Walk,5,Fly,40
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
 swarm (3d6 plus distraction and poison)
@@ -6697,7 +6637,7 @@ OFFENSE
 	MOVE:Walk,30,Burrow,15 ft.
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +11 (1d8+4), 2 Claws +11 (1d6+4), tail slap +11 (1d4+4)
+Bite +11 (1d8+4), 2 Claws +11 (1d6+4), Tail Slap +11 (1d4+4)
 	FACE:10
 	REACH:10
 
@@ -6806,7 +6746,7 @@ Hungry Fog	SOURCEPAGE:p.151
 	MONSTERCLASS:Ooze:7
 	DR:10/magic
 	MOVE:Fly,15
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	NATURALATTACKS:Touch,Weapon.Melee.Natural,*1,6d6
 	FACE:15
 	REACH:15
@@ -7450,7 +7390,7 @@ scent
 Resist cold 10, electricity 30, fire 10
 	SR:18
 	MOVE:Walk,60,Fly,120
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
 Gore +14 (1d8+5), 2 hooves +8 (1d6+2)
@@ -7512,7 +7452,7 @@ cold 10, electricity 10, fire 10
 	MOVE:Walk,40,Fly,160 ft. (average)
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +28 (2d6+2), 2 Claws +28 (1d8+12), tail slap +26
+Bite +28 (2d6+2), 2 Claws +28 (1d8+12), Tail Slap +26
 (2d6+6), 2 wings +26 (1d8+6)
 	FACE:15
 	REACH:15
@@ -7558,7 +7498,7 @@ silver weapons)
 	DR:5/good or silver
 Immune cold
 	MOVE:Walk,20,Fly,50
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
 Gore +4 (1d4-1 plus bleed)
@@ -8066,7 +8006,7 @@ Immune curse effects, electricity, mind-affecting
 effects, paralysis, poison, sleep
 	SR:30
 	MOVE:Walk,40,Fly,100,Swim,60
-	(average)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|e
 Bite +29 (3d8+16/19-20 plus poison), 2 Claws +29
 (2d6+16), tail +24 (3d6+8 plus grab)
 	FACE:30
@@ -8312,7 +8252,7 @@ Manananggal	SOURCEPAGE:p.189
 Immune undead traits
 Weaknesses light sensitivity, vulnerable to light blades
 	MOVE:Walk,30,Fly,100
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 Bite +11 (1d8+4), 2 Claws +12 (1d8+4 plus grab)
 
 	Special Attacks:blood drain (1d2 Constitution)
@@ -8451,7 +8391,7 @@ Basilosaurus	KEY:Megafauna (Basilosaurus)	SORTKEY:Megafauna	SOURCEPAGE:p.192
 161 (17d8+85)
 	MOVE:Swim,40
 
-Bite +23 (4d6+15/19-20 plus grab), tail slap +18 (2d8+7)
+Bite +23 (4d6+15/19-20 plus grab), Tail Slap +18 (2d8+7)
 	FACE:20
 	REACH:20
 	BONUS:STAT|STR|30
@@ -8983,7 +8923,7 @@ OFFENSE
 	MOVE:Walk,30,Swim,50 ft.
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +10 (2d6+5 plus poison), tail slap +5 (1d8+2)
+Bite +10 (2d6+5 plus poison), Tail Slap +5 (1d8+2)
 	FACE:10
 	REACH:5
 Spells Known (CL 7th
@@ -11398,7 +11338,7 @@ OFFENSE
 	MOVE:Walk,30 ft.
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-tail slap +2 (1d3)
+Tail Slap +2 (1d3)
 STATISTICS
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|0
@@ -11466,7 +11406,7 @@ OFFENSE
 	MOVE:Walk,40 ft.
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-tail slap +5 (2d6+3)
+Tail Slap +5 (2d6+3)
 STATISTICS
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|0
@@ -13370,7 +13310,7 @@ OFFENSE
 surge 400 ft.
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +33 (6d10+14/19-20 plus grab), tail slap +33
+Bite +33 (6d10+14/19-20 plus grab), Tail Slap +33
 (6d8+14/19-20 plus grab)
 	FACE:20
 	REACH:20 ft.
@@ -13391,7 +13331,7 @@ Base Atk +23
 CMB +41 (+45 grapple)
 CMD 57 (can't be tripped)
 Feats Critical Focus, Dodge, Improved Critical (Bite), Improved
-Critical (tail slap), Improved Initiative, Improved Iron Will,
+Critical (Tail Slap), Improved Initiative, Improved Iron Will,
 Improved Vital Strike, Iron Will, Lightning Reflexes, Power
 Attack, Skill Focus (Perception), Vital Strike
 Skills Perception +23, Stealth +8, Swim +22
@@ -13408,9 +13348,9 @@ circumstance bonus on its Stealth check. In addition, except
 when in combat, a sea serpent is considered to be under
 the effects of a nondetection spell. Both of these effects
 function at caster level 20th and cannot be dispelled.
-Powerful Tail (Ex) A deep sea serpent's tail slap is always a
+Powerful Tail (Ex) A deep sea serpent's Tail Slap is always a
 primary attack. When a deep sea serpent deals damage to
-an object with its tail slap or via constrict damage, it ignores
+an object with its Tail Slap or via constrict damage, it ignores
 the first 10 points of hardness that object possesses.
 Surge (Ex) A deep sea serpent can surge forward as a fullround
 action at a speed of 400 feet. It must move in a
@@ -13469,7 +13409,7 @@ OFFENSE
 	MOVE:Walk,50 ft.
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
-Bite +10 (1d8+6 plus trip), tail slap +5 (1d6+3)
+Bite +10 (1d8+6 plus trip), Tail Slap +5 (1d6+3)
 
 	Special Attacks:bay
 STATISTICS
@@ -13881,7 +13821,7 @@ OFFENSE
 
 	NATURALATTACKS:,Natural.Melee.Weapon,*,
 Bite +32 (2d8+12 plus 2d6 fire), 2 Claws +32 (2d8+12 plus
-2d6 fire), tail slap +30 (1d4+6 plus banishing swipe)
+2d6 fire), Tail Slap +30 (1d4+6 plus banishing swipe)
 Ranged glaring ray +23 (20d6 fire)
 	FACE:20
 	REACH:20 ft.
@@ -13996,13 +13936,13 @@ OFFENSE
 Bite +18
 (1d6+9/19-20 plus
 grab), 2 Claws +18
-(1d6+9), tail slap
+(1d6+9), Tail Slap
 +14 (1d6+4 plus
 stunning shock)
 	FACE:5 ft.
 Reach
 5 ft. (10 ft. with
-tail slap)
+Tail Slap)
 Special Attacks
 constrict
 (2d6+4),
@@ -14022,7 +13962,7 @@ Base Atk +9
 CMB +18 (+24 grapple)
 CMD 34
 Feats Alertness, Dodge, Improved Critical (Bite), Improved
-Grapple, Power Attack, Stealthy, Weapon Focus (tail slap)
+Grapple, Power Attack, Stealthy, Weapon Focus (Tail Slap)
 Skills Disable Device +16, Escape Artist +7, Intimidate +9,
 Knowledge (geography) +10, Perception +22, Sense Motive +4,
 Stealth +25, Survival +16, Swim +25
@@ -14666,7 +14606,7 @@ Sprite	SOURCEPAGE:p.255
 	MONSTERCLASS:Fey:1
 	DR:2/cold iron
 	MOVE:Walk,15,Fly,60
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	FACE:1
 	REACH:0
 	BONUS:STAT|STR|-8
@@ -14825,7 +14765,7 @@ Thriae Queen	SOURCEPAGE:p.263
 	BONUS:VAR|FastHealingRate|10
 	SR:29
 	MOVE:Walk,30,Fly,50
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 	NATURALATTACKS:Sting,Natural.Melee.Weapon,*1,2d8
 	FACE:15
 	REACH:15
@@ -14849,7 +14789,7 @@ Thriae Seer	SOURCEPAGE:p.265
 	MONSTERCLASS:Monstrous Humanoid:14
 	SR:22
 	MOVE:Walk,30,Fly,60
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 	NATURALATTACKS:Sting,Natural.Melee.Weapon,*,1d8
 	BONUS:STAT|STR|4
 	BONUS:STAT|DEX|10
@@ -14870,7 +14810,7 @@ Thriae Soldier	SOURCEPAGE:p.266
 	BONUS:COMBAT|AC|4|TYPE=Armor
 	MONSTERCLASS:Monstrous Humanoid:5
 	MOVE:Walk,30,Fly,60
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 	NATURALATTACKS:Sting,Natural.Melee.Weapon,*1,1d8
 	BONUS:STAT|STR|10
 	BONUS:STAT|DEX|6
@@ -15059,7 +14999,7 @@ Tzitzimitl	SOURCEPAGE:p.275
 	BONUS:VAR|FireResistanceBonus|15
 	SR:30
 	MOVE:Walk,50,Fly,60
-	(good)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|4
 Bite +26 (2d8+14 plus 3d6 electricity and
 energy drain), 2 Claws +27 (2d6+14/19-20 plus
 3d6 electricity)
@@ -15091,7 +15031,7 @@ Valkyrie	SOURCEPAGE:p.276
 	DR:10/cold iron and lawful
 	SR:23
 	MOVE:Walk,30,Fly,100
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	BONUS:STAT|STR|8
 	BONUS:STAT|DEX|6
 	BONUS:STAT|CON|10
@@ -15207,7 +15147,7 @@ Vulture	SOURCEPAGE:p.283
 	BONUS:COMBAT|1|TYPE=NaturalArmor
 	MONSTERCLASS:Animal:1
 	MOVE:Walk,10,Fly,50
-	(average)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|e
 	NATURALATTACKS:Bite,Melee.Natural.Weapon,*1,1d6
 	BONUS:STAT|STR|2
 	BONUS:STAT|DEX|2
@@ -15227,7 +15167,7 @@ Giant Vulture	KEY:Vulture (Giant)	SORTKEY:Vulture	SOURCEPAGE:p.283
 	BONUS:COMBAT|AC|6|TYPE=NaturalArmor
 	MONSTERCLASS:Animal:5
 	MOVE:Walk,10,Fly,50
-	(average)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|e
 	NATURALATTACKS:Bite,Melee.Weapon.Natural,*1,2d6
 	FACE:10
 	REACH:5
@@ -15297,7 +15237,7 @@ Yuki-Onna	SOURCEPAGE:p.286
 	VISION:Darkvision (60')
 	MONSTERCLASS:Undead:9
 	MOVE:Fly,30
-	(perfect)
+	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
 	NATURALATTACKS:Touches,Melee.Natural.Weapon,*2,4d6
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|8
