@@ -1,0 +1,18 @@
+# CVS $Revision: $ $Author: $ -- Thu Jul  7 12:04:01 2011 -- reformated by prettylst.pl v1.39 (build 11455)
+SOURCELONG:Advanced Race Guide	SOURCESHORT:ARG
+# Original Entry by: Scott Meyer
+
+# NB: var(" * ") syntax is necessary for the SKILL.*.MISC uses here as * contains spaces
+
+###Block: Conditional skills (for output only)
+# Skill Name					Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
+
+
+###Block: Skill .MODs
+# Skill Name				Bonus to skill																						Bonus to skill rank
+Sense Motive.MOD			BONUS:SKILL|Sense Motive (Sense Enchantment)|var("SKILL.Sense Motive.MISC")							BONUS:SKILLRANK|Sense Motive (Sense Enchantment)|skillinfo("TOTALRANK","Sense Motive")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Sense Motive (Sense Enchantment).MISC"),var("SKILL.Sense Motive.MISC")
+Spellcraft.MOD				BONUS:SKILL|Spellcraft (Identify Enchantment)|var("SKILL.Spellcraft.MISC")							BONUS:SKILLRANK|Spellcraft (Identify Enchantment)|skillinfo("TOTALRANK","Spellcraft")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Spellcraft (Identify Enchantment).MISC"),var("SKILL.Spellcraft.MISC")
+Spellcraft.MOD				BONUS:SKILL|Spellcraft (Identify Curse or Emotion)|var("SKILL.Spellcraft.MISC")							BONUS:SKILLRANK|Spellcraft (Identify Curse or Emotion)|skillinfo("TOTALRANK","Spellcraft")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Spellcraft (Identify Curse or Emotion).MISC"),var("SKILL.Spellcraft.MISC")
+Stealth.MOD					BONUS:SKILL|Stealth (Load Crossbow)|var("SKILL.Spellcraft.MISC")									BONUS:SKILLRANK|Stealth (Load Crossbow)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (Load Crossbow).MISC"),var("SKILL.Stealth.MISC")
+Stealth.MOD					BONUS:SKILL|Stealth (Poison Ammo)|var("SKILL.Spellcraft.MISC")									BONUS:SKILLRANK|Stealth (Poison Ammo)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (Poison Ammo).MISC"),var("SKILL.Stealth.MISC")
+Stealth.MOD					BONUS:SKILL|Stealth (Sniping)|var("SKILL.Spellcraft.MISC")									BONUS:SKILLRANK|Stealth (Sniping)|skillinfo("TOTALRANK","Stealth")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Stealth (Sniping).MISC"),var("SKILL.Stealth.MISC")
