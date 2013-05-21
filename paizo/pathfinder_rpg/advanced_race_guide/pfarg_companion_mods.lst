@@ -1,0 +1,62 @@
+# CVS $Revision: 20122 $ $Author: zaister $ -- Wed Mar 20 16:10:53 2013 -- reformated by prettylst.pl v1.39 (build 15052)
+SOURCELONG:Advanced Race Guide	SOURCESHORT:ARG	SOURCEWEB:http://paizo.com/products/btpy8rv2?Pathfinder-Roleplaying-Game-Advanced-Race-Guide	SOURCEDATE:2012-06
+# Original Entry by: Scott Meyer
+
+###Block: Favored Class Fell Rider Mount HP Bonus
+# Class of the Master			Type					Define						Bonus to HP												Modify VAR
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount	DEFINE:FellRiderMountHP|0	BONUS:HP|CURRENTMAX|var("FellRiderMountGrantedHP")
+
+FOLLOWER:FellRiderMountHP=1	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=2	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=3	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=4	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=5	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=6	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=7	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=8	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=9	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=10	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=11	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=12	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=13	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=14	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=15	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=16	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=17	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=18	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=19	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+FOLLOWER:FellRiderMountHP=20	TYPE:Fell Rider Mount															BONUS:VAR|FellRiderMountGrantedHP|1
+
+###Block:Companion for Cavalier
+# Class of the Master		Type				Hit Dice	Ability													Automatically Gained Feat		Required Race			Define												Bonus to Ability Pool					Combat bonus					Bonus to HP							Stat bonus			Modify VAR							Main Race Type
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Special Ability|AUTOMATIC|Animal Tricks and Training|Bonus Tricks|Link												DEFINE:MasterLevel|0	DEFINE:BonusTricks|0	DEFINE:FellRiderMountHP|0										BONUS:HP|CURRENTMAX|var("FellRiderMountHP")		BONUS:STAT|STR|2	BONUS:STAT|DEX|-2			BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1	RACETYPE:Animal
+FOLLOWER:FellRiderMountLVL=2	TYPE:Fell Rider Mount	HD:1																																																																			BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=3	TYPE:Fell Rider Mount			ABILITY:Special Ability|AUTOMATIC|Evasion																																								BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK									BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:FellRiderMountLVL=4	TYPE:Fell Rider Mount	HD:1																																								BONUS:ABILITYPOOL|Companion Stat Increase|1		BONUS:WEAPONPROF=Hoof|DAMAGE|2	BONUS:WEAPONPROF=Trample|DAMAGE|2																		BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=5	TYPE:Fell Rider Mount	HD:1																																																																			BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=6	TYPE:Fell Rider Mount	HD:1		ABILITY:Special Ability|AUTOMATIC|Devotion																																							BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK									BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:FellRiderMountLVL=7	TYPE:Fell Rider Mount																																																																				BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=8	TYPE:Fell Rider Mount	HD:1																																																																			BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=9	TYPE:Fell Rider Mount	HD:1																AUTO:FEAT|Multiattack																					BONUS:ABILITYPOOL|Companion Stat Increase|1	BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK									BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:FellRiderMountLVL=10	TYPE:Fell Rider Mount	HD:1																																																																			BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=11	TYPE:Fell Rider Mount																																																																				BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=12	TYPE:Fell Rider Mount	HD:1																																																BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK									BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:FellRiderMountLVL=13	TYPE:Fell Rider Mount	HD:1																																																																			BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=14	TYPE:Fell Rider Mount	HD:1																																								BONUS:ABILITYPOOL|Companion Stat Increase|1																				BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=15	TYPE:Fell Rider Mount																																																	BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK									BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:FellRiderMountLVL=16	TYPE:Fell Rider Mount	HD:1		ABILITY:Special Ability|AUTOMATIC|Improved Evasion																																																									BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=17	TYPE:Fell Rider Mount	HD:1																																																																			BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=18	TYPE:Fell Rider Mount	HD:1																																																BONUS:COMBAT|AC|2|TYPE=NaturalArmor.STACK									BONUS:STAT|STR,DEX|1	BONUS:VAR|MasterLevel|1	BONUS:VAR|BonusTricks|1
+FOLLOWER:FellRiderMountLVL=19	TYPE:Fell Rider Mount																																																																				BONUS:VAR|MasterLevel|1
+FOLLOWER:FellRiderMountLVL=20	TYPE:Fell Rider Mount	HD:1																																								BONUS:ABILITYPOOL|Companion Stat Increase|1																				BONUS:VAR|MasterLevel|1
+#
+
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Animal Trick|NORMAL|Animal Training ~ Combat Riding					AUTO:FEAT|Armor Proficiency (Light)	PRERACE:1,Companion (Camel)
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Animal Trick|NORMAL|Animal Training ~ Combat Riding					AUTO:FEAT|Armor Proficiency (Light)	PRERACE:1,Companion (Horse)
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Animal Trick|NORMAL|Animal Training ~ Combat Riding					AUTO:FEAT|Armor Proficiency (Light)	PRERACE:1,Companion (Pony)
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Animal Trick|NORMAL|Animal Training ~ Combat Riding					AUTO:FEAT|Armor Proficiency (Light)	PRERACE:1,Companion (Wolf)
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Animal Trick|NORMAL|Animal Training ~ Combat Riding					AUTO:FEAT|Armor Proficiency (Light)	PRERACE:1,Companion (Boar)
+FOLLOWER:FellRiderMountLVL=1	TYPE:Fell Rider Mount			ABILITY:Animal Trick|NORMAL|Animal Training ~ Combat Riding					AUTO:FEAT|Armor Proficiency (Light)	PRERACE:1,Companion (Dog)
+
+#The mount is always considered combat trained and begins play with Light Armor Proficiency as a bonus feat
+#
