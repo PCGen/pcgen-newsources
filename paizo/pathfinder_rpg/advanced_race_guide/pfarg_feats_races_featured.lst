@@ -35,14 +35,47 @@ Angelic Blood
 	BENEFIT:You gain a +2 bonus on saving throws against effects with the evil descriptor and on Constitution checks to stabilize when you are reduced to negative hit points (but not dead). Furthermore, each time you take bleed or blood drain damage, each undead creature or creature with the evil subtype that is currently adjacent to you also takes 1 point of damage.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Angelic Flesh
-	TYPE:General
+Angelic Flesh (Brazen)
+	TYPE:General.AngelicFlesh
 	PRERACE:1,Aasimar
 	PREFEAT:1,Angelic Blood
+	!PREFEAT:1,Angelic Flesh (Golden),Angelic Flesh (Silver),Angelic Flesh (Steel)
+	BONUS:SKILL|Disguise,Stealth|-2
 	DESC:Your skin shines like burnished metal.
 	SOURCEPAGE:p.88
-	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain one of the following benefits, depending on the metallic affinity of your flesh (choose one). &nl; [Brazen] You gain fire resistance 5 and a +2 bonus on saves against fire effects. &nl; [Golden] You gain a +2 bonus on saves against blindness, dazzling, patterns, and effects with the light descriptor. When you cast spells or use spell-like abilities that are from the illusion (pattern) subschool or have the light descriptor, you do so at +1 caster level. &nl; [Silver] You gain a +2 bonus on saves against paralysis, petrification, and poison, and your unarmed strikes or natural weapons count as silver for the purpose of overcoming damage reduction. &nl; [Steel] You gain a +1 natural armor bonus to AC, and your unarmed strikes or natural weapons count as cold iron for the purpose of overcoming damage reduction.
-
+	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain fire resistance 5 and a +2 bonus on saves against fire effects.
+	
+Angelic Flesh (Golden)
+	TYPE:General.AngelicFlesh
+	PRERACE:1,Aasimar
+	PREFEAT:1,Angelic Blood
+	!PREFEAT:1,Angelic Flesh (Brazen),Angelic Flesh (Silver),Angelic Flesh (Steel)
+	BONUS:SKILL|Disguise,Stealth|-2
+	DESC:Your skin shines like burnished metal.
+	SOURCEPAGE:p.88
+	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain a +2 bonus on saves against blindness, dazzling, patterns, and effects with the light descriptor. When you cast spells or use spell-like abilities that are from the illusion (pattern) subschool or have the light descriptor, you do so at +1 caster level.
+	
+Angelic Flesh (Silver)
+	TYPE:General.AngelicFlesh
+	PRERACE:1,Aasimar
+	PREFEAT:1,Angelic Blood
+	!PREFEAT:1,Angelic Flesh (Golden),Angelic Flesh (Brazen),Angelic Flesh (Steel)
+	BONUS:SKILL|Disguise,Stealth|-2
+	DESC:Your skin shines like burnished metal.
+	SOURCEPAGE:p.88
+	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain a +2 bonus on saves against paralysis, petrification, and poison, and your unarmed strikes or natural weapons count as silver for the purpose of overcoming damage reduction.
+	
+Angelic Flesh (Steel)
+	TYPE:General.AngelicFlesh
+	PRERACE:1,Aasimar
+	PREFEAT:1,Angelic Blood
+	!PREFEAT:1,Angelic Flesh (Golden),Angelic Flesh (Silver),Angelic Flesh (Brazen)
+	BONUS:SKILL|Disguise,Stealth|-2
+	BONUS:COMBAT|AC|1|TYPE=NaturalArmor
+	DESC:Your skin shines like burnished metal.
+	SOURCEPAGE:p.88
+	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain a +1 natural armor bonus to AC, and your unarmed strikes or natural weapons count as cold iron for the purpose of overcoming damage reduction.	
+	
 Celestial Servant
 	TYPE:General
 	PRERACE:1,Aasimar
@@ -91,7 +124,8 @@ Metallic Wings
 	TYPE:General
 	PRERACE:1,Aasimar
 	PRELEVEL:MIN=11
-	PREFEAT:3,Angel Wings,Angelic Blood,Angelic Flesh
+	PREFEAT:3,Angel Wings,Angelic Blood,TYPE.AngelicFlesh
+	NATURALATTACKS:Wings,Weapon.Natural.Melee.Slashing.Finessable,*2,1d4
 	DESC:Your wing feathers are made of gleaming metal.
 	BENEFIT:You gain two wing attacks. These are secondary natural attacks that deal 1d4 points of slashing damage (or 1d3 if you are Small).
 
@@ -137,8 +171,9 @@ Nimble Striker
 	PREABILITY:1,CATEGORY=Special Ability,Sprinter
 	PRESTAT:1,DEX=13
 	DESC:You were born to charge your enemies and nobody does it better.
-	BENEFIT:You do not take a �2 penalty to AC when you use the Cleave feat, Lunge feat, or when you charge.
+	BENEFIT:You do not take a -2 penalty to AC when you use the Cleave feat, Lunge feat, or when you charge.
 
+##Block: Dhampir Feats
 Blood Drinker
 	TYPE:General
 	PRERACE:1,Dhampir
