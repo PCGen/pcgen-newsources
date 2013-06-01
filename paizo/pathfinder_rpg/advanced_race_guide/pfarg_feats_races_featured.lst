@@ -638,12 +638,15 @@ Trap Wrecker
 Dwarf Blooded
 	TYPE:General
 	PRERACE:1,Oread
+	ABILITY:Special Ability|Steady ~ Dwarf,Stonecunning ~ Dwarf
 	DESC:You have dwarven blood coursing through your veins.
+	SOURCEPAGE:p.147
 	BENEFIT:Your dwarven heritage manifests in two ways. First, your speed is never modified by armor or encumbrance, as the dwarf slow and steady racial trait. Second, you gain the stonecunning dwarf racial trait.
 
 Echoes of Stone
 	TYPE:General
 	PRERACE:1,Oread
+	BONUS:SKILL|Perception (Underground),Survival (Avoid Becoming Lost in Caverns and Rocky Areas)|4
 	DESC:Your senses are keener among the rocks and stones.
 	BENEFIT:You gain a +4 racial bonus on Perception checks underground, and on Survival checks to avoid becoming lost in caverns and rocky areas.
 
@@ -652,7 +655,9 @@ Murmurs of Earth
 	PRELEVEL:MIN=9
 	PRERACE:1,Oread
 	PREFEAT:1,Echoes of Stone
+	VISION:Tremorsense (15')
 	DESC:The earth opens up her secrets to your perceptions.
+	SOURCEPAGE:p.147
 	BENEFIT:You gain a limited form of tremorsense. As a move action, you become aware of all creatures within 15 feet that are in contact with the ground at that moment.
 
 Oread Burrower
@@ -660,7 +665,9 @@ Oread Burrower
 	PRELEVEL:MIN=9
 	PRERACE:1,Oread
 	PREFEAT:1,Stony Step
+	MOVECLONE:Walk,Burrow,/2
 	DESC:The ground parts for you at the slightest touch, allowing you to dig with great speed.
+	SOURCEPAGE:p.147
 	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
 
 Oread Earth Glider
@@ -669,25 +676,33 @@ Oread Earth Glider
 	PRERACE:1,Oread
 	PREFEAT:2,Oread Burrower,Stony Step
 	DESC:The earth welcomes you, showing you the secret paths through sand and soil.
+	SOURCEPAGE:p.147
 	BENEFIT:You gain the earth glide universal monster ability and can use it to travel at your full base speed through sand, dirt, clay, gravel, or similar materials. If protected against fire damage, you can even burrow through lava. You can burrow through solid stone at 1/2 your base speed.
 
 Stony Step
 	TYPE:General
 	PRERACE:1,Oread
 	DESC:The earth recognizes its kinship with you and does not impede your movement.
+	SOURCEPAGE:p.147
 	BENEFIT:Whenever you move, you may move through 5 feet of earth- or stone-based difficult terrain (rubble, stone stairs, and so on) each round as if it were normal terrain. The effects of this feat stack with similar feats such as Acrobatic Steps and Nimble Moves. This feat allows you to take a 5-foot step into this kind of difficult terrain.
 
+###Block: Ratfolk Feats	
+	
 Burrowing Teeth
 	TYPE:General
 	PRERACE:1,Ratfolk
 	PREFEAT:2,Sharpclaw,Tunnel Rat
+	MOVECLONE:Walk,Burrow,/2
 	DESC:You have teeth and claws that suit you well to digging.
+	SOURCEPAGE:p.154
 	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
 
 Sharpclaw 
 	TYPE:Combat
 	PRERACE:1,Ratfolk
+	NATURALATTACKS:Claw,Weapon.Natural.Melee.Slashing.Finessable,*2,1d4
 	DESC:Your nails are large and strong.
+	SOURCEPAGE:p.154
 	BENEFIT:You gain two claw attacks. These are primary natural attacks that deal 1d4 points of damage.
 
 Tunnel Rat
@@ -695,18 +710,23 @@ Tunnel Rat
 	PRERACE:1,Ratfolk
 	PREABILITY:1,CATEGORY=Special Ability,Swarming
 	DESC:You are a master of fighting in confined spaces.
+	SOURCEPAGE:p.154
 	BENEFIT:You count as one size smaller than normal for the purpose of squeezing.
 
+###Block: Sylph Feats
+	
 Airy Step
 	TYPE:General
 	PRERACE:1,Sylph
 	DESC:The air responds to your innate elemental nature, protecting you from harm and cushioning your falls.
+	SOURCEPAGE:p.159
 	BENEFIT:You gain a +2 bonus on saving throws against effects with the air or electricity descriptors and effects that deal electricity damage. You may ignore the first 30 feet of any fall when determining falling damage.
 
 Cloud Gazer
 	TYPE:General
 	PRERACE:1,Sylph
 	DESC:Your insight into your elemental heritage gives you a clarity of sight few humans possess.
+	SOURCEPAGE:p.159
 	BENEFIT:You can see through fog, mist, and clouds, without penalty, ignoring any cover or concealment bonuses from such effects. If the effect is created by magic, this feat instead triples the distance you can see without penalty.
 
 Inner Breath
@@ -714,6 +734,7 @@ Inner Breath
 	PRELEVEL:MIN=11
 	PRERACE:1,Sylph
 	DESC:Your body is suffused with elemental air that provides for all your respiratory needs.
+	SOURCEPAGE:p.159
 	BENEFIT:You no longer need to breathe. You are immune to effects that require breathing (such as inhaled poison). This does not give you immunity to cloud or gas attacks that do not require breathing, such as cloudkill.
 
 Wings of Air
@@ -721,53 +742,68 @@ Wings of Air
 	PRELEVEL:MIN=9
 	PRERACE:1,Sylph
 	PREFEAT:1,Airy Step
+	MOVECLONE:Walk,Fly
 	DESC:The winds lift you, carrying you where you want to go.
+	SOURCEPAGE:p.159
 	BENEFIT:Your bonus on saves against effects with the air or electricity descriptors and effects that deal electricity damage increases to +4. In addition, you gain a supernatural fly speed equal to your base speed (good maneuverability). You may only fly with this ability when wearing light armor or no armor.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+###Block: Tengu Feats
+	
 Blood Beak 
 	TYPE:Combat
 	PREATT:5
 	PRERACE:1,Tengu
 	PREABILITY:1,CATEGORY=Special Ability,Natural Weapon
+	WBONUS:WEAPONPROF=Beak|DAMAGESIZE|1
 	DESC:Your bleed attack is bloody and dangerous.
-	BENEFIT:Increase the damage of your beak attack to 1d6. Furthermore, when you confirm a critical hit with your beak attack, you also deal 1 point of bleed damage. &nl; [Special] The bleed effect from this feat stacks with that of the Bleeding Critical feat and similar effects, adding 1 point to your bleed damage.
+	SOURCEPAGE:p.165
+	BENEFIT:Increase the damage of your beak attack to 1d6. Furthermore, when you confirm a critical hit with your beak attack, you also deal 1 point of bleed damage. The bleed effect from this feat stacks with that of the Bleeding Critical feat and similar effects, adding 1 point to your bleed damage.
 
 Carrion Feeder
 	TYPE:General
 	PRERACE:1,Tengu
+	BONUS:SKILL|Survival (Find Food)|2
 	DESC:Like many scavengers, you can stomach foods that would make weaker creatures ill.
+	SOURCEPAGE:p.165
 	BENEFIT:You gain a +2 racial bonus on saving throws against diseases and ingested poisons (but not other poisons). You receive a +2 bonus on Survival skill checks to find food for yourself (and only yourself).
 
 Long-Nose Form
 	TYPE:General
 	PRELEVEL:MIN=3
 	PRERACE:1,Tengu
+	TEMPBONUS:PC|STAT|STR|2
 	DESC:You can shift into the form of a human with an unusually long nose.
+	SOURCEPAGE:p.165
 	BENEFIT:Once per day, you can assume the form of a human whose nose is the length of your beak. This spell-like ability functions as alter self with a caster level equal to your level. While in this form you gain the scent ability and a +2 bonus to your Strength score. Because your long nose in this form clearly indicates you are not fully human, you do not gain the normal bonus to Disguise checks for using a polymorph effect (however, you could possibly explain the nose as an unfortunate curse or deformity, or hide it with an item such as a plague doctor's mask).
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Scavenger's Eye
 	TYPE:General
 	PRERACE:1,Tengu
+	BONUS:SKILL|Appraise|2
 	DESC:Your gaze is naturally drawn to valuable glittering objects.
-	BENEFIT:You gain a +2 bonus on Appraise checks. You may determine the most valuable item in a hoard as a standard action and gain an additional +2 bonus on the Appraise check to do so. In addition, if you fail an Appraise check by 5 or more, you treat the check as if you had failed by less than 5. &nl; [Normal] Determining the most valuable object in a treasure hoard takes 1 full-round action.
+	SOURCEPAGE:p.166
+	BENEFIT:You gain a +2 bonus on Appraise checks. You may determine the most valuable item in a hoard as a standard action and gain an additional +2 bonus on the Appraise check to do so. In addition, if you fail an Appraise check by 5 or more, you treat the check as if you had failed by less than 5.
 
 Tengu Raven Form
 	TYPE:General
 	PRELEVEL:MIN=7
 	PRERACE:1,Tengu
 	PREFEAT:1,Tengu Wings
+	TEMPBONUS:PC|STAT|STR|4		TEMPBONUS:PC|STAT|DEX|-2	TEMPBONUS:PC|COMBAT|AC|4|TYPE:NaturalArmor
 	DESC:You can shift into the form of a giant black raven.
-	BENEFIT:Once per day, you can take the form of a Large black bird resembling a raven, granting you a fly speed of 60 feet (good maneuverability), a +4 size bonus to your Strength, a �2 penalty to your Dexterity, and a +4 natural armor bonus. This spell-like ability otherwise functions as beast shape II with a caster level equal to your level.
+	SOURCEPAGE:p.166
+	BENEFIT:Once per day, you can take the form of a Large black bird resembling a raven, granting you a fly speed of 60 feet (good maneuverability), a +4 size bonus to your Strength, a -2 penalty to your Dexterity, and a +4 natural armor bonus. This spell-like ability otherwise functions as beast shape II with a caster level equal to your level.
 
 Tengu Wings
 	TYPE:General
 	PRELEVEL:MIN=5
 	PRERACE:1,Tengu
 	DESC:You can grow wings that allow you to fly.
+	SOURCEPAGE:p.166
 	BENEFIT:Once per day, you can sprout a pair of giant black crow's wings, granting you a fly speed of 30 feet (average maneuverability). This spell-like ability otherwise functions as beast shape I (though you do not gain any other benefits of that spell) with a caster level equal to your level.
 
+###Block: Tiefling Feats
+	
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Armor of the Pit
 	TYPE:General
