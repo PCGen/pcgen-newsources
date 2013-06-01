@@ -34,47 +34,16 @@ Angelic Blood
 	SOURCEPAGE:p.88
 	BENEFIT:You gain a +2 bonus on saving throws against effects with the evil descriptor and on Constitution checks to stabilize when you are reduced to negative hit points (but not dead). Furthermore, each time you take bleed or blood drain damage, each undead creature or creature with the evil subtype that is currently adjacent to you also takes 1 point of damage.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Angelic Flesh (Brazen)
-	TYPE:General.AngelicFlesh
+Angelic Flesh
+	TYPE:General
 	PRERACE:1,Aasimar
 	PREFEAT:1,Angelic Blood
-	!PREFEAT:1,Angelic Flesh (Golden),Angelic Flesh (Silver),Angelic Flesh (Steel)
 	BONUS:SKILL|Disguise,Stealth|-2
+	BONUS:ABILITYPOOL|AngelicFleshOption|1
+	MULT:NO
 	DESC:Your skin shines like burnished metal.
 	SOURCEPAGE:p.88
-	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain fire resistance 5 and a +2 bonus on saves against fire effects.
-	
-Angelic Flesh (Golden)
-	TYPE:General.AngelicFlesh
-	PRERACE:1,Aasimar
-	PREFEAT:1,Angelic Blood
-	!PREFEAT:1,Angelic Flesh (Brazen),Angelic Flesh (Silver),Angelic Flesh (Steel)
-	BONUS:SKILL|Disguise,Stealth|-2
-	DESC:Your skin shines like burnished metal.
-	SOURCEPAGE:p.88
-	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain a +2 bonus on saves against blindness, dazzling, patterns, and effects with the light descriptor. When you cast spells or use spell-like abilities that are from the illusion (pattern) subschool or have the light descriptor, you do so at +1 caster level.
-	
-Angelic Flesh (Silver)
-	TYPE:General.AngelicFlesh
-	PRERACE:1,Aasimar
-	PREFEAT:1,Angelic Blood
-	!PREFEAT:1,Angelic Flesh (Golden),Angelic Flesh (Brazen),Angelic Flesh (Steel)
-	BONUS:SKILL|Disguise,Stealth|-2
-	DESC:Your skin shines like burnished metal.
-	SOURCEPAGE:p.88
-	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain a +2 bonus on saves against paralysis, petrification, and poison, and your unarmed strikes or natural weapons count as silver for the purpose of overcoming damage reduction.
-	
-Angelic Flesh (Steel)
-	TYPE:General.AngelicFlesh
-	PRERACE:1,Aasimar
-	PREFEAT:1,Angelic Blood
-	!PREFEAT:1,Angelic Flesh (Golden),Angelic Flesh (Silver),Angelic Flesh (Brazen)
-	BONUS:SKILL|Disguise,Stealth|-2
-	BONUS:COMBAT|AC|1|TYPE=NaturalArmor
-	DESC:Your skin shines like burnished metal.
-	SOURCEPAGE:p.88
-	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain a +1 natural armor bonus to AC, and your unarmed strikes or natural weapons count as cold iron for the purpose of overcoming damage reduction.	
+	BENEFIT:You take a –2 penalty on Disguise and Stealth checks but gain one of the following benefits, depending on the metallic affinity of your flesh (choose one).
 	
 Celestial Servant
 	TYPE:General
@@ -127,6 +96,7 @@ Metallic Wings
 	PREFEAT:3,Angel Wings,Angelic Blood,TYPE.AngelicFlesh
 	NATURALATTACKS:Wings,Weapon.Natural.Melee.Slashing.Finessable,*2,1d4
 	DESC:Your wing feathers are made of gleaming metal.
+	SOURCEPAGE:p.88
 	BENEFIT:You gain two wing attacks. These are secondary natural attacks that deal 1d4 points of slashing damage (or 1d3 if you are Small).
 
 ##Block: Catfolk Feats
@@ -136,32 +106,36 @@ Black Cat
 	TYPE:General
 	PRERACE:1,Catfolk
 	DESC:Bad luck befalls those who dare to cross you.
+	SOURCEPAGE:p.93
 	BENEFIT:Once per day as an immediate action, when you are hit by a melee attack, you can force the opponent who made the attack to reroll it with a +4 penalty. The opponent must take the result of the second attack roll. This is a supernatural ability. &nl; [Special] If you take this feat and don't already have all black fur, your fur turns completely black when you takes this feat.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Catfolk Exemplar
 	TYPE:General
 	PRERACE:1,Catfolk
+	QUALIFY:ABILITY=FEAT|Aspect of the Beast
+	BONUS:ABILITYPOOL|CatfolkExemplarOption|1
+	MULT:YES	STACK:NO
 	DESC:Your feline traits are more defined and prominent than those of other members of your race.
-	BENEFIT:You can take the Aspect of the Beast feat even if you do not meet the normal prerequisites. Furthermore, your catlike nature manifests in one of the following ways. You choose the manifestation when you take this feat, and cannot change it later. &nl; [Enhanced Senses (Ex)] If you have low-light vision, you gain the scent catfolk racial trait. If you have the scent racial trait, you gain low-light vision. &nl; [Fast Sprinter (Ex)] You gain a 10-foot racial bonus to your speed when using the charge, run, or withdraw actions. If you have the sprinter racial trait, your racial bonus to speed when using the charge, run, or withdraw action increases to a 20-foot bonus. &nl; [Sharp Claws (Ex)] If you do not have the cat's claws racial trait or the claws of the beast manifestation from the Aspect of the Beast feat , you gain the cat's claws racial trait. If you have either the cat's claws racial trait or the claws of the beast manifestation, your claw damage increases to 1d6. &nl; [Special] You can take this feat multiple times. Its effects do not stack. Each time you select it, you must choose a different manifestation.
-
-#  TODO: fix pretext
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+	SOURCEPAGE:p.93
+	BENEFIT:You can take the Aspect of the Beast feat even if you do not meet the normal prerequisites. Furthermore, your catlike nature manifests in one of the following ways.
+	
 Claw Pounce 
 	TYPE:Combat
 	PREATT:10
 	PRERACE:1,Catfolk
 	PREFEAT:1,Nimble Striker
 	PRESTAT:2,STR=13,DEX=15
-	PRETEXT:Cat's claws racial trait or Aspect of the Beast (claws of the beast manifestation)
+	PREMULT:1,PREABILITY:1,CATEGORY=Special Ability,Cat's Claws ~ Catfolk,PREFEAT:1,Aspect of the Beast(Claws of the Beast)
 	DESC:You can charge and make an attack with your paws.
-	BENEFIT:When you make a charge, you can make a full attack with your claws. &nl; [Normal] Charging is a special full-round action that limits you to a single attack.
+	SOURCEPAGE:p.94
+	BENEFIT:When you make a charge, you can make a full attack with your claws.
 
 Feline Grace
 	TYPE:General
 	PRERACE:1,Catfolk
 	PRESTAT:1,DEX=13
 	DESC:Your innate grace allows you to get out of the stickiest situations.
+	SOURCEPAGE:p.94
 	BENEFIT:You gain a +2 bonus to your CMD against bull rush, grapple, overrun, repositioning, and trip combat maneuvers.
 
 Nimble Striker 
@@ -171,13 +145,16 @@ Nimble Striker
 	PREABILITY:1,CATEGORY=Special Ability,Sprinter
 	PRESTAT:1,DEX=13
 	DESC:You were born to charge your enemies and nobody does it better.
+	SOURCEPAGE:p.94
 	BENEFIT:You do not take a -2 penalty to AC when you use the Cleave feat, Lunge feat, or when you charge.
 
 ##Block: Dhampir Feats
+#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Blood Drinker
 	TYPE:General
 	PRERACE:1,Dhampir
 	DESC:Consuming blood reinvigorates you.
+	SOURCEPAGE:p.99
 	BENEFIT:Choose one humanoid subtype, such as "goblinoid" (this subtype cannot be "dhampir"). You have acquired a taste for the blood of creatures with this subtype. Whenever you drink fresh blood from such a creature, you gain 5 temporary hit points and a +1 bonus on checks and saves based on Constitution. The effects last 1 hour. If you feed multiple times, you continue to gain hit points to a maximum of 5 temporary hit points for every three Hit Dice you have, but the +1 bonus on Constitution-based skill checks and saving throws does not stack. Normally, you can only drink blood from an opponent who is helpless, grappled, paralyzed, pinned, unconscious, or similarly disabled. If you have a bite attack, you can drink blood automatically as part of your bite attack; otherwise, you must first cut your target by dealing 1 hit point of damage with a slashing or piercing weapon (though you may feed upon a creature with severe wounds or a bleed effect without cutting it first). Once you cut the target, you can drink from its wound as a standard action. Drinking blood deals 2 points of Constitution damage to the creature you feed upon. The blood must come from a living creature of the specified humanoid subtype. It cannot come from a dead or summoned creature. Feeding on unwilling intelligent creatures is an evil act.
 
 Blood Feaster
@@ -186,15 +163,16 @@ Blood Feaster
 	PRERACE:1,Dhampir
 	PREFEAT:1,Blood Drinker
 	DESC:Consuming blood gives you superhuman strength.
-	BENEFIT:If you use your Blood Drinker feat to drain 4 or more points of Constitution from a living creature, you gain a +2 bonus on damage rolls and a +1 bonus on Strength-based skill checks. This bonus lasts for a number of rounds equal to 1/2 your Hit Dice.
+	SOURCEPAGE:p.100
+	BENEFIT:If you use your Blood Drinker feat to drain 4 or more points of Constitution from a living creature, you gain a +2 bonus on damage rolls and a +1 bonus on Strength-based skill checks. This bonus lasts for %1 rounds.|HD/2
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Blood Salvage
 	TYPE:General
 	PRERACE:1,Dhampir
 	PREFEAT:1,Blood Drinker
 	DESC:You do not need to drink blood from a living creature to gain healing benefits.
-	BENEFIT:You can use your Blood Drinker feat on a dead creature of the appropriate humanoid subtype. The creature must have died less than 6 hours beforehand. &nl; [Normal] You only benefit from the Blood Drinker feat if you consume fresh blood from a living creature.
+	SOURCEPAGE:p.100
+	BENEFIT:You can use your Blood Drinker feat on a dead creature of the appropriate humanoid subtype. The creature must have died less than 6 hours beforehand.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Diverse Palate
@@ -202,75 +180,86 @@ Diverse Palate
 	PRERACE:1,Dhampir
 	PREFEAT:1,Blood Drinker
 	DESC:Your taste for blood is broader than that of other dhampirs.
+	SOURCEPAGE:p.100
 	BENEFIT:Choose a humanoid subtype or the monstrous humanoid type. You may use your Blood Drinker feat on creatures of this subtype or type. &nl; [Special] You can take this feat multiple times. Each time you select it, choose a new humanoid subtype or the monstrous humanoid.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Natural Charmer
 	TYPE:General
 	PRERACE:1,Dhampir
 	PRESTAT:1,CHA=17
 	DESC:You possess some of the dominating powers of your vampire progenitor.
-	BENEFIT:You can take 20 on any Charisma-based skills to charm, convince, persuade, or seduce humanoids whose attitude is at least friendly to you. Taking 20 still requires 20 times the normal time to perform the skill. &nl; [Normal] You cannot take 20 on any check where you incur penalties for failure.
+	SOURCEPAGE:p.100
+	BENEFIT:You can take 20 on any Charisma-based skills to charm, convince, persuade, or seduce humanoids whose attitude is at least friendly to you. Taking 20 still requires 20 times the normal time to perform the skill.
 
-#  TODO: fix pretext
+##Block: Drow Feats
+
 Drow Nobility
 	TYPE:General
 	PRERACE:1,Drow
-	PRETEXT:Able to use drow spell-like abilities
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
+	ABILITY:Special Ability|AUTOMATIC|Drow Nobility Bonuses
 	DESC:Your blood courses with power, granting you greater spell-like abilities.
+	SOURCEPAGE:p.105
 	BENEFIT:You may use detect magic as a spell-like ability at will, and add feather fall and levitate to the spell-like abilities that you may use once each per day. Your caster level is equal to your character level.
 
-#  TODO: fix pretext
 Greater Drow Nobility
 	TYPE:General
 	PRERACE:1,Drow
 	PREFEAT:2,Drow Nobility,Improved Drow Nobility
 	PRESTAT:1,CHA=13
-	PRETEXT:able to use drow spell-like abilities
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
+	ABILITY:Special Ability|AUTOMATIC|Greater Drow Nobility Bonuses
 	DESC:You have mastered the lesser spell-like abilities of the drow, demonstrating true nobility.
+	SOURCEPAGE:p.105
 	BENEFIT:Your detect magic spell-like ability is now constant. You may use your dancing lights, deeper darkness, faerie fire, feather fall, and levitate spell-like abilities at will.
 
-#  TODO: fix pretext
 Improved Drow Nobility
 	TYPE:General
 	PRERACE:1,Drow
 	PREFEAT:1,Drow Nobility
 	PRESTAT:1,CHA=13
-	PRETEXT:able to use drow spell-like abilities
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
+	ABILITY:Special Ability|AUTOMATIC|Improved Drow Nobility Bonuses
 	DESC:Your magical heritage is more potent than that of your peers, as demonstrated by your superior spell-like abilities.
+	SOURCEPAGE:p.105
 	BENEFIT:You may use your dancing lights, faerie fire, feather fall, and levitate spell-like abilities twice per day. Your darkness spell-like ability instead becomes deeper darkness, which you may use twice per day.
 
-#  TODO: fix pretext
 Improved Umbral Scion
 	TYPE:General
 	PRERACE:1,Drow
 	PREFEAT:4,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility,Umbral Scion
 	PRESTAT:2,CHA=13,WIS=13
-	PRETEXT:Able to use drow spell-like abilities
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
+	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=TL|Dispel Magic|Divine Favor|Suggestion
 	DESC:You are a master of drow noble magic.
+	SOURCEPAGE:p.105
 	BENEFIT:You may use dispel magic, divine favor, and suggestion once per day as spell-like abilities. Your caster level is equal to your character level.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Noble Spell Resistance
 	TYPE:General
 	PRELEVEL:MIN=13
 	PRERACE:1,Drow
 	PREFEAT:1,Greater Drow Nobility
 	PRESTAT:2,CHA=13,WIS=13
+	SR:TL+11
 	DESC:Your ascension is complete; you have the spell resistance approaching that of a demon.
-	BENEFIT:Your spell resistance is equal to 11 + your character level. &nl; [Special] You receive a +1 circumstance bonus on Diplomacy and Intimidate checks made against any drow.
+	SOURCEPAGE:p.105
+	BENEFIT:Your spell resistance is equal to %1.  You receive a +1 circumstance bonus on Diplomacy and Intimidate checks made against any drow.|11+TL
 
 Shadow Caster
 	TYPE:GeneralPRECLASS:1,SPELLCASTER=1
 	PRERACE:1,Drow
 	DESC:Your command over shadow and darkness create longer-lasting spell effects.
+	SOURCEPAGE:p.105
 	BENEFIT:When you cast spells of the shadow subschool or spells with the darkness descriptor, you are considered two levels higher when determining the duration of those spells.
 
 Spider Step
 	TYPE:General
 	PRELEVEL:MIN=3
 	PRERACE:1,Drow
+	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=TL|Spider Climb
 	DESC:You tread where only arachnids dare.
+	SOURCEPAGE:p.106
 	BENEFIT:You can cast spider climb once per day as a spell-like ability, using your character level as the caster level. Furthermore, you gain a +4 bonus on saving throws against the web special attacks of spiders and the effects of web and other similar spells (such as the web cloud spell).
 
 #  TODO: fix pretext
@@ -279,29 +268,36 @@ Spider Summoner
 	PRERACE:1,Drow
 	PRETEXT:Ability to cast summon monster or summon nature's ally spells
 	DESC:You gain the ability to summon powerful spiders.
-	BENEFIT:When casting either a summon monster spell or a summon nature's ally spell, your options increase. Depending on the level of the spell, you can summon the spiders listed below.  [Summon Monster: 1st levelï¿½giant crab spider*; 4th levelï¿½giant black widow*; 5th levelï¿½ogre spider*; 7th levelï¿½giant tarantula*] [Summon Nature's Ally: 1st levelï¿½giant crab spider; 4th levelï¿½giant black widow; 5th levelï¿½ogre spider; 7th levelï¿½giant tarantula]  Creatures marked with an asterisk (*) are summoned with the celestial template if you are good, and the fiendish template if you are evil. If you are neutral, you may choose which template to apply to the creature. Furthermore, when you summon spiders using summon monster or summon nature's ally, the DC of the summoned monster's poison and web effects increases by 2.
+	SOURCEPAGE:p.106
+	BENEFIT:When casting either a summon monster spell or a summon nature's ally spell, your options increase. Depending on the level of the spell, you can summon the spiders listed.  Summon Monster: 1st level giant crab spider*; 4th level giant black widow*; 5th level ogre spider*; 7th level giant tarantula*.  Summon Nature's Ally: 1st level giant crab spider; 4th level giant black widow; 5th level ogre spider; 7th level giant tarantula.  Creatures marked with an asterisk (*) are summoned with the celestial template if you are good, and the fiendish template if you are evil. If you are neutral, you may choose which template to apply to the creature. Furthermore, when you summon spiders using summon monster or summon nature's ally, the DC of the summoned monster's poison and web effects increases by 2.
 
-#  TODO: fix pretext
 Umbral Scion
 	TYPE:General
 	PRERACE:1,Drow
 	PREFEAT:3,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility
 	PRESTAT:2,CHA=13,WIS=13
-	PRETEXT:able to use drow spell-like abilities
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
 	DESC:New spell-like abilities are unlocked for you as you rise to ascendency among the drow people.
+	SOURCEPAGE:p.106
 	BENEFIT:Select one of the following: dispel magic, divine favor, or suggestion. You may use this spell once per day as a spell-like ability. Your caster level is equal to your character level.
+
+###Block:  Fetchling Abilities
 
 Dark Sight
 	TYPE:General
 	PRERACE:1,Fetchling
 	PREFEAT:1,Gloom Sight
 	DESC:With further modification, your eyes can pierce the gloom of even magical darkness.
+	SOURCEPAGE:p.111
 	BENEFIT:You gain the ability to see up to 15 feet clearly in magical darkness, such as that created by the deeper darkness spell.
 
 Gloom Sight
 	TYPE:General
 	PRERACE:1,Fetchling
+	VISION:Darkvision (90')
+	ABILITY:Special Ability|AUTOMATIC|Light Sensitivity|PREFEAT:1,[Improved Dark Sight]
 	DESC:With a combination of strange shadow magic and chirurgery, your eyes are permanently modified to see farther in darkness.
+	SOURCEPAGE:p.111
 	BENEFIT:You gain darkvision 90 ft., but gain the light sensitivity weakness.
 
 Gloom Strike 
@@ -309,13 +305,16 @@ Gloom Strike
 	PRERACE:1,Fetchling
 	PREFEAT:1,Blind-Fight
 	DESC:Few creatures are as accustomed to fighting in the shadows as you.
+	SOURCEPAGE:p.111
 	BENEFIT:When you are within an area of dim light or darkness, you gain a +1 bonus on attack rolls against enemies that are also within dim light or darkness.
 
 Improved Dark Sight
 	TYPE:General
 	PRERACE:1,Fetchling
 	PREFEAT:2,Dark Sight,Gloom Sight
+	ABILITY:Special Ability|AUTOMATIC|Light Blindness
 	DESC:With further modification, your eyes see clearly in not only normal darkness, but in magical darkness as well.
+	SOURCEPAGE:p.112
 	BENEFIT:You gain the see in darkness ability and lose the light sensitivity weakness, but gain the light blindness weakness.
 
 #  TODO: fix pretext
@@ -325,6 +324,7 @@ Shadow Ghost
 	PRERACE:1,Fetchling
 	PRETEXT:shadow walk spell-like ability
 	DESC:You can move between the Shadow Plane and the Material Plane more often.
+	SOURCEPAGE:p.112
 	BENEFIT:You gain the ability to use shadow walk an additional time each day. &nl; [Special] You may select this feat multiple times. Its effects stack.
 
 #  TODO: fix pretext
@@ -333,8 +333,11 @@ Shadow Walker
 	PRERACE:1,Fetchling
 	PRETEXT:shadow walk spell-like ability
 	DESC:You can pierce the veil between the Shadow Plane and the Material Plane more often, and to greater effect.
+	SOURCEPAGE:p.112
 	BENEFIT:You can expend one use of your shadow walk spell-like ability to use dimension door as a spell-like ability. Your start and end locations for this ability must be in dim light or darkness.
 
+###Block: Goblin Feats
+	
 Burn! Burn! Burn!
 	TYPE:General
 	PRESKILL:1,Disable Device=1
