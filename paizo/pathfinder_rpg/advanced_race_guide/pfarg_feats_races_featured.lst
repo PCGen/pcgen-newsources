@@ -343,18 +343,21 @@ Burn! Burn! Burn!
 	PRESKILL:1,Disable Device=1
 	PRERACE:1,Goblin
 	DESC:You take the goblin love of arson and fire play to a whole new level.
+	SOURCEPAGE:p.118
 	BENEFIT:You deal an extra 1d4 points of fire damage when you attack with fire from an alchemical or nonmagical source (such as with alchemical fire or torches) and gain a +4 competence bonus on Reflex saving throws made to avoid catching on fire or to put yourself out when on fire. Additional damage caused by this feat does not apply to magical attacks (such as an alchemist's bomb) or to splash damage.
 
 Fire Hand 
 	TYPE:Combat
 	PRERACE:1,Goblin
 	DESC:Born with a torch in your hand, you have a gift with anything that burns.
+	SOURCEPAGE:p.118
 	BENEFIT:You can wield a torch as a weapon without taking the nonproficient penalty and gain a +1 bonus on attack rolls with melee weapons that deal fire damage.
 
 Fire Tamer
 	TYPE:General
 	PRERACE:1,Goblin
 	DESC:You know your way around even magical fire.
+	SOURCEPAGE:p.118
 	BENEFIT:You gain a +2 bonus on saves against spells with the fire descriptor. Additionally, your scars mark you as a talented fire tamer, granting you a +2 circumstance bonus on Diplomacy and Intimidate checks when dealing with other goblins.
 
 Flame Heart
@@ -362,15 +365,18 @@ Flame Heart
 	PRELEVEL:MIN=5
 	PRERACE:1,Goblin
 	PREFEAT:1,Fire Tamer
+	ABILITY:Special Ability|AUTOMATIC|Resistance to Fire
+	DEFINE:FireResistanceBonus|5
 	DESC:You have mastered fire magic and alchemy.
+	SOURCEPAGE:p.118
 	BENEFIT:You gain fire resistance 5. When casting spells with the fire descriptor or throwing alchemist bombs that deal fire damage, treat your caster level or alchemist level as if you were 1 level higher.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Goblin Gunslinger 
 	TYPE:Combat
 	PRERACE:1,Goblin
 	DESC:You have learned how to fire the big guns.
-	BENEFIT:You can wield Medium firearms without taking the penalty for an inappropriately sized weapon. &nl; [Normal] You take a �2 penalty when using an inappropriately sized weapon.
+	SOURCEPAGE:p.118
+	BENEFIT:You can wield Medium firearms without taking the penalty for an inappropriately sized weapon.
 
 Tangle Feet 
 	TYPE:Combat
@@ -378,14 +384,17 @@ Tangle Feet
 	PRESIZELTEQ:S
 	PREFEAT:3,Dodge,Mobility,Underfoot
 	DESC:Creatures who cross your path find themselves tripping over their own feet.
+	SOURCEPAGE:p.118
 	BENEFIT:When you successfully make an Acrobatics check to avoid provoking an attack of opportunity from a larger opponent when you move through its threatened area or its space, you can make that opponent lose its balance until the end of its next turn as a free action. While that creature's balance is lost, if it attempts to move, it must make a successful DC 15 Acrobatics check or fall prone, wasting the move action. You can only affect one creature with this effect each round.
 
-#  TODO: fix pretext
+###Block: Hobgoblin Feats	
+
 Deafening Explosion
 	TYPE:General
 	PRERACE:1,Hobgoblin
-	PRETEXT:Bomb class feature
+	PREABILITY:1,CATEGORY=Special Ability,Bomb
 	DESC:Your bombs explode with deafening force.
+	SOURCEPAGE:p.124
 	BENEFIT:You may reduce your bomb damage by one die to give it the ability to deafen the creature struck by it. The bomb must deal fire, force, or sonic damage. If a creature takes a direct hit from your bomb, it must make a saving throw against the bomb's DC or be deafened for 1 minute. This deafening is in addition to any other effects the bomb would normally have.
 
 Demoralizing Lash 
@@ -394,6 +403,7 @@ Demoralizing Lash
 	PRESKILL:1,Intimidate=1
 	PRERACE:1,Hobgoblin
 	DESC:You cow your enemies with the lash of a whip.
+	SOURCEPAGE:p.124
 	BENEFIT:To use this feat, you must use a whip (or another weapon in the flails fighter weapon group) to attack a foe demoralized by an Intimidate check. If the attack hits, you extend the duration the creature is shaken by 1 round. This feat has no effect on creatures whose shaken conditions are from sources other than Intimidate checks.
 
 Focusing Blow 
@@ -401,6 +411,7 @@ Focusing Blow
 	PRERACE:1,Hobgoblin
 	PREFEAT:1,Hobgoblin Discipline
 	DESC:You and your allies work together to shake off mental effects.
+	SOURCEPAGE:p.124
 	BENEFIT:An ally who also has this feat can deal damage to you in order to break an ongoing mind-affecting effect that allows a saving throw. The ally must cause at least 5 points of damage to you with an attack, spell, or other ability. You then reroll your saving throw, with a +1 bonus for every 5 additional points of damage the attack caused. If your save is successful, the mind-affecting effect ends. Only damage actually dealt counts for purposes of this feat; nonlethal damage and damage reduced or eliminated by damage reduction, resistances, and so on does not qualify.
 
 Hobgoblin Discipline
@@ -408,23 +419,27 @@ Hobgoblin Discipline
 	PREATT:1
 	PRERACE:1,Hobgoblin
 	DESC:The presence of other hobgoblins bolsters your resolve.
+	SOURCEPAGE:p.124
 	BENEFIT:While you are within 30 feet of at least two other hobgoblins, you gain a +1 morale bonus on saving throws.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Taskmaster 
 	TYPE:Combat
 	PRESKILL:1,Intimidate=5
 	PRERACE:1,Hobgoblin
 	PREFEAT:1,Demoralizing Lash
 	DESC:You intimidate weaker allies into reckless ferocity.
-	BENEFIT:As a standard action, you spur an ally, who must have fewer Hit Dice than yourself, to reckless effort. For 1 minute, the ally gains a +1 morale bonus on attack rolls, weapon damage rolls, and Will saves against mind-affecting effects. However, the ally also takes a �2 penalty to AC and on skill checks. To affect an unwilling ally, you must succeed at an Intimidate check with the same DC used to demoralize your ally. &nl; [Special] If you have 10 or more ranks in Intimidate, the morale bonus increases to +2.
+	SOURCEPAGE:p.124
+	BENEFIT:As a standard action, you spur an ally, who must have fewer Hit Dice than yourself, to reckless effort. For 1 minute, the ally gains a +1 morale bonus on attack rolls, weapon damage rolls, and Will saves against mind-affecting effects. However, the ally also takes a -2 penalty to AC and on skill checks. To affect an unwilling ally, you must succeed at an Intimidate check with the same DC used to demoralize your ally. If you have 10 or more ranks in Intimidate, the morale bonus increases to +2.
 
+###Block: Ifrit Feats
+	
 Blazing Aura 
 	TYPE:Combat
 	PRELEVEL:MIN=13
 	PRERACE:1,Ifrit
 	PREFEAT:2,Inner Flame,Scorching Weapons
 	DESC:An inferno rages inside you, causing your body to radiate intense heat.
+	SOURCEPAGE:p.130
 	BENEFIT:When you use Scorching Weapons, on your turn as a free action, you may create an aura of heat that lasts for 1 round. This aura deals 1d6 points of fire damage to any creature that begins its turn adjacent to you.
 
 Blistering Feint 
@@ -432,6 +447,7 @@ Blistering Feint
 	PRERACE:1,Ifrit
 	PREFEAT:2,Combat Expertise,Improved Feint
 	DESC:Your foes flinch from the heat of your weapon, giving you an opportunity to slip past their defenses.
+	SOURCEPAGE:p.130
 	BENEFIT:You gain a +2 bonus on feint checks made while wielding a weapon that deals fire damage. Anytime you successfully feint a creature while using such a weapon, you may deal its fire damage to the enemy.
 
 Elemental Jaunt
@@ -439,12 +455,14 @@ Elemental Jaunt
 	PRERACE=1,Ifrit,Oread,Sylph,Undine
 	PRELEVEL:MIN=15
 	DESC:The spirits of your ancestral home call to you, beckoning you to return.
+	SOURCEPAGE:p.130
 	BENEFIT:Once per day, you can cast plane shift as a spell-like ability with a caster level equal to your level to transport yourself and willing targets to an elemental plane that is appropriate to your race (ifrits to the Plane of Fire, oreads to the Plane of Earth, sylphs to the Plane of Air, and undines to the Plane of Water). While on that plane, you (but not anyone transported with you) are treated as though under the effect of the spell planar adaptation.
 
 Firesight
 	TYPE:General
 	PRERACE:1,Ifrit
 	DESC:Fire no longer blinds you, and smoke conceals nothing from your gaze.
+	SOURCEPAGE:p.130
 	BENEFIT:You can see through fire and smoke without penalty, ignoring any cover or concealment bonuses from fire and smoke. This does not allow you to see anything you could not otherwise see (for example, invisible creatures are still invisible). You are immune to the dazzled condition.
 
 Inner Flame 
@@ -453,36 +471,54 @@ Inner Flame
 	PRERACE:1,Ifrit
 	PREFEAT:1,Scorching Weapons
 	DESC:Your body generates so much heat that your mere touch scorches your enemies.
+	SOURCEPAGE:p.130
 	BENEFIT:Your bonus on saves against fire attacks and spells with the fire descriptor or light descriptor increases to +4. When you use Scorching Weapons, the affected weapons deal an additional 1d6 points of fire damage instead of 1, and when you are grappling, you deal this damage to your grappling opponent on your turn.
 
 Scorching Weapons 
 	TYPE:Combat
 	PRERACE:1,Ifrit
 	DESC:Elemental fire stirs within your body, boiling your blood and rendering you resistant to flame.
+	SOURCEPAGE:p.130
 	BENEFIT:You gain a +2 bonus on saving throws against fire attacks and spells with the fire descriptor or light descriptor. As a swift action, you can make up to two held manufactured metallic weapons become red-hot for 1 round, dealing 1 additional point of fire damage with a successful hit. This does not stack with other effects that add fire damage to weapons, such as the flaming weapon special ability.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+###Block: Kobold Feats
+	
 Draconic Aspect
 	TYPE:General
 	PRERACE:1,Kobold
+	BONUS:ABILITYPOOL|KoboldDragonScaleColor|1|!PREABILITY:1,CATEGORY=Special Ability,Dragon-Scaled
+	BONUS:COMBAT|AC|1|TYPE=NaturalArmor|PREABILITY:1,CATEGORY=Special Ability,Dragon-Scaled
 	DESC:You possess some of the qualities of your dragon ancestors.
-	BENEFIT:Your scales take on the color and some of the resistances of one of the chromatic dragons. Choose one of the following chromatic dragon types: black (acid), blue (electricity), green (acid), red (fire), or white (cold). Your scales take on the color of that dragon, and you gain resistance 5 to the dragon color's corresponding energy type. &nl; [Special] If you have the dragon-scaled racial trait, your scale color does not change and you gain a +1 natural armor bonus instead.
+	SOURCEPAGE:p.136
+	BENEFIT:Your scales take on the color and some of the resistances of one of the chromatic dragons. Choose one of the following chromatic dragon types: black (acid), blue (electricity), green (acid), red (fire), or white (cold). Your scales take on the color of that dragon, and you gain resistance 5 to the dragon color's corresponding energy type. If you have the dragon-scaled racial trait, your scale color does not change and you gain a +1 natural armor bonus instead.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Draconic Breath
 	TYPE:General
 	PRERACE:1,Kobold
 	PREFEAT:1,Draconic Aspect
+	ABILITY:Special Ability|AUTOMATIC|Acid Line ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Black ~ Dragon Scaled
+	ABILITY:Special Ability|AUTOMATIC|Electricity Line ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Blue ~ Dragon Scaled
+	ABILITY:Special Ability|AUTOMATIC|Acid Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Green ~ Dragon Scaled
+	ABILITY:Special Ability|AUTOMATIC|Fire Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Red ~ Dragon Scaled
+	ABILITY:Special Ability|AUTOMATIC|Cold Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,White ~ Dragon Scaled
+	DEFINE:KoboldBreathWeaponSave|0
 	DESC:You possess draconic defenses and a draconic breath weapon.
-	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You gain a breath weapon that is determined by your scale coloration by either the Draconic Aspect feat or the dragon-scaled racial trait. Using a breath weapon is a standard action that does not provoke attacks of opportunity. You can use your breath weapon once per day. Creatures within the area of your breath weapon who succeed at a Reflex saving throw (DC 10 + your character level + your Constitution modifier) take only half damage. &nl; [Black (Su)] You breathe a 30-foot line of acid that deals 2d6 points of acid damage. &nl; [Blue (Su)] You breathe a 30-foot line of electricity that deals 2d6 points of electricity damage. &nl; [Green (Su)] You breathe a 15-foot cone of acid that deals 2d6 points of acid damage. &nl; [Red (Su)] You breathe a 15-foot cone of fire that deals 2d6 points of fire damage. &nl; [White (Su)] You breathe a 15-foot cone of cold that deals 2d6 points of cold damage. &nl; [Special] Kobold sorcerers with either the Draconic or Kobold bloodline can use their Charisma modifier instead of their Constitution to determine the number of times per day they can use this breath weapon and the DC of this breath weapon.
+	SOURCEPAGE:p.136
+	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You gain a breath weapon that is determined by your scale coloration by either the Draconic Aspect feat or the dragon-scaled racial trait. Using a breath weapon is a standard action that does not provoke attacks of opportunity. You can use your breath weapon once per day. Creatures within the area of your breath weapon who succeed at a Reflex saving throw (DC %1) take only half damage.|KoboldBreathWeaponSave
+	BONUS:VAR|KoboldBreathWeaponSave|10+TL+CON|!PREABILITY:1,CATEGORY=Special Ability,Kobold Sorcerer Bloodline,Draconic Bloodline
+	BONUS:VAR|KoboldBreathWeaponSave|10+TL+CHA|PREABILITY:1,CATEGORY=Special Ability,Kobold Sorcerer Bloodline,Draconic Bloodline
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Draconic Glide
 	TYPE:General
 	PRERACE:1,Kobold
 	PREFEAT:1,Draconic Aspect
+	DEFINE:GlidingBaseSpeed|5
 	DESC:You possess draconic defenses and wings that allow you to glide.
-	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You grow a pair of wings that you can use to fall and glide at a safe pace. You can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling safely, you may make an additional DC 15 Fly check to glide, moving 5 feet laterally for every 20 feet you fall. &nl; [Special] If you have the gliding wings racial trait, instead of the above abilities, your base speed increases to 30 feet.
+	SOURCEPAGE:p.136
+	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You grow a pair of wings that you can use to fall and glide at a safe pace. You can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling safely, you may make an additional DC 15 Fly check to glide, moving %1 feet laterally for every 20 feet you fall.|GlidingBaseSpeed
+	BONUS:VAR|GlidingBaseSpeed|25
 
 Draconic Paragon
 	TYPE:General
@@ -490,51 +526,60 @@ Draconic Paragon
 	PRELEVEL:MIN=10
 	PRERACE:1,Kobold
 	PREFEAT:1,Draconic Aspect
+	MOVE:Fly,20		CSKILL:Fly
 	DESC:You can shrug off sleep and paralysis effects as well as any dragon, and your draconic aspects improve.
+	SOURCEPAGE:p.137
 	BENEFIT:You gain an additional +2 bonus against sleep and paralysis effects. You can use your breath weapon twice per day and your breath weapon damage increases to 4d6 points of energy damage. Your wings from the Draconic Glide feat grow stronger, granting you a fly speed of 20 feet (average maneuverability).
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Kobold Ambusher 
 	TYPE:Combat
 	PRESKILL:1,Stealth=4
 	PRERACE:1,Kobold
 	DESC:You are adept at moving fast and staying hidden.
-	BENEFIT:You take no penalty on Stealth checks when you move up to your full speed. You can use the run or charge action and remain hidden, taking a �10 penalty on the check to do so. &nl; [Normal] When moving greater than half speed up to your full speed, you take a �5 penalty on Stealth checks. When you are able to run or charge while using Stealth, you take a �20 penalty on the Stealth check.
+	SOURCEPAGE:p.137
+	BENEFIT:You take no penalty on Stealth checks when you move up to your full speed. You can use the run or charge action and remain hidden, taking a -10 penalty on the check to do so.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Kobold Sniper 
 	TYPE:Combat
 	PRESKILL:1,Stealth=1
 	PRERACE:1,Kobold
 	DESC:You snipe quickly, making it harder for others to find the location of your attack.
-	BENEFIT:When you are sniping, you only take a �10 penalty on your Stealth checks to stay hidden. &nl; [Normal] You take a �20 penalty on your Stealth check to maintain your obscured location while sniping.
+	SOURCEPAGE:p.137
+	BENEFIT:When you are sniping, you only take a -10 penalty on your Stealth checks to stay hidden.
 
+# Implement: proficiency with all tail attachments.
 Tail Terror 
 	TYPE:Combat
 	PREATT:1
 	PRERACE:1,Kobold
+	NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Bludgeoning.Finessable,*1,1d4
 	DESC:You have strengthened your tail enough to make slap attacks with it.
+	SOURCEPAGE:p.137
 	BENEFIT:You can make a tail slap attack with your tail. This is a secondary natural attack that deals 1d4 points of bludgeoning damage. Furthermore, you can augment your tail slap attack with a kobold tail attachment. For the purpose of weapon feats, you are considered proficient with all kobold tail attachments.
 
+###Block: Orc Feats
+	
 Born Alone
 	TYPE:General
 	PRERACE:1,Orc
 	DESC:You are so tough and vicious that you killed and ate the rest of your litter while still in the womb.
+	SOURCEPAGE:p.141
 	BENEFIT:Whenever you kill or knock unconscious an opponent with a melee attack, you gain temporary hit points equal to your Constitution bonus (minimum 1) until your next turn. These temporary hit points do not stack. You do not gain this bonus if the opponent is helpless or has less than half your Hit Dice.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Bullying Blow 
 	TYPE:Combat
 	PRESKILL:1,Intimidate=1
 	PRERACE:1,Orc
 	DESC:With a simple hit, you more easily intimidate an opponent.
-	BENEFIT:As a standard action, you may make a melee attack with a �2 penalty on the attack roll. If the attack damages your opponent, you may make an Intimidate check to demoralize that opponent as a free action. &nl; [Normal] Intimidating an opponent is a standard action.
+	SOURCEPAGE:p.141
+	BENEFIT:As a standard action, you may make a melee attack with a -2 penalty on the attack roll. If the attack damages your opponent, you may make an Intimidate check to demoralize that opponent as a free action.
 
 Ferocious Action
 	TYPE:General
 	PRERACE:1,Orc
 	PREABILITY:1,CATEGORY=Special Ability,Ferocity
 	DESC:You ferocity is quick but shorter lived.
+	SOURCEPAGE:p.141
 	BENEFIT:When you fall to 0 hit points or fewer, you lose 2 hit points each round, but you are not staggered. If you are in a rage (such as that caused by the barbarian rage class feature), you instead only lose 1 hit point per round.
 
 Foment the Blood
@@ -542,27 +587,32 @@ Foment the Blood
 	PRERACE:1,Orc
 	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
 	DESC:You can unleash a wave of energy that drives orcs into a frenzy.
+	SOURCEPAGE:p.141
 	BENEFIT:When you channel energy, instead of creating its normal effect, you can give orcs a bonus on weapon damage and critical hit confirmation rolls until your next turn. This bonus is equal to the number of dice your channeled energy normally heals or harms. Your channel has its normal effect on other creatures in the area.
 
 Grudge Fighter 
 	TYPE:Combat
 	PRERACE:1,Orc
 	DESC:You feel great anger at anyone who dares to attack you, and this fury makes your own attacks that much stronger.
+	SOURCEPAGE:p.141
 	BENEFIT:You gain a +1 morale bonus on attack and damage rolls made against any creature that attacked you in the current combat.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Orc Weapon Expertise 
 	TYPE:Combat
 	PREATT:1
 	PRERACE:1,Orc
+	BONUS:ABILITYPOOL|OrcWeaponExpertise|1
+	MULT:YES	STACK:NO
 	DESC:You can do more with the weapons orcs favor the most.
-	BENEFIT:When you take this feat, choose one of the benefits below. Whenever you wield a weapon that has "orc" in its name, you gain the benefit you chose so long as you are actually proficient with that weapon.     This feat has no effect if you are not proficient with the weapon you're using. &nl; [Bully] Gain a +1 bonus on damage rolls against creatures at least one size smaller than you. &nl; [Defender] Gain a +1 shield bonus to your AC (or +2 if wielding a two-handed weapon). &nl; [Disrupter] Add +3 to opponents' concentration checks to cast a spell within your threatened area. This only applies if you are aware of the enemy's location and are capable of taking an attack of opportunity. If you have already used all of your available attacks of opportunity for the round, this increase does not apply. &nl; [Killer] Gain a +2 competence bonus on attack rolls made to confirm critical hits. &nl; [Thug] Deal +1 point of nonlethal damage with the weapon. &nl; [Trickster] Gain a +2 bonus on a single type of combat maneuver check that you can perform with that weapon. &nl; [Special] You can gain this feat multiple times. Each time you take this feat, you must choose a different benefit. You may only apply one of these benefits per round (chosen as a free action at the start of your turn).
+	SOURCEPAGE:p.142
+	BENEFIT:Whenever you wield a weapon that has "orc" in its name, you gain the benefit you chose so long as you are actually proficient with that weapon. This feat has no effect if you are not proficient with the weapon you're using.  You can gain this feat multiple times. Each time you take this feat, you must choose a different benefit. You may only apply one of these benefits per round (chosen as a free action at the start of your turn).
 
 Resolute Rager
 	TYPE:General
 	PRERACE:1,Orc
 	PREABILITY:1,CATEGORY=Special Ability,Rage
 	DESC:Fear passes quickly while you are raging.
+	SOURCEPAGE:p.142
 	BENEFIT:While raging, when under the effect of a fear effect that allows a saving throw, you can make a new saving throw against that fear effect at the start of each of your turns before acting. If you make the new save, the fear effect ends.
 
 Reverse-Feint 
@@ -571,6 +621,7 @@ Reverse-Feint
 	PRERACE:1,Orc
 	PREFEAT:1,Toughness
 	DESC:You can goad an opponent into attacking you in order to make your counter attack all the more powerful.
+	SOURCEPAGE:p.142
 	BENEFIT:As a move action, you can leave a gap in your defenses for one adjacent opponent to use. If the opponent attacks you on its next turn, it gains a +4 bonus on its attack roll. Whether or not the opponent successfully hits, you may attack it as an immediate action with a single melee attack, gaining a +2 bonus on your attack roll.
 
 Trap Wrecker
@@ -579,8 +630,11 @@ Trap Wrecker
 	PRERACE:1,Orc
 	PREFEAT:1,Power Attack
 	DESC:You can smash traps instead of disarming them.
+	SOURCEPAGE:p.142
 	BENEFIT:You can attempt to disarm a trap by striking it with a melee weapon instead of making a Disable Device check. As a full-round action, make a melee attack against an Armor Class equal to the trap's Disable Device DC. If you miss, the trap activates. If you hit, roll damage. If this damage is at least half the trap's Disable Device DC, you disable the trap. If this damage is less than half the trap's Disable Device DC, the trap activates. You can only attempt this on nonmagical traps. You must be able to reach some part of the trap with your attack in order to use this feat. At the GM's discretion, some traps may not be susceptible to this feat.
 
+###Block: Oread Feats
+	
 Dwarf Blooded
 	TYPE:General
 	PRERACE:1,Oread
