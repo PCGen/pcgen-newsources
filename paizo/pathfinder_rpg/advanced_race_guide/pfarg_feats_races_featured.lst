@@ -11,21 +11,6 @@ SOURCELONG:Advanced Race Guide	SOURCESHORT:ARG	SOURCEWEB:http://paizo.com/produc
 ###
 ##Block: Aasimar Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
-Angel Wings
-	TYPE:General
-	PRERACE:1,Aasimar
-	PREPCLEVEL:MIN=10
-	PREFEAT:1,Angelic Blood
-	CSKILL:Fly
-	MOVE:Fly,30
-	BONUS:MOVEADD|TYPE.Fly|-10|PREVARGT:ENCUMBERANCE,1
-	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability
-	BONUS:VAR|Maneuverability|3|PREVAREQ:ENCUMBERANCE,0
-	BONUS:VAR|Maneuverability|2|PREVARGT:ENCUMBERANCE,1
-	DESC:Feathered wings sprout from your back.
-	SOURCEPAGE:p.87
-	BENEFIT:You gain a pair of gleaming feathered wings that grant a fly speed of 30 feet (average maneuverability) if wearing light armor or unencumbered, or 20 feet (poor maneuverability) with a medium or heavy load or medium or heavy armor. Fly is a class skill for you.
-
 Angelic Blood
 	TYPE:General
 	PRERACE:1,Aasimar
@@ -43,8 +28,9 @@ Angelic Flesh
 	MULT:NO
 	DESC:Your skin shines like burnished metal.
 	SOURCEPAGE:p.88
-	BENEFIT:You take a 2 penalty on Disguise and Stealth checks but gain one of the following benefits, depending on the metallic affinity of your flesh (choose one).
+	BENEFIT:You take a -2 penalty on Disguise and Stealth checks but gain one of the following benefits, depending on the metallic affinity of your flesh (choose one).
 	
+#Implement: add celestial template to animal companion
 Celestial Servant
 	TYPE:General
 	PRERACE:1,Aasimar
@@ -75,7 +61,9 @@ Greater Channel Force
 Heavenly Radiance
 	TYPE:General
 	PRERACE:1,Aasimar
-	PRETEXT:Daylight spell-like ability, sufficiently high level (see below)
+	PREABILITY:Spell-Like Ability ~ Aasimar
+	MULT:YES	STACK:NO	CHOOSE:NOCHOICE
+	BONUS:ABILITYPOOL|HeavenlyRadianceOption|1
 	DESC:Your heavenly light can be used in a variety of ways.
 	SOURCEPAGE:p.88
 	BENEFIT:You gain one additional use per day of daylight. Choose one spell from the table below; by expending a use of daylight, you may use this spell as a spell-like ability. To select a spell, you must meet the minimum character level for its listing in the table. The save DC for this spell is Charisma-based.
@@ -101,52 +89,11 @@ Metallic Wings
 
 ##Block: Catfolk Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Black Cat
-	TYPE:General
-	PRERACE:1,Catfolk
-	DESC:Bad luck befalls those who dare to cross you.
-	SOURCEPAGE:p.93
-	BENEFIT:Once per day as an immediate action, when you are hit by a melee attack, you can force the opponent who made the attack to reroll it with a +4 penalty. The opponent must take the result of the second attack roll. This is a supernatural ability. &nl; [Special] If you take this feat and don't already have all black fur, your fur turns completely black when you takes this feat.
-
-Catfolk Exemplar
-	TYPE:General
-	PRERACE:1,Catfolk
-	QUALIFY:ABILITY=FEAT|Aspect of the Beast
-	BONUS:ABILITYPOOL|CatfolkExemplarOption|1
-	MULT:YES	STACK:NO
-	DESC:Your feline traits are more defined and prominent than those of other members of your race.
-	SOURCEPAGE:p.93
-	BENEFIT:You can take the Aspect of the Beast feat even if you do not meet the normal prerequisites. Furthermore, your catlike nature manifests in one of the following ways.
-	
-Claw Pounce 
-	TYPE:Combat
-	PREATT:10
-	PRERACE:1,Catfolk
-	PREFEAT:1,Nimble Striker
-	PRESTAT:2,STR=13,DEX=15
-	PREMULT:1,PREABILITY:1,CATEGORY=Special Ability,Cat's Claws ~ Catfolk,PREFEAT:1,Aspect of the Beast(Claws of the Beast)
-	DESC:You can charge and make an attack with your paws.
-	SOURCEPAGE:p.94
-	BENEFIT:When you make a charge, you can make a full attack with your claws.
-
-Feline Grace
-	TYPE:General
-	PRERACE:1,Catfolk
-	PRESTAT:1,DEX=13
-	DESC:Your innate grace allows you to get out of the stickiest situations.
-	SOURCEPAGE:p.94
-	BENEFIT:You gain a +2 bonus to your CMD against bull rush, grapple, overrun, repositioning, and trip combat maneuvers.
-
-Nimble Striker 
-	TYPE:Combat
-	PREATT:1
-	PRERACE:1,Catfolk
-	PREABILITY:1,CATEGORY=Special Ability,Sprinter
-	PRESTAT:1,DEX=13
-	DESC:You were born to charge your enemies and nobody does it better.
-	SOURCEPAGE:p.94
-	BENEFIT:You do not take a -2 penalty to AC when you use the Cleave feat, Lunge feat, or when you charge.
+Black Cat	TYPE:General	PRERACE:1,Catfolk	DESC:Bad luck befalls those who dare to cross you.	SOURCEPAGE:p.93	BENEFIT:Once per day as an immediate action, when you are hit by a melee attack, you can force the opponent who made the attack to reroll it with a +4 penalty. The opponent must take the result of the second attack roll. This is a supernatural ability. Your fur turns completely black.
+Catfolk Exemplar	TYPE:General	PRERACE:1,Catfolk	QUALIFY:ABILITY=FEAT|Aspect of the Beast	BONUS:ABILITYPOOL|CatfolkExemplarOption|1	MULT:YES	STACK:NO	DESC:Your feline traits are more defined and prominent than those of other members of your race.	SOURCEPAGE:p.93	BENEFIT:You can take the Aspect of the Beast feat even if you do not meet the normal prerequisites. Furthermore, your catlike nature manifests in one of the following ways.
+Claw Pounce 	TYPE:Combat	PREATT:10	PRERACE:1,Catfolk	PREFEAT:1,Nimble Striker	PRESTAT:2,STR=13,DEX=15	PREMULT:1,PREABILITY:1,CATEGORY=Special Ability,Cat's Claws ~ Catfolk,PREFEAT:1,Aspect of the Beast(Claws of the Beast)	DESC:You can charge and make an attack with your paws.	SOURCEPAGE:p.94	BENEFIT:When you make a charge, you can make a full attack with your claws.
+Feline Grace	TYPE:General	PRERACE:1,Catfolk	PRESTAT:1,DEX=13	DESC:Your innate grace allows you to get out of the stickiest situations.	SOURCEPAGE:p.94	BENEFIT:You gain a +2 bonus to your CMD against bull rush, grapple, overrun, repositioning, and trip combat maneuvers.
+Nimble Striker 	TYPE:Combat	PREATT:1	PRERACE:1,Catfolk	PREABILITY:1,CATEGORY=Special Ability,Sprinter	PRESTAT:1,DEX=13	DESC:You were born to charge your enemies and nobody does it better.	SOURCEPAGE:p.94	BENEFIT:You do not take a -2 penalty to AC when you use the Cleave feat, Lunge feat, or when you charge.
 
 ##Block: Dhampir Feats
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
@@ -183,13 +130,7 @@ Diverse Palate
 	SOURCEPAGE:p.100
 	BENEFIT:Choose a humanoid subtype or the monstrous humanoid type. You may use your Blood Drinker feat on creatures of this subtype or type. &nl; [Special] You can take this feat multiple times. Each time you select it, choose a new humanoid subtype or the monstrous humanoid.
 
-Natural Charmer
-	TYPE:General
-	PRERACE:1,Dhampir
-	PRESTAT:1,CHA=17
-	DESC:You possess some of the dominating powers of your vampire progenitor.
-	SOURCEPAGE:p.100
-	BENEFIT:You can take 20 on any Charisma-based skills to charm, convince, persuade, or seduce humanoids whose attitude is at least friendly to you. Taking 20 still requires 20 times the normal time to perform the skill.
+Natural Charmer	TYPE:General	PRERACE:1,Dhampir	PRESTAT:1,CHA=17	DESC:You possess some of the dominating powers of your vampire progenitor.	SOURCEPAGE:p.100	BENEFIT:You can take 20 on any Charisma-based skills to charm, convince, persuade, or seduce humanoids whose attitude is at least friendly to you. Taking 20 still requires 20 times the normal time to perform the skill.
 
 ##Block: Drow Feats
 
@@ -225,43 +166,10 @@ Improved Drow Nobility
 	BENEFIT:You may use your dancing lights, faerie fire, feather fall, and levitate spell-like abilities twice per day. Your darkness spell-like ability instead becomes deeper darkness, which you may use twice per day.
 	DEFINE:DrowNobilityTier|2
 
-Improved Umbral Scion
-	TYPE:General
-	PRERACE:1,Drow
-	PREFEAT:4,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility,Umbral Scion
-	PRESTAT:2,CHA=13,WIS=13
-	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
-	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=TL|Dispel Magic|Divine Favor|Suggestion
-	DESC:You are a master of drow noble magic.
-	SOURCEPAGE:p.105
-	BENEFIT:You may use dispel magic, divine favor, and suggestion once per day as spell-like abilities. Your caster level is equal to your character level.
-
-Noble Spell Resistance
-	TYPE:General
-	PRELEVEL:MIN=13
-	PRERACE:1,Drow
-	PREFEAT:1,Greater Drow Nobility
-	PRESTAT:2,CHA=13,WIS=13
-	SR:TL+11
-	DESC:Your ascension is complete; you have the spell resistance approaching that of a demon.
-	SOURCEPAGE:p.105
-	BENEFIT:Your spell resistance is equal to %1.  You receive a +1 circumstance bonus on Diplomacy and Intimidate checks made against any drow.|11+TL
-
-Shadow Caster
-	TYPE:GeneralPRECLASS:1,SPELLCASTER=1
-	PRERACE:1,Drow
-	DESC:Your command over shadow and darkness create longer-lasting spell effects.
-	SOURCEPAGE:p.105
-	BENEFIT:When you cast spells of the shadow subschool or spells with the darkness descriptor, you are considered two levels higher when determining the duration of those spells.
-
-Spider Step
-	TYPE:General
-	PRELEVEL:MIN=3
-	PRERACE:1,Drow
-	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=TL|Spider Climb
-	DESC:You tread where only arachnids dare.
-	SOURCEPAGE:p.106
-	BENEFIT:You can cast spider climb once per day as a spell-like ability, using your character level as the caster level. Furthermore, you gain a +4 bonus on saving throws against the web special attacks of spiders and the effects of web and other similar spells (such as the web cloud spell).
+Improved Umbral Scion	TYPE:General	PRERACE:1,Drow	PREFEAT:4,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility,Umbral Scion	PRESTAT:2,CHA=13,WIS=13	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=TL|Dispel Magic|Divine Favor|Suggestion	DESC:You are a master of drow noble magic.	SOURCEPAGE:p.105	BENEFIT:You may use dispel magic, divine favor, and suggestion once per day as spell-like abilities. Your caster level is equal to your character level.
+Noble Spell Resistance	TYPE:General	PRELEVEL:MIN=13	PRERACE:1,Drow	PREFEAT:1,Greater Drow Nobility	PRESTAT:2,CHA=13,WIS=13	SR:TL+11	DESC:Your ascension is complete; you have the spell resistance approaching that of a demon.	SOURCEPAGE:p.105	BENEFIT:Your spell resistance is equal to %1.  You receive a +1 circumstance bonus on Diplomacy and Intimidate checks made against any drow.|11+TL
+Shadow Caster	TYPE:GeneralPRECLASS:1,SPELLCASTER=1	PRERACE:1,Drow	DESC:Your command over shadow and darkness create longer-lasting spell effects.	SOURCEPAGE:p.105	BENEFIT:When you cast spells of the shadow subschool or spells with the darkness descriptor, you are considered two levels higher when determining the duration of those spells.
+Spider Step	TYPE:General	PRELEVEL:MIN=3	PRERACE:1,Drow	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=TL|Spider Climb	DESC:You tread where only arachnids dare.	SOURCEPAGE:p.106	BENEFIT:You can cast spider climb once per day as a spell-like ability, using your character level as the caster level. Furthermore, you gain a +4 bonus on saving throws against the web special attacks of spiders and the effects of web and other similar spells (such as the web cloud spell).
 
 #  TODO: fix pretext
 Spider Summoner
@@ -272,603 +180,133 @@ Spider Summoner
 	SOURCEPAGE:p.106
 	BENEFIT:When casting either a summon monster spell or a summon nature's ally spell, your options increase. Depending on the level of the spell, you can summon the spiders listed.  Summon Monster: 1st level giant crab spider*; 4th level giant black widow*; 5th level ogre spider*; 7th level giant tarantula*.  Summon Nature's Ally: 1st level giant crab spider; 4th level giant black widow; 5th level ogre spider; 7th level giant tarantula.  Creatures marked with an asterisk (*) are summoned with the celestial template if you are good, and the fiendish template if you are evil. If you are neutral, you may choose which template to apply to the creature. Furthermore, when you summon spiders using summon monster or summon nature's ally, the DC of the summoned monster's poison and web effects increases by 2.
 
-Umbral Scion
-	TYPE:General
-	PRERACE:1,Drow
-	PREFEAT:3,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility
-	PRESTAT:2,CHA=13,WIS=13
-	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow
-	DESC:New spell-like abilities are unlocked for you as you rise to ascendency among the drow people.
-	SOURCEPAGE:p.106
-	BENEFIT:Select one of the following: dispel magic, divine favor, or suggestion. You may use this spell once per day as a spell-like ability. Your caster level is equal to your character level.
+Umbral Scion	TYPE:General	PRERACE:1,Drow	PREFEAT:3,Drow Nobility,Greater Drow Nobility,Improved Drow Nobility	PRESTAT:2,CHA=13,WIS=13	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Drow	DESC:New spell-like abilities are unlocked for you as you rise to ascendency among the drow people.	SOURCEPAGE:p.106	BENEFIT:Select one of the following: dispel magic, divine favor, or suggestion. You may use this spell once per day as a spell-like ability. Your caster level is equal to your character level.
 
 ###Block:  Fetchling Abilities
 
-Dark Sight
-	TYPE:General
-	PRERACE:1,Fetchling
-	PREFEAT:1,Gloom Sight
-	DESC:With further modification, your eyes can pierce the gloom of even magical darkness.
-	SOURCEPAGE:p.111
-	BENEFIT:You gain the ability to see up to 15 feet clearly in magical darkness, such as that created by the deeper darkness spell.
+Dark Sight	TYPE:General	PRERACE:1,Fetchling	PREFEAT:1,Gloom Sight	DESC:With further modification, your eyes can pierce the gloom of even magical darkness.	SOURCEPAGE:p.111	BENEFIT:You gain the ability to see up to 15 feet clearly in magical darkness, such as that created by the deeper darkness spell.
+Gloom Sight	TYPE:General	PRERACE:1,Fetchling	VISION:Darkvision (90')	ABILITY:Special Ability|AUTOMATIC|Light Sensitivity|PREFEAT:1,[Improved Dark Sight]	DESC:With a combination of strange shadow magic and chirurgery, your eyes are permanently modified to see farther in darkness.	SOURCEPAGE:p.111	BENEFIT:You gain darkvision 90 ft., but gain the light sensitivity weakness.
+Gloom Strike 	TYPE:Combat	PRERACE:1,Fetchling	PREFEAT:1,Blind-Fight	DESC:Few creatures are as accustomed to fighting in the shadows as you.	SOURCEPAGE:p.111	BENEFIT:When you are within an area of dim light or darkness, you gain a +1 bonus on attack rolls against enemies that are also within dim light or darkness.
+Improved Dark Sight	TYPE:General	PRERACE:1,Fetchling	PREFEAT:2,Dark Sight,Gloom Sight	ABILITY:Special Ability|AUTOMATIC|Light Blindness	DESC:With further modification, your eyes see clearly in not only normal darkness, but in magical darkness as well.	SOURCEPAGE:p.112	BENEFIT:You gain the see in darkness ability and lose the light sensitivity weakness, but gain the light blindness weakness.
 
-Gloom Sight
-	TYPE:General
-	PRERACE:1,Fetchling
-	VISION:Darkvision (90')
-	ABILITY:Special Ability|AUTOMATIC|Light Sensitivity|PREFEAT:1,[Improved Dark Sight]
-	DESC:With a combination of strange shadow magic and chirurgery, your eyes are permanently modified to see farther in darkness.
-	SOURCEPAGE:p.111
-	BENEFIT:You gain darkvision 90 ft., but gain the light sensitivity weakness.
-
-Gloom Strike 
-	TYPE:Combat
-	PRERACE:1,Fetchling
-	PREFEAT:1,Blind-Fight
-	DESC:Few creatures are as accustomed to fighting in the shadows as you.
-	SOURCEPAGE:p.111
-	BENEFIT:When you are within an area of dim light or darkness, you gain a +1 bonus on attack rolls against enemies that are also within dim light or darkness.
-
-Improved Dark Sight
-	TYPE:General
-	PRERACE:1,Fetchling
-	PREFEAT:2,Dark Sight,Gloom Sight
-	ABILITY:Special Ability|AUTOMATIC|Light Blindness
-	DESC:With further modification, your eyes see clearly in not only normal darkness, but in magical darkness as well.
-	SOURCEPAGE:p.112
-	BENEFIT:You gain the see in darkness ability and lose the light sensitivity weakness, but gain the light blindness weakness.
-
-#  TODO: fix pretext
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Shadow Ghost
 	TYPE:General
 	PRERACE:1,Fetchling
-	PRETEXT:shadow walk spell-like ability
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Fetchling
+	PREPCLEVEL:MIN=9
+	DEFINE:ShadowWalkTimes|1
+	MULT:YES	STACK:YES
+	BONUS:VAR|ShadowWalkTimes|1
 	DESC:You can move between the Shadow Plane and the Material Plane more often.
 	SOURCEPAGE:p.112
-	BENEFIT:You gain the ability to use shadow walk an additional time each day. &nl; [Special] You may select this feat multiple times. Its effects stack.
+	BENEFIT:You gain the ability to use shadow walk %1 times each day. You may select this feat multiple times.|ShadowWalkTimes
 
-#  TODO: fix pretext
 Shadow Walker
 	TYPE:General
 	PRERACE:1,Fetchling
-	PRETEXT:shadow walk spell-like ability
+	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Abilities ~ Fetchling
+	PREPCLEVEL:MIN=9
 	DESC:You can pierce the veil between the Shadow Plane and the Material Plane more often, and to greater effect.
 	SOURCEPAGE:p.112
 	BENEFIT:You can expend one use of your shadow walk spell-like ability to use dimension door as a spell-like ability. Your start and end locations for this ability must be in dim light or darkness.
 
 ###Block: Goblin Feats
 	
-Burn! Burn! Burn!
-	TYPE:General
-	PRESKILL:1,Disable Device=1
-	PRERACE:1,Goblin
-	DESC:You take the goblin love of arson and fire play to a whole new level.
-	SOURCEPAGE:p.118
-	BENEFIT:You deal an extra 1d4 points of fire damage when you attack with fire from an alchemical or nonmagical source (such as with alchemical fire or torches) and gain a +4 competence bonus on Reflex saving throws made to avoid catching on fire or to put yourself out when on fire. Additional damage caused by this feat does not apply to magical attacks (such as an alchemist's bomb) or to splash damage.
-
-Fire Hand 
-	TYPE:Combat
-	PRERACE:1,Goblin
-	DESC:Born with a torch in your hand, you have a gift with anything that burns.
-	SOURCEPAGE:p.118
-	BENEFIT:You can wield a torch as a weapon without taking the nonproficient penalty and gain a +1 bonus on attack rolls with melee weapons that deal fire damage.
-
-Fire Tamer
-	TYPE:General
-	PRERACE:1,Goblin
-	DESC:You know your way around even magical fire.
-	SOURCEPAGE:p.118
-	BENEFIT:You gain a +2 bonus on saves against spells with the fire descriptor. Additionally, your scars mark you as a talented fire tamer, granting you a +2 circumstance bonus on Diplomacy and Intimidate checks when dealing with other goblins.
-
-Flame Heart
-	TYPE:General
-	PRELEVEL:MIN=5
-	PRERACE:1,Goblin
-	PREFEAT:1,Fire Tamer
-	ABILITY:Special Ability|AUTOMATIC|Resistance to Fire
-	DEFINE:FireResistanceBonus|5
-	DESC:You have mastered fire magic and alchemy.
-	SOURCEPAGE:p.118
-	BENEFIT:You gain fire resistance 5. When casting spells with the fire descriptor or throwing alchemist bombs that deal fire damage, treat your caster level or alchemist level as if you were 1 level higher.
-
-Goblin Gunslinger 
-	TYPE:Combat
-	PRERACE:1,Goblin
-	DESC:You have learned how to fire the big guns.
-	SOURCEPAGE:p.118
-	BENEFIT:You can wield Medium firearms without taking the penalty for an inappropriately sized weapon.
-
-Tangle Feet 
-	TYPE:Combat
-	PRERACE:1,Goblin
-	PRESIZELTEQ:S
-	PREFEAT:3,Dodge,Mobility,Underfoot
-	DESC:Creatures who cross your path find themselves tripping over their own feet.
-	SOURCEPAGE:p.118
-	BENEFIT:When you successfully make an Acrobatics check to avoid provoking an attack of opportunity from a larger opponent when you move through its threatened area or its space, you can make that opponent lose its balance until the end of its next turn as a free action. While that creature's balance is lost, if it attempts to move, it must make a successful DC 15 Acrobatics check or fall prone, wasting the move action. You can only affect one creature with this effect each round.
+Burn! Burn! Burn!	TYPE:General	PRESKILL:1,Disable Device=1	PRERACE:1,Goblin	DESC:You take the goblin love of arson and fire play to a whole new level.	SOURCEPAGE:p.118	BENEFIT:You deal an extra 1d4 points of fire damage when you attack with fire from an alchemical or nonmagical source (such as with alchemical fire or torches) and gain a +4 competence bonus on Reflex saving throws made to avoid catching on fire or to put yourself out when on fire. Additional damage caused by this feat does not apply to magical attacks (such as an alchemist's bomb) or to splash damage.
+Fire Hand 	TYPE:Combat	PRERACE:1,Goblin	DESC:Born with a torch in your hand, you have a gift with anything that burns.	SOURCEPAGE:p.118	BENEFIT:You can wield a torch as a weapon without taking the nonproficient penalty and gain a +1 bonus on attack rolls with melee weapons that deal fire damage.
+Fire Tamer	TYPE:General	PRERACE:1,Goblin	DESC:You know your way around even magical fire.	SOURCEPAGE:p.118	BENEFIT:You gain a +2 bonus on saves against spells with the fire descriptor. Additionally, your scars mark you as a talented fire tamer, granting you a +2 circumstance bonus on Diplomacy and Intimidate checks when dealing with other goblins.
+Flame Heart	TYPE:General	PRELEVEL:MIN=5	PRERACE:1,Goblin	PREFEAT:1,Fire Tamer	ABILITY:Special Ability|AUTOMATIC|Resistance to Fire	DEFINE:FireResistanceBonus|5	DESC:You have mastered fire magic and alchemy.	SOURCEPAGE:p.118	BENEFIT:You gain fire resistance 5. When casting spells with the fire descriptor or throwing alchemist bombs that deal fire damage, treat your caster level or alchemist level as if you were 1 level higher.
+Goblin Gunslinger 	TYPE:Combat	PRERACE:1,Goblin	BONUS:WEAPONPROF=Firearms|PCSIZE|1	DESC:You have learned how to fire the big guns.	SOURCEPAGE:p.118	BENEFIT:You can wield Medium firearms without taking the penalty for an inappropriately sized weapon.
+Tangle Feet 	TYPE:Combat	PRERACE:1,Goblin	PRESIZELTEQ:S	PREFEAT:3,Dodge,Mobility,Underfoot	DESC:Creatures who cross your path find themselves tripping over their own feet.	SOURCEPAGE:p.118	BENEFIT:When you successfully make an Acrobatics check to avoid provoking an attack of opportunity from a larger opponent when you move through its threatened area or its space, you can make that opponent lose its balance until the end of its next turn as a free action. While that creature's balance is lost, if it attempts to move, it must make a successful DC 15 Acrobatics check or fall prone, wasting the move action. You can only affect one creature with this effect each round.
 
 ###Block: Hobgoblin Feats	
 
-Deafening Explosion
-	TYPE:General
-	PRERACE:1,Hobgoblin
-	PREABILITY:1,CATEGORY=Special Ability,Bomb
-	DESC:Your bombs explode with deafening force.
-	SOURCEPAGE:p.124
-	BENEFIT:You may reduce your bomb damage by one die to give it the ability to deafen the creature struck by it. The bomb must deal fire, force, or sonic damage. If a creature takes a direct hit from your bomb, it must make a saving throw against the bomb's DC or be deafened for 1 minute. This deafening is in addition to any other effects the bomb would normally have.
-
-Demoralizing Lash 
-	TYPE:Combat
-	PREATT:1
-	PRESKILL:1,Intimidate=1
-	PRERACE:1,Hobgoblin
-	DESC:You cow your enemies with the lash of a whip.
-	SOURCEPAGE:p.124
-	BENEFIT:To use this feat, you must use a whip (or another weapon in the flails fighter weapon group) to attack a foe demoralized by an Intimidate check. If the attack hits, you extend the duration the creature is shaken by 1 round. This feat has no effect on creatures whose shaken conditions are from sources other than Intimidate checks.
-
-Focusing Blow 
-	TYPE:Teamwork
-	PRERACE:1,Hobgoblin
-	PREFEAT:1,Hobgoblin Discipline
-	DESC:You and your allies work together to shake off mental effects.
-	SOURCEPAGE:p.124
-	BENEFIT:An ally who also has this feat can deal damage to you in order to break an ongoing mind-affecting effect that allows a saving throw. The ally must cause at least 5 points of damage to you with an attack, spell, or other ability. You then reroll your saving throw, with a +1 bonus for every 5 additional points of damage the attack caused. If your save is successful, the mind-affecting effect ends. Only damage actually dealt counts for purposes of this feat; nonlethal damage and damage reduced or eliminated by damage reduction, resistances, and so on does not qualify.
-
-Hobgoblin Discipline
-	TYPE:General
-	PREATT:1
-	PRERACE:1,Hobgoblin
-	DESC:The presence of other hobgoblins bolsters your resolve.
-	SOURCEPAGE:p.124
-	BENEFIT:While you are within 30 feet of at least two other hobgoblins, you gain a +1 morale bonus on saving throws.
-
-Taskmaster 
-	TYPE:Combat
-	PRESKILL:1,Intimidate=5
-	PRERACE:1,Hobgoblin
-	PREFEAT:1,Demoralizing Lash
-	DESC:You intimidate weaker allies into reckless ferocity.
-	SOURCEPAGE:p.124
-	BENEFIT:As a standard action, you spur an ally, who must have fewer Hit Dice than yourself, to reckless effort. For 1 minute, the ally gains a +1 morale bonus on attack rolls, weapon damage rolls, and Will saves against mind-affecting effects. However, the ally also takes a -2 penalty to AC and on skill checks. To affect an unwilling ally, you must succeed at an Intimidate check with the same DC used to demoralize your ally. If you have 10 or more ranks in Intimidate, the morale bonus increases to +2.
+Deafening Explosion	TYPE:General	PRERACE:1,Hobgoblin	PREABILITY:1,CATEGORY=Special Ability,Bomb	DESC:Your bombs explode with deafening force.	SOURCEPAGE:p.124	BENEFIT:You may reduce your bomb damage by one die to give it the ability to deafen the creature struck by it. The bomb must deal fire, force, or sonic damage. If a creature takes a direct hit from your bomb, it must make a saving throw against the bomb's DC or be deafened for 1 minute. This deafening is in addition to any other effects the bomb would normally have.
+Demoralizing Lash 	TYPE:Combat	PREATT:1	PRESKILL:1,Intimidate=1	PRERACE:1,Hobgoblin	DESC:You cow your enemies with the lash of a whip.	SOURCEPAGE:p.124	BENEFIT:To use this feat, you must use a whip (or another weapon in the flails fighter weapon group) to attack a foe demoralized by an Intimidate check. If the attack hits, you extend the duration the creature is shaken by 1 round. This feat has no effect on creatures whose shaken conditions are from sources other than Intimidate checks.
+Focusing Blow 	TYPE:Teamwork	PRERACE:1,Hobgoblin	PREFEAT:1,Hobgoblin Discipline	DESC:You and your allies work together to shake off mental effects.	SOURCEPAGE:p.124	BENEFIT:An ally who also has this feat can deal damage to you in order to break an ongoing mind-affecting effect that allows a saving throw. The ally must cause at least 5 points of damage to you with an attack, spell, or other ability. You then reroll your saving throw, with a +1 bonus for every 5 additional points of damage the attack caused. If your save is successful, the mind-affecting effect ends. Only damage actually dealt counts for purposes of this feat; nonlethal damage and damage reduced or eliminated by damage reduction, resistances, and so on does not qualify.
+Hobgoblin Discipline	TYPE:General	PREATT:1	PRERACE:1,Hobgoblin	DESC:The presence of other hobgoblins bolsters your resolve.	SOURCEPAGE:p.124	BENEFIT:While you are within 30 feet of at least two other hobgoblins, you gain a +1 morale bonus on saving throws.
+Taskmaster 	TYPE:Combat	PRESKILL:1,Intimidate=5	PRERACE:1,Hobgoblin	PREFEAT:1,Demoralizing Lash	DESC:You intimidate weaker allies into reckless ferocity.	SOURCEPAGE:p.124	BENEFIT:As a standard action, you spur an ally, who must have fewer Hit Dice than yourself, to reckless effort. For 1 minute, the ally gains a +1 morale bonus on attack rolls, weapon damage rolls, and Will saves against mind-affecting effects. However, the ally also takes a -2 penalty to AC and on skill checks. To affect an unwilling ally, you must succeed at an Intimidate check with the same DC used to demoralize your ally. If you have 10 or more ranks in Intimidate, the morale bonus increases to +2.
 
 ###Block: Ifrit Feats
 	
-Blazing Aura 
-	TYPE:Combat
-	PRELEVEL:MIN=13
-	PRERACE:1,Ifrit
-	PREFEAT:2,Inner Flame,Scorching Weapons
-	DESC:An inferno rages inside you, causing your body to radiate intense heat.
-	SOURCEPAGE:p.130
-	BENEFIT:When you use Scorching Weapons, on your turn as a free action, you may create an aura of heat that lasts for 1 round. This aura deals 1d6 points of fire damage to any creature that begins its turn adjacent to you.
-
-Blistering Feint 
-	TYPE:Combat
-	PRERACE:1,Ifrit
-	PREFEAT:2,Combat Expertise,Improved Feint
-	DESC:Your foes flinch from the heat of your weapon, giving you an opportunity to slip past their defenses.
-	SOURCEPAGE:p.130
-	BENEFIT:You gain a +2 bonus on feint checks made while wielding a weapon that deals fire damage. Anytime you successfully feint a creature while using such a weapon, you may deal its fire damage to the enemy.
-
-Elemental Jaunt
-	TYPE:General
-	PRERACE=1,Ifrit,Oread,Sylph,Undine
-	PRELEVEL:MIN=15
-	DESC:The spirits of your ancestral home call to you, beckoning you to return.
-	SOURCEPAGE:p.130
-	BENEFIT:Once per day, you can cast plane shift as a spell-like ability with a caster level equal to your level to transport yourself and willing targets to an elemental plane that is appropriate to your race (ifrits to the Plane of Fire, oreads to the Plane of Earth, sylphs to the Plane of Air, and undines to the Plane of Water). While on that plane, you (but not anyone transported with you) are treated as though under the effect of the spell planar adaptation.
-
-Firesight
-	TYPE:General
-	PRERACE:1,Ifrit
-	DESC:Fire no longer blinds you, and smoke conceals nothing from your gaze.
-	SOURCEPAGE:p.130
-	BENEFIT:You can see through fire and smoke without penalty, ignoring any cover or concealment bonuses from fire and smoke. This does not allow you to see anything you could not otherwise see (for example, invisible creatures are still invisible). You are immune to the dazzled condition.
-
-Inner Flame 
-	TYPE:Combat
-	PRELEVEL:MIN=7
-	PRERACE:1,Ifrit
-	PREFEAT:1,Scorching Weapons
-	DESC:Your body generates so much heat that your mere touch scorches your enemies.
-	SOURCEPAGE:p.130
-	BENEFIT:Your bonus on saves against fire attacks and spells with the fire descriptor or light descriptor increases to +4. When you use Scorching Weapons, the affected weapons deal an additional 1d6 points of fire damage instead of 1, and when you are grappling, you deal this damage to your grappling opponent on your turn.
-
-Scorching Weapons 
-	TYPE:Combat
-	PRERACE:1,Ifrit
-	DESC:Elemental fire stirs within your body, boiling your blood and rendering you resistant to flame.
-	SOURCEPAGE:p.130
-	BENEFIT:You gain a +2 bonus on saving throws against fire attacks and spells with the fire descriptor or light descriptor. As a swift action, you can make up to two held manufactured metallic weapons become red-hot for 1 round, dealing 1 additional point of fire damage with a successful hit. This does not stack with other effects that add fire damage to weapons, such as the flaming weapon special ability.
+Blazing Aura 	TYPE:Combat	PRELEVEL:MIN=13	PRERACE:1,Ifrit	PREFEAT:2,Inner Flame,Scorching Weapons	DESC:An inferno rages inside you, causing your body to radiate intense heat.	SOURCEPAGE:p.130	BENEFIT:When you use Scorching Weapons, on your turn as a free action, you may create an aura of heat that lasts for 1 round. This aura deals 1d6 points of fire damage to any creature that begins its turn adjacent to you.
+Blistering Feint 	TYPE:Combat	PRERACE:1,Ifrit	PREFEAT:2,Combat Expertise,Improved Feint	DESC:Your foes flinch from the heat of your weapon, giving you an opportunity to slip past their defenses.	SOURCEPAGE:p.130	BENEFIT:You gain a +2 bonus on feint checks made while wielding a weapon that deals fire damage. Anytime you successfully feint a creature while using such a weapon, you may deal its fire damage to the enemy.
+Elemental Jaunt	TYPE:General	PRERACE=1,Ifrit,Oread,Sylph,Undine	PRELEVEL:MIN=15	DESC:The spirits of your ancestral home call to you, beckoning you to return.	SOURCEPAGE:p.130	BENEFIT:Once per day, you can cast plane shift as a spell-like ability with a caster level equal to your level to transport yourself and willing targets to an elemental plane that is appropriate to your race (ifrits to the Plane of Fire, oreads to the Plane of Earth, sylphs to the Plane of Air, and undines to the Plane of Water). While on that plane, you (but not anyone transported with you) are treated as though under the effect of the spell planar adaptation.
+Firesight	TYPE:General	PRERACE:1,Ifrit	DESC:Fire no longer blinds you, and smoke conceals nothing from your gaze.	SOURCEPAGE:p.130	BENEFIT:You can see through fire and smoke without penalty, ignoring any cover or concealment bonuses from fire and smoke. This does not allow you to see anything you could not otherwise see (for example, invisible creatures are still invisible). You are immune to the dazzled condition.
+Inner Flame 	TYPE:Combat	PRELEVEL:MIN=7	PRERACE:1,Ifrit	PREFEAT:1,Scorching Weapons	DESC:Your body generates so much heat that your mere touch scorches your enemies.	SOURCEPAGE:p.130	BENEFIT:Your bonus on saves against fire attacks and spells with the fire descriptor or light descriptor increases to +4. When you use Scorching Weapons, the affected weapons deal an additional 1d6 points of fire damage instead of 1, and when you are grappling, you deal this damage to your grappling opponent on your turn.
+Scorching Weapons 	TYPE:Combat	PRERACE:1,Ifrit	DESC:Elemental fire stirs within your body, boiling your blood and rendering you resistant to flame.	SOURCEPAGE:p.130	BENEFIT:You gain a +2 bonus on saving throws against fire attacks and spells with the fire descriptor or light descriptor. As a swift action, you can make up to two held manufactured metallic weapons become red-hot for 1 round, dealing 1 additional point of fire damage with a successful hit. This does not stack with other effects that add fire damage to weapons, such as the flaming weapon special ability.
 
 ###Block: Kobold Feats
 	
-Draconic Aspect
-	TYPE:General
-	PRERACE:1,Kobold
-	BONUS:ABILITYPOOL|KoboldDragonScaleColor|1|!PREABILITY:1,CATEGORY=Special Ability,Dragon-Scaled
-	BONUS:COMBAT|AC|1|TYPE=NaturalArmor|PREABILITY:1,CATEGORY=Special Ability,Dragon-Scaled
-	DESC:You possess some of the qualities of your dragon ancestors.
-	SOURCEPAGE:p.136
-	BENEFIT:Your scales take on the color and some of the resistances of one of the chromatic dragons. Choose one of the following chromatic dragon types: black (acid), blue (electricity), green (acid), red (fire), or white (cold). Your scales take on the color of that dragon, and you gain resistance 5 to the dragon color's corresponding energy type. If you have the dragon-scaled racial trait, your scale color does not change and you gain a +1 natural armor bonus instead.
-
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Draconic Breath
-	TYPE:General
-	PRERACE:1,Kobold
-	PREFEAT:1,Draconic Aspect
-	ABILITY:Special Ability|AUTOMATIC|Acid Line ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Black ~ Dragon Scaled
-	ABILITY:Special Ability|AUTOMATIC|Electricity Line ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Blue ~ Dragon Scaled
-	ABILITY:Special Ability|AUTOMATIC|Acid Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Green ~ Dragon Scaled
-	ABILITY:Special Ability|AUTOMATIC|Fire Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Red ~ Dragon Scaled
-	ABILITY:Special Ability|AUTOMATIC|Cold Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,White ~ Dragon Scaled
-	DEFINE:KoboldBreathWeaponSave|0
-	DESC:You possess draconic defenses and a draconic breath weapon.
-	SOURCEPAGE:p.136
-	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You gain a breath weapon that is determined by your scale coloration by either the Draconic Aspect feat or the dragon-scaled racial trait. Using a breath weapon is a standard action that does not provoke attacks of opportunity. You can use your breath weapon once per day. Creatures within the area of your breath weapon who succeed at a Reflex saving throw (DC %1) take only half damage.|KoboldBreathWeaponSave
-	BONUS:VAR|KoboldBreathWeaponSave|10+TL+CON|!PREABILITY:1,CATEGORY=Special Ability,Kobold Sorcerer Bloodline,Draconic Bloodline
-	BONUS:VAR|KoboldBreathWeaponSave|10+TL+CHA|PREABILITY:1,CATEGORY=Special Ability,Kobold Sorcerer Bloodline,Draconic Bloodline
-
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Draconic Glide
-	TYPE:General
-	PRERACE:1,Kobold
-	PREFEAT:1,Draconic Aspect
-	DEFINE:GlidingBaseSpeed|5
-	DESC:You possess draconic defenses and wings that allow you to glide.
-	SOURCEPAGE:p.136
-	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You grow a pair of wings that you can use to fall and glide at a safe pace. You can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling safely, you may make an additional DC 15 Fly check to glide, moving %1 feet laterally for every 20 feet you fall.|GlidingBaseSpeed
-	BONUS:VAR|GlidingBaseSpeed|25
-
-Draconic Paragon
-	TYPE:General
-	PREFEAT:1,Draconic Breath,Draconic Glide
-	PRELEVEL:MIN=10
-	PRERACE:1,Kobold
-	PREFEAT:1,Draconic Aspect
-	MOVE:Fly,20		CSKILL:Fly
-	DESC:You can shrug off sleep and paralysis effects as well as any dragon, and your draconic aspects improve.
-	SOURCEPAGE:p.137
-	BENEFIT:You gain an additional +2 bonus against sleep and paralysis effects. You can use your breath weapon twice per day and your breath weapon damage increases to 4d6 points of energy damage. Your wings from the Draconic Glide feat grow stronger, granting you a fly speed of 20 feet (average maneuverability).
-
-Kobold Ambusher 
-	TYPE:Combat
-	PRESKILL:1,Stealth=4
-	PRERACE:1,Kobold
-	DESC:You are adept at moving fast and staying hidden.
-	SOURCEPAGE:p.137
-	BENEFIT:You take no penalty on Stealth checks when you move up to your full speed. You can use the run or charge action and remain hidden, taking a -10 penalty on the check to do so.
-
-Kobold Sniper 
-	TYPE:Combat
-	PRESKILL:1,Stealth=1
-	PRERACE:1,Kobold
-	DESC:You snipe quickly, making it harder for others to find the location of your attack.
-	SOURCEPAGE:p.137
-	BENEFIT:When you are sniping, you only take a -10 penalty on your Stealth checks to stay hidden.
-
-# Implement: proficiency with all tail attachments.
-Tail Terror 
-	TYPE:Combat
-	PREATT:1
-	PRERACE:1,Kobold
-	NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Bludgeoning.Finessable,*1,1d4
-	DESC:You have strengthened your tail enough to make slap attacks with it.
-	SOURCEPAGE:p.137
-	BENEFIT:You can make a tail slap attack with your tail. This is a secondary natural attack that deals 1d4 points of bludgeoning damage. Furthermore, you can augment your tail slap attack with a kobold tail attachment. For the purpose of weapon feats, you are considered proficient with all kobold tail attachments.
+Draconic Aspect	TYPE:General	PRERACE:1,Kobold	BONUS:ABILITYPOOL|KoboldDragonScaleColor|1|!PREABILITY:1,CATEGORY=Special Ability,Dragon-Scaled	BONUS:COMBAT|AC|1|TYPE=NaturalArmor|PREABILITY:1,CATEGORY=Special Ability,Dragon-Scaled	DESC:You possess some of the qualities of your dragon ancestors.	SOURCEPAGE:p.136	BENEFIT:Your scales take on the color and some of the resistances of one of the chromatic dragons. Choose one of the following chromatic dragon types: black (acid), blue (electricity), green (acid), red (fire), or white (cold). Your scales take on the color of that dragon, and you gain resistance 5 to the dragon color's corresponding energy type. If you have the dragon-scaled racial trait, your scale color does not change and you gain a +1 natural armor bonus instead.
+Draconic Breath	TYPE:General	PRERACE:1,Kobold	PREFEAT:1,Draconic Aspect	ABILITY:Special Ability|AUTOMATIC|Acid Line ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Black ~ Dragon Scaled	ABILITY:Special Ability|AUTOMATIC|Electricity Line ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Blue ~ Dragon Scaled	ABILITY:Special Ability|AUTOMATIC|Acid Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Green ~ Dragon Scaled	ABILITY:Special Ability|AUTOMATIC|Fire Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,Red ~ Dragon Scaled	ABILITY:Special Ability|AUTOMATIC|Cold Cone ~ Kobold Dragon Breath|PREABILITY:1,CATEGORY=Special Ability,White ~ Dragon Scaled	DEFINE:KoboldBreathWeaponSave|0	DESC:You possess draconic defenses and a draconic breath weapon.	SOURCEPAGE:p.136	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You gain a breath weapon that is determined by your scale coloration by either the Draconic Aspect feat or the dragon-scaled racial trait. Using a breath weapon is a standard action that does not provoke attacks of opportunity. You can use your breath weapon once per day. Creatures within the area of your breath weapon who succeed at a Reflex saving throw (DC %1) take only half damage.|KoboldBreathWeaponSave	BONUS:VAR|KoboldBreathWeaponSave|10+TL+CON|!PREABILITY:1,CATEGORY=Special Ability,Kobold Sorcerer Bloodline,Draconic Bloodline	BONUS:VAR|KoboldBreathWeaponSave|10+TL+CHA|PREABILITY:1,CATEGORY=Special Ability,Kobold Sorcerer Bloodline,Draconic Bloodline
+Draconic Glide	TYPE:General	PRERACE:1,Kobold	PREFEAT:1,Draconic Aspect	DEFINE:GlidingBaseSpeed|5	DESC:You possess draconic defenses and wings that allow you to glide.	SOURCEPAGE:p.136	BENEFIT:You gain a +2 bonus against sleep and paralysis effects. You grow a pair of wings that you can use to fall and glide at a safe pace. You can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling safely, you may make an additional DC 15 Fly check to glide, moving %1 feet laterally for every 20 feet you fall.|GlidingBaseSpeed	BONUS:VAR|GlidingBaseSpeed|25
+Draconic Paragon	TYPE:General	PREFEAT:1,Draconic Breath,Draconic Glide	PRELEVEL:MIN=10	PRERACE:1,Kobold	PREFEAT:1,Draconic Aspect	MOVE:Fly,20		CSKILL:Fly	DESC:You can shrug off sleep and paralysis effects as well as any dragon, and your draconic aspects improve.	SOURCEPAGE:p.137	BENEFIT:You gain an additional +2 bonus against sleep and paralysis effects. You can use your breath weapon twice per day and your breath weapon damage increases to 4d6 points of energy damage. Your wings from the Draconic Glide feat grow stronger, granting you a fly speed of 20 feet (average maneuverability).
+Kobold Ambusher 	TYPE:Combat	PRESKILL:1,Stealth=4	PRERACE:1,Kobold	DESC:You are adept at moving fast and staying hidden.	SOURCEPAGE:p.137	BENEFIT:You take no penalty on Stealth checks when you move up to your full speed. You can use the run or charge action and remain hidden, taking a -10 penalty on the check to do so.
+Kobold Sniper 	TYPE:Combat	PRESKILL:1,Stealth=1	PRERACE:1,Kobold	DESC:You snipe quickly, making it harder for others to find the location of your attack.	SOURCEPAGE:p.137	BENEFIT:When you are sniping, you only take a -10 penalty on your Stealth checks to stay hidden.
+Tail Terror 	TYPE:Combat	PREATT:1	PRERACE:1,Kobold	NATURALATTACKS:Tail Slap,Weapon.Natural.Melee.Bludgeoning.Finessable,*1,1d4	AUTO:WEAPONPROF|TYPE.KoboldTailAttachment	DESC:You have strengthened your tail enough to make slap attacks with it.	SOURCEPAGE:p.137	BENEFIT:You can make a tail slap attack with your tail. This is a secondary natural attack that deals 1d4 points of bludgeoning damage. Furthermore, you can augment your tail slap attack with a kobold tail attachment. For the purpose of weapon feats, you are considered proficient with all kobold tail attachments.
 
 ###Block: Orc Feats
 	
-Born Alone
-	TYPE:General
-	PRERACE:1,Orc
-	DESC:You are so tough and vicious that you killed and ate the rest of your litter while still in the womb.
-	SOURCEPAGE:p.141
-	BENEFIT:Whenever you kill or knock unconscious an opponent with a melee attack, you gain temporary hit points equal to your Constitution bonus (minimum 1) until your next turn. These temporary hit points do not stack. You do not gain this bonus if the opponent is helpless or has less than half your Hit Dice.
-
-Bullying Blow 
-	TYPE:Combat
-	PRESKILL:1,Intimidate=1
-	PRERACE:1,Orc
-	DESC:With a simple hit, you more easily intimidate an opponent.
-	SOURCEPAGE:p.141
-	BENEFIT:As a standard action, you may make a melee attack with a -2 penalty on the attack roll. If the attack damages your opponent, you may make an Intimidate check to demoralize that opponent as a free action.
-
-Ferocious Action
-	TYPE:General
-	PRERACE:1,Orc
-	PREABILITY:1,CATEGORY=Special Ability,Ferocity
-	DESC:You ferocity is quick but shorter lived.
-	SOURCEPAGE:p.141
-	BENEFIT:When you fall to 0 hit points or fewer, you lose 2 hit points each round, but you are not staggered. If you are in a rage (such as that caused by the barbarian rage class feature), you instead only lose 1 hit point per round.
-
-Foment the Blood
-	TYPE:General
-	PRERACE:1,Orc
-	PREABILITY:1,CATEGORY=Special Ability,Channel Energy
-	DESC:You can unleash a wave of energy that drives orcs into a frenzy.
-	SOURCEPAGE:p.141
-	BENEFIT:When you channel energy, instead of creating its normal effect, you can give orcs a bonus on weapon damage and critical hit confirmation rolls until your next turn. This bonus is equal to the number of dice your channeled energy normally heals or harms. Your channel has its normal effect on other creatures in the area.
-
-Grudge Fighter 
-	TYPE:Combat
-	PRERACE:1,Orc
-	DESC:You feel great anger at anyone who dares to attack you, and this fury makes your own attacks that much stronger.
-	SOURCEPAGE:p.141
-	BENEFIT:You gain a +1 morale bonus on attack and damage rolls made against any creature that attacked you in the current combat.
-
-Orc Weapon Expertise 
-	TYPE:Combat
-	PREATT:1
-	PRERACE:1,Orc
-	BONUS:ABILITYPOOL|OrcWeaponExpertise|1
-	MULT:YES	STACK:NO
-	DESC:You can do more with the weapons orcs favor the most.
-	SOURCEPAGE:p.142
-	BENEFIT:Whenever you wield a weapon that has "orc" in its name, you gain the benefit you chose so long as you are actually proficient with that weapon. This feat has no effect if you are not proficient with the weapon you're using.  You can gain this feat multiple times. Each time you take this feat, you must choose a different benefit. You may only apply one of these benefits per round (chosen as a free action at the start of your turn).
-
-Resolute Rager
-	TYPE:General
-	PRERACE:1,Orc
-	PREABILITY:1,CATEGORY=Special Ability,Rage
-	DESC:Fear passes quickly while you are raging.
-	SOURCEPAGE:p.142
-	BENEFIT:While raging, when under the effect of a fear effect that allows a saving throw, you can make a new saving throw against that fear effect at the start of each of your turns before acting. If you make the new save, the fear effect ends.
-
-Reverse-Feint 
-	TYPE:Combat
-	PREATT:1
-	PRERACE:1,Orc
-	PREFEAT:1,Toughness
-	DESC:You can goad an opponent into attacking you in order to make your counter attack all the more powerful.
-	SOURCEPAGE:p.142
-	BENEFIT:As a move action, you can leave a gap in your defenses for one adjacent opponent to use. If the opponent attacks you on its next turn, it gains a +4 bonus on its attack roll. Whether or not the opponent successfully hits, you may attack it as an immediate action with a single melee attack, gaining a +2 bonus on your attack roll.
-
-Trap Wrecker
-	TYPE:General
-	PRESKILL:1,Disable Device=1
-	PRERACE:1,Orc
-	PREFEAT:1,Power Attack
-	DESC:You can smash traps instead of disarming them.
-	SOURCEPAGE:p.142
-	BENEFIT:You can attempt to disarm a trap by striking it with a melee weapon instead of making a Disable Device check. As a full-round action, make a melee attack against an Armor Class equal to the trap's Disable Device DC. If you miss, the trap activates. If you hit, roll damage. If this damage is at least half the trap's Disable Device DC, you disable the trap. If this damage is less than half the trap's Disable Device DC, the trap activates. You can only attempt this on nonmagical traps. You must be able to reach some part of the trap with your attack in order to use this feat. At the GM's discretion, some traps may not be susceptible to this feat.
+Born Alone	TYPE:General	PRERACE:1,Orc	DESC:You are so tough and vicious that you killed and ate the rest of your litter while still in the womb.	SOURCEPAGE:p.141	BENEFIT:Whenever you kill or knock unconscious an opponent with a melee attack, you gain temporary hit points equal to your Constitution bonus (minimum 1) until your next turn. These temporary hit points do not stack. You do not gain this bonus if the opponent is helpless or has less than half your Hit Dice.
+Bullying Blow 	TYPE:Combat	PRESKILL:1,Intimidate=1	PRERACE:1,Orc	DESC:With a simple hit, you more easily intimidate an opponent.	SOURCEPAGE:p.141	BENEFIT:As a standard action, you may make a melee attack with a -2 penalty on the attack roll. If the attack damages your opponent, you may make an Intimidate check to demoralize that opponent as a free action.
+Ferocious Action	TYPE:General	PRERACE:1,Orc	PREABILITY:1,CATEGORY=Special Ability,Ferocity	DESC:You ferocity is quick but shorter lived.	SOURCEPAGE:p.141	BENEFIT:When you fall to 0 hit points or fewer, you lose 2 hit points each round, but you are not staggered. If you are in a rage (such as that caused by the barbarian rage class feature), you instead only lose 1 hit point per round.
+Foment the Blood	TYPE:General	PRERACE:1,Orc	PREABILITY:1,CATEGORY=Special Ability,Channel Energy	DESC:You can unleash a wave of energy that drives orcs into a frenzy.	SOURCEPAGE:p.141	BENEFIT:When you channel energy, instead of creating its normal effect, you can give orcs a bonus on weapon damage and critical hit confirmation rolls until your next turn. This bonus is equal to the number of dice your channeled energy normally heals or harms. Your channel has its normal effect on other creatures in the area.
+Grudge Fighter 	TYPE:Combat	PRERACE:1,Orc	DESC:You feel great anger at anyone who dares to attack you, and this fury makes your own attacks that much stronger.	SOURCEPAGE:p.141	BENEFIT:You gain a +1 morale bonus on attack and damage rolls made against any creature that attacked you in the current combat.
+Orc Weapon Expertise 	TYPE:Combat	PREATT:1	PRERACE:1,Orc	BONUS:ABILITYPOOL|OrcWeaponExpertise|1	MULT:YES	STACK:NO	DESC:You can do more with the weapons orcs favor the most.	SOURCEPAGE:p.142	BENEFIT:Whenever you wield a weapon that has "orc" in its name, you gain the benefit you chose so long as you are actually proficient with that weapon. This feat has no effect if you are not proficient with the weapon you're using.  You can gain this feat multiple times. Each time you take this feat, you must choose a different benefit. You may only apply one of these benefits per round (chosen as a free action at the start of your turn).
+Resolute Rager	TYPE:General	PRERACE:1,Orc	PREABILITY:1,CATEGORY=Special Ability,Rage	DESC:Fear passes quickly while you are raging.	SOURCEPAGE:p.142	BENEFIT:While raging, when under the effect of a fear effect that allows a saving throw, you can make a new saving throw against that fear effect at the start of each of your turns before acting. If you make the new save, the fear effect ends.
+Reverse-Feint 	TYPE:Combat	PREATT:1	PRERACE:1,Orc	PREFEAT:1,Toughness	DESC:You can goad an opponent into attacking you in order to make your counter attack all the more powerful.	SOURCEPAGE:p.142	BENEFIT:As a move action, you can leave a gap in your defenses for one adjacent opponent to use. If the opponent attacks you on its next turn, it gains a +4 bonus on its attack roll. Whether or not the opponent successfully hits, you may attack it as an immediate action with a single melee attack, gaining a +2 bonus on your attack roll.
+Trap Wrecker	TYPE:General	PRESKILL:1,Disable Device=1	PRERACE:1,Orc	PREFEAT:1,Power Attack	DESC:You can smash traps instead of disarming them.	SOURCEPAGE:p.142	BENEFIT:You can attempt to disarm a trap by striking it with a melee weapon instead of making a Disable Device check. As a full-round action, make a melee attack against an Armor Class equal to the trap's Disable Device DC. If you miss, the trap activates. If you hit, roll damage. If this damage is at least half the trap's Disable Device DC, you disable the trap. If this damage is less than half the trap's Disable Device DC, the trap activates. You can only attempt this on nonmagical traps. You must be able to reach some part of the trap with your attack in order to use this feat. At the GM's discretion, some traps may not be susceptible to this feat.
 
 ###Block: Oread Feats
 	
-Dwarf Blooded
-	TYPE:General
-	PRERACE:1,Oread
-	ABILITY:Special Ability|Steady ~ Dwarf,Stonecunning ~ Dwarf
-	DESC:You have dwarven blood coursing through your veins.
-	SOURCEPAGE:p.147
-	BENEFIT:Your dwarven heritage manifests in two ways. First, your speed is never modified by armor or encumbrance, as the dwarf slow and steady racial trait. Second, you gain the stonecunning dwarf racial trait.
-
-Echoes of Stone
-	TYPE:General
-	PRERACE:1,Oread
-	BONUS:SKILL|Perception (Underground),Survival (Avoid Becoming Lost in Caverns and Rocky Areas)|4
-	DESC:Your senses are keener among the rocks and stones.
-	BENEFIT:You gain a +4 racial bonus on Perception checks underground, and on Survival checks to avoid becoming lost in caverns and rocky areas.
-
-Murmurs of Earth
-	TYPE:General
-	PRELEVEL:MIN=9
-	PRERACE:1,Oread
-	PREFEAT:1,Echoes of Stone
-	VISION:Tremorsense (15')
-	DESC:The earth opens up her secrets to your perceptions.
-	SOURCEPAGE:p.147
-	BENEFIT:You gain a limited form of tremorsense. As a move action, you become aware of all creatures within 15 feet that are in contact with the ground at that moment.
-
-Oread Burrower
-	TYPE:General
-	PRELEVEL:MIN=9
-	PRERACE:1,Oread
-	PREFEAT:1,Stony Step
-	MOVECLONE:Walk,Burrow,/2
-	DESC:The ground parts for you at the slightest touch, allowing you to dig with great speed.
-	SOURCEPAGE:p.147
-	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
-
-Oread Earth Glider
-	TYPE:General
-	PRELEVEL:MIN=13
-	PRERACE:1,Oread
-	PREFEAT:2,Oread Burrower,Stony Step
-	DESC:The earth welcomes you, showing you the secret paths through sand and soil.
-	SOURCEPAGE:p.147
-	BENEFIT:You gain the earth glide universal monster ability and can use it to travel at your full base speed through sand, dirt, clay, gravel, or similar materials. If protected against fire damage, you can even burrow through lava. You can burrow through solid stone at 1/2 your base speed.
-
-Stony Step
-	TYPE:General
-	PRERACE:1,Oread
-	DESC:The earth recognizes its kinship with you and does not impede your movement.
-	SOURCEPAGE:p.147
-	BENEFIT:Whenever you move, you may move through 5 feet of earth- or stone-based difficult terrain (rubble, stone stairs, and so on) each round as if it were normal terrain. The effects of this feat stack with similar feats such as Acrobatic Steps and Nimble Moves. This feat allows you to take a 5-foot step into this kind of difficult terrain.
+Dwarf Blooded	TYPE:General	PRERACE:1,Oread	ABILITY:Special Ability|Steady ~ Dwarf,Stonecunning ~ Dwarf	DESC:You have dwarven blood coursing through your veins.	SOURCEPAGE:p.147	BENEFIT:Your dwarven heritage manifests in two ways. First, your speed is never modified by armor or encumbrance, as the dwarf slow and steady racial trait. Second, you gain the stonecunning dwarf racial trait.
+Echoes of Stone	TYPE:General	PRERACE:1,Oread	BONUS:SKILL|Perception (Underground),Survival (Avoid Becoming Lost in Caverns and Rocky Areas)|4	DESC:Your senses are keener among the rocks and stones.	BENEFIT:You gain a +4 racial bonus on Perception checks underground, and on Survival checks to avoid becoming lost in caverns and rocky areas.
+Murmurs of Earth	TYPE:General	PRELEVEL:MIN=9	PRERACE:1,Oread	PREFEAT:1,Echoes of Stone	VISION:Tremorsense (15')	DESC:The earth opens up her secrets to your perceptions.	SOURCEPAGE:p.147	BENEFIT:You gain a limited form of tremorsense. As a move action, you become aware of all creatures within 15 feet that are in contact with the ground at that moment.
+Oread Burrower	TYPE:General	PRELEVEL:MIN=9	PRERACE:1,Oread	PREFEAT:1,Stony Step	MOVECLONE:Walk,Burrow,/2	DESC:The ground parts for you at the slightest touch, allowing you to dig with great speed.	SOURCEPAGE:p.147	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
+Oread Earth Glider	TYPE:General	PRELEVEL:MIN=13	PRERACE:1,Oread	PREFEAT:2,Oread Burrower,Stony Step	DESC:The earth welcomes you, showing you the secret paths through sand and soil.	SOURCEPAGE:p.147	BENEFIT:You gain the earth glide universal monster ability and can use it to travel at your full base speed through sand, dirt, clay, gravel, or similar materials. If protected against fire damage, you can even burrow through lava. You can burrow through solid stone at 1/2 your base speed.
+Stony Step	TYPE:General	PRERACE:1,Oread	DESC:The earth recognizes its kinship with you and does not impede your movement.	SOURCEPAGE:p.147	BENEFIT:Whenever you move, you may move through 5 feet of earth- or stone-based difficult terrain (rubble, stone stairs, and so on) each round as if it were normal terrain. The effects of this feat stack with similar feats such as Acrobatic Steps and Nimble Moves. This feat allows you to take a 5-foot step into this kind of difficult terrain.
 
 ###Block: Ratfolk Feats	
 	
-Burrowing Teeth
-	TYPE:General
-	PRERACE:1,Ratfolk
-	PREFEAT:2,Sharpclaw,Tunnel Rat
-	MOVECLONE:Walk,Burrow,/2
-	DESC:You have teeth and claws that suit you well to digging.
-	SOURCEPAGE:p.154
-	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
-
-Sharpclaw 
-	TYPE:Combat
-	PRERACE:1,Ratfolk
-	NATURALATTACKS:Claw,Weapon.Natural.Melee.Slashing.Finessable,*2,1d4
-	DESC:Your nails are large and strong.
-	SOURCEPAGE:p.154
-	BENEFIT:You gain two claw attacks. These are primary natural attacks that deal 1d4 points of damage.
-
-Tunnel Rat
-	TYPE:General
-	PRERACE:1,Ratfolk
-	PREABILITY:1,CATEGORY=Special Ability,Swarming
-	DESC:You are a master of fighting in confined spaces.
-	SOURCEPAGE:p.154
-	BENEFIT:You count as one size smaller than normal for the purpose of squeezing.
+Burrowing Teeth	TYPE:General	PRERACE:1,Ratfolk	PREFEAT:2,Sharpclaw,Tunnel Rat	MOVECLONE:Walk,Burrow,/2	DESC:You have teeth and claws that suit you well to digging.	SOURCEPAGE:p.154	BENEFIT:You gain a burrow speed equal to 1/2 your base speed. You can burrow through sand, dirt, clay, gravel, or similar materials, but not solid stone. You do not leave a hole behind, nor is your passage marked on the surface.
+Sharpclaw 	TYPE:Combat	PRERACE:1,Ratfolk	NATURALATTACKS:Claw,Weapon.Natural.Melee.Slashing.Finessable,*2,1d4	DESC:Your nails are large and strong.	SOURCEPAGE:p.154	BENEFIT:You gain two claw attacks. These are primary natural attacks that deal 1d4 points of damage.
+Tunnel Rat	TYPE:General	PRERACE:1,Ratfolk	PREABILITY:1,CATEGORY=Special Ability,Swarming	DESC:You are a master of fighting in confined spaces.	SOURCEPAGE:p.154	BENEFIT:You count as one size smaller than normal for the purpose of squeezing.
 
 ###Block: Sylph Feats
 	
-Airy Step
-	TYPE:General
-	PRERACE:1,Sylph
-	DESC:The air responds to your innate elemental nature, protecting you from harm and cushioning your falls.
-	SOURCEPAGE:p.159
-	BENEFIT:You gain a +2 bonus on saving throws against effects with the air or electricity descriptors and effects that deal electricity damage. You may ignore the first 30 feet of any fall when determining falling damage.
-
-Cloud Gazer
-	TYPE:General
-	PRERACE:1,Sylph
-	DESC:Your insight into your elemental heritage gives you a clarity of sight few humans possess.
-	SOURCEPAGE:p.159
-	BENEFIT:You can see through fog, mist, and clouds, without penalty, ignoring any cover or concealment bonuses from such effects. If the effect is created by magic, this feat instead triples the distance you can see without penalty.
-
-Inner Breath
-	TYPE:General
-	PRELEVEL:MIN=11
-	PRERACE:1,Sylph
-	DESC:Your body is suffused with elemental air that provides for all your respiratory needs.
-	SOURCEPAGE:p.159
-	BENEFIT:You no longer need to breathe. You are immune to effects that require breathing (such as inhaled poison). This does not give you immunity to cloud or gas attacks that do not require breathing, such as cloudkill.
-
-Wings of Air
-	TYPE:General
-	PRELEVEL:MIN=9
-	PRERACE:1,Sylph
-	PREFEAT:1,Airy Step
-	MOVECLONE:Walk,Fly
-	DESC:The winds lift you, carrying you where you want to go.
-	SOURCEPAGE:p.159
-	BENEFIT:Your bonus on saves against effects with the air or electricity descriptors and effects that deal electricity damage increases to +4. In addition, you gain a supernatural fly speed equal to your base speed (good maneuverability). You may only fly with this ability when wearing light armor or no armor.
+Airy Step	TYPE:General	PRERACE:1,Sylph	DESC:The air responds to your innate elemental nature, protecting you from harm and cushioning your falls.	SOURCEPAGE:p.159	BENEFIT:You gain a +2 bonus on saving throws against effects with the air or electricity descriptors and effects that deal electricity damage. You may ignore the first 30 feet of any fall when determining falling damage.
+Cloud Gazer	TYPE:General	PRERACE:1,Sylph	DESC:Your insight into your elemental heritage gives you a clarity of sight few humans possess.	SOURCEPAGE:p.159	BENEFIT:You can see through fog, mist, and clouds, without penalty, ignoring any cover or concealment bonuses from such effects. If the effect is created by magic, this feat instead triples the distance you can see without penalty.
+Inner Breath	TYPE:General	PRELEVEL:MIN=11	PRERACE:1,Sylph	DESC:Your body is suffused with elemental air that provides for all your respiratory needs.	SOURCEPAGE:p.159	BENEFIT:You no longer need to breathe. You are immune to effects that require breathing (such as inhaled poison). This does not give you immunity to cloud or gas attacks that do not require breathing, such as cloudkill.
+Wings of Air	TYPE:General	PRELEVEL:MIN=9	PRERACE:1,Sylph	PREFEAT:1,Airy Step	MOVECLONE:Walk,Fly	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	BONUS:VAR|Maneuverability|3|PREVAREQ:ENCUMBERANCE,0	BONUS:VAR|Maneuverability|2|PREVARGT:ENCUMBERANCE,1	DESC:The winds lift you, carrying you where you want to go.	SOURCEPAGE:p.159	BENEFIT:Your bonus on saves against effects with the air or electricity descriptors and effects that deal electricity damage increases to +4. In addition, you gain a supernatural fly speed equal to your base speed (good maneuverability). You may only fly with this ability when wearing light armor or no armor.
 
 ###Block: Tengu Feats
 	
-Blood Beak 
-	TYPE:Combat
-	PREATT:5
-	PRERACE:1,Tengu
-	PREABILITY:1,CATEGORY=Special Ability,Natural Weapon
-	WBONUS:WEAPONPROF=Beak|DAMAGESIZE|1
-	DESC:Your bleed attack is bloody and dangerous.
-	SOURCEPAGE:p.165
-	BENEFIT:Increase the damage of your beak attack to 1d6. Furthermore, when you confirm a critical hit with your beak attack, you also deal 1 point of bleed damage. The bleed effect from this feat stacks with that of the Bleeding Critical feat and similar effects, adding 1 point to your bleed damage.
-
-Carrion Feeder
-	TYPE:General
-	PRERACE:1,Tengu
-	BONUS:SKILL|Survival (Find Food)|2
-	DESC:Like many scavengers, you can stomach foods that would make weaker creatures ill.
-	SOURCEPAGE:p.165
-	BENEFIT:You gain a +2 racial bonus on saving throws against diseases and ingested poisons (but not other poisons). You receive a +2 bonus on Survival skill checks to find food for yourself (and only yourself).
-
-Long-Nose Form
-	TYPE:General
-	PRELEVEL:MIN=3
-	PRERACE:1,Tengu
-	TEMPBONUS:PC|STAT|STR|2
-	DESC:You can shift into the form of a human with an unusually long nose.
-	SOURCEPAGE:p.165
-	BENEFIT:Once per day, you can assume the form of a human whose nose is the length of your beak. This spell-like ability functions as alter self with a caster level equal to your level. While in this form you gain the scent ability and a +2 bonus to your Strength score. Because your long nose in this form clearly indicates you are not fully human, you do not gain the normal bonus to Disguise checks for using a polymorph effect (however, you could possibly explain the nose as an unfortunate curse or deformity, or hide it with an item such as a plague doctor's mask).
-
-Scavenger's Eye
-	TYPE:General
-	PRERACE:1,Tengu
-	BONUS:SKILL|Appraise|2
-	DESC:Your gaze is naturally drawn to valuable glittering objects.
-	SOURCEPAGE:p.166
-	BENEFIT:You gain a +2 bonus on Appraise checks. You may determine the most valuable item in a hoard as a standard action and gain an additional +2 bonus on the Appraise check to do so. In addition, if you fail an Appraise check by 5 or more, you treat the check as if you had failed by less than 5.
-
-Tengu Raven Form
-	TYPE:General
-	PRELEVEL:MIN=7
-	PRERACE:1,Tengu
-	PREFEAT:1,Tengu Wings
-	TEMPBONUS:PC|STAT|STR|4		TEMPBONUS:PC|STAT|DEX|-2	TEMPBONUS:PC|COMBAT|AC|4|TYPE:NaturalArmor
-	DESC:You can shift into the form of a giant black raven.
-	SOURCEPAGE:p.166
-	BENEFIT:Once per day, you can take the form of a Large black bird resembling a raven, granting you a fly speed of 60 feet (good maneuverability), a +4 size bonus to your Strength, a -2 penalty to your Dexterity, and a +4 natural armor bonus. This spell-like ability otherwise functions as beast shape II with a caster level equal to your level.
-
-Tengu Wings
-	TYPE:General
-	PRELEVEL:MIN=5
-	PRERACE:1,Tengu
-	DESC:You can grow wings that allow you to fly.
-	SOURCEPAGE:p.166
-	BENEFIT:Once per day, you can sprout a pair of giant black crow's wings, granting you a fly speed of 30 feet (average maneuverability). This spell-like ability otherwise functions as beast shape I (though you do not gain any other benefits of that spell) with a caster level equal to your level.
+Blood Beak 	TYPE:Combat	PREATT:5	PRERACE:1,Tengu	PREABILITY:1,CATEGORY=Special Ability,Natural Weapon	WBONUS:WEAPONPROF=Beak|DAMAGESIZE|1	DESC:Your bleed attack is bloody and dangerous.	SOURCEPAGE:p.165	BENEFIT:Increase the damage of your beak attack to 1d6. Furthermore, when you confirm a critical hit with your beak attack, you also deal 1 point of bleed damage. The bleed effect from this feat stacks with that of the Bleeding Critical feat and similar effects, adding 1 point to your bleed damage.
+Carrion Feeder	TYPE:General	PRERACE:1,Tengu	BONUS:SKILL|Survival (Find Food)|2	DESC:Like many scavengers, you can stomach foods that would make weaker creatures ill.	SOURCEPAGE:p.165	BENEFIT:You gain a +2 racial bonus on saving throws against diseases and ingested poisons (but not other poisons). You receive a +2 bonus on Survival skill checks to find food for yourself (and only yourself).
+Long-Nose Form	TYPE:General	PRELEVEL:MIN=3	PRERACE:1,Tengu	TEMPBONUS:PC|STAT|STR|2	DESC:You can shift into the form of a human with an unusually long nose.	SOURCEPAGE:p.165	BENEFIT:Once per day, you can assume the form of a human whose nose is the length of your beak. This spell-like ability functions as alter self with a caster level equal to your level. While in this form you gain the scent ability and a +2 bonus to your Strength score. Because your long nose in this form clearly indicates you are not fully human, you do not gain the normal bonus to Disguise checks for using a polymorph effect (however, you could possibly explain the nose as an unfortunate curse or deformity, or hide it with an item such as a plague doctor's mask).
+Scavenger's Eye	TYPE:General	PRERACE:1,Tengu	BONUS:SKILL|Appraise|2	DESC:Your gaze is naturally drawn to valuable glittering objects.	SOURCEPAGE:p.166	BENEFIT:You gain a +2 bonus on Appraise checks. You may determine the most valuable item in a hoard as a standard action and gain an additional +2 bonus on the Appraise check to do so. In addition, if you fail an Appraise check by 5 or more, you treat the check as if you had failed by less than 5.
+Tengu Raven Form	TYPE:General	PRELEVEL:MIN=7	PRERACE:1,Tengu	PREFEAT:1,Tengu Wings	TEMPBONUS:PC|STAT|STR|4		TEMPBONUS:PC|STAT|DEX|-2	TEMPBONUS:PC|COMBAT|AC|4|TYPE:NaturalArmor	DESC:You can shift into the form of a giant black raven.	SOURCEPAGE:p.166	BENEFIT:Once per day, you can take the form of a Large black bird resembling a raven, granting you a fly speed of 60 feet (good maneuverability), a +4 size bonus to your Strength, a -2 penalty to your Dexterity, and a +4 natural armor bonus. This spell-like ability otherwise functions as beast shape II with a caster level equal to your level.
+Tengu Wings	TYPE:General	PRELEVEL:MIN=5	PRERACE:1,Tengu	DESC:You can grow wings that allow you to fly.	SOURCEPAGE:p.166	BENEFIT:Once per day, you can sprout a pair of giant black crow's wings, granting you a fly speed of 30 feet (average maneuverability). This spell-like ability otherwise functions as beast shape I (though you do not gain any other benefits of that spell) with a caster level equal to your level.
 
 ###Block: Tiefling Feats
 	
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Armor of the Pit
-	TYPE:General
-	PRERACE:1,Tiefling
-	DESC:Your fiendish traits take the form of a protective scaly skin.
-	BENEFIT:You gain a +2 natural armor bonus. &nl; [Special] If you have the scaled skin racial trait, you instead gain resistance 5 to two of the following energy types that you don't have resistance to already: cold, electricity, and fire.
+Armor of the Pit	TYPE:General	PRERACE:1,Tiefling	BONUS:COMBAT|AC|2|TYPE=NaturalArmor|!PREABILITY:1,CATEGORY=Special Ability,Scaled Skin C ~ Tiefling,Scaled Skin E ~ Tiefling,Scaled Skin F ~ Tiefling	DEFINE:ColdResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Cold|!PREABILITY:1,CATEGORY=Special Ability,Scaled Skin C ~ Tiefling	DEFINE:ElectricityResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Electricity|!PREABILITY:1,CATEGORY=Special Ability,Scaled Skin E ~ Tiefling	DEFINE:FireResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Fire|!PREABILITY:1,CATEGORY=Special Ability,Scaled Skin F ~ Tiefling	DESC:Your fiendish traits take the form of a protective scaly skin.	SOURCEPAGE:p.172	BENEFIT:You gain a +2 natural armor bonus. If you have the scaled skin racial trait, you instead gain resistance 5 to two of the following energy types that you don't have resistance to already: cold, electricity, and fire.
+Expanded Fiendish Resistance (Acid)	TYPE:General	PRERACE:1,Tiefling	!PREABILITY:1,CATEGORY=Special Ability,Resistance to Acid	DEFINE:AcidResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Acid	DESC:You gain extra fiendish resistances.	SOURCEPAGE:p.173	BENEFIT:You gain resistance 5 to Acid.
+Expanded Fiendish Resistance (Cold)	TYPE:General	PRERACE:1,Tiefling	!PREABILITY:1,CATEGORY=Special Ability,Resistance to Cold	DEFINE:ColdResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Cold	DESC:You gain extra fiendish resistances.	SOURCEPAGE:p.173	BENEFIT:You gain resistance 5 to Cold.
+Expanded Fiendish Resistance (Electricity)	TYPE:General	PRERACE:1,Tiefling	!PREABILITY:1,CATEGORY=Special Ability,Resistance to Electricity	DEFINE:ElectricityResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Electricity	DESC:You gain extra fiendish resistances.	SOURCEPAGE:p.173	BENEFIT:You gain resistance 5 to Electricity.
+Expanded Fiendish Resistance (Fire)	TYPE:General	PRERACE:1,Tiefling	!PREABILITY:1,CATEGORY=Special Ability,Resistance to Fire	DEFINE:FireResistanceBonus|5	ABILITY:Special Ability|AUTOMATIC|Resistance to Fire	DESC:You gain extra fiendish resistances.	SOURCEPAGE:p.173	BENEFIT:You gain resistance 5 to Fire.
+Fiend Sight	TYPE:General	PREVISION:1,Darkvision=60	PRERACE:1,Tiefling	VISION:Low-Light|.SET.Darkvision (120')	DESC:Your eyes develop keener sight in dim light and darkness.	SOURCEPAGE:p.173	BENEFIT:You gain low-light vision and your darkvision improves to 120 ft.
+Advanced Fiend Sight	TYPE:General	PREFEAT:1,Fiend Sight	PRERACE:1,Tiefling	ABILITY:Special Ability,See In Darkness	DESC:Your eyes develop keener sight in dim light and darkness.	SOURCEPAGE:p.173	BENEFIT:You gain the see in darkness universal monster ability.
+Grasping Tail	TYPE:General	PRERACE:1,Tiefling	DESC:Your tail becomes more useful.	SOURCEPAGE:p.173	BENEFIT:You can use your tail to grab stowed items. While you cannot wield weapons with your tail, you can use it to retrieve small, stowed objects carried on your person as a swift action. If you have the prehensile tail racial trait, you can use your tail to grab unattended items within 5 feet as a swift action as well as to grab stowed objects carried on your person; you can hold such objects with your tail, though you cannot manipulate them with your tail (other than to put them in your hand).
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Expanded Fiendish Resistance
-	TYPE:General
-	PRERACE:1,Tiefling
-	DESC:You gain extra fiendish resistances.
-	BENEFIT:Pick one of the following energy types that you do not already have resistance to: acid, cold, electricity, or fire. You gain resistance 5 to that energy type. &nl; [Special] You can take this feat multiple times. Each time you do, pick another energy type you do not have resistance to. You gain resistance 5 to that energy type.
-
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Fiend Sight
-	TYPE:General
-	PREVISION:1,Darkvision=60
-	PRERACE:1,Tiefling
-	DESC:Your eyes develop keener sight in dim light and darkness.
-	BENEFIT:You gain low-light vision and your darkvision improves to 120 ft. &nl; [Special] You can take this feat twice. When you take it a second time, you gain the see in darkness universal monster ability.
-
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Grasping Tail
-	TYPE:General
-	PRERACE:1,Tiefling
-	DESC:Your tail becomes more useful.
-	BENEFIT:You can use your tail to grab stowed items. While you cannot wield weapons with your tail, you can use it to retrieve small, stowed objects carried on your person as a swift action. &nl; [Special] If you have the prehensile tail racial trait, you can use your tail to grab unattended items within 5 feet as a swift action as well as to grab stowed objects carried on your person; you can hold such objects with your tail, though you cannot manipulate them with your tail (other than to put them in your hand).
-
-Aquatic Ancestry
-	TYPE:General
-	PRERACE:1,Undine
-	DESC:You favor your outsider ancestry and are better adapted to life in the water.
-	BENEFIT:You gain the amphibious special quality. Your swim speed increases by +10 feet.
-
-#  TODO: fix pretext
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
-Hydraulic Maneuver
-	TYPE:General
-	PRERACE:1,Undine
-	PRETEXT:Hydraulic push spell-like ability
-	DESC:You can use your hydraulic push to disarm or trip.
-	BENEFIT:You may use hydraulic push to attempt a bull rush, disarm, dirty trick (blind or dazzle, see ), or trip combat maneuver. Each time you use hydraulic push, you must decide which of the allowed combat maneuvers you want to perform. You may use this feat with your hydraulic push racial spell-like ability, your class-granted use of hydraulic push, or any hydraulic push spells you cast, but not with magic items or other external sources that use that spell. &nl; [Normal] Hydraulic push can only be used to make a bull rush combat maneuver.
-
-Steam Caster
-	TYPE:General
-	PRERACE:1,Undine
-	DESC:You imbue your fire spells with elemental water, transforming them into powerful gouts of steam.
-	BENEFIT:You may increase the casting time of a fire spell to a full-round action, infusing it with elemental power (spells with a casting time of 1 full-round action or longer do not have an increased casting time). The spell is treated as if it had the water descriptor. All fire effects of the altered spell instead manifest as superheated steam. The altered spell works normally underwater without requiring a caster level check. Unlike fire, the steam cannot ignite objects or set creatures on fire. As the spell still deals fire damage, fire resistance or immunity still applies to the spell's effects.
-
-#  TODO: fix pretext
-Triton Portal
-	TYPE:General
-	PRELEVEL:MIN=5
-	PRERACE:1,Undine
-	PRETEXT:hydraulic push spell-like ability
-	DESC:You can channel your inner magic to summon allies.
-	BENEFIT:Once per day, you may expend your racial hydraulic push ability to instead cast summon nature's ally III as a spell-like ability with a caster level equal to your character level. This use of the ability can only summon a Small water elemental or 1d3 dolphins. Using this ability is a full-round action.
-
-Water Skinned
-	TYPE:General
-	PRERACE:1,Undine
-	DESC:Your touch extinguishes small flames.
-	BENEFIT:As a standard action, you can extinguish a small nonmagical fire with a touch, affecting anything up to the size of a large campfire. This ability does not affect fires with a total area greater than 5 square feet. Touching the fire in this way does not harm you.
+###Block: Undine Feats	
+	
+Aquatic Ancestry	TYPE:General	PRERACE:1,Undine	ABILITY:Special Ability,Amphibious	BONUS:MOVEADD|TYPE.Swim|10	DESC:You favor your outsider ancestry and are better adapted to life in the water.	SOURCEPAGE:p.177	BENEFIT:You gain the amphibious special quality. Your swim speed increases by +10 feet.
+Hydraulic Maneuver	TYPE:General	PRERACE:1,Undine	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Undine	DESC:You can use your hydraulic push to disarm or trip.	SOURCEPAGE:p.177	BENEFIT:You may use hydraulic push to attempt a bull rush, disarm, dirty trick, or trip combat maneuver. Each time you use hydraulic push, you must decide which of the allowed combat maneuvers you want to perform. You may use this feat with your hydraulic push racial spell-like ability, your class-granted use of hydraulic push, or any hydraulic push spells you cast, but not with magic items or other external sources that use that spell.
+Steam Caster	TYPE:General	PRERACE:1,Undine	DESC:You imbue your fire spells with elemental water, transforming them into powerful gouts of steam.	SOURCEPAGE:p.178	BENEFIT:You may increase the casting time of a fire spell to a full-round action, infusing it with elemental power (spells with a casting time of 1 full-round action or longer do not have an increased casting time). The spell is treated as if it had the water descriptor. All fire effects of the altered spell instead manifest as superheated steam. The altered spell works normally underwater without requiring a caster level check. Unlike fire, the steam cannot ignite objects or set creatures on fire. As the spell still deals fire damage, fire resistance or immunity still applies to the spell's effects.
+Triton Portal	TYPE:General	PRELEVEL:MIN=5	PRERACE:1,Undine	PREABILITY:1,CATEGORY=Special Ability,Spell-Like Ability ~ Undine	DESC:You can channel your inner magic to summon allies.	SOURCEPAGE:p.178	BENEFIT:Once per day, you may expend your racial hydraulic push ability to instead cast summon nature's ally III as a spell-like ability with a caster level of %1. This use of the ability can only summon a Small water elemental or 1d3 dolphins. Using this ability is a full-round action.|TL
+Water Skinned	TYPE:General	PRERACE:1,Undine	DESC:Your touch extinguishes small flames.	SOURCEPAGE:p.178	BENEFIT:As a standard action, you can extinguish a small nonmagical fire with a touch, affecting anything up to the size of a large campfire. This ability does not affect fires with a total area greater than 5 square feet. Touching the fire in this way does not harm you.
 
 #
 # End
