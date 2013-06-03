@@ -52,8 +52,8 @@ Agile Tongue
 Magical Tail
 	TYPE:General
 	PRERACE:1,Kitsune
-	MULT:YES	STACK:NO	CHOOSE:SPELLS|Disguise Self|Charm Person|Misdirection|Invisibility|Suggestion|Displacement|Confusion|Dominate Person
-	SPELLS:Innate|TIMES=2|TIMEUNIT=Day|CASTERLEVEL=HD|%LIST,TL+CHA+10
+	MULT:YES	STACK:NO	CHOOSE:NOCHOICE
+	BONUS:ABILITYPOOL|KitsuneMagicalTail|1
 	DESC:You grow an extra tail that represents your growing magical powers.
 	SOURCEPAGE:p.193
 	BENEFIT: You gain a new spell-like ability, each usable twice per day, from the following list, in order: disguise self, charm person, misdirection, invisibility, suggestion, displacement, confusion, dominate person. For example, the first time you select this feat, you gain disguise self 2/day; the second time you select this feat, you gain charm person 2/day. Your caster level for these spells is equal to your Hit Dice. The DCs for these abilities are Charisma-based. Special: You may select this feat up to eight times. Each time you take it, you gain an additional ability as described above.
@@ -70,10 +70,10 @@ Realistic Likeness
 Sea Hunter
 	TYPE:Combat
 	PREFEAT:1,Combat Expertise
-	PRERACE:1,merfolk.
+	PRERACE:1,Merfolk.
 	DESC:Your blows knock swimming opponents off balance.
 	SOURCEPAGE:p.195
-	BENEFIT: When you make a successful melee attack against a swimming target, as a free action you can attempt to knock the target off balance. Treat this as a trip combat maneuver. If you succeed, the target is considered off balance (see Table 13–7: Combat Adjustments Underwater on page 433 of the Core Rulebook) until it recovers its balance, usually by making a Swim check on its turn. This feat has no effect on creatures with a swim speed, those using magic such as freedom of movement, and creatures that can’t be tripped. 
+	BENEFIT: When you make a successful melee attack against a swimming target, as a free action you can attempt to knock the target off balance. Treat this as a trip combat maneuver. If you succeed, the target is considered off balance until it recovers its balance, usually by making a Swim check on its turn. This feat has no effect on creatures with a swim speed, those using magic such as freedom of movement, and creatures that can’t be tripped. 
 
 ##Block: Nagaji Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
@@ -82,7 +82,7 @@ Spit Venom
 	PRERACE:1,Nagaji
 	DESC:You have mastered the nagaji warrior technique of spitting venom into your opponent’s eyes.
 	SOURCEPAGE:p.197
-	BENEFIT: As a full-round action, you can spit poison up to 10 feet as a ranged touch attack. If you hit, the target must make a successful Fortitude save or be blinded for 1d6 rounds. The DC of this save is equal to 10 + 1/2 your total Hit Dice + your Constitution modifier. You can use this ability once per day plus one additional time per day for every three Hit Dice you have.
+	BENEFIT: As a full-round action, you can spit poison up to 10 feet as a ranged touch attack. If you hit, the target must make a successful Fortitude save or be blinded for 1d6 rounds. The DC of this save is equal to %1. You can use this ability %2 times per day.|10+TL/2+CON|TL/3
 
 ##Block: Samsaran Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
@@ -101,6 +101,8 @@ Stretched Wings
 	PREFEAT:1,Skill Focus (Fly)
 	PRERACE:1,Strix
 	PREABILITY:1,CATEGORY=Special Ability,Wingclipped
+	BONUS:MOVEADD|Fly|40
+	BONUS:VAR|Maneuverability|1
 	DESC:You strengthen your crippled wings.
 	SOURCEPAGE:p.201
 	BENEFIT: Your strix racial fly speed increases to 60 feet (average). You ignore the wing-clipped trait’s Fly check requirement to fly upward.
@@ -110,6 +112,8 @@ Stretched Wings
 Extra Elemental Assault
 	TYPE:General
 	PRERACE:1,Suli
+	BONUS:VAR|ElementalAssaultDuration|2
+	MULT:YES	STACK:YES	CHOOSE:NOCHOICE
 	DESC:You have unlocked greater elemental power.
 	SOURCEPAGE:p.203
 	BENEFIT: Your elemental assault ability lasts an additional 2 rounds per day. Special: You can take this feat multiple times. Its effects stack.
