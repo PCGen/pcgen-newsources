@@ -9,113 +9,46 @@ Cyclops, Great	KEY:Cyclops (Great)	SORTKEY:Cyclops	SOURCEPAGE:p.60
 	VISION:Low-Light Vision
 	BONUS:COMBAT|AC|4|TYPE=Armor
 	BONUS:COMBAT|AC|13|TYPE=NaturalArmor
-	MONSTERCLASS::
-195 (17d8+119)
-Fort +12, Ref +6, Will +14
-OFFENSE
+	MONSTERCLASS:Humanoid:17
 	MOVE:Walk,50
-	NATURALATTACKS:,Natural.Melee.Weapon,*,
-mwk greatclub +24/+19/+14 (3d8+19), Gore +17 (1d8+6) or
-Gore +23 (1d8+13), 2 Slams +23 (2d6+13)
-Ranged rock +11 (2d6+19)
+	NATURALATTACKS:Gore,Natural.Melee.Weapon,*1,1d8
+	NATURALATTACKS:Slams,Natural.Melee.Weapon,*2,2d6
 	FACE:15
 	REACH:15
-
-	Special Attacks:powerful charge (Gore, 4d8+24), rock
-throwing (120 ft.)
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 36, Dex 13, Con 25, Int 7,
-Wis 14, Cha 8
-Base Atk +12
-CMB
-+27
-CMD 38
-Feats Awesome
-Blow, Cleave,
-Critical Focus,
-Diehard, Endurance,
-Improved Bull Rush,
-Iron Will, Power Attack,
-Staggering Critical
-Skills Perception +22
-	AUTO:LANG|Common, Cyclops, Giant
-SQ flash of brutality
-
+	BONUS:STAT|STR|26
+	BONUS:STAT|DEX|2
+	BONUS:STAT|CON|14
+	BONUS:STAT|INT|-4
+	BONUS:STAT|WIS|4
+	BONUS:STAT|CHA|-2
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Cyclops (Great)
+	AUTO:LANG|Common|Cyclops|Giant
 
 Crucidaemon	KEY:Daemon (Crucidaemon)	SORTKEY:Daemon	SOURCEPAGE:p.61
-
 	CR:15
 	XP:51,200
 	KIT:1|NE
 	SIZE:M
 	RACETYPE:Outsider
- (daemon, evil, extraplanar)
-	VISION:Darkvision (60')|deathwatch, detect good, true
-seeing
-Perception +23
-DEFENSE
-		BONUS:COMBAT|AC|
-29, touch 16, flat-footed 23 (+5 Dex, +1 dodge, +13|TYPE=NaturalArmor
-	MONSTERCLASS::
-212 (17d10+119)
-Fort +17, Ref +12, Will +13
-
+	RACESUBTYPE:Daemon|Evil|Extraplanar
+	VISION:Darkvision (60')
+	BONUS:COMBAT|AC|13|TYPE=NaturalArmor
+	MONSTERCLASS:Outsider:17
 	DR:10/good and silver
-Immune acid, bleed, death effects,
-disease, poison
-Resist cold 10, electricity 10, fire 10
 	SR:26
-OFFENSE
 	MOVE:Walk,50
-	NATURALATTACKS:,Natural.Melee.Weapon,*,
-daggers +29/+29/+24/+19/+14 (1d4+11/17-20)
 	FACE:5
 	REACH:10
-
-	Special Attacks:bleed (2d6), chained daggers, trap making
-Spell-Like Abilities (CL 16th
-concentration +25)
-Constant-air walk, deathwatch, detect good, true seeing
-At will-fear (DC 23), greater teleport (self plus 50 lbs. of
-objects only), invisibility
-3/day-greater glyph of warding (DC 25), hold monster (DC 24)
-1/day-insanity (DC 26), summon (level 4,
-2 piscodaemons 50%), symbol of pain (DC 24)
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 28, Dex 21, Con 24, Int 16, Wis 17, Cha 29
-Base Atk +17
-CMB +26
-CMD 42
-Feats Dodge, Improved Critical
-(daggers), Improved Initiative,
-Lightning Reflexes, Mobility,
-Spring Attack, Stealthy, Step Up,
-Weapon Focus (daggers)
-Skills Bluff +29, Craft (traps) +31,
-Disable Device +25, Escape Artist +7,
-Intimidate +29, Knowledge (arcana,
-engineering) +11, Perception +23, Sense
-Motive +16, Spellcraft +18, Stealth +29,
-Use Magic Device +19
-Racial Modifiers
-+8 Craft (traps)
-	AUTO:LANG|Abyssal, Draconic, Infernal;
-telepathy 100 ft.
-
+	BONUS:STAT|STR|18
+	BONUS:STAT|DEX|10
+	BONUS:STAT|CON|14
+	BONUS:STAT|INT|6
+	BONUS:STAT|WIS|6
+	BONUS:STAT|CHA|18
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Crucidaemon
+	BONUS:SKILL|Craft (traps)|8|TYPE=Racial
+	AUTO:LANG|Abyssal|Draconic|Infernal
+	BONUS:VAR|TelepathyRange|100
 
 Vulnudaemon	KEY:Daemon (Vulnudaemon)	SORTKEY:Daemon	SOURCEPAGE:p.62
 	CR:4
@@ -123,31 +56,20 @@ Vulnudaemon	KEY:Daemon (Vulnudaemon)	SORTKEY:Daemon	SOURCEPAGE:p.62
 	KIT:1|NE
 	SIZE:S
 	RACETYPE:Outsider
- (daemon, evil, extraplanar)
-	VISION:Darkvision (60')|detect good, detect magic;
-Perception +10
-Aura aura of doom (30 ft., DC 18)
-DEFENSE
-		BONUS:COMBAT|AC|
-17, touch 14, flat-footed 14 (+3 Dex, +3|TYPE=NaturalArmor, +1 size)
-	MONSTERCLASS::
-39 (6d10+6)
-Fort +6, Ref +5, Will +6
-
+	RACESUBTYPE:Daemon|Evil|Extraplanar
+	VISION:Darkvision (60')
+	BONUS:COMBAT|AC|3|TYPE=NaturalArmor
+	MONSTERCLASS:Outsider:6
 	DR:5/good or silver
-Immune acid, death effects, disease,
-poison
-Resist cold 10, electricity 10, fire 10
-OFFENSE
 	MOVE:Walk,30
-	NATURALATTACKS:,Natural.Melee.Weapon,*,Bite +5 (1d3+1)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,1d3
 	BONUS:STAT|STR|4
 	BONUS:STAT|DEX|6
 	BONUS:STAT|CON|2
 	BONUS:STAT|INT|2
 	BONUS:STAT|WIS|2
 	BONUS:STAT|CHA|6
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Vulnudaemon
 	AUTO:LANG|Abyssal|Draconic|Infernal
 
 Deathtrap Ooze	SOURCEPAGE:p.63
@@ -223,80 +145,24 @@ Shaggy Demodand	KEY:Demodand (Shaggy)	SORTKEY:Demodand	SOURCEPAGE:p.68
 	KIT:1|CE
 	SIZE:M
 	RACETYPE:Outsider
- (chaotic, demodand, evil, extraplanar)
-Init +11
-	VISION:blindsense 30 ft., Darkvision (60')|detect
-good, detect magic, see invisibility
-Perception +36
-DEFENSE
-		BONUS:COMBAT|AC|
-32, touch 17, flat-footed 25 (+7 Dex, +15|TYPE=NaturalArmor
-	MONSTERCLASS::
-262 (25d10+125)
-Fort +19, Ref +17, Will +18
-+4 vs. divine spells
-
+	RACESUBTYPE:Chaotic|Demodand|Evil|Extraplanar
+	VISION:blindsense (30')|Darkvision (60')
+	BONUS:COMBAT|AC|15|TYPE=NaturalArmor
+	MONSTERCLASS:Outsider:25
 	DR:15/good and magic
-Immune acid, poison
-Resist cold 10,
-fire 10
 	SR:29
-OFFENSE
-	MOVE:Walk,40,Fly,50 ft. (average)
-
-	NATURALATTACKS:,Natural.Melee.Weapon,*,
-
-+2 unholy morningstar +36/+31/+26/+21 (1d8+11), Bite +32
-(2d6+4), claw +32 (1d6+4) or
-Bite +34 (2d6+9), 2 Claws +34 (1d6+9)
-
-	Special Attacks:faith-stealing strike
-Spell-Like Abilities (CL 20th
-concentration +25)
-Constant-detect good, detect magic, see invisibility
-At will-detect thoughts (DC 17), fear (DC 19), gaseous form,
-greater dispel magic, invisibility (self only), magic circle
-against good
-3/day-empowered cloudkill (DC 20), fog cloud,
-quickened ray of enfeeblement (DC 16),
-stinking cloud (DC 18)
-1/day-blasphemy (DC 22), chaos
-hammer (DC 19), mass charm
-monster (DC 23), summon
-(level 6, 1d6 tarry
-demodands or 1d4 slimy
-demodands 60%)
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 29, Dex 24, Con 21, Int 19,
-Wis 18, Cha 20
-Base Atk +25
-CMB +34;
-CMD 51
-Feats Alertness, Cleave,
-Combat CaSting,
-Combat Reflexes,
-Empower Spell-Like
-Ability (cloudkill), Flyby Attack, Great
-Cleave, Improved Initiative, Intimidating
-Prowess, Lightning Reflexes, Multiattack,
-Power Attack, Quicken Spell-Like Ability (ray
-of enfeeblement)
-Skills Acrobatics +35 (+39 when jumping), Bluff +28,
-Diplomacy +28, Fly +35, Intimidate +42, Knowledge
-(arcana) +26, Knowledge (planes) +15, Knowledge
-(religion) +15, Perception +36, Sense Motive +36, Spellcraft
-+29, Use Magic Device +30
-	AUTO:LANG|Abyssal, Celestial, Common
-SQ heretical soul
-
-
+	MOVE:Walk,40,Fly,5
+	(average)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,2d6
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d6
+	BONUS:STAT|STR|18
+	BONUS:STAT|DEX|14
+	BONUS:STAT|CON|10
+	BONUS:STAT|INT|8
+	BONUS:STAT|WIS|8
+	BONUS:STAT|CHA|10
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Shaggy Demodand
+	AUTO:LANG|Abyssal|Celestial|Common
 
 Slimy Demodand	KEY:Demodand (Slimy)	SORTKEY:Demodand	SOURCEPAGE:p.69
 	CR:16
