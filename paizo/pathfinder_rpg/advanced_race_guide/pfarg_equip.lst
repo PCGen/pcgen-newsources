@@ -11,6 +11,18 @@ Waraxe (Dwarven Double)		WIELD:OneHanded	PROFICIENCY:WEAPON|Waraxe (Dwarven Doub
 # Two Handed
 Longaxe (Dwarven)			WIELD:TwoHanded	PROFICIENCY:WEAPON|Longaxe (Dwarven)		OUTPUTNAME:Longaxe, Dwarven		COST:50	DAMAGE:1d12	CRITMULT:x3	CRITRANGE:1	WT:14	TYPE:Weapon.Melee.Dwarven.Slashing.Exotic		SPROP:These ornate and heavy blades are mounted atop a long, steel-shod haft for greater reach. They are rare among cave-dwelling dwarves but common in mountain dwarf clans that commonly feud with giants.|PRERULE:1,DisplayWeaponDetails
 Longhammer (Dwarven)		WIELD:TwoHanded	PROFICIENCY:WEAPON|Longhammer (Dwarven)		OUTPUTNAME:Longhammer, Dwarven	COST:70	DAMAGE:2d6	CRITMULT:x3	CRITRANGE:1	WT:20	TYPE:Weapon.Melee.Dwarven.Bludgeoning.Exotic.Hammer	SPROP:These heavy-headed bludgeons are often carved or cast with monstrous faces or drilled with tiny holes to create a menacing whistling as they are swung through the air.|PRERULE:1,DisplayWeaponDetails
+Elixer of Darksight
+	TYPE:Magic.Potion.Consumable
+	COST:1200
+	SOURCEPAGE:p.19
+	SPROP:Enables user to see through Deeper Darkness when using Darkvision
+	BONUS:VISION|Darkvision|60
+Rod of Dwarven Might
+	TYPE:Magic.Rod
+	COST:80000
+	WT:10
+	SOURCEPAGE:p.19
+	SPROP:Increases all AC, attack roll, CMD, CMB, and saving throw bonuses from a dwarf’s racial traits by +1. The rod shares the mundane powers of a rod of lordly might, but its magical weapon forms are tailored to dwarven preferences.
 
 ###Block: Elven Equipment
 Arcane Family Workbook
@@ -48,8 +60,30 @@ Tent (Hanging)
 	WT:15
 	SOURCEPAGE:p.27
 	SPROP:A small tent with a teardrop shape which hangs from a sturdy anchor rope.  Climbing in or out of a hanging tent is a full-round action that requires a DC 10 Climb check. Failure by 5 or more indicates the camper has fallen from the tent.
-	
-###Block: Gnome Equipment
+#TODO: Add Darkleaf Cloth Items
+#TODO: Add Wyrroot Special Weapon Material	
+Bracers of Sworn Vengeance
+	TYPE:Magic.Wondrous.Bracer
+	COST:25000
+	WT:1
+	SOURCEPAGE:p.28
+	SPROP:Once per day, as an immediate action when the wearer takes hit point damage from a target, she may cry out, “Death to those who wrong me!”, swearing vengeance against the attacker. The wearer gains a +1 competence bonus on weapon attack rolls made against the target of his sworn vengeance, and deals an additional 2d6 points of damage on successful weapon attack rolls.
+#TODO: User gets +1 att and dam if he already has those weaponprofs. 
+Gauntlets of Skill at Arms
+	TYPE:Magic.Wondrous.Glove
+	COST:30000
+	WT:1
+	SOURCEPAGE:p.28
+	SPROP:The gloves enable the wearer to use any traditional elven weapon as if he were proficient in its use. If he uses such a weapon and is already proficient with it, he gains a +1 competence bonus on attack and damage rolls.
+	AUTO:WEAPONPROF|Longbow|Longsword|Rapier|Shortbow|TYPE.Elven
+Gloves of Elvenkind
+	TYPE:Magic.Wondrous.Glove
+	COST:7500
+	SOURCEPAGE:p.29
+	SPROP:Grant a +5 competence bonus on Spellcraft checks and concentration checks made to cast a spell defensively.
+	BONUS:SKILL|Spellcraft (Cast Defensively),Concentrate (Cast Defensively)|5|TYPE=Competence
+
+	###Block: Gnome Equipment
 Dilettante’s Outfit
 	TYPE:Goods.Clothing.Resizable.Racial.Gnome
 	SIZE:Small
@@ -90,6 +124,31 @@ Sheriff's Whistle
 	COST:1
 	SOURCEPAGE:p.37
 	SPROP:Gives off a piercing shriek that can easily be heard up to 1,000 feet away. Can only be heard by badgers, dogs, and gnomes.
+Amazing Tools of Manufacture
+	TYPE:Magic.Wondrous
+	COST:12000
+	WT:1
+	SOURCEPAGE:p.37
+	SPROP:In the hands of a casual wielder, these items simply appear to be magically enhanced masterwork tools for a specific Craft skill (determined randomly), granting a +4 circumstance bonus on such skill checks. However, in the hands of a craftsman with 6 or more ranks in the selected Craft skill, the wielder can perform 2,000 gp worth of work in a single hour, but only once each day. Only a single skill check is required to successfully complete the item, made on the last day of crafting and gaining the +4 circumstance bonus granted by the tools.
+Boots of Escape
+	TYPE:Magic.Wondrous.Boot
+	COST:8000
+	WT:1
+	SOURCEPAGE:p.38
+	SPROP:Once per day, when the wearer of the boots is grappled, pinned, or entangled, he may transfer himself to any spot within 30 feet. This acts as if the wearer had used a dimension door spell. A gnome wearing these boots may instead transfer himself up to 400 feet.
+Phantasmal Gem
+	TYPE:Magic.Wondrous
+	COST:4000
+	WT:1
+	SOURCEPAGE:p.38
+	SPROP:If a spellcaster holding the phantasmal gem casts an illusion spell with a duration of concentration (or concentration + a number of rounds), the illusion lasts up to an additional 10 rounds after the spellcaster ceases concentrating on it. The spellcaster may end the illusion early as a swift action. The phantasmal gem can be used multiple times in a day, but cannot grant more than a total of 10 additional rounds of illusion spells per day. A gnome using a phantasmal gem can recharge it by expending uses of spell-like abilities gained through the gnome magic racial trait. Each spell-like ability expended as a standard action recharges 1 round of duration to the phantasmal gem (up to a maximum of 10 rounds).
+Ring of Craft Magic
+	TYPE:Magic.Wondrous.Ring
+	COST:12000
+	WT:1
+	SOURCEPAGE:p.38
+	SPROP:The wearer of this ring may make a Craft check in place of a Spellcraft check to identify an item that could be created with the Craft skill. The wearer may also expend a spell slot or prepared spell to gain an enhancement bonus equal to the level of the expended spell on a single Craft or Profession check (regardless of the amount of time needed to make the check).
+
 
 ###Half-Elf Equipment
 Golden Maple Leaves
@@ -105,6 +164,35 @@ Star Charts
 	SOURCEPAGE:p.46
 	SPROP:Anyone referencing one of these charts on a clear night can attempt a DC 20 Knowledge (geography) check to determine her approximate location and the month. In addition, these charts grant a +2 circumstance bonus on Survival checks made to avoid getting lost at night with a clear sky.
 	BONUS:SKILL|Survival (Avoid Getting Lost)|2|TYPE=Circumstance
+Ancestral Clasp
+	TYPE:Magic.Wondrous
+	COST:10000
+	WT:.5
+	SOURCEPAGE:p.47
+	SPROP:Whenever a half-elf fits an ancestral clasp to the pommel, grip, or haft of a longbow, longsword, rapier, or shortbow, the character is treated as though she were proficient with that weapon. In addition, when an ancestral clasp is fitted to any weapon with the word “elven” in the title, the character treats the weapon as if it were a martial weapon, mirroring the Weapon Familiarity elven racial trait. A half-elf who already is proficient with one of the above weapons adorned with an ancestral clasp receives a +1 insight bonus on attack rolls with that weapon.
+Brooch of Blending
+	TYPE:Magic.Wondrous.Amulet
+	COST:2000
+	SOURCEPAGE:p.47
+	SPROP:As a standard action the wearer can transform his features to appear either entirely elven or entirely human. Grants a +20 circumstance bonus on Disguise checks to appear as a member of the selected race. Those who know him recognize him without a Perception check. This change does not radiate magic and cannot be seen with detect magic, although true seeing does reveal the alteration. This item only functions for half-elves,
+Cloak of the Diplomat
+	TYPE:Magic.Wondrous.Cloak
+	COST:20000
+	WT:1
+	SOURCEPAGE:p.48
+	SPROP:Once per day, before making a Diplomacy or Sense Motive check, the wearer can roll twice and take the better result. The wearer can adjust a creature’s attitude up to three steps when using Diplomacy. However,should the wearer ever fail a Diplomacy check to adjust a creature’s attitude by 5 or more, the creature’s attitude is reduced by two steps instead of one.
+	BONUS:SKILL|Diplomacy,Sense Motive|5|TYPE=Competence
+Purifying Pearl
+	TYPE:Magic.Wondrous
+	COST:19000
+	SOURCEPAGE:p.48
+	SPROP:Up to 10 cubic feet of food or drink per day is affected as if a purify food and drink spell had been cast. If placed in the mouth of a creature, the pearl acts as a neutralize poison spell cast on that creature (caster level 10th).
+Ring of the Sophisticate
+	TYPE:Magic.Wondrous.Ring
+	COST:11000
+	SOURCEPAGE:p.48
+	SPROP:Once per day on command, the wearer can cast either locate creature or locate object. On command, the wearer can instantly know the direction to the nearest tavern, pub, or similar watering hole  within 20 miles of the wearer.
+	BONUS:SKILL|Sense Motive,Knowledge (Local)|4|TYPE=Competence
 
 ###Block: Half-Orc Equipment
 Black Fester
@@ -163,6 +251,8 @@ Whip (Training)
 	SOURCEPAGE:p.76
 	SPROP:When using the whip to demoralize a trained animal, the wielder may choose to fascinate the animal rather than causing it to become shaken for the same duration as the shaken condition, but the fascinate effect ends if line of sight between the wielder and the animal is broken.
 	BONUS:SKILL|Handle Animal (Push Animal),Intimidate (Demoralize Animal)|2|TYPE=Circumstance
+
+###Block: Featured Races Equipment
 
 ###Block: Aasimar Equipment
 Ambrosia
@@ -474,10 +564,239 @@ Fleshgem (Spikes)
 	WT:5
 	SOURCEPAGE:p.147
 	SPROP:Fleshgem spikes act as armor spikes but armor cannot be worn over them.
+Stonechipper Salve
+	TYPE:Goods.Alchemical.Consumable.Racial.Oread
+	COST:150
+	WT:1
+	SOURCEPAGE:p.147
+	SPROP:When applied to an object made of stone, it reduces the object’s hardness by 3 for 10 minutes. As a standard action, a creature can apply the paste to affect one 5-foot-square or a Medium or smaller creature. The paste only affects hardness, not damage reduction or similar defenses.
 
-	TYPE:
-	COST:
-	WT:
-	SOURCEPAGE:p.
-	SPROP:
+###Block: Ratfolk Equipment
+Blight Tonic
+	TYPE:Goods.Alchemical.Consumable.Racial.Ratfolk
+	COST:150
+	WT:1
+	SOURCEPAGE:p.153
+	SPROP:increases the potency of a creature’s disease attack transmitted by physical contact, such as a dire rat’s filth fever. The next time a creature must save against the drinker’s disease save DC, the DC for the initial infection increases by +2. The tonic lasts for 10 minutes or until the next time a creature must save against the drinker’s disease DC, whichever comes first.
+Pox Burster
+	TYPE:Goods.Alchemical.Consumable.Racial.Ratfolk
+	COST:50
+	WT:1
+	SOURCEPAGE:p.154
+	SPROP:You can throw a pox burster as a splash weapon. Treat this attack as a ranged touch attack with a range increment of 10 feet. A direct hit forces a target to immediately make a DC 13 Fortitude save or contract filth fever. Every space adjacent to the target square of the pox burster is covered in disease-causing filth. For the next minute, any creature that is injured while in one of these spaces must also make a DC 9 Fortitude save or contract filth fever.
+Stink Ink
+	TYPE:Goods.Alchemical.Writing.Liquid.Vial.Racial.Ratfolk
+	COST:5
+	WT:1
+	SOURCEPAGE:p.154
+	SPROP:Only creatures with the keen senses trait or scent ability can read stink ink without aid of some form of magic. Reading or writing something with stink ink takes twice as long as going through the same amount of information written in normal ink.
+Stink Ink (Arcane)
+	DISPLAYNAME:Stink Ink, Arcane
+	TYPE:Goods.Alchemical.Writing.Liquid.Vial.Racial.Ratfolk
+	COST:5
+	WT:1
+	SOURCEPAGE:p.154
+	SPROP:Like normal stink ink, the arcane version can only be read by creatures with the scent ability (although read magic works normally on spells and arcane formulae inscribed with stink ink). Using arcane stink ink to inscribe a spell or formula into a book costs +10% of the normal amount
 
+###Block: Ratfolk Weapons
+Tailblade (Ratfolk)
+	WIELD:Light
+	PROFICIENCY:WEAPON|Tailblade (Ratfolk)
+	COST:11
+	DAMAGE:1d2
+	CRITMULT:x2
+	CRITRANGE:1
+	WT:.5
+	SIZE:S
+	TYPE:Weapon.Light.Melee.Slashing.RatfolkTailblade.Finessable
+	SPROP:A tailblade is a small, sharp knife designed to be strapped to the tip of a wielder’s tail. A ratfolk wielding a tailblade can make a tail attack, adding its Strength modifier to the tailblade’s damage. Ratfolk are considered proficient with such attacks and can apply feats or effects appropriate to natural attacks to tail attacks made with a tailblade. If used as part of a full attack action, attacks with a tailblade are considered secondary attacks.|PRERULE:1,DisplayWeaponDetails
+	SOURCEPAGE:p.154
+
+###Block:Sylph Equipment
+Elemental Breath
+	TYPE:Goods.Alchemical.Consumable.Vial.Racial.Sylph
+	COST:80
+	WT:.5
+	SOURCEPAGE:p.159
+	SPROP:When elemental breath is inhaled (as drinking a potion) by an air-breathing creature, that creature does not need to breath air for 10 rounds.
+Wing Cloak
+	TYPE:Goods.Clothing.Cloak.Racial.Sylph
+	COST:1200
+	WT:1
+	SOURCEPAGE:p.159
+	SPROP:When the cloak is shaped into a wing, the wearer can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling, the wearer may make an additional DC 15 Fly check to glide, moving 5 feet laterally for every 20 feet she falls.
+
+###Block: Tengu Equipment
+Signal Kite Kit
+	TYPE:Goods.General.Racial.Tengu
+	COST:5
+	SOURCEPAGE:p.165
+	SPROP:Sending or interpreting a signal kite’s message functions as described in the Bluff skill, but the sender and anyone trying to understand the message must also know Tengu.
+Wing Oil
+	TYPE:Goods.Alchemical.Consumable.Flask.Racial.Tengu
+	COST:1
+	SOURCEPAGE:p.165
+	SPROP:Gives a feathered creature a +1 bonus on all saving throws to resist the effects of cold weather. Its effects last 24 hours.
+
+###Block: Tengu Terror Kite
+Terror Kite
+	WIELD:TwoHanded
+	PROFICIENCY:WEAPON|Terror Kite
+	COST:20
+	DAMAGE:1d6
+	SIZE:M
+	TYPE:TerrorKite
+	SPROP:Participants in a kite battle make alternating sunder combat maneuvers against each other’s kites; each successful maneuver allows a competitor to roll 1d6 points of damage against the opponent’s kite. When a kite reaches 0 hit points, it is broken or its string is cut, and its player loses the match. In some matches, points are awarded for touching the kite’s top to the opponent’s string, with the winner being the first to reach a set point total.|PRERULE:1,DisplayWeaponDetails
+	SOURCEPAGE:p.165
+
+###Block: Tiefling Equipment
+Fiendgore Unguent
+	TYPE:Goods.Alchemical.Consumable.Flask.Racial.Tiefling
+	COST:75
+	WT:1
+	SOURCEPAGE:p.172
+	SPROP:While under the effects of a fiendgore unguent, a tiefling or an evil outsider gains a +2 circumstance bonus on Intimidate checks and a +1 circumstance bonus to the DC of all spells with the fear descriptor that they cast. If applied to a creature other than a tiefling or an evil outsider, it sickens the creature instead. The unguent’s effects (either beneficial or harmful) last for 1 minute.
+
+###Block: Undine Equipment
+Chain Belt
+	TYPE:Goods.Clothing.Belt.Racial.Undine
+	COST:15
+	WT:.25
+	SOURCEPAGE:p.177
+	SPROP:If worn properly, the belt can hold up to 30 pounds of small items. A swimming undine can unwrap the belt as swift action if she needs to remove it to decrease her weight load.
+Potion Sponge
+	TYPE:TYPE:Goods.Container.General.Flask.Racial.Undine			CONTAINS:1|Liquid=1|SpellComponent=1|Poison=1
+	COST:2
+	SOURCEPAGE:p.177
+	SPROP:Unlike a potion that is drunk from a vial, a potion sponge can be used underwater. A potion can be poured from a vial into a sponge potion (or squeezed from a sponge into a vial) as a full-round action. The potion sponge is immune to attacks that specifically target crystal, glass, ceramic, or porcelain, such as shatter. It otherwise works like a potion vial.
+
+###Block: Uncommon Races Equipment
+
+###Block: Changeling Equipment
+
+###Block: Duergar Equipment
+Spellscorch (Poison)
+	TYPE:Goods.Poison.Consumable
+	COST:200
+	SOURCEPAGE:p.187
+	SPROP:Injury; Fort DC 14; Freq 1 rnd (4); Cure 1 save; Effect for the next minute the target must make a Concentration check with a DC equal to 10 + spell level to cast a spell, and all other concentration checks to cast spells take a –5 penalty.
+
+###Block: Gillmen Equipment
+Sea-Knife
+	WIELD:Light
+	PROFICIENCY:WEAPON|SeaKnife
+	COST:8
+	DAMAGE:1d4
+	CRITMULT:x2
+	CRITRANGE:2
+	WT:1
+	SIZE:M
+	TYPE:Weapon.Light.Melee.Piercing.Slashing.Exotic.Finessable
+	SPROP:The wearer cannot use a leg with a sea-knife strapped to it for walking or running. A sea-knife can be used as a light melee weapon when the wielder is swimming, f lying, or prone. This allows the wielder to use a two-handed weapon, or wield a weapon with one hand and carry a shield, and still make off-hand attacks with the sea-knife.|PRERULE:1,DisplayWeaponDetails
+	BONUS:COMBAT|AC|-2|TYPE=Circumstance
+	SOURCEPAGE:p.189
+
+###Block: Grippli Equipment
+Black Spider Marsh Poison
+	TYPE:Goods.Poison.Consumable
+	COST:800
+	SOURCEPAGE:p.191
+	SPROP:Injury; Fort DC 14; Freq 1 rnd (6); Cure 2 consecutive saves;	Effect 1d4 Dex and confused for 1 rnd	
+
+###Block: Kitsune Equipment	
+
+###Block: Merfolk Equipment
+Underwater Crossbow (Light)
+	PROFICIENCY:WEAPON|Crossbow (Light)
+	OUTPUTNAME:Underwater Crossbow, Light
+	COST:70
+	DAMAGE:1d8
+	CRITMULT:x2
+	CRITRANGE:2
+	WT:4
+	SIZE:M
+	TYPE:Weapon.Simple.Ranged.Standard.Piercing.Container.Projectile.Crossbow
+	CONTAINS:UNLIM|Bolt
+	SPROP:An underwater crossbow functions like its normal counterpart above water, and can be used underwater. When fired underwater, the crossbow has a range increment of 20 feet.|PRERULE:1,DisplayWeaponDetails
+	SOURCEPAGE:p.195
+Underwater Crossbow (Heavy)
+	PROFICIENCY:WEAPON|Crossbow (Heavy)
+	OUTPUTNAME:Underwater Crossbow, Heavy
+	COST:100
+	DAMAGE:1d10
+	CRITMULT:x2
+	CRITRANGE:2
+	WT:8
+	SIZE:M
+	TYPE:Weapon.Simple.Ranged.Standard.Piercing.Container.Projectile.Crossbow
+	SPROP:An underwater crossbow functions like its normal counterpart above water, and can be used underwater. When fired underwater, the crossbow has a range increment of 20 feet.|PRERULE:1,DisplayWeaponDetails|PRERULE:1,DisplayWeaponDetails
+	SOURCEPAGE:p.195
+
+###Block: Samsaran Equipment
+Samsaran Life Wheel
+	TYPE:Goods.General.Tools.Racial.Samsaran
+	COST:25
+	WT:.5
+	SOURCEPAGE:p.199
+	SPROP:If a samsaran meditates with her wheel for at least 10 minutes about a Knowledge (history) question relating to her own history or the histories of her past lives, she gains a +1 insight bonus on the check.
+
+###Block: Strix Equipment
+Snag Net
+	PROFICIENCY:WEAPON|Net
+	COST:30
+	WT:10
+	EQMOD:
+	SIZE:M
+	RANGE:10
+	TYPE:Weapon.Exotic.Ranged.Standard.Thrown
+	SPROP:You make a ranged touch attack against your target. A net's maximum range is 10 feet. If you hit, the target is entangled. If you entangle an opponent and hold the trailing rope, on your turn in place of a melee attack you may make a trip combat maneuver check against that opponent; if you succeed, you may trip the opponent or deal 1 point of piercing damage to the opponent.|PRERULE:1,DisplayWeaponDetails
+	SOURCEPAGE:p.201
+
+###Block: Suli Equipment
+Elemental Flux
+	TYPE:Goods.Alchemical.Consumable.Flask.Racial.Suli
+	COST:20
+	WT:1
+	SOURCEPAGE:p.203
+	SPROP:Adding at least 1 hit point worth of suli blood to it creates an alchemical splash weapon. The splash weapon works like a flask of acid, except the damage is a random energy type. The activated flux retains its power for 24 hours before becoming inert material.
+
+###Block: Svirfneblin Equipment
+Jolting Dart
+	PROFICIENCY:WEAPON|Dart
+	COST:100
+	DAMAGE:1d3+1d6 Electricity
+	CRITMULT:x2
+	CRITRANGE:1
+	WT:.5
+	SIZE:S
+	TYPE:Weapon.Simple.Ranged.Standard.Piercing.Electricity.Thrown.Dart
+	SPROP:|PRERULE:1,DisplayWeaponDetails
+	SOURCEPAGE:p.205
+
+###Block: Vanara Equipment
+Whipwood
+	KEY:WWOOD
+	TYPE:BaseMaterial.MasterworkQuality.Weapon.Shield
+	COST:BASECOST+500
+	SOURCEPAGE:p.207
+	VISIBLE:QUALIFY
+	ITYPE:Wooden.Whipwood.Masterwork
+	REPLACES:MWORKA,MWORKW
+	PRETYPE:1,Wooden
+	BONUS:VAR|CMD_Sunder|2
+	SPROP:+5 Weapon's HP
+	
+###Block: Vishkanya Equipment
+Poison Tattoo
+	TYPE:Goods.Alchemical.Consumable.Racial.Vishkanya
+	COST:50
+	SOURCEPAGE:p.209
+	SPROP:temporarily boosts the strength of a vishkanya’s natural poison, increasing the DC of the next weapon envenomed with the vishkanya’s blood or saliva by +2 (once used, the tattoo is merely decorative and does not affect the creature’s poison).
+
+###Block: Wayang Equipment
+Shadow Stencil Set
+	TYPE:Goods.General.Tools.Racial.Wayang
+	COST:30
+	WT:2
+	SOURCEPAGE:p.211
+	SPROP:If used to aid in the creation of any type of shadow spell or effect (including shadow puppet bardic performances), a wayang adds a +1 competence bonus to her saving throw DC.
