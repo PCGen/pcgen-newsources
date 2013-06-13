@@ -14,208 +14,105 @@ Kongamato	SOURCEPAGE:p.168
 	SR:26
 	MOVE:Walk,40,Fly,160
 	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|Average
-	NATURALATTACKS:,Natural.Melee.Weapon,*1,
-Bite +28 (2d6+2), 2 Claws +28 (1d8+12), Tail Slap +26
-(2d6+6), 2 wings +26 (1d8+6)
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,2d6
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d8|Tail Slap,Natural.Melee.Weapon,*1,2d6|Wings,Natural.Melee.Weapon,*2,1d8
 	FACE:15
 	REACH:15
-
-	Special Attacks:wailing dive, breath weapon (50-ft. cone, 14d6
-sonic damage, Reflex DC 20 for half, usable every 1d4 rounds)
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 34, Dex 17, Con 26, Int 9, Wis 14, Cha 17
-Base Atk +18
-CMB +32
-CMD 45 (49 vs. trip)
-Feats Flyby Attack, Hover, Improved Initiative, Improved
-Sunder, Lightning Reflexes, Multiattack, Power Attack,
-Snatch, Wingover
-Skills Climb +19, Fly +20, Intimidate +16, Perception +23,
-Sense Motive +15, Stealth +13, Survival +20
+	BONUS:STAT|STR|24
+	BONUS:STAT|DEX|6
+	BONUS:STAT|CON|16
+	BONUS:STAT|INT|-2
+	BONUS:STAT|WIS|4
+	BONUS:STAT|CHA|6
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Kongamato
 	AUTO:LANG|Draconic
-SQ compression, piercing beak
 
-
-Augur	KEY:Kyton ()	SORTKEY:Kyton	SOURCEPAGE:p.170
+#regeneration 2 (good weapons and spells, silver weapons)
+#Immune cold
+Augur	KEY:Kyton (Augur)	SORTKEY:Kyton	SOURCEPAGE:p.170
 	CR:2
 	XP:600
 	KIT:1|LE
 	SIZE:T
 	RACETYPE:Outsider
- (evil, extraplanar, kyton, lawful)
+	RACESUBTYPE:Evil|Extraplanar|Kyton|Lawful
 	VISION:Darkvision (60')
-
-	BONUS:COMBAT|AC|
-17, touch 15, flat-footed 14 (+3 Dex, +2|TYPE=NaturalArmor, +2 size)
-	MONSTERCLASS::
-19 (3d10+3)
-regeneration 2 (good weapons and spells,
-silver weapons)
+	BONUS:COMBAT|AC|2|TYPE=NaturalArmor
+	MONSTERCLASS:Outsider:3
 	DR:5/good or silver
-Immune cold
 	MOVE:Walk,20,Fly,50
 	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|5
-
-	NATURALATTACKS:,Natural.Melee.Weapon,*1,
-Gore +4 (1d4-1 plus bleed)
+	NATURALATTACKS:Gore,Natural.Melee.Weapon,*1,1d4
 	FACE:2.5
-	REACH:0 ft.
+	REACH:0
+	BONUS:STAT|STR|-2
+	BONUS:STAT|DEX|6
+	BONUS:STAT|CON|2
+	BONUS:STAT|INT|2
+	BONUS:STAT|WIS|2
+	BONUS:STAT|CHA|-4
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Augur
+	AUTO:LANG|Common|Infernal (cannot speak)
 
-	Special Attacks:bleed (1d2), unnerving gaze (30 ft., DC 9)
-Spell-Like Abilities (CL 6th
-concentration +4)
-Constant-deathwatch
-At will-bleed (DC 8), mage hand, open/close
-3/day-inflict light wounds (DC 10)
-1/week-commune (CL 12th, 6 questions)
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 8, Dex 17, Con 12, Int 13, Wis 12, Cha 7
-Base Atk +3
-CMB +4
-CMD 13 (can't be tripped)
-Feats Improved Initiative, Lightning Reflexes
-Skills Bluff +4, Escape Artist +9, Fly +11, Intimidate +4,
-Perception +7, Sense Motive +7, Sleight of Hand +9,
-Stealth +17
-	AUTO:LANG|Common, Infernal (cannot speak)
-
-Eremite	KEY:Kyton ()	SORTKEY:Kyton	SOURCEPAGE:p.171
+#regeneration 15 (good weapons and spells, silver weapons)
+#Immune cold, fear effects, nonlethal damage, pain
+#	NATURALATTACK:PRIMARY|Bite ~ Eremite|Claws ~ Eremite
+#	NATURALATTACK:SECONDARY|Wings ~ Eremite
+Eremite	KEY:Kyton (Eremite)	SORTKEY:Kyton	SOURCEPAGE:p.171
 	CR:20
 	XP:307,200
 	KIT:1|LE
 	SIZE:M
 	RACETYPE:Outsider
- (evil, extraplanar, kyton, lawful)
-Init +12
+	RACESUBTYPE:Evil|Extraplanar|Kyton|Lawful
 	VISION:Darkvision (60')|true seeing
-Perception +34
-	BONUS:COMBAT|AC|
-38, touch 19, flat-footed 29 (+8 Dex, +1 dodge, +19|TYPE=NaturalArmor
-	MONSTERCLASS::
-310 (20d10+200)
-regeneration 15 (good weapons and
-spells, silver weapons)
-Fort +22, Ref +16, Will +19
+	BONUS:COMBAT|AC|19|TYPE=NaturalArmor
+	MONSTERCLASS:Outsider:20
 	DR:15/good and silver
-Immune cold, fear effects, nonlethal
-damage, pain
 	SR:31
 	MOVE:Walk,40,Fly,60
 	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|(good)
-
-	NATURALATTACKS:,Natural.Melee.Weapon,*1,
-Bite +30 (2d6+10 plus pain), 2 Claws +30 (2d6+10/19-20
-plus grab and pain), 2 wings +25 (1d8+5 plus pain)
-
-	Special Attacks:evisceration, unnerving gaze (30 ft., DC 31)
-Spell-Like Abilities (CL 20th
-concentration +31)
-Constant-true seeing
-At will-greater teleport (self plus 50 lbs. of objects only), inflict
-critical wounds (DC 25), shadow walk, telekinesis (DC 26)
-3/day-blade barrier (DC 27), dimensional lock, forcecage (DC 28),
-greater shadow evocation (DC 29), heal (self only), insanity
-(DC 28), mass inflict critical wounds (DC 29), plane shift
-(DC 28), shades (DC 29), symbol of pain (DC 26), wall of force
-1/day-binding (DC 29), trap the soul (DC 29)
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 30, Dex 27, Con 30, Int 22, Wis 21, Cha 33
-Base Atk +20
-CMB +30 (+34 grapple)
-CMD 49
-Feats Combat CaSting, Combat Expertise, Combat Reflexes,
-Dodge, Improved Critical (Claws), Improved Initiative,
-Iron Will, Lightning Reflexes, Skill Focus (Perception),
-Spell Penetration
-Skills Bluff +34, Diplomacy +34, Fly +12, Heal +28, Intimidate +34,
-Knowledge (arcana) +16, Knowledge (dungeoneering) +16,
-Knowledge (nature) +16, Knowledge (planes) +29, Knowledge
-(religion) +16, Perception +34, Sense Motive +28, Spellcraft +29,
-Stealth +31, Use Magic Device +31
-	AUTO:LANG|Common, Infernal
-
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,2d6
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*1,2d6
+	NATURALATTACKS:Wings,Natural.Melee.Weapon,*1,1d8
+	BONUS:STAT|STR|20
+	BONUS:STAT|DEX|16
+	BONUS:STAT|CON|20
+	BONUS:STAT|INT|12
+	BONUS:STAT|WIS|10
+	BONUS:STAT|CHA|22
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Eremite
+	AUTO:LANG|Common|Infernal
 	BONUS:VAR|TelepathyRange|100
 
-SQ graft flesh, shadow traveler
-
-173
-Interlocutor	KEY:Kyton ()	SORTKEY:Kyton	SOURCEPAGE:p.173
+#regeneration 5 (good weapons and spells, silver weapons)
+#Immune cold
+#	NATURALATTACK:PRIMARY|Claws ~ Interlocutor
+Interlocutor	KEY:Kyton (Interlocutor)	SORTKEY:Kyton	SOURCEPAGE:p.173
 	CR:12
 	XP:19,200
 	KIT:1|LE
 	SIZE:L
 	RACETYPE:Outsider
- (evil, extraplanar, kyton, lawful)
+	RACESUBTYPE:Evil|Extraplanar|Kyton|Lawful
 	VISION:Darkvision (60')
-	BONUS:COMBAT|AC|
-26, touch 13, flat-footed 22 (+3 Dex, +1 dodge, +13|TYPE=NaturalArmor,
--1 size)
-	MONSTERCLASS::
-147 (14d10+70)
-regeneration 5 (good weapons and spells,
-silver weapons)
+	BONUS:COMBAT|AC|13|TYPE=NaturalArmor,
+	MONSTERCLASS:Outsider:14
 	DR:10/silver or good
-Immune cold
 	SR:23
 	MOVE:Walk,40
-
-	NATURALATTACKS:,Natural.Melee.Weapon,*1,
-4 Claws +20 (1d8+7/19-20 plus bleed)
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*4,1d8
 	FACE:10
 	REACH:10
-
-	Special Attacks:bleed (1d6), poison, rend (2 Claws, 1d8+7),
-surgical strikes, unnerving gaze (30 ft.
-DC 22)
-Spell-Like Abilities (CL 14th
-concentration +19)
-At will-bleed (DC 15), plane shift (from the Material Plane to
-the Plane of Shadow Plane, self only), stabilize
-3/day-cure serious wounds, restoration
-1/day-breath of life
-STATISTICS
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|0
 	BONUS:STAT|CON|0
 	BONUS:STAT|INT|0
 	BONUS:STAT|WIS|0
 	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Interlocutor
 Str 24, Dex 17, Con 21, Int 15, Wis 22, Cha 20
-Base Atk +14
-CMB +22
-CMD 36 (38 vs. trip)
-Feats Cleave, Combat Reflexes, Dodge,
-Improved Initiative, Iron Will,
-Lightning Reflexes, Power Attack
-Skills Heal +23, Intimidate +22,
-Knowledge (arcana, local,
-religion) +9, Knowledge
-(dungeoneering, nature,
-planes) +12, Perception +23,
-Sense Motive +23, Stealth +16
-	AUTO:LANG|Common, Infernal
+	AUTO:LANG|Common|Infernal
 
 Lammasu	SOURCEPAGE:p.174
 	CR:8
@@ -223,38 +120,15 @@ Lammasu	SOURCEPAGE:p.174
 	KIT:1|LG
 	SIZE:L
 	RACETYPE:Magical Beast
-	VISION:Darkvision (60')|low-light vision;
-Aura magic circle against evil (20 ft.)
-	BONUS:COMBAT|AC|
-21, touch 10, flat-footed 20 (+1 Dex, +11|TYPE=NaturalArmor, -1 size)
-	MONSTERCLASS::
-94 (9d10+45)
+	VISION:Darkvision (60')|Low-Light Vision
+	BONUS:COMBAT|AC|11|TYPE=NaturalArmor
+	MONSTERCLASS:Magical Beast:9
 	MOVE:Walk,30,Fly,60
 	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|(average)
-2 Claws +14 (1d8+6), 2 wings +9 (1d6+3)
+	NATURALATTACKS:Claws,Natural.Melee.Weapon,*2,1d8
+	NATURALATTACKS:Wings,Natural.Melee.Weapon,*2,1d6
 	FACE:10
 	REACH:5
-Special Attacks
-pounce, rake
-(2 Claws +14;
-1d8+6)
-Spell-Like
-Abilities (CL 9th;
-concentration +11)
-3/day-greater
-invisibility
-1/day-dimension door
-Spells Known (CL 7th;
-concentration +9)
-3rd (4/day)-cure serious wounds,
-searing light
-2nd (7/day)-cure moderate wounds, lesser
-restoration, resist energy
-1st (7/day)-bless, command (DC 13), cure light
-wounds, detect evil, divine favor
-0 (at will)-detect magic, detect poison, guidance,
-mending, purify food and drink, resistance, stabilize
-STATISTICS
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|0
 	BONUS:STAT|CON|0
@@ -263,73 +137,46 @@ STATISTICS
 	BONUS:STAT|CHA|0
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
 Str 23, Dex 12, Con 21, Int 16, Wis 17, Cha 14
-Base Atk +9
-CMB +16
-CMD 27 (31 vs. trip)
-Feats Blind-Fight, Eschew MaterialsB, Improved
-Initiative, Iron Will, Lightning Reflexes, Power Attack
-Skills Diplomacy +11, Fly +11, Knowledge (arcana) +12,
-Perception +15, Sense Motive +12
-	AUTO:LANG|Celestial, Common
+	VFEAT:Eschew Materials
+	AUTO:LANG|Celestial|Common
 
 
-Fungus Leshy	KEY:Leshy ()	SORTKEY:Leshy	SOURCEPAGE:p.176
+Fungus Leshy	KEY:Leshy (Fungus)	SORTKEY:Leshy	SOURCEPAGE:p.176
 	CR:2
 	XP:600
 	KIT:1|TN
 	SIZE:S
-	plant (leshy, shapechanger)
+	RACETYPE:Plant
+	RACESUBTYPE:Leshy|Shapechanger
 	VISION:Darkvision (60')|Low-Light Vision
-	BONUS:COMBAT|AC|
-13, touch 13, flat-footed 11 (+2 Dex, +1 size)
-	MONSTERCLASS::
-15 (2d8+6)
-Fort +6, Ref +2, Will +2
-Immune electricity, sonic, plant traits
+	MONSTERCLASS:Plant:2
 	MOVE:Walk,20 ft.
 Bite +2 (1d6), 2 Claws +2 (1d3)
 Ranged puffball +4 (1 plus spores)
 
-	Special Attacks:spores
-Spell-Like Abilities (CL 4th
-concentration +6)
-Constant-pass without trace
-STATISTICS
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|0
 	BONUS:STAT|CON|0
 	BONUS:STAT|INT|0
 	BONUS:STAT|WIS|0
 	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Fungus Leshy
 Str 10, Dex 15, Con 16, Int 7, Wis 14, Cha 15
-Base Atk +1
-CMB +0
-CMD 12
-Feats Blind-Fight
-Skills Stealth +10 (+14 in swamps and underground), Survival
-+3 (+7 in swamps and underground)
 	BONUS:SKILL|||TYPE=Racial
 Racial Modifiers +4
 Stealth and Survival in swamps and underground
-	AUTO:LANG|Druidic, Sylvan
-plantspeech (fungi)
-SQ change shape (Small fungus
-tree shape), verdant burst
+	AUTO:LANG|Druidic, Sylvan, plantspeech (fungi)
 
-
-Gourd Leshy	KEY:Leshy ()	SORTKEY:Leshy	SOURCEPAGE:p.177
+Gourd Leshy	KEY:Leshy (Gourd)	SORTKEY:Leshy	SOURCEPAGE:p.177
 	CR:1
 	XP:400
 	KIT:1|TN
 	SIZE:S
-	plant (leshy, shapechanger)
+	RACETYPE:Plant
+	RACESUBTYPE:Leshy|Shapechanger
 	VISION:Darkvision (60')|Low-Light Vision
-	BONUS:COMBAT|AC|
-13, touch 13, flat-footed 11 (+2 Dex, +1 size)
-	MONSTERCLASS::
-9 (1d8+5)
-Fort +4, Ref +2, Will +0
+
+	MONSTERCLASS:Plant:1
 Immune electricity, sonic, plant traits
 	MOVE:Walk,20 ft.
 Slam -1 (1d3-2 plus ensnare)
@@ -347,44 +194,28 @@ STATISTICS
 	BONUS:STAT|CHA|0
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
 Str 6, Dex 15, Con 14, Int 6, Wis 11, Cha 15
-Base Atk +0
-CMB -3
-CMD 9
-Feats Toughness
-Skills Perception +4, Stealth +6 (+10 in plains and
-undergrowth), Survival +0 (+4 in plains and
-undergrowth)
 	BONUS:SKILL|||TYPE=Racial
-Racial Modifiers +4 Stealth
-and Survival in plains and undergrowth
-	AUTO:LANG|Druidic, Sylvan
-plantspeech
-(gourds)
-SQ change shape (Small gourd
-tree
-shape), keepsake, verdant burst
+Racial Modifiers +4 Stealth and Survival in plains and undergrowth
+	AUTO:LANG|Druidic, Sylvan, plantspeech (gourds)
 
 Leaf Leshy	KEY:Leshy ()	SORTKEY:Leshy	SOURCEPAGE:p.178
 	CR:1/2
 	XP:200
 	KIT:1|TN
 	SIZE:S
-	plant (leshy, shapechanger)
+	RACETYPE:Plant
+	RACESUBTYPE:Leshy|Shapechanger
 	VISION:Darkvision (60')|Low-Light Vision
 	BONUS:COMBAT|AC|
 13, touch 12, flat-footed 12 (+1 armor, +1 Dex, +1 size)
-	MONSTERCLASS::
-5 (1d8+1)
-Fort +3, Ref +1, Will +1
+	MONSTERCLASS:Plant:1
 Immune electricity, sonic, plant traits
 	MOVE:Walk,20,Climb,10,Fly,10
 	ABILITY:Special Ability|AUTOMATIC|Flight Maneuverability	DEFINE:Maneuverability|(clumsy)
 glide
 shortspear +2 (1d4-2/19-20)
 Ranged seedpods +2 touch (1 plus deafen)
-Spell-Like Abilities (CL 2nd
-concentration +3)
-Constant-pass without trace
+
 STATISTICS
 	BONUS:STAT|STR|0
 	BONUS:STAT|DEX|0
@@ -394,19 +225,11 @@ STATISTICS
 	BONUS:STAT|CHA|0
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
 Str 6, Dex 13, Con 12, Int 5, Wis 12, Cha 13
-Base Atk +0
-CMB -3
-CMD 8
-Feats Weapon Finesse
-Skills Fly -1, Stealth +5 (+9 in forests and jungles), Survival +1
-(+5 in forests and jungles)
 	BONUS:SKILL|||TYPE=Racial
 Racial Modifiers +4 Stealth and
 Survival in forests and jungles
 	AUTO:LANG|Druidic, Sylvan
 plantspeech (trees)
-SQ change shape (Small tree
-tree shape), verdant burst
 
 
 Seaweed Leshy	KEY:Leshy ()	SORTKEY:Leshy	SOURCEPAGE:p.179
@@ -414,14 +237,11 @@ Seaweed Leshy	KEY:Leshy ()	SORTKEY:Leshy	SOURCEPAGE:p.179
 	XP:800
 	KIT:1|TN
 	SIZE:S
-	plant (aquatic, leshy, shapechanger)
+	RACETYPE:Plant
+	RACESUBTYPE:Aquatic|Leshy|Shapechanger
 	VISION:Darkvision (60')|Low-Light Vision
-	BONUS:COMBAT|AC|
-15, touch 12, flat-footed 14 (+1 armor, +1 Dex, +2|TYPE=NaturalArmor,
-+1 size)
-	MONSTERCLASS::
-30 (4d8+12)
-Fort +6, Ref +2, Will +3
+	BONUS:COMBAT|AC|2|TYPE=NaturalArmor
+	MONSTERCLASS:Plant:4
 Immune electricity, sonic, plant traits
 	MOVE:Walk,20,Swim,20
 Slam +4 (1d6)
@@ -4447,172 +4267,41 @@ Perception +9, Sense Motive +9, Stealth +17, Swim +6;
 Racial Modifiers +4 Bluff, +8 Disguise
 	AUTO:LANG|Common, Infernal, Undercommon;
 comprehend languages
-SQ change shape (Tiny living object), master's eyes
-ECOLOGY
-Environment any
-Organization solitary, pair, or rack (3-10)
-Treasure standard
-SPECIAL ABILITIES
-Change Shape (Su) As a full-round action, a raktavarna can
-take the shape of a handheld object, most often an
-ornamental light, a one-handed weapon, or a piece
-of treasure. If the rakshasa remains stationary
-in such a form, it can attempt Stealth checks
-even while being observed. It can remain
-motionless in object form indefinitely, but
-reverts to its true form as soon as it takes
-any action.
-Master's Eyes (Su) A raktavarna can
-designate a single creature as its master
-as a standard action. If the raktavarna
-is a spellcaster's familiar, its master is
-automatically that spellcaster, and the
-raktavarna cannot change this. As a fullround
-action, a raktavarna's master can observe
-the world as if looking through the raktavarna's eyes. The
-master must concentrate to maintain this link each round.
-The master's visual senses are suppressed for this time, and
-he uses the raktavarna's Darkvision, detect magic, and regular
-eyesight to observe the world. This ability has no limit on
-range, and functions even across planar boundaries. If the
-raktavarna is slain while its master is using this ability, the
-master is stunned for 1d4 rounds (no save).
-Poison (Su) Bite-injury
-save Fort DC 13
-frequency 1/round
-for 6 rounds
-effect 1d2 Wis plus modify memory
-cure 1 save.
-Each time a victim takes Wisdom damage from this poison, a
-modify memory effect causes the victim to forget the previous
-minute's interactions with the raktavarna, as long as the
-raktavarna is no longer visible or is in object form. The save
-DC is Constitution-based.
-Made up of smoke, blood, and gold, raktavarnas are the
-least of the rakshasas-they are born not from humanoids,
-but from the souls of rakshasas who failed utterly in their
-previous incarnation and who are thus reborn from a
-serpent's egg.
-These terrors drift through society, passing from hand
-to hand as weapons or strange tokens from foreign lands,
-curiosities brought home by traders and emissaries and
-given to leaders as tribute. In this manner the raktavarnas
-gain entry into corridors of power throughout the world,
-and what they see, their foul masters know. A raktavarna's
-servitude to a master ends only when its master decrees,
-or (more commonly) upon the master's death. Little
-disconcerts raktavarnas more than having no master,
-and when they are cast adrift in this manner, they seek a
-replacement as soon as they can.
-A 7th-level lawful evil spellcaster with
-the Improved Familiar feat can gain a
-raktavarna rakshasa as a familiar.
+
 229
-Rakshasa, Marai-Rakshasa, Raktavarna
-Rakshasa, Tataka
-This towering, blue-skinned woman has backward-facing hands
-and a feral, animal-like visage with exaggerated features.
-TATAKA
+
+Tataka	KEY:Rakshasa (Tataka)	SORTKEY:Rakshasa	SOURCEPAGE:p.229
 	CR:15
 	XP:51,200
 	KIT:1|LE
 	SIZE:L
 	RACETYPE:Outsider
- (native, rakshasa, shapechanger)
-	VISION:Darkvision (60')|
-	ABILITY:Special Ability|AUTOMATIC|Scent, true seeing
-Perception +19
-	BONUS:COMBAT|AC|
-28, touch 13, flat-footed 24 (+3 Dex, +1 dodge, +15|TYPE=NaturalArmor,
--1 size)
-	MONSTERCLASS::
-225 (18d10+126)
-Fort +18, Ref +9, Will +12
-
+	RACESUBTYPE:Native|Rakshasa|Shapechanger
+	VISION:Darkvision (60')|True Seeing
+	ABILITY:Special Ability|AUTOMATIC|Scent
+	BONUS:COMBAT|AC|15|TYPE=NaturalArmor
+	MONSTERCLASS:Outsider:18
 	DR:15/good and piercing
 	SR:30
-	MOVE:Walk,40 ft.
-air walk
-
-	NATURALATTACKS:,Natural.Melee.Weapon,*1,
-unarmed strike +24/+19/+14/+9 (2d6+7/19-20),
-Bite +19 (1d8+3)
+	MOVE:Walk,40,Air Walk,40
+	NATURALATTACKS:Bite,Natural.Melee.Weapon,*1,1d6
 	FACE:10
 	REACH:10
+	BONUS:STAT|STR|14
+	BONUS:STAT|DEX|6
+	BONUS:STAT|CON|14
+	BONUS:STAT|INT|2
+	BONUS:STAT|WIS|2
+	BONUS:STAT|CHA|10
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Tataka
+	BONUS:SKILL|Bluff|4|TYPE=Racial
+	BONUS:SKILL|Disguise|8|TYPE=Racial
+	AUTO:LANG|Common|Infernal|Undercommon
 
-	Special Attacks:detect thoughts (DC 24), martial artist
-Spell-Like Abilities (CL 15th
-concentration +20)
-Constant-air walk, true seeing
-Spells Known (CL 12th
-concentration +17)
-6th (3/day)-heal
-5th (6/day)-flame strike (DC 20), telekinesis (DC 20)
-4th (7/day)-charm monster (DC 19), dimension door,
-freedom of movement
-3rd (7/day)-dispel magic, fireball (DC 18), haste, rage
-2nd (7/day)-acid arrow, cure moderate wounds, death
-knell (DC 17), invisibility, misdirection
-1st (8/day)-command (DC 16), mage armor, magic missile,
-ray of enfeeblement (DC 16), shield of faith
-0 (at will)-acid splash, bleed (DC 15), light, mage hand,
-mending, message, open/close, prestidigitation, read magic
-STATISTICS
-	BONUS:STAT|STR|0
-	BONUS:STAT|DEX|0
-	BONUS:STAT|CON|0
-	BONUS:STAT|INT|0
-	BONUS:STAT|WIS|0
-	BONUS:STAT|CHA|0
-	ABILITY:Internal|AUTOMATIC|Default Traits ~ 
-Str 24, Dex 16, Con 25, Int 13, Wis 13, Cha 20
-Base Atk +18
-CMB +26
-CMD 40
-Feats Cleave, Combat Reflexes, Critical Focus, Dodge, Great
-Cleave, Improved Critical (unarmed strike), Improved Vital
-Strike, Power Attack, Vital Strike
-Skills Acrobatics +18 (+22 when jumping), Bluff +23, Climb +17,
-Disguise +26, Intimidate +23, Knowledge (religion) +10,
-Perception +19, Sense Motive +19, Survival +16, Swim +18;
-	BONUS:SKILL|||TYPE=Racial
-Racial Modifiers +4 Bluff, +8 Disguise
-	AUTO:LANG|Common, Infernal, Undercommon
-SQ change shape (any humanoid
-alter self or giant form I)
-ECOLOGY
-Environment any
-Organization solitary, pair, patrol (3-6)
-Treasure standard
-SPECIAL ABILITIES
-Martial Artist (Su) A tataka's unarmed strikes deal 2d6 points
-of damage. If a tataka gains monk levels, it uses its tataka
-unarmed strike damage or its monk unarmed strike damage,
-whichever is higher. Its unarmed strikes function as lawful
-and evil weapons for overcoming damage reduction.
-Spells A tataka casts spells as a 12th-level sorcerer. A tataka
-can cast spells from the cleric list as well as those normally
-available to a sorcerer. Cleric spells are considered arcane
-spells for a tataka.
-Tataka rakshasas are the least subtle and largest of their
-kind. They are philosophers and fanatics, loyal servants of
-the rakshasa immortals. Their familiarity with religion
-and its trappings makes them excellent corruptors and
-blasphemers. Such rakshasas might assault sacred sites
-or rituals directly so as to foil good works and slay holy
-people. A tataka holds all religions in contempt save the
-worship of rakshasas, and it openly mocks and assaults
-any who dare believe otherwise.
-Tataka rakshasas are more than zealots, though, and
-they train from an early age in martial arts-their strikes
-can break bones as surely as any unarmed strike from
-a monk or other practitioner of such
-styles of combat.
-A typical tataka is 12 feet tall and
-weighs 1,300 pounds.
+
 230
 Illustration by Carolina Eade
-Ratfolk
+Ratfolk	SOURCEPAGE:p.
 This small, ratlike humanoid has a twitching, whiskered snout,
 pointed ears, and a long, leathery tail.
 RATFOLK
@@ -4656,42 +4345,7 @@ Racial
 Modifiers +2 Craft (alchemy), +4 Handle Animal to influence
 rodents, +2 Perception, +2 Use Magic Device
 	AUTO:LANG|Common
-ECOLOGY
-Environment warm deserts or urban
-Organization solitary, pair, pack (3-12), or colony (13-100)
-Treasure NPC gear (leather armor, light crossbow with 20 bolts,
-dagger, other treasure)
-SPECIAL ABILITIES
-Swarming (Ex) Ratfolk are used to living and fighting communally,
-and are adept at swarming foes for their own gain and their
-foes' detriment. Up to two ratfolk can share the same square at
-the same time. If two ratfolk in the same square attack
-the same foe, they are considered to be flanking that
-foe as if they were in two opposite squares.
-Ratfolk are small, rodentlike humanoids
-often found traveling in nomadic trading
-caravans or perhaps dwelling in colonies
-in slums, sewers, and other normally
-undesirable urban sectors. Tinkerers
-and hoarders by nature, many ratfolk
-are shrewd merchants, carefully
-navigating the shifting alliances
-of black markets and bazaars.
-They love their stockpiles of
-intereSting items far more
-than money, and would rather trade for more baubles to
-add to their hoards than for mere coins.
-Ratfolk are extremely communal, and live in large
-warrens with plenty of hidden crannies in which to stash
-their hoards or f lee in times of danger, gravitating toward
-subterranean tunnels or tightly packed tenements in
-city ghettos. They feel an intense bond with their large
-families and kin networks, as well as with ordinary
-rodents of all sorts, living in chaotic harmony and
-fighting fiercely to defend each other when threatened.
-Ratfolk are generally 4 feet tall and weigh 80 pounds. They
-often wear robes to conceal their forms in cities, as they know
-other humanoids find their rodent features distasteful.
+
 RATFOLK CHARACTERS
 Ratfolk are defined by their class levels-they do not possess
 racial Hit Dice. All ratfolk have the following racial traits.
@@ -4713,12 +4367,8 @@ Ratfolk with high intelligence can choose from any of
 the following bonus languages: Aklo, Draconic, Dwarven,
 Gnoll, Gnome, Goblin, Half ling, Orc, and Undercommon.
 231
-Illustration by Scott Purdy
-Rakshasa, Tataka-Ratfolk
-Rusalka
-This beguiling female figure is partly obscured by long f lowing
-hair that dances and f lows around her as if she were underwater.
-RUSALKA
+
+Rusalka	SOURCEPAGE:p.231
 	CR:12
 	XP:19,200
 	KIT:1|NE
@@ -4773,14 +4423,9 @@ Artist +18, Knowledge (arcana) +6, Knowledge (nature) +18,
 Perception +22, Perform (dance) +14, Perform (sing) +27,
 Sense Motive +15, Spellcraft +18, Stealth +27, Swim +31
 	AUTO:LANG|Common, Sylvan
-SQ amphibious
 
 232
-Illustration by J. P. Targete
-Sabosan
-This batlike humanoid has a lean, muscular body covered with
-fur and two large, leathery wings.
-SABOSAN
+Sabosan	SOURCEPAGE:p.232
 	CR:5
 	XP:1,600
 	KIT:1|NE
