@@ -43,9 +43,7 @@ Gnome Weapon Focus	TYPE:Combat		PREATT:1	PRERACE:1,Gnome		PREWEAPONPROF:1,TYPE.M
 Great Hatred	TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Hatred	BONUS:VAR|GnomeHatredBonus|1	DESC:Your rage burns with vast intensity.	SOURCEPAGE:p.37		BENEFIT:You gain an additional +1 bonus on melee and thrown weapon attacks against targets of your hatred racial trait.
 
 #  TODO: Need to work out hated creature type selection mechanic and then update benefit as appropriate.
-Vast Hatred		TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Hatred
-	DESC:Your rage stretches beyond normal bounds.	SOURCEPAGE:p.37
-	BENEFIT:Select two creature types (and subtypes where appropriate) from the list of potential favored enemies from the ranger class ability. Your +1 attack bonus from the hatred racial trait applies to creatures of the selected types (and subtypes). &nl; [Special] You may take this feat more than once. Its benefits do not stack. Each time you select this feat, you select two additional creature types to which your hatred racial trait applies.
+Vast Hatred		TYPE:Combat		PRERACE:1,Gnome		PREABILITY:1,CATEGORY=Special Ability,Hatred		DESC:Your rage stretches beyond normal bounds.	SOURCEPAGE:p.37		BENEFIT:Select two creature types (and subtypes where appropriate) from the list of potential favored enemies from the ranger class ability. Your +1 attack bonus from the hatred racial trait applies to creatures of the selected types (and subtypes). &nl; [Special] You may take this feat more than once. Its benefits do not stack. Each time you select this feat, you select two additional creature types to which your hatred racial trait applies.
 
 ###
 ##Block: Half-Elven Feats
@@ -64,20 +62,24 @@ Half-Drow Paragon
 	SOURCEPAGE:p.47
 	BENEFIT:You count as a drow for any effects that relate to race. Furthermore, the spell-like abilities granted to you by your drow magic racial trait count as drow spell-like abilities for the purposes of any feat prerequisites.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
 Human Spirit
 	TYPE:General
 	PRERACE:1,Half-elf
+	PREPCLEVEL:MAX=1
 	DESC:Your blood burns with the passion and unyielding quest for self-improvement displayed so prominently by your human relatives.
-	BENEFIT:You receive 1 bonus skill rank. Whenever you gain another Hit Die, you gain an additional skill rank. You cannot gain more than four skill ranks in this way. &nl; [Special] You can only take this feat at 1st level. If you take this feat, you cannot take the Elven Spirit feat.
+	SOURCEPAGE:p.47
+	BONUS:SKILLPOINTS|NUMBER|1|PRELEVELMAX:4
+	BENEFIT:You receive 1 bonus skill rank. Whenever you gain another Hit Die, you gain an additional skill rank. You cannot gain more than four skill ranks in this way.
 
-#  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
+#  TODO: need to remove extra favored class bonuses provided by existing favored class
 Multitalented Mastery
 	TYPE:General
 	PRELEVEL:MIN=5
 	PRERACE:1,Half-elf
 	PREABILITY:1,CATEGORY=Special Ability,Multitalented
 	DESC:You are adept at numerous disciplines.
+	SOURCEPAGE:p.47
+	BONUS:ABILITYPOOL|Favored Class Bonus|TL
 	BENEFIT:All of your classes are considered favored classes. You gain either +1 hit point or +1 skill point whenever you take a level in any class. Apply these bonuses retroactively for all class levels that have not yet gained one of these bonuses. &nl; [Normal] Half-elves with the multitalented racial trait have two favored classes.
 
 Neither Elf nor Human
@@ -86,6 +88,7 @@ Neither Elf nor Human
 	PRERACE:1,Half-elf
 	PREFEAT:2,Exile's Path,Seen and Unseen
 	DESC:You have removed yourself from your heritage so thoroughly that even magic does not recognize you.
+	SOURCEPAGE:p.47
 	BENEFIT:You are not considered elven or human for the purpose of harmful spells or effects based on your type, like a bane weapon or a ranger's favored enemy class feature.
 
 Seen and Unseen
@@ -94,24 +97,31 @@ Seen and Unseen
 	PRERACE:1,Half-elf
 	PREFEAT:1,Exile's Path
 	DESC:Your anonymity makes you difficult to find through magical or mundane means, and you have learned how to combat both of your progenitor races.
-	BENEFIT:You gain a +2 bonus on all saving throws against scrying or divination effects. Additionally, you gain a +2 bonus on all Stealth checks, and elves, half-elves, and humans take a �4 penalty on all efforts to track you through the Survival skill.
+	SOURCEPAGE:p.47
+	BONUS:SKILL|Stealth|2
+	BENEFIT:You gain a +2 bonus on all saving throws against scrying or divination effects. Additionally, you gain a +2 bonus on all Stealth checks, and elves, half-elves, and humans take a -4 penalty on all efforts to track you through the Survival skill.
 
 Shared Manipulation
 	TYPE:General
 	PRERACE:1,Half-elf
 	PRESTAT:1,CHA=13
 	DESC:You can subtly bolster allies' ability to misdirect and infuriate their enemies.
-	BENEFIT:As a move action, you can grant all friendly creatures within 30 feet who can see or hear you a +2 bonus on Bluff or Intimidate checks (choose which skill to affect each time you use this ability) for a number of rounds equal to your Charisma modifier (minimum 1 round).
+	SOURCEPAGE:p.47
+	BENEFIT:As a move action, you can grant all friendly creatures within 30 feet who can see or hear you a +2 bonus on Bluff or Intimidate checks (choose which skill to affect each time you use this ability) for %1 rounds.|max(1,CHA)
 
 ###
 ##Block: Half-Orc Feats
 # Feat Name				Unique Key						Type				Visible		Required Ability																						Req. Att.	Required Check Base		Required Class				Required Feat									Multiple Requirements																									Required Race									Maximum Size	Required Skill				Required Casting Type	Req. Spell Type				Required Stat		Required Text								Var. Min. Value			Required Vision			Req. Weapond Prof.		Define																					Innate Spells							Description																									Stackable?	Multiple?	Choose													Selections	Automatically Gained Feat																							Add Spell Lvl	Bonus to Ability Pool																																																																																																																																					Combat bonus					Bonus to DC							Bonus to skill						Modify VAR																						Add to vision			Class Skill	Vision				Source Page		Description of the Benefits																																																																																																																																																									More language
+# TODO: adjust effective druid level
 Beast Rider
 	TYPE:General
 	PREABILITY:1,CATEGORY=Special Ability,Nature's Bond ~ Animal Companion,Special Mount,Companion ~ Hunter's Bond
 	PRELEVEL:MIN=7
 	PRERACE=1,Orc,Half-Orc
 	DESC:You gain the service of a monstrous companion or mount.
+	SOURCEPAGE:p.56
+	BONUS:FOLLOWERS|Animal Companion|-1		FOLLOWERS:Mount|1
+	COMPANIONLIST:Mount|Elephant,Pteranodon,Rhinoceros,Stegosaurus,Triceratops|PREABILITY:1,CATEGORY=Special Ability,Special Mount
 	BENEFIT:Select one of the following creature types: elephant, pteranodon, rhinoceros, stegosaurus, or triceratops. Add this creature type to your list of possible animal companions or mounts. When summoning a creature of the selected type to serve as a mount or companion, treat your effective druid level as if it were two levels higher (to a maximum of your character level). If the creature is large enough for you to ride, it gains the combat training general purpose (see Handle Animal) at no cost.
 
 Blood Vengeance
@@ -119,13 +129,15 @@ Blood Vengeance
 	PRERACE=1,Orc,Half-Orc
 	!PREALIGN:LG,LN,LE
 	DESC:Seeing an ally fall in combat fills you with a raging and murderous fury.
-	BENEFIT:Whenever one of your allies is reduced to negative hit points or killed, you may enter a state similar to but less powerful than a barbarian's rage as a free action on your next turn. If you have the rage class feature and are already raging, your morale bonuses to Strength and Constitution increase by +2 for the duration of your rage. If you do not have the rage class feature, or you have no more rage rounds left, this weaker rage gives you all the benefits and penalties of a barbarian's rage, except your morale bonus to Strength and Constitution is only +2. In either case, this state lasts for 4 rounds. As with a barbarian's rage, when this weaker rage ends, you are fatigued; if another ally falls before this duration ends, the weaker rage lasts for an additional 4 rounds. This feat does not allow you to enter a rage if you are fatigued. You may only use this feat if the fallen ally had at least as many Hit Dice as you (excluding conjured or summoned allies).
+	SOURCEPAGE:p.56
+	BENEFIT:Whenever one of your allies is reduced to negative hit points or killed, you may enter a state similar to but less powerful than a barbarian's rage as a free action on your next turn. If you have the rage class feature and are already raging, your morale bonuses to Strength and Constitution increase by +2 for the duration of your rage. If you do not have the rage class feature, or you have no more rage rounds left, this weaker rage gives you all the benefits and penalties of a barbarian's rage, except your morale bonus to Strength and Constitution is only +2. In either case, this state lasts for 4 rounds.
 
 Destroyer's Blessing 
 	TYPE:Combat
 	PRERACE=1,Orc,Half-Orc
 	PREABILITY:1,CATEGORY=Special Ability,Rage
 	DESC:Breaking things adds to your power.
+	SOURCEPAGE:p.56
 	BENEFIT:When you are raging and you succeed at a sunder combat maneuver, you regain 1 round of rage. If the sunder attempt causes the object to gain the broken condition, you heal 1 hit point. You can only gain these benefits once per round.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
@@ -135,13 +147,16 @@ Ferocious Resolve
 	PREABILITY:1,CATEGORY=Special Ability,Orc Ferocity
 	PRESTAT:1,CON=13
 	DESC:Your orc heritage allows you to fight on.
-	BENEFIT:You gain the ferocity universal monster ability, allowing you to continue fighting at negative hit points. When using this ability, you gain a +2 bonus on Intimidate checks. &nl; [Normal] A half-orc with the orc ferocity racial trait can fight for 1 more round after he is brought below 0 hit points.
+	SOURCEPAGE:p.57
+	ABILITY:Special Ability|AUTOMATIC|Ferocity
+	BENEFIT:You gain the Ferocity universal monster ability, allowing you to continue fighting at negative hit points. When using this ability, you gain a +2 bonus on Intimidate checks.
 
 Ferocious Summons
 	TYPE:General
 	PRERACE=1,Orc,Half-Orc
 	PREFEAT:2,Augment Summoning,Spell Focus(Conjuration)
 	DESC:Your summoned creatures gain your ferocity.
+	SOURCEPAGE:p.57
 	BENEFIT:Creatures you summon gain the ferocity universal monster ability.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
@@ -150,13 +165,15 @@ Ferocious Tenacity
 	PRERACE=1,Orc,Half-Orc
 	PREABILITY:2,CATEGORY=Special Ability,Ferocity,Rage
 	DESC:You spit in the face of death.
-	BENEFIT:Once per day when raging, if you are hit by an attack that would deal enough hit points of damage to kill you (negative hit points equal to your Constitution score), as an immediate action you may expend 1 or more rounds of rage to negate some of this damage and keep yourself alive. Each round of rage you spend reduces the attack's damage by 1 point, but cannot reduce the damage taken below 1 hit point. For example, if you are raging, have a raging Constitution score of 18, are currently at 2 hit points, and take 20 hit points of damage from a hit (which is enough to bring you to �18 hit points, thereby killing you), you may spend 1 round of rage to reduce the damage by 1 hit point (leaving you perilously close to death at �17 hit points); if you spend 17 rounds of rage, you reduce the damage to 1 (the minimum), leaving you with 1 hit point. &nl; [Note] If this damage still makes you fall unconscious, your rage ends just like it normally would, lowering your Constitution to its normal value and reducing your hit point total as normal. Therefore, it is possible to use this feat to prevent yourself from instantly dying, yet you still die because your negative hit points exceed your normal Constitution score�take your normal Constitution into account when deciding how many rounds of rage to spend with this feat.
+	SOURCEPAGE:p.57
+	BENEFIT:Once per day when raging, if you are hit by an attack that would deal enough hit points of damage to kill you (negative hit points equal to your Constitution score), as an immediate action you may expend 1 or more rounds of rage to negate some of this damage and keep yourself alive. Each round of rage you spend reduces the attack's damage by 1 point, but cannot reduce the damage taken below 1 hit point.
 
 Gore Fiend
 	TYPE:General
 	PRERACE=1,Orc,Half-Orc
 	PREABILITY:1,CATEGORY=Special Ability,Rage
 	DESC:Horrible wounds, whether on yourself or your enemies, make your blood sing.
+	SOURCEPAGE:p.57
 	BENEFIT:When you are raging and you confirm a critical hit with a melee weapon or a critical hit is confirmed on you (whether by a melee weapon, spell, or ranged weapon), you regain 1 round of rage (up to your maximum for the day). You can only gain this benefit once per round.
 
 Horde Charge 
@@ -164,6 +181,7 @@ Horde Charge
 	PREATT:1
 	PRERACE=1,Orc,Half-Orc
 	DESC:When you charge with an ally, you are more deadly.
+	SOURCEPAGE:p.57
 	BENEFIT:When charging during the same round as an ally with this feat, you gain a +2 bonus on attack and damage rolls in addition to the normal bonus for charging. If you can make multiple attacks on a charge, this bonus only applies to the first attack.
 
 Improved Surprise Follow-Through 
@@ -172,13 +190,15 @@ Improved Surprise Follow-Through
 	PREFEAT:4,Cleave,Great Cleave,Power Attack,Surprise Follow-Through
 	PRESTAT:1,STR=13
 	DESC:You follow up an attack with a surprising series of sweeping blows.
+	SOURCEPAGE:p.57
 	BENEFIT:When using Great Cleave, each opponent you attack on your turn (other than the first) is denied his Dexterity bonus against you.
 
 Resilient Brute
 	TYPE:General
 	PRERACE=1,Orc,Half-Orc
 	DESC:You absorb punishment others find deadly.
-	BENEFIT:Once per day, when a creature confirms a critical hit against you, you may treat half the damage as nonlethal damage. You cannot use this ability if you are immune to nonlethal damage. When your base attack bonus reaches +10, you may use this ability an additional time per day.
+	SOURCEPAGE:p.57
+	BENEFIT:%1/day, when a creature confirms a critical hit against you, you may treat half the damage as nonlethal damage. You cannot use this ability if you are immune to nonlethal damage.|1+if(BAB>=10,1,0)
 
 Surprise Follow-Through 
 	TYPE:Combat
@@ -186,6 +206,7 @@ Surprise Follow-Through
 	PREFEAT:2,Cleave,Power Attack
 	PRESTAT:1,STR=13
 	DESC:When striking one opponent, you catch its ally off guard.
+	SOURCEPAGE:p.57
 	BENEFIT:When using Cleave or Great Cleave, the second foe you attack on your turn is denied its Dexterity bonus against you.
 
 Sympathetic Rage 
@@ -193,6 +214,7 @@ Sympathetic Rage
 	PRERACE=1,Orc,Half-Orc
 	!PREALIGN:LG,LN,LE
 	DESC:Seeing an ally rage fills you with your own fury.
+	SOURCEPAGE:p.57
 	BENEFIT:Whenever you are adjacent to an ally who is raging, you may choose to enter a similar but less powerful rage as a free action on your turn. This weaker rage gives you all the benefits and penalties of a barbarian's rage, except your morale bonus to Strength and Constitution is only +2. There is no limit to how long you can rage, as long as you remain adjacent to a raging ally (for example, you could take a 5-foot step away from one raging ally toward another raging ally and maintain your rage). As with a barbarian's rage, when this weaker rage ends, you are fatigued. You cannot use this feat if you are fatigued.
 
 Tenacious Survivor
@@ -201,6 +223,7 @@ Tenacious Survivor
 	PREFEAT:2,Diehard,Endurance
 	PRESTAT:1,CON=13
 	DESC:Your spirit lingers long after any other's would have passed on.
+	SOURCEPAGE:p.58
 	BENEFIT:When you are killed by hit point damage, your soul lingers in your body for a number of rounds equal to your Constitution bonus. You are still dead, but a creature can make a DC 10 Heal check as a standard action to realize that you can still be saved. You can be healed by magic as if you were alive. If you are healed enough hit points that you would no longer be dead, you are alive again, but you gain one permanent negative level.
 
 Thrill of the Kill
@@ -208,6 +231,7 @@ Thrill of the Kill
 	PRERACE=1,Orc,Half-Orc
 	PREABILITY:1,CATEGORY=Special Ability,Rage
 	DESC:Killing fuels your rage.
+	SOURCEPAGE:p.58
 	BENEFIT:When you are raging and your attack reduces an enemy to negative hit points or kills it, you regain 1 round of rage. You may only use this feat if the fallen enemy had at least as many Hit Dice as you. You can only gain this benefit once per round.
 
 ###
@@ -220,6 +244,9 @@ Adaptive Fortune
 	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
 	PREFEAT:1,Fortunate One
 	DESC:Your luck takes on almost legendary proportions.
+	SOURCEPAGE:p.66
+	BONUS:VAR|AdaptableLuckTimes|1
+	BONUS:VAR|AdaptableLuckBonus|2
 	BENEFIT:Increase the number of times per day you can use the adaptable luck racial trait by 1. Furthermore, when you use adaptable luck, increase the luck bonus for each type of use by 2.
 
 Blundering Defense 
@@ -227,12 +254,14 @@ Blundering Defense
 	PRERACE:1,Halfling
 	PREFEAT:1,Cautious Fighter
 	DESC:Your feverish and sometimes comical defensive techniques offer enough distraction to aid allies.
+	SOURCEPAGE:p.66
 	BENEFIT:Whenever you fight defensively or use the total defense action, allies gain a luck bonus to AC and CMD equal to 1/2 the dodge bonus you gain from the action you are taking. Allies only gain this bonus while they are adjacent to you.
 
 Cautious Fighter 
 	TYPE:Combat
 	PRERACE:1,Halfling
 	DESC:You care more about survival than victory.
+	SOURCEPAGE:p.66
 	BENEFIT:When fighting defensively or using total defense, your dodge bonus to AC increases by 2.
 
 Courageous Resolve
@@ -240,7 +269,8 @@ Courageous Resolve
 	PRERACE:1,Halfling
 	PREABILITY:2,CATEGORY=Special Ability,Craven,Fearless
 	DESC:Even when others run, you tend to stand your ground.
-	BENEFIT:If you have the fearless racial trait, your racial bonus on saving throws against fear effects increases to +4. If you have the craven racial trait, you still take the �2 penalty on fear saves, but you can gain the benefit of morale bonuses on saving throws against fear effects.
+	SOURCEPAGE:p.66
+	BENEFIT:If you have the fearless racial trait, your racial bonus on saving throws against fear effects increases to +4. If you have the craven racial trait, you still take the -2 penalty on fear saves, but you can gain the benefit of morale bonuses on saving throws against fear effects.
 
 Desperate Swing 
 	TYPE:Combat
@@ -248,13 +278,16 @@ Desperate Swing
 	PRERACE:1,Halfling
 	PREFEAT:1,Cautious Fighter
 	DESC:You land your most telling blows in desperate situations.
-	BENEFIT:Once per day, you can make a single melee attack while taking the total defense action. You take a �4 penalty on attack rolls when making this attack. You also gain a +4 bonus on critical confirmation rolls made while fighting defensively or making an attack of opportunity using this feat.
+	SOURCEPAGE:p.66
+	BENEFIT:Once per day, you can make a single melee attack while taking the total defense action. You take a -4 penalty on attack rolls when making this attack. You also gain a +4 bonus on critical confirmation rolls made while fighting defensively or making an attack of opportunity using this feat.
 
 Fortunate One
 	TYPE:General
 	PRERACE:1,Halfling
 	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
 	DESC:You have an even greater knack than most halflings for adaptable luck.
+	SOURCEPAGE:p.66
+	BONUS:VAR|AdaptableLuckTimes|1
 	BENEFIT:The number of times per day you can use the adaptable luck racial trait increases by 1.
 
 Improved Low Blow 
@@ -263,6 +296,7 @@ Improved Low Blow
 	PRERACE:1,Halfling
 	PREABILITY:1,CATEGORY=Special Ability,Low-blow
 	DESC:You are adept at hitting larger opponents where it hurts.
+	SOURCEPAGE:p.66
 	BENEFIT:Your bonus to confirm critical hits against opponents larger than yourself improves to +2. Furthermore, once per day, after you fail to hit with a critical hit confirmation roll, you can reroll the confirmation roll, but must take the new result even if it is worse.
 
 Lucky Healer
@@ -270,6 +304,7 @@ Lucky Healer
 	PRERACE:1,Halfling
 	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
 	DESC:Your luck allows you to draw from magical healing far more efficiently than most.
+	SOURCEPAGE:p.66
 	BENEFIT:Spend a use of your adaptive luck racial trait to reroll the damage healed from a single magical healing effect (such as a spell with "cure" in the title or channel energy). You regain a number of hit points equal to the new roll or the original roll, whichever is greater. Other creatures healed by the effect do not gain this benefit.
 
 Lucky Strike 
@@ -278,6 +313,7 @@ Lucky Strike
 	PRERACE:1,Halfling
 	PREABILITY:1,CATEGORY=Special Ability,Adaptable Luck
 	DESC:Your luck increases the potency of your weapon attacks.
+	SOURCEPAGE:p.67
 	BENEFIT:Spend a use of your adaptive luck racial trait to reroll the damage from a single weapon attack. You deal damage equal to the new damage roll, or the original roll, whichever is greater.
 
 Risky Striker 
@@ -285,13 +321,15 @@ Risky Striker
 	PREATT:1
 	PRERACE:1,Halfling
 	DESC:You can make yourself a little more vulnerable to larger creatures in order to land a devastating blow.
-	BENEFIT:You can choose to take a �1 penalty to AC to gain a +2 bonus on melee damage rolls against creatures two or more size categories larger than you. When your base attack bonus reaches +4 and every four levels thereafter, the damage increases by 2. The bonus damage is multiplied in the case of a critical hit. You can only choose to use this feat when you declare that you are making an attack action or a full-attack action with a melee weapon. The effects last until your next turn.
+	SOURCEPAGE:p.
+	BENEFIT:You can choose to take a -1 penalty to AC to gain a +2 bonus on melee damage rolls against creatures two or more size categories larger than you. When your base attack bonus reaches +4 and every four levels thereafter, the damage increases by 2. The bonus damage is multiplied in the case of a critical hit. You can only choose to use this feat when you declare that you are making an attack action or a full-attack action with a melee weapon. The effects last until your next turn.
 
 Sure and Fleet
 	TYPE:General
 	PRERACE:1,Halfling
 	PREABILITY:1,CATEGORY=Special Ability,Fleet Of Foot
 	DESC:You are both fast and careful.
+	SOURCEPAGE:p.
 	BENEFIT:You gain a +2 racial bonus on Acrobatics and Climb checks.
 
 Surprise Strike 
@@ -300,6 +338,7 @@ Surprise Strike
 	PRERACE:1,Halfling
 	PREFEAT:2,Cautious Fighter,Desperate Swing
 	DESC:You actually seem to do more damage when frantically trying to avoid your enemies.
+	SOURCEPAGE:p.
 	BENEFIT:Once per day, when fighting defensively or making an attack of opportunity while taking the total defense action with the Desperate Swing feat, you take no penalty on the attack roll.
 
 Uncanny Defense 
@@ -308,6 +347,7 @@ Uncanny Defense
 	PRERACE:1,Halfling
 	PREFEAT:1,Cautious Fighter
 	DESC:Your instinct for self-preservation gives you many advantages.
+	SOURCEPAGE:p.
 	BENEFIT:While fighting defensively or taking the total defense action, you gain a bonus on your Reflex saving throws and to your CMD equal to 1/2 of the dodge bonus to AC you gained from taking that action.
 
 ###
@@ -318,12 +358,14 @@ Bestow Luck
 	PRERACE:1,Human
 	PREFEAT:2,Defiant Luck,Inexplicable Luck
 	DESC:You are extremely lucky and sometimes your allies are as well.
+	SOURCEPAGE:p.
 	BENEFIT:You gain an extra use per day of your Defiant Luck ability. You can also use your Inexplicable Luck ability to grant an ally that can see and hear its benefit as an immediate action.
 
 Critical Versatility 
 	TYPE:CombatPRECLASS:1,Fighter=11
 	PRERACE:1,Human
 	DESC:An open mind and combat training grant versatility to your critical hits.
+	SOURCEPAGE:p.
 	BENEFIT:Once per day, you can spend 1 hour practicing maneuvers to gain one single critical feat that you meet the prerequisites for. You gain the benefits of the chosen critical feat until you choose to practice a different critical feat.
 
 Dauntless Destiny
@@ -333,6 +375,7 @@ Dauntless Destiny
 	PREFEAT:1,Fearless Curiosity
 	PRESTAT:1,CHA=13
 	DESC:Your ability to avert disaster is impressive.
+	SOURCEPAGE:p.
 	BENEFIT:You gain a +1 bonus on saving throws against effects with the emotion descriptor; this bonus stacks with those granted by Fearless Curiosity and Intimidating Confidence. In addition, once per day you may reroll a natural 1 on a saving throw or an attack roll. If your reroll results in a successful saving throw or attack roll, as a free action you can make an Intimidate check to demoralize the target of your attack or the creature that forced you to make a saving throw, as long as the creature is within 30 feet and can see and hear you. This effect does not apply on saving throws against traps or other objects. This does not stack with other effects that allow you to reroll a saving throw or an attack roll. You may only make one reroll.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
@@ -340,6 +383,7 @@ Defiant Luck
 	TYPE:General
 	PRERACE:1,Human
 	DESC:You can sometimes defiantly shrug off spells and attacks that would kill a lesser creature.
+	SOURCEPAGE:p.
 	BENEFIT:Once per day, after you roll a natural 1 on a saving throw or a critical hit is confirmed against you, you can either reroll that saving throw, or force the creature that confirmed the critical hit against you to reroll the critical confirmation roll. This does not stack with other effects that allow you to reroll a saving throw or an attack roll. You may only make one reroll. &nl; [Special] If you are using the optional hero point system, you can also spend 1 hero point when a critical hit is confirmed against you to have the opponent reroll the critical hit confirmation roll.
 
 Fast Learner
@@ -347,6 +391,7 @@ Fast Learner
 	PRERACE:1,Human
 	PRESTAT:1,INT=13
 	DESC:You progress gain extra versatility.
+	SOURCEPAGE:p.
 	BENEFIT:When you gain a level in a favored class, you gain both +1 hit point and +1 skill rank instead of choosing either one or the other benefit or you can choose an alternate class reward.
 
 Fearless Curiosity
@@ -354,6 +399,7 @@ Fearless Curiosity
 	PRERACE:1,Human
 	PRESTAT:1,CHA=13
 	DESC:Your desire to see and experience the world overrides healthy caution.
+	SOURCEPAGE:p.
 	BENEFIT:You gain a +1 bonus on saving throws against effects with the emotion descriptor. In addition, for any round in which you begin your turn affected by a fear effect, you gain a new save at the beginning of your turn to reduce the severity of the fear effect, from panicked to frightened, frightened to shaken, and shaken to unaffected.
 
 Heroic Will
@@ -362,6 +408,7 @@ Heroic Will
 	PRERACE:1,Human
 	PREFEAT:1,Iron Will
 	DESC:Your indomitable will breaks free from mental shackles.
+	SOURCEPAGE:p.
 	BENEFIT:Once per day as a standard action, you may attempt a new saving throw against a harmful condition requiring a Will save that is affecting you. If you are dominated, controlled, or cannot take an action because of the effect against which you are trying to make a new saving throw, you can make this saving throw at the start of the turn as no action, but on a success, your turn ends. You cannot use this feat to remove instantaneous effects, effects that do not require a Will save, or effects that do not allow a saving throw.
 
 Huntmaster
@@ -370,6 +417,7 @@ Huntmaster
 	PRESKILL:1,Handle Animal=1
 	PRERACE:1,Human
 	DESC:You are an expert trainer of horses, hounds, falcons, or hunting cats.
+	SOURCEPAGE:p.
 	BENEFIT:If you have the animal companion class feature, pick one of the following types of animal companions that this feat affects: bird, dog, small cat, or horse. If you have the divine bond (mount) or mount class feature, this feat always affects horses. You gain a +2 bonus on Handle Animal and Knowledge (nature) checks with creatures of that type of animal. Furthermore, you are treated as one level higher when determining the abilities of your animal companion or mount, as long as it is of the chosen type.
 
 Improved Improvisation
@@ -378,6 +426,7 @@ Improved Improvisation
 	PREFEAT:2,Fast Learner,Improvisation
 	PRESTAT:1,INT=13
 	DESC:You are masterful in your improvisation.
+	SOURCEPAGE:p.
 	BENEFIT:Your nonproficiency penalty with weapons, armor, and shields is halved. In addition, the bonus on all skill checks for skills you have no ranks in increases to +4 instead of +2.
 
 Improvisation
@@ -386,6 +435,7 @@ Improvisation
 	PREFEAT:1,Fast Learner
 	PRESTAT:1,INT=13
 	DESC:You can figure out how to do almost anything.
+	SOURCEPAGE:p.
 	BENEFIT:You gain a +2 bonus on all skill checks for skills you have no ranks in. Furthermore, you can use all trained skills untrained.
 
 Inexplicable Luck
@@ -393,6 +443,7 @@ Inexplicable Luck
 	PRERACE:1,Human
 	PREFEAT:1,Defiant Luck
 	DESC:Others are often dumfounded by your luck.
+	SOURCEPAGE:p.
 	BENEFIT:Once per day, as a free action before a roll is made, you gain a +8 bonus on any single d20 roll. You can also use this ability after the roll is made, but if you do, this bonus is reduced to +4.
 
 Intimidating Confidence
@@ -402,6 +453,7 @@ Intimidating Confidence
 	PREFEAT:1,Fearless Curiosity
 	PRESTAT:1,CHA=13
 	DESC:You have boundless faith in your success.
+	SOURCEPAGE:p.
 	BENEFIT:You gain a +1 bonus on saving throws against effects with the emotion descriptor; this bonus stacks with the bonus granted by Fearless Curiosity. When you confirm a critical hit, as a free action you can make an Intimidate check to demoralize one creature you threaten. If you have the Dazzling Display feat, you can make Intimidate checks to demoralize all creatures you threaten instead. You gain a +2 bonus on this check if your weapon has a �3 critical modifier, or +4 if it has a �4 critical modifier.
 
 Martial Mastery 
@@ -409,6 +461,7 @@ Martial Mastery
 	PRERACE:1,Human
 	PREFEAT:1,Martial Versatility
 	DESC:You broaden your study of weapons to encompass multiple similar weapons.
+	SOURCEPAGE:p.
 	BENEFIT:Each combat feat you have that applies to a specific weapon (e.g., Weapon Focus) can be used with all weapons in the same weapon group.
 
 #  TODO: benefit has items that likely need PRExxx prerequisites and to be removed from benefit
@@ -416,11 +469,13 @@ Martial Versatility
 	TYPE:CombatPRECLASS:1,Fighter=4
 	PRERACE:1,Human
 	DESC:You further broaden your study of weapons to encompass multiple similar weapons.
+	SOURCEPAGE:p.
 	BENEFIT:Choose one combat feat you know that applies to a specific weapon (e.g., Weapon Focus). You can use that feat with any weapon within the same weapon group. &nl; [Special] You may take this feat more than once. Each time it applies to a different feat.
 
 Surge of Success
 	TYPE:General
 	DESC:Your success drives your further actions.
+	SOURCEPAGE:p.
 	PRERACE:1,Human
 	BENEFIT: When you confirm a critical hit or roll a natural 20 on a saving throw, you gain a +2 circumstance bonus on a single attack roll, saving throw, skill check, or ability check of your choice before the end of your next turn. You must choose to use this bonus before you make the attack roll, saving throw, skill check, or ability check.
 
