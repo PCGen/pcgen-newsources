@@ -279,7 +279,7 @@ Desperate Swing
 	PREFEAT:1,Cautious Fighter
 	DESC:You land your most telling blows in desperate situations.
 	SOURCEPAGE:p.66
-	BENEFIT:Once per day, you can make a single melee attack while taking the total defense action. You take a -4 penalty on attack rolls when making this attack. You also gain a +4 bonus on critical confirmation rolls made while fighting defensively or making an attack of opportunity using this feat.
+	BENEFIT:Once per day, you can make a single melee attack while taking the total defense action.		DESC:You take a -4 penalty on attack rolls when making this attack.|PREFEAT:1,[Surprise Strike]		DESC:You also gain a +4 bonus on critical confirmation rolls made while fighting defensively or making an attack of opportunity using this feat.
 
 Fortunate One
 	TYPE:General
@@ -321,15 +321,16 @@ Risky Striker
 	PREATT:1
 	PRERACE:1,Halfling
 	DESC:You can make yourself a little more vulnerable to larger creatures in order to land a devastating blow.
-	SOURCEPAGE:p.
-	BENEFIT:You can choose to take a -1 penalty to AC to gain a +2 bonus on melee damage rolls against creatures two or more size categories larger than you. When your base attack bonus reaches +4 and every four levels thereafter, the damage increases by 2. The bonus damage is multiplied in the case of a critical hit. You can only choose to use this feat when you declare that you are making an attack action or a full-attack action with a melee weapon. The effects last until your next turn.
+	SOURCEPAGE:p.67
+	BENEFIT:You can choose to take a -1 penalty to AC to gain a +%1 bonus on melee damage rolls against creatures two or more size categories larger than you. The bonus damage is multiplied in the case of a critical hit. You can only choose to use this feat when you declare that you are making an attack action or a full-attack action with a melee weapon. The effects last until your next turn.|(1+max(1,(BAB-4))/4)*2
 
 Sure and Fleet
 	TYPE:General
 	PRERACE:1,Halfling
 	PREABILITY:1,CATEGORY=Special Ability,Fleet Of Foot
 	DESC:You are both fast and careful.
-	SOURCEPAGE:p.
+	SOURCEPAGE:p.67
+	BONUS:SKILL|Acrobatics,Climb|2|TYPE=Racial
 	BENEFIT:You gain a +2 racial bonus on Acrobatics and Climb checks.
 
 Surprise Strike 
@@ -338,7 +339,7 @@ Surprise Strike
 	PRERACE:1,Halfling
 	PREFEAT:2,Cautious Fighter,Desperate Swing
 	DESC:You actually seem to do more damage when frantically trying to avoid your enemies.
-	SOURCEPAGE:p.
+	SOURCEPAGE:p.67
 	BENEFIT:Once per day, when fighting defensively or making an attack of opportunity while taking the total defense action with the Desperate Swing feat, you take no penalty on the attack roll.
 
 Uncanny Defense 
@@ -347,8 +348,8 @@ Uncanny Defense
 	PRERACE:1,Halfling
 	PREFEAT:1,Cautious Fighter
 	DESC:Your instinct for self-preservation gives you many advantages.
-	SOURCEPAGE:p.
-	BENEFIT:While fighting defensively or taking the total defense action, you gain a bonus on your Reflex saving throws and to your CMD equal to 1/2 of the dodge bonus to AC you gained from taking that action.
+	SOURCEPAGE:p.67
+	BENEFIT:While fighting defensively you gain a +%1 bonus on your Reflex saving throws and to your CMD. When taking the total defense action, this bonus increases to +%2|FightingDefensivelyACBonus/2|TotalDefenseACBonus/2
 
 ###
 ##Block: Human Feats
