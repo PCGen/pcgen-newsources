@@ -85,6 +85,10 @@ Sociable		KEY:Sociable ~ Half-Elf			CATEGORY:Special Ability	TYPE:RacialTraits.S
 Wary	KEY:Wary ~ Half-Elf	CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HalfElfRacialTrait.HalfElfAdaptability.HalfElfRacialVision				PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Drow Blooded ~ Half-Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HalfElfRacialVision,HalfElfAdaptability]			DESC:Many half-elves have spent their long lives moving from place to place, often driven out by the hostility of others. Such experiences have made them wary of others’ motivations. Half-elves with this trait gain a +1 racial bonus on Sense Motive and Bluff checks.			BONUS:SKILL|Sense Motive,Bluff|1|TYPE=Racial		COST:0		SOURCEPAGE:p.42
 Water Child		KEY:Water Child ~ Half-Elf		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.HalfElfRacialTrait.HalfElfAdaptability.HalfElfMultitalented	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Water Child ~ Half-Elf],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.HalfElfAdaptability,TYPE.HalfElfMultitalented]								DESC:Some half-elves are born of elves adapted to life on or near the water. These half-elves gain a +4 racial bonus on Swim checks, can always take 10 while swimming, and may choose Aquan as a bonus language.																						TEMPLATE:Aquan Bonus Language												BONUS:SKILL|Swim|4|TYPE=Racial																	COST:0	SOURCEPAGE:p.17
 
+###Block: Favored Class Bonuses for Multitalented Mastery
+Bonus Hit Point			KEY:Bonus Hit Point ~ Multitalented Mastery		CATEGORY:Special Ability	TYPE:MultitalentedMasteryBonus	VISIBLE:DISPLAY	STACK:YES	MULT:YES	CHOOSE:NOCHOICE													BONUS:HP|CURRENTMAX|1
+Bonus Skill Point		KEY:Bonus Skill Point ~ Multitalented Mastery	CATEGORY:Special Ability	TYPE:MultitalentedMasteryBonus	VISIBLE:DISPLAY	STACK:YES	MULT:YES	CHOOSE:SKILL|TYPE=Charisma|TYPE=Dexterity|TYPE=Intelligence|TYPE=Strength|TYPE=Wisdom					BONUS:SKILLRANK|LIST|1
+
 
 ###Block: Half-Orc Racial Trait Abilities
 # Ability Name	Unique Key				Category of Ability		Type															Multiple Requirements																									Description																																																																							Automatically Gained Weapon Prof.	Save checks bonus			Bonus to skill					Modify VAR			Change Weapon Prof. Category				Cost		Source Page		Natural Attacks
@@ -158,8 +162,8 @@ Heroic		KEY:Heroic ~ Human		CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQu
 
 ###Block: Fast Learner feat favored class bonus
 Fast Learner Bonus		CATEGORY:Special Ability		TYPE:FavoredClassBonus		PREFEAT:1,Fast Learner		VISIBLE:DISPLAY		STACK:NO	MULT:YES	CHOOSE:NOCHOICE		ABILITY:Special Ability|AUTOMATIC|Bonus Hit Point|Bonus Skill Point		DESC:Gain both +1 hit point and +1 skill rank.  Only available if you've taken the Fast Learner feat.
-CATEGORY=Special Ability|Bonus Hit Point.MOD			PREFEAT:1,[Fast Learner]
-CATEGORY=Special Ability|Bonus Skill Point.MOD			PREFEAT:1,[Fast Learner]
+CATEGORY=Special Ability|Bonus Hit Point.MOD			!PREFEAT:1,Fast Learner
+CATEGORY=Special Ability|Bonus Skill Point.MOD			!PREFEAT:1,Fast Learner
 
 #
 # End
