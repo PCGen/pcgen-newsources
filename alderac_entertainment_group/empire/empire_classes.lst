@@ -5,7 +5,7 @@ SOURCELONG:Alderac Entertainment Group (AEG) - Empire	SOURCESHORT:Empire	SOURCEW
 ######## Noble Base class
 ########
 
-CLASS:Noble		KEY:Noble		HD:6		ABB:Nob		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3		BONUS:CHECKS|BASE.Willpower|CL/2+2		BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	
+CLASS:Noble		KEY:Noble		HD:6		ABB:Nob		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3		BONUS:CHECKS|BASE.Will|CL/2+2		BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	
 CLASS:Noble		CSKILL:Appraise|Bluff|Diplomacy|Disguise|Forgery|Gather Information|Handle Animal|Intimidate|TYPE=Knowledge|Listen|TYPE=Perform|Ride|Sense Motive|Speak Language|Spot|Swim		STARTSKILLPTS:4
 ###Block:Proficiencies
 1	AUTO:WEAPONPROF|TYPE.Martial
@@ -15,11 +15,11 @@ CLASS:Noble		CSKILL:Appraise|Bluff|Diplomacy|Disguise|Forgery|Gather Information
 ###Progression
 1	AUTO:FEAT|Iron Will
 1	BONUS:ABILITYPOOL|Realm Feat|CL/5+1
-2	ABILITY:Special Ability|AUTOMATIC|Strength of Will
+2	ABILITY:Special Ability|AUTOMATIC|Strength of Will ~ Noble
 3	ABILITY:Special Ability|AUTOMATIC|Canny Administrator
 6	ABILITY:Special Ability|AUTOMATIC|Noble Bearing
 8	ABILITY:Special Ability|AUTOMATIC|Expert Financier
-12	ABILITY:Special Ability|AUTOMATIC|Indomitable Will
+12	ABILITY:Special Ability|AUTOMATIC|Indomitable Will ~ Noble
 13	ABILITY:Special Ability|AUTOMATIC|Master of Protocol
 18	ABILITY:Special Ability|AUTOMATIC|Political Master
 20	ABILITY:Special Ability|AUTOMATIC|Renowned Monarch
@@ -54,9 +54,9 @@ CLASS:Political Mastermind	PRESKILL:1,Diplomacy=13		PRESKILL:1,Gather Informatio
 CLASS:Political Mastermind	STARTSKILLPTS:4		CSKILL:Bluff|Diplomacy|Forgery|Gather Information|Intimidate|Listen|TYPE.Perform|Search|Sense Motive|Speak Language
 1	ABILITY:Special Ability|AUTOMATIC|Friends in high places
 2	ABILITY:Special Ability|AUTOMATIC|Friend in need
-3	ABILITY:Special Ability|AUTOMATIC|Web of power
+3	ABILITY:Special Ability|AUTOMATIC|Web of power		DEFINE:WebOfPowerCount|0	BONUS:VAR|WebOfPowerCount|1
 4	ABILITY:Special Ability|AUTOMATIC|Staunch allies
-5	ABILITY:Special Ability|AUTOMATIC|Web of power
+5										BONUS:VAR|WebOfPowerCount|1
 
 
 
@@ -151,7 +151,7 @@ CLASS:Rogue.MOD
 ########
 CLASS:Sorcerer.MOD
 5	ABILITY:Special Ability|AUTOMATIC|Call of Magic
-10	ABILITY:Special Ability|AUTOMATIC|Strength of Will
+10	ABILITY:Special Ability|AUTOMATIC|Strength of Will ~ Sorcerer
 15	ABILITY:Special Ability|AUTOMATIC|Sorcerer Lord
 20	ABILITY:Special Ability|AUTOMATIC|Draconic Monarch
 
