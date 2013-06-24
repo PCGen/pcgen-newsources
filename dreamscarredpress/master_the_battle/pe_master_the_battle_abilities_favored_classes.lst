@@ -10,7 +10,8 @@ Bonus Terror Use	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.
 
 #Block: Elan
 # COMMENT: Don't know if the bonus works
-Bonus to Intimidate	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassDread		VISIBLE:YES	PREABILITY:1,CATEGORY=Special Ability,Dread		PRECLASS:1,Dread=1		PRERACE:1,Elan	DESC:Add +1/2 to Intimidate checks.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	SOURCEPAGE:p.36	BONUS:SKILL|Intimidate|1/2
+Bonus to Intimidate	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassDread		VISIBLE:YES	PREABILITY:1,CATEGORY=Special Ability,Dread		PRECLASS:1,Dread=1		PRERACE:1,Elan	DESC:Add +1/2 to Intimidate checks.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	SOURCEPAGE:p.36	ABILITY:Special Ability|AUTOMATIC|Bonus to Intimidate ~ Favored Class Option	BONUS:VAR|FavoredClassBonusToIntimidate|1
+Bonus to Intimidate ~ Favored Class Option	CATEGORY:Special Ability	VISIBLE:NO	DEFINE:FavoredClassBonusToIntimidate|0	BONUS:SKILL|Intimidate|floor(FavoredClassBonusToIntimidate/2)
 
 #Block: Dwarf
 # COMMENT: Bonus Terror Use found under Duergar
@@ -19,5 +20,5 @@ Bonus to Intimidate	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBon
 Bonus Weapon Damage with Terror Channel	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassDread		VISIBLE:YES	PREABILITY:1,CATEGORY=Special Ability,Dread		PRECLASS:1,Dread=1		PRERACE:1,Half-Orc	DESC:Add +1/3 to weapon damage when channeling a terror through a weapon.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	SOURCEPAGE:p.36
 
 #Block: Human
-Bonus Terror	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassDread	VISIBLE:YES	PREABILITY:1,CATEGORY=Special Ability,Dread		PRECLASS:1,Dread=1		PRERACE:1,Human	DESC:Gain +1/6 of a new terror.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	SOURCEPAGE:p.26	ABILITY:Special Ability|AUTOMATIC|Bonus Terror ~ Favored Class Option	BONUS:VAR|FavoredClassBonusToTerrorsKnown|1
-Bonus Terror ~ Favored Class Option	CATEGORY:Special Ability	VISIBLE:NO	DEFINE:FavoredClassBonusToStrategyUses|0	BONUS:ABILITYPOOL|Terror|floor(FavoredClassBonusToTerrorsKnown/6)
+Bonus Terror	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassDread	VISIBLE:YES	PREABILITY:1,CATEGORY=Special Ability,Dread		PRECLASS:1,Dread=1		PRERACE:1,Human	DESC:Gain +1/6 of a new terror.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	SOURCEPAGE:p.36	ABILITY:Special Ability|AUTOMATIC|Bonus Terror ~ Favored Class Option	BONUS:VAR|FavoredClassBonusToTerrorsKnown|1
+Bonus Terror ~ Favored Class Option	CATEGORY:Special Ability	VISIBLE:NO	DEFINE:FavoredClassBonusToTerrorsKnown|0	BONUS:ABILITYPOOL|Terror|floor(FavoredClassBonusToTerrorsKnown/6)
