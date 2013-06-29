@@ -1,0 +1,107 @@
+SOURCELONG:Psionics Expanded - Hidden Intentions	SOURCESHORT:PEHI	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2012-05
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2013/06/24
+
+###Block: Cryptic
+
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Cryptic	HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:CHECKS|Base.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Cryptic			SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Cryptic|CL
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Cryptic		STARTSKILLPTS:4	CSKILL:Acrobatics|Appraise|Autohypnosis|Climb|TYPE.Craft|Disguise|Escape Artist|TYPE.Knowledge|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Swim|Use Magic Device	ABILITY:Internal|AUTOMATIC|Disable Device Class Skill|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisableDevice
+
+#Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency	AUTO:FEAT|Armor Proficiency (Light)	AUTO:WEAPONPROF|Rapier|Shortbow
+
+#Block: Psionic Ability
+1	BONUS:VAR|IsPsionic|1																								DEFINE:IsPsionic|0							ABILITY:Special Ability|AUTOMATIC|Psionic
+1	BONUS:VAR|CrypticLVL|CL																								DEFINE:CrypticLVL|0
+1	BONUS:VAR|CrypticPL|CrypticLVL	BONUS:VAR|CrypticPL|var("BL=Cryptic")															DEFINE:CrypticPL|0
+1	DEFINE:CrypticPrimeStat|0	BONUS:VAR|CrypticPrimeStat|INT
+1	BONUS:VAR|BasePowerPoints|1	BONUS:VAR|BasePowerPoints|1|PREVARGTEQ:CrypticPL,2	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:CrypticPL,3
+1	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:CrypticPL,4	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:CrypticPL,5	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:CrypticPL,6
+1	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:CrypticPL,7	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:CrypticPL,8	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:CrypticPL,9
+1	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:CrypticPL,10	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:CrypticPL,11	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:CrypticPL,12
+1	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:CrypticPL,13	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:CrypticPL,14	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:CrypticPL,15
+1	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:CrypticPL,16	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:CrypticPL,17	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:CrypticPL,18
+1	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:CrypticPL,19	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:CrypticPL,20
+1	BONUS:VAR|BonusPowerPoints|(CrypticPrimeStat*CrypticPL)/2|TYPE=CrypticBonusPP
+
+1	BONUS:VAR|CrypticCL|CrypticLVL	BONUS:VAR|CrypticCL|var("BL=Cryptic")																DEFINE:CrypticCL|0
+1	DEFINE:CrypticPowersKnownLVL|CL		DEFINE:CrypticPowersKnown|0			BONUS:VAR|CrypticPowersKnown|CrypticPowersKnownLVL
+1	DEFINE:CrypticMaximumPowerLevelKnownLVL|CL	DEFINE:CrypticMaximumPowerLevelKnown|0	BONUS:VAR|CrypticMaximumPowerLevelKnown|min(6,floor((CrypticMaximumPowerLevelKnownLVL+2)/3))
+
+#Block: Powers Known
+1	KNOWN:2,1
+2	KNOWN:2,2
+3	KNOWN:2,3
+4	KNOWN:2,3,1
+5	KNOWN:2,3,2
+6	KNOWN:2,3,3
+7	KNOWN:2,3,3,1
+8	KNOWN:2,3,3,2
+9	KNOWN:2,3,3,3
+10	KNOWN:2,3,3,3,1
+11	KNOWN:2,3,3,3,2
+12	KNOWN:2,3,3,3,3
+13	KNOWN:2,3,3,3,3,1
+14	KNOWN:2,3,3,3,3,2
+15	KNOWN:2,3,3,3,3,3
+16	KNOWN:2,3,3,3,3,3,1
+17	KNOWN:2,3,3,3,3,3,2
+18	KNOWN:2,3,3,3,3,3,3
+19	KNOWN:2,3,3,3,3,3,4
+20	KNOWN:2,3,3,3,3,3,5
+
+#Block: Class Info
+1	ABILITY:Special Ability|AUTOMATIC|Altered Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticAlteredDefense
+1	ABILITY:Special Ability|AUTOMATIC|Disrupt Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisruptPattern
+1	ABILITY:Special Ability|AUTOMATIC|Pattern Designs ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticPatternDesigns
+1	ABILITY:Internal|AUTOMATIC|Scribe Tattoo ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticScribeTattoo
+1	ABILITY:Internal|AUTOMATIC|Trapfinding ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticTrapfinding
+1	ABILITY:Special Ability|AUTOMATIC|Trapmaker ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticTrapmaker
+2	ABILITY:Special Ability|AUTOMATIC|Hidden Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticHiddenPattern
+2	ABILITY:Internal|AUTOMATIC|Insights ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticInsights
+3	ABILITY:Special Ability|AUTOMATIC|Enhanced Disruption ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticEnhancedDisruption
+3	ABILITY:Special Ability|AUTOMATIC|Evasion ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticEvasion
+4	ABILITY:Special Ability|AUTOMATIC|Rapid Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticRapidDefense
+6	ABILITY:Special Ability|AUTOMATIC|Swift Trapper ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticSwiftTrapper
+10	ABILITY:Special Ability|AUTOMATIC|Hide in Plain Sight ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticHideInPlainSight,TYPE.CrypticHiddenPattern
+14	ABILITY:Special Ability|AUTOMATIC|Enduring Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticEnduringDefense
+18	ABILITY:Special Ability|AUTOMATIC|Unchanging Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticUnchangingPattern
+20	ABILITY:Internal|AUTOMATIC|Supreme Insight ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticSupremeInsight
+
+
+###Block: Psion Advanced Disciplines
+#Block: Mindbender Advanced Discipline
+CLASS:Psion.MOD
+SUBCLASS:Mindbender	COST:0	PROHIBITCOST:0	SPELLLIST:2|Telepath|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Bluff|Diplomacy|Sense Motive
+SUBCLASSLEVEL:1	BONUS:VAR|TelepathyDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Mindbender Advanced Discipline
+
+###Block: Astral Warrior class
+CLASS:Astral Warrior	HD:10		TYPE:Monster.Companion	CLASSTYPE:Companion	MAXLEVEL:NOLIMIT	SOURCEPAGE:p.12	LEVELSPERFEAT:0	ABILITY:FEAT|AUTOMATIC|CMB Output	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	AUTO:WEAPONPROF|Astral Warrior Weapon
+CLASS:Astral Warrior	PRERACETYPE:Construct	STARTSKILLPTS:0	MODTOSKILLS:NO	ABILITY:Special Ability|AUTOMATIC|Construct Traits|PREVAREQ:NoTypeTraits,0	TEMPLATE:Construct|Mindless
+
+
+
+###Block: Sighted Seeker prestige class
+# NEEDS DATA WORK: Power point sighted seeker not yet implemented
+
+#CLASS:Sighted Seeker	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.27	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+#CLASS:Sighted Seeker	PREMULT:1,[PREFEAT:1,Skill Focus(Survival)],[PREABILITY:1,CATEGORY=Special Ability,Track]	PRESKILL:3,Diplomacy=2,Perception=5,Survival=2	PREVARGT:TotalPowerPoints,0	PREATT:4
+#CLASS:Sighted Seeker	STARTSKILLPTS:6	CSKILL:Diplomacy|Knowledge (Local)|Knowledge (Nature)|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Stealth|Survival
+#1					ABILITY:Special Ability|AUTOMATIC|Favored Prey ~ Sighted Seeker
+#1					ABILITY:Internal|AUTOMATIC|Urban Tracking ~ Sighted Seeker|Weapon and Armor Proficiencies ~ Sighted Seeker
+#2	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Passive Seeking ~ Sighted Seeker
+#3	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Mark Prey ~ Sighted Seeker
+#4	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Prescient Tactics ~ Sighted Seeker
+#5					ABILITY:Special Ability|AUTOMATIC|Seeker's Analysis ~ Sighted Seeker
+#6	ADD:SPELLCASTER|Psionic
+#7	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Sighted Analysis ~ Sighted Seeker
+#8	ADD:SPELLCASTER|Psionic	ABILITY:Internal|AUTOMATIC|Hypercognition ~ Sighted Seeker
+#9					ABILITY:Special Ability|AUTOMATIC|The Sight ~ Sighted Seeker
+#10	ADD:SPELLCASTER|Psionic	ABILITY:Internal|AUTOMATIC|Metafaculty ~ Sighted Seeker
+
+#
+# End
+#
