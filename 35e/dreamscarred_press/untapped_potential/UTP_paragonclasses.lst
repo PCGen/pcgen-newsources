@@ -1,0 +1,25 @@
+SOURCELONG:Dreamscarred Press - Untapped Potential: New Horizons in Psionics	SOURCESHORT:UTP	SOURCEWEB:http://www.DreamscarredPress.com
+
+# Class Name	Hit Dice	Type				Subclass?		Source Page				Automatic Languages	Define			Save checks bonus											Combat bonus					Modify VAR
+CLASS:Dromite Paragon		HD:6		TYPE:Base.Psionic.Paragon.PC	HASSUBCLASS:No	SOURCEPAGE:PsionicClasses.rtf	LANGAUTO:Literacy			BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL
+# Class Name	Skill Pts/Lvl
+CLASS:Dromite Paragon		STARTSKILLPTS:4	CSKILL:Autohypnosis, Bluff, Diplomacy, Climb, Concentration, Craft (any), Listen, Knowledge (Psionics), Profession (any), Spot
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Dromite Paragon		SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO
+
+###Block:Proficiencies
+1	FEATAUTO:Simple Weapon Proficiencies
+###Block: Psionic subtype, BasePowerPoints, BonusPowerPoints
+# TEMPLATE:Psionic qualifies the character for Psionic only items and feats and DEFINES base and bonus power points.
+# due to the use of "BL=Psion" (which provides the bonus caster levels applied to Psion) there are no
+# variables that need to be set or modified by PrC's to calculate correct points, it's all done here.
+# Use ADD:SPELLCASTER(Psionic) in PrC's that add to manifester level.
+# Code those that have KNOWN tags similar to this but change the VAR names, i.e. PsionML becomes WilderML,
+# PsionBonusPP becomes WarmindBonusPP, alter the basepp bonus:var's to the correct values, etc.
+1	BONUS:VAR|PsionML|CL	BONUS:VAR|PsionML|var("BL=Dromite Paragon")												DEFINE:PsionML|0	TEMPLATE:Psionic
+
+
+###Block: Class Info
+1	KNOWN:0,3				ADD:FEAT(TYPE=Psionic,TYPE=Metapsionic,TYPE=ItemCreation)
+2	BONUS:CASTERLEVEL|Society Mind|1
+3	BONUS:CASTERLEVEL|Society Mind|1
