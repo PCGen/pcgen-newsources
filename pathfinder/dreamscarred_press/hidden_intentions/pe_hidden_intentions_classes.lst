@@ -3,17 +3,16 @@ SOURCELONG:Psionics Expanded - Hidden Intentions	SOURCESHORT:PEHI	SOURCEWEB:http
 # ORIGINAL ENTRY DATE: 2013/06/24
 
 ###Block: Cryptic
-
 # Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus
 CLASS:Cryptic	HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:CHECKS|Base.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 CLASS:Cryptic			SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Cryptic|CL
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Cryptic		STARTSKILLPTS:4	CSKILL:Acrobatics|Appraise|Autohypnosis|Climb|TYPE.Craft|Disguise|Escape Artist|TYPE.Knowledge|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Swim|Use Magic Device	ABILITY:Internal|AUTOMATIC|Disable Device Class Skill|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisableDevice
 
-#Block: Proficiencies
+###Block: Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency	AUTO:FEAT|Armor Proficiency (Light)	AUTO:WEAPONPROF|Rapier|Shortbow
 
-#Block: Psionic Ability
+###Block: Psionic Ability
 1	BONUS:VAR|IsPsionic|1																								DEFINE:IsPsionic|0							ABILITY:Special Ability|AUTOMATIC|Psionic
 1	BONUS:VAR|CrypticLVL|CL																								DEFINE:CrypticLVL|0
 1	BONUS:VAR|CrypticPL|CrypticLVL	BONUS:VAR|CrypticPL|var("BL=Cryptic")															DEFINE:CrypticPL|0
@@ -31,7 +30,7 @@ CLASS:Cryptic		STARTSKILLPTS:4	CSKILL:Acrobatics|Appraise|Autohypnosis|Climb|TYP
 1	DEFINE:CrypticPowersKnownLVL|CL		DEFINE:CrypticPowersKnown|0			BONUS:VAR|CrypticPowersKnown|CrypticPowersKnownLVL
 1	DEFINE:CrypticMaximumPowerLevelKnownLVL|CL	DEFINE:CrypticMaximumPowerLevelKnown|0	BONUS:VAR|CrypticMaximumPowerLevelKnown|min(6,floor((CrypticMaximumPowerLevelKnownLVL+2)/3))
 
-#Block: Powers Known
+###Block: Powers Known
 1	KNOWN:2,1
 2	KNOWN:2,2
 3	KNOWN:2,3
@@ -53,7 +52,7 @@ CLASS:Cryptic		STARTSKILLPTS:4	CSKILL:Acrobatics|Appraise|Autohypnosis|Climb|TYP
 19	KNOWN:2,3,3,3,3,3,4
 20	KNOWN:2,3,3,3,3,3,5
 
-#Block: Class Info
+###Block: Class Info
 1	ABILITY:Special Ability|AUTOMATIC|Altered Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticAlteredDefense
 1	ABILITY:Special Ability|AUTOMATIC|Disrupt Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisruptPattern
 1	ABILITY:Special Ability|AUTOMATIC|Pattern Designs ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticPatternDesigns
@@ -93,24 +92,70 @@ CLASS:Astral Warrior	HD:10		TYPE:Monster.Companion	CLASSTYPE:Companion	MAXLEVEL:
 CLASS:Astral Warrior	PRERACETYPE:Construct	STARTSKILLPTS:0	MODTOSKILLS:NO	ABILITY:Special Ability|AUTOMATIC|Construct Traits|PREVAREQ:NoTypeTraits,0	TEMPLATE:Construct|Mindless
 
 
+###Block: Body Snatcher prestige class
+CLASS:Body Snatcher	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:6	SOURCEPAGE:p.43	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Body Snatcher	PREFEAT:1,Extend Power	PREFEAT:2,TYPE=Metapsionic	PRESKILL:3,Bluff=10,Perform (Act)=3,Sense Motive=3	PRESPELL:2,Brain Lock,Conceal Thoughts	PRECLASS:1,SPELLCASTER=10
+CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Perform|Sense Motive|Spellcraft
+CLASS:Body Snatcher	ALLOWBASECLASS:NO
+1	ABILITY:Special Ability|AUTOMATIC|Body Thief ~ Body Snatcher
+1	ABILITY:Special Ability|AUTOMATIC|Extended Transfer ~ Body Snatcher
+1	ABILITY:Special Ability|AUTOMATIC|Melding Exchange ~ Body Snatcher
+2	ABILITY:Special Ability|AUTOMATIC|The Flesh Remembers ~ Body Snatcher
+2	ABILITY:Special Ability|AUTOMATIC|Traumatic Transfer ~ Body Snatcher
+3	ABILITY:Special Ability|AUTOMATIC|Mimic Mind ~ Body Snatcher
+4	ABILITY:Special Ability|AUTOMATIC|Rapid Transfer ~ Body Snatcher
+4	ABILITY:Special Ability|AUTOMATIC|Seal the Host ~ Body Snatcher
+5	ABILITY:Special Ability|AUTOMATIC|Mindleap Contingency ~ Body Snatcher
+5	ABILITY:Special Ability|AUTOMATIC|Greater Melding Exchange ~ Body Snatcher
+6	ABILITY:Special Ability|AUTOMATIC|Death Is Only the Beginning ~ Body Snatcher
 
-###Block: Sighted Seeker prestige class
-# NEEDS DATA WORK: Power point sighted seeker not yet implemented
+SUBCLASS:Body Snatcher	KEY:Body Snatcher ~ Advance Manifesting	OUTPUTNAME:Advance Manifesting
+SUBCLASSLEVEL:2	ADD:SPELLCASTER|Psionic
+SUBCLASSLEVEL:3	ADD:SPELLCASTER|Psionic
+SUBCLASSLEVEL:4	ADD:SPELLCASTER|Psionic
+SUBCLASSLEVEL:5	ADD:SPELLCASTER|Psionic
 
-#CLASS:Sighted Seeker	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.27	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
-#CLASS:Sighted Seeker	PREMULT:1,[PREFEAT:1,Skill Focus(Survival)],[PREABILITY:1,CATEGORY=Special Ability,Track]	PRESKILL:3,Diplomacy=2,Perception=5,Survival=2	PREVARGT:TotalPowerPoints,0	PREATT:4
-#CLASS:Sighted Seeker	STARTSKILLPTS:6	CSKILL:Diplomacy|Knowledge (Local)|Knowledge (Nature)|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Stealth|Survival
-#1					ABILITY:Special Ability|AUTOMATIC|Favored Prey ~ Sighted Seeker
-#1					ABILITY:Internal|AUTOMATIC|Urban Tracking ~ Sighted Seeker|Weapon and Armor Proficiencies ~ Sighted Seeker
-#2	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Passive Seeking ~ Sighted Seeker
-#3	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Mark Prey ~ Sighted Seeker
-#4	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Prescient Tactics ~ Sighted Seeker
-#5					ABILITY:Special Ability|AUTOMATIC|Seeker's Analysis ~ Sighted Seeker
-#6	ADD:SPELLCASTER|Psionic
-#7	ADD:SPELLCASTER|Psionic	ABILITY:Special Ability|AUTOMATIC|Sighted Analysis ~ Sighted Seeker
-#8	ADD:SPELLCASTER|Psionic	ABILITY:Internal|AUTOMATIC|Hypercognition ~ Sighted Seeker
-#9					ABILITY:Special Ability|AUTOMATIC|The Sight ~ Sighted Seeker
-#10	ADD:SPELLCASTER|Psionic	ABILITY:Internal|AUTOMATIC|Metafaculty ~ Sighted Seeker
+SUBCLASS:Body Snatcher	KEY:Body Snatcher ~ Advance Mindblade	OUTPUTNAME:Advance Mindblade	PREABILITY:1,CATEGORY=Special Ability,Form Mind Blade
+SUBCLASSLEVEL:2	BONUS:VAR|MndBladeLVL|1
+SUBCLASSLEVEL:3	BONUS:VAR|MndBladeLVL|1
+SUBCLASSLEVEL:4	BONUS:VAR|MndBladeLVL|1
+SUBCLASSLEVEL:5	BONUS:VAR|MndBladeLVL|1
+
+SUBCLASS:Body Snatcher	KEY:Body Snatcher ~ Advance Astral Suit	OUTPUTNAME:Advance Astral Suit	PREABILITY:1,CATEGORY=Special Ability,Form Astral Suit ~ Aegis
+SUBCLASSLEVEL:2	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:3	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:4	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:5	BONUS:VAR|AegisCL,AegisDRLVL|1
+
+SUBCLASS:Body Snatcher	KEY:Body Snatcher ~ Advance Manifesting and Mindblade	OUTPUTNAME:Advance Manifesting and Mind Blade	PREABILITY:1,CATEGORY=Special Ability,Form Mind Blade	PRETEMPLATE:1,High Psionics
+SUBCLASSLEVEL:2	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+SUBCLASSLEVEL:3	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+SUBCLASSLEVEL:4	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+SUBCLASSLEVEL:5	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1
+
+SUBCLASS:Body Snatcher	KEY:Body Snatcher ~ Advance Manifesting and Astral Suit	OUTPUTNAME:Advance Manifesting and Astral Suit	PREABILITY:1,CATEGORY=Special Ability,Form Astral Suit ~ Aegis	PRETEMPLATE:1,High Psionics
+SUBCLASSLEVEL:2	ADD:SPELLCASTER|Psionic	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:3	ADD:SPELLCASTER|Psionic	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:4	ADD:SPELLCASTER|Psionic	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:5	ADD:SPELLCASTER|Psionic	BONUS:VAR|AegisCL,AegisDRLVL|1
+
+SUBCLASS:Body Snatcher	KEY:Body Snatcher ~ Advance Manifesting Mindblade and Astral Suit	OUTPUTNAME:Advance Manifesting, Mind Blade, and Astral Suit	PREABILITY:1,CATEGORY=Special Ability,Form Mind Blade	PREABILITY:1,CATEGORY=Special Ability,Form Astral Suit ~ Aegis	PRETEMPLATE:1,High Psionics
+SUBCLASSLEVEL:2	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:3	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:4	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1	BONUS:VAR|AegisCL,AegisDRLVL|1
+SUBCLASSLEVEL:5	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1	BONUS:VAR|AegisCL,AegisDRLVL|1
+
+###Block: Soul Archer prestige class
+CLASS:Soul Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.45	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Soul Archer	PREFEAT:2,Point-Blank Shot,Precise Shot	PREABILITY:1,CATEGORY=Special Ability,Enhanced Mind Blade,Enhanced Mind Bolt ~ Soulbolt	PREATT:5
+CLASS:Soul Archer	STARTSKILLPTS:4	CSKILL:Perception|Survival
+1	BONUS:ABILITYPOOL|Ranged Blade Skill|floor((CL+1)/2)	ABILITY:Special Ability|AUTOMATIC|Ranged Blade Skills ~ Soul Archer
+1	ABILITY:Special Ability|AUTOMATIC|Form Mind Arrow ~ Soul Archer
+2	BONUS:ABILITYPOOL|Ranged Feat|1	BONUS:VAR|MndBladeLVL|(CL-1)	ABILITY:Special Ability|AUTOMATIC|Ranged Feat ~ Soul Archer
+4	ABILITY:Special Ability|AUTOMATIC|Ranged Psychic Strike ~ Soul Archer
+6	ABILITY:Special Ability|AUTOMATIC|Reflexive Shot ~ Soul Archer
+8	ABILITY:Special Ability|AUTOMATIC|Phasing Shot ~ Soul Archer
+10	ABILITY:Special Ability|AUTOMATIC|Empowered Shot ~ Soul Archer
 
 #
 # End
