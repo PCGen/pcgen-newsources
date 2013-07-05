@@ -1,0 +1,23 @@
+SOURCELONG:Psionics Expanded - Hidden Intentions	SOURCESHORT:PEHI	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2012-05
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2013/06/24
+
+###Block: Kaigun Marksman Archetype
+Kaigun			KEY:Marksman Archetype ~ Kaigun	CATEGORY:Archetype		TYPE:Archetype.MarksmanArchetype.MarksmanBucklerProficiency.MarksmanPointBlankShot.MarksmanEvadeArrows1.MarksmanPower6.MarksmanDisengage.MarksmanPower10	PRECLASS:1,Marksman=1	PREMULT:1,[PREABILITY:1,CATEGORY=Archetype,Marksman Archetype ~ Kaigun],[!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanBucklerProficiency,TYPE.MarksmanPointBlankShot,TYPE.MarksmanEvadeArrows1,TYPE.MarksmanPower6,TYPE.MarksmanDisengage,TYPE.MarksmanPower10]	DESC:You are a marksman who opts to focus your training with firearms, becoming a deadly gun-wielder.	ABILITY:Special Ability|AUTOMATIC|Gun Wielder ~ Kaigun|PRECLASS:1,Marksman=1	ABILITY:Special Ability|AUTOMATIC|Psionic Deed ~ Kaigun|PRECLASS:1,Marksman=2	ABILITY:Special Ability|AUTOMATIC|Telekinetic Reload ~ Kaigun|PRECLASS:1,Marksman=6	ABILITY:Special Ability|AUTOMATIC|Mental Grit ~ Kaigun|PRECLASS:1,Marksman=7	ABILITY:Special Ability|AUTOMATIC|Focused Control ~ Kaigun|PRECLASS:1,Marksman=10	COST:0	SOURCEPAGE:p.14	BONUS:VAR|EvadeArrows|-1	BONUS:SPELLKNOWN|CLASS=Marksman;LEVEL=2|-1|PRECLASS:1,Marksman=6	BONUS:SPELLKNOWN|CLASS=Marksman;LEVEL=3|-1|PRECLASS:1,Marksman=10	AUTO:FEAT|Exotic Weapon Proficiency (Firearms)	AUTO:WEAPONPROF|TYPE.Firearm
+Gun Wielder			KEY:Gun Wielder ~ Kaigun		CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:You gain a battered gun identical to the one gained by the gunslinger.	SOURCEPAGE:p.15	AUTO:FEAT|Gunsmithing	BONUS:ABILITYPOOL|Kaigun Amateur Gunslinger|1
+Psionic Deed		KEY:Psionic Deed ~ Kaigun		CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:You gain access to a single 1st-level deed normally available to a gunslinger.  This deed works and interacts with grit the same way as gunslinger deeds.  If you also have levels in gunslinger, you can spend grit points from that class to use this deed.	SOURCEPAGE:p.15	BONUS:ABILITYPOOL|Kaigun Deed|1
+Telekinetic Reload	KEY:Telekinetic Reload ~ Kaigun	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:As a swift action you can expend your psionic focus to reload any one-handed firearm you are currently wielding.	SOURCEPAGE:p.15
+Mental Grit			KEY:Mental Grit ~ Kaigun		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You learn how to turn your psionic power into grit points.  As a swift action, you can spend 3 power points and expend your psionic focus after making a successful ranged attack with a firearm to gain 1 grit point, although you cannot exceed your normal maximum grit points.	SOURCEPAGE:p.15
+Focused Control		KEY:Focused Control ~ Kaigun		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:When you misfire with a firearm and are maintaining psionic focus, the misfire value of that firearm increases by 2 instead of 4.	SOURCEPAGE:p.15
+
+###Block: Psionic Deeds
+Explosive Shot		KEY:Explosive Shot ~ Psionic Deed		CATEGORY:Special Ability	TYPE:SpecialQuality.DeedsLvl1.DeedsHasGritCost.Supernatural		DESC:At 1st level, when the gunslinger makes a ranged attack with a firearm, she can spend 1 grit point and have the attack deal splash damage to all creatures within a 5 ft. radius of the creature struck.  Splash damage from explosive shot is always equal to the attack's minimum damage.  Alternatively, the gunslinger can spend 2 grit points to have the radius of the effect be 10 ft. instead of 5 ft.  If the attack misses, the effect is wasted.	SOURCEPAGE:p.16	PREVARGT:IsPsionic,0
+Energized Ammunition	KEY:Energized Ammunition ~ Psionic Deed	CATEGORY:Special Ability	TYPE:SpecialQuality.DeedsLvl11.DeedsHasGritCost.Supernatural	DESC:At 11th level, when the gunslinger makes a ranged attack with a firearm, she can spend 1 grit point as a free action to change the damage of the attack to her active energy type.	SOURCEPAGE:p.16	PREVARGT:IsPsionic,0
+
+###Block: Give the deeds to gunslingers
+CATEGORY=Special Ability|Deeds ~ Gunslinger.MOD	ABILITY:Special Ability|AUTOMATIC|Explosive Shot ~ Psionic Deed|PREMULT:2,[!PREABILITY:1,CATEGORY=Archetype,TYPE.ExplosiveShotPsionicDeed],[PREVARGT:IsPsionic,0]
+CATEGORY=Special Ability|Deeds ~ Gunslinger.MOD	ABILITY:Special Ability|AUTOMATIC|Energized Ammunition ~ Psionic Deed|PREMULT:2,[!PREABILITY:1,CATEGORY=Archetype,TYPE.EnergizedAmmunitionPsionicDeed],[PREVARGT:IsPsionic,0]
+
+#
+# End
+#

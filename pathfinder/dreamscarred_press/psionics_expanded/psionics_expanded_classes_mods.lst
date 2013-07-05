@@ -1,0 +1,46 @@
+SOURCELONG:Psionics Expanded	SOURCESHORT:PsiEx	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2012-07
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2013/07/05
+
+###Block: Modifications to prestige classes for Aegis
+CLASS:Cerebremancer.MOD	BONUS:VAR|AegisCL|CL	BONUS:VAR|AegisDRLVL|CL
+CLASS:Elocater.MOD	BONUS:VAR|AegisCL|(CL*3/4)	BONUS:VAR|AegisDRLVL|(CL*3/4)
+CLASS:Metamind.MOD	BONUS:VAR|AegisCL|(CL*3/4)	BONUS:VAR|AegisDRLVL|(CL*3/4)
+CLASS:Phrenic Slayer.MOD	BONUS:VAR|AegisCL|(CL-1)	BONUS:VAR|AegisDRLVL|(CL-1)
+CLASS:Psion Uncarnate.MOD	BONUS:VAR|AegisCL|(CL*2/3)	BONUS:VAR|AegisDRLVL|(CL*2/3)
+CLASS:Psychic Fist (Add to Manifesting).MOD	BONUS:VAR|AegisCL|(CL*4/5)	BONUS:VAR|AegisDRLVL|(CL*4/5)
+CLASS:Thrallherd.MOD	BONUS:VAR|AegisCL|max(8,(CL-1))	BONUS:VAR|AegisDRLVL|max(8,(CL-1))
+CLASS:War Mind (Warrior's Path).MOD	BONUS:VAR|AegisCL|CL	BONUS:VAR|AegisDRLVL|CL
+
+
+###Block: Advanced Disciplines
+CLASS:Psion.MOD
+SUBCLASS:Constructor	COST:0	PROHIBITCOST:0	SPELLLIST:2|Psion|Shaper	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Bluff|Disguise|Use Magic Device
+SUBCLASSLEVEL:1	BONUS:VAR|MetacreativityDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Constructor Advanced Discipline
+
+SUBCLASS:Erudite	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Use Magic Device
+SUBCLASSLEVEL:1	BONUS:VAR|GeneralistDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Erudite Advanced Discipline
+
+SUBCLASS:Insight	COST:0	PROHIBITCOST:0	SPELLLIST:2|Seer|Psion	CSKILL:Autohypnosis|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Spellcraft|Diplomacy|Perception
+SUBCLASSLEVEL:1	BONUS:VAR|ClairsentienceDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Insight Advanced Discipline
+
+SUBCLASS:Jaunting	COST:0	PROHIBITCOST:0	SPELLLIST:2|Nomad|Psion	CSKILL:Autohypnosis|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Spellcraft|Climb|Fly|Survival|Swim
+SUBCLASSLEVEL:1	BONUS:VAR|PsychoportationDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Jaunting Advanced Discipline
+
+SUBCLASS:Mindbender	COST:0	PROHIBITCOST:0	SPELLLIST:2|Telepath|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Bluff|Diplomacy|Sense Motive
+SUBCLASSLEVEL:1	BONUS:VAR|TelepathyDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Mindbender Advanced Discipline
+
+SUBCLASS:Transmogrifist	COST:0	PROHIBITCOST:0	SPELLLIST:2|Egoist|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Acrobatics|Heal
+SUBCLASSLEVEL:1	BONUS:VAR|PsychometabolismDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Transmogrifist Advanced Discipline
+
+SUBCLASS:Unseen Hand	COST:0	PROHIBITCOST:0	SPELLLIST:2|Kineticist|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Acrobatics|Heal
+SUBCLASSLEVEL:1	BONUS:VAR|PsychokinesisDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Unseen Hand Advanced Discipline
+
+
+###Block: Archetypes implemented as subclasses
+CLASS:Psion.MOD
+SUBCLASS:Bombardier	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Use Magic Device
+SUBCLASSLEVEL:1	AUTO:FEAT|Scribe Scroll	ABILITY:Special Ability|AUTOMATIC|Exploding Stone ~ Bombardier|Talents ~ Bombardier	BONUS:ABILITYPOOL|Psion Feat|-1
+
+SUBCLASS:Mindwright	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Use Magic Device
+SUBCLASSLEVEL:1		ABILITY:Internal|AUTOMATIC|Mindwright Abilities
