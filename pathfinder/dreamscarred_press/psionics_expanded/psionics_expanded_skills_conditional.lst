@@ -2,6 +2,7 @@ SOURCELONG:Psionics Expanded	SOURCESHORT:PsiEx	SOURCEWEB:http://dreamscarredpres
 # ORIGINAL ENTRY: Douglas Limmer
 # ORIGINAL ENTRY DATE: 2013/07/05
 
+###Block: New conditional skills
 Intimidate (Demoralize)	KEYSTAT:CHA	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Intimidate (Demoralize).MISC"),var("SKILL.Intimidate.MISC")	SOURCEPAGE:p.14
 Intimidate.MOD		BONUS:SKILL|Intimidate (Demoralize)|var("SKILL.Intimidate.MISC")	BONUS:SKILLRANK|Intimidate (Demoralize)|skillinfo("TOTALRANK", "Intimidate")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Intimidate (Demoralize).MISC"),var("SKILL.Intimidate.MISC")
 
@@ -16,3 +17,7 @@ Use Magic Device.MOD	BONUS:SKILL|Use Magic Device (activate item)|var("SKILL.Use
 
 Acrobatics (on the ground)	KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Acrobatics (on the ground).MISC"),var("SKILL.Acrobatics.MISC")	SOURCEPAGE:p.42
 Acrobatics.MOD	BONUS:SKILL|Acrobatics (on the ground)|var("SKILL.Acrobatics.MISC")	BONUS:SKILLRANK|Acrobatics (on the ground)|skillinfo("TOTALRANK", "Acrobatics")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Acrobatics (on the ground).MISC"),var("SKILL.Acrobatics.MISC")
+
+
+###Block: Skill for losing a skill point
+Lost Skill Point	USEUNTRAINED:NO	VISIBLE:DISPLAY|READONLY	EXCLUSIVE:YES
