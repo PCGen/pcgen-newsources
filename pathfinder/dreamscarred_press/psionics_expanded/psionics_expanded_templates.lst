@@ -53,3 +53,9 @@ Advanced Construct	PRERACE:1,Astral Construct%
 
 ###Block: Activate High Psionics
 High Psionics	DESC:Add this to activate high psionics options.
+
+###Block: Inner Peace Maenad trait templates
+Inner Peace both		VISIBLE:NO	BONUS:SKILL|Knowledge (Religion),Knowledge (Psionics)|1|TYPE=Trait		PRECSKILL:2,Knowledge (Psionics),Knowledge (Religion)
+Inner Peace religion	VISIBLE:NO	BONUS:SKILL|Knowledge (Religion)|1|TYPE=Trait	CSKILL:Knowledge (Psionics)	PREMULT:2,[PRECSKILL:1,Knowledge (Religion)],[!PRECSKILL:1,Knowledge (Psionics)]
+Inner Peace psionics	VISIBLE:NO	BONUS:SKILL|Knowledge (Psionics)|1|TYPE=Trait	CSKILL:Knowledge (Religion)	PREMULT:2,[PRECSKILL:1,Knowledge (Psionics)],[!PRECSKILL:1,Knowledge (Religion)]
+Inner Peace neither	VISIBLE:NO	CSKILL:Knowledge (Religion)|Knowledge (Psionics)					!PRECSKILL:1,Knowledge (Psionics),Knowledge (Religion)
