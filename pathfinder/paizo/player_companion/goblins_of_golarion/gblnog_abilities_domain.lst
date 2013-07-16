@@ -5,66 +5,14 @@ SOURCELONG:Goblins of Golarion	SOURCESHORT:GblnoG	SOURCEWEB:http://paizo.com/pro
 ###Block: Archetype (Domain) Abilities
 # Ability Name		Unique Key					Category of Ability		Type											Visible	Define																									Description																	Ability							Bonus to Ability Pool					Save checks bonus							Combat bonus					Add to base move															Modify VAR																											Damage Reduction	Source Page		Aspects																Description of the Benefits																																																																																																																																																																																																																		Temporary Bonus
 Call Fire	KEY:Call of Fire ~ Arson Subdomain	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DomainPower DESC:As a standard action, you can stretch out your hand toward any visible fire source within 60 feet and beckon it toward you. This causes a ribbon-thin streak of fire to approach you in a straight line through the air. Any creature directly in the fire ribbon's path takes 1d4 points of fire damage; a successful Reflex save (DC %1) negates this damage. When the ribbon of fire reaches your hand, it either extinguishes or lights a flammable object of your choice that you're holding. You can use this ability %2 times per day.|DomainFireDC|DomainFireTimes	SOURCEPAGE:pg.27
+#
+Sift	KEY:Sift ~ Flotsam Subdomain	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DomainPower	DEFINE:SiftObjectValue|0	BONUS:VAR|SiftObjectValue|50*DomainWaterLVL|PREPCLEVEL:MAX=19	BONUS:VAR|SiftObjectValue|5000|PREPCLEVEL:MIN=20	SOURCEPAGE:pg.27
+CATEGORY=Special Ability|Sift ~ Flotsam Subdomain	DESC:Once per day you can reach into water as a standard action and pull out an object with a maximum gp value of %1. This object always has the broken condition upon being withdrawn from the water. The water you reach into must be at least deep enough to fully immerse yourself. If retrieving an object which would not normally float, assume it rests on top of, or is entwined with, debris that does float. Objects retrieved in this manner disappear after 24 hours if they haven't yet been used up or otherwise destroyed.|SiftObjectValue|PREPCLEVEL:MAX=12
+CATEGORY=Special Ability|Sift ~ Flotsam Subdomain	DESC:Once per day you can reach into water as a standard action and pull out an object with a maximum gp value of %1. The water you reach into must be at least deep enough to fully immerse yourself. If retrieving an object which would not normally float, assume it rests on top of, or is entwined with, debris that does float. Objects retrieved in this manner disappear after 24 hours if they  haven't yet been used up or otherwise destroyed.|SiftObjectValue|PREPCLEVEL:MIN=13
+#
+Master's Yoke	KEY:Master's Yoke ~ Slavery Subdomain	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DomainPower	DEFINE:MastersYokeDuration|0	DEFINE:MastersYokeTimes|0	BONUS:VAR|MastersYokeDuration|DomainLawLVL/2	BONUS:VAR|MastersYokeTimes|1+(DomainLawLVL-4)/4		DESC:You can attempt to assert your dominance over any visible creature within 30 feet by declaring the target your property. The target can resist this effect with a Will save (DC %1). If the target fails the save, it is affected as if by dominate monster for %2 rounds, save that the target can choose to ignore any order you give and instead take 2 points of Constitution damage and become staggered for 1 round. You can use this ability %3 time(s) per day. This is a language-based mind-affecting effect.|DomainLawDC|DomainLawLVL|MastersYokeTimes		SOURCEPAGE:pg.27
+Painful Smite	KEY:Painful Smite ~ Torture Subdomain	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural.DomainPower		DESC:Prior to making a melee attack roll, you can choose to convert all damage from that strike into nonlethal damage, adding your Wisdom modifier to the damage. If you succeed in your attack, you can make an Intimidate check against your target to demoralize them as a free action. You gain a bonus on your Intimidate check equal to the nonlethal damage dealt by the painful strike. You can use this ability $1 times per day.|DomainLawTimes	SOURCEPAGE:pg.27
 
-
-Body of Ice				
-KEY:Body of Ice ~ Ice Subdomain				
-CATEGORY:Special Ability	
-TYPE:SpecialQuality.Supernatural.DomainPower									
-DESC:At 8th level, you can transmute your body and equipment to ice for a period of time. It takes a standard action to take on the form of ice, and you can end the transmutation with a free action on your turn. When you take on the form of ice, you are immune to cold and have DR 5/-, but you take twice the normal amount of damage from fire. You can take on the form of ice %1 rounds per day. The rounds need not be consecutive.|DomainLVL																																																																				
-SOURCEPAGE:p.92
-
-Sift
-KEY:Sift ~ Flotsam Subdomain
-CATEGORY:Special Ability
-TYPE:SpecialQuality.Supernatural.DomainPower
-DESC:Once per day you can reach into
-water as a standard action and pull out an object with
-a maximum gp value of %1. This object always has the broken condition upon being
-withdrawn from the water. The water you reach into must
-be at least deep enough to fully immerse yourself.
-DESC:Once per day you can reach into
-water as a standard action and pull out an object with
-a maximum gp value of %1. The water you reach into must
-be at least deep enough to fully immerse yourself.|PREVAR
-At 12th
-level, objects you retrieve are not broken. At 20th level you
-can retrieve objects worth up to 5,000 gp. If retrieving an
-object which would not normally float, assume it rests on
-top of, or is entwined with, debris that does float. Objects
-retrieved in this manner disappear after 24 hours if they
-haven’t yet been used up or otherwise destroyed.
-SOURCEPAGE:pg.27
-
-
-Command				KEY:Command ~ Inevitable Subdomain				CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DomainPower									DESC:As a standard action, you can give a creature an emotionless yet undeniable order, as per the spell command. A Will save negates this effect. You cannot target a creature more than once per day with this ability. You can use this ability %1 times per day.|3+WIS																																																																																																	SOURCEPAGE:p.92
-
-Master’s Yoke (Su): At 8th level you can attempt to
-assert your dominance over any visible creature within
-30 feet by declaring the target your property. The target
-can resist this effect with a Will save (DC = 10 + 1/2 your
-cleric level + your Wisdom modifier). If the target fails the
-save, it is affected as if by dominate monster for a number of
-rounds equal to 1/2 your cleric level, save that the target
-can choose to ignore any order you give and instead take 2
-points of Constitution damage and become staggered for
-1 round. You can use this ability once per day at 8th level,
-and an additional time per day for every four levels beyond
-8th. This is a language-based mind-affecting effect.
-Replacement Domain Spells: 1st—charm person, 5th—
-dominate person, 8th—binding.
-
-
-Deadly Weather			KEY:Deadly Weather ~ Catastrophe Subdomain		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural.DomainPower									DESC:At 8th level, you can unleash a furious call to the heavens, summoning forth an everchanging storm of destruction %1 rounds per day. This storm has a radius of %2 feet. Each round, the storm has one of the following effects: driving rain (-4 on all Perception checks and ranged attack rolls), howling winds (-8 on Fly skill checks and ranged attack rolls), heavy snow (all terrain is considered difficult), or lightning bolt (as call lightning). Other effects depending on the weather might also apply (at the GM's discretion). You choose which effect takes place each round, but no effect may be repeated on the following round. These rounds do not need to be consecutive.|DomainLVL|DomainLVL*5																									SOURCEPAGE:p.87
-
-Painful Smite (Su): Prior to making a melee attack roll,
-you can choose to convert all damage from that strike into
-nonlethal damage, adding your Wisdom modifier to the
-damage. If you succeed in your attack, you can make an
-Intimidate check against your target to demoralize them
-as a free action. You gain a bonus on your Intimidate check
-equal to the nonlethal damage dealt by the painful strike.
-You can use this ability a number of times per day equal to
-3 + your Wisdom modifier.
-Replacement Domain Spells: 2nd—pain strike*, 5th—
-symbol of pain, 8th—demand.
+##
+## EOF
+##
