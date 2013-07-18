@@ -192,7 +192,7 @@ Battle Mask			TYPE:Goods.General.Clothing.Headgear.Racial.Orc	COST:50	WT:2		SOUR
 Tribal Standard		TYPE:Goods.General.Racial.Orc				COST:50	WT:20		SOURCEPAGE:p.141	SPROP:The standard must be carried in one hand by a member of the tribe to have any effect.  It provides a +1 morale bonus on saving throws against fear affects to all members of the tribe who are within 60 ft and can see the standard. If the standard is brought low, defiled, destroyed, or captured, the tribe's members take a 1 penalty on attack rolls and saving throws versus fear effects for the next hour. If the orcs reclaim a captured standard, the penalties end and the bonus is restored.
 War Spirit Pouch		TYPE:Goods.Alchemical.Consumable.Racial.Orc	COST:50			SOURCEPAGE:p.141	SPROP:By crushing the pouch as a standard action, an orc (or a creature from a suitably warlike culture) gains 1d4+1 temporary hit points which go away after 10 minutes.
 Bonebreaker Gauntlets	TYPE:Magic.Wondrous.Glove				COST:6000	WT:2		SOURCEPAGE:p.142	SPROP:Once per day, as part of a melee attack, the wearer can activate the gauntlets to inflict a horrific injury on an opponent. If the attack hits, the target must make a DC 14 Will save. If the save fails, the gauntlets reduce the target's Strength, Dexterity, or Constitution (wearer's choice) by 6.
-Fetish Mask		TYPE:Magic.Wondrous.Headgear		COST:0		SOURCEPAGE:p.140		SPROP:A Scarred Witch Doctor forms a bond with a wooden mask.		BONUS:SKILL|Heal,Intimidate|2		ASPECT:SaveBonus|+2 vs Pain		PREABILITY:1,CATEGORY=Archetype,Witch Archetype ~ Scarred Witch Doctor		VISIBLE:QUALIFY
+Fetish Mask		TYPE:Magic.Wondrous.Headgear		COST:0		SOURCEPAGE:p.140		SPROP:A Scarred Witch Doctor forms a bond with a wooden mask.		BONUS:SKILL|Heal,Intimidate|2		PREABILITY:1,CATEGORY=Archetype,Witch Archetype ~ Scarred Witch Doctor
 
 ###Block: Oread Equipment
 # Equipment Name			Required Weapon Proficiency		Type															Cost		Weight	Critical Hit Multiplier	Critical Hit Range	Damage	Modifier			Source Page		Bonus to skill																									Special Property
@@ -226,7 +226,7 @@ Tailblade (Ratfolk)	PROFICIENCY:WEAPON|Tailblade (Ratfolk)	TYPE:Weapon.Light.Mel
 # Equipment Name			Type									Cost		Weight	Source Page		Special Property																																																Temporary Bonus
 Elemental Breath			TYPE:Goods.Alchemical.Consumable.Vial.Racial.Sylph	COST:80	WT:.5		SOURCEPAGE:p.159	SPROP:When elemental breath is inhaled (as drinking a potion) by an air-breathing creature, that creature does not need to breath air for 10 rounds.
 Wing Cloak				TYPE:Goods.Clothing.Cloak.Racial.Sylph			COST:1200	WT:1		SOURCEPAGE:p.159	SPROP:When the cloak is shaped into a wing, the wearer can make a DC 15 Fly check to fall safely from any height without taking falling damage, as if using feather fall. When falling, the wearer may make an additional DC 15 Fly check to glide, moving 5 feet laterally for every 20 feet she falls.
-Elixer of Forceful Exhalation	TYPE:Magic.Potion.Consumable					COST:900	WT:1		SOURCEPAGE:p.160	SPROP:The drinker can exhale up to three 15-foot-long Gusts of Wind (as the spell), after which the skill bonuses end.																															TEMPBONUS:ANYPC|SKILL|Acrobatics (Jump),Swim|4|TYPE=Competence
+Elixer of Forceful Exhalation	TYPE:Magic.Potion.Consumable					COST:900	WT:1		SOURCEPAGE:p.160	SPROP:The drinker can exhale up to three 15-foot-long Gusts of Wind (as the spell), after which the skill bonuses end.																															BONUS:SKILL|Acrobatics (Jump),Swim|4|TYPE=Competence|PREAPPLY:ANYPC
 
 ###Block: Tengu Equipment
 # Equipment Name						Output Name							Type									Cost		Weight	Source Page		Special Property
@@ -253,7 +253,7 @@ Chain Belt			TYPE:Goods.Clothing.Belt.Racial.Undine											COST:15	WT:.25				
 Potion Sponge		TYPE:Goods.Container.General.Flask.Racial.Undine	CONTAINS:1|Liquid=1|SpellComponent=1|Poison=1	COST:2									SOURCEPAGE:p.177												SPROP:Unlike a potion that is drunk from a vial, a potion sponge can be used underwater. A potion can be poured from a vial into a sponge potion (or squeezed from a sponge into a vial) as a full-round action. The potion sponge is immune to attacks that specifically target crystal, glass, ceramic, or porcelain, such as shatter. It otherwise works like a potion vial.
 Shark Tooth Amulet	TYPE:Magic.Wondrous.Amulet													COST:9000									SOURCEPAGE:p.178												SPROP:The wearer can use melee weapons normally while underwater. Also allows the wearer to make thrown ranged weapon attacks underwater with a 2 penalty on attack rolls and range increment halved.
 Shawl of Life-Keeping	TYPE:Magic.Wondrous.Cloak													COST:1000									SOURCEPAGE:p.178												SPROP:Stores up to 10 of the wearer's hp.  If wearer's hp is reduced to -1 or lower, immediately heals the wearer.
-Slippers of the Triton	TYPE:Magic.Wondrous.Boot													COST:56000	WT:1		MOVE:Swim,30|!PREMOVE:1,Swim=1		SOURCEPAGE:p.178	BONUS:MOVEADD|TYPE.Swim|10|TYPE=Enhancement|PREMOVE:1,Swim=1		ABILITY:Special Ability|AUTOMATIC|Water Breathing		SPROP:Grant water breathing, swim speed of 30 ft or +10 foot enhancement if wearer already has a swim speed.
+Slippers of the Triton	TYPE:Magic.Wondrous.Boot													COST:56000	WT:1				SOURCEPAGE:p.178		BONUS:MOVEADD|TYPE.Swim|10|TYPE=Enhancement|PREMOVE:1,Swim=1		ABILITY:Special Ability|AUTOMATIC|Water Breathing		SPROP:Grant water breathing, swim speed of 30 ft or +10 foot enhancement if wearer already has a swim speed.
 
 ###Block: Uncommon Races Equipment
 
@@ -268,8 +268,8 @@ Spellscorch (Poison)	TYPE:Goods.Poison.Consumable	COST:200	SOURCEPAGE:p.187	SPRO
 Sea-Knife		PROFICIENCY:WEAPON|Sea-Knife	TYPE:Weapon.Light.Melee.Piercing.Slashing.Exotic.Finessable	COST:8	WT:1		CRITMULT:x2			CRITRANGE:2			DAMAGE:1d4	WIELD:Light		SIZE:M	SOURCEPAGE:p.189	BONUS:COMBAT|AC|-2|TYPE=Circumstance	SPROP:The wearer cannot use a leg with a sea-knife strapped to it for walking or running. A sea-knife can be used as a light melee weapon when the wielder is swimming, f lying, or prone. This allows the wielder to use a two-handed weapon, or wield a weapon with one hand and carry a shield, and still make off-hand attacks with the sea-knife.|PRERULE:1,DisplayWeaponDetails
 
 ###Block: Grippli Equipment
-# Equipment Name			Type					Cost		Source Page		Special Property																																												Effect 1d4 Dex and confused for 1 rnd
-Black Spider Marsh Poison	TYPE:Goods.Poison.Consumable	COST:800	SOURCEPAGE:p.191	SPROP:Injury; Fort DC 14; Freq 1 rnd (6); Cure 2 consecutive saves;																																			EFFECT:1d4 Dex and confused for 1 rnd:
+# Equipment Name			Type					Cost		Source Page		Special Property																																												
+Black Spider Marsh Poison	TYPE:Goods.Poison.Consumable	COST:800	SOURCEPAGE:p.191	SPROP:Injury; Fort DC 14; Freq 1 rnd (6); Effect 1d4 Dex and confused for 1 rnd; Cure 2 consecutive saves
 Bubble Vault			TYPE:Magic.Wondrous		COST:1500	SOURCEPAGE:p.191	SPROP:Swells to form a 1-foot-diameter soap-like bubble when placed in water. Up to 5 cubic feet of goods can be placed inside. On command, the bubble sinks to the bottom of the water, automatically burying itself 1 foot deep if there is mud or other loose material present.
 
 ###Block: Kitsune Equipment
@@ -313,7 +313,7 @@ Meridian Belt	TYPE:Magic.Wondrous.Belt.Racial.Vanara	COST:1000	WT:1		SOURCEPAGE:
 ###Block: Vishkanya Equipment
 # Equipment Name		Type									Cost		Weight	Source Page		Special Property																																								Temporary Bonus
 Poison Tattoo		TYPE:Goods.Alchemical.Consumable.Racial.Vishkanya	COST:50			SOURCEPAGE:p.209	SPROP:Temporarily boosts the strength of a vishkanya's natural poison, increasing the DC of the next weapon envenomed with the vishkanya's blood or saliva by +2 (once used, the tattoo is merely decorative and does not affect the creature's poison).
-Corset of the Vishkanya	TYPE:Magic.Wondrous.Shirt					COST:3000	WT:1		SOURCEPAGE:p.209	SPROP:The wearer can compress herself to fit through tight spaces as though affected by a Squeeze spell for up to 10 rounds per day. While using the corset's magic, she gains a +5 bonus on Escape Artist checks.							TEMPBONUS:PC|SKILL|Escape Artist|5
+Corset of the Vishkanya	TYPE:Magic.Wondrous.Shirt					COST:3000	WT:1		SOURCEPAGE:p.209	SPROP:The wearer can compress herself to fit through tight spaces as though affected by a Squeeze spell for up to 10 rounds per day. While using the corset's magic, she gains a +5 bonus on Escape Artist checks.							BONUS:SKILL|Escape Artist|5|PREAPPLY:PC
 
 ###Block: Wayang Equipment
 # Equipment Name		Type							Cost		Weight	Source Page		Special Property
