@@ -32,7 +32,7 @@ Skill Focus Plus Two			OUTPUTNAME:Skill Focus +2								CATEGORY:Special Ability
 Skill Focus Plus One			OUTPUTNAME:Skill Focus +1								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|1|TYPE=SkillFocus																										COST:2
 
 #Count Test w/ PREVAR test
-Warcraft				CATEGORY:Special Ability	TYPE:SpecialAttack											DEFINE:Warcraft Bonus|0	DESC:+%1 BAB|Warcraft Bonus														BONUS:VAR|Warcraft Bonus|countdistinct("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Normal Progression")	BONUS:VAR|Warcraft Bonus|countdistinct("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Half Progression")/2
+Warcraft				CATEGORY:Special Ability	TYPE:SpecialAttack											DEFINE:Warcraft Bonus|0	DESC:+%1 BAB|Warcraft Bonus														BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Normal Progression")	BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Half Progression")/2
 #
 Warcraft ~ Normal Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:6
 Warcraft ~ Half Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:3
