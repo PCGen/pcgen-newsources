@@ -10,12 +10,12 @@ Imperial Dragon Defaults	CATEGORY:Internal	DEFINE:DragonFlightSupernatural|1	ABI
 Default Traits ~ Forest Dragon	CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Imperial Dragon Defaults	
 	ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Cone of Piercing|Woodland Stride ~ Forest Dragon|Immunity to Poison
 	ABILITY:Special Ability|AUTOMATIC|Sound Imitation ~ Forest Dragon|PREVARGTEQ:DragonAge,2
-	SPELLS:Pass Without Trace|PREVARGTEQ:DragonAge,3
-	SPELLS:Entangle|PREVARGTEQ:DragonAge,4
-	SPELLS:Blight|PREVARGTEQ:DragonAge,6
-	SPELLS:Tree Stride|PREVARGTEQ:DragonAge,8
-	SPELLS:Animate Plants|PREVARGTEQ:DragonAge,10
-	SPELLS:Earthquake|PREVARGTEQ:DragonAge,12
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Pass Without Trace|PREVARGTEQ:DragonAge,3
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Entangle|PREVARGTEQ:DragonAge,4
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Blight|PREVARGTEQ:DragonAge,6
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Tree Stride|PREVARGTEQ:DragonAge,8
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Animate Plants|PREVARGTEQ:DragonAge,10
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Earthquake|PREVARGTEQ:DragonAge,12
 	BONUS:DR|Adamantine|2|PREVARGTEQ:DragonAge,5
 	BONUS:DR|Adamantine|3|PREVARGTEQ:DragonAge,7
 	BONUS:DR|Adamantine|5|PREVARGTEQ:DragonAge,9
@@ -25,7 +25,7 @@ Default Traits ~ Forest Dragon	CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Impe
 	ABILITY:Special Ability|AUTOMATIC|Elemental Breath ~ Forest Dragon|PREVARGTEQ:DragonAge,10
 	ABILITY:Special Ability|AUTOMATIC|Stony Death ~ Forest Dragon|PREVARGTEQ:DragonAge,12
 	BONUS:PCLEVEL|Sorcerer|-1|PREVARLTEQ:DragonAge,2
-	BONUS:PCLEVEL|Sorcerer|(DragonAge-3)*2|PREVARGTEQ:DragonAge,3
+	BONUS:PCLEVEL|Sorcerer|(DragonAge-3)*2|PREVARGTEQ:DragonAge,4
 
 Change Shape (Su)			KEY:Change Shape ~ Forest Dragon	SOURCEPAGE:p.94	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC:An adult or older forest dragon can assume any humanoid form three times per day as if using polymorph.
 Destructive Crush (Su)		KEY:Destructive Crush ~ Forest Dragon	SOURCEPAGE:p.94	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC:When an old or older forest dragon makes a crush attack, the impact kicks up debris in a 20-foot-radius burst for 1d6 rounds. The debris obscures the vision of creatures within the debris field and grants concealment to those creatures. The forest dragon can see normally within and through the debris field.
@@ -37,12 +37,21 @@ Woodland Stride (Ex)		KEY:Woodland Stride ~ Forest Dragon	SOURCEPAGE:p.94	CATEGO
 
 # Sea Dragon
 Default Traits ~ Sea Dragon	CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Imperial Dragon Defaults
-	ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Cone of Fire
-	ABILITY:Special Ability|AUTOMATIC|Change Shape ~ Sea Dragon|PREVARGTEQ:DragonAge,
-	ABILITY:Special Ability|AUTOMATIC|Sea Strider ~ Sea Dragon|PREVARGTEQ:DragonAge,
-	ABILITY:Special Ability|AUTOMATIC|Tidal Wave ~ Sea Dragon|PREVARGTEQ:DragonAge,
-	ABILITY:Special Ability|AUTOMATIC|Torrent Breath ~ Sea Dragon|PREVARGTEQ:DragonAge,
-	ABILITY:Special Ability|AUTOMATIC|Unfettered Swimmer ~ Sea Dragon|PREVARGTEQ:DragonAge,
+	ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Cone of Fire|Immunity to Electricity|Water Breathing
+	ABILITY:Special Ability|AUTOMATIC|Change Shape ~ Sea Dragon|PREVARGTEQ:DragonAge,3
+	ABILITY:Special Ability|AUTOMATIC|Sea Strider ~ Sea Dragon|PREVARGTEQ:DragonAge,6
+	ABILITY:Special Ability|AUTOMATIC|Tidal Wave ~ Sea Dragon|PREVARGTEQ:DragonAge,12
+	ABILITY:Special Ability|AUTOMATIC|Torrent Breath ~ Sea Dragon|PREVARGTEQ:DragonAge,2
+	ABILITY:Special Ability|AUTOMATIC|Unfettered Swimmer ~ Sea Dragon|PREVARGTEQ:DragonAge,4
+	BONUS:PCLEVEL|Sorcerer|-1|PREVARLTEQ:DragonAge,2
+	BONUS:PCLEVEL|Sorcerer|(DragonAge-3)*2|PREVARGTEQ:DragonAge,4
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Create Water|PREVARGTEQ:DragonAge,3
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Hydraulic Push|PREVARGTEQ:DragonAge,4
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Call Lightning|PREVARGTEQ:DragonAge,6
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Control Water|PREVARGTEQ:DragonAge,8
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Water Walk|PREVARGTEQ:DragonAge,10
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|Vortex|PREVARGTEQ:DragonAge,12
+
 
 Change Shape (Su)			KEY:Change Shape ~ Sea Dragon	SOURCEPAGE:p.96	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: A young or older sea dragon can assume any humanoid form three times per day as if using polymorph.
 Sea Strider (Su)			KEY:Sea Strider ~ Sea Dragon	SOURCEPAGE:p.96	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: Three times per day as a standard action, an old or older sea dragon can move from one body of water to another as if using the teleport spell (self only).
@@ -60,6 +69,12 @@ Default Traits ~ Sky Dragon	CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Imperia
 	ABILITY:Special Ability|AUTOMATIC|Cloud Sight ~ Sky Dragon|PREVARGTEQ:DragonAge,
 	ABILITY:Special Ability|AUTOMATIC|Grounding Breath ~ Sky Dragon|PREVARGTEQ:DragonAge,
 	ABILITY:Special Ability|AUTOMATIC|Primal Lightning ~ Sky Dragon|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
 
 Borne Aloft (Su)			KEY:Borne Aloft ~ Sky Dragon	SOURCEPAGE:p.98	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: Old or younger sky dragons fly with good maneuverability while all older sky dragons have perfect.
 Celestial Emissary (Su)		KEY:Celestial Emissary ~ Sky Dragon	SOURCEPAGE:p.98	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: Three times per day, a great wyrm sky dragon can imbue others with the celestial aspect of the oracle spell divine vessel*, but it can only be cast on another willing creature of good alignment.
@@ -77,6 +92,12 @@ Default Traits ~ Sovereign Dragon	CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|I
 	ABILITY:Special Ability|AUTOMATIC|Golden Armor ~ Sovereign Dragon|PREVARGTEQ:DragonAge,
 	ABILITY:Special Ability|AUTOMATIC|Master Counterspelling ~ Sovereign Dragon|PREVARGTEQ:DragonAge,
 	ABILITY:Special Ability|AUTOMATIC|Violent Retort ~ Sovereign Dragon|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
 
 Change Shape (Su)			KEY:Change Shape ~ Sovereign Dragon	SOURCEPAGE:p.100	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: A young or older sovereign dragon can assume any humanoid form three times per day as polymorph.
 Dogmatic Discordance (Su)	KEY:Dogmatic Discordance ~ Sovereign Dragon	SOURCEPAGE:p.100	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: Good or evil creatures take a -2 penalty when making saving throws against a sovereign dragon's spells, spell-like abilities, breath weapon, and aura.
@@ -93,6 +114,12 @@ Default Traits ~ Underworld Dragon	CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|
 	ABILITY:Special Ability|AUTOMATIC|Lava Eruption ~ Underworld Dragon|PREVARGTEQ:DragonAge,
 	ABILITY:Special Ability|AUTOMATIC|Smoke Vision ~ Underworld Dragon|PREVARGTEQ:DragonAge,
 	ABILITY:Special Ability|AUTOMATIC|Underworld Burrower ~ Underworld Dragon|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
+	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=(max(TL,1))|XXX|PREVARGTEQ:DragonAge,
 
 Adamantine Claws (Ex)		KEY:Adamantine Claws ~ Underworld Dragon	SOURCEPAGE:p.102	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: The claws of an underworld dragon are made of adamantine, and have the qualities of a weapon made from that material.
 Change Shape (Su)			KEY:Change Shape ~ Underworld Dragon	SOURCEPAGE:p.102	CATEGORY:Special Ability	TYPE:RaceAbility.SpecialQuality	DESC: A young or older underworld dragon can assume any humanoid form three times per day as if using polymorph.
