@@ -48,3 +48,14 @@ Bonus Witch Familiar Natural Armor
 
 #Wizard: Select one item creation feat known by the wizard. Whenever he crafts an item using that feat, the amount of progress he makes in an 8-hour period increases by 200 gp (50 gp if crafting while adventuring). This does not reduce the cost of the item; it just increases the rate at which the item is crafted.
 Bonus Wizard Item Creation Craft progress
+
+
+#Half-elf, Human, Tiefling, Suli - Add +1/4 to the magus's arcane pool.
+Increase Magus Arcane Pool 1/4	KEY:Magus Arcane Pool Increase	CATEGORY:Special Ability	TYPE:FavoredClassBonus		PRERACE:1,Half-Elf,RACESUBTYPE=Suli,RACESUBTYPE=Human,RACESUBTYPE=Tiefling		CHOOSE:NOCHOICE	MULT:YES	STACK:YES	BONUS:VAR|MagusArcanePool|floor(count("ABILITIES","CATEGORY=Special Ability","KEY=Magus Arcane Pool Increase")/4)|TYPE=FavoredBonus
+#Halfling The magus gains 1/6 of a new magus arcana.
+New Magus Arcana 1/6	KEY:New Magus Arcana	CATEGORY:Special Ability	TYPE:FavoredClassBonus		PRERACE:1,Halfling,RACESUBTYPE=Halfling	CHOOSE:NOCHOICE	MULT:YES	STACK:YES		BONUS:ABILITYPOOL|Magus Arcana|floor(count("ABILITIES","CATEGORY=Special Ability","KEY=New Magus Arcana")/6)|TYPE=FavoredBonus
+#Half-orc Add +1/2 point of fire damage to spells that deal fire damage cast by the magus.
+Magus Fire Damage Increase 1/2	KEY:Magus Fire Damage Bonus Increase		CATEGORY:Special Ability	TYPE:FavoredClassBonus		PRERACE:1,Half-Orc		CHOOSE:NOCHOICE	MULT:YES	STACK:YES	DEFINE:MagusFireDamage|0	BONUS:VAR|MagusFireDamage|floor(count("ABILITIES","CATEGORY=Special Ability","KEY=Magus Fire Damage Bonus")/2)|TYPE=FavoredBonus	ABILITY:Special Ability|AUTOMATIC|Magus Fire Damage Bonus|PREABILITY:2,CATEGORY=Internal,Magus Fire Damage Bonus
+Magus Fire Damage Bonus			CATEGORY:Special Ability	TYPE:SpecialAttack	DESC:+%1 to fire based spell damage|MagusFireDamage
+#Kobold Add a +1/2 bonus on concentration checks made to cast defensively.
+Improved Concentration Check 1/2	KEY:Improved Concentration Check	PRERACE:1,RACESUBTYPE=Kobold,Kobold		CATEGORY:Special Ability	TYPE:FavoredClassBonus			CHOOSE:NOCHOICE	MULT:YES	STACK:YES	BONUS:SKILL|Concentration (Cast Defensively)|floor(count("ABILITIES","CATEGORY=Special Ability","KEY=Improved Concentration Check")/2)|TYPE=FavoredBonus
