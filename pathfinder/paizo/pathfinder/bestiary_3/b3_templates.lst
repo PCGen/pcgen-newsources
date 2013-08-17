@@ -26,15 +26,6 @@ Rat Lord (Giant Rat)					KEY:Animal Lord ~ Rat Lord		ABILITY:Special Ability|AUT
 Shark Lord (Shark)					KEY:Animal Lord ~ Shark Lord		ABILITY:Special Ability|AUTOMATIC|Brutal Jaws ~ Shark Lord	SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.AnimalLordRaceTrait.AnimalLord.SpecialQuality	DESC:Shark lords have black eyes, pale skin, sharp teeth, and little to no body hair. They gain the following additional ability.
 Serpent Lord (Snake)					KEY:Animal Lord ~ Serpent Lord	ABILITY:Special Ability|AUTOMATIC|Poison Immunity ~ Serpent Lord	SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.AnimalLordRaceTrait.AnimalLord.SpecialQuality	DESC:Serpent lords tend to have unusual skin colors, often with stripes or other patterns), snakelike eyes, and forked tongues. Serpent lords gain the following ability.
 #
-Bear Hug	TYPE:Extraordinary						KEY:Bear Hug ~ Bear Lord		SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.BearLordRaceTrait.SpecialQuality	DESC:A bear lord deals +1d6 extra points of damage when it makes a grapple check to damage a creature.
-Savage	TYPE:Extraordinary							KEY:Savage ~ Canine Lord			SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.CanineLordRaceTrait.SpecialQuality	DESC:A canine lord deals +1d6 extra points of damage on its first attack in a round against a prone opponent.
-Leap	TYPE:Extraordinary							KEY:Leap ~ Cat Lord			SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.CatLordRaceTrait.SpecialQuality	DESC:A cat lord adds half its Hit Dice to all Acrobatics checks made to jump, and is always treated as if it had a running start when jumping.
-Thick Skin	TYPE:Extraordinary						KEY:Thick Skin ~ Crocodile Lord	SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.CrocodileLordRaceTrait.SpecialQuality	DESC:A crocodile lord's base natural armor bonus improves by an additional +2 in both of its forms.
-Primeval Mind	TYPE:Extraordinary					KEY:Primeval Mind ~ Dinosaur Lord	SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.DinosaurLordRaceTrait.SpecialQuality	DESC:A dinosaur lord is immune to charm effects and gains a +2 bonus on all Will saves.
-Raptor's Dive	TYPE:Extraordinary					KEY:Raptor's Dive ~ Raptor Lord	SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.RaptorLordRaceTrait.SpecialQuality	DESC:A raptor lord deals double damage with any charge that starts 10 or more feet above its target.
-Hearty	TYPE:Extraordinary							KEY:Hearty ~ Rat Lord			SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.RatLordRaceTrait.SpecialQuality	DESC:Rat lords are immune to disease and gain a +2 bonus on all Fortitude saves.
-Brutal Jaws	TYPE:Extraordinary						KEY:Brutal Jaws ~ Shark Lord		SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.SharkLordRaceTrait.SpecialQuality	DESC:A shark lord's bite attack causes bleed (1d6).
-Poison Immunity	TYPE:Extraordinary					KEY:Poison Immunity ~ Serpent Lord	SOURCEPAGE:p.15	CATEGORY:Special Ability	TYPE:RaceTrait.SerpentLordRaceTrait.SpecialQuality	DESC:Serpent lords are immune to poison.
 
 Fey Creature	!PREALIGN:LG,LN,LE	RACETYPE:Fey
 	BONUS:STAT|STR|-2
@@ -48,6 +39,11 @@ Fey Creature	!PREALIGN:LG,LN,LE	RACETYPE:Fey
 	TEMPLATE:CHOOSE:Has Natural Armor|Has No Natural Armor
 	DR:5/cold iron	BONUS:DR|Cold Iron|5|PRELEVEL:MIN=10
 	CSKILL:Acrobatics|Bluff|Fly|Stealth
+	+4 bonus
+on saves against mind-affecting effects, 
+	BONUS:VAR|ColdResistanceBonus,ElectricityResistanceBonus|10
+	
+	ABILITY:Special Ability|AUTOMATIC|Resistance to Cold|Resistance to Electricity
 
 Has Natural Armor		VISIBLE:NO	PREVARGTEQ:var("AC.Natural"),1		BONUS:COMBAT|AC|-1|TYPE=NaturalArmor
 Has No Natural Armor	VISIBLE:NO	PREVAREQ:var("AC.Natural"),0	
@@ -59,11 +55,7 @@ Has No Natural Armor	VISIBLE:NO	PREVAREQ:var("AC.Natural"),0
 #Type: The creature's type changes to fey. Do not recalculate HD, BAB, or saves.
 #Senses: A fey creature gains low-light vision.
 #Armor Class: Reduce the creature's natural armor, if any, by 1 (minimum of 0).
-Defensive Abilities: A fey creature gains a +4 bonus
-on saves against mind-affecting effects, resist cold and
-electricity 10, and 	
-DR:5/cold iron (if 11 HD or less) or 	
-DR:10/cold iron (if 12 HD or more).
+Defensive Abilities: A fey creature gains a +4 bonus on saves against mind-affecting effects, resist cold and electricity 10, and 	DR:5/cold iron (if 11 HD or less) or 	 DR:10/cold iron (if 12 HD or more).
 Speed: Unless the base creature f lies better, the fey
 creature f lies at 1-1/2 times the base creature's land speed
 (good maneuverability), rounded down to the nearest
@@ -82,6 +74,8 @@ Spell Resistance	TYPE:Extraordinary	KEY:Spell Resistance ~ Fey Creature	SOURCEPA
 Trackless Step	TYPE:Extraordinary	KEY:Trackless Step ~ Fey Creature	SOURCEPAGE:p.116	CATEGORY:Special Ability	TYPE:RaceTrait.XXXRaceTrait.SpecialQuality	DESC:A fey creature does not leave a trail in natural surroundings and cannot be tracked. It can choose to leave a trail, if it so desires.
 Vanish (Su)	KEY:Vanish ~ Fey Creature	SOURCEPAGE:p.116	CATEGORY:Special Ability	TYPE:RaceTrait.XXXRaceTrait.SpecialQuality	DESC:As a swift action, a fey creature can vanish for 1 round as if affected by invisibility. It can use this ability for 1 round per day per Hit Die.
 Woodland Stride	TYPE:Extraordinary	KEY:Woodland Stride ~ Fey Creature	SOURCEPAGE:p.116	CATEGORY:Special Ability	TYPE:RaceTrait.XXXRaceTrait.SpecialQuality	DESC:A fey creature can move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at its normal speed and without taking damage or suffering any other impairment. Thorns, briars, and overgrown areas that have been magically manipulated to impede motion still affect it. Optionally, this ability may function in a different type of terrain, to allow the fey creature to move through, swamps, rocky areas, ice, and so forth. Whatever the choice, this ability only functions in one type of terrain. This ability can be selected more than once, for a different terrain each time.
+
+
 Spell-Like Abilities	KEY:Spell-Like Abilities ~ Fey Creature	SOURCEPAGE:p.116	CATEGORY:Special Ability	TYPE:RaceTrait.XXXRaceTrait.SpecialQuality	DESC:A fey creature with an Intelligence or Wisdom score of 8 or more has a cumulative number of spell-like abilities depending on its Hit Dice. Unless otherwise noted, an ability is usable once per day. Caster level equals the creature's HD (or the caster level of the base creature's spell-like abilities, whichever is higher).
 
 HD Abilities
