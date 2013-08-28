@@ -1,7 +1,7 @@
 # CVS $Revision$ $Author$ 
 # Abilities granted by Magic Items
 SOURCELONG:Ultimate Equipment	SOURCESHORT:UE	SOURCEWEB:http://paizo.com/products/btpy8tmc	SOURCEDATE:2012-08
-# ORIGINAL ENTRY: James Dempsey
+# ORIGINAL ENTRY: James Dempsey, Scott Meyer
 # ORIGINAL ENTRY DATE: 13 May 2013
 
 # Ability Name			Category of Ability		Type				Required Class		Define				Description																							Ability																			List of Known Class Spells by Level
@@ -14,9 +14,8 @@ Merform Belt Merfolk Form							CATEGORY:Internal																															
 ###Block: Modifier to make Splash Weapon proficiency available to all classes
 CATEGORY=Special Ability|All Automatic Proficiencies.MOD		AUTO:WEAPONPROF|Splash Weapon
 
-###Block: Bonus granted to skill ranks by Headband of Vast Intelligence
-Skill Bonus		KEY:Skill Bonus ~ Headband		CATEGORY:Special Ability 	TYPE:HeadbandSkillBonus		MULT:YES		STACK:NO		SELECT:1		CHOOSE:SKILL|ANY		BONUS:SKILLRANK|%CHOICE|TL
-Knowledge Skill Bonus		KEY:Knowledge Skill Bonus ~ Headband		CATEGORY:Special Ability		TYPE:HeadbandKnowledgeSkillBonus		MULT:YES		STACK:NO		SELECT:1		CHOOSE:SKILL|TYPE.Knowledge		BONUS:SKILLRANK|%CHOICE|TL
+###Block: Minor variation on Headband of Vast Intelligence
+Headband of Intellect Knowledge Skill Selection	TYPE:HeadbandKnowledgeSkill	CATEGORY:Special Ability	MULT:YES	STACK:NO	CHOOSE:SKILL|TYPE=Knowledge	BONUS:SKILLRANK|%LIST|TL
 
 #
 # EOF
