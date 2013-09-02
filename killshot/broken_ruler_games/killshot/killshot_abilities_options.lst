@@ -12,7 +12,6 @@
 #Trigger: Defensive options provide details for the trigger created by this option.
 #Untrained: Some base options can be used "untrained," meaning an application outside the normal boundaries. These applications inflict serious penalties, but are available for all characters to provide extra possibilities.
 #Weapon: If the option can be gained from a weapon, it lists so here. Some weapon options can allow for additional training points to increase its potential.
-
 #To do so, you must already have spent the training points to gain a
 #trained, focus, or professional option. To increase a trained option, you have
 #to spend either 2 training points or half the listed points for a trained option
@@ -23,41 +22,50 @@
 #weapon option, but you can only apply these additional option dice with a
 #mastered weapon.
 
-# Options
-Active	KEY:Active ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option.AutoGranted	ASPECT:TYPE|Base, Dice
-Aim		KEY:Aim ~ Option			COST:2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Focus, Trained (2 points) or Weapon	COST:2	PREVARGTEQ:PoolTraining,2
-Alert		KEY:Alert ~ Option		COST:2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Focus, Trained (2 points)
-Anticipate	KEY:Anticipate ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Focus, Professional
-Bullshit	KEY:Bullshit ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Burst		KEY:Burst ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Weapon
-Concentrate	KEY:Concentrate ~ Option	COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Deadly	KEY:Deadly ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus, Professional
-Detour	KEY:Detour ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Trained (2 points)
-Disable	KEY:Disable ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus, Professional
-Drive		KEY:Drive ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Dual Strike	KEY:Dual Strike ~ Option	COST:5	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Trained (5 points)
-Explosives	KEY:Explosives ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Free		KEY:Free ~ Option			COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Base
-Full Auto	KEY:Full Auto ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Weapon
-Guardian	KEY:Guardian ~ Option		COST:3	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Trained (3 points)
-Hack		KEY:Hack ~ Option			COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Heal		KEY:Heal ~ Option			COST:2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Stunt, Trained (2 points)
-Lock		KEY:Lock ~ Option			COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus, Professional
-Maneuver	KEY:Maneuver ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Focus, Professional
-Move		KEY:Move ~ Option			COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Base
-Parry		KEY:Parry ~ Option		COST:3	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Trained (3 points)
-Quick		KEY:Quick ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Base
-Ready		KEY:Ready ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Base, Defensive
-Recover	KEY:Recover ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Professional
-Reflex	KEY:Reflex ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus, Professional
-Search	KEY:Search ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Sever		KEY:Sever ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Stunt, Weapon
-Shadow	KEY:Shadow ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
-Shatter	KEY:Shatter ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus, Professional
-Smash		KEY:Smash ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Stunt, Weapon
-Surprise	KEY:Surprise ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Focus, Professional
-Survival	KEY:Survival ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Focus
 
+# OptionName ~ Professional Purchase	BONUS:VAR|TrainingPool|Cost-1
+# OptionName ~ Focus Purchase			BONUS:VAR|TrainingPool|Cost-1
+# OptionName ~ WeaponAddition			BONUS:VAR|TrainingPool|-3
+#	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	
+#Free		KEY:Free ~ Option			COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Base
+#Move		KEY:Move ~ Option			COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Base
+#Quick		KEY:Quick ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Base
+#Ready		KEY:Ready ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Base, Defensive
+
+
+# Trained Option ~ 
+Aim		KEY:Trained Option ~ Aim			ABILITY:Special Ability|AUTOMATIC|Aim		COST:0	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Focus, Trained (2 points) or Weapon
+Alert		KEY:Trained Option ~ Alert			ABILITY:Special Ability|AUTOMATIC|Alert		COST:0	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Automatic, Focus, Trained (2 points)
+Detour	KEY:Trained Option ~ Detour			ABILITY:Special Ability|AUTOMATIC|Detour		COST:0	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Trained (2 points)
+Dual Strike	KEY:Trained Option ~ Dual Strike		ABILITY:Special Ability|AUTOMATIC|Dual Strike	COST:0	PREVARGTEQ:TrainingPool,5	BONUS:VAR|TrainingPool|-5	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Trained (5 points)
+Guardian	KEY:Trained Option ~ Guardian			ABILITY:Special Ability|AUTOMATIC|Guardian	COST:0	PREVARGTEQ:TrainingPool,3	BONUS:VAR|TrainingPool|-3	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Trained (3 points)
+Heal		KEY:Trained Option ~ Heal			ABILITY:Special Ability|AUTOMATIC|Heal		COST:0	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Stunt, Trained (2 points)
+Parry		KEY:Trained Option ~ Parry			ABILITY:Special Ability|AUTOMATIC|Parry		COST:0	PREVARGTEQ:TrainingPool,3	BONUS:VAR|TrainingPool|-3	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Defensive, Trained (3 points)
+# Weapon Option
+Burst		KEY:Weapon Granted Option ~ Burst		ABILITY:Special Ability|AUTOMATIC|Burst		COST:0	CATEGORY:Training Pool	TYPE:WeaponOption	ASPECT:TYPE|Dice, Weapon
+Full Auto	KEY:Weapon Granted Option ~ Full Auto	ABILITY:Special Ability|AUTOMATIC|Full Auto	COST:0	CATEGORY:Training Pool	TYPE:WeaponOption	ASPECT:TYPE|Dice, Weapon
+Sever		KEY:Weapon Granted Option ~ Sever		ABILITY:Special Ability|AUTOMATIC|Sever		COST:0	CATEGORY:Training Pool	TYPE:WeaponOption	ASPECT:TYPE|Dice, Stunt, Weapon
+Smash		KEY:Weapon Granted Option ~ Smash		ABILITY:Special Ability|AUTOMATIC|Smash		COST:0	CATEGORY:Training Pool	TYPE:WeaponOption	ASPECT:TYPE|Dice, Stunt, Weapon
+Aim		KEY:Weapon Granted Option ~ Aim		ABILITY:Special Ability|AUTOMATIC|Aim		COST:0	CATEGORY:Training Pool	TYPE:WeaponOption
+# Focus Option
+Anticipate	KEY:Focus Granted Option ~ Anticipate	ABILITY:Special Ability|AUTOMATIC|Anticipate	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Defensive, Focus, Professional
+Bullshit	KEY:Focus Granted Option ~ Bullshit		ABILITY:Special Ability|AUTOMATIC|Bullshit	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Concentrate	KEY:Focus Granted Option ~ Concentrate	ABILITY:Special Ability|AUTOMATIC|Concentrate	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Deadly	KEY:Focus Granted Option ~ Deadly		ABILITY:Special Ability|AUTOMATIC|Deadly		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus, Professional
+Disable	KEY:Focus Granted Option ~ Disable		ABILITY:Special Ability|AUTOMATIC|Disable		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus, Professional
+Drive		KEY:Focus Granted Option ~ Drive		ABILITY:Special Ability|AUTOMATIC|Drive		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Explosives	KEY:Focus Granted Option ~ Explosives	ABILITY:Special Ability|AUTOMATIC|Explosives	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Hack		KEY:Focus Granted Option ~ Hack		ABILITY:Special Ability|AUTOMATIC|Hack		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Lock		KEY:Focus Granted Option ~ Lock		ABILITY:Special Ability|AUTOMATIC|Lock		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus, Professional
+Maneuver	KEY:Focus Granted Option ~ Maneuver		ABILITY:Special Ability|AUTOMATIC|Maneuver	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Defensive, Focus, Professional
+Reflex	KEY:Focus Granted Option ~ Reflex		ABILITY:Special Ability|AUTOMATIC|Reflex		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus, Professional
+Search	KEY:Focus Granted Option ~ Search		ABILITY:Special Ability|AUTOMATIC|Search		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Shadow	KEY:Focus Granted Option ~ Shadow		ABILITY:Special Ability|AUTOMATIC|Shadow		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+Shatter	KEY:Focus Granted Option ~ Shatter		ABILITY:Special Ability|AUTOMATIC|Shatter		COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus, Professional
+Surprise	KEY:Focus Granted Option ~ Surprise		ABILITY:Special Ability|AUTOMATIC|Surprise	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Defensive, Focus, Professional
+Survival	KEY:Focus Granted Option ~ Survival		ABILITY:Special Ability|AUTOMATIC|Survival	COST:0	CATEGORY:Training Pool	TYPE:FocusOption	ASPECT:TYPE|Dice, Focus
+
+#Recover	KEY:Recover ~ Option		COST:0	CATEGORY:Training Pool	TYPE:Option	ASPECT:TYPE|Dice, Professional
 ###Block: Option Display - These will be granted to avoid upsetting the pool
 Active	KEY:Active Option ~ Display		CATEGORY:Special Ability	TYPE:SpecialQuality.Option.AutoGranted	ASPECT:TYPE|Base, Dice
 	DESC:Conflict rules this game. Whether you're exchanging gunfire, words or battling gravity for the right to climb a brick wall, you're in conflict. The Active option represents all usual actions attempted by every character, from making a simple physical attack to hearing the sound of approaching footsteps to solving a crossword puzzle. Anything involving an active roll against an opponent or difficulty dice can be attempted with this base option. However, the Active option is limited in what it can do and is no substitute for experience and training. You can use another appropriate option to gain an advantage over your opponents or the Director.
@@ -154,13 +162,6 @@ Explosives	KEY:Explosives Option ~ Display		CATEGORY:Special Ability	TYPE:Specia
 	DESC:&nl; Critical: The blast's intensity destroys a single modifier of your choice and prevents all opponents within the burst range from accessing that modifier.
 	DESC:&nl; Focus: This option is only available to Bombers.
 	DESC:&nl; Range:  Personal (construction); Burst (detonation)
-
-
-# COMMENT: Display Options
-# COMMENT: If we want to use a Central Pool then we have to have an ability to grant the Options without deducting the POOL. Nature AUTO won't deduct COST but the Var for a POOL will still be applied. Proposed method would be to have all the Options displayed via a non-cost ability. Thereby we separate out what is displayed and what the user selects.
-Explosives Option Display		CATEGORY:Special Ability	TYPE:SpecialQuality
-	DESC:This would display the Explosives Option
-
 
 Free	KEY:Free Option ~ Display		CATEGORY:Special Ability	TYPE:SpecialQuality.Option	ASPECT:TYPE|Automatic, Base
 	DESC:&nl;Some things are just far too easy to pull off, yet can lead to that crucial advantage in a scene. There are many possibilities we take for granted, placing them in the Free option. Communicating and sharing information with Teammates or opponents, setting unique conditions or preparations, pulling the hammer back on a sniper rifle, and many more fall within this option's realm.

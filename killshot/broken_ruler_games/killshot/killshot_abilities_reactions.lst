@@ -11,10 +11,11 @@
 #Condition: The specific type of roll required to invoke the reaction.
 #These conditions can be as vague as "any attack roll" or list specific rolls,
 #such as "Body vs. Mind" or "any active Sense roll".
-#Level: There are three levels of reaction available in Killshot: Base, Enhanced, and Expert. Base
-#reactions are available to everyone, even if the reaction is not listed with a particular character, so
-#long as they meet the conditions. Enhanced reactions can only be unlocked after you gain a
-#mechanical or survival achievement, while Expert reactions are only available when you have
+#Level: There are three levels of reaction available in Killshot: Base, Enhanced, and Expert. 
+#Base reactions are available to everyone, even if the reaction is not listed with a particular character, so
+#long as they meet the conditions. 
+# Enhanced reactions can only be unlocked after you gain a mechanical or survival achievement,
+#while Expert reactions are only available when you have
 #unlocked at least one of every type of achievement. You must still spend the training points listed for
 #any Enhanced or Expert reactions.
 #Trained: If the reaction requires your character to spend training points, it will say so here and the
@@ -22,10 +23,34 @@
 #Weapon: If the reaction can be gained from a particular weapon, it is listed here. Some weapon
 #reactions can allow for additional training points to increase its potential.
 
+Bleed		KEY:Weapon Granted Reaction ~ Bleed		ABILITY:Special Ability|AUTOMATIC|Bleed		CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+Burn		KEY:Weapon Granted Reaction ~ Burn		ABILITY:Special Ability|AUTOMATIC|Burn		CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+Fracture	KEY:Weapon Granted Reaction ~ Fracture	ABILITY:Special Ability|AUTOMATIC|Fracture	CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+Burst		KEY:Weapon Granted Reaction ~ Burst		ABILITY:Special Ability|AUTOMATIC|Burst		CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+Explode	KEY:Weapon Granted Reaction ~ Explode	ABILITY:Special Ability|AUTOMATIC|Explode		CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+Untraceable	KEY:Weapon Granted Reaction ~ Untraceable	ABILITY:Special Ability|AUTOMATIC|Untraceable	CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+Slow		KEY:Weapon Granted Reaction ~ Slow		ABILITY:Special Ability|AUTOMATIC|Slow		CATEGORY:Training Pool	TYPE:ReactionWeaponOnly
+#
+Confuse	KEY:Trained Reaction ~ Confuse	ABILITY:Special Ability|AUTOMATIC|Confuse		ASPECT:TYPE|Trained (2 points)	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained
+Daze		KEY:Trained Reaction ~ Daze		ABILITY:Special Ability|AUTOMATIC|Daze		ASPECT:TYPE|Trained (3 points)	PREVARGTEQ:TrainingPool,3	BONUS:VAR|TrainingPool|-3	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained
+Disarm	KEY:Trained Reaction ~ Disarm		ABILITY:Special Ability|AUTOMATIC|Disarm		ASPECT:TYPE|Trained (4 points)	PREVARGTEQ:TrainingPool,4	BONUS:VAR|TrainingPool|-4	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained
+Pocket Item	KEY:Trained Reaction ~ Pocket Item	ABILITY:Special Ability|AUTOMATIC|Pocket Item	ASPECT:TYPE|Trained (2 points)	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained
+Stun		KEY:Trained Reaction ~ Stun		ABILITY:Special Ability|AUTOMATIC|Stun		ASPECT:TYPE|Trained (5 points)	PREVARGTEQ:TrainingPool,5	BONUS:VAR|TrainingPool|-5	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained
+
+# Additional Training:
+Grab Additional	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	
+	DESC:&nl; Additional Training: This reaction gets better if you spend 2 additional training points. You gain +1d20 while unarmed and choose the highest base die rolled against your opponent so long as the Restrained modifier applies.
+Pass Additional	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	
+	DESC:&nl; Additional Training: If the Teammate accepting this reaction has spent an additional 2 training points, they can maintain the +1d10 for an additional roll.
+Push Additional	CATEGORY:Training Pool	TYPE:Reaction.SpecialQuality.ReactionTrained	PREVARGTEQ:TrainingPool,2	BONUS:VAR|TrainingPool|-2	CATEGORY:Training Pool	
+	DESC:&nl; Additional Training: For 2 additional training points, you can apply this reaction with a ranged attack against distant opponents.
+
+
 
 # REACTIONS
 # Need to look up how these work and when the various tiers kick in.
 
+# Weapon Only Reactions
 Bleed	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionWeaponOnly
 	DESC:A deep gash sends blood spewing from the wound, a loss soon felt by the opponent unless the bleeding can be stopped.
 	DESC:&nl; Condition: Any attack roll using a weapon with the Bleed reaction.
@@ -33,7 +58,6 @@ Bleed	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.R
 	DESC:&nl; Enhanced: At the start of the next series, the opponent takes 1 point of normal damage.
 	DESC:&nl; Expert: The opponent cannot recover a ny damage until it undergoes a successful Heal or Recover option (no base options can be substituted) and takes another point of lethal damage at the start of every series until the bleeding stops.
 	DESC:&nl; Weapon: You must use a weapon with the Bleed reaction.
-
 Burn	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionWeaponOnly
 	DESC:The result of an explosive weapon, the opponent or a targeted object catches fire and threatens to become completely engulfed.
 	DESC:&nl; Condition: Any attack roll using a weapon with the Burn reaction.
@@ -41,68 +65,16 @@ Burn	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.Re
 	DESC:&nl; Enhanced: The opponent takes a half penalty to all Sense or Mind focus dice as the flames lick across her face and block her vision or inflict too much pain for the opponent to concentrate. Objects simply catch fire.
 	DESC:&nl; Expert: The opponent automatically takes 1 point of lethal damage at the start of every series until a number of hits are gained by any appropriate active roll vs. Normal difficulty made to put the fire out. Objects lose 1 point of Armor Rating per series and are destroyed at the start of the next series when their Rating is reduced to 0.
 	DESC:&nl; Weapon: You must use a weapon with the Burn reaction.
-
-Confuse	ASPECT:TYPE|Trained (2 points)	COST:2	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
-	DESC:Mastery of language comes in handy from time to time when manipulating lesser students like yourself. See what I did there? That momentary pause gives a sly person the opening they need to slip in a suggestive comment or a concealed phrase.
-	DESC:&nl; Condition: Any active Mind roll. You must have a common form of communication (i.e. language) between yourself and the opponent or take a half penalty to your own Mind focus dice.
-	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
-	DESC:&nl; Enhanced: If the opposed Mind roll ties your active roll, you are successful.
-	DESC:&nl; Expert: The opponent takes a half penalty to all Sense or Mind focus dice until they succeed on any roll with those dice.
-	DESC:&nl; Trained: You must have spent training points to gain this reaction.
-
-Daze	ASPECT:TYPE|Trained (3 points)	COST:3	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
-	DESC:&nl; A shot to the head or a jab to the ribs causes the opponent to become woozy and disoriented for a brief moment.
-	DESC:&nl; Condition: Any attack roll.
-	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
-	DESC:&nl; Enhanced: Until the opponent recovers at least 1 point of damage or gains a boost, he takes a half penalty to all Body, Sense, and Mind focus dice.
-	DESC:&nl; Expert: The opponent gains an additional hit penalty to all rolls, even if she's never taken damage, until the end of the scene.
-	DESC:&nl; Trained: You must have spent training points to gain this reaction.
-
-Disarm	ASPECT:TYPE|Trained (4 points)	COST:4	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
-	DESC:&nl; Weapons complicate close combat and some thugs need to be disarmed or the mark needs to drop an item their holding before you can drop a grenade down their pants.
-	DESC:&nl; Condition: Any melee or ranged attack roll or an active Body roll against an adjacent opponent. When you spend training points to gain this reaction, you must choose which type of attack applies.
-	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
-	DESC:&nl; Enhanced: A solid blow causes the item or weapon to slip loose in the opponent's hand(s). The opponent cannot use a gear's circumstance dice or a weapon's bonus hits in their defense rolls until they regain the Edge.
-	DESC:&nl; Expert: The opponent drops an item or weapon of your choice from their hands and must use a Quick option to pick it up again.
-	DESC:&nl; Trained: You must have spent training points to gain this reaction.
-
 Explode	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionWeaponOnly
 	DESC:&nl; Savage weaponry unleashes the explosive potential of nearby objects (or an opponent), causing an immediate fireball threatening to kill anyone in range. This reaction creates an additional burst attack against everyone within 1 Move option of the affected object or opponent.
 	DESC:&nl; Condition: Any burst attack using a weapon with the Explode reaction.
 	DESC:&nl; Level: Expert
 	DESC:&nl; Weapon: You must use a weapon with the Explode reaction.
-
 Fracture	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionWeaponOnly
 	DESC:&nl; A brutal and deliberate hit snaps precious bonus in your opponent and renders the injured area useless for the remainder of the scene (or longer). The opponent suffers a half penalty to all Body focus dice until the injury has been treated with a Heal or Recover option (no base options allowed) with a number of hits equal to the amount of damage inflicted.
 	DESC:&nl; Condition: Any melee attack roll using a weapon with the Fracture reaction.
 	DESC:&nl; Level: Expert
 	DESC:&nl; Weapon: You must use a weapon with the Fracture reaction.
-
-
-Grab	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
-	DESC:&nl; Using your hands or wrapping the full length of your weapon around your opponent's body, you can hold onto them and refuse to let go. Your opponent cannot use Move options and you gain the Restrained modifier against them. You can then force the opponent to move with you by making an opposed Body roll with an Active option, though you are restricted to half the normal speed while holding a grabbed opponent. Your opponent can attempt to break the grab by making an opposed Body roll of their own when they have the Edge.
-	DESC:&nl; Additional Training: This reaction gets better if you spend 2 additional training points. You gain +1d20 while unarmed and choose the highest base die rolled against your opponent so long as the Restrained modifier applies.
-	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
-	DESC:&nl; Condition: Any dice roll against an adjacent opponent.
-
-Pass	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
-	DESC:&nl; Beyond simple co-operation between Teammates, the Pass reaction applied to a successful active roll allows you to gang up on an opponent or against difficulty dice. Choose a Teammate; this reaction grants them your bonus option with +1d10. If the Teammate succeeds and gains a bonus option, they can continue to use it for themselves or pass it back to you, but the additional circumstance die only applies to the first roll. If this reaction is gained from a successful opposed or defense roll, you can allow a Teammate to use an automatic option only. In no way shape or form does your Team steal the Edge without the proper number of hits.
-	DESC:&nl; Additional Training: If the Teammate accepting this reaction has spent an additional 2 training points, they can maintain the +1d10 for an additional roll.
-	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
-	DESC:&nl; Condition: Any dice roll.
-
-Pocket Item	ASPECT:TYPE|Trained (2 points)	COST:2	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
-	DESC:&nl; Close contact with an opponent puts you in the perfect position to slip a hand inside a pocket, backpack, or other personal possession and slip out an item or place an item in as long as its no larger than your hand. Applying this reaction negates any potential opposed roll to the effort, but you cannot choose the item you're stealing without facing additional difficulty dice to the effort.
-	DESC:&nl; Condition: Any active Body or Sense roll against an adjacent opponent. The pocketed object must have a Weight of 1 or less; heavier objects require 2 hits per extra Weight of the object. If not enough hits are rolled, the reaction fails and the opponent steals the Edge.
-	DESC:&nl; Level: Enhanced
-	DESC:&nl; Trained: You must have spent training points to gain this reaction.
-
-Push	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
-	DESC:&nl; You drive a massive amount of force into your attack and pummel the opponent backwards. The opponent is no longer adjacent and must use a Move or similar option to become adjacent again.
-	DESC:&nl; Additional Training: For 2 additional training points, you can apply this reaction with a ranged attack against distant opponents.
-	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
-	DESC:&nl; Condition: Any dice roll against an adjacent opponent.
-
 Slow	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionWeaponOnly
 	DESC:&nl; Old-school weapons have a nasty habit of leaving a piece of metal or wooden shaft in an opponent's leg and keeps them from getting away easily.
 	DESC:&nl; Condition: Any attack roll using a weapon with the Slow reaction.
@@ -110,20 +82,6 @@ Slow	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.Re
 	DESC:&nl; Enhanced: When afflicted with this reaction, the opponent cannot move any distance when they first use a Move option in a series. Only once a second Move option has been spent can the opponent start to cover any distance.
 	DESC:&nl; Expert: The opponent can only move up to 1 Move option away by making a stunt roll.
 	DESC:&nl; Weapon: You must use a weapon with the Slow reaction.
-
-Stun	ASPECT:TYPE|Trained (5 points)	COST:5	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
-	DESC:&nl; The attack strikes your opponent along a nerve or joint, causing him to stutter and stumble for a while.
-	DESC:&nl; Condition: Any attack roll.
-	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
-	DESC:&nl; Enhanced: Once until the end of the current series, you can steal the Edge from the opponent's Team. This can only be done when the stunned opponent prepares to use an option.
-	DESC:&nl; Expert: The opponent cannot gain the Edge until the start of the next series.
-	DESC:&nl; Trained: You must have spent training points to gain this reaction.
-
-Trip	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
-	DESC:&nl; Your attack drops your opponent to the ground. Your opponent must use a Move option to stand back up and suffers a half penalty to all Body focus dice until they do so.
-	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
-	DESC:&nl; Condition: Any dice roll against an adjacent opponent.
-
 Untraceable	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionWeaponOnly
 	DESC:&nl; Some weapons, particular revolvers, are constructed to avoid leaving shell casings behind.
 	DESC:&nl; Condition: Any attack roll using a weapon with the Untraceable reaction.
@@ -132,4 +90,63 @@ Untraceable	ASPECT:TYPE|Weapon	CATEGORY:Special Ability	TYPE:Reaction.SpecialQua
 	DESC:&nl; Expert: Decrease your total Evidence Points by 1. This reaction can only be applied once per scene.
 	DESC:&nl; Weapon: You must use a weapon with the Untraceable reaction.
 
+# Trained Reactions
+Confuse	ASPECT:TYPE|Trained (2 points)	COST:2	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
+	DESC:Mastery of language comes in handy from time to time when manipulating lesser students like yourself. See what I did there? That momentary pause gives a sly person the opening they need to slip in a suggestive comment or a concealed phrase.
+	DESC:&nl; Condition: Any active Mind roll. You must have a common form of communication (i.e. language) between yourself and the opponent or take a half penalty to your own Mind focus dice.
+	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
+	DESC:&nl; Enhanced: If the opposed Mind roll ties your active roll, you are successful.
+	DESC:&nl; Expert: The opponent takes a half penalty to all Sense or Mind focus dice until they succeed on any roll with those dice.
+	DESC:&nl; Trained: You must have spent training points to gain this reaction.
+Daze	ASPECT:TYPE|Trained (3 points)	COST:3	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
+	DESC:&nl; A shot to the head or a jab to the ribs causes the opponent to become woozy and disoriented for a brief moment.
+	DESC:&nl; Condition: Any attack roll.
+	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
+	DESC:&nl; Enhanced: Until the opponent recovers at least 1 point of damage or gains a boost, he takes a half penalty to all Body, Sense, and Mind focus dice.
+	DESC:&nl; Expert: The opponent gains an additional hit penalty to all rolls, even if she's never taken damage, until the end of the scene.
+	DESC:&nl; Trained: You must have spent training points to gain this reaction.
+Disarm	ASPECT:TYPE|Trained (4 points)	COST:4	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
+	DESC:&nl; Weapons complicate close combat and some thugs need to be disarmed or the mark needs to drop an item their holding before you can drop a grenade down their pants.
+	DESC:&nl; Condition: Any melee or ranged attack roll or an active Body roll against an adjacent opponent. When you spend training points to gain this reaction, you must choose which type of attack applies.
+	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
+	DESC:&nl; Enhanced: A solid blow causes the item or weapon to slip loose in the opponent's hand(s). The opponent cannot use a gear's circumstance dice or a weapon's bonus hits in their defense rolls until they regain the Edge.
+	DESC:&nl; Expert: The opponent drops an item or weapon of your choice from their hands and must use a Quick option to pick it up again.
+	DESC:&nl; Trained: You must have spent training points to gain this reaction.
+Pocket Item	ASPECT:TYPE|Trained (2 points)	COST:2	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
+	DESC:&nl; Close contact with an opponent puts you in the perfect position to slip a hand inside a pocket, backpack, or other personal possession and slip out an item or place an item in as long as its no larger than your hand. Applying this reaction negates any potential opposed roll to the effort, but you cannot choose the item you're stealing without facing additional difficulty dice to the effort.
+	DESC:&nl; Condition: Any active Body or Sense roll against an adjacent opponent. The pocketed object must have a Weight of 1 or less; heavier objects require 2 hits per extra Weight of the object. If not enough hits are rolled, the reaction fails and the opponent steals the Edge.
+	DESC:&nl; Level: Enhanced
+	DESC:&nl; Trained: You must have spent training points to gain this reaction.
+Stun	ASPECT:TYPE|Trained (5 points)	COST:5	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.ReactionTrained
+	DESC:&nl; The attack strikes your opponent along a nerve or joint, causing him to stutter and stumble for a while.
+	DESC:&nl; Condition: Any attack roll.
+	DESC:&nl; Level: This reaction works for both Enhanced and Expert reactions.
+	DESC:&nl; Enhanced: Once until the end of the current series, you can steal the Edge from the opponent's Team. This can only be done when the stunned opponent prepares to use an option.
+	DESC:&nl; Expert: The opponent cannot gain the Edge until the start of the next series.
+	DESC:&nl; Trained: You must have spent training points to gain this reaction.
 
+
+
+#Base Reactions - Auto Granted
+Grab	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
+	DESC:&nl; Using your hands or wrapping the full length of your weapon around your opponent's body, you can hold onto them and refuse to let go. Your opponent cannot use Move options and you gain the Restrained modifier against them. You can then force the opponent to move with you by making an opposed Body roll with an Active option, though you are restricted to half the normal speed while holding a grabbed opponent. Your opponent can attempt to break the grab by making an opposed Body roll of their own when they have the Edge.
+	DESC:&nl; Additional Training: Requires 2 additional training points|!PREABILITY:1,CATEGORY=Training Pool,Grab Additional
+	DESC:&nl; Additional Training: You gain +1d20 while unarmed and choose the highest base die rolled against your opponent so long as the Restrained modifier applies.|PREABILITY:1,CATEGORY=Training Pool,Grab Additional
+	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
+	DESC:&nl; Condition: Any dice roll against an adjacent opponent.
+Pass	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
+	DESC:&nl; Beyond simple co-operation between Teammates, the Pass reaction applied to a successful active roll allows you to gang up on an opponent or against difficulty dice. Choose a Teammate; this reaction grants them your bonus option with +1d10. If the Teammate succeeds and gains a bonus option, they can continue to use it for themselves or pass it back to you, but the additional circumstance die only applies to the first roll. If this reaction is gained from a successful opposed or defense roll, you can allow a Teammate to use an automatic option only. In no way shape or form does your Team steal the Edge without the proper number of hits.
+	DESC:&nl; Additional Training: Requires 2 additional training points|!PREABILITY:1,CATEGORY=Training Pool,Pass Additional
+	DESC:&nl; Additional Training: If the Teammate accepting this reaction has spent an additional 2 training points, they can maintain the +1d10 for an additional roll.|PREABILITY:1,CATEGORY=Training Pool,Pass Additional
+	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
+	DESC:&nl; Condition: Any dice roll.
+Push	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
+	DESC:&nl; You drive a massive amount of force into your attack and pummel the opponent backwards. The opponent is no longer adjacent and must use a Move or similar option to become adjacent again.
+	DESC:&nl; Additional Training: Requires 2 additional training points|!PREABILITY:1,CATEGORY=Training Pool,Push Additional
+	DESC:&nl; Additional Training: You can apply this reaction with a ranged attack against distant opponents.|PREABILITY:1,CATEGORY=Training Pool,Push Additional
+	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
+	DESC:&nl; Condition: Any dice roll against an adjacent opponent.
+Trip	ASPECT:TYPE|Base	CATEGORY:Special Ability	TYPE:Reaction.SpecialQuality.AutoReaction
+	DESC:&nl; Your attack drops your opponent to the ground. Your opponent must use a Move option to stand back up and suffers a half penalty to all Body focus dice until they do so.
+	DESC:&nl; Base Reaction: This reaction is available to everyone in Killshot.
+	DESC:&nl; Condition: Any dice roll against an adjacent opponent.
