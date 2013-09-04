@@ -14,7 +14,7 @@ SKILL:Stealth		RANK:10
 SKILL:Swim			RANK:18
 FEAT:Deadly Aim
 FEAT:Weapon Focus (Spear)
-GEAR:Spear			LOCATION:Primary Hand	QTY:1
+GEAR:Spear			LOCATION:Equipped		QTY:1
 GEAR:Spear			LOCATION:Carried		QTY:2
 
 
@@ -53,7 +53,7 @@ FEAT:Power Attack
 FEAT:Run
 FEAT:Self-Sufficient
 FEAT:Weapon Focus(Spear)
-GEAR:Spear			LOCATION:Primary Hand	QTY:1
+GEAR:Spear			LOCATION:Equipped		EQMOD:PLUS1W	
 
 
 STARTPACK:Ahuizotl Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Ahuizotl],[!PRERACE:1,%]	SOURCEPAGE:p.10
@@ -293,6 +293,48 @@ FEAT:Snatch Arrows
 FEAT:Spring Attack
 
 
+STARTPACK:Asura (Asurendra, Death) Default	TYPE:DefaultMonster.Outsider	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Asura (Asurendra, Death)],[!PRERACE:1,%]	SOURCEPAGE:p.24-25
+ALIGN:LE
+RACE:Asura (Asurendra, Death)		!PRERACE:1,%
+NAME:Asurendra Death Asura
+STAT:STR=10|DEX=10|CON=10|INT=11|WIS=11|CHA=11
+SKILL:Acrobatics			RANK:31
+SKILL:Bluff				RANK:33
+SKILL:Climb				RANK:21
+SKILL:Diplomacy			RANK:30
+SKILL:Escape Artist		RANK:14
+SKILL:Fly				RANK:35
+SKILL:Intimidate			RANK:33
+SKILL:Knowledge (Arcana)	RANK:27
+SKILL:Knowledge (History)	RANK:13
+SKILL:Knowledge (Planes)	RANK:30
+SKILL:Knowledge (Religion)	RANK:27
+SKILL:Perception			RANK:34
+SKILL:Perform (Dance)		RANK:33
+SKILL:Sense Motive		RANK:30
+SKILL:Spellcraft			RANK:27
+SKILL:Stealth			RANK:23
+SKILL:Swim				RANK:21
+SKILL:Use Magic Device		RANK:30
+FEAT:Awesome Blow
+FEAT:Cleave
+FEAT:Combat Reflexes
+FEAT:Critical Focus
+FEAT:Deflect Arrows
+FEAT:Dodge
+FEAT:Great Cleave
+FEAT:Improved Bull Rush
+FEAT:Improved Initiative
+FEAT:Lightning Reflexes
+FEAT:Mobility
+FEAT:Power Attack
+FEAT:Quicken Spell-Like Ability ~ Spell (Slay Living)
+FEAT:Quicken Spell-Like Ability ~ Spell (Circle of Death)
+FEAT:Quicken Spell-Like Ability ~ Spell (Death Knell)
+FEAT:Snatch Arrows
+FEAT:Spring Attack
+
+
 STARTPACK:Asura (Tripurasura) Default	TYPE:DefaultMonster.Outsider	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Asura (Tripurasura)],[!PRERACE:1,%]	SOURCEPAGE:p.26
 ALIGN:LE
 RACE:Asura (Tripurasura)		!PRERACE:1,%
@@ -338,9 +380,9 @@ FEAT:Improved Grapple
 FEAT:Mobility
 FEAT:Power Attack
 FEAT:Spring Attack
-GEAR:Kukri				LOCATION:EQUIPPED		QTY:1		EQMOD:MWORKW.AXIOM.UNHOLY
-GEAR:Longword			LOCATION:EQUIPPED		QTY:1		EQMOD:MWORKW.AXIOM.UNHOLY
-GEAR:Spear				LOCATION:EQUIPPED		QTY:1		EQMOD:MWORKW.AXIOM.UNHOLY
+GEAR:Kukri				LOCATION:EQUIPPED		QTY:1		EQMOD:MWORKW
+GEAR:Longword			LOCATION:EQUIPPED		QTY:1		EQMOD:MWORKW
+GEAR:Spear				LOCATION:EQUIPPED		QTY:1		EQMOD:MWORKW
 
 
 STARTPACK:Atomie Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Atomie],[!PRERACE:1,%]	SOURCEPAGE:p.28
@@ -376,9 +418,9 @@ RACE:Axe Beak (Terror Bird)		!PRERACE:1,%
 NAME:Terror Bird
 STAT:STR=10|DEX=11|CON=10|INT=10|WIS=11|CHA=10
 SKILL:Perception				RANK:9
-FEAT:Improved Critical (Bite)
 FEAT:Run
 FEAT:Skill Focus (Perception)
+FEAT:Improved Critical (Bite)
 
 
 STARTPACK:Azruverda Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Azruverda],[!PRERACE:1,%]	SOURCEPAGE:p.30
@@ -491,7 +533,7 @@ FEAT:Precise Shot
 FEAT:Rapid Shot
 FEAT:Shot on the Run
 FEAT:Weapon Focus (Composite Longbow)
-EQUIP:Longbow (Composite)	LOCATION:Equipped		EQMOD:BOWSTR.PLUS1W
+EQUIP:Longbow (Composite +0)	LOCATION:Equipped		EQMOD:BOWSTR.PLUS1W
 
 
 STARTPACK:Behemoth (Tempest) Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Behemoth (Tempest)],[!PRERACE:1,%]	SOURCEPAGE:p.37
@@ -681,6 +723,7 @@ NAME:Caryatid Column
 STAT:STR=10|DEX=11|CON=10|INT=10|WIS=11|CHA=11
 EQUIP:Longsword			LOCATION:Primary Hand	EQUIPMOD:MWORKW
 
+#Catfolk kit not made - playable race
 
 STARTPACK:Caulborn Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Caulborn],[!PRERACE:1,%]	SOURCEPAGE:p.48
 ALIGN:TN
@@ -717,13 +760,13 @@ ALIGN:CN
 RACE:Cecaelia		!PRERACE:1,%
 NAME:Cecaelia
 STAT:STR=10|DEX=11|CON=10|INT=11|WIS=10|CHA=11
-SKILL:Stealth				RANK:13
-SKILL:Survival				RANK:10
-SKILL:Swim					RANK:12
+SKILL:Stealth		RANK:13
+SKILL:Survival		RANK:10
+SKILL:Swim			RANK:12
 FEAT:Combat Reflexes
 FEAT:Weapon Focus (Spear)
 FEAT:Weapon Focus (Tentacles)
-EQUIP:Longsword			LOCATION:Primary Hand	EQUIPMOD:MWORKW
+EQUIP:Spear			LOCATION:Equipped		EQUIPMOD:MWORKW
 
 
 STARTPACK:Ceratioidi Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Ceratioidi],[!PRERACE:1,%]	SOURCEPAGE:p.50
@@ -778,7 +821,7 @@ NAME:Clockwork Goliath
 STAT:STR=11|DEX=10|CON=10|INT=10|WIS=11|CHA=11
 FEAT:Improved Initiative
 FEAT:Lightning Reflexes
-GEAR:Cannon					LOCATION:Primary Hand
+GEAR:Cannon			LOCATION:Equipped
 
 
 STARTPACK:Clockwork Leviathan Default	TYPE:DefaultMonster.Construct	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Clockwork Leviathan],[!PRERACE:1,%]	SOURCEPAGE:p.55
@@ -800,7 +843,22 @@ NAME:Clockwork Servant
 STAT:STR=11|DEX=10|CON=10|INT=10|WIS=11|CHA=11
 FEAT:Improved Initiative
 FEAT:Lightning Reflexes
-GEAR:Net					LOCATION:Equipped
+GEAR:Net			LOCATION:Equipped		QTY:1
+GEAR:Net			LOCATION:Carried		QTY:4
+
+
+STARTPACK:Clockwork Servant (Awakened) Default	TYPE:DefaultMonster.Construct	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Clockwork Servant (Awakened)],[!PRERACE:1,%]	SOURCEPAGE:p.56
+ALIGN:TN
+RACE:Clockwork Servant (Awakened)		!PRERACE:1,%
+NAME:Awakened Clockwork Servant
+STAT:STR=11|DEX=10|CON=10|INT=11|WIS=11|CHA=11
+FEAT:Improved Initiative
+FEAT:Lightning Reflexes
+SKILL:Disable Device	RANK:7
+SKILL:Perception		RANK:2
+FEAT:Skill Focus (Disable Device)
+GEAR:Net			LOCATION:Equipped		QTY:1
+GEAR:Net			LOCATION:Carried		QTY:4
 
 
 STARTPACK:Clockwork Soldier Default	TYPE:DefaultMonster.Construct	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Clockwork Soldier],[!PRERACE:1,%]	SOURCEPAGE:p.57
@@ -846,7 +904,7 @@ FEAT:Spirited Charge
 FEAT:Trample
 FEAT:Weapon Focus (Glaive)
 GEAR:Glaive					LOCATION:Two Hands	EQMOD:PLUS2W.ICY_BRST
-GEAR:Plate Armor				LOCATION:Equipped
+GEAR:Full Plate				LOCATION:Equipped
 
 
 STARTPACK:Crab (Shark-Eating) Default	TYPE:DefaultMonster	VISIBLE:QUALIFY	EQUIPBUY:0	PREMULT:1,[PRERACE:1,Crab (Shark-Eating)],[!PRERACE:1,%]	SOURCEPAGE:p.60
@@ -882,6 +940,6 @@ FEAT:Improved Bull Rush
 FEAT:Iron Will
 FEAT:Power Attack
 FEAT:Staggering Critical
-GEAR:Greatclub				LOCATION:Primary Hand	EQMOD:MWORKW
-GEAR:Rock (Medium)			LOCATION:Carried
-
+GEAR:Greatclub			LOCATION:Primary Hand	EQMOD:MWORKW
+GEAR:Rock (Medium)		LOCATION:Carried
+GEAR:Hide				LOCATION:Equipped
