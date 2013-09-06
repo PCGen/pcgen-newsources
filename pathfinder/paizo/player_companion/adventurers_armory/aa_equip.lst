@@ -3,28 +3,27 @@ SOURCELONG:Adventurer's Armory	SOURCESHORT:PFAA	SOURCEWEB:http://paizo.com/store
 # Original RSRD Entry by: PCGen Data Team
 # Pathfinder RPG Entry by: Jeff Baril, Jonas Karlsson
 
-#The items commented out with a #TODO are generally those that are duplicated in APG, not sure what to do about them.
-
 #Goods and Services
 # Equipment Name					Type							Contains				Cost		Weight	Size		Source Page		Quality and value																			Special Property
-Area Map							TYPE:Goods.General									COST:50	WT:2
-Astrolabe							TYPE:Goods.General									COST:1000	WT:6
-Blanket	TYPE:Goods.General	COST:0.2	WT:1 
-#TODO Backpack (masterwork)	TYPE:Goods.General	COST:50	WT:4 
-#TODOBlock and tackle	TYPE:Goods.General	COST:5	WT:5
-Breakaway chains					TYPE:Goods.General									COST:65	WT:2
-#TODOChest (small)	OUTPUTNAME:Chest, small	TYPE:Goods.General	COST:2	WT:25
-#TODOChest (medium)	OUTPUTNAME:Chest, medium	TYPE:Goods.General	COST:5	WT:50
-#TODOChest (large)	OUTPUTNAME:Chest, large	TYPE:Goods.General	COST:10	WT:100
-#TODOChest (huge)	OUTPUTNAME:Chest, huge	TYPE:Goods.General	COST:25	WT:250
-Collapsible plank					TYPE:Goods.General									COST:0.4	WT:10				SOURCEPAGE:p.6
+Area Map							TYPE:Goods.General									COST:50	WT:2					SOURCEPAGE:p.5	SPROP: if relevant, +1 to Survival/Knowledge (dungeoneering) to navigate.
+Astrolabe							TYPE:Goods.General									COST:1000	WT:6					SOURCEPAGE:p.5	SPROP:Allows to use Int mod instead of Wis on Survival to avoid getting lost.
+Blanket	TYPE:Goods.General	COST:0.2	WT:1 					SOURCEPAGE:p.6
+TODO Backpack (Masterwork)		OUTPUTNAME:Backpack, Masterwork		TYPE:Goods.General.Container.Resizable	CONTAINS:UNLIM|Any		COST:50	WT:4		SOURCEPAGE:p.6	BONUS:VAR|LOADSCORE|1
+Block and Tackle.MOD	SOURCEPAGE:p.6	SPROP:+5 circumstance to lift heavy; takes 1 minute to put into place
+Breakaway Chains					TYPE:Goods.General									COST:65	WT:2	SOURCEPAGE:p.6
+Chest (small)	OUTPUTNAME:Chest, small	TYPE:Goods.General	COST:2	WT:25	SOURCEPAGE:p.6
+Chest (medium)	OUTPUTNAME:Chest, medium	TYPE:Goods.General	COST:5	WT:50	SOURCEPAGE:p.6
+Chest (large)	OUTPUTNAME:Chest, large	TYPE:Goods.General	COST:10	WT:100	SOURCEPAGE:p.6
+Chest (huge)	OUTPUTNAME:Chest, huge	TYPE:Goods.General	COST:25	WT:250	SOURCEPAGE:p.6
+Collapsible Plank					TYPE:Goods.General									COST:0.4	WT:10				SOURCEPAGE:p.6
 Coffin (common)					TYPE:Goods.Container.General			CONTAINS:UNLIM|Any=UNLIM	COST:10	WT:30				SOURCEPAGE:p.6
 Coffin (ornate)					TYPE:Goods.Container.General			CONTAINS:UNLIM|Any=UNLIM	COST:100	WT:50				SOURCEPAGE:p.6
 Key (copy)						TYPE:Goods.General									COST:1	WT:0				SOURCEPAGE:p.6
-Earplugs	TYPE:Goods.General	COST:0.03	WT:0	SOURCEPAGE:p.???
-False-bottomed chest				TYPE:Goods.Container.General								COST:52	WT:25				SOURCEPAGE:p.6
-False-bottomed cup				TYPE:Goods.Container.General								COST:1	WT:0				SOURCEPAGE:p.6
-False-bottomed scabbard				TYPE:Goods.Container.General								COST:45	WT:1				SOURCEPAGE:p.6
+#TODO change earplugs to be a bonus when equipped
+Earplugs	TYPE:Goods.General	COST:0.03	WT:0	SOURCEPAGE:p.6	SPROP:+2 circumstance bonus to saves for effect requiring hearing but −5 on hearing-based Perception checks.
+False-bottomed Chest				TYPE:Goods.Container.General								COST:52	WT:25				SOURCEPAGE:p.6
+False-bottomed Cup				TYPE:Goods.Container.General								COST:1	WT:0				SOURCEPAGE:p.6
+False-bottomed Scabbard				TYPE:Goods.Container.General								COST:45	WT:1				SOURCEPAGE:p.6	CONTAINS:UNLIM|Potion=1
 Manacles (False)					TYPE:Goods.General									COST:65	WT:2				SOURCEPAGE:p.6
 Chair (Folding)					TYPE:Goods.General									COST:2	WT:10				SOURCEPAGE:p.6
 Ladder (Folding)					TYPE:Goods.General									COST:2	WT:16				SOURCEPAGE:p.6
@@ -32,38 +31,54 @@ Arrow (Grappling)					TYPE:Goods.General									COST:1	WT:0.5			SOURCEPAGE:p.7
 Bolt (Grappling)					TYPE:Goods.General									COST:1	WT:0.5			SOURCEPAGE:p.7
 Hammock						TYPE:Goods.General									COST:0.1	WT:3				SOURCEPAGE:p.7
 Fortune-Teller's Deck (Harrow)		TYPE:Goods.General									COST:100	WT:0				SOURCEPAGE:p.7
-Helmet candle					TYPE:Goods.General									COST:2	WT:4				SOURCEPAGE:p.7
-Hollowed pommel					TYPE:Goods.General									COST:5	WT:0				SOURCEPAGE:p.7
+Helmet Candle					TYPE:Goods.General.Container	CONTAINS:UNLIM|Candle=1									COST:2	WT:4				SOURCEPAGE:p.7
+# TODO This probably needs to be an EQMOD on a weapon
+Hollowed Pommel					TYPE:Goods.General									COST:5	WT:0				SOURCEPAGE:p.7
 Hourglass (one hour)				TYPE:Goods.General									COST:25	WT:1				SOURCEPAGE:p.7
 Hourglass (one minute)				TYPE:Goods.General									COST:20	WT:0.5			SOURCEPAGE:p.7
 Hourglass (six seconds)				TYPE:Goods.General									COST:10	WT:0				SOURCEPAGE:p.7
-#TODOIron spike	TYPE:Goods.General	COST:.05	WT:1
-Vial (Iron)						TYPE:Goods.General									COST:0.1	WT:1				SOURCEPAGE:p.7
+Iron spike	TYPE:Goods.General	COST:.05	WT:1	SOURCEPAGE:p.7
+Vial (Iron)						TYPE:Goods.General									COST:0.1	WT:1				SOURCEPAGE:p.7	SPROP:hardness 5, 3 hit points, and break DC 14
+# TODO Change to an EQMOD for Lantern?
 Lantern (Waterproof Bullseye)			TYPE:Goods.General.LightSource							COST:18	WT:3				SOURCEPAGE:p.7	QUALITY:Normal Illumination|60 ft. cone	QUALITY:Increases light level by 1 step|120 ft. cone	QUALITY:Duration|6 hr./pint	SPROP:Normal illumination (60'), plus 1 step (120'), 6 hr./pint
 Lantern (Waterproof Hooded)			TYPE:Goods.General.LightSource							COST:12	WT:2				SOURCEPAGE:p.7	QUALITY:Bright Illumination|30 ft.	QUALITY:Shadowy Illumination|60 ft.	QUALITY:Duration|6 hr./pint					SPROP:Bright illumination (30'), shadowy illumination (60'), 6 hr./pint
-Manacles (Mithral)				TYPE:Goods.General									COST:1000	WT:2				SOURCEPAGE:p.7
-#TODOPaper (sheet)	TYPE:Goods.General	COST:0.4	WT:0
-Powder	TYPE:Goods.General	COST:0.01	WT:0.5
-Prosthetic arm					TYPE:Goods.General									COST:10	WT:3				SOURCEPAGE:p.7
-Prosthetic foot					TYPE:Goods.General									COST:1	WT:2				SOURCEPAGE:p.7
-Prosthetic hand					TYPE:Goods.General									COST:1	WT:1				SOURCEPAGE:p.7
-Prosthetic leg					TYPE:Goods.General									COST:20	WT:6				SOURCEPAGE:p.7
-Pump water canister				TYPE:Goods.General									COST:75	WT:5				SOURCEPAGE:p.7
-#TODORice paper (sheet)	TYPE:Goods.General	COST:0.05	WT:0
-#TODOScroll case	TYPE:Goods.General	COST:1	WT:0.5
-Sextant	TYPE:Goods.General	COST:500	WT:2	SOURCEPAGE:p.???
-Shaving kit						TYPE:Goods.General									COST:1.5	WT:0.5			SOURCEPAGE:p.8
+Magnet	TYPE:Goods.General	COST:0.5	WT:0.5	SOURCEPAGE:p.7
+Marbles	TYPE:Goods.General.Consumable	COST:0.1	WT:2	SOURCEPAGE:p.7	SPROP:DC 10 Reflex to avoid falling unless move at half-speed
+Manacles (Mithral)				TYPE:Goods.General									COST:1000	WT:2				SOURCEPAGE:p.7	SPROP:hardness 15, 30 hit points, and a break DC of 30
+Paper (Sheet)	TYPE:Goods.General	COST:0.4	WT:0				SOURCEPAGE:p.7	SPROP:hardness 0, 1 hit point, and break DC 5
+Perfume/Cologne	TYPE:Goods.General		COST:5	WT:0				SOURCEPAGE:p.7
+Pickle Extractor	TYPE:Goods.General		COST:0.2	WT:2				SOURCEPAGE:p.7
+Pocket Watch	TYPE:Goods.General		COST:250	WT:1				SOURCEPAGE:p.7
+#Poison Pill Ring is an eqmod for rings
+Powder	TYPE:Goods.General	COST:0.01	WT:0.5	SOURCEPAGE:p.7
+Prosthetic Arm					TYPE:Goods.General									COST:10	WT:3				SOURCEPAGE:p.7
+Prosthetic Foot					TYPE:Goods.General									COST:1	WT:2				SOURCEPAGE:p.7
+Prosthetic Hand					TYPE:Goods.General									COST:1	WT:1				SOURCEPAGE:p.7
+Prosthetic Leg					TYPE:Goods.General									COST:20	WT:6				SOURCEPAGE:p.7
+#TODO When full the canister weight is 37 lbs
+Pump Water Canister				TYPE:Goods.General									COST:75	WT:5				SOURCEPAGE:p.7
+Rice Paper (sheet)	TYPE:Goods.General	COST:0.05	WT:0	SOURCEPAGE:p.8	SPROP:hardness 0, 1 hit point, and break DC 2
+Scroll Case	TYPE:Goods.General.Container	COST:1	WT:0.5	SOURCEPAGE:p.8	CONTAINS:UNLIM|Scroll
+#TODO change to a ASPECT/skill bonus
+Sextant	TYPE:Goods.General	COST:500	WT:2	SOURCEPAGE:p.8	SPROP:+4 circumstance to Survival to avoid getting lost
+Shaving kit						TYPE:Goods.General.Rezisable	EQMOD:CHARGED_ITEM_50|CHARGES[50]									COST:1.5	WT:0.5			SOURCEPAGE:p.8
+#TODO Shield Sconce should be an EQMOD for shields
 Shield Sconce					TYPE:Goods.General									COST:1	WT:0.5			SOURCEPAGE:p.8
-Shovel	TYPE:Goods.General	COST:0.02	WT:3	SOURCEPAGE:p.???
-#TODOSignal horn	TYPE:Goods.General	COST:1	WT:2	SOURCEPAGE:p.???
-Skeleton key					TYPE:Goods.General									COST:85	WT:0				SOURCEPAGE:p.8
-Soap	TYPE:Goods.General	COST:0.01	WT:0.5	SOURCEPAGE:p.???
-Spear-thrower					TYPE:Goods.General									COST:1	WT:1				SOURCEPAGE:p.8																						SPROP:Double range of dart, javelin, or shortspear
+Shovel	TYPE:Goods.General	COST:0.02	WT:3	SOURCEPAGE:p.8
+Signal Horn	TYPE:Goods.General	COST:1	WT:2	SOURCEPAGE:p.8
+Skeleton Key					TYPE:Goods.General									COST:85	WT:0				SOURCEPAGE:p.8
+# For some reason this is far cheaper than the soap from Core
+Soap	TYPE:Goods.General	COST:0.01	WT:0.5	SOURCEPAGE:p.8	EQMOD:CHARGED_ITEM_50|CHARGES[50]
+Spear-thrower					TYPE:Goods.General									COST:1	WT:1				SOURCEPAGE:p.8																						SPROP:Double range of dart, javelin, or shortspear. Move action to load.
 Spellbook (Traveling/blank)			TYPE:Goods.Tools.Spellbook								COST:10	WT:1				SOURCEPAGE:p.8
 Stationary						TYPE:Goods.General.Writing.Documents						COST:1	WT:0				SOURCEPAGE:p.8
-Stove can						TYPE:Goods.General									COST:10	WT:1				SOURCEPAGE:p.8
-String or twine (50 feet)			TYPE:Goods.General									COST:0	WT:0.5			SOURCEPAGE:p.8
+Stove Can						TYPE:Goods.General									COST:10	WT:1				SOURCEPAGE:p.8	EQMOD:CHARGED_ITEM_10|CHARGES[10]
+# 2 differents items?
+String (50 feet)			TYPE:Goods.General									COST:0	WT:0.5			SOURCEPAGE:p.8
+Twine (50 feet)			TYPE:Goods.General									COST:0	WT:0.5			SOURCEPAGE:p.8
+#TODO this is supposed to vary by ink/size between 1cp to 10gp per color
 Tattoo						TYPE:Goods.Service									COST:1	WT:0				SOURCEPAGE:p.8
+#TODO: Done up to there VL
 #TODOTent (small 1 person)	TYPE:Goods.General	COST:10	WT:5	SOURCEPAGE:p.???
 #TODOTent (medium 2 people)	TYPE:Goods.General	COST:15	WT:10	SOURCEPAGE:p.???
 #TODOTent (large 4 people)	TYPE:Goods.General	COST:30	WT:20	SOURCEPAGE:p.???
@@ -77,8 +92,11 @@ Weapon Cord	TYPE:Goods.General	COST:0.1	WT:0	SOURCEPAGE:p.???
 Whetstone	TYPE:Goods.General	COST:0.02	WT:1	SOURCEPAGE:p.???
 Whistle	TYPE:Goods.General	COST:0.8	WT:0	SOURCEPAGE:p.???
 #TODOWhistle (silent)	TYPE:Goods.General	COST:0.9	WT:0	SOURCEPAGE:p.???
-Wrist Sheath					TYPE:Goods.General.Container			CONTAINS:UNLIM|Any=UNLIM	COST:1	WT:1				SOURCEPAGE:p.9																						SPROP:Holds 1 forearm-length item or five arrows or bolts. Move action to release 1 or more items. +2 on Sleight of Hand to hide items in sheath. Can wear one wrist sheath per arm.
-Wrist Sheath (Spring Loaded)	OUTPUTNAME:Wrist Sheath, Spring Loaded		TYPE:Goods.General.Container			CONTAINS:UNLIM|Any=UNLIM	COST:5	WT:1				SOURCEPAGE:p.9																						SPROP:As Wrist Sheath, but swift action to release items. Full-round action to insert item.
+
+#TODO I don't see a way to limit the character to (number of arms) wrist sheats. Maybe add a specific EQSLOT?
+#TODO No way to limit correctly the item either. Let’s limit to the bigger number of item, 5 arrows/bolts
+Wrist Sheath					TYPE:Goods.General.Container			CONTAINS:UNLIM|Any=5	COST:1	WT:1				SOURCEPAGE:p.9																						SPROP:Holds 1 forearm-length item or five arrows or bolts. Move action to release 1 or more items (provokes as normal). +2 on Sleight of Hand to hide items in sheath. Can wear one wrist sheath per arm.
+Wrist Sheath (Spring Loaded)	OUTPUTNAME:Wrist Sheath, Spring Loaded		TYPE:Goods.General.Container			CONTAINS:UNLIM|Any=5	COST:5	WT:1				SOURCEPAGE:p.9																						SPROP:Holds 1 forearm-length item or five arrows or bolts. Swift action to release 1 or more items (provokes as normal). +2 on Sleight of Hand to hide items in sheath. Can wear one wrist sheath per arm. Full-round action to insert item.
 
 #Special Substances and Items
 Alchemical Grease	TYPE:Goods.Alchemical.Consumable	COST:5	WT:1	SOURCEPAGE:p.???
