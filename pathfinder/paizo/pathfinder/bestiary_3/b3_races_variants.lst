@@ -1,7 +1,7 @@
 
 #VARIANT BANDERSNATCHES - Though no bandersnatch is ordinary, some are rarer than others. The most famous is the frumious bandersnatch, brimming with rage so fierce it burns. Variant bandersnatches may combine two or more of the abilities below.
 
-No Variant					COST:0	KEY:Variant Bandersnatch ~ None	CATEGORY:Special Ability	TYPE:VariantBandersnatch
+No Variant					COST:0				KEY:Variant Bandersnatch ~ None					CATEGORY:Special Ability	TYPE:VariantBandersnatch
 Confounding Bandersnatch (+1 CR)	COST:0	BONUS:MISC|CR|1	KEY:Variant Bandersnatch ~ Confounding	SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:VariantBandersnatch.RacialAbility.SpecialQuality	DESC:Confounding bandersnatches drip infectious madness from their quills and Claws.	ABILITY:Special Ability|AUTOMATIC|Poison ~ Confounding Bandersnatch
 Frumious Bandersnatch (+2 CR)		COST:0	BONUS:MISC|CR|2	KEY:Variant Bandersnatch ~ Frumious		SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:VariantBandersnatch.RacialAbility.SpecialQuality	DESC:A frumious bandersnatch seethes with barely repressed rage and anger. If it misses with its Bite attack or falls below half of its hit points, it succumbs to such uncontrollable fury that it bursts into flame. While engulfed in these flames, a frumious bandersnatch is affected as by a haste spell (this effect cannot be dispelled) and causes an additional 2d6 points of fire damage with each of its melee attacks and its quill defense ability. The fury lasts for 5 rounds, after which the bandersnatch cannot enter a fury again for another 5 rounds.  frumious bandersnatch has fire resistance 30.	ABILITY:Special Ability|AUTOMATIC|Resistance to Fire	BONUS:VAR|FireResistanceBonus|30
 Lesser Bandersnatch (-4 CR)		COST:0	BONUS:MISC|CR|-4	KEY:Variant Bandersnatch ~ Lesser		SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:VariantBandersnatch.RacialAbility.SpecialQuality	DESC:Smaller or younger bandersnatches are still fearsome predators in their own right. A lesser bandersnatch is Huge, with 4 fewer Hit Dice than a typical bandersnatch. Reduce its physical ability scores by 4 each and its Wisdom and Charisma by 2 each. A lesser bandersnatch lacks quick recovery and deals 1d8+4 points of damage with its quill defense and pain abilities. Lesser bandersnatches never have any additional variant powers.
@@ -15,80 +15,148 @@ Poison	KEY:Poison ~ Confounding Bandersnatch				SOURCEPAGE:p.	CATEGORY:Special A
 #BOG NIXIES - In some lands, nixies are evil creatures who lead folk to drown in their waters, either by captivating their targets with song or by assuming the form of an animal or humanoid and tricking a hunter or explorer into dangerous waters. These evil nixies prefer dwelling in festering swamps or blighted fens, and are typically known as bog nixies. The fact that a bog nixie can grant minor wishes, ironically, only increases their opportunities for evil, as brave or foolish explorers deliberately seek them out. A bog nixie is a neutral evil nixie with the advanced creature template who has the following additional powers. A bog nixie's CR is +2 higher than a normal nixie's.
 
 Bog Nixie	CATEGORY:Internal	BONUS:MISC|CR|2	ABILITY:Special Ability|AUTOMATIC|TYPE=BogNixieRacialAbility
+#
 Captivating Song	KEY:Captivating Song ~ Bog Nixie	SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:RacialAbility.BogNixieRacialAbility.SpecialQuality.Supernatural	DESC:This works like the harpy ability of the same name. The save DC is Charisma-based.
-Change Shape		KEY:Change Shape ~ Bog Nixie	SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:RacialAbility.BogNixieRacialAbility.SpecialQuality.Supernatural	DESC:This works as polymorph, and allows the bog nixie to assume the form of any size Small or Medium aquatic animal or humanoid.
-Minor Wish		KEY:Minor Wish ~ Bog Nixie	SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:RacialAbility.BogNixieRacialAbility.SpecialQuality.SpellLike	DESC:Once per day, a bog nixie can create a magical effect in exchange for a gift or service from a humanoid. The power of this "wish" is no greater than what can be done with a 3rd-level spell.
+Change Shape	KEY:Change Shape ~ Bog Nixie		SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:RacialAbility.BogNixieRacialAbility.SpecialQuality.Supernatural	DESC:This works as polymorph, and allows the bog nixie to assume the form of any size Small or Medium aquatic animal or humanoid.
+Minor Wish		KEY:Minor Wish ~ Bog Nixie		SOURCEPAGE:p.	CATEGORY:Special Ability	TYPE:RacialAbility.BogNixieRacialAbility.SpecialQuality.SpellLike	DESC:Once per day, a bog nixie can create a magical effect in exchange for a gift or service from a humanoid. The power of this "wish" is no greater than what can be done with a 3rd-level spell.
 
 
 
 
 
 
-Common Anemone	KEY:Sea Anemone (Common)	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
+Common anemone
+	SIZE:T
+	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
 	CR:1/4
 	KIT:1|TN
 	SIZE:T
 	RACETYPE:Vermin
 	RACESUBTYPE:Aquatic
 	VISION:Blindsight (30')
-	BONUS:COMBAT|AC|3|TYPE=NaturalArmor
 	MONSTERCLASS:Vermin:1
 	MOVE:Walk,5
-	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,2d6
-	FACE:10
-	REACH:10
-	BONUS:STAT|STR|2
-	BONUS:STAT|DEX|4
-	BONUS:STAT|CON|8
+	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,1d2	BONUS:WEAPONPROF=Tentacle|TOHIT|-5	BONUS:WEAPONPROF=Tentacle|DAMAGE|-(STR/2)
+	FACE:0
+	REACH:0
+	BONUS:STAT|STR|-10
+	BONUS:STAT|DEX|10
+	BONUS:STAT|CON|-4
 	BONUS:STAT|INT|0
 	BONUS:STAT|WIS|0
 	BONUS:STAT|CHA|-8
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ Giant Sea Anemone
 	BONUS:SKILL|Stealth|8|TYPE=Racial
-
-Species
-	CR:Size HD
-Common anemone 1/4
-	SIZE:T
-	MONSTERCLASS::1d8
-Bluehair anemone 1/2
+Bluehair anemone
 	SIZE:S
-	2d8
-Coffin anemone 1
-	SIZE:M
-	3d8
-Darkforest anemone 6
-	SIZE:H
-	9d8
-Siren's bed anemone 9
-	SIZE:G
-	14d8
-Deep tiger anemone 13
-	SIZE:C
-	19d8
-
-
-Giant Sea Anemone	KEY:Sea Anemone (Giant)	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
-	CR:2
+	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
+	CR:1/2
 	KIT:1|TN
-	SIZE:L
 	RACETYPE:Vermin
 	RACESUBTYPE:Aquatic
 	VISION:Blindsight (30')
-	BONUS:COMBAT|AC|3|TYPE=NaturalArmor
-	MONSTERCLASS:Vermin:4
+	MONSTERCLASS:Vermin:2
 	MOVE:Walk,5
-	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,2d6
-	FACE:10
-	REACH:10
-	BONUS:STAT|STR|2
-	BONUS:STAT|DEX|4
-	BONUS:STAT|CON|8
+	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,1d3	BONUS:WEAPONPROF=Tentacle|TOHIT|-5	BONUS:WEAPONPROF=Tentacle|DAMAGE|-(STR/2)
+	FACE:5
+	REACH:5
+	BONUS:STAT|STR|-6
+	BONUS:STAT|DEX|8
+	BONUS:STAT|CON|0
 	BONUS:STAT|INT|0
 	BONUS:STAT|WIS|0
 	BONUS:STAT|CHA|-8
 	ABILITY:Internal|AUTOMATIC|Default Traits ~ Giant Sea Anemone
 	BONUS:SKILL|Stealth|8|TYPE=Racial
+Coffin anemone
+	SIZE:M
+	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
+	CR:1
+	KIT:1|TN
+	RACETYPE:Vermin
+	RACESUBTYPE:Aquatic
+	VISION:Blindsight (30')
+	MONSTERCLASS:Vermin:3
+	MOVE:Walk,5
+	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,1d4	BONUS:WEAPONPROF=Tentacle|TOHIT|-5	BONUS:WEAPONPROF=Tentacle|DAMAGE|-(STR/2)
+	FACE:5
+	REACH:5
+	BONUS:STAT|STR|-2
+	BONUS:STAT|DEX|6
+	BONUS:STAT|CON|4
+	BONUS:STAT|INT|0
+	BONUS:STAT|WIS|0
+	BONUS:STAT|CHA|-8
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Giant Sea Anemone
+	BONUS:SKILL|Stealth|8|TYPE=Racial
+Darkforest anemone
+	SIZE:H
+	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
+	CR:6
+	KIT:1|TN
+	RACETYPE:Vermin
+	RACESUBTYPE:Aquatic
+	VISION:Blindsight (30')
+	BONUS:COMBAT|AC|6|TYPE=NaturalArmor
+	MONSTERCLASS:Vermin:1
+	MOVE:Walk,5
+	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,1d8	BONUS:WEAPONPROF=Tentacle|TOHIT|-5	BONUS:WEAPONPROF=Tentacle|DAMAGE|-(STR/2)
+	FACE:15
+	REACH:15
+	BONUS:STAT|STR|6
+	BONUS:STAT|DEX|2
+	BONUS:STAT|CON|12
+	BONUS:STAT|INT|0
+	BONUS:STAT|WIS|0
+	BONUS:STAT|CHA|-8
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Giant Sea Anemone
+	BONUS:SKILL|Stealth|8|TYPE=Racial
+Siren's bed anemone
+	SIZE:G
+	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
+	CR:9
+	KIT:1|TN
+	RACETYPE:Vermin
+	RACESUBTYPE:Aquatic
+	VISION:Blindsight (30')
+	BONUS:COMBAT|AC|9|TYPE=NaturalArmor
+	MONSTERCLASS:Vermin:14
+	MOVE:Walk,5
+	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,2d6	BONUS:WEAPONPROF=Tentacle|TOHIT|-5	BONUS:WEAPONPROF=Tentacle|DAMAGE|-(STR/2)
+	FACE:20
+	REACH:20
+	BONUS:STAT|STR|10
+	BONUS:STAT|DEX|0
+	BONUS:STAT|CON|16
+	BONUS:STAT|INT|0
+	BONUS:STAT|WIS|0
+	BONUS:STAT|CHA|-8
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Giant Sea Anemone
+	BONUS:SKILL|Stealth|8|TYPE=Racial
+Deep tiger anemone
+	SIZE:C
+	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
+	CR:13
+	KIT:1|TN
+	RACETYPE:Vermin
+	RACESUBTYPE:Aquatic
+	VISION:Blindsight (30')
+	BONUS:COMBAT|AC|12|TYPE=NaturalArmor
+	MONSTERCLASS:Vermin:19
+	MOVE:Walk,5
+	NATURALATTACKS:Tentacles,Natural.Melee.Weapon,*1,2d8	BONUS:WEAPONPROF=Tentacle|TOHIT|-5	BONUS:WEAPONPROF=Tentacle|DAMAGE|-(STR/2)
+	FACE:25
+	REACH:25
+	BONUS:STAT|STR|14
+	BONUS:STAT|DEX|-2
+	BONUS:STAT|CON|20
+	BONUS:STAT|INT|0
+	BONUS:STAT|WIS|0
+	BONUS:STAT|CHA|-8
+	ABILITY:Internal|AUTOMATIC|Default Traits ~ Giant Sea Anemone
+	BONUS:SKILL|Stealth|8|TYPE=Racial
+
+
 
 Giant Sea Anemone	KEY:Sea Anemone (Giant)	SORTKEY:Sea Anemone	SOURCEPAGE:p.237
 	CR:2
