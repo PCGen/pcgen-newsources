@@ -5,7 +5,7 @@ SOURCELONG:Ultimate Equipment	SOURCESHORT:PFUE	SOURCEWEB:http://paizo.com/produc
 
 ###Block: Conditional skills (for output only)
 Survival (Navigate)			KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Survival (Navigate).MISC"),var("SKILL.Survival.MISC")
-Knowledge (Dungeoneering, Navigate)			KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Knowledge (Dungeoneering, Navigate).MISC"),var("SKILL.Knowledge (Dungeoneering).MISC")
+Knowledge (Dungeoneering (Navigate))			KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Knowledge (Dungeoneering, Navigate).MISC"),var("SKILL.Knowledge (Dungeoneering).MISC")
 Diplomacy (City Officials)		KEYSTAT:CHA	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Diplomacy (City Officials).MISC"),var("SKILL.Diplomacy.MISC")
 Linguistics (Forgery)	KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Linguistics (Forgery).MISC"),var("SKILL.Linguistics.MISC")
 Conceal (Identity)		KEYSTAT:DEX	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Conceal (Identity).MISC"),var("SKILL.Conceal.MISC")
@@ -18,16 +18,16 @@ Survival (Tracking)			KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISI
 Linguistics (Identify Forgery)	KEYSTAT:INT	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Linguistics (Identify Forgery).MISC"),var("SKILL.Linguistics.MISC")
 Perception (Spot Traps)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Perception (Spot Traps).MISC"),var("SKILL.Perception.MISC")
 Disable Device (Magical Traps)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Disable Device (Magical Traps).MISC"),var("SKILL.Disable Device.MISC")
-Bluff (Lie)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Lie).MISC"),var("SKILL.Bluff).MISC")
-Bluff (Feint)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Feint).MISC"),var("SKILL.Bluff).MISC")
-Bluff (Pass Hidden Message)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Pass Hidden Message).MISC"),var("SKILL.Bluff).MISC")
-Bluff (Imitate Voice)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Imitate Voice).MISC"),var("SKILL.Bluff).MISC")
+Bluff (Lie)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Lie).MISC"),var("SKILL.Bluff.MISC")
+Bluff (Feint)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Feint).MISC"),var("SKILL.Bluff.MISC")
+Bluff (Pass Hidden Message)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Pass Hidden Message).MISC"),var("SKILL.Bluff.MISC")
+Bluff (Imitate Voice)		KEYSTAT:WIS	USEUNTRAINED:NO	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT												PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (Imitate Voice).MISC"),var("SKILL.Bluff.MISC")
 
 
 ###Block: Skill .MODs
 
 Survival.MOD				BONUS:SKILL|Survival (Navigate)|var("SKILL.Survival.MISC")						BONUS:SKILLRANK|Survival (Navigate)|skillinfo("TOTALRANK","Survival")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Survival (Navigate).MISC"),var("SKILL.Survival.MISC")
-Knowledge (Dungeoneering).MOD				BONUS:SKILL|Knowledge (Dungeoneering, Navigate)|var("SKILL.Knowledge (Dungeoneering).MISC")						BONUS:SKILLRANK|Knowledge (Dungeoneering, Navigate)|skillinfo("TOTALRANK","Knowledge (Dungeoneering)")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Knowledge (Dungeoneering, Navigate).MISC"),var("SKILL.Knowledge (Dungeoneering).MISC")
+Knowledge (Dungeoneering).MOD				BONUS:SKILL|Knowledge (Dungeoneering (Navigate))|var("SKILL.Knowledge (Dungeoneering).MISC")						BONUS:SKILLRANK|Knowledge (Dungeoneering, Navigate)|skillinfo("TOTALRANK","Knowledge (Dungeoneering)")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Knowledge (Dungeoneering, Navigate).MISC"),var("SKILL.Knowledge (Dungeoneering).MISC")
 Diplomacy.MOD				BONUS:SKILL|Diplomacy (City Officials)|var("SKILL.Diplomacy.MISC")						BONUS:SKILLRANK|Diplomacy (City Officials)|skillinfo("TOTALRANK","Diplomacy")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Diplomacy (City Officials).MISC"),var("SKILL.Diplomacy.MISC")
 Linguistics.MOD				BONUS:SKILL|Linguistics (Forgery)|var("SKILL.Linguistics.MISC")						BONUS:SKILLRANK|Linguistics (Forgery)|skillinfo("TOTALRANK","Linguistics")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Linguistics (Forgery).MISC"),var("SKILL.Linguistics.MISC")
 Bluff.MOD				BONUS:SKILL|Bluff (Conceal Identity)|var("SKILL.Bluff.MISC")						BONUS:SKILLRANK|Bluff (Conceal Identity)|skillinfo("TOTALRANK","Bluff")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Bluff (Conceal Identity).MISC"),var("SKILL.Bluff.MISC")
