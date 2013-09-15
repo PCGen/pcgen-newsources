@@ -3,10 +3,6 @@ SOURCELONG:Ultimate Equipment	SOURCESHORT:PFUE	SOURCEWEB:http://paizo.com/produc
 # Pathfinder RPG Entry by: Scott Meyer
 
 ########## START BLOCK ##########
-##### The commented out section below replaces each class kit.  This method works, I've tested it under 6.01.05
-##### If this method is preferred, then simply delete the individual class kits and uncomment this block out.
-##### Two Things to make note of:  1) I've recently updated the Bard in the Core Rules to pop up select a perfomance type and if an instrument is required, to grant it - Will double up instrument choices on bard's instrument
-##### 2) This is a Paizo error, the Weight of individual class kits is NOT the same as if each individual item was bought - this is brought up on their forums, not sure if it's been addressed yet.
 
 ##### JD Comment: While this works fine if you want the kit for your class, it stops a player from being able to buy a kit 
 ##### for a different class. This is particularly important if later sources introduce new base classes. Also, when a player 
@@ -15,73 +11,60 @@ SOURCELONG:Ultimate Equipment	SOURCESHORT:PFUE	SOURCEWEB:http://paizo.com/produc
 
 ##### On #2 above, see http://paizo.com/threads/rzs2pks3?Ultimate-Equipment-Class-Kits-vs-Piecemeal  --- looks like they won't be being changed.
 
+#### Digging further into things, I didn't know that each class kit had a different cost associated with it, so yea, my '1 class kit to rule them all' idea won't work.
+#### However, the block below is for the Bard... It cleans it up so you don't have 16 different kits.  1 'main' Bard's kit that fires off a template chooser for the user to
+#### choose whether to randomly get an instrument or to let them decide which instrument.
+
+#### Thanks for adding TOTALCOST!!!  And yea, the weight thing is annoying, but nothing we can do about it.
+
 ####Condensed into 1 block - W. Robert 'Mynex' Reed
-#
-#STARTPACK:Class Kit	TOTALCOST:100	APPLY:INSTANT
-#GEAR:Alchemy Crafting Kit	LOCATION:Carried	QTY:1		SIZE:PC	PRECLASS:1,Alchemist
-#GEAR:Backpack			LOCATION:Carried	QTY:1		SIZE:PC
-#GEAR:Bedroll			LOCATION:Backpack	QTY:1		SIZE:PC	!PRECLASS:1,Barbarian,Druid,Monk
-#GEAR:Bit and Bridle					QTY:1		SIZE:PC	PRECLASS:1,Cavalier
-#GEAR:Blanket			LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Barbarian,Druid,Monk
-#GEAR:Caltrops			LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Rogue
-#GEAR:Candle				LOCATION:Backpack	QTY:10	SIZE:PC	PRECLASS:1,Cleric,Inquisitor,Oracle,Witch
-#GEAR:Chalk (1 Piece)		LOCATION:Backpack	QTY:10	SIZE:PC	PRECLASS:1,Rogue,Witch
-#GEAR:Feed (Per Day)					QTY:5		SIZE:PC	PRECLASS:1,Cavalier,Druid
-#GEAR:Flint and Steel		LOCATION:Backpack	QTY:1		SIZE:PC	!PRECLASS:1,Monk
-#GEAR:Grappling Hook		LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Rogue
-#GEAR:Gunsmith's Kit		LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Gunslinger
-#GEAR:Holly and Mistletoe	LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Druid
-#GEAR:Holy Symbol (Wooden)	LOCATION:Carried	QTY:1		SIZE:PC	PRECLASS:1,Cleric,Inquisitor,Paladin
-#GEAR:Holy Text (Cheap)		LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Cleric,Cleric,Inquisitor,Paladin
-#GEAR:Ink (1 oz Vial)		LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Alchemist,Bard,Magus,Witch,Wizard
-#GEAR:Inkpen				LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Alchemist,Bard,Magus,Witch,Wizard
-#GEAR:Journal			LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Bard
-#GEAR:Manacles (Medium)		LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Inquisitor
-#GEAR:Mess Kit			LOCATION:Backpack	QTY:1		SIZE:PC	!PRECLASS:1,Barbarian,Monk
-#GEAR:Mirror (Small/Steel)	LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Bard,Rogue
-#GEAR:Piton				LOCATION:Backpack	QTY:1		SIZE:PC	PRECLASS:1,Rogue
-#GEAR:Pot (Iron)			LOCATION:Backpack	QTY:1		SIZE:PC	!PRECLASS:1,Monk
-#GEAR:Pouch (Belt)			LOCATION:Carried	QTY:1		SIZE:PC
-#GEAR:Powder Horn			LOCATION:Carried	QTY:1		SIZE:PC	PRECLASS:1,Gunslinger
-#GEAR:Rations (Trail/Per Day)	LOCATION:Backpack	QTY:5		SIZE:PC
-#GEAR:Rope (Hemp/50 ft)		LOCATION:Backpack	QTY:1		SIZE:PC	!PRECLASS:1,Sorcerer,Witch
-#GEAR:Saddle (Riding)					QTY:1		SIZE:PC	PRECLASS:1,Cavalier
-#GEAR:Saddlebags						QTY:1		SIZE:PC	PRECLASS:1,Cavalier
-#GEAR:Soap (per lb)		LOCATION:Backpack	QTY:1		SIZE:PC	!PRECLASS:1,Gunslinger,Sorcer,Witch
-#GEAR:Spell Component Pouch	LOCATION:Carried	QTY:1		SIZE:PC	PRECLASS:1,Cleric,Druid,Inquisitor,Magus,Witch,Wizard
-#GEAR:Thieves' Tools		LOCATION:Carried	QTY:1		SIZE:PC	PRECLASS:1,Rogue
-#GEAR:Torch				LOCATION:Backpack	QTY:10	SIZE:PC
-#GEAR:Waterskin			LOCATION:Backpack	QTY:1		SIZE:PC
 #
 ####If you want the bard's instrument to be part of the 'Class' kit, then add the following line to the 'Class' kit above
 ##TEMPLATE:Bard Instrument Choice
 ####Then add the following lines to the templates file
-##Bard Instrument Choice		VISIBLE:NO		TEMPLATE:CHOOSE:Bard's Instrument (Choose)|Bard's Instrument (Random)
-##Bard's Instrument (Choose)		KIT:1|Bard's Instrument (Choose)	
-##Bard's Instrument (Random)		KIT:1|Bard's Instrument (Random)	
-####Add VISBLE:NO to the Bard Instrument Choices below if this method is used
+##Bard Instrument		VISIBLE:NO		TEMPLATE:CHOOSE:Bard's Instrument (Choose)|Bard's Instrument (Random)
+##Bard's Instrument (Choose)		VISIBLE:NO		KIT:1|Bard's Instrument (Choose)	
+##Bard's Instrument (Random)		VISIBLE:NO		KIT:1|Bard's Instrument (Random)	
 #
-#STARTPACK:Bard's Instrument (Choose)	TOTALCOST:100	APPLY:INSTANT
-#GEAR:TYPE=Goods.Instrument	LOCATION:Carried	QTY:1	SIZE:PC
+#STARTPACK:Bard's Kit		TOTALCOST:41		APPLY:INSTANT
+#GEAR:Backpack		LOCATION:Carried		QTY:1		SIZE:PC
+#GEAR:Bedroll		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Pouch (Belt)				QTY:1		SIZE:PC
+#GEAR:Flint and Steel		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Ink (1 oz Vial)		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Inkpen		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Pot (Iron)		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Journal		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Mess Kit		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Mirror (Small/Steel)		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Rope (Hemp/50 ft)		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Soap (per lb)		LOCATION:Backpack		QTY:1		SIZE:PC
+#GEAR:Torch			LOCATION:Backpack		QTY:10		SIZE:PC
+#GEAR:Rations (Trail/Per Day)		LOCATION:Backpack		QTY:5		SIZE:PC
+#GEAR:Waterskin		LOCATION:Backpack		QTY:1		SIZE:PC
+##TEMPLATE:Bard's Instrument
 #
-#STARTPACK:Bard's Instrument (Random)	TOTALCOST:0	APPLY:INSTANT
+#STARTPACK:Bard's Instrument (Choose)	APPLY:INSTANT	TOTALCOST:0	VISIBLE:NO
+#GEAR:TYPE=Goods.Instrument	QTY:1	SIZE:PC	LOCATION:Carried
+#
+#STARTPACK:Bard's Instrument (Random)	APPLY:INSTANT	TOTALCOST:0	VISIBLE:NO
 #SELECT:roll("1d15")
-#GEAR:Musical Instrument (Harpsichord)	LOCATION:Carried	QTY:1	SIZE:PC	OPTION:1
-#GEAR:Musical Instrument (Piano)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:2
-#GEAR:Musical Instrument (Pipe Organ)	LOCATION:Carried	QTY:1	SIZE:PC	OPTION:3
-#GEAR:Musical Instrument (Bells)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:4
-#GEAR:Musical Instrument (Chimes)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:5
-#GEAR:Musical Instrument (Drums)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:6
-#GEAR:Musical Instrument (Gong)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:7
-#GEAR:Musical Instrument (Fiddle)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:8
-#GEAR:Musical Instrument (Harp)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:9
-#GEAR:Musical Instrument (Lute)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:10
-#GEAR:Musical Instrument (Mandolin)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:11
-#GEAR:Musical Instrument (Flute)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:12
-#GEAR:Musical Instrument (Pan Pipes)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:13
-#GEAR:Musical Instrument (Recorder)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:14
-#GEAR:Musical Instrument (Trumpet)		LOCATION:Carried	QTY:1	SIZE:PC	OPTION:15
-
+#GEAR:Musical Instrument (Harpsichord)	QTY:1	SIZE:PC	LOCATION:Carried	OPTION:1
+#GEAR:Musical Instrument (Piano)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:2
+#GEAR:Musical Instrument (Pipe Organ)	QTY:1	SIZE:PC	LOCATION:Carried	OPTION:3
+#GEAR:Musical Instrument (Bells)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:4
+#GEAR:Musical Instrument (Chimes)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:5
+#GEAR:Musical Instrument (Drums)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:6
+#GEAR:Musical Instrument (Gong)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:7
+#GEAR:Musical Instrument (Fiddle)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:8
+#GEAR:Musical Instrument (Harp)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:9
+#GEAR:Musical Instrument (Lute)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:10
+#GEAR:Musical Instrument (Mandolin)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:11
+#GEAR:Musical Instrument (Flute)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:12
+#GEAR:Musical Instrument (Pan Pipes)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:13
+#GEAR:Musical Instrument (Recorder)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:14
+#GEAR:Musical Instrument (Trumpet)		QTY:1	SIZE:PC	LOCATION:Carried	OPTION:15
+#
 ########## END BLOCK ##########
 
 
