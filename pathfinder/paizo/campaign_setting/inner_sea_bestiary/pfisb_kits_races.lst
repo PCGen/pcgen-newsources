@@ -86,8 +86,8 @@ STARTPACK:Cayhound Default		EQUIPBUY:0		TYPE:DefaultMonster.Outsider		VISIBLE:QU
 ALIGN:CG
 RACE:Cayhound		!PRERACE:1,%
 NAME:Cayhound
-SKILL:Acrobatics		RANK:6
-SKILL:Intimidate		RANK:5
+SKILL:Acrobatics		RANK:5
+SKILL:Intimidate		RANK:2
 SKILL:Knowledge (Planes)		RANK:4
 SKILL:Perception		RANK:6
 SKILL:Sense Motive		RANK:4
@@ -335,22 +335,21 @@ GENDER:Female
 NAME:Female Lashunta Wizard
 CLASS:Wizard		LEVEL:1
 ABILITY:CATEGORY=Favored Class|Wizard
-ABILITY:CATEGORY=Favored Class Bonus|Bonus Hit Point
-ABILITY:CATEGORY=Special Ability|Universal School
-ABILITY:CATEGORY=Special Ability|Arcane Bond ~ Bonded Object
+ABILITY:CATEGORY=Favored Class Bonus|Bonus Skill Point (Use Magic Device)
+ABILITY:CATEGORY=Arcane Bond|Arcane Bond ~ Bonded Object
+ABILITY:CATEGORY=Lashunta Knowledge Bonus|Knowledge Bonus ~ Lashunta (Knowledge (Arcana))
 LANGBONUS:Celestial|Draconic|Common
 SKILL:Diplomacy		RANK:1
 SKILL:Handle Animal		RANK:1
 SKILL:Knowledge (Arcana)		RANK:1
 SKILL:Perception		RANK:1
 SKILL:Spellcraft		RANK:1
-SKILL:Use Magic Device		RANK:1
 FEAT:Toughness
 STAT:STR=8|DEX=13|CON=10|INT=15|WIS=12|CHA=14
-GEAR:Crossbow (Light)		QTY:1		SIZE:PC		LOCATION:Carried
-GEAR:Bolt (Crossbow)		QTY:20		SIZE:PC		LOCATION:Crossbow (Light)
-GEAR:Quarterstaff		QTY:1		SIZE:PC		LOCATION:Primary Hand
-GEAR:Amulet		QTY:1		SIZE:PC		LOCATION:Amulet
+GEAR:Crossbow (Light)		QTY:1		SIZE:PC
+GEAR:Bolt (Crossbow)		QTY:20		SIZE:PC
+GEAR:Quarterstaff		EQMOD:MWORKW		QTY:1		SIZE:PC		LOCATION:Primary Hand
+GEAR:Amulet		QTY:1		SIZE:PC		LOCATION:Equipped
 SPELLS:SPELLBOOK=Known Spells|CLASS=Wizard|Charm Person|Mage Armor|Magic Missile
 SPELLS:SPELLBOOK=Prepared Spells|CLASS=Wizard|Charm Person|Mage Armor|Magic Missile|Acid Splash|Detect Magic|Flare|Read Magic
 
@@ -416,15 +415,15 @@ CLASS:Fighter		LEVEL:2
 TEMPLATE:Mana Wastes Mutant
 ABILITY:CATEGORY=Favored Class|Fighter
 ABILITY:CATEGORY=Favored Class Bonus|Bonus Hit Point
-ABILITY:CATEGORY=Fighter Bonus Feat|Cleave
-ABILITY:CATEGORY=Fighter Bonus Feat|Weapon Focus (Longsword)
-ABILITY:CATEGORY=Mutant Deformity|Deformed Arm
-ABILITY:CATEGORY=Mutant Special Ability|Disease
+ABILITY:CATEGORY=Mutant Deformity|Deformed Arm ~ Mana Wastes Mutant
+ABILITY:CATEGORY=Mutant Special Ability|Disease ~ Mana Wastes Mutant
 SKILL:Perception		RANK:4
-SKILL:Stealth		RANK:4
-SKILL:Survival		RANK:4
+SKILL:Stealth		RANK:3
+SKILL:Survival		RANK:2
 FEAT:Iron Will
 FEAT:Power Attack
+ABILITY:CATEGORY=Fighter Bonus Feat|Cleave
+ABILITY:CATEGORY=Fighter Bonus Feat|Weapon Focus (Longsword)
 STAT:STR=9|DEX=14|CON=13|INT=12|WIS=15|CHA=10
 GEAR:Breastplate		EQMOD:MWORKA		QTY:1		SIZE:PC		LOCATION:Equipped
 GEAR:Longsword		EQMOD:MWORKW		QTY:1		SIZE:PC		LOCATION:Primary Hand
@@ -861,6 +860,7 @@ FEAT:Lightning Reflexes
 FEAT:Quicken Spell
 FEAT:Quicken Spell-Like Ability ~ Spell (Dominate Person)		FREE:YES
 STAT:STR=10|DEX=10|CON=11|INT=11|WIS=11|CHA=10
+SPELLS:SPELLBOOK=Known Spells|CLASS=Sorcerer|Arcane Mark|Dancing Lights|Daze|Detect Magic|Ghost Sound|Mage Hand|Message|Read Magic|Touch of Fatigue|Charm Person|Comprehend Languages|Erase|Ray of Enfeeblement|Silent Image|Blindness/Deafness|Invisibility|Levitate|Symbol of Mirroring|Touch of Idiocy|Clairaudience/Clairvoyance|Explosive Runes|Hold Person|Secret Page|Dimension Door|Phantasmal Killer|Symbol of Slowing|Symbol of Pain|Symbol of Persuasion
 
 STARTPACK:Vespergaunt Default		EQUIPBUY:0		TYPE:DefaultMonster.Ooze		VISIBLE:QUALIFY		PREMULT:1,[PRERACE:1,Vespergaunt],[!PRERACE:1,%]		SOURCEPAGE:p.58
 ALIGN:NE
