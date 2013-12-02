@@ -9,6 +9,8 @@ SOURCELONG:Advanced Class Guide Playtest	SOURCESHORT:ACGP	SOURCEWEB:http://paizo
 ###Block: Favored Classes
 # Ability Name	Category of Ability		Type			Visible		Stackable?	Multiple?	Bonus to Ability Pool
 Bloodrager		CATEGORY:Special Ability	TYPE:FavoredClass	VISIBLE:DISPLAY	STACK:NO	MULT:NO	BONUS:ABILITYPOOL|Favored Class Bonus|var("CL=Bloodrager")
+Investigator		CATEGORY:Special Ability	TYPE:FavoredClass	VISIBLE:DISPLAY	STACK:NO	MULT:NO	BONUS:ABILITYPOOL|Favored Class Bonus|var("CL=Investigator")
+Hunter		CATEGORY:Special Ability	TYPE:FavoredClass	VISIBLE:DISPLAY	STACK:NO	MULT:NO	BONUS:ABILITYPOOL|Favored Class Bonus|var("CL=Hunter")
 
 ###Block: Class Skills
 # Ability Name			Unique Key				Category of Ability	Class Skill
@@ -177,6 +179,41 @@ Ghost Strike		KEY:Ghost Strike ~ Undead Bloodrager		CATEGORY:Special Ability	TYP
 Frightful Strike		KEY:Frightful Strike ~ Undead Bloodrager		CATEGORY:Special Ability	TYPE:BloodragerClassAbility.SpecialAttack.Supernatural							DESC:As a swift action once per bloodrage, you can empower your melee attacks with fear. For 1 round, creatures you hit with your melee attacks become shaken. Creatures who are already shaken become frightened, though this does not stack with the frightful charger ability.	DESC:Creatures who are already frightened become panicked.|PREVARGTEQ:BloodlineLVL,16	DESC:This is a mind- affecting fear effect.
 Incorporeal Bloodrager	KEY:Incorporeal Bloodrager ~ Undead Bloodrager	CATEGORY:Special Ability	TYPE:BloodragerClassAbility.SpecialQuality.Supernatural							DESC:Once per day you can choose to become incorporeal. You only take half damage from corporeal sources as long as they are magic (you take no damage from non-magic weapons and objects). Your attacks deal normal damage due to your ghost strike bloodrage power.
 One Foot in the Grave	KEY:One Foot in the Grave ~ Undead Bloodrager	CATEGORY:Special Ability	TYPE:BloodragerClassAbility.SpecialQuality.Extraordinary							DESC:You gain immunity to cold, nonlethal damage, paralysis, and sleep. Your DR increases to 8/-. Unintelligent undead don't notice you unless you attack them. You receive a +4 morale bonus on saving throws made against spells and spell-like abilities cast by undead.																																				ABILITY:Special Ability|AUTOMATIC|Immunity to Cold|Immunity to Nonlethal Damage|Immunity to Paralysis|Immunity to Sleep	BONUS:DR|-|3											ASPECT:SaveBonus|+4 morale against spells and spell-like abilities cast by undead
+
+
+Weapon and Armor Proficiency	KEY:Weapon and Armor Proficiency ~ Investigator	CATEGORY:Special Ability	TYPE:HunterClassAbility.SpecialQuality	DESC:Investigators are proficient with simple weapons, plus the hand crossbow, rapier, sap, shortbow, short sword, and sword cane. They are proficient in light armors, but not shields.	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Auto|Weapon Prof ~ Simple	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight	AUTO:WEAPONPROF|Crossbow (Hand)|Rapier|Sap|Shortbow|Sword (Short)|Sword Cane
+
+Inspiration	KEY:Inspiration ~ Investigator	CATEGORY:Special Ability	TYPE:InvestigatorClassAbility.SpecialQuality.Extraordinary	DESC:You have %1 points in your inspiration pool. You can do cool stuff with it.|InvestigatorLVL/2+INT	SOURCEPAGE:p.19
+
+Investigator Talents		CATEGORY:Special Ability	TYPE:Internal.RogueClassAbility						VISIBLE:NO	DEFINE:InvestigatorTalentLVL|0																																																			BONUS:ABILITYPOOL|Investigator Talent|(InvestigatorTalentLVL-1)/2
+
+# Among many talents, let’s make one
+Amazing Inspiration						CATEGORY:Special Ability	TYPE:InvestigatorClassAbility.SpecialQuality.Extraordinary.InvestigatorTalent															PREVARGTEQ:InvestigatorTalentLVL,7								DESC:You roll d8 instead of d6 for inspiration.																																									SOURCEPAGE:p.19
+
+###Block: Class Skills
+# Ability Name			Unique Key				Category of Ability	Class Skill
+Hunter Core Class Skills	KEY:Class Skills ~ Hunter	CATEGORY:Internal		CSKILL:Climb|TYPE=Craft|Handle Animal|Heal|Intimidate|Knowledge (Dungeoneering)|Knowledge (Geography)|Knowledge (Nature)|Perception|TYPE=Profession|Ride|Spellcraft|Stealth|Survival|Swim
+
+###Block: Weapon and Armor Proficiencies
+# Ability Name			Unique Key							Category of Ability		Type								Description																																																																																														Ability
+Weapon and Armor Proficiency	KEY:Weapon and Armor Proficiency ~ Hunter	CATEGORY:Special Ability	TYPE:HunterClassAbility.SpecialQuality	DESC:Hunters are proficient with all simple weapons plus the longbow, scimitar, scythe, and shortbow. Hunters are prof icient with light and medium armor but are prohibited from wearing heavy armor. Hunters are prof icient with shields (except tower shields), but must use only those crafted from wood. A hunter who wears prohibited armor or uses a prohibited shield is unable to cast hunter spells or use any of her supernatural or spell-like class abilities while doing so and for 24 hours thereafter.	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Auto|Weapon Prof ~ Simple	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium	AUTO:WEAPONPROF|Longbow|Shortbow|Scimitar|Scythe
+
+###Block: Druid Abilities
+# Ability Name		Unique Key					Category of Ability		Type								Description																																						Bonus to skill					Class Skill																								Source Page		Aspects
+
+# Ability Name		Unique Key					Category of Ability		Type									Description																																						Bonus to skill					Source Page		Aspects
+Orisons			KEY:Orisons ~ Hunter			CATEGORY:Special Ability	TYPE:HunterClassAbility.SpecialQuality			DESC:You can prepare a number of orisons, or 0-level spells. These spells are cast like any other spells, but they are not expended when used and may be used again.																			SOURCEPAGE:p.??
+Animal Focus			KEY:Animal Focus ~ Hunter			CATEGORY:Special Ability	TYPE:HunterClassAbility.SpecialQuality.Supernatural			DESC:You can take on the aspect of an animal as a swift action, gaining a bonus or special ability based on the type of animal emulated (her animal companion also gains this benefit).																			SOURCEPAGE:p.??
+Hunter Tactics		KEY:Hunter Tactics ~ Hunter		CATEGORY:Special Ability	TYPE:HunterClassAbility.SpecialQuality.Extraordinary			DESC:AC has same teamwork feat as you. Need to satisfy positionning to use.																			SOURCEPAGE:p.??
+
+#Nature Sense								CATEGORY:Special Ability	TYPE:DruidClassAbility.SpecialQuality.Extraordinary	DESC:You gain a +2 bonus on Knowledge (Nature) and Survival skill checks.																											BONUS:SKILL|Knowledge (Nature),Survival|2	SOURCEPAGE:p.50
+# Wild Empathy is included in pathfinder_rpg_core_rulebook_abilities_class_common.lst file
+# Woodland Stride is included in pathfinder_rpg_core_rulebook_abilities_class_common.lst file
+#Trackless Step								CATEGORY:Special Ability	TYPE:DruidClassAbility.SpecialQuality.Extraordinary	DESC:You leave no trail in natural surroundings and cannot be tracked. You may choose to leave a trail if so desired.																											SOURCEPAGE:p.51
+
+###Block: Nature's Bond
+# Ability Name			Unique Key						Category of Ability		Type														Visible		Required Var. value			Define																																		Description																			Ability																																					Bonus to Ability Pool			Modify VAR																																										Allow Follower			Allowed Companions						Class Skill				Source Page		List of Class Spells by Level
+Animal Companion			KEY:Animal Companion ~ Hunter	CATEGORY:Special Ability	TYPE:HunterClassAbility.SpecialQuality.Extraordinary.NatureBond.HunterAnimalCompanion										DEFINE:AnimalCompanionLVL|0																																																			ABILITY:Internal|AUTOMATIC|Animal Companion ~ Base|!PREABILITY:1,CATEGORY=Special Ability,TYPE.NatureBondAnimalCompanion,TYPE.NaturesBondAnimalCompanion																																																																																	SOURCEPAGE:p.51
 
 #
 # End

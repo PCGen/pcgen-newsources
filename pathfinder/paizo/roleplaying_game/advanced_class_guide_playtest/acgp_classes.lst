@@ -64,6 +64,124 @@ CLASS:Sorcerer.MOD	TYPE:Sorcerer
 # Class Name		Multiple Requirements
 CLASS:Sorcerer.MOD	PREMULT:1,[PRECLASS:1,Sorcerer],[!PRECLASS:1,TYPE=Sorcerer]
 
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
+CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+CLASS:Investigator	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Alchemist,TYPE=Rogue]
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Investigator	STARTSKILLPTS:6	CSKILL:Acrobatics|Appraise|Bluff|Climb|TYPE=Craft|Diplomacy|Disable Device|Disguise|Escape Artist|Heal|Intimidate|TYPE=Knowledge|Perception|TYPE=Perform|TYPE=Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Use Magic Device
+# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
+CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Investigator|CL	SPELLLIST:1|Alchemist
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Investigator|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1																	AUTO:FEAT|Armor Proficiency (Light)
+###Block: Alchemist Book
+1	ABILITY:Internal|AUTOMATIC|Free Formula Book|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Investigator=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Investigator=1]]
+###Block: Vars
+1	BONUS:VAR|AlchemistAlchemyLVL|CL	BONUS:VAR|TrapfindingLVL|CL
+3	BONUS:VAR|InvestigatorTalentLVL|CL
+3	BONUS:VAR|RogueTrapSenseLVL|CL
+4	BONUS:VAR|RogueSneakAttackLVL|CL-3
+###Block: Class Abilities
+1	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemy ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorAlchemy
+1	ABILITY:Investigator Class Ability|AUTOMATIC|Inspiration ~ Investigator|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorInspiration
+1	ABILITY:Rogue Class Ability|AUTOMATIC|Trapfinding|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorTrapfinding
+2	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Resistance ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance
+2	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Use ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonUse
+3	ABILITY:Rogue Class Ability|AUTOMATIC|Trap Sense ~ Rogue|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTrapSense
+3	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTalents
+4	ABILITY:Alchemist Class Ability|AUTOMATIC|Swift Alchemy ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSwiftAlchemy
+4	ABILITY:Rogue Class Ability|AUTOMATIC|Sneak Attack|Sneak Attack ~ Rogue|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSneakAttack
+5	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Resistance 4 ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance4
+8	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Resistance 6 ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance6
+10	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Immunity ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonImmunity
+###Block: Spellcasting
+1	CAST:0,1
+2	CAST:0,2
+3	CAST:0,3
+4	CAST:0,3,1
+5	CAST:0,4,2
+6	CAST:0,4,3
+7	CAST:0,4,3,1
+8	CAST:0,4,4,2
+9	CAST:0,5,4,3
+10	CAST:0,5,4,3,1
+11	CAST:0,5,4,4,2
+12	CAST:0,5,5,4,3
+13	CAST:0,5,5,4,3,1
+14	CAST:0,5,5,4,4,2
+15	CAST:0,5,5,5,4,3
+16	CAST:0,5,5,5,4,3,1
+17	CAST:0,5,5,5,4,4,2
+18	CAST:0,5,5,5,5,4,3
+19	CAST:0,5,5,5,5,5,4
+20	CAST:0,5,5,5,5,5,5
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Bonus Languages	Ability																	Define			Automatically Gained Language	Save checks bonus											Combat bonus					Monster Role
+CLASS:Hunter		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Class Skills ~ Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL				BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
+# Class Name	Required AL
+CLASS:Hunter		PREALIGN:NG,LN,TN,CN,NE
+CLASS:Hunter	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Druid,TYPE=Ranger]
+# Class Name	Skill Pts/Lvl
+CLASS:Hunter		STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
+CLASS:Hunter		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Hunter|CL	SPELLLIST:1|Druid
+###Block:Proficiencies
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Proficiencies ~ Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
+###Block: Spell Alignment Restrictions
+1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+###Block: Level Progression Abilities
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Orisons ~ Hunter
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Animal Companion ~ Hunter
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Animal Focus ~ Hunter
+2	ABILITY:Hunter Class Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
+2	ABILITY:Hunter Class Ability|AUTOMATIC|Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
+3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
+3	ABILITY:Hunter Class Ability|AUTOMATIC|Teamwork Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
+3	BONUS:ABILITYPOOL|Teamwork Feat|CL/3
+5	ABILITY:Hunter Class Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
+20	ABILITY:Hunter Class Ability|AUTOMATIC|Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
+###Block: Vars
+1	BONUS:VAR|AnimalCompanionLVL|CL|PREABILITY:1,CATEGORY=Special Ability,TYPE.HunterAnimalCompanion
+1	BONUS:VAR|WildEmpathyLVL|CL
+###Block: Level progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,3
+4	CAST:4,3,1
+5	CAST:4,4,2
+6	CAST:5,4,3
+7	CAST:5,4,3,1
+8	CAST:5,4,4,2
+9	CAST:5,5,4,3
+10	CAST:5,5,4,3,1
+11	CAST:5,5,4,4,2
+12	CAST:5,5,5,4,3
+13	CAST:5,5,5,4,3,1
+14	CAST:5,5,5,4,4,2
+15	CAST:5,5,5,5,4,3
+16	CAST:5,5,5,5,4,3,1
+17	CAST:5,5,5,5,4,4,2
+18	CAST:5,5,5,5,5,4,3
+19	CAST:5,5,5,5,5,4,4
+20	CAST:5,5,5,5,5,4,5
+
+
+# Class Name		Type
+CLASS:Druid.MOD	TYPE:Druid
+# Class Name		Multiple Requirements
+CLASS:Druid.MOD	PREMULT:1,[PRECLASS:1,Druid],[!PRECLASS:1,TYPE=Druid]
+
+# Class Name		Type
+CLASS:Ranger.MOD	TYPE:Ranger
+# Class Name		Multiple Requirements
+CLASS:Ranger.MOD	PREMULT:1,[PRECLASS:1,Ranger],[!PRECLASS:1,TYPE=Ranger]
+
 #
 # End
 #
