@@ -1,5 +1,5 @@
-# CVS $Revision: 12957 $ $Author: jbaril $ -- Wed Nov 20 12:03:49 2013 -- reformated by prettylst.pl v1.50 (build 21703)
-SOURCELONG:Advanced Class Guide Playtest	SOURCESHORT:ACGP	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2013-11
+# CVS $Revision: 12957 $ $Author: jbaril $ -- Tue Dec 10 13:08:21 2013 -- reformated by prettylst.pl v1.50 (build 21703)
+SOURCELONG:Advanced Class Guide Playtest	SOURCESHORT:ACGP	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2013-12
 # Original Entry by: Stefan Radermacher
 
 # Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
@@ -9,14 +9,13 @@ CLASS:Bloodrager	PREMULT:1,[PRECLASS:1,Bloodrager],[!PRECLASS:1,TYPE=Barbarian,T
 # Class Name	Skill Pts/Lvl
 CLASS:Bloodrager	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level								Use Spell List
-CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bloodrager|CL-3|PRECLASS:1,Bloodrager=4	SPELLLIST:1|Magus
+CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bloodrager|CL-3|PRECLASS:1,Bloodrager=4	SPELLLIST:1|Bloodrager
 ###Block:Proficiencies
 1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies
-###Block:Proficiencies
 ###Block: Bloodline
-1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager Bloodline
+1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodline ~ Bloodrager
 ###Block: Variable Progression
 1	BONUS:VAR|RageLVL|CL
 2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE
@@ -24,15 +23,17 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 5	BONUS:VAR|UncannyDodgeLevel|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerImprovedUncannyDodge
 7	BONUS:VAR|BloodragerDRLVL|CL
 ###Block: Level Progression
-1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodrage
+1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrage ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodrage
 1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Fast Movement ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerFastMovement
 2	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
+3	ABILITY:Bloodrager Class Ability|AUTOMATIC|Blood Sanctuary ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodSanctuary
 4	ABILITY:Bloodrager Class Ability|AUTOMATIC|Blood Casting ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodCasting
+4	ABILITY:Bloodrager Class Ability|AUTOMATIC|Eschew Materials ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerEschewMaterials
 7	ABILITY:Bloodrager Class Ability|AUTOMATIC|Damage Reduction ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerDamageReduction
-11	ABILITY:Bloodrager Class Ability|AUTOMATIC|Greater Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerGreaterBloodrage
+11	ABILITY:Bloodrager Class Ability|AUTOMATIC|Greater Bloodrage ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerGreaterBloodrage
 14	ABILITY:Bloodrager Class Ability|AUTOMATIC|Indomitable Will ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerIndomitableWill
-17	ABILITY:Bloodrager Class Ability|AUTOMATIC|Tireless Rage ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerTirelessRage
-20	ABILITY:Bloodrager Class Ability|AUTOMATIC|Mighty Rage ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerMightyRage
+17	ABILITY:Bloodrager Class Ability|AUTOMATIC|Tireless Bloodrage ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerTirelessBloodrage
+20	ABILITY:Bloodrager Class Ability|AUTOMATIC|Mighty Bloodrage ~ Bloodrager|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerMightyBloodrage
 ###Block: Spell Level progression
 4	CAST:0,1		KNOWN:0,2
 5	CAST:0,1		KNOWN:0,3
@@ -65,16 +66,17 @@ CLASS:Sorcerer.MOD	TYPE:Sorcerer
 CLASS:Sorcerer.MOD	PREMULT:1,[PRECLASS:1,Sorcerer],[!PRECLASS:1,TYPE=Sorcerer]
 
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define			Save checks bonus											Combat bonus
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
 CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+# Class Name		Multiple Requirements
 CLASS:Investigator	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Alchemist,TYPE=Rogue]
-# Class Name	Skill Pts/Lvl	Class Skill
+# Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Investigator	STARTSKILLPTS:6	CSKILL:Acrobatics|Appraise|Bluff|Climb|TYPE=Craft|Diplomacy|Disable Device|Disguise|Escape Artist|Heal|Intimidate|TYPE=Knowledge|Perception|TYPE=Perform|TYPE=Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Use Magic Device
-# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level
+# Class Name		Spell Stat		Spell Type		Memorize		Spellbook		Caster level				Use Spell List
 CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Investigator|CL	SPELLLIST:1|Alchemist
 ###Block: Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Investigator|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Light)
+1																			AUTO:FEAT|Armor Proficiency (Light)
 ###Block: Alchemist Book
 1	ABILITY:Internal|AUTOMATIC|Free Formula Book|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Investigator=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Investigator=1]]
 ###Block: Vars
@@ -117,15 +119,14 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 19	CAST:0,5,5,5,5,5,4
 20	CAST:0,5,5,5,5,5,5
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Bonus Languages	Ability																	Define			Automatically Gained Language	Save checks bonus											Combat bonus					Monster Role
-CLASS:Hunter		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Class Skills ~ Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL				BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
-# Class Name	Required AL
-CLASS:Hunter		PREALIGN:NG,LN,TN,CN,NE
-CLASS:Hunter	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Druid,TYPE=Ranger]
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
+CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Class Skills ~ Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
+# Class Name	Required AL			Multiple Requirements
+CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Druid,TYPE=Ranger]
 # Class Name	Skill Pts/Lvl
-CLASS:Hunter		STARTSKILLPTS:4
-# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
-CLASS:Hunter		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Hunter|CL	SPELLLIST:1|Druid
+CLASS:Hunter	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level			Use Spell List
+CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Hunter|CL	SPELLLIST:1|Druid
 ###Block:Proficiencies
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies
@@ -136,16 +137,16 @@ CLASS:Hunter		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2
 1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
 ###Block: Level Progression Abilities
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Orisons ~ Hunter
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Animal Companion ~ Hunter
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Animal Focus ~ Hunter
-2	ABILITY:Hunter Class Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
-2	ABILITY:Hunter Class Ability|AUTOMATIC|Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
-3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
-3	ABILITY:Hunter Class Ability|AUTOMATIC|Teamwork Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
+1								ABILITY:Hunter Class Ability|AUTOMATIC|Orisons ~ Hunter
+1								ABILITY:Hunter Class Ability|AUTOMATIC|Animal Companion ~ Hunter
+1								ABILITY:Hunter Class Ability|AUTOMATIC|Animal Focus ~ Hunter
+2								ABILITY:Hunter Class Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
+2								ABILITY:Hunter Class Ability|AUTOMATIC|Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
+3								ABILITY:Hunter Class Ability|AUTOMATIC|Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
+3								ABILITY:Hunter Class Ability|AUTOMATIC|Teamwork Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
 3	BONUS:ABILITYPOOL|Teamwork Feat|CL/3
-5	ABILITY:Hunter Class Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
-20	ABILITY:Hunter Class Ability|AUTOMATIC|Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
+5								ABILITY:Hunter Class Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
+20								ABILITY:Hunter Class Ability|AUTOMATIC|Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
 ###Block: Vars
 1	BONUS:VAR|AnimalCompanionLVL|CL|PREABILITY:1,CATEGORY=Special Ability,TYPE.HunterAnimalCompanion
 1	BONUS:VAR|WildEmpathyLVL|CL
@@ -172,14 +173,14 @@ CLASS:Hunter		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2
 20	CAST:5,5,5,5,5,4,5
 
 
-# Class Name		Type
+# Class Name	Type
 CLASS:Druid.MOD	TYPE:Druid
-# Class Name		Multiple Requirements
+# Class Name	Multiple Requirements
 CLASS:Druid.MOD	PREMULT:1,[PRECLASS:1,Druid],[!PRECLASS:1,TYPE=Druid]
 
-# Class Name		Type
+# Class Name	Type
 CLASS:Ranger.MOD	TYPE:Ranger
-# Class Name		Multiple Requirements
+# Class Name	Multiple Requirements
 CLASS:Ranger.MOD	PREMULT:1,[PRECLASS:1,Ranger],[!PRECLASS:1,TYPE=Ranger]
 
 #
