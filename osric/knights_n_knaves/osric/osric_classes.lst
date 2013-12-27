@@ -4,8 +4,7 @@ SOURCELONG:OSRIC - Old School Reference & Index Compilation		SOURCESHORT:OSRIC	S
 #TODO: Restrict Con Bonus to only certain levels. Likely best method to add it to each class instead of global like a regular d20 game
 
 ###Block: Assassin ------------------------------------------------------------------------------------------------------------
-CLASS:Assassin	PRESTAT:5,STR=12,DEX=12,CON=6,INT=11,WIS=6	PREALIGN:LE,NE,CE	MAXLEVEL:15
-1:REPEATLEVEL:1|SKIP=0|MAX=15	HITDIE:6
+CLASS:Assassin	HD:6	PRESTAT:5,STR=12,DEX=12,CON=6,INT=11,WIS=6	PREALIGN:LE,NE,CE	MAXLEVEL:15
 1	AUTO:ARMORPROF|Leather|Studded Leather	AUTO:SHIELDPROF|Shield
 1	BONUS:ABILITYPOOL|Weapon Proficiencies|3
 4:REPEATLEVEL:4|SKIP=0|MAX=15		BONUS:ABILITYPOOL|Weapon Proficiencies|1
@@ -16,6 +15,24 @@ CLASS:Assassin	PRESTAT:5,STR=12,DEX=12,CON=6,INT=11,WIS=6	PREALIGN:LE,NE,CE	MAXL
 5	BONUS:COMBAT|BAB|1	BONUS:VAR|BackstabMultBonus|1
 9	BONUS:COMBAT|BAB|3	BONUS:VAR|BackstabMultBonus|1
 13	BONUS:COMBAT|BAB|2	BONUS:VAR|BackstabMultBonus|1
+###Block: Level Limiters
+1	PREVARGTEQ:AssassinMaxLVL,1
+2	PREVARGTEQ:AssassinMaxLVL,2
+3	PREVARGTEQ:AssassinMaxLVL,3
+4	PREVARGTEQ:AssassinMaxLVL,4
+5	PREVARGTEQ:AssassinMaxLVL,5
+6	PREVARGTEQ:AssassinMaxLVL,6
+7	PREVARGTEQ:AssassinMaxLVL,7
+8	PREVARGTEQ:AssassinMaxLVL,8
+9	PREVARGTEQ:AssassinMaxLVL,9
+10	PREVARGTEQ:AssassinMaxLVL,10
+11	PREVARGTEQ:AssassinMaxLVL,11
+12	PREVARGTEQ:AssassinMaxLVL,12
+13	PREVARGTEQ:AssassinMaxLVL,13
+14	PREVARGTEQ:AssassinMaxLVL,14
+15	PREVARGTEQ:AssassinMaxLVL,15
+
+
 
 ###Block: Cleric ------------------------------------------------------------------------------------------------------------
 
@@ -77,14 +94,16 @@ CLASS:Thief
 
 
 ###Block: Multiclassing
-CLASS:Cleric_Assassin	
-CLASS:Cleric_Fighter
-CLASS:Cleric_Thief
-CLASS:Cleric_Ranger
-CLASS:Cleric_Magic User
-CLASS:Fighter_Assassin
-CLASS:Fighter_Thief
-CLASS:Fighter_Magic User
-CLASS:Magic User_Thief
-CLASS:Cleric_Fighter_Magic User
-CLASS:Fighter_Magic User_Thief
+CLASS:Cleric/Assassin	
+CLASS:Cleric/Fighter
+CLASS:Cleric/Thief
+CLASS:Cleric/Ranger
+CLASS:Cleric/Magic User
+CLASS:Fighter/Assassin
+CLASS:Fighter/Thief
+CLASS:Fighter/Magic User
+CLASS:Magic User/Thief
+CLASS:Cleric/Fighter/Magic User
+CLASS:Fighter/Magic User/Thief
+
+
