@@ -1,5 +1,6 @@
 SOURCELONG:Shattered star Player's Guide	SOURCESHORT:SSPG	SOURCEWEB:http://paizo.com/products/btpy8txj?Pathfinder-Adventure-Path-Shattered-Star-Players-Guide		SOURCEDATE:2012-08
 # Original Entry by: Eric C Smith (Maredudd)
+# Orginal Entry on: 9/19/2013
 
 ###Block: Campaign Traits
 # Ability Name				Category of Ability		Type						Multiple Requirements																					Description																																																																																																																																																																												Multiple?	Choose									Ability								Save checks bonus				Bonus to skill									Modify VAR									Class Skill			Apply Kit				Source Page		Aspects																				More language
@@ -14,6 +15,38 @@ Monument Scholar				CATEGORY:Special Ability	TYPE:Trait.CampaignTrait		PREMULT:1
 Nontraditional Native (Varisian)	NAMEISPI:YES		CATEGORY:Special Ability	TYPE:Trait.CampaignTrait		PRERACE:1,RACESUBTYPE=Varisian		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Nontraditional Native],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CampaignTrait]			SOURCEPAGE:p.4		DESC:You gain a +1 trait bonus on Knowledge (geography) checks made relating to Varisia and gain a +1 trait bonus on damage rolls made during the surprise round when youUre wielding a bladed scarf or starknife.
 
 Nontraditional Native (Shoant)		NAMEISPI:YES		CATEGORY:Special Ability	TYPE:Trait.CampaignTrait		PRERACE:1,RACESUBTYPE=Shoanti		PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Nontraditional Native],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CampaignTrait]			SOURCEPAGE:p.4		DESC:You gain a +1 trait bonus on Survival checks made while in Varisia and gain a +1 trait bonus on rolls to confirm critical hits made using an earth breaker or a klar.
+
+
+Ruin Raider
+CATEGORY:Special Ability
+TYPE:Trait.CampaignTrait
+PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Ruin Raider],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CampaignTrait]
+DESC:While the mercantile industries of Magnimar appeal to your keen eye for monetary gain, you know that the boldest route to true fortune lies in hunting down rare relics and selling them to the highest bidder.
+SOURCEPAGE:p.5
+BENEFIT:You gain a +1 trait bonus on Appraise checks. Additionally, you gain a +4 bonus on Perception checks made to distinguish statue-like creatures from actual sculptures.
+BONUS:SKILL|Appraise|1|TYPE=Trait
+BONUS:SKILL|Perception (Distinguishing Statue-Like Creatures)|4
+
+Serpent Runner
+CATEGORY:Special Ability
+TYPE:Trait.CampaignTrait
+PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Serpent Runner],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CampaignTrait]
+DESC:
+SOURCEPAGE:p.5
+BENEFIT:You’ve participated in the mock
+gladiatorial battles and athletic feats at the Serpent’s
+Run, Magnimar’s grand hippodrome, but the safe
+nature of those games leaves you bored. Seeking greater
+thrills and tests of your abilities, you’ve pledged your
+arms and skill to the local Pathfinder lodge. Choose one
+of the following benefits to represent the techniques you
+learned from your time at the Serpent's Run: Choose a
+specific type of armor. When wearing armor of that type,
+you treat its armor check penalty as if it were –1 lower.
+When fighting with two weapons, the penalty imposed on
+your primary weapon is reduced by 1. You gain a +2 trait
+bonus on Intimidate checks to demoralize opponents.
+
 
 ###Block: Combat Traits
 # Ability Name					Category of Ability			Type					Multiple Requirements																															Source Page			Description																																																																																																																																																																												Multiple?	Choose									Ability								Save checks bonus				Bonus to skill									Modify VAR									Class Skill			Apply Kit				Source Page		Aspects																				More language
@@ -51,27 +84,44 @@ courage class ability grants an additional +1 trait bonus on saving throws again
 
 ###Block: Magic Traits
 # Ability Name					Category of Ability			Type					Multiple Requirements																															Source Page			Description																																																																																																																																																																												Multiple?	Choose									Ability								Save checks bonus				Bonus to skill									Modify VAR									Class Skill			Apply Kit				Source Page		Aspects																				More language
-Beast of the Society			CATEGORY:Special Ability	TYPE:Trait.MagicTrait	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Beast of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MagicTrait]					SOURCEPAGE:p.5		DESC:
-A druid at the Grand Lodge revealed to you secrets changing your form into 
+Beast of the Society
+CATEGORY:Special Ability
+TYPE:Trait.MagicTrait
+PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Beast of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MagicTrait]
+DESC:
+SOURCEPAGE:p.5
+BENEFIT:A druid at the Grand Lodge revealed to you secrets changing your form into 
 that of an animal. Whenever you use your wild shape class ability to turn 
 yourself into a Small or Medium animal, the effect lasts for 2 hours per druid level instead of 1 hour per druid level.
 
-Greater Adept of the Society	CATEGORY:Special Ability	TYPE:Trait.MagicTrait	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Greater Adept of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MagicTrait]			SOURCEPAGE:p.5		DESC:
-Months of meditation and practice with the greatest spellcasters of the 
-Society have given you an increased capacity for arcane knowledge. You gain one additional 0-level spell slot.
+Greater Adept of the Society
+CATEGORY:Special Ability
+TYPE:Trait.MagicTrait
+PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Greater Adept of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MagicTrait]
+DESC:Months of meditation and practice with the greatest spellcasters of the  Society have given you an increased capacity for arcane knowledge.
+SOURCEPAGE:p.5
+BENEFIT:You gain one additional 0-level spell slot.
+BONUS:SPELLCAST|TYPE=Arcane;LEVEL=0|1|PRESPELLCAST:TYPE=Arcane
+BONUS:SPELLCAST|TYPE=Divine;LEVEL=0|1|PRESPELLCAST:TYPE=Divine
 
-Havoc of the Society			CATEGORY:Special Ability	TYPE:Trait.MagicTrait	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Havoc of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MagicTrait]					SOURCEPAGE:p.5		DESC:
-Through countless hours studying vast libraries of arcane power, you have 
-learned how to cause greater damage to your foes. Whenever you cast a spell 
-that deals damage, you gain a +1 trait bonus to the total damage dealt. 
-This damage is considered force damage regardless of the type of damage dealt by the spell.
+Havoc of the Society
+CATEGORY:Special Ability
+TYPE:Trait.MagicTrait
+PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Havoc of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.MagicTrait]
+DESC:Through countless hours studying vast libraries of arcane power, you have learned how to cause greater damage to your foes.
+SOURCEPAGE:p.5
+BENEFIT:Whenever you cast a spell that deals damage, you gain a +1 trait bonus to the total damage dealt. This damage is considered force damage regardless of the type of damage dealt by the spell.
 
 ###Block: Social Traits
 # Ability Name					Category of Ability			Type					Multiple Requirements																															Source Page			Description																																																																																																																																																																												Multiple?	Choose									Ability								Save checks bonus				Bonus to skill									Modify VAR									Class Skill			Apply Kit				Source Page		Aspects																				More language
-Maestro of the Society			CATEGORY:Special Ability	TYPE:Trait.SocialTrait	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Maestro of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SocialTrait]				SOURCEPAGE:p.5		DESC:
-The skills of GolarionUs greatest musicians are at your fingertips, thanks 
-to the vast treasure trove of musical knowledge in the vaults beneath the 
-Grand Lodge in Absalom. Studying this knowledge gives you the ability to use your bardic performance an additional 3 rounds per day.
+Maestro of the Society
+CATEGORY:Special Ability
+TYPE:Trait.SocialTrait
+PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Maestro of the Society],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.SocialTrait]
+DESC:The skills of Golarion's greatest musicians are at your fingertips.
+SOURCEPAGE:p.5
+BENEFIT:You use your bardic performance an additional 3 rounds per day.
+BONUS:VAR|BardicPerformanceDuration|3
 
 
 ##
