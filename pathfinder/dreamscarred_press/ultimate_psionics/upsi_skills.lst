@@ -1,0 +1,10 @@
+SOURCELONG:Ultimate Psionics	SOURCESHORT:UPsi	SOURCEWEB:http://dreamscarredpress.com/dragonfly/Store/product/pid=126.html	SOURCEDATE:2013-12
+# Ultimate Psionics compilation by: Paul Shipley based on Psionics {Unleashed/Expanded} original entry by: Douglas Limmer
+
+#Conditional Skills
+Acrobatics (On ship)	KEYSTAT:DEX	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Acrobatics (On ship).MISC"),var("SKILL.Acrobatics.MISC")
+Climb (On ship)		KEYSTAT:STR	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Climb (On ship).MISC"),var("SKILL.Climb.MISC")
+
+#Conditional Skills MODs
+Acrobatics.MOD		BONUS:SKILL|Acrobatics (On ship)|var("SKILL.Acrobatics.MISC")|TYPE=Skill	BONUS:SKILLRANK|Acrobatics (On ship)|skillinfo("TOTALRANK", "Acrobatics")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Acrobatics (On ship).MISC"),var("SKILL.Acrobatics.MISC")
+Climb.MOD			BONUS:SKILL|Climb (On ship)|var("SKILL.Climb.MISC")|TYPE=Skill			BONUS:SKILLRANK|Climb (On ship)|skillinfo("TOTALRANK", "Climb")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Climb (On ship).MISC"),var("SKILL.Climb.MISC")
