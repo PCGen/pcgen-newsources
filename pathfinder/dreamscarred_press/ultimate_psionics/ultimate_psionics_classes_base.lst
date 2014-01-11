@@ -1,0 +1,620 @@
+SOURCELONG:Ultimate Psionics	SOURCESHORT:UP	SOURCEWEB:http://dreamscarredpress.com/dragonfly/Store/product/pid=126.html	SOURCEDATE:2013-12
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2013/07/05
+
+###Block: Aegis
+
+# Class Name	Hit Dice	Type				Max Level	Source Page		Ability																		Save checks bonus											Combat bonus
+CLASS:Aegis		HD:10		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.28	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Aegis		STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Climb|TYPE=Craft|Fly|Intimidate|Knowledge (Engineering)|Knowledge (Psionics)|TYPE=Profession|Spellcraft|Swim		ABILITY:Internal|AUTOMATIC|Use Magic Device Class Skill|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisUseMagicDevice
+
+###Block: Aegis Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisMartialWeaponProficiency						AUTO:FEAT|Martial Weapon Proficiency Output|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisMartialWeaponProficiency	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisSimpleWeaponProficiency
+1																								AUTO:ARMORPROF|Astral Suit	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisLightArmorProficiency	AUTO:FEAT|Shield Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisShieldProficiency
+
+###Block: Aegis class definitions
+1	DEFINE:AegisPrimeStat|0	BONUS:VAR|AegisPrimeStat|INT
+1	DEFINE:AegisPPStat|0	BONUS:VAR|AegisPPStat|AegisPrimeStat
+1	BONUS:VAR|AegisLVL|CL	DEFINE:AegisLVL|0
+# COMMENT: AegisCL is to determine Aegis customization points; AegisDRLVL is to determine the DR for the Aegis (or similar archetype abilities)
+1	BONUS:VAR|AegisCL|AegisLVL	BONUS:VAR|AegisCL|var("BL=Aegis")				DEFINE:AegisCL|0
+1	BONUS:VAR|CustomPoints|2+AegisCL	BONUS:VAR|CustomPoints|floor((AegisCL+1)/5)
+1	BONUS:VAR|AegisDRLVL|AegisLVL										DEFINE:AegisDRLVL|0
+
+###Block: Aegis Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Aegis Power Points
+# COMMENT: Tack the following on if an archetype removes the aegis power points
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisPowerPoints
+
+###Block: Aegis Class Abilities
+1	ABILITY:Special Ability|AUTOMATIC|Astral Repair ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisAstralRepair
+1	ABILITY:Special Ability|AUTOMATIC|Form Astral Suit ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisFormAstralSuit
+1	ABILITY:Special Ability|AUTOMATIC|Damage Reduction ~ Aegis|PREMULT:2,[!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisDamageReduction],[PREVARGTEQ:AegisDRLVL,2]
+2	ABILITY:Special Ability|AUTOMATIC|Craftsman ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisCraftsman
+3	ABILITY:Special Ability|AUTOMATIC|Reconfigure ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisReconfigure
+3	ABILITY:Special Ability|AUTOMATIC|Invigorating Suit ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisInvigoratingSuit
+4	ABILITY:Special Ability|AUTOMATIC|Augment Suit ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisAugmentSuit
+5	ABILITY:Internal|AUTOMATIC|Master Craftsman ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisMasterCraftsman
+12	ABILITY:Special Ability|AUTOMATIC|Cannibalize Suit ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisCannibalizeSuit
+20	ABILITY:Special Ability|AUTOMATIC|Perfect Merger ~ Aegis|!PREABILITY:1,CATEGORY=Archetype,TYPE.AegisPerfectMerger
+
+
+###Block: Cryptic
+# Class Name	Hit Dice	Type				Max Level	Source Page		Ability																		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Cryptic	HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.34	ABILITY:Internal|AUTOMATIC|Disable Device Class Skill|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisableDevice	BONUS:CHECKS|Base.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Cryptic	STARTSKILLPTS:4	CSKILL:Acrobatics|Appraise|Autohypnosis|Climb|TYPE.Craft|Disguise|Escape Artist|TYPE.Knowledge|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Swim|Use Magic Device
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Cryptic	SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Cryptic|CL
+
+###Block: Cryptic Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticSimpleWeaponProficiency	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticLightArmorProficiency	AUTO:WEAPONPROF|Rapier|Shortbow
+
+###Block: Cryptic class definitions
+1	BONUS:VAR|CrypticPrimeStat|INT	DEFINE:CrypticPrimeStat|0
+1	BONUS:VAR|CrypticLVL|CL	DEFINE:CrypticLVL|0
+
+###Block: Cryptic Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Cryptic Manifesting
+# COMMENT: Tack the following on if an archetype removes the cryptic manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticManifesting
+
+###Block: Cryptic Powers Known
+1	KNOWN:2,1
+2	KNOWN:2,2
+3	KNOWN:2,3
+4	KNOWN:2,3,1
+5	KNOWN:2,3,2
+6	KNOWN:2,3,3
+7	KNOWN:2,3,3,1
+8	KNOWN:2,3,3,2
+9	KNOWN:2,3,3,3
+10	KNOWN:2,3,3,3,1
+11	KNOWN:2,3,3,3,2
+12	KNOWN:2,3,3,3,3
+13	KNOWN:2,3,3,3,3,1
+14	KNOWN:2,3,3,3,3,2
+15	KNOWN:2,3,3,3,3,3
+16	KNOWN:2,3,3,3,3,3,1
+17	KNOWN:2,3,3,3,3,3,2
+18	KNOWN:2,3,3,3,3,3,3
+19	KNOWN:2,3,3,3,3,3,4
+20	KNOWN:2,3,3,3,3,3,5
+
+###Block: Cryptic Class Abilities
+1	ABILITY:Special Ability|AUTOMATIC|Altered Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticAlteredDefense
+1	ABILITY:Special Ability|AUTOMATIC|Disrupt Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisruptPattern
+1	ABILITY:Special Ability|AUTOMATIC|Pattern Designs ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticPatternDesigns
+1	ABILITY:Internal|AUTOMATIC|Scribe Tattoo ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticScribeTattoo
+1	ABILITY:Internal|AUTOMATIC|Trapfinding ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticTrapfinding
+1	ABILITY:Special Ability|AUTOMATIC|Trapmaker ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticTrapmaker
+2	ABILITY:Special Ability|AUTOMATIC|Hidden Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticHiddenPattern
+2	ABILITY:Internal|AUTOMATIC|Insights ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticInsights
+3	ABILITY:Special Ability|AUTOMATIC|Enhanced Disruption ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticEnhancedDisruption
+3	ABILITY:Special Ability|AUTOMATIC|Evasion ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticEvasion
+4	ABILITY:Special Ability|AUTOMATIC|Rapid Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticRapidDefense
+6	ABILITY:Special Ability|AUTOMATIC|Swift Trapper ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticSwiftTrapper
+10	ABILITY:Special Ability|AUTOMATIC|Hide in Plain Sight ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticHideInPlainSight,TYPE.CrypticHiddenPattern
+14	ABILITY:Special Ability|AUTOMATIC|Enduring Defense ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticEnduringDefense
+18	ABILITY:Special Ability|AUTOMATIC|Unchanging Pattern ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticUnchangingPattern
+20	ABILITY:Internal|AUTOMATIC|Supreme Insight ~ Cryptic|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticSupremeInsight
+
+
+###Block: Dread
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Dread		HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.43	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Dread		STARTSKILLPTS:6	CSKILL:Acrobatics|Autohypnosis|Bluff|Climb|TYPE.Craft|Escape Artist|Intimidate|Knowledge (Psionics)|Perception|TYPE.Profession|Sense Motive|Spellcraft|Stealth|Swim
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Dread		SPELLSTAT:CHA	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Dread|CL
+
+###Block: Dread Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadMartialWeaponProficiency	AUTO:FEAT|Martial Weapon Proficiency Output|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadMartialWeaponProficiency
+1																								AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadSimpleWeaponProficiency	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadLightArmorProficiency
+
+###Block: Dread class definitions
+1	BONUS:VAR|DreadPrimeStat|CHA	DEFINE:DreadPrimeStat|0
+1	BONUS:VAR|DreadLVL|CL	DEFINE:DreadLVL|0
+
+###Block: Dread Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Dread Manifesting
+# COMMENT: Tack the following on if an archetype removes the dread manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadManifesting
+
+###Block: Dread Powers Known
+1	KNOWN:2,1
+2	KNOWN:2,2
+3	KNOWN:2,3
+4	KNOWN:2,3,1
+5	KNOWN:2,3,2
+6	KNOWN:2,3,3
+7	KNOWN:2,3,3,1
+8	KNOWN:2,3,3,2
+9	KNOWN:2,3,3,3
+10	KNOWN:2,3,3,3,1
+11	KNOWN:2,3,3,3,2
+12	KNOWN:2,3,3,3,3
+13	KNOWN:2,3,3,3,3,1
+14	KNOWN:2,3,3,3,3,2
+15	KNOWN:2,3,3,3,3,3
+16	KNOWN:2,3,3,3,3,3,1
+17	KNOWN:2,3,3,3,3,3,2
+18	KNOWN:2,3,3,3,3,3,3
+19	KNOWN:2,3,3,3,3,3,4
+20	KNOWN:2,3,3,3,3,3,5
+
+###Block: Dread Class Abilities
+1																	ABILITY:Special Ability|AUTOMATIC|Fearsome Insight ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadFearsomeInsight
+1																	ABILITY:Special Ability|AUTOMATIC|Devastating Touch ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadDevastatingTouch
+2	BONUS:ABILITYPOOL|Terror|floor(CL/2)|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadTerror		ABILITY:Special Ability|AUTOMATIC|Terror ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadTerror
+3																	ABILITY:Special Ability|AUTOMATIC|Aura of Fear ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadAuraOfFear
+3																	ABILITY:Special Ability|AUTOMATIC|Channel Terror ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadChannelTerror
+5	BONUS:ABILITYPOOL|Dread Bonus Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadBonusFeat5
+7																	ABILITY:Special Ability|AUTOMATIC|Immersed in Fear ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadImmersedInFear
+9	BONUS:ABILITYPOOL|Dread Bonus Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadBonusFeat9
+11																	ABILITY:Special Ability|AUTOMATIC|Shadow Twin ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadShadowTwin
+11																	ABILITY:Special Ability|AUTOMATIC|Twin Fear ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadTwinFear
+13	BONUS:ABILITYPOOL|Dread Bonus Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadBonusFeat13
+15																	ABILITY:Internal|AUTOMATIC|Shadow Twin 100 ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadShadowTwin100
+15																	ABILITY:Internal|AUTOMATIC|Twin Fear Form of Doom ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadTwinFearFormOfDoom
+17	BONUS:ABILITYPOOL|Dread Bonus Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadBonusFeat17
+19																	ABILITY:Internal|AUTOMATIC|Shadow Twin 400 ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadShadowTwin400
+20																	ABILITY:Special Ability|AUTOMATIC|Fear Incarnate ~ Dread|!PREABILITY:1,CATEGORY=Archetype,TYPE.DreadFearIncarnate
+
+
+###Block: Marksman
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Marksman	HD:10		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.44	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Marksman	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Climb|TYPE=Craft|Escape Artist|Intimidate|Knowledge (Psionics)|Perception|TYPE=Perform|TYPE=Profession|Sense Motive|Stealth|Survival|Use Magic Device
+# Class Name	Spell Stat		Stat for Bonus Spells	Spell Type		Memorize	Caster level
+CLASS:Marksman	SPELLSTAT:WIS	BONUSSPELLSTAT:NONE	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Marksman|CL
+
+###Block: Marksman Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanSimpleWeaponProficiency	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanLightArmorProficiency	AUTO:SHIELDPROF|SHIELDTYPE=Buckler|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanBucklerProficiency	AUTO:WEAPONPROF|TYPE=Light.Martial|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanLightMartialProficiency	AUTO:WEAPONPROF|TYPE=Martial.Ranged|TYPE=Martial.Thrown|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanRangedProficiency
+
+###Block: Marksman class definitions
+1	BONUS:VAR|MarksmanPrimeStat|WIS	DEFINE:MarksmanPrimeStat|0
+1	BONUS:VAR|MarksmanSecondaryStat|DEX	DEFINE:MarksmanSecondaryStat|0
+1	BONUS:VAR|MarksmanLVL|CL	DEFINE:MarksmanLVL|0
+
+###Block: Marksman Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Marksman Manifesting
+# COMMENT: Tack the following on if an archetype removes the Marksman manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanManifesting
+
+###Block: Marksman Powers Known
+2	KNOWN:0,1
+3	KNOWN:0,2
+4	KNOWN:0,2
+5	KNOWN:0,2,1
+6	KNOWN:0,2,2
+7	KNOWN:0,2,3
+8	KNOWN:0,2,3
+9	KNOWN:0,2,3,1
+10	KNOWN:0,2,3,2
+11	KNOWN:0,2,3,3
+12	KNOWN:0,2,3,3
+13	KNOWN:0,2,3,3,1
+14	KNOWN:0,2,3,3,1
+15	KNOWN:0,2,3,3,2
+16	KNOWN:0,2,3,3,2
+17	KNOWN:0,2,3,3,3
+18	KNOWN:0,2,3,3,3
+19	KNOWN:0,2,3,3,4
+20	KNOWN:0,2,3,3,4
+
+###Block: Marksman Class Abilities
+1	ABILITY:Internal|AUTOMATIC|Marksman Combat Style|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanCombatStyle
+1	ABILITY:Special Ability|AUTOMATIC|Wind Reader ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanWindReader
+1	AUTO:FEAT|Point-Blank Shot|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanPointBlankShot
+2	ABILITY:Special Ability|AUTOMATIC|Favored Weapon ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanFavoredWeapon
+2	ABILITY:Special Ability|AUTOMATIC|Evade Arrows ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanEvadeArrows
+4	ABILITY:Special Ability|AUTOMATIC|Cover Fire ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanCoverFire
+7	ABILITY:Special Ability|AUTOMATIC|Disengage ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanDisengage
+13	ABILITY:Special Ability|AUTOMATIC|Defensive Shot ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanDefensiveShot
+19	ABILITY:Special Ability|AUTOMATIC|Ranged Specialist ~ Marksman|!PREABILITY:1,CATEGORY=Archetype,TYPE.MarksmanRangedSpecialist
+
+
+###Block: Psion
+# Class Name	Hit Dice	Type				Max Level	Base class as subclass?	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Psion		HD:6		TYPE:Base.Psionic.PC.Trained	MAXLEVEL:20	ALLOWBASECLASS:NO		SOURCEPAGE:p.49	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl
+CLASS:Psion		STARTSKILLPTS:2
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Psion		SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Psion|CL
+SUBCLASS:Egoist			COST:0	PROHIBITCOST:0	SPELLLIST:2|Egoist|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.52	SORTKEY:1
+SUBCLASSLEVEL:1	BONUS:VAR|PsychometabolismDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Psychometabolism Discipline	ABILITY:Internal|AUTOMATIC|Psychometabolism Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+SUBCLASS:Kineticist		COST:0	PROHIBITCOST:0	SPELLLIST:2|Kineticist|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.51	SORTKEY:1
+SUBCLASSLEVEL:1	BONUS:VAR|PsychokinesisDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Psychokinesis Discipline	ABILITY:Internal|AUTOMATIC|Psychokinesis Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+SUBCLASS:Nomad			COST:0	PROHIBITCOST:0	SPELLLIST:2|Nomad|Psion		CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.52	SORTKEY:1
+SUBCLASSLEVEL:1	BONUS:VAR|PsychoportationDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Psychoportation Discipline	ABILITY:Internal|AUTOMATIC|Psychoportation Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+SUBCLASS:Seer			COST:0	PROHIBITCOST:0	SPELLLIST:2|Psion|Seer		CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.51	SORTKEY:1
+SUBCLASSLEVEL:1	BONUS:VAR|ClairsentienceDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Clairsentience Discipline	ABILITY:Internal|AUTOMATIC|Clairsentience Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+SUBCLASS:Shaper			COST:0	PROHIBITCOST:0	SPELLLIST:2|Psion|Shaper	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.51	SORTKEY:1
+SUBCLASSLEVEL:1	BONUS:VAR|MetacreativityDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Metacreativity Discipline	ABILITY:Internal|AUTOMATIC|Metacreativity Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+SUBCLASS:Telepath			COST:0	PROHIBITCOST:0	SPELLLIST:2|Psion|Telepath	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.52	SORTKEY:1
+SUBCLASSLEVEL:1	BONUS:VAR|TelepathyDisciplineLVL|CL			ABILITY:Special Ability|AUTOMATIC|Telepathy Discipline	ABILITY:Internal|AUTOMATIC|Telepathy Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+SUBCLASS:Generalist	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion			CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft	SOURCEPAGE:p.52	SORTKEY:0
+SUBCLASSLEVEL:1	BONUS:VAR|GeneralistDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Generalist Discipline	ABILITY:Internal|AUTOMATIC|Generalist Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionDisciplineClassSkills
+
+###Block: Advanced Disciplines
+SUBCLASS:Constructor	COST:0	PROHIBITCOST:0	SPELLLIST:2|Psion|Shaper	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Bluff|Disguise|Use Magic Device
+SUBCLASSLEVEL:1	BONUS:VAR|MetacreativityDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Constructor Advanced Discipline
+SUBCLASS:Erudite		COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion			CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Use Magic Device
+SUBCLASSLEVEL:1	BONUS:VAR|GeneralistDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Erudite Advanced Discipline
+SUBCLASS:Insight		COST:0	PROHIBITCOST:0	SPELLLIST:2|Seer|Psion		CSKILL:Autohypnosis|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Spellcraft|Diplomacy|Perception
+SUBCLASSLEVEL:1	BONUS:VAR|ClairsentienceDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Insight Advanced Discipline
+SUBCLASS:Jaunting		COST:0	PROHIBITCOST:0	SPELLLIST:2|Nomad|Psion		CSKILL:Autohypnosis|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Spellcraft|Climb|Fly|Survival|Swim
+SUBCLASSLEVEL:1	BONUS:VAR|PsychoportationDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Jaunting Advanced Discipline
+SUBCLASS:Mindbender	COST:0	PROHIBITCOST:0	SPELLLIST:2|Telepath|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Bluff|Diplomacy|Sense Motive
+SUBCLASSLEVEL:1	BONUS:VAR|TelepathyDisciplineLVL|CL			ABILITY:Special Ability|AUTOMATIC|Mindbender Advanced Discipline
+SUBCLASS:Transmogrifist	COST:0	PROHIBITCOST:0	SPELLLIST:2|Egoist|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Acrobatics|Heal
+SUBCLASSLEVEL:1	BONUS:VAR|PsychometabolismDisciplineLVL|CL	ABILITY:Special Ability|AUTOMATIC|Transmogrifist Advanced Discipline
+SUBCLASS:Unseen Hand	COST:0	PROHIBITCOST:0	SPELLLIST:2|Kineticist|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Acrobatics|Heal
+SUBCLASSLEVEL:1	BONUS:VAR|PsychokinesisDisciplineLVL|CL		ABILITY:Special Ability|AUTOMATIC|Unseen Hand Advanced Discipline
+###Block: Archetypes implemented as subclasses
+SUBCLASS:Bombardier	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Use Magic Device
+SUBCLASSLEVEL:1	BONUS:ABILITYPOOL|Psion Feat|-1	ABILITY:Special Ability|AUTOMATIC|Exploding Stone ~ Bombardier|Talents ~ Bombardier	AUTO:FEAT|Scribe Scroll
+SUBCLASS:Mindwright	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion	CSKILL:Autohypnosis|TYPE=Craft|TYPE=Knowledge|TYPE=Profession|Spellcraft|Use Magic Device
+SUBCLASSLEVEL:1							ABILITY:Internal|AUTOMATIC|Mindwright Abilities
+
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|Psion Weapon Proficiencies
+
+###Block: Psion class definitions
+1	BONUS:VAR|PsionPrimeStat|INT	DEFINE:PsionPrimeStat|0
+1	BONUS:VAR|PsionLVL|CL	DEFINE:PsionLVL|0
+
+###Block: Psion Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Psion Manifesting
+# COMMENT: Tack the following on if an archetype removes the Psion manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsionManifesting
+
+###Block: Class Powers known
+1	KNOWN:3,3
+2	KNOWN:3,5
+3	KNOWN:3,5,2
+4	KNOWN:3,5,4
+5	KNOWN:3,5,4,2
+6	KNOWN:3,5,4,4
+7	KNOWN:3,5,4,4,2
+8	KNOWN:3,5,4,4,4
+9	KNOWN:3,5,4,4,4,2
+10	KNOWN:3,5,4,4,4,4
+11	KNOWN:3,5,4,4,4,4,1
+12	KNOWN:3,5,4,4,4,4,3
+13	KNOWN:3,5,4,4,4,4,3,1
+14	KNOWN:3,5,4,4,4,4,3,3
+15	KNOWN:3,5,4,4,4,4,3,3,1
+16	KNOWN:3,5,4,4,4,4,3,3,3
+17	KNOWN:3,5,4,4,4,4,3,3,3,1
+18	KNOWN:3,5,4,4,4,4,3,3,3,3
+19	KNOWN:3,5,4,4,4,4,3,3,3,4
+20	KNOWN:3,5,4,4,4,4,3,3,3,6
+
+###Block: Psion Class abilities
+1	BONUS:ABILITYPOOL|Psion Feat|(CL/5)+1
+
+
+###Block: Psychic Warrior
+# Class Name		Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Psychic Warrior	HD:8		TYPE:Base.Psionic.PC.Self-Taught	MAXLEVEL:20	SOURCEPAGE:p.53	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Psychic Warrior	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Climb|TYPE=Craft|Knowledge (Psionics)|Perception|TYPE=Profession|Ride|Spellcraft|Swim
+# Class Name		Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Psychic Warrior	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Psychic Warrior|CL
+
+###Block: Psychic Warrior Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorMartialWeaponProficiency	AUTO:FEAT|Martial Weapon Proficiency Output|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorMartialWeaponProficiency
+1	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorSimpleWeaponProficiency
+1	AUTO:FEAT|Armor Proficiency (Heavy)|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorHeavyArmorProficiency,TYPE.PsychicWarriorArmorProficiencies
+1	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorLightArmorProficiency,TYPE.PsychicWarriorArmorProficiencies
+1	AUTO:FEAT|Armor Proficiency (Medium)|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorMediumArmorProficiency,TYPE.PsychicWarriorArmorProficiencies
+1	AUTO:FEAT|Shield Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorShieldProficiency
+
+###Block: Psychic Warrior class definitions
+1	BONUS:VAR|PsychicWarriorPrimeStat|WIS	DEFINE:PsychicWarriorPrimeStat|0
+1	BONUS:VAR|PsychicWarriorLVL|CL	DEFINE:PsychicWarriorLVL|0
+
+###Block: Psychic Warrior Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Psychic Warrior Manifesting
+# COMMENT: Tack the following on if an archetype removes the Psychic Warrior manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorManifesting
+
+###Block: Psychic Warrior Class abilities
+1	BONUS:ABILITYPOOL|Primary Warrior Path|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorWarriorPath
+1	BONUS:VAR|WarriorPathLVL|CL|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorWarriorPath
+1	ABILITY:Special Ability|AUTOMATIC|Warrior's Path ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorWarriorPath
+1	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat1
+1	BONUS:VAR|PrereqBAB|(CL+3)/4|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorPsionicProficiency	DEFINE:PrereqBAB|BAB	ABILITY:Special Ability|AUTOMATIC|Psionic Proficiency ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorPsionicProficiency
+2	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat2
+5	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat5
+6	ABILITY:Special Ability|AUTOMATIC|Martial Power ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorMartialPower
+8	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat8
+9	BONUS:ABILITYPOOL|Secondary Warrior Path|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorSecondaryPath																							ABILITY:Special Ability|AUTOMATIC|Secondary Path ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorSecondaryPath
+11	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat11
+12	ABILITY:Special Ability|AUTOMATIC|Twisting Path ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorTwistingPath
+14	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat14
+15	BONUS:VAR|PathweavingLVL|-CL|PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorPathweaving		DEFINE:PathweavingLVL|CL	ABILITY:Special Ability|AUTOMATIC|Pathweaving ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorPathweaving
+17	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat17
+20	BONUS:ABILITYPOOL|Psychic Warrior Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorBonusFeat20
+20	ABILITY:Special Ability|AUTOMATIC|Eternal Warrior ~ Psychic Warrior|!PREABILITY:1,CATEGORY=Archetype,TYPE.PsychicWarriorEternalWarrior
+
+###Block: Psychic Warrior powers known
+1	KNOWN:2,1
+2	KNOWN:2,2
+3	KNOWN:2,3
+4	KNOWN:2,3,1
+5	KNOWN:2,3,2
+6	KNOWN:2,3,3
+7	KNOWN:2,3,3,1
+8	KNOWN:2,3,3,2
+9	KNOWN:2,3,3,3
+10	KNOWN:2,3,3,3,1
+11	KNOWN:2,3,3,3,2
+12	KNOWN:2,3,3,3,3
+13	KNOWN:2,3,3,3,3,1
+14	KNOWN:2,3,3,3,3,2
+15	KNOWN:2,3,3,3,3,3
+16	KNOWN:2,3,3,3,3,3,1
+17	KNOWN:2,3,3,3,3,3,2
+18	KNOWN:2,3,3,3,3,3,3
+19	KNOWN:2,3,3,3,3,3,4
+20	KNOWN:2,3,3,3,3,3,5
+
+
+###Block: Soulknife
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Soulknife	HD:10		TYPE:Base.Psionic.PC.Intuitive	MAXLEVEL:20	SOURCEPAGE:p.57	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Soulknife	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Climb|TYPE=Craft|Intimidate|Knowledge (Psionics)|Perception|TYPE=Profession|Stealth|Swim
+###Block: Soulknife Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies	
+1	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeSimpleWeaponProficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeLightArmorProficiency
+1	AUTO:FEAT|Armor Proficiency (Medium)|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeMediumArmorProficiency
+1	AUTO:FEAT|Shield Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeShieldProficiency
+
+###Block: Soulknife Class Info
+# COMMENT: The soulknife doesn't seem to actually have a prime stat.
+#1	BONUS:VAR|SoulknifePrimeStat|WIS	DEFINE:SoulknifePrimeStat|0
+1	BONUS:VAR|SoulknifeLVL|CL	DEFINE:SoulknifeLVL|0
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	BONUS:ABILITYPOOL|Soulknife Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeBonusFeat
+1	TEMPLATE:Wild Talent Determination
+
+###Block: Mind Blade abilities by effective level; to add a PrC's class level to SK for mind blade powers, use BONUS:VAR|MindBladeLVL|x in the PrC's class level line setup
+1	ABILITY:Special Ability|AUTOMATIC|Form Mind Blade ~ Soulknife|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeFormMindBlade
+1	ABILITY:Special Ability|AUTOMATIC|Shape Mind Blade ~ Soulknife|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeShapeMindBlade
+1	ABILITY:Special Ability|AUTOMATIC|Throw Mind Blade ~ Soulknife|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeThrowMindBlade
+1	BONUS:ABILITYPOOL|Blade Skill|CL/2
+1	ABILITY:Special Ability|AUTOMATIC|Enhanced Mind Blade ~ Soulknife|PREMULT:2,[PREVARGTEQ:MindBladeLVL,3],[!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeEnhancedMindBlade]
+3	ABILITY:Special Ability|AUTOMATIC|Psychic Strike ~ Soulknife|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifePsychicStrike
+5	ABILITY:Special Ability|AUTOMATIC|Quick Draw ~ Soulknife|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeQuickDraw
+20	ABILITY:Special Ability|AUTOMATIC|Mind Blade Mastery ~ Soulknife|!PREABILITY:1,CATEGORY=Archetype,TYPE.SoulknifeMindBladeMastery
+
+
+###Block: Tactician
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Tactician	HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.64	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Tactician	STARTSKILLPTS:4	CSKILL:Autohypnosis|Bluff|Climb|TYPE.Craft|Diplomacy|Intimidate|Knowledge (Engineering)|Knowledge (History)|Knowledge (Psionics)|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Ride|Sense Motive|Spellcraft|Swim|Use Magic Device
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Tactician	SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Tactician|CL
+
+###Block: Tactician Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianMartialWeaponProficiency
+1	AUTO:FEAT|Martial Weapon Proficiency Output|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianMartialWeaponProficiency
+1	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianSimpleWeaponProficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianLightArmorProficiency
+1	AUTO:FEAT|Armor Proficiency (Medium)|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianMediumArmorProficiency
+1	AUTO:FEAT|Shield Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianShieldProficiency
+
+###Block: Tactician class definitions
+1	BONUS:VAR|TacticianPrimeStat|INT	DEFINE:TacticianPrimeStat|0
+1	BONUS:VAR|TacticianSecondaryStat|CHA	DEFINE:TacticianSecondaryStat|0
+1	BONUS:VAR|TacticianLVL|CL	DEFINE:TacticianLVL|0
+
+###Block: Tactician Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Tactician Manifesting
+# COMMENT: Tack the following on if an archetype removes the Tactician manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianManifesting
+
+###Block: Tactician Powers Known
+1	KNOWN:3,1
+2	KNOWN:3,2
+3	KNOWN:3,2,1
+4	KNOWN:3,2,2
+5	KNOWN:3,2,2,1
+6	KNOWN:3,2,2,2
+7	KNOWN:3,2,2,2,1
+8	KNOWN:3,2,2,2,2
+9	KNOWN:3,2,2,2,2,1
+10	KNOWN:3,2,2,2,2,2
+11	KNOWN:3,2,2,2,2,2,1
+12	KNOWN:3,2,2,2,2,2,2
+13	KNOWN:3,2,2,2,2,2,2,1
+14	KNOWN:3,2,2,2,2,2,2,2
+15	KNOWN:3,2,2,2,2,2,2,2,1
+16	KNOWN:3,2,2,2,2,2,2,2,2
+17	KNOWN:3,2,2,2,2,2,2,2,2,1
+18	KNOWN:3,2,2,2,2,2,2,2,2,2
+19	KNOWN:3,2,2,2,2,2,2,2,2,3
+20	KNOWN:3,2,2,2,2,2,2,2,2,4
+
+###Block: Tactician Class Abilities
+1	ABILITY:Special Ability|AUTOMATIC|Collective ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianCollective
+1	ABILITY:Special Ability|AUTOMATIC|Coordinated Strike ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianCoordinatedStrike
+2	ABILITY:Special Ability|AUTOMATIC|Spirit of Many ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianSpiritOfMany
+3	ABILITY:Special Ability|AUTOMATIC|Telepathy ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianTelepathy
+4	ABILITY:Special Ability|AUTOMATIC|Strategy ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianStrategy
+5	ABILITY:Special Ability|AUTOMATIC|Improved Share ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianImprovedShare
+6	ABILITY:Special Ability|AUTOMATIC|Coordinate ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianCoordinate
+6	ABILITY:Special Ability|AUTOMATIC|Teamwork Feats ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianTeamworkFeats
+8	ABILITY:Special Ability|AUTOMATIC|Echo Effect ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianEchoEffect
+14	ABILITY:Special Ability|AUTOMATIC|Pooled Knowledge ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianPooledKnowledge
+15	ABILITY:Internal|AUTOMATIC|Collective Range Unlimited ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianCollectiveRangeUnlimited
+19	ABILITY:Internal|AUTOMATIC|Collective Range Planar ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianCollectiveRangePlanar
+20	ABILITY:Special Ability|AUTOMATIC|Master Strategist ~ Tactician|!PREABILITY:1,CATEGORY=Archetype,TYPE.TacticianMasterStrategist
+
+
+###Block: Vitalist
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Vitalist	HD:6		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.69	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Vitalist	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|TYPE=Craft|Diplomacy|Heal|Intimidate|Knowledge (History)|Knowledge (Local)|Knowledge (Psionics)|Linguistics|Perception|TYPE=Perform|TYPE=Profession|Sense Motive|Spellcraft|Survival
+# Class Name	Spell Stat		Stat for Bonus Spells	Spell Type		Memorize	Caster level
+CLASS:Vitalist	SPELLSTAT:WIS	BONUSSPELLSTAT:NONE	SPELLTYPE:PSIONIC	MEMORIZE:NO	BONUS:CASTERLEVEL|Vitalist|CL
+
+###Block: Vitalist Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistSimpleWeaponProficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistLightArmorProficiency
+
+###Block: Vitalist class definitions
+1	BONUS:VAR|VitalistPrimeStat|WIS	DEFINE:VitalistPrimeStat|0
+1	BONUS:VAR|VitalistLVL|CL	DEFINE:VitalistLVL|0
+
+###Block: Vitalist Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Vitalist Manifesting
+# COMMENT: Tack the following on if an archetype removes the Vitalist manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistManifesting
+
+###Block: Vitalist Powers Known
+1	KNOWN:0,VitalistPowersKnown
+2	KNOWN:0,VitalistPowersKnown
+3	KNOWN:0,0,VitalistPowersKnown
+4	KNOWN:0,0,VitalistPowersKnown
+5	KNOWN:0,0,0,VitalistPowersKnown
+6	KNOWN:0,0,0,VitalistPowersKnown
+7	KNOWN:0,0,0,0,VitalistPowersKnown
+8	KNOWN:0,0,0,0,VitalistPowersKnown
+9	KNOWN:0,0,0,0,0,VitalistPowersKnown
+10	KNOWN:0,0,0,0,0,VitalistPowersKnown
+11	KNOWN:0,0,0,0,0,0,VitalistPowersKnown
+12	KNOWN:0,0,0,0,0,0,VitalistPowersKnown
+13	KNOWN:0,0,0,0,0,0,0,VitalistPowersKnown
+14	KNOWN:0,0,0,0,0,0,0,VitalistPowersKnown
+15	KNOWN:0,0,0,0,0,0,0,0,VitalistPowersKnown
+16	KNOWN:0,0,0,0,0,0,0,0,VitalistPowersKnown
+17	KNOWN:0,0,0,0,0,0,0,0,0,VitalistPowersKnown
+18	KNOWN:0,0,0,0,0,0,0,0,0,VitalistPowersKnown
+19	KNOWN:0,0,0,0,0,0,0,0,0,VitalistPowersKnown
+20	KNOWN:0,0,0,0,0,0,0,0,0,VitalistPowersKnown
+
+###Block: Vitalist Class Abilities
+1	ABILITY:Internal|AUTOMATIC|Vitalist Method|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistMethod
+1	ABILITY:Special Ability|AUTOMATIC|Collective ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistCollective
+1	ABILITY:Internal|AUTOMATIC|Vitalist Knacks|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistKnacks
+1	ABILITY:Special Ability|AUTOMATIC|Collective Healing ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistCollectiveHealing
+1	ABILITY:Special Ability|AUTOMATIC|Medic Powers ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistMedicPowers
+1	ABILITY:Special Ability|AUTOMATIC|Transfer Wounds ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistTransferWounds
+2	ABILITY:Special Ability|AUTOMATIC|Health Sense ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistHealthSense
+2	ABILITY:Special Ability|AUTOMATIC|Spirit of Many ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistSpiritOfMany
+3	ABILITY:Special Ability|AUTOMATIC|Steal Health ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistStealHealth
+3	ABILITY:Special Ability|AUTOMATIC|Telepathy ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistTelepathy
+5	ABILITY:Special Ability|AUTOMATIC|Request Aid ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistRequestAid
+9	BONUS:ABILITYPOOL|Vitalist Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistExpandedKnowledge9
+14	ABILITY:Special Ability|AUTOMATIC|Steal Life ~ Vitalist|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistStealLife
+18	BONUS:ABILITYPOOL|Vitalist Feat|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.VitalistExpandedKnowledge18
+
+
+###Block: Wilder
+# Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus					Modify VAR
+CLASS:Wilder	HD:8		TYPE:Base.Psionic.PC.Intuitive	MAXLEVEL:20	SOURCEPAGE:p.75	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Wilder	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Bluff|Climb|TYPE=Craft|Diplomacy|Escape Artist|Intimidate|Knowledge (Psionics)|Perception|TYPE=Profession|Sense Motive|Spellcraft|Swim|Use Magic Device
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Wilder	SPELLSTAT:CHA	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Wilder|CL
+
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderSimpleWeaponProficiency
+1	AUTO:FEAT|Armor Proficiency (Light)|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderLightArmorProficiency
+1	AUTO:FEAT|Shield Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderShieldProficiency
+
+###Block: Wilder class definitions
+1	BONUS:VAR|WilderPrimeStat|CHA	DEFINE:WilderPrimeStat|0
+1	BONUS:VAR|WilderLVL|CL	DEFINE:WilderLVL|0
+
+###Block: Wilder Psionic Ability
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	ABILITY:Internal|AUTOMATIC|Wilder Manifesting
+# COMMENT: Tack the following on if an archetype removes the Wilder manifesting ability
+#|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderManifesting
+
+###Block: Wilder Class abilities
+1	ABILITY:Special Ability|AUTOMATIC|Psychic Enervation ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderPsychicEnervation
+1	ABILITY:Special Ability|AUTOMATIC|Surge Blast ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderSurgeBlast
+1	ABILITY:Special Ability|AUTOMATIC|Wild Surge ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderWildSurge
+2	ABILITY:Special Ability|AUTOMATIC|Elude Attack ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderEludeAttack
+4	ABILITY:Special Ability|AUTOMATIC|Surging Euphoria ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderSurgingEuphoria
+5	ABILITY:Internal|AUTOMATIC|Improved Surge Bond ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderImprovedSurgeBond
+20	ABILITY:Special Ability|AUTOMATIC|Perfect Surge ~ Wilder|!PREABILITY:1,CATEGORY=Archetype,TYPE.WilderPerfectSurge
+
+###Block: Wilder powers known
+1	KNOWN:1,1
+2	KNOWN:1,2
+3	KNOWN:1,2
+4	KNOWN:1,2,1
+5	KNOWN:1,2,1
+6	KNOWN:1,2,1,1
+7	KNOWN:1,2,1,1
+8	KNOWN:1,2,1,1,1
+9	KNOWN:1,2,1,1,1
+10	KNOWN:1,2,1,1,1,1
+11	KNOWN:1,2,1,1,1,1
+12	KNOWN:1,2,1,1,1,1,1
+13	KNOWN:1,2,1,1,1,1,1
+14	KNOWN:1,2,1,1,1,1,1,1
+15	KNOWN:1,2,1,1,1,1,1,1
+16	KNOWN:1,2,1,1,1,1,1,1,1
+17	KNOWN:1,2,1,1,1,1,1,1,1
+18	KNOWN:1,2,1,1,1,1,1,1,1,1
+19	KNOWN:1,2,1,1,1,1,1,1,1,1
+20	KNOWN:1,2,1,1,1,1,1,1,1,2
+
+
+###Block: Gifted Blade pseudo-class
+# Class Name		Type			Visible
+CLASS:Gifted Blade	TYPE:Psionic	VISIBLE:NO
+# Class Name		Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Gifted Blade	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Gifted Blade|CL
+
+###Block: Gifted Blade Powers Known
+1	KNOWN:0,1
+2	KNOWN:0,1
+3	KNOWN:0,2
+4	KNOWN:0,2
+5	KNOWN:0,2,1
+6	KNOWN:0,2,1
+7	KNOWN:0,2,2
+8	KNOWN:0,2,2
+9	KNOWN:0,2,2,1
+10	KNOWN:0,2,2,1
+11	KNOWN:0,2,2,1
+12	KNOWN:0,2,2,2
+13	KNOWN:0,2,2,2,0
+14	KNOWN:0,2,2,2,0
+15	KNOWN:0,2,2,2,1
+16	KNOWN:0,2,2,2,1
+17	KNOWN:0,2,2,2,1
+18	KNOWN:0,2,2,2,1
+
+#
+# End
+#

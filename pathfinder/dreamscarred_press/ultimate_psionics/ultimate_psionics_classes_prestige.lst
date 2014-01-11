@@ -1,0 +1,653 @@
+# CVS $Revision: $ $Author: $ -- Tue Jul 16 09:27:47 2013 -- reformated by prettylst.pl v1.50 (build 20400)
+SOURCELONG:Psionics Expanded	SOURCESHORT:PsiEx	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2012-07
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2013/07/05
+
+# TODO: 
+#       Change source line
+#       Change page numbers
+#       Move bonuses to ability file
+#       Use MaxManifesterLVL variable for prereqs
+#       Shift to <class>PrimeStat
+
+# Variables: <class>ML - manifester level - defaults to CL+BL=<class>
+#            <class>PL - level for determining power points - defaults to <class>ML
+#            <class>PKL - level for powers known - defaults to CL+BL=<class>
+#            <class>MPL - level for max power level known - defaults to CL+BL=<class>
+#            <class>PowersKnown - number of powers known
+#            <class>MaxPowerLevel - maximum power level known
+
+###Block: Adaptive Warrior prestige class
+
+# Class Name		Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Adaptive Warrior	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.37	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Req. Att.	Required Feat					Required Skill					Var. Must Be Grater
+CLASS:Adaptive Warrior	PREATT:5	PREFEAT:2,Combat Expertise,Improved Feint	PRESKILL:2,Autohypnosis=5,Sense Motive=5	PREVARGT:TotalPowerPoints,0
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Adaptive Warrior	STARTSKILLPTS:2	CSKILL:Acrobatics|Bluff|Intimidate|Perception|Sense Motive	DEFINE:AdaptiveWarriorLVL|CL
+
+###Block: Adaptive Warrior class abilities
+1	ABILITY:Internal|AUTOMATIC|Weapon and Armor Proficiencies ~ Adaptive Warrior
+1	ABILITY:Special Ability|AUTOMATIC|Counter Fighting Style ~ Adaptive Warrior
+1	ABILITY:Special Ability|AUTOMATIC|Examine Technique ~ Adaptive Warrior
+2	ABILITY:Special Ability|AUTOMATIC|Mimic Skill ~ Adaptive Warrior
+3	ABILITY:Special Ability|AUTOMATIC|Mimic Proficiency ~ Adaptive Warrior
+5	ABILITY:Special Ability|AUTOMATIC|Block Attack ~ Adaptive Warrior
+6	ABILITY:Special Ability|AUTOMATIC|Accelerated Combat ~ Adaptive Warrior
+7	ABILITY:Special Ability|AUTOMATIC|Extended Memory ~ Adaptive Warrior
+8	ABILITY:Special Ability|AUTOMATIC|Extended Examination ~ Adaptive Warrior
+9	ABILITY:Special Ability|AUTOMATIC|Mimic Feat ~ Adaptive Warrior
+10	ABILITY:Special Ability|AUTOMATIC|Combine Fighting Styles ~ Adaptive Warrior
+
+###Block: Adaptive Warrior enhance psionic ability
+1	BONUS:ABILITYPOOL|Adaptive Warrior Enhancement Choice|1									DEFINE:AdaptiveWarriorEnhancementCount|0
+2											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+3											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+4											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+5											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+7											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+8											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+9											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+10											BONUS:VAR|AdaptiveWarriorEnhancementCount|1
+
+
+###Block: Body Snatcher prestige class
+
+# Class Name		Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Body Snatcher	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:6	SOURCEPAGE:p.43	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Required Class			Required Feat							Required Skill							Req. Known Spell
+CLASS:Body Snatcher	PRECLASS:1,SPELLCASTER=10	PREFEAT:1,Extend Power	PREFEAT:2,TYPE=Metapsionic	PRESKILL:3,Bluff=10,Perform (Act)=3,Sense Motive=3	PRESPELL:2,Brain Lock,Conceal Thoughts
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Perform|Sense Motive|Spellcraft	DEFINE:BodySnatcherLVL|CL
+
+###Block: Body Snatcher class abilities
+1	ABILITY:Special Ability|AUTOMATIC|Body Thief ~ Body Snatcher
+1	ABILITY:Special Ability|AUTOMATIC|Extended Transfer ~ Body Snatcher
+1	ABILITY:Special Ability|AUTOMATIC|Melding Exchange ~ Body Snatcher
+2	ABILITY:Special Ability|AUTOMATIC|The Flesh Remembers ~ Body Snatcher
+2	ABILITY:Special Ability|AUTOMATIC|Traumatic Transfer ~ Body Snatcher
+3	ABILITY:Special Ability|AUTOMATIC|Mimic Mind ~ Body Snatcher
+4	ABILITY:Special Ability|AUTOMATIC|Rapid Transfer ~ Body Snatcher
+4	ABILITY:Special Ability|AUTOMATIC|Seal the Host ~ Body Snatcher
+5	ABILITY:Special Ability|AUTOMATIC|Mindleap Contingency ~ Body Snatcher
+5	ABILITY:Special Ability|AUTOMATIC|Greater Melding Exchange ~ Body Snatcher
+6	ABILITY:Special Ability|AUTOMATIC|Death Is Only the Beginning ~ Body Snatcher
+
+###Block: Body Snatcher enhance psionic ability
+1	BONUS:ABILITYPOOL|Body Snatcher Enhancement Choice|1								DEFINE:BodySnatcherEnhancementCount|0
+2										BONUS:VAR|BodySnatcherEnhancementCount|1
+3										BONUS:VAR|BodySnatcherEnhancementCount|1
+4										BONUS:VAR|BodySnatcherEnhancementCount|1
+5										BONUS:VAR|BodySnatcherEnhancementCount|1
+
+###Block: Cerebremancer prestige class
+# Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Cerebremancer	HD:6		TYPE:PC.Prestige.Psionic	ABB:Cer		MAXLEVEL:10	SOURCEPAGE:p.155	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Required Skill								Req. Spell Type
+CLASS:Cerebremancer	PRESKILL:2,Knowledge (Arcana)=3,Knowledge (Psionics)=3	PRESPELLTYPE:1,Arcane=2	PRESPELLTYPE:1,Psionic=2
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Cerebremancer	STARTSKILLPTS:2	CSKILL:Knowledge (Arcana)|Knowledge (Psionics)|Linguistics|Spellcraft	DEFINE:CerebremancerLVL|CL
+###Block: Class Info
+1	BONUS:VAR|MagicalManifesting|1	ABILITY:Special Ability|AUTOMATIC|Magical Manifesting ~ Cerebremancer
+2	BONUS:VAR|MindOverMagic|1		ABILITY:Special Ability|AUTOMATIC|Mind over Magic ~ Cerebremancer
+3	BONUS:VAR|MagicalManifesting|1
+5	BONUS:VAR|MagicalManifesting|1
+6	BONUS:VAR|MindOverMagic|1
+7	BONUS:VAR|MagicalManifesting|1
+9	BONUS:VAR|MagicalManifesting|1
+10	ABILITY:Special Ability|AUTOMATIC|Weave the Sources ~ Cerebremancer
+
+###Block: Cerebremancer enhance psionic ability
+1	BONUS:ABILITYPOOL|Cerebremancer Enhancement Choice|1		BONUS:VAR|CerebremancerEnhancementCount|1	DEFINE:CerebremancerEnhancementCount|0
+2											BONUS:VAR|CerebremancerEnhancementCount|1
+3											BONUS:VAR|CerebremancerEnhancementCount|1
+4											BONUS:VAR|CerebremancerEnhancementCount|1
+5											BONUS:VAR|CerebremancerEnhancementCount|1
+6											BONUS:VAR|CerebremancerEnhancementCount|1
+7											BONUS:VAR|CerebremancerEnhancementCount|1
+8											BONUS:VAR|CerebremancerEnhancementCount|1
+9											BONUS:VAR|CerebremancerEnhancementCount|1
+10											BONUS:VAR|CerebremancerEnhancementCount|1
+
+
+###Block: Elocater prestige class
+# Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Elocater	HD:8		TYPE:PC.Prestige.Psionic	ABB:Elo		MAXLEVEL:10	SOURCEPAGE:p.157	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Req. Att.	Required Feat			Multiple Requirements															Required Skill		Req. Spell Type
+CLASS:Elocater	PREATT:3	PREFEAT:2,Dodge,Mobility	PREMULT:1,[PREFEAT:1,Spring Attack],[PREABILITY:1,CATEGORY=Special Ability,Nomad's Step ~ Psychoportation]	PRESKILL:1,Acrobatics=5	PRESPELLTYPE:1,Psionic=1
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Elocater	STARTSKILLPTS:6	CSKILL:Acrobatics|Climb|Escape Artist|Fly|Knowledge (Psionics)|Perception|Sleight of Hand|Spellcraft|Stealth|Use Magic Device	DEFINE:ElocaterLVL|CL
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
+1	AUTO:FEAT|Armor Proficiency (Light)
+
+###Block: Special Abilities
+1	ABILITY:Special Ability|AUTOMATIC|Aerial Acrobatics ~ Elocater
+1	ABILITY:Special Ability|AUTOMATIC|Personal Gravity ~ Elocater
+1	ABILITY:Special Ability|AUTOMATIC|Scorn Earth ~ Elocater
+1	ABILITY:Special Ability|AUTOMATIC|Terminal Velocity ~ Elocater
+2	BONUS:VAR|SpatialAwareness|2	ABILITY:Special Ability|AUTOMATIC|Spatial Awareness ~ Elocater
+2	BONUS:VAR|FreerunningSpeedBonus|10	ABILITY:Special Ability|AUTOMATIC|Freerunning ~ Elocater
+3	BONUS:VAR|DimensionStep|1	ABILITY:Special Ability|AUTOMATIC|Dimension Step ~ Elocater	SPELLS:Innate|TIMES=DimensionStep|CASTERLEVEL=CL|Fold Space,14+INT
+4	ABILITY:Special Ability|AUTOMATIC|Flanker ~ Elocater
+5	BONUS:VAR|SpatialAwareness|2	BONUS:VAR|FreerunningSpeedBonus|10
+6	BONUS:VAR|DimensionStep|1	ABILITY:Special Ability|AUTOMATIC|Dimension Swap ~ Elocater
+6	ABILITY:Special Ability|AUTOMATIC|Transporter ~ Elocater	BONUS:ABILITYPOOL|Elocater Transporter|1	
+7	ABILITY:Special Ability|AUTOMATIC|Capricious Step ~ Elocater
+8	BONUS:VAR|SpatialAwareness|2	BONUS:VAR|FreerunningSpeedBonus|10
+9	BONUS:VAR|DimensionStep|1	ABILITY:Special Ability|AUTOMATIC|Dimension Spring Attack ~ Elocater|PREFEAT:1,Spring Attack
+10	ABILITY:Special Ability|AUTOMATIC|Accelerated Action ~ Elocater
+
+###Block: Elocater enhance psionic ability
+1	BONUS:ABILITYPOOL|Elocater Enhancement Choice|1			DEFINE:ElocaterEnhancementCount|0
+2											BONUS:VAR|ElocaterEnhancementCount|1
+3											BONUS:VAR|ElocaterEnhancementCount|1
+4											BONUS:VAR|ElocaterEnhancementCount|1
+6											BONUS:VAR|ElocaterEnhancementCount|1
+7											BONUS:VAR|ElocaterEnhancementCount|1
+8											BONUS:VAR|ElocaterEnhancementCount|1
+10											BONUS:VAR|ElocaterEnhancementCount|1
+
+
+###Block: Metaforge prestige class
+
+# Class Name	Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Metaforge	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.38	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Required Ability												Required Skill
+CLASS:Metaforge	PREABILITY:2,CATEGORY=Special Ability,Enhanced Mind Blade,Invigorating Suit ~ Aegis	PRESKILL:1,TYPE.Craft=3,TYPE.Craft=3
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Metaforge	STARTSKILLPTS:4	CSKILL:Autohypnosis|Climb|Fly|Intimidate|Knowledge (Psionics)	DEFINE:MetaforgeLVL|CL
+
+###Block: Metaforge class abilities
+1	BONUS:VAR|AegisCL|CL	BONUS:VAR|AegisDRLVL|CL	BONUS:VAR|AstralSuitLVL|CL	BONUS:VAR|MndBladeLVL|CL
+1	BONUS:VAR|CrystallizedMindBlade|(CL+3)/4																ABILITY:Special Ability|AUTOMATIC|Crystallized Mind Blade ~ Metaforge
+2	BONUS:VAR|TransferEnhancement|CL/2																	ABILITY:Special Ability|AUTOMATIC|Transfer Enhancement ~ Metaforge
+3																							ABILITY:Special Ability|AUTOMATIC|Dual Summon ~ Metaforge
+10																							ABILITY:Special Ability|AUTOMATIC|Shift Form ~ Metaforge
+
+
+###Block: Metamind prestige class
+# Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Metamind	HD:6		TYPE:PC.Prestige.Psionic	ABB:MMd		MAXLEVEL:10	SOURCEPAGE:p.159	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Required Class				Required Feat			Required Skill
+CLASS:Metamind	PRECLASS:1,SPELLCASTER.Psionic=4	PREFEAT:1,Psicrystal Affinity	PRESKILL:2,Knowledge (Psionics)=5,Spellcraft=2
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Metamind	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Spellcraft	DEFINE:MetamindLVL|CL
+
+###Block: Metamind class abilities
+1	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
+1	ABILITY:Special Ability|AUTOMATIC|Cognizance Psicrystal ~ Metamind	BONUS:VAR|CogPsiCrystal|3+2*floor((CL+1)/2)
+1	ABILITY:Special Ability|AUTOMATIC|Sequestration ~ Metamind	BONUS:VAR|Sequestration|(1+CL)
+2										AUTO:FEAT|Psionic Talent
+4	BONUS:VAR|EfficientRecharge|1	ABILITY:Special Ability|AUTOMATIC|Efficient Recharge ~ Metamind
+5	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1	AUTO:FEAT|Psionic Talent
+8									BONUS:VAR|EfficientRecharge|1	AUTO:FEAT|Psionic Talent
+9	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
+10	ABILITY:Special Ability|AUTOMATIC|Font of Power ~ Metamind
+
+###Block: Metamind enhance psionic ability
+1	BONUS:ABILITYPOOL|Metamind Enhancement Choice|1			DEFINE:MetamindEnhancementCount|0
+2											BONUS:VAR|MetamindEnhancementCount|1
+3											BONUS:VAR|MetamindEnhancementCount|1
+4											BONUS:VAR|MetamindEnhancementCount|1
+6											BONUS:VAR|MetamindEnhancementCount|1
+7											BONUS:VAR|MetamindEnhancementCount|1
+8											BONUS:VAR|MetamindEnhancementCount|1
+10											BONUS:VAR|MetamindEnhancementCount|1
+
+
+###Block: Metamorph prestige class
+
+# Class Name	Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus						Modify VAR
+CLASS:Metamorph	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.19	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Required Feat				Required Skill							Req. Known Spell
+CLASS:Metamorph	PREFEAT:1,Improved Metamorphosis	PRESKILL:2,Autohypnosis=5,Knowledge (Psionics)=5	PRESPELL:1,Metamorphosis
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Metamorph	STARTSKILLPTS:2	CSKILL:Autohypnosis|Climb|Fly|Knowledge (Nature)|Knowledge (Psionics)|Spellcraft|Swim	DEFINE:MetamorphLVL|CL
+
+###Block: Metamorph class abilities
+1	BONUS:VAR|AlterMetamorphosisLVL|CL
+1	BONUS:VAR|NaturalShifter|1	ABILITY:Special Ability|AUTOMATIC|Natural Shifter ~ Metamorph
+1	ABILITY:Special Ability|AUTOMATIC|Supernatural Shift ~ Metamorph
+2	BONUS:VAR|FreeShiftTimes|(CL/2)	ABILITY:Special Ability|AUTOMATIC|Free Shift ~ Metamorph
+3	ABILITY:Special Ability|AUTOMATIC|Alter Metamorphosis ~ Metamorph
+5	ABILITY:Special Ability|AUTOMATIC|Quick Shift ~ Metamorph
+6	BONUS:VAR|NaturalShifter|1	ABILITY:Special Ability|AUTOMATIC|Gain Major Metamorphosis ~ Metamorph
+7	ABILITY:Special Ability|AUTOMATIC|Extended Shift ~ Metamorph
+9	ABILITY:Special Ability|AUTOMATIC|Shift Type ~ Metamorph
+10	ABILITY:Special Ability|AUTOMATIC|Permanent Shift ~ Metamorph
+
+###Block: Metamorph enhance psionic ability
+1	BONUS:ABILITYPOOL|Metamorph Enhancement Choice|1								DEFINE:MetamorphEnhancementCount|0
+2										BONUS:VAR|MetamorphEnhancementCount|1
+3										BONUS:VAR|MetamorphEnhancementCount|1
+4										BONUS:VAR|MetamorphEnhancementCount|1
+5										BONUS:VAR|MetamorphEnhancementCount|1
+7										BONUS:VAR|MetamorphEnhancementCount|1
+8										BONUS:VAR|MetamorphEnhancementCount|1
+9										BONUS:VAR|MetamorphEnhancementCount|1
+10										BONUS:VAR|MetamorphEnhancementCount|1
+
+
+###Block: Mystic Archer prestige class
+
+# Class Name		Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Mystic Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:7	SOURCEPAGE:p.23	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Req. Att.	Required Feat								Required Skill		Var. Must Be Grater
+CLASS:Mystic Archer	PREATT:6	PREFEAT:3,Intuitive Shot,Point-Blank Shot,Psionic Shot	PRESKILL:1,Perception=6	PREVARGT:IsPsionic,0
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Mystic Archer	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Perception|Survival	DEFINE:MysticArcherLVL|CL
+
+###Block: Mystic Archer class abilities
+1	BONUS:VAR|InevitableStrikeTimes|(CL+1)/2	ABILITY:Special Ability|AUTOMATIC|Inevitable Strike ~ Mystic Archer
+2								ABILITY:Special Ability|AUTOMATIC|Blindsense ~ Mystic Archer
+2	BONUS:VAR|RangedSneakAttack|1			ABILITY:Special Ability|AUTOMATIC|Ranged Sneak Attack ~ Mystic Archer
+3	BONUS:VAR|HeightenedSensesRange|5*(CL-2)	ABILITY:Special Ability|AUTOMATIC|Heightened Senses ~ Mystic Archer
+4								ABILITY:Special Ability|AUTOMATIC|Tremorsense ~ Mystic Archer
+5	BONUS:VAR|RangedSneakAttack|1
+6								ABILITY:Special Ability|AUTOMATIC|Blindsight ~ Mystic Archer
+7								ABILITY:Special Ability|AUTOMATIC|Unhindered Vision ~ Mystic Archer
+
+
+###Block: Phrenic Slayer prestige class
+# Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Phrenic Slayer	HD:10		TYPE:PC.Prestige.Psionic	ABB:PhS		MAXLEVEL:10	SOURCEPAGE:p.161	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Req. Att.	Multiple Requirements													Required Skill				Required Text																				Var. Must Be Grater
+CLASS:Phrenic Slayer	PREATT:4	PREMULT:1,[PREFEAT:1,Skill Focus (Survival)],[PREABILITY:1,CATEGORY=Special Ability,Track]	PRESKILL:1,Knowledge (Psionics)=1	PRETEXT:Must have had hostile encouter with the psionic creature to be selected as a favored enemy, alone or with a small group.	PREVARGT:TotalPowerPoints,0
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Phrenic Slayer	STARTSKILLPTS:4	CSKILL:Bluff|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Survival	DEFINE:PhrenicSlayerLVL|CL
+
+###Block: Phrenic Slayer Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
+1													AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
+
+###Block: Phrenic Slayer Class Info
+1	BONUS:VAR|SlayerFavoredEnemy|2	ABILITY:Special Ability|AUTOMATIC|Favored Enemy ~ Phrenic Slayer
+1	ABILITY:Special Ability|AUTOMATIC|Enemy Sense ~ Phrenic Slayer
+2	BONUS:VAR|BrainNauseaDC|10+(CL/2)+WIS	BONUS:VAR|BrainNausea|1	ABILITY:Special Ability|AUTOMATIC|Brain Nausea ~ Phrenic Slayer
+3	BONUS:VAR|LucidBuffer|2								ABILITY:Special Ability|AUTOMATIC|Lucid Buffer ~ Phrenic Slayer
+4	BONUS:VAR|SlayerFavoredEnemy|2						
+5	BONUS:VAR|SlayerPowerResistance|13+CL						ABILITY:Special Ability|AUTOMATIC|Power Resistance ~ Phrenic Slayer
+6	BONUS:VAR|BrainNausea|1									ABILITY:Special Ability|AUTOMATIC|Cerebral Blind ~ Phrenic Slayer
+7	BONUS:VAR|SlayerFavoredEnemy|2
+8	BONUS:VAR|LucidBuffer|2									ABILITY:Special Ability|AUTOMATIC|Breach Power Resistance ~ Phrenic Slayer
+9													ABILITY:Special Ability|AUTOMATIC|Cerebral Immunity ~ Phrenic Slayer
+10	BONUS:VAR|SlayerFavoredEnemy|2	BONUS:VAR|BrainNausea|1			ABILITY:Special Ability|AUTOMATIC|Rebound Attack ~ Phrenic Slayer
+
+###Block: Phrenic Slayer enhance psionic ability
+1	BONUS:ABILITYPOOL|Phrenic Slayer Enhancement Choice|1		DEFINE:PhrenicSlayerEnhancementCount|0
+2											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+3											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+4											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+5											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+6											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+7											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+8											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+9											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+10											BONUS:VAR|PhrenicSlayerEnhancementCount|1
+
+
+###Block: Psicrystal Imprinter prestige class
+
+# Class Name			Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Psicrystal Imprinter	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.39	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name			Required Feat							Required Skill
+CLASS:Psicrystal Imprinter	PREFEAT:2,Craft Cognizance Crystal,Scribe Scroll	PRESKILL:2,Knowledge (Psionics)=1,Spellcraft=5
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Psicrystal Imprinter	STARTSKILLPTS:2	CSKILL:Knowledge (Psionics)|Spellcraft
+
+###Block: Psicrystal imprinter Class abilities
+1	DEFINE:PsicrystalImprinterLVL|CL
+1	ABILITY:Special Ability|AUTOMATIC|Psicrystal Bond ~ Psicrystal Imprinter
+1	ABILITY:Special Ability|AUTOMATIC|Psicrystal Receptacle ~ Psicrystal Imprinter
+2	BONUS:VAR|SkilledCrafter|CL/2		ABILITY:Special Ability|AUTOMATIC|Skilled Crafter ~ Psicrystal Imprinter
+3	BONUS:VAR|PsicrystalResonanceLVL|CL	ABILITY:Special Ability|AUTOMATIC|Psicrystal Resonance ~ Psicrystal Imprinter
+4	AUTO:FEAT|Improved Psicrystal
+5	ABILITY:Special Ability|AUTOMATIC|Efficient Receptacle ~ Psicrystal Imprinter
+7	AUTO:FEAT|Improved Psicrystal
+9	ABILITY:Special Ability|AUTOMATIC|Essence Crystal ~ Psicrystal Imprinter
+10	BONUS:VAR|EfficientReceptacle|-1	ABILITY:Special Ability|AUTOMATIC|Crystalline Infusion ~ Psicrystal Imprinter		AUTO:FEAT|Improved Psicrystal
+
+###Block: Psicrystal Imprinter enhance psionic ability
+1	BONUS:ABILITYPOOL|Psicrystal Imprinter Enhancement Choice|1									DEFINE:PsicrystalImprinterEnhancementCount|0
+2											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+3											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+4											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+5											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+6											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+7											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+8											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+9											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+10											BONUS:VAR|PsicrystalImprinterEnhancementCount|1
+
+
+###Block: Psion Uncarnate prestige class
+# Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Psion Uncarnate	HD:6		TYPE:PC.Prestige.Psionic	ABB:PUn		MAXLEVEL:10	SOURCEPAGE:p.163	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Required Feat		Required Skill						Req. Spell Type			Required Text
+CLASS:Psion Uncarnate	PREFEAT:1,Psionic Body	PRESKILL:2,Knowledge (Psionics)=5,Spellcraft=5	PRESPELLTYPE:1,Psionic=3	PRETEXT:Must have had some instruction by another psion uncarnate or one of the Unbodied.
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Psion Uncarnate	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Disguise|Knowledge (Planes)|Sense Motive|Spellcraft	DEFINE:PsionUncarnateLVL|CL
+
+###Block: Psion Uncarnate Class Info
+1	BONUS:VAR|ShedBody|9+CL	ABILITY:Special Ability|AUTOMATIC|Shed Body ~ Psion Uncarnate
+1	ABILITY:Special Ability|AUTOMATIC|Matter-Bound ~ Psion Uncarnate
+2	BONUS:VAR|UncarnateIncorporealTouchDice|1	BONUS:VAR|UncarnateIncorporealTouch|(CL/2)+2	ABILITY:Special Ability|AUTOMATIC|Incorporeal Touch ~ Psion Uncarnate
+2	ABILITY:Special Ability|AUTOMATIC|Uncarnate Armor ~ Psion Uncarnate
+3	BONUS:VAR|AssumeEquipment|CL			ABILITY:Special Ability|AUTOMATIC|Assume Equipment ~ Psion Uncarnate
+4								ABILITY:Special Ability|AUTOMATIC|Assume Likeness ~ Psion Uncarnate
+5	BONUS:VAR|UncarnateIncorporealTouchDice|1	ABILITY:Special Ability|AUTOMATIC|Parting the Veil ~ Psion Uncarnate
+6								ABILITY:Special Ability|AUTOMATIC|Hide Mind ~ Psion Uncarnate
+7	BONUS:VAR|TelekineticForceDC|10+CL+max(INT,WIS,CHA)	ABILITY:Special Ability|AUTOMATIC|Telekinetic Force ~ Psion Uncarnate				SPELLS:Innate|TIMES=3|Telekinetic Force,TelekineticForceDC					AUTO:FEAT|Psionic Talent
+8								ABILITY:Special Ability|AUTOMATIC|Rend the Veil ~ Psion Uncarnate
+9	BONUS:VAR|UncarnateIncorporealTouchDice|1	BONUS:VAR|UncarnateBridgeDC|10+(CL/2)+max(INT,WIS,CHA)	ABILITY:Special Ability|AUTOMATIC|Uncarnate Bridge ~ Psion Uncarnate
+10								ABILITY:Special Ability|AUTOMATIC|Uncarnate ~ Psion Uncarnate	TEMPLATE:Incorporeal
+
+###Block: Psion Uncarnate enhance psionic ability
+1	BONUS:ABILITYPOOL|Psion Uncarnate Enhancement Choice|1	DEFINE:PsionUncarnateEnhancementCount|0
+2											BONUS:VAR|PsionUncarnateEnhancementCount|1
+3											BONUS:VAR|PsionUncarnateEnhancementCount|1
+5											BONUS:VAR|PsionUncarnateEnhancementCount|1
+6											BONUS:VAR|PsionUncarnateEnhancementCount|1
+8											BONUS:VAR|PsionUncarnateEnhancementCount|1
+9											BONUS:VAR|PsionUncarnateEnhancementCount|1
+
+
+###Block: Psychic Fist prestige class
+# Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Psychic Fist	HD:8		TYPE:PC.Prestige.Psionic	ABB:PFi		MAXLEVEL:10	SOURCEPAGE:p.166	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Req. Att.	Required Feat					Required Skill		Var. Must Be Grater
+CLASS:Psychic Fist	PREATT:4	PREFEAT:1,Psionic Fist,Psionic Weapon	PRESKILL:1,Acrobatics=6	PREVARGT:TotalPowerPoints,0	PREVARGT:KiPoints,0
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Psychic Fist	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Escape Artist|Knowledge (Psionics)|Spellcraft|Stealth	DEFINE:PsychicFistLVL|CL
+# Class Name		Spell Stat		Spell Type		Memorize	Caster level				Use Spell List
+CLASS:Psychic Fist	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Psychic Fist|CL	SPELLLIST:1|Psychic Warrior
+
+###Block: Psychic Fist Psionic subtype, BasePowerPoints, BonusPowerPoints
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	DEFINE:PsychicFistOwnManifesting|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	BONUS:VAR|PsychicFistPL|PsychicFistML	BONUS:VAR|PsychicFistML|var("BL=Psychic Fist")	DEFINE:PsychicFistPL|0	DEFINE:PsychicFistML|0
+1	DEFINE:MaxManifesterLVL|0	BONUS:VAR|MaxManifesterLVL|PsychicFistML|TYPE=NoStack
+1	BONUS:VAR|BasePowerPoints|1	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:PsychicFistPL,2	BONUS:VAR|BasePowerPoints|3|PREVARGTEQ:PsychicFistPL,3	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:PsychicFistPL,4
+1	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:PsychicFistPL,5	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:PsychicFistPL,6	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:PsychicFistPL,7	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:PsychicFistPL,8
+1	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:PsychicFistPL,9	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:PsychicFistPL,10
+1	BONUS:VAR|BonusPowerPoints|(WIS*PsychicFistPL)/2|TYPE=PsychicFistBonusPP
+1	DEFINE:PsychicFistPKL|PsychicFistLVL*PsychicFistOwnManifesting	BONUS:VAR|PsychicFistPKL|var("BL=Psychic Fist")*PsychicFistOwnManifesting
+1	DEFINE:PsychicFistMPL|PsychicFistLVL*PsychicFistOwnManifesting	BONUS:VAR|PsychicFistMPL|var("BL=Psychic Fist")*PsychicFistOwnManifesting
+1	DEFINE:PsychicFistPowersKnown|0	BONUS:VAR|PsychicFistPowersKnown|PsychicFistPKL*PsychicFistOwnManifesting
+1	DEFINE:PsychicFistMaxPowerLevel|0	BONUS:VAR|PsychicFistMaxPowerLevel|floor((PsychicFistMPL+1)/2)*PsychicFistOwnManifesting
+
+###Block: Psychic Fist Monk Abilities
+1						BONUS:VAR|MonkACLVL|CL			ABILITY:Special Ability|AUTOMATIC|Monk Abilities ~ Psychic Fist
+1						BONUS:VAR|MonkFastMovementLVL|CL
+1						BONUS:VAR|FlurryLVL|CL
+1	BONUS:UDAM|CLASS.Monk|CL
+1						BONUS:VAR|KiPoolLVL|KiPower
+
+###Block: Psychic Fist Manifestng
+1	KNOWN:0,1*PsychicFistOwnManifesting
+2	KNOWN:0,2*PsychicFistOwnManifesting	
+3	KNOWN:0,2*PsychicFistOwnManifesting,1*PsychicFistOwnManifesting
+4	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting
+5	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,1*PsychicFistOwnManifesting
+6	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting
+7	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,1*PsychicFistOwnManifesting
+8	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting
+9	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,1*PsychicFistOwnManifesting
+10	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting
+
+###Block: Psychic Fist Class Info
+2	BONUS:VAR|KiPower|CL/2	ABILITY:Special Ability|AUTOMATIC|Ki Power ~ Psychic Fist
+3	BONUS:VAR|InfusedBody|1					ABILITY:Special Ability|AUTOMATIC|Infused Body ~ Psychic Fist
+4								BONUS:VAR|MesmerizingGlowTargets|CL/2	BONUS:VAR|MesmerizingGlowDC|14+WIS	ABILITY:Special Ability|AUTOMATIC|Mesmerizing Glow ~ Psychic Fist
+5	BONUS:ABILITYPOOL|Psychic Fist Feat|1
+6	BONUS:VAR|InfusedBody|1	ABILITY:Special Ability|AUTOMATIC|Concentrated Will ~ Psychic Fist
+7	ABILITY:Special Ability|AUTOMATIC|Psionic Acrobatics ~ Psychic Fist
+9								BONUS:VAR|InfusedBody|1
+10	BONUS:ABILITYPOOL|Psychic Fist Feat|1	ABILITY:Special Ability|AUTOMATIC|Psychic Fusion ~ Psychic Fist
+
+###Block: Psychic Fist enhance psionic ability
+1	BONUS:ABILITYPOOL|Psychic Fist Enhancement Choice|1		DEFINE:Psychic FistEnhancementCount|0
+2											BONUS:VAR|PsychicFistEnhancementCount|1
+3											BONUS:VAR|PsychicFistEnhancementCount|1
+4											BONUS:VAR|PsychicFistEnhancementCount|1
+5											BONUS:VAR|PsychicFistEnhancementCount|1
+7											BONUS:VAR|PsychicFistEnhancementCount|1
+8											BONUS:VAR|PsychicFistEnhancementCount|1
+9											BONUS:VAR|PsychicFistEnhancementCount|1
+10											BONUS:VAR|PsychicFistEnhancementCount|1
+
+
+###Block: Pyrokineticist prestige class
+# Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Pyrokineticist	HD:8		TYPE:PC.Prestige.Psionic	ABB:Pyr		MAXLEVEL:10	SOURCEPAGE:p.168	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Required AL		Required Skill										Required Text											Var. Must Be Grater
+CLASS:Pyrokineticist	PREALIGN:CG,CN,CE	PRESKILL:3,Autohypnosis=5,Craft (Alchemy)=1,Knowledge (Psionics)=2	PRETEXT:Must have set fire to a structure of any size just to watch it burn.	PREVARGT:TotalPowerPoints,0
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Pyrokineticist	STARTSKILLPTS:2	CSKILL:Acrobatics|Autohypnosis|Climb|Intimidate|Spellcraft	DEFINE:PyrokineticistLVL|CL
+
+###Block: Pyrokineticist Class Info
+1	ABILITY:Special Ability|AUTOMATIC|Fire Lash ~ Pyrokineticist
+1	BONUS:VAR|ManipulateBlazeRange|(25+5*floor(CL/2))	ABILITY:Special Ability|AUTOMATIC|Manipulate Blaze ~ Pyrokineticist
+2	BONUS:VAR|FireAdaptation|4	BONUS:VAR|FireResistanceBonus|10	ABILITY:Special Ability|AUTOMATIC|Fire Adaptation ~ Pyrokineticist
+2	ABILITY:Special Ability|AUTOMATIC|Hand Afire ~ Pyrokineticist	BONUS:VAR|HandAfire|2
+3	BONUS:VAR|BoltFire|CL	ABILITY:Special Ability|AUTOMATIC|Bolt of Fire ~ Pyrokineticist
+4	BONUS:VAR|WeaponAfire|2	ABILITY:Special Ability|AUTOMATIC|Weapon Afire ~ Pyrokineticist
+5	BONUS:VAR|NimbusDuration|CL	BONUS:VAR|Nimbus|2							ABILITY:Special Ability|AUTOMATIC|Nimbus ~ Pyrokineticist
+6	ABILITY:Special Ability|AUTOMATIC|Firewalk ~ Pyrokineticist
+6	BONUS:VAR|LeechHeat|2	ABILITY:Special Ability|AUTOMATIC|Leech Heat ~ Pyrokineticist
+6	BONUS:VAR|PenetratingFire|CL	ABILITY:Special Ability|AUTOMATIC|Penetrating Fire ~ Pyrokineticist
+7	BONUS:VAR|FireAdaptation|4	BONUS:VAR|FireResistanceBonus|10
+8	BONUS:VAR|HandAfire,Nimbus,WeaponAfire|2
+9	BONUS:VAR|LeechHeat|2	BONUS:VAR|HeatDeathDC|14+CHA	ABILITY:Special Ability|AUTOMATIC|Heat Death ~ Pyrokineticist
+10	BONUS:VAR|ConflagrationDC|15+CHA	ABILITY:Special Ability|AUTOMATIC|Conflagration ~ Pyrokineticist
+10	ABILITY:Special Ability|AUTOMATIC|Fire Soul ~ Pyrokineticist
+
+
+###Block: Sighted Seeker prestige class
+
+# Class Name		Hit Dice	Type					Max Level	Base class as subclass?	Source Page		Save checks bonus													Combat bonus						Modify VAR
+CLASS:Sighted Seeker	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	ALLOWBASECLASS:NO		SOURCEPAGE:p.27	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name		Req. Att.	Multiple Requirements												Required Skill						Var. Must Be Grater
+CLASS:Sighted Seeker	PREATT:4	PREMULT:1,[PREFEAT:1,Skill Focus(Survival)],[PREABILITY:1,CATEGORY=Special Ability,Track]	PRESKILL:3,Diplomacy=2,Perception=5,Survival=2	PREVARGT:TotalPowerPoints,0
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Sighted Seeker	STARTSKILLPTS:6	CSKILL:Diplomacy|Knowledge (Local)|Knowledge (Nature)|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Stealth|Survival
+# Class Name		Spell Stat		Stat for Bonus Spells	Spell Type		Memorize	Caster level
+CLASS:Sighted Seeker	SPELLSTAT:WIS	BONUSSPELLSTAT:NONE	SPELLTYPE:PSIONIC	MEMORIZE:NO	BONUS:CASTERLEVEL|Sighted Seeker|SightedSeekerML
+
+###Block: Sighted Seeker setup for possible manifesting
+1	BONUS:VAR|IsPsionic|1																											DEFINE:IsPsionic|0	DEFINE:SightedSeekerOwnManifesting|0			ABILITY:Special Ability|AUTOMATIC|Psionic
+1	BONUS:VAR|SightedSeekerPL|SightedSeekerML	BONUS:VAR|SightedSeekerML|var("BL=Sighted Seeker")															DEFINE:SightedSeekerPL|0	DEFINE:SightedSeekerML|0
+1	DEFINE:MaxManifesterLVL|0	BONUS:VAR|MaxManifesterLVL|SightedSeekerML|TYPE=NoStack
+1	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:SightedSeekerPL,1	BONUS:VAR|BasePowerPoints|3|PREVARGTEQ:SightedSeekerPL,2	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:SightedSeekerPL,3
+1	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:SightedSeekerPL,4	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:SightedSeekerPL,5	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:SightedSeekerPL,6
+1	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:SightedSeekerPL,7	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:SightedSeekerPL,8	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:SightedSeekerPL,9
+1	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:SightedSeekerPL,10
+1	BONUS:VAR|BonusPowerPoints|(WIS*SightedSeekerPL)/2|TYPE=SightedSeekerBonusPP
+1	DEFINE:SightedSeekerPKL|SightedSeekerLVL*SightedSeekerOwnManifesting	BONUS:VAR|SightedSeekerPKL|var("BL=SightedSeeker)*SightedSeekerOwnManifesting
+1	DEFINE:SightedSeekerMPL|SightedSeekerLVL*SightedSeekerOwnManifesting	BONUS:VAR|SightedSeekerMPL|var("BL=SightedSeeker)*SightedSeekerOwnManifesting
+1	DEFINE:SightedSeekerPowersKnown|0	BONUS:VAR|SightedSeekerPowersKnown|SightedSeekerPKL*SightedSeekerOwnManifesting	BONUS:VAR|SightedSeekerPowersKnown|floor((SightedSeekerPKL+4)/6)*SightedSeekerOwnManifesting
+1	DEFINE:SightedSeekerMaxPowerLevel|0	BONUS:VAR|SightedSeekerMaxPowerLevel|min(3,floor((SightedSeekerMPL+2)/3))*SightedSeekerOwnManifesting	BONUS:VAR|SightedSeekerMaxPowerLevel|1*SightedSeekerOwnManifesting|PREVARGTEQ:SightedSeekerMPL,9
+
+###Block: Sighted Seeker powers known
+1	KNOWN:0,1*SightedSeekerOwnManifesting
+2	KNOWN:0,3*SightedSeekerOwnManifesting
+3	KNOWN:0,4*SightedSeekerOwnManifesting
+4	KNOWN:0,4*SightedSeekerOwnManifesting,1*SightedSeekerOwnManifesting
+5	KNOWN:0,4*SightedSeekerOwnManifesting,2*SightedSeekerOwnManifesting
+6	KNOWN:0,4*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting
+7	KNOWN:0,4*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting,1*SightedSeekerOwnManifesting
+8	KNOWN:0,4*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting
+9	KNOWN:0,4*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting,1*SightedSeekerOwnManifesting
+10	KNOWN:0,4*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting,3*SightedSeekerOwnManifesting,2*SightedSeekerOwnManifesting
+
+###Block: Sighted Seeker class abilities
+1	BONUS:VAR|SightedSeekerLVL|CL	DEFINE:SightedSeekerLVL|0	ABILITY:Special Ability|AUTOMATIC|Favored Prey ~ Sighted Seeker
+1											ABILITY:Internal|AUTOMATIC|Urban Tracking ~ Sighted Seeker|Weapon and Armor Proficiencies ~ Sighted Seeker
+2											ABILITY:Special Ability|AUTOMATIC|Passive Seeking ~ Sighted Seeker
+3											ABILITY:Special Ability|AUTOMATIC|Mark Prey ~ Sighted Seeker
+4											ABILITY:Special Ability|AUTOMATIC|Prescient Tactics ~ Sighted Seeker
+5											ABILITY:Special Ability|AUTOMATIC|Seeker's Analysis ~ Sighted Seeker
+7											ABILITY:Special Ability|AUTOMATIC|Sighted Analysis ~ Sighted Seeker
+8											ABILITY:Internal|AUTOMATIC|Hypercognition ~ Sighted Seeker
+9											ABILITY:Special Ability|AUTOMATIC|The Sight ~ Sighted Seeker
+10											ABILITY:Internal|AUTOMATIC|Metafaculty ~ Sighted Seeker
+
+###Block: Sighted Seeker enhance psionic ability
+1	BONUS:ABILITYPOOL|Sighted Seeker Enhancement Choice|1								DEFINE:SightedSeekerEnhancementCount|0
+2										BONUS:VAR|SightedSeekerEnhancementCount|1
+3										BONUS:VAR|SightedSeekerEnhancementCount|1
+4										BONUS:VAR|SightedSeekerEnhancementCount|1
+6										BONUS:VAR|SightedSeekerEnhancementCount|1
+7										BONUS:VAR|SightedSeekerEnhancementCount|1
+8										BONUS:VAR|SightedSeekerEnhancementCount|1
+10										BONUS:VAR|SightedSeekerEnhancementCount|1
+
+
+###Block: Soul Archer prestige class
+
+# Class Name	Hit Dice	Type					Max Level	Source Page		Save checks bonus												Combat bonus					Modify VAR
+CLASS:Soul Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.45	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Required Ability													Req. Att.	Required Feat
+CLASS:Soul Archer	PREABILITY:1,CATEGORY=Special Ability,Enhanced Mind Blade,Enhanced Mind Bolt ~ Soulbolt	PREATT:5	PREFEAT:2,Point-Blank Shot,Precise Shot
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Soul Archer	STARTSKILLPTS:4	CSKILL:Perception|Survival	DEFINE:SoulArcherLVL|CL
+
+###Block: Soul Archer class abilities
+1	BONUS:ABILITYPOOL|Ranged Blade Skill|floor((CL+1)/2)						ABILITY:Special Ability|AUTOMATIC|Ranged Blade Skills ~ Soul Archer
+1															ABILITY:Special Ability|AUTOMATIC|Form Mind Arrow ~ Soul Archer
+2	BONUS:ABILITYPOOL|Ranged Feat|1				BONUS:VAR|MndBladeLVL|(CL-1)	ABILITY:Special Ability|AUTOMATIC|Ranged Feat ~ Soul Archer
+4															ABILITY:Special Ability|AUTOMATIC|Ranged Psychic Strike ~ Soul Archer
+6															ABILITY:Special Ability|AUTOMATIC|Reflexive Shot ~ Soul Archer
+8															ABILITY:Special Ability|AUTOMATIC|Phasing Shot ~ Soul Archer
+10															ABILITY:Special Ability|AUTOMATIC|Empowered Shot ~ Soul Archer
+
+###Block: Soul Archer enhance psionic ability
+1	BONUS:ABILITYPOOL|Soul Archer Enhancement Choice|1								DEFINE:SoulArcherEnhancementCount|0
+2										BONUS:VAR|SoulArcherEnhancementCount|1
+3										BONUS:VAR|SoulArcherEnhancementCount|1
+4										BONUS:VAR|SoulArcherEnhancementCount|1
+5										BONUS:VAR|SoulArcherEnhancementCount|1
+6										BONUS:VAR|SoulArcherEnhancementCount|1
+7										BONUS:VAR|SoulArcherEnhancementCount|1
+8										BONUS:VAR|SoulArcherEnhancementCount|1
+9										BONUS:VAR|SoulArcherEnhancementCount|1
+10										BONUS:VAR|SoulArcherEnhancementCount|1
+
+
+# NEEDS CODE WORK: TKWm needs to KNOW Far Hand or Telekinetic Force, not just have them on its power list.
+###Block: Telekinetic Weaponmaster prestige class
+
+# Class Name				Hit Dice	Type					Max Level	Source Page		Save checks bonus												Combat bonus					Modify VAR
+CLASS:Telekinetic Weaponmaster	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:5	SOURCEPAGE:p.39	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name				Req. Att.	Required Feat						Req. Known Spell
+CLASS:Telekinetic Weaponmaster	PREATT:5	PREFEAT:2,Psionic Meditation,Psionic Weapon	PRESPELL:1,Far Hand,Telekinetic Force
+# Class Name				Skill Pts/Lvl	Class Skill
+CLASS:Telekinetic Weaponmaster	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Intimidate	DEFINE:TelekineticWeaponmasterLVL|CL
+
+###Block: Telekinetic Weaponmaster class abilities
+1	ABILITY:Special Ability|AUTOMATIC|Telekinetic Reach ~ Telekinetic Weaponmaster
+2	ABILITY:Special Ability|AUTOMATIC|Telekinetic Throw ~ Telekinetic Weaponmaster
+3	ABILITY:Special Ability|AUTOMATIC|Telekinetic Block ~ Telekinetic Weaponmaster
+4	ABILITY:Special Ability|AUTOMATIC|Dual Kinetic Mastery ~ Telekinetic Weaponmaster
+5	ABILITY:Special Ability|AUTOMATIC|Telekinetic Whirlwind ~ Telekinetic Weaponmaster
+
+###Block: Telekinetic Weaponmaster enhance psionic ability
+1	BONUS:ABILITYPOOL|Telekinetic Weaponmaster Enhancement Choice|1										DEFINE:TelekineticWeaponmasterEnhancementCount|0
+2												BONUS:VAR|TelekineticWeaponmasterEnhancementCount|1
+3												BONUS:VAR|TelekineticWeaponmasterEnhancementCount|1
+4												BONUS:VAR|TelekineticWeaponmasterEnhancementCount|1
+5												BONUS:VAR|TelekineticWeaponmasterEnhancementCount|1
+
+
+###Block: Thrallherd prestige class
+# Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:Thrallherd	HD:6		TYPE:PC.Prestige.Psionic	ABB:Thr		MAXLEVEL:10	SOURCEPAGE:p.170	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Required Class				Required Feat						Multiple Requirements																Required Skill
+CLASS:Thrallherd	PRECLASS:1,SPELLCASTER.Psionic=5	PREFEAT:1,Inquisitor,Skill Focus (Diplomacy)	PREMULT:1,[PRESPELL:1,Mindlink,Mind Control],[PREABILITY:1,CATEGORY=Special Ability,TYPE.ThrallherdLinkMinds]	PRESKILL:2,Knowledge (Psionics)=5,Diplomacy=4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Thrallherd	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|Knowledge (Psionics)|Sense Motive|Spellcraft	DEFINE:ThrallherdLVL|CL
+
+###Block: Thrallherd Class Info
+1	BONUS:VAR|ThrallherdScore|(TL+CHA+CL)	ABILITY:Special Ability|AUTOMATIC|Thrallherd ~ Thrallherd
+2	BONUS:ABILITYPOOL|Alluring Voice Bonus|CL/2			ABILITY:Special Ability|AUTOMATIC|Alluring Voice ~ Thrallherd
+3	BONUS:ABILITYPOOL|Thrallherd Empathic Connection Choice|1	ABILITY:Special Ability|AUTOMATIC|Empathic Connection ~ Thrallherd
+5	BONUS:ABILITYPOOL|Thrallherd Mind Control Choice|1		ABILITY:Special Ability|AUTOMATIC|Mind Control ~ Thrallherd
+7											ABILITY:Special Ability|AUTOMATIC|Greater Mind Control ~ Thrallherd
+9											ABILITY:Special Ability|AUTOMATIC|Superior Mind Control ~ Thrallherd
+10											ABILITY:Special Ability|AUTOMATIC|Expanded Call ~ Thrallherd
+10	ABILITY:Special Ability|AUTOMATIC|Twofold Master ~ Thrallherd
+
+###Block: Thrallherd enhance psionic ability
+1	BONUS:ABILITYPOOL|Thrallherd Enhancement Choice|1		DEFINE:ThrallherdEnhancementCount|0
+2											BONUS:VAR|ThrallherdEnhancementCount|1
+3											BONUS:VAR|ThrallherdEnhancementCount|1
+4											BONUS:VAR|ThrallherdEnhancementCount|1
+5											BONUS:VAR|ThrallherdEnhancementCount|1
+6											BONUS:VAR|ThrallherdEnhancementCount|1
+7											BONUS:VAR|ThrallherdEnhancementCount|1
+8											BONUS:VAR|ThrallherdEnhancementCount|1
+9											BONUS:VAR|ThrallherdEnhancementCount|1
+
+
+###Block: War Mind prestige class
+# Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
+CLASS:War Mind	HD:10		TYPE:PC.Prestige.Psionic	ABB:WMnd		MAXLEVEL:10	SOURCEPAGE:p.173	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+# Class Name	Restricted AL		Req. Att.	Required Skill								Required Text								Var. Must Be Grater
+CLASS:War Mind	!PREALIGN:CG,CN,CE	PREATT:3	PRESKILL:2,Knowledge (History)=2,Knowledge (Psionics)=5	PRETEXT:Instruction from another war mind or Codex of War.	PREVARGT:TotalPowerPoints,0
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:War Mind	STARTSKILLPTS:2	CSKILL:Autohypnosis|Intimidate|Knowledge (History)|Knowledge (Psionics)|Spellcraft	DEFINE:WarMindLVL|CL
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level			Use Spell List
+CLASS:War Mind	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|War Mind|CL	SPELLLIST:1|Psychic Warrior
+
+###Block: War Mind Psionic subtype, BasePowerPoints, BonusPowerPoints
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	DEFINE:WarMindOwnManifesting|0	ABILITY:Special Ability|AUTOMATIC|Psionic
+1	BONUS:VAR|WarMndPL|WarMndML	BONUS:VAR|WarMndML|var("BL=War Mind")	DEFINE:WarMndPL|0	DEFINE:WarMndML|0
+1	DEFINE:MaxManifesterLVL|0	BONUS:VAR|MaxManifesterLVL|WarMndML|TYPE=NoStack
+1	BONUS:VAR|BasePowerPoints|2	BONUS:VAR|BasePowerPoints|3|PREVARGTEQ:WarMndPL,2	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:WarMndPL,3	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:WarMndPL,4
+1	BONUS:VAR|BasePowerPoints|6|PREVARGTEQ:WarMndPL,5	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:WarMndPL,6	BONUS:VAR|BasePowerPoints|9|PREVARGTEQ:WarMndPL,7	BONUS:VAR|BasePowerPoints|10|PREVARGTEQ:WarMndPL,8
+1	BONUS:VAR|BasePowerPoints|11|PREVARGTEQ:WarMndPL,9	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:WarMndPL,10
+1	BONUS:VAR|BonusPowerPoints|(WIS*WarMndPL)/2|TYPE=WarMindBonusPP
+1	DEFINE:WarMindPKL|WarMindLVL*WarMindOwnManifesting	BONUS:VAR|WarMindPKL|var("BL=War Mind")*WarMindOwnManifesting
+1	DEFINE:WarMindMPL|WarMindLVL*WarMindOwnManifesting	BONUS:VAR|WarMindMPL|var("BL=War Mind")*WarMindOwnManifesting
+1	DEFINE:WarMindPowersKnown|0	BONUS:VAR|WarMindPowersKnown|(1+floor(WarMindPKL/2))*WarMindOwnManifesting
+1	DEFINE:WarMindMaxPowerLevel|0	BONUS:VAR|WarMindMaxPowerLevel|max(1,floor(WarMindMPL/2))*WarMindOwnManifesting
+
+###Block: War Mind powers known
+1	KNOWN:0,1*WarMindOwnManifesting	DEFINE:WarMindPowersKnown|0	DEFINE:WarMindMaxPowerLevel|0	BONUS:VAR|WarMindPowersKnown|1*WarMindOwnManifesting	BONUS:VAR|WarMindMaxPowerLevel|1*WarMindOwnManifesting
+2	KNOWN:0,2*WarMindOwnManifesting	BONUS:VAR|WarMindPowersKnown|1*WarMindOwnManifesting
+3	KNOWN:0,2*WarMindOwnManifesting
+4	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting	BONUS:VAR|WarMindPowersKnown|1*WarMindOwnManifesting	BONUS:VAR|WarMindMaxPowerLevel|1*WarMindOwnManifesting
+5	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting
+6	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting	BONUS:VAR|WarMindPowersKnown|1*WarMindOwnManifesting	BONUS:VAR|WarMindMaxPowerLevel|1*WarMindOwnManifesting
+7	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting
+8	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting	BONUS:VAR|WarMindPowersKnown|1*WarMindOwnManifesting	BONUS:VAR|WarMindMaxPowerLevel|1*WarMindOwnManifesting
+9	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting
+10	KNOWN:0,2*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting,1*WarMindOwnManifesting	BONUS:VAR|WarMindPowersKnown|1*WarMindOwnManifesting	BONUS:VAR|WarMindMaxPowerLevel|1*WarMindOwnManifesting
+
+###Block: War Mind Class Info
+1				BONUS:VAR|SuperiorityChain|2	ABILITY:Special Ability|AUTOMATIC|Chain of Personal Superiority ~ War Mind
+2				BONUS:VAR|DefensiveChain|2	ABILITY:Special Ability|AUTOMATIC|Chain of Defensive Posture ~ War Mind
+3	DR:EnduringBody/-	BONUS:VAR|EnduringBody|1	ABILITY:Special Ability|AUTOMATIC|Enduring Body ~ War Mind
+4									ABILITY:Special Ability|AUTOMATIC|Well of Power ~ War Mind
+5									ABILITY:Special Ability|AUTOMATIC|Sweeping Strike ~ War Mind
+6				BONUS:VAR|EnduringBody|1
+7				BONUS:VAR|SuperiorityChain|2
+8				BONUS:VAR|DefensiveChain|2
+9				BONUS:VAR|EnduringBody|1
+10									ABILITY:Special Ability|AUTOMATIC|Chain of Overwhelming Force ~ War Mind
+
+###Block: War Mind enhance psionic ability
+1	BONUS:ABILITYPOOL|War Mind Enhancement Choice|1		BONUS:VAR|WarMindEnhancementCount|1	DEFINE:War MindEnhancementCount|0
+2											BONUS:VAR|WarMindEnhancementCount|1
+3											BONUS:VAR|WarMindEnhancementCount|1
+4											BONUS:VAR|WarMindEnhancementCount|1
+5											BONUS:VAR|WarMindEnhancementCount|1
+6											BONUS:VAR|WarMindEnhancementCount|1
+7											BONUS:VAR|WarMindEnhancementCount|1
+8											BONUS:VAR|WarMindEnhancementCount|1
+9											BONUS:VAR|WarMindEnhancementCount|1
+10											BONUS:VAR|WarMindEnhancementCount|1
+
+#
+# End
+#

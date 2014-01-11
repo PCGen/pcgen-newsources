@@ -1,0 +1,50 @@
+# CVS $Revision: $ $Author: $ -- Tue Jul 16 09:27:47 2013 -- reformated by prettylst.pl v1.50 (build 20400)
+SOURCELONG:Psionics Expanded	SOURCESHORT:PsiEx	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2012-07
+# ORIGINAL ENTRY: Douglas Limmer
+# ORIGINAL ENTRY DATE: 2013/07/05
+
+# TODO:
+#   Change source line
+
+###Block: Meditant's Flurry of Strikes
+STARTPACK:Meditant Flurry of Strikes	VISIBLE:NO	APPLY:INSTANT	EQUIPBUY:0
+GEAR:Flurry of Strikes	LOCATION:Unarmed
+
+
+###Block: Lose a skill point for Telekinetic Draw
+STARTPACK:Telekinetic Draw Skill Point Loss	VISIBLE:NO	APPLY:INSTANT
+SKILL:Lost Skill Point	RANK:1
+
+
+###Block: Starting Gold kits
+STARTPACK:Classes Starting Gold ~ UltPsi	VISIBLE:QUALIFY	APPLY:INSTANT	PREMULT:2,[PREPCLEVEL:MIN=1,MAX=1],[PRECLASS:1,Psion=1,Wilder=1,Psychic Warrior=1,Soulknife=1,Aegis=1,Cryptic=1,Dread=1,Marksman=1,Tactician=1,Vitalist=1]
+TEMPLATE:Starting Gold ~ UltPsi
+
+STARTPACK:Starting Gold UltPsi ~ Random	VISIBLE:NO	APPLY:INSTANT
+FUNDS:gp	QTY:10*roll("2d6")	PRECLASS:1,Aegis=1
+FUNDS:gp	QTY:10*roll("3d4")	PRECLASS:1,Psion=1
+FUNDS:gp	QTY:10*roll("4d4")	PRECLASS:1,Vitalist=1,Wilder=1
+FUNDS:gp	QTY:10*roll("3d6")	PRECLASS:1,Cryptic=1,Dread=1
+FUNDS:gp	QTY:10*roll("5d4")	PRECLASS:1,Marksman=1,Psychic Warrior=1,Soulknife=1
+FUNDS:gp	QTY:10*roll("4d6")	PRECLASS:1,Tactician=1
+
+STARTPACK:Starting Gold UltPsi ~ Maximum	VISIBLE:NO	APPLY:INSTANT
+FUNDS:gp	QTY:120	PRECLASS:1,Aegis=1,Psion=1
+FUNDS:gp	QTY:160	PRECLASS:1,Vitalist=1,Wilder=1
+FUNDS:gp	QTY:180	PRECLASS:1,Cryptic=1,Dread=1
+FUNDS:gp	QTY:200	PRECLASS:1,Marksman=1,Psychic Warrior=1,Soulknife=1
+FUNDS:gp	QTY:240	PRECLASS:1,Tactician=1
+
+STARTPACK:Starting Gold UltPsi ~ Average	VISIBLE:NO	APPLY:INSTANT
+FUNDS:gp	QTY:70	PRECLASS:1,Aegis=1
+FUNDS:gp	QTY:75	PRECLASS:1,Psion=1
+FUNDS:gp	QTY:100	PRECLASS:1,Vitalist=1,Wilder=1
+FUNDS:gp	QTY:105	PRECLASS:1,Cryptic=1,Dread=1
+FUNDS:gp	QTY:125	PRECLASS:1,Marksman=1,Psychic Warrior=1,Soulknife=1
+FUNDS:gp	QTY:140	PRECLASS:1,Tactician=1
+
+
+
+#
+# End
+#
