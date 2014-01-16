@@ -225,20 +225,24 @@ CLASS:Metamind	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Spellcra
 ###Block: Metamorph prestige class
 
 # Class Name	Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus						Modify VAR
-CLASS:Metamorph	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.19	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Metamorph	HD:8		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.362	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|(CL*3)/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Required Feat				Required Skill							Req. Known Spell
 CLASS:Metamorph	PREFEAT:1,Improved Metamorphosis	PRESKILL:2,Autohypnosis=5,Knowledge (Psionics)=5	PRESPELL:1,Metamorphosis
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Metamorph	STARTSKILLPTS:2	CSKILL:Autohypnosis|Climb|Fly|Knowledge (Nature)|Knowledge (Psionics)|Spellcraft|Swim	DEFINE:MetamorphLVL|CL
+CLASS:Metamorph	STARTSKILLPTS:2	CSKILL:Autohypnosis|Climb|Fly|Knowledge (Nature)|Knowledge (Psionics)|Spellcraft|Swim
+
+###Block: Metamorph class definitions
+# COMMENT: No Metamorph class abilities depend on an ability score
+#1	BONUS:VAR|MetamorphPrimeStat|INT	DEFINE:MetamorphPrimeStat|0
+1	BONUS:VAR|MetamorphLVL|CL	DEFINE:MetamorphLVL|0
 
 ###Block: Metamorph class abilities
-1	BONUS:VAR|AlterMetamorphosisLVL|CL
-1	BONUS:VAR|NaturalShifter|1	ABILITY:Special Ability|AUTOMATIC|Natural Shifter ~ Metamorph
+1	ABILITY:Special Ability|AUTOMATIC|Natural Shifter ~ Metamorph
 1	ABILITY:Special Ability|AUTOMATIC|Supernatural Shift ~ Metamorph
-2	BONUS:VAR|FreeShiftTimes|(CL/2)	ABILITY:Special Ability|AUTOMATIC|Free Shift ~ Metamorph
+2	ABILITY:Special Ability|AUTOMATIC|Free Shift ~ Metamorph
 3	ABILITY:Special Ability|AUTOMATIC|Alter Metamorphosis ~ Metamorph
 5	ABILITY:Special Ability|AUTOMATIC|Quick Shift ~ Metamorph
-6	BONUS:VAR|NaturalShifter|1	ABILITY:Special Ability|AUTOMATIC|Gain Major Metamorphosis ~ Metamorph
+6	ABILITY:Special Ability|AUTOMATIC|Gain Major Metamorphosis ~ Metamorph
 7	ABILITY:Special Ability|AUTOMATIC|Extended Shift ~ Metamorph
 9	ABILITY:Special Ability|AUTOMATIC|Shift Type ~ Metamorph
 10	ABILITY:Special Ability|AUTOMATIC|Permanent Shift ~ Metamorph
@@ -258,47 +262,54 @@ CLASS:Metamorph	STARTSKILLPTS:2	CSKILL:Autohypnosis|Climb|Fly|Knowledge (Nature)
 ###Block: Mystic Archer prestige class
 
 # Class Name		Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Mystic Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:7	SOURCEPAGE:p.23	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Mystic Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:7	SOURCEPAGE:p.364	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name		Req. Att.	Required Feat								Required Skill		Var. Must Be Grater
 CLASS:Mystic Archer	PREATT:6	PREFEAT:3,Intuitive Shot,Point-Blank Shot,Psionic Shot	PRESKILL:1,Perception=6	PREVARGT:IsPsionic,0
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Mystic Archer	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Perception|Survival	DEFINE:MysticArcherLVL|CL
+CLASS:Mystic Archer	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Perception|Survival
+
+###Block: Mystic Archer class definitions
+# COMMENT: No Mystic Archer class abilities depend on an ability score
+#1	BONUS:VAR|MysticArcherPrimeStat|INT	DEFINE:MysticArcherPrimeStat|0
+1	BONUS:VAR|MysticArcherLVL|CL	DEFINE:MysticArcherLVL|0
 
 ###Block: Mystic Archer class abilities
-1	BONUS:VAR|InevitableStrikeTimes|(CL+1)/2	ABILITY:Special Ability|AUTOMATIC|Inevitable Strike ~ Mystic Archer
-2								ABILITY:Special Ability|AUTOMATIC|Blindsense ~ Mystic Archer
-2	BONUS:VAR|RangedSneakAttack|1			ABILITY:Special Ability|AUTOMATIC|Ranged Sneak Attack ~ Mystic Archer
-3	BONUS:VAR|HeightenedSensesRange|5*(CL-2)	ABILITY:Special Ability|AUTOMATIC|Heightened Senses ~ Mystic Archer
-4								ABILITY:Special Ability|AUTOMATIC|Tremorsense ~ Mystic Archer
-5	BONUS:VAR|RangedSneakAttack|1
-6								ABILITY:Special Ability|AUTOMATIC|Blindsight ~ Mystic Archer
-7								ABILITY:Special Ability|AUTOMATIC|Unhindered Vision ~ Mystic Archer
+1	ABILITY:Special Ability|AUTOMATIC|Inevitable Strike ~ Mystic Archer
+2	ABILITY:Special Ability|AUTOMATIC|Blindsense ~ Mystic Archer
+2	ABILITY:Special Ability|AUTOMATIC|Ranged Sneak Attack ~ Mystic Archer
+3	ABILITY:Special Ability|AUTOMATIC|Heightened Senses ~ Mystic Archer
+4	ABILITY:Special Ability|AUTOMATIC|Tremorsense ~ Mystic Archer
+6	ABILITY:Special Ability|AUTOMATIC|Blindsight ~ Mystic Archer
+7	ABILITY:Special Ability|AUTOMATIC|Unhindered Vision ~ Mystic Archer
 
 
 ###Block: Phrenic Slayer prestige class
 # Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Phrenic Slayer	HD:10		TYPE:PC.Prestige.Psionic	ABB:PhS		MAXLEVEL:10	SOURCEPAGE:p.161	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Phrenic Slayer	HD:10		TYPE:PC.Prestige.Psionic	ABB:PhS		MAXLEVEL:10	SOURCEPAGE:p.365	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name		Req. Att.	Multiple Requirements													Required Skill				Required Text																				Var. Must Be Grater
 CLASS:Phrenic Slayer	PREATT:4	PREMULT:1,[PREFEAT:1,Skill Focus (Survival)],[PREABILITY:1,CATEGORY=Special Ability,Track]	PRESKILL:1,Knowledge (Psionics)=1	PRETEXT:Must have had hostile encouter with the psionic creature to be selected as a favored enemy, alone or with a small group.	PREVARGT:TotalPowerPoints,0
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Phrenic Slayer	STARTSKILLPTS:4	CSKILL:Bluff|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Survival	DEFINE:PhrenicSlayerLVL|CL
+CLASS:Phrenic Slayer	STARTSKILLPTS:4	CSKILL:Bluff|Knowledge (Psionics)|Perception|Sense Motive|Spellcraft|Survival
 
 ###Block: Phrenic Slayer Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
-1													AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
+1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies
+1	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
+1	AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
+
+###Block: Phrenic Slayer class definitions
+1	BONUS:VAR|PhrenicSlayerPrimeStat|WIS	DEFINE:PhrenicSlayerPrimeStat|0
+1	BONUS:VAR|PhrenicSlayerLVL|CL	DEFINE:PhrenicSlayerLVL|0
 
 ###Block: Phrenic Slayer Class Info
-1	BONUS:VAR|SlayerFavoredEnemy|2	ABILITY:Special Ability|AUTOMATIC|Favored Enemy ~ Phrenic Slayer
+1	ABILITY:Special Ability|AUTOMATIC|Favored Enemy ~ Phrenic Slayer
 1	ABILITY:Special Ability|AUTOMATIC|Enemy Sense ~ Phrenic Slayer
-2	BONUS:VAR|BrainNauseaDC|10+(CL/2)+WIS	BONUS:VAR|BrainNausea|1	ABILITY:Special Ability|AUTOMATIC|Brain Nausea ~ Phrenic Slayer
-3	BONUS:VAR|LucidBuffer|2								ABILITY:Special Ability|AUTOMATIC|Lucid Buffer ~ Phrenic Slayer
-4	BONUS:VAR|SlayerFavoredEnemy|2						
-5	BONUS:VAR|SlayerPowerResistance|13+CL						ABILITY:Special Ability|AUTOMATIC|Power Resistance ~ Phrenic Slayer
-6	BONUS:VAR|BrainNausea|1									ABILITY:Special Ability|AUTOMATIC|Cerebral Blind ~ Phrenic Slayer
-7	BONUS:VAR|SlayerFavoredEnemy|2
-8	BONUS:VAR|LucidBuffer|2									ABILITY:Special Ability|AUTOMATIC|Breach Power Resistance ~ Phrenic Slayer
-9													ABILITY:Special Ability|AUTOMATIC|Cerebral Immunity ~ Phrenic Slayer
-10	BONUS:VAR|SlayerFavoredEnemy|2	BONUS:VAR|BrainNausea|1			ABILITY:Special Ability|AUTOMATIC|Rebound Attack ~ Phrenic Slayer
+2	ABILITY:Special Ability|AUTOMATIC|Brain Nausea ~ Phrenic Slayer
+3	ABILITY:Special Ability|AUTOMATIC|Lucid Buffer ~ Phrenic Slayer
+5	ABILITY:Special Ability|AUTOMATIC|Power Resistance ~ Phrenic Slayer
+6	ABILITY:Special Ability|AUTOMATIC|Cerebral Blind ~ Phrenic Slayer
+8	ABILITY:Special Ability|AUTOMATIC|Breach Power Resistance ~ Phrenic Slayer
+9	ABILITY:Special Ability|AUTOMATIC|Cerebral Immunity ~ Phrenic Slayer
+10	ABILITY:Special Ability|AUTOMATIC|Rebound Attack ~ Phrenic Slayer
 
 ###Block: Phrenic Slayer enhance psionic ability
 1	BONUS:ABILITYPOOL|Phrenic Slayer Enhancement Choice|1		DEFINE:PhrenicSlayerEnhancementCount|0
@@ -316,23 +327,27 @@ CLASS:Phrenic Slayer	STARTSKILLPTS:4	CSKILL:Bluff|Knowledge (Psionics)|Perceptio
 ###Block: Psicrystal Imprinter prestige class
 
 # Class Name			Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Psicrystal Imprinter	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.39	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Psicrystal Imprinter	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.367	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name			Required Feat							Required Skill
 CLASS:Psicrystal Imprinter	PREFEAT:2,Craft Cognizance Crystal,Scribe Scroll	PRESKILL:2,Knowledge (Psionics)=1,Spellcraft=5
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Psicrystal Imprinter	STARTSKILLPTS:2	CSKILL:Knowledge (Psionics)|Spellcraft
 
+###Block: Psicrystal Imprinter class definitions
+# COMMENT: No Psicrystal Imprinter class abilities depend on an ability score
+#1	BONUS:VAR|PsicrystalImprinterPrimeStat|WIS	DEFINE:PsicrystalImprinterPrimeStat|0
+1	BONUS:VAR|PsicrystalImprinterLVL|CL	DEFINE:PsicrystalImprinterLVL|0
+
 ###Block: Psicrystal imprinter Class abilities
-1	DEFINE:PsicrystalImprinterLVL|CL
 1	ABILITY:Special Ability|AUTOMATIC|Psicrystal Bond ~ Psicrystal Imprinter
 1	ABILITY:Special Ability|AUTOMATIC|Psicrystal Receptacle ~ Psicrystal Imprinter
-2	BONUS:VAR|SkilledCrafter|CL/2		ABILITY:Special Ability|AUTOMATIC|Skilled Crafter ~ Psicrystal Imprinter
-3	BONUS:VAR|PsicrystalResonanceLVL|CL	ABILITY:Special Ability|AUTOMATIC|Psicrystal Resonance ~ Psicrystal Imprinter
+2	ABILITY:Special Ability|AUTOMATIC|Skilled Crafter ~ Psicrystal Imprinter
+3	ABILITY:Special Ability|AUTOMATIC|Psicrystal Resonance ~ Psicrystal Imprinter
 4	AUTO:FEAT|Improved Psicrystal
 5	ABILITY:Special Ability|AUTOMATIC|Efficient Receptacle ~ Psicrystal Imprinter
 7	AUTO:FEAT|Improved Psicrystal
 9	ABILITY:Special Ability|AUTOMATIC|Essence Crystal ~ Psicrystal Imprinter
-10	BONUS:VAR|EfficientReceptacle|-1	ABILITY:Special Ability|AUTOMATIC|Crystalline Infusion ~ Psicrystal Imprinter		AUTO:FEAT|Improved Psicrystal
+10	ABILITY:Special Ability|AUTOMATIC|Crystalline Infusion ~ Psicrystal Imprinter		AUTO:FEAT|Improved Psicrystal
 
 ###Block: Psicrystal Imprinter enhance psionic ability
 1	BONUS:ABILITYPOOL|Psicrystal Imprinter Enhancement Choice|1									DEFINE:PsicrystalImprinterEnhancementCount|0
@@ -349,25 +364,30 @@ CLASS:Psicrystal Imprinter	STARTSKILLPTS:2	CSKILL:Knowledge (Psionics)|Spellcraf
 
 ###Block: Psion Uncarnate prestige class
 # Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Psion Uncarnate	HD:6		TYPE:PC.Prestige.Psionic	ABB:PUn		MAXLEVEL:10	SOURCEPAGE:p.163	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Psion Uncarnate	HD:6		TYPE:PC.Prestige.Psionic	ABB:PUn		MAXLEVEL:10	SOURCEPAGE:p.370	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name		Required Feat		Required Skill						Req. Spell Type			Required Text
 CLASS:Psion Uncarnate	PREFEAT:1,Psionic Body	PRESKILL:2,Knowledge (Psionics)=5,Spellcraft=5	PRESPELLTYPE:1,Psionic=3	PRETEXT:Must have had some instruction by another psion uncarnate or one of the Unbodied.
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Psion Uncarnate	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Disguise|Knowledge (Planes)|Sense Motive|Spellcraft	DEFINE:PsionUncarnateLVL|CL
+CLASS:Psion Uncarnate	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Disguise|Knowledge (Planes)|Sense Motive|Spellcraft
+
+###Block: Psion Uncarnate class definitions
+# COMMENT: No Psion Uncarnate class abilities depend on an ability score
+#1	BONUS:VAR|PsionUncarnatePrimeStat|WIS	DEFINE:PsionUncarnatePrimeStat|0
+1	BONUS:VAR|PsionUncarnateLVL|CL	DEFINE:PsionUncarnateLVL|0
 
 ###Block: Psion Uncarnate Class Info
-1	BONUS:VAR|ShedBody|9+CL	ABILITY:Special Ability|AUTOMATIC|Shed Body ~ Psion Uncarnate
+1	ABILITY:Special Ability|AUTOMATIC|Shed Body ~ Psion Uncarnate
 1	ABILITY:Special Ability|AUTOMATIC|Matter-Bound ~ Psion Uncarnate
-2	BONUS:VAR|UncarnateIncorporealTouchDice|1	BONUS:VAR|UncarnateIncorporealTouch|(CL/2)+2	ABILITY:Special Ability|AUTOMATIC|Incorporeal Touch ~ Psion Uncarnate
+2	ABILITY:Special Ability|AUTOMATIC|Incorporeal Touch ~ Psion Uncarnate
 2	ABILITY:Special Ability|AUTOMATIC|Uncarnate Armor ~ Psion Uncarnate
-3	BONUS:VAR|AssumeEquipment|CL			ABILITY:Special Ability|AUTOMATIC|Assume Equipment ~ Psion Uncarnate
-4								ABILITY:Special Ability|AUTOMATIC|Assume Likeness ~ Psion Uncarnate
-5	BONUS:VAR|UncarnateIncorporealTouchDice|1	ABILITY:Special Ability|AUTOMATIC|Parting the Veil ~ Psion Uncarnate
-6								ABILITY:Special Ability|AUTOMATIC|Hide Mind ~ Psion Uncarnate
-7	BONUS:VAR|TelekineticForceDC|10+CL+max(INT,WIS,CHA)	ABILITY:Special Ability|AUTOMATIC|Telekinetic Force ~ Psion Uncarnate				SPELLS:Innate|TIMES=3|Telekinetic Force,TelekineticForceDC					AUTO:FEAT|Psionic Talent
-8								ABILITY:Special Ability|AUTOMATIC|Rend the Veil ~ Psion Uncarnate
-9	BONUS:VAR|UncarnateIncorporealTouchDice|1	BONUS:VAR|UncarnateBridgeDC|10+(CL/2)+max(INT,WIS,CHA)	ABILITY:Special Ability|AUTOMATIC|Uncarnate Bridge ~ Psion Uncarnate
-10								ABILITY:Special Ability|AUTOMATIC|Uncarnate ~ Psion Uncarnate	TEMPLATE:Incorporeal
+3	ABILITY:Special Ability|AUTOMATIC|Assume Equipment ~ Psion Uncarnate
+4	ABILITY:Special Ability|AUTOMATIC|Assume Likeness ~ Psion Uncarnate
+5	ABILITY:Special Ability|AUTOMATIC|Parting the Veil ~ Psion Uncarnate
+6	ABILITY:Special Ability|AUTOMATIC|Hide Mind ~ Psion Uncarnate
+7	ABILITY:Special Ability|AUTOMATIC|Telekinetic Force ~ Psion Uncarnate	AUTO:FEAT|Psionic Talent
+8	ABILITY:Special Ability|AUTOMATIC|Rend the Veil ~ Psion Uncarnate
+9	ABILITY:Special Ability|AUTOMATIC|Uncarnate Bridge ~ Psion Uncarnate
+10	ABILITY:Special Ability|AUTOMATIC|Uncarnate ~ Psion Uncarnate	TEMPLATE:Incorporeal
 
 ###Block: Psion Uncarnate enhance psionic ability
 1	BONUS:ABILITYPOOL|Psion Uncarnate Enhancement Choice|1	DEFINE:PsionUncarnateEnhancementCount|0
@@ -385,28 +405,20 @@ CLASS:Psychic Fist	HD:8		TYPE:PC.Prestige.Psionic	ABB:PFi		MAXLEVEL:10	SOURCEPAG
 # Class Name		Req. Att.	Required Feat					Required Skill		Var. Must Be Grater
 CLASS:Psychic Fist	PREATT:4	PREFEAT:1,Psionic Fist,Psionic Weapon	PRESKILL:1,Acrobatics=6	PREVARGT:TotalPowerPoints,0	PREVARGT:KiPoints,0
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Psychic Fist	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Escape Artist|Knowledge (Psionics)|Spellcraft|Stealth	DEFINE:PsychicFistLVL|CL
+CLASS:Psychic Fist	STARTSKILLPTS:4	CSKILL:Acrobatics|Autohypnosis|Escape Artist|Knowledge (Psionics)|Spellcraft|Stealth
 # Class Name		Spell Stat		Spell Type		Memorize	Caster level				Use Spell List
 CLASS:Psychic Fist	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Psychic Fist|CL	SPELLLIST:1|Psychic Warrior
 
-###Block: Psychic Fist Psionic subtype, BasePowerPoints, BonusPowerPoints
-1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0	DEFINE:PsychicFistOwnManifesting|0	ABILITY:Special Ability|AUTOMATIC|Psionic
-1	BONUS:VAR|PsychicFistPL|PsychicFistML	BONUS:VAR|PsychicFistML|var("BL=Psychic Fist")	DEFINE:PsychicFistPL|0	DEFINE:PsychicFistML|0
-1	DEFINE:MaxManifesterLVL|0	BONUS:VAR|MaxManifesterLVL|PsychicFistML|TYPE=NoStack
-1	BONUS:VAR|BasePowerPoints|1	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:PsychicFistPL,2	BONUS:VAR|BasePowerPoints|3|PREVARGTEQ:PsychicFistPL,3	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:PsychicFistPL,4
-1	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:PsychicFistPL,5	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:PsychicFistPL,6	BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:PsychicFistPL,7	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:PsychicFistPL,8
-1	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:PsychicFistPL,9	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:PsychicFistPL,10
-1	BONUS:VAR|BonusPowerPoints|(WIS*PsychicFistPL)/2|TYPE=PsychicFistBonusPP
-1	DEFINE:PsychicFistPKL|PsychicFistLVL*PsychicFistOwnManifesting	BONUS:VAR|PsychicFistPKL|var("BL=Psychic Fist")*PsychicFistOwnManifesting
-1	DEFINE:PsychicFistMPL|PsychicFistLVL*PsychicFistOwnManifesting	BONUS:VAR|PsychicFistMPL|var("BL=Psychic Fist")*PsychicFistOwnManifesting
-1	DEFINE:PsychicFistPowersKnown|0	BONUS:VAR|PsychicFistPowersKnown|PsychicFistPKL*PsychicFistOwnManifesting
-1	DEFINE:PsychicFistMaxPowerLevel|0	BONUS:VAR|PsychicFistMaxPowerLevel|floor((PsychicFistMPL+1)/2)*PsychicFistOwnManifesting
+###Block: Psychic Fist class definitions
+1	DEFINE:PsychicFistOwnManifesting|0
+1	BONUS:VAR|PsychicFistPrimeStat|WIS	DEFINE:PsychicFistPrimeStat|0
+1	BONUS:VAR|PsychicFistLVL|CL	DEFINE:PsionUncarnateLVL|0
 
 ###Block: Psychic Fist Monk Abilities
-1						BONUS:VAR|MonkACLVL|CL			ABILITY:Special Ability|AUTOMATIC|Monk Abilities ~ Psychic Fist
-1						BONUS:VAR|MonkFastMovementLVL|CL
-1						BONUS:VAR|FlurryLVL|CL
-1	BONUS:UDAM|CLASS.Monk|CL
+1						BONUS:VAR|MonkACLVL|PsychicFistLVL			ABILITY:Special Ability|AUTOMATIC|Monk Abilities ~ Psychic Fist
+1						BONUS:VAR|MonkFastMovementLVL|PsychicFistLVL
+1						BONUS:VAR|FlurryLVL|PsychicFistLVL
+1	BONUS:UDAM|CLASS.Monk|PsychicFistLVL
 1						BONUS:VAR|KiPoolLVL|KiPower
 
 ###Block: Psychic Fist Manifestng
@@ -422,13 +434,13 @@ CLASS:Psychic Fist	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL
 10	KNOWN:0,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting,2*PsychicFistOwnManifesting
 
 ###Block: Psychic Fist Class Info
-2	BONUS:VAR|KiPower|CL/2	ABILITY:Special Ability|AUTOMATIC|Ki Power ~ Psychic Fist
-3	BONUS:VAR|InfusedBody|1					ABILITY:Special Ability|AUTOMATIC|Infused Body ~ Psychic Fist
-4								BONUS:VAR|MesmerizingGlowTargets|CL/2	BONUS:VAR|MesmerizingGlowDC|14+WIS	ABILITY:Special Ability|AUTOMATIC|Mesmerizing Glow ~ Psychic Fist
+1	ABILITY:Special Ability|AUTOMATIC|Psychic Fist Manifesting|PREVARGTEQ:PsychicFistOwnManifesting,1
+2	ABILITY:Special Ability|AUTOMATIC|Ki Power ~ Psychic Fist
+3	ABILITY:Special Ability|AUTOMATIC|Infused Body ~ Psychic Fist
+4	ABILITY:Special Ability|AUTOMATIC|Mesmerizing Glow ~ Psychic Fist
 5	BONUS:ABILITYPOOL|Psychic Fist Feat|1
-6	BONUS:VAR|InfusedBody|1	ABILITY:Special Ability|AUTOMATIC|Concentrated Will ~ Psychic Fist
+6	ABILITY:Special Ability|AUTOMATIC|Concentrated Will ~ Psychic Fist
 7	ABILITY:Special Ability|AUTOMATIC|Psionic Acrobatics ~ Psychic Fist
-9								BONUS:VAR|InfusedBody|1
 10	BONUS:ABILITYPOOL|Psychic Fist Feat|1	ABILITY:Special Ability|AUTOMATIC|Psychic Fusion ~ Psychic Fist
 
 ###Block: Psychic Fist enhance psionic ability
