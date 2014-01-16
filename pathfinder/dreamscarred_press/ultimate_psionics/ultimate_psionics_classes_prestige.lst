@@ -1,10 +1,8 @@
-# CVS $Revision: $ $Author: $ -- Tue Jul 16 09:27:47 2013 -- reformated by prettylst.pl v1.50 (build 20400)
-SOURCELONG:Psionics Expanded	SOURCESHORT:PsiEx	SOURCEWEB:http://dreamscarredpress.com/dragonfly/index.php	SOURCEDATE:2012-07
+SOURCELONG:Ultimate Psionics	SOURCESHORT:UP	SOURCEWEB:http://dreamscarredpress.com/dragonfly/Store/product/pid=126.html	SOURCEDATE:2013-12
 # ORIGINAL ENTRY: Douglas Limmer
 # ORIGINAL ENTRY DATE: 2013/07/05
 
 # TODO: 
-#       Change source line
 #       Change page numbers
 #       Move bonuses to ability file
 #       Use MaxManifesterLVL variable for prereqs
@@ -20,11 +18,16 @@ SOURCELONG:Psionics Expanded	SOURCESHORT:PsiEx	SOURCEWEB:http://dreamscarredpres
 ###Block: Adaptive Warrior prestige class
 
 # Class Name		Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Adaptive Warrior	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.37	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Adaptive Warrior	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.349	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name		Req. Att.	Required Feat					Required Skill					Var. Must Be Grater
 CLASS:Adaptive Warrior	PREATT:5	PREFEAT:2,Combat Expertise,Improved Feint	PRESKILL:2,Autohypnosis=5,Sense Motive=5	PREVARGT:TotalPowerPoints,0
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Adaptive Warrior	STARTSKILLPTS:2	CSKILL:Acrobatics|Bluff|Intimidate|Perception|Sense Motive	DEFINE:AdaptiveWarriorLVL|CL
+CLASS:Adaptive Warrior	STARTSKILLPTS:2	CSKILL:Acrobatics|Bluff|Intimidate|Perception|Sense Motive
+
+###Block: Adaptive Warrior class definitions
+# COMMENT: Adaptive Warrior abilities aren't tied to any attribute score
+#1	BONUS:VAR|AdaptiveWarriorPrimeStat|INT	DEFINE:AdaptiveWarriorPrimeStat|0
+1	BONUS:VAR|AdaptiveWarriorLVL|CL	DEFINE:AdaptiveWarriorLVL|0
 
 ###Block: Adaptive Warrior class abilities
 1	ABILITY:Internal|AUTOMATIC|Weapon and Armor Proficiencies ~ Adaptive Warrior
@@ -54,11 +57,15 @@ CLASS:Adaptive Warrior	STARTSKILLPTS:2	CSKILL:Acrobatics|Bluff|Intimidate|Percep
 ###Block: Body Snatcher prestige class
 
 # Class Name		Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Body Snatcher	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:6	SOURCEPAGE:p.43	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Body Snatcher	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:6	SOURCEPAGE:p.351	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name		Required Class			Required Feat							Required Skill							Req. Known Spell
-CLASS:Body Snatcher	PRECLASS:1,SPELLCASTER=10	PREFEAT:1,Extend Power	PREFEAT:2,TYPE=Metapsionic	PRESKILL:3,Bluff=10,Perform (Act)=3,Sense Motive=3	PRESPELL:2,Brain Lock,Conceal Thoughts
+CLASS:Body Snatcher	PREVARGTEQ:MaxManifesterLVL,10	PREFEAT:1,Extend Power	PREFEAT:2,TYPE=Metapsionic	PRESKILL:3,Bluff=10,Perform (Act)=3,Sense Motive=3	PRESPELL:2,Brain Lock,Conceal Thoughts
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Perform|Sense Motive|Spellcraft	DEFINE:BodySnatcherLVL|CL
+CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Perform|Sense Motive|Spellcraft
+
+###Block: Body Snatcher class definitions
+1	BONUS:VAR|BodySnatcherPrimeStat|INT	DEFINE:BodySnatcherPrimeStat|0
+1	BONUS:VAR|BodySnatcherLVL|CL	DEFINE:BodySnatcherLVL|0
 
 ###Block: Body Snatcher class abilities
 1	ABILITY:Special Ability|AUTOMATIC|Body Thief ~ Body Snatcher
@@ -72,6 +79,7 @@ CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Per
 5	ABILITY:Special Ability|AUTOMATIC|Mindleap Contingency ~ Body Snatcher
 5	ABILITY:Special Ability|AUTOMATIC|Greater Melding Exchange ~ Body Snatcher
 6	ABILITY:Special Ability|AUTOMATIC|Death Is Only the Beginning ~ Body Snatcher
+6	ABILITY:Internal|AUTOMATIC|True Mind Switch ~ Body Snatcher
 
 ###Block: Body Snatcher enhance psionic ability
 1	BONUS:ABILITYPOOL|Body Snatcher Enhancement Choice|1								DEFINE:BodySnatcherEnhancementCount|0
@@ -82,19 +90,20 @@ CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Per
 
 ###Block: Cerebremancer prestige class
 # Class Name		Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Cerebremancer	HD:6		TYPE:PC.Prestige.Psionic	ABB:Cer		MAXLEVEL:10	SOURCEPAGE:p.155	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Cerebremancer	HD:6		TYPE:PC.Prestige.Psionic	ABB:Cer		MAXLEVEL:10	SOURCEPAGE:p.353	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name		Required Skill								Req. Spell Type
 CLASS:Cerebremancer	PRESKILL:2,Knowledge (Arcana)=3,Knowledge (Psionics)=3	PRESPELLTYPE:1,Arcane=2	PRESPELLTYPE:1,Psionic=2
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Cerebremancer	STARTSKILLPTS:2	CSKILL:Knowledge (Arcana)|Knowledge (Psionics)|Linguistics|Spellcraft	DEFINE:CerebremancerLVL|CL
+CLASS:Cerebremancer	STARTSKILLPTS:2	CSKILL:Knowledge (Arcana)|Knowledge (Psionics)|Linguistics|Spellcraft
+
+###Block: Cerebremancer class definitions
+# COMMENT: No Cerebremancer class abilities depend on an ability score
+#1	BONUS:VAR|CerebremancerPrimeStat|INT	DEFINE:CerebremancerPrimeStat|0
+1	BONUS:VAR|CerebremancerLVL|CL	DEFINE:CerebremancerLVL|0
+
 ###Block: Class Info
-1	BONUS:VAR|MagicalManifesting|1	ABILITY:Special Ability|AUTOMATIC|Magical Manifesting ~ Cerebremancer
-2	BONUS:VAR|MindOverMagic|1		ABILITY:Special Ability|AUTOMATIC|Mind over Magic ~ Cerebremancer
-3	BONUS:VAR|MagicalManifesting|1
-5	BONUS:VAR|MagicalManifesting|1
-6	BONUS:VAR|MindOverMagic|1
-7	BONUS:VAR|MagicalManifesting|1
-9	BONUS:VAR|MagicalManifesting|1
+1	ABILITY:Special Ability|AUTOMATIC|Magical Manifesting ~ Cerebremancer
+2	ABILITY:Special Ability|AUTOMATIC|Mind over Magic ~ Cerebremancer
 10	ABILITY:Special Ability|AUTOMATIC|Weave the Sources ~ Cerebremancer
 
 ###Block: Cerebremancer enhance psionic ability
@@ -110,32 +119,38 @@ CLASS:Cerebremancer	STARTSKILLPTS:2	CSKILL:Knowledge (Arcana)|Knowledge (Psionic
 10											BONUS:VAR|CerebremancerEnhancementCount|1
 
 
+###Block: Dark Tempest prestige class -- need to add it!
+
 ###Block: Elocater prestige class
 # Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Elocater	HD:8		TYPE:PC.Prestige.Psionic	ABB:Elo		MAXLEVEL:10	SOURCEPAGE:p.157	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Elocater	HD:8		TYPE:PC.Prestige.Psionic	ABB:Elo		MAXLEVEL:10	SOURCEPAGE:p.357	BONUS:CHECKS|BASE.Reflex,BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Req. Att.	Required Feat			Multiple Requirements															Required Skill		Req. Spell Type
 CLASS:Elocater	PREATT:3	PREFEAT:2,Dodge,Mobility	PREMULT:1,[PREFEAT:1,Spring Attack],[PREABILITY:1,CATEGORY=Special Ability,Nomad's Step ~ Psychoportation]	PRESKILL:1,Acrobatics=5	PRESPELLTYPE:1,Psionic=1
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Elocater	STARTSKILLPTS:6	CSKILL:Acrobatics|Climb|Escape Artist|Fly|Knowledge (Psionics)|Perception|Sleight of Hand|Spellcraft|Stealth|Use Magic Device	DEFINE:ElocaterLVL|CL
+CLASS:Elocater	STARTSKILLPTS:6	CSKILL:Acrobatics|Climb|Escape Artist|Fly|Knowledge (Psionics)|Perception|Sleight of Hand|Spellcraft|Stealth|Use Magic Device
+
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
 1	AUTO:FEAT|Armor Proficiency (Light)
+
+###Block: Elocater class definitions
+# COMMENT: No Elocater class abilities depend on an ability score
+#1	BONUS:VAR|ElocaterPrimeStat|INT	DEFINE:ElocaterPrimeStat|0
+1	BONUS:VAR|ElocaterLVL|CL	DEFINE:ElocaterLVL|0
 
 ###Block: Special Abilities
 1	ABILITY:Special Ability|AUTOMATIC|Aerial Acrobatics ~ Elocater
 1	ABILITY:Special Ability|AUTOMATIC|Personal Gravity ~ Elocater
 1	ABILITY:Special Ability|AUTOMATIC|Scorn Earth ~ Elocater
 1	ABILITY:Special Ability|AUTOMATIC|Terminal Velocity ~ Elocater
-2	BONUS:VAR|SpatialAwareness|2	ABILITY:Special Ability|AUTOMATIC|Spatial Awareness ~ Elocater
-2	BONUS:VAR|FreerunningSpeedBonus|10	ABILITY:Special Ability|AUTOMATIC|Freerunning ~ Elocater
-3	BONUS:VAR|DimensionStep|1	ABILITY:Special Ability|AUTOMATIC|Dimension Step ~ Elocater	SPELLS:Innate|TIMES=DimensionStep|CASTERLEVEL=CL|Fold Space,14+INT
+2	ABILITY:Special Ability|AUTOMATIC|Spatial Awareness ~ Elocater
+2	ABILITY:Special Ability|AUTOMATIC|Freerunning ~ Elocater
+3	ABILITY:Special Ability|AUTOMATIC|Dimension Step ~ Elocater
 4	ABILITY:Special Ability|AUTOMATIC|Flanker ~ Elocater
-5	BONUS:VAR|SpatialAwareness|2	BONUS:VAR|FreerunningSpeedBonus|10
-6	BONUS:VAR|DimensionStep|1	ABILITY:Special Ability|AUTOMATIC|Dimension Swap ~ Elocater
-6	ABILITY:Special Ability|AUTOMATIC|Transporter ~ Elocater	BONUS:ABILITYPOOL|Elocater Transporter|1	
+6	ABILITY:Special Ability|AUTOMATIC|Dimension Swap ~ Elocater
+6	ABILITY:Special Ability|AUTOMATIC|Transporter ~ Elocater
 7	ABILITY:Special Ability|AUTOMATIC|Capricious Step ~ Elocater
-8	BONUS:VAR|SpatialAwareness|2	BONUS:VAR|FreerunningSpeedBonus|10
-9	BONUS:VAR|DimensionStep|1	ABILITY:Special Ability|AUTOMATIC|Dimension Spring Attack ~ Elocater|PREFEAT:1,Spring Attack
+9	ABILITY:Special Ability|AUTOMATIC|Dimension Spring Attack ~ Elocater|PREFEAT:1,Spring Attack
 10	ABILITY:Special Ability|AUTOMATIC|Accelerated Action ~ Elocater
 
 ###Block: Elocater enhance psionic ability
@@ -152,47 +167,58 @@ CLASS:Elocater	STARTSKILLPTS:6	CSKILL:Acrobatics|Climb|Escape Artist|Fly|Knowled
 ###Block: Metaforge prestige class
 
 # Class Name	Hit Dice	Type					Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Metaforge	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.38	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Metaforge	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.359	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Required Ability												Required Skill
 CLASS:Metaforge	PREABILITY:2,CATEGORY=Special Ability,Enhanced Mind Blade,Invigorating Suit ~ Aegis	PRESKILL:1,TYPE.Craft=3,TYPE.Craft=3
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Metaforge	STARTSKILLPTS:4	CSKILL:Autohypnosis|Climb|Fly|Intimidate|Knowledge (Psionics)	DEFINE:MetaforgeLVL|CL
+CLASS:Metaforge	STARTSKILLPTS:4	CSKILL:Autohypnosis|Climb|Fly|Intimidate|Knowledge (Psionics)
+
+###Block: Metaforge class definitions
+# COMMENT: No Metaforge class abilities depend on an ability score
+#1	BONUS:VAR|MetaforgePrimeStat|INT	DEFINE:MetaforgePrimeStat|0
+1	BONUS:VAR|MetaforgeLVL|CL	DEFINE:MetaforgeLVL|0
 
 ###Block: Metaforge class abilities
-1	BONUS:VAR|AegisCL|CL	BONUS:VAR|AegisDRLVL|CL	BONUS:VAR|AstralSuitLVL|CL	BONUS:VAR|MndBladeLVL|CL
-1	BONUS:VAR|CrystallizedMindBlade|(CL+3)/4																ABILITY:Special Ability|AUTOMATIC|Crystallized Mind Blade ~ Metaforge
-2	BONUS:VAR|TransferEnhancement|CL/2																	ABILITY:Special Ability|AUTOMATIC|Transfer Enhancement ~ Metaforge
-3																							ABILITY:Special Ability|AUTOMATIC|Dual Summon ~ Metaforge
-10																							ABILITY:Special Ability|AUTOMATIC|Shift Form ~ Metaforge
+1	ABILITY:Internal|AUTOMATIC|Astral Suit ~ Metaforge
+1	ABILITY:Internal|AUTOMATIC|Mind Blade ~ Metaforge
+1	ABILITY:Special Ability|AUTOMATIC|Crystallized Mind Blade ~ Metaforge
+2	ABILITY:Special Ability|AUTOMATIC|Transfer Enhancement ~ Metaforge
+3	ABILITY:Special Ability|AUTOMATIC|Dual Summon ~ Metaforge
+10	ABILITY:Special Ability|AUTOMATIC|Swift Transfer ~ Metaforge
 
 
 ###Block: Metamind prestige class
 # Class Name	Hit Dice	Type					Abbreviation	Max Level	Source Page		Save checks bonus													Combat bonus					Modify VAR
-CLASS:Metamind	HD:6		TYPE:PC.Prestige.Psionic	ABB:MMd		MAXLEVEL:10	SOURCEPAGE:p.159	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Metamind	HD:6		TYPE:PC.Prestige.Psionic	ABB:MMd		MAXLEVEL:10	SOURCEPAGE:p.360	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PsiCrystalLVL|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Required Class				Required Feat			Required Skill
-CLASS:Metamind	PRECLASS:1,SPELLCASTER.Psionic=4	PREFEAT:1,Psicrystal Affinity	PRESKILL:2,Knowledge (Psionics)=5,Spellcraft=2
+CLASS:Metamind	PREVARGTEQ:MaxManifesterLVL,4	PREFEAT:1,Psicrystal Affinity	PRESKILL:2,Knowledge (Psionics)=5,Spellcraft=2
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Metamind	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Spellcraft	DEFINE:MetamindLVL|CL
+CLASS:Metamind	STARTSKILLPTS:2	CSKILL:Autohypnosis|Knowledge (Psionics)|Spellcraft
+
+###Block: Metamind class definitions
+# COMMENT: No Metamind class abilities depend on an ability score
+#1	BONUS:VAR|MetamindPrimeStat|INT	DEFINE:MetamindPrimeStat|0
+1	BONUS:VAR|MetamindLVL|CL	DEFINE:MetamindLVL|0
 
 ###Block: Metamind class abilities
-1	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
-1	ABILITY:Special Ability|AUTOMATIC|Cognizance Psicrystal ~ Metamind	BONUS:VAR|CogPsiCrystal|3+2*floor((CL+1)/2)
-1	ABILITY:Special Ability|AUTOMATIC|Sequestration ~ Metamind	BONUS:VAR|Sequestration|(1+CL)
-2										AUTO:FEAT|Psionic Talent
-4	BONUS:VAR|EfficientRecharge|1	ABILITY:Special Ability|AUTOMATIC|Efficient Recharge ~ Metamind
-5	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1	AUTO:FEAT|Psionic Talent
-8									BONUS:VAR|EfficientRecharge|1	AUTO:FEAT|Psionic Talent
-9	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
+1	ABILITY:Special Ability|AUTOMATIC|Cognizance Psicrystal ~ Metamind
+1	ABILITY:Special Ability|AUTOMATIC|Sequestration ~ Metamind
+2	AUTO:FEAT|Psionic Talent
+4	ABILITY:Special Ability|AUTOMATIC|Efficient Recharge ~ Metamind
+5	AUTO:FEAT|Psionic Talent
+8	AUTO:FEAT|Psionic Talent
 10	ABILITY:Special Ability|AUTOMATIC|Font of Power ~ Metamind
 
 ###Block: Metamind enhance psionic ability
-1	BONUS:ABILITYPOOL|Metamind Enhancement Choice|1			DEFINE:MetamindEnhancementCount|0
+1	BONUS:ABILITYPOOL|Metamind Enhancement Choice|1			DEFINE:MetamindEnhancementCount|0	BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
 2											BONUS:VAR|MetamindEnhancementCount|1
 3											BONUS:VAR|MetamindEnhancementCount|1
 4											BONUS:VAR|MetamindEnhancementCount|1
+5		BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
 6											BONUS:VAR|MetamindEnhancementCount|1
 7											BONUS:VAR|MetamindEnhancementCount|1
 8											BONUS:VAR|MetamindEnhancementCount|1
+9		BONUS:ABILITYPOOL|Metamind Bonus PP Level|1
 10											BONUS:VAR|MetamindEnhancementCount|1
 
 
