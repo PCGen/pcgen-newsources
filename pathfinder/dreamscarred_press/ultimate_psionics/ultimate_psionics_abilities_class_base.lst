@@ -695,10 +695,17 @@ Maneuver							KEY:Maneuver ~ Weaponmaster											CATEGORY:Special Ability	TY
 # ======================== SOULKNIFE ====================== #
 
 ###Block: Soulknife Mindblade Abilities
-Form Mind Blade		KEY:Form Mind Blade ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:WeaponSpecialCount|0	DESC:Form a semi-sold weapon composed of psychic energy.																		AUTO:WEAPONPROF|Mind Blade	SOURCEPAGE:p.58	BONUS:VAR|MindBladeLVL|SoulknifeLVL	DEFINE:MindBladeLVL|0	DEFINE:BladeSkillDC|0	BONUS:VAR|BladeSkillDC|10+BAB	DEFINE:BladeSkillPrereqLVL|MindBladeLVL
+Form Mind Blade		KEY:Form Mind Blade ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DEFINE:WeaponSpecialCount|0	DESC:Form a semi-sold weapon composed of psychic energy.																		AUTO:WEAPONPROF|Mind Blade	SOURCEPAGE:p.58	BONUS:VAR|MndBladeLVL|SoulknifeLVL	DEFINE:MndBladeLVL|0	DEFINE:BladeSkillDC|0	BONUS:VAR|BladeSkillDC|10+BAB	DEFINE:BladeSkillPrereqLVL|MndBladeLVL
 Shape Mind Blade		KEY:Shape Mind Blade ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:Change form of mind blade as a full round action; change abilities in 8 hours.																			SOURCEPAGE:p.59
 Throw Mind Blade		KEY:Throw Mind Blade ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:Throw mind blade as often as necessary per round.																							SOURCEPAGE:p.59
-Enhanced Mind Blade	KEY:Enhanced Mind Blade ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:Gain +%1 in enhancement bonuses and abilities; maximum enhancement bonus +%2.|MindBladeEnhancement|MindBladeMaxEnhancement											SOURCEPAGE:p.63	DEFINE:MindBladeEnhancement|0	DEFINE:MindBladeMaxEnhancement|0	BONUS:VAR|MindBladeEnhancement|max(0,(EnhancedMindBladeLVL-1)/2)	BONUS:VAR|MindBladeMaxEnhancement|min((EnhancedMindBladeLVL/3),5)	DEFINE:EnhancedMindBladeLVL|MindBladeLVL
+# COMMENT: The Enhanced Mind Blade ability seems to undefine MindBladeLVL for some unknown reason.
+# COMMENT: But sometimes (the first time or three?) it works OK.
+# COMMENT: Adding a redundant DEFINE:MindBladeLVL|0 didn't help.
+# COMMENT: Sometimes MindBladeLVL works OK, but EnhancedMndBladeLVL doesn't.
+# COMMENT: Sometimes both MindBladeLVL and EnhancedMindBladeLVL work the way they're supposed to.
+# COMMENT: Will try a global "MndBladeLVL" -> "MindBladeLVL" to see if that helps.
+# COMMENT: If so, there seems to be some sort of intermittent parsing error, likely involving "min".
+Enhanced Mind Blade	KEY:Enhanced Mind Blade ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:Gain +%1 in enhancement bonuses and abilities; maximum enhancement bonus +%2.|MindBladeEnhancement|MindBladeMaxEnhancement	SOURCEPAGE:p.63	DEFINE:EnhancedMndBladeLVL|0	BONUS:VAR|EnhancedMndBladeLVL|MndBladeLVL	DEFINE:MindBladeEnhancement|0	BONUS:VAR|MindBladeEnhancement|max(0,(EnhancedMndBladeLVL-1)/2)	DEFINE:MindBladeMaxEnhancement|0	BONUS:VAR|MindBladeMaxEnhancement|min((EnhancedMndBladeLVL/3),5)
 Psychic Strike		KEY:Psychic Strike ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural	DESC:Imbue mind blade with psychic energy; +%1d%2|PsychicStrikeDice|PsychicStrikeDieType	DESC:+%1|PsychicStrikeBonusDamage|PREVARGT:PsychicStrikeBonusDamage,0	DESC:damage when discharged.	SOURCEPAGE:p.64	DEFINE:PsychicStrikeBonusDamage|0	BONUS:VAR|PsychicStrikeDice|(SoulknifeLVL+1)/4	DEFINE:PsychicStrikeDice|0	DEFINE:PsychicStrikeDieType|8
 Quick Draw			KEY:Quick Draw ~ Soulknife		CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:Manifest mind blade as a free action %1/round.|QuickDrawTimes	DEFINE:QuickDrawTimes|1																								SOURCEPAGE:p.64
 Mind Blade Mastery	KEY:Mind Blade Mastery ~ Soulknife	CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:Can maintain mind blade in null psionics field, change one configuration as a swift action, or all as a full-round action.											SOURCEPAGE:p.64
