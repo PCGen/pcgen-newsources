@@ -2,12 +2,7 @@ SOURCELONG:Ultimate Psionics	SOURCESHORT:UP	SOURCEWEB:http://dreamscarredpress.c
 # ORIGINAL ENTRY: Douglas Limmer
 # ORIGINAL ENTRY DATE: 2013/07/05
 
-# CHECK:
-#   Check specific armor/weapon prices
-#   Test earrings of resistance
-#   Test glove of calling
-#   Test green/white ioun stone
-#   Test mind stone/greater mind stone
+# TO DO: Legendary Items
 
 ###Block: Astral suits
 # NEEDS CODE/DATA WORK: Astral Armor and Astral Juggernaut should override other worn armor.
@@ -111,7 +106,7 @@ Plate of the Juggernaut		PROFICIENCY:ARMOR|Full Plate		TYPE:Enhancement.Armor.He
 
 
 ###BLOCK: Specific weapons
-Strengthbleeder	PROFICIENCY:WEAPON|Longsword	TYPE:Weapon.Melee.Martial.Specific.Slashing.Sword	COST:15	WT:4	CRITMULT:x2	CRITRANGE:2	DAMAGE:1d8	EQMOD:MAGIC_COST|9600.PLUS1W.CRYS_MUN	WIELD:OneHanded	SIZE:M	SOURCEPAGE:p.398	SPROP:1/day, until end of combat, enemy takes 1 Strength damage when hit and wielder gets a cumulative +1 enhancement bonus to Strength (up to +8)
+Strengthbleeder	PROFICIENCY:WEAPON|Longsword	TYPE:Weapon.Melee.Martial.Specific.Slashing.Sword	COST:15	WT:4	CRITMULT:x2	CRITRANGE:2	DAMAGE:1d8	EQMOD:MAGIC_COST|9600.PLUS2W.CRYS_MUN	WIELD:OneHanded	SIZE:M	SOURCEPAGE:p.398	SPROP:1/day, until end of combat, enemy takes 1 Strength damage when hit and wielder gets a cumulative +1 enhancement bonus to Strength (up to +8)
 
 
 ###Block: Cognizance Crystals
@@ -223,11 +218,11 @@ Crystal Mask (Psionic Craft)			OUTPUTNAME:Crystal Mask of Psionic Craft									
 Dissipating Gloves	TYPE:Psionic.Wondrous.Glove	COST:6000	WT:0	SLOTS:2	SOURCEPAGE:p.413	SPROP:3/day, melee touch attack deals 3d6 damage
 
 ###Block: - E -
-Earring of Resistance +1											TYPE:Psionic.Wondrous.EarringOfResistance			COST:700	WT:0								SOURCEPAGE:p.413																																																															SPROP:+1 competence bonus on save against a single psionic power	EQMOD:PWR_ERNG
-Earring of Resistance +2											TYPE:Psionic.Wondrous.EarringOfResistance			COST:2800	WT:0								SOURCEPAGE:p.413																																																															SPROP:+2 competence bonus on save against a single psionic power	EQMOD:PWR_ERNG
-Earring of Resistance +3											TYPE:Psionic.Wondrous.EarringOfResistance			COST:6300	WT:0								SOURCEPAGE:p.413																																																															SPROP:+3 competence bonus on save against a single psionic power	EQMOD:PWR_ERNG
-Earring of Resistance +4											TYPE:Psionic.Wondrous.EarringOfResistance			COST:12200	WT:0								SOURCEPAGE:p.413																																																															SPROP:+4 competence bonus on save against a single psionic power	EQMOD:PWR_ERNG
-Earring of Resistance +5											TYPE:Psionic.Wondrous.EarringOfResistance			COST:17500	WT:0								SOURCEPAGE:p.413																																																															SPROP:+5 competence bonus on save against a single psionic power	EQMOD:PWR_ERNG
+Earring of Resistance +1											TYPE:Psionic.Wondrous.EarringOfResistance			COST:700	WT:0								SOURCEPAGE:p.413																																																															SPROP:+1 competence bonus on save against a single psionic power	MODS:REQUIRED
+Earring of Resistance +2											TYPE:Psionic.Wondrous.EarringOfResistance			COST:2800	WT:0								SOURCEPAGE:p.413																																																															SPROP:+2 competence bonus on save against a single psionic power	MODS:REQUIRED
+Earring of Resistance +3											TYPE:Psionic.Wondrous.EarringOfResistance			COST:6300	WT:0								SOURCEPAGE:p.413																																																															SPROP:+3 competence bonus on save against a single psionic power	MODS:REQUIRED
+Earring of Resistance +4											TYPE:Psionic.Wondrous.EarringOfResistance			COST:12200	WT:0								SOURCEPAGE:p.413																																																															SPROP:+4 competence bonus on save against a single psionic power	MODS:REQUIRED
+Earring of Resistance +5											TYPE:Psionic.Wondrous.EarringOfResistance			COST:17500	WT:0								SOURCEPAGE:p.413																																																															SPROP:+5 competence bonus on save against a single psionic power	MODS:REQUIRED
 Empathic Monocle													TYPE:Psionic.Wondrous.Eyes		COST:1750	WT:0.5							SOURCEPAGE:p.413																																																															SPROP:Expend focus for bonus to Diplomacy and Sense Motive
 Empathic Monocle (Greater)				OUTPUTNAME:Empathic Monocle, Greater	TYPE:Psionic.Wondrous.Eyes		COST:8400	WT:0.5							SOURCEPAGE:p.413																																																															SPROP:Learn surface thoughts of creature (Will DC 12 negates)
 Eyes of Disarming Glances	TYPE:Psionic.Wondrous.Eyegear		COST:20000	WT:0	SOURCEPAGE:p.413	SPROP:2/day disarm with 30ft. range gaze attack
@@ -242,7 +237,7 @@ Fear Drinker's Amulet (Greater)	TYPE:Psionic.Wondrous.Amulet	COST:10000	WT:0	SOU
 ###Block: - G -
 Gauntlet of the Thunder Shield	TYPE:Psionic.Wondrous.Glove	COST:8000	WT:1	SOURCEPAGE:p.414	SPROP:gain +4 shield bonus to AC and sonic resistance 10 for 30 rounds per day
 Gladiator's Gauze													TYPE:Psionic.Wondrous.Consumable	COST:35	WT:0.5							SOURCEPAGE:p.414																																																															SPROP:Stabilizes and stops bleed effects
-Glove of Calling	TYPE:Psionic.Wondrous.Glove	COST:4000	WT:1	SOURCEPAGE:p.415	SPROP:Call a weapon as a swift action.	CHOOSE:EQUIPMENT|TYPE=Weapon
+Glove of Calling	TYPE:Psionic.Wondrous.Glove.GloveOfCalling	COST:4000	WT:1	SOURCEPAGE:p.415	SPROP:Call a weapon as a swift action.	MODS:REQUIRED
 Gloves of Object Reading																						TYPE:Psionic.Universal.Glove						COST:3000	WT:0																																						SOURCEPAGE:p.415																																																																																																											SPROP:object reading while handling an item
 Gloves of Titan's Grip																							TYPE:Psionic.Universal.Glove						COST:14000	WT:0																																						SOURCEPAGE:p.415																																																																																																	BONUS:VAR|CMB_Grapple|8|PREAPPLY:PC					SPROP:3/day +8 enhancement bonus on grapple checks for 7 rounds
 Gloves of the Beast (1d3)											TYPE:Psionic.Wondrous.Glove		COST:625	WT:0.5							SOURCEPAGE:p.415
@@ -276,7 +271,7 @@ Helm of Attitude Adjustment	TYPE:Psionic.Wondrous.Head	COST:18000	WT:2	SOURCEPAG
 # COMMENT:  Cost for Dull Grey Ioun Stone made up 
 Ioun Stone (Dull Grey)				OUTPUTNAME:Ioun Stone, [NAME]															TYPE:Magic.Wondrous.Ioun						COST:25	WT:0.02																																					SOURCEPAGE:p.390																																																																																																											SPROP:Provides 1 psionic power point then disintegrates.
 # NEEDS CODE/DATA WORK: Can't add the power to powers known.
-Ioun Stone (Green and White)				OUTPUTNAME:Ioun Stone, [NAME]			TYPE:Psionic.Wondrous.Ioun.GreenWhiteIoun		COST:12000	WT:0								SOURCEPAGE:p.214																																																															SPROP:Grants an additional power known.	EQMOD:PWR_GWI
+Ioun Stone (Green and White)				OUTPUTNAME:Ioun Stone, [NAME]			TYPE:Psionic.Wondrous.Ioun.GreenWhiteIoun		COST:12000	WT:0								SOURCEPAGE:p.214																																																															SPROP:Grants an additional power known.	MODS:REQUIRED
 Ioun Stone (Rainbow)				OUTPUTNAME:Ioun Stone, [NAME]															TYPE:Magic.Wondrous.Ioun						COST:16000	WT:0.02																																					SOURCEPAGE:p.390																																																																																																											SPROP:Provides 5 psionic power points per day (regenerates)
 
 ###Block: - L -
@@ -387,7 +382,7 @@ Third Eye (Powerthieve)																							TYPE:Psionic.Universal.Eyegear				
 Third Eye (Repudiate)																							TYPE:Psionic.Universal.Eyegear					COST:43200	WT:0																																						SOURCEPAGE:p.426																																																																																																											SPROP:1/day Dispel Psionics at +20 modifier
 Third Eye (Sense)																								TYPE:Psionic.Universal.Eyegear					COST:24000	WT:0																																						SOURCEPAGE:p.426																																																																																																											SPROP:Clairvoyant Sense at will
 # NEEDS DATA WORK: Feat not granted
-Third Eye (Talented)	TYPE:Psionic.Universal.Eyegear.ThirdEyeTalented	COST:10180	WT:0	SOURCEPAGE:p.426	SPROP:grants user psionic talent, and Wild Talent or Psionic Talent feat	EQMOD:PWR_THRDI
+Third Eye (Talented)	TYPE:Psionic.Universal.Eyegear.ThirdEyeTalented	COST:10180	WT:0	SOURCEPAGE:p.426	SPROP:grants user psionic talent, and Wild Talent or Psionic Talent feat	MODS:REQUIRED
 Third Eye (View)																								TYPE:Psionic.Universal.Eyegear					COST:10180	WT:0																																						SOURCEPAGE:p.426																																																																																																											SPROP:1/day Remote Viewing
 Torc of Free Will						TYPE:Psionic.Universal.Amulet						COST:6000	WT:2																																						SOURCEPAGE:p.427																																																																																																											SPROP:not affected by Brain Lock power or items.
 # COMMENT: Can these next two be combined into one item somehow?
