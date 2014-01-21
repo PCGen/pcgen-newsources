@@ -3,7 +3,6 @@ SOURCELONG:Ultimate Psionics	SOURCESHORT:UP	SOURCEWEB:http://dreamscarredpress.c
 # SRD Original Entry by: TaluronIscandar
 
 # TODO: 
-#       Move psicrystal abilities to monsters?
 #       Stress test size changes?
 
 ###Block: General Psionic Abilities
@@ -14,6 +13,20 @@ Psionic Focus			CATEGORY:Internal			VISIBLE:DISPLAY	TEMPBONUS:PC|VAR|PsionicFocu
 
 ###Block: Psionic Feat-Related Abilities
 Psionic Talent Power Points	CATEGORY:Internal			DEFINE:PsionicTalentCount|0	BONUS:VAR|BonusPowerPoints|((PsionicTalentCount*(PsionicTalentCount+3))/2)
+
+
+###Block: Legendary Items abilities
+###Block: Crown of Chaos abilities	
+Crown of Chaos Attunement	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:Attuned to the Crown of Chaos	SOURCEPAGE:p.432	DEFINE:CrownOfChaosLVL|1	BONUS:VAR|CrownOfChaosLVL|TL/5	ABILITY:Special Ability|AUTOMATIC|Power Surge ~ Crown of Chaos|PREVARGTEQ:TL,5	ABILITY:Special Ability|AUTOMATIC|Good Fortune ~ Crown of Chaos|PREVARGTEQ:TL,10	ABILITY:Special Ability|AUTOMATIC|Shroud of Chaos ~ Crown of Chaos|PREVARGTEQ:TL,20
+Power Surge		KEY:Power Surge ~ Crown of Chaos		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You can pay for augments with crown of chaos's pp; take 1d6 nonlethal damage per pp spent.	SOURCEPAGE:p.433
+Good Fortune	KEY:Good Fortune ~ Crown of Chaos		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:1/day, roll twice and take the highest result on a skill check, attack roll, ability check, or saving throw.	SOURCEPAGE:p.433
+Shroud of Chaos	KEY:Shroud of Chaos ~ Crown of Chaos	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:1/day, for 1 minute, gain 20%% miss chance against ranged attacks and any creature within 30 ft. must roll twice and take the lowest result on any skill check or saving throw.	SOURCEPAGE:p.433
+
+###Block: Dancing Robes of Sharatwan abilities
+Dancing Robes of Sharatwan Attunement	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:Attuned to the Dancing Robes of Sharatwan	SOURCEPAGE:p.433	AUTO:FEAT|Speed of Thought|PREVARGTEQ:TL,4	ABILITY:Special Ability|AUTOMATIC|Hands Alight ~ Dancing Robes of Sharatwan|PREVARGTEQ:TL,6	ABILITY:Blade Skill|AUTOMATIC|Twin Strike ~ Blade Skill|PREVARGTEQ:TL,10	SPELLS:Innate|TIMES=3|Physical Acceleration|PREVARGTEQ:TL,12	ABILITY:Special Ability|AUTOMATIC|The Price of Peace ~ Dancing Robes of Sharatwan|PREVARGTEQ:TL,16	ABILITY:Special Ability|AUTOMATIC|Energized Blades ~ Dancing Robes of Sharatwan|PREVARGTEQ:TL,18
+Hands Alight		KEY:Hands Alight ~ Dancing Robes of Sharatwan		CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You can cause your hands to glow; +2 to Intimidate, no Stealth, illumines as torch.	SOURCEPAGE:p.434	TEMPBONUS:PC|SKILL|Intimidate|2|TYPE=Circumstance
+The Price of Peace	KEY:The Price of Peace ~ Dancing Robes of Sharatwan	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:If you use Diplomacy on a creature that then attacks you, it is shaken for %1 rounds (Will DC %2 negates).|PriceOfPeaceDuration|PriceOfPeaceDC	DEFINE:PriceOfPeaceDuration|CHA	DEFINE:PriceOfPeaceDC|0	BONUS:VAR|PriceOfPeaceDC|10+TL/2+CHA	SOURCEPAGE:p.434
+Energized Blades		KEY:Energized Blades ~ Dancing Robes of Sharatwan	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural	DESC:You can change your mind blades' damage type to electricity.	SOURCEPAGE:p.434
 
 
 ###Block: Psicrystal Abilities
