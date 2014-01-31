@@ -27,19 +27,19 @@ Disadvantage (Foolish)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Speci
 Disadvantage (Frail)						OUTPUTNAME:Disadvantage - [NAME]						CATEGORY:Special Ability	TYPE:Disadvantage.SpecialQuality	ABILITY:Special Ability|AUTOMATIC|Disadvantage Counter	COST:0
 
 #POOL Cost Changes and CHOOSE:SKILLSNAMED Test
-Skill Focus					OUTPUTNAME:Skill Focus +3								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|3|TYPE=SkillFocus																										COST:6
-Skill Focus Plus Two			OUTPUTNAME:Skill Focus +2								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|2|TYPE=SkillFocus																										COST:4
-Skill Focus Plus One			OUTPUTNAME:Skill Focus +1								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|1|TYPE=SkillFocus																										COST:2
+#Skill Focus					OUTPUTNAME:Skill Focus +3								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|3|TYPE=SkillFocus																										COST:6
+#Skill Focus Plus Two			OUTPUTNAME:Skill Focus +2								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|2|TYPE=SkillFocus																										COST:4
+#Skill Focus Plus One			OUTPUTNAME:Skill Focus +1								CATEGORY:Special Ability	TYPE:General.SpecialQuality.Abilities.Corruptable																																						MULT:YES	CHOOSE:SKILLSNAMED|Class																																																																																																																																																																				BONUS:SKILL|%LIST|1|TYPE=SkillFocus																										COST:2
 
 #Count Test w/ PREVAR test
-Warcraft				CATEGORY:Special Ability	TYPE:SpecialAttack											DEFINE:Warcraft Bonus|0	DESC:+%1 BAB|Warcraft Bonus														BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Normal Progression")	BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Half Progression")/2
+#Warcraft				CATEGORY:Special Ability	TYPE:SpecialAttack											DEFINE:Warcraft Bonus|0	DESC:+%1 BAB|Warcraft Bonus														BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Normal Progression")	BONUS:VAR|Warcraft Bonus|count("ABILITIES","CATEGORY=Special Ability","NAME=Warcraft ~ Half Progression")/2
 #
-Warcraft ~ Normal Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:6
-Warcraft ~ Half Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:3
+#Warcraft ~ Normal Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:6
+#Warcraft ~ Half Progression	CATEGORY:Special Ability	TYPE:Combat.Base Attack Bonus	VISIBLE:DISPLAY	PREVARLTEQ:Warcraft Bonus,TL+2										MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warcraft																																												COST:3
 
 ###Block: Specific Tom Tests that have been requested in the past
-1a Test Tom OS Token			CATEGORY:Special Ability	TYPE:TEST.General.TOM.SpecialQuality	DESC:+%1 Fortitude|var("CHECK.0.RACE")	DESC:+%1 Reflex|var("CHECK.1.RACE")	DESC:+%1 Will|var("CHECK.2.RACE")
-1a Test Tom Wizard Level Up		CATEGORY:FEAT			TYPE:TEST.General.TOM.SpecialQuality	BONUS:PCLEVEL|Wizard|6
+#1a Test Tom OS Token			CATEGORY:Special Ability	TYPE:TEST.General.TOM.SpecialQuality	DESC:+%1 Fortitude|var("CHECK.0.RACE")	DESC:+%1 Reflex|var("CHECK.1.RACE")	DESC:+%1 Will|var("CHECK.2.RACE")
+#1a Test Tom Wizard Level Up		CATEGORY:FEAT			TYPE:TEST.General.TOM.SpecialQuality	BONUS:PCLEVEL|Wizard|6
 
 
 #
