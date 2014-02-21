@@ -1,17 +1,114 @@
 SOURCELONG:Inner Sea Magic	SOURCESHORT:ISM	SOURCEWEB:http://paizo.com/products/btpy8mfs?Pathfinder-Campaign-Setting-Inner-Sea-Magic	SOURCEDATE:2011-07
 # Original Entry by: Andrew Wilson
 
-Acadamae			KEY:Acadamae ~ Acadamy					CATEGORY:Special Ability	TYPE:MagicSchool	
-Arcanamirium		KEY:Arcanamirium ~ Acadamy				CATEGORY:Special Ability	TYPE:MagicSchool	
-Magaambya			KEY:Magaambya ~ Acadamy					CATEGORY:Special Ability	TYPE:MagicSchool	
-Kintargo Opera House	KEY:Kintargo Opera House ~ Guild			CATEGORY:Special Ability	TYPE:MagicSchool	
-Oenopion Fleshforges	KEY:Oenopion Fleshforges ~ Guild			CATEGORY:Special Ability	TYPE:MagicSchool	
-Poisioner's Guild		KEY:Poisioner's Guild ~ Guild				CATEGORY:Special Ability	TYPE:MagicSchool	
-White Grotto		KEY:White Grotto ~ Guild				CATEGORY:Special Ability	TYPE:MagicSchool	
-Monastery			KEY:Monastery ~ Monastic Society			CATEGORY:Special Ability	TYPE:MagicSchool	
-Citadel Enferac		KEY:Citadel Enferac ~ Secret Society		CATEGORY:Special Ability	TYPE:MagicSchool	
-The Harrowed Society	KEY:The Harrowed Society ~ Secret Society		CATEGORY:Special Ability	TYPE:MagicSchool	
-Crimson Citadel		KEY:Crimson Citadel ~ Secret Society		CATEGORY:Special Ability	TYPE:MagicSchool	
+Acadamae				KEY:Acadamae ~ Acadamy					CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:AcadamyFame|0		DEFINE:GenericSchoolFame|0		DEFINE:AcadamaeFame|0			BONUS:VAR|AcadamyFame|AcadamaeFame|TYPE=MagicSchool				BONUS:VAR|GenericSchoolFame|AcadamaeFame|TYPE=MagicSchool				BONUS:ABILITYPOOL|Acadamae Reward|AcadamaeFame						CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Acadamae Fame			TEMPBONUS:PC|VAR|AcadamaeFame|%CHOICE				ABILITY:Special Ability|AUTOMATIC|All General Acadamy Abilities
+Arcanamirium			KEY:Arcanamirium ~ Acadamy				CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:AcadamyFame|0		DEFINE:GenericSchoolFame|0		DEFINE:ArcanamiriumFame|0		BONUS:VAR|AcadamyFame|ArcanamiriumFame|TYPE=MagicSchool			BONUS:VAR|GenericSchoolFame|ArcanamiriumFame|TYPE=MagicSchool			BONUS:ABILITYPOOL|Arcanamirium Reward|ArcanamiriumFame				CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Arcanamirium Fame		TEMPBONUS:PC|VAR|ArcanamiriumFame|%CHOICE				ABILITY:Special Ability|AUTOMATIC|All General Acadamy Abilities
+Magaambya				KEY:Magaambya ~ Acadamy					CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:AcadamyFame|0		DEFINE:GenericSchoolFame|0		DEFINE:MagaambyaFame|0			BONUS:VAR|AcadamyFame|MagaambyaFame|TYPE=MagicSchool				BONUS:VAR|GenericSchoolFame|MagaambyaFame|TYPE=MagicSchool				BONUS:ABILITYPOOL|Magaambya Reward|MagaambyaFame					CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Magaambya Fame			TEMPBONUS:PC|VAR|MagaambyaFame|%CHOICE				ABILITY:Special Ability|AUTOMATIC|All General Acadamy Abilities
+Kintargo Opera House		KEY:Kintargo Opera House ~ Guild			CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:GuildFame|0		DEFINE:GenericSchoolFame|0		DEFINE:KintargoOperaHouseFame|0	BONUS:VAR|GuildFame|KintargoOperaHouseFame|TYPE=MagicSchool			BONUS:VAR|GenericSchoolFame|KintargoOperaHouseFame|TYPE=MagicSchool		BONUS:ABILITYPOOL|Kintargo Opera House Reward|KintargoOperaHouseFame		CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Kintargo Opera House Fame	TEMPBONUS:PC|VAR|KintargoOperaHouseFame|%CHOICE			ABILITY:Special Ability|AUTOMATIC|All General Guild Abilities
+Oenopion Fleshforges		KEY:Oenopion Fleshforges ~ Guild			CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:GuildFame|0		DEFINE:GenericSchoolFame|0		DEFINE:OenopionFleshforgesFame|0	BONUS:VAR|GuildFame|OenopionFleshforgesFame|TYPE=MagicSchool		BONUS:VAR|GenericSchoolFame|OenopionFleshforgesFame|TYPE=MagicSchool		BONUS:ABILITYPOOL|Oenopion Fleshforges Reward|OenopionFleshforgesFame		CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Oenopion Fleshforges Fame	TEMPBONUS:PC|VAR|OenopionFleshforgesFame|%CHOICE		ABILITY:Special Ability|AUTOMATIC|All General Guild Abilities
+Poisioner's Guild			KEY:Poisioners Guild ~ Guild				CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:GuildFame|0		DEFINE:GenericSchoolFame|0		DEFINE:PoisionersGuildFame|0		BONUS:VAR|GuildFame|PoisionersGuildFame|TYPE=MagicSchool			BONUS:VAR|GenericSchoolFame|PoisionersGuildFame|TYPE=MagicSchool			BONUS:ABILITYPOOL|Poisioners Guild Reward|PoisionersGuildFame			CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Poisioner's Guild Fame	TEMPBONUS:PC|VAR|PoisionersGuildFame|%CHOICE			ABILITY:Special Ability|AUTOMATIC|All General Guild Abilities
+White Grotto			KEY:White Grotto ~ Guild				CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:GuildFame|0		DEFINE:GenericSchoolFame|0		DEFINE:WhiteGrottoFame|0		BONUS:VAR|GuildFame|WhiteGrottoFame|TYPE=MagicSchool				BONUS:VAR|GenericSchoolFame|WhiteGrottoFame|TYPE=MagicSchool			BONUS:ABILITYPOOL|White Grotto Reward|WhiteGrottoFame					CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=White Grotto Fame		TEMPBONUS:PC|VAR|WhiteGrottoFame|%CHOICE				ABILITY:Special Ability|AUTOMATIC|All General Guild Abilities
+Monastery				KEY:Monastery ~ Monastic Society			CATEGORY:Special Ability	TYPE:MagicSchool												DEFINE:GenericSchoolFame|0		DEFINE:MonasteryFame|0															BONUS:VAR|GenericSchoolFame|MonasteryFame|TYPE=MagicSchool				BONUS:ABILITYPOOL|Monastery Reward|MonasteryFame					CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Monastery Fame			TEMPBONUS:PC|VAR|MonasteryFame|%CHOICE				ABILITY:Special Ability|AUTOMATIC|All General Monastery Abilities
+Citadel Enferac			KEY:Citadel Enferac ~ Secret Society		CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:SecretSocietyFame|0	DEFINE:GenericSchoolFame|0		DEFINE:CitadelEnferacFame|0		BONUS:VAR|SecretSocietyFame|CitadelEnferacFame|TYPE=MagicSchool		BONUS:VAR|GenericSchoolFame|CitadelEnferacFame|TYPE=MagicSchool			BONUS:ABILITYPOOL|Citadel Enferac Reward|CitadelEnferacFame				CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Citadel Enferac Fame		TEMPBONUS:PC|VAR|CitadelEnferacFame|%CHOICE			ABILITY:Special Ability|AUTOMATIC|Citadel Enferac Specific Rewards
+The Harrowed Society		KEY:The Harrowed Society ~ Secret Society		CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:SecretSocietyFame|0	DEFINE:GenericSchoolFame|0		DEFINE:TheHarrowedSocietyFame|0	BONUS:VAR|SecretSocietyFame|TheHarrowedSocietyFame|TYPE=MagicSchool	BONUS:VAR|GenericSchoolFame|TheHarrowedSocietyFame|TYPE=MagicSchool		BONUS:ABILITYPOOL|The Harrowed Society Reward|TheHarrowedSocietyFame		CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=The Harrowed Society Fame	TEMPBONUS:PC|VAR|TheHarrowedSocietyFame|%CHOICE			ABILITY:Special Ability|AUTOMATIC|The Harrowed Society Specific Rewards
+Crimson Citadel			KEY:Crimson Citadel ~ Secret Society		CATEGORY:Special Ability	TYPE:MagicSchool							DEFINE:SecretSocietyFame|0	DEFINE:GenericSchoolFame|0		DEFINE:CrimsonCitadelFame|0		BONUS:VAR|SecretSocietyFame|CrimsonCitadelFame|TYPE=MagicSchool		BONUS:VAR|GenericSchoolFame|CrimsonCitadelFame|TYPE=MagicSchool			BONUS:ABILITYPOOL|Crimson Citadel Reward|CrimsonCitadelFame				CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Crimson Citadel Fame		TEMPBONUS:PC|VAR|CrimsonCitadelFame|%CHOICE			ABILITY:Special Ability|AUTOMATIC|Crimson Citadel Specific Rewards
+
+
+## Acadamy
+#
+All General Acadamy Abilities		CATEGORY:Special Ability	ABILITY:Magic School Reward|AUTOMATIC|Library Access ~ Acadamy|PREVARGTEQ:AcadamyFame,5		ABILITY:Magic School Reward|AUTOMATIC|Senior Student ~ Acadamy|PREVARGTEQ:AcadamyFame,20		ABILITY:Magic School Reward|AUTOMATIC|Professors Assistant ~ Acadamy|PREVARGTEQ:AcadamyFame,35	ABILITY:Magic School Reward|AUTOMATIC|Full Professor ~ Acadamy|PREVARGTEQ:AcadamyFame,50	DESC:This adds all of the basic abilities at the correct stage	VISIBLE:YES
+
+# General Academy Rewards
+Library Access			KEY:Library Access ~ Acadamy				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward	VISIBLE:YES		DESC:This is Library Access
+Senior Student			KEY:Senior Student ~ Acadamy				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward	VISIBLE:YES		DESC:This is Senior Student
+Professor's Assistant		KEY:Professors Assistant ~ Acadamy			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward	VISIBLE:YES		DESC:This is Professor's Assistant
+Full Professor			KEY:Full Professor ~ Acadamy				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward	VISIBLE:YES		DESC:This is Full Professor
+
+# Acadamae Specific Rewards
+Favourite Summons			KEY:Favourite Summons ~ Acadamy			CATEGORY:Special Ability	TYPE:AcadamaeReward		COST:5						MULT:YES	CHOOSE:NOCHOICE
+Imp Minion				KEY:Imp Minion ~ Acadamy				CATEGORY:Special Ability	TYPE:AcadamaeReward		COST:5	PREVARGTEQ:AcadamyFame,20
+Summoning Specialisation	KEY:Summoning Specialisation ~ Acadamy		CATEGORY:Special Ability	TYPE:AcadamaeReward		COST:3						MULT:YES	CHOOSE:NOCHOICE
+
+# Arcanamirium Specific Rewards
+Commission Magic Item		KEY:Commission Magic Item ~ Acadamy			CATEGORY:Special Ability	TYPE:ArcanamiriumReward		COST:2						MULT:YES	CHOOSE:NOCHOICE	
+Research Grant			KEY:Research Grant ~ Acadamy				CATEGORY:Special Ability	TYPE:ArcanamiriumReward		COST:5	PREVARGTEQ:AcadamyFame,20	MULT:YES	CHOOSE:NOCHOICE
+Scholar				KEY:Scholar ~ Acadamy					CATEGORY:Special Ability	TYPE:ArcanamiriumReward		COST:2                              	MULT:YES	CHOOSE:NOCHOICE
+
+# Magaambya Specific Rewards
+Ancient Mwaqngi Magic		KEY:Ancient Mwaqngi Magic ~ Acadamy			CATEGORY:Special Ability	TYPE:MagaambyaReward		COST:4						MULT:YES	CHOOSE:NOCHOICE
+Diplomatic Student		KEY:Diplomatic Student ~ Acadamy			CATEGORY:Special Ability	TYPE:MagaambyaReward
+
+
+## Guild
+#
+All General Guild Abilities		CATEGORY:Special Ability	ABILITY:Magic School Reward|AUTOMATIC|Eclectic Training ~ Guild|PREVARGTEQ:GuildFame,5		ABILITY:Magic School Reward|AUTOMATIC|Senior Guild Member ~ Guild|PREVARGTEQ:GuildFame,20		ABILITY:Magic School Reward|AUTOMATIC|Esoteric Training ~ Guild|PREVARGTEQ:GuildFame,35	ABILITY:Magic School Reward|AUTOMATIC|Guildmaster ~ Guild|PREVARGTEQ:GuildFame,50	DESC:This adds all of the basic abilities at the correct stage	VISIBLE:YES
+
+# General Guild Rewards
+Eclectic Training			KEY:Eclectic Training ~ Guild				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Senior Guild Member		KEY:Senior Guild Member ~ Guild			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Esoteric Training			KEY:Esoteric Training ~ Guild				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Guildmaster				KEY:Guildmaster ~ Guild					CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+
+# Kintargo Opera House  Specific Guild Rewards
+Idolised				KEY:Idolised ~ Guild					CATEGORY:Special Ability	TYPE:KintargoOperaHouseReward			COST:5
+Projection				KEY:Projection ~ Guild					CATEGORY:Special Ability	TYPE:KintargoOperaHouseReward			COST:5
+Virtuoso				KEY:Virtuoso ~ Guild					CATEGORY:Special Ability	TYPE:KintargoOperaHouseReward			COST:10	PREVARGTEQ:KintargoOperaHouseFame,20
+
+# Oenopion Fleshforges  Specific Guild Rewards
+Enhancement				KEY:Enhancement ~ Guild					CATEGORY:Special Ability	TYPE:OenopionFleshforgesReward		COST:20	PREVARGTEQ:OenopionFleshforgesFame,30
+Surgeon				KEY:Surgeon ~ Guild					CATEGORY:Special Ability	TYPE:OenopionFleshforgesReward
+
+# Poisioners Guild  Specific Guild Rewards
+Discounted Poisions		KEY:Discounted Poisions ~ Guild			CATEGORY:Special Ability	TYPE:PoisionersGuildReward		COST:2	PREVARGTEQ:PoisionersGuildFame,10
+Poision Immunity			KEY:Poision Immunity ~ Guild				CATEGORY:Special Ability	TYPE:PoisionersGuildReward		COST:5
+
+# White Grotto  Specific Guild Rewards
+Lingering Illusions		KEY:Lingering Illusions ~ Guild			CATEGORY:Special Ability	TYPE:WhiteGrottoReward			COST:2
+Hidden Wand				KEY:Hidden Wand ~ Guild					CATEGORY:Special Ability	TYPE:WhiteGrottoReward			COST:2	PREVARGTEQ:WhiteGrottoFame,30
+
+
+## Monastry
+#
+All General Monastery Abilities		CATEGORY:Special Ability	ABILITY:Magic School Reward|AUTOMATIC|Infirmary Access ~ Monastery|PREVARGTEQ:MonasteryFame,5		ABILITY:Magic School Reward|AUTOMATIC|Friar ~ Monastery|PREVARGTEQ:MonasteryFame,20		ABILITY:Magic School Reward|AUTOMATIC|Back from the Dead ~ Monastery|PREVARGTEQ:MonasteryFame,35	ABILITY:Magic School Reward|AUTOMATIC|Elder ~ Monastery|PREVARGTEQ:MonasteryFame,50	DESC:This adds all of the basic abilities at the correct stage	VISIBLE:YES
+
+# General Monastery Rewards
+Infirmary Access			KEY:Infirmary Access ~ Monastery			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Friar					KEY:Friar ~ Monastery					CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Back from the Dead		KEY:Back from the Dead ~ Monastery			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Elder					KEY:Elder ~ Monastery					CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+
+
+## Secret Society
+#
+
+Citadel Enferac Specific Rewards		CATEGORY:Special Ability	ABILITY:Magic School Reward|AUTOMATIC|Signifer ~ Secret Society|PREVARGTEQ:CitadelEnferacFame,20		ABILITY:Magic School Reward|AUTOMATIC|Paravicar ~ Secret Society|PREVARGTEQ:CitadelEnferacFame,50		DESC:This adds all of the basic abilities at the correct stage	VISIBLE:YES
+
+# Citadel Enferac Specific Rewards
+Signifer				KEY:Signifer ~ Secret Society				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Paravicar				KEY:Paravicar ~ Secret Society			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Blessing of Enferac		KEY:Blessing of Enferac ~ Secret Society		CATEGORY:Special Ability	TYPE:CitadelEnferacReward	COST:5	PREVARGTEQ:CitadelEnferacFame,30
+
+The Harrowed Society Specific Rewards		CATEGORY:Special Ability	ABILITY:Magic School Reward|AUTOMATIC|Augur ~ Secret Society|PREVARGTEQ:TheHarrowedSocietyFame,20		ABILITY:Magic School Reward|AUTOMATIC|Seer ~ Secret Society|PREVARGTEQ:TheHarrowedSocietyFame,50		DESC:This adds all of the basic abilities at the correct stage	VISIBLE:YES
+
+# The Harrowed Society Specific Rewards
+Augur					KEY:Augur ~ Secret Society				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Seer					KEY:Seer ~ Secret Society				CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Trumps				KEY:Trumps ~ Secret Society				CATEGORY:Special Ability	TYPE:TheHarrowedSocietyReward	COST:5	PREVARGTEQ:TheHarrowedSocietyFame,20
+
+Crimson Citadel Specific Rewards		CATEGORY:Special Ability	ABILITY:Magic School Reward|AUTOMATIC|Crimson Agent ~ Secret Society|PREVARGTEQ:CrimsonCitadelFame,20		ABILITY:Magic School Reward|AUTOMATIC|Crimson Scion ~ Secret Society|PREVARGTEQ:CrimsonCitadelFame,50		DESC:This adds all of the basic abilities at the correct stage	VISIBLE:YES
+
+# Crimson Citadel Specific Rewards
+Crimson Agent			KEY:Crimson Agent ~ Secret Society			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Crimson Scion			KEY:Crimson Scion ~ Secret Society			CATEGORY:Special Ability	TYPE:SpecialQuality.MagicSchoolReward
+Assassin Prodigy			KEY:Assassin Prodigy ~ Secret Society		CATEGORY:Special Ability	TYPE:CrimsonCitadelReward
+Mantis Magic			KEY:Mantis Magic ~ Secret Society			CATEGORY:Special Ability	TYPE:CrimsonCitadelReward	COST:2
+
+
+# Completely General Rewards
+Research Aid			KEY:Research Aid ~ Secret Society			CATEGORY:Special Ability	TYPE:AcadamaeReward.ArcanamiriumReward.MagaambyaReward.KintargoOperaHouseReward.OenopionFleshforgesReward.PoisionersGuildReward.WhiteGrottoReward.MonasteryReward.CitadelEnferacReward.TheHarrowedSocietyReward.CrimsonCitadelReward		MULT:YES	CHOOSE:NOCHOICE
+Scholarship Aid			KEY:Scholarship Aid ~ Secret Society		CATEGORY:Special Ability	TYPE:AcadamaeReward.ArcanamiriumReward.MagaambyaReward.KintargoOperaHouseReward.OenopionFleshforgesReward.PoisionersGuildReward.WhiteGrottoReward.MonasteryReward.CitadelEnferacReward.TheHarrowedSocietyReward.CrimsonCitadelReward		MULT:YES	CHOOSE:NOCHOICE
+Spell Transcription		KEY:Spell Transcription ~ Secret Society		CATEGORY:Special Ability	TYPE:AcadamaeReward.ArcanamiriumReward.MagaambyaReward.KintargoOperaHouseReward.OenopionFleshforgesReward.PoisionersGuildReward.WhiteGrottoReward.MonasteryReward.CitadelEnferacReward.TheHarrowedSocietyReward.CrimsonCitadelReward		MULT:YES	CHOOSE:NOCHOICE
+Spellcasting			KEY:Spellcasting ~ Secret Society			CATEGORY:Special Ability	TYPE:AcadamaeReward.ArcanamiriumReward.MagaambyaReward.KintargoOperaHouseReward.OenopionFleshforgesReward.PoisionersGuildReward.WhiteGrottoReward.MonasteryReward.CitadelEnferacReward.TheHarrowedSocietyReward.CrimsonCitadelReward		MULT:YES	CHOOSE:NOCHOICE
 
 #
 # End
