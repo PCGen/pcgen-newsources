@@ -242,6 +242,141 @@ CLASS:Bard.MOD
 1	BONUS:VAR|CompLevel|CL|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard	ABILITY:Special Ability|AUTOMATIC|Animal Companion|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard
 4														ABILITY:Special Ability|AUTOMATIC|Resist Nature's Lure|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard
 
+# Cleric Variant
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page			Bonus Languages					Save checks bonus											Combat bonus					Add domain number		Monster Role
+CLASS:Cleric (Cloistered Cleric)	HD:6		TYPE:Base.PC.Variant	CLASSTYPE:PC	ABB:Clr		MAXLEVEL:20	SOURCEPAGE:ClassesI.rtf	LANGBONUS:Abyssal,Celestial,Infernal	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*1/2|TYPE=Base.REPLACE	BONUS:DOMAIN|NUMBER|2	ROLE:Cleric
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Cleric (Cloistered Cleric)	STARTSKILLPTS:6	CSKILL:Concentration|TYPE=Craft|Diplomacy|Heal|TYPE=Knowledge|TYPE=Profession|Spellcraft|Decipher Script|Speak Language
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
+CLASS:Cleric (Cloistered Cleric)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9	BONUS:CASTERLEVEL|Cleric (Cloistered Cleric)|CL
+###Block:Proficiencies
+1	AUTO:WEAPONPROF|TYPE=Simple	AUTO:ARMORPROF|Light
+1	ABILITY:Special Ability|AUTOMATIC|Cloistered Cleric ~ Lore
+1	DOMAIN:Knowledge	BONUS:DOMAIN|NUMBER|1
+# This is Phase I of the Turn abilities improvement (for 5.6).  Futher enhancements are planned,
+#	both OS and data to include modifications for differences in Turning ability for Undead,
+#	Air, Fire, etc.
+###Block: Turn Undead stuff
+1	BONUS:ABILITYPOOL|Turn Undead|1|TYPE=ClassAbility	BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL|TYPE=Level.REPLACE	ABILITY:Special Ability|AUTOMATIC|Basic Turning|Cleric Turning
+###Block: Spontaneous casting
+1	ABILITY:Special Ability|VIRTUAL|Spontaneous casting - Cure spells|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericSpontaneousCasting|PREABILITY:1,CATEGORY=Special Ability,Turn Undead
+1	ABILITY:Special Ability|VIRTUAL|Spontaneous casting - Inflict spells|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericSpontaneousCasting|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead
+###Block: Spell Alignment Restrictions
+1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+###Block: Aura strength
+1	BONUS:VAR|AlignmentAuraBase|CL	DEFINE:AlignmentAuraBase|0
+###Block:
+1	ABILITY:Special Ability|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
+1	ABILITY:Special Ability|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
+1	ABILITY:Special Ability|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
+1	ABILITY:Special Ability|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
+###Block: Righteous Might Workaround
+1	TEMPLATE:RighteousMightDR
+###Block: Level progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,2,1
+4	CAST:5,3,2
+5	CAST:5,3,2,1
+6	CAST:5,3,3,2
+7	CAST:6,4,3,2,1
+8	CAST:6,4,3,3,2
+9	CAST:6,4,4,3,2,1
+10	CAST:6,4,4,3,3,2
+11	CAST:6,5,4,4,3,2,1
+12	CAST:6,5,4,4,3,3,2
+13	CAST:6,5,5,4,4,3,2,1
+14	CAST:6,5,5,4,4,3,3,2
+15	CAST:6,5,5,5,4,4,3,2,1
+16	CAST:6,5,5,5,4,4,3,3,2
+17	CAST:6,5,5,5,5,4,4,3,2,1
+18	CAST:6,5,5,5,5,4,4,3,3,2
+19	CAST:6,5,5,5,5,5,4,4,3,3
+20	CAST:6,5,5,5,5,5,4,4,4,4
+
+# Druid Variant
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Ex Class		Source Page			Bonus Languages	Automatically Gained Language	Save checks bonus											Combat bonus					Monster Role
+CLASS:Druid (Druidic Avenger)		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Drd		MAXLEVEL:20	EXCLASS:Ex Druid	SOURCEPAGE:ClassesI.rtf	LANGBONUS:Sylvan	AUTO:LANG|Druidic			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Druid
+# Class Name	Required AL
+CLASS:Druid (Druidic Avenger)		PREALIGN:LN,NG,TN,NE,CN
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Druid (Druidic Avenger)		STARTSKILLPTS:4	CSKILL:Concentration|TYPE=Craft|Handle Animal|Heal|Knowledge (Nature)|Listen|TYPE=Profession|Ride|Spellcraft|Spot|Survival|Swim|Intimidate
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
+CLASS:Druid (Druidic Avenger)		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9	BONUS:CASTERLEVEL|Druid|CL
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Druid|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidProficiencies
+###Block: Wildshape Abilities Block
+#
+# To add effective Druid levels to this ability use BONUS:VAR|DruidWildShape|CL
+#
+1	BONUS:VAR|DruidWildShape|CL
+1	BONUS:VAR|WildEmpathy|CL-4
+###Block: Spell Alignment Restrictions
+1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+###Block:
+1	ABILITY:Special Ability|AUTOMATIC|Druid Elemental Wild Shape Times|Druid Wild Shape|Druid Wild Shape Progression|Druid Wild Shape Times|Wild Shape|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildShape
+1	ABILITY:Special Ability|AUTOMATIC|Nature Sense|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidNatureSense
+1	ABILITY:Special Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildEmpathy
+2	ABILITY:Special Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWoodlandStride
+3	ABILITY:Special Ability|AUTOMATIC|Trackless Step|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTracklessStep
+4	ABILITY:Special Ability|AUTOMATIC|Resist Nature's Lure|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidResistNaturesLure
+9	ABILITY:Special Ability|AUTOMATIC|Venom Immunity|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidVenomImmunity
+13	ABILITY:Special Ability|AUTOMATIC|A Thousand Faces|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAThousandFaces
+15	ABILITY:Special Ability|AUTOMATIC|Timeless Body|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTimelessBody																	TEMPLATE:Timeless Body
+#
+1	ABILITY:Special Ability|AUTOMATIC|Druidic Avenger ~ Fast Movement
+1	ABILITY:Special Ability|AUTOMATIC|Druidic Avenger ~ Rage
+17	ABILITY:Special Ability|AUTOMATIC|Druidic Avenger ~ Tireless Rage
+###Block: Normal Progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,2,1
+4	CAST:5,3,2
+5	CAST:5,3,2,1
+6	CAST:5,3,3,2
+7	CAST:6,4,3,2,1
+8	CAST:6,4,3,3,2
+9	CAST:6,4,4,3,2,1
+10	CAST:6,4,4,3,3,2
+11	CAST:6,5,4,4,3,2,1
+12	CAST:6,5,4,4,3,3,2
+13	CAST:6,5,5,4,4,3,2,1
+14	CAST:6,5,5,4,4,3,3,2
+15	CAST:6,5,5,5,4,4,3,2,1
+16	CAST:6,5,5,5,4,4,3,3,2
+17	CAST:6,5,5,5,5,4,4,3,2,1
+18	CAST:6,5,5,5,5,4,4,3,3,2
+19	CAST:6,5,5,5,5,5,4,4,3,3
+20	CAST:6,5,5,5,5,5,4,4,4,4
+
+# Fighter Variant-
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page			Define			Save checks bonus											Combat bonus					Monster Role
+CLASS:Fighter (Thug)	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ftr		MAXLEVEL:20	SOURCEPAGE:ClassesI.rtf	DEFINE:FighterLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat	DEFINE:ThugLVL|CL
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Fighter (Thug)	STARTSKILLPTS:2	CSKILL:Climb|TYPE=Craft|Handle Animal|Intimidate|Jump|Ride|Swim
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Thug ~ Weapon and Armor Proficiency
+###Block: Advanced Weapon Feat qualifications
+1	ABILITY:Special Ability|AUTOMATIC|Fighter Level Advanced Feat Tracker
+1	ABILITY:Special Ability|AUTOMATIC|Weapon Specialization Qualify|!PREABILITY:1,CATEGORY=ACF,TYPE.FighterWeaponSpecialization
+1	ABILITY:Special Ability|AUTOMATIC|Greater Weapon Focus Qualify|!PREABILITY:1,CATEGORY=ACF,TYPE.FighterGreaterWeaponFocus
+1	ABILITY:Special Ability|AUTOMATIC|Greater Weapon Specialization Qualify|!PREABILITY:1,CATEGORY=ACF,TYPE.FighterGreaterWeaponSpecialization
+1	ABILITY:Special Ability|AUTOMATIC|Thug ~ Bonus Feats|!PREABILITY:1,CATEGORY=ACF,TYPE.FighterBonusFeat,TYPE.FighterBonusFeats
+
+# Monk Variant - Monk Fighting Style
+CLASS:Monk.MOD
+1	BONUS:ABILITYPOOL|Monk Fighting Style|1
+1	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,MonkFightingStyleAlt
+2	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,MonkFightingStyleAlt
+6	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,MonkFightingStyleAlt
+
+# Paladin Variants -
 # Class Name	Prohibited Class
 CLASS:Paladin.MOD	!PRECLASS:1,Paladin of Freedom=1,Paladin of Slaughter=1,Paladin of Tyranny=1
 
@@ -465,6 +600,23 @@ CLASS:Ranger (Urban Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|L
 18	CAST:0,3,2,2,1
 19	CAST:0,3,3,3,2
 20	CAST:0,3,3,3,3
+
+# Variant Rogue -
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page				Save checks bonus												Combat bonus					Monster Role
+CLASS:Rogue (Wilderness Rogue)		HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Rog		MAXLEVEL:20	SOURCEPAGE:ClassesII.rtf	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Rogue (Wilderness Rogue)		STARTSKILLPTS:8	CSKILL:Balance|Bluff|Climb|TYPE=Craft|Disable Device|Disguise|Escape Artist|Hide|Intimidate|Jump|Knowledge (Local)|Listen|Move Silently|Open Lock|TYPE=Perform|TYPE=Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Magic Device|Use Rope|Handle Animal|Knowledge (Geography)|Knowledge (Nature)|Ride|Survival
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Rogue|!PREABILITY:1,CATEGORY=ACF,TYPE.RogueProficiencies
+###Block: Level progression
+1											BONUS:VAR|RogueSneakAttackLVL|CL												ABILITY:Special Ability|AUTOMATIC|Rogue Sneak Attack|Sneak Attack|Trapfinding
+2											BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy	ABILITY:Special Ability|AUTOMATIC|Evasion
+3											BONUS:VAR|RogueTrapSenseLVL|CL												ABILITY:Special Ability|AUTOMATIC|Rogue Trap Sense|Trap Sense Ability
+4											BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|CL/4	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
+10	BONUS:ABILITYPOOL|Rogue Special Ability|min(4,(CL-7)/3)
+7	ABILITY:Special Ability|AUTOMATIC|Wilderness Rogue ~ Woodland Stride
+
+
 
 
 ###Battle Sorcerer
