@@ -322,6 +322,9 @@ Marksman Manifesting Variables	CATEGORY:Internal	BONUS:VAR|MarksmanML|MarksmanLV
 
 ###Block: Core class abilities
 # Ability Name			Output Name				Category of Ability		Type						Visible	Define									Description																						Modify VAR											Weapon prof. bonus													Source Page
+# NEEDS CODE/DATA WORK: AUTO:WEAPONPROF|TYPE=Martial.Ranged doesn't add exotic ranged weapons that get treated as martial by a race ability
+# WORKAROUND: Halfling Sling Staff added specifically
+Marksman Ranged Weapon Proficiency	CATEGORY:Internal		AUTO:WEAPONPROF|TYPE=Martial.Ranged|TYPE=Martial.Thrown	AUTO:WEAPONPROF|Sling Staff (Halfling)|PREABILITY:1,CATEGORY=Special Ability,Weapon Familiarity ~ Halfling
 Marksman Combat Style	CATEGORY:Internal	BONUS:ABILITYPOOL|Marksman Combat Style|1	BONUS:VAR|MarksmanStyleLVL|MarksmanLVL	DEFINE:MarksmanStyleLVL|0	DEFINE:MarksmanStyleStat|0	BONUS:VAR|MarksmanStyleStat|MarksmanPrimeStat	DEFINE:MarksmanStyleDC|0	BONUS:VAR|MarksmanStyleDC|10+(MarskmanStyleLVL/2)+MarksmanPrimeStat	BONUS:VAR|StyleSkill|MarksmanLVL/3			DEFINE:StyleSkill|0
 Wind Reader	KEY:Wind Reader ~ Marksman		CATEGORY:Special Ability	TYPE:SpecialAttack.Supernatural			DEFINE:WindReaderBonus|0	DEFINE:WindReaderTimes|0	DESC:Gain +%1 on ranged attacks in a round, %2/day.|WindReaderBonus|WindReaderTimes										BONUS:VAR|WindReaderBonus|MarksmanPrimeStat	BONUS:VAR|WindReaderTimes|3+WindReaderLVL																	SOURCEPAGE:p.44	BONUS:VAR|WindReaderLVL|MarksmanLVL			DEFINE:WindReaderLVL|0
 Evade Arrows	KEY:Evade Arrows ~ Marksman	CATEGORY:Special Ability	TYPE:SpecialQuality.Supernatural			DEFINE:EvadeArrows|0							DESC:Gain +%1 AC vs. ranged attacks.|EvadeArrows																																											SOURCEPAGE:p.44	BONUS:VAR|EvadeArrows|(MarksmanLVL+2)/4		DEFINE:EvadeArrows|0
