@@ -3,7 +3,7 @@ SOURCELONG:Advanced Class Guide Playtest	SOURCESHORT:ACGP	SOURCEWEB:http://paizo
 # Original Entry by: Stefan Radermacher
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus												Combat bonus					Monster Role
-CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Class Skills ~ Warpriest|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
+CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
 # Class Name	Multiple Requirements
 CLASS:Warpriest	PREMULT:1,[PRECLASS:1,Warpriest],[!PRECLASS:1,TYPE=Cleric,TYPE=Fighter]
 # Class Name	Skill Pts/Lvl
@@ -12,20 +12,20 @@ CLASS:Warpriest	STARTSKILLPTS:2
 CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Warpriest|CL	SPELLLIST:1|Cleric
 ###Block:Proficiencies
 1		BONUS:VAR|AlignmentAuraLVL|CL
-1			ABILITY:Cleric Class Ability|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
-1			ABILITY:Cleric Class Ability|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
-1			ABILITY:Cleric Class Ability|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
-1			ABILITY:Cleric Class Ability|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
-1			ABILITY:Warpriest Class Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Warpriest
-1			ABILITY:Warpriest Class Ability|AUTOMATIC|Orisons ~ Warpriest
-1			ABILITY:Warpriest Class Ability|AUTOMATIC|Spontaneous Casting ~ Warpriest
-1			ABILITY:Warpriest Class Ability|AUTOMATIC|Weapon Focus ~ Warpriest
-1			ABILITY:Warpriest Class Ability|AUTOMATIC|Blessings ~ Warpriest
-1			ABILITY:Warpriest Class Ability|AUTOMATIC|Sacred Weapon ~ Warpriest
-2			ABILITY:Warpriest Class Ability|AUTOMATIC|Fervor ~ Warpriest
-3			ABILITY:Warpriest Class Ability|AUTOMATIC|Bonus Feats ~ Warpriest
-4			ABILITY:Warpriest Class Ability|AUTOMATIC|Channel Positive Energy ~ Warpriest
-7			ABILITY:Warpriest Class Ability|AUTOMATIC|Sacred Armor ~ Warpriest
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Orisons
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Spontaneous Casting
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Weapon Focus
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Blessings
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Sacred Weapon
+2			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Fervor
+3			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Bonus Feats
+4			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Channel Positive Energy
+7			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Sacred Armor
 
 ###Block: Spell Alignment Restrictions
 1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
