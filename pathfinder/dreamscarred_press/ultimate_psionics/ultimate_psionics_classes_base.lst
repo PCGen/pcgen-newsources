@@ -590,6 +590,7 @@ CLASS:Wilder	SPELLSTAT:CHA	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Wilde
 19	KNOWN:1,2,1,1,1,1,1,1,1,1
 20	KNOWN:1,2,1,1,1,1,1,1,1,2
 
+
 ###Block: Gifted Blade pseudo-class
 # Class Name		Type			Visible
 CLASS:Gifted Blade	TYPE:Psionic	VISIBLE:NO
@@ -615,6 +616,40 @@ CLASS:Gifted Blade	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL
 16	KNOWN:0,2,2,2,1
 17	KNOWN:0,2,2,2,1
 18	KNOWN:0,2,2,2,1
+
+###Block: Gifted Blade Tactican Power List pseudo-class
+# Class Name		Type			Visible
+CLASS:Gifted Blade Tactician Power List	TYPE:Psionic	VISIBLE:NO
+# Class Name		Spell Stat		Spell Type		Memorize	Caster level
+CLASS:Gifted Blade Tactician Power List	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Gifted Blade Tactician Power List|CL	SPELLLIST:1|Tactician
+
+###Block: Gifted Blade Tactician Power List Powers Known
+1	KNOWN:0,1
+2	KNOWN:0,1
+3	KNOWN:0,2
+4	KNOWN:0,2
+5	KNOWN:0,2,1
+6	KNOWN:0,2,1
+7	KNOWN:0,2,2
+8	KNOWN:0,2,2
+9	KNOWN:0,2,2,1
+10	KNOWN:0,2,2,1
+11	KNOWN:0,2,2,1
+12	KNOWN:0,2,2,2
+13	KNOWN:0,2,2,2,0
+14	KNOWN:0,2,2,2,0
+15	KNOWN:0,2,2,2,1
+16	KNOWN:0,2,2,2,1
+17	KNOWN:0,2,2,2,1
+18	KNOWN:0,2,2,2,1
+
+
+###Block: add Psychic Mage as a subclass; needed to add to spell list, I think.
+CLASS:Wizard.MOD
+SUBCLASS:Psychic Mage	SPELLLIST:2|Wizard|Psion
+#	CHOICE:SCHOOL|Psychic Mage
+SUBCLASSLEVEL:1	BONUS:VAR|AbjurationSchoolLVL|CL	BONUS:VAR|DisallowWizardArcaneSchoolArchetype|1	!PREABILITY:1,CATEGORY=Archetype,TYPE.WizardArcaneSchool	ABILITY:Archetype|AUTOMATIC|Wizard Archetype ~ Psychic Mage
+
 
 #
 # End

@@ -33,8 +33,8 @@ Combustible Mutagen	KEY:Discovery ~ Combustible Mutagen	CATEGORY:Special Ability
 Sizable Mutation		KEY:Sizable Mutation ~ Mutator	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:By mixing a prepared extract into your mutagen, you can add an enlarge person or reduce person effect to that mutagen, although the original effect of the extract is wasted.  The effect lasts for the duration of the mutation.  However, once the effect of the mutagen ends, you take 2 points of ability damage to Strength, Dexterity, and Constitution.	SOURCEPAGE:p.xx
 
 
-# COMMENT: Modify Advanced Talent so one can take APG rogue talents
-CATEGORY=Special Ability|Advanced Talent ~ Blade Skill.MOD	QUALIFY:ABILITY=Special Ability|Stealthy Sniper ~ Rogue Talent
+# COMMENT: Modify Advanced Talents so one can take APG rogue talents
+CATEGORY=Special Ability|Advanced Talents ~ Blade Skill.MOD	QUALIFY:ABILITY=Special Ability|Stealthy Sniper ~ Rogue Talent
 
 # COMMENT: One or more of the below is from UC; move it/them appropriately
 ###Block: Modify rogue talents
@@ -46,6 +46,24 @@ CATEGORY=Special Ability|Stealthy Sniper ~ Rogue Talent.MOD	TYPE:SoulknifeAdvanc
 
 ###Block: Modify the Pain Surge wild surge to get the Fight On feet, as needed
 CATEGORY=Internal|Pain Surge Bond Bonus Feats.MOD	ABILITY:FEAT|AUTOMATIC|Fight On|PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Pain Surge],[PREVARGTEQ:SurgeLVL,13]
+
+###Block: Psionics Domain and subdomains
+###Block: Psionics Domain abilities
+Psionics	KEY:Core Domain ~ Psionics Domain	CATEGORY:Internal		TYPE:Internal.DomainAbility	ABILITY:Special Ability|AUTOMATIC|Granted Power ~ Psionics Domain|PREVARGTEQ:DomainPsionicsAbilityTriggerLVL,1	ABILITY:Special Ability|AUTOMATIC|Psionic Amplifier ~ Psionics Domain|PREVARGTEQ:DomainPsionicsAbilityTriggerLVL,1	ABILITY:Special Ability|AUTOMATIC|Dispelling Touch ~ Psionics Domain|PREVARGTEQ:DomainPsionicsAbilityTriggerLVL,8	BONUS:VAR|DomainPsionicsLVL|DomainLVL|TYPE=Domain	BONUS:VAR|DomainPsionicsDC|10+(DomainPsionicsLVL/2)+CHA	BONUS:VAR|DomainPsionicsTimes|DomainPowerTimes|TYPE=Domain	BONUS:VAR|DomainPsionicsAbilityTriggerLVL|DomainAbilityTriggerLVL|TYPE=Domain
+
+# Cleric Domain archetype support
+Psionics	KEY:Psionics Domain		CATEGORY:Special Ability	TYPE:ClericClassAbility.Domain.ClericDomain	DEFINE:DomainPsionicsLVL|0	DEFINE:DomainPsionicsDC|0	DEFINE:DomainPsionicsTimes|0	DEFINE:DomainPsionicsAbilityTriggerLVL|0											DESC:Dedication has opened your third eye, allowing your psychic power to spring forth in a cascade of potential.																							ABILITY:Special Ability|AUTOMATIC|Granted Power ~ Psionics Domain|PREVARGTEQ:DomainPsionicsAbilityTriggerLVL,1	ABILITY:Special Ability|AUTOMATIC|Psionic Amplifier ~ Psionics Domain|PREVARGTEQ:DomainPsionicsAbilityTriggerLVL,1	ABILITY:Special Ability|AUTOMATIC|Dispelling Touch ~ Psionics Domain|PREVARGTEQ:DomainPsionicsAbilityTriggerLVL,8																								BONUS:VAR|DomainPsionicsLVL|DomainLVL|TYPE=Domain	BONUS:VAR|DomainPsionicsDC|10+(DomainPsionicsLVL/2)+CHA	BONUS:VAR|DomainPsionicsTimes|DomainPowerTimes|TYPE=Domain	BONUS:VAR|DomainPsionicsAbilityTriggerLVL|DomainAbilityTriggerLVL|TYPE=Domain																					SOURCEPAGE:p.294	SPELLLEVEL:DOMAIN|Psionics=1|Charm Person|Psionics=2|Detect Thoughts|Psionics=3|Seek Thoughts|Psionics=4|Charm Monster|Psionics=5|Telepathic Bond|Psionics=6|Suggestion (Mass)|Psionics=7|Insanity|Psionics=8|Mind Blank|Psionics=9|Foresight
+
+# Psionics Domain abilities
+Granted Power		KEY:Granted Power ~ Psionics Domain			CATEGORY:Special Ability	TYPE:ClericClassAbility.SpecialQuality.DomainPower	DESC:You gain Wild Talent or Psionic Talent as a bonus feat.	TEMPLATE:Wild Talent Determination	SOURCEPAGE:p.294
+Psionic Amplifier		KEY:Psionic Amplifier ~ Psionics Domain		CATEGORY:Special Ability	TYPE:ClericClassAbility.SpecialQuality.Supernatural.DomainPower	DESC:You can become an amplifier of psionic energy.	SOURCEPAGE:p.294	ASPECT:Ability Benefit|(%1/day)|DomainPsionicsTimes	ASPECT:CheckCount|%1|DomainPsionicsTimes	ASPECT:CheckType|Uses per Day						BENEFIT:As a standard action you can become an amplifier of psionic energy until the end of your next turn.  This aura emanates 15 ft. out from you.  All psionic powers manifested within the emanation either gain a +1 bonus to their manifester level or increase their saving throw DC by +1, chosen by the manifester when he manifests the power.  This manifester level increase allows additional augmenting of the power being manifester.  You can use this ability %1 times per day.|DomainPsionicsTimes
+Dispelling Touch		KEY:Dispelling Touch ~ Psionics Domain		CATEGORY:Special Ability	TYPE:ClericClassAbility.SpecialAttack.SpellLike.DomainPower							DEFINE:PsionicsDispellingTouchTimes|0												DESC:You can use a targeted Dispel Psionics effect as a melee touch attack.																																																																																																												BONUS:VAR|PsionicsDispellingTouchTimes|(DomainPsionicsLVL-4)/4																														SOURCEPAGE:p.294	ASPECT:Ability Benefit|(%1/day)|PsionicsDispellingTouchTimes	ASPECT:CheckCount|%1|PsionicsDispellingTouchTimes	ASPECT:CheckType|Uses per Day						BENEFIT:You can use a targeted Dispel Psionics effect as a melee touch attack. You can use this ability %1 times per day.|PsionicsDispellingTouchTimes
+
+# Subdomain abilities
+Lucid Dream		KEY:Lucid Dream ~ Dreams Subdomain		CATEGORY:Special Ability	TYPE:ClericClassAbility.SpecialQuality.Supernatural.DomainPower	DESC:You can make a slight alteration to reality changing the world around you.  This ability works like the stone shape spell (CL %1).  It works on any unworked non-living solid material.  The material reverts back to its previous shape after %2 minutes.  You may use this ability %3/day.|LucidDreamCL|LucidDreamDuration|LucidDreamTimes	SOURCEPAGE:p.294	DEFINE:LucidDreamCL|PsionicsDomainLVL	DEFINE:LucidDreamDuration|PsionicsDomainLVL	DEFINE:LucidDreamTimes|0	BONUS:VAR|LucidDreamTimes|floor((PsionicsDomainLVL-4)/4)
+Psychokinesis	KEY:Psychokinesis ~ Noetics Subdomain	CATEGORY:Special Ability	TYPE:ClericClassAbility.SpecialQuality.PsiLike.DomainPower		DESC:YOu can move an object, or even a creature, by concentrating your mind on its current location and then the location you desire, creating a sustained force.  You can move up to %1 pounds up to 20 feet per round.  A create can negate the effect on an object it possesses or itself with a successful Will save (DC %2) or with power resistance.  The weight can be moved across the ground or through the air.  This effect ends if the object is forced out of range (%3 ft.) or if you cease concentration.  You can use this ability %4 rounds per day.|PsychokinesisWeight|PsychokinesisDC|PsychokinesisRange|PsychokinesisTimes	DEFINE:PsychokinesisWeight|0	BONUS:VAR|PsychokinesisWeight|25*PsionicsDomainLVL	DEFINE:PsychokinesisDC|PsionicsDomainDC	DEFINE:PsychokinesisRange|0	BONUS:VAR|PsychokinesisRange|25+5*floor(PsionicsDomainLVL/2)	DEFINE:PsychoKinesisTimes|PsionicDomainTimes	SOURCEPAGE:p.294
+
+
 
 #
 # End
