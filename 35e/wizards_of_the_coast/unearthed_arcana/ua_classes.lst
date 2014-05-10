@@ -89,7 +89,7 @@ CLASS:Savage Bard.MOD	BONUS:CASTERLEVEL|Savage Bard|CL	SPELLLIST:1|Savage Bard
 ###Block: Illiteracy
 # (Copy this line and include the hidden feat for any other Illiterate class.)
 #	Currently, this does not take into account the removal using Skill points.
-1	BONUS:VAR|IllteracyLVL|CL	DEFINE:IllteracyLVL|0	ABILITY:Special Ability|VIRTUAL|Illiteracy|PREVAREQ:TL,IlliteracyLVL
+1	BONUS:VAR|IllteracyLVL|CL	DEFINE:IllteracyLVL|0	ABILITY:Special Ability|VIRTUAL|Barbarian ~ Illiteracy|PREVAREQ:TL,IlliteracyLVL
 ###Block: Spell List
 # This doesn't take into accound Bard spells from other sources.  No way to 'Remove spells from a spell list'
 1	SPELLLEVEL:CLASS|Savage Bard=0|Dancing Lights,Daze,Detect Magic,Flare,Ghost Sound,Know Direction,Light,Lullaby,Mage Hand,Mending,Message,Open/Close,Resistance,Summon Instrument
@@ -116,17 +116,14 @@ CLASS:Cleric (Cloistered Cleric)	STARTSKILLPTS:6	CSKILL:Concentration|TYPE=Craft
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
 CLASS:Cleric (Cloistered Cleric)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9	BONUS:CASTERLEVEL|Cleric (Cloistered Cleric)|CL
 ###Block:Proficiencies
-1	AUTO:WEAPONPROF|TYPE=Simple	AUTO:ARMORPROF|Light
+1	ABILITY:Internal|AUTOMATIC|TYPE=WeaponProfSimple|TYPE=ArmorProfLight
 1	ABILITY:Special Ability|AUTOMATIC|Cloistered Cleric ~ Lore
 1	DOMAIN:Knowledge	BONUS:DOMAIN|NUMBER|1
 # This is Phase I of the Turn abilities improvement (for 5.6).  Futher enhancements are planned,
 #	both OS and data to include modifications for differences in Turning ability for Undead,
 #	Air, Fire, etc.
 ###Block: Turn Undead stuff
-1	BONUS:ABILITYPOOL|Turn Undead|1|TYPE=ClassAbility	BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL|TYPE=Level.REPLACE	ABILITY:Special Ability|AUTOMATIC|Basic Turning|Cleric Turning
-###Block: Spontaneous casting
-1	ABILITY:Special Ability|VIRTUAL|Spontaneous casting - Cure spells|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericSpontaneousCasting|PREABILITY:1,CATEGORY=Special Ability,Turn Undead
-1	ABILITY:Special Ability|VIRTUAL|Spontaneous casting - Inflict spells|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericSpontaneousCasting|PREABILITY:1,CATEGORY=Special Ability,Rebuke Undead
+1	ABILITY:Special Ability|AUTOMATIC|Cleric ~ Turn or Rebuke Undead|Cleric ~ Spontaneous Casting|Cleric ~ Aura
 ###Block: Spell Alignment Restrictions
 1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
 1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
@@ -134,11 +131,6 @@ CLASS:Cleric (Cloistered Cleric)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVE
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
 ###Block: Aura strength
 1	BONUS:VAR|AlignmentAuraBase|CL	DEFINE:AlignmentAuraBase|0
-###Block:
-1	ABILITY:Special Ability|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
-1	ABILITY:Special Ability|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
-1	ABILITY:Special Ability|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
-1	ABILITY:Special Ability|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
 ###Block: Righteous Might Workaround
 1	TEMPLATE:RighteousMightDR
 ###Block: Level progression
@@ -173,7 +165,7 @@ CLASS:Druid (Druidic Avenger)		STARTSKILLPTS:4	CSKILL:Concentration|TYPE=Craft|H
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
 CLASS:Druid (Druidic Avenger)		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9	BONUS:CASTERLEVEL|Druid|CL
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Druid|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidProficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidProficiencies
 ###Block: Wildshape Abilities Block
 #
 # To add effective Druid levels to this ability use BONUS:VAR|DruidWildShape|CL
@@ -223,9 +215,9 @@ CLASS:Druid (Druidic Avenger)		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=
 
 # Fighter Variant-
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page			Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Fighter (Thug)	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ftr		MAXLEVEL:20	SOURCEPAGE:ClassesI.rtf	DEFINE:FighterLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat	DEFINE:ThugLVL|CL
+CLASS:Fighter (Thug)	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ftr		MAXLEVEL:20	SOURCEPAGE:p.51	DEFINE:FighterLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat	DEFINE:ThugLVL|CL
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Fighter (Thug)	STARTSKILLPTS:2	CSKILL:Climb|TYPE=Craft|Handle Animal|Intimidate|Jump|Ride|Swim
+CLASS:Fighter (Thug)	STARTSKILLPTS:4	CSKILL:Climb|TYPE=Craft|Handle Animal|Intimidate|Jump|Ride|Swim|Bluff|Gather Information|Knowledge (Local)|Sleight of Hand
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Thug ~ Weapon and Armor Proficiency
 ###Block: Advanced Weapon Feat qualifications
@@ -246,7 +238,6 @@ CLASS:Monk.MOD
 # Class Name	Prohibited Class
 CLASS:Paladin.MOD	!PRECLASS:1,Paladin of Freedom=1,Paladin of Slaughter=1,Paladin of Tyranny=1
 
-
 # Class Name			Hit Dice	Type			Abbreviation	Max Level	Ex Class			Source Page		Save checks bonus											Combat bonus
 CLASS:Paladin of Freedom	HD:10		TYPE:Base.PC	ABB:PoF		MAXLEVEL:20	EXCLASS:Ex Paladin	SOURCEPAGE:p.53	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
 # Class Name			Required AL	Prohibited Class
@@ -256,9 +247,7 @@ CLASS:Paladin of Freedom	STARTSKILLPTS:2	CSKILL:Bluff|Concentration|TYPE=Craft|H
 # Class Name			Spell Stat		Spell Type		Automatically Known Spell Levels				Craft Level Mult.	Caster level											Use Spell List
 CLASS:Paladin of Freedom	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	ITEMCREATE:0.5	BONUS:CASTERLEVEL|Paladin|CL/2|PRECLASS:1,Paladin of Freedom=4	SPELLLIST:1|Paladin
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
-1																	AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Weapon and Armor Proficiency
 ###Block: Prohibited Spells
 1	PROHIBITSPELL:SPELL.Death Ward
 1	PROHIBITSPELL:SPELL.Discern Lies
@@ -266,12 +255,12 @@ CLASS:Paladin of Freedom	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVE
 1	PROHIBITSPELL:SPELL.Magic Circle against Chaos
 1	PROHIBITSPELL:SPELL.Protection from Chaos
 ###Block: Level progression
-1				BONUS:VAR|AuraGood,DetectEvilLVL,PaladinSmiteEvilLVL|CL	DEFINE:AllowHolyAvenger|1	ABILITY:Special Ability|AUTOMATIC|Aura of Good|Detect Evil|Paladin Smite Evil|Smite Evil
-2				BONUS:VAR|LayOnHandsLVL|CL											ABILITY:Special Ability|AUTOMATIC|Divine Grace|Lay on Hands
-3																			ABILITY:Special Ability|AUTOMATIC|Aura of Resolve|Divine Health
-4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Special Ability|AUTOMATIC|Basic Turning|Paladin Turn Undead|Turn Undead
-5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Special Ability|AUTOMATIC|Special Mount
-6	CAST:0,1		BONUS:VAR|RemoveDiseaseLVL|CL											ABILITY:Special Ability|AUTOMATIC|Remove Disease
+1				BONUS:VAR|AuraGood,DetectEvilLVL,PaladinSmiteEvilLVL|CL	DEFINE:AllowHolyAvenger|1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Aura of Good|Paladin ~ Detect Evil|Paladin ~ Smite Evil
+2				BONUS:VAR|LayOnHandsLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Divine Grace|Paladin ~ Lay on Hands
+3																			ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Freedom ~ Aura of Resolve|Paladin ~ Divine Health
+4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Turn Undead
+5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Special Mount
+6	CAST:0,1		BONUS:VAR|RemoveDiseaseLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Remove Disease
 7	CAST:0,1
 8	CAST:0,1,0
 9	CAST:0,1,0
@@ -296,16 +285,14 @@ CLASS:Paladin of Slaughter	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Handl
 # Class Name			Spell Stat		Spell Type		Automatically Known Spell Levels				Craft Level Mult.	Caster level											Use Spell List
 CLASS:Paladin of Slaughter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	ITEMCREATE:0.5	BONUS:CASTERLEVEL|Paladin of Slaughter|CL/2|PRECLASS:1,Paladin of Slaughter=4	SPELLLIST:1|Paladin of Slaughter
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
-1																	AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Weapon and Armor Proficiency
 ###Block: Level progression
-1				BONUS:VAR|AuraEvil,DetectGoodLVL,PaladinSmiteGoodLVL|CL	DEFINE:AllowUnholyAvenger|1	ABILITY:Special Ability|AUTOMATIC|Aura of Evil|Detect Good|Paladin of Slaughter Smite Good|Smite Good
-2				BONUS:VAR|DeadlyTouchLVL|CL											ABILITY:Special Ability|AUTOMATIC|Deadly Touch|Divine Grace
-3																			ABILITY:Special Ability|AUTOMATIC|Debilitating Aura|Divine Health
-4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Special Ability|AUTOMATIC|Basic Turning|Paladin of Slaughter Rebuke Undead|Rebuke Undead
-5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Special Ability|AUTOMATIC|Special Mount
-6	CAST:0,1		BONUS:VAR|CauseDiseaseLVL|CL											ABILITY:Special Ability|AUTOMATIC|Cause Disease
+1				BONUS:VAR|AuraEvil,DetectGoodLVL,PaladinSmiteGoodLVL|CL	DEFINE:AllowUnholyAvenger|1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Slaughter ~ Aura of Evil|Paladin of Slaughter ~ Detect Good|Paladin of Slaughter ~ Smite Good
+2				BONUS:VAR|DeadlyTouchLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Slaughter ~ Deadly Touch|Paladin ~ Divine Grace
+3																			ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Slaughter ~ Debilitating Aura|Paladin ~ Divine Health
+4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Slaughter ~ Rebuke Undead
+5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Special Mount
+6	CAST:0,1		BONUS:VAR|CauseDiseaseLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Slaughter ~ Cause Disease
 7	CAST:0,1
 8	CAST:0,1,0
 9	CAST:0,1,0
@@ -330,18 +317,16 @@ CLASS:Paladin of Tyranny	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Diploma
 # Class Name			Spell Stat		Spell Type		Automatically Known Spell Levels				Craft Level Mult.	Caster level											Use Spell List
 CLASS:Paladin of Tyranny	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	ITEMCREATE:0.5	BONUS:CASTERLEVEL|Paladin of Tyranny|CL/2|PRECLASS:1,Paladin of Tyranny=4	SPELLLIST:1|Paladin of Tyranny
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Martial Weapon Proficiency Output|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
-1																	AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Weapon and Armor Proficiency
 ###Block: Prohibited Spells
 
 ###Block: Level progression
-1				BONUS:VAR|AuraEvil,DetectGoodLVL,PaladinSmiteGoodLVL|CL	DEFINE:AllowUnholyAvenger|1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Aura of Evil|Paladin ~ Detect Good|Paladin of Tyranny ~ Smite Good|Smite Good
-2				BONUS:VAR|DeadlyTouchLVL|CL											ABILITY:Special Ability|AUTOMATIC|Deadly Touch|Paladin ~ Divine Grace
-3																			ABILITY:Special Ability|AUTOMATIC|Aura of Despair|Paladin ~ Divine Health
-4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Special Ability|AUTOMATIC|Basic Turning|Paladin of Tyranny ~ Rebuke Undead|Rebuke Undead
-5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Special Ability|AUTOMATIC|Paladin ~ Special Mount
-6	CAST:0,1		BONUS:VAR|CauseDiseaseLVL|CL											ABILITY:Special Ability|AUTOMATIC|Paladin of Tyranny ~ Cause Disease
+1				BONUS:VAR|AuraEvil,DetectGoodLVL,PaladinSmiteGoodLVL|CL	DEFINE:AllowUnholyAvenger|1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Tyranny ~ Aura of Evil|Paladin of Tyranny ~ Detect Good|Paladin of Tyranny ~ Smite Good
+2				BONUS:VAR|DeadlyTouchLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Tyranny ~ Deadly Touch|Paladin ~ Divine Grace
+3																			ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Tyranny ~ Aura of Despair|Paladin ~ Divine Health
+4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Tyranny ~ Rebuke Undead
+5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin ~ Special Mount
+6	CAST:0,1		BONUS:VAR|CauseDiseaseLVL|CL											ABILITY:Paladin Class Feature|AUTOMATIC|Paladin of Tyranny ~ Cause Disease
 7	CAST:0,1
 8	CAST:0,1,0
 9	CAST:0,1,0
@@ -366,7 +351,7 @@ CLASS:Ranger (Planar Ranger)	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE=Cra
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels				Craft Level Mult.	Caster level
 CLASS:Ranger (Planar Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	ITEMCREATE:0.5	BONUS:CASTERLEVEL|Ranger (Planar Ranger)|CL/2|PRECLASS:1,Ranger (Planar Ranger)=4	SPELLLIST:1|Ranger
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Ranger|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerProficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerProficiencies
 ###Block:
 1	BONUS:VAR|RangerFavoredEnemyLVL|CL
 1	BONUS:VAR|RangerCombatTreeLVL|CL
@@ -375,14 +360,14 @@ CLASS:Ranger (Planar Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|
 9	BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy
 ###Block:
 1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Favored Enemy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerFavoredEnemy
-1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Ranger Combat Tree|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Combat Style|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
 1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWildEmpathy
 4	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
 7	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWoodlandStride
 8	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Swift Tracker|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerSwiftTracker
 9	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Evasion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEvasion
 13	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Camouflage|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCamouflage
-17	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Hide in Plain Sight (Ranger)|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerHideInPlainSight
+17	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Hide in Plain Sight|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerHideInPlainSight
 ###Block:
 1	AUTO:FEAT|Track|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerTrack
 3	AUTO:FEAT|Endurance|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEndurance
@@ -439,7 +424,7 @@ CLASS:Ranger (Urban Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|L
 9	BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy
 ###Block:
 1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Favored Enemy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerFavoredEnemy
-1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Ranger Combat Tree|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Combat Style|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
 1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWildEmpathy
 4	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
 8	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Swift Tracker|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerSwiftTracker
@@ -473,11 +458,11 @@ CLASS:Rogue (Wilderness Rogue)		HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Rog		MAXLEVE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Rogue (Wilderness Rogue)		STARTSKILLPTS:8	CSKILL:Balance|Bluff|Climb|TYPE=Craft|Disable Device|Disguise|Escape Artist|Hide|Intimidate|Jump|Knowledge (Local)|Listen|Move Silently|Open Lock|TYPE=Perform|TYPE=Profession|Search|Sense Motive|Sleight of Hand|Spot|Swim|Tumble|Use Magic Device|Use Rope|Handle Animal|Knowledge (Geography)|Knowledge (Nature)|Ride|Survival
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Rogue|!PREABILITY:1,CATEGORY=ACF,TYPE.RogueProficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.RogueProficiencies
 ###Block: Level progression
-1											BONUS:VAR|RogueSneakAttackLVL|CL												ABILITY:Special Ability|AUTOMATIC|Rogue Sneak Attack|Sneak Attack|Trapfinding
-2											BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy	ABILITY:Special Ability|AUTOMATIC|Evasion
-3											BONUS:VAR|RogueTrapSenseLVL|CL												ABILITY:Special Ability|AUTOMATIC|Rogue Trap Sense|Trap Sense Ability
+1											BONUS:VAR|RogueSneakAttackLVL|CL												ABILITY:Special Ability|AUTOMATIC|Rogue ~ Sneak Attack|Rogue ~ Trapfinding
+2											BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Evasion
+3											BONUS:VAR|RogueTrapSenseLVL|CL												ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trap Sense
 4											BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|CL/4	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
 10	BONUS:ABILITYPOOL|Rogue Special Ability|min(4,(CL-7)/3)
 7	ABILITY:Special Ability|AUTOMATIC|Wilderness Rogue ~ Woodland Stride
@@ -493,10 +478,11 @@ CLASS:Battle Sorcerer	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Knowledge 
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
 CLASS:Battle Sorcerer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Sorcerer|CL
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Sorcerer|!PREABILITY:1,CATEGORY=ACF,TYPE.SorcererProficiencies
-1	AUTO:ARMORPROF|Light
+1	ABILITY:Special Ability|AUTOMATIC|Sorcerer ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.SorcererProficiencies
+1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight
+
 ###Block: Familiar
-1	BONUS:VAR|FamiliarLVL|CL|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SorcererSummonFamiliar	ABILITY:Special Ability|AUTOMATIC|Summon Familiar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SorcererSummonFamiliar
+1	BONUS:VAR|FamiliarLVL|CL|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SorcererSummonFamiliar	ABILITY:Special Ability|AUTOMATIC|Sorcerer ~ Familiar|!PREABILITY:1,CATEGORY=Special Ability,TYPE.SorcererSummonFamiliar
 ###Block:
 1	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=0|-1
 1	BONUS:SPELLCAST|CLASS=Sorcerer;LEVEL=1|-1
@@ -547,9 +533,9 @@ CLASS:Cleric (Spontaneous)	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Diplo
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
 CLASS:Cleric (Spontaneous)	SPELLSTAT:WIS	SPELLTYPE:Divine	SPELLLIST:1|Cleric	BONUS:CASTERLEVEL|Cleric (Spontaneous)|CL
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Cleric|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericProficiences
+1	ABILITY:Special Ability|AUTOMATIC|Cleric ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.ClericProficiences
 ###Block:
-1	BONUS:ABILITYPOOL|Turn Undead|1|TYPE=ClassAbility	BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL|TYPE=Level.REPLACE	ABILITY:Special Ability|AUTOMATIC|Basic Turning|Cleric Turning
+1	ABILITY:Special Ability|AUTOMATIC|Cleric ~ Turn or Rebuke Undead
 ###Block: Spell Alignment Restrictions
 1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
 1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
@@ -662,7 +648,7 @@ CLASS:Druid (Spontaneous)		STARTSKILLPTS:4	CSKILL:Concentration|TYPE=Craft|Diplo
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels											Caster level
 CLASS:Druid (Spontaneous)		SPELLSTAT:WIS	SPELLTYPE:Divine	SPELLLIST:1|Druid	BONUS:CASTERLEVEL|Druid (Spontaneous)|CL
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Druid|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidProficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidProficiencies
 ###Block: Wildshape Abilities Block
 #
 # To add effective Druid levels to this ability use BONUS:VAR|DruidWildShape|CL
@@ -739,28 +725,26 @@ CLASS:Prestige Bard	!PREALIGN:LG,LN,LE	PREATT:3	!PRECLASS:1,Bard=1	PRESKILL:2,TY
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Prestige Bard	STARTSKILLPTS:6	CSKILL:Appraise|Balance|Bluff|Climb|Concentration|TYPE=Craft|Decipher Script|Diplomacy|Disguise|Escape Artist|Gather Information|Hide|Jump|TYPE=Knowledge|Listen|Move Silently|TYPE=Perform|TYPE=Profession|Sense Motive|Sleight of Hand|Speak Language|Spellcraft|Swim|Tumble|Use Magic Device
 ###Block:Proficiencies
-1																												ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|Bard Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1																																											AUTO:FEAT|Armor Proficiency (Light)
-1																																											AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Bard ~ Weapon and Armor Proficiency
 # caster level adjustments for spells
 1									BONUS:CASTERLEVEL|SCHOOL.Divination|2	BONUS:CASTERLEVEL|SCHOOL.Enchantment|2	BONUS:CASTERLEVEL|Illusion|2
 1									BONUS:CASTERLEVEL|SCHOOL.Necromancy|-2	BONUS:CASTERLEVEL|SCHOOL:Evocation|-2
-1																												ABILITY:Special Ability|AUTOMATIC|Armored Casting (Bard)
+1																												
 1	BONUS:ABILITYPOOL|Prestige Bard Unique Spells|1
 ###Block: Bardic abilities level definitions.
-1	BONUS:VAR|BardicKnowledgeLvl|CL	BONUS:VAR|BardicKnowledge|BardicKnowledgeLvl											ABILITY:Special Ability|AUTOMATIC|Bardic Knowledge
-1	BONUS:VAR|BardicMusicLvl|CL	BONUS:VAR|BardicMusicTimes|CL	BONUS:VAR|InspireDurationBase|5									ABILITY:Special Ability|AUTOMATIC|Bardic Music
+1	BONUS:VAR|BardicKnowledgeLvl|CL	BONUS:VAR|BardicKnowledge|BardicKnowledgeLvl											ABILITY:Special Ability|AUTOMATIC|Bard ~ Bardic Knowledge
+1	BONUS:VAR|BardicMusicLvl|CL	BONUS:VAR|BardicMusicTimes|CL	BONUS:VAR|InspireDurationBase|5									ABILITY:Special Ability|AUTOMATIC|Bard ~ Bardic Music
 #NB: need to adjust inspire courage progression:
 1	BONUS:VAR|InspireCourageSaves,InspireCourageAttack,InspireCourageDamage|1+floor(InspireCourageLVL/5)-max(floor((InspireCourageLVL+4)/6),1)
 ###Block: Bardic Music Abilities by level
-1					ABILITY:Special Ability|VIRTUAL|Bardic Countersong|Bardic Fascinate|Bardic Inspire Courage|PRESKILL:1,TYPE.Perform=8|PREVARGTEQ:BardicMusicLvl,1
-1					ABILITY:Special Ability|VIRTUAL|Bardic Inspire Competence|PRESKILL:1,TYPE.Perform=11|PREVARGTEQ:BardicMusicLvl,3
-1					ABILITY:Special Ability|VIRTUAL|Bardic Inspire Greatness|PRESKILL:1,TYPE.Perform=17|PREVARGTEQ:BardicMusicLvl,7
-1					ABILITY:Special Ability|VIRTUAL|Bardic Song of Freedom|PRESKILL:1,TYPE.Perform=20|PREVARGTEQ:BardicMusicLvl,9
-1					ABILITY:Special Ability|VIRTUAL|Bardic Inspire Heroics|PRESKILL:1,TYPE.Perform=23|PREVARGTEQ:BardicMusicLvl,11
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Countersong|Bardic Music ~ Fascinate|Bardic Music ~ Inspire Courage|PRESKILL:1,TYPE.Perform=8|PREVARGTEQ:BardicMusicLvl,1
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Inspire Competence|PRESKILL:1,TYPE.Perform=11|PREVARGTEQ:BardicMusicLvl,3
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Inspire Greatness|PRESKILL:1,TYPE.Perform=17|PREVARGTEQ:BardicMusicLvl,7
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Song of Freedom|PRESKILL:1,TYPE.Perform=20|PREVARGTEQ:BardicMusicLvl,9
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Inspire Heroics|PRESKILL:1,TYPE.Perform=23|PREVARGTEQ:BardicMusicLvl,11
 #NB: prestige bard does not get suggestion, but mass suggestion refers to suggestion, so include it at the same lvl
-1					ABILITY:Special Ability|VIRTUAL|Bardic Suggestion|PRESKILL:1,TYPE.Perform=26|PREVARGTEQ:BardicMusicLvl,13
-1					ABILITY:Special Ability|VIRTUAL|Bardic Mass Suggestion|PRESKILL:1,TYPE.Perform=26|PREVARGTEQ:BardicMusicLvl,13
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Suggestion|PRESKILL:1,TYPE.Perform=26|PREVARGTEQ:BardicMusicLvl,13
+1					ABILITY:Special Ability|VIRTUAL|Bardic Music ~ Mass Suggestion|PRESKILL:1,TYPE.Perform=26|PREVARGTEQ:BardicMusicLvl,13
 #caster level progression
 2	ADD:SPELLCASTER|Arcane
 4	ADD:SPELLCASTER|Arcane
@@ -783,20 +767,18 @@ CLASS:Prestige Paladin	PREABILITY:1,CATEGORY=Special Ability,Turn Undead	PREALIG
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Prestige Paladin	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Diplomacy|Handle Animal|Heal|Knowledge (Nobility and Royalty)|Knowledge (Religion)|TYPE=Profession|Ride|Sense Motive
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
-1																	AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Weapon and Armor Proficiency
 ###Block: Level progression
 1	BONUS:ABILITYPOOL|Prestige Paladin Unique Spells|1
 1										BONUS:VAR|TurnLevelBase,TurnDamagePlusBase|CL
 1										BONUS:VAR|DetectEvilLVL,PaladinSmiteEvilLVL|CL
 1																					DEFINE:AllowHolyAvenger|1
-1																														ABILITY:Special Ability|AUTOMATIC|Detect Evil|Paladin Smite Evil|Smite Evil
+1																														ABILITY:Special Ability|AUTOMATIC|Paladin ~ Detect Evil|Paladin ~ Smite Evil
 2										BONUS:VAR|LayOnHandsLVL|CL+3	BONUS:VAR|SpecialMountLVL|CL+3
-2																														ABILITY:Special Ability|AUTOMATIC|Divine Grace|Lay on Hands|Special Mount
-3																														ABILITY:Special Ability|AUTOMATIC|Aura of Courage|Divine Health
+2																														ABILITY:Special Ability|AUTOMATIC|Paladin ~ Divine Grace|Paladin ~ Lay on Hands|Paladin ~ Special Mount
+3																														ABILITY:Special Ability|AUTOMATIC|Paladin ~ Aura of Courage|Paladin ~ Divine Health
 #NB: offset bonus included in removedisease ability
-4										BONUS:VAR|RemoveDisease|CL/4-(RemoveDiseaseLVL/3-1)												ABILITY:Special Ability|AUTOMATIC|Remove Disease
+4										BONUS:VAR|RemoveDisease|CL/4-(RemoveDiseaseLVL/3-1)												ABILITY:Special Ability|AUTOMATIC|Paladin ~ Remove Disease
 #spellcasting progression
 1																										ADD:SPELLCASTER|Divine
 3																										ADD:SPELLCASTER|Divine
@@ -813,9 +795,7 @@ CLASS:Ex Prestige Paladin	HD:8		TYPE:PC.Prestige	ABB:XPPal		SOURCEPAGE:p.71	VISI
 # Class Name			Skill Pts/Lvl	Class Skill
 CLASS:Ex Prestige Paladin	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Diplomacy|Handle Animal|Heal|Knowledge (Nobility and Royalty)|Knowledge (Religion)|TYPE=Profession|Ride|Sense Motive
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Heavy)|Armor Proficiency (Light)|Armor Proficiency (Medium)
-1																	AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Weapon and Armor Proficiency
 
 # Original Entry by: Jasper-Spaans
 
@@ -826,23 +806,21 @@ CLASS:Prestige Ranger	PREATT:4	!PRECLASS:1,Ranger=1	PREFEAT:2,Endurance,Track	PR
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Prestige Ranger	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE=Craft|Handle Animal|Heal|Hide|Jump|Knowledge (Dungeoneering)|Knowledge (Geography)|Knowledge (Nature)|Listen|Move Silently|TYPE=Profession|Ride|Search|Spot|Survival|Swim|Use Rope
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|All Automatic Proficiencies|All Martial Weapon Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1																	AUTO:FEAT|Armor Proficiency (Light)
-1																	AUTO:FEAT|Shield Proficiency
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Weapon and Armor Proficiency
 ###Block: Favored Enemy level stacking
 1	BONUS:ABILITYPOOL|Prestige Ranger Unique Spells|1
-1										BONUS:VAR|RangerFavoredEnemyLVL|CL												ABILITY:Special Ability|AUTOMATIC|Basic Favored Enemy|Ranger Favored Enemy
-1										BONUS:VAR|WildEmpathy|CL													ABILITY:Special Ability|AUTOMATIC|Wild Empathy
-1										BONUS:VAR|AnimalCompanionLVL|CL												ABILITY:Special Ability|AUTOMATIC|Animal Companion
-2																							ADD:SPELLCASTER|Divine	ABILITY:Special Ability|AUTOMATIC|Woodland Stride
+1										BONUS:VAR|RangerFavoredEnemyLVL|CL												ABILITY:Special Ability|AUTOMATIC|Ranger ~ Favored Enemy
+1										BONUS:VAR|WildEmpathy|CL													ABILITY:Special Ability|AUTOMATIC|Ranger ~ Wild Empathy
+1										BONUS:VAR|AnimalCompanionLVL|CL												ABILITY:Special Ability|AUTOMATIC|Ranger ~ Animal Companion
+2																							ADD:SPELLCASTER|Divine	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Woodland Stride
 2	BONUS:ABILITYPOOL|Prestige Ranger Bonus Feats|1		BONUS:VAR|PrestigeRangerBonusFeatLVL|CL	DEFINE:PrestigeRangerBonusFeatLVL|0
-3																											ABILITY:Special Ability|AUTOMATIC|Swift Tracker
+3																											ABILITY:Special Ability|AUTOMATIC|Ranger ~ Swift Tracker
 4																							ADD:SPELLCASTER|Divine
 6																							ADD:SPELLCASTER|Divine
 7	BONUS:ABILITYPOOL|Prestige Ranger Bonus Feats|1
 8																							ADD:SPELLCASTER|Divine
-9																											ABILITY:Special Ability|AUTOMATIC|Camouflage
+9																											ABILITY:Special Ability|AUTOMATIC|Ranger ~ Camouflage
 10																							ADD:SPELLCASTER|Divine
 12																							ADD:SPELLCASTER|Divine
-13																											ABILITY:Special Ability|AUTOMATIC|Hide in Plain Sight (Ranger)
+13																											ABILITY:Special Ability|AUTOMATIC|Ranger ~ Hide in Plain Sight
 14																							ADD:SPELLCASTER|Divine
