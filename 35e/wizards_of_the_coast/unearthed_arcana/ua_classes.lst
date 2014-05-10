@@ -1,124 +1,11 @@
 # Original Entry by: Tir-Gwaith
 
-# ALLOWBASECLASS:NO with "Barbarian" Subclass, so there won't be any stacking issues. - Tir Gwaith
 
-# Class Name		Base class as subclass?
-CLASS:Barbarian.MOD	ALLOWBASECLASS:NO
-###Block: Ape Totem
-SUBCLASS:Ape Totem Barbarian	ABB:ApeBbn	COST:0	SOURCEPAGE:p.48
-SUBCLASSLEVEL:1						TEMPLATE:Ape Totem Climb Half
-SUBCLASSLEVEL:2	BONUS:SKILL|Intimidate|2
-SUBCLASSLEVEL:3											AUTO:FEAT|Power Attack
-SUBCLASSLEVEL:5						TEMPLATE:Ape Totem Climb Full
-#
-###Block: Bear Totem
-SUBCLASS:Bear Totem Barbarian	ABB:BearBbn	COST:0	SOURCEPAGE:p.48
-SUBCLASSLEVEL:1											AUTO:FEAT|Toughness
-SUBCLASSLEVEL:2											AUTO:FEAT|Improved Grapple
-SUBCLASSLEVEL:3											AUTO:FEAT|Great Fortitude
-SUBCLASSLEVEL:5	ABILITY:Special Ability|AUTOMATIC|Bear Totem 5th level
-#
-###Block: Boar Totem
-SUBCLASS:Boar Totem Barbarian	ABB:BoarBbn	COST:0	SOURCEPAGE:p.48
-SUBCLASSLEVEL:1						ABILITY:Special Ability|AUTOMATIC|Boar Totem Diehard Rage
-SUBCLASSLEVEL:3	BONUS:VAR|RageDuration|2
-SUBCLASSLEVEL:7	BONUS:VAR|BarbarianDR|1
-#
-###Block: Dragon Totem
-SUBCLASS:Dragon Totem Barbarian	ABB:DgnBbn	COST:0	SOURCEPAGE:p.48
-SUBCLASSLEVEL:1																							AUTO:FEAT|Blind-Fight
-SUBCLASSLEVEL:2													ABILITY:Special Ability|AUTOMATIC|Dragon Totem 2nd level
-SUBCLASSLEVEL:5	BONUS:VAR|FrightfulPresDC|CL/2	BONUS:VAR|FrightfulPresRange|30	ABILITY:Special Ability|AUTOMATIC|Frightful Presence
-#
-# RSRD Frightful Presence defines DC with HD/2.  Dragon Totem Barbarians don't automatically get that,
-#	so possibly need to modify the RSRD with a second ability to do the stacking correctly. - Tir Gwaith
-#	For now, this is just linked to the RSRD ability of same name.
-#
-###Block: Eagle Totem
-SUBCLASS:Eagle Totem Barbarian	ABB:EglBbn	COST:0	SOURCEPAGE:p.48-49
-SUBCLASSLEVEL:1	BONUS:SKILL|Spot|2																			ABILITY:Special Ability|AUTOMATIC|Barbarian Fast Movement
-SUBCLASSLEVEL:2					BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|(CL+1)/3	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
-SUBCLASSLEVEL:3																																	AUTO:FEAT|Lightning Reflexes
-#
-###Block: Horse Totem
-SUBCLASS:Horse Totem Barbarian	ABB:HrsBbn	COST:0	SOURCEPAGE:p.49
-SUBCLASSLEVEL:1	ABILITY:Special Ability|AUTOMATIC|Barbarian Fast Movement
-SUBCLASSLEVEL:2											AUTO:FEAT|Run
-SUBCLASSLEVEL:3	ABILITY:Special Ability|AUTOMATIC|Horse Totem 3rd level
-SUBCLASSLEVEL:5											AUTO:FEAT|Endurance
-# REMOVE: uncanny dodge, trap sense, and improved uncanny dodge (have added Fast Movement back in)
-#
-###Block: Jaguar Totem
-SUBCLASS:Jaguar Totem Barbarian	ABB:JagBbn	COST:0	SOURCEPAGE:p.49
-1																			ABILITY:Special Ability|AUTOMATIC|Barbarian Fast Movement
-2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|(CL+1)/3	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
-3	BONUS:VAR|TrapSense|CL/3														ABILITY:Special Ability|AUTOMATIC|Trap Sense Ability
-#
-###Block: Lion Totem
-SUBCLASS:Lion Totem Barbarian	ABB:LionBbn	COST:0	SOURCEPAGE:p.49
-SUBCLASSLEVEL:1																				AUTO:FEAT|Run
-SUBCLASSLEVEL:2	BONUS:SKILL|Hide|2
-SUBCLASSLEVEL:3					BONUS:VAR|TrapSense|CL/3	ABILITY:Special Ability|AUTOMATIC|Trap Sense Ability
-SUBCLASSLEVEL:5										ABILITY:Special Ability|AUTOMATIC|Lion Totem 5th level
-#
-###Block: Serpent Totem
-SUBCLASS:Serpent Totem Barbarian	ABB:SptBbn	COST:0	SOURCEPAGE:p.49
-SUBCLASSLEVEL:1						ABILITY:Special Ability|AUTOMATIC|Serpant Totem 1st Level
-SUBCLASSLEVEL:2	BONUS:SKILL|Move Silently|2
-SUBCLASSLEVEL:3																AUTO:FEAT|Improved Grapple
-SUBCLASSLEVEL:5																AUTO:FEAT|Improved Initiative
-#
-###Block: Wolf Totem
-SUBCLASS:Wolf Totem Barbarian	ABB:WlfBbn	COST:0	SOURCEPAGE:p.49
-SUBCLASSLEVEL:1	ABILITY:Special Ability|AUTOMATIC|Barbarian Fast Movement
-SUBCLASSLEVEL:2											AUTO:FEAT|Improved Trip
-SUBCLASSLEVEL:5											AUTO:FEAT|Track
-#
-# Making a Subclass for the base class, so users don't have to remember that "Jaguar" is normal Barbarian.
-###Block: Basic Barbarian Subclass
-SUBCLASS:Barbarian (Normal)	OUTPUTNAME:Barbarian	COST:0
-1																			ABILITY:Special Ability|AUTOMATIC|Barbarian Fast Movement
-2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE	BONUS:VAR|UncannyDodgeLevel|(CL+1)/3	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
-3	BONUS:VAR|TrapSense|CL/3														ABILITY:Special Ability|AUTOMATIC|Trap Sense Ability
-###Block: Removing abilites to be moved into SUBCLASSes.
-1												ABILITY:Special Ability|AUTOMATIC|.CLEAR.Barbarian Fast Movement
-2	BONUS:VAR|UncannyDodgeFlankingLevel|-CL|TYPE=EachClass.REPLACE	ABILITY:Special Ability|AUTOMATIC|.CLEAR.Uncanny Dodge ~ Base
-3	BONUS:VAR|TrapSense|-CL/3							ABILITY:Special Ability|AUTOMATIC|.CLEAR.Trap Sense Ability
+CLASS:Barbarian.MOD	BONUS:ABILITYPOOL|Totem Barbarian|1	BONUS:ABILITYPOOL|Barbarian Rage Variant|1
 
-#########################################################
-#####                                              ######
-#####        Rage Variants (for Barbarians)        ######
-#####                                              ######
-#########################################################
-#Barbarians can have:
-# Barbarian Rage (standard)
-# Whirling Frenzy (p.66) -- remove Rage all, Indomitable will, add Frenzy and Evasion in Frenzy
-# Hunter (p.58) -- Remove Rage all, Indomitable will, add Archery Combat style, Favored Enemy as Ranger
-#-- Luckily, none of these conflict with the Totem variants, so it can all be included in one batch, and users can use both at the same time.
-#
-#Whirling Frenzy VARs.  I've tried to re-use Rage VARs, so other feats can still work
-# with the Frenzy version. If this becomes a problem, we'll need to make them separate Frenzy Vars.
-# - Tir Gwaith
-# 	RageTimes         - Number of times per day
-# 	RageDuration      - Length of Frenzy
-# 	RageStrBonus      - Bonus to Strength while in Frenzy
-# 	FrenzyACBonus     * Bonus to AC while in Frenzy
-# 	FrenzyReflexBonus * Bonus to Reflex while in Frenzy
-# 	Frenzied          * Whether or not character is in Frenzy for temp bonuses
-# 	RageBonus         - Bonus tracker for the Rage benefit numbers
 
-# Class Name
-CLASS:Barbarian.MOD
-###Block:Remove Automatic Rage
-1	BONUS:VAR|BarbRageTimesLVL,BarbRagePowerLVL|-CL	ABILITY:Special Ability|AUTOMATIC|.CLEAR.Barbarian Rage|.CLEAR.Rage
-14									ABILITY:Special Ability|AUTOMATIC|.CLEAR.Indomitable Will
-###Block: Abiliy Pool for the 3 choices. Using Barbarian Rage for the normal choice.
-1	BONUS:ABILITYPOOL|Barbarian Rage Variant|1	BONUS:VAR|BarbRageTimesLVL,BarbRagePowerLVL|CL|PREABILITY:1,CATEGORY=Special Ability,Barbarian Rage,Barbarian Whirling Frenzy	ABILITY:Special Ability|AUTOMATIC|Rage|PREABILITY:1,CATEGORY=Special Ability,Barbarian Rage
-1									BONUS:VAR|RangerFavoredEnemyLVL,RangerCombatTreeLVL|CL|PREABILITY:1,CATEGORY=Special Ability,Barbarian Hunter			ABILITY:Special Ability|AUTOMATIC|Whirling Frenzy|PREABILITY:1,CATEGORY=Special Ability,Barbarian Whirling Frenzy
 
-#
-# End Barbarian
-#
+
 
 ###Block: Bard
 # Class Name
@@ -218,29 +105,8 @@ CLASS:Savage Bard.MOD	BONUS:CASTERLEVEL|Savage Bard|CL	SPELLLIST:1|Savage Bard
 #Since this is an option, and not subclass, I'm NOT changing the SOURCE info.
 
 # Class Name
-CLASS:Bard.MOD
-###Block: Remove Bardic Knowledge, the various Inspires
-1	BONUS:VAR|BardicKnowledgeLvl|-CL			ABILITY:Special Ability|AUTOMATIC|.CLEAR.Bardic Knowledge
-1	BONUS:VAR|BardicKnowledge|-BardicKnowledgeLvl
-###Block: Bardic Music Abilities by level
-1	ABILITY:Special Ability|VIRTUAL|.CLEAR.Bardic Inspire Courage
-1	ABILITY:Special Ability|VIRTUAL|.CLEAR.Bardic Inspire Competence
-1	ABILITY:Special Ability|VIRTUAL|.CLEAR.Bardic Inspire Greatness
-1	ABILITY:Special Ability|VIRTUAL|.CLEAR.Bardic Inspire Heroics
-###Block: Grant Choice via Ability Pool
-1	BONUS:ABILITYPOOL|Bard Variant|1
-###Block: Grant Bardic Knowledge again, using "Regular Bard" Checks
-1	BONUS:VAR|BardicKnowledgeLvl|CL|PREABILITY:1,CATEGORY=Special Ability,Regular Bard			ABILITY:Special Ability|AUTOMATIC|Bardic Knowledge|PREABILITY:1,CATEGORY=Special Ability,Regular Bard
-1	BONUS:VAR|BardicKnowledge|BardicKnowledgeLvl|PREABILITY:1,CATEGORY=Special Ability,Regular Bard
-###Block: Grant Inspire abilities again, using "Regular Bard" Checks
-1	ABILITY:Special Ability|VIRTUAL|Bardic Inspire Courage|PREABILITY:1,CATEGORY=Special Ability,Regular Bard|PRESKILL:1,TYPE.Perform=3|PREVARGTEQ:BardicMusicLvl,1
-1	ABILITY:Special Ability|VIRTUAL|Bardic Inspire Competence|PREABILITY:1,CATEGORY=Special Ability,Regular Bard|PRESKILL:1,TYPE.Perform=6|PREVARGTEQ:BardicMusicLvl,3
-1	ABILITY:Special Ability|VIRTUAL|Bardic Inspire Greatness|PREABILITY:1,CATEGORY=Special Ability,Regular Bard|PRESKILL:1,TYPE.Perform=12|PREVARGTEQ:BardicMusicLvl,9
-1	ABILITY:Special Ability|VIRTUAL|Bardic Inspire Heroics|PREABILITY:1,CATEGORY=Special Ability,Regular Bard|PRESKILL:1,TYPE.Perform=18|PREVARGTEQ:BardicMusicLvl,15
-###Block: Animal Companion
-1	BONUS:VAR|WildEmpathy|CL|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard	ABILITY:Special Ability|AUTOMATIC|Nature Sense|Wild Empathy|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard
-1	BONUS:VAR|CompLevel|CL|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard	ABILITY:Special Ability|AUTOMATIC|Animal Companion|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard
-4														ABILITY:Special Ability|AUTOMATIC|Resist Nature's Lure|PREABILITY:1,CATEGORY=Special Ability,Druidlike Bard
+CLASS:Bard.MOD	BONUS:ABILITYPOOL|Bard Variant|1
+
 
 # Cleric Variant
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page			Bonus Languages					Save checks bonus											Combat bonus					Add domain number		Monster Role
@@ -299,7 +165,7 @@ CLASS:Cleric (Cloistered Cleric)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVE
 
 # Druid Variant
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Ex Class		Source Page			Bonus Languages	Automatically Gained Language	Save checks bonus											Combat bonus					Monster Role
-CLASS:Druid (Druidic Avenger)		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Drd		MAXLEVEL:20	EXCLASS:Ex Druid	SOURCEPAGE:ClassesI.rtf	LANGBONUS:Sylvan	AUTO:LANG|Druidic			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Druid
+CLASS:Druid (Druidic Avenger)		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Drd		MAXLEVEL:20	EXCLASS:Ex Druid	SOURCEPAGE:ClassesI.rtf	LANGBONUS:Sylvan	AUTO:LANG|Druidic			BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Druid	DEFINE:DruidLVL|CL
 # Class Name	Required AL
 CLASS:Druid (Druidic Avenger)		PREALIGN:LN,NG,TN,NE,CN
 # Class Name	Skill Pts/Lvl	Class Skill
@@ -313,22 +179,22 @@ CLASS:Druid (Druidic Avenger)		SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=
 # To add effective Druid levels to this ability use BONUS:VAR|DruidWildShape|CL
 #
 1	BONUS:VAR|DruidWildShape|CL
-1	BONUS:VAR|WildEmpathy|CL-4
+1	BONUS:VAR|WildEmpathy|-4
 ###Block: Spell Alignment Restrictions
 1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
 1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
 1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
 ###Block:
-1	ABILITY:Special Ability|AUTOMATIC|Druid Elemental Wild Shape Times|Druid Wild Shape|Druid Wild Shape Progression|Druid Wild Shape Times|Wild Shape|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildShape
-1	ABILITY:Special Ability|AUTOMATIC|Nature Sense|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidNatureSense
-1	ABILITY:Special Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildEmpathy
-2	ABILITY:Special Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWoodlandStride
-3	ABILITY:Special Ability|AUTOMATIC|Trackless Step|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTracklessStep
-4	ABILITY:Special Ability|AUTOMATIC|Resist Nature's Lure|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidResistNaturesLure
-9	ABILITY:Special Ability|AUTOMATIC|Venom Immunity|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidVenomImmunity
-13	ABILITY:Special Ability|AUTOMATIC|A Thousand Faces|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAThousandFaces
-15	ABILITY:Special Ability|AUTOMATIC|Timeless Body|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTimelessBody																	TEMPLATE:Timeless Body
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Wild Shape|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildShape
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Nature Sense|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidNatureSense
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildEmpathy
+2	ABILITY:Special Ability|AUTOMATIC|Druid ~ Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWoodlandStride
+3	ABILITY:Special Ability|AUTOMATIC|Druid ~ Trackless Step|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTracklessStep
+4	ABILITY:Special Ability|AUTOMATIC|Druid ~ Resist Nature's Lure|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidResistNaturesLure
+9	ABILITY:Special Ability|AUTOMATIC|Druid ~ Venom Immunity|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidVenomImmunity
+13	ABILITY:Special Ability|AUTOMATIC|Druid ~ A Thousand Faces|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAThousandFaces
+15	ABILITY:Special Ability|AUTOMATIC|Druid ~ Timeless Body|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTimelessBody																	TEMPLATE:Timeless Body
 #
 1	ABILITY:Special Ability|AUTOMATIC|Druidic Avenger ~ Fast Movement
 1	ABILITY:Special Ability|AUTOMATIC|Druidic Avenger ~ Rage
@@ -372,9 +238,9 @@ CLASS:Fighter (Thug)	STARTSKILLPTS:2	CSKILL:Climb|TYPE=Craft|Handle Animal|Intim
 # Monk Variant - Monk Fighting Style
 CLASS:Monk.MOD
 1	BONUS:ABILITYPOOL|Monk Fighting Style|1
-1	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,MonkFightingStyleAlt
-2	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,MonkFightingStyleAlt
-6	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,MonkFightingStyleAlt
+1	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,TYPE.MonkFightingStyleAlt
+2	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,TYPE.MonkFightingStyleAlt
+6	BONUS:VAR|MonkFeatCount|-1|PREABILITY:1,CATEGORY=Special Ability,TYPE.MonkFightingStyleAlt
 
 # Paladin Variants -
 # Class Name	Prohibited Class
@@ -470,12 +336,12 @@ CLASS:Paladin of Tyranny	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVE
 ###Block: Prohibited Spells
 
 ###Block: Level progression
-1				BONUS:VAR|AuraEvil,DetectGoodLVL,PaladinSmiteGoodLVL|CL	DEFINE:AllowUnholyAvenger|1	ABILITY:Special Ability|AUTOMATIC|Aura of Evil|Detect Good|Paladin of Tyranny Smite Good|Smite Good
-2				BONUS:VAR|DeadlyTouchLVL|CL											ABILITY:Special Ability|AUTOMATIC|Deadly Touch|Divine Grace
-3																			ABILITY:Special Ability|AUTOMATIC|Aura of Despair|Divine Health
-4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Special Ability|AUTOMATIC|Basic Turning|Paladin of Tyranny Rebuke Undead|Rebuke Undead
-5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Special Ability|AUTOMATIC|Special Mount
-6	CAST:0,1		BONUS:VAR|CauseDiseaseLVL|CL											ABILITY:Special Ability|AUTOMATIC|Cause Disease
+1				BONUS:VAR|AuraEvil,DetectGoodLVL,PaladinSmiteGoodLVL|CL	DEFINE:AllowUnholyAvenger|1	ABILITY:Special Ability|AUTOMATIC|Paladin ~ Aura of Evil|Paladin ~ Detect Good|Paladin of Tyranny ~ Smite Good|Smite Good
+2				BONUS:VAR|DeadlyTouchLVL|CL											ABILITY:Special Ability|AUTOMATIC|Deadly Touch|Paladin ~ Divine Grace
+3																			ABILITY:Special Ability|AUTOMATIC|Aura of Despair|Paladin ~ Divine Health
+4	CAST:0,0		BONUS:VAR|PaladinTurnLVL|CL											ABILITY:Special Ability|AUTOMATIC|Basic Turning|Paladin of Tyranny ~ Rebuke Undead|Rebuke Undead
+5	CAST:0,0		BONUS:VAR|SpecialMountLVL|CL											ABILITY:Special Ability|AUTOMATIC|Paladin ~ Special Mount
+6	CAST:0,1		BONUS:VAR|CauseDiseaseLVL|CL											ABILITY:Special Ability|AUTOMATIC|Paladin of Tyranny ~ Cause Disease
 7	CAST:0,1
 8	CAST:0,1,0
 9	CAST:0,1,0
@@ -504,19 +370,19 @@ CLASS:Ranger (Planar Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|
 ###Block:
 1	BONUS:VAR|RangerFavoredEnemyLVL|CL
 1	BONUS:VAR|RangerCombatTreeLVL|CL
-1	BONUS:VAR|WildEmpathy|CL
+1	BONUS:VAR|WildEmpathyBonus|CL
 4	BONUS:VAR|AnimalCompanionLVL|CL/2|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
 9	BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy
 ###Block:
-1	ABILITY:Special Ability|AUTOMATIC|Basic Favored Enemy|Ranger Favored Enemy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerFavoredEnemy
-1	ABILITY:Special Ability|AUTOMATIC|Ranger Combat Tree|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
-1	ABILITY:Special Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWildEmpathy
-4	ABILITY:Special Ability|AUTOMATIC|Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
-7	ABILITY:Special Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWoodlandStride
-8	ABILITY:Special Ability|AUTOMATIC|Swift Tracker|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerSwiftTracker
-9	ABILITY:Special Ability|AUTOMATIC|Evasion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEvasion
-13	ABILITY:Special Ability|AUTOMATIC|Camouflage|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCamouflage
-17	ABILITY:Special Ability|AUTOMATIC|Hide in Plain Sight (Ranger)|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerHideInPlainSight
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Favored Enemy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerFavoredEnemy
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Ranger Combat Tree|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWildEmpathy
+4	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
+7	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWoodlandStride
+8	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Swift Tracker|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerSwiftTracker
+9	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Evasion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEvasion
+13	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Camouflage|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCamouflage
+17	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Hide in Plain Sight (Ranger)|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerHideInPlainSight
 ###Block:
 1	AUTO:FEAT|Track|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerTrack
 3	AUTO:FEAT|Endurance|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEndurance
@@ -547,7 +413,7 @@ CLASS:Ranger (Urban Ranger)	STARTSKILLPTS:6	CSKILL:Climb|Concentration|TYPE=Craf
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels				Craft Level Mult.	Caster level
 CLASS:Ranger (Urban Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4	ITEMCREATE:0.5	BONUS:CASTERLEVEL|Ranger (Urban Ranger)|CL/2|PRECLASS:1,Ranger (Urban Ranger)=4	BONUS:CASTERLEVEL|Ranger|CL/2|PRECLASS:1,Ranger (Urban Ranger)=4	SPELLLIST:2|Ranger|Ranger (Urban Ranger)
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Ranger|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerProficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerProficiencies
 ###Block: Removed from Urban Ranger
 1	PROHIBITSPELL:SPELL.Animal Messenger
 1	PROHIBITSPELL:SPELL.Charm Animal
@@ -568,17 +434,17 @@ CLASS:Ranger (Urban Ranger)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|L
 ###Block:
 1	BONUS:VAR|RangerFavoredEnemyLVL|CL
 1	BONUS:VAR|RangerCombatTreeLVL|CL
-1	BONUS:VAR|WildEmpathy|CL/2
+1	BONUS:VAR|WildEmpathyBonus|CL/2
 4	BONUS:VAR|AnimalCompanionLVL|CL/2|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
 9	BONUS:VAR|EvasionUsable,ImprovedEvasionUsable|1|TYPE=Prerequisite|PREEQUIP:1,TYPE=Medium,TYPE=Heavy
 ###Block:
-1	ABILITY:Special Ability|AUTOMATIC|Basic Favored Enemy|Ranger Favored Enemy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerFavoredEnemy
-1	ABILITY:Special Ability|AUTOMATIC|Ranger Combat Tree|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
-1	ABILITY:Special Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWildEmpathy
-4	ABILITY:Special Ability|AUTOMATIC|Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
-8	ABILITY:Special Ability|AUTOMATIC|Swift Tracker|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerSwiftTracker
-9	ABILITY:Special Ability|AUTOMATIC|Evasion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEvasion
-17	ABILITY:Special Ability|AUTOMATIC|Hide in Plain Sight (Ranger)|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerHideInPlainSight
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Favored Enemy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerFavoredEnemy
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Ranger Combat Tree|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerCombatTree
+1	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerWildEmpathy
+4	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerAnimalCompanion
+8	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Swift Tracker|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerSwiftTracker
+9	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Evasion|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEvasion
+17	ABILITY:Special Ability|AUTOMATIC|Ranger ~ Hide in Plain Sight|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerHideInPlainSight
 ###Block:
 1	AUTO:FEAT|Urban Tracking|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerTrack
 3	AUTO:FEAT|Endurance|!PREABILITY:1,CATEGORY=ACF,TYPE.RangerEndurance
@@ -621,11 +487,11 @@ CLASS:Rogue (Wilderness Rogue)		STARTSKILLPTS:8	CSKILL:Balance|Bluff|Climb|TYPE=
 
 ###Battle Sorcerer
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page				Save checks bonus											Combat bonus					Monster Role
-CLASS:Sorcerer	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sor		MAXLEVEL:20	SOURCEPAGE:p.56	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Sorcerer
+CLASS:Battle Sorcerer	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sor		MAXLEVEL:20	SOURCEPAGE:p.56	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Sorcerer
 # Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Sorcerer	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Knowledge (Arcana)|TYPE=Profession|Spellcraft|Intimidate
+CLASS:Battle Sorcerer	STARTSKILLPTS:2	CSKILL:Concentration|TYPE=Craft|Knowledge (Arcana)|TYPE=Profession|Spellcraft|Intimidate
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
-CLASS:Sorcerer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Sorcerer|CL
+CLASS:Battle Sorcerer	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Sorcerer|CL
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Sorcerer|!PREABILITY:1,CATEGORY=ACF,TYPE.SorcererProficiencies
 1	AUTO:ARMORPROF|Light
@@ -802,23 +668,23 @@ CLASS:Druid (Spontaneous)		SPELLSTAT:WIS	SPELLTYPE:Divine	SPELLLIST:1|Druid	BONU
 # To add effective Druid levels to this ability use BONUS:VAR|DruidWildShape|CL
 #
 1	BONUS:VAR|DruidWildShape|CL
-1	BONUS:VAR|WildEmpathy|CL	BONUS:VAR|AnimalCompanionLVL|CL
+1	BONUS:VAR|WildEmpathyBonus|CL	BONUS:VAR|AnimalCompanionLVL|CL
 ###Block: Spell Alignment Restrictions
 1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
 1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
 1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
 ###Block:
-1	ABILITY:Special Ability|AUTOMATIC|Druid Elemental Wild Shape Times|Druid Wild Shape|Druid Wild Shape Progression|Druid Wild Shape Times|Wild Shape|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildShape
-1	ABILITY:Special Ability|AUTOMATIC|Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAnimalCompanion
-1	ABILITY:Special Ability|AUTOMATIC|Nature Sense|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidNatureSense
-1	ABILITY:Special Ability|AUTOMATIC|Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildEmpathy
-2	ABILITY:Special Ability|AUTOMATIC|Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWoodlandStride
-3	ABILITY:Special Ability|AUTOMATIC|Trackless Step|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTracklessStep
-4	ABILITY:Special Ability|AUTOMATIC|Resist Nature's Lure|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidResistNaturesLure
-9	ABILITY:Special Ability|AUTOMATIC|Venom Immunity|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidVenomImmunity
-13	ABILITY:Special Ability|AUTOMATIC|A Thousand Faces|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAThousandFaces
-15	ABILITY:Special Ability|AUTOMATIC|Timeless Body|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTimelessBody																	TEMPLATE:Timeless Body
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Wild Shape|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildShape
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Animal Companion|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAnimalCompanion
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Nature Sense|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidNatureSense
+1	ABILITY:Special Ability|AUTOMATIC|Druid ~ Wild Empathy|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWildEmpathy
+2	ABILITY:Special Ability|AUTOMATIC|Druid ~ Woodland Stride|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidWoodlandStride
+3	ABILITY:Special Ability|AUTOMATIC|Druid ~ Trackless Step|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTracklessStep
+4	ABILITY:Special Ability|AUTOMATIC|Druid ~ Resist Nature's Lure|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidResistNaturesLure
+9	ABILITY:Special Ability|AUTOMATIC|Druid ~ Venom Immunity|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidVenomImmunity
+13	ABILITY:Special Ability|AUTOMATIC|Druid ~ A Thousand Faces|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidAThousandFaces
+15	ABILITY:Special Ability|AUTOMATIC|Druid ~ Timeless Body|!PREABILITY:1,CATEGORY=ACF,TYPE.DruidTimelessBody																	TEMPLATE:Timeless Body
 ###Block: Normal Progression
 1	CAST:3,1
 2	CAST:4,2
