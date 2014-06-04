@@ -1,0 +1,77 @@
+### 2015 May 25
+
+Advanced Study			TYPE:Combat		PRECLASS:1,TYPE.MartialDisciple=4	DESC:Add two manuevers known (in-class), one manuever known (out-of-class), or one stance known	CHOOSE:NOCHOICE	MULT:YES	STACK:YES	BONUS:ABILITYPOOL|Advanced Study Choice|1
+# COMMENT: What is "shield proficiency"?
+# NEEDS DATA/CODE WORK: Couldn't get PREPROFWITHSHIELD to work, anyway; "Shield (Light)", "Shield%" didn't allow the feat, even though the character is proficient with light shields
+Buckler Bash	TYPE:Combat	PRESPELLSCHOOL:1,Broken Blade=1,Iron Tortoise=1	DESC:Bash with buckler as light shield, buckler associated with Iron Tortoise and Broken Blade, may substitute buckler bash for unarmed strike in maneuver
+Deadly Pairing	TYPE:Teamwork	PRESPELLSCHOOL:1,Steel Serpent=1	PREVARGTEQ:StalkerDeadlyStrikeDice,1	DESC:Increase threat range of weapon by 1 when flanking, 2 if you or ally are in a Steel Serpent stance
+# NEEDS DATA WORK: How does one capture shield bonus to AC?  How does one apply bonus to touch attacks?
+Defensive Expertise	TYPE:Combat	DESC:Your shield bonus applies to touch attacks and Reflex saves. [not implemented]
+Defensive Web	TYPE:Combat	PRECLASS:1,Warder=7	PREABILITY:1,CATEGORY=Special Ability,Warder ~ Defensive Focus	DESC:When spending a full-round action to recover maneuvers, creatures cannot leave your threatened space.
+# COMMENT: Will need more for more classes
+Discipline Expertise (Stalker)	TYPE:General	DESC:+2 to skills associated with Stalker disciplines	BONUS:SKILL|Acrobatics,Perception,Heal,Stealth|2|TYPE=Competence	PRECLASS:1,Stalker=1
+Discipline Expertise (Warder)		TYPE:General	DESC:+2 to skills associated with Warder disciplines	BONUS:SKILL|Acrobatics,Diplomacy,Bluff,Survival|2|TYPE=Competence	PRECLASS:1,Warder=1
+Discipline Expertise (Warlord)	TYPE:General	DESC:+2 to skills associated with Warlord disciplines	BONUS:SKILL|Diplomacy,Survival,Sense Motive,Perception,Acrobatics|2|TYPE=Competence	PRECLASS:1,Warlord=1
+# COMMENT: Will need more for more disciplines
+Discipline Focus (Broken Blade)	TYPE:General	PRESPELLSCHOOL:3,Broken Blade=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Broken Blade|2	BONUS:COMBAT|DAMAGE.Close,DAMAGE.Monk,DAMAGE.Natural|2
+Discipline Focus (Golden Lion)	TYPE:General	PRESPELLSCHOOL:3,Golden Lion=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Golden Lion|2		BONUS:COMBAT|DAMAGE.BladeHeavy,DAMAGE.Hammer,DAMAGE.Polearm|2
+Discipline Focus (Iron Tortoise)	TYPE:General	PRESPELLSCHOOL:3,Iron Tortoise=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Iron Tortoise|2	BONUS:COMBAT|DAMAGE.Axe,DAMAGE.BladeHeavy,DAMAGE.Close|2
+Discipline Focus (Primal Fury)	TYPE:General	PRESPELLSCHOOL:3,Primal Fury=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Primal Fury|2		BONUS:COMBAT|DAMAGE.Axe,DAMAGE.BladeHeavy,DAMAGE.Hammer|2
+Discipline Focus (Scarlet Throne)	TYPE:General	PRESPELLSCHOOL:3,Scarlet Throne=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Scarlet Throne|2	BONUS:COMBAT|DAMAGE.BladeHeavy,DAMAGE.BladeLight,DAMAGE.Spear|2
+Discipline Focus (Solar Wind)		TYPE:General	PRESPELLSCHOOL:3,Solar Wind=1		DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Solar Wind|2		BONUS:COMBAT|DAMAGE.Bow,DAMAGE.Crossbow,DAMAGE.Thrown|2
+Discipline Focus (Steel Serpent)	TYPE:General	PRESPELLSCHOOL:3,Steel Serpent=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Steel Serpent|2	BONUS:COMBAT|DAMAGE.Close,DAMAGE.Monk,DAMAGE.BladeLight|2
+Discipline Focus (Thrashing Dragon)	TYPE:General	PRESPELLSCHOOL:3,Thrashing Dragon=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Thrashing Dragon|2	BONUS:COMBAT|DAMAGE.Close,DAMAGE.BladeLight,DAMAGE.Double|2
+Discipline Focus (Veiled Moon)	TYPE:General	PRESPELLSCHOOL:3,Veiled Moon=1	DESC:+2 to DCs of this discipline; +2 damage with associated weapons of discipline	BONUS:DC|SCHOOL.Veiled Moon|2		BONUS:COMBAT|DAMAGE.BladeLight,DAMAGE.Double,DAMAGE.Spear|2
+Discipline Mastery	TYPE:General	DESC:You may take 10 on skill checks made with any associated skill of a discipline you possess (with 8 or more ranks).	PRESKILL:1,Acrobatics=8,Perception=8,Heal=8,Stealth=8,Diplomacy=8,Bluff=8,Survival=8,Sense Motive=8
+# NEEDS DATA WORK: Doesn't play well with off-hand/two-handed weapons; altered STR still factored in.
+# NEEDS DATA WORK: Won't play well with other abilities that also swap DEX for STR for damage.
+# COMMENT: Not sure why TYPE=NotRanged; it's what Weapon Finesse uses
+# WORKAROUND: Added a TEMPBONUS that, if activated, gives correct damage bonuses to finesse weapons, but loses correct bonuses to non-finesse weapons
+# COMMENT: The below would work for one-handed weapons in the main hand (only)
+#	BONUS:COMBAT|DAMAGE.Finesseable|max(DEX,STR)-STR|TYPE=NotRanged	BONUS:COMBAT|DAMAGE.Double|max(DEX,STR)-STR|TYPE=NotRanged|PREFEAT:1,Double Weapon Finesse
+Deadly Agility			TYPE:Combat		PREFEAT:1,Weapon Finesse	PREATT:1	DESC:Add Dex, not Str, to damage with finesseable weapon	TEMPBONUS:PC|COMBAT|DAMAGEMULT:0|-0.5	TEMPBONUS:PC|COMBAT|DAMAGEMULT:1|-1	TEMPBONUS:PC|COMBAT|DAMAGEMULT:2|-1.5	TEMPBONUS:PC|COMBAT|DAMAGE.Finesseable|DEX|TYPE=NotRanged	TEMPBONUS:PC|COMBAT|DAMAGE.Double|DEX|TYPE=NotRanged|PREFEAT:1,Double Weapon Finesse
+# COMMENT: Not sure why TYPE=NotRanged; it's what Weapon Finesse uses
+# NEEDS CODE/DATA WORK: Other effects that affect light weapons need to be aware of this feat (or this feat aware of them); see Deadly Finesse above for an example
+# NEEDS CODE/DATA WORK: Doesn't follow "weapon that you are proficient in" clause
+Double Weapon Finesse		TYPE:Combat		PREFEAT:2,Two-Weapon Fighting,Weapon Finesse	PREWEAPONPROF:1,TYPE.Double	DESC:Treat both heads of double weapon as light for Weapon Finesse and Two-Weapon Fighting; +2 CMD with double weapon	BONUS:VAR|CMD|2|TYPE=Competence|PREEQUIPBOTH:1,TYPE=Weapon.Double	BONUS:COMBAT|TOHIT.Double|max(DEX,STR)-STR|TYPE=NotRanged
+Extended Mark	TYPE:Combat	PREABILITY:1,CATEGORY=Special Ability,Warder ~ Armiger's Mark	DESC:double armiger's mark duration	BONUS:VAR|WarderImprovedArmigersMarkDuration|WarderPrimeStatBonus	BONUS:VAR|WarderArmigersMarkDuration|WarderPrimeStatBonus
+Extra Gambit	TYPE:Combat	PRESTAT:1,CHA=13	PRECLASS:1,Warlord=3	PREABILITY:1,CATEGORY=Special Ability,TYPE.Gambit	DESC:gain another gambit method	CHOOSE:NOCHOICE	MULT:YES	STACK:YES	BONUS:VAR|WarlordGambitCount|1
+Extra Marks		TYPE:Combat	PREABILITY:1,CATEGORY=Special Ability,Warder ~ Armiger's Mark	DESC:gain 2 uses of armiger's mark	BONUS:VAR|WarderArmigersMarkTimes|2	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+#Extra Ki (already defined in core)
+# COMMENT: Can it be taken more than once, for different classes?  I'm assuming yes, but this may be incorrect.
+Extra Readied Maneuver (Stalker)		KEY:Extra Readied Maneuver ~ Stalker		TYPE:Combat		PREVARGTEQ:StalkerInitiatorLVL,1		DESC:Ready an additional maneuver	PRECLASS:1,Stalker=1		BONUS:VAR|StalkerManeuversReadied|1
+Extra Readied Maneuver (Warlord)		KEY:Extra Readied Maneuver ~ Warlord		TYPE:Combat		PREVARGTEQ:WarlordInitiatorLVL,1		DESC:Ready an additional maneuver	PRECLASS:1,Warlord=1		BONUS:VAR|WarlordManeuversReadied|1
+Extra Readied Maneuver (Warder)		KEY:Extra Readied Maneuver ~ Warder		TYPE:Combat		PREVARGTEQ:WarderInitiatorLVL,1		DESC:Ready an additional maneuver	PRECLASS:1,Warder=1		BONUS:VAR|WarderManeuversReadied|1
+# COMMENT: This one indicated by the author as not allowed
+#Extra Readied Maneuver (Martial Training)	KEY:Extra Readied Maneuver ~ Martial Training	TYPE:Combat		PREVARGTEQ:MartialTrainingInitiatorLVL,1	DESC:Ready an additional maneuver	PREFEAT:1,Martial Training I	BONUS:VAR|MartialTrainingManeuversReadied|1
+Extra Stalker Art			TYPE:Combat		PRECLASS:1,Stalker=3	PRESTAT:1,WIS=13	DESC:Add stalker art	CHOOSE:NOCHOICE	MULT:YES	STACK:YES	BONUS:VAR|StalkerArtsCount|1
+Fuse Styles				TYPE:Combat.Style	PREFEAT:1,TYPE.Style	PRESPELLSCHOOLSUB:1,Stance=1	DESC:Enter fighting style and stance with the same swift action
+Guard's Glare	TYPE:Combat	PRESKILL:1,Intimidate=4	PREABILITY:1,CATEGORY=Special Ability,Warder ~ Armiger's Mark	DESC:Creature demoralized and marked must save (Will DC %1) to move away from you|GuardsGlareDC	DEFINE:GuardsGlareDC|0	BONUS:VAR|GuardsGlareDC|10+floor(WarderLVL/2)+INT
+Greater Unarmed Strike		TYPE:Combat		PREFEAT:1,Improved Unarmed Strike	PREATT:3	DESC:Unarmed attack inflicts more damage	ABILITY:Internal|AUTOMATIC|Greater Unarmed Strike 37|PREVARGTEQ:TL,3|PREVARLTEQ:TL,7	ABILITY:Internal|AUTOMATIC|Greater Unarmed Strike 811|PREVARGTEQ:TL,8|PREVARLTEQ:TL,11	ABILITY:Internal|AUTOMATIC|Greater Unarmed Strike 1215|PREVARGTEQ:TL,12|PREVARLTEQ:TL,15	ABILITY:Internal|AUTOMATIC|Greater Unarmed Strike 16|PREVARGTEQ:TL,16
+Lightning Recovery		TYPE:Combat		PRESPELLCAST:TYPE=Initiator	DESC:%1/day, instantly recover maneuver just used|LightningRecoveryTimes	DEFINE:LightningRecoveryTimes|0	BONUS:VAR|LightningRecoveryTimes|1	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
+Lightning Swap			TYPE:Combat		PREFEAT:1,Quick Draw	PREATT:5	PRESTAT:1,DEX=15	DESC:Draw or put away weapon as free action, %1 swaps/round; +2 to CMD against disarms|LightningSwapsPerRound	DEFINE:LightningSwapsPerRound|DEX	BONUS:VAR|CMD_Disarm|2
+Martial Charge	TYPE:Combat	PREATT:3	PRESPELLCAST:1,TYPE=Initiator	DESC:You may initiate a strike at the end of a charge.
+# COMMENT: Penalty (or temp. hp) not added automatically.
+Martial Power			TYPE:Combat	PRESTAT:1,CON=13	PRESPELLTYPE:1,Initiator=1	DESC:take -%1 on attack to get %2 temp hp, %3 with shield|MartialPowerAttackPenalty|MartialPowerTempHP|MartialPowerShieldTempHP	DEFINE:MartialPowerAttackPenalty|0	DEFINE:MartialPowerTempHP|0	BONUS:VAR|MartialPowerAttackPenalty|floor((BAB+1)/2)	BONUS:VAR|MartialPowerTempHP|2*floor((BAB+1)/2)	DEFINE:MartialPowerShieldTempHP|MartialPowerTempHP*1.5	SERVESAS:ABILITY=FEAT|Combat Expertise
+Martial Training I		TYPE:Combat		PREATT:3	PRESKILL:1,Knowledge (Martial)=3	DESC:Select a discipline; get class skill, initiator level half your level plus stat, two 1st-level maneuvers, ready 1 maneuver	SORTKEY:Martial Training 1	ABILITY:Special Ability|AUTOMATIC|Martial Training ~ Initiating	BONUS:VAR|MartialTrainingInitiatorLVL|min(TL,TL/2+MartialTrainingStatBonus)	BONUS:VAR|MartialTrainingManeuversKnown|2	BONUS:VAR|MartialTrainingManeuversReadied|1	ADD:SPELLCASTER|Martial Training	ADD:SPELLCASTER|Martial Training Stances	BONUS:VAR|MartialTrainingFeatManeuverLevel|1	DEFINE:HighestInitiatorLVL|0	BONUS:VAR|HighestInitiatorLVL|MartialTrainingInitiatorLVL|TYPE=NoStack
+Martial Training II		TYPE:Combat		PREATT:5	PRESKILL:1,Knowledge (Martial)=5	PREFEAT:1,Martial Training I	DESC:Get two more maneuvers, and one stance, up to 2nd level; ready an additional maneuver	SORTKEY:Martial Training 2	BONUS:VAR|MartialTrainingManeuversKnown|2	BONUS:VAR|MartialTrainingStancesKnown|1	BONUS:VAR|MartialTrainingManeuversReadied|1	BONUS:VAR|MartialTrainingFeatManeuverLevel|1
+Martial Training III		TYPE:Combat		PREATT:7	PRESKILL:1,Knowledge (Martial)=7	PREFEAT:1,Martial Training II	DESC:Get one maneuver (3rd level), one stance, ready one more maneuver, trade out maneuver up to 2nd level	SORTKEY:Martial Training 3	BONUS:VAR|MartialTrainingManeuversKnown|1	BONUS:VAR|MartialTrainingManeuversReadied|1	BONUS:VAR|MartialTrainingStancesKnown|1	BONUS:VAR|MartialTrainingFeatManeuverLevel|1
+Martial Training IV		TYPE:Combat		PREATT:9	PRESKILL:1,Knowledge (Martial)=9	PREFEAT:1,Martial Training III	DESC:Two maneuvers up to 4th level, ready an additional maneuver	SORTKEY:Martial Training 4	BONUS:VAR|MartialTrainingManeuversKnown|2	BONUS:VAR|MartialTrainingManeuversReadied|1	BONUS:VAR|MartialTrainingFeatManeuverLevel|1
+Martial Training V		TYPE:Combat		PREATT:11	PRESKILL:1,Knowledge (Martial)=11	PREFEAT:1,Martial Training IV	DESC:Get two maneuvers or one maneuver and one stance up to 5th; ready additional maneuver; trade one maneuver for up to 4th lvl	SORTKEY:Martial Training 5	BONUS:ABILITYPOOL|Martial Training Choice|1	BONUS:VAR|MartialTrainingManeuversReadied|1	BONUS:VAR|MartialTrainingFeatManeuverLevel|1
+Martial Training VI		TYPE:Combat		PREATT:13	PRESKILL:1,Knowledge (Martial)=13	PREFEAT:1,Martial Training V	DESC:Get two maneuvers, or one maneuver and one stance, ready additional maneuver, trade manevuer up to 5th level	SORTKEY:Martial Training 6	BONUS:ABILITYPOOL|Martial Training Choice|1	BONUS:VAR|MartialTrainingManeuversReadied|1	BONUS:VAR|MartialTrainingFeatManeuverLevel|1
+Powerful Mark	TYPE:Combat	PREABILITY:1,CATEGORY=Special Ability,Warder ~ Armiger's Mark	DESC:penalty for armiger's mark increases by 2, and DC for grand challenge increases by 2	BONUS:VAR|WarderArmigersMarkPenalty|2	BONUS:VAR|WarderImprovedArmigersMarkDC|2
+Ricochet Weapon	TYPE:Combat	PRESTAT:1,DEX=13	PREFEAT:1,Point-Blank Shot	DESC:When you throw a weapon as part of a martial strike, that weapon gains the returning property for 2 round
+Serene Stride	TYPE:General	PRESTAT:1,WIS=13	PREABILITY:1,CATEGORY=Special Ability,TYPE.Ki	DESC:As long as your ki pool as at least one point, ignore movement and Acrobatics penalties from difficult terrain and move across liquid surfaces as if they were solid
+# NEEDS CODE WORK: NUMCHOICES doesn't set a maximum number of times the feat can be taken
+Tactical Rush	TYPE:Combat	PRESPELLSCHOOL:1,Iron Tortoise=1,Scarlet Throne=1,Veiled Moon=1	DESC:Move your speed as a swift action %1/encounter.|TacticalRushTimes	DEFINE:TacticalRushTimes|0	BONUS:VAR|TacticalRushTimes|1	CHOOSE:NUMCHOICES=3|NOCHOICE	MULT:YES	STACK:YES	ASPECT:CheckCount|%1|TacticalRushTimes	ASPECT:CheckType|Uses per encounter
+Take the Blow	TYPE:Combat	PREABILITY:1,CATEGORY=Special Ability,Warder ~ Armiger's Mark	DESC:Use one use of armiger's mark to force opponent who targets ally with melee or ranged attack to target you instead
+# NEEDS CODE WORK: NUMCHOICES doesn't set a maximum number of times the feat can be taken
+Victorious Recovery	TYPE:Combat	PRESPELLCAST:TYPE=Initiator	DESC:%1/encounter recover maneuver when you reduce opponent to 0 hp|VictoriousRecoveryTimes	DEFINE:VictoriousRecoveryTimes|0	BONUS:VAR|VictoriousRecoveryTimes|1	CHOOSE:NUMCHOICES=3|NOCHOICE	MULT:YES	STACK:YES	ASPECT:CheckCount|%1|VictoriousRecoveryTimes	ASPECT:CheckType|Uses per encounter
+Weapon Group Adaptation	TYPE:Combat	DESC:Chosen weapon group is considered associated with your disciplines.	BONUS:ABILITYPOOL|Weapon Group Adaptation Choice|1
+
+
+
+#
+# End
+#
+
