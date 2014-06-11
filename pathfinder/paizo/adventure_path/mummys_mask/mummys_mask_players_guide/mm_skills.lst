@@ -1,14 +1,9 @@
-SOURCELONG:Mummys Mask Player's Guide	SOURCESHORT:KMPG	SOURCEWEB:http://paizo.com/products/btpy8x1t?Pathfinder-Adventure-Path-Mummys-Mask-Players-Guide	SOURCEDATE:2014-03
+SOURCELONG:Mummys Mask Player's Guide	SOURCESHORT:mm	SOURCEWEB:http://paizo.com/products/btpy8x1t?Pathfinder-Adventure-Path-Mummys-Mask-Players-Guide	SOURCEDATE:2014-03
 # Original Entry by: David R. Bender
 
 ###Block: Conditional Skills for output only
-# Skill Name				Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value											Source Page
-Perception (Concealed or Secret Doors in structures built in the style of Ancient Osirion)	KEYSTAT:INT	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Perception (Concealed or Secret Doors in structures built in the style of Ancient Osirion).MISC"),SKILL.Perception.MISC	SOURCEPAGE:p.90
-Bluff (vs. Sphinx)	KEYSTAT:INT	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Bluff (vs. Sphinx).MISC"),SKILL.Bluff.MISC	SOURCEPAGE:p.90
-Diplomacy (vs. Sphinx)	KEYSTAT:INT	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Diplomacy (vs. Sphinx).MISC"),SKILL.Diplomacy.MISC	SOURCEPAGE:p.90
 
-###Block: Skill .MODs
-# Skill Name	Bonus to skill										Bonus to skill rank
-Perception.MOD	BONUS:SKILL|Perception (Concealed or Secret Doors in structures built in the style of Ancient Osirion)|SKILL.Perception.MISC	BONUS:SKILLRANK|Perception (Concealed or Secret Doors in structures built in the style of Ancient Osirion)|skillinfo("TOTALRANK","Perception")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Perception (Concealed or Secret Doors in structures built in the style of Ancient Osirion).MISC"),SKILL.Perception.MISC
-Bluff.MOD	BONUS:SKILL|Bluff (vs. Sphinx)|SKILL.Bluff.MISC	BONUS:SKILLRANK|Bluff (vs. Sphinx)|skillinfo("TOTALRANK","Bluff")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Bluff (vs. Sphinx).MISC"),SKILL.Bluff.MISC
-Diplomacy.MOD	BONUS:SKILL|Diplomacy (vs. Sphinx)|SKILL.Diplomacy.MISC	BONUS:SKILLRANK|Diplomacy (vs. Sphinx)|skillinfo("TOTALRANK","Diplomacy")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Diplomacy (vs. Sphinx).MISC"),SKILL.Diplomacy.MISC
+
+Perception.MOD	SITUATION:Concealed or Secret Doors in structures built in the style of Ancient Osirion
+Bluff.MOD		SITUATION:vs. Sphinx
+Diplomacy.MOD	SITUATION:vs. Sphinx
