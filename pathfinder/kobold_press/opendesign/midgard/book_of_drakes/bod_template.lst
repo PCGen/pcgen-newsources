@@ -96,8 +96,8 @@ Drake ~ Large		FACE:10		REACH:5		VISIBLE:NO	PRESIZEEQ:L		BONUS:WEAPONPROF=Bite|D
 ##Block: Drake Ability Templates
 ##
 # Template Name	Unique Key				Size		Visible	Required Size	Combat bonus																						Adjust PC Size							Stat bonus																Weapon prof. bonus																					Wield Category bonus				Natural Attacks														Temporary effect description
-Unfold (Enlarge)								VISIBLE:NO				BONUS:COMBAT|DAMAGESIZE|1|PREAPPLY:PC	BONUS:COMBAT|TOHIT,AC|-1|TYPE=Size|PREAPPLY:PC	BONUS:COMBAT|TOHIT.GRAPPLE|5|TYPE=Size|PREAPPLY:PC										BONUS:STAT|STR|2|TYPE=Size|PREAPPLY:PC	BONUS:STAT|DEX|-1*(min(2,DEXSCORE-1))|TYPE=Size|PREAPPLY:PC																									BONUS:WIELDCATEGORY|ALL|1|PREAPPLY:PC																	TEMPDESC:Applies the effects of increasing the drakes size.
-Unfold (Reduce)								VISIBLE:NO				BONUS:COMBAT|DAMAGESIZE|-1|PREAPPLY:PC	BONUS:COMBAT|TOHIT,AC|1|TYPE=Size|PREAPPLY:PC										BONUS:SIZEMOD|NUMBER|-1|TYPE=Temporary|PREAPPLY:PC	BONUS:STAT|STR|-1*(min(2,STRSCORE-1))|TYPE=Size|PREAPPLY:PC	BONUS:STAT|DEX|2|TYPE=Size|PREAPPLY:PC																																																TEMPDESC:Applies the effects of reducing the drakes size.
+Unfold (Enlarge)								VISIBLE:NO				TEMPBONUS:PC|COMBAT|DAMAGESIZE|1	TEMPBONUS:PC|COMBAT|TOHIT,AC|-1|TYPE=Size	TEMPBONUS:PC|COMBAT|TOHIT.GRAPPLE|5|TYPE=Size										TEMPBONUS:PC|STAT|STR|2|TYPE=Size	TEMPBONUS:PC|STAT|DEX|-1*(min(2,DEXSCORE-1))|TYPE=Size																									TEMPBONUS:PC|WIELDCATEGORY|ALL|1																	TEMPDESC:Applies the effects of increasing the drakes size.
+Unfold (Reduce)								VISIBLE:NO				TEMPBONUS:PC|COMBAT|DAMAGESIZE|-1	TEMPBONUS:PC|COMBAT|TOHIT,AC|1|TYPE=Size										TEMPBONUS:PC|SIZEMOD|NUMBER|-1|TYPE=Temporary	TEMPBONUS:PC|STAT|STR|-1*(min(2,STRSCORE-1))|TYPE=Size	TEMPBONUS:PC|STAT|DEX|2|TYPE=Size																																																TEMPDESC:Applies the effects of reducing the drakes size.
 
 
 ##
