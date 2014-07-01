@@ -91,25 +91,9 @@ Leadership (Humans)													KEY:Leadership ~ Humans							SORTKEY:Leadership
 #Tier Two Skills are occasionally useful or relatively narrow, but are replaceable by special abilities or relatively low-level spells. They include Appraise (Int) Balance (Dex), Bluff (Chr), Climb (Str), Concentration (Con), Control Shape (Wis), Craft/Exotic (Int)*, Escape Artist (Dex), Gather Information (Cha), Handle Animal (Cha)*, Heal (Wis), Intimidate (Cha), Open Lock (Dex)*, Perform (Specify) (Cha), Profession/Complex (Wis)*, Psicraft (Int)*, Ride (Dex), Sense/Listen (Wis), Sense Motive (Wis), Speak Language (Int), and Use Magic Device (Cha)*.Tier Two skills are available for half cost. They can usually be Corrupted, but not Specialized without special permission.
 CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Atheria Skill Tiers|PRETEMPLATE:1,Atheria Campaign
 
-Atheria Skill Tiers	CATEGORY:Internal
-	BONUS:SKILL|Appraise|skillinfo("TOTALRANK","Appraise")
-	BONUS:SKILL|Balance|skillinfo("TOTALRANK","Balance")
-	BONUS:SKILL|Bluff|skillinfo("TOTALRANK","Bluff")
-	BONUS:SKILL|Climb|skillinfo("TOTALRANK","Climb")
-	BONUS:SKILL|Concentration|skillinfo("TOTALRANK","Concentration")
-	BONUS:SKILL|Control Shape|skillinfo("TOTALRANK","Control Shape")
-	BONUS:SKILL|Escape Artist|skillinfo("TOTALRANK","Escape Artist")
-	BONUS:SKILL|Gather Information|skillinfo("TOTALRANK","Gather Information")
-	BONUS:SKILL|Handle Animal|skillinfo("TOTALRANK","Handle Animal")
-	BONUS:SKILL|Heal|skillinfo("TOTALRANK","Heal")
-	BONUS:SKILL|Intimidate|skillinfo("TOTALRANK","Intimidate")
-	BONUS:SKILL|Open Lock|skillinfo("TOTALRANK","Open Lock")
-	BONUS:SKILL|Psicraft|skillinfo("TOTALRANK","Psicraft")
-	BONUS:SKILL|Ride|skillinfo("TOTALRANK","Ride")
-	BONUS:SKILL|Listen|skillinfo("TOTALRANK","Listen")
-	BONUS:SKILL|Sense Motive|skillinfo("TOTALRANK","Sense Motive")
-	BONUS:SKILL|Speak Language|skillinfo("TOTALRANK","Speak Language")
-	BONUS:SKILL|Use Magic Device|skillinfo("TOTALRANK","Use Magic Device")
+Atheria Skill Tiers	CATEGORY:Internal	BONUS:SKILL|Appraise|skillinfo("TOTALRANK","Appraise")	BONUS:SKILL|Balance|skillinfo("TOTALRANK","Balance")	BONUS:SKILL|Bluff|skillinfo("TOTALRANK","Bluff")	BONUS:SKILL|Climb|skillinfo("TOTALRANK","Climb")	BONUS:SKILL|Concentration|skillinfo("TOTALRANK","Concentration")	BONUS:SKILL|Control Shape|skillinfo("TOTALRANK","Control Shape")	BONUS:SKILL|Escape Artist|skillinfo("TOTALRANK","Escape Artist")	BONUS:SKILL|Gather Information|skillinfo("TOTALRANK","Gather Information")	BONUS:SKILL|Handle Animal|skillinfo("TOTALRANK","Handle Animal")	BONUS:SKILL|Heal|skillinfo("TOTALRANK","Heal")	BONUS:SKILL|Intimidate|skillinfo("TOTALRANK","Intimidate")	BONUS:SKILL|Open Lock|skillinfo("TOTALRANK","Open Lock")	BONUS:SKILL|Ride|skillinfo("TOTALRANK","Ride")	BONUS:SKILL|Listen|skillinfo("TOTALRANK","Listen")	BONUS:SKILL|Sense Motive|skillinfo("TOTALRANK","Sense Motive")	BONUS:SKILL|Speak Language|skillinfo("TOTALRANK","Speak Language")	BONUS:SKILL|Use Magic Device|skillinfo("TOTALRANK","Use Magic Device")
+#		BONUS:SKILL|Psicraft|skillinfo("TOTALRANK","Psicraft")
+
 # Need to break out which skills qualify:
 #TYPE=Craft
 #TYPE=Perform
@@ -119,18 +103,11 @@ Atheria Skill Tiers	CATEGORY:Internal
 
 
 #Tier Three Skills are either rarely useful due to their narrowness or lack of applicability or can be easily replaced by a first-level spell such as Comprehend Languages. They include Autohypnosis (Wis)*, Burrow (Wis)*, Craft/Mundane (Int), Decipher Script (Int)*, Disguise (Cha), Forgery (Int), Jump (Str), Sense/Touch (Wis), Use Psionic Device (Cha)*, and Use Rope (Dex). They are available for one-third cost. As a rule, they cannot be Specialized or Corrupted further without special permission.
-CATEGORY=Internal|Atheria Skill Tiers.MOD
-	BONUS:SKILL|Autohypnosis|skillinfo("TOTALRANK","Autohypnosis")*2
+CATEGORY=Internal|Atheria Skill Tiers.MOD		BONUS:SKILL|Decipher Script|skillinfo("TOTALRANK","Decipher Script")*2	BONUS:SKILL|Disguise|skillinfo("TOTALRANK","Disguise")*2	BONUS:SKILL|Forgery|skillinfo("TOTALRANK","Forgery")*2	BONUS:SKILL|Jump|skillinfo("TOTALRANK","Jump")*2		BONUS:SKILL|Use Rope|skillinfo("TOTALRANK","Use Rope")*2
 #Burrow
 #Craft/Mundane (Int)
-	BONUS:SKILL|Decipher Script|skillinfo("TOTALRANK","Decipher Script")*2
-	BONUS:SKILL|Disguise|skillinfo("TOTALRANK","Disguise")*2
-	BONUS:SKILL|Forgery|skillinfo("TOTALRANK","Forgery")*2
-	BONUS:SKILL|Jump|skillinfo("TOTALRANK","Jump")*2
 #Sense/Touch (Wis)
-	BONUS:SKILL|Use Psionic Device|skillinfo("TOTALRANK","Use Psionic Device")*2
-	BONUS:SKILL|Use Rope|skillinfo("TOTALRANK","Use Rope")*2
-
+#BONUS:SKILL|Autohypnosis|skillinfo("TOTALRANK","Autohypnosis")*2	BONUS:SKILL|Use Psionic Device|skillinfo("TOTALRANK","Use Psionic Device")*2
 
 # Lesser Outsider
 Innate Enchantment													KEY:Innate Enchantment ~ Lesser Outsider															CATEGORY:Special Ability	TYPE:EclipseAbilityOutput																																													DESC:All Specialized: Only while remaining true to alignment and to the service of a patron deity, 42,000 GP total value, 14* CP.
@@ -205,7 +182,7 @@ Augment Bonus (Int to Dex for AC)												KEY:Augmented Bonus ~ AC from INT		
 Augment Bonus (Wis to Dex for AC)												KEY:Augmented Bonus ~ AC from WIS		OUTPUTNAME:Augmented Bonus (WIS adds to AC)	CATEGORY:Special Ability	TYPE:Extra.EclipseAbilityOutput.Abilities.Corruptable																																																																																																																																																																																						BONUS:COMBAT|AC|WIS																					COST:6	SOURCEPAGE:p.25	BENEFIT:(+2 CP) Adds INT bonus to AC.
 
 
-Augment Bonus (INT boosts Performance Skill; specialized for double effect - to inspire minions only)	KEY:Augmented Bonus ~ INT Boosts Perform									CATEGORY:Special Ability	TYPE:Extra.EclipseAbilityOutput.Abilities.Corruptable.BBEG																																																																																																																																																																																									BONUS:SKILL|Perform (Atrocities)|INT*2|TYPE=AugmentedBonus	BONUS:VAR|MysticArtistSkillTotal|INT*2|TYPE=AugmentedBonus	COST:6	SOURCEPAGE:p.25	BENEFIT:(+6 CP) Adds INT bonus to Perform (Atrocities).
+Augment Bonus (INT boosts Performance Skill; specialized for double effect - to inspire minions only)	KEY:Augmented Bonus ~ INT Boosts Perform									CATEGORY:Special Ability	TYPE:Extra.EclipseAbilityOutput.Abilities.Corruptable.BBEG																																																																																																																																																																																										BONUS:SKILL|Perform (Atrocities)|INT*2|TYPE=AugmentedBonus	BONUS:VAR|MysticArtistSkillTotal|INT*2|TYPE=AugmentedBonus	COST:6	SOURCEPAGE:p.25	BENEFIT:(+6 CP) Adds INT bonus to Perform (Atrocities).
 Augment Bonus ~ Paladin Grace																												CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.Extra					DESC: + Cha bonus to all saves																																																																																																																																																																								BONUS:CHECKS|Fortitude,Reflex,Will|CHA																									COST:18	SOURCEPAGE:web
 Augment Bonus / Improved ~ Dex applies to Attack																								CATEGORY:Special Ability	TYPE:EclipseAbilityOutput.Ability.Extra																																																																																																																																																																																									BONUS:COMBAT|TOHIT|DEX																					COST:12
 
