@@ -1,4 +1,128 @@
 
+Proposal #2
+
+#GAMESYSTEM:	DATA should control defaults
+DEFAULTVALUES	NUMATTACKS:1	ITERATIVE:NO	RANGEINCREMENT:1	SIZE:PC	RANGE:0
+
+
+TAGS:
+ItemName - First item as usual.
+KEY:				Sets the Unique ID (Cannot conflict with any other Equipment Name)
+SIZE:				Sets the initial size - if creature is large, size and damage should change to reflect the change (Natural Attacks should always mimic the size of the creature)
+DAMAGE:			Same as usual damage tag takes xdy+z format
+SPROP:			Same as Equipment
+RANGEINCREMENT		Placeholder - if Tom works it out this should be handled by the new EQVAR system as a LOCAL and MODIFY (This should be a Data controlled value)
+NUMATTACK			Sets the number of attacks this has. If absent DEFAULT is 1 (This should be a Data controlled value)
+ITERATIVE			NO/YES	If absent DEFAULT is set to NO (This should be a Data controlled value)
+OPTDAMAGE			OPTIONAL	 - Many creatures have a (+xdy+z) with special effects
+RANGE:			OPTIONAL	Sets Range
+REACH:			OPTIONAL	Sets Reach
+SPECIALATTACK		OPTIONAL	Requires ITERATIVE:YES
+
+It should be a fairly easy matter of making BONUS:WEAPONPROF=x|
+
+
+
+###Equip Name	This file would be only usable by creatures using NA:KEY-ID
+ItemName	KEY-ID		SIZE:		DAMAGE	OPT DAMAGE	SPROP		RANGE		RANGEINCREMENT	NUMATTACK	
+
+Bite		KEY:Bite (1d6)	SIZE:M	TYPE:Natural.Weapon.Piercing	DAMAGE:1d6			SPROP:Trip attempt|PREABILITY:x,HasTrip	NUMATTACKS:1
+
+
+Manticore Spike	KEY:Manticore Spikes	PROFICIENCY:WEAPON|Spike	TYPE:Natural.Weapon.Ranged	SIZE:L	DAMAGE:1d8	RANGE:180	RANGEINCREMENTS:1	NUMATTACKS:6	SPROP:All targets of a volley must be within 30', max of 24 spikes may be fire in 23 hours	QUALITY:Ammo|24
+
+Flurry of Blows	KEY:Flurry of Blows	PROFICIENCY:WEAPON|Unarmed	TYPE:Natural.Weapon.Monk	SIZE:PC	
+	ITERATIVEBONUS:1+(BASEAB/3)
+
+####
+* Do we need to include a PROF name? I think we should. Any creature granted the weapon will be proficient automatically, or should we force data to handle that?
+* These need to be accessible by the code as equipment to handle Weapon Focus, Improved Natural Attack, etc.
+* Thoughts - Flurry of Blows is based upon Monk Unarmed Damage - this is currently controlled by UDAM. 
+* Further, we need a method to alter damage
+
+
+
+
+
+
+Illustrative Purposes (Not sure what the max cap is for Flurry)
+
+Need Method to handle iterative attacks - this would apply to Flurry and Companions which gain second attack.
+
+Can we do NUMATTACKS:TIER=1|x	NUMATTACKS:TIER=2|x	NUMATTACKS:TIER=3|x	NUMATTACKS:TIER=4
+
+Add ITERTIVEATTACKS:
+
+Flurry of Blows	KEY:Flurry of Blows	ITERATIVEATTACKS:min(1+((BAB-1)/3),5)	CRITMULT:x2	CRITRANGE:1
+
+# Level 1+
+Flurry of Blows.MOD	DAMAGE:1d1|PRESIZEEQ:F|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:1d2|PRESIZEEQ:D|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:1d3|PRESIZEEQ:T|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:1d4|PRESIZEEQ:S|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:1d6|PRESIZEEQ:M|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:1d8|PRESIZEEQ:L|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:2d6|PRESIZEEQ:H|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:3d6|PRESIZEEQ:G|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+Flurry of Blows.MOD	DAMAGE:4d6|PRESIZEEQ:C|PREVARGTEQ:MonkUnarmedLVL,0|PREVARLTEQ:MonkUnarmedLVL,3
+# Level 4+
+Flurry of Blows.MOD	DAMAGE:1d2|PRESIZEEQ:F|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:1d3|PRESIZEEQ:D|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:1d4|PRESIZEEQ:T|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:1d6|PRESIZEEQ:S|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:1d8|PRESIZEEQ:M|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:2d6|PRESIZEEQ:L|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:3d6|PRESIZEEQ:H|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:4d6|PRESIZEEQ:G|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+Flurry of Blows.MOD	DAMAGE:6d6|PRESIZEEQ:C|PREVARGTEQ:MonkUnarmedLVL,4|PREVARLTEQ:MonkUnarmedLVL,7
+# Level 8+
+Flurry of Blows.MOD	DAMAGE:1d3|PRESIZEEQ:F|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:1d4|PRESIZEEQ:D|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:1d6|PRESIZEEQ:T|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:1d8|PRESIZEEQ:S|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:1d10|PRESIZEEQ:M|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:2d8|PRESIZEEQ:L|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:3d8|PRESIZEEQ:H|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:4d8|PRESIZEEQ:G|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+Flurry of Blows.MOD	DAMAGE:6d8|PRESIZEEQ:C|PREVARGTEQ:MonkUnarmedLVL,8|PREVARLTEQ:MonkUnarmedLVL,11
+# Level 12+
+Flurry of Blows.MOD	DAMAGE:1d4|PRESIZEEQ:F|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:1d6|PRESIZEEQ:D|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:1d8|PRESIZEEQ:T|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:1d10|PRESIZEEQ:S|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:2d6|PRESIZEEQ:M|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:3d6|PRESIZEEQ:L|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:4d6|PRESIZEEQ:H|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:6d6|PRESIZEEQ:G|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+Flurry of Blows.MOD	DAMAGE:8d6|PRESIZEEQ:C|PREVARGTEQ:MonkUnarmedLVL,12|PREVARLTEQ:MonkUnarmedLVL,15
+# Level 16+
+Flurry of Blows.MOD	DAMAGE:1d6|PRESIZEEQ:F|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:1d8|PRESIZEEQ:D|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:1d10|PRESIZEEQ:T|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:2d6|PRESIZEEQ:S|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:2d8|PRESIZEEQ:M|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:3d8|PRESIZEEQ:L|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:4d8|PRESIZEEQ:H|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:6d8|PRESIZEEQ:G|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+Flurry of Blows.MOD	DAMAGE:8d8|PRESIZEEQ:C|PREVARGTEQ:MonkUnarmedLVL,16|PREVARLTEQ:MonkUnarmedLVL,19
+# Level 20
+Flurry of Blows.MOD	DAMAGE:1d8|PRESIZEEQ:F|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:1d10|PRESIZEEQ:D|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:2d6|PRESIZEEQ:T|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:2d8|PRESIZEEQ:S|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:2d10|PRESIZEEQ:M|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:4d8|PRESIZEEQ:L|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:6d8|PRESIZEEQ:H|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:8d8|PRESIZEEQ:G|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+Flurry of Blows.MOD	DAMAGE:12d8|PRESIZEEQ:C|PREVARGTEQ:MonkUnarmedLVL,20|PREVARLTEQ:MonkUnarmedLVL,20
+
+# Multiple 
+
+Bite	KEY:Bite ~ Animal Companion
+
+
+
+
 PROPOSED: http://jira.pcgen.org/browse/NEWTAG-331
 
 NATURALWEAPON:A|B|C|D|E|F|A|B|C|D|E|F|Z

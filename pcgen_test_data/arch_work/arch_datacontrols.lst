@@ -1,11 +1,31 @@
 
+#	VARTYPEDEF:x|y
+
+#	x is a legal data format (currently NUMBER, GRIDPOINT)
+#	y is a name for the data type ("traditional variables" should be defined as "VAR", other items are up to the data team)
+#	Known Limitations:
+
+#	x will have a lot more legal values going forward (STRING, etc. - many of those that are legal on QUALIFY today) 
+#	Note that a y value MUST have a VARTYPEDEF in the Data Control file for it to be legal in the "y" slot of LOCAL in the Variable File. 
+#VARTYPEDEF:GRIDPOINT|AREA
+
+
+VARTYPEDEF:NUMBER|VAR
+VARTYPEDEF:POINT|AREA
 
 
 
-FACTDEF:x|y|z <> ...tokens...
-x is a file type (e.g. DEITY for Deity LST files)
-y is the identifier type (STRING, etc.)
-z is the identifier (then usable as x in the FACT LST token)
+
+
+
+
+# FACTDEF and FACTSETDEF Proposals use this
+
+
+#	FACTDEF:x|y|z <> ...tokens...
+#	x is a file type (e.g. DEITY for Deity LST files)
+#	y is the identifier type (STRING, etc.)
+#	z is the identifier (then usable as x in the FACT LST token)
 
 
 
