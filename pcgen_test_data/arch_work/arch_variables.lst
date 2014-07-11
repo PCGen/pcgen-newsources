@@ -12,6 +12,15 @@
 
 #	LOCAL:EQUIPMENT|VAR=AllowedCharms	EXPLANATION:Long form for the AllowedCharms Variable
 
+#GLOBAL:x|y
+#	x is a variable type (see VARTYPEDEF) - NOTE: optional, if absent assumes 'VAR;
+#	y is the variable name
+
+#	GLOBAL:VAR|ClericLVL
+#	VAR|ClericLVL
+#	ClericLVL
+#	ALL the above are currently legal
+
 ###Block: Local Vars
 
 LOCAL:EQUIPMENT|AllowedCharms			EXPLANATION:This determines how many charms are allowed on the item (Valid is 1 or 5)
@@ -32,3 +41,9 @@ LOCAL:EQUIPMENT|SpellEffectTierFourTimes	EXPLANATION:Spell Effect EQMOD - Determ
 
 #Future Development:
 ###Block: GLOBAL
+
+AREA|Face
+#(note that since GLOBAL is implied, this is equal to GLOBAL:AREA|Face)
+#MODIFY:AREA=Face|SET|10,10	- LONG TERM x=y is not allowed today
+
+
