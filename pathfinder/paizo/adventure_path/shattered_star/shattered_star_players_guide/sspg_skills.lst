@@ -1,12 +1,17 @@
-SOURCELONG:Shattered star Player's Guide	SOURCESHORT:SSPG	SOURCEWEB:http://paizo.com/products/btpy8txj?Pathfinder-Adventure-Path-Shattered-Star-Players-Guide		SOURCEDATE:2012-08
-# Original Entry by: Eric C Smith (Maredudd)
-# Orginal Entry on: 01/02/2014
+# CVS $Revision: $ $Author: $ -- Wed Jul 23 13:38:17 2014 -- reformated by prettylst.pl v1.51 (build 24365)
+SOURCELONG:Shattered Star Player's Guide	SOURCESHORT:SSPG	SOURCEWEB:http://paizo.com/products/btpy8txj?Pathfinder-Adventure-Path-Shattered-Star-Players-Guide	SOURCEDATE:2012-08
+# Original Entry by: Stefan Radermacher
+# Orginal Entry on: 7/23/2014
 
-###Block: Conditional Skills for output only
-# Skill Name			Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
-Perception (Distinguishing Statue-Like Creatures)	KEYSTAT:WIS	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Perception (Distinguishing StatueLike Creatures).MISC"),SKILL.Perception.MISC
+# Skill Name			Situational Skill Use
+Diplomacy.MOD			SITUATION:In Magnimar
+Intimidate.MOD			SITUATION:In Magnimar
+Knowledge (History).MOD		SITUATION:Magnimar
+Knowledge (History).MOD		SITUATION:Varisia
+Knowledge (Geography).MOD	SITUATION:Varisia
+Perception.MOD			SITUATION:Distinguishing Statue-Like Creatures
+Survival.MOD			SITUATION:Varisia
 
-
-###Block: Skill .MODs
-# Skill Name	Bonus to skill									Bonus to skill rank
-Perception.MOD		BONUS:SKILL|Perception (Distinguishing Statue-Like Creatures)|SKILL.Perception.MISC		BONUS:SKILLRANK|Perception (Distinguishing Statue-Like Creatures)|skillinfo("TOTALRANK","Perception")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Perception (Distinguishing StatueLike Creatures).MISC"),SKILL.Perception.MISC
+#
+# End
+#
