@@ -1,4 +1,338 @@
-# CVS $Revision: 12957 $ $Author: jbaril $ -- Tue Dec 10 13:08:21 2013 -- reformated by prettylst.pl v1.50 (build 21703)
-SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/products/btpy95d1	SOURCEDATE:2014-08
+# CVS $Revision: 12957 $ $Author: jbaril $ -- Sun Aug  3 18:25:16 2014 -- reformated by prettylst.pl v1.51 (build 23662)
+SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2014-08
 # Original Entry by: Stefan Radermacher
 
+
+# Class Name		Type
+CLASS:Alchemist.MOD	TYPE:Alchemist
+# Class Name		Multiple Requirements
+CLASS:Alchemist.MOD	PREMULT:1,[PRECLASS:1,Alchemist],[!PRECLASS:1,TYPE=Alchemist]
+
+# Class Name		Type
+CLASS:Barbarian.MOD	TYPE:Barbarian
+# Class Name		Multiple Requirements
+CLASS:Barbarian.MOD	PREMULT:1,[PRECLASS:1,Barbarian],[!PRECLASS:1,TYPE=Barbarian]
+
+# Class Name	Type
+CLASS:Bard.MOD	TYPE:Bard
+# Class Name	Multiple Requirements
+CLASS:Bard.MOD	PREMULT:1,[PRECLASS:1,Bard],[!PRECLASS:1,TYPE=Bard]
+
+# Class Name	Type
+CLASS:Druid.MOD	TYPE:Druid
+# Class Name	Multiple Requirements
+CLASS:Druid.MOD	PREMULT:1,[PRECLASS:1,Druid],[!PRECLASS:1,TYPE=Druid]
+
+# Class Name	Type
+CLASS:Fighter.MOD	TYPE:Fighter
+# Class Name	Multiple Requirements
+CLASS:Fighter.MOD	PREMULT:1,[PRECLASS:1,Fighter],[!PRECLASS:1,TYPE=Fighter]
+
+# Class Name	Type
+CLASS:Monk.MOD	TYPE:Monk
+# Class Name	Multiple Requirements
+CLASS:Monk.MOD	PREMULT:1,[PRECLASS:1,Monk],[!PRECLASS:1,TYPE=Monk]
+
+# Class Name	Type
+CLASS:Oracle.MOD	TYPE:Oracle
+# Class Name	Multiple Requirements
+CLASS:Oracle.MOD	PREMULT:1,[PRECLASS:1,Oracle],[!PRECLASS:1,TYPE=Oracle]
+
+# Class Name	Type
+CLASS:Ranger.MOD	TYPE:Ranger
+# Class Name	Multiple Requirements
+CLASS:Ranger.MOD	PREMULT:1,[PRECLASS:1,Ranger],[!PRECLASS:1,TYPE=Ranger]
+
+# Class Name	Type
+CLASS:Rogue.MOD	TYPE:Rogue
+# Class Name	Multiple Requirements
+CLASS:Rogue.MOD	PREMULT:1,[PRECLASS:1,Rogue],[!PRECLASS:1,TYPE=Rogue]
+
+# Class Name		Type
+CLASS:Sorcerer.MOD	TYPE:Sorcerer
+# Class Name		Multiple Requirements
+CLASS:Sorcerer.MOD	PREMULT:1,[PRECLASS:1,Sorcerer],[!PRECLASS:1,TYPE=Sorcerer]
+
+# Class Name	Type
+CLASS:Witch.MOD	TYPE:Witch
+# Class Name	Multiple Requirements
+CLASS:Witch.MOD	PREMULT:1,[PRECLASS:1,Witch],[!PRECLASS:1,TYPE=Witch]
+
+# Class Name	Type
+CLASS:Wizard.MOD	TYPE:Wizard
+# Class Name	Multiple Requirements
+CLASS:Wizard.MOD	PREMULT:1,[PRECLASS:1,Wizard],[!PRECLASS:1,TYPE=Wizard]
+
+###
+###################################################################################
+###
+
+# Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
+CLASS:Arcanist	HD:6		TYPE:Base.PC.Sorcerer.Wizard	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
+# Class Name	Skill Pts/Lvl
+CLASS:Arcanist	STARTSKILLPTS:2
+# Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
+CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
+
+
+###Block:Proficiencies
+1	AUTO:FEAT|Simple Weapon Proficiency
+###Block: Variable Progression
+1	BONUS:VAR|MaxArcanistReservoir|CL*2
+###Block: Level Progression
+1	BONUS:ABILITYPOOL|Arcanist Exploit|(CL+1)/2
+1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Consume Spells|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistConsumeSpells
+1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Arcane Reservoir|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistArcaneReservoir
+1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Arcanist Exploits|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistArcanistExploits
+1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Cantrips|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistCantrips
+11									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Greater Arcanist Exploits|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistGreaterArcanistExploits
+20									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Magical Supremacy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistMagicalSupremacy
+###Block: Spell Level progression
+1	CAST:4,2
+2	CAST:5,2
+3	CAST:5,3
+4	CAST:6,3,1
+5	CAST:6,4,2
+6	CAST:7,4,2,1
+7	CAST:7,5,3,2
+8	CAST:8,5,3,2,1
+9	CAST:8,5,4,3,2
+10	CAST:9,5,4,3,2,1
+11	CAST:9,5,5,4,3,2
+12	CAST:9,5,5,4,3,2,1
+13	CAST:9,5,5,4,4,3,2
+14	CAST:9,5,5,4,4,3,2,1
+15	CAST:9,5,5,4,4,4,3,2
+16	CAST:9,5,5,4,4,4,3,2,1
+17	CAST:9,5,5,4,4,4,4,3,2
+18	CAST:9,5,5,4,4,4,4,3,2,1
+19	CAST:9,5,5,4,4,4,4,4,3,2
+20	CAST:9,5,5,4,4,4,4,4,3,3
+
+
+
+###
+###################################################################################
+###
+
+
+# Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
+CLASS:Bloodrager	HD:10		TYPE:Base.PC.Barbarian.Sorcerer	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
+# Class Name	Multiple Requirements
+CLASS:Bloodrager	PREMULT:1,[PRECLASS:1,Bloodrager],[!PRECLASS:1,TYPE=Barbarian,TYPE=Sorcerer]
+# Class Name	Skill Pts/Lvl
+CLASS:Bloodrager	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level								Use Spell List
+CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bloodrager|CL-3|PRECLASS:1,Bloodrager=4	SPELLLIST:1|Bloodrager
+###Block:Proficiencies
+1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies
+###Block: Bloodline
+1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Bloodline
+###Block: Variable Progression
+1	BONUS:VAR|RageLVL|CL
+2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE
+2	BONUS:VAR|UncannyDodgeLevel|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerUncannyDodge
+5	BONUS:VAR|UncannyDodgeLevel|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerImprovedUncannyDodge
+7	BONUS:VAR|BloodragerDRLVL|CL
+###Block: Level Progression
+1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodrage
+1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Fast Movement|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerFastMovement
+2	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
+3	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Blood Sanctuary|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodSanctuary
+4	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Blood Casting|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodCasting
+4	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Eschew Materials|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerEschewMaterials
+7	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Damage Reduction|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerDamageReduction
+11	ABILITY:Bloodrager Class Ability|AUTOMATIC|Greater Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerGreaterBloodrage
+14	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Indomitable Will|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerIndomitableWill
+17	ABILITY:Bloodrager Class Ability|AUTOMATIC|Tireless Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerTirelessBloodrage
+20	ABILITY:Bloodrager Class Ability|AUTOMATIC|Mighty Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerMightyBloodrage
+###Block: Spell Level progression
+4	CAST:0,1		KNOWN:0,2
+5	CAST:0,1		KNOWN:0,3
+6	CAST:0,1		KNOWN:0,4
+7	CAST:0,1,1		KNOWN:0,4,2
+8	CAST:0,1,1		KNOWN:0,4,3
+9	CAST:0,2,1		KNOWN:0,5,4
+10	CAST:0,2,1,1	KNOWN:0,5,4,2
+11	CAST:0,2,1,1	KNOWN:0,5,4,3
+12	CAST:0,2,2,1	KNOWN:0,6,5,4
+13	CAST:0,3,2,1,1	KNOWN:0,6,5,4,2
+14	CAST:0,3,2,1,1	KNOWN:0,6,5,4,3
+15	CAST:0,3,2,2,1	KNOWN:0,6,6,5,4
+16	CAST:0,3,3,2,1	KNOWN:0,6,6,5,4
+17	CAST:0,4,3,2,1	KNOWN:0,6,6,5,4
+18	CAST:0,4,3,2,2	KNOWN:0,6,6,6,5
+19	CAST:0,4,3,3,2	KNOWN:0,6,6,6,5
+20	CAST:0,4,4,3,2	KNOWN:0,6,6,6,5
+
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
+CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
+# Class Name	Required AL			Multiple Requirements
+CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Druid,TYPE=Ranger]
+# Class Name	Skill Pts/Lvl
+CLASS:Hunter	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level			Use Spell List
+CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Hunter|CL	SPELLLIST:1|Druid
+###Block:Proficiencies
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies
+###Block: Spell Alignment Restrictions
+1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+###Block: Level Progression Abilities
+#3	BONUS:ABILITYPOOL|Teamwork Feat|CL/3|PREMULT:1,[!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat],[!PREABILITY:1,CATEGORY=Special Ability,Determination ~ Preacher]
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOrisons
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalCompanion
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalFocus
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Nature Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterNatureTraining
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
+2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Precise Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterPreciseCompanion
+2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
+3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
+3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
+5	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
+8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSwiftTracker
+8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Second Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSecondAnimalFocus
+20	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
+###Block: Vars
+1	BONUS:VAR|AnimalCompanionLVL|CL|PREABILITY:1,CATEGORY=Special Ability,TYPE.HunterAnimalCompanion
+1	BONUS:VAR|WildEmpathyLVL|CL
+2	BONUS:VAR|TrackLVL|CL
+###Block: Level progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,3
+4	CAST:4,3,1
+5	CAST:4,4,2
+6	CAST:5,4,3
+7	CAST:5,4,3,1
+8	CAST:5,4,4,2
+9	CAST:5,5,4,3
+10	CAST:5,5,4,3,1
+11	CAST:5,5,4,4,2
+12	CAST:5,5,5,4,3
+13	CAST:5,5,5,4,3,1
+14	CAST:5,5,5,4,4,2
+15	CAST:5,5,5,5,4,3
+16	CAST:5,5,5,5,4,3,1
+17	CAST:5,5,5,5,4,4,2
+18	CAST:5,5,5,5,5,4,3
+19	CAST:5,5,5,5,5,5,4
+20	CAST:5,5,5,5,5,5,5
+
+
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
+CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+# Class Name		Multiple Requirements
+CLASS:Investigator	PREMULT:1,[PRECLASS:1,Investigator],[!PRECLASS:1,TYPE=Alchemist,TYPE=Rogue]
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Investigator	STARTSKILLPTS:6	CSKILL:Acrobatics|Appraise|Bluff|Climb|TYPE=Craft|Diplomacy|Disable Device|Disguise|Escape Artist|Heal|Intimidate|TYPE=Knowledge|Perception|TYPE=Perform|TYPE=Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Use Magic Device
+# Class Name		Spell Stat		Spell Type		Memorize		Spellbook		Caster level				Use Spell List
+CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Investigator|CL	SPELLLIST:1|Alchemist
+###Block: Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Investigator ~ Weapon and Armor Proficiency|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
+1																			AUTO:FEAT|Armor Proficiency (Light)
+###Block: Alchemist Book
+1	ABILITY:Internal|AUTOMATIC|Free Formula Book|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Investigator=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Investigator=1]]
+###Block: Vars
+1	BONUS:VAR|AlchemistAlchemyLVL|CL	BONUS:VAR|TrapfindingLVL|CL
+3	BONUS:VAR|InvestigatorTalentLVL|CL
+3	BONUS:VAR|RogueTrapSenseLVL|CL
+4	BONUS:VAR|RogueSneakAttackLVL|CL-3
+###Block: Class Abilities
+1	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemy ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorAlchemy
+1	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Inspiration|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorInspiration
+1	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trapfinding|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorTrapfinding
+2	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Resistance ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance
+2	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Use ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonUse
+3	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trap Sense|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTrapSense
+3	ABILITY:Special Ability|AUTOMATIC|Investigator ~ Investigator Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTalents
+4	ABILITY:Alchemist Class Ability|AUTOMATIC|Swift Alchemy ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSwiftAlchemy
+4	ABILITY:Special Ability|AUTOMATIC|Sneak Attack|Rogue ~ Sneak Attack|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSneakAttack
+5	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemist ~ Poison Resistance 4|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance4
+8	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemist ~ Poison Resistance 6|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance6
+10	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemist ~ Poison Immunity|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonImmunity
+###Block: Spellcasting
+1	CAST:0,1
+2	CAST:0,2
+3	CAST:0,3
+4	CAST:0,3,1
+5	CAST:0,4,2
+6	CAST:0,4,3
+7	CAST:0,4,3,1
+8	CAST:0,4,4,2
+9	CAST:0,5,4,3
+10	CAST:0,5,4,3,1
+11	CAST:0,5,4,4,2
+12	CAST:0,5,5,4,3
+13	CAST:0,5,5,4,3,1
+14	CAST:0,5,5,4,4,2
+15	CAST:0,5,5,5,4,3
+16	CAST:0,5,5,5,4,3,1
+17	CAST:0,5,5,5,4,4,2
+18	CAST:0,5,5,5,5,4,3
+19	CAST:0,5,5,5,5,5,4
+20	CAST:0,5,5,5,5,5,5
+
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
+CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.38	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|CL	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will,BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+# Class Name	Multiple Requirements
+CLASS:Skald		PREMULT:1,[PRECLASS:1,Skald],[!PRECLASS:1,TYPE=Barbarian,TYPE=Bard]
+# Class Name	Skill Pts/Lvl
+CLASS:Skald		STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
+CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Skald|CL	SPELLLIST:1|Bard
+###Block: Proficiencies
+1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Proficiencies ~ Skald|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
+###Block: Vars
+1	BONUS:VAR|RagingSongLVL|CL
+3	BONUS:VAR|RageLVL|CL
+3	BONUS:VAR|RagePowersLVL|CL
+9	BONUS:VAR|BarbarianDRLVL|CL
+###Block: Class Abilities
+1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Bardic Knowledge|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldBardicKnowledge
+1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Cantrips|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldCantrips
+1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Raging Song|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldRagingSong
+1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Scribe Scroll|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldScribeScroll
+2	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Well-Versed|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWellVersed
+3	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Rage Powers|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldRagePowers
+5	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Spell Kenning|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldSpellKenning
+7	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Lore Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldLoreMaster
+9	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Damage Reduction|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldDamageReduction
+10	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Dirge of Doom|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldDirgeOfDoom
+20	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Master Skald|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldMasterSkald
+###Block: Spellcasting
+1	CAST:0,1			KNOWN:4,2
+2	CAST:0,2			KNOWN:5,3
+3	CAST:0,3			KNOWN:6,4
+4	CAST:0,3,1			KNOWN:6,4,2
+5	CAST:0,4,2			KNOWN:6,4,3
+6	CAST:0,4,3			KNOWN:6,4,4
+7	CAST:0,4,3,1		KNOWN:6,5,4,2
+8	CAST:0,4,4,2		KNOWN:6,5,4,3
+9	CAST:0,5,4,3		KNOWN:6,5,4,4
+10	CAST:0,5,4,3,1		KNOWN:6,5,5,4,2
+11	CAST:0,5,4,4,2		KNOWN:6,6,5,4,3
+12	CAST:0,5,5,4,3		KNOWN:6,6,5,4,4
+13	CAST:0,5,5,4,3,1		KNOWN:6,6,5,5,4,2
+14	CAST:0,5,5,4,4,2		KNOWN:6,6,6,5,4,3
+15	CAST:0,5,5,5,4,3		KNOWN:6,6,6,5,4,4
+16	CAST:0,5,5,5,4,3,1	KNOWN:6,6,6,5,5,4,2
+17	CAST:0,5,5,5,4,4,2	KNOWN:6,6,6,6,5,4,3
+18	CAST:0,5,5,5,5,4,3	KNOWN:6,6,6,6,5,4,4
+19	CAST:0,5,5,5,5,5,4	KNOWN:6,6,5,6,5,5,4
+20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
+
+
+#
+# End
+#
