@@ -68,7 +68,7 @@ CLASS:Wizard.MOD	PREMULT:1,[PRECLASS:1,Wizard],[!PRECLASS:1,TYPE=Wizard]
 ###
 
 # Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Arcanist	HD:6		TYPE:Base.PC.Sorcerer.Wizard	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
+CLASS:Arcanist	HD:6		TYPE:Base.PC.Sorcerer.Wizard	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|CL/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
 # Class Name	Skill Pts/Lvl
 CLASS:Arcanist	STARTSKILLPTS:2
 # Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
@@ -117,7 +117,7 @@ CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arc
 
 
 # Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Bloodrager	HD:10		TYPE:Base.PC.Barbarian.Sorcerer	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
+CLASS:Bloodrager	HD:10		TYPE:Base.PC.Barbarian.Sorcerer	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
 # Class Name	Multiple Requirements
 CLASS:Bloodrager	PREMULT:1,[PRECLASS:1,Bloodrager],[!PRECLASS:1,TYPE=Barbarian,TYPE=Sorcerer]
 # Class Name	Skill Pts/Lvl
@@ -169,7 +169,7 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
+CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:SAVE|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
 # Class Name	Required AL			Multiple Requirements
 CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Druid,TYPE=Ranger]
 # Class Name	Skill Pts/Lvl
@@ -228,7 +228,7 @@ CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|
 
 
 # Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
-CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|CL	BONUS:SAVE|BASE.Fortitude|CL/3	BONUS:SAVE|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
 # Class Name		Multiple Requirements
 CLASS:Investigator	PREMULT:1,[PRECLASS:1,Investigator],[!PRECLASS:1,TYPE=Alchemist,TYPE=Rogue]
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -246,18 +246,15 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 3	BONUS:VAR|RogueTrapSenseLVL|CL
 4	BONUS:VAR|RogueSneakAttackLVL|CL-3
 ###Block: Class Abilities
-1	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemy ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorAlchemy
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist ~ Alchemy|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorAlchemy
 1	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Inspiration|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorInspiration
 1	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trapfinding|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorTrapfinding
-2	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Resistance ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance
-2	ABILITY:Alchemist Class Ability|AUTOMATIC|Poison Use ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonUse
+2	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Poison Resistance|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance
+2	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist ~ Poison Use|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonUse
 3	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trap Sense|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTrapSense
-3	ABILITY:Special Ability|AUTOMATIC|Investigator ~ Investigator Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTalents
-4	ABILITY:Alchemist Class Ability|AUTOMATIC|Swift Alchemy ~ Alchemist|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSwiftAlchemy
+3	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Investigator Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTalents
+4	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist ~ Swift Alchemy|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSwiftAlchemy
 4	ABILITY:Special Ability|AUTOMATIC|Sneak Attack|Rogue ~ Sneak Attack|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSneakAttack
-5	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemist ~ Poison Resistance 4|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance4
-8	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemist ~ Poison Resistance 6|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance6
-10	ABILITY:Alchemist Class Ability|AUTOMATIC|Alchemist ~ Poison Immunity|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonImmunity
 ###Block: Spellcasting
 1	CAST:0,1
 2	CAST:0,2
@@ -282,7 +279,7 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.38	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|CL	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will,BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.38	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|CL	BONUS:SAVE|BASE.Reflex|CL/3	BONUS:SAVE|BASE.Will,BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
 # Class Name	Multiple Requirements
 CLASS:Skald		PREMULT:1,[PRECLASS:1,Skald],[!PRECLASS:1,TYPE=Barbarian,TYPE=Bard]
 # Class Name	Skill Pts/Lvl
@@ -336,3 +333,4 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 #
 # End
 #
+
