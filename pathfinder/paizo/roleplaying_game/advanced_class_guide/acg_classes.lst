@@ -2,73 +2,12 @@
 SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2014-08
 # Original Entry by: Stefan Radermacher
 
-
-# Class Name		Type
-CLASS:Alchemist.MOD	TYPE:Alchemist
-# Class Name		Multiple Requirements
-CLASS:Alchemist.MOD	PREMULT:1,[PRECLASS:1,Alchemist],[!PRECLASS:1,TYPE=Alchemist]
-
-# Class Name		Type
-CLASS:Barbarian.MOD	TYPE:Barbarian
-# Class Name		Multiple Requirements
-CLASS:Barbarian.MOD	PREMULT:1,[PRECLASS:1,Barbarian],[!PRECLASS:1,TYPE=Barbarian]
-
-# Class Name	Type
-CLASS:Bard.MOD	TYPE:Bard
-# Class Name	Multiple Requirements
-CLASS:Bard.MOD	PREMULT:1,[PRECLASS:1,Bard],[!PRECLASS:1,TYPE=Bard]
-
-# Class Name	Type
-CLASS:Druid.MOD	TYPE:Druid
-# Class Name	Multiple Requirements
-CLASS:Druid.MOD	PREMULT:1,[PRECLASS:1,Druid],[!PRECLASS:1,TYPE=Druid]
-
-# Class Name	Type
-CLASS:Fighter.MOD	TYPE:Fighter
-# Class Name	Multiple Requirements
-CLASS:Fighter.MOD	PREMULT:1,[PRECLASS:1,Fighter],[!PRECLASS:1,TYPE=Fighter]
-
-# Class Name	Type
-CLASS:Monk.MOD	TYPE:Monk
-# Class Name	Multiple Requirements
-CLASS:Monk.MOD	PREMULT:1,[PRECLASS:1,Monk],[!PRECLASS:1,TYPE=Monk]
-
-# Class Name	Type
-CLASS:Oracle.MOD	TYPE:Oracle
-# Class Name	Multiple Requirements
-CLASS:Oracle.MOD	PREMULT:1,[PRECLASS:1,Oracle],[!PRECLASS:1,TYPE=Oracle]
-
-# Class Name	Type
-CLASS:Ranger.MOD	TYPE:Ranger
-# Class Name	Multiple Requirements
-CLASS:Ranger.MOD	PREMULT:1,[PRECLASS:1,Ranger],[!PRECLASS:1,TYPE=Ranger]
-
-# Class Name	Type
-CLASS:Rogue.MOD	TYPE:Rogue
-# Class Name	Multiple Requirements
-CLASS:Rogue.MOD	PREMULT:1,[PRECLASS:1,Rogue],[!PRECLASS:1,TYPE=Rogue]
-
-# Class Name		Type
-CLASS:Sorcerer.MOD	TYPE:Sorcerer
-# Class Name		Multiple Requirements
-CLASS:Sorcerer.MOD	PREMULT:1,[PRECLASS:1,Sorcerer],[!PRECLASS:1,TYPE=Sorcerer]
-
-# Class Name	Type
-CLASS:Witch.MOD	TYPE:Witch
-# Class Name	Multiple Requirements
-CLASS:Witch.MOD	PREMULT:1,[PRECLASS:1,Witch],[!PRECLASS:1,TYPE=Witch]
-
-# Class Name	Type
-CLASS:Wizard.MOD	TYPE:Wizard
-# Class Name	Multiple Requirements
-CLASS:Wizard.MOD	PREMULT:1,[PRECLASS:1,Wizard],[!PRECLASS:1,TYPE=Wizard]
-
 ###
 ###################################################################################
 ###
 
 # Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Arcanist	HD:6		TYPE:Base.PC.Sorcerer.Wizard	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|CL/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
+CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|CL/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
 # Class Name	Skill Pts/Lvl
 CLASS:Arcanist	STARTSKILLPTS:2
 # Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
@@ -117,7 +56,7 @@ CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arc
 
 
 # Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Bloodrager	HD:10		TYPE:Base.PC.Barbarian.Sorcerer	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
+CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
 # Class Name	Multiple Requirements
 CLASS:Bloodrager	PREMULT:1,[PRECLASS:1,Bloodrager],[!PRECLASS:1,TYPE=Barbarian,TYPE=Sorcerer]
 # Class Name	Skill Pts/Lvl
