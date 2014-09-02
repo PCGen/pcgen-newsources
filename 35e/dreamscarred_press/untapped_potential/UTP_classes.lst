@@ -58,7 +58,7 @@ SOURCELONG:Untapped Potential: New Horizons in Psionics	SOURCESHORT:UTP	SOURCEWE
 #Marksman
 
 # Class Name	Hit Dice	Type				Abbreviation	Max Level	Source Page			Save checks bonus											Combat bonus					Modify VAR
-CLASS:Marksman	HD:6		TYPE:Base.Psionic.PC	ABB:Mkn		MAXLEVEL:20	SOURCEPAGE:pages 22-29	BONUS:CHECKS|BASE.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Marksman	HD:6		TYPE:Base.Psionic.PC	ABB:Mkn		MAXLEVEL:20	SOURCEPAGE:p.22	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel"(APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude|classlevel"(APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel"(APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Marksman	STARTSKILLPTS:4	CSKILL:Balance|Climb|Concentration|TYPE.Craft|Escape Artist|Hide|Intimidate|Jump|Knowledge (Psionics)|Listen|TYPE.Perform|TYPE.Profession|Sense Motive|Spot|Survival|Use Psionic Device|Use Rope
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
@@ -69,7 +69,7 @@ CLASS:Marksman	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Mar
 1																																																												ABILITY:Special Ability|AUTOMATIC|Buckler Proficiency												AUTO:FEAT|Armor Proficiency (Light)
 
 #
-1											BONUS:VAR|MarksmanML|var("BL=Marksman")																																							DEFINE:MarksmanML|CL																		TEMPLATE:Psionic
+1											BONUS:VAR|MarksmanML|var("BL=Marksman")																																							DEFINE:MarksmanML|0	BONUS:VAR|MarksmanML|CL																		TEMPLATE:Psionic
 1											BONUS:VAR|BasePowerPoints|1	BONUS:VAR|BasePowerPoints|1|PREVARGTEQ:MarksmanML,2	BONUS:VAR|BasePowerPoints|1|PREVARGTEQ:MarksmanML,3	BONUS:VAR|BasePowerPoints|1|PREVARGTEQ:MarksmanML,4
 1											BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:MarksmanML,5	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:MarksmanML,6	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:MarksmanML,7	BONUS:VAR|BasePowerPoints|2|PREVARGTEQ:MarksmanML,8
 1											BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:MarksmanML,9	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:MarksmanML,10	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:MarksmanML,11	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:MarksmanML,12	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:MarksmanML,13
@@ -121,7 +121,7 @@ CLASS:Society Mind	SPELLSTAT:WIS	SPELLTYPE:Psionic	MEMORIZE:YES	KNOWNSPELLS:LEVE
 
 1																																																																		AUTO:FEAT|Simple Weapon Proficiency
 1																																																																		AUTO:FEAT|Armor Proficiency (Light)
-1						BONUS:VAR|SocietyMindML|var("BL=Society Mind")																																	DEFINE:SocietyMindML|CL														TEMPLATE:Psionic
+1						BONUS:VAR|SocietyMindML|var("BL=Society Mind")																																	DEFINE:SocietyMindML|0	BONUS:VAR|SocietyMindML|CL														TEMPLATE:Psionic
 1						BONUS:VAR|BasePowerPoints|2	BONUS:VAR|BasePowerPoints|4|PREVARGTEQ:SocietyMindML,2	BONUS:VAR|BasePowerPoints|5|PREVARGTEQ:SocietyMindML,3	BONUS:VAR|BasePowerPoints|6|PREVARGTEQ:SocietyMindML,4
 1						BONUS:VAR|BasePowerPoints|8|PREVARGTEQ:SocietyMindML,5	BONUS:VAR|BasePowerPoints|10|PREVARGTEQ:SocietyMindML,6	BONUS:VAR|BasePowerPoints|11|PREVARGTEQ:SocietyMindML,7	BONUS:VAR|BasePowerPoints|12|PREVARGTEQ:SocietyMindML,8
 1						BONUS:VAR|BasePowerPoints|14|PREVARGTEQ:SocietyMindML,9	BONUS:VAR|BasePowerPoints|16|PREVARGTEQ:SocietyMindML,10	BONUS:VAR|BasePowerPoints|18|PREVARGTEQ:SocietyMindML,11	BONUS:VAR|BasePowerPoints|20|PREVARGTEQ:SocietyMindML,12
