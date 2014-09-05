@@ -7,7 +7,7 @@ SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/produ
 ###
 
 # Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|CL/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
+CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
 # Class Name	Skill Pts/Lvl
 CLASS:Arcanist	STARTSKILLPTS:2
 # Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
@@ -56,7 +56,7 @@ CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arc
 
 
 # Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
+CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|0	BONUS:VAR|BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
 # Class Name	Multiple Requirements
 CLASS:Bloodrager	PREMULT:1,[PRECLASS:1,Bloodrager],[!PRECLASS:1,TYPE=Barbarian,TYPE=Sorcerer]
 # Class Name	Skill Pts/Lvl
@@ -68,7 +68,7 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies
 ###Block: Bloodline
-1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Bloodline
+1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Bloodline|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodline
 ###Block: Variable Progression
 1	BONUS:VAR|RageLVL|CL
 2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE
@@ -108,7 +108,7 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:SAVE|BASE.Will|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
+CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|0	BONUS:VAR|HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
 # Class Name	Required AL			Multiple Requirements
 CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,TYPE=Druid,TYPE=Ranger]
 # Class Name	Skill Pts/Lvl
@@ -167,7 +167,7 @@ CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|
 
 
 # Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
-CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|CL	BONUS:SAVE|BASE.Fortitude|CL/3	BONUS:SAVE|BASE.Will,BASE.Reflex|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|0	BONUS:VAR|InvestigatorLVL|classlevel("APPLIEDAS=NONEPIC")	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
 # Class Name		Multiple Requirements
 CLASS:Investigator	PREMULT:1,[PRECLASS:1,Investigator],[!PRECLASS:1,TYPE=Alchemist,TYPE=Rogue]
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -218,7 +218,7 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.38	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|CL	BONUS:SAVE|BASE.Reflex|CL/3	BONUS:SAVE|BASE.Will,BASE.Fortitude|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Skill
+CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.38	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|0	BONUS:VAR|SkaldLVL|CL	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
 # Class Name	Multiple Requirements
 CLASS:Skald		PREMULT:1,[PRECLASS:1,Skald],[!PRECLASS:1,TYPE=Barbarian,TYPE=Bard]
 # Class Name	Skill Pts/Lvl
