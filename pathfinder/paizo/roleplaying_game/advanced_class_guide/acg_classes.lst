@@ -106,6 +106,59 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 19	CAST:0,4,3,3,2	KNOWN:0,6,6,6,5
 20	CAST:0,4,4,3,2	KNOWN:0,6,6,6,5
 
+###Block: Brawler
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define										Combat bonus											Modify VAR																Monster Role	Bonus
+CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Brw		MAXLEVEL:20	SOURCEPAGE:p.23		DEFINE:BrawlerLVL|0	DEFINE:MartialFlexibilityLVL|0	DEFINE:ManeuverTrainingLVL|0	DEFINE:MartialTrainingLVL|0	DEFINE:BrawlerMFBonus|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|BrawlerLVL|CL	ROLE:None		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|CL/3
+# Class Name	Skill Pts/Lvl
+CLASS:Brawler	STARTSKILLPTS:4
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Proficiencies ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Class Skills ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
+#PREVAREQ:BrawlerDefaultSkill,0
+###Block:
+2	KIT:1|Brawler Brawler's Flurry
+###Block: Brawler Bonus Feats
+1	AUTO:FEAT|Improved Unarmed Strike
+###Block:
+1	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Brawler's Cunning|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersCunning
+1	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Martial Flexibility|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerMartialFlexibility
+1	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Martial Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerMartialTraining
+2	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Bonus Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBonusFeat
+2	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Brawler's Flurry|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersFlurry
+3	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Maneuver Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerManeuverTraining
+4	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ AC Bonus|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerACBonus
+4	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Knockout|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerKnockout
+5	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Brawler's Strike|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersStrike
+5	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Close Weapon Mastery|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerCloseWeaponMastery
+16	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Awesome Blow|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerAwesomeBlow
+20	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Improved Awesome Blow|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerImprovedAwesomeBlow
+###Block:
+1	ABILITY:Internal|AUTOMATIC|Brawler ~ Unarmed Damage
+###Block: Level progression
+#           F   D   T   S   M   L   H   G   C
+1	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6		UMULT:2
+2	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
+3	UDAM:1d1,1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6
+4	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6
+5	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6
+6	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6
+7	UDAM:1d2,1d3,1d4,1d6,1d8,2d6,3d6,4d6,6d6
+8	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8
+9	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8
+10	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8
+11	UDAM:1d3,1d4,1d6,1d8,1d10,2d8,3d8,4d8,6d8
+12	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6
+13	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6
+14	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6
+15	UDAM:1d4,1d6,1d8,1d10,2d6,3d6,4d6,6d6,8d6
+16	UDAM:1d6,1d8,1d10,2d6,2d8,3d8,4d8,6d8,8d8
+17	UDAM:1d6,1d8,1d10,2d6,2d8,3d8,4d8,6d8,8d8
+18	UDAM:1d6,1d8,1d10,2d6,2d8,3d8,4d8,6d8,8d8
+19	UDAM:1d6,1d8,1d10,2d6,2d8,3d8,4d8,6d8,8d8
+20	UDAM:1d8,1d10,2d6,2d8,2d10,4d8,6d8,8d8,12d8
+
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
 CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|0	BONUS:VAR|HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
@@ -268,6 +321,8 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 18	CAST:0,5,5,5,5,4,3	KNOWN:6,6,6,6,5,4,4
 19	CAST:0,5,5,5,5,5,4	KNOWN:6,6,5,6,5,5,4
 20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
+
+
 
 
 #
