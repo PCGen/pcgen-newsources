@@ -323,7 +323,29 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
 
 
-
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
+CLASS:Slayer	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sla		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Class Skills ~ Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SlayerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
+# Class Name	Multiple Requirements
+CLASS:Slayer	PREMULT:1,[PRECLASS:1,Slayer],[!PRECLASS:1,TYPE=Ranger,TYPE=Rogue]
+# Class Name	Skill Pts/Lvl
+CLASS:Slayer	STARTSKILLPTS:6
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerWeaponProficiency,TYPE.SlayerArmorProficiencies,TYPE.SlayerMediumArmorProficiency,TYPE.SlayerLightArmorProficiency,TYPE.SlayerShieldProficiency
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerWeaponProficiency,TYPE.SlayerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerLightArmorProficiency
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Medium|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerMediumArmorProficiency
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerShieldProficiency
+###Block: Progression Abilities
+1	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Studied Target|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerStudiedTarget
+1	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerTrack
+2	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Slayer Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerTalents
+3	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Sneak Attack|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSneakAttack
+7	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Stalker|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerStalker
+11	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSwiftTracker
+13	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Slayer's Advance|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSlayersAdvance
+14	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerQuarry
+19	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Improved Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerImprovedQuarry
+20	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Master Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerMasterSlayer
 
 #
 # End
