@@ -113,7 +113,7 @@ CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Brw		MAXLEVEL:20	SOURCEPAGE:
 # Class Name	Skill Pts/Lvl
 CLASS:Brawler	STARTSKILLPTS:4
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Brawler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Proficiencies ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Class Skills ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
 #PREVAREQ:BrawlerDefaultSkill,0
@@ -167,16 +167,16 @@ CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE	PREMULT:1,[PRECLASS:1,Hunter],[!PRECLASS:1,
 # Class Name	Skill Pts/Lvl
 CLASS:Hunter	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level			Use Spell List
-CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Hunter|CL	SPELLLIST:1|Druid
+CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZE:NO		SPELLLIST:2|Druid|Ranger	KNOWNSPELLS:Summon Nature's Ally I|Summon Nature's Ally II|Summon Nature's Ally III|Summon Nature's Ally IV|Summon Nature's Ally V|Summon Nature's Ally VI
 ###Block:Proficiencies
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies
 ###Block: Spell Alignment Restrictions
-1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
-1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
-1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
-1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+1	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG		
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	
 ###Block: Level Progression Abilities
 #3	BONUS:ABILITYPOOL|Teamwork Feat|CL/3|PREMULT:1,[!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat],[!PREABILITY:1,CATEGORY=Special Ability,Determination ~ Preacher]
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOrisons
@@ -188,35 +188,42 @@ CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|
 2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
 3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
 3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
+4	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Improved Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
 5	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
+7	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Tricks|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks
 8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSwiftTracker
 8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Second Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSecondAnimalFocus
+10	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Raise Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterRaiseAnimalCompanion
+11	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Speak With Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSpeakWithMaster
+14	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Greater Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterGreaterEmpathicLink
+17	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ One With The Wild|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOneWithTheWild
 20	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
 ###Block: Vars
 1	BONUS:VAR|AnimalCompanionLVL|CL|PREABILITY:1,CATEGORY=Special Ability,TYPE.HunterAnimalCompanion
 1	BONUS:VAR|WildEmpathyLVL|CL
 2	BONUS:VAR|TrackLVL|CL
 ###Block: Level progression
-1	CAST:3,1
-2	CAST:4,2
-3	CAST:4,3
-4	CAST:4,3,1
-5	CAST:4,4,2
-6	CAST:5,4,3
-7	CAST:5,4,3,1
-8	CAST:5,4,4,2
-9	CAST:5,5,4,3
-10	CAST:5,5,4,3,1
-11	CAST:5,5,4,4,2
-12	CAST:5,5,5,4,3
-13	CAST:5,5,5,4,3,1
-14	CAST:5,5,5,4,4,2
-15	CAST:5,5,5,5,4,3
-16	CAST:5,5,5,5,4,3,1
-17	CAST:5,5,5,5,4,4,2
-18	CAST:5,5,5,5,5,4,3
-19	CAST:5,5,5,5,5,5,4
-20	CAST:5,5,5,5,5,5,5
+# The KNOWN are 1 higher than in the book for levels 1+ because all the Summon Nature's Ally spells are automatically known in addition
+1	CAST:3,1				KNOWN:4,3			
+2	CAST:4,2				KNOWN:5,4			
+3	CAST:4,3				KNOWN:6,5			
+4	CAST:4,3,1				KNOWN:6,5,3			
+5	CAST:4,4,2				KNOWN:6,5,4			
+6	CAST:5,4,3				KNOWN:6,5,5			
+7	CAST:5,4,3,1			KNOWN:6,6,5,3		
+8	CAST:5,4,4,2			KNOWN:6,6,5,4		
+9	CAST:5,5,4,3			KNOWN:6,6,5,5		
+10	CAST:5,5,4,3,1			KNOWN:6,6,6,5,3		
+11	CAST:5,5,4,4,2			KNOWN:6,7,6,5,4		
+12	CAST:5,5,5,4,3			KNOWN:6,7,6,5,5		
+13	CAST:5,5,5,4,3,1		KNOWN:6,7,6,6,5,3	
+14	CAST:5,5,5,4,4,2		KNOWN:6,7,7,6,5,4	
+15	CAST:5,5,5,5,4,3		KNOWN:6,7,7,6,5,5	
+16	CAST:5,5,5,5,4,3,1		KNOWN:6,7,7,6,6,5,3	
+17	CAST:5,5,5,5,4,4,2		KNOWN:6,7,7,7,6,5,4	
+18	CAST:5,5,5,5,5,4,3		KNOWN:6,7,7,7,6,5,5	
+19	CAST:5,5,5,5,5,5,4		KNOWN:6,7,7,7,6,6,5	
+20	CAST:5,5,5,5,5,5,5		KNOWN:6,7,7,7,7,6,6	
 
 
 # Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
@@ -330,7 +337,7 @@ CLASS:Slayer	PREMULT:1,[PRECLASS:1,Slayer],[!PRECLASS:1,TYPE=Ranger,TYPE=Rogue]
 # Class Name	Skill Pts/Lvl
 CLASS:Slayer	STARTSKILLPTS:6
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Weapon and Armor Proficiency ~ Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerWeaponProficiency,TYPE.SlayerArmorProficiencies,TYPE.SlayerMediumArmorProficiency,TYPE.SlayerLightArmorProficiency,TYPE.SlayerShieldProficiency
+1	ABILITY:Special Ability|AUTOMATIC|Slayer ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerWeaponProficiency,TYPE.SlayerArmorProficiencies,TYPE.SlayerMediumArmorProficiency,TYPE.SlayerLightArmorProficiency,TYPE.SlayerShieldProficiency
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerWeaponProficiency,TYPE.SlayerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerLightArmorProficiency
 1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Medium|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerMediumArmorProficiency
@@ -346,6 +353,61 @@ CLASS:Slayer	STARTSKILLPTS:6
 14	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerQuarry
 19	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Improved Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerImprovedQuarry
 20	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Master Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerMasterSlayer
+
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus												Combat bonus					Monster Role
+CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|0	BONUS:VAR|WarpriestLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
+# Class Name	Multiple Requirements
+CLASS:Warpriest	PREMULT:1,[PRECLASS:1,Warpriest],[!PRECLASS:1,TYPE=Cleric,TYPE=Fighter]
+# Class Name	Skill Pts/Lvl
+CLASS:Warpriest	STARTSKILLPTS:2
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level				Use Spell List
+CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Warpriest|CL	SPELLLIST:1|Cleric
+###Block:Proficiencies
+1		BONUS:VAR|AlignmentAuraLVL|CL
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
+1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Orisons
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Spontaneous Casting
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Weapon Focus
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Blessings
+1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Sacred Weapon
+2			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Fervor
+3			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Bonus Feats
+4			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Channel Positive Energy
+7			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Sacred Armor
+
+###Block: Spell Alignment Restrictions
+1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG		PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG		PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG		PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE		PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+###Block: Level Progression Abilities
+###Block: Vars
+###Block: Level progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,3
+4	CAST:4,3,1
+5	CAST:4,4,2
+6	CAST:5,4,3
+7	CAST:5,4,3,1
+8	CAST:5,4,4,2
+9	CAST:5,5,4,3
+10	CAST:5,5,4,3,1
+11	CAST:5,5,4,4,2
+12	CAST:5,5,5,4,3
+13	CAST:5,5,5,4,3,1
+14	CAST:5,5,5,4,4,2
+15	CAST:5,5,5,5,4,3
+16	CAST:5,5,5,5,4,3,1
+17	CAST:5,5,5,5,4,4,2
+18	CAST:5,5,5,5,5,4,3
+19	CAST:5,5,5,5,5,5,4
+20	CAST:5,5,5,5,5,5,5
 
 #
 # End
