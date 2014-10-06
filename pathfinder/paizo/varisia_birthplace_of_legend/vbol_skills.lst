@@ -1,0 +1,29 @@
+SOURCELONG:Varisia, Birthplace of Legends	SOURCESHORT:VBOL	SOURCEWEB:http://paizo.com/products/btpy8tim?Pathfinder-Player-Companion-Varisia-Birthplace-of-Legends	SOURCEDATE:2012-09
+
+
+
+###Block: Conditional skills (for output only)
+# Skill Name					Key Stat	Untrained?		Classes	Type			Visible		Req. Rule (in options)		Prohibited Var. Value
+#Perception (In dim light)			KEYSTAT:WIS	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Perception (In dim light).MISC"),var("SKILL.Perception.MISC")
+#Perception (Notice valuable trade goods)			KEYSTAT:WIS	USEUNTRAINED:YES	CLASSES:ALL	TYPE:SkillUse	VISIBLE:EXPORT	PRERULE:1,DISPLAYSKILLUSE	PREVARNEQ:var("SKILL.Perception (Notice valuable trade goods).MISC"),var("SKILL.Perception.MISC")
+
+###Block: Skill .MODs
+# Skill Name		Bonus to skill													Bonus to skill rank
+
+Diplomacy.MOD					SITUATION:In Magnimar
+Diplomacy.MOD					SITUATION:Aberrations/monstrous humanoids/undead/Giant subtype
+Intimidate.MOD					SITUATION:In Magnimar
+
+Knowledge (History).MOD			SITUATION:Magnimar
+Knowledge (History).MOD			SITUATION:Varisia
+Knowledge (Geography).MOD		SITUATION:Varisia
+
+Perception.MOD					SITUATION:In dim light
+Perception.MOD					SITUATION:At night
+Perception.MOD					SITUATION:Notice valuable trade goods
+Perception.MOD					SITUATION:Distinguish statuelike creatures vs scupltures
+
+Survival.MOD					SITUATION:Varisia
+
+#Perception.MOD		BONUS:SKILL|Perception (In dim light)|var("SKILL.Perception.MISC")				BONUS:SKILLRANK|Perception (In dim light)|skillinfo("TOTALRANK", "Perception")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Perception (In dim light).MISC"),var("SKILL.Perception.MISC")
+#Perception.MOD		BONUS:SKILL|Perception (Notice valuable trade goods)|var("SKILL.Perception.MISC")				BONUS:SKILLRANK|Perception (Notice valuable trade goods)|skillinfo("TOTALRANK", "Perception")|TYPE=SkillGranted|PREVARNEQ:var("SKILL.Perception (Notice valuable trade goods).MISC"),var("SKILL.Perception.MISC")
