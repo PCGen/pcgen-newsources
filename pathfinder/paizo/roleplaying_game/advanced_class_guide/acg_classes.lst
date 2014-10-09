@@ -114,8 +114,8 @@ CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Brw		MAXLEVEL:20	SOURCEPAGE:
 CLASS:Brawler	STARTSKILLPTS:4
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Brawler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Weapon Proficiencies ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Class Skills ~ Brawler|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
+1	ABILITY:Internal|AUTOMATIC|Brawler ~ Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Brawler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
 #PREVAREQ:BrawlerDefaultSkill,0
 ###Block:
 2	KIT:1|Brawler Brawler's Flurry
@@ -288,7 +288,7 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 ###Block: Proficiencies
 1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies
-1	ABILITY:Internal|AUTOMATIC|Weapon Proficiencies ~ Skald|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Skald ~ Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
 ###Block: Vars
 1	BONUS:VAR|RagingSongLVL|CL
 3	BONUS:VAR|RageLVL|CL
@@ -331,7 +331,7 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
-CLASS:Slayer	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sla		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Class Skills ~ Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SlayerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
+CLASS:Slayer	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sla		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Slayer ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SlayerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
 # Class Name	Multiple Requirements
 CLASS:Slayer	PREMULT:1,[PRECLASS:1,Slayer],[!PRECLASS:1,TYPE=Ranger,TYPE=Rogue]
 # Class Name	Skill Pts/Lvl
@@ -356,7 +356,7 @@ CLASS:Slayer	STARTSKILLPTS:6
 
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus												Combat bonus					Monster Role
-CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|0	BONUS:VAR|WarpriestLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3		BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
+CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|0	BONUS:VAR|WarpriestLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:SAVE|BASE.Reflex|CL/3		BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
 # Class Name	Multiple Requirements
 CLASS:Warpriest	PREMULT:1,[PRECLASS:1,Warpriest],[!PRECLASS:1,TYPE=Cleric,TYPE=Fighter]
 # Class Name	Skill Pts/Lvl
