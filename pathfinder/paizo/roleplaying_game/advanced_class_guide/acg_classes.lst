@@ -162,9 +162,9 @@ CLASS:Brawler	STARTSKILLPTS:4
 CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|0	BONUS:VAR|HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
 CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE
 # Class Name	Skill Pts/Lvl
-CLASS:Hunter	STARTSKILLPTS:4
+CLASS:Hunter	STARTSKILLPTS:6
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level			Use Spell List
-CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZE:NO		SPELLLIST:2|Druid|Ranger	KNOWNSPELLS:Summon Nature's Ally I|Summon Nature's Ally II|Summon Nature's Ally III|Summon Nature's Ally IV|Summon Nature's Ally V|Summon Nature's Ally VI
+CLASS:Hunter	SPELLSTAT:INT	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZE:NO		SPELLLIST:2|Druid|Ranger	KNOWNSPELLS:Summon Nature's Ally I|Summon Nature's Ally II|Summon Nature's Ally III|Summon Nature's Ally IV|Summon Nature's Ally V|Summon Nature's Ally VI
 ###Block:Proficiencies
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
@@ -176,24 +176,33 @@ CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZ
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	
 ###Block: Level Progression Abilities
 #3	BONUS:ABILITYPOOL|Teamwork Feat|CL/3|PREMULT:1,[!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat],[!PREABILITY:1,CATEGORY=Special Ability,Determination ~ Preacher]
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOrisons
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalCompanion
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalFocus
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Nature Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterNatureTraining
+1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOrisons
 1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
 2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Precise Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterPreciseCompanion
 2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
 3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
-3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
+3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feats|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats
+3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 1|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat1
 4	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Improved Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
 5	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
+6	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 2|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat2
 7	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Tricks|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks
-8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSwiftTracker
+7	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Trick 1|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks,TYPE.HunterBonusTrick1
 8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Second Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSecondAnimalFocus
+8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSwiftTracker
+9	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 3|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat3
 10	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Raise Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterRaiseAnimalCompanion
 11	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Speak With Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSpeakWithMaster
+12	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 4|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat4
+13	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Trick 2|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks,TYPE.HunterBonusTrick2
 14	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Greater Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterGreaterEmpathicLink
+15	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 5|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat5
 17	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ One With The Wild|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOneWithTheWild
+18	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 6|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat6
+19	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Trick 3|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks,TYPE.HunterBonusTrick3
 20	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
 ###Block: Vars
 1	BONUS:VAR|AnimalCompanionLVL|CL|PREABILITY:1,CATEGORY=Special Ability,TYPE.HunterAnimalCompanion
