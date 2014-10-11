@@ -12,20 +12,19 @@ CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p
 CLASS:Arcanist	STARTSKILLPTS:2
 # Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
 CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
-
-
 ###Block:Proficiencies
-1	AUTO:FEAT|Simple Weapon Proficiency
+1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
 ###Block: Variable Progression
 1	BONUS:VAR|MaxArcanistReservoir|CL*2
 ###Block: Level Progression
 1	BONUS:ABILITYPOOL|Arcanist Exploit|(CL+1)/2
-1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Consume Spells|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistConsumeSpells
-1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Arcane Reservoir|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistArcaneReservoir
-1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Arcanist Exploits|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistArcanistExploits
-1									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Cantrips|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistCantrips
-11									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Greater Arcanist Exploits|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistGreaterArcanistExploits
-20									ABILITY:Arcanist Class Ability|AUTOMATIC|Arcanist ~ Magical Supremacy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistMagicalSupremacy
+1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Consume Spells|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistConsumeSpells
+1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Arcane Reservoir|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistArcaneReservoir
+1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Arcanist Exploits|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistArcanistExploits
+1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Cantrips|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistCantrips
+11									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Greater Arcanist Exploits|!PREABILITY:1,CATEGORY=Archtype,TYPE:ArcanistGreaterArcanistExploits
+20									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Magical Supremacy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistMagicalSupremacy
 ###Block: Spell Level progression
 1	CAST:4,2
 2	CAST:5,2
@@ -62,11 +61,11 @@ CLASS:Bloodrager	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level								Use Spell List
 CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bloodrager|CL|PRECLASS:1,Bloodrager=4	SPELLLIST:1|Bloodrager
 ###Block:Proficiencies
-1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
+1	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies
 ###Block: Bloodline
-1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Bloodline|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodline
+1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Bloodline|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodline
 ###Block: Variable Progression
 1	BONUS:VAR|RageLVL|CL
 2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE
@@ -74,17 +73,17 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 5	BONUS:VAR|UncannyDodgeLevel|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerImprovedUncannyDodge
 7	BONUS:VAR|BloodragerDRLVL|CL
 ###Block: Level Progression
-1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodrage
-1	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Fast Movement|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerFastMovement
+1	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodrage
+1	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Fast Movement|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerFastMovement
 2	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
-3	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Blood Sanctuary|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodSanctuary
-4	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Blood Casting|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodCasting
-4	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Eschew Materials|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerEschewMaterials
-7	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Damage Reduction|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerDamageReduction
-11	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Greater Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerGreaterBloodrage
-14	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Indomitable Will|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerIndomitableWill
-17	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Tireless Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerTirelessBloodrage
-20	ABILITY:Bloodrager Class Ability|AUTOMATIC|Bloodrager ~ Mighty Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerMightyBloodrage
+3	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Blood Sanctuary|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodSanctuary
+4	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Blood Casting|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodCasting
+4	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Eschew Materials|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerEschewMaterials
+7	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Damage Reduction|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerDamageReduction
+11	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Greater Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerGreaterBloodrage
+14	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Indomitable Will|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerIndomitableWill
+17	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Tireless Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerTirelessBloodrage
+20	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Mighty Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerMightyBloodrage
 ###Block: Spell Level progression
 4	CAST:0,1		KNOWN:0,2
 5	CAST:0,1		KNOWN:0,3
@@ -111,27 +110,27 @@ CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bra		MAXLEVEL:20	SOURCEPAGE:
 # Class Name	Skill Pts/Lvl
 CLASS:Brawler	STARTSKILLPTS:4
 ###Block:Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Brawler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Brawler ~ Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Brawler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
+1	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
 #PREVAREQ:BrawlerDefaultSkill,0
 ###Block:
 2	KIT:1|Brawler Brawler's Flurry
 ###Block: Brawler Bonus Feats
 1	AUTO:FEAT|Improved Unarmed Strike
 ###Block:
-1	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Brawler's Cunning|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersCunning
-1	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Martial Flexibility|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerMartialFlexibility
-1	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Martial Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerMartialTraining
-2	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Bonus Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBonusFeat
-2	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Brawler's Flurry|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersFlurry
-3	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Maneuver Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerManeuverTraining
-4	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ AC Bonus|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerACBonus
-4	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Knockout|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerKnockout
-5	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Brawler's Strike|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersStrike
-5	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Close Weapon Mastery|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerCloseWeaponMastery
-16	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Awesome Blow|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerAwesomeBlow
-20	ABILITY:Brawler Class Feature|AUTOMATIC|Brawler ~ Improved Awesome Blow|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerImprovedAwesomeBlow
+1	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Brawler's Cunning|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersCunning
+1	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Martial Flexibility|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerMartialFlexibility
+1	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Martial Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerMartialTraining
+2	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Bonus Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBonusFeat
+2	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Brawler's Flurry|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersFlurry
+3	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Maneuver Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerManeuverTraining
+4	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ AC Bonus|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerACBonus
+4	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Knockout|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerKnockout
+5	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Brawler's Strike|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerBrawlersStrike
+5	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Close Weapon Mastery|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerCloseWeaponMastery
+16	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Awesome Blow|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerAwesomeBlow
+20	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Improved Awesome Blow|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerImprovedAwesomeBlow
 ###Block:
 1	ABILITY:Internal|AUTOMATIC|Brawler ~ Unarmed Damage
 ###Block: Level progression
@@ -166,7 +165,7 @@ CLASS:Hunter	STARTSKILLPTS:6
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level			Use Spell List
 CLASS:Hunter	SPELLSTAT:INT	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZE:NO		SPELLLIST:2|Druid|Ranger	KNOWNSPELLS:Summon Nature's Ally I|Summon Nature's Ally II|Summon Nature's Ally III|Summon Nature's Ally IV|Summon Nature's Ally V|Summon Nature's Ally VI
 ###Block:Proficiencies
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
+1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies
 ###Block: Spell Alignment Restrictions
@@ -176,34 +175,25 @@ CLASS:Hunter	SPELLSTAT:INT	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZ
 1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	
 ###Block: Level Progression Abilities
 #3	BONUS:ABILITYPOOL|Teamwork Feat|CL/3|PREMULT:1,[!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat],[!PREABILITY:1,CATEGORY=Special Ability,Determination ~ Preacher]
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalCompanion
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalFocus
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Nature Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterNatureTraining
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOrisons
-1	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
-2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Precise Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterPreciseCompanion
-2	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
-3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
-3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feats|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats
-3	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 1|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat1
-4	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Improved Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
-5	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
-6	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 2|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat2
-7	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Tricks|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks
-7	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Trick 1|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks,TYPE.HunterBonusTrick1
-8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Second Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSecondAnimalFocus
-8	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSwiftTracker
-9	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 3|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat3
-10	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Raise Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterRaiseAnimalCompanion
-11	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Speak With Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSpeakWithMaster
-12	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 4|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat4
-13	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Trick 2|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks,TYPE.HunterBonusTrick2
-14	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Greater Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterGreaterEmpathicLink
-15	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 5|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat5
-17	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ One With The Wild|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOneWithTheWild
-18	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Teamwork Feat 6|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats,TYPE.HunterTeamworkFeat6
-19	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Bonus Trick 3|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks,TYPE.HunterBonusTrick3
-20	ABILITY:Hunter Class Ability|AUTOMATIC|Hunter ~ Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
+1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalCompanion
+1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalFocus
+1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Nature Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterNatureTraining
+1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOrisons
+1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Wild Empathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWildEmpathy
+2	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Precise Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterPreciseCompanion
+2	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTrack
+3	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Hunter Tactics|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterHunterTactics
+3	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Teamwork Feats|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeats
+4	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Improved Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterTeamworkFeat
+5	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Woodland Stride|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWoodlandStride
+7	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Bonus Tricks|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterBonusTricks
+8	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Second Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSecondAnimalFocus
+8	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSwiftTracker
+10	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Raise Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterRaiseAnimalCompanion
+11	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Speak With Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterSpeakWithMaster
+14	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Greater Empathic Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterGreaterEmpathicLink
+17	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ One With The Wild|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterOneWithTheWild
+20	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Master Hunter|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterMasterHunter
 ###Block: Vars
 1	BONUS:VAR|AnimalCompanionLVL|CL|PREABILITY:1,CATEGORY=Special Ability,TYPE.HunterAnimalCompanion
 1	BONUS:VAR|WildEmpathyLVL|CL
@@ -239,8 +229,10 @@ CLASS:Investigator	STARTSKILLPTS:6	CSKILL:Acrobatics|Appraise|Bluff|Climb|TYPE=C
 # Class Name		Spell Stat		Spell Type		Memorize		Spellbook		Caster level				Use Spell List
 CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Investigator|CL	SPELLLIST:1|Alchemist
 ###Block: Proficiencies
-1	ABILITY:Special Ability|AUTOMATIC|Investigator ~ Weapon and Armor Proficiency|All Automatic Proficiencies	AUTO:FEAT|Simple Weapon Proficiency
-1																			AUTO:FEAT|Armor Proficiency (Light)
+1	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1	AUTO:WEAPONPROF|Crossbow (Hand)|Rapier|Sap|Shortbow|Sword (Short)|Sword Cane|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies
 ###Block: Alchemist Book
 1	ABILITY:Internal|AUTOMATIC|Free Formula Book|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Investigator=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Investigator=1]]
 ###Block: Vars
@@ -250,12 +242,12 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 4	BONUS:VAR|RogueSneakAttackLVL|CL-3
 ###Block: Class Abilities
 1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist ~ Alchemy|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorAlchemy
-1	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Inspiration|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorInspiration
+1	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Inspiration|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorInspiration
 1	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trapfinding|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorTrapfinding
-2	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Poison Resistance|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance
+2	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Poison Resistance|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonResistance
 2	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist ~ Poison Use|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorPoisonUse
 3	ABILITY:Special Ability|AUTOMATIC|Rogue ~ Trap Sense|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTrapSense
-3	ABILITY:Investigator Class Ability|AUTOMATIC|Investigator ~ Investigator Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTalents
+3	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Investigator Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.RogueTalents
 4	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist ~ Swift Alchemy|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSwiftAlchemy
 4	ABILITY:Special Ability|AUTOMATIC|Sneak Attack|Rogue ~ Sneak Attack|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSneakAttack
 ###Block: Spellcasting
@@ -288,27 +280,27 @@ CLASS:Skald		STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
 CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Skald|CL	SPELLLIST:1|Bard
 ###Block: Proficiencies
-1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
+1	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Auto|Weapon Prof ~ Simple|Weapon Prof ~ Martial|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldArmorProficiencies
-1	ABILITY:Internal|AUTOMATIC|Skald ~ Weapon Proficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWeaponProficiencies
 ###Block: Vars
 1	BONUS:VAR|RagingSongLVL|CL
 3	BONUS:VAR|RageLVL|CL
 3	BONUS:VAR|RagePowersLVL|CL
 9	BONUS:VAR|BarbarianDRLVL|CL
 ###Block: Class Abilities
-1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Bardic Knowledge|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldBardicKnowledge
-1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Cantrips|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldCantrips
-1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Raging Song|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldRagingSong
-1	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Scribe Scroll|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldScribeScroll
-2	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Well-Versed|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWellVersed
-2	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Versatile Performance|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldVersatilePerformance
-3	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Rage Powers|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldRagePowers
-5	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Spell Kenning|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldSpellKenning
-7	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Lore Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldLoreMaster
-9	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Damage Reduction|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldDamageReduction
-10	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Dirge of Doom|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldDirgeOfDoom
-20	ABILITY:Skald Class Ability|AUTOMATIC|Skald ~ Master Skald|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldMasterSkald
+1	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Bardic Knowledge|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldBardicKnowledge
+1	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Cantrips|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldCantrips
+1	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Raging Song|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldRagingSong
+1	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Scribe Scroll|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldScribeScroll
+2	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Well-Versed|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldWellVersed
+2	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Versatile Performance|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldVersatilePerformance
+3	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Rage Powers|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldRagePowers
+5	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Spell Kenning|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldSpellKenning
+7	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Lore Master|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldLoreMaster
+9	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Damage Reduction|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldDamageReduction
+10	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Dirge of Doom|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldDirgeOfDoom
+20	ABILITY:Skald Class Features|AUTOMATIC|Skald ~ Master Skald|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldMasterSkald
 ###Block: Spellcasting
 1	CAST:0,1			KNOWN:4,2
 2	CAST:0,2			KNOWN:5,3
@@ -367,16 +359,16 @@ CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL
 1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
 1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
 1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
-1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency
-1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Orisons
-1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Spontaneous Casting
-1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Weapon Focus
-1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Blessings
-1			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Sacred Weapon
-2			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Fervor
-3			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Bonus Feats
-4			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Channel Positive Energy
-7			ABILITY:Warpriest Class Feature|AUTOMATIC|Warpriest ~ Sacred Armor
+1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency
+1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Orisons
+1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Spontaneous Casting
+1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Weapon Focus
+1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Blessings
+1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Weapon
+2			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Fervor
+3			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Bonus Feats
+4			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Channel Positive Energy
+7			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Armor
 
 ###Block: Spell Alignment Restrictions
 1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
