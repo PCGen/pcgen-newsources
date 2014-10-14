@@ -1,0 +1,10 @@
+# CVS $Revision: $ $Author: $ -- Sat Dec  2 09:37:31 2006 -- reformated by prettylst.pl v1.35 (build 1495)
+SOURCELONG:Complendium of Legendary Classes	SOURCESHORT:CLgC
+
+# Feat Name			Type				Req. Att.	Required Feat				Required Skill				Required Stat	Description																			Stackable?	Multiple?	Choose					Combat bonus						Bonus to skill							Class Skill		Source Page
+Cross Class Learning	TYPE:General																			DESC:You can learn cross-class skills as if they were class skills											MULT:YES	CHOOSE:NUMCHOICES=2|SKILLSNAMED|ALL																		CSKILL:%CHOICE	SOURCEPAGE:p.10
+Hunters Wisdom		TYPE:General										PRESKILL:1,Knowledge (Nature)=5				DESC:Your knowledge of animals makes you more skilled at killing them																																							SOURCEPAGE:p.46
+Master Tracker		TYPE:General				PREFEAT:1,Track										PRESTAT:1,WIS=15	DESC:You have mastered the ways of the hunter, allowing you to follow enemies through even the most dificult terrain																			BONUS:SKILL|Search,Wilderness Lore|4|PREAPPLY:PC				SOURCEPAGE:p.25
+Parry				TYPE:General		PREATT:3	PREFEAT:1,Expertise									PRESTAT:1,DEX=13	DESC:You may attempt to deflect a melee attack against you with your own weapon																																					SOURCEPAGE:p.41
+Riposte			TYPE:General		PREATT:6	PREFEAT:1,Parry													DESC:You may attempt to turn a successful parry into an attack against your opponent																																				SOURCEPAGE:p.41
+Superior Unarmed Strike	TYPE:General.Fighter			PREFEAT:1,Improved Unarmed Strike										DESC:You know how to deliver real punishment with your unarmed attacks.									STACK:YES	MULT:YES	CHOOSE:NOCHOICE				BONUS:COMBAT|TOHIT.GRAPPLE,TOHIT.Unarmed|1													SOURCEPAGE:p.5
