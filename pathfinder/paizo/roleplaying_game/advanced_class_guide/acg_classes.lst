@@ -156,6 +156,7 @@ CLASS:Brawler	STARTSKILLPTS:4
 19	UDAM:1d6,1d8,1d10,2d6,2d8,3d8,4d8,6d8,8d8
 20	UDAM:1d8,1d10,2d6,2d8,2d10,4d8,6d8,8d8,12d8
 
+###Block: Hunter
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
 CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|0	BONUS:VAR|HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
@@ -221,6 +222,7 @@ CLASS:Hunter	SPELLSTAT:INT	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZ
 19	CAST:5,5,5,5,5,5,4		KNOWN:6,7,7,7,6,6,5	
 20	CAST:5,5,5,5,5,5,5		KNOWN:6,7,7,7,7,6,6	
 
+###Block: Investigator
 
 # Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
 CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|0	BONUS:VAR|InvestigatorLVL|classlevel("APPLIEDAS=NONEPIC")	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
@@ -272,6 +274,7 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 19	CAST:0,5,5,5,5,5,4
 20	CAST:0,5,5,5,5,5,5
 
+###Block: Skald
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
 CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.38	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|0	BONUS:VAR|SkaldLVL|CL	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
@@ -323,6 +326,7 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 19	CAST:0,5,5,5,5,5,4	KNOWN:6,6,5,6,5,5,4
 20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
 
+###Block: Slayer
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
 CLASS:Slayer	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sla		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Slayer ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SlayerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
@@ -335,17 +339,39 @@ CLASS:Slayer	STARTSKILLPTS:6
 1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Medium|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerMediumArmorProficiency
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerShieldProficiency
 ###Block: Progression Abilities
-1	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Studied Target|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerStudiedTarget
-1	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerTrack
-2	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Slayer Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerTalents
-3	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Sneak Attack|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSneakAttack
-7	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Stalker|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerStalker
-11	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSwiftTracker
-13	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Slayer's Advance|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSlayersAdvance
-14	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerQuarry
-19	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Improved Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerImprovedQuarry
-20	ABILITY:Slayer Class Feature|AUTOMATIC|Slayer ~ Master Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerMasterSlayer
+1	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Studied Target|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerStudiedTarget
+1	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Track|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerTrack
+2	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Slayer Talents|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerTalents
+3	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Sneak Attack|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSneakAttack
+7	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Stalker|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerStalker
+11	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Swift Tracker|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSwiftTracker
+13	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Slayer's Advance|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerSlayersAdvance
+14	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerQuarry
+19	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Improved Quarry|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerImprovedQuarry
+20	ABILITY:Slayer Class Features|AUTOMATIC|Slayer ~ Master Slayer|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerMasterSlayer
 
+###Block: Swashbuckler
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
+CLASS:Swashbuckler	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Swa		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Swashbuckler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SwashbucklerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
+# Class Name	Skill Pts/Lvl
+CLASS:Swashbuckler	STARTSKILLPTS:6
+###Block:Proficiencies
+1	ABILITY:Special Ability|AUTOMATIC|Swashbuckler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerArmorProficiencies,TYPE.SwashbucklerWeaponProficiency,TYPE.SwashbucklerArmorProficiencies,TYPE.SwashbucklerLightArmorProficiency,TYPE.SwashbucklerShieldProficiency
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerWeaponProficiency,TYPE.SlayerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerLightArmorProficiency
+1	ABILITY:Internal|AUTOMATIC|Shield Prof ~ Buckler|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerArmorProficiencies,TYPE.SlayerShieldProficiency
+###Block: Progression Abilities
+1	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Panache|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerPanache
+1	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Deeds|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerDeeds
+1	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Swashbuckler Finesse|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerSwashbucklerFinesse
+2	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Charmed Life|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerCharmedLife
+3	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Nimble|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerNimble
+4	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Bonus Feats|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerBonusFeats
+5	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Swashbuckler Weapon Training|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerSwashbucklerWeaponTraining
+20	ABILITY:Swashbuckler Class Features|AUTOMATIC|Swashbuckler ~ Swashbuckler Weapon Mastery|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerSwashbucklerWeaponMastery
+
+###Block: Warpriest
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus												Combat bonus					Monster Role
 CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	SOURCEPAGE:p.48	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|0	BONUS:VAR|WarpriestLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:SAVE|BASE.Reflex|CL/3		BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
