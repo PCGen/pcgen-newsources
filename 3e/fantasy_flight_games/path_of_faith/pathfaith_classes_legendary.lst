@@ -1,0 +1,54 @@
+# CVS $Revision: $ $Author: $ -- Sat Oct  7 13:25:32 2006 -- reformated by prettylst.pl v1.35 (build 565)
+# CVS
+SOURCELONG:Fantasy Flight Games - Path of Faith	SOURCESHORT:Faith	SOURCEWEB:http://www.fantasyflightgames.com/dd36.html
+# Original Entry by: Ratheof Blithwyn
+# Built Upon by: David R Saulnier
+
+#
+# Legendary classes
+#
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Arcane Architect	HD:4		TYPE:PC.Prestige	ABB:Arch		MAXLEVEL:10	SOURCEPAGE:p.7	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE
+# Class Name		Required Feat						Required Skill														Req. Known Spell		Req. Spell Type
+CLASS:Arcane Architect	PREFEAT:2,Craft Wondrous Item,Extend Spell	PRESKILL:1,TYPE.Craft=10	PRESKILL:1,Knowledge (Arcana)=5	PRESKILL:1,Spellcraft=10	PRESPELL:1,Tiny Hut	PRESPELLTYPE:Arcane,2,3
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Arcane Architect	STARTSKILLPTS:2	CSKILL:Alchemy|Concentration|TYPE.Craft|TYPE.Knowledge|TYPE.Profession|Scry|Search|Speak Language|Spellcraft
+1	ADD:SPELLCASTER(ANY)	SA:Locate Flaw (+%, +%d6)|LocateFlaw|LocateFlawDie				BONUS:VAR|LocateFlaw|2	BONUS:VAR|LocateFlawDie|1				DEFINE:LocateFlaw|0	DEFINE:LocateFlawDie|0
+2	ADD:SPELLCASTER(ANY)	SA:Energy Enhancement %/day|EnergyEnhancement					BONUS:VAR|EnergyEnhancement|CL/2							DEFINE:EnergyEnhancement|0
+3	ADD:SPELLCASTER(ANY)	SA:Augment Construct (+%, +%d4)|AugmentConstruct|AugmentConstructDie	BONUS:VAR|AugmentConstruct|CL/3	BONUS:VAR|AugmentConstructDie|CL/3	DEFINE:AugmentConstruct|0	DEFINE:AugmentConstructDie|0
+4	ADD:SPELLCASTER(ANY)
+5	ADD:SPELLCASTER(ANY)													BONUS:VAR|LocateFlaw|2	BONUS:VAR|LocateFlawDie|1
+6	ADD:SPELLCASTER(ANY)
+7	ADD:SPELLCASTER(ANY)													BONUS:VAR|LocateFlaw|2	BONUS:VAR|LocateFlawDie|1
+8	ADD:SPELLCASTER(ANY)
+9	ADD:SPELLCASTER(ANY)													BONUS:VAR|LocateFlaw|2	BONUS:VAR|LocateFlawDie|1
+10	ADD:SPELLCASTER(ANY)
+#
+#Above being used as Reference
+#
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus											Combat bonus
+CLASS:Avatar            HD:8        TYPE:PC.Legendary ABB:Avat          MAXLEVEL:5  SOURCEPAGE:p.54   BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/1+2    BONUS:CHECKS|BASE.Reflex|CL/3 BONUS:COMBAT|BAB|CL/1|TYPE=Base.REPLACE
+# Class Name		Required Feat						                              Required Skill				Req. Known Spell	Req. Spell Type
+CLASS:Avatar            PREFEAT:4,Leadership,Iron Will,Skill Focus (Knowledge (religion)),DM Choice   PRESKILL:1,Knowledge (Religion)=15                    PRESPELLTYPE:Divine,7      
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Avatar            STARTSKILLPTS:4   CSKILL:Animal Empathy|Bluff|Concentration|Diplomacy|Gather Information|Handle Animal|Heal|Intimidate|Knowledge (Religion)|TYPE.Profession|Scry|Sense Motive|Spellcraft
+1	ADD:SPELLCASTER(DIVINE) SA:Avatar Ability CHOOSE:FEATADD|TYPE=Avatar
+2	                  	SA:Avatar Ability CHOOSE:FEATADD|TYPE=Avatar
+3	ADD:SPELLCASTER(DIVINE)	SA:Avatar Ability CHOOSE:FEATADD|TYPE=Avatar
+4	                        SA:Avatar Ability CHOOSE:FEATADD|TYPE=Avatar
+5	ADD:SPELLCASTER(DIVINE)	SA:Avatar Ability CHOOSE:FEATADD|TYPE=Avatar
+# Beacon of Faith
+# Divine Channel
+# Divine Forger
+# Knight Lord
+# Mystic
+# Paragon
+# Soultamer
+# Plague
+# Wild Master
+
+
+#
+# end
+#
