@@ -1,0 +1,120 @@
+# CVS $Revision: 4585 $ $Author: amaitland $ -- Thu Feb 22 13:04:59 2007 -- reformated by prettylst.pl v1.36 (build 2045)
+SOURCELONG:My Campaign	SOURCESHORT:My	SOURCEWEB:http://www.mywebsite.com
+
+
+# Mighty: Escape Artist, Diplomacy, Intimidate, Open Lock, Use Rope
+Escape Artist.MOD		BONUS:SKILL|Escape Artist [STR]|SKILL.Escape Artist.MISC|PREVAREQ:LpEscapeArtistWithSTR,1		BONUS:SKILLRANK|Escape Artist [STR]|SKILLRANK=Escape Artist|PREVAREQ:LpEscapeArtistWithSTR,1
+Diplomacy.MOD		BONUS:SKILL|Diplomacy [STR]|SKILL.Diplomacy.MISC|PREVAREQ:LpDiplomacyWithSTR,1			BONUS:SKILLRANK|Diplomacy [STR]|SKILLRANK=Diplomacy|PREVAREQ:LpDiplomacyWithSTR,1
+Intimidate.MOD		BONUS:SKILL|Intimidate [STR]|SKILL.Intimidate.MISC|PREVAREQ:LpIntimidateWithSTR,1			BONUS:SKILLRANK|Intimidate [STR]|SKILLRANK=Intimidate|PREVAREQ:LpIntimidateWithSTR,1
+Open Lock.MOD		BONUS:SKILL|Open Lock [STR]|SKILL.Open Lock.MISC|PREVAREQ:LpOpenLockWithSTR,1				BONUS:SKILLRANK|Open Lock [STR]|SKILLRANK=Open Lock|PREVAREQ:LpOpenLockWithSTR,1
+Use Rope.MOD		BONUS:SKILL|Use Rope [STR]|SKILL.Use Rope.MISC|PREVAREQ:LpArtistWithSTR,1				BONUS:SKILLRANK|Use Rope [STR]|SKILLRANK=Use Rope|PREVAREQ:LpArtistWithSTR,1
+
+Escape Artist [STR]	USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpArtistWithSTR,1		KEYSTAT:STR		ACHECK:YES		TYPE:SkillUse.Strength
+Diplomacy [STR]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpDiplomacyWithSTR,1		KEYSTAT:STR		ACHECK:YES		TYPE:SkillUse.Strength
+Intimidate [STR]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpIntimidateWithSTR,1	KEYSTAT:STR		ACHECK:NO		TYPE:SkillUse.Strength
+Open Lock [STR]		USEUNTRAINED:NO		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpOpenLockWithSTR,1		KEYSTAT:STR		ACHECK:YES		TYPE:SkillUse.Strength
+Use Rope [STR]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpUseRopeWithSTR,1		KEYSTAT:STR		ACHECK:NO		TYPE:SkillUse.Strength
+
+# Swift: Climb, Intimidate, Jump, Perform, Swim
+Climb.MOD			BONUS:SKILL|Climb [DEX]|SKILL.Climb.MISC|PREVAREQ:LpClimbWithDEX,1					BONUS:SKILLRANK|Climb [DEX]|SKILLRANK=Climb|PREVAREQ:LpClimbWithDEX,1
+Intimidate.MOD		BONUS:SKILL|Intimidate [DEX]|SKILL.Intimidate.MISC|PREVAREQ:LpIntimidateWithDEX,1			BONUS:SKILLRANK|Intimidate [DEX]|SKILLRANK=Intimidate|PREVAREQ:LpIntimidateWithDEX,1
+Jump.MOD			BONUS:SKILL|Jump [DEX]|SKILL.Jump.MISC|PREVAREQ:LpJumpWithDEX,1						BONUS:SKILLRANK|Jump [DEX]|SKILLRANK=Jump|PREVAREQ:LpJumpWithDEX,1
+Perform.MOD			BONUS:SKILL|Perform [DEX]|SKILL.Perform.MISC|PREVAREQ:LpPerformWithDEX,1				BONUS:SKILLRANK|Perform [DEX]|SKILLRANK=Perform|PREVAREQ:LpPerformWithDEX,1
+Swim.MOD			BONUS:SKILL|Swim [DEX]|SKILL.Swim.MISC|PREVAREQ:LpSwimWithDEX,1						BONUS:SKILLRANK|Swim [DEX]|SKILLRANK=Swim|PREVAREQ:LpSwimWithDEX,1
+
+Climb [DEX]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpClimbWithDEX,1		KEYSTAT:DEX		ACHECK:YES		TYPE:SkillUse.Dexterity
+Intimidate [DEX]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpIntimidateWithDEX,1	KEYSTAT:DEX		ACHECK:YES		TYPE:SkillUse.Dexterity
+Jump [DEX]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpJumpWithDEX,1		KEYSTAT:DEX		ACHECK:YES		TYPE:SkillUse.Dexterity
+Perform [DEX]		USEUNTRAINED:NO		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpPerformWithDEX,1		KEYSTAT:DEX		ACHECK:YES		TYPE:SkillUse.Dexterity
+Swim [DEX]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpSwimWithDEX,1		KEYSTAT:DEX		ACHECK:YES		TYPE:SkillUse.Dexterity
+
+# Unyielding: Climb, Escape Artist, Intimidate, Survival, Swim
+Climb.MOD			BONUS:SKILL|Climb [CON]|SKILL.Climb.MISC|PREVAREQ:LpClimbWithCON,1					BONUS:SKILLRANK|Climb [CON]|SKILLRANK=Climb|PREVAREQ:LpClimbWithCON,1
+Escape Artist.MOD		BONUS:SKILL|Escape Artist [CON]|SKILL.Escape Artist.MISC|PREVAREQ:LpEscapeArtistWithCON,1		BONUS:SKILLRANK|Escape Artist [CON]|SKILLRANK=Escape Artist|PREVAREQ:LpEscapeArtistWithCON,1
+Intimidate.MOD		BONUS:SKILL|Intimidate [CON]|SKILL.Intimidate.MISC|PREVAREQ:LpIntimidateWithCON,1			BONUS:SKILLRANK|Intimidate [CON]|SKILLRANK=Intimidate|PREVAREQ:LpIntimidateWithCON,1
+Survival.MOD		BONUS:SKILL|Survival [CON]|SKILL.Survival.MISC|PREVAREQ:LpSurvivalWithCON,1				BONUS:SKILLRANK|Survival [CON]|SKILLRANK=Survival|PREVAREQ:LpSurvivalWithCON,1
+Swim.MOD			BONUS:SKILL|Swim [CON]|SKILL.Swim.MISC|PREVAREQ:LpSwimWithCON,1						BONUS:SKILLRANK|Swim [CON]|SKILLRANK=Swim|PREVAREQ:LpSwimWithCON,1
+
+Climb [CON]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpClimbWithCON,1		KEYSTAT:CON		ACHECK:YES		TYPE:SkillUse.Constitution
+Escape Artist [CON]	USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpEscapeArtistWithCON,1	KEYSTAT:CON		ACHECK:YES		TYPE:SkillUse.Constitution
+Intimidate [CON]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpIntimidateWithCON,1	KEYSTAT:CON		ACHECK:YES		TYPE:SkillUse.Constitution
+Survival [CON]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpSurvivalWithCON,1		KEYSTAT:CON		ACHECK:YES		TYPE:SkillUse.Constitution
+Swim [CON]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpSwimWithCON,1		KEYSTAT:CON		ACHECK:YES		TYPE:SkillUse.Constitution
+
+# Learned: Bluff, Climb, Diplomacy, Hide, Survival
+Bluff.MOD			BONUS:SKILL|Bluff [INT]|SKILL.Bluff.MISC|PREVAREQ:LpBluffWithINT,1					BONUS:SKILLRANK|Bluff [INT]|SKILLRANK=Bluff|PREVAREQ:LpBluffWithINT,1
+Climb.MOD			BONUS:SKILL|Climb [INT]|SKILL.Climb.MISC|PREVAREQ:LpClimbWithINT,1					BONUS:SKILLRANK|Climb [INT]|SKILLRANK=Climb|PREVAREQ:LpClimbWithINT,1
+Diplomacy.MOD		BONUS:SKILL|Diplomacy [INT]|SKILL.Diplomacy.MISC|PREVAREQ:LpDiplomacyWithINT,1			BONUS:SKILLRANK|Diplomacy [INT]|SKILLRANK=Diplomacy|PREVAREQ:LpDiplomacyWithINT,1
+Hide.MOD			BONUS:SKILL|Swim [INT]|SKILL.Swim.MISC|PREVAREQ:LpHideWithINT,1						BONUS:SKILLRANK|Swim [INT]|SKILLRANK=Swim|PREVAREQ:LpHideWithINT,1
+Survival.MOD		BONUS:SKILL|Survival [INT]|SKILL.Survival.MISC|PREVAREQ:LpSurvivalWithINT,1				BONUS:SKILLRANK|Survival [INT]|SKILLRANK=Survival|PREVAREQ:LpSurvivalWithINT,1
+
+Bluff [INT]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpBluffWithINT,1		KEYSTAT:INT		ACHECK:YES		TYPE:SkillUse.Intelligence
+Climb [INT]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpClimbWithINT,1		KEYSTAT:INT		ACHECK:YES		TYPE:SkillUse.Intelligence
+Diplomacy [INT]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpDiplomacyWithINT,1		KEYSTAT:INT		ACHECK:YES		TYPE:SkillUse.Intelligence
+Hide [INT]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpHideWithINT,1		KEYSTAT:INT		ACHECK:YES		TYPE:SkillUse.Intelligence
+Survival [INT]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpSurvivalWithINT,1		KEYSTAT:INT		ACHECK:YES		TYPE:SkillUse.Intelligence
+
+# Wise: Concentration, Diplomacy, Hide, Ride, Tumble
+Concentration.MOD		BONUS:SKILL|Concentration [WIS]|SKILL.Concentration.MISC|PREVAREQ:LpConcentrationWithWIS,1	BONUS:SKILLRANK|Concentration [WIS]|SKILLRANK=Concentration|PREVAREQ:LpConcentrationWithWIS,1
+Diplomacy.MOD		BONUS:SKILL|Diplomacy [WIS]|SKILL.Diplomacy.MISC|PREVAREQ:LpDiplomacyWithWIS,1			BONUS:SKILLRANK|Diplomacy [WIS]|SKILLRANK=Diplomacy|PREVAREQ:LpDiplomacyWithWIS,1
+Hide.MOD			BONUS:SKILL|Hide [WIS]|SKILL.Hide.MISC|PREVAREQ:LpHideWithWIS,1						BONUS:SKILLRANK|Hide [WIS]|SKILLRANK=Hide|PREVAREQ:LpHideWithWIS,1
+Ride.MOD			BONUS:SKILL|Ride [WIS]|SKILL.Ride.MISC|PREVAREQ:LpRideWithWIS,1						BONUS:SKILLRANK|Ride [WIS]|SKILLRANK=Ride|PREVAREQ:LpRideWithWIS,1
+Tumble.MOD			BONUS:SKILL|Tumble [WIS]|SKILL.Tumble.MISC|PREVAREQ:LpTumbleWithWIS,1					BONUS:SKILLRANK|Tumble [WIS]|SKILLRANK=Tumble|PREVAREQ:LpTumbleWithWIS,1
+
+Concentration [WIS]	USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpConcentrationWithWIS,1	KEYSTAT:WIS		ACHECK:YES		TYPE:SkillUse.Wisdom
+Diplomacy [WIS]		USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpDiplomacyWithWIS,1		KEYSTAT:WIS		ACHECK:YES		TYPE:SkillUse.Wisdom
+Hide [WIS]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpHideWithWIS,1		KEYSTAT:WIS		ACHECK:YES		TYPE:SkillUse.Wisdom
+Ride [WIS]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpRideWithWIS,1		KEYSTAT:WIS		ACHECK:YES		TYPE:SkillUse.Wisdom
+Tumble [WIS]		USEUNTRAINED:NO		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpTumbleWithWIS,1		KEYSTAT:WIS		ACHECK:YES		TYPE:SkillUse.Wisdom
+
+# Persuasive: Concentration, Heal, Ride, Sense Motive, Sleight of Hand
+Concentration.MOD		BONUS:SKILL|Concentration [CHA]|SKILL.Concentration.MISC|PREVAREQ:LpConcentrationWithCHA,1	BONUS:SKILLRANK|Concentration [CHA]|SKILLRANK=Concentration|PREVAREQ:LpConcentrationWithCHA,1
+Heal.MOD			BONUS:SKILL|Heal [CHA]|SKILL.Heal.MISC|PREVAREQ:LpHealWithCHA,1						BONUS:SKILLRANK|Heal [CHA]|SKILLRANK=Heal|PREVAREQ:LpHealWithCHA,1
+Ride.MOD			BONUS:SKILL|Ride [CHA]|SKILL.Ride.MISC|PREVAREQ:LpRideWithCHA,1						BONUS:SKILLRANK|Ride [CHA]|SKILLRANK=Ride|PREVAREQ:LpRideWithCHA,1
+Sense Motive.MOD		BONUS:SKILL|Sense Motive [CHA]|SKILL.Sense Motive.MISC|PREVAREQ:LpSenseMotiveWithCHA,1		BONUS:SKILLRANK|Sense Motive [CHA]|SKILLRANK=Sense Motive|PREVAREQ:LpSenseMotiveWithCHA,1
+Sleight of Hand.MOD	BONUS:SKILL|Sleight of Hand [CHA]|SKILL.Sleight of Hand.MISC|PREVAREQ:LpSleightOfHandWithCHA,1	BONUS:SKILLRANK|Sleight of Hand [CHA]|SKILLRANK=Sleight of Hand|PREVAREQ:LpSleightOfHandWithCHA,1
+
+Concentration [CHA]	USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpConcentrationWithCHA,1	KEYSTAT:CHA		ACHECK:YES		TYPE:SkillUse.Charisma
+Heal [CHA]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpHealWithCHA,1		KEYSTAT:CHA		ACHECK:YES		TYPE:SkillUse.Charisma
+Ride [CHA]			USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpRideWithCHA,1		KEYSTAT:CHA		ACHECK:YES		TYPE:SkillUse.Charisma
+Sense Motive [CHA]	USEUNTRAINED:YES		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpSenseMotiveWithCHA,1	KEYSTAT:CHA		ACHECK:YES		TYPE:SkillUse.Charisma
+Sleight of Hand [CHA]	USEUNTRAINED:NO		CLASS:ALL		VISIBLE:EXPORT	PREVAREQ:LpSleightOfHandWithCHA,1	KEYSTAT:CHA		ACHECK:YES		TYPE:SkillUse.Charisma
+
+
+
+#Every line that starts with a '#' is a comment. You may want to remove these comments, if you use this file to set up
+#your own data. Remember not to put the '#' at the start of your own data, as PCGen would see it as a comment only.
+#
+#When Running PCGen, you can select "Help > Documentation > List Files > List File Tag Index > Skill File tags" to find
+#out how the tags in the skills file work. Some of the tags used here are global tags. You will see an alphabetical
+#listing of all PCGen tags to the left of the documentation window. You can find the global tags there as well.
+#
+#
+#
+#
+#####Example
+
+#Sleight of Hand		KEYSTAT:DEX		USEUNTRAINED:NO	ACHECK:YES		TYPE:Dexterity		BONUS:SKILL|Sleight of Hand|2|PRESKILL:1,Bluff=5|TYPE=Synergy.STACK		SOURCEPAGE:SkillsII.rtf
+
+###Sample for Ability by Skill rules guide.
+#Ability by Skill	TYPE:NoStat	VISIBLE:DISPLAY	BONUS:ABILITYPOOL|AbilitybySkillPool|SKILL.Ability by Skill.RANK
+
+#####
+#Sleight of Hand is the name of the skill. It will appear in the skills list on PCGen's Skills tab and will be used if a
+#skill gets bonused or is declared a class skill. It must be the first entry on each line.
+#
+#The KEYSTAT tag sets what stat the skill draw any bonuses from. If the tag is left off, no Stat bonus will be automatically
+#applied.
+#
+#The USEUNTRAINED tag indicates if this skill can be used untrained by the character. It can be left off if it is set to YES.
+#
+#The ACHECK tag applies the Armor check penalty to this skill. It can be left off if it is set to NO.
+#
+#BONUS tags are a group of similar tags, that grant some form of Bonus to another already existing tag. To read a description
+#of them, look in the List File Tag Index under the topic "Bonus tags".
+#
+#The PRESKILL tag is used with the BONUS tag, so it is required that you have a certain skill at a certain level to benefit
+#from this Bonus. There is a multitude of existing prerequiste tags in PCGen. If you are looking into the documentation under
+#List File Tag Index, you can find them listed under the topic "PRExxx tags".
+#
+#The SOURCEPAGE tag can be used to hold a reference to where you can find the spell. This will be displayed in PCGen.
