@@ -1,0 +1,189 @@
+# CVS $Revision: $ $Author: $ -- Thu Jan 20 15:11:32 2005 -- reformated by prettylst.pl v1.34 (build 455)
+SOURCELONG:Iron Kingdoms Character Guide	SOURCESHORT:IKCG	SOURCEWEB:http://www.ironkingdoms.com
+
+#IK Prestige Classes created by Glen Murie
+
+#Clear out 'illegal' prestiges
+
+# Class Name
+CLASS:Arcane Archer.FORGET
+
+# Class Name
+CLASS:Arcane Trickster.FORGET
+
+# Class Name
+CLASS:Assassin.FORGET
+
+# Class Name
+CLASS:Dragon Disciple.FORGET
+
+# Class Name
+CLASS:Eldritch Knight.FORGET
+
+# Class Name
+CLASS:Horizon Walker.FORGET
+
+# Class Name
+CLASS:Mystic Theurge.FORGET
+
+# Class Name
+CLASS:Shadowdancer.FORGET
+
+# Class Name
+CLASS:Thaumaturgist.FORGET
+
+# TODO: Morrow's blessing lets the Battle Chaplain to exceed the normal healing bonus limit, so Cure Light could
+# heal 1d8+9 HP. I think the only way to implement this is to .MOD the relevant spells, but I'd prefer to
+# be able to do it here. I currently have the caster level of Mass Cure Light wounds implemented incorrectly,
+# it should be equal to divine caster level, but I don't know how to do that.
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Battle Chaplain	HD:10		TYPE:PC.Prestige	ABB:Bcp		MAXLEVEL:5	SOURCEPAGE:pg.115	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Willpower,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Required AL		Required Skill													Req. Spell Type
+CLASS:Battle Chaplain	PREALIGN:0,3,6	PRESKILL:1,Knowledge (Religion)=8	PRESKILL:1,Handle Animal,Heal,Ride,Sense Motive=5	PRESPELLTYPE:Divine,1,1
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Battle Chaplain	STARTSKILLPTS:2	CSKILL:Concentration|Diplomacy|Handle Animal|Heal|Knowledge (Religion)|TYPE.Profession|Ride|Sense Motive|Spellcraft
+1	ADD:SPELLCASTER(Divine)								SA:Rally the Faithful +2 (Su)
+2												SA:Morrow's Blessing (Su)												BONUS:CASTERLEVEL|SUBSCHOOL.Healing|1	ADD:FEAT(Cleave,Combat Casting,Combat Expertise,Extra Turning,Great Cleave,Improved Bull Rush,Improved Counterspell,Improved Disarm,Improved Feint,Improved Shield Bash,Improved Sunder,Improved Trip,Improved Turning,Mounted Combat,Mounted Archery,Power Attack,Trample,Ride By Attack,Skill Focus (Heal),Spirited Charge,Two Weapon Fighting,Improved Two Weapon Fighting,Weapon Focus,Whirlwind Attack)
+3	ADD:SPELLCASTER(Divine)	SA:.CLEAR.Rally the Faithful +2 (Su)	SA:Rally the Faithful +4 (Su)
+4																																			ADD:FEAT(Cleave,Combat Casting,Combat Expertise,Extra Turning,Great Cleave,Improved Bull Rush,Improved Counterspell,Improved Disarm,Improved Feint,Improved Shield Bash,Improved Sunder,Improved Trip,Improved Turning,Mounted Combat,Mounted Archery,Power Attack,Trample,Ride By Attack,Skill Focus (Heal),Spirited Charge,Two Weapon Fighting,Improved Two Weapon Fighting,Weapon Focus,Whirlwind Attack)	SPELLS:Innate|TIMES=1|CASTERLEVEL=TL|Cure Light Wounds (Mass),15+WIS
+5	ADD:SPELLCASTER(Divine)	SA:.CLEAR.Rally the Faithful +4 (Su)	SA:Morrow's Sight (Sp), can sense evil actions within 30 feet.	SA:Rally the Faithful +6 (Su)																																																																											SPELLS:Innate|TIMES=-1|CASTERLEVEL=TL|Detect Evil,11+WIS
+
+###########
+# TODO:
+#	Implementation of Caster level is not 100% correct. It is based off of Druid class level plus this one,
+#	but since the only way to get directly to this class is as a Druid it should stand for the time being.
+#	I have to fix it so that some nut who wants a Druid/Cleric can do it and get their caster level
+#	from their levels in Cleric at some point though...
+#	Need to create a calculation for Elemental Strike at some point, though it's fairly trivial.
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Blackclad	HD:8		TYPE:PC.Prestige	ABB:Blc		MAXLEVEL:6	SOURCEPAGE:pg.117	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Willpower,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Required AL	Required Feat						Req. Special Ability		Required Skill															Req. Spell Type
+CLASS:Blackclad	PREALIGN:7	PREFEAT:3,Endurance,Great Fortitude,Iron Will	PRESA:,1,Trackless Step (Ex)	PRESKILL:2,Craft (Stoneworking),Craft (Woodworking)=5	PRESKILL:2,Intimidate,Knowledge (Nature)=8	PRESPELLTYPE:Divine,1,4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Blackclad	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Intimidate|Jump|Knowledge (Nature)|Listen|Spellcraft|Spot|Survival|Swim
+# Class Name	Spell Stat		Spell Type		Automaticaly Known Spell Levels			Caster level
+CLASS:Blackclad	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7	BONUS:CASTERLEVEL|Blackclad|CL+CL=Druid
+1	CAST:0,0,0,0,2,1		SA:Unhindered Step (Ex)	SA:Stone Mastery (Su),Stone Tell and teleport via stones 20ft/level/day.	SPELLS:Innate|TIMES=CL|CASTERLEVEL=((CL=Blackclad)+(CL=Druid))|Stone Tell,16+WIS
+2	CAST:0,0,0,0,2,2																																	FEATAUTO:Craft Construct
+3	CAST:0,0,0,0,3,2,1	SA:Elemental Staff (Su), Quarterstaff gets elemental damage bonus.
+4	CAST:0,0,0,0,3,3,2	SA:Lesser Warden Sensitivity (Su), see IKCG page 119.									SPELLS:Innate|TIMES=CL|CASTERLEVEL=((CL=Blackclad)+(CL=Druid))|Stone Stride,15+WIS
+5	CAST:0,0,0,0,3,3,2,1	SA:Elemental Strike (Sp), see IKCG page 119.
+6	CAST:0,0,0,0,4,3,3,2	SA:Greater Warden Sensitivity (Ex), see IKCG page 119.
+
+###########
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Mage Hunter	HD:6		TYPE:PC.Prestige	ABB:MgHtr		MAXLEVEL:10	SOURCEPAGE:pg.120	BONUS:CHECKS|BASE.Willpower,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Req. Att.	Required Feat							Required Race		Required Skill
+CLASS:Mage Hunter	PREATT:5	PREFEAT:4,Dodge,Evasion,Lightning Reflexes,Mobility	PRERACE:Elf (Iosan)	PRESKILL:2,Hide,Move Silently=10	PRESKILL:2,Spellcraft,Survival=4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Mage Hunter	STARTSKILLPTS:4	CSKILL:Balance|Climb|Escape Artist|Gather Information|Hide|Jump|Listen|Move Silently|Spellcraft|Spot|Survival|Tumble
+1											SA:Camouflage (Ex), see IKCG pg.123	SA:Mechanika Intolerance, see IKCG pg.123	SA:Pathfinder, see IKCG pg 123	SA:If Spellcraft higher than 5 ranks +2 synergy to Survival to track spellcasters.	BONUS:VAR|SneakAttack|(CL=Mage Hunter-1)/3	FEATAUTO:Sneak Attack
+2											SA:Arcane Foe (Ex) +2																																						FEATAUTO:Improved Evasion
+3											SA:Nondetection (Ex), See IKCG pg.123																																			FEATAUTO:Witch Hound
+4																																																				FEATAUTO:Uncanny Dodge
+5						SA:.CLEAR.Arcane Foe (Ex) +2	SA:Arcane Foe (Ex) +4	SA:Spell Tracking (Ex), see IKCG pg. 124
+6	SR:10+CL=Mage Hunter+CHA
+7											SA:Wizard Strike (Ex), see IKCG pg. 124
+8						SA:.CLEAR.Arcane Foe (Ex) +4	SA:Arcane Foe (Ex) +6
+9																																																				FEATAUTO:Slippery Mind
+
+###########
+# TODO: Can't seem to implement the Weapon Focus (Pistol) or other feat bonus at first level correctly
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Pistoleer	HD:6		TYPE:PC.Prestige	ABB:Ptr		MAXLEVEL:10	SOURCEPAGE:pg.124	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Req. Att.	Required Feat								Required Skill
+CLASS:Pistoleer	PREATT:3	PREFEAT:2,Exotic Weapon Proficiency (Small Arms),Quick Draw	PRESKILL:1,Craft (Small Arms)=8	PRESKILL:1,Intimidate=4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Pistoleer	STARTSKILLPTS:4	CSKILL:Craft (Small Arms)|Balance|Bluff|Climb|Craft (Gunsmithing)|Hide|Intimidate|Jump|Listen|Move Silently|Ride|Spot|Tumble
+1																		BONUS:VAR|VitalShot|(CL=Pistoleer+2)/3	ADD:FEAT(Weapon Focus (Pistol),Alertness,Combat Reflexes,Improved Critical (Pistol),Lightning Reflexes,Point Blank Shot,Far Shot,Precise Shot,Improved Precise Shot,Shot on the Run)1	FEATAUTO:Vital Shot
+2																									ADD:FEAT(Alertness,Combat Reflexes,Improved Critical (Pistol),Lightning Reflexes,Point Blank Shot,Far Shot,Precise Shot,Improved Precise Shot,Shot on the Run)1
+3	SA:Pistol Mastery (Ex), +1 Hit and Damage within 30 feet.	SA:Pistol Whip (Ex), see IKCG pg. 127
+4																									ADD:FEAT(Two Pistol Fighting,Improved Two Pistol Fighting)1
+5																																																								FEATAUTO:Salvage Ammunition
+6	SA:Hairtrigger (Ex), see IKCG pg.127
+7
+8	SA:Quick Load (Ex), see IKGG pg.127
+9	SA:Lightning Draw
+10	SA:Gunsmith Expertise, see IKCG pg 128
+
+###########
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Rifleman	HD:8		TYPE:PC.Prestige	ABB:Rfl		MAXLEVEL:10	SOURCEPAGE:pg.128	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Req. Att.	Required Feat													Required Skill
+CLASS:Rifleman	PREATT:5	PREFEAT:3,Exotic Weapon Proficiency (Small Arms),Point Blank Shot,Weapon Focus (Rifle)	PRESKILL:1,Craft (Small Arms)=8	PRESKILL:1,Spot=4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Rifleman	STARTSKILLPTS:4	CSKILL:Craft (Cannoneer)|Craft (Small Arms)|Climb|Concentration|Craft (Gunsmithing)|Hide|Jump|Move Silently|Ride|Spot
+1												BONUS:VAR|SnipingShot|(CL=Rifleman+2)/2																																										AUTO:WEAPONPROF|TYPE=Martial.Melee	FEATAUTO:Armor Proficiency (Light)|Armor Proficiency (Medium)|Simple Weapon Proficiency|Far Shot|Sniping Shot
+2	SA:Rifle Mastery, +1 Hit and Damage in first range increment.
+3	SA:Rifle Melee (Ex),see IKCG pg.132													ADD:FEAT(Alertness,Combat Expertise,Combat Reflexes,Greater Weapon Focus (Rifle),Improved Critical (Rifle),Improved Precise Shot,Lightning Reflexes,Mounted Combat,Mounted Archery,Precise Shot,Quick Draw,Rapid Shot,Shot on the Run,Weapon Finesse)
+4	SA:Hairtrigger (Ex), see IKCG pg.132																																																											FEATAUTO:Salvage Ammunition
+5	SA:Quick Load (Ex), see IKGG pg.132
+6																			ADD:FEAT(Alertness,Combat Expertise,Combat Reflexes,Greater Weapon Focus (Rifle),Improved Critical (Rifle),Improved Precise Shot,Lightning Reflexes,Mounted Combat,Mounted Archery,Precise Shot,Quick Draw,Rapid Shot,Shot on the Run,Weapon Finesse)
+7
+8
+9																			ADD:FEAT(Alertness,Combat Expertise,Combat Reflexes,Greater Weapon Focus (Rifle),Improved Critical (Rifle),Improved Precise Shot,Lightning Reflexes,Mounted Combat,Mounted Archery,Precise Shot,Quick Draw,Rapid Shot,Shot on the Run,Weapon Finesse)
+10	SA:Gunsmith Expertise, see IKCG pg 132
+
+###########
+# TODO: Can't seem to implement the Evasion/Lighting Reflexes benefit correctly
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Second Story Man	HD:6		TYPE:PC.Prestige	ABB:Ssm		MAXLEVEL:10	SOURCEPAGE:pg.133	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name		Required AL			Required Skill
+CLASS:Second Story Man	PREALIGN:3,4,5,6,7,8	PRESKILL:1,Open Lock=8	PRESKILL:1,Disable Device=6	PRESKILL:3,Balance,Climb,Gather Information=4	PRESKILL:1,Craft (Tools)=3	PRESKILL:1,Use Rope=2
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Second Story Man	STARTSKILLPTS:6	CSKILL:Craft (Clockwork)Appraise|Balance|Bluff|Climb|Craft (Tools)|Disable Device|Disguise|Escape Artist|Gather Information|Hide|Jump|Listen|Move Silently|Open Lock|Search|Spot|Tumble|Use Rope
+1	SA:Slow Fall (% ft.)|SlowFall			BONUS:VAR|SlowFall|((CL=Second Story Man+3)/4).TRUNC*10					DEFINE:SlowFall|0	ADD:FEAT(Evasion,Lightning Reflexes)																																												AUTO:WEAPONPROF|TYPE=Simple
+2	SA:An ear for locks, see IKCG pg.135	BONUS:VAR|UncannyDodgeFlankingLevel|CL=Second Story Man|TYPE=EachClass.REPLACE				ADD:FEAT(Uncanny Dodge,Improved Uncanny Dodge)
+3	SA:Assess Mechanism, see IKCG pg.136																		ADD:FEAT((Skill Focus (Balance),Skill Focus (Climb),Skill Focus (Craft (Tools)),Skill Focus (Disguise),Skill Focus (Disable Device),Skill Focus (Gather Information),Skill Focus (Hide),Skill Focus (Jump),Skill Focus (Listen),Skill Focus (Move Silently),Skill Focus (Open Lock),Skill Focus (Tumble))
+4																									ADD:FEAT(TYPE=SsmAbilities,TYPE=General,TYPE=Metamagic,TYPE=ItemCreation,Defensive Roll,Improved Evasion,Skill Mastery)
+5																									ADD:FEAT(Uncanny Dodge,Improved Uncanny Dodge)
+6	SA:An ear for traps, see IKCG pg.136																		ADD:FEAT((Skill Focus (Balance),Skill Focus (Climb),Skill Focus (Craft (Tools)),Skill Focus (Disguise),Skill Focus (Disable Device),Skill Focus (Gather Information),Skill Focus (Hide),Skill Focus (Jump),Skill Focus (Listen),Skill Focus (Move Silently),Skill Focus (Open Lock),Skill Focus (Tumble))
+7																									ADD:FEAT(TYPE=SsmAbilities,TYPE=General,TYPE=Metamagic,TYPE=ItemCreation,Defensive Roll,Improved Evasion,Skill Mastery)
+8																									ADD:FEAT(Uncanny Dodge,Improved Uncanny Dodge)
+9	SA:An ear for footsteps, see IKCG pg.136
+10																									ADD:FEAT(TYPE=SsmAbilities,TYPE=General,TYPE=Metamagic,TYPE=ItemCreation,Defensive Roll,Improved Evasion,Skill Mastery)
+
+###########
+
+# Class Name	Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Warcaster	HD:6		TYPE:PC.Prestige	ABB:Wrc		MAXLEVEL:6	SOURCEPAGE:pg.137	BONUS:CHECKS|BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name	Req. Att.	Required Feat											Required Skill												Req. Spell Type
+CLASS:Warcaster	PREATT:4	PREFEAT:4,Combat Casting,Iron Will,Leadership,Skill Focus (Concentration)	PRESKILL:1,Concentration=10	PRESKILL:1,Spellcraft=7	PRESKILL:1,Jack Handling=5	PRESPELLTYPE:Arcane|Divine,1,3
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Warcaster	STARTSKILLPTS:2	CSKILL:Craft (Mechanika)|Concentration|TYPE.Craft|Jack Handling|TYPE.Knowledge|TYPE.Profession|Spellcraft|Spot
+1	ADD:SPELLCASTER(ANY)	SA:Warcaster Adept (Su)	SA:Sense Cortex (Su)	SA:Augment Jack (Su) % foot range.|WCAugmentRange	SA: Warcaster Focus, up to % points, see IKCG pg. 141|WCFocusPoints	BONUS:VAR|WCAugmentRange|(CL=Warcaster*10)	BONUS:VAR|WCFocusPoints|(CL=Warcaster+2)	DEFINE:WCAugmentRange|0	DEFINE:WCFocusPoints|0	FEATAUTO:Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Armor Proficiency (Warcaster)	FEATAUTO:Shield Proficiency|Tower Shield Proficiency		WEAPONBONUS:TYPE.Simple|TYPE.Martial	VFEAT:Warcaster Weapon Bonus
+2	ADD:SPELLCASTER(ANY)
+3	ADD:SPELLCASTER(ANY)
+4	ADD:SPELLCASTER(ANY)
+5	ADD:SPELLCASTER(ANY)
+6	ADD:SPELLCASTER(ANY)
+
+###########
+
+# Class Name			Hit Dice	Type			Abbreviation	Max Level	Source Page				Save checks bonus												Combat bonus
+CLASS:Intelligence Liaison	HD:6		TYPE:PC.Prestige	ABB:Spy		MAXLEVEL:10	SOURCEPAGE:Privateer Website	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name			Req. Att.	Required Feat																									Required Skill
+CLASS:Intelligence Liaison	PREATT:4	PREFEAT:1,Alertness	PREFEAT:1,Skill Focus (Bluff),Skill Focus (Diplomacy),Skill Focus (Disguise),Skill Focus (Gather Information),Skill Focus (Sense Motive)	PRESKILL:3,Bluff,Disguise,Gather Information=6	PRESKILL:2,Diplomacy,Sense Motive=4	PRESKILL:2,Forgery,Perform (Impersonation)=3
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Intelligence Liaison	STARTSKILLPTS:8	CSKILL:Bluff|TYPE.Craft|Craft (Small Arms)|Decipher Script|Diplomacy|Disable Device|Disguise|Escape Artist|Forgery|Gather Information|Hide|Intimidate|TYPE.Knowledge|Listen|Move Silently|Perform (Impersonation)|TYPE.Profession|Search|Sense Motive|Spot
+# Sneak Attack
+1																																			BONUS:VAR|SneakAttack|1|PRECLASS:1,Ex Paladin=5
+2																																			BONUS:VAR|SneakAttack|(CL=Intelligence Liaison+1)/3																															FEATAUTO:Sneak Attack
+# Block Normal Progression
+1														SA:Bluff weapon proficiency	SA:Fabricate Identity (Ex)	SA:Cover Identity, has 5 ranks in inconspicuous profession																							AUTO:WEAPONPROF|Crossbow (Hand)|Crossbow (Light)|TYPE.Dagger|Dart|Mace (Light)|Sap|Shortbow|Sword (Short)	FEATAUTO:Martial Weapon Proficiency
+2														SA:Expert Impersonation (Ex)																											BONUS:SKILLRANK|Speak Language|2
+3														SA:Charming, +2 to all personal interaction skills	SA:First Spy Ability	SA:Feign Skill Expertise +%|FeignSkillExpertise	BONUS:VAR|FeignSkillExpertise|CL=Intelligence Liaison-2							DEFINE:FeignSkillExpertise|0
+4														SA:Undetectability (Ex)																												BONUS:SKILLRANK|Speak Language|2
+5	SA:.CLEAR.Cover Identity, has 5 ranks in inconspicuous profession			SA:Two Cover Identities, has 5 ranks in two inconspicuous professions
+6														SA:Second Spy Ability																												BONUS:SKILLRANK|Speak Language|2
+7														SA:Against the odds (Ex)
+8																																													BONUS:SKILLRANK|Speak Language|2
+9														SA:Detect Ruse (Ex)	SA: Third Spy Ability
+10	SA:.CLEAR.Two Cover Identities, has 5 ranks in two inconspicuous professions	SA:Three Cover Identities, has 5 ranks in three inconspicuous professions																			BONUS:SKILLRANK|Speak Language|2
+

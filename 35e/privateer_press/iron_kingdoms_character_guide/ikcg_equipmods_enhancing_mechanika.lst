@@ -1,0 +1,77 @@
+# CVS $Revision: $ $Author: $ -- Wed Jan 19 21:04:03 2005 -- reformated by prettylst.pl v1.33 (build 421)
+SOURCELONG:Iron Kingdoms Character Guide	SOURCESHORT:IKCG	SOURCEWEB:http://www.ironkingdoms.com
+## Original Entry by: Rax the Grey
+
+## NOTE: Add Mechanikal to item first to qualify for enhancements.  --Rax
+-## NOTE: Customize a set of fitted armor and add Warcaster Armor and then the Mech. Assist, Arcane Turbine, Power Field (needs work), and Arcane Focus Chamber as desired. --Rax
+## TODO: Enter conduits out to +10  --Raxx
+
+## Block: Armor
+# Modifier Name					Unique Key		Type				Visible		Type granted						Keys to replace							Source Page			Required Feat					Required Type				Combat bonus					BONUS:EQM			Modify the item cost			Special Property							Apply to both heads
++1 Runeplate (Enhancement to Armor)	KEY:MECHPLUS1A	TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus1			REPLACES:MECHPLUS2A,MECHPLUS3A,MECHPLUS4A,MECHPLUS5A	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Armor,Mechanikal		BONUS:COMBAT|AC|1|TYPE=Armor.REPLACE																				ASSIGNTOALL:YES
++2 Runeplate (Enhancement to Armor)	KEY:MECHPLUS2A	TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus2			REPLACES:MECHPLUS1A,MECHPLUS3A,MECHPLUS4A,MECHPLUS5A	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Armor,Mechanikal		BONUS:COMBAT|AC|2|TYPE=Armor.REPLACE																				ASSIGNTOALL:YES
++3 Runeplate (Enhancement to Armor)	KEY:MECHPLUS3A	TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus3			REPLACES:MECHPLUS1A,MECHPLUS2A,MECHPLUS4A,MECHPLUS5A	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Armor,Mechanikal		BONUS:COMBAT|AC|3|TYPE=Armor.REPLACE																				ASSIGNTOALL:YES
++4 Runeplate (Enhancement to Armor)	KEY:MECHPLUS4A	TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus4			REPLACES:MECHPLUS1A,MECHPLUS2A,MECHPLUS3A,MECHPLUS5A	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Armor,Mechanikal		BONUS:COMBAT|AC|4|TYPE=Armor.REPLACE																				ASSIGNTOALL:YES
++5 Runeplate (Enhancement to Armor)	KEY:MECHPLUS5A	TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus5			REPLACES:MECHPLUS1A,MECHPLUS2A,MECHPLUS3A,MECHPLUS4A	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Armor,Mechanikal		BONUS:COMBAT|AC|5|TYPE=Armor.REPLACE																				ASSIGNTOALL:YES
+
+## Block: Warcaster Armor
+Warcaster Armor					KEY:WARCSTRA	TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Plus2.Warcaster										SOURCEPAGE:pg. 340	PREFEAT:1,Armor Proficiency (Warcaster)	PRETYPE:4,Masterwork,Armor,CustomFit,Mechanikal	BONUS:COMBAT|AC|2|TYPE=Armor.REPLACE																				ASSIGNTOALL:YES
+Mechanikal Assist (AC +1)			KEY:MAAC		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 341								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal	BONUS:COMBAT|AC|1|TYPE=Armor.STACK		BONUS:EQM|WEIGHTADD|3	BONUS:ITEMCOST|TYPE.Warcaster|8000															ASSIGNTOALL:YES
+Mechanikal Assist (Speed +10)			KEY:MASP		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 341								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal	BONUS:MOVEADD|TYPE.Walk|10.STACK		BONUS:EQM|WEIGHTADD|3	BONUS:ITEMCOST|TYPE.Warcaster|8000															ASSIGNTOALL:YES
+Mechanikal Assist (Max Dex +2)		KEY:MAMD		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 341								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal	BONUS:EQMARMOR|MAXDEX|2				BONUS:EQM|WEIGHTADD|3	BONUS:ITEMCOST|TYPE.Warcaster|8000															ASSIGNTOALL:YES
+Mechanikal Assist (ACP +2)			KEY:MAACP		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 341								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal	BONUS:EQMARMOR|ACCHECK|-2		BONUS:EQM|WEIGHTADD|3	BONUS:ITEMCOST|TYPE.Warcaster|8000															ASSIGNTOALL:YES
+Mechanikal Assist (ASF -25%)			KEY:MAASF		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 341								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal	BONUS:EQMARMOR|SPELLFAILURE|-25		BONUS:EQM|WEIGHTADD|3	BONUS:ITEMCOST|TYPE.Warcaster|8000															ASSIGNTOALL:YES
+Arcane Turbine					KEY:ACTB		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 340								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal								BONUS:EQM|WEIGHTADD|15	BONUS:ITEMCOST|TYPE.Warcaster|16000										ASSIGNTOALL:YES
+Power Field						KEY:PWRFLD		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 340								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal								BONUS:EQM|WEIGHTADD|2	BONUS:ITEMCOST|TYPE.Warcaster|20000	SPROP:Provides energy field of 40 points			ASSIGNTOALL:YES
+Arcane Focus Chamber				KEY:AFC		TYPE:Armor			VISIBLE:QUALIFY	ITYPE:Mechanikal.Warcaster											SOURCEPAGE:pg. 341								PRETYPE:4,Masterwork,Armor,Warcaster,Mechanikal								BONUS:EQM|WEIGHTADD|2	BONUS:ITEMCOST|TYPE.Warcaster|4000	SPROP:Carried wearer's material spell components	ASSIGNTOALL:YES
+
+## Block: Shield
+# Modifier Name					Unique Key		Type				Visible		Type granted						Keys to replace							Source Page			Required Feat					Required Type				Combat bonus					BONUS:EQM			Modify the item cost			Special Property							Apply to both heads
++1 Runeplate (Enhancement to Shield)	KEY:MECHPLUS1S	TYPE:Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus1			REPLACES:MECHPLUS2S,MECHPLUS3S,MECHPLUS4S,MECHPLUS5S	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Shield,Mechanikal		BONUS:COMBAT|AC|1|TYPE=Shield.REPLACE																				ASSIGNTOALL:YES
++2 Runeplate (Enhancement to Shield)	KEY:MECHPLUS2S	TYPE:Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus2			REPLACES:MECHPLUS1S,MECHPLUS3S,MECHPLUS4S,MECHPLUS5S	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Shield,Mechanikal		BONUS:COMBAT|AC|2|TYPE=Shield.REPLACE																				ASSIGNTOALL:YES
++3 Runeplate (Enhancement to Shield)	KEY:MECHPLUS3S	TYPE:Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus3			REPLACES:MECHPLUS1S,MECHPLUS2S,MECHPLUS4S,MECHPLUS5S	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Shield,Mechanikal		BONUS:COMBAT|AC|3|TYPE=Shield.REPLACE																				ASSIGNTOALL:YES
++4 Runeplate (Enhancement to Shield)	KEY:MECHPLUS4S	TYPE:Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus4			REPLACES:MECHPLUS1S,MECHPLUS2S,MECHPLUS3S,MECHPLUS5S	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Shield,Mechanikal		BONUS:COMBAT|AC|4|TYPE=Shield.REPLACE																				ASSIGNTOALL:YES
++5 Runeplate (Enhancement to Shield)	KEY:MECHPLUS5S	TYPE:Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus5			REPLACES:MECHPLUS1S,MECHPLUS2S,MECHPLUS3S,MECHPLUS4S	SOURCEPAGE:pg. 333								PRETYPE:3,Masterwork,Shield,Mechanikal		BONUS:COMBAT|AC|5|TYPE=Shield.REPLACE																				ASSIGNTOALL:YES
+
+## Block: Armor/Shild Conduit
++1 Conduit (Armor/Shield)			KEY:CON1A		TYPE:Armor.Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON2A,CON3A,CON4A,CON5A											PRETYPE:2,Masterwork,Armor,Shield																	BONUS:ITEMCOST|TYPE.ColdIron.Armor.Shield|250		ASSIGNTOALL:YES
++2 Conduit (Armor/Shield)			KEY:CON2A		TYPE:Armor.Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1A,CON3A,CON4A,CON5A											PRETYPE:2,Masterwork,Armor,Shield																	BONUS:ITEMCOST|TYPE.ColdIron.Armor.Shield|2200		ASSIGNTOALL:YES
++3 Conduit (Armor/Shield)			KEY:CON3A		TYPE:Armor.Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1A,CON2A,CON4A,CON5A											PRETYPE:2,Masterwork,Armor,Shield																	BONUS:ITEMCOST|TYPE.ColdIron.Armor.Shield|4410		ASSIGNTOALL:YES
++4 Conduit (Armor/Shield)			KEY:CON4A		TYPE:Armor.Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1A,CON2A,CON3A,CON5A											PRETYPE:2,Masterwork,Armor,Shield																	BONUS:ITEMCOST|TYPE.ColdIron.Armor.Shield|7360		ASSIGNTOALL:YES
++5 Conduit (Armor/Shield)			KEY:CON5A		TYPE:Armor.Shield			VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1A,CON2A,CON3A,CON4A											PRETYPE:2,Masterwork,Armor,Shield																	BONUS:ITEMCOST|TYPE.ColdIron.Armor.Shield|11050	ASSIGNTOALL:YES
+
+## Block: Weapons
+ +1 Runeplate (Enhancement to Weapon or Ammunition)		KEY:MECHPLUS1W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus1				REPLACES:MECHPLUS2W,MECHPLUS3W,MECHPLUS4W,MECHPLUS5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|1200		BONUS:WEAPON|DAMAGE,TOHIT|1|TYPE=Enhancement	ASSIGNTOALL:YES
+ +2 Runeplate (Enhancement to Weapon or Ammunition)		KEY:MECHPLUS2W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus2				REPLACES:MECHPLUS1W,MECHPLUS3W,MECHPLUS4W,MECHPLUS5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|2400		BONUS:WEAPON|DAMAGE,TOHIT|2|TYPE=Enhancement	ASSIGNTOALL:YES
+ +3 Runeplate (Enhancement to Weapon or Ammunition)		KEY:MECHPLUS3W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus3				REPLACES:MECHPLUS1W,MECHPLUS2W,MECHPLUS4W,MECHPLUS5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|6480		BONUS:WEAPON|DAMAGE,TOHIT|3|TYPE=Enhancement	ASSIGNTOALL:YES
+ +4 Runeplate (Enhancement to Weapon or Ammunition)		KEY:MECHPLUS4W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus4				REPLACES:MECHPLUS1W,MECHPLUS2W,MECHPLUS3W,MECHPLUS5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|12480	BONUS:WEAPON|DAMAGE,TOHIT|4|TYPE=Enhancement	ASSIGNTOALL:YES
+ +5 Runeplate (Enhancement to Weapon or Ammunition)		KEY:MECHPLUS5W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal.MPlus5				REPLACES:MECHPLUS1W,MECHPLUS2W,MECHPLUS3W,MECHPLUS4W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|20400	BONUS:WEAPON|DAMAGE,TOHIT|5|TYPE=Enhancement	ASSIGNTOALL:YES
+
+## Block: Weapon Conduit
++1 Conduit (Weapon)				KEY:CON1W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON2W,CON3W,CON4W,CON5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|300		ASSIGNTOALL:YES
++2 Conduit (Weapon)				KEY:CON2W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1W,CON3W,CON4W,CON5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|3600		ASSIGNTOALL:YES
++3 Conduit (Weapon)				KEY:CON3W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1W,CON2W,CON4W,CON5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|7020		ASSIGNTOALL:YES
++4 Conduit (Weapon)				KEY:CON4W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1W,CON2W,CON3W,CON5W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|11520	ASSIGNTOALL:YES
++5 Conduit (Weapon)				KEY:CON5W		TYPE:Weapon		VISIBLE:QUALIFY	ITYPE:Mechanikal				REPLACES:CON1W,CON2W,CON3W,CON4W											PRETYPE:3,Masterwork,Weapon,Mechanikal																	BONUS:ITEMCOST|TYPE.Weapon|17100	ASSIGNTOALL:YES
+
+## Block: Misc
+Mechanikal						KEY:MECH		TYPE:Armor.Shield.Weapon.Amulet.Belt.Bracer.Cape.Glove.Headgear.Instrument.Mantle.Ring.Robe.Shirt.Eyegear.Boot				VISIBLE:QUALIFY	ITYPE:Mechanikal																			SOURCEPAGE:pg. 331	PREMULT:1,[PREMULT:2,[PRETYPE:Masterwork],[PRETYPE:Armor|Shield|Weapon]],[PRETYPE:Amulet|Belt|Bracer|Cape|Glove|Headgear|Instrument|Mantle|Ring|Robe|Shirt|Eyegear|Boot]
+Reflective Arcane Matrix			KEY:RAM
+Induction Belt					KEY:INB
+
+## Block: Mechanikal Triggers
+Mechanikal Trigger				KEY:MTR		TYPE:Mechanikal	COST:2*(1000+(100*%SPELLLEVEL*%CASTERLEVEL))		VISIBLE:QUALIFY	ITYPE:Mechanikal																			SOURCEPAGE:pg. 328	PREMULT:1,[PREMULT:2,[PRETYPE:Mechanikal],[PRETYPE:Armor|Shield|Weapon]],[PRETYPE:Amulet|Belt|Bracer|Cape|Glove|Headgear|Instrument|Mantle|Ring|Robe|Shirt|Eyegear|Boot]																																																		CHOOSE:EQBUILDER.SPELL
+Offensive Spell Trigger				KEY:OST		TYPE:Mechanikal	COST:2*(100*%SPELLLEVEL*%CASTERLEVEL)			VISIBLE:QUALIFY	ITYPE:Mechanikal																			SOURCEPAGE:pg. 328	PREMULT:1,[PREMULT:2,[PRETYPE:Mechanikal],[PRETYPE:Armor|Shield|Weapon]],[PRETYPE:Amulet|Belt|Bracer|Cape|Glove|Headgear|Instrument|Mantle|Ring|Robe|Shirt|Eyegear|Boot]																																																		CHOOSE:EQBUILDER.SPELL
+Reflexive Spell Trigger				KEY:RST		TYPE:Mechanikal	COST:2*(1000+(100*%SPELLLEVEL*%CASTERLEVEL))		VISIBLE:QUALIFY	ITYPE:Mechanikal																			SOURCEPAGE:pg. 328	PREMULT:1,[PREMULT:2,[PRETYPE:Mechanikal],[PRETYPE:Armor|Shield|Weapon]],[PRETYPE:Amulet|Belt|Bracer|Cape|Glove|Headgear|Instrument|Mantle|Ring|Robe|Shirt|Eyegear|Boot]																																																		CHOOSE:EQBUILDER.SPELL
+
+## Block: Accumulator Sockets
+Charge Socket	KEY:SOCKC		COST:200	BONUS:EQM|WEIGHTADD|1		VISIBLE:QUALIFY	TYPE:Mechanikal	REPLACES:SOCKT,SOCKH	PRETYPE:1,Mechanikal
+Trickle Socket	KEY:SOCKT		COST:200	BONUS:EQM|WEIGHTADD|1		VISIBLE:QUALIFY	TYPE:Mechanikal	REPLACES:SOCKC,SOCKH	PRETYPE:1,Mechanikal
+Hybrid Socket	KEY:SOCKH		COST:450	BONUS:EQM|WEIGHTADD|2		VISIBLE:QUALIFY	TYPE:Mechanikal	REPLACES:SOCKT,SOCKC	PRETYPE:1,Mechanikal
+
+##Block: Accumulator Charges
+# Modifier Name	Unique Key				Visible	Choose			Nb of Charges
+Charges (5)		KEY:ACCUMULATOR_CHARGE_5	VISIBLE:NO	CHOOSE:EQBUILDER|1	CHARGES:1|5
+Charges (10)	KEY:ACCUMULATOR_CHARGE_10	VISIBLE:NO	CHOOSE:EQBUILDER|1	CHARGES:1|10
+Charges (20)	KEY:ACCUMULATOR_CHARGE_20	VISIBLE:NO	CHOOSE:EQBUILDER|1	CHARGES:1|20
+
