@@ -1,0 +1,105 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+# anger of angels races (from chapter 10)
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+
+###############################
+# Creatures
+###############################
+# Agrippa advances by character class, but seems to have no favored class listed
+# haven't done Ephemerite Divine Specificity-worked with it a little, combat and skill implemented,
+# the others would be nigh impossible
+
+# Race Name				Product Identity?	Favored Class	Starting Feats	Size		Move				Reach		Vision					Required AL		Restricted AL	Automatic Languages	Save checks bonus											Combat bonus						Bonus to skill rank																													Stat bonus														Racial HD Class Skills																								Default Monster Feat									Nb Legs	Nb Hands	Special Ability				Define																				HITDICE		Spell Res.	Damage Reduction	MONSTERCLASS			Type			Template				CR	Source Page					Caster level					Spell																																																						ADD:FEAT
+Agrippa				NAMEISPI:YES				STARTFEATS:1																																																																																																																																																																																									SOURCEPAGE:Chapter 10: Creatures
+Agrippa.MOD													SIZE:M																																																																																																																																																																														TYPE:Outsider	TEMPLATE:Evil
+Agrippa.MOD																																																																																																																																																																																															TEMPLATE:Qualify (Fiend)
+Agrippa.MOD																																																																																																																																																LEGS:0	HANDS:0
+Agrippa.MOD																																																																																																																																																																															HITDICE:6,8
+Agrippa.MOD																																																																																																																																																																																							MONSTERCLASS:Agrippa:6
+Agrippa.MOD															MOVE:Walk,5
+Agrippa.MOD																																																		BONUS:COMBAT|AC|10|TYPE=NaturalArmor.REPLACE
+Agrippa.MOD																																																		BONUS:COMBAT|BAB|6|PREDEFAULTMONSTER:Y
+Agrippa.MOD																			REACH:0
+Agrippa.MOD																																																																																																																																																				SA:Fear Aura (Su)
+# don't think caster level is defined, rsrd says default is HD (total HD, that is) IIRC
+Agrippa.MOD																																																																																																																																																																																																											BONUS:CASTERLEVEL|RACE.Agrippa|TL
+Agrippa.MOD																																																																																																																																																																																																																		SPELL:Cause Fear|-1|Innate|Charm Person|-1|Innate|Comprehend Languages|-1|Innate|Protection from Good|-1|Innate|Read Magic|-1|Innate|Bestow Curse|3|Innate|Contagion|3|Innate|Darkness|3|Innate|Desecrate|3|Innate|Magic Circle against Good|3|Innate|Finger of Death|1|Innate|Inflict Critical Wounds|1|Innate|Earthquake|1|Innate
+Agrippa.MOD																																																																																																																																																										DEFINE:AcidResistance|10	DEFINE:ColdResistance|10	DEFINE:ElectricityResistance|20	DEFINE:Fire Resistance|20
+Agrippa.MOD																																																																																																																																																																																															TEMPLATE:Energy Resistance
+Agrippa.MOD																					VISION:Blindsight (10')
+Agrippa.MOD																																																																																																																																																																																				DR:20/magic
+Agrippa.MOD																																																																																																																																																				SA:Fiendish Grimoire (Ex)
+Agrippa.MOD																																																																																																																																																				SA:Immunity to Disease and Poison
+Agrippa.MOD																																																																																																																																																				SA:No Discernable Anatomy (Ex)
+Agrippa.MOD																																																																																																																																																				SA:Regeneration 1 (Ex)
+Agrippa.MOD																																																																																																																																																																																		SR:20
+Agrippa.MOD																																					BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|5|PREDEFAULTMONSTER:Y
+Agrippa.MOD																																																																																										BONUS:STAT|CON|6	BONUS:STAT|INT|6	BONUS:STAT|WIS|6	BONUS:STAT|CHA|4
+Agrippa.MOD																																																																																																									MONCSKILL:Concentration|Craft (Alchemy)|Diplomacy|Intimidate|Knowledge (Arcana)|Knowledge (Religion)|Knowledge (The Planes)|Listen|Sense Motive|Spellcraft|Spot
+Agrippa.MOD																																																										BONUS:SKILLRANK|Diplomacy|2|PREDEFAULTMONSTER:Y
+Agrippa.MOD																																																										BONUS:SKILLRANK|Concentration,Craft (Alchemy),Diplomacy,Intimidate,Knowledge (Arcana),Knowledge (Religion),Knowledge (The Planes),Listen,Sense Motive,Spellcraft,Spot|9|PREDEFAULTMONSTER:Y
+Agrippa.MOD																																																																																																																																				MFEAT:Iron Will|Skill Focus (Knowledge (The Planes))|Spell Penetration
+Agrippa.MOD																																																																																																																																																																																																				CR:7
+Agrippa.MOD																											PREALIGN:2,5,8
+#An agrippa isn't supposed to know any languages
+
+
+Ephemerite				NAMEISPI:YES																																																																																																																																																																																															SOURCEPAGE:Chapter 10: Creatures
+Ephemerite.MOD																																																																																																																																															LEGS:2	HANDS:2
+Ephemerite.MOD												SIZE:M																																																																																																																																																																														TYPE:Construct	TEMPLATE:Extraplanar
+Ephemerite.MOD																																																																																																																																																																																														TEMPLATE:Qualify (Angel)
+Ephemerite.MOD																																																																																																																																																																																						MONSTERCLASS:Ephemerite.MOD:2
+Ephemerite.MOD																																																																																																																																																																														HITDICE:2,10
+Ephemerite.MOD														MOVE:Walk,40,Fly,60
+Ephemerite.MOD																																																	BONUS:COMBAT|AC|7|TYPE=NaturalArmor.REPLACE
+Ephemerite.MOD																																																	BONUS:COMBAT|BAB|1|PREDEFAULTMONSTER:Y
+Ephemerite.MOD																		REACH:5
+#no caster level listed, using default of Hit Dice
+Ephemerite.MOD																																																																																																																																																																																																										BONUS:CASTERLEVEL|RACE.Ephemerite|TL
+Ephemerite.MOD																																																																																																																																																																																																																	SPELL:Create Water|-1|Innate|Light|-1|Innate|Mending|-1|Innate	SPELL:Clarity of the Faith|-1|Innate
+Ephemerite.MOD																																																																																																																																																																																														TEMPLATE:Heavenborn
+Ephemerite.MOD																																																																																																																																																			SA:Construct traits
+#Ephemerite.MOD		SA:Divine Specialty (Ex)
+Ephemerite.MOD																																																																																																																																																																																																																																																																							ADD:FEAT(TYPE=DivineSpecificity)1
+Ephemerite.MOD																																																																																																																																																																																			DR:10/magic
+Ephemerite.MOD																																																																																																																																																			SA:Instant Mortality (Ex)
+Ephemerite.MOD																																																																																																																																																			SA:Quasi-Outsider
+Ephemerite.MOD																																																																																																																																																									DEFINE:AcidResistance|5	DEFINE:ColdResistance|5	DEFINE:FireResistance|5	DEFINE:SonicResistance|5
+Ephemerite.MOD																																																																																																																																																																																														TEMPLATE:Energy Resistance
+Ephemerite.MOD																																																																																																																																																			SA:Specific Intelligence (Ex)
+Ephemerite.MOD																																				BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|3|PREDEFAULTMONSTER:Y
+Ephemerite.MOD																																																																																									BONUS:STAT|STR|4	BONUS:STAT|DEX|4	BONUS:STAT|WIS|2	BONUS:STAT|CHA|-2
+Ephemerite.MOD																																																																																																																																																									DEFINE:LOCK.CON|10	DEFINE:LOCK.INT|10
+Ephemerite.MOD																																																																																																																																																																																																			CR:2
+Ephemerite.MOD																										PREALIGN:4
+#why did I have this??
+#Ephemerite.MOD		VISION:Darkvision (60')|Low-light
+Ephemerite.MOD																																LANGAUTO:Celestial
+
+
+Nephilim (Gibborite)		NAMEISPI:YES																																																																																																																																																																																															SOURCEPAGE:Chapter 10: Creatures
+Nephilim (Gibborite).MOD																																																																																																																																													LEGS:2	HANDS:2
+Nephilim (Gibborite).MOD										SIZE:L																																																																																																																																																																														TYPE:Outsider	TEMPLATE:Native
+Nephilim (Gibborite).MOD																																																																																																																																																																																				MONSTERCLASS:Gibborite:3
+Nephilim (Gibborite).MOD																																																																																																																																																																												HITDICE:3,8
+Nephilim (Gibborite).MOD												MOVE:Walk,40
+Nephilim (Gibborite).MOD																																															BONUS:COMBAT|AC|2|TYPE=NaturalArmor.REPLACE
+Nephilim (Gibborite).MOD																																															BONUS:COMBAT|BAB|3|PREDEFAULTMONSTER:Y
+Nephilim (Gibborite).MOD																REACH:10
+Nephilim (Gibborite).MOD																		VISION:Darkvision (60')|Low-light
+Nephilim (Gibborite).MOD																																																																																																																																																	SA:Descent into Darkness (Ex)
+Nephilim (Gibborite).MOD																																																																																																																																																							DEFINE:AcidResistance|5	DEFINE:ColdResistance|5	DEFINE:ElectricityResistance|5
+Nephilim (Gibborite).MOD																																																																																																																																																																																												TEMPLATE:Energy Resistance
+Nephilim (Gibborite).MOD																																																																																																																																																																															SR:6
+Nephilim (Gibborite).MOD																																		BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|3|PREDEFAULTMONSTER:Y
+Nephilim (Gibborite).MOD																																																																																							BONUS:STAT|STR|8	BONUS:STAT|CON|4	BONUS:STAT|INT|2	BONUS:STAT|WIS|2	BONUS:STAT|CHA|4
+Nephilim (Gibborite).MOD																																																																																																						MONCSKILL:Concentration|Craft (Alchemy)|Diplomacy|Knowledge (Arcana)|Knowledge (Local)|Knowledge (Religion)|Use Magic Device|Spellcraft|Spot
+Nephilim (Gibborite).MOD																																																							BONUS:SKILLRANK|Concentration,Craft (Alchemy),Diplomacy,Knowledge (Arcana),Knowledge (Local),Knowledge (Religion),Use Magic Device,Spellcraft,Spot|6|PREDEFAULTMONSTER:Y
+Nephilim (Gibborite).MOD							STARTFEATS:1
+Nephilim (Gibborite).MOD																																																																																																																																	MFEAT:Power Attack|Weapon Focus (Longsword)
+Nephilim (Gibborite).MOD																																																																																																																																																																																																	CR:3
+Nephilim (Gibborite).MOD																											!PREALIGN:2,5,8
+Nephilim (Gibborite).MOD				FAVCLASS:Sorcerer
+#Gibborites should know celestial and one additional language
+Nephilim (Gibborite).MOD																														LANGAUTO:Celestial																						BONUS:SKILLRANK|Speak Language|1

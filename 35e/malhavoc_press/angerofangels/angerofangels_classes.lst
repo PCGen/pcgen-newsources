@@ -1,0 +1,305 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+# Anger of Angels classes
+
+# NAMEISPI:YES tags added
+# (these classes are all visible:no, however)
+
+# should these classes have a SOURCEPAGE tag? they're mostly artifacts of PCGen and not so much from Anger of Angels...
+
+
+# made separate race classes mostly because some racial benefits were easier implemented inside a class rather than a race
+# also, monsters still aren't getting all the skill points they should... (I think this has something to do with an Extra Hit Dice calculation in PCGEN?)
+# after that's fixed, classes should be changed to TYPE:Base.Monster, Gibborite should have MONSTERCLASS:Outsider
+
+# I'd like to do the race's innate spells thru the classes, so caster level, spell level, etc would be defined,
+# but I don't think I can tell it to have some spells at will, some 1/day...
+
+# I'm assuming angels shouldn't have tower shield proficiency?
+# Martial Weapon Proficiency (MWP) feat is adding proficiency in ALL martial weapons? - bug appears to be in rsrd .lsts
+# can't figure out how to add 1 martial weapon proficiency for the life of me >:/
+# update: now they're not getting even the 1 martial weapon proficiency.
+# the prof. doesn't show up under abilities, UNLESS you take MWP again, thru feat tab--then it shows up (along with the new prof.)
+
+# I'm having serious trouble getting Memunite, Principality bonus to chosen skills to work
+# going to do it through bonus hidden feats
+# maybe b/c i'm trying to give the bonus b/f they have any class skills? maybe if those tags were documented, pheh
+# hidden feats are wanting to give 2 choices, beh?
+
+# Hashalim issues
+# Judgement calls:
+# Golden Icon (Holy Symbol) - gave Hashmalim AllowImprovedTurning, AllowExtraTurning
+
+# now, if I could somehow set it up so that you had 1 Golden Icon, but when it was equipped a choice dialog popped up, that listed "Longsword, Staff, etc"...
+# for now, I've made 5 separate items
+
+# Hashmalim now get Basic Turning, Turn Undead as feats, regardless of whether the right Golden Icon is equipped
+# This will show up as something like "Turn Undead 0/day" with no Icon equipped, "Turn Undead 6/day" when equipped, etc
+# Extra turning will ruin this :/
+
+# +1 caster level to Law spells probably can't be coded - it doesn't appear to be with the Law domain
+
+# Lawful Spirit
+# Clerics have Law domain in addition to two other domains
+# arcane or divine may prepare or cast spells from the Law domain using their normal spell slots:
+# 	(I assume clerics can prepare Law-only spells as normal cleric spells, then)
+# sorcerers and bards treat spells from the Law domain as additional spells known that do not count toward their limit
+# possible tags:
+#	BONUS:DOMAIN|NUMBER|1
+#		cannot restrict bonus domain to lawful domain. also, chaotic or neutral Hashmalim should still recieve law domain
+#		has no effect on classes that have no domain casting (didn't on druid class)
+#		I may want to try modding the cleric class, if i can restrict the mods to hashmalim race
+#	BONUS:SPELLKNOWN|CLASS=Bard;LEVEL=1|1			You know 1 more 1st level Bard spell
+#	BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=1|1			You know 1 more 1st level spell of Arcane type (how does this work w/ multiple classes?)
+#		note that this will add known spells b/f the class would usually have access to that level of spell. the spells/day wouldn't change, however
+#		affects each and every arcane class
+#	SPELLLEVEL:CLASS|SPELLCASTER.Arcane=1|Cure Light Wounds	Adds Cure Light Wounds to any arcane spellcaster's list of 1st level spells.
+#		works fine. for sorcerer/bard, however, I still need to somehow add it to the spells *known*
+#	ADD:SPELLLEVEL:CLASS|SPELLCASTER.Arcane=1|Change Self	Adds the Change Self spell to the 1st level Arcane list.
+#
+#	I need an BONUS:SPELLKNOWN|etc|specific spell tag
+
+#	okay, what I've done is added each Law domain spells to SPELLCASTER.Arcane and SPELLCASTER.Divine (is there a SPELLCASTER.any?)
+#	then, I've added 1 bonus spell known of levels 1-9 to SPELLCASTER.Arcane and SPELLCASTER.Divine
+#	(Divine isn't necessary for any core class, but other materials may have divine classes who have limited spells known)
+#	so... the character gets a bonus spell known, and has a Law domain spell added to their class list--but there's no way I can make them actually
+#	*pick* the bonus Law domain spell as their extra spell known
+
+#	I know someone's done a Mindscapes .lsting - some of the prestige classes in there would require a similiar tag, I'll look & see what they've done
+#	if i can find it.
+
+#	for clerics having the Law domain as an extra domain, I've modded the cleric class, using a PRERACE tag
+
+
+##############################
+# Monster classes
+# something in these classes is causing an annoying stats-fill-up-entire-window bug
+##############################
+# i made all these VISIBLE:NO since they advance by character class or not at all
+
+# Documentation says i need "CLASS:Outsider.COPY=Agrippa", but now throwing error; "Outsider.COPY=Agrippa" seems to work
+# this *was* working before (as far as I know). possibly something temporarily made funky in alpha build
+
+# okay, now it's telling me there's another class called agrippa, in rsrd_classes_monster.lst
+# in other words, it's making a copy of Outsider, then going "Hey you! there's two outsider classes!"?
+#Outsider.COPY=Agrippa
+#CLASS:Agrippa	PRERACE:Agrippa	HD:8	VISIBLE:NO
+#CLASS:Agrippa		SPELLSTAT:CHA	SPELLTYPE:Arcane		MEMORIZE:NO
+#1	ADD:SPELLCASTER(Sorcerer)	BONUS:PCLEVEL|Sorcerer|5
+
+# Class Name	Product Identity?	Output Name			Hit Dice	Type			Visible	Save checks bonus									Combat bonus
+CLASS:Agrippa	NAMEISPI:YES	OUTPUTNAME:Outsider	HD:10		TYPE:Monster	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Required Race
+CLASS:Agrippa	PRERACE:Agrippa
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Agrippa	STARTSKILLPTS:8	CSKILL:Concentration|Craft (Alchemy)|Diplomacy|Intimidate|Knowledge (Arcana)|Knowledge (Religion)|Knowledge (The Planes)|Listen|Sense Motive|Spellcraft|Spot
+# Class Name	Spell Stat		Spell Type		Memorize
+CLASS:Agrippa	SPELLSTAT:CHA	SPELLTYPE:Arcana	MEMORIZE:NO
+1	ADD:SPELLCASTER(Sorcerer)	BONUS:PCLEVEL|Sorcerer|5
+
+
+# AHA! this line is causing the "stats-fill-up-entire-window" bug. now.... WHY???!!!
+#Construct.COPY=Ephemerite	TYPE:Base	PRERACE:Ephemerite		VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|(CL/2+2)-(CL/3)
+#it's definitely the BONUS:CHECKS tag
+#different tag settings swell abilities different amounts =P
+
+# Class Name	Product Identity?	Hit Dice	Type			Add INT to Skill Points?	Levels per Feat	Save checks bonus									Combat bonus
+CLASS:Ephemerite	NAMEISPI:YES	HD:10		TYPE:Monster	MODTOSKILLS:NO			LEVELSPERFEAT:0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|(CL/2)+2	BONUS:COMBAT|BAB|CL*3/4
+# Class Name	Reg. Race Type
+CLASS:Ephemerite	PRERACETYPE:Construct
+# Class Name	Skill Pts/Lvl
+CLASS:Ephemerite	STARTSKILLPTS:2
+
+
+
+
+##############################
+# Heavenborn Classes
+##############################
+# I don't think you're supposed to be able to increase your class level in your Angelic racial class, AoA just makes no mention of it.
+# SKR, on his forums, says no, "favored class: Cherub" is just supposed to be shorthand for "your racial HD does not count towards a multiclass xp penalty"
+# or something like that. I can find and quote/link this if anyone wants me to
+
+# find & replaced: visible:no to visible:no nameispi:yes
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Cherub	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Cherub	STARTSKILLPTS:8	CSKILL:Balance|Concentration|Hide|Intimidate|Knowledge (Religion)|Jump|Listen|Move Silently|Search|Sense Motive|Spot
+1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Dynama	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Dynama	STARTSKILLPTS:8	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Gather Information|Heal|Intimidate|Knowledge (Local)|TYPE.Profession|Sense Motive|Speak Language|Spot
+1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Grigori	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Grigori	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Knowledge|TYPE.Profession|Search|Spellcraft|Spot
+1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Hashmalite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:3	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Hashmalite	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Decipher Script|Intimidate|TYPE.Knowledge|Search|Spellcraft|Spot
+1																																																									AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1																																																		ADD:FEAT(Martial Weapon Proficiency)
+
+# add Golden Icons
+1																														ADD:EQUIP(Golden Icon (Rod),Golden Icon (Staff),Golden Icon (Orb),Golden Icon (Holy Symbol),Golden Icon (Longsword))5
+# for Golden Icon (Rod)
+1														BONUS:STAT|WIS|4|TYPE=Enhancement|PREEQUIP:1,Golden Icon (Rod)
+# for Golden Icon (Staff)
+#1	BONUS:STAT|CHA|4|TYPE=Enhancement|PREEQUIP:1,Golden Icon (Staff)
+# for Golden Icon (Orb)
+#1	SPELL:Message|-1|Golden Icon|PREEQUIP:1,Golden Icon (Orb)
+# for Golden Icon (Holy Symbol)
+1																																																																																FEATAUTO:Basic Turning|Turn Undead
+
+1	BONUS:VAR|AllowExtraTurning|1																				DEFINE:AllowExtraTurning|0
+1	BONUS:VAR|AllowImprovedTurning|1																			DEFINE:AllowImprovedTurning|0
+
+#1	BONUS:VAR|TurnTimesBase|3+CHA|TYPE=NoStack|PREEQUIP:1,Golden Icon (Holy Symbol)
+#1	BONUS:VAR|TurnLevelBase|CL|PREEQUIP:1,Golden Icon (Holy Symbol)
+#1	BONUS:VAR|TurnDamagePlusBase|CL|PREEQUIP:1,Golden Icon (Holy Symbol)
+#1	BONUS:VAR|TurnCheckBase|CHA|TYPE=NoStack|PREEQUIP:1,Golden Icon (Holy Symbol)
+
+# for Golden Icon (Longsword)
+#1	BONUS:WEAPON|DAMAGE,TOHIT|1|TYPE=Enhancement|PREEQUIP:1,Golden Icon (Longsword)
+
+#Lawful spirit code
+#	Hashmalim have Law domain, regardless of alignment (right? says nothing about non-lawful hashmalim not getting the bonus)
+
+#1	BONUS:DOMAIN|NUMBER|1 modding cleric class, can use a PRERACE tag
+
+
+# arcane spell block
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=1|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=2|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=3|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=4|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=5|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=6|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=7|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=8|1
+1							BONUS:SPELLKNOWN|TYPE=Arcane;LEVEL=9|1
+
+# divine spell block
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=1|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=2|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=3|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=4|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=5|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=6|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=7|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=8|1
+1							BONUS:SPELLKNOWN|TYPE=Divine;LEVEL=9|1
+
+# it's not working anymore...
+# no errors, no documentation change, it's just not working :'(
+# now MODing spells, CLASS:ALL[PRERACE:Heavenborn (Hashmalite)]=x
+# actually cleaner approach
+
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=1|Protection from Chaos
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=2|Calm Emotions
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=3|Magic Circle against Chaos
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=4|Order's Wrath
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=5|Dispel Chaos
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=6|Hold Monster
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=7|Dictum
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=8|Shield of Law
+#SPELLLEVEL:CLASS|SPELLCASTER.Arcane=9|Summon Monster IX
+#SPELLLEVEL:CLASS|SPELLCASTER.Divine=1|Protection from Chaos
+#SPELLLEVEL:CLASS|SPELLCASTER.Divine=2|Calm Emotions
+#SPELLLEVEL:CLASS|SPELLCASTER.Divine=3|Magic Circle against Chaos
+#SPELLLEVEL:CLASS|SPELLCASTER.Divine=4|Order's Wrath
+#SPELLLEVEL:CLASS|SPELLCASTER.Divine=5|Dispel Chaos
+#SPELLLEVEL:CLASS|SPELLCASTER:Divine=6|Hold Monster
+#SPELLLEVEL:CLASS|SPELLCASTER:Divine=7|Dictum
+#SPELLLEVEL:CLASS|SPELLCASTER:Divine=8|Shield of Law
+#SPELLLEVEL:CLASS|SPELLCASTER:Divine=9|Summon Monster IX
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Kalkydrite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:3	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Kalkydrite	STARTSKILLPTS:8	CSKILL:Balance|Concentration|Heal|Knowledge (Nature)|TYPE.Perform|Search|Spot|Survival|Wilderness Lore|Tumble
+1																AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1									ADD:FEAT(Martial Weapon Proficiency)
+#	turn undead block
+1																																							FEATAUTO:Basic Turning|Turn Undead
+1	BONUS:VAR|TurnTimesBase|3+CHA|TYPE=NoStack
+1	BONUS:VAR|TurnLevelBase|CL
+1	BONUS:VAR|TurnDamagePlusBase|CL
+1	BONUS:VAR|TurnCheckBase|CHA|TYPE=NoStack
+
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Malakite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Malakite	STARTSKILLPTS:8	CSKILL:Bluff|Intimidate|Jump|Knowledge (Religion)|Knowledge (The Planes)|Listen|Move Silently|Spot
+1																			AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1												ADD:FEAT(Martial Weapon Proficiency)
+#horribly obtuse, should return 1 if Malakite+Fighter levels >= 4, etc
+1	DEFINE:WeapSpecQualify|((CL=Malakite)+(CL=Fighter)-3)MIN1
+1	DEFINE:GreatWeapFocusQualify|((CL=Malakite)+(CL=Fighter)-7)MIN1
+1	DEFINE:GreatWeapSpecQualify|((CL=Malakite)+(CL=Fighter)-11)MIN1
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Memunite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:1	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Memunite	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Listen|Move Silently|TYPE.Profession|Spot
+1												AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+#1	CHOOSE:SKILLSNAMED|TYPE.Craft|1		BONUS:SKILL|LIST|2
+#1	CHOOSE:SKILLSNAMED|TYPE.Profession|1	BONUS:SKILL|LIST|2
+1	ADD:FEAT(Craft Skill Bonus)	ADD:FEAT(Profession Skill Bonus)
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Ophanite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Ophanite	STARTSKILLPTS:8	CSKILL:Concentration|Escape Artist|Intimidate|Jump|Knowledge (The Planes)|Speak Language|Spot|Swim|Tumble
+1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Para		NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Para		STARTSKILLPTS:8	CSKILL:Concentration|Handle Animal|Jump|Perform|Ride|Speak Language|Spot|Tumble|Use Rope
+1																									AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1																		ADD:FEAT(Martial Weapon Proficiency)
+1	SA:Celestial Rage (Ex) %/day|CelestialRage	BONUS:VAR|CelestialRage|1	DEFINE:CelestialRage|0
+
+
+# Class Name		Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Principality	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Principality	STARTSKILLPTS:8	CSKILL:Bluff|Concentration|Diplomacy|Gather Information|Heal|Intimidate|Knowledge (History)|Knowledge (Religion)|TYPE.Profession|Sense Motive|Speak Language|Spot
+1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+#1	CHOOSE:SKILLSNAMED|TYPE.Knowledge|1	BONUS:SKILL|LIST|2
+1	ADD:FEAT(Knowledge Skill Bonus)
+
+
+# Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
+CLASS:Seraph	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Seraph	STARTSKILLPTS:8	CSKILL:Concentration|Diplomacy|Heal|Knowledge (History)|Knowledge (Religion)|Listen|Perform|Sense Motive|Spot
+1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
+1	ADD:FEAT(Martial Weapon Proficiency)
+
+
+

@@ -1,0 +1,97 @@
+# CVS $Revision: $ $Author: $ -- Mon Feb 28 14:40:13 2005 -- reformated by prettylst.pl v1.34 (build 455)
+SOURCELONG:Legends of the Samurai - Bushido Handbook|SOURCESHORT:LoS-B|SOURCEWEB:http://www.rpgobjects.com/index.php?page=pro&product_id=66
+
+###Block: Ashigaru
+# Feat Name			Type						Visible	Required Feat				Prohibited Feat				Multiple Requirements																Special Ability																																																																												Define							Stackable?	Multiple?	Choose			Virtual Feat			Choose a Feat					Modify VAR
+Ashigaru Bow Style	TYPE:Ashigaru1				VISIBLE:NO																																																																																																														DEFINE:MassedFire|0	DEFINE:ArcedFire|0														ADD:FEAT(Weapon Focus)
+Ashigaru Spear Style	TYPE:Ashigaru1				VISIBLE:NO																																																																																																														DEFINE:HighSpear|0	DEFINE:SpearWall|0														ADD:FEAT(Weapon Focus)
+
+Ashigaru Bow Style 2	TYPE:Ashigaru2				VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style		!PREFEAT:1,Kyujutsu																																																																																																																				VFEAT:Kyujutsu
+Ashigaru Spear Style 2	TYPE:Ashigaru2				VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style	!PREFEAT:1,Yarijutsu																																																																																																																				VFEAT:Yarijutsu
+Ashigaru Bonus Feat 2	TYPE:Ashigaru2				VISIBLE:NO													PREMULT:1,[PREFEAT:2,Ashigaru Bow Style,Kyujutsu],[PREFEAT:2,Ashigaru Spear Style,Yarijutsu]																																																																																																							ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Ashigaru Bow Style 6	TYPE:Ashigaru6				VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style		!PREFEAT:1,Daisan																																																																																																																					VFEAT:Daisan
+Ashigaru Spear Style 6	TYPE:Ashigaru6				VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style	!PREFEAT:1,Spear Thrust																																																																																																																				VFEAT:Spear Thrust
+Ashigaru Bonus Feat 6	TYPE:Ashigaru6				VISIBLE:NO													PREMULT:1,[PREFEAT:2,Ashigaru Bow Style 2,Daisan],[PREFEAT:2,Ashigaru Spear Style 2,Spear Thrust]																																																																																																						ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Ashigaru Bow Style 9	TYPE:Ashigaru9				VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style		!PREFEAT:1,Point Blank Shot																																																																																																																			VFEAT:Point Blank Shot
+Ashigaru Spear Style 9	TYPE:Ashigaru9				VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style	!PREFEAT:1,Footwork																																																																																																																				VFEAT:Footwork
+Ashigaru Bonus Feat 9	TYPE:Ashigaru9				VISIBLE:NO													PREMULT:1,[PREFEAT:2,Ashigaru Bow Style 6,Point Blank Shot],[PREFEAT:2,Ashigaru Spear Style 6,Footwork]																																																																																																					ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Ashigaru Bow Style 12	TYPE:Ashigaru12				VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style		!PREFEAT:1,Far Shot																																																																																																																				VFEAT:Far Shot
+Ashigaru Spear Style 12	TYPE:Ashigaru12				VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style	!PREFEAT:1,Whirling Spear																																																																																																																			VFEAT:Whirling Spear
+Ashigaru Bonus Feat 12	TYPE:Ashigaru12				VISIBLE:NO													PREMULT:1,[PREFEAT:2,Ashigaru Bow Style 9,Far Shot],[PREFEAT:2,Ashigaru Spear Style 9,Whirling Spear]																																																																																																						ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Ashigaru Bow Style 15	TYPE:Ashigaru15				VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style		!PREFEAT:1,Dojukiri																																																																																																																				VFEAT:Dojukiri
+Ashigaru Spear Style 15	TYPE:Ashigaru15				VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style	!PREFEAT:1,Footwork (Superior)																																																																																																																		VFEAT:Footwork (Superior)
+Ashigaru Bonus Feat 15	TYPE:Ashigaru15				VISIBLE:NO													PREMULT:1,[PREFEAT:2,Ashigaru Bow Style 12,Dojukiri],[PREFEAT:2,Ashigaru Spear Style 12,Footwork (Superior)]																																																																																																				ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Ashigaru Bow Style 17	TYPE:Ashigaru17				VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style		!PREFEAT:1,Zen Archery																																																																																																																				VFEAT:Zen Archery
+Ashigaru Spear Style 17	TYPE:Ashigaru17				VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style	!PREFEAT:1,Tai Sabaki																																																																																																																				VFEAT:Tai Sabaki
+Ashigaru Bonus Feat 17	TYPE:Ashigaru17				VISIBLE:NO													PREMULT:1,[PREFEAT:2,Ashigaru Bow Style 15,Zen Archery],[PREFEAT:2,Ashigaru Spear Style 15,Tai Sabaki]																																																																																																					ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Arced Fire			TYPE:AshigaurFormationFighting	VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style																											SA:+% bonus to attack (only to offset range penalties)|ArcedFire																																																																												STACK:YES	MULT:YES	CHOOSE:+2 Arced Fire													BONUS:VAR|ArcedFire|2
+Massed Fire			TYPE:AshigaurFormationFighting	VISIBLE:NO	PREFEAT:1,Ashigaru Bow Style																											SA:+% damage on successful attack|MassedFire																																																																															STACK:YES	MULT:YES	CHOOSE:+1 Massed Fire													BONUS:VAR|MassedFire|1
+High Spear			TYPE:AshigaurFormationFighting	VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style																										SA:+% armor class against ranged attacks|HighSpear																																																																														STACK:YES	MULT:YES	CHOOSE:+1 High Spear													BONUS:VAR|HighSpear|1
+Spear Wall			TYPE:AshigaurFormationFighting	VISIBLE:NO	PREFEAT:1,Ashigaru Spear Style																										SA:+% bonus to attack and damage when set to receive a charge|SpearWall																																																																											STACK:YES	MULT:YES	CHOOSE:+1 Spear Wall													BONUS:VAR|SpearWall|1
+
+Ashigaru Ki			TYPE:Special				VISIBLE:NO																																SA:Ashigaru Ki %/day (Strength)|AshigaruKi|PREMULT:2,[PREVARGTEQ:CL=Ashigaru,5],[PREVARLT:CL=Ashigaru,10]	SA:Ashigaru Ki %/day (Strength or Dexterity)|AshigaruKi|PREMULT:2,[PREVARGTEQ:CL=Ashigaru,10],[PREVARLT:CL=Ashigaru,15]	SA:Ashigaru Ki %/day (Strength or Dexterity or Constitution)|AshigaruKi|PREMULT:2,[PREVARGTEQ:CL=Ashigaru,15],[PREVARLT:CL=Ashigaru,20]	SA:Ashigaru Ki %/day (Strength, Dexterity and Constitution)|AshigaruKi|PREVARGTEQ:CL=Ashigaru,20	DEFINE:AshigaruKi|0
+
+Formation Command		TYPE:Special				VISIBLE:NO																																SA:Formation Command (% conscripts of % level or less)|NumConscripts|ConscriptLevel|PREMULT:2,[PREVARGTEQ:CL=Ashigaru,9],[PREVARLT:CL=Ashigaru,16]	SA:Improved Formation Command (% conscripts of % level or less)|NumConscripts|ConscriptLevel|PREVARGTEQ:CL=Ashigaru,16																																		DEFINE:NumConscripts|0	DEFINE:ConscriptLevel|0
+
+###Block: Kuge
+# Feat Name			Type			Visible	Required Feat			Prohibited Feat			Multiple Requirements													Special Ability								Virtual Feat		Choose a Feat					Bonus to skill
+Born to the Saddle	TYPE:Special	VISIBLE:NO																											SA:+% to Handle Animal checks when training horses|HON												BONUS:SKILL|Ride|HON
+
+Kuge Crossbow Style	TYPE:Kuge2		VISIBLE:NO																																									ADD:FEAT(Weapon Focus)
+Kuge Bow Style		TYPE:Kuge2		VISIBLE:NO																																									ADD:FEAT(Weapon Focus)
+
+Kuge Style 3		TYPE:Kuge3		VISIBLE:NO						!PREFEAT:1,Mounted Archery																											VFEAT:Mounted Archery
+Kuge Bonus Feat 3		TYPE:Kuge3		VISIBLE:NO	PREFEAT:1,Mounted Archery																																				ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Kuge Style 6		TYPE:Kuge6		VISIBLE:NO						!PREFEAT:1,Point Blank Shot																											VFEAT:Point Blank Shot
+Kuge Bonus Feat 6		TYPE:Kuge6		VISIBLE:NO	PREFEAT:1,Point Blank Shot																																				ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Kuge Crossbow Style 7	TYPE:Kuge7		VISIBLE:NO	PREFEAT:1,Kuge Crossbow Style	!PREFEAT:1,Rapid Reload																												VFEAT:Rapid Reload
+Kuge Bow Style 7		TYPE:Kuge7		VISIBLE:NO	PREFEAT:1,Kuge Bow Style	!PREFEAT:1,Rapid Shot																												VFEAT:Rapid Shot
+Kuge Bonus Feat 7		TYPE:Kuge7		VISIBLE:NO											PREMULT:1,[PREFEAT:2,Kuge Crossbow Style,Rapid Reload],[PREFEAT:2,Kuge Bow Style,Rapid Shot]															ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+Kuge Crossbow Style 9	TYPE:Kuge9		VISIBLE:NO	PREFEAT:1,Kuge Crossbow Style	!PREFEAT:1,Far Shot																												VFEAT:Far Shot
+Kuge Bow Style 9		TYPE:Kuge9		VISIBLE:NO	PREFEAT:1,Kuge Bow Style	!PREFEAT:1,Manyshot																												VFEAT:Manyshot
+Kuge Bonus Feat 9		TYPE:Kuge9		VISIBLE:NO											PREMULT:1,[PREFEAT:2,Kuge Crossbow Style 7,Far Shot],[PREFEAT:2,Kuge Bow Style 7,Manyshot]															ADD:FEAT(TYPE=General,TYPE=MAM,TYPE=MAS)
+
+###Block: Ninja
+# Feat Name		Type			Visible	Special Ability																																																															Define							Bonus to skill
+Silent Kill		TYPE:Special	VISIBLE:NO	SA:Silent Kill +%d%|SilentKill|SilentKillDie																																																										DEFINE:SilentKillDie|6	DEFINE:SilentKill|0
+
+Ninja Ki		TYPE:Special	VISIBLE:NO	SA:Ninja Ki %/day (Kyo, Rin)|NinjaKi|PREVARLT:CL=Ninja,10	SA:Ninja Ki %/day (Kyo, Rin, Sha, Toh)|NinjaKi|PREMULT:2,[PREVARLT:CL=Ninja,15],[PREVARGTEQ:CL=Ninja,10]	SA:Ninja Ki %/day (Jin, Kai, Kyo, Rin, Sha, Toh)|NinjaKi|PREMULT:2,[PREVARLT:CL=Ninja,20],[PREVARGTEQ:CL=Ninja,15]	SA:Ninja Ki %/day (Jin, Kai, Kyo, Retsu, Rin, Sha, Toh, Zai, Zen)|NinjaKi|PREVARGTEQ:CL=Ninja,20	DEFINE:NinjaKi|0
+
+Shinobi Jutsu	TYPE:Special	VISIBLE:NO	SA:Shinobi-jutsu|PREVARLT:CL=Ninja,4	SA:Shinobi-jutsu (yoko aruki)|PREVARGTEQ:CL=Ninja,4																																																										BONUS:SKILL|Climb,Hide,Move Silently|CL=Ninja
+
+###Block: Ronin
+# Feat Name				Type			Visible	Prohibited Feat					Special Ability																	Define			Virtual Feat				Modify VAR
+Taunt					TYPE:Special	VISIBLE:NO								SA:Taunt|PREVARLT:CL=Ronin,16	SA:Great Taunt|PREVARGTEQ:CL=Ronin,16
+
+Ronin Kenjutsu 2			TYPE:Ronin2		VISIBLE:NO	!PREFEAT:1,Kenjutsu																											VFEAT:Kenjutsu
+Ronin Iaijutsu 2			TYPE:Ronin2		VISIBLE:NO	!PREFEAT:1,Quick Draw																											VFEAT:Quick Draw
+Ronin Nito Ryu Kenjutsu 2	TYPE:Ronin2		VISIBLE:NO	!PREFEAT:1,Kenjutsu																											VFEAT:Kenjutsu
+
+Ronin Kenjutsu 6			TYPE:Ronin6		VISIBLE:NO	!PREFEAT:1,Two Handed Strike																										VFEAT:Two Handed Strike
+Ronin Iaijutsu 6			TYPE:Ronin6		VISIBLE:NO	!PREFEAT:1,Iaijutsu																											VFEAT:Iaijutsu
+Ronin Nito Ryu Kenjutsu 6	TYPE:Ronin6		VISIBLE:NO	!PREFEAT:1,Two Weapon Fighting																									VFEAT:Two Weapon Fighting
+
+Ronin Kenjutsu 9			TYPE:Ronin9		VISIBLE:NO	!PREFEAT:1,Pear Splitter																										VFEAT:Pear Splitter
+Ronin Iaijutsu 9			TYPE:Ronin9		VISIBLE:NO	!PREFEAT:1,Improved Initiative																									VFEAT:Improved Initiative
+Ronin Nito Ryu Kenjutsu 9	TYPE:Ronin9		VISIBLE:NO	!PREFEAT:1,Two Weapon Defense																										VFEAT:Two Weapon Defense
+
+Ronin Kenjutsu 12			TYPE:Ronin12	VISIBLE:NO	!PREFEAT:1,Improaved Critical(Katana)																								VFEAT:Improved Critical(Katana)
+Ronin Iaijutsu 12			TYPE:Ronin12	VISIBLE:NO								SA:Iajutsu Strike ~ +%d6 damage when attacking an opponent flat-footed due to losing initiative|IaijutsuStrike	DEFINE:IaijutsuStrike|0							BONUS:VAR|IaijutsuStrike|1
+Ronin Nito Ryu Kenjutsu 12	TYPE:Ronin12	VISIBLE:NO	!PREFEAT:1,Nito Ryu Kenjutsu																										VFEAT:Nito Ryu Kenjutsu
+
+Ronin Kenjutsu 15			TYPE:Ronin15	VISIBLE:NO								SA:+% to hit and damage when wielding the katana or daito two-handed|KenjutsuStrike						DEFINE:KenjutsuStrike|0							BONUS:VAR|KenjustuStrike|1
+Ronin Iaijutsu 15			TYPE:Ronin15	VISIBLE:NO																																					BONUS:VAR|IaijutsuStrike|1
+Ronin Nito Ryu Kenjutsu 15	TYPE:Ronin15	VISIBLE:NO	!PREFEAT:1,Juju Domai																											VFEAT:Juju Domai
+
+Ronin Kenjutsu 18			TYPE:Ronin18	VISIBLE:NO																																					BONUS:VAR|KenjustuStrike|1
+Ronin Iaijutsu 18			TYPE:Ronin18	VISIBLE:NO																																					BONUS:VAR|IaijutsuStrike|1
+Ronin Nito Ryu Kenjutsu 18	TYPE:Ronin18	VISIBLE:NO								SA:+2 armor class when wielding a weapon in the off-hand

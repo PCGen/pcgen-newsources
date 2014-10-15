@@ -1,0 +1,88 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+
+# for now, Angel of Death requires ANY weapon focus
+# (it can be either a longsword, or the deity's favored weapon)
+
+# last time I looked at Favored Enemy feats, in the 3e .lst files, it was a Cthulhuan horror - I'll do it later =)
+# hopefully a simple ADD:VFEAT tag will work
+# doesn't look like it will
+
+# need to define chains of fire, greater fire in equipment .lst - done
+
+# there needs to be a PRESPELLDESCRIPTOR tag...
+
+# not that PCGEN would show this, but there's no area listed for the angel of terror's Confusion aura :/
+
+# I'm calling the Fire-Speakers "Breath Weapon" ability "Fire-Speaker Breath Weapon" so that there's less chance it will conflict with other Breath Weapons
+# (you know, in case you made a Seraph-Dragon Disciple-FireSpeaker)
+
+# Angel of Fury makes reference to Rage variable, as Barbarian. may need to change if barbarian class changes much (it did from pcgen 5.5.1 to .2...)
+
+# Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
+CLASS:Angel of Death	HD:10		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Req. Att.	Required Check Base		Required Feat											Multiple Requirements								Required Skill						Required Template
+CLASS:Angel of Death	PREATT:8	PRECHECKBASE:1,Fortitude=8	PREFEAT:4,Astride the Ladder,Hide from Mortal Eyes,Power Attack,Weapon Focus	PREMULT:1,[PRETEMPLATE:Bound Angel],[PRETEMPLATE:Fallen Angel]	PRESKILL:2,Intimidate,Knowledge (Religion)=5	PRETEMPLATE:Qualify (Wings of Death)
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Angel of Death	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Intimidate|Knowledge (Religion)|Listen|TYPE.Profession|Search|Sense Motive|Spot
+1	SA:Black Wings	SA:Poison Use
+#2	ADD:VFEAT(TYPE.RangerFavoredEnemy)|1
+2	SA:Favored Enemy +2 (Ex)
+3	SA:Envenomed Weapon (Su)
+#4	ADD:VFEAT(TYPE.RangerFavoredEnemy)|1
+4	SA:Favored Enemy +4 (Ex)
+5	SA:Claim the Faithful (Su)	SA:Veil of Faith (Su)
+
+
+# Class Name			Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
+CLASS:Angel of Destruction	HD:10		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name			Restricted AL	Req. Att.	Required Check Base		Required Feat			Required Skill				Required Template
+CLASS:Angel of Destruction	!PREALIGN:6,7,8	PREATT:5	PRECHECKBASE:1,Willpower=4	PREFEAT:2,Cleave,Power Attack	PRESKILL:1,Knowledge (Religion)=2	PRETEMPLATE:Bound Angel
+# Class Name			Skill Pts/Lvl	Class Skill
+CLASS:Angel of Destruction	STARTSKILLPTS:2	CSKILL:Concentration,TYPE.Craft,Intimidate,Knowledge (Arcana),Knowledge (Religion),Listen,TYPE.Profession,Search,Sense Motive,Spot
+1						SA:Smite Infidel %/day (Su)	BONUS:VAR|SmiteInfidel|1	DEFINE:SmiteInfidel|0
+2						SA:Chain of Fire (Su)											ADD:EQUIP(Chain of Fire)
+3											BONUS:VAR|SmiteInfidel|1
+4						SA:Key to Hell (Su)
+5	SA:.CLEAR.Chain of Fire (Su)	SA:Chain of Greater Fire (Su)	BONUS:VAR|SmiteInfidel|1					ADD:EQUIP(Chain of Greater Fire)
+
+# Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
+CLASS:Angel of Fury	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Req. Att.	Required Check Base		Multiple Requirements																																																	Required Skill		Required Template
+CLASS:Angel of Fury	PREATT:5	PRECHECKBASE:1,Willpower=5	PREMULT:1,[PREFEAT:1,Energy Touch (fire)],[PRERACE:Heavenborn (Ophanite)]	PREMULT:1,[PRETEMPLATE:Qualify (Instantaneous Movement)],[PREFEAT:1,Transcend Distance I],[PRESPELL:1,Dimension Door,Dimension Slide,Teleport,Teleport (Greater),Tree Stride,Gate,Plane Shift],[PRESPELLSCHOOLSUB:Teleportation,1,3]	PRESKILL:1,Intimidate=3	PRETEMPLATE:Bound Angel
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Angel of Fury	STARTSKILLPTS:2	CSKILL:Climb|Concentration|Intimidate|Jump|Knowledge (Religion)|Listen|Sense Motive|Spot
+# size change will not work with tiny or smaller angels
+# until some source makes a risen imp or something, I doubt this will be a problem
+1													TEMPLATE:CHOOSE:Morph (Small to Large)|Morph (Medium to Large)
+1	SA:Swallow Hole (Ex)
+2	SA:Holy Fire (Su)	SA:Rage %/day	BONUS:VAR|Rage|1	DEFINE:Rage|0
+4							BONUS:VAR|Rage|1
+5	SA:Fiery Transformation
+
+# Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
+CLASS:Angel of Terror	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Req. Att.	Required Check Base				Required Feat			Required Skill								Required Template
+CLASS:Angel of Terror	PREATT:5	PRECHECKBASE:2,Fortitude=4,Willpower=4	PREFEAT:2,Glory,Iron Will	PRESKILL:4,Intimidate=6,Listen=4,Perform (Sing)=3,Spot=4	PRETEMPLATE:Bound Angel	PRETEMPLATE:Qualify (Captain of Fear)
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Angel of Terror	STARTSKILLPTS:2	CSKILL:Bluff|Climb|Concentration|Diplomacy|Intimidate|Jump|Knowledge (Religion)|Listen|TYPE.Perform|Sense Motive|Spot
+1					SPELL:Chant the Holy Name|-1|Innate
+2					SPELL:Mirror Image|-1|Innate
+3	SA:Lord of Dread (Su)
+5	SA:Confusion Aura (Su)
+
+# Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
+CLASS:Fire-Speaker	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+# Class Name		Req. Att.	Required Check Base			Required Feat					Multiple Requirements																					Required Skill							Required Template
+CLASS:Fire-Speaker	PREATT:4	PRECHECKBASE:2,Reflex=4,Willpower=4	PREFEAT:2,Iron Will,Spiritual Contact	PREMULT:1,[PRETEMPLATE:Qualify (Fire Tolerance)],[PRETEMPLATE:Fire],[PRESA:1,Fire Immunity,Fire Immunity (Ex)],[PREVARGTEQ:FireResistance,1]	PRESKILL:3,Concentration=5,Diplomacy=8,Intimidate=5	PRETEMPLATE:Qualify (Angel)
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Fire-Speaker	STARTSKILLPTS:2	CSKILL:Bluff|Concentration|Diplomacy|Intimidate|Knowledge (Arcana)|Knowledge (Religion)|Knowledge (Nature)|Listen|Sense Motive|Speak Language
+1						SA:Fire-Speaker Breath Weapon %/day (Su)|FireSpeakerBreath	BONUS:VAR|FireSpeakerBreath|1	DEFINE:FireSpeakerBreath|0
+2						SA:Fire-Speaking (Su)
+3																BONUS:VAR|FireSpeakerBreath|1
+4						SA:Wild Shape 1/day (Su)
+5						SA:Celestial Brand (Su)
+5																										ADD:FEAT(Astride the Ladder,Detect Angels and Fiends,Ever Vigilant,Evilsense,Great Fortitude,Lightning Reflexes,Spell Penetration,Stigmata,Transcend Distance I,Transcend Distance II,Transcend Distance III)
+5	SA:.CLEAR.Fire-Speaking (Su)	SA:Greater Fire-Speaking (Su)

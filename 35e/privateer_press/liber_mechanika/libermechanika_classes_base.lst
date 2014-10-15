@@ -1,0 +1,37 @@
+# CVS $Revision: $ $Author: $ -- Wed Jan 19 21:04:03 2005 -- reformated by prettylst.pl v1.33 (build 421)
+SOURCELONG:Liber Mechanika|SOURCESHORT:LM|SOURCEWEB:http://www.ironkingdoms.com
+#Original Entry by: Rax the Grey
+
+# TODO: Code up Special Abilites -- Rax
+
+# Class Name		Hit Dice	Type			Abbreviation	Source Page			Automatic Languages	Define		Save checks bonus												Combat bonus					Modify VAR
+CLASS:Arcane Mechanik	HD:6		TYPE:Base.PC	ABB:Amk		SOURCEPAGE:pg. 9		LANGAUTO:Literacy		DEFINE:FMLevel|0	BONUS:CHECKS|BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|FMLevel|CL
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Arcane Mechanik	STARTSKILLPTS:6	CSKILL:Appraise|Concentration|TYPE.Craft|Craft (Clockwork)|Craft (Mechanika)|Craft (Steam Engine)|Jack Handling|Knowledge (Arcana)|Knowledge (Mechanika)|TYPE.KnowSciTech|Profession (Mechanik)|Search|Spellcraft
+# Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels	Spellbook		Caster level					Use Spell List
+CLASS:Arcane Mechanik	SPELLSTAT:INT	SPELLTYPE:Arcane	KNOWNSPELLS:LEVEL=0			SPELLBOOK:YES	BONUS:CASTERLEVEL|Arcane Mechanik|CL	SPELLLIST:2|Wizard|Arcane Mechanik
+# Proficiencies
+1	FEATAUTO:Armor Proficiency (Light)|Shield Proficiency|Simple Weapon Proficiency|All Automatic Proficiencies
+1	VFEAT:Etch Rune Plate
+###Block: Normal Progression
+1	CAST:4,1			SA:Fabrication Score (%%)|FabricationScore	DEFINE:FabricationScore|0	BONUS:VAR|FabricationScore|10
+2	CAST:4,1			SA:Charge Accumulator
+3	CAST:4,2,0			SA:Mechanika Familiarity	ADD:FEAT(TYPE=ArcaneMechanik)1
+4	CAST:4,2,1
+5	CAST:4,3,1			SA:Mechanikal Familiar		BONUS:VAR|FabricationScore|5
+6	CAST:4,3,2,0		ADD:FEAT(TYPE=ArcaneMechanik)1
+7	CAST:4,4,2,1
+8	CAST:4,4,3,1		ADD:FEAT(Arcane Mechanik Special Ability)1
+9	CAST:4,4,3,2,0		ADD:FEAT(TYPE=ArcaneMechanik)1
+10	CAST:4,5,4,2,1		BONUS:VAR|FabricationScore|5
+11	CAST:4,5,4,3,1
+12	CAST:4,5,4,3,2,0		ADD:FEAT(Arcane Mechanik Special Ability)1		ADD:FEAT(TYPE=ArcaneMechanik)1
+13	CAST:4,5,5,4,2,1
+14	CAST:4,5,5,4,3,1
+15	CAST:4,5,5,4,3,2,0	BONUS:VAR|FabricationScore|5
+16	CAST:4,5,5,5,4,2,1	ADD:FEAT(Arcane Mechanik Special Ability)1
+17	CAST:4,5,5,5,4,3,1
+18	CAST:4,5,5,5,4,3,2
+19	CAST:4,5,5,5,5,4,2
+20	CAST:4,5,5,5,5,4,3	ADD:FEAT(Arcane Mechanik Special Ability)1	BONUS:VAR|FabricationScore|5
+

@@ -1,0 +1,33 @@
+# CVS $Revision: 0.1 $ $Author: blithwyn $ 
+SOURCELONG:Mongoose Publishing - Power Classes Volume VII - Hedge Wizard|SOURCESHORT:HedgeWiz|SOURCEWEB:http//www.mongoosepublishing.com
+# Original Entry by: Ratheof Blithwyn
+
+# Class Name		Output Name			Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus												Combat bonus
+CLASS:Hedge Wizard	OUTPUTNAME:Hedge Wizard	HD:6		TYPE:Base.PC	ABB:HWiz		MAXLEVEL:20	SOURCEPAGE:p.4-8	BONUS:CHECKS|BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Hedge Wizard	STARTSKILLPTS:4	CSKILL:Alchemy|Appraise|Bluff|Concentration|TYPE.Craft|Gather Information|Intimidate|Pick Pocket|Profession (Herbalist)|Search|Sense Motive|Spellcraft
+# Class Name		Spell Stat		Spell Type		Spell selection				Automatically Known Spell Levels	Spellbook		Memorize
+CLASS:Hedge Wizard	SPELLSTAT:INT	SPELLTYPE:Arcane	SPELLLIST:2|Hedge Wizard|Wizard	KNOWNSPELLS:LEVEL=0			SPELLBOOK:YES	MEMORIZE:YES
+1	CAST:6,0				SA:Arcane Armour	SA:Dabbler	SA:Summon Familiar		ADD:FEAT(Martial Weapon Proficiency)										WEAPONAUTO:SIMPLE	FEATAUTO:Simple Weapon Proficiency|Armor Proficiency (Light)	WEAPONBONUS:TYPE=Martial
+2	CAST:8,1				SA:Master of Cantrips
+3	CAST:10,2							FEATAUTO:Craft Charm
+4	CAST:12,3
+5	CAST:14,4,1							ADD:FEAT(Brew Potion,Brewmaster,Craft Wondrous Item,Potion Focus,Scribe Scroll,Spell Penetration)
+6	CAST:16,5,2
+7	CAST:18,6,3,1
+8	CAST:20,7,3,2
+9	CAST:99,8,4,3,1			SA:Unlimited Cantrips
+10	CAST:99,9,5,3,2						ADD:FEAT(Brew Potion,Brewmaster,Craft Wondrous Item,Potion Focus,Scribe Scroll,Spell Penetration)
+11	CAST:99,10,6,4,2,1
+12	CAST:99,11,6,5,3,1
+13	CAST:99,12,7,6,3,2
+14	CAST:99,13,8,6,4,2,1
+15	CAST:99,14,9,7,4,3,1					ADD:FEAT(Brew Potion,Brewmaster,Craft Wondrous Item,Potion Focus,Scribe Scroll,Spell Penetration)
+16	CAST:99,15,9,8,5,3,2		SA:A Better Cantrip
+17	CAST:99,16,10,9,5,4,2,1
+18	CAST:99,17,11,9,6,4,3,1
+19	CAST:99,18,12,10,6,5,3,2
+20	CAST:99,19,12,11,7,5,4,2,1				ADD:FEAT(Brew Potion,Brewmaster,Craft Wondrous Item,Potion Focus,Scribe Scroll,Spell Penetration)
+# 99 = "At 9th level and above a hedge wizard is able to effectively spontaneously cast any cantrip he knows"
+
+# need to fix "one martial weapon light or one-handed"

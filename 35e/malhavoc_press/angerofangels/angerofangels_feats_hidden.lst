@@ -1,0 +1,131 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+
+# Anger of Angels class abilities, racial abilities, natural weapons due to size
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+
+#NAMEISPI'd; DESCISPI'd a few, not that these feats have DESCs
+
+# Chosen skill bonuses for Memunite race
+# Feat Name							Product Identity?	Type					Visible	!PREMULT																	Required Race				Special Ability							Desc is PI?		Choose						Combat bonus					Bonus to skill				Bonus to skill rank
+Craft Skill Bonus														VISIBLE:NO																																					CHOOSE:SKILLSNAMED|TYPE.Craft|1									BONUS:SKILL|LIST|2|TYPE.Racial
+Profession Skill Bonus													VISIBLE:NO																																					CHOOSE:SKILLSNAMED|TYPE.Profession|1								BONUS:SKILL|LIST|2|TYPE.Racial
+
+# Chosen skill bonus for Principality race
+Knowledge Skill Bonus													VISIBLE:NO																																					CHOOSE:SKILLSNAMED|TYPE.Knowledge|1									BONUS:SKILL|LIST|4|TYPE.Racial
+
+# Special Ability of Ephemerite (Divine Specificity )
+# Miscellaneous and Spellcasting both grant specific things that I don't think can be implemented
+# (Miscellaneous = 1 class ability of 4th level or lower, Spellcasting is like 1 spell of 3rd level or lower... no real way to check these)
+
+#no DESCs here to tag
+Divine Specificity (Combat)				NAMEISPI:YES	TYPE:DivineSpecificity		VISIBLE:NO																									SA:Divine Specificity (Combat) (Ex)				DESCISPI:YES								BONUS:COMBAT|TOHIT|4|TYPE=Circumstance
+Divine Specificity (Miscellaneous)			NAMEISPI:YES	TYPE:DivineSpecificity		VISIBLE:NO																									SA:Divine Specificity (Miscellaneous) (Ex)		DESCISPI:YES
+Divine Specificity (Skill)				NAMEISPI:YES	TYPE:DivineSpecificity		VISIBLE:NO																									SA:Divine Specificity (Skill) (Ex)				DESCISPI:YES	CHOOSE:NONCLASSSKILLLIST|LIST																BONUS:SKILLRANK|LIST|6
+Divine Specificity (Spellcasting)			NAMEISPI:YES	TYPE:DivineSpecificity		VISIBLE:NO																									SA:Divine Specificity (Spellcasting) (Ex)			DESCISPI:YES
+
+
+#Just playing around for now
+#This is probably too complex and too unimportant to bother with
+
+# funky PCGen behavior:
+# Angelic Animal Affinity (Foo) won't display
+# possibly conflicting with Angelic Animal Affinity? something do with '('s?
+
+#Angelic Animal Affinity Feat
+#Apes- Grigori
+#Birds- Avoral, Bralani, Lantern Archon, Memunite, Ophanite, Trumpet Archon
+#Canines- Hashmalite, Hound Archon, Principality
+#Felines- Cherub
+#Mustelids- Malakite
+#Snakes- Lillend, Seraph
+#Ursines- Dynama
+
+#okay, prereqs for this will be nasty, basically, to allow for outside sources, half-celestials, etc, they'll need to go all inversedy
+#I'll need to define exactly what races CAN'T take the feat instead of who CAN
+# another idea:
+# !PREMULT:1,[PRERACE:Heavenborn],[PRERACE:Heavenborn (Dynama)]
+# 0 if something funky (Lillend), or if pc is a Dynama
+# 1 if Heavenborn non-dynamis
+# 2 if Heavenborn Dynama
+# (so the feat works right for Heavenborn, but nothing else, but is much shorter and less error-prone)
+# note: !PREMULT:x appears to require that the value be LESS THAN x, not just NOT x
+# !PREMULT:1 returns false on 1 & 2
+
+# '('s with feats cause problems
+# a foo (bar) feat seems to mod foo, does not show up on feat list
+# featcount will not work right with foo (bar) feats
+
+Angelic Animal Affinity {Birds}													!PREMULT:3,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Memunite)],[!PRERACE:Heavenborn (Ophanite)]
+Angelic Animal Affinity {Canines}													!PREMULT:3,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Hashmalite)],[!PRERACE:Heavenborn (Principality)]
+Angelic Animal Affinity {Equines}													!PREMULT:2,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Para)]
+Angelic Animal Affinity {Felines}													!PREMULT:2,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Cherub)]
+Angelic Animal Affinity {Mustelids}													!PREMULT:2,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Malakite)]
+#note that the seraph already has this ability, and with a +4 bonus
+Angelic Animal Affinity {Snakes}													!PREMULT:2,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Seraph)]
+Angelic Animal Affinity {Ursines}													!PREMULT:2,[PRERACE:Heavenborn],[!PRERACE:Heavenborn (Dynama)]
+Angelic Animal Affinity {Snakes or Birds}																														PRERACE:Heavenborn (Kalkydrite)
+
+Angelic Animal Affinity {Birds}.MOD			NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Birds only) +%|TL+CHA		DESCISPI:YES
+Angelic Animal Affinity {Canines}.MOD		NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Canines only) +%|TL+CHA		DESCISPI:YES
+Angelic Animal Affinity {Equines}.MOD		NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Equines only) +%|TL+CHA		DESCISPI:YES
+Angelic Animal Affinity {Felines}.MOD		NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Felines only) +%|TL+CHA		DESCISPI:YES
+Angelic Animal Affinity {Mustelids}.MOD		NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Mustelids only) +%|TL+CHA		DESCISPI:YES
+Angelic Animal Affinity {Snakes}.MOD		NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Snakes only) +%|TL+CHA		DESCISPI:YES
+Angelic Animal Affinity {Ursines}.MOD		NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Ursines only) +%|TL+CHA		DESCISPI:YES
+
+Angelic Animal Affinity {Snakes or Birds}.MOD	NAMEISPI:YES	TYPE:AngelicAnimalAffinity	VISIBLE:NO																									SA:Wild Empathy (Ex) (Snakes or Birds) +%|TL+CHA	DESCISPI:YES
+
+
+#Ability Focus.MOD	MULT:YES	STACK:YES
+#Ability Focus {Cherub Roar}	PRERACE:Heavenborn (Cherub)	VISIBLE:NO	TYPE:AbilityFocus	BONUS:VAR|CherubRoarDC|2
+#Ability Focus {Hashmal Burst}	PRERACE:Heavenborn (Hashmal)	VISIBLE:NO	TYPE:AbilityFocus	BONUS:VAR|HashmalBurstDC|2
+#Ability Focus {Fiery Burst}
+#Ability Focus {Aura of Forgotten Presence}
+#Ability Focus {Seraph Breath Weapon}
+#Ability Focus {Possess Mortal}
+#Ability Focus {Claim the Faithful}
+#Ability Focus {Confusion Aura}
+#Ability Focus {Firespeaker Breath Weapon}
+#Ability Focus {Fear Aura}
+#Ability Focus {Devastating Bite}
+
+#############################################################
+# Natural Attacks by Size
+##############################################################
+
+# Although it's not documented, rsrd Dragon Disciple entry has natural attacks added thru feats
+# After loading a Dragon Disciple, it becomes patently apparent that using NATURALATTACKS tag in feats doesn't work ;)
+# Barak showed me how to correctly do this, thanks ;)
+
+# I'm just commenting these entries out because they took a long time to type, and God-forbid, if pcgen .lst code changes around,
+# I might need them again ;)
+
+#Fine Avvite Bite Attack				VISIBLE:NO	PRESIZEEQ:F	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1
+#Diminutive Avvite Bite Attack			VISIBLE:NO	PRESIZEEQ:D	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d2
+#Tiny Avvite Bite Attack				VISIBLE:NO	PRESIZEEQ:T	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d3
+#Small Avvite Bite Attack			VISIBLE:NO	PRESIZEEQ:S	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d4
+#Medium Avvite Bite Attack			VISIBLE:NO	PRESIZEEQ:M	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d6
+#Large Avvite Bite Attack			VISIBLE:NO	PRESIZEEQ:L	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d8
+#Huge Avvite Bite Attack				VISIBLE:NO	PRESIZEEQ:H	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,2d6
+#Colossal Avvite Bite Attack			VISIBLE:NO	PRESIZEEQ:C	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,2d8
+#Gargantuan Avvite Bite Attack			VISIBLE:NO	PRESIZEEQ:G	TYPE:AvviteNA		NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,4d6
+
+#Fine Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:F	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,1
+#Diminutive Raphaite Incorporeal Touch	VISIBLE:NO	PRESIZEEQ:D	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,1d2
+#Tiny Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:T	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,1d3
+#Small Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:S	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,1d4
+#Medium Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:M	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,1d6
+#Large Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:L	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,1d8
+#Huge Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:H	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,2d6
+#Colossal Raphaite Incorporeal Touch		VISIBLE:NO	PRESIZEEQ:C	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,2d8
+#Gargantuan Raphaite Incorporeal Touch	VISIBLE:NO	PRESIZEEQ:G	TYPE:RaphaiteNA		NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*1,4d6
+
+# Glitch in large Theriofiend Claw damage (2d8 vs. 1d8), I made it conform to pattern
+#Small Theriofiend Natural Attacks		VISIBLE:NO	PRESIZEEQ:S	TYPE:TheriofiendNA	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d3|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d4
+#Medium Theriofiend Natural Attacks		VISIBLE:NO	PRESIZEEQ:M	TYPE:TheriofiendNA	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d4|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d6
+#Large Theriofiend Natural Attacsk		VISIBLE:NO	PRESIZEEQ:L	TYPE:TheriofiendNA	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d6|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d8
+#Huge Theriofiend Natural Attacks		VISIBLE:NO	PRESIZEEQ:H	TYPE:TheriofiendNA	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d8|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,2d6
+#Gargantuan Theriofiend Natural Attacks	VISIBLE:NO	PRESIZEEQ:G	TYPE:TheriofiendNA	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,2d6|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,2d8
+#Colossal Theriofiend Natural Attacks	VISIBLE:NO	PRESIZEEQ:C	TYPE:TheriofiendNA	NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,2d8|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,4d6
+

@@ -1,0 +1,22 @@
+# CVS $Revision: $ $Author: $ -- Mon Aug  2 14:50:52 2004 -- reformated by prettylst.pl v1.32 (build 375)
+SOURCELONG:Sword and Sorcery - Modules - Rappan Athuk|SOURCESHORT:SS-Rappan Athuk|SOURCEWEB:http://www.swordsorcery.com
+#Just the basics, need checking
+
+# Class Name		Hit Dice	Type			Abbreviation	Max Level	Source Page		Save checks bonus																Combat bonus		Deity
+CLASS:Disciple of Orcus	HD:8		TYPE:PC.Prestige	ABB:DoO		MAXLEVEL:10	SOURCEPAGE:Web	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL*3/4	DEITY:Orcus
+# Class Name		Required AL	Required Feat					Required Skill
+CLASS:Disciple of Orcus	PREALIGN:8	PREFEAT:1,Great Fortitude,Power Attack	PRESKILL:1,Knowledge (Religiob)=9
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Disciple of Orcus	STARTSKILLPTS:4	CSKILL:Alchemy|Cocentration|TYPE.Craft|Heal|Knowledge (Anatomy)|Knowledge (Religion)|TYPE.Profession|Spellcraft
+# Class Name		Spell Stat		Spell Type
+CLASS:Disciple of Orcus	SPELLSTAT:WIS	SPELLTYPE:Divine
+1	ADD:SPELLCASTER(Divine)	VISION:Darkvision (60')	SA:Animate Dead
+2									SA:Speak With Dead
+3	ADD:SPELLCASTER(Divine)					SA:Necromantic Power
+4									SA:Summon Undead
+5	ADD:SPELLCASTER(Divine)					SA:Cloak of Orcus
+6									SA:Friend of Death
+7	ADD:SPELLCASTER(Divine)
+8									SA:Touch of the Death God	SA:Touch of the Death God (DC %)|TouchDeathGod	DEFINE:TouchDeathGod|15+CHA+(CL=Disciple of Orcus)
+9	ADD:SPELLCASTER(Divine)					SA:Greater Summoning
+10	ADD:SPELLCASTER(Divine)					SA:Shroud of Orcus																			TEMPLATE:Undead

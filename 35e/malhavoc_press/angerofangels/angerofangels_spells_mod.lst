@@ -1,0 +1,104 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+
+# I think everything in this file is now commented out :/
+
+
+# Something I've always wanted done, made easy with the new .COPY tag
+# now if we could do this in race files...  =D
+
+# now to wait until .COPY tag is working? did i mess something up?
+
+# cannot clear CLASSES tag, so Protection from Evil (self only) is
+# showing up in Sor/Wiz class list, etc
+
+# since I can't clear the class tag, I'm taking this out
+
+#Bless Weapon.COPY=Bless Weapon (personal weapon only)
+#Illuminated Weapon.COPY=Illuminated Weapon (personal weapon only)
+
+#Detect Thoughts.COPY=Detect Thoughts (sleeping creatures only)
+#Detect Thoughts.MOD
+
+#Invisibility.COPY=Invisibility (self only)
+#Magic Fang.COPY=Magic Fang (self only)
+#Protection from Evil.COPY=Protection from Evil (self only)
+#Protection from Evil.MOD	CLASSES:.CLEAR.Adept,Cleric,Paladin,Sorcerer,Wizard=1
+
+#Sanctuary.COPY=Sanctuary (self only)
+#Shield of Faith.COPY=Shield of Faith (self only)
+
+#.COPY tag is taking extra tags and adding them onto the name.
+#e.g. i wind up with "Invisibility (self only)RANGE:PersonalTARGET:You"
+#Invisibility.COPY=Invisibility (self only)				RANGE:Personal	TARGETAREA:You
+#Magic Fang.COPY=Magic Fang (self only)					RANGE:Personal	TARGETAREA:You
+#Protection from Evil.COPY=Protection from Evil (self only)		RANGE:Personal	TARGETAREA:You
+#Sanctuary.COPY=Sanctuary (self only)					RANGE:Personal	TARGETAREA:You
+#Shield of Faith.COPY=Shield of Faith (self only)			RANGE:Personal	TARGETAREA:You
+
+##########################
+# Spell list mods
+##########################
+
+#Hashmalite
+#Protection from Chaos.MOD		CLASSES:ALL=1[PRERACE:Heavenborn (Hashmalite)]
+#Calm Emotions.MOD			CLASSES:ALL=2[PRERACE:Heavenborn (Hashmalite)]
+#Magic Circle against Chaos.MOD	CLASSES:ALL=3[PRERACE:Heavenborn (Hashmalite)]
+#Order's Wrath.MOD			CLASSES:ALL=4[PRERACE:Heavenborn (Hashmalite)]
+#Dispel Chaos.MOD				CLASSES:ALL=5[PRERACE:Heavenborn (Hashmalite)]
+#Hold Monster.MOD				CLASSES:ALL=6[PRERACE:Heavenborn (Hashmalite)]
+#Dictum.MOD					CLASSES:ALL=7[PRERACE:Heavenborn (Hashmalite)]
+#Shield of Law.MOD			CLASSES:ALL=8[PRERACE:Heavenborn (Hashmalite)]
+#Summon Monster IX.MOD			CLASSES:ALL=9[PRERACE:Heavenborn (Hashmalite)]
+
+# These should probably go back into the feat file if
+# the ADD:SPELLLEVEL tag ever starts working
+
+# This doesn't work either.
+# Calm Emotions.MOD	CLASSES:Sorcerer=2[PRERACE:Heavenborn (Hashmalite)]
+# didn't work either, so it's apparently the CLASS:Specific Class part
+# that isn't working, even though ALL works fine
+# ACTUALLY, ALL ignores the following PRE tag
+
+#Celestial Sorcery
+#Aid.MOD				CLASSES:ALL=2[PREFEAT:1,Celestial Sorcery]
+#Bless.MOD				CLASSES:ALL=1[PREFEAT:1,Celestial Sorcery]
+#Create Food and Water.MOD	CLASSES:ALL=3[PREFEAT:1,Celestial Sorcery]
+#Cure Critical Wounds.MOD	CLASSES:ALL=4[PREFEAT:1,Celestial Sorcery]
+#Cure Light Wounds.MOD		CLASSES:ALL=1[PREFEAT:1,Celestial Sorcery]
+#Cure Minor Wounds.MOD		CLASSES:ALL=0[PREFEAT:1,Celestial Sorcery]
+#Cure Moderate Wounds.MOD	CLASSES:ALL=2[PREFEAT:1,Celestial Sorcery]
+#Cure Serious Wounds.MOD		CLASSES:ALL=3[PREFEAT:1,Celestial Sorcery]
+#Dispel Evil.MOD			CLASSES:ALL=5[PREFEAT:1,Celestial Sorcery]
+#Flame Strike.MOD			CLASSES:ALL=5[PREFEAT:1,Celestial Sorcery]
+#Heartglow.MOD			CLASSES:ALL=2[PREFEAT:1,Celestial Sorcery]
+#Holy Aura.MOD			CLASSES:ALL=8[PREFEAT:1,Celestial Sorcery]
+#Holy Smite.MOD			CLASSES:ALL=4[PREFEAT:1,Celestial Sorcery]
+#Holy Word.MOD			CLASSES:ALL=7[PREFEAT:1,Celestial Sorcery]
+#Light of Heaven.MOD		CLASSES:ALL=4[PREFEAT:1,Celestial Sorcery]
+#Prayer.MOD				CLASSES:ALL=3[PREFEAT:1,Celestial Sorcery]
+#Remove Disease.MOD		CLASSES:ALL=3[PREFEAT:1,Celestial Sorcery]
+#Soul Beacon.MOD			CLASSES:ALL=1[PREFEAT:1,Celestial Sorcery]
+#Transin Celestia.MOD		CLASSES:ALL=3[PREFEAT:1,Celestial Sorcery]
+#Trisagion.MOD			CLASSES:ALL=9[PREFEAT:1,Celestial Sorcery]
+#Virtue.MOD				CLASSES:ALL=0[PREFEAT:1,Celestial Sorcery]
+
+#Infernal Sorcery
+#Animate Dead.MOD		CLASSES:ALL=3[PREFEAT:1,Infernal Sorcery]
+#Bane.MOD			CLASSES:ALL=1[PREFEAT:1,Infernal Sorcery]
+#Blasphemy.MOD		CLASSES:ALL=7[PREFEAT:1,Infernal Sorcery]
+#Death Knell.MOD		CLASSES:ALL=2[PREFEAT:1,Infernal Sorcery]
+#Deeper Darkness.MOD	CLASSES:ALL=3[PREFEAT:1,Infernal Sorcery]
+#Desecrate.MOD		CLASSES:ALL=2[PREFEAT:1,Infernal Sorcery]
+#Dispel Good.MOD		CLASSES:ALL=5[PREFEAT:1,Infernal Sorcery]
+#Doom.MOD			CLASSES:ALL=1[PREFEAT:1,Infernal Sorcery]
+#Fires of Hell.MOD		CLASSES:ALL=4[PREFEAT:1,Infernal Sorcery]
+#Flame Strike.MOD		CLASSES:ALL=5[PREFEAT:1,Infernal Sorcery]
+#Hell's Hounding.MOD	CLASSES:ALL=2[PREFEAT:1,Infernal Sorcery]
+#Prayer.MOD			CLASSES:ALL=3[PREFEAT:1,Infernal Sorcery]
+#Produce Flame.MOD		CLASSES:ALL=2[PREFEAT:1,Infernal Sorcery]
+#Ugbogior's Breath.MOD	CLASSES:ALL=3[PREFEAT:1,Infernal Sorcery]
+#Unhallow.MOD		CLASSES:ALL=5[PREFEAT:1,Infernal Sorcery]
+#Unholy Aura.MOD		CLASSES:ALL=8[PREFEAT:1,Infernal Sorcery]
+#Unholy Blight.MOD		CLASSES:ALL=4[PREFEAT:1,Infernal Sorcery]

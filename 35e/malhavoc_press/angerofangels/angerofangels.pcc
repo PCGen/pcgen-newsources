@@ -1,0 +1,108 @@
+# CVS $Revision$ $Author$ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+
+# Anger of Angels, by Sean K. Reynolds
+
+# note that many of the comments in these files may contradict each other
+# I'm just throwing notes in as I go thru this...
+
+# I've tried to follow the legal-thingies, such as COPYRIGHT, SOURCEPAGE, NAMEISPI tags as well as I could
+# however, since this is the first batch of .lst files I've intended to distribute, I'm not too familiar with them
+
+# If something had an original source other than Anger of Angels, I listed the source as that original source
+# (I put the SOURCEPAGE tag for original source only if i had access to the source, otherwise no SOURCEPAGE tag)
+
+
+# I'm making fairly good use of the .COPY tag, I don't think it was working quite right in 5.5.1 (not for equipment?)
+# it would be NICE if it worked for spells O:)
+
+# now using PCGen 5.5.2
+
+# For a lot of things (everything I could, basically) I used .MOD tags to spread entries out from one line to multiple lines
+# Although it's probably asking for errors, it made it a lot easier for me to read, which i figured was pretty important
+# otherwise I might have given up halfway thru
+
+# 	the .MOD tag is nigh bugless. The .COPY tag is pretty much a bug itself.
+
+# I've made bunch of "Qualify" templates: Qualify (Angel), Qualify (Fire tolerance), Qualify (Detect Evil at Will), etc
+# the point of these templates are for if a prerequisite is "fuzzy" (is an efreeti a fiend?) and therefore going to vary from user to user,
+# or if it's very hard for pcgen to check (does race foo have any amount of fire resistance?)
+# if a character should meet of these "fuzzy" prerequisites, it's much easier to throw in one of these templates than say, edit a .lst file entry
+
+# I'm not sure if the various spells from the Book of Hallowed Might having PI names will be any trouble,
+# so i've tried to put references to those spells in separate, easy to delete entries
+
+# I think pretty much all the capitalized names of things are going to be PI, on looking at the licence terms...
+# will stick a NAMEISPI:YES tag on everything I can then.
+
+# globally used VARs:
+
+# AcidResistance,ColdResistance,ElectricityResistance,FireResistance,Sonic Resistance
+# 	allows Energy Resistance amount to be modified by Improved Energy Resistance Feat
+# HealingTouchLevel
+#	the Grail domain gives the Healing Touch feat, as if the character were one level higher
+# MagicDR,EpicDR,ChaoticDR,EvilDR,GoodDR,LawfulDR,AdamantineDR,ColdIronDR,SilverDR,
+#	indicates amount of damage reduction of type creature has, for Improved Damage Reduction Feat
+#	if I can .MOD rsrd races to use these VARs, I will--dunno if I can .CLEAR present DR tag
+
+
+# todo: Vrykolaka template -- ha! done! kinda...
+# various bugs, quirks
+
+CAMPAIGN:MP - Anger of Angels - Source Book
+GAMEMODE:35e
+GENRE:Fantasy
+TYPE:Malhavoc Press.Supplement
+SOURCELONG:Malhavoc Press - Anger of Angels
+SOURCESHORT:AoA
+SOURCEWEB:http://www.montecook.com
+ISOGL:YES
+
+#copied from Opgen Game License page
+COPYRIGHT:Open Game License v 1.0a Copyright 2000-2003, Wizards of the Coast, Inc.
+COPYRIGHT:d20 System Reference Document Copyright 2000-2003, Wizards of the Coast,Inc; authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, based on original material by E. Gary Gygax and Dave Arneson
+COPYRIGHT:Anger of Angels &copy;2003 Sean K. Reynolds. All rights reserved.
+COPYRIGHT:Path of the Magi &copy;2002 Citizen Games/Troll Lord Games.
+COPYRIGHT:Skreyn's Register: The Bonds of Magic &copy;2002 Sean K. Reynolds
+COPYRIGHT:The Book of Hallowed Might &copy;2002 Monte J. Cook
+COPYRIGHT:PCGen dataset conversion for Anger of Angels Copyright 2003-2004, PCgen Data Team including, but not limited to, Michael Wright (brainface_mike), Andrew McDougall (Tir Gwaith).
+
+#this should, of course, be changed
+LICENSED:NO
+LICENSE:Pending
+#EXTRAFILE:OGL.txt
+
+# Stuff from the orinal author that I haven't exactly figured out yet. - Tir Gwaith
+#EXTRAFILE:angerofangels_spells_mod.lst
+#EXTRAFILE:angerofangels_spells_tempmod.lst
+# - This one I've merged what I could into spells.lst - Tir Gwaith
+
+#stuff that is in the rsrd, but not rsrd .lsts
+TEMPLATE:utility_templates.lst
+
+RACE:angerofangels_races.lst
+RACE:angerofangels_races_monsters.lst
+FEAT:angerofangels_feats.lst
+FEAT:angerofangels_feats_dominion.lst
+
+# choices for class/race, natural attacks due to size
+FEAT:angerofangels_feats_hidden.lst
+
+CLASS:angerofangels_classes.lst
+CLASS:angerofangels_classes_prestige.lst
+CLASS:angerofangels_classes_template.lst
+TEMPLATE:angerofangels_templates.lst
+EQUIPMENT:angerofangels_equip.lst
+EQUIPMOD:angerofangels_equipmods.lst
+SPELL:angerofangels_spells.lst
+DOMAIN:angerofangels_domains.lst
+
+DEITY:angerofangels_deities.lst
+
+#inclusion of Qualify (Angel) and Qualify (Fiend) templates (simply allows passing of "Angel or Fiend" prerequisites)
+RACE:angerofangels_races_mod.lst
+TEMPLATE:angerofangels_templates_mod.lst
+
+#workarounds for the hashmalim
+DOMAIN:angerofangels_domains_mod.lst
+CLASS:angerofangels_classes_mod.lst

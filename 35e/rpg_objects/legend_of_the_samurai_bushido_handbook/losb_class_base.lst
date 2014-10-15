@@ -1,0 +1,99 @@
+# CVS $Revision: $ $Author: $ -- Mon Feb 28 14:21:26 2005 -- reformated by prettylst.pl v1.34 (build 455)
+SOURCELONG:Legends of the Samurai - Bushido Handbook|SOURCESHORT:LoS-B|SOURCEWEB:http://www.rpgobjects.com/index.php?page=pro&product_id=66
+
+# Class Name	Hit Dice	Type			Source Page		Save checks bonus												Combat bonus
+CLASS:Ashigaru	HD:10		TYPE:PC.Base	SOURCEPAGE:p.14	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Ashigaru	STARTSKILLPTS:2	CSKILL:Climb|Intimidate|Jump|Knowledge (Tactics ~ Shusai)|Survival|Swim
+1													ADD:FEAT(TYPE=Ashigaru1)												FEATAUTO:Weapon Proficiency (Bows)|Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Armor Proficiency (Medium)
+2													ADD:FEAT(TYPE=Ashigaru2)
+3													ADD:FEAT(TYPE=AshigaurFormationFighting)
+4																								VFEAT:Weapon Specialization
+5	BONUS:VAR|AshigaruKi|CL/5															FEAT:Ashigaru Ki
+6													ADD:FEAT(TYPE=Ashigaru6)
+7													ADD:FEAT(TYPE=AshigaurFormationFighting)
+8													ADD:FEAT(TYPE=Fighter)
+9	BONUS:VAR|NumConscripts|CL	BONUS:VAR|ConscriptLevel|CL/2			ADD:FEAT(TYPE=Ashigaru9)			FEAT:Formation Command
+11													ADD:FEAT(TYPE=Fighter)
+12													ADD:FEAT(TYPE=Ashigaru12)
+13													ADD:FEAT(TYPE=AshigaurFormationFighting)
+14													ADD:FEAT(TYPE=Fighter)
+15													ADD:FEAT(TYPE=Ashigaru15)
+16	BONUS:VAR|NumConscripts|CL	BONUS:VAR|ConscriptLevel|(CL-1)-(CL/2)	ADD:FEAT(TYPE=Fighter)
+17													ADD:FEAT(TYPE=Ashigaru17)
+18													ADD:FEAT(TYPE=AshigaurFormationFighting)
+19													ADD:FEAT(TYPE=Fighter)
+
+# Class Name	Hit Dice	Type			Source Page		Save checks bonus												Combat bonus
+CLASS:Kuge		HD:8		TYPE:PC.Base	SOURCEPAGE:p.16	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Kuge		STARTSKILLPTS:4	CSKILL:Bluff|Diplomacy|Gather Information|Handle Animal|Intimidate|Knowledge (Calligraphy ~ Sho)|Knowledge (Chinese Classics ~ Myokyo)|Knowledge (Chinese Poetry ~ Shigaku)|Knowledge (Composition and Rhetoric ~ Monjo)|Knowledge (History)|Knowledge (Japanese Poetry ~ Kagaku)|Knowledge (Law ~ Myoho)|Knowledge (Mathematics ~ San)|Knowledge (Nobility and Royalty)|Knowledge (Politics ~ Shinshi)|Knowledge (Religion)|Knowledge (Tactics ~ Shusai)|Perform (Flower Arranging)|Perform (Tea Ceremony)|Ride|Sense Motive|Survival
+1																										VFEAT:Mounted Combat			FEATAUTO:Weapon Proficiency (Bows)|Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Born to the Saddle
+2	SA:August Personage +%|AugustPersonage	BONUS:VAR|AugustPersonage|2					DEFINE:AugustPersonage|0	ADD:FEAT(TYPE=Kuge2)
+3																						ADD:FEAT(TYPE=Kuge3)
+4																										VFEAT:Weapon Specialization
+5	SA:Kuge Ki %/day|KugeKi				BONUS:VAR|AugustPersonage|2	BONUS:VAR|KugeKi|CL/5	DEFINE:KugeKi|0
+6	SA:Court Contact ~ Low Rank																	ADD:FEAT(TYPE=Kuge6)
+7																						ADD:FEAT(TYPE=Kuge7)
+8	SA:Slander																								VFEAT:Greater Weapon Focus
+9																						ADD:FEAT(TYPE=Kuge9)
+10								BONUS:VAR|AugustPersonage|2
+11	SA:Court Contact ~ Medium Rank
+12	SA:Innuendo																								VFEAT:Greater Weapon Specialization
+13	SA:Court Appointment ~ Medium Rank
+14	SA:Court Contact ~ High Rank
+15								BONUS:VAR|AugustPersonage|2
+16	SA:Smear Campaign
+17	SA:Court Appointment ~ High Rank
+18	SA:Imperial Visitation 1/year
+19								BONUS:VAR|AugustPersonage|2
+
+# Class Name	Hit Dice	Type			Source Page		Save checks bonus												Combat bonus
+CLASS:Ninja		HD:6		TYPE:PC.Base	SOURCEPAGE:p.19	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL*3/4
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Ninja		STARTSKILLPTS:8	CSKILL:Balance|Bluff|Climb|Craft (Ninja Alchemy)|Disable Device|Disguise|Escape Artist|Forgery|Gather Information|Handle Animal|Hide|Intimidate|Jump|Knowledge (History)|Knowledge (Local)|Knowledge (Nature)|Knowledge (Nobility and Royalty)|Knowledge (Tactics ~ Shusai)|Listen|Move Silently|Open Lock|Perform (Dance)|Search|Sense Motive|Sleight of Hand|Spot|Survival|Swim|Tumble|Use Rope
+1	SA:Trapfinding		BONUS:VAR|SilentKill|(CL+1)/2								FEATAUTO:Weapon Proficiency (Agricultural)|Weapon Proficiency (Knives)|Weapon Proficiency (Ninja)|Weapon Proficiency (Spears and Staves)|Armor Proficiency (Light)|Ninjutsu|Silent Kill
+2																	FEATAUTO:Evasion|Shinobi Jutsu
+4																	FEATAUTO:Endurance
+5					BONUS:VAR|NinjaKi|CL/5									FEATAUTO:Ninja Ki
+6	SA:Shichi-ho-de +%|CL						BONUS:MOVEADD|TYPE.Walk|((CL-2)/4)*10
+8	SA:Goton-no-jutsu
+9	SA:Chunin															FEATAUTO:Improved Evasion
+12	SA:Tobi-ashi
+14	SA:Jonin
+16	SA:Master Jonin
+18	SA:Jonin Lord
+
+# Class Name	Hit Dice	Type			Source Page		Save checks bonus												Combat bonus
+CLASS:Ronin		HD:8		TYPE:PC.Base	SOURCEPAGE:p.20	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL
+# Class Name	Skill Pts/Lvl	Class Skill
+CLASS:Ronin		STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Hide|Intimidate|Listen|Move Silently|Spot|Survival|Swim
+1																														FEATAUTO:Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Weapon Focus(Katana)
+2																				ADD:FEAT(TYPE=Ronin2)
+3																														FEATAUTO:Banter
+4																								VFEAT:Weapon Specialization(Katana)
+5	SA:Ronin Ki %/day|RoninKi	BONUS:VAR|RoninKi|CL/5								DEFINE:RoninKi|0											FEATAUTO:Evasion
+6										BONUS:COMBAT|AC|1|TYPE=Competence.STACK				ADD:FEAT(TYPE=Ronin6)
+7
+8																														FEATAUTO:Uncanny Dodge|Taunt
+9																				ADD:FEAT(TYPE=Ronin9)
+11
+12																				ADD:FEAT(TYPE=Ronin12)							FEATAUTO:Improved Evasion
+13										BONUS:COMBAT|AC|1|TYPE=Competence.STACK
+14
+15																				ADD:FEAT(TYPE=Ronin15)
+17
+18																				ADD:FEAT(TYPE=Ronin18)
+19										BONUS:COMBAT|AC|1|TYPE=Competence.STACK
+
+# Class Name	Type			Source Page
+CLASS:Samurai	TYPE:PC.Base	SOURCEPAGE:p.25
+
+# Class Name	Type			Source Page
+CLASS:Shokunin	TYPE:PC.Base	SOURCEPAGE:p.27
+
+# Class Name	Type			Source Page
+CLASS:Touzoku	TYPE:PC.Base	SOURCEPAGE:p.30
+
+# Class Name	Type			Source Page
+CLASS:Yamabushi	TYPE:PC.Base	SOURCEPAGE:p.33

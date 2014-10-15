@@ -1,0 +1,85 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+
+# I can't get the PRERACE tags to work, so i'm just taking them out
+# maybe I could use a PREEQUIP tag in Hashmalim class file? have to research
+
+# pasting NAMEISPI:YES tags like a madman. even on "Flaming Sword"
+
+
+##############################
+# Magic Items
+##############################
+# Dusts of (Heaven's Footprint/Hell's Presence) don't seem to have a weight listed. should I add a WT:0 tag?
+# I would assume it's not listed b/c is negligible?
+
+#weapons
+# Equipment Name							Product Identity?	Output Name				Required Proficiency		Type					Cost		Weight	Base Item for EQMOD	Modifier								Source Page				Stat bonus					Weapon prop. bonus
+Longsword.COPY=Flaming Sword					NAMEISPI:YES																								EQMOD:MWORKW	EQMOD:PLUS1W	EQMOD:FLM_M		SOURCEPAGE:Chapter 9: Magic
+Longsword.COPY=Holy Sword					NAMEISPI:YES																								EQMOD:MWORKW	EQMOD:PLUS1W	EQMOD:HOLY_M	SOURCEPAGE:Chapter 9: Magic
+
+#rods
+#gave error "could not copy Rod (flame extinguishing) to Rod (snow) - don't know why, I copy&pasted the name
+#Rod (Flame Extinguishing).COPY=Rod (Snow)	COST:32000					SOURCEPAGE:Chapter 9: Magic
+Rod (Snow)								NAMEISPI:YES	OUTPUTNAME:Rod of [NAME]						TYPE:Magic.Rod			COST:15000	WT:5		BASEITEM:Rod		EQMOD:SPL_CHRG|CHARGES[10]					SOURCEPAGE:Chapter 9: Magic
+
+
+#Wondrous Items
+Book of Hours							NAMEISPI:YES											TYPE:Magic.Wondrous.Book	COST:6000	WT:5															SOURCEPAGE:Chapter 9: Magic
+Dust of Heaven's Footprint 1					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:2800	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Heaven's Footprint 2					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:4500	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Heaven's Footprint 3					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:6600	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Heaven's Footprint 4					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:9100	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Heaven's Footprint 5					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:15300	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Hell's Presence 1					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:2800	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Hell's Presence 2					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:2500	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Hell's Presence 3					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:6600	WT:0															SOURCEPAGE:Chapter 9: Magic
+Dust of Hell's Presence 4					NAMEISPI:YES											TYPE:Magic.Wondrous		COST:9100	WT:0															SOURCEPAGE:Chapter 9: Magic
+Elixer of Life							NAMEISPI:YES											TYPE:Magic.Wondrous		COST:7000	WT:0															SOURCEPAGE:Chapter 9: Magic
+Heart of Flaming Sulfer						NAMEISPI:YES											TYPE:Magic.Wondrous		COST:10000	WT:1															SOURCEPAGE:Chapter 9: Magic
+Hecate's Key							NAMEISPI:YES											TYPE:Magic.Wondrous		COST:16000	WT:1															SOURCEPAGE:Chapter 9: Magic
+Holy Grail								NAMEISPI:YES											TYPE:Magic.Wondrous		COST:100000	WT:0															SOURCEPAGE:Chapter 9: Magic
+Liquid Corruption							NAMEISPI:YES											TYPE:Magic.Wondrous		COST:2500	WT:1															SOURCEPAGE:Chapter 9: Magic
+Samhain's Prison							NAMEISPI:YES											TYPE:Magic.Wondrous		COST:1500	WT:5															SOURCEPAGE:Chapter 9: Magic
+Tangible Halo (+2)						NAMEISPI:YES											TYPE:Magic.Wondrous.Headgear	COST:4200	WT:0															SOURCEPAGE:Chapter 9: Magic	BONUS:STAT|CHA|2|TYPE=Enhancement
+Tangible Halo (+4)						NAMEISPI:YES											TYPE:Magic.Wondrous.Headgear	COST:16200	WT:0															SOURCEPAGE:Chapter 9: Magic	BONUS:STAT|CHA|4|TYPE=Enhancement
+Tangible Halo (+6)						NAMEISPI:YES											TYPE:Magic.Wondrous.Headgear	COST:36200	WT:0															SOURCEPAGE:Chapter 9: Magic	BONUS:STAT|CHA|6|TYPE=Enhancement
+
+Holy Grail (Original)						NAMEISPI:YES											TYPE:Magic.Artifact		COST:0																SOURCEPAGE:Chapter 9: Magic
+
+##############################
+# Golden icon forms
+##############################
+# Giving Orb type:Rod so it can be equipped?
+Golden Icon (Rod)							NAMEISPI:YES											TYPE:Magic.Rod			COST:0
+Golden Icon (Orb)							NAMEISPI:YES											TYPE:Magic.Rod			COST:0
+
+#how to restrict turn undead to hashmalim only?
+Holy Symbol (Silver).COPY=Golden Icon (Holy Symbol)	NAMEISPI:YES																COST:0
+Longsword.COPY=Golden Icon (Longsword)			NAMEISPI:YES																COST:0
+Quarterstaff.COPY=Golden Icon (Staff)			NAMEISPI:YES																COST:0
+
+
+##############################
+# Chain of Fire
+##############################
+
+# note that 3e light flail = 3.5 flail
+# in PCGEN, alchemical silver and adamantine are exclusive, may have to make extra eqmod, or something?
+# flaming is also an Energy (choice) in 3.5 lst... easier and simpler to make new eqmod
+
+# did multiple weapon-feat bonuses the same way sunblade was done...
+
+Flail.COPY=Chain of Fire					NAMEISPI:YES																COST:0							EQMOD:Destruction1																	BONUS:WEAPON|DAMAGE,TOHIT|1|TYPE=Enhancement
+Flail.COPY=Chain of Greater Fire				NAMEISPI:YES																COST:0							EQMOD:Destruction2																	BONUS:WEAPON|DAMAGE,TOHIT|2|TYPE=Enhancement
+
+Flail.COPY=Chain of Fire (Heavy Flail)			NAMEISPI:YES						PROFICIENCY:Flail (Heavy)						COST:0							EQMOD:Destruction1																	BONUS:WEAPON|DAMAGE,TOHIT|1|TYPE=Enhancement
+Flail.COPY=Chain of Greater Fire (Heavy Flail)		NAMEISPI:YES						PROFICIENCY:Flail (Heavy)						COST:0							EQMOD:Destruction2																	BONUS:WEAPON|DAMAGE,TOHIT|2|TYPE=Enhancement
+
+Flail.COPY=Chain of Fire (Spiked Chain)			NAMEISPI:YES						PROFICIENCY:Chain (Spiked)						COST:0							EQMOD:Destruction1																	BONUS:WEAPON|DAMAGE,TOHIT|1|TYPE=Enhancement
+Flail.COPY=Chain of Greater Fire (Spiked Chain)		NAMEISPI:YES						PROFICIENCY:Chain (Spiked)						COST:0							EQMOD:Destruction2																	BONUS:WEAPON|DAMAGE,TOHIT|2|TYPE=Enhancement
+
+Flail.COPY=Chain of Fire (Whip)				NAMEISPI:YES						PROFICIENCY:Whip								COST:0							EQMOD:Destruction1																	BONUS:WEAPON|DAMAGE,TOHIT|1|TYPE=Enhancement
+Flail.COPY=Chain of Greater Fire (Whip)			NAMEISPI:YES						PROFICIENCY:Whip								COST:0							EQMOD:Destruction2																	BONUS:WEAPON|DAMAGE,TOHIT|2|TYPE=Enhancement

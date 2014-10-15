@@ -1,0 +1,22 @@
+# CVS $Revision: $ $Author: $ -- Sun Jun 20 13:43:53 2004 -- reformated by prettylst.pl v1.32 (build 363)
+SOURCELONG:The Lore of the Gods Book One: The Greek Gods|SOURCESHORT:Greek Gods|SOURCEWEB:http://www.bastionpress.com/
+# Original Entry by: Tir Gwaith
+
+# Fortitude progression +1, +0, +1, +2, +2, +2, +2, +3, +4, +5  ???????
+# Light Shields?
+
+# Class Name		Hit Dice	Type			Abbreviation	Save checks bonus											Combat bonus
+CLASS:Hunter of Hera	HD:6		TYPE:PC.Prestige	ABB:HH		BONUS:CHECKS|BASE.Reflex,BASE.Willpower|floor((var(CL)+2)*3/10)+(var(CL)/10)	BONUS:COMBAT|BAB|CL*3/4
+# Class Name		Req. Att.	Required Check Base					Required Skill											Required Text
+CLASS:Hunter of Hera	PREATT:6	PRECHECKBASE:Fortitude=3,Reflex=3,Willpower=3	PRESKILL:3,Hide,Listen,Move Silently=8	PRESKILL:1,Knowledge (Religion)=4	PRETEXT:See text.
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Hunter of Hera	STARTSKILLPTS:4	CSKILL:Balance|Bluff|Climb|Concentration|Diplomacy|Disguise|Gather Information|Hide|Intimidate|Jump|Knowledge (Religion)|Knowledge (Nature)|Listen|Move Silently|Search|Sense Motive|Spot|Swim|Wilderness Lore
+1	AUTO:ARMORPROF|Shield	AUTO:WEAPONPROF|TYPE.Simple|TYPE.Martial	FEATAUTO:Simple Weapon Proficiency|Martial Weapon Proficiency|Armor Proficiency (Light)|Armor Proficiency (Medium)
+###Block: Normal progression
+1			SA:Commune
+2			SA:Favored Enemy (Children f the Gods) +%|FavoredEnemyChildrenGods	BONUS:VAR|FavoredEnemyChildrenGods|min((var(CL)/2),4)	DEFINE:FavoredEnemyChildrenGods
+3			SA:Sense Divine Blood (30')
+5			SA:Track																										FEATAUTO:Track
+6			SA:True Strike 3/day
+9	DR:5/-
+10			SA:Smite Godling 1/day

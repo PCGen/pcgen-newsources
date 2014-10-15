@@ -1,0 +1,287 @@
+# CVS $Revision: $ $Author: $ -- Fri Aug  6 18:16:15 2004 -- reformated by prettylst.pl v1.32 (build 375)
+# Original entry by Michael Wright (brainface_mike)
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+# templates for anger of angels
+
+# stuck NAMEISPI's everywhere
+# I avoided doing this on templates I just made up for PCGen (Qualify foo, Morph foo)
+# if the name included a PI term (Captain of Fear) i stuck the tag on, though
+# (that was a prerequisite, not an ability, however... eh)
+
+# PRETYPE:(Racial Type) works in template files, does it in others? Documented tag refers just to equipment
+
+# !PREs aren't working in 5.5.8--they're registering as normal PREs
+# obviously, this isn't very helpful
+# PREMULT:0,[PREs] are working fine as a substitute
+
+
+################################
+# Worker Template
+#################################
+
+#class object cannot change creature's type (right?)
+# these should be made VISIBLE:NO, but debugging
+#changes type to outsider (half-celestial class)
+# PRETYPE is trying to be the equipment tag =P
+# Template Name				Product Identity?	CR	Visible		REMOVEABLE		Damage Reduction	Template																															Source Page											Special Ability																			Define													Required AL		Required Feat			Multiple Requirements		!PREMULT						Required Race				Required Size	Required Template			Required Type	Save checks bonus				Combat bonus									BONUS:SIZEMOD		Bonus to skill							Stat bonus											Feat			Automatic Languages		Move					MOVECLONE			Removable?		SUBRACE			Type				Vision					Spell										Natural Attacks
+Morph (Outsider)								VISIBLE:YES		REMOVEABLE:NO																																																																																																																																																																																										TYPE:Outsider
+#changes type to magical beast (half-celestial class)
+Morph (Animal to Magical Beast)					VISIBLE:YES		REMOVEABLE:NO																																																																																																																					PRETYPE:Animal																																																																			TYPE:Magical Beast
+Morph (Vermin to Magical Beast)					VISIBLE:YES		REMOVEABLE:NO																																																																																																																					PRETYPE:Vermin																																																																			TYPE:Magical Beast
+
+#for the Angel of Fury prestige class (increases size w/o stat mods)
+#(did tiny, fine, diminutive for kicks and kicks alone, btw)
+#small to large handles lantern archon, I don't know of any other small celestials/angels, much less tiny ones
+#Morph (Fine to Diminutive)	REMOVEABLE:NO	VISIBLE:YES	PRESIZEEQ:F	BONUS:SIZEMOD|NUMBER|1				BONUS:STAT|DEX|2
+#Morph (Diminutive to Tiny)	REMOVEABLE:NO	VISIBLE:YES	PRESIZEEQ:D	BONUS:SIZEMOD|NUMBER|1	BONUS:STAT|STR|-2	BONUS:STAT|DEX|2
+#Morph (Tiny to Small)		REMOVEABLE:NO	VISIBLE:YES	PRESIZEEQ:T	BONUS:SIZEMOD|NUMBER|1	BONUS:STAT|STR|-4	BONUS:STAT|DEX|2
+
+Morph (Small to Medium)							VISIBLE:YES		REMOVEABLE:NO																																																																																																													PRESIZEEQ:S																											BONUS:SIZEMOD|NUMBER|1										BONUS:STAT|STR|-4	BONUS:STAT|DEX|2	BONUS:STAT|CON|-2
+Morph (Medium to Large)							VISIBLE:YES		REMOVEABLE:NO																																																																																																													PRESIZEEQ:M																BONUS:COMBAT|AC|-2|TYPE=NaturalArmor	BONUS:COMBAT|REACH|5	BONUS:SIZEMOD|NUMBER|1										BONUS:STAT|STR|-8	BONUS:STAT|DEX|2	BONUS:STAT|CON|-4
+Morph (Small to Large)							VISIBLE:YES		REMOVEABLE:NO				TEMPLATE:Morph (Small to Medium)	TEMPLATE:Morph (Medium to Large)																																																																																														PRESIZEEQ:S
+
+# Above subtypes aren't from Malhavoc press (or anything)
+
+SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www.montecook.com
+
+##################################
+# Helper templates (Allows character to pass certain prerequisites, for if the prereqs are fuzzy and hard to check)
+# I'll also try to check prerequisites thru more mundane means, but these will be here as a backup as something will inevitably be missed
+# (for instance, for firespeaker: PRESA:1,Fire Immunity,Immunity to Fire, etc will miss SA:Fire Immunity (Ex) )
+# I had these as (Angel) instead of Qualify (Angel), but the PRETEMPLATE tags weren't working then - PCGEN doesn't like names starting with '('s?
+##################################
+
+#indicates character qualifies as an angel
+Qualify (Angel)								VISIBLE:DISPLAY	REMOVEABLE:YES																																				SOURCEPAGE:Chapter 2: Angels (Terminology: Angel and Fiend)
+
+#indicates character qualifies as a fiend
+Qualify (Fiend)								VISIBLE:DISPLAY	REMOVEABLE:YES																																				SOURCEPAGE:Chapter 2: Angels (Terminology: Angel and Fiend)
+
+#character can take feats/abilites restricted to planetouched (there's no distinction between good/evil planetouched)
+Qualify (Planetouched)							VISIBLE:DISPLAY	REMOVEABLE:YES
+
+#indicates character can create a fear effect at least daily (Angel of Terror prerequisite)
+Qualify (Captain of Fear)		NAMEISPI:YES		VISIBLE:DISPLAY	REMOVEABLE:YES																																				SOURCEPAGE:Chapter 8: Prestige Classes (Angel of Terror)
+
+#indicates character has some form of fire resistance (Fire-Speaker prerequisite)
+Qualify (Fire Tolerance)						VISIBLE:DISPLAY	REMOVEABLE:YES																																				SOURCEPAGE:Chapter 8: Prestige Classes (Fire-Speaker)
+
+#indicates ability to Rage, or something similiar
+Qualify (Rage)								VISIBLE:DISPLAY																																							SOURCEPAGE:Chapter 7: Angelic and Fiendish Feats (Heaven's Rage)																																																																																																																																					REMOVABLE:YES
+
+#indicates character can cast Detect Evil at will (as a spell-like ability)
+Qualify (Detect Evil at Will)		NAMEISPI:YES		VISIBLE:DISPLAY	REMOVEABLE:YES																																				SOURCEPAGE:Chapter 7: Angelic and Fiendish Feats (Evilsense)
+
+#indicates character has wings (not just a fly speed, and may not even be able to fly)
+Qualify (Wings of Death)		NAMEISPI:YES		VISIBLE:DISPLAY																																							SOURCEPAGE:Chapter 8: Prestige Classes (Angel of Death)																																																																																																																																						REMOVABLE:YES
+
+#indicates character has some form of teleportation ability (this should be easier to check, just adding in case)
+Qualify (Instantaneous Movement)	NAMEISPI:YES		VISIBLE:DISPLAY																																							SOURCEPAGE:Chapter 8: Prestige Classes (Angel of Fury)																																																																																																																																						REMOVABLE:YES
+
+##################################
+# From race .lst files
+##################################
+Heavenborn					NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																				SOURCEPAGE:Chapter 2: Angels								SA:Tongues (Su)	SA:Immunity to Electricity	SA:Immunity to Petrification	SA:+4 racial bonus to Fort saves against poison																																																																																																																										VISION:Darkvision (60'),Low-light
+
+Kalkydrite Serpent Form			NAMEISPI:YES		VISIBLE:YES																																								SOURCEPAGE:Chapter 2: Angels (Kalkydrim)						SA:Improved Grab (Ex)	SA:Constrict (Ex)																																																	PRERACE:Heavenborn (Kalkydrite)																		BONUS:COMBAT|AC|4|TYPE=NaturalArmor.REPLACE																																					MOVE:Walk,20,Climb,20,Fly,40					REMOVABLE:YES																									NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing,*1,1d6
+
+##################################
+# For certain prerequisites (I don't think anything has prereq of "Free Angel", but if so, any angel w/o this template will be a "Free Angel")
+# a bound angel should require a deity. however, I'm ignoring this, as no deities are defined in the srd, I don't think any in AoA are Open content--in any
+# case i haven't put any in these .lst files--and i don't want to force users to go thru the hassle of defining their own deities thru the .lst editor
+##################################
+Bound Angel					NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																				SOURCEPAGE:Chapter 2: Angels (Bound and Free Angels)																																																																				PRETEMPLATE:Qualify (Angel)
+
+##################################
+# From feat .lst files
+# apparently can't add templates thru feats :(
+##################################
+# Large Angelform causes the angel to increase in size and gain a greater reach, but the angel's stats do not change, so we have to undo the stat changes
+# template files aren't documented as handling the REACH tag...
+# Large Angelform		REMOVEABLE:YES	VISIBLE:NO	BONUS:SIZEMOD|NUMBER|1	BONUS:STAT|STR|-8	BONUS:STAT|DEX|2	BONUS:STAT|CON|-4	BONUS:COMBAT|AC|-2|TYPE=NaturalArmor	REACH:10
+# make these VISIBLE:NO when done debugging
+#Transcend I	REMOVEABLE:YES	VISIBLE:YES	SPELL:INNATE|Dimension Door|1
+#Transcend II	REMOVEABLE:YES	VISIBLE:YES	SPELL:INNATE|Dimension Door|2
+
+# Claw/Tail feats (You'll have to manually add these, but you're supposed to be able to turn the effect on/off anyway...)
+# I'm not sure what effect this will have on existing natural weapons
+Fiendish Tail				NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																																																																						PREFEAT:1,Fiendish Tail																																																																																																																					NATURALATTACKS:Tail,Weapon.Natural.Melee.Bludgeoning,*1,1d6
+Great Claws					NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																																																																						PREFEAT:1,Great Claws																																																																																																																					NATURALATTACKS:Claw,Weapon.Natural.Melee.Slashing,*2,1d6
+
+
+##################################
+# House of the Zodiac (Angel of the Zodiac feat)
+# (under certain conditions, feat gives larger bonuses)
+# somebody give me a term for "Sun is in this house of the Zodiac"?
+##################################
+Zodiac Benefits								VISIBLE:YES		REMOVEABLE:YES																																				SOURCEPAGE:Chapter 7: Angelic and Fiendish Feats (Angel of the Zodiac)																																							PREFEAT:1,Angel of the Zodiac																														BONUS:CHECKS|ALL|4|TYPE=Sacred	BONUS:COMBAT|AC|4|TYPE=Sacred											BONUS:SKILL|ALL|4|TYPE=Sacred
+
+##################################
+# Creature Templates
+# I guess a creature template qualifies as "Capitilized names of... creatures"?
+##################################
+# note that the effects of Outcast Purge, etc, haven't been coded in -- that would require pcgen to discern when an ability relates to affecting evil...
+# i can probably make some limited headway here, though... but later
+
+# The example angel (shown in Outcast, Rebellious, and Fallen forms) in AoA keeps the Good subtype as an outcast angel
+# and doesn't lose it until he becomes a Rebellious angel, but this seems contrary to the rules
+
+# details:
+# An Outcast/Rebellious angel looses all good/anti-evil abilities due to race (but not class)
+# A Fallen angel regains those abilities, but they're now evil/anti-good
+# A Rebellious Angel looses Tongues (Su) (Pretty sure I could make this work inside AoA, and modding RSRD creatures, but worth the effort?)
+# A Fallen Angel gains telepathy (100')
+# A Fallen Angel's DR x/evil (if any) should change to DR x/good
+
+Outcast Angel				NAMEISPI:YES																																											SOURCEPAGE:Chapter 10: Creatures
+Outcast Angel.MOD								VISIBLE:YES		REMOVEABLE:YES
+Outcast Angel.MOD																																																																																																																													PRETEMPLATE:Qualify (Angel)
+Outcast Angel.MOD																	TEMPLATE:Good.REMOVE																																									SA:Outcast Purge (Ex)
+Outcast Angel.MOD																																																																																																																																																																			BONUS:STAT|WIS|-2
+
+#SA:.CLEAR.foo is documented as not working across objects. let's test that >=D
+#bah! it's true :(
+#	SA:.CLEAR..Tongues (Su)
+#	SA:.CLEAR.Tongues (Su)
+# PREALIGN tag isn't catching the '!'?
+Rebellious Angel				NAMEISPI:YES																																											SOURCEPAGE:Chapter 10: Creatures
+Rebellious Angel.MOD							VISIBLE:YES		REMOVEABLE:YES
+Rebellious Angel.MOD																																																																																																																												PRETEMPLATE:Outcast Angel
+#Rebellious Angel.MOD	!PREALIGN:0,3,6
+Rebellious Angel.MOD																																																																																																							PREMULT:0,[PREALIGN:0,3,6]
+Rebellious Angel.MOD																TEMPLATE:Outcast Angel
+Rebellious Angel.MOD																																																												SA:Pride's Isolation (Ex)
+Rebellious Angel.MOD																																																												SA:Rebellious Purge (Ex)
+Rebellious Angel.MOD																																																																																																																																																																		BONUS:STAT|CHA|2
+
+Fallen Angel				NAMEISPI:YES																																											SOURCEPAGE:Chapter 10: Creatures
+Fallen Angel.MOD								VISIBLE:YES		REMOVEABLE:YES
+Fallen Angel.MOD																																																																																																																													PRETEMPLATE:Rebellious Angel
+Fallen Angel.MOD																																																																																																PREALIGN:2,5,8
+Fallen Angel.MOD																	TEMPLATE:Rebellious Angel
+Fallen Angel.MOD																																																													SA:Evil's Reward (Ex)
+Fallen Angel.MOD																	TEMPLATE:Good.REMOVE	TEMPLATE:Evil	TEMPLATE:Qualify (Fiend)	TEMPLATE:Qualify (Angel).REMOVE																											SA:Spirit Inversion
+
+#Nephilim templates
+Nephilim (Avvite)				NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																				SOURCEPAGE:Chapter 10: Creatures																																																																																																																																																	TYPE:Outsider
+#Nephilim (Avvite).MOD		PREMULT:1,[PRETYPE:Animal],[PRETYPE:Fey],[PRETYPE:Giant],[PRETYPE:Humanoid],[PRETYPE:Monstrous Humanoid],[PRERACE:Nephilim (Gibborite)]
+Nephilim (Avvite).MOD																TEMPLATE:Qualify (Fiend)	TEMPLATE:Native
+Nephilim (Avvite).MOD																																																																																																																																										BONUS:COMBAT|AC|4|TYPE=NaturalArmor.STACK
+Nephilim (Avvite).MOD																																																												SA:Wounding (Su)	SA:Devastating Bite (DC %) (Su)|10+TL/2+CHA	SA:Ghost Touch
+Nephilim (Avvite).MOD																																																																																																																																																																																																																SPELL:Unholy Blight|1|Innate
+Nephilim (Avvite).MOD													DR:5/magic																																														SA:Fear Immunity (Ex)
+Nephilim (Avvite).MOD																																																																																	DEFINE:AcidResistance|5	DEFINE:ColdResistance|5	DEFINE:ElectricityResistance|5
+Nephilim (Avvite).MOD																TEMPLATE:Energy Resistance
+Nephilim (Avvite).MOD																																																																																																																																																																		BONUS:STAT|DEX|4	BONUS:STAT|CHA|2	BONUS:STAT|INT|(3-INTSCORE)max0
+Nephilim (Avvite).MOD						CR:2
+Nephilim (Avvite).MOD																TEMPLATE:CHOOSE:NW_Avvite_Fine|NW_Avvite_Diminutive|NW_Avvite_Tiny|NW_Avvite_Small|NW_Avvite_Medium|NW_Avvite_Large|NW_Avvite_Huge|NW_Avvite_Gargantuan|NW_Avvite_Colossal
+
+Nephilim (Emite)				NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																				SOURCEPAGE:Chapter 10: Creatures																																																																																																																																																	TYPE:Outsider
+#Nephilim (Emite).MOD		PREMULT:1,[PRETYPE:Animal],[PRETYPE:Fey],[PRETYPE:Giant],[PRETYPE:Humanoid],[PRETYPE:Monstrous Humanoid],[PRERACE:Nephilim (Gibborite)]
+Nephilim (Emite).MOD																TEMPLATE:Qualify (Fiend)	TEMPLATE:Native
+Nephilim (Emite).MOD																																																												SA:Fear Aura (DC %) (Su)|10+TL/2+CHA
+Nephilim (Emite).MOD																																																												SA:Fear Immunity (Ex)																																																																																																																																																	SPELL:Phantasmal Killer|1|Inante|Unholy Blight|1|Innate
+Nephilim (Emite).MOD																																																																																	DEFINE:AcidResistance|5	DEFINE:ColdResistance|5	DEFINE:ElectricityResistance|5
+Nephilim (Emite).MOD																TEMPLATE:Energy Resistance
+Nephilim (Emite).MOD																																																																																																																																																																		BONUS:STAT|INT|2	BONUS:STAT|CHA|2
+Nephilim (Emite).MOD						CR:1
+
+Nephilim (Raphaite)			NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																				SOURCEPAGE:Chapter 10: Creatures																																																																																																																																																	TYPE:Outsider
+#Nephilim (Raphaite).MOD		PREMULT:1,[!PRETYPE:Outsider],[PRERACE:Nephilim (Gibborite)]
+#Nephilim (Raphaite).MOD		!PRETYPE:Outsider
+Nephilim (Raphaite).MOD																TEMPLATE:Qualify (Fiend)	TEMPLATE:Native	TEMPLATE:Incorporeal
+Nephilim (Raphaite).MOD																																																																																																																																																																																											MOVECLONE:Walk,0,Fly,*1
+Nephilim (Raphaite).MOD																																																												SA:Strength Drain (Su)
+Nephilim (Raphaite).MOD																																																																																																																																																																																																																SPELL:Dimension Door|1|Innate
+Nephilim (Raphaite).MOD																																																																																																																																																																																																										VISION:Darkvision (60')|Low-light
+Nephilim (Raphaite).MOD																																																												SA:Fear Immunity (Ex)
+Nephilim (Raphaite).MOD																																																																																	DEFINE:AcidResistance|5	DEFINE:ColdResistance|5	DEFINE:ElectricityResistance|5
+Nephilim (Raphaite).MOD																TEMPLATE:Energy Resistance
+Nephilim (Raphaite).MOD																																																																																																																																																																		BONUS:STAT|WIS|2	BONUS:STAT|CHA|4
+Nephilim (Raphaite).MOD						CR:2
+Nephilim (Raphaite).MOD																TEMPLATE:CHOOSE:NW_Raphaite_Fine|NW_Raphaite_Diminutive|NW_Raphaite_Tiny|NW_Raphaite_Small|NW_Raphaite_Medium|NW_Raphaite_Large|NW_Raphaite_Huge|NW_Raphaite_Gargantuan|NW_Raphaite_Colossal
+
+# the (3.0) srd doesn't seem to touch claw/bite attacks for different sizes being applied thru a template... so i have no idea how to
+# do it or if it's even possible...
+# no way to roll random number in .lst file, right?
+# Intelligence should be 1d4+2, just making it 4
+Theriofiend					NAMEISPI:YES		VISIBLE:YES		REMOVEABLE:YES																																				SOURCEPAGE:Chapter 10: Creatures
+#Theriofiend.MOD			PRETYPE:Animal
+Theriofiend.MOD																																																																																																													!PREMULT:1,[PRESIZELT:S,PRESIZEGT:H]
+Theriofiend.MOD																	TEMPLATE:Qualify (Fiend)	TEMPLATE:Native																																																																																																																																																																															TYPE:Outsider
+Theriofiend.MOD																																																													SA:Hunger's Bite (Ex)
+Theriofiend.MOD																																																																																																																																																																																																											VISION:Darkvision (60')
+Theriofiend.MOD																																																																																		DEFINE:ColdResistance|5	DEFINE:FireResistance|5
+Theriofiend.MOD																	TEMPLATE:Energy Resistance
+Theriofiend.MOD														DR:5/magic
+#Theriofiend's Intelligence should be 1d4+2
+Theriofiend.MOD																																																																																																																																																																			BONUS:STAT|INT|4-INTSCORE
+Theriofiend.MOD							CR:1
+Theriofiend.MOD																																																																																																																																																																																		LANGAUTO:Abyssal
+Theriofiend.MOD																																																																																																																																																																																																			SUBRACE:Theriofiend
+#Theriofiend.MOD			ADD:FEAT(TYPE.TheriofiendNA)
+#using TEMPLATE:CHOOSE as opposed to the 50-11 other ways I tried, thanks go to Barak ;*
+Theriofiend.MOD																	TEMPLATE:CHOOSE:NW_Theriofiend_Small|NW_Theriofiend_Medium|NW_Theriofiend_Large|NW_Theriofiend_Huge|NW_Theriofiend_Gargantuan|NW_Theriofiend_Colossal
+
+
+# There are a few issues with this template that I don't think can currently be done in PCGen, such as:
+#	"Hit Dice: Increase all current and future Hit Dice to d12."
+#	actually, that's the only problem I have...
+#	ahh, another--Should get choice of Abyssal or Infernal as a bonus language--I thought there was a tag for this, but I can't find one
+Vrykolaka					NAMEISPI:YES		VISIBLE:YES																																								SOURCEPAGE:Chapter 10: Creatures																																																																																																																																										REMOVABLE:YES
+#Vrykolaka		PRETYPE:Humanoid
+# should only give *1* of Abyssal/Infernal
+Vrykolaka.MOD																																																																																																																																																																																		LANGAUTO:Abyssal,Infernal
+Vrykolaka.MOD																																																																																																																																																																																																							TYPE:Undead
+Vrykolaka.MOD																																																																																																																																											BONUS:COMBAT|AC|6|TYPE=NaturalArmor.STACKS
+Vrykolaka.MOD																	TEMPLATE:CHOOSE:NW_Vrykolaka_Small|NW_Vrykolaka_Medium|NW_Vrykolaka_Large
+Vrykolaka.MOD																																																													SA:Blood Drain (Ex)
+Vrykolaka.MOD																																																													SA:Create Spawn (Ex)
+#one of the meanest special attacks, ever (although I'm sure some creature, somewhere, has a "target is utterly annihilated and cannot be raised from the dead" attack)
+Vrykolaka.MOD																																																													SA:Soul Damnation (Ex)
+Vrykolaka.MOD																																																													SA:Daylight Weakness (Ex)
+Vrykolaka.MOD																																																													SA:Fast Healing 1 (Ex)
+Vrykolaka.MOD																																																													SA:Fiendish Possessor (Ex)
+Vrykolaka.MOD																																																																																		DEFINE:Cold Resistance|10	DEFINE:ElectricityResistance|10
+Vrykolaka.MOD																	TEMPLATE:Energy Resistance
+Vrykolaka.MOD																																																													SA:Turn Resistance +2 (Ex)
+Vrykolaka.MOD																																																																																																																																																																			BONUS:STAT|STR|2	BONUS:STAT|WIS|2	BONUS:STAT|CHA|2
+Vrykolaka.MOD																																																																																																																																																										BONUS:SKILL|Hide,Move Silently,Spot|4|TYPE=Racial
+Vrykolaka.MOD																																																																																																																																																																															FEAT:Toughness
+Vrykolaka.MOD							CR:1
+Vrykolaka.MOD																																																																																																PREALIGN:2,5,8
+
+########################################################
+# Natural Weapons given in templates, dependant on size
+########################################################
+NW_Avvite_Fine				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:F																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1
+NW_Avvite_Diminutive			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:D																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d2
+NW_Avvite_Tiny				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:T																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d3
+NW_Avvite_Small				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:S																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d4
+NW_Avvite_Medium				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:M																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d6
+NW_Avvite_Large				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:L																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d8
+NW_Avvite_Huge				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:H																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,2d6
+NW_Avvite_Gargantuan			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:G																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,2d8
+NW_Avvite_Colossal			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:C																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,4d6
+
+NW_Raphaite_Fine				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:F																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,1
+NW_Raphaite_Diminutive			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:D																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,1d2
+NW_Raphaite_Tiny				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:T																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,1d3
+NW_Raphaite_Small				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:S																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,1d4
+NW_Raphaite_Medium			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:M																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,1d6
+NW_Raphaite_Large				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:L																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,1d8
+NW_Raphaite_Huge				NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:H																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,2d6
+NW_Raphaite_Gargantuan			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:G																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,2d8
+NW_Raphaite_Colossal			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:C																																																																																																NATURALATTACKS:Incorporeal Touch,Weapon.Natural.Melee,*2,4d6
+
+# Theriofiend Huge size Claw damage is listed as 2d8, i made it conform to the inferred pattern.
+NW_Theriofiend_Small			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:S																																																																																																NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d3|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d4
+NW_Theriofiend_Medium			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:M																																																																																																NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d4|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d6
+NW_Theriofiend_Large			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:L																																																																																																NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d6|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,1d8
+NW_Theriofiend_Huge			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:H																																																																																																NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d8|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,2d6
+NW_Theriofiend_Gargantuan		NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:G																																																																																																NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,2d6|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,2d8
+NW_Theriofiend_Colossal			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:C																																																																																																NATURALATTACKS:Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,2d8|Bite,Weapon.Natural.Melee.Bludgeoning.Piercing.Slashing,*1,4d6
+
+NW_Vrykolaka_Small			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:S																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d4|Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d3
+NW_Vrykolaka_Medium			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:M																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d6|Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d4
+NW_Vrykolaka_Large			NAMEISPI:YES		VISIBLE:NO		REMOVEABLE:NO																																																																																																													PRESIZEEQ:L																																																																																																NATURALATTACKS:Bite,Weapon.Natural.Melee.Piercing.Slashing.Bludgeoning,*1,1d8|Claw,Weapon.Natural.Melee.Piercing.Slashing,*2,1d6
