@@ -385,29 +385,32 @@ CLASS:Warpriest	STARTSKILLPTS:2
 # Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level				Use Spell List
 CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Warpriest|CL	SPELLLIST:1|Cleric
 ###Block:Proficiencies
-1		BONUS:VAR|AlignmentAuraLVL|CL
-1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Chaos|PREDEITYALIGN:CG,CN,CE
-1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Evil|PREDEITYALIGN:LE,NE,CE
-1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Good|PREDEITYALIGN:LG,NG,CG
-1			ABILITY:Cleric Class Feature|VIRTUAL|Aura of Law|PREDEITYALIGN:LG,LN,LE
-1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency
-1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Orisons
-1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Spontaneous Casting
-1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Weapon Focus
-1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Blessings
-1			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Weapon
-2			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Fervor
-3			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Bonus Feats
-4			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Channel Positive Energy
-7			ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Armor
-
+1	ABILITY:Special Ability|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestShieldProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|Weapon Prof ~ Deity Weapons|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestLightArmorProficiency
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Medium|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestMediumArmorProficiency
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Heavy|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestHeavyArmorProficiency
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestShieldProficiencies
 ###Block: Spell Alignment Restrictions
-1	PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
-1	PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG		PROHIBITSPELL:ALIGNMENT.Evil|PREALIGN:LG,NG,CG		PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG		PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
-1	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREALIGN:CG,CN,CE	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE		PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
-1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
+1	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG		
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	
 ###Block: Level Progression Abilities
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Aura|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestAura
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Blessings|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestBlessings
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Focus Weapon|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestFocusWeapon
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestOrisons
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Weapon|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestSacredWeapon
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Spontaneous Casting|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestSpontaneousCasting
+1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Bonus Languages|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestBonusLanguages
+2	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Fervor|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestFervor
+3	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Bonus Feats|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestBonusFeats
+4	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Channel Energy|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestChannelEnergy
+7	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Armor|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestSacredArmor
+20	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Aspect of War|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestAspectOfWar
 ###Block: Vars
+1		BONUS:VAR|AlignmentAuraLVL|CL
 ###Block: Level progression
 1	CAST:3,1
 2	CAST:4,2
