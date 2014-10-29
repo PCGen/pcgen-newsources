@@ -106,13 +106,14 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 ###Block: Brawler
 
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define										Combat bonus											Modify VAR																Monster Role	Bonus
-CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bra		MAXLEVEL:20	SOURCEPAGE:p.23		DEFINE:BrawlerLVL|0	DEFINE:MartialFlexibilityLVL|0	DEFINE:ManeuverTrainingLVL|0	DEFINE:MartialTrainingLVL|0	DEFINE:BrawlerMFBonus|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|BrawlerLVL|CL	ROLE:None		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|CL/3
+CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bra		MAXLEVEL:20	SOURCEPAGE:p.23		ABILITY:Internal|AUTOMATIC|Brawler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills		DEFINE:BrawlerLVL|0	DEFINE:MartialFlexibilityLVL|0	DEFINE:ManeuverTrainingLVL|0	DEFINE:MartialTrainingLVL|0	DEFINE:BrawlerMFBonus|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|BrawlerLVL|CL	ROLE:None		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|CL/3
 # Class Name	Skill Pts/Lvl
 CLASS:Brawler	STARTSKILLPTS:4
 ###Block:Proficiencies
 1	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
+1	AUTO:WEAPONPROF|Handaxe|Sword (Short)|TYPE.Weapon Group Close|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
 #PREVAREQ:BrawlerDefaultSkill,0
 ###Block:
 2	KIT:1|Brawler Brawler's Flurry
@@ -224,16 +225,16 @@ CLASS:Hunter	SPELLSTAT:INT	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZ
 ###Block: Investigator
 
 # Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
-CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	DEFINE:InvestigatorLVL|0	BONUS:VAR|InvestigatorLVL|classlevel("APPLIEDAS=NONEPIC")	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
+CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.18	ABILITY:Internal|AUTOMATIC|Investigator ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorClassSkills		DEFINE:InvestigatorLVL|0	BONUS:VAR|InvestigatorLVL|classlevel("APPLIEDAS=NONEPIC")	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
 # Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Investigator	STARTSKILLPTS:6	CSKILL:Acrobatics|Appraise|Bluff|Climb|TYPE=Craft|Diplomacy|Disable Device|Disguise|Escape Artist|Heal|Intimidate|TYPE=Knowledge|Perception|TYPE=Perform|TYPE=Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Use Magic Device
+CLASS:Investigator	STARTSKILLPTS:6	
 # Class Name		Spell Stat		Spell Type		Memorize		Spellbook		Caster level				Use Spell List
 CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Investigator|CL	SPELLLIST:1|Alchemist
 ###Block: Proficiencies
 1	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
 1	AUTO:WEAPONPROF|Crossbow (Hand)|Rapier|Sap|Shortbow|Sword (Short)|Sword Cane|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
-1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies
 ###Block: Alchemist Book
 1	ABILITY:Internal|AUTOMATIC|Free Formula Book|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Investigator=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Investigator=1]]
 ###Block: Vars
@@ -272,6 +273,57 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 18	CAST:0,5,5,5,5,4,3
 19	CAST:0,5,5,5,5,5,4
 20	CAST:0,5,5,5,5,5,5
+
+
+###Block: Shaman
+
+# Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
+CLASS:Shaman	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Shm		MAXLEVEL:20	SOURCEPAGE:p.35	ABILITY:Internal|AUTOMATIC|Shaman ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanClassSkills		DEFINE:ShamanLVL|0		BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2		BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3		BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE		BONUS:VAR|ShamanLVL|CL	ROLE:Cleric
+# Class Name	Skill Pts/Lvl
+CLASS:Arcanist	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
+CLASS:Arcanist	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:YES	BONUS:CASTERLEVEL|Shaman|CL	SPELLLIST:1|Shaman
+###Block:Proficiencies
+1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanArmorProficiencies
+###Block: Variable Progression
+###Block: Level Progression
+1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Orisons|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanOrisons
+1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Spirit|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanSpirit
+1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Spirit Animal|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanSpiritAnimal
+1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Spirit Magic|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanSpiritMagic
+2	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Hex|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanHex
+4	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Wandering Spirit|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWanderingSpirit
+14	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Wandering Hex|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWanderingHex
+20	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Manifestation|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanManifestation
+#8	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Spirit (Greater)|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanSpiritGreater
+#12	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Wandering Spirit (Greater)|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWanderingSpiritGreater
+#16	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Spirit (True)|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanSpiritTrue
+#20	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Wandering Spirit (True)|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWanderingSpiritTrue
+###Block: Spell Level progression
+1	CAST:3,1
+2	CAST:4,2
+3	CAST:4,2,1
+4	CAST:4,3,2
+5	CAST:4,3,2,1
+6	CAST:4,3,3,2
+7	CAST:4,4,3,2,1
+8	CAST:4,4,3,3,2
+9	CAST:4,4,4,3,2,1
+10	CAST:4,4,4,3,3,2
+11	CAST:4,4,4,3,3,2,1
+12	CAST:4,4,4,4,3,3,2
+13	CAST:4,4,4,4,4,3,2,1
+14	CAST:4,4,4,4,4,3,3,2
+15	CAST:4,4,4,4,4,4,3,2,1
+16	CAST:4,4,4,4,4,4,3,3,2
+17	CAST:4,4,4,4,4,4,4,3,2,1
+18	CAST:4,4,4,4,4,4,4,3,3,2
+19	CAST:4,4,4,4,4,4,4,4,3,3
+20	CAST:4,4,4,4,4,4,4,4,4,4
+
 
 ###Block: Skald
 
@@ -360,7 +412,13 @@ CLASS:Slayer	STARTSKILLPTS:6
 # Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
 CLASS:Swashbuckler	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Swa		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Swashbuckler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SwashbucklerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
 # Class Name	Skill Pts/Lvl
-CLASS:Swashbuckler	STARTSKILLPTS:6
+CLASS:Swashbuckler	STARTSKILLPTS:4
+1	DEFINE:SwashbucklerPanachePoints|0
+1	DEFINE:PanachePoints|0
+1	DEFINE:SwashbucklerPanacheMax|0
+1	DEFINE:PanacheMax|0
+1	DEFINE:PanachePointsFavoredBonus|0
+1	DEFINE:PanacheMaxFavoredBonus|0	
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Swashbuckler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerArmorProficiencies,TYPE.SwashbucklerWeaponProficiency,TYPE.SwashbucklerArmorProficiencies,TYPE.SwashbucklerLightArmorProficiency,TYPE.SwashbucklerShieldProficiency
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerWeaponProficiency,TYPE.SlayerWeaponProficiencies
