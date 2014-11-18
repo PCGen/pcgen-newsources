@@ -36,6 +36,10 @@ CLASS:Barbarian	STARTSKILLPTS:4	CSKILL:Balance|Climb|TYPE=Craft|Handle Animal|He
 18									BONUS:VAR|BarbarianCharge|1
 20									BONUS:VAR|FavoredTerrainB|1
 
+# We can remove the subclasses if:
+# 1) CLASS SKILL is set up - CODE FEATURE - work around, PRExxx the skills, as the skills seem to be specific to one class.
+# 2) Ability to change displayed Class Name - CODE UI, OS
+# 3) - change from AUTO:FEAT to ABILITY, just making this work for load. -AM/LK
 # Class Name	Hit Dice	Type			Abbreviation	Subclass?		Source Page		Automatic Languages	Save checks bonus											Combat bonus
 CLASS:Magician	HD:6		TYPE:Base.PC	ABB:Mag		HASSUBCLASS:YES	SOURCEPAGE:105	AUTO:LANG|Literacy		BONUS:SAVE|BASE.Will|classlevel()/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel()/3	BONUS:COMBAT|BASEAB|classlevel()/2|TYPE=Base.REPLACE
 # Class Name	Required Race
@@ -44,29 +48,29 @@ CLASS:Magician	PRERACE:Aeriad (Blue),Aeriad (Green),Arimite,Cymrilian,Dracartan,
 CLASS:Magician	STARTSKILLPTS:4	CSKILL:Concentration|Craft (Talismancy)|Decipher Script|Diplomacy|Gather Information|Heal|TYPE.Knowledge|TYPE.Profession|Research|Search|Sense Motive|Spellcraft
 ###Block:SubClasses
 SUBCLASS:Priest			COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeInvocation	ADD:FEAT(Invocation)
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeInvocation	AUTO:FEAT|Invocation
 SUBCLASS:Wizard			COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeWizardry	ADD:FEAT(Wizardry)
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeWizardry	AUTO:FEAT|Wizardry
 SUBCLASS:Shaman			COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeShamanism	ADD:FEAT(Shamanism)
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeShamanism	AUTO:FEAT|Shamanism
 SUBCLASS:Pyromancer		COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModePyromancy	ADD:FEAT(Elementalism (Pyromancy))
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModePyromancy	AUTO:FEAT|Elementalism (Pyromancy)
 SUBCLASS:Aquamancer		COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeAquamancy	ADD:FEAT(Elementalism (Aquamancy))
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeAquamancy	AUTO:FEAT|Elementalism (Aquamancy)
 SUBCLASS:Geomancer		COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeGeomancy	ADD:FEAT(Elementalism (Geomancy))
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeGeomancy	AUTO:FEAT|Elementalism (Geomancy)
 SUBCLASS:Aeromancer		COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeAeromancy	ADD:FEAT(Elementalism (Aeromancy))
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeAeromancy	AUTO:FEAT|Elementalism (Aeromancy)
 SUBCLASS:Natural Magician	COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeNatural		ADD:FEAT(Natural Magic)
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeNatural		AUTO:FEAT|Natural Magic
 SUBCLASS:Witch			COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeWitchcraft	ADD:FEAT(Witchcraft)
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeWitchcraft	AUTO:FEAT|Witchcraft
 SUBCLASS:Crystalomancer		COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeCrystalomancy	ADD:FEAT(Crystalomancy)
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeCrystalomancy	AUTO:FEAT|Crystalomancy
 SUBCLASS:Mystic			COST:0
-SUBCLASSLEVEL:1	CSKILL:TYPE.ModeMysticism	ADD:FEAT(Mysticism)
-# SUBCLASS:Necromancer		COST:0
-# SUBCLASSLEVEL:1			ADD:FEAT(Necromancy)			CSKILL:TYPE.ModeNecromancy
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeMysticism	AUTO:FEAT|Mysticism
+SUBCLASS:Necromancer		COST:0
+SUBCLASSLEVEL:1	CSKILL:TYPE=ModeNecromancy	AUTO:FEAT|Necromancy			
 ###Block: Level Progression
 1	SAB:Spellbook																AUTO:FEAT|Simple Weapon Proficiency|All Automatic Proficiencies
 2	SAB:Magic Bonus +% (Ex)|MagicBonus	BONUS:VAR|MagicBonus|1					DEFINE:MagicBonus|0
