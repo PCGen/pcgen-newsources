@@ -8,6 +8,17 @@
 
 Default	CATEGORY:Internal	ABILITY:Special Ability|AUTOMATIC|Die Value	DEFINE:Attribute_Build_Pool|0	BONUS:VAR|Attribute_Build_Pool|16	DEFINE:Predilection_Pool|0	BONUS:VAR|Predilection_Pool|1	DEFINE:Calling_Pool|0	BONUS:VAR|Calling_Pool|1
 
+CATEGORY=Internal|Default.MOD	DEFINE:Body|0			BONUS:VAR|Body|ceil((STR+AGL+END)/2)
+CATEGORY=Internal|Default.MOD	DEFINE:Mind|0			BONUS:VAR|Mind|ceil((PER+WIL+PRS)/2)
+CATEGORY=Internal|Default.MOD	DEFINE:Initiative|0		BONUS:VAR|Initiative|PRS+AGL+PER
+CATEGORY=Internal|Default.MOD	DEFINE:Actions|0			BONUS:VAR|Actions|SPT/2
+CATEGORY=Internal|Default.MOD	DEFINE:Health|0			BONUS:VAR|Health|STR+END+WIL
+CATEGORY=Internal|Default.MOD	DEFINE:Combat_Movement|0	BONUS:VAR|Combat_Movement|AGL
+CATEGORY=Internal|Default.MOD	DEFINE:Run|0			BONUS:VAR|Run|STR+END
+CATEGORY=Internal|Default.MOD	DEFINE:Sprint|0			BONUS:VAR|Sprint|Run*2
+CATEGORY=Internal|Default.MOD	DEFINE:Immaculum|0		BONUS:VAR|Immaculum|Motes	
+CATEGORY=Internal|Default.MOD	DEFINE:Motes|0			
+CATEGORY=Internal|Default.MOD	DEFINE:Immaculum_Max|0		BONUS:VAR|Immaculum_Max|SPT*2
 
 ###Block: Attributes start at 1 and can only have a starting value max of 5.
 CATEGORY=Internal|Default.MOD	DEFINESTAT:LOCK|STR|Attribute_STR	DEFINE:Attribute_STR|0	BONUS:VAR|Attribute_STR|1|TYPE=Base
@@ -39,7 +50,7 @@ Die Value	CATEGORY:Special Ability	ASPECT:DieValue|d%|DieValue	DEFINE:DieValue|0
 
 
 
-
+###Block: Building up Values - Need to get the cost down - Need a Different method.
 +1 Strength		CATEGORY:Character		BONUS:VAR|Attribute_STR|1	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
 +1 Agility		CATEGORY:Character		BONUS:VAR|Attribute_AGL|1	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
 +1 Endurance	CATEGORY:Character		BONUS:VAR|Attribute_END|1	CHOOSE:NOCHOICE	MULT:YES	STACK:YES
@@ -304,7 +315,7 @@ Vibration Sense			PREABILITY:1,CATEGORY=Himsati Nature,Vibration Sense				CATEGO
 # (Growth or Shrink)
 #	+1 Size
 #	-1 Size
-
+###Block: Set Skill Ranks.
 CATEGORY=Internal|Default.MOD		DEFINE:Skill_Biology|0			BONUS:SKILLRANK|Biology|Skill_Biology			
 CATEGORY=Internal|Default.MOD		DEFINE:Skill_Earth_Science|0		BONUS:SKILLRANK|Earth Science|Skill_Earth_Science		
 CATEGORY=Internal|Default.MOD		DEFINE:Skill_Linguistics|0		BONUS:SKILLRANK|Linguistics|Skill_Linguistics			
@@ -342,10 +353,14 @@ CATEGORY=Internal|Default.MOD		DEFINE:Skill_Culture|0			BONUS:SKILLRANK|Culture|
 CATEGORY=Internal|Default.MOD		DEFINE:Skill_Indoctrination|0		BONUS:SKILLRANK|Indoctrination|Skill_Indoctrination	
 CATEGORY=Internal|Default.MOD		DEFINE:Skill_Performance|0		BONUS:SKILLRANK|Performance|Skill_Performance		
 CATEGORY=Internal|Default.MOD		DEFINE:Skill_Persuasion|0		BONUS:SKILLRANK|Persuasion|Skill_Persuasion		
-
-###Block: Core Skill Selection
-+2 Core Skill	CATEGORY:Internal	CHOOSE:SKILL|CLASS	MULT:YES	STACK:NO	BONUS:SKILL|%LIST|2|TYPE=Core
-+3 Core Skill	CATEGORY:Internal	CHOOSE:SKILL|CLASS	MULT:YES	STACK:NO	BONUS:SKILL|%LIST|3|TYPE=Core
+###Block: Cost tracking - Set Base Cost by Rank. Table Followed.
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost2Rank1|0	DEFINE:BaseCost2Rank2|0	DEFINE:BaseCost2Rank3|0	DEFINE:BaseCost2Rank4|0	DEFINE:BaseCost2Rank5|0			BONUS:VAR|BaseCost2Rank1|2	BONUS:VAR|BaseCost2Rank2|3	BONUS:VAR|BaseCost2Rank3|5	BONUS:VAR|BaseCost2Rank4|8	BONUS:VAR|BaseCost2Rank5|13
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost3Rank1|0	DEFINE:BaseCost3Rank2|0	DEFINE:BaseCost3Rank3|0	DEFINE:BaseCost3Rank4|0	DEFINE:BaseCost3Rank5|0			BONUS:VAR|BaseCost3Rank1|3	BONUS:VAR|BaseCost3Rank2|4	BONUS:VAR|BaseCost3Rank3|7	BONUS:VAR|BaseCost3Rank4|11	BONUS:VAR|BaseCost3Rank5|18
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost4Rank1|0	DEFINE:BaseCost4Rank2|0	DEFINE:BaseCost4Rank3|0	DEFINE:BaseCost4Rank4|0	DEFINE:BaseCost4Rank5|0			BONUS:VAR|BaseCost4Rank1|4	BONUS:VAR|BaseCost4Rank2|6	BONUS:VAR|BaseCost4Rank3|10	BONUS:VAR|BaseCost4Rank4|16	BONUS:VAR|BaseCost4Rank5|26
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost5Rank1|0	DEFINE:BaseCost5Rank2|0	DEFINE:BaseCost5Rank3|0	DEFINE:BaseCost5Rank4|0	DEFINE:BaseCost5Rank5|0			BONUS:VAR|BaseCost5Rank1|5	BONUS:VAR|BaseCost5Rank2|8	BONUS:VAR|BaseCost5Rank3|13	BONUS:VAR|BaseCost5Rank4|21	BONUS:VAR|BaseCost5Rank5|34
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost6Rank1|0	DEFINE:BaseCost6Rank2|0	DEFINE:BaseCost6Rank3|0	DEFINE:BaseCost6Rank4|0	DEFINE:BaseCost6Rank5|0			BONUS:VAR|BaseCost6Rank1|6	BONUS:VAR|BaseCost6Rank2|10	BONUS:VAR|BaseCost6Rank3|16	BONUS:VAR|BaseCost6Rank4|26	BONUS:VAR|BaseCost6Rank5|42
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost7Rank1|0	DEFINE:BaseCost7Rank2|0	DEFINE:BaseCost7Rank3|0	DEFINE:BaseCost7Rank4|0	DEFINE:BaseCost7Rank5|0			BONUS:VAR|BaseCost7Rank1|7	BONUS:VAR|BaseCost7Rank2|12	BONUS:VAR|BaseCost7Rank3|19	BONUS:VAR|BaseCost7Rank4|31	BONUS:VAR|BaseCost7Rank5|50
+CATEGORY=Internal|Default.MOD		DEFINE:BaseCost8Rank1|0	DEFINE:BaseCost8Rank2|0	DEFINE:BaseCost8Rank3|0	DEFINE:BaseCost8Rank4|0	DEFINE:BaseCost8Rank5|0			BONUS:VAR|BaseCost8Rank1|8	BONUS:VAR|BaseCost8Rank2|14	BONUS:VAR|BaseCost8Rank3|22	BONUS:VAR|BaseCost8Rank4|36	BONUS:VAR|BaseCost8Rank5|58
 
 
 ###Block:
@@ -393,60 +408,600 @@ Indoctrination		TYPE:SocialSkill	CATEGORY:Core Skill	CSKILL:Indoctrination
 Performance			TYPE:SocialSkill	CATEGORY:Core Skill	CSKILL:Performance		
 Persuasion			TYPE:SocialSkill	CATEGORY:Core Skill	CSKILL:Persuasion		
 
-
-
-
 ###Block: Purchase Skills
 
 # Academics - 2 / 4 (Non-Immortals)
-Biology				COST:2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Biology|1					PRERACE:1,Immortal
-Earth Science			COST:2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Earth_Science|1				PRERACE:1,Immortal
-Linguistics				COST:2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Linguistics|1					PRERACE:1,Immortal
-Occult				COST:2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Occult|1					PRERACE:1,Immortal
-Theoretical Sciences		COST:2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Theoretical_Sciences|1			PRERACE:1,Immortal
-Social Sciences			COST:2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Social_Sciences|1				PRERACE:1,Immortal
-#
-Biology (Mortal)			COST:4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Biology|1					PRERACE:1,Mortal
-Earth Science (Mortal)		COST:4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Earth_Science|1				PRERACE:1,Mortal
-Linguistics (Mortal)		COST:4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Linguistics|1					PRERACE:1,Mortal
-Occult (Mortal)			COST:4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Occult|1					PRERACE:1,Mortal
-Theoretical Sciences (Mortal)	COST:4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Theoretical_Sciences|1			PRERACE:1,Mortal
-Social Sciences (Mortal)	COST:4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Social_Sciences|1				PRERACE:1,Mortal
+Biology				ASPECT:Base Cost|2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Biology|1					PRERACE:1,Immortal	PREVARGTEQ:Experience,SkillCost_Biology				ASPECT:Current Cost|%1|SkillCost_Biology					PREVARLT:skillinfo("TOTALRANK","Biology"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Earth Science			ASPECT:Base Cost|2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Earth_Science|1				PRERACE:1,Immortal	PREVARGTEQ:Experience,SkillCost_Earth_Science			ASPECT:Current Cost|%1|SkillCost_Earth_Science				PREVARLT:skillinfo("TOTALRANK","Earth Science"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Linguistics				ASPECT:Base Cost|2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Linguistics|1					PRERACE:1,Immortal	PREVARGTEQ:Experience,SkillCost_Linguistics			ASPECT:Current Cost|%1|SkillCost_Linguistics				PREVARLT:skillinfo("TOTALRANK","Linguistics"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Occult				ASPECT:Base Cost|2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Occult|1					PRERACE:1,Immortal	PREVARGTEQ:Experience,SkillCost_Occult				ASPECT:Current Cost|%1|SkillCost_Occult					PREVARLT:skillinfo("TOTALRANK","Occult"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Theoretical Sciences		ASPECT:Base Cost|2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Theoretical_Sciences|1			PRERACE:1,Immortal	PREVARGTEQ:Experience,SkillCost_Theoretical_Sciences		ASPECT:Current Cost|%1|SkillCost_Theoretical_Sciences			PREVARLT:skillinfo("TOTALRANK","Theoretical Sciences"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Social Sciences			ASPECT:Base Cost|2	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Social_Sciences|1				PRERACE:1,Immortal	PREVARGTEQ:Experience,SkillCost_Social_Sciences			ASPECT:Current Cost|%1|SkillCost_Social_Sciences			PREVARLT:skillinfo("TOTALRANK","Social Sciences"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+# Academics (4 for Mortals)
+Biology (Mortal)			ASPECT:Base Cost|4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Biology|1					PRERACE:1,Mortal		PREVARGTEQ:Experience,SkillCost_Biology_Mortal			ASPECT:Current Cost|%1|SkillCost_Biology_Mortal				PREVARLT:skillinfo("TOTALRANK","Biology"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Earth Science (Mortal)		ASPECT:Base Cost|4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Earth_Science|1				PRERACE:1,Mortal		PREVARGTEQ:Experience,SkillCost_Earth_Science_Mortal		ASPECT:Current Cost|%1|SkillCost_Earth_Science_Mortal			PREVARLT:skillinfo("TOTALRANK","Earth Science"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Linguistics (Mortal)		ASPECT:Base Cost|4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Linguistics|1					PRERACE:1,Mortal		PREVARGTEQ:Experience,SkillCost_Linguistics_Mortal		ASPECT:Current Cost|%1|SkillCost_Linguistics_Mortal			PREVARLT:skillinfo("TOTALRANK","Linguistics"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Occult (Mortal)			ASPECT:Base Cost|4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Occult|1					PRERACE:1,Mortal		PREVARGTEQ:Experience,SkillCost_Occult_Mortal			ASPECT:Current Cost|%1|SkillCost_Occult_Mortal				PREVARLT:skillinfo("TOTALRANK","Occult"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Theoretical Sciences (Mortal)	ASPECT:Base Cost|4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Theoretical_Sciences|1			PRERACE:1,Mortal		PREVARGTEQ:Experience,SkillCost_Theoretical_Sciences_Mortal	ASPECT:Current Cost|%1|SkillCost_Theoretical_Sciences_Mortal	PREVARLT:skillinfo("TOTALRANK","Theoretical Sciences"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Social Sciences (Mortal)	ASPECT:Base Cost|4	SORTKEY:Academics			TYPE:Academics.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Social_Sciences|1				PRERACE:1,Mortal		PREVARGTEQ:Experience,SkillCost_Social_Sciences_Mortal	ASPECT:Current Cost|%1|SkillCost_Social_Sciences_Mortal		PREVARLT:skillinfo("TOTALRANK","Social Sciences"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
 # Actives - Base Cost 4
-Animal Discipline			COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Animal_Discipline|1	
-Evasion				COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Evasion|1		
-Ground Vehicle			COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Ground_Vehicle|1	
-Gymnastics				COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Gymnastics|1		
-Pilot					COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Pilot|1			
-Shipboard				COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Shipboard|1		
-Sports				COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Sports|1		
-Survival				COST:4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Survival|1		
+Animal Discipline			ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Animal_Discipline|1								PREVARGTEQ:Experience,SkillCost_Animal_Discipline		ASPECT:Current Cost|%1|SkillCost_Animal_Discipline			PREVARLT:skillinfo("TOTALRANK","Animal Discipline"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Evasion				ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Evasion|1									PREVARGTEQ:Experience,SkillCost_Evasion				ASPECT:Current Cost|%1|SkillCost_Evasion					PREVARLT:skillinfo("TOTALRANK","Evasion"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Ground Vehicle			ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Ground_Vehicle|1								PREVARGTEQ:Experience,SkillCost_Ground_Vehicle			ASPECT:Current Cost|%1|SkillCost_Ground_Vehicle				PREVARLT:skillinfo("TOTALRANK","Ground Vehicle"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Gymnastics				ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Gymnastics|1									PREVARGTEQ:Experience,SkillCost_Gymnastics			ASPECT:Current Cost|%1|SkillCost_Gymnastics				PREVARLT:skillinfo("TOTALRANK","Gymnastics"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Pilot					ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Pilot|1										PREVARGTEQ:Experience,SkillCost_Pilot				ASPECT:Current Cost|%1|SkillCost_Pilot					PREVARLT:skillinfo("TOTALRANK","Pilot"),5				STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Shipboard				ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Shipboard|1									PREVARGTEQ:Experience,SkillCost_Shipboard				ASPECT:Current Cost|%1|SkillCost_Shipboard				PREVARLT:skillinfo("TOTALRANK","Shipboard"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Sports				ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Sports|1									PREVARGTEQ:Experience,SkillCost_Sports				ASPECT:Current Cost|%1|SkillCost_Sports					PREVARLT:skillinfo("TOTALRANK","Sports"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Survival				ASPECT:Base Cost|4	SORTKEY:Actives			TYPE:Actives.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Survival|1									PREVARGTEQ:Experience,SkillCost_Survival				ASPECT:Current Cost|%1|SkillCost_Survival					PREVARLT:skillinfo("TOTALRANK","Survival"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
 # Combat - Base Cost 4
-Dodge					COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Dodge|1			
-Blade Weapons			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Blade_Weapons|1	
-Bashing Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Bashing_Weapon|1	
-Firearm				COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Firearm|1
-Military Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Military_Weapon|1	
-Missile Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Missile_Weapon|1	
-Parrying Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Parrying_Weapon|1	
-Polearm Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Polearm_Weapon|1	
-Thrown Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Thrown_Weapon|1
-Unarmed Combat			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Unarmed_Combat|1	
-Exotic Weapon			COST:4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Exotic_Weapon|1	
+Dodge					ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Dodge|1										PREVARGTEQ:Experience,SkillCost_Dodge				ASPECT:Current Cost|%1|SkillCost_Dodge					PREVARLT:skillinfo("TOTALRANK","Dodge"),5				STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Blade Weapons			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Blade_Weapons|1								PREVARGTEQ:Experience,SkillCost_Blade_Weapons			ASPECT:Current Cost|%1|SkillCost_Blade_Weapons				PREVARLT:skillinfo("TOTALRANK","Blade Weapons"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Bashing Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Bashing_Weapon|1								PREVARGTEQ:Experience,SkillCost_Bashing_Weapon			ASPECT:Current Cost|%1|SkillCost_Bashing_Weapon				PREVARLT:skillinfo("TOTALRANK","Bashing Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Firearm				ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Firearm|1									PREVARGTEQ:Experience,SkillCost_Firearm				ASPECT:Current Cost|%1|SkillCost_Firearm					PREVARLT:skillinfo("TOTALRANK","Firearm"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Military Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Military_Weapon|1								PREVARGTEQ:Experience,SkillCost_Military_Weapon			ASPECT:Current Cost|%1|SkillCost_Military_Weapon			PREVARLT:skillinfo("TOTALRANK","Military Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Missile Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Missile_Weapon|1								PREVARGTEQ:Experience,SkillCost_Missile_Weapon			ASPECT:Current Cost|%1|SkillCost_Missile_Weapon				PREVARLT:skillinfo("TOTALRANK","Missile Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Parrying Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Parrying_Weapon|1								PREVARGTEQ:Experience,SkillCost_Parrying_Weapon			ASPECT:Current Cost|%1|SkillCost_Parrying_Weapon			PREVARLT:skillinfo("TOTALRANK","Parrying Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Polearm Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Polearm_Weapon|1								PREVARGTEQ:Experience,SkillCost_Polearm_Weapon			ASPECT:Current Cost|%1|SkillCost_Polearm_Weapon				PREVARLT:skillinfo("TOTALRANK","Polearm Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Thrown Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Thrown_Weapon|1								PREVARGTEQ:Experience,SkillCost_Thrown_Weapon			ASPECT:Current Cost|%1|SkillCost_Thrown_Weapon				PREVARLT:skillinfo("TOTALRANK","Thrown Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Unarmed Combat			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Unarmed_Combat|1								PREVARGTEQ:Experience,SkillCost_Unarmed_Combat			ASPECT:Current Cost|%1|SkillCost_Unarmed_Combat				PREVARLT:skillinfo("TOTALRANK","Unarmed Combat"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Exotic Weapon			ASPECT:Base Cost|4	SORTKEY:Combat			TYPE:Combat.Skill		CATEGORY:Skill	BONUS:VAR|Skill_Exotic_Weapon|1								PREVARGTEQ:Experience,SkillCost_Exotic_Weapon			ASPECT:Current Cost|%1|SkillCost_Exotic_Weapon				PREVARLT:skillinfo("TOTALRANK","Exotic Weapon"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
 # Professional - Base Cost 4
-Artistry				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Artistry|1		
-Business				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Business|1		
-Computer				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Computer|1		
-Crafts				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Crafts|1		
-Investigation			COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Investigation|1	
-Larceny				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Larceny|1		
-Medicine				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Medicine|1		
-Trades				COST:4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Trades|1		
+Artistry				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Artistry|1									PREVARGTEQ:Experience,SkillCost_Artistry				ASPECT:Current Cost|%1|SkillCost_Artistry					PREVARLT:skillinfo("TOTALRANK","Artistry"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Business				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Business|1									PREVARGTEQ:Experience,SkillCost_Business				ASPECT:Current Cost|%1|SkillCost_Business					PREVARLT:skillinfo("TOTALRANK","Business"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Computer				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Computer|1									PREVARGTEQ:Experience,SkillCost_Computer				ASPECT:Current Cost|%1|SkillCost_Computer					PREVARLT:skillinfo("TOTALRANK","Computer"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Crafts				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Crafts|1									PREVARGTEQ:Experience,SkillCost_Crafts				ASPECT:Current Cost|%1|SkillCost_Crafts					PREVARLT:skillinfo("TOTALRANK","Crafts"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Investigation			ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Investigation|1								PREVARGTEQ:Experience,SkillCost_Investigation			ASPECT:Current Cost|%1|SkillCost_Investigation				PREVARLT:skillinfo("TOTALRANK","Investigation"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Larceny				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Larceny|1									PREVARGTEQ:Experience,SkillCost_Larceny				ASPECT:Current Cost|%1|SkillCost_Larceny					PREVARLT:skillinfo("TOTALRANK","Larceny"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Medicine				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Medicine|1									PREVARGTEQ:Experience,SkillCost_Medicine				ASPECT:Current Cost|%1|SkillCost_Medicine					PREVARLT:skillinfo("TOTALRANK","Medicine"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Trades				ASPECT:Base Cost|4	SORTKEY:Professional		TYPE:Professional.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Trades|1									PREVARGTEQ:Experience,SkillCost_Trades				ASPECT:Current Cost|%1|SkillCost_Trades					PREVARLT:skillinfo("TOTALRANK","Trades"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
 # Social - Base Cost 4
-Culture				COST:2	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Culture|1			PRERACE:1,Immortal
-Culture (Mortal)			COST:4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Culture|1			PRERACE:1,Mortal
-Indoctrination			COST:4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Indoctrination|1	
-Performance				COST:4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Performance|1		
-Persuasion				COST:4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Persuasion|1		
+Culture				ASPECT:Base Cost|2	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Culture|1			PRERACE:1,Immortal			PREVARGTEQ:Experience,SkillCost_Culture				ASPECT:Current Cost|%1|SkillCost_Culture					PREVARLT:skillinfo("TOTALRANK","Culture"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Culture (Mortal)			ASPECT:Base Cost|4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Culture|1			PRERACE:1,Mortal				PREVARGTEQ:Experience,SkillCost_Culture_Mortal			ASPECT:Current Cost|%1|SkillCost_Culture_Mortal				PREVARLT:skillinfo("TOTALRANK","Culture"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Indoctrination			ASPECT:Base Cost|4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Indoctrination|1								PREVARGTEQ:Experience,SkillCost_Indoctrination			ASPECT:Current Cost|%1|SkillCost_Indoctrination				PREVARLT:skillinfo("TOTALRANK","Indoctrination"),5		STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Performance				ASPECT:Base Cost|4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Performance|1									PREVARGTEQ:Experience,SkillCost_Performance			ASPECT:Current Cost|%1|SkillCost_Performance				PREVARLT:skillinfo("TOTALRANK","Performance"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
+Persuasion				ASPECT:Base Cost|4	SORTKEY:SocialSkill		TYPE:SocialSkill.Skill	CATEGORY:Skill	BONUS:VAR|Skill_Persuasion|1									PREVARGTEQ:Experience,SkillCost_Persuasion			ASPECT:Current Cost|%1|SkillCost_Persuasion				PREVARLT:skillinfo("TOTALRANK","Persuasion"),5			STACK:YES	MULT:YES	CHOOSE:NOCHOICE		COST:0
 
+###Block: These are used to grant the proper skill ranks
++2 Core Skill	CATEGORY:Internal	CHOOSE:SKILL|CLASS	MULT:YES	STACK:NO	BONUS:SKILLRANK|%LIST|2|TYPE=Core
++3 Core Skill	CATEGORY:Internal	CHOOSE:SKILL|CLASS	MULT:YES	STACK:NO	BONUS:SKILLRANK|%LIST|3|TYPE=Core
+
+###Block: Counter cost impact - This only impacts Immortals, Mortals are not set up.
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Biology)					BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Biology)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Earth Science)				BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Earth Science)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Linguistics)				BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Linguistics)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Occult)					BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Occult)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Theoretical Sciences)			BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Theoretical Sciences)	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Social Sciences)				BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Social Sciences)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Animal Discipline)			BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Animal Discipline)	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Evasion)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Evasion)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Ground Vehicle)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Ground Vehicle)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Gymnastics)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Gymnastics)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Pilot)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Pilot)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Shipboard)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Shipboard)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Sports)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Sports)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Survival)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Survival)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Dodge)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Dodge)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Blade Weapons)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Blade Weapons)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Bashing Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Bashing Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Firearm)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Firearm)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Military Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Military Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Missile Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Missile Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Parrying Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Parrying Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Polearm Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Polearm Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Thrown Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Thrown Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Unarmed Combat)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Unarmed Combat)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Exotic Weapon)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Exotic Weapon)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Artistry)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Artistry)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Business)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Business)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Computer)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Computer)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Crafts)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Crafts)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Investigation)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Investigation)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Larceny)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Larceny)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Medicine)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Medicine)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Trades)					BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Trades)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Culture)					BONUS:VAR|SkillCost_Experience|BaseCost2Rank1+BaseCost2Rank2+BaseCost2Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Culture)			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Indoctrination)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Indoctrination)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Performance)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Performance)		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2|PREABILITY:1,CATEGORY=Internal,+2 Core Skill (Persuasion)				BONUS:VAR|SkillCost_Experience|BaseCost4Rank1+BaseCost4Rank2+BaseCost4Rank3|PREABILITY:1,CATEGORY=Internal,+3 Core Skill (Persuasion)		
+
+# COMMENT: Skill cost has to be set for the next tier for price to be calculated correctly. 
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Biology|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Earth_Science|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Linguistics|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Occult|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Theoretical_Sciences|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Social_Sciences|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Biology_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Earth_Science_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Linguistics_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Occult_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Theoretical_Sciences_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Social_Sciences_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Animal_Discipline|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Evasion|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Ground_Vehicle|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Gymnastics|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Pilot|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Shipboard|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Sports|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Survival|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Dodge|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Blade_Weapons|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Bashing_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Firearm|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Military_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Missile_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Parrying_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Polearm_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Thrown_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Unarmed_Combat|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Exotic_Weapon|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Artistry|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Business|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Computer|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Crafts|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Investigation|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Larceny|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Medicine|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Trades|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Culture|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Culture_Mortal|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Indoctrination|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Performance|0
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Persuasion|0
+###Block: Skill Costs Calculated
+# Rank 1 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Biology"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Occult"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Biology"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Occult"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Animal_Discipline|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Animal Discipline"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Evasion|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Evasion"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Ground_Vehicle|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Ground Vehicle"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Gymnastics|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Gymnastics"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Pilot|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Pilot"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Shipboard|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Shipboard"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Sports|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Sports"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Survival|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Survival"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Dodge|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Dodge"),0			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Blade_Weapons|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Blade Weapons"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Bashing_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Bashing Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Firearm|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Firearm"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Military_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Military Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Missile_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Missile Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Parrying_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Parrying Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Polearm_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Polearm Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Thrown_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Thrown Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Unarmed_Combat|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Unarmed Combat"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Exotic_Weapon|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Exotic Weapon"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Artistry|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Artistry"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Business|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Business"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Computer|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Computer"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Crafts|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Crafts"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Investigation|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Investigation"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Larceny|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Larceny"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Medicine|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Medicine"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Trades|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Trades"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture|BaseCost2Rank1|PREVAREQ:skillinfo("TOTALRANK","Culture"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture_Mortal|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Culture"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Indoctrination|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Indoctrination"),0	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Performance|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Performance"),0		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Persuasion|BaseCost4Rank1|PREVAREQ:skillinfo("TOTALRANK","Persuasion"),0		
+# Rank 2 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Biology"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Occult"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Biology"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Occult"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Animal_Discipline|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Animal Discipline"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Evasion|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Evasion"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Ground_Vehicle|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Ground Vehicle"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Gymnastics|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Gymnastics"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Pilot|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Pilot"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Shipboard|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Shipboard"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Sports|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Sports"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Survival|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Survival"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Dodge|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Dodge"),1			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Blade_Weapons|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Blade Weapons"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Bashing_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Bashing Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Firearm|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Firearm"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Military_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Military Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Missile_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Missile Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Parrying_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Parrying Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Polearm_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Polearm Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Thrown_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Thrown Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Unarmed_Combat|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Unarmed Combat"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Exotic_Weapon|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Exotic Weapon"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Artistry|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Artistry"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Business|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Business"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Computer|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Computer"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Crafts|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Crafts"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Investigation|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Investigation"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Larceny|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Larceny"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Medicine|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Medicine"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Trades|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Trades"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture|BaseCost2Rank2|PREVAREQ:skillinfo("TOTALRANK","Culture"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture_Mortal|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Culture"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Indoctrination|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Indoctrination"),1	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Performance|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Performance"),1		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Persuasion|BaseCost4Rank2|PREVAREQ:skillinfo("TOTALRANK","Persuasion"),1		
+# Rank 3 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Biology"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Occult"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Biology"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Occult"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Animal_Discipline|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Animal Discipline"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Evasion|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Evasion"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Ground_Vehicle|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Ground Vehicle"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Gymnastics|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Gymnastics"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Pilot|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Pilot"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Shipboard|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Shipboard"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Sports|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Sports"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Survival|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Survival"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Dodge|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Dodge"),2			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Blade_Weapons|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Blade Weapons"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Bashing_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Bashing Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Firearm|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Firearm"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Military_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Military Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Missile_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Missile Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Parrying_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Parrying Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Polearm_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Polearm Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Thrown_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Thrown Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Unarmed_Combat|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Unarmed Combat"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Exotic_Weapon|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Exotic Weapon"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Artistry|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Artistry"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Business|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Business"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Computer|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Computer"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Crafts|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Crafts"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Investigation|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Investigation"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Larceny|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Larceny"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Medicine|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Medicine"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Trades|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Trades"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture|BaseCost2Rank3|PREVAREQ:skillinfo("TOTALRANK","Culture"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture_Mortal|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Culture"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Indoctrination|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Indoctrination"),2	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Performance|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Performance"),2		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Persuasion|BaseCost4Rank3|PREVAREQ:skillinfo("TOTALRANK","Persuasion"),2		
+# Rank 4 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Biology"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Occult"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Biology"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Occult"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Animal_Discipline|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Animal Discipline"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Evasion|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Evasion"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Ground_Vehicle|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Ground Vehicle"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Gymnastics|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Gymnastics"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Pilot|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Pilot"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Shipboard|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Shipboard"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Sports|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Sports"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Survival|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Survival"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Dodge|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Dodge"),3			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Blade_Weapons|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Blade Weapons"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Bashing_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Bashing Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Firearm|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Firearm"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Military_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Military Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Missile_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Missile Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Parrying_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Parrying Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Polearm_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Polearm Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Thrown_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Thrown Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Unarmed_Combat|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Unarmed Combat"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Exotic_Weapon|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Exotic Weapon"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Artistry|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Artistry"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Business|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Business"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Computer|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Computer"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Crafts|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Crafts"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Investigation|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Investigation"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Larceny|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Larceny"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Medicine|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Medicine"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Trades|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Trades"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture|BaseCost2Rank4|PREVAREQ:skillinfo("TOTALRANK","Culture"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture_Mortal|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Culture"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Indoctrination|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Indoctrination"),3	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Performance|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Performance"),3		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Persuasion|BaseCost4Rank4|PREVAREQ:skillinfo("TOTALRANK","Persuasion"),3		
+# Rank 5 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Biology"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Occult"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Biology_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Biology"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Earth_Science_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Earth Science"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Linguistics_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Linguistics"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Occult_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Occult"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Theoretical_Sciences_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Theoretical Sciences"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Social_Sciences_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Social Sciences"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Animal_Discipline|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Animal Discipline"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Evasion|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Evasion"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Ground_Vehicle|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Ground Vehicle"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Gymnastics|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Gymnastics"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Pilot|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Pilot"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Shipboard|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Shipboard"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Sports|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Sports"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Survival|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Survival"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Dodge|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Dodge"),4			
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Blade_Weapons|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Blade Weapons"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Bashing_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Bashing Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Firearm|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Firearm"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Military_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Military Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Missile_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Missile Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Parrying_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Parrying Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Polearm_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Polearm Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Thrown_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Thrown Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Unarmed_Combat|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Unarmed Combat"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Exotic_Weapon|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Exotic Weapon"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Artistry|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Artistry"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Business|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Business"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Computer|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Computer"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Crafts|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Crafts"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Investigation|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Investigation"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Larceny|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Larceny"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Medicine|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Medicine"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Trades|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Trades"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture|BaseCost2Rank5|PREVAREQ:skillinfo("TOTALRANK","Culture"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Culture_Mortal|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Culture"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Indoctrination|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Indoctrination"),4	
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Performance|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Performance"),4		
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Persuasion|BaseCost4Rank5|PREVAREQ:skillinfo("TOTALRANK","Persuasion"),4		
+
+###Block: Experience Pool Reduction based upon Skills
+CATEGORY=Internal|Default.MOD		DEFINE:SkillCost_Experience|0	BONUS:VAR|Experience|-SkillCost_Experience
+###Block: Set Deductions based upon Ranks in any particular skill
+# Rank 1 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Biology"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Earth Science"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Linguistics"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Occult"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Biology"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Earth Science"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Linguistics"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Occult"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Animal Discipline"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Evasion"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Ground Vehicle"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Gymnastics"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Pilot"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Shipboard"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Sports"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Survival"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Dodge"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Blade Weapons"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Bashing Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Firearm"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Military Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Missile Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Parrying Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Polearm Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Thrown Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Unarmed Combat"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Exotic Weapon"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Artistry"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Business"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Computer"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Crafts"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Investigation"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Larceny"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Medicine"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Trades"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank1|PREVARGT:skillinfo("TOTALRANK","Culture"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Culture"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Indoctrination"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Performance"),0
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank1|PREVARGT:skillinfo("TOTALRANK","Persuasion"),0
+# Rank 2 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Biology"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Earth Science"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Linguistics"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Occult"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Biology"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Earth Science"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Linguistics"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Occult"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Animal Discipline"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Evasion"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Ground Vehicle"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Gymnastics"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Pilot"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Shipboard"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Sports"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Survival"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Dodge"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Blade Weapons"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Bashing Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Firearm"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Military Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Missile Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Parrying Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Polearm Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Thrown Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Unarmed Combat"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Exotic Weapon"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Artistry"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Business"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Computer"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Crafts"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Investigation"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Larceny"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Medicine"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Trades"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank2|PREVARGT:skillinfo("TOTALRANK","Culture"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Culture"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Indoctrination"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Performance"),1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank2|PREVARGT:skillinfo("TOTALRANK","Persuasion"),1
+# Rank 3 Cost
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Biology"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Earth Science"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Linguistics"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Occult"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Biology"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Earth Science"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Linguistics"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Occult"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Animal Discipline"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Evasion"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Ground Vehicle"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Gymnastics"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Pilot"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Shipboard"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Sports"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Survival"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Dodge"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Blade Weapons"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Bashing Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Firearm"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Military Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Missile Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Parrying Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Polearm Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Thrown Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Unarmed Combat"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Exotic Weapon"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Artistry"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Business"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Computer"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Crafts"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Investigation"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Larceny"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Medicine"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Trades"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank3|PREVARGT:skillinfo("TOTALRANK","Culture"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Culture"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Indoctrination"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Performance"),2
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank3|PREVARGT:skillinfo("TOTALRANK","Persuasion"),2
+#
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Biology"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Earth Science"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Linguistics"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Occult"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Biology"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Earth Science"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Linguistics"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Occult"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Animal Discipline"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Evasion"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Ground Vehicle"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Gymnastics"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Pilot"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Shipboard"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Sports"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Survival"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Dodge"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Blade Weapons"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Bashing Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Firearm"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Military Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Missile Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Parrying Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Polearm Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Thrown Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Unarmed Combat"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Exotic Weapon"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Artistry"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Business"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Computer"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Crafts"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Investigation"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Larceny"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Medicine"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Trades"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank4|PREVARGT:skillinfo("TOTALRANK","Culture"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Culture"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Indoctrination"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Performance"),3
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank4|PREVARGT:skillinfo("TOTALRANK","Persuasion"),3
+#
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Biology"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Earth Science"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Linguistics"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Occult"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Biology"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Earth Science"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Linguistics"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Occult"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Theoretical Sciences"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Social Sciences"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Animal Discipline"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Evasion"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Ground Vehicle"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Gymnastics"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Pilot"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Shipboard"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Sports"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Survival"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Dodge"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Blade Weapons"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Bashing Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Firearm"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Military Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Missile Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Parrying Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Polearm Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Thrown Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Unarmed Combat"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Exotic Weapon"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Artistry"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Business"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Computer"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Crafts"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Investigation"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Larceny"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Medicine"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Trades"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost2Rank5|PREVARGT:skillinfo("TOTALRANK","Culture"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Culture"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Indoctrination"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Performance"),4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|SkillCost_Experience|BaseCost4Rank5|PREVARGT:skillinfo("TOTALRANK","Persuasion"),4
 
