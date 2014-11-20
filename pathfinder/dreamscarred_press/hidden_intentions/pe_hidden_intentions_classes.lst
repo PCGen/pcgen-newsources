@@ -4,7 +4,7 @@ SOURCELONG:Psionics Expanded - Hidden Intentions	SOURCESHORT:PEHI	SOURCEWEB:http
 
 ###Block: Cryptic
 # Class Name	Hit Dice	Type				Max Level	Source Page		Save checks bonus											Combat bonus
-CLASS:Cryptic	HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:CHECKS|Base.Reflex,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Cryptic	HD:8		TYPE:Base.Psionic.PC	MAXLEVEL:20	SOURCEPAGE:p.2	BONUS:SAVE|Base.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 CLASS:Cryptic			SPELLSTAT:INT	SPELLTYPE:Psionic	MEMORIZE:NO	BONUS:CASTERLEVEL|Cryptic|CL
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Cryptic		STARTSKILLPTS:4	CSKILL:Acrobatics|Appraise|Autohypnosis|Climb|TYPE.Craft|Disguise|Escape Artist|TYPE.Knowledge|Linguistics|Perception|TYPE.Perform|TYPE.Profession|Sense Motive|Sleight of Hand|Spellcraft|Stealth|Swim|Use Magic Device	ABILITY:Internal|AUTOMATIC|Disable Device Class Skill|!PREABILITY:1,CATEGORY=Archetype,TYPE.CrypticDisableDevice
@@ -88,12 +88,12 @@ SUBCLASS:Mindwright	COST:0	PROHIBITCOST:0	SPELLLIST:1|Psion	CSKILL:Autohypnosis|
 SUBCLASSLEVEL:1		ABILITY:Internal|AUTOMATIC|Mindwright Abilities
 
 ###Block: Astral Warrior class
-CLASS:Astral Warrior	HD:10		TYPE:Monster.Companion	CLASSTYPE:Companion	MAXLEVEL:NOLIMIT	SOURCEPAGE:p.12	LEVELSPERFEAT:0	ABILITY:FEAT|AUTOMATIC|CMB Output	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	AUTO:WEAPONPROF|Astral Warrior Weapon
+CLASS:Astral Warrior	HD:10		TYPE:Monster.Companion	CLASSTYPE:Companion	MAXLEVEL:NOLIMIT	SOURCEPAGE:p.12	LEVELSPERFEAT:0	ABILITY:FEAT|AUTOMATIC|CMB Output	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	AUTO:WEAPONPROF|Astral Warrior Weapon
 CLASS:Astral Warrior	PRERACETYPE:Construct	STARTSKILLPTS:0	MODTOSKILLS:NO	ABILITY:Special Ability|AUTOMATIC|Construct Traits|PREVAREQ:NoTypeTraits,0	TEMPLATE:Construct|Mindless
 
 
 ###Block: Body Snatcher prestige class
-CLASS:Body Snatcher	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:6	SOURCEPAGE:p.43	BONUS:CHECKS|BASE.Will|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Body Snatcher	HD:6		TYPE:PC.Prestige.Psionic	MAXLEVEL:6	SOURCEPAGE:p.43	BONUS:SAVE|BASE.Will|(classlevel("APPLIEDAS=NONEPIC")+1)/2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|(classlevel("APPLIEDAS=NONEPIC")+1)/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 CLASS:Body Snatcher	PREFEAT:1,Extend Power	PREFEAT:2,TYPE=Metapsionic	PRESKILL:3,Bluff=10,Perform (Act)=3,Sense Motive=3	PRESPELL:2,Brain Lock,Conceal Thoughts	PRECLASS:1,SPELLCASTER=10
 CLASS:Body Snatcher	STARTSKILLPTS:2	CSKILL:Autohypnosis|Bluff|Diplomacy|TYPE.Perform|Sense Motive|Spellcraft
 CLASS:Body Snatcher	ALLOWBASECLASS:NO
@@ -146,7 +146,7 @@ SUBCLASSLEVEL:4	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1	BONUS:VAR|AegisC
 SUBCLASSLEVEL:5	ADD:SPELLCASTER|Psionic	BONUS:VAR|MndBladeLVL|1	BONUS:VAR|AegisCL,AegisDRLVL|1
 
 ###Block: Soul Archer prestige class
-CLASS:Soul Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.45	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
+CLASS:Soul Archer	HD:10		TYPE:PC.Prestige.Psionic	MAXLEVEL:10	SOURCEPAGE:p.45	BONUS:SAVE|BASE.Reflex|(classlevel("APPLIEDAS=NONEPIC")+1)/2	BONUS:SAVE|BASE.Fortitude,BASE.Will|(classlevel("APPLIEDAS=NONEPIC")+1)/3	BONUS:COMBAT|BAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|PCrystalLevel|CL|PREFEAT:1,Psicrystal Affinity
 CLASS:Soul Archer	PREFEAT:2,Point-Blank Shot,Precise Shot	PREABILITY:1,CATEGORY=Special Ability,Enhanced Mind Blade,Enhanced Mind Bolt ~ Soulbolt	PREATT:5
 CLASS:Soul Archer	STARTSKILLPTS:4	CSKILL:Perception|Survival
 1	BONUS:ABILITYPOOL|Ranged Blade Skill|floor((CL+1)/2)	ABILITY:Special Ability|AUTOMATIC|Ranged Blade Skills ~ Soul Archer
