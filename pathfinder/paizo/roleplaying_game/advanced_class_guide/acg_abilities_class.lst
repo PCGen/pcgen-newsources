@@ -43,18 +43,28 @@ Weapon and Armor Proficiency	KEY:Warpriest ~ Weapon and Armor Proficiency	CATEGO
 Weapon Prof ~ Deity Weapons									CATEGORY:Internal		AUTO:WEAPONPROF|DEITYWEAPONS
 
 ###Block: Archetype Pool
-CATEGORY=Internal|Archetype Display.MOD		ABILITY:Hunter Archetype|AUTOMATIC|Archetype Hunter|PRECLASS:1,Hunter=1
+CATEGORY=Internal|Archetype Display.MOD		ABILITY:Arcanist Archetype|AUTOMATIC|Archetype Arcanist|PRECLASS:1,Arcanist=1
 CATEGORY=Internal|Archetype Display.MOD		ABILITY:Bloodrager Archetype|AUTOMATIC|Archetype Bloodrager|PRECLASS:1,Bloodrager=1
 CATEGORY=Internal|Archetype Display.MOD		ABILITY:Brawler Archetype|AUTOMATIC|Archetype Brawler|PRECLASS:1,Brawler=1
+CATEGORY=Internal|Archetype Display.MOD		ABILITY:Hunter Archetype|AUTOMATIC|Archetype Hunter|PRECLASS:1,Hunter=1
+CATEGORY=Internal|Archetype Display.MOD		ABILITY:Investigator Archetype|AUTOMATIC|Archetype Investigator|PRECLASS:1,Investigator=1
+CATEGORY=Internal|Archetype Display.MOD		ABILITY:Shaman Archetype|AUTOMATIC|Archetype Shaman|PRECLASS:1,Shaman=1
+CATEGORY=Internal|Archetype Display.MOD		ABILITY:Skald Archetype|AUTOMATIC|Archetype Skald|PRECLASS:1,Skald=1
 CATEGORY=Internal|Archetype Display.MOD		ABILITY:Slayer Archetype|AUTOMATIC|Archetype Slayer|PRECLASS:1,Slayer=1
 CATEGORY=Internal|Archetype Display.MOD		ABILITY:Swashbuckler Archetype|AUTOMATIC|Archetype Swashbuckler|PRECLASS:1,Swashbuckler=1
+CATEGORY=Internal|Archetype Display.MOD		ABILITY:Warpriest Archetype|AUTOMATIC|Archetype Warpriest|PRECLASS:1,Warpriest=1
 
 ###Block: Archetype Displays
-Archetype Hunter				CATEGORY:Archetype	TYPE:HunterArchetype		VISIBLE:NO
+Archetype Arcanist			CATEGORY:Archetype	TYPE:ArcanistArchetype		VISIBLE:NO
 Archetype Bloodrager			CATEGORY:Archetype	TYPE:BloodragerArchetype	VISIBLE:NO
 Archetype Brawler				CATEGORY:Archetype	TYPE:BrawlerArchetype		VISIBLE:NO
+Archetype Investigator			CATEGORY:Archetype	TYPE:InvestigatorArchetype	VISIBLE:NO
+Archetype Hunter				CATEGORY:Archetype	TYPE:HunterArchetype		VISIBLE:NO
+Archetype Shaman				CATEGORY:Archetype	TYPE:ShamanArchetype		VISIBLE:NO
+Archetype Skald				CATEGORY:Archetype	TYPE:SkaldArchetype		VISIBLE:NO
 Archetype Slayer				CATEGORY:Archetype	TYPE:SlayerArchetype		VISIBLE:NO
 Archetype Swashbuckler			CATEGORY:Archetype	TYPE:SwashbucklerArchetype	VISIBLE:NO
+Archetype Warpriest			CATEGORY:Archetype	TYPE:WarpriestArchetype	VISIBLE:NO
 
 # ============================
 # Arcanist class abiltites
@@ -187,7 +197,7 @@ Enchantment School	KEY:Arcanist School ~ Enchantment	CATEGORY:Special Ability	TY
 Evocation School		KEY:Arcanist School ~ Evocation	CATEGORY:Special Ability	TYPE:SpecialQuality.ArcanistSchool	DEFINE:EvocationSchoolLVL|0		BONUS:VAR|EvocationSchoolLVL|WizardSchoolLVL			ABILITY:Special Ability|AUTOMATIC|Evocation School ~ Intense Spells|Evocation School ~ Force Missile|!PRECLASS:1,Wizard=1			
 Illusion School		KEY:Arcanist School ~ Illusion	CATEGORY:Special Ability	TYPE:SpecialQuality.ArcanistSchool	DEFINE:IllusionSchoolLVL|0		BONUS:VAR|IllusionSchoolLVL|WizardSchoolLVL			ABILITY:Special Ability|AUTOMATIC|Illusion School ~ Extended Illusion|Illusion School ~ Blinding Ray|!PRECLASS:1,Wizard=1		
 Necromancy School		KEY:Arcanist School ~ Necromancy	CATEGORY:Special Ability	TYPE:SpecialQuality.ArcanistSchool	DEFINE:NecromancySchoolLVL|0		BONUS:VAR|NecromancySchoolLVL|WizardSchoolLVL			ABILITY:Special Ability|AUTOMATIC|Necromancy School ~ Power Over Undead|Necromancy School ~ Grave Touch|!PRECLASS:1,Wizard=1						
-Transmutation School	KEY:Arcanist School ~ Transmutation	CATEGORY:Special Ability	TYPE:SpecialQuality.ArcanistSchool	DEFINE:TransmutationSchoolLVL|0	BONUS:VAR|TransmutationSchoolLVL|WizardSchoolLVL		ABILITY:Special Ability|AUTOMATIC|Transmutation School ~ Physical Enhancement|Transmutation School ~ Telekinetic Fist|!PRECLASS:1,Wizard=1	BONUS:ABILITYPOOL||1
+Transmutation School	KEY:Arcanist School ~ Transmutation	CATEGORY:Special Ability	TYPE:SpecialQuality.ArcanistSchool	DEFINE:TransmutationSchoolLVL|0	BONUS:VAR|TransmutationSchoolLVL|WizardSchoolLVL		ABILITY:Special Ability|AUTOMATIC|Transmutation School ~ Physical Enhancement|Transmutation School ~ Telekinetic Fist|!PRECLASS:1,Wizard=1	
 
 ###Block:  Arcanist School Power Selections
 Resistance			KEY:Arcanist School Abjuration ~ Resistance			BONUS:VAR|ArcanistSchoolBoost_Resistance|-1|!PRECLASS:1,Wizard=1		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=Special Ability,Arcanist School ~ Abjuration	TYPE:ArcanistSchoolChoice
