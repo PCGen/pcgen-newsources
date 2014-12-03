@@ -13,7 +13,7 @@ Buy Path of Power		TYPE:PathOfPower	COST:1	BONUS:ABILITYPOOL|Path of Power Choic
 
 
 ###Block: Actual Feats
-Armored Caster	SOURCEPAGE:p.7	KEY:Armored Caster ~ PoP	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREFEAT:1,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
+Armored Caster	SOURCEPAGE:p.7	KEY:Armored Caster	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREFEAT:1,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
 Domain Ability	SOURCEPAGE:p.7	TYPE:General	DESC:Your mystical studies have granted you an innate talent.	PRETEXT:Having expended a Feat on a domain path.	BENEFIT:You gain the granted power for the domain as well as access to its spells.
 #Special: Prestige or Exclusive domain abilities may cost two Feats to acquire at the option of the game master.
 Path Master		SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You become a semi-spontaneous caster.	PRETEXT:Knowing at least three paths.	BENEFIT:You may invest your spell slots in paths rather than in individual spells. You may then expend those spell levels in casting any spell on the path that you can handle. For example, a 8'th level wizard with the Pyrotics path could invest two fourth level spell slots in it, and then use them to cast Fireball and Burning Hands twice each, or any other combination of Pyrotic spells of up to level four - the maximum level of spell which he or she can cast - which adds up to eight spell levels or less.
@@ -27,50 +27,46 @@ Shielded Caster	SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You may perform somatic compo
 Skillfullness	SOURCEPAGE:p.7	TYPE:General	MULT:YES	CHOOSE:NOCHOICE	STACK:YES	DESC:You gain six skill points which may be expended normally.	PRESTAT:1,INT=10	BENEFIT:You gain +6 skill points to be expended normally per your current class. This does not allow you to surpass normal limits on class or cross-class skills. Normal: Skill points are strictly dependent on class levels. Special: This Feat may be taken repeatedly.
 # COMMENT: Unable to grant 6 Skill Points - Needs Code Work.
 Spell Ability	SOURCEPAGE:p.8	TYPE:General	DESC:You have acquired limited spellcasting abilities.	CHOOSE:PCSTAT|INT|WIS|CHA	MULT:YES	
+	ABILITY:Internal|AUTOMATIC|Spell Ability ~ INT Caster|PREFEAT:1,Spell Ability (INT)
+	ABILITY:Internal|AUTOMATIC|Spell Ability ~ WIS Caster|PREFEAT:1,Spell Ability (WIS)
+	ABILITY:Internal|AUTOMATIC|Spell Ability ~ CHA Caster|PREFEAT:1,Spell Ability (CHA)
+	
+	
+	TEMPLATE:Spell Ability Level
 # COMMENT: See Psionic Ability Above, same problem, how to grant spellcasting via a feat???
 #Prerequisites: The user must select Int, Wis, or Chr to derive bonus spells and save DC's from. A character must have a minimum ability score of (10 + the level of the spell in question) to cast a spell.	BENEFIT:You gain spell "slots" according to the chart below, limited by both your level and by the number of feats you have invested in spell ability. The caster level is equal to your character level. The character must memorize spells until the third Feat is invested, at which point she becomes a spontaneous caster. These spell slots may be used to cast spells from any path you have acquired by spending Feats. Additional L5 and L6 spells (Still once per week each) may be purchased at +1 Feat each up to a maximum of 4 each and a total of fifteen Feats. Normal: Spellcasting abilities are derived from class levels, rather than Feats. Special: As shown above, this feat may be taken more than once. Characters may select either Divine or Arcane magic when this Feat is taken. If Divine, their choices of spell lists will be limited by whatever entity grants their powers, but they may use up to medium armor and still cast spells without failure. If Arcane they are subject to spell failure, although they may take the Armored Caster Feat. In low-magic settings, Feat-based magic may be the only available system.
-
-
-
-#	DEFINE:SpellAbilityCasterLvlZero|0
-#	DEFINE:SpellAbilityCasterLvlOne|0
-#	DEFINE:SpellAbilityCasterLvlTwo|0
-#	DEFINE:SpellAbilityCasterLvlThree|0
-#	DEFINE:SpellAbilityCasterLvlFour|0
-#	DEFINE:SpellAbilityCasterLvlFive|0
-#	DEFINE:SpellAbilityCasterLvlSix|0
-
-#BONUS:VAR|SpellAbilityCasterLvlZero|1
-#BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,2
-#BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
-#
-#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=3|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=10|PREVARGTEQ:SpellAbilityFeatCount,4
-#BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
-#	
-#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=11|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=15|PREVARGTEQ:SpellAbilityFeatCount,1
-#
-#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#
-#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
-#
-#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=16|PREVARGTEQ:SpellAbilityFeatCount,7
-#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,8
-#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,10
-#BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,11
-#
-#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,9
-#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,12
-#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,13
-#BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,14
+	DEFINE:SpellAbilityCasterLvlZero|0
+	DEFINE:SpellAbilityCasterLvlOne|0
+	DEFINE:SpellAbilityCasterLvlTwo|0
+	DEFINE:SpellAbilityCasterLvlThree|0
+	DEFINE:SpellAbilityCasterLvlFour|0
+	DEFINE:SpellAbilityCasterLvlFive|0
+	DEFINE:SpellAbilityCasterLvlSix|0
+	BONUS:VAR|SpellAbilityCasterLvlZero|1
+	BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,2
+	BONUS:VAR|SpellAbilityCasterLvlZero|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
+	BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=3|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=10|PREVARGTEQ:SpellAbilityFeatCount,4
+	BONUS:VAR|SpellAbilityCasterLvlOne|1|PREPCLEVEL:MIN=14|PREVARGTEQ:SpellAbilityFeatCount,6
+	BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=5|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=6|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=11|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlTwo|1|PREPCLEVEL:MIN=15|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlThree|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlFour|1|PREPCLEVEL:MIN=2|PREVARGTEQ:SpellAbilityFeatCount,1
+	BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=16|PREVARGTEQ:SpellAbilityFeatCount,7
+	BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,8
+	BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,10
+	BONUS:VAR|SpellAbilityCasterLvlFive|1|PREPCLEVEL:MIN=17|PREVARGTEQ:SpellAbilityFeatCount,11
+	BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,9
+	BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,12
+	BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,13
+	BONUS:VAR|SpellAbilityCasterLvlSix|1|PREPCLEVEL:MIN=18|PREVARGTEQ:SpellAbilityFeatCount,14
