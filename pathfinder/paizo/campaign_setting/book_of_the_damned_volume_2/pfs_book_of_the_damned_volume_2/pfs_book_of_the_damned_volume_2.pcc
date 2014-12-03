@@ -1,13 +1,13 @@
-CAMPAIGN:Lords of Chaos - Book of the Damned, Volume 2
-KEY:Lords of Chaos - Book of the Damned - Volume 2
-GAMEMODE:Pathfinder
-TYPE:Paizo Publishing.Pathfinder Campaign Setting
+CAMPAIGN:Lords of Chaos (PFS)
+KEY:PFS ~ Lords of Chaos
+GAMEMODE:Pathfinder|Pathfinder_PFS
+TYPE:Paizo Publishing PFS.Pathfinder Campaign Setting
 RANK:2
 STATUS:ALPHA
 GENRE:Fantasy
 BOOKTYPE:Campaign Setting
 SETTING:Pathfinder|Golarion
-PRECAMPAIGN:2,INCLUDESBOOKTYPE=Core Rules,INCLUDES=Bestiary
+PRECAMPAIGN:3,Pathfinder Society Core Assumption,INCLUDES=Bestiary,Includes=Advanced Players Guide
 PUBNAMELONG:Paizo Inc.
 PUBNAMESHORT:Paizo
 PUBNAMEWEB:http://paizo.com
@@ -17,7 +17,7 @@ SOURCEWEB:http://paizo.com/products/btpy8hij?Pathfinder-Campaign-Setting-Book-of
 SOURCEDATE:2010-10
 ISOGL:YES
 
-COVER:botd2.jpg
+COVER:../botd2.jpg
 LOGO:@/publisher_logos/Paizo_Publishing.png
 URL:WEBSITE|http://www.paizo.com/|Visit Paizo Publishing!
 URL:WEBSITE|http://www.paizo.com/communityuse|Paizo's Community Use Policy.
@@ -46,29 +46,33 @@ COPYRIGHT:PCGen dataset conversion for "Pathfinder Campaign Setting: Lords of Ch
 # Do not remove the EXTRAFILE comment.
 #EXTRAFILE:OGL.txt
 
-FORWARDREF:CLASSSPELLLIST|Witch
-FORWARDREF:WEAPONPROF|Dogslicer,War Razor
+#Additional Resources
+#Last Updated Wednesday, October 29, 2014
 
-# Data Files
-ABILITYCATEGORY:botd2_abilitycategories.lst
-ABILITY:botd2_abilities_classes.lst
-# Nascent demon lord is a straight repeat of ISWG - so only incorporate if ISWG not loaded
-ABILITY:botd2_abilities_ndl.lst|!PRECAMPAIGN:1,Inner Sea World Guide
-ABILITY:botd2_abilities_race.lst
-CLASS:botd2_classes_prestige.lst
-DEITY:botd2_deities.lst
-EQUIPMENT:botd2_equip.lst
-FEAT:botd2_feats.lst
-KIT:botd2_kits_race.lst
-RACE:botd2_races.lst
-SPELL:botd2_spells.lst
-# Nascent demon lord is a straight repeat of ISWG - so only incorporate if ISWG not loaded
-SPELL:botd2_spells_ndl.lst|!PRECAMPAIGN:1,Inner Sea World Guide
-TEMPLATE:botd2_templates.lst
-# Nascent demon lord is a straight repeat of ISWG - so only incorporate if ISWG not loaded
-TEMPLATE:botd2_templates_ndl.lst|!PRECAMPAIGN:1,Inner Sea World Guide
+#Pathfinder Campaign Setting: Lords of Chaos
+#Spells: disfiguring touch, vermin shape I, vermin shape II
 
-#TODO: obediences/boons p38-39
+!PRECAMPAIGN:1,Lords of Chaos - Book of the Damned - Volume 2
+PCC:../book_of_the_damned_volume_2.pcc
+SPELL:../botd2_spells.lst|(INCLUDE:disfiguring touch,vermin shape I, vermin shape II)
+
+LSTEXCLUDE:botd2_abilitycategories.lst
+LSTEXCLUDE:botd2_abilities_classes.lst
+# Nascent demon lord is a straight repeat of ISWG - so only incorporate if ISWG not loaded
+LSTEXCLUDE:botd2_abilities_ndl.lst|!PRECAMPAIGN:1,Inner Sea World Guide
+LSTEXCLUDE:botd2_abilities_race.lst
+LSTEXCLUDE:botd2_classes_prestige.lst
+LSTEXCLUDE:botd2_deities.lst
+LSTEXCLUDE:botd2_equip.lst
+LSTEXCLUDE:botd2_feats.lst
+LSTEXCLUDE:botd2_kits_race.lst
+LSTEXCLUDE:botd2_races.lst
+# Nascent demon lord is a straight repeat of ISWG - so only incorporate if ISWG not loaded
+LSTEXCLUDE:botd2_spells_ndl.lst|!PRECAMPAIGN:1,Inner Sea World Guide
+LSTEXCLUDE:botd2_templates.lst
+# Nascent demon lord is a straight repeat of ISWG - so only incorporate if ISWG not loaded
+LSTEXCLUDE:botd2_templates_ndl.lst|!PRECAMPAIGN:1,Inner Sea World Guide
+
 
 #
 # End
