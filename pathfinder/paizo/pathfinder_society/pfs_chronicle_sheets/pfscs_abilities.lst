@@ -15,18 +15,25 @@ Diamond of Demon Seeking		KEY:PFS Scenario 3-25 ~ Diamond of Demon Seeking		CATE
 PFS Special Ascendance Day							KEY:Chronicle ~ PFS Special Ascendance Day		TYPE:PFSChronicle.SpecialQuality	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5	
 PFS Special Year of the Risen Rune						KEY:Chronicle ~ PFS Special Year of the Risen Rune	TYPE:PFSChronicle.SpecialQuality	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
 
-Ascendance Day Cloak				KEY:PFS Ascendance Day ~ Ascendance Day Cloak					CATEGORY:Special Ability	TYPE:PFS Ascendance Day		COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on all saves made to resist compulsion spells, spell-like abilities and effects (One time use, PFS Acendance Day)																					SOURCELONG:PFS Ascendance Day
-Actor of the Eleven Acts			KEY:PFS Ascendance Day ~ Actor of the Eleven Acts				CATEGORY:Special Ability	TYPE:PFS Ascendance Day		COST:0	VISIBLE:YES		ASPECT:SkillBonus|You may use a Perform (act, dance, or oratory) in place of a Will save against a spell, spell-like ability, or effect that has the evil or fear descriptor. (One time use, PFS Ascendance Day)		SOURCELONG:PFS Ascendance Day
-Honorary Ambassador (Andoran)			KEY:PFS Year of the Risen Rune ~ Honorary Ambassador				CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune						COST:0	VISIBLE:YES		ASPECT:SkillBonus|When you fail a Diplomacy check by 7 or more to improve a creature's attitude, its attitude only decreases by one step. (PFS Year of the Risen Rune)
-Lesson Learned (Cheliax)			KEY:PFS Year of the Risen Rune ~ Lesson Learned					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune						COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on Sense Motive checks against devils and Cheliax government officials (including Hellknights). (PFS Year of the Risen Rune)
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ PFS Special Ascendance Day.MOD				ABILITY:Chronicle_PFS_Special_Ascendance_Day|AUTOMATIC|Chronicle_PFS_Special_Ascendance_Day_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PFS Special Year of the Risen Rune.MOD		ABILITY:Chronicle_PFS_Special_Year_of_the_Risen_Rune|AUTOMATIC|Chronicle_PFS_Special_Year_of_the_Risen_Rune_Enable
+Chronicle_PFS_Special_Ascendance_Day_Enable		TYPE:Chronicle_PFS_Special_Ascendance_Day			CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PFS_Special_Year_of_the_Risen_Rune_Enable	TYPE:Chronicle_PFS_Special_Year_of_the_Risen_Rune	CATEGORY:Special Ability	VISIBLE:NO
+
+# Boons
+Ascendance Day Cloak				KEY:PFS Ascendance Day ~ Ascendance Day Cloak					CATEGORY:Special Ability	TYPE:Chronicle_PFS_Special_Ascendance_Day.SpecialQuality		COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on all saves made to resist compulsion spells, spell-like abilities and effects (One time use, PFS Acendance Day)																					SOURCELONG:PFS Ascendance Day
+Actor of the Eleven Acts			KEY:PFS Ascendance Day ~ Actor of the Eleven Acts				CATEGORY:Special Ability	TYPE:Chronicle_PFS_Special_Ascendance_Day.SpecialQuality		COST:0	VISIBLE:YES		ASPECT:SkillBonus|You may use a Perform (act, dance, or oratory) in place of a Will save against a spell, spell-like ability, or effect that has the evil or fear descriptor. (One time use, PFS Ascendance Day)		SOURCELONG:PFS Ascendance Day
+Honorary Ambassador (Andoran)			KEY:PFS Year of the Risen Rune ~ Honorary Ambassador				CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality						COST:0	VISIBLE:YES		ASPECT:SkillBonus|When you fail a Diplomacy check by 7 or more to improve a creature's attitude, its attitude only decreases by one step. (PFS Year of the Risen Rune)
+Lesson Learned (Cheliax)			KEY:PFS Year of the Risen Rune ~ Lesson Learned					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality						COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on Sense Motive checks against devils and Cheliax government officials (including Hellknights). (PFS Year of the Risen Rune)
 Heidmarch's Boon (Grand Lodge)		KEY:PFS Year of the Risen Rune ~ Heidmarch's Boon				CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality		COST:0	VISIBLE:YES		DESC:When you purchase a vanity or a Grand Lodge faction prestige award, reduce the Prestige Point cost by 2 (minimum 1). When you use this boon, cross it off of your Chronicle sheet. (PFS Year of the Risen Rune)
 Gift of the Kirin (Lantern Lodge)		KEY:PFS Year of the Risen Rune ~ Gift of the Kirin				CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality		COST:0	VISIBLE:YES		DESC:You may treat your Fame score as 2 points higher when purchasing any single item. When you use this boon, cross it off of your Chronicle sheet. (PFS Year of the Risen Rune)
 Curse-Breaker (Osirion)				KEY:PFS Year of the Risen Rune ~ Curse-Breaker					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality		COST:0	VISIBLE:YES		DESC:Treat your caster level as 2 higher when casting remove curse or targetted by remove curse. These effects do not stack. (PFS Year of the Risen Rune)
 Deal with Junderhoff (Qadira)			KEY:PFS Year of the Risen Rune ~ Deal with Junderhoff				CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality		COST:0	VISIBLE:YES		DESC:After rolling a Day Job check, you may roll a second Day Job check and earn gold from both. When you use this boon, cross it off of your Chronicle sheet. (PFS Year of the Risen Rune)
-Kingpin's Pal (Sczarni)				KEY:PFS Year of the Risen Rune ~ Kingpin's Pal					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune						COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on Intimidate checks against ethnic Varisians and members of teh Sczarni families. (PFS Year of the Risen Rune)
-Well Informed (Shadow Lodge)			KEY:PFS Year of the Risen Rune ~ Well Informed					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune						COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on Intimidate checks against Pathfinders. (PFS Year of the Risen Rune)
+Kingpin's Pal (Sczarni)				KEY:PFS Year of the Risen Rune ~ Kingpin's Pal					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality						COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on Intimidate checks against ethnic Varisians and members of teh Sczarni families. (PFS Year of the Risen Rune)
+Well Informed (Shadow Lodge)			KEY:PFS Year of the Risen Rune ~ Well Informed					CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality						COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on Intimidate checks against Pathfinders. (PFS Year of the Risen Rune)
 Slayer of Sloth (Silver Crusade)		KEY:PFS Year of the Risen Rune ~ Slayer of Sloth				CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality		COST:0	VISIBLE:YES		DESC:You man smite evil (as the paladin class ability) using half your character level as your effective paladin level. When you use this boon, cross it off your Chronicle sheet. (PFS Year of the Risen Rune)
-Proud but Discouraged (Taldor)		KEY:PFS Year of the Risen Rune ~ Proud but Discouraged			CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune						COST:0	VISIBLE:YES		ASPECT:SkillBonus|Increase the bonus of any aid another action you recieve from any member of the Taldor faction by 2. (PFS Year of the Risen Rune)
+Proud but Discouraged (Taldor)		KEY:PFS Year of the Risen Rune ~ Proud but Discouraged			CATEGORY:Special Ability	TYPE:PFS Year of the Risen Rune.SpecialQuality						COST:0	VISIBLE:YES		ASPECT:SkillBonus|Increase the bonus of any aid another action you recieve from any member of the Taldor faction by 2. (PFS Year of the Risen Rune)
 
 ############
 # Subtiers #
@@ -170,13 +177,21 @@ CATEGORY=PFS Chronicle|Chronicle ~ S00-28.MOD		DESC:, Pearl of power (2nd level)
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ S00-02.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S00-02_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S00-04.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S00-04_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S00-09.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S00-09_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S00-15.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S00-15_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S00-26.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S00-06_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S00-26.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S00-27_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ S00-02.MOD		ABILITY:Chronicle_S00-02|AUTOMATIC|Chronicle_S00-02_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S00-04.MOD		ABILITY:Chronicle_S00-04|AUTOMATIC|Chronicle_S00-04_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S00-09.MOD		ABILITY:Chronicle_S00-09|AUTOMATIC|Chronicle_S00-09_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S00-15.MOD		ABILITY:Chronicle_S00-15|AUTOMATIC|Chronicle_S00-15_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S00-26.MOD		ABILITY:Chronicle_S00-26|AUTOMATIC|Chronicle_S00-26_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S00-27.MOD		ABILITY:Chronicle_S00-27|AUTOMATIC|Chronicle_S00-27_Enable
+Chronicle_S00-02_Enable		TYPE:Chronicle_S00-02	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S00-04_Enable		TYPE:Chronicle_S00-04	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S00-09_Enable		TYPE:Chronicle_S00-09	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S00-15_Enable		TYPE:Chronicle_S00-15	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S00-26_Enable		TYPE:Chronicle_S00-26	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S00-27_Enable		TYPE:Chronicle_S00-27	CATEGORY:Special Ability	VISIBLE:NO
 
+# Boons
 Boon1						KEY:PFS Scenario 0-02 ~ Boon1				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-02	TYPE:Chronicle_S00-02.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario 02: The Hydra's Fang Incident			DESC:The Chelish Embassy of Absalom recognizes you for your outstanding service to the Empire. You are given a boon that grants you one free use of the divination spell from a Cleric of Asmodeus. You can only use this boon in Egorian, Cheliax's diabolical capital city.
 Boon2						KEY:PFS Scenario 0-02 ~ Boon2				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-02	TYPE:Chronicle_S00-02.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario 02: The Hydra's Fang Incident			DESC:The Andoren Embassy of Absalom regards you as an upstanding free citizen of the Republic.
 Boon						KEY:PFS Scenario 0-04 ~ Boon				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-04	TYPE:Chronicle_S00-04.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario 04: The Frozen Fingers of Midnight		DESC:The Yagevna family in Irrisen recognizes you as a close associate for freeing their daughter, Natalya, from her icy prison. When in Irrisen, you gain a +2 circumstance bonus on all diplomacy rolls when you mention the Yagevna family and how you assisted them.	ASPECT:SkillBonus|+2 circumstance bonus on all diplomacy rolls in Irrisen (PFS #4 Boon).
@@ -288,20 +303,35 @@ CATEGORY=PFS Chronicle|Chronicle ~ S01-56.MOD		DESC:, +2 guisarme (8,309 gp), Po
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ S01-33.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-33_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-34.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-34_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-36.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-36_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-37.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-37_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-38.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-38_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-40.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-40_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-41.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-41_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-42.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-42_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-43.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-43_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-44.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-44_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-45.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-45_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-50.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-50_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S01-53.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S01-53_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ S01-33.MOD		ABILITY:Chronicle_S01-33|AUTOMATIC|Chronicle_S01-33_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-34.MOD		ABILITY:Chronicle_S01-34|AUTOMATIC|Chronicle_S01-34_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-36.MOD		ABILITY:Chronicle_S01-36|AUTOMATIC|Chronicle_S01-36_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-37.MOD		ABILITY:Chronicle_S01-37|AUTOMATIC|Chronicle_S01-37_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-38.MOD		ABILITY:Chronicle_S01-38|AUTOMATIC|Chronicle_S01-38_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-40.MOD		ABILITY:Chronicle_S01-40|AUTOMATIC|Chronicle_S01-40_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-41.MOD		ABILITY:Chronicle_S01-41|AUTOMATIC|Chronicle_S01-41_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-42.MOD		ABILITY:Chronicle_S01-42|AUTOMATIC|Chronicle_S01-42_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-43.MOD		ABILITY:Chronicle_S01-43|AUTOMATIC|Chronicle_S01-43_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-44.MOD		ABILITY:Chronicle_S01-44|AUTOMATIC|Chronicle_S01-44_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-45.MOD		ABILITY:Chronicle_S01-45|AUTOMATIC|Chronicle_S01-45_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-50.MOD		ABILITY:Chronicle_S01-50|AUTOMATIC|Chronicle_S01-50_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S01-53.MOD		ABILITY:Chronicle_S01-53|AUTOMATIC|Chronicle_S01-53_Enable
+Chronicle_S01-33_Enable	TYPE:Chronicle_S01-33	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-34_Enable	TYPE:Chronicle_S01-34	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-36_Enable	TYPE:Chronicle_S01-36	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-37_Enable	TYPE:Chronicle_S01-37	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-38_Enable	TYPE:Chronicle_S01-38	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-40_Enable	TYPE:Chronicle_S01-40	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-41_Enable	TYPE:Chronicle_S01-41	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-42_Enable	TYPE:Chronicle_S01-42	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-43_Enable	TYPE:Chronicle_S01-43	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-44_Enable	TYPE:Chronicle_S01-44	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-45_Enable	TYPE:Chronicle_S01-45	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-50_Enable	TYPE:Chronicle_S01-50	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S01-53_Enable	TYPE:Chronicle_S01-53	CATEGORY:Special Ability	VISIBLE:NO
 
+# Boons
 Zamir joined the Pathfinder Society			KEY:PFS Scenario 1-33 ~ Zamir joined the Pathfinder Society		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-33	TYPE:Chronicle_S01-33.SpecialQuality	COST:0	VISIBLE:YES	SOURCELONG:PFS Scenario 33: Assault on the Kingdom of the Impossible	DESC:Venture-Captain Mihir presents you with a copper coin that has the sigil of the open road on one side and the flag of Jalmeray on the other. When in Absalom or any major city (more than 5,000 residents) in Andoran, Cheliax, Jalmeray, Osirion, Qadira, or Taldor, you can present this coin to any citizen of Jalmeray (it takes 1d4 hours to locate one) and receive a +4 circumstance bonus on any one Appraise, Diplomacy, or Knowledge (any) skill check. You may only use this coin once per scenario.	ASPECT:SkillBonus|+4 circumstance bonus on any one Appraise, Diplomacy, or Knowledge (any) skill check (see text, Zamir joined the Pathfinder Society).
 Zamir is slain						KEY:PFS Scenario 1-33 ~ Zamir is slain					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-33	TYPE:Chronicle_S01-33.SpecialQuality	COST:0	VISIBLE:YES	SOURCELONG:PFS Scenario 33: Assault on the Kingdom of the Impossible	DESC:The Thakur of Jalmeray recognizes the great service you have done for his country and spreads the word of your deeds to the corners of the island. In any future encounter when dealing with a citizen of Jalmeray, you may gain a +1 circumstance bonus to any Diplomacy rolls made during that encounter. You may only use this bonus once per scenario.	ASPECT:AkillBonus|+1 circumstance bonus to any Diplomacy rolls dealing with a citizen of Jalmeray (Zamir is slain).
 Recovered Akila's wand					KEY:PFS Scenario 1-36 ~ Recovered Akila's wand				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-36	TYPE:Chronicle_S01-36.SpecialQuality	COST:0	VISIBLE:YES	SOURCELONG:PFS Scenario 36: The Prisoner of Skull Hill			DESC:You recovered Akila's wand
@@ -354,7 +384,6 @@ PFS Scenario #2-24 Shadow's Last Stand, Part II: Web of Corruption			KEY:Chronic
 PFS Scenario #2-25 You Only Die Twice								KEY:Chronicle ~ S02-25	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
 PFS Scenario #2-26 The Mantis's Prey								KEY:Chronicle ~ S02-26	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
 PFS Scenario #2-SP Year of the Shadow Lodge							KEY:Chronicle ~ S02-SP	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-11
-
 #PFS Scenario #2-EX The Midnight Mauler								KEY:Chronicle ~ S02-EX	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-7	OUTPUTNAME:S02-EX The Midnight Mauler (RETIRED)
 
 #
@@ -423,19 +452,33 @@ CATEGORY=PFS Chronicle|Chronicle ~ S02-26.MOD		DESC:, +2 mithral shirt (5,100 gp
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ S02-01.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-01_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-04.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-04_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-08.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-08_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-17.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-17_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-18.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-18_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-19.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-19_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-20.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-20_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-22.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-22_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-24.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-24_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-25.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-25_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-26.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-26_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S02-SP.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S02-SP_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ S02-01.MOD		ABILITY:Chronicle_S02-01|AUTOMATIC|Chronicle_S02-01_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-04.MOD		ABILITY:Chronicle_S02-04|AUTOMATIC|Chronicle_S02-04_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-08.MOD		ABILITY:Chronicle_S02-08|AUTOMATIC|Chronicle_S02-08_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-17.MOD		ABILITY:Chronicle_S02-17|AUTOMATIC|Chronicle_S02-17_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-18.MOD		ABILITY:Chronicle_S02-18|AUTOMATIC|Chronicle_S02-18_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-19.MOD		ABILITY:Chronicle_S02-19|AUTOMATIC|Chronicle_S02-19_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-20.MOD		ABILITY:Chronicle_S02-20|AUTOMATIC|Chronicle_S02-20_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-22.MOD		ABILITY:Chronicle_S02-22|AUTOMATIC|Chronicle_S02-22_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-24.MOD		ABILITY:Chronicle_S02-24|AUTOMATIC|Chronicle_S02-24_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-25.MOD		ABILITY:Chronicle_S02-25|AUTOMATIC|Chronicle_S02-25_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-26.MOD		ABILITY:Chronicle_S02-26|AUTOMATIC|Chronicle_S02-26_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S02-SP.MOD		ABILITY:Chronicle_S02-SP|AUTOMATIC|Chronicle_S02-SP_Enable
+Chronicle_S02-01_Enable	TYPE:Chronicle_S02-01	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-04_Enable	TYPE:Chronicle_S02-04	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-08_Enable	TYPE:Chronicle_S02-08	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-17_Enable	TYPE:Chronicle_S02-17	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-18_Enable	TYPE:Chronicle_S02-18	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-19_Enable	TYPE:Chronicle_S02-19	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-20_Enable	TYPE:Chronicle_S02-20	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-22_Enable	TYPE:Chronicle_S02-22	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-24_Enable	TYPE:Chronicle_S02-24	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-25_Enable	TYPE:Chronicle_S02-25	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-26_Enable	TYPE:Chronicle_S02-26	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S02-SP_Enable	TYPE:Chronicle_S02-SP	CATEGORY:Special Ability	VISIBLE:NO
 
+# Boons
 The Favor of Cartahegn			KEY:PFS Scenario 2-01 ~ The Favor of Cartahegn		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-01	TYPE:Chronicle_S02-01.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #2-01			DESC:While in a settlement of 5,000 people or more in Garund, you may purchase equipment (but not weapons or armor) at a 10%% discount.
 Tortured by the Aspis			KEY:PFS Scenario 2-01 ~ Tortured by the Aspis		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-01	TYPE:Chronicle_S02-01.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #2-01			DESC:You lose 1 permanent point of Constitution.	BONUS:STAT|CON|-1
 Time in Dreng's Vaults			KEY:PFS Scenario 2-04 ~ Time in Dreng's Vaults		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-04	TYPE:Chronicle_S02-04.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #2-04			DESC:You gain a permanent +2 circumstance bonus on any one Knowledge skill check.
@@ -560,23 +603,41 @@ CATEGORY=PFS Chronicle|Chronicle ~ S03-EX.MOD		DESC:, +1 studded leather (4,175 
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ S03-02.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-02_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-03.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-03_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-04.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-04_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-06.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-06_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-08.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-08_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-12.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-12_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-13.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-13_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-14.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-14_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-16.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-16_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-17.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-17_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-18.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-18_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-20.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-20_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-22.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-22_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-24.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-24_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-EX.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-EX_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S03-SP.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S03-SP_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ S03-02.MOD		ABILITY:Chronicle_S03-02|AUTOMATIC|Chronicle_S03-02_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-03.MOD		ABILITY:Chronicle_S03-03|AUTOMATIC|Chronicle_S03-03_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-04.MOD		ABILITY:Chronicle_S03-04|AUTOMATIC|Chronicle_S03-04_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-06.MOD		ABILITY:Chronicle_S03-06|AUTOMATIC|Chronicle_S03-06_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-08.MOD		ABILITY:Chronicle_S03-08|AUTOMATIC|Chronicle_S03-08_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-12.MOD		ABILITY:Chronicle_S03-12|AUTOMATIC|Chronicle_S03-12_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-13.MOD		ABILITY:Chronicle_S03-13|AUTOMATIC|Chronicle_S03-13_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-14.MOD		ABILITY:Chronicle_S03-14|AUTOMATIC|Chronicle_S03-14_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-16.MOD		ABILITY:Chronicle_S03-16|AUTOMATIC|Chronicle_S03-16_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-17.MOD		ABILITY:Chronicle_S03-17|AUTOMATIC|Chronicle_S03-17_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-18.MOD		ABILITY:Chronicle_S03-18|AUTOMATIC|Chronicle_S03-18_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-20.MOD		ABILITY:Chronicle_S03-20|AUTOMATIC|Chronicle_S03-20_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-22.MOD		ABILITY:Chronicle_S03-22|AUTOMATIC|Chronicle_S03-22_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-24.MOD		ABILITY:Chronicle_S03-24|AUTOMATIC|Chronicle_S03-24_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-EX.MOD		ABILITY:Chronicle_S03-EX|AUTOMATIC|Chronicle_S03-EX_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S03-SP.MOD		ABILITY:Chronicle_S03-SP|AUTOMATIC|Chronicle_S03-SP_Enable
+Chronicle_S03-02_Enable	TYPE:Chronicle_S03-02	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-03_Enable	TYPE:Chronicle_S03-03	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-04_Enable	TYPE:Chronicle_S03-04	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-06_Enable	TYPE:Chronicle_S03-06	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-08_Enable	TYPE:Chronicle_S03-08	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-12_Enable	TYPE:Chronicle_S03-12	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-13_Enable	TYPE:Chronicle_S03-13	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-14_Enable	TYPE:Chronicle_S03-14	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-16_Enable	TYPE:Chronicle_S03-16	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-17_Enable	TYPE:Chronicle_S03-17	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-18_Enable	TYPE:Chronicle_S03-18	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-20_Enable	TYPE:Chronicle_S03-20	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-22_Enable	TYPE:Chronicle_S03-22	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-24_Enable	TYPE:Chronicle_S03-24	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-EX_Enable	TYPE:Chronicle_S03-EX	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S03-SP_Enable	TYPE:Chronicle_S03-SP	CATEGORY:Special Ability	VISIBLE:NO
 
+# Boons
 Contraband Dividends			KEY:PFS Scenario 3-02 ~ Contraband Dividends			CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-02							TYPE:Chronicle_S03-02.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #3-02			DESC:You ensured that a valuable shipment of contraband antiquities were able to enter Absalom through the sewers without kobolds causing any problems. As a result, you receive a single item of no more than 150 gp from among the non-relic bits of the cargo. You must select this item now and reflect its purchase on this Chronicle sheet.
 Koboldfriend				KEY:PFS Scenario 3-02 ~ Koboldfriend				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-02							TYPE:Chronicle_S03-02.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #3-02			DESC:You negotiated a truce between the Pathfinder Society and Yiddlepode of the Sewer Dragon tribe. As part of the bargain, she gave you a token of kobold. When worn about your neck (occupying the neck magic item slot), the token grants you a +2 bonus on all Diplomacy checks with humanoids of the reptilian subtype.
 Embezzler of Embelliada			KEY:PFS Scenario 3-03 ~ Embezzler of Embelliada			CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-03							TYPE:Chronicle_S03-03.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #3-03		ASPECT:SkillBonus|-2 penalty on all Diplomacy checks against faithful of Abadar and city officials in Katapesh (Embezzler of Embelliada)	DESC:You were caught attempting to cash in stolen letters of credit at a Katapeshi bank run by clerics of Abadar. Word of your crime spreads after the Pathfinder Society has to bail you out of the city's jail. You suffer a permanent -2 penalty on all Diplomacy checks against faithful of Abadar and city officials in Katapesh.
@@ -712,25 +773,44 @@ CATEGORY=PFS Chronicle|Chronicle ~ S04-26.MOD		DESC:, belt of physical perfectio
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ S04-05.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-05_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-06.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-06_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-07.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-07_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-08.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-08_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-09.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-09_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-10.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-10_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-11.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-11_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-12.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-12_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-13.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-13_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-14.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-14_Enable
-#CATEGORY=PFS Chronicle|Chronicle ~ S04-15.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-15_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-16.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-16_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-19.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-19_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-21.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-21_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-23.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-23_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-24.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-24_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-25.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-25_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-26.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-26_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S04-SP.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S04-SP_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ S04-05.MOD		ABILITY:Chronicle_S04-05|AUTOMATIC|Chronicle_S04-05_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-06.MOD		ABILITY:Chronicle_S04-06|AUTOMATIC|Chronicle_S04-06_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-07.MOD		ABILITY:Chronicle_S04-07|AUTOMATIC|Chronicle_S04-07_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-08.MOD		ABILITY:Chronicle_S04-08|AUTOMATIC|Chronicle_S04-08_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-09.MOD		ABILITY:Chronicle_S04-09|AUTOMATIC|Chronicle_S04-09_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-10.MOD		ABILITY:Chronicle_S04-10|AUTOMATIC|Chronicle_S04-10_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-11.MOD		ABILITY:Chronicle_S04-11|AUTOMATIC|Chronicle_S04-11_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-12.MOD		ABILITY:Chronicle_S04-12|AUTOMATIC|Chronicle_S04-12_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-13.MOD		ABILITY:Chronicle_S04-13|AUTOMATIC|Chronicle_S04-13_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-14.MOD		ABILITY:Chronicle_S04-14|AUTOMATIC|Chronicle_S04-14_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-16.MOD		ABILITY:Chronicle_S04-16|AUTOMATIC|Chronicle_S04-16_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-19.MOD		ABILITY:Chronicle_S04-19|AUTOMATIC|Chronicle_S04-19_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-21.MOD		ABILITY:Chronicle_S04-21|AUTOMATIC|Chronicle_S04-21_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-23.MOD		ABILITY:Chronicle_S04-23|AUTOMATIC|Chronicle_S04-23_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-24.MOD		ABILITY:Chronicle_S04-24|AUTOMATIC|Chronicle_S04-24_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-25.MOD		ABILITY:Chronicle_S04-25|AUTOMATIC|Chronicle_S04-25_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-26.MOD		ABILITY:Chronicle_S04-26|AUTOMATIC|Chronicle_S04-26_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S04-SP.MOD		ABILITY:Chronicle_S04-SP|AUTOMATIC|Chronicle_S04-SP_Enable
+Chronicle_S04-05_Enable	TYPE:Chronicle_S04-05	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-06_Enable	TYPE:Chronicle_S04-06	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-07_Enable	TYPE:Chronicle_S04-07	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-08_Enable	TYPE:Chronicle_S04-08	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-09_Enable	TYPE:Chronicle_S04-09	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-10_Enable	TYPE:Chronicle_S04-10	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-11_Enable	TYPE:Chronicle_S04-11	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-12_Enable	TYPE:Chronicle_S04-12	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-13_Enable	TYPE:Chronicle_S04-13	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-14_Enable	TYPE:Chronicle_S04-14	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-16_Enable	TYPE:Chronicle_S04-16	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-19_Enable	TYPE:Chronicle_S04-19	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-21_Enable	TYPE:Chronicle_S04-21	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-23_Enable	TYPE:Chronicle_S04-23	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-24_Enable	TYPE:Chronicle_S04-24	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-25_Enable	TYPE:Chronicle_S04-25	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-26_Enable	TYPE:Chronicle_S04-26	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S04-SP_Enable	TYPE:Chronicle_S04-SP	CATEGORY:Special Ability	VISIBLE:NO
+
 
 Faerie Dragon Improved Familiar				KEY:PFS Scenario 4-05 ~ Faerie Dragon Improved Familiar	CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-05	TYPE:Chronicle_S04-05.SpecialQuality	COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #4-05			DESC:A caster of at least 7th level with an alignment within one step of chaotic good may bond with the faerie dragon Riddywipple using the Improved Familiar feat. If you make this bond with the creature, you must provide a copy of the Patthfinder RPG Bestiary 3 as if the improved familiar were available as an Additional Resource.
 Greenheart's Blessing						KEY:PFS Scenario 4-06 ~ Greenheart's Blessing			CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-06	TYPE:Chronicle_S04-06.SpecialQuality	COST:0	VISIBLE:YES		SOURCELONG:PFS Scenario #4-06			DESC:The peaceful and benevolent spirit of Galdron Greenheart infuses you when you set it to rest in the shrine beneath the Green Market. A small fraction of the luck and fortune in business that imbues the market stays with you as a result, and brings you success for the rest of your life. You receive a +2 bonus on all Day Job checks.
@@ -780,34 +860,33 @@ Formidable Renoun							KEY:PFS Scenario 4-SP ~ Formidable Renoun				CATEGORY:Sp
 # Season 5 #
 ############
 
-PFS Scenario #5-01 The Glass River Rescue							KEY:Chronicle ~ S05-01	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-02 The Wardstone Patrol							KEY:Chronicle ~ S05-02	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
+#PFS Scenario #5-01 The Glass River Rescue							KEY:Chronicle ~ S05-01	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-02 The Wardstone Patrol							KEY:Chronicle ~ S05-02	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
 PFS Scenario #5-03 The Hellknight's Feast							KEY:Chronicle ~ S05-03	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
-PFS Scenario #5-04 The Stolen Heir								KEY:Chronicle ~ S05-04	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-05 The Elven Entanglement							KEY:Chronicle ~ S05-05	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
-PFS Scenario #5-06 You Have What You Hold							KEY:Chronicle ~ S05-06	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
-PFS Scenario #5-07 Port Godless								KEY:Chronicle ~ S05-07	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
-PFS Scenario #5-08 The Confirmation								KEY:Chronicle ~ S05-08	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-2
+#PFS Scenario #5-04 The Stolen Heir								KEY:Chronicle ~ S05-04	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-05 The Elven Entanglement							KEY:Chronicle ~ S05-05	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
+#PFS Scenario #5-06 You Have What You Hold							KEY:Chronicle ~ S05-06	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
+#PFS Scenario #5-07 Port Godless								KEY:Chronicle ~ S05-07	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
+#PFS Scenario #5-08 The Confirmation								KEY:Chronicle ~ S05-08	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-2
 PFS Scenario #5-09 The Traitor's Lodge							KEY:Chronicle ~ S05-09	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
-PFS Scenario #5-10 Where Mammoths Dare Not Tread					KEY:Chronicle ~ S05-10	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
+#PFS Scenario #5-10 Where Mammoths Dare Not Tread					KEY:Chronicle ~ S05-10	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
 PFS Scenario #5-11 Library of the Lion							KEY:Chronicle ~ S05-11	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-12 Destiny of the Sands, Part 1: A Bitter Bargain			KEY:Chronicle ~ S05-12	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-13 Weapon in the Rift							KEY:Chronicle ~ S05-13	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
-PFS Scenario #5-14 Day of the Demon								KEY:Chronicle ~ S05-14	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
-PFS Scenario #5-15 Destiny of the Sands, Part 2: Race to Seeker's Folly		KEY:Chronicle ~ S05-15	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-16 Destiny of the Sands, Part 3: Sanctum of the Sages		KEY:Chronicle ~ S05-16	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
-PFS Scenario #5-17 Fate of the Fiend							KEY:Chronicle ~ S05-17	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
-PFS Scenario #5-18 The Stranger Within							KEY:Chronicle ~ S05-18	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
-PFS Scenario #5-19 The Horn of Aroden							KEY:Chronicle ~ S05-19	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-12 Destiny of the Sands, Part 1: A Bitter Bargain			KEY:Chronicle ~ S05-12	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-13 Weapon in the Rift							KEY:Chronicle ~ S05-13	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
+#PFS Scenario #5-14 Day of the Demon								KEY:Chronicle ~ S05-14	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
+#PFS Scenario #5-15 Destiny of the Sands, Part 2: Race to Seeker's Folly		KEY:Chronicle ~ S05-15	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-16 Destiny of the Sands, Part 3: Sanctum of the Sages		KEY:Chronicle ~ S05-16	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
+#PFS Scenario #5-17 Fate of the Fiend							KEY:Chronicle ~ S05-17	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
+#PFS Scenario #5-18 The Stranger Within							KEY:Chronicle ~ S05-18	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
+#PFS Scenario #5-19 The Horn of Aroden							KEY:Chronicle ~ S05-19	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
 PFS Scenario #5-20 The Sealed Gate								KEY:Chronicle ~ S05-20	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
-PFS Scenario #5-21 The Merchant's Wake							KEY:Chronicle ~ S05-21	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-22 Scars of the Third Crusade						KEY:Chronicle ~ S05-22	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
-PFS Scenario #5-23 Cairn of Shadows								KEY:Chronicle ~ S05-23	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
-PFS Scenario #5-24 Assault on the Wound							KEY:Chronicle ~ S05-24	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
-PFS Scenario #5-25 Vengeance at Sundered Crag						KEY:Chronicle ~ S05-25	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
-PFS Scenario #5-99 The Paths We Choose							KEY:Chronicle ~ S05-99	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
-PFS Scenario #5-SP Siege of the Diamond City						KEY:Chronicle ~ S05-SP	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-11
-
+#PFS Scenario #5-21 The Merchant's Wake							KEY:Chronicle ~ S05-21	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-22 Scars of the Third Crusade						KEY:Chronicle ~ S05-22	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-5
+#PFS Scenario #5-23 Cairn of Shadows								KEY:Chronicle ~ S05-23	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 5-9
+#PFS Scenario #5-24 Assault on the Wound							KEY:Chronicle ~ S05-24	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
+#PFS Scenario #5-25 Vengeance at Sundered Crag						KEY:Chronicle ~ S05-25	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 7-11
+#PFS Scenario #5-99 The Paths We Choose							KEY:Chronicle ~ S05-99	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 3-7
+#PFS Scenario #5-SP Siege of the Diamond City						KEY:Chronicle ~ S05-SP	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	MULT:YES	CHOOSE:NUMCHOICES=1|ABILITY|PFS Chronicle|TYPE=Tier 1-11
 #PFS Scenario #5-S2 Ruins of Bonekeep, Level 2: Maze to the Mind Slave		KEY:Chronicle ~ S05-S2	TYPE:Chronicle	CATEGORY:PFS Chronicle	VISIBLE:YES	COST:0	
 
 #
@@ -818,10 +897,15 @@ PFS Scenario #5-SP Siege of the Diamond City						KEY:Chronicle ~ S05-SP	TYPE:Ch
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ S05-03.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S05-03_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S05-09.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S05-09_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S05-11.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S05-11_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ S05-20.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_S05-20_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ S05-03.MOD		ABILITY:Chronicle_S05-03|AUTOMATIC|Chronicle_S05-03_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S05-09.MOD		ABILITY:Chronicle_S05-09|AUTOMATIC|Chronicle_S05-09_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S05-11.MOD		ABILITY:Chronicle_S05-11|AUTOMATIC|Chronicle_S05-11_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ S05-20.MOD		ABILITY:Chronicle_S05-20|AUTOMATIC|Chronicle_S05-20_Enable
+Chronicle_S05-03_Enable	TYPE:Chronicle_S05-03	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S05-09_Enable	TYPE:Chronicle_S05-09	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S05-11_Enable	TYPE:Chronicle_S05-11	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_S05-20_Enable	TYPE:Chronicle_S05-20	CATEGORY:Special Ability	VISIBLE:NO
 
 Concern for Liberty				KEY:PFS Scenario 5-03 ~ Concern for Liberty			CATEGORY:Special Ability	TYPE:Chronicle_S05-03.SpecialAbility	COST:0	VISIBLE:YES			DESC:Whenever you recieve more than one Will save to overcome an enchantment (compulsion) effect, you gain a +2 bonus on the extra Will saves. Once per scenario as an immediate action, you may extend this benefit to an adjacent ally for one round.																																																																																																																																																																																																																																																																SOURCELONG:PFS Scenario #5-03 The Hellknight's Feast
 Driven by Glory					KEY:PFS Scenario 5-03 ~ Driven by Glory				CATEGORY:Special Ability	TYPE:Chronicle_S05-03.SpecialAbility	COST:0	VISIBLE:YES		ASPECT:SkillBonus|+2 bonus on any skill check to further the Taldor faction's goals. This boon lasts for 1 year from the date of this Chronicle sheet (Driven by Glory).																																																																																																																																																																																																																																																																SOURCELONG:PFS Scenario #5-03 The Hellknight's Feast
@@ -955,37 +1039,81 @@ CATEGORY=PFS Chronicle|Chronicle ~ PZOGWK0001-5.MOD		DESC:You may purchase the f
 # Selectable Boons
 #
 
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-4.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9500-4_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-5.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9500-5_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-6.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9500-6_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-7.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9500-7_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-8.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9500-8_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9520.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9520_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9521.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9521_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9522.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9522_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9523.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9523_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9524.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9524_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9525.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9525_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9526.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9526_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9527.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9527_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9528.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9528_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9529.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9529_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9530.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9530_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9531.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9531_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9532.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9532_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9533.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9533_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9534.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9534_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9535.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9535_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9536.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9536_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9537.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9537_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9538.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9538_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9539.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9539_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9540.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9540_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9541.MOD		ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9541_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-1.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9542-1_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-2.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9542-2_Enable
-CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-3.MOD	ABILITY:Special Ability|AUTOMATIC|Chronicle_PZO9542-3_Enable
+# Ability Pool Display
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-4.MOD	ABILITY:Chronicle_PZO9500-4|AUTOMATIC|Chronicle_PZO9500-4_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-5.MOD	ABILITY:Chronicle_PZO9500-5|AUTOMATIC|Chronicle_PZO9500-5_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-6.MOD	ABILITY:Chronicle_PZO9500-6|AUTOMATIC|Chronicle_PZO9500-6_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-7.MOD	ABILITY:Chronicle_PZO9500-7|AUTOMATIC|Chronicle_PZO9500-7_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9500-8.MOD	ABILITY:Chronicle_PZO9500-8|AUTOMATIC|Chronicle_PZO9500-8_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9520.MOD		ABILITY:Chronicle_PZO9520|AUTOMATIC|Chronicle_PZO9520_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9521.MOD		ABILITY:Chronicle_PZO9521|AUTOMATIC|Chronicle_PZO9521_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9522.MOD		ABILITY:Chronicle_PZO9522|AUTOMATIC|Chronicle_PZO9522_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9523.MOD		ABILITY:Chronicle_PZO9523|AUTOMATIC|Chronicle_PZO9523_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9524.MOD		ABILITY:Chronicle_PZO9524|AUTOMATIC|Chronicle_PZO9524_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9525.MOD		ABILITY:Chronicle_PZO9525|AUTOMATIC|Chronicle_PZO9525_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9526.MOD		ABILITY:Chronicle_PZO9526|AUTOMATIC|Chronicle_PZO9526_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9527.MOD		ABILITY:Chronicle_PZO9527|AUTOMATIC|Chronicle_PZO9527_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9528.MOD		ABILITY:Chronicle_PZO9528|AUTOMATIC|Chronicle_PZO9528_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9529.MOD		ABILITY:Chronicle_PZO9529|AUTOMATIC|Chronicle_PZO9529_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9530.MOD		ABILITY:Chronicle_PZO9530|AUTOMATIC|Chronicle_PZO9530_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9531.MOD		ABILITY:Chronicle_PZO9531|AUTOMATIC|Chronicle_PZO9531_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9532.MOD		ABILITY:Chronicle_PZO9532|AUTOMATIC|Chronicle_PZO9532_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9533.MOD		ABILITY:Chronicle_PZO9533|AUTOMATIC|Chronicle_PZO9533_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9534.MOD		ABILITY:Chronicle_PZO9534|AUTOMATIC|Chronicle_PZO9534_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9535.MOD		ABILITY:Chronicle_PZO9535|AUTOMATIC|Chronicle_PZO9535_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9536.MOD		ABILITY:Chronicle_PZO9536|AUTOMATIC|Chronicle_PZO9536_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9537.MOD		ABILITY:Chronicle_PZO9537|AUTOMATIC|Chronicle_PZO9537_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9538.MOD		ABILITY:Chronicle_PZO9538|AUTOMATIC|Chronicle_PZO9538_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9539.MOD		ABILITY:Chronicle_PZO9539|AUTOMATIC|Chronicle_PZO9539_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9540.MOD		ABILITY:Chronicle_PZO9540|AUTOMATIC|Chronicle_PZO9540_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9541.MOD		ABILITY:Chronicle_PZO9541|AUTOMATIC|Chronicle_PZO9541_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-1.MOD	ABILITY:Chronicle_PZO9542-1|AUTOMATIC|Chronicle_PZO9542-1_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-2.MOD	ABILITY:Chronicle_PZO9542-2|AUTOMATIC|Chronicle_PZO9542-2_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-3.MOD	ABILITY:Chronicle_PZO9542-3|AUTOMATIC|Chronicle_PZO9542-3_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZO9542-4.MOD	ABILITY:Chronicle_PZO9542-3|AUTOMATIC|Chronicle_PZO9542-3_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZOGWK0001-1.MOD	ABILITY:Chronicle_PZOGWK0001-1|AUTOMATIC|Chronicle_PZOGWK0001-1_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZOGWK0001-2.MOD	ABILITY:Chronicle_PZOGWK0001-2|AUTOMATIC|Chronicle_PZOGWK0001-2_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZOGWK0001-3.MOD	ABILITY:Chronicle_PZOGWK0001-3|AUTOMATIC|Chronicle_PZOGWK0001-3_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZOGWK0001-4.MOD	ABILITY:Chronicle_PZOGWK0001-4|AUTOMATIC|Chronicle_PZOGWK0001-4_Enable
+CATEGORY=PFS Chronicle|Chronicle ~ PZOGWK0001-5.MOD	ABILITY:Chronicle_PZOGWK0001-5|AUTOMATIC|Chronicle_PZOGWK0001-5_Enable
+Chronicle_PZO9500-4_Enable	TYPE:Chronicle_PZO9500-4	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9500-5_Enable	TYPE:Chronicle_PZO9500-5	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9500-6_Enable	TYPE:Chronicle_PZO9500-6	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9500-7_Enable	TYPE:Chronicle_PZO9500-7	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9500-8_Enable	TYPE:Chronicle_PZO9500-8	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9520_Enable	TYPE:Chronicle_PZO9520		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9521_Enable	TYPE:Chronicle_PZO9521		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9522_Enable	TYPE:Chronicle_PZO9522		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9523_Enable	TYPE:Chronicle_PZO9523		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9524_Enable	TYPE:Chronicle_PZO9524		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9525_Enable	TYPE:Chronicle_PZO9525		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9526_Enable	TYPE:Chronicle_PZO9526		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9527_Enable	TYPE:Chronicle_PZO9527		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9528_Enable	TYPE:Chronicle_PZO9528		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9529_Enable	TYPE:Chronicle_PZO9529		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9530_Enable	TYPE:Chronicle_PZO9530		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9531_Enable	TYPE:Chronicle_PZO9531		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9532_Enable	TYPE:Chronicle_PZO9532		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9533_Enable	TYPE:Chronicle_PZO9533		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9534_Enable	TYPE:Chronicle_PZO9534		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9535_Enable	TYPE:Chronicle_PZO9535		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9536_Enable	TYPE:Chronicle_PZO9536		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9537_Enable	TYPE:Chronicle_PZO9537		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9538_Enable	TYPE:Chronicle_PZO9538		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9539_Enable	TYPE:Chronicle_PZO9539		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9540_Enable	TYPE:Chronicle_PZO9540		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9541_Enable	TYPE:Chronicle_PZO9541		CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9542-1_Enable	TYPE:Chronicle_PZO9542-1	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9542-2_Enable	TYPE:Chronicle_PZO9542-2	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9542-3_Enable	TYPE:Chronicle_PZO9542-3	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZO9542-4_Enable	TYPE:Chronicle_PZO9542-4	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZOGWK0001-1_Enable	TYPE:Chronicle_PZOGWK0001-1	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZOGWK0001-2_Enable	TYPE:Chronicle_PZOGWK0001-2	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZOGWK0001-3_Enable	TYPE:Chronicle_PZOGWK0001-3	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZOGWK0001-4_Enable	TYPE:Chronicle_PZOGWK0001-4	CATEGORY:Special Ability	VISIBLE:NO
+Chronicle_PZOGWK0001-5_Enable	TYPE:Chronicle_PZOGWK0001-5	CATEGORY:Special Ability	VISIBLE:NO
 
+# Boons
 You Be Goblin						KEY:PFS Module PZO9500-5 ~ You Be Goblin							CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-5	TYPE:Module_WeBeGoblins.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module You Be Goblin			ASPECT:SkillBonus|+2 bonus on all Bluff, Diplomacy, Intimidate, and Sense Motive checks made against goblins (You Be Goblin).	DESC:You have special insight into the distractible and sadistic mind of a goblin. You gain a +2 bonus on all Bluff, Diplomacy, Intimidate, and Sense Motive checks made against goblins.
 Antagonized by Avalexi					KEY:PFS Module PZO9500-6 ~ Antagonized by Avalexi				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-6	TYPE:Module_DawnOfTheScarletSun.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Dawn of the Scarlet Sun			DESC:Though you foiled her plot, Avalexi is still at large and seeks revenge. Whenever you use a boon that would be crossed off after being used, there is a 25%% chance that your contact is slain, waylaid, discredited, or otherwise neutralized by the fiend. Such a contact grants no benefit, and you must then cross both that boon and Antagonized by Avalexi off your Chronicle sheets. If you slay Avalexi, cross this boon off the Chronicle sheet immediately.
 Resources of Redemption					KEY:PFS Module PZO9500-6 ~ Resources of Redemption				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-6	TYPE:Module_DawnOfTheScarletSun.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Dawn of the Scarlet Sun			DESC:For your aid, the Church of Sarenrae assists you in acquiring tools of the faith. Treat your Fame score as 2 higher to determine your maximum item cost when purchasing any of the following: weapons with the bane undead, flaming, or flaming burst special ability; shields with the blinding special ability; crowns of blasting, necklaces of fireballs, phylacteries of faithfulness, staves of healing, or staves of illumination.
@@ -1025,13 +1153,6 @@ Honored by the Twilight Talons			KEY:PFS Module PZO9539 ~ Honored by the Twiligh
 Study of Infinite Spells				KEY:PFS Module PZO9540 ~ Study of Infinite Spells					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9540	TYPE:Module_FangwoodKeep.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Fangwood Keep		DESC:Although you were unable to learn spells directly from the book of infinite spells, the Pathfinder Society rewarded you for the recovery of such a powerful artifact by allowing you access to its extensive spell libraries. Choose any number of spells of 1st, 2nd, 3rd, or 4th level so long as the total spell levels do not add up to more than eight. You may scribe these spells into a spellbook or formulae book by paying only the scribing costs (see page 219 of the Pathfinder RPG Core Rulebook), or you may teach them to your familiar as appropriate.
 Borderland Keep						KEY:PFS Module PZO9540 ~ Borderland Keep							CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9540	TYPE:Module_FangwoodKeep.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Fangwood Keep		DESC:(property vanity-15 PP): You have taken command of Fangwood Keep as a representative of either Molthune or Nirmathas. Managing the keep increases the number of followers you can retain at any one time by 1. In addition, you may forgo rolling your Day Job at the end of a scenario to manage the fort's operations, patrol the surrounding territory, and launch raids against the enemy. Doing so allows you to recover 1 Prestige Point as you earn the acclaim and support of the selected nation, though it does not increase your Fame score. Any Prestige Points in excess of your Fame must be spent immediately or are lost.
 Orb of a Distant World					KEY:PFS Module PZO9541 ~ Orb of a Distant World				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9541	TYPE:Module_DoomComestoDustpawn.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Doom Comes to Dustpawn		DESC:You have recovered one of the spheres from the orrery of distant worlds. The sphere is a use-activated item that can expend a number of charges to cast a spell-like ability as a standard action (CL 11th). The sphere has 4 charges and cannot be recharged. Choose one of the following spheres when you gain this boon: Sun (searing light, 1 charge); Aballon (haste 2, charges); Castrovel (detect thoughts, 1 charge); Golarion (resilient sphere, 4 charges); Akiton (rage, 1 charge); Verces (align weapon, 1 charge); Eox (death ward, 2 charges); Triaxus (teleport, 4 charges); Liavara (dream, 4 charges); Bretheda (restoration, 2 charges); Apostae (fly, 2 charges); or Aucturn (confusion, 2 charges).	MULT:YES	CHOOSE:NUMCHOICES=1|STRING|Sun|Aballon|Castrovel|Golarion|Akiton|Verces|Eox|Triaxus|Liavara|Bretheda|Apostae|Aucturn
-Image of Imminent Opportunity				KEY:PFS Module PZOGWK0001-1 ~ Image of Imminent Opportunity		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-1	TYPE:Module_ThornkeepTheAccursedHalls.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Accursed Halls		DESC:[__] Your glance into the Pool of Seeing granted you a vision of another level of the dungeons beneath Thornkeep, giving you a unique insight into a future encounter. When adventuring in Thornkeep, you gain a +2 bonus on any single initiative check or attack roll, applied before the roll is made. You may use this boon once per dungeon level within the complex.
-Prediction of Future Peril				KEY:PFS Module PZOGWK0001-1 ~ Prediction of Future Peril		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-1	TYPE:Module_ThornkeepTheAccursedHalls.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Accursed Halls		DESC: Your glance into the Pool of Seeing granted you a vision of another level of the dungeons beneath Thornkeep, giving you a unique insight into a future encounter. When adventuring in Thornkeep, you may use this boon to gain the following bonuses, each applied before the associated die is rolled. You may use this boon once per dungeon level in Thornkeep, crossing the associated bonus off the Chronicle sheet once applied.&nl;[__] You gain a +5 bonus on a Knowledge check to identify a creature.&nl;[__] You gain a +2 bonus on any single saving throw.&nl;[__] You gain a +2 bonus to AC against any single opponent.
-Unidentified Ungent					KEY:PFS Module PZOGWK0001-2 ~ Unidentified Ungent			CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-2	TYPE:Module_ThornkeepTheForgottenLaboratory.SpecialQuality	COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Forgotten Laboratory	ASPECT:Ability Benefit|Unidentified Ungent:Short lived mutation for 1d4+3 rounds (see text; PFS Thornkeep The Forgotten Laboratory).	DESC:[__] You laid claim to one of the few intact flasks of mysterious alchemical origin in the laboratory. As a move action that does not provoke attacks of opportunity, you may apply or consume the substance to gain a random, short-lived mutation for 1d4+3 rounds. All mutations are supernatural abilities. Roll a d6 to determine the effects of the mutagen. On a result of 1 or 2, you rage as per the rage spell, but are sickened for 1 round after the effect ends. On a result of 3 or 4, your natural reach increases by 5 feet but you take 1d2 points of Dexterity damage when the effect ends. On a result of 5 or 6, you gain the ability to, as a standard action, breathe a single 15-foot line of acid dealing 4d6 points of acid damage (Reflex DC 15 for half damage) but dealing 2d6 points of acid damage to you when the effect ends. When you use this mutagen, cross the boon off the Chronicle sheet.
-Noqual Ore							KEY:PFS Module PZOGWK0001-3 ~ Noqual Ore					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-3	TYPE:Module_ThornkeepTheEnigmaVaults.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Enigma Vaults	DESC:Among the otherworldly treasures of the Enigma Vaults, you discovered a cache of rare noqual ore. You may purchase equipment made from this rare skymetal (see chronicle).
-Millennial Lore						KEY:PFS Module PZOGWK0001-4 ~ Millennial Lore				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-5	TYPE:Module_ThornkeepTheDarkMenagerie.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Dark Menagerie	DESC:[__] In return for her freedom, Melabdara promised you a future service. When you would fail to earn a Prestige Point at the end of a scenario, you may call upon Melabdara to provide you with long-lost information that might prove just as enticing to your faction as your assigned mission, and that earns you 1 Prestige Point as though you had completed the faction mission. This boon may only be used for faction missions, and may not apply to a scenario's success conditions. When you use this boon, cross it off the Chronicle sheet.
-Wealth of the Ages					KEY:PFS Module PZOGWK0001-4 ~ Wealth of the Ages				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-5	TYPE:Module_ThornkeepTheDarkMenagerie.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Dark Menagerie	DESC:In return for her freedom, Melabdara promised you a valuable magical item or other monetary boon. You earn an additional 375 gp for completing this scenario.
-Echoing Paradox						KEY:PFS Module PZOGWK0001-5 ~ Echoing Paradox				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-4	TYPE:Module_ThornkeepSanctumOfALostAge.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep Sanctum of a Lost Age	DESC:[__] A trace of the magic of the Sanctum of Lost Ages clings to you, and against all odds and reason, a future or past version of you can appear to provide assistance in a time of need. Before you roll an attack roll, a skill check, or a saving throw, a copy of you appears either to flank with you or to grant you a +2 bonus as per the aid another action. If you have an ability that grants a higher bonus on aid another actions, you gain this as a bonus instead; the copy also shares all of your teamwork feats. After the attack, skill check, or save is resolved, the copy fades away, and you are shaken until the end of your next turn by the unsettling paradox of being at two places at once. When you use this boon, cross it off the Chronicle sheet.
 Scalefriend							KEY:PFS Module PZO9542-1 ~ Scalefriend						CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-1	TYPE:Boon.Module_TheDragonsDemand1.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module The Dragon's Demand (1)		DESC:[__] [__] [__] You were fortunate to encounter and aid the kobold Nighttail, who helped you to neutralize the Blood Vow tribe. She still owes you a good turn or two, and you may call in a favor when performing one of the skills below to use Nighttail's skill modifier instead of your own as she assists you. Alternatively, Nighttail can cast a spell as though she shared your space, though any attacks of opportunity she provokes for spellcasting damage you (they still force her to make a concentration check). Using any of the skill-based or spellcasting favors requires your spending the time or actions to perform the task yourself. You may use the favors listed below in any combination, checking off one or more boxes each time you ask for help. When you check the last box, Nighttail's debt has been repaid; cross this boon off your Chronicle sheet. &nl;* Handle Animal +7 &nl;* Survival +10 &nl;* Bluff +9 &nl;* Cast resist energy (CL 1st, concentration +2) &nl;* Nighttail and Hak (The Dragon's Demand 14–15) fight alongside you for one encounter in The Dragon's Demand module. You may use this boon at the beginning of combat or at the start of a combat round. Nighttail and Hak begin combat adjacent to you or in the closest available square, and they act on their own initiative. The pair have a starting attitude of helpful and follow your commands to the best of their abilities, but they are GM-controlled NPCs; a GM may grant you direct control at his or her discretion. If Nighttail and/or Hak die during the encounter, cross the entire boon off your Chronicle sheet. (2 boxes)
 Day at the Auction					KEY:PFS Module PZO9542-2 ~ Day at the Auction					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-2	TYPE:Boon.Module_TheDragonsDemand2.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module The Dragon's Demand (2)		DESC:[__] During the auction of the Hunclay estate, you bid on and won an exceptionally rare item. When you purchase (not upgrade) one magic item, you may treat your Fame score as though it were 3 higher to determine your maximum item cost. When you use this boon, cross it off your Chronicle sheet.
 Dragonfoe							KEY:PFS Module PZO9542-2 ~ Dragonfoe						CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-2	TYPE:Boon.Module_TheDragonsDemand2.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module The Dragon's Demand (2)		DESC:[__] The Crypt of Tula held more than just dragon-slaying weapons and powerful armor; it also housed the spirit of Tula, which granted you a blessing for your imminent confrontation. You may use this boon to reroll either one attack roll against a dragon or one caster level check to overcome a dragon's spell resistance. If you are using a weapon, spell, or item that grants a specific benefit when used against dragons (e.g. a dragonbane longsword), you gain a +2 insight bonus on the reroll. The reroll must be made before the results of the original roll are known, and you must take the second result even if it is lower. When you use this boon, cross it off your Chronicle sheet.
@@ -1050,711 +1171,19 @@ Perform (Percussion Instruments)	CATEGORY:Special Ability	TYPE:AllyOfBelhaimPerf
 Perform (Sing)				CATEGORY:Special Ability	TYPE:AllyOfBelhaimPerformChoice	ABILITY:Special Ability|AUTOMATIC|Skill Specialization (Perform (Sing))
 Perform (String Instruments)		CATEGORY:Special Ability	TYPE:AllyOfBelhaimPerformChoice	ABILITY:Special Ability|AUTOMATIC|Skill Specialization (Perform (String Instruments))
 Perform (Wind Instruments)		CATEGORY:Special Ability	TYPE:AllyOfBelhaimPerformChoice	ABILITY:Special Ability|AUTOMATIC|Skill Specialization (Perform (Wind Instruments))
-Debt of Shadow						KEY:PFS Module The Dragon's Demand 4 ~ Debt of Shadow					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-4	TYPE:Module_TheDragonsDemand4.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module The Dragon's Demand (4)		DESC:[__] [__] [__] You freed the shae Maffei from her prison, and she accompanies you always just out of sight so long as she is indebted to you. She has promised to repay your service in kind, and you may call in a favor when performing one of the skills below to use Maffei's skill modifier instead of your own as she assists you. Using any of the skill-based favors requires your spending the time or actions to perform the task yourself. You may use the favors listed below in any combination, checking off one box each time you ask for help. When you check the last box, Maffei's debt has been repaid; cross this boon off your Chronicle sheet. &nl;* Disable Device +16 &nl;* Knowledge (arcana or planes) +13 &nl;* Sleight of Hand +16 &nl;* You gain a +3 bonus on Stealth checks for 5 minutes.
+Debt of Shadow						KEY:PFS Module PZO9542-4 ~ Debt of Shadow					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-4	TYPE:Module_TheDragonsDemand4.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module The Dragon's Demand (4)		DESC:[__] [__] [__] You freed the shae Maffei from her prison, and she accompanies you always just out of sight so long as she is indebted to you. She has promised to repay your service in kind, and you may call in a favor when performing one of the skills below to use Maffei's skill modifier instead of your own as she assists you. Using any of the skill-based favors requires your spending the time or actions to perform the task yourself. You may use the favors listed below in any combination, checking off one box each time you ask for help. When you check the last box, Maffei's debt has been repaid; cross this boon off your Chronicle sheet. &nl;* Disable Device +16 &nl;* Knowledge (arcana or planes) +13 &nl;* Sleight of Hand +16 &nl;* You gain a +3 bonus on Stealth checks for 5 minutes.
+Image of Imminent Opportunity				KEY:PFS Module PZOGWK0001-1 ~ Image of Imminent Opportunity		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-1	TYPE:Module_ThornkeepTheAccursedHalls.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Accursed Halls		DESC:[__] Your glance into the Pool of Seeing granted you a vision of another level of the dungeons beneath Thornkeep, giving you a unique insight into a future encounter. When adventuring in Thornkeep, you gain a +2 bonus on any single initiative check or attack roll, applied before the roll is made. You may use this boon once per dungeon level within the complex.
+Prediction of Future Peril				KEY:PFS Module PZOGWK0001-1 ~ Prediction of Future Peril		CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-1	TYPE:Module_ThornkeepTheAccursedHalls.SpecialQuality				COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Accursed Halls		DESC: Your glance into the Pool of Seeing granted you a vision of another level of the dungeons beneath Thornkeep, giving you a unique insight into a future encounter. When adventuring in Thornkeep, you may use this boon to gain the following bonuses, each applied before the associated die is rolled. You may use this boon once per dungeon level in Thornkeep, crossing the associated bonus off the Chronicle sheet once applied.&nl;[__] You gain a +5 bonus on a Knowledge check to identify a creature.&nl;[__] You gain a +2 bonus on any single saving throw.&nl;[__] You gain a +2 bonus to AC against any single opponent.
+Unidentified Ungent					KEY:PFS Module PZOGWK0001-2 ~ Unidentified Ungent			CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-2	TYPE:Module_ThornkeepTheForgottenLaboratory.SpecialQuality	COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Forgotten Laboratory	ASPECT:Ability Benefit|Unidentified Ungent:Short lived mutation for 1d4+3 rounds (see text; PFS Thornkeep The Forgotten Laboratory).	DESC:[__] You laid claim to one of the few intact flasks of mysterious alchemical origin in the laboratory. As a move action that does not provoke attacks of opportunity, you may apply or consume the substance to gain a random, short-lived mutation for 1d4+3 rounds. All mutations are supernatural abilities. Roll a d6 to determine the effects of the mutagen. On a result of 1 or 2, you rage as per the rage spell, but are sickened for 1 round after the effect ends. On a result of 3 or 4, your natural reach increases by 5 feet but you take 1d2 points of Dexterity damage when the effect ends. On a result of 5 or 6, you gain the ability to, as a standard action, breathe a single 15-foot line of acid dealing 4d6 points of acid damage (Reflex DC 15 for half damage) but dealing 2d6 points of acid damage to you when the effect ends. When you use this mutagen, cross the boon off the Chronicle sheet.
+Noqual Ore							KEY:PFS Module PZOGWK0001-3 ~ Noqual Ore					CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-3	TYPE:Module_ThornkeepTheEnigmaVaults.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Enigma Vaults	DESC:Among the otherworldly treasures of the Enigma Vaults, you discovered a cache of rare noqual ore. You may purchase equipment made from this rare skymetal (see chronicle).
+Millennial Lore						KEY:PFS Module PZOGWK0001-4 ~ Millennial Lore				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-5	TYPE:Module_ThornkeepTheDarkMenagerie.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Dark Menagerie	DESC:[__] In return for her freedom, Melabdara promised you a future service. When you would fail to earn a Prestige Point at the end of a scenario, you may call upon Melabdara to provide you with long-lost information that might prove just as enticing to your faction as your assigned mission, and that earns you 1 Prestige Point as though you had completed the faction mission. This boon may only be used for faction missions, and may not apply to a scenario's success conditions. When you use this boon, cross it off the Chronicle sheet.
+Wealth of the Ages					KEY:PFS Module PZOGWK0001-4 ~ Wealth of the Ages				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-5	TYPE:Module_ThornkeepTheDarkMenagerie.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep The Dark Menagerie	DESC:In return for her freedom, Melabdara promised you a valuable magical item or other monetary boon. You earn an additional 375 gp for completing this scenario.
+Echoing Paradox						KEY:PFS Module PZOGWK0001-5 ~ Echoing Paradox				CATEGORY:Special Ability	PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-4	TYPE:Module_ThornkeepSanctumOfALostAge.SpecialQuality		COST:0	VISIBLE:YES		SOURCELONG:PFS Module Thornkeep Sanctum of a Lost Age	DESC:[__] A trace of the magic of the Sanctum of Lost Ages clings to you, and against all odds and reason, a future or past version of you can appear to provide assistance in a time of need. Before you roll an attack roll, a skill check, or a saving throw, a copy of you appears either to flank with you or to grant you a +2 bonus as per the aid another action. If you have an ability that grants a higher bonus on aid another actions, you gain this as a bonus instead; the copy also shares all of your teamwork feats. After the attack, skill check, or save is resolved, the copy fades away, and you are shaken until the end of your next turn by the unsettling paradox of being at two places at once. When you use this boon, cross it off the Chronicle sheet.
 
 
 #TODO: Implement Stolen Deeds PP cost reduction for properties purchased with PA
 
 
-########################
-# Ability Pool Display #
-########################
-
-Chronicle_S00-01_Enable		TYPE:Chronicle_S00-01	CATEGORY:Special Ability	VISIBLE:YES
-Chronicle_S00-02_Enable		TYPE:Chronicle_S00-02	CATEGORY:Special Ability	VISIBLE:YES
-Chronicle_S00-03_Enable		TYPE:Chronicle_S00-03	CATEGORY:Special Ability	VISIBLE:YES
-Chronicle_S00-04_Enable		TYPE:Chronicle_S00-04	CATEGORY:Special Ability	VISIBLE:YES
-Chronicle_S00-05_Enable		TYPE:Chronicle_S00-05	CATEGORY:Special Ability	VISIBLE:YES
-Chronicle_S00-06_Enable		TYPE:Chronicle_S00-06	CATEGORY:Special Ability	VISIBLE:YES
-Chronicle_S00-07_Enable		TYPE:Chronicle_S00-07	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-08_Enable		TYPE:Chronicle_S00-08	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-09_Enable		TYPE:Chronicle_S00-09	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-10_Enable		TYPE:Chronicle_S00-10	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-11_Enable		TYPE:Chronicle_S00-11	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-12_Enable		TYPE:Chronicle_S00-12	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-13_Enable		TYPE:Chronicle_S00-13	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-14_Enable		TYPE:Chronicle_S00-14	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-15_Enable		TYPE:Chronicle_S00-15	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-16_Enable		TYPE:Chronicle_S00-16	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-17_Enable		TYPE:Chronicle_S00-17	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-18_Enable		TYPE:Chronicle_S00-18	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-19_Enable		TYPE:Chronicle_S00-19	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-20_Enable		TYPE:Chronicle_S00-20	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-21_Enable		TYPE:Chronicle_S00-21	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-22_Enable		TYPE:Chronicle_S00-22	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-23_Enable		TYPE:Chronicle_S00-23	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-24_Enable		TYPE:Chronicle_S00-24	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-25_Enable		TYPE:Chronicle_S00-25	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-26_Enable		TYPE:Chronicle_S00-26	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-27_Enable		TYPE:Chronicle_S00-27	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S00-28_Enable		TYPE:Chronicle_S00-28	CATEGORY:Special Ability	VISIBLE:NO
-	
-# Ability Pool Display
-Chronicle_S01-29_Enable	TYPE:Chronicle_S01-29	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-30_Enable	TYPE:Chronicle_S01-30	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-31_Enable	TYPE:Chronicle_S01-31	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-32_Enable	TYPE:Chronicle_S01-32	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-33_Enable	TYPE:Chronicle_S01-33	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-34_Enable	TYPE:Chronicle_S01-34	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-35_Enable	TYPE:Chronicle_S01-35	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-36_Enable	TYPE:Chronicle_S01-36	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-37_Enable	TYPE:Chronicle_S01-37	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-38_Enable	TYPE:Chronicle_S01-38	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-39_Enable	TYPE:Chronicle_S01-39	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-40_Enable	TYPE:Chronicle_S01-40	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-41_Enable	TYPE:Chronicle_S01-41	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-42_Enable	TYPE:Chronicle_S01-42	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-43_Enable	TYPE:Chronicle_S01-43	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-44_Enable	TYPE:Chronicle_S01-44	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-45_Enable	TYPE:Chronicle_S01-45	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-46_Enable	TYPE:Chronicle_S01-46	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-47_Enable	TYPE:Chronicle_S01-47	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-48_Enable	TYPE:Chronicle_S01-48	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-49_Enable	TYPE:Chronicle_S01-49	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-50_Enable	TYPE:Chronicle_S01-50	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-51_Enable	TYPE:Chronicle_S01-51	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-52_Enable	TYPE:Chronicle_S01-52	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-53_Enable	TYPE:Chronicle_S01-53	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-54_Enable	TYPE:Chronicle_S01-54	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-55_Enable	TYPE:Chronicle_S01-55	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S01-56_Enable	TYPE:Chronicle_S01-56	CATEGORY:Special Ability	VISIBLE:NO
-
-# Ability Pool Display
-Chronicle_S02-01_Enable	TYPE:Chronicle_S02-01	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-02_Enable	TYPE:Chronicle_S02-02	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-03_Enable	TYPE:Chronicle_S02-03	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-04_Enable	TYPE:Chronicle_S02-04	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-05_Enable	TYPE:Chronicle_S02-05	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-06_Enable	TYPE:Chronicle_S02-06	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-07_Enable	TYPE:Chronicle_S02-07	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-08_Enable	TYPE:Chronicle_S02-08	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-09_Enable	TYPE:Chronicle_S02-09	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-10_Enable	TYPE:Chronicle_S02-10	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-11_Enable	TYPE:Chronicle_S02-11	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-12_Enable	TYPE:Chronicle_S02-12	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-13_Enable	TYPE:Chronicle_S02-13	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-14_Enable	TYPE:Chronicle_S02-14	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-15_Enable	TYPE:Chronicle_S02-15	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-16_Enable	TYPE:Chronicle_S02-16	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-17_Enable	TYPE:Chronicle_S02-17	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-18_Enable	TYPE:Chronicle_S02-18	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-19_Enable	TYPE:Chronicle_S02-19	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-20_Enable	TYPE:Chronicle_S02-20	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-21_Enable	TYPE:Chronicle_S02-21	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-22_Enable	TYPE:Chronicle_S02-22	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-23_Enable	TYPE:Chronicle_S02-23	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-24_Enable	TYPE:Chronicle_S02-24	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-25_Enable	TYPE:Chronicle_S02-25	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-26_Enable	TYPE:Chronicle_S02-26	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-SP_Enable	TYPE:Chronicle_S02-SP	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S02-EX_Enable	TYPE:Chronicle_S02-EX	CATEGORY:PFS Chronicle	VISIBLE:NO
-
-# Ability Pool Display
-Chronicle_S03-01_Enable	TYPE:Chronicle_S03-01	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-02_Enable	TYPE:Chronicle_S03-02	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-03_Enable	TYPE:Chronicle_S03-03	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-04_Enable	TYPE:Chronicle_S03-04	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-05_Enable	TYPE:Chronicle_S03-05	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-06_Enable	TYPE:Chronicle_S03-06	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-07_Enable	TYPE:Chronicle_S03-07	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-08_Enable	TYPE:Chronicle_S03-08	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-09_Enable	TYPE:Chronicle_S03-09	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-10_Enable	TYPE:Chronicle_S03-10	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-11_Enable	TYPE:Chronicle_S03-11	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-12_Enable	TYPE:Chronicle_S03-12	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-13_Enable	TYPE:Chronicle_S03-13	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-14_Enable	TYPE:Chronicle_S03-14	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-15_Enable	TYPE:Chronicle_S03-15	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-16_Enable	TYPE:Chronicle_S03-16	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-17_Enable	TYPE:Chronicle_S03-17	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-18_Enable	TYPE:Chronicle_S03-18	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-19_Enable	TYPE:Chronicle_S03-19	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-20_Enable	TYPE:Chronicle_S03-20	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-21_Enable	TYPE:Chronicle_S03-21	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-22_Enable	TYPE:Chronicle_S03-22	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-23_Enable	TYPE:Chronicle_S03-23	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-24_Enable	TYPE:Chronicle_S03-24	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-25_Enable	TYPE:Chronicle_S03-25	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-26_Enable	TYPE:Chronicle_S03-26	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-SP_Enable	TYPE:Chronicle_S03-SP	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S03-EX_Enable	TYPE:Chronicle_S03-EX	CATEGORY:Special Ability	VISIBLE:NO
-
-
-# Ability Pool Display
-Chronicle_S04-01_Enable	TYPE:Chronicle_S04-01	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-02_Enable	TYPE:Chronicle_S04-02	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-03_Enable	TYPE:Chronicle_S04-03	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-04_Enable	TYPE:Chronicle_S04-04	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-05_Enable	TYPE:Chronicle_S04-05	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-06_Enable	TYPE:Chronicle_S04-06	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-07_Enable	TYPE:Chronicle_S04-07	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-08_Enable	TYPE:Chronicle_S04-08	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-09_Enable	TYPE:Chronicle_S04-09	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-10_Enable	TYPE:Chronicle_S04-10	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-11_Enable	TYPE:Chronicle_S04-11	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-12_Enable	TYPE:Chronicle_S04-12	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-13_Enable	TYPE:Chronicle_S04-13	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-14_Enable	TYPE:Chronicle_S04-14	CATEGORY:Special Ability	VISIBLE:NO
-#Chronicle_S04-15_Enable	TYPE:Chronicle_S04-15	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-16_Enable	TYPE:Chronicle_S04-16	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-17_Enable	TYPE:Chronicle_S04-17	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-18_Enable	TYPE:Chronicle_S04-18	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-19_Enable	TYPE:Chronicle_S04-19	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-20_Enable	TYPE:Chronicle_S04-20	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-21_Enable	TYPE:Chronicle_S04-21	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-22_Enable	TYPE:Chronicle_S04-22	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-23_Enable	TYPE:Chronicle_S04-23	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-24_Enable	TYPE:Chronicle_S04-24	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-25_Enable	TYPE:Chronicle_S04-25	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-26_Enable	TYPE:Chronicle_S04-26	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-SP_Enable	TYPE:Chronicle_S04-SP	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-EX_Enable	TYPE:Chronicle_S04-EX	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S04-S2_Enable	TYPE:Chronicle_S04-S2	CATEGORY:Special Ability	VISIBLE:NO
-
-# Ability Pool Display
-Chronicle_S05-01_Enable	TYPE:Chronicle_S05-01	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-02_Enable	TYPE:Chronicle_S05-02	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-03_Enable	TYPE:Chronicle_S05-03	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-04_Enable	TYPE:Chronicle_S05-04	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-05_Enable	TYPE:Chronicle_S05-05	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-06_Enable	TYPE:Chronicle_S05-06	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-07_Enable	TYPE:Chronicle_S05-07	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-08_Enable	TYPE:Chronicle_S05-08	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-09_Enable	TYPE:Chronicle_S05-09	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-10_Enable	TYPE:Chronicle_S05-10	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-11_Enable	TYPE:Chronicle_S05-11	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-12_Enable	TYPE:Chronicle_S05-12	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-13_Enable	TYPE:Chronicle_S05-13	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-14_Enable	TYPE:Chronicle_S05-14	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-15_Enable	TYPE:Chronicle_S05-15	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-16_Enable	TYPE:Chronicle_S05-16	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-17_Enable	TYPE:Chronicle_S05-17	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-18_Enable	TYPE:Chronicle_S05-18	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-19_Enable	TYPE:Chronicle_S05-19	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-20_Enable	TYPE:Chronicle_S05-20	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-21_Enable	TYPE:Chronicle_S05-21	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-22_Enable	TYPE:Chronicle_S05-22	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-23_Enable	TYPE:Chronicle_S05-23	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-24_Enable	TYPE:Chronicle_S05-24	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-25_Enable	TYPE:Chronicle_S05-25	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-99_Enable	TYPE:Chronicle_S05-99	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-SP_Enable	TYPE:Chronicle_S05-SP	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_S05-S2_Enable	TYPE:Chronicle_S05-S2	CATEGORY:Special Ability	VISIBLE:NO
-
-# Ability Pool Display
-Chronicle_PZO9500-4_Enable	TYPE:Chronicle_PZO9500-4	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9500-5_Enable	TYPE:Chronicle_PZO9500-5	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9500-6_Enable	TYPE:Chronicle_PZO9500-6	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9500-7_Enable	TYPE:Chronicle_PZO9500-7	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9500-8_Enable	TYPE:Chronicle_PZO9500-8	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9520_Enable	TYPE:Chronicle_PZO9520		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9521_Enable	TYPE:Chronicle_PZO9521		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9522_Enable	TYPE:Chronicle_PZO9522		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9523_Enable	TYPE:Chronicle_PZO9523		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9524_Enable	TYPE:Chronicle_PZO9524		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9525_Enable	TYPE:Chronicle_PZO9525		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9526_Enable	TYPE:Chronicle_PZO9526		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9527_Enable	TYPE:Chronicle_PZO9527		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9528_Enable	TYPE:Chronicle_PZO9528		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9529_Enable	TYPE:Chronicle_PZO9529		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9530_Enable	TYPE:Chronicle_PZO9530		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9531_Enable	TYPE:Chronicle_PZO9531		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9532_Enable	TYPE:Chronicle_PZO9532		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9533_Enable	TYPE:Chronicle_PZO9533		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9534_Enable	TYPE:Chronicle_PZO9534		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9535_Enable	TYPE:Chronicle_PZO9535		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9536_Enable	TYPE:Chronicle_PZO9536		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9537_Enable	TYPE:Chronicle_PZO9537		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9538_Enable	TYPE:Chronicle_PZO9538		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9539_Enable	TYPE:Chronicle_PZO9539		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9540_Enable	TYPE:Chronicle_PZO9540		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9541_Enable	TYPE:Chronicle_PZO9541		CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9542-1_Enable	TYPE:Chronicle_PZO9542-1	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9542-2_Enable	TYPE:Chronicle_PZO9542-2	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9542-3_Enable	TYPE:Chronicle_PZO9542-3	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9542-4_Enable	TYPE:Chronicle_PZO9542-4	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-01_Enable	TYPE:Chronicle_PZO9545-01	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-02_Enable	TYPE:Chronicle_PZO9545-02	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-03_Enable	TYPE:Chronicle_PZO9545-03	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-04_Enable	TYPE:Chronicle_PZO9545-04	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-05_Enable	TYPE:Chronicle_PZO9545-05	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-06_Enable	TYPE:Chronicle_PZO9545-06	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-07_Enable	TYPE:Chronicle_PZO9545-07	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-08_Enable	TYPE:Chronicle_PZO9545-08	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-09_Enable	TYPE:Chronicle_PZO9545-09	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-10_Enable	TYPE:Chronicle_PZO9545-10	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-11_Enable	TYPE:Chronicle_PZO9545-11	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-12_Enable	TYPE:Chronicle_PZO9545-12	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-13_Enable	TYPE:Chronicle_PZO9545-13	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-14_Enable	TYPE:Chronicle_PZO9545-14	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-15_Enable	TYPE:Chronicle_PZO9545-15	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-16_Enable	TYPE:Chronicle_PZO9545-16	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZO9545-17_Enable	TYPE:Chronicle_PZO9545-17	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZOGWK0001-1_Enable	TYPE:Chronicle_PZOGWK0001-1	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZOGWK0001-2_Enable	TYPE:Chronicle_PZOGWK0001-2	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZOGWK0001-3_Enable	TYPE:Chronicle_PZOGWK0001-3	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZOGWK0001-4_Enable	TYPE:Chronicle_PZOGWK0001-4	CATEGORY:Special Ability	VISIBLE:NO
-Chronicle_PZOGWK0001-5_Enable	TYPE:Chronicle_PZOGWK0001-5	CATEGORY:Special Ability	VISIBLE:NO
-
 #
 # DONE
 #
-
-#CATEGORY=Internal|Default.MOD		ABILITY:Internal|AUTOMATIC|ChronicleTrackers
-#ChronicleTrackers		CATEGORY:Internal
-
-# Ability Pool Trackers
-##Chronicle_S00-01_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-01|AUTOMATIC|Chronicle_S00-01_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-01
-#Chronicle_S00-02_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-02|AUTOMATIC|Chronicle_S00-02_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-02
-##Chronicle_S00-03_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-03|AUTOMATIC|Chronicle_S00-03_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-03
-#Chronicle_S00-04_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-04|AUTOMATIC|Chronicle_S00-04_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-04
-##Chronicle_S00-05_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-05|AUTOMATIC|Chronicle_S00-05_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-05
-##Chronicle_S00-06_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-06|AUTOMATIC|Chronicle_S00-06_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-06
-##Chronicle_S00-07_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-07|AUTOMATIC|Chronicle_S00-07_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-07
-##Chronicle_S00-08_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-08|AUTOMATIC|Chronicle_S00-08_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-08
-#Chronicle_S00-09_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-09|AUTOMATIC|Chronicle_S00-09_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-09
-##Chronicle_S00-10_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-10|AUTOMATIC|Chronicle_S00-10_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-10
-##Chronicle_S00-11_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-11|AUTOMATIC|Chronicle_S00-11_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-11
-##Chronicle_S00-12_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-12|AUTOMATIC|Chronicle_S00-12_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-12
-##Chronicle_S00-13_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-13|AUTOMATIC|Chronicle_S00-13_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-13
-##Chronicle_S00-14_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-14|AUTOMATIC|Chronicle_S00-14_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-14
-#Chronicle_S00-15_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-15|AUTOMATIC|Chronicle_S00-15_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-15
-##Chronicle_S00-16_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-16|AUTOMATIC|Chronicle_S00-16_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-16
-##Chronicle_S00-17_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-17|AUTOMATIC|Chronicle_S00-17_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-17
-##Chronicle_S00-18_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-18|AUTOMATIC|Chronicle_S00-18_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-18
-##Chronicle_S00-19_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-19|AUTOMATIC|Chronicle_S00-19_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-19
-##Chronicle_S00-20_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-20|AUTOMATIC|Chronicle_S00-20_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-20
-##Chronicle_S00-21_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-21|AUTOMATIC|Chronicle_S00-21_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-21
-##Chronicle_S00-22_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-22|AUTOMATIC|Chronicle_S00-22_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-22
-##Chronicle_S00-23_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-23|AUTOMATIC|Chronicle_S00-23_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-23
-##Chronicle_S00-24_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-24|AUTOMATIC|Chronicle_S00-24_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-24
-##Chronicle_S00-25_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-25|AUTOMATIC|Chronicle_S00-25_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-25
-#Chronicle_S00-26_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-26|AUTOMATIC|Chronicle_S00-26_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-26
-#Chronicle_S00-27_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-27|AUTOMATIC|Chronicle_S00-27_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-27
-##sChronicle_S00-28_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S00-28|AUTOMATIC|Chronicle_S00-28_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S00-28
-
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-01_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-02_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-03_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-04_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-05_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-06_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-07_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-08_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-09_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-10_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-11_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-12_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-13_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-14_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-15_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-16_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-17_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-18_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-19_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-20_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-21_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-22_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-23_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-24_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-25_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-26_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-27_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S00-28_Tracker
-
-# Ability Pool Trackers
-##Chronicle_S01-29_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-29|AUTOMATIC|Chronicle_S01-29_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-29
-##Chronicle_S01-30_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-30|AUTOMATIC|Chronicle_S01-30_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-30
-##Chronicle_S01-31_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-31|AUTOMATIC|Chronicle_S01-31_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-31
-##Chronicle_S01-32_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-32|AUTOMATIC|Chronicle_S01-32_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-32
-#Chronicle_S01-33_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-33|AUTOMATIC|Chronicle_S01-33_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-33
-##Chronicle_S01-34_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-34|AUTOMATIC|Chronicle_S01-34_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-34
-##Chronicle_S01-35_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-35|AUTOMATIC|Chronicle_S01-35_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-35
-#Chronicle_S01-36_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-36|AUTOMATIC|Chronicle_S01-36_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-36
-#Chronicle_S01-37_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-37|AUTOMATIC|Chronicle_S01-37_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-37
-#Chronicle_S01-38_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-38|AUTOMATIC|Chronicle_S01-38_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-38
-##Chronicle_S01-39_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-39|AUTOMATIC|Chronicle_S01-39_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-39
-#Chronicle_S01-40_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-40|AUTOMATIC|Chronicle_S01-40_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-40
-#Chronicle_S01-41_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-41|AUTOMATIC|Chronicle_S01-41_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-41
-#Chronicle_S01-42_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-42|AUTOMATIC|Chronicle_S01-42_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-42
-#Chronicle_S01-43_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-43|AUTOMATIC|Chronicle_S01-43_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-43
-#Chronicle_S01-44_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-44|AUTOMATIC|Chronicle_S01-44_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-44
-#Chronicle_S01-45_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-45|AUTOMATIC|Chronicle_S01-45_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-45
-##Chronicle_S01-46_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-46|AUTOMATIC|Chronicle_S01-46_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-46
-##Chronicle_S01-47_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-47|AUTOMATIC|Chronicle_S01-47_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-47
-##Chronicle_S01-48_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-48|AUTOMATIC|Chronicle_S01-48_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-48
-##Chronicle_S01-49_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-49|AUTOMATIC|Chronicle_S01-49_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-49
-#Chronicle_S01-50_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-50|AUTOMATIC|Chronicle_S01-50_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-50
-##Chronicle_S01-51_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-51|AUTOMATIC|Chronicle_S01-51_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-51
-##Chronicle_S01-52_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-52|AUTOMATIC|Chronicle_S01-52_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-52
-#Chronicle_S01-53_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-53|AUTOMATIC|Chronicle_S01-53_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-53
-##Chronicle_S01-54_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-54|AUTOMATIC|Chronicle_S01-54_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-54
-##Chronicle_S01-55_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-55|AUTOMATIC|Chronicle_S01-55_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-55
-##Chronicle_S01-56_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S01-56|AUTOMATIC|Chronicle_S01-56_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S01-56
-
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-29_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-30_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-31_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-32_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-33_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-34_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-35_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-36_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-37_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-38_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-39_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-40_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-41_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-42_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-43_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-44_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-45_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-46_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-47_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-48_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-49_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-50_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-51_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-52_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-53_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-54_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-55_Tracker
-##CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S01-56_Tracker
-
-# Ability Pool Trackers
-#Chronicle_S02-01_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-01|AUTOMATIC|Chronicle_S02-01_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-01
-#Chronicle_S02-02_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-02|AUTOMATIC|Chronicle_S02-02_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-02
-#Chronicle_S02-03_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-03|AUTOMATIC|Chronicle_S02-03_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-03
-#Chronicle_S02-04_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-04|AUTOMATIC|Chronicle_S02-04_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-04
-#Chronicle_S02-05_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-05|AUTOMATIC|Chronicle_S02-05_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-05
-#Chronicle_S02-06_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-06|AUTOMATIC|Chronicle_S02-06_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-06
-#Chronicle_S02-07_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-07|AUTOMATIC|Chronicle_S02-07_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-07
-#Chronicle_S02-08_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-08|AUTOMATIC|Chronicle_S02-08_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-08
-#Chronicle_S02-09_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-09|AUTOMATIC|Chronicle_S02-09_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-09
-#Chronicle_S02-10_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-10|AUTOMATIC|Chronicle_S02-10_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-10
-#Chronicle_S02-11_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-11|AUTOMATIC|Chronicle_S02-11_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-11
-#Chronicle_S02-12_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-12|AUTOMATIC|Chronicle_S02-12_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-12
-#Chronicle_S02-13_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-13|AUTOMATIC|Chronicle_S02-13_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-13
-#Chronicle_S02-14_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-14|AUTOMATIC|Chronicle_S02-14_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-14
-#Chronicle_S02-15_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-15|AUTOMATIC|Chronicle_S02-15_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-15
-#Chronicle_S02-16_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-16|AUTOMATIC|Chronicle_S02-16_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-16
-#Chronicle_S02-17_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-17|AUTOMATIC|Chronicle_S02-17_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-17
-#Chronicle_S02-18_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-18|AUTOMATIC|Chronicle_S02-18_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-18
-#Chronicle_S02-19_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-19|AUTOMATIC|Chronicle_S02-19_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-19
-#Chronicle_S02-20_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-20|AUTOMATIC|Chronicle_S02-20_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-20
-#Chronicle_S02-21_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-21|AUTOMATIC|Chronicle_S02-21_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-21
-#Chronicle_S02-22_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-22|AUTOMATIC|Chronicle_S02-22_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-22
-#Chronicle_S02-23_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-23|AUTOMATIC|Chronicle_S02-23_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-23
-#Chronicle_S02-24_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-24|AUTOMATIC|Chronicle_S02-24_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-24
-#Chronicle_S02-25_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-25|AUTOMATIC|Chronicle_S02-25_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-25
-#Chronicle_S02-26_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-26|AUTOMATIC|Chronicle_S02-26_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-26
-#Chronicle_S02-SP_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S02-SP|AUTOMATIC|Chronicle_S02-SP_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S02-SP
-
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-01_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-02_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-03_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-04_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-05_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-06_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-07_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-08_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-09_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-10_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-11_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-12_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-13_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-14_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-15_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-16_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-17_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-18_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-19_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-20_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-21_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-22_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-23_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-24_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-25_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-26_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S02-SP_Tracker
-
-# Ability Pool Trackers
-#Chronicle_S03-01_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-01|AUTOMATIC|Chronicle_S03-01_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-01
-#Chronicle_S03-02_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-02|AUTOMATIC|Chronicle_S03-02_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-02
-#Chronicle_S03-03_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-03|AUTOMATIC|Chronicle_S03-03_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-03
-#Chronicle_S03-04_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-04|AUTOMATIC|Chronicle_S03-04_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-04
-#Chronicle_S03-05_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-05|AUTOMATIC|Chronicle_S03-05_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-05
-#Chronicle_S03-06_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-06|AUTOMATIC|Chronicle_S03-06_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-06
-#Chronicle_S03-07_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-07|AUTOMATIC|Chronicle_S03-07_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-07
-#Chronicle_S03-08_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-08|AUTOMATIC|Chronicle_S03-08_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-08
-#Chronicle_S03-09_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-09|AUTOMATIC|Chronicle_S03-09_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-09
-#Chronicle_S03-10_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-10|AUTOMATIC|Chronicle_S03-10_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-10
-#Chronicle_S03-11_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-11|AUTOMATIC|Chronicle_S03-11_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-11
-#Chronicle_S03-12_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-12|AUTOMATIC|Chronicle_S03-12_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-12
-#Chronicle_S03-13_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-13|AUTOMATIC|Chronicle_S03-13_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-13
-#Chronicle_S03-14_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-14|AUTOMATIC|Chronicle_S03-14_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-14
-#Chronicle_S03-15_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-15|AUTOMATIC|Chronicle_S03-15_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-15
-#Chronicle_S03-16_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-16|AUTOMATIC|Chronicle_S03-16_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-16
-#Chronicle_S03-17_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-17|AUTOMATIC|Chronicle_S03-17_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-17
-#Chronicle_S03-18_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-18|AUTOMATIC|Chronicle_S03-18_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-18
-#Chronicle_S03-19_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-19|AUTOMATIC|Chronicle_S03-19_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-19
-#Chronicle_S03-20_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-20|AUTOMATIC|Chronicle_S03-20_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-20
-#Chronicle_S03-21_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-21|AUTOMATIC|Chronicle_S03-21_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-21
-#Chronicle_S03-22_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-22|AUTOMATIC|Chronicle_S03-22_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-22
-#Chronicle_S03-23_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-23|AUTOMATIC|Chronicle_S03-23_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-23
-#Chronicle_S03-24_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-24|AUTOMATIC|Chronicle_S03-24_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-24
-#Chronicle_S03-25_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-25|AUTOMATIC|Chronicle_S03-25_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-25
-#Chronicle_S03-26_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-26|AUTOMATIC|Chronicle_S03-26_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-26
-#Chronicle_S03-SP_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S03-SP|AUTOMATIC|Chronicle_S03-SP_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S03-SP
-
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-01_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-02_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-03_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-04_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-05_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-06_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-07_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-08_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-09_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-10_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-11_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-12_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-13_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-14_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-15_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-16_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-17_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-18_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-19_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-20_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-21_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-22_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-23_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-24_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-25_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-26_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S03-SP_Tracker
-
-# Ability Pool Trackers
-#Chronicle_S04-01_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-01|AUTOMATIC|Chronicle_S04-01_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-01
-#Chronicle_S04-02_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-02|AUTOMATIC|Chronicle_S04-02_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-02
-#Chronicle_S04-03_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-03|AUTOMATIC|Chronicle_S04-03_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-03
-#Chronicle_S04-04_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-04|AUTOMATIC|Chronicle_S04-04_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-04
-#Chronicle_S04-05_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-05|AUTOMATIC|Chronicle_S04-05_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-05
-#Chronicle_S04-06_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-06|AUTOMATIC|Chronicle_S04-06_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-06
-#Chronicle_S04-07_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-07|AUTOMATIC|Chronicle_S04-07_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-07
-#Chronicle_S04-08_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-08|AUTOMATIC|Chronicle_S04-08_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-08
-#Chronicle_S04-09_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-09|AUTOMATIC|Chronicle_S04-09_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-09
-#Chronicle_S04-10_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-10|AUTOMATIC|Chronicle_S04-10_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-10
-#Chronicle_S04-11_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-11|AUTOMATIC|Chronicle_S04-11_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-11
-#Chronicle_S04-12_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-12|AUTOMATIC|Chronicle_S04-12_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-12
-#Chronicle_S04-13_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-13|AUTOMATIC|Chronicle_S04-13_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-13
-#Chronicle_S04-14_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-14|AUTOMATIC|Chronicle_S04-14_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-14
-#Chronicle_S04-15_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-15|AUTOMATIC|Chronicle_S04-15_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-15
-#Chronicle_S04-16_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-16|AUTOMATIC|Chronicle_S04-16_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-16
-#Chronicle_S04-17_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-17|AUTOMATIC|Chronicle_S04-17_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-17
-#Chronicle_S04-18_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-18|AUTOMATIC|Chronicle_S04-18_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-18
-#Chronicle_S04-19_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-19|AUTOMATIC|Chronicle_S04-19_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-19
-#Chronicle_S04-20_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-20|AUTOMATIC|Chronicle_S04-20_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-20
-#Chronicle_S04-21_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-21|AUTOMATIC|Chronicle_S04-21_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-21
-#Chronicle_S04-22_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-22|AUTOMATIC|Chronicle_S04-22_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-22
-#Chronicle_S04-23_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-23|AUTOMATIC|Chronicle_S04-23_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-23
-#Chronicle_S04-24_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-24|AUTOMATIC|Chronicle_S04-24_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-24
-#Chronicle_S04-25_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-25|AUTOMATIC|Chronicle_S04-25_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-25
-#Chronicle_S04-26_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-26|AUTOMATIC|Chronicle_S04-26_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-26
-#Chronicle_S04-SP_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S04-SP|AUTOMATIC|Chronicle_S04-SP_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S04-SP
-
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-01_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-02_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-03_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-04_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-05_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-06_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-07_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-08_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-09_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-10_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-11_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-12_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-13_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-14_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-15_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-16_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-17_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-18_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-19_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-20_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-21_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-22_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-23_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-24_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-25_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-26_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S04-SP_Tracker
-
-# Ability Pool Trackers
-#Chronicle_S05-01_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-01|AUTOMATIC|Chronicle_S05-01_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-01
-#Chronicle_S05-02_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-02|AUTOMATIC|Chronicle_S05-02_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-02
-#Chronicle_S05-03_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-03|AUTOMATIC|Chronicle_S05-03_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-03
-#Chronicle_S05-04_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-04|AUTOMATIC|Chronicle_S05-04_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-04
-#Chronicle_S05-05_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-05|AUTOMATIC|Chronicle_S05-05_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-05
-#Chronicle_S05-06_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-06|AUTOMATIC|Chronicle_S05-06_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-06
-#Chronicle_S05-07_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-07|AUTOMATIC|Chronicle_S05-07_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-07
-#Chronicle_S05-08_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-08|AUTOMATIC|Chronicle_S05-08_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-08
-#Chronicle_S05-09_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-09|AUTOMATIC|Chronicle_S05-09_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-09
-#Chronicle_S05-10_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-10|AUTOMATIC|Chronicle_S05-10_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-10
-#Chronicle_S05-11_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-11|AUTOMATIC|Chronicle_S05-11_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-11
-#Chronicle_S05-12_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-12|AUTOMATIC|Chronicle_S05-12_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-12
-#Chronicle_S05-13_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-13|AUTOMATIC|Chronicle_S05-13_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-13
-#Chronicle_S05-14_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-14|AUTOMATIC|Chronicle_S05-14_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-14
-#Chronicle_S05-15_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-15|AUTOMATIC|Chronicle_S05-15_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-15
-#Chronicle_S05-16_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-16|AUTOMATIC|Chronicle_S05-16_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-16
-#Chronicle_S05-17_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-17|AUTOMATIC|Chronicle_S05-17_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-17
-#Chronicle_S05-18_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-18|AUTOMATIC|Chronicle_S05-18_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-18
-#Chronicle_S05-19_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-19|AUTOMATIC|Chronicle_S05-19_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-19
-#Chronicle_S05-20_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-20|AUTOMATIC|Chronicle_S05-20_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-20
-#Chronicle_S05-21_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-21|AUTOMATIC|Chronicle_S05-21_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-21
-#Chronicle_S05-22_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-22|AUTOMATIC|Chronicle_S05-22_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-22
-#Chronicle_S05-23_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-23|AUTOMATIC|Chronicle_S05-23_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-23
-#Chronicle_S05-24_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-24|AUTOMATIC|Chronicle_S05-24_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-24
-#Chronicle_S05-25_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-25|AUTOMATIC|Chronicle_S05-25_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-25
-#Chronicle_S05-99_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-99|AUTOMATIC|Chronicle_S05-99_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-99
-#Chronicle_S05-SP_Tracker	CATEGORY:Internal		ABILITY:Chronicle_S05-SP|AUTOMATIC|Chronicle_S05-SP_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ S05-SP
-
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-01_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-02_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-03_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-04_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-05_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-06_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-07_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-08_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-09_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-10_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-11_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-12_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-13_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-14_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-15_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-16_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-17_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-18_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-19_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-20_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-21_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-22_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-23_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-24_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-25_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-99_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_S05-SP_Tracker
-
-# Ability Pool Trackers
-#Chronicle_PZO9500-4_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9500-4|AUTOMATIC|Chronicle_PZO9500-4_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-4
-#Chronicle_PZO9500-5_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9500-5|AUTOMATIC|Chronicle_PZO9500-5_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-5
-#Chronicle_PZO9500-6_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9500-6|AUTOMATIC|Chronicle_PZO9500-6_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-6
-#Chronicle_PZO9500-7_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9500-7|AUTOMATIC|Chronicle_PZO9500-7_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-7
-#Chronicle_PZO9500-8_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9500-8|AUTOMATIC|Chronicle_PZO9500-8_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9500-8
-#Chronicle_PZO9520_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9520|AUTOMATIC|Chronicle_PZO9520_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9520
-#Chronicle_PZO9521_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9521|AUTOMATIC|Chronicle_PZO9521_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9521
-#Chronicle_PZO9522_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9522|AUTOMATIC|Chronicle_PZO9522_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9522
-#Chronicle_PZO9523_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9523|AUTOMATIC|Chronicle_PZO9523_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9523
-#Chronicle_PZO9524_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9524|AUTOMATIC|Chronicle_PZO9524_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9524
-#Chronicle_PZO9525_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9525|AUTOMATIC|Chronicle_PZO9525_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9525
-#Chronicle_PZO9526_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9526|AUTOMATIC|Chronicle_PZO9526_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9526
-#Chronicle_PZO9527_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9527|AUTOMATIC|Chronicle_PZO9527_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9527
-#Chronicle_PZO9528_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9528|AUTOMATIC|Chronicle_PZO9528_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9528
-#Chronicle_PZO9529_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9529|AUTOMATIC|Chronicle_PZO9529_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9529
-#Chronicle_PZO9530_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9530|AUTOMATIC|Chronicle_PZO9530_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9530
-#Chronicle_PZO9531_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9531|AUTOMATIC|Chronicle_PZO9531_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9531
-#Chronicle_PZO9532_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9532|AUTOMATIC|Chronicle_PZO9532_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9532
-#Chronicle_PZO9533_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9533|AUTOMATIC|Chronicle_PZO9533_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9533
-#Chronicle_PZO9534_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9534|AUTOMATIC|Chronicle_PZO9534_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9534
-#Chronicle_PZO9535_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9535|AUTOMATIC|Chronicle_PZO9535_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9535
-#Chronicle_PZO9536_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9536|AUTOMATIC|Chronicle_PZO9536_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9536
-#Chronicle_PZO9537_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9537|AUTOMATIC|Chronicle_PZO9537_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9537
-#Chronicle_PZO9538_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9538|AUTOMATIC|Chronicle_PZO9538_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9538
-#Chronicle_PZO9539_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9539|AUTOMATIC|Chronicle_PZO9539_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9539
-#Chronicle_PZO9540_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9540|AUTOMATIC|Chronicle_PZO9540_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9540
-#Chronicle_PZO9541_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9541|AUTOMATIC|Chronicle_PZO9541_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9541
-#Chronicle_PZO9542-1_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9542-1|AUTOMATIC|Chronicle_PZO9542-1_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-1
-#Chronicle_PZO9542-2_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9542-2|AUTOMATIC|Chronicle_PZO9542-2_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-2
-#Chronicle_PZO9542-3_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9542-3|AUTOMATIC|Chronicle_PZO9542-3_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-3
-#Chronicle_PZO9542-4_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9542-4|AUTOMATIC|Chronicle_PZO9542-4_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9542-4
-#Chronicle_PZO9545-01_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-01|AUTOMATIC|Chronicle_PZO9545-01_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-01
-#Chronicle_PZO9545-02_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-02|AUTOMATIC|Chronicle_PZO9545-02_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-02
-#Chronicle_PZO9545-03_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-03|AUTOMATIC|Chronicle_PZO9545-03_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-03
-#Chronicle_PZO9545-04_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-04|AUTOMATIC|Chronicle_PZO9545-04_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-04
-#Chronicle_PZO9545-05_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-05|AUTOMATIC|Chronicle_PZO9545-05_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-05
-#Chronicle_PZO9545-06_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-06|AUTOMATIC|Chronicle_PZO9545-06_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-06
-#Chronicle_PZO9545-07_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-07|AUTOMATIC|Chronicle_PZO9545-07_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-07
-#Chronicle_PZO9545-08_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-08|AUTOMATIC|Chronicle_PZO9545-08_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-08
-#Chronicle_PZO9545-09_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-09|AUTOMATIC|Chronicle_PZO9545-09_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-09
-#Chronicle_PZO9545-10_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-10|AUTOMATIC|Chronicle_PZO9545-10_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-10
-#Chronicle_PZO9545-11_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-11|AUTOMATIC|Chronicle_PZO9545-11_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-11
-#Chronicle_PZO9545-12_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-12|AUTOMATIC|Chronicle_PZO9545-12_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-12
-#Chronicle_PZO9545-13_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-13|AUTOMATIC|Chronicle_PZO9545-13_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-13
-#Chronicle_PZO9545-14_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-14|AUTOMATIC|Chronicle_PZO9545-14_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-14
-#Chronicle_PZO9545-15_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-15|AUTOMATIC|Chronicle_PZO9545-15_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-15
-#Chronicle_PZO9545-16_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-16|AUTOMATIC|Chronicle_PZO9545-16_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-16
-#Chronicle_PZO9545-17_Tracker		CATEGORY:Internal		ABILITY:Chronicle_PZO9545-17|AUTOMATIC|Chronicle_PZO9545-17_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZO9545-17
-#Chronicle_PZOGWK0001-1_Tracker	CATEGORY:Internal		ABILITY:Chronicle_PZOGWK0001-1|AUTOMATIC|Chronicle_PZOGWK0001-1_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-1
-#Chronicle_PZOGWK0001-2_Tracker	CATEGORY:Internal		ABILITY:Chronicle_PZOGWK0001-2|AUTOMATIC|Chronicle_PZOGWK0001-2_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-2
-#Chronicle_PZOGWK0001-3_Tracker	CATEGORY:Internal		ABILITY:Chronicle_PZOGWK0001-3|AUTOMATIC|Chronicle_PZOGWK0001-3_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-3
-#Chronicle_PZOGWK0001-4_Tracker	CATEGORY:Internal		ABILITY:Chronicle_PZOGWK0001-4|AUTOMATIC|Chronicle_PZOGWK0001-4_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-4
-#Chronicle_PZOGWK0001-5_Tracker	CATEGORY:Internal		ABILITY:Chronicle_PZOGWK0001-5|AUTOMATIC|Chronicle_PZOGWK0001-5_Enable|PREABILITY:1,CATEGORY=PFS Chronicle,Chronicle ~ PZOGWK0001-5
-
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9500-4_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9500-5_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9500-6_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9500-7_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9500-8_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9520_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9521_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9522_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9523_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9524_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9525_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9526_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9527_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9528_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9529_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9530_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9531_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9532_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9533_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9534_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9535_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9536_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9537_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9538_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9539_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9540_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9541_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9542-1_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9542-2_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9542-3_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9542-4_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-01_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-02_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-03_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-04_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-05_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-06_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-07_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-08_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-09_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-10_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-11_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-12_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-13_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-14_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-15_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-16_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZO9545-17_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZOGWK0001-1_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZOGWK0001-2_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZOGWK0001-3_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZOGWK0001-4_Tracker
-#CATEGORY=Internal|ChronicleTrackers.MOD	ABILITY:Internal|AUTOMATIC|Chronicle_PZOGWK0001-5_Tracker
-
