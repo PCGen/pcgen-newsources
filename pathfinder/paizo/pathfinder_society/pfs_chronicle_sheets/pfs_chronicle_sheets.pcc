@@ -28,7 +28,7 @@ ABILITYCATEGORY:pfscs_abilitycategories.lst
 # EQUIPMENT:pfscs_equip_arms_armor.lst
 # EQUIPMENT:pfscs_equip_general.lst
 EQUIPMENT:pfscs_equip.lst
-# EQUIPMOD:pfscs_equipmods.lst
+EQUIPMOD:pfscs_equipmods.lst
 # FEAT:pfscs_feats.lst
 # KIT:pfscs_kits.lst
 # LANGUAGE:pfscs_languages.lst
@@ -40,6 +40,19 @@ EQUIPMENT:pfscs_equip.lst
 # ARMORPROF:pfscs_profs_armor.lst
 # SHIELDPROF:pfscs_profs_shield.lst
 # WEAPONPROF:pfscs_profs_weapon.lst
+
+# forward refs for APG entries
+FORWARDREF:EQMOD|ALLYING
+
+# load these UE entries if UE otherwise not loaded
+#EQUIPMENT:@/pathfinder/paizo/roleplaying_game/ultimate_equipment/ue_equip_arms_armor.lst|(INCLUDE:Dogslicer)|!PRECAMPAIGN:1,Ultimate Equipment
+#WEAPONPROF:@/pathfinder/paizo/roleplaying_game/ultimate_equipment/ue_profs_weapon.lst|(INCLUDE:Dogslicer)|!PRECAMPAIGN:1,Ultimate Equipment
+
+EQUIPMENT:@/pathfinder/paizo/roleplaying_game/advanced_race_guide/arg_equip_arms_armor.lst|(INCLUDE:Dogslicer)|!PRECAMPAIGN:1,Advanced Race Guide
+WEAPONPROF:@/pathfinder/paizo/roleplaying_game/advanced_race_guide/arg_profs_weapon.lst|(INCLUDE:Dogslicer)|!PRECAMPAIGN:1,Advanced Race Guide
+
+ABILITYCATEGORY:@/pathfinder/paizo/campaign_setting/pathfinder_society_field_guide/pfsfg_abilitycategories_skillspecialization.lst|!PRECAMPAIGN:1,Pathfinder Society Field Guide
+ABILITY:@/pathfinder/paizo/campaign_setting/pathfinder_society_field_guide/pfsfg_abilities_skillspecialization.lst|!PRECAMPAIGN:1,Pathfinder Society Field Guide
 
 ### You can hide TYPEs in the GUI - TYPEs are handy for organization, but some are only used for internal functions.
 #HIDETYPE:EQUIP|SpecialSuppressor
