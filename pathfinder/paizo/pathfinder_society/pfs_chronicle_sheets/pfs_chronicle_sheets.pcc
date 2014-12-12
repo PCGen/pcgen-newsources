@@ -28,7 +28,7 @@ ABILITYCATEGORY:pfscs_abilitycategories.lst
 # EQUIPMENT:pfscs_equip_arms_armor.lst
 # EQUIPMENT:pfscs_equip_general.lst
 EQUIPMENT:pfscs_equip.lst
-# EQUIPMOD:pfscs_equipmods.lst
+EQUIPMOD:pfscs_equipmods.lst
 # FEAT:pfscs_feats.lst
 # KIT:pfscs_kits.lst
 # LANGUAGE:pfscs_languages.lst
@@ -41,15 +41,23 @@ EQUIPMENT:pfscs_equip.lst
 # SHIELDPROF:pfscs_profs_shield.lst
 # WEAPONPROF:pfscs_profs_weapon.lst
 
-### You can hide TYPEs in the GUI - TYPEs are handy for organization, but some are only used for internal functions.
-#HIDETYPE:EQUIP|SpecialSuppressor
-#HIDETYPE:SKILL|Science
-#HIDETYPE:FEAT|Leadership
+# load these in case the source isn't loaded
 
-#Remove the '#' in front of those lines referring to files that you actually want to load
-#Remember to set the GAMEMODE to the one you really want.
-#Options in the Open Source data are 3e, 35e, Modern, Deadlands, Sidewinder, Spycraft, or Xcrawl.
+# needed for Gorge of Gluttons
+EQUIPMENT:@/pathfinder/paizo/roleplaying_game/advanced_race_guide/arg_equip_arms_armor.lst|(INCLUDE:Dogslicer)|!PRECAMPAIGN:1,Advanced Race Guide
+WEAPONPROF:@/pathfinder/paizo/roleplaying_game/advanced_race_guide/arg_profs_weapon.lst|(INCLUDE:Dogslicer)|!PRECAMPAIGN:1,Advanced Race Guide
+EQUIPMOD:@/pathfinder/paizo/roleplaying_game/ultimate_equipment/ue_equipmods.lst|(INCLUDE:FRAGILE)|!PRECAMPAIGN:1,Ultimate Equipment
 
-#If you use this framework to set up a dataset of your own, then you may want to rename the folder and files to something
-#different. Otherwise if you ever should install a newer version of PCGen into your existing directory or needed to re-install
-#your existing installation of PCGen, your changes would get overwritten and thus be lost.
+# needed for Skill Specialization
+ABILITYCATEGORY:@/pathfinder/paizo/campaign_setting/pathfinder_society_field_guide/pfsfg_abilitycategories_skillspecialization.lst|!PRECAMPAIGN:1,Pathfinder Society Field Guide
+ABILITY:@/pathfinder/paizo/campaign_setting/pathfinder_society_field_guide/pfsfg_abilities_skillspecialization.lst|!PRECAMPAIGN:1,Pathfinder Society Field Guide
+
+# needed for Gamin the Misforged
+EQUIPMOD:@/pathfinder/paizo/roleplaying_game/advanced_players_guide/apg_equipmods.lst|(INCLUDE:ALLYING)|!PRECAMPAIGN:1,Advanced Player's Guide
+
+# needed for Glorymane
+EQUIPMOD:@/pathfinder/paizo/roleplaying_game/ultimate_equipment/ue_equipmods.lst|(INCLUDE:BRONZE)|!PRECAMPAIGN:1,Ultimate Equipment
+
+#
+# DONE
+#
