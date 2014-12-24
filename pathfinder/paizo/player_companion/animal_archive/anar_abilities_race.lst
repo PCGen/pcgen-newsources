@@ -27,3 +27,31 @@ Trained for Air Support		SORTKEY:1 Animal Trained for Air Support	KEY:Animal Tra
 Burglar				SORTKEY:1 Animal Trained for Burglar	KEY:Animal Training ~ Burglar		CATEGORY:Special Ability	TYPE:AnimalTrick.AnimalTraining.General.SpecialQuality	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AnimalTraining	ABILITY:Animal Trick|AUTOMATIC|Animal Trick ~ Come|Animal Trick ~ Fetch|Animal Trick ~ Maneuver|Animal Trick ~ Seek|Animal Trick ~ Sneak	COST:5	SOURCEPAGE:p.9	DESC:An animal trained as a burglar knows the come, fetch, maneuver (steal), seek, and sneak tricks. You can order it to steal a specific item you point out.
 Liberator				SORTKEY:1 Animal Trained for Liberator	KEY:Animal Training ~ Liberator	CATEGORY:Special Ability	TYPE:AnimalTrick.AnimalTraining.General.SpecialQuality	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AnimalTraining	ABILITY:Animal Trick|AUTOMATIC|Animal Trick ~ Break Out|Animal Trick ~ Flee|Animal Trick ~ Get Help							COST:3	SOURCEPAGE:p.9	DESC:An animal trained in liberating knows the break out, flee, and get help tricks.
 Servant				SORTKEY:1 Animal Trained for Servant	KEY:Animal Training ~ Servant		CATEGORY:Special Ability	TYPE:AnimalTrick.AnimalTraining.General.SpecialQuality	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AnimalTraining	ABILITY:Animal Trick|AUTOMATIC|Animal Trick ~ Deliver|Animal Trick ~ Exclusive|Animal Trick ~ Serve							COST:3	SOURCEPAGE:p.9	DESC:An animal trained as a servant knows the deliver, exclusive, and serve tricks.
+
+###Block: Companion Support
+
+Companion Advancement (Llama)				KEY:Companion Advancement ~ Llama				CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY	PRERACE:1,Companion (Llama)																																				BONUS:SIZEMOD|NUMBER|1
+# +6 STR, +8 is Size to Large, -2 bonused to offset Size
+Companion Advancement (Moose)				KEY:Companion Advancement ~ Moose				CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY	PRERACE:1,Companion (Moose)																																				BONUS:SIZEMOD|NUMBER|1	ABILITY:Special Ability|AUTOMATIC|Powerful Charge	BONUS:STAT|STR|-2
+Companion Advancement (Panda)				KEY:Companion Advancement ~ Panda				CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY	PRERACE:1,Companion (Panda)																																				BONUS:SIZEMOD|NUMBER|1	ABILITY:Special Ability|AUTOMATIC|Panda ~ Powerful Bite	
+Companion Advancement (Walrus)			KEY:Companion Advancement ~ Walrus				CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY	PRERACE:1,Companion (Walrus)																																				BONUS:SIZEMOD|NUMBER|1	ABILITY:Special Ability|AUTOMATIC|Walrus ~ Fatal Gore
+
+
+Race Traits ~ Companion (Llama)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite
+Race Traits ~ Llama				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite		ABILITY:Special Ability|AUTOMATIC|Llama ~ Spit
+
+Race Traits ~ Moose				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore|Hooves	ABILITY:Special Ability|AUTOMATIC|Scent|Powerful Charge
+Race Traits ~ Companion (Moose)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore|Hooves
+
+Race Traits ~ Panda				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite|Claws	ABILITY:Special Ability|AUTOMATIC|Panda ~ Powerful Bite
+Race Traits ~ Companion (Panda)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite|Claws
+
+Race Traits ~ Walrus				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore	ABILITY:Special Ability|AUTOMATIC|Walrus ~ Fatal Gore|Hold Breath
+Race Traits ~ Companion (Walrus)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore	ABILITY:Special Ability|AUTOMATIC|Hold Breath
+
+
+Spit			KEY:Llama ~ Spit				TYPE:Extraordinary.SpecialAttack	CATEGORY:Special Ability	DESC:Once per hour, a llama can regurgitate the contents of its stomach, spitting the foul material at a single target within 10 feet. The target must succeed at a DC 12 Fortitude save or be sickened for 1d4 rounds. The save DC is Constitution-based.
+Powerful Bite	KEY:Panda ~ Powerful Bite		TYPE:Extraordinary.SpecialQuality	CATEGORY:Special Ability	DESC:A panda applies twice its Strength bonus to bite damage.	BONUS:WEAPONPROF=Bite|DAMAGE|STR*2
+Fatal Gore		KEY:Walrus ~ Fatal Gore			TYPE:Extraordinary.SpecialQuality	CATEGORY:Special Ability	DESC:A walrus threatens a critical hit with gore attacks on a roll of 19 or 20.	BONUS:WEAPONPROF=Gore|CRITRANGE|1
+Natural Diver	KEY:Armadillo ~ Natural Diver		TYPE:Extraordinary.SpecialQuality	CATEGORY:Special Ability	DESC:Armadillos can hold their breath underwater for up to 6 minutes. Their dense armor naturally causes them to sink; they can inflate their stomachs to counter this, accounting for their racial bonus on Swim checks.
+Protective Ball	KEY:Armadillo ~ Protective Ball	TYPE:Extraordinary.SpecialQuality	CATEGORY:Special Ability	DESC:Some armadillos can roll up into a ball, increasing their natural armor bonus to +3 but decreasing their speed to 0.
