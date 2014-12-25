@@ -40,11 +40,11 @@ Companion Advancement (Walrus)			KEY:Companion Advancement ~ Walrus				CATEGORY:
 Race Traits ~ Companion (Llama)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite
 Race Traits ~ Llama				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite		ABILITY:Special Ability|AUTOMATIC|Llama ~ Spit
 
-Race Traits ~ Moose				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore|Hooves	ABILITY:Special Ability|AUTOMATIC|Scent|Powerful Charge
-Race Traits ~ Companion (Moose)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore|Hooves
+Race Traits ~ Moose				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore|Hoof	ABILITY:Special Ability|AUTOMATIC|Scent|Powerful Charge
+Race Traits ~ Companion (Moose)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore|Hoof
 
-Race Traits ~ Panda				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite|Claws	ABILITY:Special Ability|AUTOMATIC|Panda ~ Powerful Bite
-Race Traits ~ Companion (Panda)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite|Claws
+Race Traits ~ Panda				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite|Claw	ABILITY:Special Ability|AUTOMATIC|Panda ~ Powerful Bite
+Race Traits ~ Companion (Panda)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Bite|Claw
 
 Race Traits ~ Walrus				CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore	ABILITY:Special Ability|AUTOMATIC|Walrus ~ Fatal Gore|Hold Breath
 Race Traits ~ Companion (Walrus)		CATEGORY:Internal	ABILITY:Internal|AUTOMATIC|Gore	ABILITY:Special Ability|AUTOMATIC|Hold Breath
@@ -64,3 +64,43 @@ Platypus ~ Semiaquatic		SOURCEPAGE:p.30	TYPE:Extraordinary.SpecialQuality	CATEGO
 Race Traits ~ Skunk					CATEGORY:Internal																																																																																																																																																ABILITY:Special Ability|AUTOMATIC|TYPE=SkunkRacialAbility
 #
 Musk						KEY:Skunk ~ Musk						CATEGORY:Special Ability	TYPE:SkunkRacialAbility.SpecialQuality.Extraordinary																																																																																																																																																																																																																																					DESC:Up to twice per day, a skunk can spray a stream of noxious musk at a single target within 10 feet as a standard action. With a successful ranged touch attack, the creature struck by this spray must make a DC 11 Fortitude save or be nauseated for 1d4 rounds and then sickened for 1d4 minutes by the horrific stench. A successful save reduces the effect to only 1d4 rounds of being sickened. A creature cannot use the scent ability as long as it is affected by this musk. The save DC is Constitution-based, and includes a +2 racial bonus.																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															SOURCEPAGE:p.247
+
+
+###Block: EqSlots for Companions
+Armor		TYPE:EqSlot	CATEGORY:EqSlot
+Belt		TYPE:EqSlot	CATEGORY:EqSlot
+Body		TYPE:EqSlot	CATEGORY:EqSlot
+Chest		TYPE:EqSlot	CATEGORY:EqSlot
+Eyes		TYPE:EqSlot	CATEGORY:EqSlot
+Feet		TYPE:EqSlot	CATEGORY:EqSlot
+Hands		TYPE:EqSlot	CATEGORY:EqSlot
+Head		TYPE:EqSlot	CATEGORY:EqSlot
+Headband	TYPE:EqSlot	CATEGORY:EqSlot
+Neck		TYPE:EqSlot	CATEGORY:EqSlot
+Ring		TYPE:EqSlot	CATEGORY:EqSlot
+Shield	TYPE:EqSlot	CATEGORY:EqSlot
+Shoulders	TYPE:EqSlot	CATEGORY:EqSlot
+Wrist		TYPE:EqSlot	CATEGORY:EqSlot
+Torso		TYPE:EqSlot	CATEGORY:EqSlot
+Weapon	TYPE:EqSlot	CATEGORY:EqSlot
+
+###Block: Companion Slot Support
+EQSlot Tracker	CATEGORY:EqSlot
+#
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Armor|-1|!PREABILITY:1,CATEGORY=EqSlot,Armor			
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Belt|-1|!PREABILITY:1,CATEGORY=EqSlot,Belt		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Body|-1|!PREABILITY:1,CATEGORY=EqSlot,Body		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Chest|-1|!PREABILITY:1,CATEGORY=EqSlot,Chest		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Eyes|-1|!PREABILITY:1,CATEGORY=EqSlot,Eyes		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Feet|-2|!PREABILITY:1,CATEGORY=EqSlot,Feet		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Hands|-2|!PREABILITY:1,CATEGORY=EqSlot,Hands		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Head|-1|!PREABILITY:1,CATEGORY=EqSlot,Head		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Headband|-1|!PREABILITY:1,CATEGORY=EqSlot,Headband	
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Neck|-1|!PREABILITY:1,CATEGORY=EqSlot,Neck		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Ring|-2|!PREABILITY:1,CATEGORY=EqSlot,Ring		
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Shield|-1|!PREABILITY:1,CATEGORY=EqSlot,Shield	
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Shoulders|-1|!PREABILITY:1,CATEGORY=EqSlot,Shoulders	
+CATEGORY=EqSlot|EQSlot Tracker.MOD	BONUS:SLOTS|Wrist|-2|!PREABILITY:1,CATEGORY=EqSlot,Wrist		
+
+#	BONUS:SLOTS|Torso|-1|!PREABILITY:1,CATEGORY=EqSlot,Torso		
+#	BONUS:SLOTS|Weapon|-1|!PREABILITY:1,CATEGORY=EqSlot,Weapon	
