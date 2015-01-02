@@ -282,9 +282,9 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 # Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
 CLASS:Shaman	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Shm		MAXLEVEL:20	SOURCEPAGE:p.35	ABILITY:Internal|AUTOMATIC|Shaman ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanClassSkills		DEFINE:ShamanLVL|0		BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2		BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3		BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE		BONUS:VAR|ShamanLVL|CL	ROLE:Cleric
 # Class Name	Skill Pts/Lvl
-CLASS:Arcanist	STARTSKILLPTS:4
+CLASS:Shaman	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
-CLASS:Arcanist	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:YES	BONUS:CASTERLEVEL|Shaman|CL	SPELLLIST:1|Shaman
+CLASS:Shaman	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:YES	BONUS:CASTERLEVEL|Shaman|CL	SPELLLIST:1|Shaman
 ###Block:Proficiencies
 1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWeaponProficiencies
