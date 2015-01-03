@@ -23,6 +23,7 @@ CATEGORY=Special Ability|Hunter ~ Wild Empathy.MOD																														
 Bonus Perception and Trap Sense						KEY:Favored Class Bonus ~ Perception and Trap Sense ~ Dwarf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassInvestigator	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Investigator	PRECLASS:1,Investigator=1	PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfInvestigatorFavClassBonus|0	DESC:Gain a +1/4 bonus on Perception checks when underground and +1/2 bonus to the investigator’s trap sense ability regarding stone traps.																																															STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfInvestigatorFavClassBonus|1	ABILITY:Internal|AUTOMATIC|Dwarf ~ Investigator ~ Perception Underground|PREVARGTEQ:DwarfInvestigatorFavClassBonus,4
 CATEGORY=Special Ability|Investigator ~ Trap Sense.MOD																																																																																																																																																										BONUS:VAR|TrapSenseBonus|DwarfInvestigatorFavClassBonus/2				BONUS:SITUATION|Perception=underground|DwarfInvestigatorFavClassBonus/4
 
+# TODO fix this when the Shaman is entered 2015/01/03 arw
 # Dwarf Shaman Spirit Animal
 Bonus Spirit Animal								KEY:Favored Class Bonus ~ Spirit Animal ~ Dwarf			CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassShaman		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Shaman		PRECLASS:1,Shaman=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfShamanFavClassBonus|0		DESC:Add 1/4 to the natural armor bonus of the shaman’s spirit animal.																																																										STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfShamanFavClassBonus|1
 
@@ -54,7 +55,7 @@ Bonus Base Speed									KEY:Favored Class Bonus ~ Base Speed ~ Elf		CATEGORY:Sp
 CATEGORY=Special Ability|Bloodrager ~ Fast Movement.MOD																																																																																																																																																					BONUS:VAR|BloodrageMovementBonus|ElfBloodragerFavClassBonus/5
 
 # Elf Brawler Base Speed
-Bonus Base Speed									KEY:Favored Class Bonus ~ Base Speed ~ Elf		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Elf%,RACESUBTYPE=Elf	DEFINE:ElfBrawlerFavClassBonus|0		DESC:Add 1 foot to the brawler’s base speed. In combat, this has an effect only for every five increases in the brawler’s base speed.																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Brawler ~ Fast Movement|PREVARGTEQ:ElfBrawlerFavClassBonus,5														BONUS:VAR|ElfBrawlerFavClassBonus|1
+Bonus Base Speed									KEY:Favored Class Bonus ~ Base Speed ~ Elf		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Elf%,RACESUBTYPE=Elf	DEFINE:ElfBrawlerFavClassBonus|0		DESC:Add 1 foot to the brawler’s base speed. In combat, this has an effect only for every five increases in the brawler’s base speed.																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Elf ~ Brawler ~ Fast Movement|PREVARGTEQ:ElfBrawlerFavClassBonus,5														BONUS:VAR|ElfBrawlerFavClassBonus|1
 # See supplementary ability below Brawler ~ (Fast Movement)
 
 # Elf Hunter Critical Confirmation
@@ -133,37 +134,40 @@ CATEGORY=Special Ability|Warpriest ~ Channel Energy.MOD	DEFINE:WarpriestGnomeCha
 ###Block:
 # Half-elf
 
-# Half-elf Arcanist @@Name@@
+# Half-elf Arcanist Caster Level
 # Ability Name	Unique Key					Category of Ability		Type											Visible		Required Ability							Required Class			Required Race					Define						Description																																			Stackable?	Multiple?	Choose		Modify VAR
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassArcanist		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Arcanist		PRECLASS:1,Arcanist=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfArcanistFavClassBonus|0	DESC:When casting arcanist enchantment spells, add 1/3 to the effective caster level, but only for the purpose of determining duration.														STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfArcanistFavClassBonus|1
+Bonus Caster Level	KEY:Favored Class Bonus ~ Caster Level ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassArcanist		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Arcanist		PRECLASS:1,Arcanist=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfArcanistFavClassBonus|0	DESC:When casting arcanist enchantment spells, add 1/3 to the effective caster level, but only for the purpose of determining duration.														STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfArcanistFavClassBonus|1	ABILITY:Special Ability|AUTOMATIC|Half Elf ~ Arcanist ~ Caster Level|PREVARGTEQ:HalfElfArcanistFavClassBonus,3
 
-# Half-elf Bloodrager @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBloodrager	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Bloodrager	PRECLASS:1,Bloodrager=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfBloodragerFavClassBonus|0	DESC:Increase the bonus gained from blood sanctuary by 1/4.																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfBloodragerFavClassBonus|1
+# Half-elf Bloodrager Blood Sanctuary
+Bonus Blood Sanctuary	KEY:Favored Class Bonus ~ Blood Sanctuary ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBloodrager	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Bloodrager	PRECLASS:1,Bloodrager=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfBloodragerFavClassBonus|0	DESC:Increase the bonus gained from blood sanctuary by 1/4.																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfBloodragerFavClassBonus|1
+CATEGORY=Special Ability|Bloodrager ~ Blood Sanctuary.MOD	BONUS:VAR|BloodragerBloodSanctuaryBonus|HalfElfBloodragerFavClassBonus/4
 
-# Half-elf Brawler @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfBrawlerFavClassBonus|0	DESC:Add 1 to the brawler’s CMD when she’s resisting a trip or overrun combat maneuver.																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfBrawlerFavClassBonus|1
+# Half-elf Brawler CMD Overrun and Trip
+Bonus CMD Overrun and Trip	KEY:Favored Class Bonus ~ CMD Overrun and Trip ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DESC:Add 1 to the brawler’s CMD when she’s resisting a trip or overrun combat maneuver.																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|CMD_Overrun,CMD_Trip|1
 
-# Half-elf Hunter @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassHunter		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Hunter		PRECLASS:1,Hunter=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfHunterFavClassBonus|0		DESC:Add 1 foot to the hunter’s companion’s base speed. In combat, this has an effect only for every five increases in base speed.														STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfHunterFavClassBonus|1
+# Half-elf Hunter Companion Fast Movemeent
+Bonus Companion Fast Movemeent	KEY:Favored Class Bonus ~ Companion Fast Movemeent ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassHunter		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Hunter		PRECLASS:1,Hunter=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfHunterFavClassBonus|0		DESC:Add 1 foot to the hunter’s companion’s base speed. In combat, this has an effect only for every five increases in base speed.														STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfHunterFavClassBonus|1	ABILITY:Special Ability|AUTOMATIC|Half-Elf ~ Hunter ~ Companion Fast Movement|PREVARGTEQ:HalfElfHunterFavClassBonus,5													
+# Half-elf Investigator Inspiration
+Bonus Inspiration	KEY:Favored Class Bonus ~ Inspiration ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassInvestigator	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Investigator	PRECLASS:1,Investigator=1	PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfInvestigatorFavClassBonus|0	DESC:Gain a +1/4 bonus on all inspiration rolls.																												STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfInvestigatorFavClassBonus|1
+CATEGORY=Special Ability|Investigator ~ Inspiration.MOD																																																																																																																																																					BONUS:VAR|InvestigatorInspirationBonus|HalfElfInvestigatorFavClassBonus/4
 
-# Half-elf Investigator @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassInvestigator	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Investigator	PRECLASS:1,Investigator=1	PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfInvestigatorFavClassBonus|0	DESC:Gain a +1/4 bonus on all inspiration rolls.																												STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfInvestigatorFavClassBonus|1
+# TODO fix this when the Shaman is entered 2015/01/03 arw
+# Half-elf Shaman Clerical Spell
+Bonus Clerical Spell	KEY:Favored Class Bonus ~ Clerical Spell ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassShaman		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Shaman		PRECLASS:1,Shaman=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfShamanFavClassBonus|0		DESC:Add one spell from the cleric spell list that isn’t on the shaman spell list to the list of spells the shaman knows. This spell must be at least 1 level below the highest spell level the shaman can cast.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfShamanFavClassBonus|1
 
-# Half-elf Shaman @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassShaman		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Shaman		PRECLASS:1,Shaman=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfShamanFavClassBonus|0		DESC:Add one spell from the cleric spell list that isn’t on the shaman spell list to the list of spells the shaman knows. This spell must be at least 1 level below the highest spell level the shaman can cast.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfShamanFavClassBonus|1
+# Half-elf Skald Raging Song
+Bonus Raging Song	KEY:Favored Class Bonus ~ Raging Song ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSkald		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Skald		PRECLASS:1,Skald=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfSkaldFavClassBonus|0		DESC:Increase the skald’s total number of raging song rounds per day by 1.																								STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfSkaldFavClassBonus|1	BONUS:VAR|SkaldRagingSongRoundsPerDay|HalfElfSkaldFavClassBonus
 
-# Half-elf Skald @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSkald		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Skald		PRECLASS:1,Skald=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfSkaldFavClassBonus|0		DESC:Increase the skald’s total number of raging song rounds per day by 1.																								STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfSkaldFavClassBonus|1
+# Half-elf Slayer Bluff and Diplomacy
+Bonus Bluff and Diplomacy	KEY:Favored Class Bonus ~ Bluff and Diplomacy ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSlayer		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Slayer		PRECLASS:1,Slayer=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfSlayerFavClassBonus|0		DESC:Gain a +1/2 bonus on Bluff checks to feint and Diplomacy checks to gain information.																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfSlayerFavClassBonus|1	ABILITY:Internal|AUTOMATIC|Half-elf ~ Slayer ~ Bluff and Diplomacy|PREVARGTEQ:HalfElfSlayerFavClassBonus,2
 
-# Half-elf Slayer @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSlayer		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Slayer		PRECLASS:1,Slayer=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfSlayerFavClassBonus|0		DESC:Gain a +1/2 bonus on Bluff checks to feint and Diplomacy checks to gain information.																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfSlayerFavClassBonus|1
+# Half-elf Swashbuckler Charmed Life
+Bonus Charmed Life	KEY:Favored Class Bonus ~ Charmed Life ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSwashbuckler	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Swashbuckler	PRECLASS:1,Swashbuckler=1	PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfSwashbucklerFavClassBonus|0	DESC:Increase the number of times per day the swashbuckler can use charmed life by 1/4.																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfSwashbucklerFavClassBonus|1
+CATEGORY=Special Ability|Swashbuckler ~ Charmed Life.MOD	BONUS:VAR|SwashbucklerCharmedLifeTimes|HalfElfSwashbucklerFavClassBonus/4
 
-# Half-elf Swashbuckler @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSwashbuckler	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Swashbuckler	PRECLASS:1,Swashbuckler=1	PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfSwashbucklerFavClassBonus|0	DESC:Increase the number of times per day the swashbuckler can use charmed life by 1/4.																						STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfSwashbucklerFavClassBonus|1
-
-# Half-elf Warpriest @@Name@@
-Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassWarpriest		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Warpriest		PRECLASS:1,Warpriest=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfWarpriestFavClassBonus|0	DESC:Gain a +1/3 bonus on the damage dealt or healed with the warpriest’s channel energy ability.																				STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfWarpriestFavClassBonus|1
-
+# Half-elf Warpriest Channel Energy
+Bonus Channel Energy	KEY:Favored Class Bonus ~ Channel Energy ~ Half-elf	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassWarpriest		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Warpriest		PRECLASS:1,Warpriest=1		PRERACE:1,Half-elf%,RACESUBTYPE=Half-elf	DEFINE:HalfElfWarpriestFavClassBonus|0	DESC:Gain a +1/3 bonus on the damage dealt or healed with the warpriest’s channel energy ability.																				STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfElfWarpriestFavClassBonus|1
+CATEGORY=Special Ability|Warpriest ~ Channel Energy.MOD	DEFINE:WarpriestHalfelfChannelEnergyBonus|0	BONUS:VAR|WarpriestHalfelfChannelEnergyBonus|HalfelfWarpriestFavClassBonus/3	DESC:&nl;Gain a +%1 bonus on the damage dealt or healed due to your Favored Class.|WarpriestHalfelfChannelEnergyBonus|PREVARGTEQ:WarpriestHalfelfChannelEnergyBonus,1
 
 
 ###Block:
@@ -274,12 +278,16 @@ Bonus @@Name@@	KEY:Favored Class Bonus ~ @@Name@@ ~ Human	CATEGORY:Special Abili
 
 
 #########################################
-###Block Supplementary abilities
+###Block: Supplementary abilities (Internal i.e. not visible)
 # Ability Name	Unique Key				Category of Ability		Type													Description																	Add to base move								Description of the Benefits
+Bluff and Diplomacy	KEY:Half-elf ~ Slayer ~ Bluff and Diplomacy	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:SITUATION|Bluff=feint|HalfelfSlayerFavClassBonus/4	BONUS:SITUATION|Diplomacy=gather information|HalfelfSlayerFavClassBonus/4
 Concentration	KEY:Gnome ~ Skald ~ Concentration	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:CONCENTRATION|Skald|GnomeSkaldFavClassBonus/6
 Perception Underground	KEY:Dwarf ~ Investigator ~ Perception Underground	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:SITUATION|Perception=Underground|DwarfInvestigatorFavClassBonus/4
 Talent	KEY:Gnome ~ Slayer ~ Talent	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:VAR|SlayerTalentLVL|GnomeSlayerFavClassBonus/6
-Fast Movement	KEY:Brawler ~ Fast Movement	CATEGORY:Special Ability	TYPE:BloodragerClassFeatures.SpecialQuality.Extraordinary.ModifyMovement	DESC:Your land speed is faster than the norm for your race by %1 feet.|floor(ElfBrawlerFavClassBonus/5)	BONUS:MOVEADD|TYPE=Walk|floor(ElfBrawlerFavClassBonus/5)	BENEFIT:Your land speed is faster than the norm for your race by %1 feet.|floor(ElfBrawlerFavClassBonus/5)
+###Block: Supplementary abilities (InciwSpecial Abilityternal i.e. visible)
+Caster Level	KEY:Half Elf ~ Arcanist ~ Caster Level	CATEGORY:Special Ability	TYPE:ArcanistClassFeatures.SpecialQuality	DESC:When casting arcanist enchantment spells, add %1 to the effective caster level, but only for the purpose of determining duration.|HalfElfArcanistFavClassBonus/3	BENEFIT:Your Caslter Level is %1 better for the purpose of determining the duration of enchantment spells.|HalfElfArcanistFavClassBonus/3
+Companion Fast Movement	KEY:Half-Elf ~ Hunter ~ Companion Fast Movement	CATEGORY:Special Ability	TYPE:HunterClassFeatures.SpecialQuality.Extraordinary.ModifyMovement	DESC:Your land speed is faster than the norm for your race by %1 feet.|floor(HalfElfHunterFavClassBonus/5)	BONUS:MOVEADD|TYPE=Walk|floor(Half-ElfHunterFavClassBonus/5)	BENEFIT:Your land speed is faster than the norm for your race by %1 feet.|floor(Half-ElfHunterFavClassBonus/5)
+Fast Movement	KEY:Elf ~ Brawler ~ Fast Movement	CATEGORY:Special Ability	TYPE:BrawlerClassFeatures.SpecialQuality.Extraordinary.ModifyMovement	DESC:Your land speed is faster than the norm for your race by %1 feet.|floor(ElfBrawlerFavClassBonus/5)	BONUS:MOVEADD|TYPE=Walk|floor(ElfBrawlerFavClassBonus/5)	BENEFIT:Your land speed is faster than the norm for your race by %1 feet.|floor(ElfBrawlerFavClassBonus/5)
 
 ###Block: Elf Hunter Critical Confirmation Choice
 # Ability Name	Unique Key										Category of Ability		Type										Visible	Define							Description																																						Stackable?	Multiple?	Choose		Modify VAR
