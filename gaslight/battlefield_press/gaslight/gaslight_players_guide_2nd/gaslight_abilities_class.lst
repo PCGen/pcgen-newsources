@@ -216,7 +216,7 @@ Cross Training									CATEGORY:Talent		TYPE:Talent.EverymanTalent	PREABILITY:2,
 By the Bootstraps	CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:When a roll fails to meet the target DC by 5 points plus the characters INT bonus, he may then spend an Action point to consider the roll a flat out success, this takes the place of the additional die normally added to rolls by spending action points.																SOURCEPAGE:p.101
 Favored Terrain	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredTerrain	DESC:Due to his extensive training and experience operating in this terrain, the Explorer gains a +1 circumstance bonus to Knowledge (physical sciences), Notice, Stealth, and Survival checks when using these skills in this type of terrain.				STACK:NO	MULT:YES	CHOOSE:STRING|Aquatic|Arctic|Desert|Forest|Hill|Marsh|Mountains	SOURCEPAGE:p.101
 Pathfinder		CATEGORY:Special Ability	TYPE:SpecialQuality			DESC:An Explorer gains the ability to make a Survival check to locate or blaze a trail through trackless terrain while traveling overland.																																			SOURCEPAGE:p.101
-#Heroic Surge	CATEGORY:Special Ability	TYPE:SpecialQuality																																																													SOURCEPAGE:p.87
+Heroic Surge	CATEGORY:Special Ability	TYPE:SpecialQuality																																																													SOURCEPAGE:p.87
 
 ###Block: Explorer Talents
 # Animal Friendship Talent Tree
@@ -274,7 +274,7 @@ Precise Critical		CATEGORY:Talent		TYPE:Talent.PrecisionTalent.GunslingerTalent	
 # Quick Draw Talent Tree
 Improved Quick Draw	CATEGORY:Talent		TYPE:Talent.QuickDrawTalent.GunslingerTalent	SOURCEPAGE:p.105
 Shoot from the Hip	CATEGORY:Talent		TYPE:Talent.QuickDrawTalent.GunslingerTalent	SOURCEPAGE:p.105
-Twitch			CATEGORY:Talent		TYPE:Talent.QuickDrawTalent.GunslingerTalent		SOURCEPAGE:p.105	PREABILITY:1,CATEGORY=Talent,Improved Quick Draw,Shoot from the Hip
+Twitch			CATEGORY:Talent		TYPE:Talent.QuickDrawTalent.GunslingerTalent	SOURCEPAGE:p.105	PREABILITY:1,CATEGORY=Talent,Improved Quick Draw,Shoot from the Hip
 
 # Trick Shooting Talent Tree
 Improved Skip Shot	CATEGORY:Talent		TYPE:Talent.TrickShootingTalent.GunslingerTalent		SOURCEPAGE:p.105													PREFEAT:1,Skip Shot
@@ -289,7 +289,7 @@ Certain Fortune		CATEGORY:Talent		TYPE:Talent.GunslingerTalent					PREABILITY:2,
 
 ###Block:   Inventor class abilities   =====================================
 Jack of All Trades	KEY:Inventor ~ Jack of All Trades	CATEGORY:Special Ability	TYPE:ClassFeatures.InventorClassFeatures.SpecialQuality	SOURCEPAGE:p.106	DESC:The inventor has picked up a smattering of even the most obscure skills. They may use any skill untrained.
-Weird Science		KEY:Inventor ~ Weird Science		CATEGORY:Special Ability	TYPE:ClassFeatures.InventorClassFeatures.SpecialQuality	SOURCEPAGE:p.106	DESC:An inventor is not a spellcaster, but instead possesses the ability to imbue items with magical power. This weird science allows the inventor to create devices that combine the effects of one or more spells, either arcane or divine. Weird science devices must be invented in advance, however -- they cannot be created on the %y. The time to create such devices is 4 hours per spell level used. As such, an inventor usually has a "xed collection of regularly-carried devices. Weird science devices are temporary and unreliable. They are able to be used reliably a number of times per day equal to ! plus half the class level of the inventor who built the device (rounding up, naturally). The device may be used by anyone -- but if used by someone other than the inventor who built it, it requires a Use Device roll at DC !5 to activate (a failed roll indicates that the device fails to activate for that user, and a roll of ! means that the device has a malfunction as described on the malfunction table below).
+Weird Science		KEY:Inventor ~ Weird Science		CATEGORY:Special Ability	TYPE:ClassFeatures.InventorClassFeatures.SpecialQuality	SOURCEPAGE:p.106	DESC:An inventor is not a spellcaster, but instead possesses the ability to imbue items with magical power. This weird science allows the inventor to create devices that combine the effects of one or more spells, either arcane or divine. Weird science devices must be invented in advance, however -- they cannot be created on the fly. The time to create such devices is 4 hours per spell level used. As such, an inventor usually has a "xed collection of regularly-carried devices". Weird science devices are temporary and unreliable. They are able to be used reliably a number of times per day equal to 1 plus half the class level of the inventor who built the device (rounding up, naturally). The device may be used by anyone -- but if used by someone other than the inventor who built it, it requires a Use Device roll at DC 15 to activate (a failed roll indicates that the device fails to activate for that user, and a roll of 1 means that the device has a malfunction as described on the malfunction table below).
 Feat grab			KEY:Inventor ~ Feat grab		CATEGORY:Special Ability	TYPE:ClassFeatures.InventorClassFeatures.SpecialQuality	SOURCEPAGE:p.106	DESC:At second level an Inventor has access to Item Creation and Metamagic feats.
 Exemplar			KEY:Inventor ~ Exemplar			CATEGORY:Special Ability	TYPE:ClassFeatures.InventorClassFeatures.SpecialQuality	SOURCEPAGE:p.106	DESC:The inventor’s Jack of All Trades ability reaches its zenith: The inventor may now add half his class level to all untrained skill checks.
 
@@ -322,7 +322,7 @@ Identify Motive						CATEGORY:Talent		TYPE:Talent.InvestigatorTalent	PREABILITY:
 #Sharp Eye							CATEGORY:Talent		TYPE:Talent.InvestigatorTalent																																																			SOURCEPAGE:p.
 
 # Deduction Talent Tree
-Logical (Occult Science)				CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Occult Science)=8																BONUS:SKILL|Knowledge (Theology and Philosophy)|floor(classlevel("Investigator")/2)|TYPE=Synergy	SOURCEPAGE:p.108
+Logical (Occult Science)				CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Occult Sciences)=8																BONUS:SKILL|Knowledge (Theology and Philosophy)|floor(classlevel("Investigator")/2)|TYPE=Synergy	SOURCEPAGE:p.108
 Logical (Behavioral Sciences)				CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Behavioral Sciences)=8															BONUS:SKILL|Sense Motive|floor(classlevel("Investigator")/2)|TYPE=Synergy					SOURCEPAGE:p.108
 Logical (Business)					CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Business)=8																	BONUS:SKILL|Forgery|floor(classlevel("Investigator")/2)|TYPE=Synergy						SOURCEPAGE:p.108
 Logical (Civics)						CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Civics)=8																	BONUS:SKILL|Persuasion|floor(classlevel("Investigator")/2)|TYPE=Synergy						SOURCEPAGE:p.108
@@ -334,7 +334,7 @@ Logical (Popular Culture)				CATEGORY:Talent		TYPE:Talent.InvestigatorTalent				
 Logical (Streetwise)					CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Streetwise)=8																	BONUS:SKILL|Persuasion|floor(classlevel("Investigator")/2)|TYPE=Synergy						SOURCEPAGE:p.108
 Logical (Military Science)				CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Military Science)=8																BONUS:SKILL|Investigate|floor(classlevel("Investigator")/2)|TYPE=Synergy					SOURCEPAGE:p.108
 Logical (Technology)					CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Technology)=8																	BONUS:SKILL|Craft (Mechanical)|floor(classlevel("Investigator")/2)|TYPE=Synergy				SOURCEPAGE:p.108
-Logical (Theology and Philosophy)			CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Theology and Philosophy)=8														BONUS:SKILL|Knowledge (Occult Science)|floor(classlevel("Investigator")/2)|TYPE=Synergy			SOURCEPAGE:p.108
+Logical (Theology and Philosophy)			CATEGORY:Talent		TYPE:Talent.InvestigatorTalent												PRESKILL:1,Knowledge (Theology and Philosophy)=8														BONUS:SKILL|Knowledge (Occult Sciences)|floor(classlevel("Investigator")/2)|TYPE=Synergy			SOURCEPAGE:p.108
 Talk a Good Game (Occult Science)			CATEGORY:Talent		TYPE:Talent.InvestigatorTalent	PREABILITY:1,CATEGORY=Talent,Logical (Occult Science)																																										SOURCEPAGE:p.108
 Talk a Good Game (Behavioral Sciences)		CATEGORY:Talent		TYPE:Talent.InvestigatorTalent	PREABILITY:1,CATEGORY=Talent,Logical (Behavioral Sciences)																																									SOURCEPAGE:p.108
 Talk a Good Game (Business)				CATEGORY:Talent		TYPE:Talent.InvestigatorTalent	PREABILITY:1,CATEGORY=Talent,Logical (Business)																																											SOURCEPAGE:p.108
