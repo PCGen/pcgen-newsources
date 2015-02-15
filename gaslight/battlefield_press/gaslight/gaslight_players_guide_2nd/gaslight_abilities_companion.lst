@@ -4,10 +4,11 @@ SOURCELONG:Gaslight - Animals	SOURCESHORT:GLA	SOURCEWEB:www.battlefieldpress.com
 
 
 # Ability Name							Modify VAR								Allow Follower			Allowed Companions
-ABILITY:CATEGORY=Special Ability|Summon Familiar.MOD										FOLLOWERS:Familiar|1		COMPANIONLIST:Familiar|Bat,Cat,Ferret,Hawk,Owl,Rat,Raven,Snake (Viper/Tiny),Toad
+ABILITY:CATEGORY=Special Ability|Summon Familiar.MOD										FOLLOWERS:Familiar|1		COMPANIONLIST:Familiar|Armadillo,Bat,Cat,Fox,Goat,Hawk,Hedgehog,Lizard,Monkey,Owl,Pig,Platypus,Raccoon,Rat,Raven,Scorpion (Greensting),Skunk,Squirrel,Toad,Turtle,Snake (Viper/Tiny),Weasel
 ABILITY:CATEGORY=Talent|Animal Companion.MOD		BONUS:VAR|AnimalCompanionLVL|classlevel("Explorer")	FOLLOWERS:Animal Companion|1	COMPANIONLIST:Animal Companion|Ape,Badger,Bear,Camel,Cat,Crocodile,Dog,Eagle,Elephant,Hawk,Herd Animal,Horse,Lizard,Monkey,Octopus,Owl,Pony,Porpoise,Rat,Raven,Shark,Snake (Viper/Medium),Snake (Viper/Small),Squid,Tiger,Wolf
 
-Familiar Level Tracker	CATEGORY:Internal	ABILITY:Special Ability|AUTOMATIC|Empathic Link|Improved Evasion|Share Spells|PREVARGTEQ:mastervar("FamiliarLVL"),1	ABILITY:Special Ability|AUTOMATIC|Familiar ~ Intelligence|PREVAREQ:FamiliarIntelligence,1	BONUS:COMBAT|AC|(mastervar("FamiliarLVL")+1)/2|TYPE=NaturalArmor.STACK	ABILITY:Special Ability|AUTOMATIC|Deliver Touch Spells|PREVARGTEQ:mastervar("FamiliarLVL"),3	ABILITY:Special Ability|AUTOMATIC|Speak with Master|PREVARGTEQ:mastervar("FamiliarLVL"),5	ABILITY:Special Ability|AUTOMATIC|Speak with Animals of its Kind|PREVARGTEQ:mastervar("FamiliarLVL"),7	ABILITY:Special Ability|AUTOMATIC|Familiar ~ Spell Resistance|PREVARGTEQ:mastervar("FamiliarLVL"),11	ABILITY:Special Ability|AUTOMATIC|Scry on Familiar|PREVARGTEQ:mastervar("FamiliarLVL"),13	ABILITY:Special Ability|AUTOMATIC|Spelled Familiar|PREVARGTEQ:mastervar("FamiliarLVL"),21					
+###Block: Familiar specific
+Familiar Level Tracker		CATEGORY:Internal	ABILITY:Special Ability|AUTOMATIC|Empathic Link|Improved Evasion|Share Spells|PREVARGTEQ:mastervar("FamiliarLVL"),1	ABILITY:Special Ability|AUTOMATIC|Familiar ~ Intelligence|PREVAREQ:FamiliarIntelligence,1	BONUS:COMBAT|AC|(mastervar("FamiliarLVL")+1)/2|TYPE=NaturalArmor.STACK	ABILITY:Special Ability|AUTOMATIC|Deliver Touch Spells|PREVARGTEQ:mastervar("FamiliarLVL"),3	ABILITY:Special Ability|AUTOMATIC|Speak with Master|PREVARGTEQ:mastervar("FamiliarLVL"),5	ABILITY:Special Ability|AUTOMATIC|Speak with Animals of its Kind|PREVARGTEQ:mastervar("FamiliarLVL"),7	ABILITY:Special Ability|AUTOMATIC|Familiar ~ Spell Resistance|PREVARGTEQ:mastervar("FamiliarLVL"),11	ABILITY:Special Ability|AUTOMATIC|Scry on Familiar|PREVARGTEQ:mastervar("FamiliarLVL"),13	ABILITY:Special Ability|AUTOMATIC|Spelled Familiar|PREVARGTEQ:mastervar("FamiliarLVL"),21					
 Familiar ~ Spell Resistance	CATEGORY:Special Ability	SR:mastervar("FamiliarLVL")+5
 Familiar ~ Intelligence		CATEGORY:Special Ability	DEFINESTAT:MINVALUE|INT|mastervar("FamiliarLVL")/2+5
 
@@ -24,14 +25,14 @@ Improved Grab												CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordina
 Ink Cloud													CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.ModifyAC	VISIBLE:YES
 Jet														CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary			VISIBLE:YES
 Keen Scent													CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Sense		VISIBLE:YES
-Poison													CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary			VISIBLE:YES	DEFINE:PoisonDC|0		DESC:Poison attacks deal initial damage and possibly secondary damage a minute later to the opponent on failed Fortitude saves (DC %1).|PoisonDC																																													BONUS:VAR|PoisonDC|10+(HD/2)+CON	BONUS:VAR|PoisonDC|2|PREFEAT:1,Ability Focus (Poison)
+Poison													CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary			VISIBLE:YES	DEFINE:PoisonDC|0		DESC:Poison attacks deal initial damage and possibly secondary damage a minute later to the opponent on failed Fortitude saves (DC %1).|PoisonDC																																													BONUS:VAR|PoisonDC|10+(HD/2)+CON	BONUS:VAR|PoisonDC|2|PREABILITY:1,CATEGORY=FEAT,Ability Focus (Poison)
 Pounce													CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:YES					DESC:When you make a charge, you can follow with a full attack.
 Rake														CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:YES					DESC:You gain extra natural attacks when you grapple or pounce your foe.
 Spot in Darkness		OUTPUTNAME:+8 Spot in dusk/darkness					CATEGORY:Special Ability	TYPE:SpecialQuality.Sense				VISIBLE:YES
 Spot in Daylight		OUTPUTNAME:+8 species bonus on Spot checks during daylight	CATEGORY:Special Ability	TYPE:SpecialQuality.Sense				VISIBLE:YES
 Stampede													CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary			VISIBLE:YES
 Tracking by Scent		OUTPUTNAME:+4 Survival checks when Tracking by Scent		CATEGORY:Special Ability	TYPE:SpecialQuality					VISIBLE:YES
-Trample													CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:YES	DEFINE:TrampleDC|0	DESC:As a full-round action, you can move up to twice your speed and literally run over any opponents at least one size category smaller than you. (Reflex half DC %1)|TrampleDC																																								BONUS:VAR|TrampleDC|10	BONUS:VAR|TrampleDC|2|PREFEAT:1,Ability Focus (Trample)	BONUS:VAR|TrampleDC|STR+(HD/2)	SOURCEPAGE:TypesSubtypesAbilities
+Trample													CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:YES	DEFINE:TrampleDC|0	DESC:As a full-round action, you can move up to twice your speed and literally run over any opponents at least one size category smaller than you. (Reflex half DC %1)|TrampleDC																																								BONUS:VAR|TrampleDC|10	BONUS:VAR|TrampleDC|2|PREABILITY:1,CATEGORY=FEAT,Ability Focus (Trample)	BONUS:VAR|TrampleDC|STR+(HD/2)	SOURCEPAGE:TypesSubtypesAbilities
 Trip														CATEGORY:Special Ability	TYPE:SpecialAttack.Extraordinary.AttackOption	VISIBLE:YES
 
 ###Block: Companion Modifier Abilities -----------------------------------------
@@ -45,8 +46,30 @@ Speak with Animals of its Kind	CATEGORY:Special Ability	TYPE:SpecialQuality			VI
 Scry on Familiar				CATEGORY:Special Ability	TYPE:SpecialQuality			VISIBLE:YES	SOURCEPAGE:p.97
 Spelled Familiar				CATEGORY:Special Ability	TYPE:SpecialQuality			VISIBLE:YES	SOURCEPAGE:p.97
 
-Hawk Familiar Bonuses			CATEGORY:Special Ability							VISIBLE:NO	SOURCEPAGE:msrdadvancedclassesII	TEMPDESC:Mage gains +3 bonus on Spot checks in daylight		TEMPBONUS:PC|SITUATION|Perception=Spot|3|TYPE=HawkFamiliar
-Owl Familiar Bonuses			CATEGORY:Special Ability							VISIBLE:NO	SOURCEPAGE:msrdadvancedclassesII	TEMPDESC:Mage gains +3 bonus on Spot checks in dusk or darkness	TEMPBONUS:PC|SITUATION|Perception=Spot|3|TYPE=OwlFamiliar
+###Block: Master Granted Bonuses
+Familiar (Armadillo)			CATEGORY:Special Ability	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.STACK
+Familiar (Bat)				CATEGORY:Special Ability	ASPECT:SkillBonus|+3 bonus on Fly checks
+Familiar (Cat)				CATEGORY:Special Ability	BONUS:SKILL|Stealth|3
+Familiar (Fox)				CATEGORY:Special Ability	BONUS:SAVE|Reflex|2
+Familiar (Goat)				CATEGORY:Special Ability	BONUS:SKILL|Survival|3
+Familiar (Hawk)				CATEGORY:Special Ability	ASPECT:SkillBonus|+3 bonus on Spot checks in daylight
+Familiar (Hedgehog)			CATEGORY:Special Ability	BONUS:SAVE|Will|2
+Familiar (Lizard)				CATEGORY:Special Ability	BONUS:SKILL|Athletics|3
+Familiar (Monkey)				CATEGORY:Special Ability	BONUS:SKILL|Acrobatics|3
+Familiar (Owl)				CATEGORY:Special Ability	ASPECT:SkillBonus|+3 bonus on Spot checks in dusk or darkness
+Familiar (Pig)				CATEGORY:Special Ability	BONUS:SKILL|Persuasion|3
+Familiar (Platypus)			CATEGORY:Special Ability	BONUS:SKILL|Athletics|3
+Familiar (Raccoon)			CATEGORY:Special Ability	BONUS:SKILL|Sleight of Hand|3
+Familiar (Rat)				CATEGORY:Special Ability	BONUS:SAVE|Fortitude|2
+Familiar (Raven)				CATEGORY:Special Ability	ASPECT:SkillBonus|+3 bonus on Appraise checks
+Familiar (Scorpion (Greensting))	CATEGORY:Special Ability	BONUS:COMBAT|INITIATIVE|4
+Familiar (Skunk)				CATEGORY:Special Ability	BONUS:SAVE|Fortitude|2
+Familiar (Squirrel)			CATEGORY:Special Ability	BONUS:SKILL|Sleight of Hand|3
+Familiar (Toad)				CATEGORY:Special Ability	BONUS:HP|CURRENTMAX|3
+Familiar (Turtle)				CATEGORY:Special Ability	BONUS:COMBAT|AC|1|TYPE=NaturalArmor.STACK
+Familiar (Snake (Viper/Tiny))		CATEGORY:Special Ability	ASPECT:SkillBonus|+3 bonus on Bluff checks
+Familiar (Weasel)				CATEGORY:Special Ability	BONUS:SAVE|Reflex|2
+
 
 ###Block: Animal Tricks & Training Section ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Ability Name			Category of Ability		Type				Define			Description			Bonus Ability Pool
