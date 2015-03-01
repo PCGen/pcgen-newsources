@@ -6,43 +6,45 @@ SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/produ
 ###################################################################################
 ###
 
-# Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.3	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
+CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.8	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
 # Class Name	Skill Pts/Lvl
 CLASS:Arcanist	STARTSKILLPTS:2
-# Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
-CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
+# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
+CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
 ###Block:Proficiencies
 1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
 ###Block: Level Progression
-1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Consume Spells|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistConsumeSpells
-1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Arcane Reservoir|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistArcaneReservoir
-1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Arcanist Exploits|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistArcanistExploits
-1									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Cantrips|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistCantrips
-11									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Greater Arcanist Exploits|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistGreaterArcanistExploits
-20									ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Magical Supremacy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistMagicalSupremacy
+1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Spells Prepared
+1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Consume Spells|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistConsumeSpells
+1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Arcane Reservoir|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistArcaneReservoir
+1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Arcanist Exploits|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistArcanistExploits
+1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Cantrips|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistCantrips
+11	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Greater Arcanist Exploits|!PREABILITY:1,CATEGORY=Archetype,TYPE:ArcanistGreaterArcanistExploits
+20	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Magical Supremacy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistMagicalSupremacy
+1	ABILITY:Internal|AUTOMATIC|Arcanist Free Spellbook|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Arcanist=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Arcanist=1]]
 ###Block: Spell Level progression
-1	CAST:4,2
-2	CAST:5,2
-3	CAST:5,3
-4	CAST:6,3,1
-5	CAST:6,4,2
-6	CAST:7,4,2,1
-7	CAST:7,5,3,2
-8	CAST:8,5,3,2,1
-9	CAST:8,5,4,3,2
-10	CAST:9,5,4,3,2,1
-11	CAST:9,5,5,4,3,2
-12	CAST:9,5,5,4,3,2,1
-13	CAST:9,5,5,4,4,3,2
-14	CAST:9,5,5,4,4,3,2,1
-15	CAST:9,5,5,4,4,4,3,2
-16	CAST:9,5,5,4,4,4,3,2,1
-17	CAST:9,5,5,4,4,4,4,3,2
-18	CAST:9,5,5,4,4,4,4,3,2,1
-19	CAST:9,5,5,4,4,4,4,4,3,2
-20	CAST:9,5,5,4,4,4,4,4,3,3
+1	CAST:0,2
+2	CAST:0,3
+3	CAST:0,4
+4	CAST:0,4,2
+5	CAST:0,4,3
+6	CAST:0,4,4,2
+7	CAST:0,4,4,3
+8	CAST:0,4,4,4,2
+9	CAST:0,4,4,4,3
+10	CAST:0,4,4,4,4,2
+11	CAST:0,4,4,4,4,3
+12	CAST:0,4,4,4,4,4,2
+13	CAST:0,4,4,4,4,4,3
+14	CAST:0,4,4,4,4,4,4,2
+15	CAST:0,4,4,4,4,4,4,3
+16	CAST:0,4,4,4,4,4,4,4,2
+17	CAST:0,4,4,4,4,4,4,4,3
+18	CAST:0,4,4,4,4,4,4,4,4,2
+19	CAST:0,4,4,4,4,4,4,4,4,3
+20	CAST:0,4,4,4,4,4,4,4,4,4
 
 
 
@@ -52,7 +54,7 @@ CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Arc
 
 
 # Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.5	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|0	BONUS:VAR|BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
+CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.15	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|0	BONUS:VAR|BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
 # Class Name	Skill Pts/Lvl
 CLASS:Bloodrager	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level								Use Spell List
@@ -493,4 +495,3 @@ CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL
 #
 # End
 #
-
