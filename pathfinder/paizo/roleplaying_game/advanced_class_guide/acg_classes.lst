@@ -1,6 +1,6 @@
 # CVS $Revision: 12957 $ $Author: jbaril $ -- Sun Aug  3 18:25:16 2014 -- reformated by prettylst.pl v1.51 (build 23662)
 SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2014-08
-# Original Entry by: Stefan Radermacher
+# Original Entry by: Stefan Radermacher and Douglas Limmer
 
 ###
 ###################################################################################
@@ -11,7 +11,7 @@ CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p
 # Class Name	Skill Pts/Lvl
 CLASS:Arcanist	STARTSKILLPTS:2
 # Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
-CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
+CLASS:Arcanist	SPELLSTAT:INT	BONUSSPELLSTAT:NONE	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
 ###Block:Proficiencies
 1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
@@ -25,27 +25,33 @@ CLASS:Arcanist	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:C
 20	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Magical Supremacy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistMagicalSupremacy
 1	ABILITY:Internal|AUTOMATIC|Arcanist Free Spellbook|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Arcanist=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Arcanist=1]]
 ###Block: Spell Level progression
-1	CAST:0,2
-2	CAST:0,3
-3	CAST:0,4
-4	CAST:0,4,2
-5	CAST:0,4,3
-6	CAST:0,4,4,2
-7	CAST:0,4,4,3
-8	CAST:0,4,4,4,2
-9	CAST:0,4,4,4,3
-10	CAST:0,4,4,4,4,2
-11	CAST:0,4,4,4,4,3
-12	CAST:0,4,4,4,4,4,2
-13	CAST:0,4,4,4,4,4,3
-14	CAST:0,4,4,4,4,4,4,2
-15	CAST:0,4,4,4,4,4,4,3
-16	CAST:0,4,4,4,4,4,4,4,2
-17	CAST:0,4,4,4,4,4,4,4,3
-18	CAST:0,4,4,4,4,4,4,4,4,2
-19	CAST:0,4,4,4,4,4,4,4,4,3
-20	CAST:0,4,4,4,4,4,4,4,4,4
 
+#1	CAST:0,2
+#2	CAST:0,3
+#3	CAST:0,4
+#4	CAST:0,4,2
+#5	CAST:0,4,3
+#6	CAST:0,4,4,2
+#7	CAST:0,4,4,3
+#8	CAST:0,4,4,4,2
+#9	CAST:0,4,4,4,3
+#10	CAST:0,4,4,4,4,2
+#11	CAST:0,4,4,4,4,3
+#12	CAST:0,4,4,4,4,4,2
+#13	CAST:0,4,4,4,4,4,3
+#14	CAST:0,4,4,4,4,4,4,2
+#15	CAST:0,4,4,4,4,4,4,3
+#16	CAST:0,4,4,4,4,4,4,4,2
+#17	CAST:0,4,4,4,4,4,4,4,3
+#18	CAST:0,4,4,4,4,4,4,4,4,2
+#19	CAST:0,4,4,4,4,4,4,4,4,3
+#20	CAST:0,4,4,4,4,4,4,4,4,4
+
+# WORKAROUND: CAST is actually spells prepared
+# WORKAROUND: The variables ArcanistCastLVL_n (n=1..9) hold the number of spells castable per day of each level
+# COMMENT: Should be limited to preparing only 1 of any specific spell
+
+1	CAST:ArcanistPreparedLVL_0,ArcanistPreparedLVL_1,ArcanistPreparedLVL_2,ArcanistPreparedLVL_3,ArcanistPreparedLVL_4,ArcanistPreparedLVL_5,ArcanistPreparedLVL_6,ArcanistPreparedLVL_7,ArcanistPreparedLVL_8,ArcanistPreparedLVL_9
 
 
 ###
@@ -65,16 +71,10 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerArmorProficiencies
 ###Block: Bloodline
 1	BONUS:VAR|BloodlineLVL,BloodlineCasterLVL|CL	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Bloodline|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodline
-###Block: Variable Progression
-1	BONUS:VAR|RageLVL|CL
-2	BONUS:VAR|UncannyDodgeFlankingLevel|CL|TYPE=EachClass.REPLACE
-2	BONUS:VAR|UncannyDodgeLevel|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerUncannyDodge
-5	BONUS:VAR|UncannyDodgeLevel|1|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerImprovedUncannyDodge
-7	BONUS:VAR|BloodragerDRLVL|CL
 ###Block: Level Progression
 1	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Bloodrage|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodrage
 1	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Fast Movement|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerFastMovement
-2	ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base
+2	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Uncanny Dodge Tracker|PREVARGTEQ:BloodragerLVL,2
 3	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Blood Sanctuary|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodSanctuary
 4	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Blood Casting|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerBloodCasting
 4	ABILITY:Bloodrager Class Features|AUTOMATIC|Bloodrager ~ Eschew Materials|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerEschewMaterials
@@ -200,26 +200,26 @@ CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZ
 2	BONUS:VAR|TrackLVL|CL
 ###Block: Level progression
 # The KNOWN are 1 higher than in the book for levels 1+ because all the Summon Nature's Ally spells are automatically known in addition
-1	CAST:3,1				KNOWN:4,3			
-2	CAST:4,2				KNOWN:5,4			
-3	CAST:4,3				KNOWN:6,5			
-4	CAST:4,3,1				KNOWN:6,5,3			
-5	CAST:4,4,2				KNOWN:6,5,4			
-6	CAST:5,4,3				KNOWN:6,5,5			
-7	CAST:5,4,3,1			KNOWN:6,6,5,3		
-8	CAST:5,4,4,2			KNOWN:6,6,5,4		
-9	CAST:5,5,4,3			KNOWN:6,6,5,5		
-10	CAST:5,5,4,3,1			KNOWN:6,6,6,5,3		
-11	CAST:5,5,4,4,2			KNOWN:6,7,6,5,4		
-12	CAST:5,5,5,4,3			KNOWN:6,7,6,5,5		
-13	CAST:5,5,5,4,3,1		KNOWN:6,7,6,6,5,3	
-14	CAST:5,5,5,4,4,2		KNOWN:6,7,7,6,5,4	
-15	CAST:5,5,5,5,4,3		KNOWN:6,7,7,6,5,5	
-16	CAST:5,5,5,5,4,3,1		KNOWN:6,7,7,6,6,5,3	
-17	CAST:5,5,5,5,4,4,2		KNOWN:6,7,7,7,6,5,4	
-18	CAST:5,5,5,5,5,4,3		KNOWN:6,7,7,7,6,5,5	
-19	CAST:5,5,5,5,5,5,4		KNOWN:6,7,7,7,6,6,5	
-20	CAST:5,5,5,5,5,5,5		KNOWN:6,7,7,7,7,6,6	
+1	CAST:0,1				KNOWN:4,3			
+2	CAST:0,2				KNOWN:5,4			
+3	CAST:0,3				KNOWN:6,5			
+4	CAST:0,3,1				KNOWN:6,5,3			
+5	CAST:0,4,2				KNOWN:6,5,4			
+6	CAST:0,4,3				KNOWN:6,5,5			
+7	CAST:0,4,3,1			KNOWN:6,6,5,3		
+8	CAST:0,4,4,2			KNOWN:6,6,5,4		
+9	CAST:0,5,4,3			KNOWN:6,6,5,5		
+10	CAST:0,5,4,3,1			KNOWN:6,6,6,5,3		
+11	CAST:0,5,4,4,2			KNOWN:6,7,6,5,4		
+12	CAST:0,5,5,4,3			KNOWN:6,7,6,5,5		
+13	CAST:0,5,5,4,3,1			KNOWN:6,7,6,6,5,3	
+14	CAST:0,5,5,4,4,2			KNOWN:6,7,7,6,5,4	
+15	CAST:0,5,5,5,4,3			KNOWN:6,7,7,6,5,5	
+16	CAST:0,5,5,5,4,3,1		KNOWN:6,7,7,6,6,5,3	
+17	CAST:0,5,5,5,4,4,2		KNOWN:6,7,7,7,6,5,4	
+18	CAST:0,5,5,5,5,4,3		KNOWN:6,7,7,7,6,5,5	
+19	CAST:0,5,5,5,5,5,4		KNOWN:6,7,7,7,6,6,5	
+20	CAST:0,5,5,5,5,5,5		KNOWN:6,7,7,7,7,6,6	
 
 ###Block: Investigator
 
@@ -253,6 +253,7 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 4	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Swift Alchemy|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorSwiftAlchemy
 4	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Studied Combat|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorStudiedCombat
 4	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Studied Strike|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorStudiedStrike
+20	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ True Inspiration|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorTrueInspiration
 ###Block: Spellcasting
 1	CAST:0,1
 2	CAST:0,2
@@ -279,7 +280,7 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 ###Block: Shaman
 
 # Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Shaman	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Shm		MAXLEVEL:20	SOURCEPAGE:p.35	ABILITY:Internal|AUTOMATIC|Shaman ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanClassSkills		DEFINE:ShamanLVL|0		BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2		BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3		BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE		BONUS:VAR|ShamanLVL|CL	ROLE:Cleric
+CLASS:Shaman	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Shm		MAXLEVEL:20	SOURCEPAGE:p.35	ABILITY:Internal|AUTOMATIC|Shaman ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanClassSkills		DEFINE:ShamanLVL|0		BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3		BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE		BONUS:VAR|ShamanLVL|CL	ROLE:Cleric
 # Class Name	Skill Pts/Lvl
 CLASS:Shaman	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
