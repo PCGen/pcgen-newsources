@@ -1,4 +1,4 @@
-# CVS $Revision: 12957 $ $Author: jbaril $ -- Sun Aug  3 18:25:16 2014 -- reformated by prettylst.pl v1.51 (build 23662)
+# CVS $Revision: 12957 $ $Author: jbaril $ -- Sat May  9 00:54:12 2015 -- reformated by PCGen PrettyLST v6.04.01
 SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2014-08
 # Original Entry by: Stefan Radermacher and Douglas Limmer
 
@@ -6,11 +6,11 @@ SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/produ
 ###################################################################################
 ###
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.8	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Combat bonus										Save bonus																					Modify VAR				Monster Role
+CLASS:Arcanist	HD:6		TYPE:Base.PC	CLASSTYPE:PC	ABB:Arc		MAXLEVEL:20	SOURCEPAGE:p.8	ABILITY:Internal|AUTOMATIC|Arcanist ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistClassSkills	DEFINE:ArcanistLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|ArcanistLVL|CL	ROLE:Wizard
 # Class Name	Skill Pts/Lvl
 CLASS:Arcanist	STARTSKILLPTS:2
-# Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
+# Class Name	Spell Stat		Spell Stat Bonus		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
 CLASS:Arcanist	SPELLSTAT:INT	BONUSSPELLSTAT:NONE	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Arcanist|CL	SPELLLIST:1|Wizard
 ###Block:Proficiencies
 1	ABILITY:Arcanist Class Features|AUTOMATIC|Arcanist ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ArcanistWeaponProficiencies
@@ -59,8 +59,8 @@ CLASS:Arcanist	SPELLSTAT:INT	BONUSSPELLSTAT:NONE	SPELLTYPE:Arcane	MEMORIZE:YES	S
 ###
 
 
-# Class Name	Hit Dice	Type						Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.15	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|0	BONUS:VAR|BloodragerLVL|CL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	ROLE:Combat.Sorcerer
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Combat bonus										Save bonus																						Modify VAR				Monster Role
+CLASS:Bloodrager	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bld		MAXLEVEL:20	SOURCEPAGE:p.15	ABILITY:Internal|AUTOMATIC|Bloodrager ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BloodragerClassSkills	DEFINE:BloodragerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|BloodragerLVL|CL	ROLE:Combat.Sorcerer
 # Class Name	Skill Pts/Lvl
 CLASS:Bloodrager	STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level								Use Spell List
@@ -104,14 +104,14 @@ CLASS:Bloodrager	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Bl
 
 ###Block: Brawler
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define										Combat bonus											Modify VAR																Monster Role	Bonus
-CLASS:Brawler		HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bra		MAXLEVEL:20	SOURCEPAGE:p.23		ABILITY:Internal|AUTOMATIC|Brawler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills		DEFINE:BrawlerLVL|0	DEFINE:MartialFlexibilityLVL|0	DEFINE:ManeuverTrainingLVL|0	DEFINE:MartialTrainingLVL|0	DEFINE:BrawlerMFBonus|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|BrawlerLVL|CL	ROLE:None		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|CL/3
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define																							Combat bonus										Save bonus																	Modify VAR			Monster Role
+CLASS:Brawler	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Bra		MAXLEVEL:20	SOURCEPAGE:p.23	ABILITY:Internal|AUTOMATIC|Brawler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills	DEFINE:BrawlerLVL|0	DEFINE:MartialFlexibilityLVL|0	DEFINE:ManeuverTrainingLVL|0	DEFINE:MartialTrainingLVL|0	DEFINE:BrawlerMFBonus|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|CL/3	BONUS:VAR|BrawlerLVL|CL	ROLE:None
 # Class Name	Skill Pts/Lvl
 CLASS:Brawler	STARTSKILLPTS:4
 ###Block:Proficiencies
 1	ABILITY:Brawler Class Features|AUTOMATIC|Brawler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerWeaponProficiencies
-1	AUTO:WEAPONPROF|Handaxe|Sword (Short)|TYPE.Weapon Group Close|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1																										AUTO:WEAPONPROF|Handaxe|Sword (Short)|TYPE.Weapon Group Close|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|!PREABILITY:1,CATEGORY=Archetype,TYPE.BrawlerClassSkills
 #PREVAREQ:BrawlerDefaultSkill,0
 ###Block:
@@ -158,22 +158,23 @@ CLASS:Brawler	STARTSKILLPTS:4
 
 ###Block: Hunter
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.26	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|0	BONUS:VAR|HunterLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Combat.Druid
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus											Save bonus																						Modify VAR			Monster Role
+CLASS:Hunter	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Hun		MAXLEVEL:20	SOURCEPAGE:p.26	ABILITY:Internal|AUTOMATIC|Hunter ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterClassSkills	DEFINE:HunterLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|HunterLVL|CL	ROLE:Combat.Druid
+# Class Name	Required AL
 CLASS:Hunter	PREALIGN:NG,LN,TN,CN,NE
 # Class Name	Skill Pts/Lvl
 CLASS:Hunter	STARTSKILLPTS:6
-# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level			Use Spell List
-CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZE:NO		SPELLLIST:2|Druid|Ranger	KNOWNSPELLS:Summon Nature's Ally I|Summon Nature's Ally II|Summon Nature's Ally III|Summon Nature's Ally IV|Summon Nature's Ally V|Summon Nature's Ally VI
+# Class Name	Spell Stat		Spell Type		Memorize	Automatically Known Spell Levels																					Caster level			Use Spell List
+CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:NO	KNOWNSPELLS:Summon Nature's Ally I|Summon Nature's Ally II|Summon Nature's Ally III|Summon Nature's Ally IV|Summon Nature's Ally V|Summon Nature's Ally VI	BONUS:CASTERLEVEL|Hunter|CL	SPELLLIST:2|Druid|Ranger
 ###Block:Proficiencies
 1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|TYPE=ArmorProfMedium|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterArmorProficiencies
 ###Block: Spell Alignment Restrictions
-1	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		
-1	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG		
-1	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	
-1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	
+1	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
 ###Block: Level Progression Abilities
 1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Animal Companion|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalCompanion
 1	ABILITY:Hunter Class Features|AUTOMATIC|Hunter ~ Animal Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HunterAnimalFocus
@@ -200,39 +201,39 @@ CLASS:Hunter	SPELLSTAT:WIS	SPELLTYPE:Divine	BONUS:CASTERLEVEL|Hunter|CL		MEMORIZ
 2	BONUS:VAR|TrackLVL|CL
 ###Block: Level progression
 # The KNOWN are 1 higher than in the book for levels 1+ because all the Summon Nature's Ally spells are automatically known in addition
-1	CAST:0,1				KNOWN:4,3			
-2	CAST:0,2				KNOWN:5,4			
-3	CAST:0,3				KNOWN:6,5			
-4	CAST:0,3,1				KNOWN:6,5,3			
-5	CAST:0,4,2				KNOWN:6,5,4			
-6	CAST:0,4,3				KNOWN:6,5,5			
-7	CAST:0,4,3,1			KNOWN:6,6,5,3		
-8	CAST:0,4,4,2			KNOWN:6,6,5,4		
-9	CAST:0,5,4,3			KNOWN:6,6,5,5		
-10	CAST:0,5,4,3,1			KNOWN:6,6,6,5,3		
-11	CAST:0,5,4,4,2			KNOWN:6,7,6,5,4		
-12	CAST:0,5,5,4,3			KNOWN:6,7,6,5,5		
-13	CAST:0,5,5,4,3,1			KNOWN:6,7,6,6,5,3	
-14	CAST:0,5,5,4,4,2			KNOWN:6,7,7,6,5,4	
-15	CAST:0,5,5,5,4,3			KNOWN:6,7,7,6,5,5	
-16	CAST:0,5,5,5,4,3,1		KNOWN:6,7,7,6,6,5,3	
-17	CAST:0,5,5,5,4,4,2		KNOWN:6,7,7,7,6,5,4	
-18	CAST:0,5,5,5,5,4,3		KNOWN:6,7,7,7,6,5,5	
-19	CAST:0,5,5,5,5,5,4		KNOWN:6,7,7,7,6,6,5	
-20	CAST:0,5,5,5,5,5,5		KNOWN:6,7,7,7,7,6,6	
+1	CAST:0,1			KNOWN:4,3
+2	CAST:0,2			KNOWN:5,4
+3	CAST:0,3			KNOWN:6,5
+4	CAST:0,3,1			KNOWN:6,5,3
+5	CAST:0,4,2			KNOWN:6,5,4
+6	CAST:0,4,3			KNOWN:6,5,5
+7	CAST:0,4,3,1		KNOWN:6,6,5,3
+8	CAST:0,4,4,2		KNOWN:6,6,5,4
+9	CAST:0,5,4,3		KNOWN:6,6,5,5
+10	CAST:0,5,4,3,1		KNOWN:6,6,6,5,3
+11	CAST:0,5,4,4,2		KNOWN:6,7,6,5,4
+12	CAST:0,5,5,4,3		KNOWN:6,7,6,5,5
+13	CAST:0,5,5,4,3,1		KNOWN:6,7,6,6,5,3
+14	CAST:0,5,5,4,4,2		KNOWN:6,7,7,6,5,4
+15	CAST:0,5,5,5,4,3		KNOWN:6,7,7,6,5,5
+16	CAST:0,5,5,5,4,3,1	KNOWN:6,7,7,6,6,5,3
+17	CAST:0,5,5,5,4,4,2	KNOWN:6,7,7,7,6,5,4
+18	CAST:0,5,5,5,5,4,3	KNOWN:6,7,7,7,6,5,5
+19	CAST:0,5,5,5,5,5,4	KNOWN:6,7,7,7,6,6,5
+20	CAST:0,5,5,5,5,5,5	KNOWN:6,7,7,7,7,6,6
 
 ###Block: Investigator
 
-# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Define				Save checks bonus											Combat bonus					Monster Role
-CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.30	ABILITY:Internal|AUTOMATIC|Investigator ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorClassSkills		DEFINE:InvestigatorLVL|0	BONUS:VAR|InvestigatorLVL|classlevel("APPLIEDAS=NONEPIC")	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
-# Class Name		Skill Pts/Lvl	Class Skill
-CLASS:Investigator	STARTSKILLPTS:6	
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																			Define				Combat bonus											Save bonus																					Modify VAR									Monster Role
+CLASS:Investigator	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Inv		MAXLEVEL:20	SOURCEPAGE:p.30	ABILITY:Internal|AUTOMATIC|Investigator ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorClassSkills	DEFINE:InvestigatorLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:VAR|InvestigatorLVL|classlevel("APPLIEDAS=NONEPIC")	ROLE:Skill
+# Class Name		Skill Pts/Lvl
+CLASS:Investigator	STARTSKILLPTS:6
 # Class Name		Spell Stat		Spell Type		Memorize		Spellbook		Caster level				Use Spell List
 CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CASTERLEVEL|Investigator|CL	SPELLLIST:1|Alchemist
 ###Block: Proficiencies
 1	ABILITY:Investigator Class Features|AUTOMATIC|Investigator ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
-1	AUTO:WEAPONPROF|Crossbow (Hand)|Rapier|Sap|Shortbow|Sword (Short)|Sword Cane|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
+1																																								AUTO:WEAPONPROF|Crossbow (Hand)|Rapier|Sap|Shortbow|Sword (Short)|Sword Cane|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorWeaponProficiencies
 1	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|!PREABILITY:1,CATEGORY=Archetype,TYPE.InvestigatorArmorProficiencies
 ###Block: Alchemist Book
 1	ABILITY:Internal|AUTOMATIC|Free Formula Book|PREMULT:1,[PREMULT:2,[PREPCLEVEL:MAX=0],[PRECLASS:1,Investigator=1]],[PREMULT:2,[!PRECLASS:1,TYPE.Base=0],[PRECLASS:1,Investigator=1]]
@@ -279,12 +280,12 @@ CLASS:Investigator	SPELLSTAT:INT	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BON
 
 ###Block: Shaman
 
-# Class Name	Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus											Combat bonus					Modify VAR				Monster Role
-CLASS:Shaman	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Shm		MAXLEVEL:20	SOURCEPAGE:p.35	ABILITY:Internal|AUTOMATIC|Shaman ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanClassSkills		DEFINE:ShamanLVL|0		BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3		BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE		BONUS:VAR|ShamanLVL|CL	ROLE:Cleric
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus											Save bonus																					Modify VAR			Monster Role
+CLASS:Shaman	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Shm		MAXLEVEL:20	SOURCEPAGE:p.35	ABILITY:Internal|AUTOMATIC|Shaman ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanClassSkills	DEFINE:ShamanLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|ShamanLVL|CL	ROLE:Cleric
 # Class Name	Skill Pts/Lvl
 CLASS:Shaman	STARTSKILLPTS:4
-# Class Name	Spell Stat		Spell Type		Memorize		Caster level			Use Spell List
-CLASS:Shaman	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:YES	BONUS:CASTERLEVEL|Shaman|CL	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9
+# Class Name	Spell Stat		Spell Type		Memorize		Automatically Known Spell Levels											Caster level
+CLASS:Shaman	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:YES	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6|LEVEL=7|LEVEL=8|LEVEL=9	BONUS:CASTERLEVEL|Shaman|CL
 
 ###Block:Proficiencies
 1	ABILITY:Shaman Class Features|AUTOMATIC|Shaman ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ShamanWeaponProficiencies
@@ -330,8 +331,8 @@ CLASS:Shaman	SPELLSTAT:WIS	SPELLTYPE:Divine	MEMORIZE:YES	BONUS:CASTERLEVEL|Shama
 
 ###Block: Skald
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Save checks bonus											Combat bonus					Monster Role
-CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.49	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|0	BONUS:VAR|SkaldLVL|CL	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	ROLE:Skill
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define		Combat bonus											Save bonus																					Modify VAR			Monster Role
+CLASS:Skald		HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Ska		MAXLEVEL:20	SOURCEPAGE:p.49	ABILITY:Internal|AUTOMATIC|Skald ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SkaldClassSkills	DEFINE:SkaldLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will,BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:VAR|SkaldLVL|CL	ROLE:Skill
 # Class Name	Skill Pts/Lvl
 CLASS:Skald		STARTSKILLPTS:4
 # Class Name	Spell Stat		Spell Type		Memorize		Spellbook		Caster level			Use Spell List
@@ -388,8 +389,8 @@ CLASS:Skald		SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:YES	SPELLBOOK:YES	BONUS:CAS
 
 ###Block: Slayer
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
-CLASS:Slayer	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sla		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Slayer ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SlayerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Save bonus																						Modify VAR			Monster Role
+CLASS:Slayer	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Sla		MAXLEVEL:20	SOURCEPAGE:p.53	ABILITY:Internal|AUTOMATIC|Slayer ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|SlayerLVL|CL	ROLE:Combat.Skill
 # Class Name	Skill Pts/Lvl
 CLASS:Slayer	STARTSKILLPTS:6
 ###Block:Proficiencies
@@ -412,16 +413,16 @@ CLASS:Slayer	STARTSKILLPTS:6
 
 ###Block: Swashbuckler
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																	Define			Combat bonus										Modify VAR			Monster Role	Bonus
-CLASS:Swashbuckler	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Swa		MAXLEVEL:20	SOURCEPAGE:p.56	ABILITY:Internal|AUTOMATIC|Swashbuckler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerClassSkills	DEFINE:SlayerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:VAR|SwashbucklerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	DEFINE:SwashbucklerLVL|0
-# Class Name	Skill Pts/Lvl
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																			Define								Combat bonus										Save bonus																													Modify VAR				Monster Role
+CLASS:Swashbuckler	HD:10		TYPE:Base.PC	CLASSTYPE:PC	ABB:Swa		MAXLEVEL:20	SOURCEPAGE:p.56	ABILITY:Internal|AUTOMATIC|Swashbuckler ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerClassSkills	DEFINE:SlayerLVL|0	DEFINE:SwashbucklerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|SwashbucklerLVL|CL	ROLE:Combat.Skill
+# Class Name		Skill Pts/Lvl
 CLASS:Swashbuckler	STARTSKILLPTS:4
 1	DEFINE:SwashbucklerPanachePoints|0
 1	DEFINE:PanachePoints|0
 1	DEFINE:SwashbucklerPanache_Max|0
 1	DEFINE:Panache_Max|0
 1	DEFINE:PanachePointsFavoredBonus|0
-1	DEFINE:PanacheMaxFavoredBonus|0	
+1	DEFINE:PanacheMaxFavoredBonus|0
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Swashbuckler ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.SwashbucklerArmorProficiencies,TYPE.SwashbucklerWeaponProficiency,TYPE.SwashbucklerArmorProficiencies,TYPE.SwashbucklerLightArmorProficiency,TYPE.SwashbucklerShieldProficiency
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.SlayerWeaponProficiency,TYPE.SlayerWeaponProficiencies
@@ -439,12 +440,12 @@ CLASS:Swashbuckler	STARTSKILLPTS:4
 
 ###Block: Warpriest
 
-# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Save checks bonus												Combat bonus					Monster Role
-CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	EXCLASS:Ex-Warpriest	SOURCEPAGE:p.60	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|0	BONUS:VAR|WarpriestLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel()/2+2	BONUS:SAVE|BASE.Reflex|classlevel()/3		BONUS:COMBAT|BASEAB|classlevel()*3/4|TYPE=Base.REPLACE	ROLE:Combat.Cleric
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Ex Class			Source Page		Ability																		Define			Combat bonus								Save bonus															Modify VAR				Monster Role
+CLASS:Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:Wrp		MAXLEVEL:20	EXCLASS:Ex-Warpriest	SOURCEPAGE:p.60	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	DEFINE:WarpriestLVL|0	BONUS:COMBAT|BASEAB|classlevel()*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel()/2+2	BONUS:SAVE|BASE.Reflex|classlevel()/3	BONUS:VAR|WarpriestLVL|CL	ROLE:Combat.Cleric
 # Class Name	Skill Pts/Lvl
 CLASS:Warpriest	STARTSKILLPTS:2
-# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level				Use Spell List
-CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Warpriest|CL	SPELLLIST:1|Cleric	BONUS:CASTERLEVEL|Cleric|CL
+# Class Name	Spell Stat		Spell Type		Automatically Known Spell Levels							Caster level									Use Spell List
+CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL=2|LEVEL=3|LEVEL=4|LEVEL=5|LEVEL=6	BONUS:CASTERLEVEL|Warpriest|CL	BONUS:CASTERLEVEL|Cleric|CL	SPELLLIST:1|Cleric
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestShieldProficiencies
 1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|Weapon Prof ~ Deity Weapons|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestWeaponProficiencies
@@ -453,10 +454,10 @@ CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL
 1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Heavy|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestHeavyArmorProficiency
 1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestShieldProficiencies
 ###Block: Spell Alignment Restrictions
-1	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE		
-1	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG		
-1	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE	
-1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE	
+1	PROHIBITSPELL:ALIGNMENT.Good|PREDEITYALIGN:LE,NE,CE
+1	PROHIBITSPELL:ALIGNMENT.Evil|PREDEITYALIGN:LG,NG,CG
+1	PROHIBITSPELL:ALIGNMENT.Lawful|PREDEITYALIGN:CG,CN,CE
+1	PROHIBITSPELL:ALIGNMENT.Chaotic|PREDEITYALIGN:LG,LN,LE
 ###Block: Level Progression Abilities
 1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Aura|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestAura
 1	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Blessings|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestBlessings
@@ -471,7 +472,7 @@ CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL
 7	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Sacred Armor|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestSacredArmor
 20	ABILITY:Warpriest Class Features|AUTOMATIC|Warpriest ~ Aspect of War|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestAspectOfWar
 ###Block: Vars
-1		BONUS:VAR|AlignmentAuraLVL|CL
+1	BONUS:VAR|AlignmentAuraLVL|CL
 ###Block: Level progression
 1	CAST:3,1
 2	CAST:4,2
@@ -494,7 +495,9 @@ CLASS:Warpriest	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1|LEVEL
 19	CAST:5,5,5,5,5,5,4
 20	CAST:5,5,5,5,5,5,5
 
-CLASS:Ex-Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:XWrp		MAXLEVEL:20					SOURCEPAGE:p.63	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	VISIBLE:NO	DEFINE:WarpriestLVL|0	BONUS:VAR|WarpriestLVL|CL	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel()/2+2	BONUS:SAVE|BASE.Reflex|classlevel()/3		BONUS:COMBAT|BASEAB|classlevel()*3/4|TYPE=Base.REPLACE	ROLE:Combat
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Visible	Define			Combat bonus								Save bonus															Modify VAR				Monster Role
+CLASS:Ex-Warpriest	HD:8		TYPE:Base.PC	CLASSTYPE:PC	ABB:XWrp		MAXLEVEL:20	SOURCEPAGE:p.63	ABILITY:Internal|AUTOMATIC|Warpriest ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestClassSkills	VISIBLE:NO	DEFINE:WarpriestLVL|0	BONUS:COMBAT|BASEAB|classlevel()*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel()/2+2	BONUS:SAVE|BASE.Reflex|classlevel()/3	BONUS:VAR|WarpriestLVL|CL	ROLE:Combat
+# Class Name		Skill Pts/Lvl
 CLASS:Ex-Warpriest	STARTSKILLPTS:2
 ###Block:Proficiencies
 1	ABILITY:Special Ability|AUTOMATIC|Warpriest ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestArmorProficiencies,TYPE.WarpriestShieldProficiencies
@@ -509,4 +512,3 @@ CLASS:Ex-Warpriest	STARTSKILLPTS:2
 #
 # End
 #
-
