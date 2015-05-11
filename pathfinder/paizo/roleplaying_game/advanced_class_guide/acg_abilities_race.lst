@@ -1,11 +1,12 @@
 # CVS $Revision: $ $Author: $ -- Thu Jan  1 20:41:44 2015 -- reformated by prettylst.pl v1.51 (build 23662)
-###Block:
-# Dwarf
+# Original entry: Andrew Wilson, Douglas Limmer
+
+###Block: Dwarf
 
 # Dwarf Arcanist Arcane Barrier and Weapon
 # Ability Name									Unique Key									Category of Ability		Type											Visible		Required Ability							Required Class			Required Race				Define						Description																																																																					Stackable?	Multiple?	Choose		Ability																		Modify VAR												Bonus
 Bonus Arcane Barrier and Weapon						KEY:Dwarf ~ Favored Class Bonus ~ Arcane Barrier and Weapon	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassArcanist		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Arcanist		PRECLASS:1,Arcanist=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfArcanistFavClassBonus|0		DESC:Add 1/4 to the arcanist’s effective class level when determining the effects of the arcane barrier and arcane weapon arcanist exploits.																																															STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfArcanistFavClassBonus|1
-CATEGORY=Special Ability|Arcanist Exploit ~ Arcane Barrier.MOD																																																																																																																																																									BONUS:VAR|ArcaneBarrierHP|DwarfArcanistFavClassBonus/4
+CATEGORY=Special Ability|Arcanist Exploit ~ Arcane Barrier.MOD																																																																																																																																																									BONUS:VAR|ArcaneBarrierHP|DwarfArcanistFavClassBonus/4	BONUS:VAR|ArcaneBarrierTime|DwarfArcanistFavClassBonus/4
 CATEGORY=Special Ability|Arcanist Exploit ~ Arcane Weapon.MOD																																																																																																																																																									BONUS:VAR|ArcanistArcaneWeaponBonus|DwarfArcanistFavClassBonus/4
 
 # Dwarf Bloodrager Bloodrage Duration
@@ -13,29 +14,27 @@ Bonus Bloodrage Duration							KEY:Dwarf ~ Favored Class Bonus ~ Bloodrage Durat
 CATEGORY=Special Ability|Bloodrager ~ Bloodrage.MOD																																																																																																																																																											BONUS:VAR|BloodrageDuration|DwarfBloodragerFavClassBonus
 
 # Dwarf Brawler Unarmed Strike
-Bonus Unarmed Strike								KEY:Dwarf ~ Favored Class Bonus ~ Unarmed Strike		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfBrawlerFavClassBonus|0		DESC:Reduce the hardness of any object made from clay, stone, or metal by %1 whenever the object is struck by the brawler’s unarmed strike (minimum 0).|DwarfBrawlerFavClassBonus																																									STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfBrawlerFavClassBonus|1
+Bonus Unarmed Strike								KEY:Dwarf ~ Favored Class Bonus ~ Unarmed Strike		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler					PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfBrawlerFavClassBonus|0		DESC:Reduce the hardness of any object made from clay, stone, or metal by %1 whenever the object is struck by the brawler's unarmed strike (minimum 0).|DwarfBrawlerFavClassBonus																																									STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfBrawlerFavClassBonus|1
 
 # Dwarf Hunter Wild Empathy
-Bonus Wild Empathy								KEY:Dwarf ~ Favored Class Bonus ~ Wild Empathy			CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassHunter		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Hunter		PRECLASS:1,Hunter=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfHunterFavClassBonus|0		DESC:Gain a +1/2 bonus on wild empathy checks the hunter makes to influence animals and magical beasts that live underground.																																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfHunterFavClassBonus|1
-CATEGORY=Special Ability|Hunter ~ Wild Empathy.MOD																																																																																																																																																											BONUS:VAR|HunterWildEmpatyBonus|DwarfHunterFavClassBonus/2
+Bonus Wild Empathy								KEY:Dwarf ~ Favored Class Bonus ~ Wild Empathy			CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassHunter			PREABILITY:1,CATEGORY=Special Ability,Hunter		PRECLASS:1,Hunter=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfHunterFavClassBonus|0		DESC:Gain a +%1 bonus on wild empathy checks the hunter makes to influence animals and magical beasts that live underground.|DwarfHunterFavClassBonus/2																																													STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfHunterFavClassBonus|1
 
 # Dwarf Investigator Perception and Trap Sense
-Bonus Perception and Trap Sense						KEY:Dwarf ~ Favored Class Bonus ~ Perception and Trap Sense	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassInvestigator	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Investigator	PRECLASS:1,Investigator=1	PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfInvestigatorFavClassBonus|0	DESC:Gain a +1/4 bonus on Perception checks when underground and +1/2 bonus to the investigator’s trap sense ability regarding stone traps.																																															STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfInvestigatorFavClassBonus|1	ABILITY:Internal|AUTOMATIC|Dwarf ~ Investigator ~ Perception Underground|PREVARGTEQ:DwarfInvestigatorFavClassBonus,4
-CATEGORY=Special Ability|Investigator ~ Trap Sense.MOD																																																																																																																																																										BONUS:VAR|TrapSenseBonus|DwarfInvestigatorFavClassBonus/2				BONUS:SITUATION|Perception=underground|DwarfInvestigatorFavClassBonus/4
+Bonus Perception and Trap Sense						KEY:Dwarf ~ Favored Class Bonus ~ Perception and Trap Sense	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassInvestigator	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Investigator	PRECLASS:1,Investigator=1	PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfInvestigatorFavClassBonus|0	DESC:Gain a +%1 bonus on Perception checks when underground and +%2 bonus to the investigator's trap sense ability regarding stone traps.|DwarfInvestigatorFavClassBonus/4|DwarfInvestigatorFavClassBonus/2																																															STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfInvestigatorFavClassBonus|1	ABILITY:Internal|AUTOMATIC|Dwarf ~ Investigator ~ Perception Underground|PREVARGTEQ:DwarfInvestigatorFavClassBonus,4
+#CATEGORY=Special Ability|Investigator ~ Trap Sense.MOD																																																																																																																																																										BONUS:SITUATION|Perception=underground|DwarfInvestigatorFavClassBonus/4
 
-# TODO fix this when the Shaman is entered 2015/01/03 arw
 # Dwarf Shaman Spirit Animal
 Bonus Spirit Animal								KEY:Dwarf ~ Favored Class Bonus ~ Spirit Animal			CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassShaman		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Shaman		PRECLASS:1,Shaman=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfShamanFavClassBonus|0		DESC:Add 1/4 to the natural armor bonus of the shaman’s spirit animal.																																																										STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfShamanFavClassBonus|1
 
 # Dwarf Skald Spell Failure
-Bonus Spell Failure								KEY:Dwarf ~ Favored Class Bonus ~ Spell Failure			CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSkald		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Skald		PRECLASS:1,Skald=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfSKaldFavClassBonus|0		DESC:Reduce the arcane spell failure chance for casting skald spells when wearing heavy armor by 1%%. Once the total reduction reaches 10%%, the skald also receives Heavy Armor Proficiency (if the skald does not already possess it).																																STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Heavy|PREVARGTEQ:DwarfSKaldFavClassBonus,10						BONUS:VAR|DwarfSKaldFavClassBonus|1
+Bonus Spell Failure								KEY:Dwarf ~ Favored Class Bonus ~ Spell Failure			CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSkald					PREABILITY:1,CATEGORY=Special Ability,Skald		PRECLASS:1,Skald=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfSKaldFavClassBonus|0		DESC:Reduce the arcane spell failure chance for casting skald spells when wearing heavy armor by %1%%. Once the total reduction reaches 10%%, the skald also receives Heavy Armor Proficiency (if the skald does not already possess it).|DwarfSkaldFavClassBonus																																STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Heavy|PREVARGTEQ:DwarfSKaldFavClassBonus,10						BONUS:VAR|DwarfSKaldFavClassBonus|1
 
 # Dwarf Slayer Slayer Underground
-Bonus Slayer Underground							KEY:Dwarf ~ Favored Class Bonus ~ Slayer Underground		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSlayer		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Slayer		PRECLASS:1,Slayer=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfSlayerFavClassBonus|0		DESC:Gain a +1/3 bonus on Knowledge (dungeoneering) checks and on Survival checks when underground. If the slayer has a +1 bonus on Knowledge (dungeoneering) checks from this ability, he is also considered trained in that skill.																																STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfSlayerFavClassBonus|1
+Bonus Slayer Underground							KEY:Dwarf ~ Favored Class Bonus ~ Slayer Underground		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSlayer			PREABILITY:1,CATEGORY=Special Ability,Slayer		PRECLASS:1,Slayer=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfSlayerFavClassBonus|0		DESC:Gain a +1/3 bonus on Knowledge (dungeoneering) checks and on Survival checks when underground. If the slayer has a +1 bonus on Knowledge (dungeoneering) checks from this ability, he is also considered trained in that skill.																																STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfSlayerFavClassBonus|1	ABILITY:Internal|AUTOMATIC|Dwarf ~ Favored Class Bonus ~ Slayer Handler
+Dwarf ~ Favored Class Bonus ~ Slayer Handler	CATEGORY:Internal	BONUS:SKILL|Knowledge (Dungeoneering)|DwarfSlayerFavClassBonus/3	BONUS:SITUATION|Survival=underground|DwarfSlayerFavClassBonus/3
 
 # Dwarf Swashbuckler Swashbuckler Precision
-Bonus Swashbuckler Precision							KEY:Dwarf ~ Favored Class Bonus ~ Swashbuckler Precision	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSwashbuckler	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Swashbuckler	PRECLASS:1,Swashbuckler=1	PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfSwashbucklerFavClassBonus|0	DESC:Add 1/4 to the swashbuckler’s effective class level to determine the extra damage she deals because of the precise strike deed when wielding a light pick or a heavy pick. If the swashbuckler has the Slashing Grace feat or another similar effect, she can treat the battleaxe or handaxe as a one-handed piercing melee weapon, and she gains this benefit when wielding the appropriate weapon for the feat as well.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfSwashbucklerFavClassBonus|1
-CATEGORY=Special Ability|Swashbuckler ~ Swashbuckler Weapon Training.MOD	BONUS:VAR|SwashbucklerWeaponTrainingBonus|(DwarfSwashbucklerFavClassBonus/4)
+Bonus Swashbuckler Precision							KEY:Dwarf ~ Favored Class Bonus ~ Swashbuckler Precision	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassSwashbuckler		PREABILITY:1,CATEGORY=Special Ability,Swashbuckler	PRECLASS:1,Swashbuckler=1	PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfSwashbucklerFavClassBonus|0	DESC:Add %1 to the swashbuckler's effective class level to determine the extra damage she deals because of the precise strike deed when wielding a light pick or a heavy pick. If the swashbuckler has the Slashing Grace feat or another similar effect, she can treat the battleaxe or handaxe as a one-handed piercing melee weapon, and she gains this benefit when wielding the appropriate weapon for the feat as well.|DwarfSwashbucklerFavClassBonus/4	STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:VAR|DwarfSwashbucklerFavClassBonus|1
 
 # Dwarf Warpriest Warpriest Blessings
 Bonus Warpriest Blessings							KEY:Dwarf ~ Favored Class Bonus ~ Warpriest Blessings		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassWarpriest		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Warpriest		PRECLASS:1,Warpriest=1		PRERACE:1,Dwarf%,RACESUBTYPE=Dwarf	DEFINE:DwarfWarpriestFavClassBonus|0	DESC:Add 1/3 to the number of times per day the warpriest can use blessings, but he can only use these additional uses on blessings that affect weapons or armor.																																												STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Warpriest ~ Favored Class Blessings|PREVARGTEQ:DwarfWarpriestFavClassBonus,3	BONUS:VAR|DwarfWarpriestFavClassBonus|1
@@ -43,20 +42,19 @@ CATEGORY=Special Ability|Warpriest ~ Favored Class Blessings.MOD																
 
 
 
-###Block:
-# Elf
+###Block: Elf
 
 # Elf Arcanist Maximum Reservoir
 # Ability Name									Unique Key							Category of Ability		Type											Visible		Required Ability							Required Class			Required Race				Define						Description																																																								Stackable?	Multiple?	Choose		Ability																		Bonus to Ability Pool							Modify VAR
 Bonus Maximum Reservoir								KEY:Elf ~ Favored Class Bonus ~ Maximum Reservoir	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassArcanist		VISIBLE:DISPLAY										PRECLASS:1,Arcanist=1		PRERACE:1,Elf%,RACESUBTYPE=Elf								DESC:Increase total number of points in the arcanist’s arcane reservoir by 1.																																												STACK:YES	MULT:YES	CHOOSE:NOCHOICE																														BONUS:VAR|MaxArcanistReservoirSize|1
 
 # Elf Bloodrager Base Speed
-Bonus Base Speed									KEY:Elf ~ Favored Class Bonus ~ Base Speed		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBloodrager	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Bloodrager	PRECLASS:1,Bloodrager=1		PRERACE:1,Elf%,RACESUBTYPE=Elf	DEFINE:ElfBloodragerFavClassBonus|0		DESC:Add 1 foot to the bloodrager’s base speed.  In combat, this only has an effect for every five increases in base speed. This bonus stacks with the bloodrager’s fast movement class feature, and applies under the same conditions as that feature.																STACK:YES	MULT:YES	CHOOSE:NOCHOICE																														BONUS:VAR|ElfBloodragerFavClassBonus|1
-CATEGORY=Special Ability|Bloodrager ~ Fast Movement.MOD																																																																																																																																																					BONUS:VAR|BloodrageMovementBonus|ElfBloodragerFavClassBonus/5
+Bonus Fast Movement								KEY:Elf ~ Favored Class Bonus ~ Fast Movement		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBloodrager	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Bloodrager	PRECLASS:1,Bloodrager=1		PRERACE:1,Elf%,RACESUBTYPE=Elf	DEFINE:ElfBloodragerFavClassBonus|0		DESC:Add 1 foot to the bloodrager’s base speed.  In combat, this only has an effect for every five increases in base speed. This bonus stacks with the bloodrager’s fast movement class feature, and applies under the same conditions as that feature.																STACK:YES	MULT:YES	CHOOSE:NOCHOICE																														BONUS:VAR|ElfBloodragerFavClassBonus|1
+CATEGORY=Special Ability|Bloodrager ~ Fast Movement.MOD																																																																																																																																																					BONUS:VAR|BloodrageMovementBonus|5*floor(ElfBloodragerFavClassBonus/5)
 
 # Elf Brawler Base Speed
-Bonus Base Speed									KEY:Elf ~ Favored Class Bonus ~ Base Speed		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Elf%,RACESUBTYPE=Elf	DEFINE:ElfBrawlerFavClassBonus|0		DESC:Add 1 foot to the brawler’s base speed. In combat, this has an effect only for every five increases in the brawler’s base speed.																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Elf ~ Brawler ~ Fast Movement|PREVARGTEQ:ElfBrawlerFavClassBonus,5														BONUS:VAR|ElfBrawlerFavClassBonus|1
-# See supplementary ability below Brawler ~ (Fast Movement)
+Bonus Base Speed									KEY:Elf ~ Favored Class Bonus ~ Base Speed		CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassBrawler		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Brawler		PRECLASS:1,Brawler=1		PRERACE:1,Elf%,RACESUBTYPE=Elf	DEFINE:ElfBrawlerFavClassBonus|0		DESC:Add 1 foot to the brawler's base speed. In combat, this has an effect only for every five increases in the brawler’s base speed.																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Elf ~ Brawler ~ Fast Movement														BONUS:VAR|ElfBrawlerFavClassBonus|1
+# See supplementary ability below Elf ~ Brawler ~ Fast Movement
 
 # Elf Hunter Critical Confirmation
 Bonus Critical Confirmation							KEY:Elf ~ Favored Class Bonus ~ Critical Confirmation	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassHunter		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Hunter		PRECLASS:1,Hunter=1		PRERACE:1,Elf%,RACESUBTYPE=Elf								DESC:Choose a weapon from the following list: longbow, longsword, rapier, short sword, shortbow, or any weapon with “elven” in its name. Gain a +1/2 bonus on critical hit confirmation rolls made while using that type of weapon (maximum bonus +4). This bonus does not stack with those gained through Critical Focus and similar effects.	STACK:YES	MULT:YES	CHOOSE:NOCHOICE																				BONUS:ABILITYPOOL|Elf Hunter Critial Confirmation Choice|1
@@ -86,8 +84,7 @@ Bonus Blessings									KEY:Elf ~ Favored Class Bonus ~ Blessings			CATEGORY:Spe
 CATEGORY=Special Ability|Warpriest ~ Favored Class Blessings.MOD																																																							DESC:You can call upon the power of your blessings a further %1 times per day, but only on blessings from the Air, Animal, Charm, Magic, Plant, or Sun domains|WarpriestBlessingFavoredClassUses|PREVARGTEQ:ElfWarpriestFavClassBonus,2																																																							BONUS:VAR|WarpriestBlessingFavoredClassUses|ElfWarpriestFavClassBonus/2
 
 
-###Block:
-# Gnome
+###Block: Gnome
 
 # Gnome Arcanist Reservoir
 # Ability Name	Unique Key					Category of Ability		Type											Visible		Required Ability							Required Class			Required Race				Define						Description																																							Stackable?	Multiple?	Choose		Modify VAR
@@ -131,8 +128,7 @@ CATEGORY=Special Ability|Warpriest ~ Channel Energy.MOD	DEFINE:WarpriestGnomeCha
 
 
 
-###Block:
-# Half-elf
+###Block: Half-elf
 
 # Half-elf Arcanist Caster Level
 # Ability Name	Unique Key					Category of Ability		Type											Visible		Required Ability							Required Class			Required Race					Define						Description																																			Stackable?	Multiple?	Choose		Modify VAR
@@ -170,8 +166,7 @@ Bonus Channel Energy	KEY:Half-elf ~ Favored Class Bonus ~ Channel Energy	CATEGOR
 CATEGORY=Special Ability|Warpriest ~ Channel Energy.MOD	DEFINE:WarpriestHalfelfChannelEnergyBonus|0	BONUS:VAR|WarpriestHalfelfChannelEnergyBonus|HalfelfWarpriestFavClassBonus/3	DESC:&nl;Gain a +%1 bonus on the damage dealt or healed due to your Favored Class.|WarpriestHalfelfChannelEnergyBonus|PREVARGTEQ:WarpriestHalfelfChannelEnergyBonus,1
 
 
-###Block:
-# Halfling
+###Block: Halfling
 
 # Halfling Arcanist Exploit
 # Ability Name	Unique Key					Category of Ability		Type											Visible		Required Ability							Required Class			Required Race					Define							Description																																																	Stackable?	Multiple?	Choose		Modify VAR
@@ -209,8 +204,7 @@ CATEGORY=Special Ability|Warpriest ~ Sacred Weapon.MOD	BONUS:VAR|WarpriestSacred
 
 
 
-###Block:
-# Half-orc
+###Block: Half-orc
 
 # Half-orc Arcanist Concentration
 # Ability Name	Unique Key					Category of Ability		Type											Visible		Required Ability							Required Class			Required Race					Define						Description																																			Stackable?	Multiple?	Choose		Modify VAR
@@ -247,8 +241,7 @@ Bonus Confirm Crit on Precise Strike	KEY:Half-orc ~ Favored Class Bonus ~ Confir
 Bonus Stabalize Rolls	KEY:Half-orc ~ Favored Class Bonus ~ Stabalize Rolls	CATEGORY:Special Ability	TYPE:SpecialQuality.FavoredClassBonus.FavoredClassWarpriest		VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=Special Ability,Warpriest		PRECLASS:1,Warpriest=1		PRERACE:1,Half-orc%,RACESUBTYPE=Half-orc	DEFINE:HalfOrcWarpriestFavClassBonus|0	DESC:Gain a +2 bonus on rolls to stabilize when dying.																											STACK:YES	MULT:YES	CHOOSE:NOCHOICE	BONUS:VAR|HalfOrcWarpriestFavClassBonus|1	ABILITY:Special Ability|AUTOMATIC|Half-orc ~ Warpriest ~ Stabalize Rolls
 
 
-###Block:
-# Human
+###Block: Human
 
 # Human Arcanist Spell in Spellbook
 # Ability Name	Unique Key					Category of Ability		Type											Visible		Required Ability							Required Class			Required Race				Define						Description																																			Stackable?	Multiple?	Choose		Modify VAR
@@ -309,7 +302,7 @@ Bluff and Diplomacy	KEY:Half-elf ~ Slayer ~ Bluff and Diplomacy	CATEGORY:Interna
 Concentration	KEY:Gnome ~ Skald ~ Concentration	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:CONCENTRATION|Skald|GnomeSkaldFavClassBonus/6
 Perception Underground	KEY:Dwarf ~ Investigator ~ Perception Underground	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:SITUATION|Perception=Underground|DwarfInvestigatorFavClassBonus/4
 Talent	KEY:Gnome ~ Slayer ~ Talent	CATEGORY:Internal	VISIBLE:NO	TYPE:FavoredClassSupplementaryAbility	BONUS:VAR|SlayerTalentLVL|GnomeSlayerFavClassBonus/6
-###Block: Supplementary abilities (InciwSpecial Abilityternal i.e. visible)
+###Block: Supplementary abilities (Internal i.e. visible)
 Animal Companion Hit Points	KEY:Half-orc ~ Hunter ~ Animal Companion Hit Points	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:Your animal companion has +%1 extra hit points.|HalfOrcHunterFavClassBonus
 Animal Companion Saves	KEY:Halfling ~ Hunter ~ Animal Companion Saves	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:Your animal companion has a +%1 luck bonus on saving throws.|floor(HalflingHunterFavClassBonus/4)
 Bloodraging Dodge Bonus	KEY:Halfling ~ Bloodrager ~ Bloodraging Dodge Bonus	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You have a +%1 dodge bonus to AC while bloodraging against creatures at least one size category larger than you.|floor(HalflingBloodragerFavClassBonus/5)	BONUS:COMBAT|AC|TYPE=Dodge|HalflingBloodragerFavClassBonus/4
@@ -319,7 +312,7 @@ Concentration Due to Damage	KEY:Half-orc ~ Arcanist ~ Concentration Due to Damag
 Confirm Crit on Precise Strike	KEY:Half-orc ~ Swashbuckler ~ Confirm Crit on Precise Strike	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You have a +%1 bonus on critical hit confirmation rolls made while using precise strike.  This bonus does not stack with those gained through Critical Focus and similar effects.|min(5,HalfOrcSwashbucklerFavClassBonus/3)
 Confirm Crit on Sneak Attack	KEY:Half-orc ~ Slayer ~ Confirm Crit on Sneak Attack	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You have a +%1 bonus on critical hit confirmation rolls made while using sneak attack.  This bonus does not stack with those gained through Critical Focus and similar effects.|min(5,HalfOrcSlayerFavClassBonus/3)
 Confirm Crit on Studied Target	KEY:Half-orc ~ Investigator ~ Confirm Crit on Studied Target	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You have a +%1 bonus on critical hit confirmation rolls made while using studied combat.  This bonus does not stack with those gained through Critical Focus and similar effects.|min(5,HalfOrcInvestigatorFavClassBonus/3)
-Fast Movement	KEY:Elf ~ Brawler ~ Fast Movement	CATEGORY:Special Ability	TYPE:SpecialQuality.ModifyMovement	DESC:Your land speed is faster than the norm for your race by %1 feet.|floor(ElfBrawlerFavClassBonus/5)	BONUS:MOVEADD|TYPE=Walk|floor(ElfBrawlerFavClassBonus/5)
+Fast Movement	KEY:Elf ~ Brawler ~ Fast Movement	CATEGORY:Special Ability	TYPE:SpecialQuality.ModifyMovement	DESC:Your land speed is faster than the norm for your race by %1 feet.|ElfBrawlerFavClassBonus	BONUS:MOVEADD|TYPE=Walk|5*floor(ElfBrawlerFavClassBonus/5)
 Stabalize Rolls	KEY:Half-orc ~ Warpriest ~ Stabalize Rolls	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You have a +%1 bonus on rolls to stabilize when dying.|HalfOrcWarpriestFavClassBonus	ASPECT:SaveBonus|+%1 bonus on rolls to stabilize when dying.|HalfOrcWarpriestFavClassBonus*2
 Studied Target Dodge Bonus	KEY:Halfling ~ Slayer ~ Studied Target Dodge Bonus	CATEGORY:Special Ability	TYPE:SpecialQuality	DESC:You have a +%1 dodge bonus to Armor Class against the your studied target.|floor(HalflingSlayerFavClassBonus/4)	BONUS:COMBAT|AC|TYPE=Dodge|HalflingSlayerFavClassBonus/4
 
@@ -466,8 +459,7 @@ CATEGORY=Internal|Warpriest Blessings Base.MOD																							DEFINE:Warp
 
 Blessings (Favored Class)				KEY:Warpriest ~ Favored Class Blessings	CATEGORY:Special Ability	TYPE:WarpriestClassFeatures.SpecialQuality.Supernatural									ASPECT:CheckCount|%1|WarpriestBlessingFavoredClassUses	ASPECT:CheckType|Uses per day
 
-# ABILITY:Special Ability|AUTOMATIC|Warpriest ~ Favored Class Blessings|PREVARGTEQ:DwarfWarpriestFavClassBonus,3
-# CATEGORY=Special Ability|Warpriest ~ Favored Class Blessings.MOD#
-# BONUS:VAR|WarpriestBlessingFavoredClassUses|DwarfWarpriestFavClassBonus/3
-# DESC:You can call upon the power of your blessings a further %1 times per day, but only on blessings that affect weapons or armor|WarpriestBlessingFavoredClassUses|PREVARGTEQ:DwarfWarpriestFavClassBonus,3
+#
+# End
+#
 
