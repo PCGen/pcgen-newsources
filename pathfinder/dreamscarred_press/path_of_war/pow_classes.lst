@@ -1,68 +1,59 @@
-# before 2014 May 25
+# CVS $Revision: $ $Author: $ -- Sat Jun 13 14:52:16 2015 -- reformated by prettylst.pl v1.51 (build 23662)
+# Original Entry by: Douglas Limmer
+# Original Entry Date: 2015-06-02 or earlier
 
-# NEEDS CODE/DATA WORK: Max slots for known spells not respected (level or amount)
+# NEEDS CODE/DATA WORK: Max slots for known spells not respected (level or amount) -- still true?
 # COMMENT: Slots for prepared spells are respected
-
+# COMMENT: Best guess at roles
 
 ### ---  Base Classes --- ###
 
-
 ###Block: Stalker
-# COMMENT: Best guess at role
-CLASS:Stalker	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	CLASSTYPE:PC	ABB:Stk	MAXLEVEL:20	ABILITY:Internal|AUTOMATIC|Stalker ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerClassSkills	ABILITY:Internal|AUTOMATIC|Stalker ~ Class Variables	DEFINE:StalkerLVL|CL	BONUS:CHECKS|BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat.Skill
+
+# Class Name	Hit Dice	Type							Class Type		Abbreviation	Max Level	Source Page		Ability																										Define			Combat bonus											Modify VAR			Monster Role	Bonus
+CLASS:Stalker	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	CLASSTYPE:PC	ABB:Stk		MAXLEVEL:20	SOURCEPAGE:p.4	ABILITY:Internal|AUTOMATIC|Stalker ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerClassSkills	ABILITY:Internal|AUTOMATIC|Stalker ~ Class Variables	DEFINE:StalkerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:VAR|StalkerLVL|CL	ROLE:Combat.Skill	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
+# Class Name	Skill Pts/Lvl
 CLASS:Stalker	STARTSKILLPTS:6
-CLASS:Stalker	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Stalker|StalkerInitiatorLVL
-
+# Class Name	Spell Stat		Spell Type			Memorize		Caster level
+CLASS:Stalker	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Stalker|StalkerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerInitiating
 ###Block:Proficiencies
-1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerWeaponProficiencies
-
+# COMMENT: Weapon and Armor proficiencies separated out from each other for archetypes' sake; not technically as written
+1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerWeaponProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerWeaponAndArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|Weapon Prof ~ Martial|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerArmorProficiencies
 ###Block: Level Progression
 1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Ki Pool|PREVARGTEQ:StalkerLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerKiPool
 1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Deadly Strike|PREVARGTEQ:StalkerLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerDeadlyStrike
 1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Dodge Bonus|PREVARGTEQ:StalkerLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerDodgeBonus
+1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Stalker Arts|PREVARGTEQ:StalkerLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerStalkerArt
 2	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Combat Insight|PREVARGTEQ:StalkerLVL,2|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerCombatInsight
-3	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Stalker Arts|PREVARGTEQ:StalkerLVL,3|!PREABILITY:1,CATEGORY=Archetype,TYUE.StalkerStalkerArt
 6	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Blending|PREVARGTEQ:StalkerLVL,6|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerBlending
-# COMMENT: Author says 10th/14th/19th instead of 11th/15th/19th
 10	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Dual Strike|PREVARGTEQ:StalkerLVL,10|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerDualStrike
 20	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Retributive Ki|PREVARGTEQ:StalkerLVL,20|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerRetributiveKi
-
 ###Block: Stalker Initiating
-1	ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Initiating|PREVARGTEQ:StalkerLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerInitiating
-1	ADD:SPELLCASTER|Stalker Stances
-
-1	KNOWN:0,StalkerManeuversKnownOne,StalkerManeuversKnownTwo,StalkerManeuversKnownThree,StalkerManeuversKnownFour,StalkerManeuversKnownFive,StalkerManeuversKnownSix,StalkerManeuversKnownSeven,StalkerManeuversKnownEight,StalkerManeuversKnownNine
+1																																																																																												ABILITY:Stalker Class Feature|AUTOMATIC|Stalker ~ Initiating|PREVARGTEQ:StalkerLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerInitiating
+1																																																																																						ADD:SPELLCASTER|Stalker Stances
+1																																													KNOWN:0,StalkerManeuversKnownOne,StalkerManeuversKnownTwo,StalkerManeuversKnownThree,StalkerManeuversKnownFour,StalkerManeuversKnownFive,StalkerManeuversKnownSix,StalkerManeuversKnownSeven,StalkerManeuversKnownEight,StalkerManeuversKnownNine
 1	CAST:0,StalkerManeuversReadiedOne,StalkerManeuversReadiedTwo,StalkerManeuversReadiedThree,StalkerManeuversReadiedFour,StalkerManeuversReadiedFive,StalkerManeuversReadiedSix,StalkerManeuversReadiedSeven,StalkerManeuversReadiedEight,StalkerManeuversReadiedNine
 
-
 ###Block: Stalker Stances pseudo-class
-# Class Name		Type			Visible
-CLASS:Stalker Stances	TYPE:InitiatorStances	VISIBLE:NO
-# Class Name		Spell Stat		Spell Type		Memorize	Caster level
-CLASS:Stalker Stances	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Stalker Stances|StalkerInitiatorLVL
 
+# Class Name		Type				Visible
+CLASS:Stalker Stances	TYPE:InitiatorStances	VISIBLE:NO
+# Class Name		Spell Stat		Spell Type			Memorize		Caster level
+CLASS:Stalker Stances	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Stalker Stances|StalkerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.StalkerInitiating
 ###Block: Stalker Stances Known/Cast
-1	KNOWN:0,StalkerStancesKnownOne,StalkerStancesKnownTwo,StalkerStancesKnownThree,StalkerStancesKnownFour,StalkerStancesKnownFive,StalkerStancesKnownSix,StalkerStancesKnownSeven,StalkerStancesKnownEight,StalkerStancesKnownNine
+1																																										KNOWN:0,StalkerStancesKnownOne,StalkerStancesKnownTwo,StalkerStancesKnownThree,StalkerStancesKnownFour,StalkerStancesKnownFive,StalkerStancesKnownSix,StalkerStancesKnownSeven,StalkerStancesKnownEight,StalkerStancesKnownNine
 1	CAST:0,StalkerStancesReadiedOne,StalkerStancesReadiedTwo,StalkerStancesReadiedThree,StalkerStancesReadiedFour,StalkerStancesReadiedFive,StalkerStancesReadiedSix,StalkerStancesReadiedSeven,StalkerStancesReadiedEight,StalkerStancesReadiedNine
 
 
-
-###Block: Warlord Stances pseudo-class
-# Class Name		Type			Visible
-CLASS:Warlord Stances	TYPE:InitiatorStances	VISIBLE:NO
-# Class Name		Spell Stat		Spell Type		Memorize	Caster level
-CLASS:Warlord Stances	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Warlord Stances|WarlordInitiatorLVL
-
-###Block: Warlord Stances Known/Cast
-1	KNOWN:0,WarlordStancesKnownOne,WarlordStancesKnownTwo,WarlordStancesKnownThree,WarlordStancesKnownFour,WarlordStancesKnownFive,WarlordStancesKnownSix,WarlordStancesKnownSeven,WarlordStancesKnownEight,WarlordStancesKnownNine
-1	CAST:0,WarlordStancesReadiedOne,WarlordStancesReadiedTwo,WarlordStancesReadiedThree,WarlordStancesReadiedFour,WarlordStancesReadiedFive,WarlordStancesReadiedSix,WarlordStancesReadiedSeven,WarlordStancesReadiedEight,WarlordStancesReadiedNine
-
-
-
 ###Block: Warder
-# COMMENT: Best guess at role
-CLASS:Warder	HD:12		TYPE:Base.PC.MartialDisciple.Initiator	CLASSTYPE:PC	ABB:Wdn	MAXLEVEL:20	ABILITY:Internal|AUTOMATIC|Warder ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarderClassSkills	ABILITY:Internal|AUTOMATIC|Warder ~ Class Variables	DEFINE:WarderLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat
+
+# Class Name	Hit Dice	Type							Class Type		Abbreviation	Max Level	Source Page		Ability																										Define			Combat bonus					Monster Role	Bonus
+CLASS:Warder	HD:12		TYPE:Base.PC.MartialDisciple.Initiator	CLASSTYPE:PC	ABB:Wdr		MAXLEVEL:20	SOURCEPAGE:p.10	ABILITY:Internal|AUTOMATIC|Warder ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarderClassSkills	ABILITY:Internal|AUTOMATIC|Warder ~ Class Variables	DEFINE:WarderLVL|CL	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Fortitude,BASE.Will|CL/2+2	BONUS:SAVE|BASE.Reflex|CL/3
+# Class Name	Skill Pts/Lvl
 CLASS:Warder	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type			Memorize		Caster level
 CLASS:Warder	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Warder|WarderInitiatorLVL
 
 ###Block:Proficiencies
@@ -83,28 +74,33 @@ CLASS:Warder	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|
 20	ABILITY:Warder Class Feature|AUTOMATIC|Warder ~ Deathless Defenses|PREVARGTEQ:WarderLVL,20|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarderDeathlessDefenses
 
 ###Block: Warder Initiating
-1	ABILITY:Warder Class Feature|AUTOMATIC|Warder ~ Initiating|PREVARGTEQ:WarderLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarderInitiating
-1	ADD:SPELLCASTER|Warder Stances
+1																																																																																								ABILITY:Warder Class Feature|AUTOMATIC|Warder ~ Initiating|PREVARGTEQ:WarderLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarderInitiating
+1																																																																																		ADD:SPELLCASTER|Warder Stances
 
-1	KNOWN:0,WarderManeuversKnownOne,WarderManeuversKnownTwo,WarderManeuversKnownThree,WarderManeuversKnownFour,WarderManeuversKnownFive,WarderManeuversKnownSix,WarderManeuversKnownSeven,WarderManeuversKnownEight,WarderManeuversKnownNine
+1																																											KNOWN:0,WarderManeuversKnownOne,WarderManeuversKnownTwo,WarderManeuversKnownThree,WarderManeuversKnownFour,WarderManeuversKnownFive,WarderManeuversKnownSix,WarderManeuversKnownSeven,WarderManeuversKnownEight,WarderManeuversKnownNine
 1	CAST:0,WarderManeuversReadiedOne,WarderManeuversReadiedTwo,WarderManeuversReadiedThree,WarderManeuversReadiedFour,WarderManeuversReadiedFive,WarderManeuversReadiedSix,WarderManeuversReadiedSeven,WarderManeuversReadiedEight,WarderManeuversReadiedNine
 
 
 ###Block: Warder Stances pseudo-class
-# Class Name		Type			Visible
+
+# Class Name		Type				Visible
 CLASS:Warder Stances	TYPE:InitiatorStances	VISIBLE:NO
-# Class Name		Spell Stat		Spell Type		Memorize	Caster level
+# Class Name		Spell Stat		Spell Type			Memorize		Caster level
 CLASS:Warder Stances	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Warder Stances|WarderInitiatorLVL
 
 ###Block: Warder Stances Known/Cast
-1	KNOWN:0,WarderStancesKnownOne,WarderStancesKnownTwo,WarderStancesKnownThree,WarderStancesKnownFour,WarderStancesKnownFive,WarderStancesKnownSix,WarderStancesKnownSeven,WarderStancesKnownEight,WarderStancesKnownNine
+1																																								KNOWN:0,WarderStancesKnownOne,WarderStancesKnownTwo,WarderStancesKnownThree,WarderStancesKnownFour,WarderStancesKnownFive,WarderStancesKnownSix,WarderStancesKnownSeven,WarderStancesKnownEight,WarderStancesKnownNine
 1	CAST:0,WarderStancesReadiedOne,WarderStancesReadiedTwo,WarderStancesReadiedThree,WarderStancesReadiedFour,WarderStancesReadiedFive,WarderStancesReadiedSix,WarderStancesReadiedSeven,WarderStancesReadiedEight,WarderStancesReadiedNine
 
 
+
 ###Block: Warlord
-# COMMENT: Best guess at role
-CLASS:Warlord	HD:10		TYPE:Base.PC.MartialDisciple.Initiator	CLASSTYPE:PC	ABB:Wrl	MAXLEVEL:20	ABILITY:Internal|AUTOMATIC|Warlord ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarlordClassSkills	ABILITY:Internal|AUTOMATIC|Warlord ~ Class Variables	DEFINE:WarlordLVL|CL	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Will,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat
+
+# Class Name	Hit Dice	Type							Class Type		Abbreviation	Max Level	Source Page		Ability																										Define			Combat bonus					Monster Role	Bonus
+CLASS:Warlord	HD:10		TYPE:Base.PC.MartialDisciple.Initiator	CLASSTYPE:PC	ABB:Wrl		MAXLEVEL:20	SOURCEPAGE:p.14	ABILITY:Internal|AUTOMATIC|Warlord ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarlordClassSkills	ABILITY:Internal|AUTOMATIC|Warlord ~ Class Variables	DEFINE:WarlordLVL|CL	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Will,BASE.Reflex|CL/3
+# Class Name	Skill Pts/Lvl
 CLASS:Warlord	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type			Memorize		Caster level
 CLASS:Warlord	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Warlord|WarlordInitiatorLVL
 
 ###Block:Proficiencies
@@ -127,22 +123,36 @@ CLASS:Warlord	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL
 20	ABILITY:Warlord Class Feature|AUTOMATIC|Warlord ~ Dual Stance|PREVARGTEQ:WarlordLVL,20|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarlordDualStance
 
 ###Block: Warlord Initiating
-1	ABILITY:Warlord Class Feature|AUTOMATIC|Warlord ~ Initiating|PREVARGTEQ:WarlordLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarlordInitiating
-1	ADD:SPELLCASTER|Warlord Stances
+1																																																																																												ABILITY:Warlord Class Feature|AUTOMATIC|Warlord ~ Initiating|PREVARGTEQ:WarlordLVL,1|!PREABILITY:1,CATEGORY=Archetype,TYPE.WarlordInitiating
+1																																																																																						ADD:SPELLCASTER|Warlord Stances
 
-1	KNOWN:0,WarlordManeuversKnownOne,WarlordManeuversKnownTwo,WarlordManeuversKnownThree,WarlordManeuversKnownFour,WarlordManeuversKnownFive,WarlordManeuversKnownSix,WarlordManeuversKnownSeven,WarlordManeuversKnownEight,WarlordManeuversKnownNine
+1																																													KNOWN:0,WarlordManeuversKnownOne,WarlordManeuversKnownTwo,WarlordManeuversKnownThree,WarlordManeuversKnownFour,WarlordManeuversKnownFive,WarlordManeuversKnownSix,WarlordManeuversKnownSeven,WarlordManeuversKnownEight,WarlordManeuversKnownNine
 1	CAST:0,WarlordManeuversReadiedOne,WarlordManeuversReadiedTwo,WarlordManeuversReadiedThree,WarlordManeuversReadiedFour,WarlordManeuversReadiedFive,WarlordManeuversReadiedSix,WarlordManeuversReadiedSeven,WarlordManeuversReadiedEight,WarlordManeuversReadiedNine
+
+
+###Block: Warlord Stances pseudo-class
+
+# Class Name		Type				Visible
+CLASS:Warlord Stances	TYPE:InitiatorStances	VISIBLE:NO
+# Class Name		Spell Stat		Spell Type			Memorize		Caster level
+CLASS:Warlord Stances	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Warlord Stances|WarlordInitiatorLVL
+
+###Block: Warlord Stances Known/Cast
+1																																										KNOWN:0,WarlordStancesKnownOne,WarlordStancesKnownTwo,WarlordStancesKnownThree,WarlordStancesKnownFour,WarlordStancesKnownFive,WarlordStancesKnownSix,WarlordStancesKnownSeven,WarlordStancesKnownEight,WarlordStancesKnownNine
+1	CAST:0,WarlordStancesReadiedOne,WarlordStancesReadiedTwo,WarlordStancesReadiedThree,WarlordStancesReadiedFour,WarlordStancesReadiedFive,WarlordStancesReadiedSix,WarlordStancesReadiedSeven,WarlordStancesReadiedEight,WarlordStancesReadiedNine
 
 
 
 ### -- Prestige Classes --- ###
 
 ###Block: Battle Templar
-# COMMENT: Best guess at role
-CLASS:Battle Templar	HD:8		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:BtT	MAXLEVEL:10	ABILITY:Internal|AUTOMATIC|Battle Templar ~ Class Skills	ABILITY:Internal|AUTOMATIC|Battle Templar ~ Class Variables	DEFINE:BattleTemplarLVL|CL	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Will,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat
-# NEEDS CODE WORK: Can't require a spell of a certain school *and* subschool [needs Golden Lion or Iron Tortoise discipline, including at least one strike and one stance]
-# WORKAROUND: Just required one Golden Lion or Iron Tortoise manevuer, one strike, and one stance
-CLASS:Battle Templar	STARTSKILLPTS:4	PRESKILL:3,Knowledge (Martial)=2,Knowledge (Religion)=2,Spellcraft=5	PREFEAT:1,Discipline Focus (Golden Lion),Discipline Focus (Iron Tortoise)	PREFEAT:1,Martial Power	PRESPELLTYPE:1,Divine=2	PRESPELLSCHOOL:1,Golden Lion=1,Iron Tortoise=1	PRESPELLSCHOOLSUB:1,Strike=1	PRESPELLSCHOOLSUB:1,Stance=1
+
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																			Define				Combat bonus					Monster Role	Bonus
+CLASS:Battle Templar	HD:8		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:BtT		MAXLEVEL:10	SOURCEPAGE:p.139	ABILITY:Internal|AUTOMATIC|Battle Templar ~ Class Skills	ABILITY:Internal|AUTOMATIC|Battle Templar ~ Class Variables	DEFINE:BattleTemplarLVL|CL	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Fortitude|(CL+1)/2	BONUS:SAVE|BASE.Will,BASE.Reflex|(CL+1)/3
+# Class Name		Required Feat															Required Skill										Required Spell School					Required Sub-school							Req. Spell Type
+CLASS:Battle Templar	PREFEAT:1,Discipline Focus (Golden Lion),Discipline Focus (Iron Tortoise)	PREFEAT:1,Martial Power	PRESKILL:3,Knowledge (Martial)=2,Knowledge (Religion)=2,Spellcraft=5	PRESPELLSCHOOL:1,Golden Lion=1,Iron Tortoise=1	PRESPELLSCHOOLSUB:1,Strike=1	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLTYPE:1,Divine=2
+# Class Name		Skill Pts/Lvl
+CLASS:Battle Templar	STARTSKILLPTS:4
 
 ###Block:Proficiencies
 1	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Weapon and Armor Proficiencies
@@ -156,7 +166,7 @@ CLASS:Battle Templar	STARTSKILLPTS:4	PRESKILL:3,Knowledge (Martial)=2,Knowledge 
 6	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Shepherd of the Flock|PREVARGTEQ:BattleTemplarLVL,6
 7	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Wrath of the Faithful|PREVARGTEQ:BattleTemplarLVL,7
 8	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Divine Inspiration|PREVARGTEQ:BattleTemplarLVL,8
-9	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Bolstering Recovery|PREVARGTEQ:BattleTemplarLVL,9
+9	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Bolstering Channel|PREVARGTEQ:BattleTemplarLVL,9
 10	ABILITY:Battle Templar Class Feature|AUTOMATIC|Battle Templar ~ Battlefield Invocation|PREVARGTEQ:BattleTemplarLVL,10
 
 ###Block: Spellcasting
@@ -174,9 +184,13 @@ CLASS:Battle Templar	STARTSKILLPTS:4	PRESKILL:3,Knowledge (Martial)=2,Knowledge 
 
 
 ###Block: Bladecaster
-# COMMENT: Best guess at role
-CLASS:Bladecaster	HD:10		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:Bdc	MAXLEVEL:10	ABILITY:Internal|AUTOMATIC|Bladecaster ~ Class Skills	ABILITY:Internal|AUTOMATIC|Bladecaster ~ Class Variables	DEFINE:BladecasterLVL|CL	BONUS:CHECKS|BASE.Fortitude|(CL+1)/2	BONUS:CHECKS|BASE.Will,BASE.Reflex|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat
-CLASS:Bladecaster	STARTSKILLPTS:4	PREATT:4	PRESKILL:2,Knowledge (Martial)=5,Spellcraft=5	PREFEAT:2,Combat Casting,Improved Counterspell	PRESPELLTYPE:1,Arcane=2	PRESPELLSCHOOLSUB:1,Stance=1
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define				Combat bonus					Monster Role	Bonus
+CLASS:Bladecaster	HD:10		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:Bdc		MAXLEVEL:10	SOURCEPAGE:p.141	ABILITY:Internal|AUTOMATIC|Bladecaster ~ Class Skills	ABILITY:Internal|AUTOMATIC|Bladecaster ~ Class Variables	DEFINE:BladecasterLVL|CL	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Fortitude|(CL+1)/2	BONUS:SAVE|BASE.Will,BASE.Reflex|(CL+1)/3
+# Class Name	Req. Att.	Required Feat						Required Skill						Required Sub-school		Req. Spell Type
+CLASS:Bladecaster	PREATT:4	PREFEAT:2,Combat Casting,Improved Counterspell	PRESKILL:2,Knowledge (Martial)=5,Spellcraft=5	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLTYPE:1,Arcane=2
+# Class Name	Skill Pts/Lvl
+CLASS:Bladecaster	STARTSKILLPTS:4
 
 ###Block: Level Progression
 1	ABILITY:Bladecaster Class Feature|AUTOMATIC|Bladecaster ~ Martial Caster|PREVARGTEQ:BladecasterLVL,1
@@ -204,11 +218,13 @@ CLASS:Bladecaster	STARTSKILLPTS:4	PREATT:4	PRESKILL:2,Knowledge (Martial)=5,Spel
 
 
 ###Block: Dragon Fury
-# COMMENT: Best guess at role
-CLASS:Dragon Fury	HD:12		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:DrF	MAXLEVEL:10	ABILITY:Internal|AUTOMATIC|Dragon Fury ~ Class Skills	ABILITY:Internal|AUTOMATIC|Dragon Fury ~ Class Variables	DEFINE:DragonFuryLVL|CL	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat
-# NEEDS CODE WORK: Can't require a spell of a certain school *and* subschool [needs one strike and one stance from Thrashing Dragon discipline]
-# WORKAROUND: Just required two Thrashing Dragon manevuers, one strike, and one stance
-CLASS:Dragon Fury	STARTSKILLPTS:4	PREATT:4	PRESKILL:2,Acrobatics=6,Knowledge (Martial)=6	PREFEAT:2,Discipline Focus (Thrashing Dragon),Two-Weapon Fighting	PRESPELLTYPE:1,Initiator=3,Initiator=4,Initiator=5,Initiator=6,Initiator=7,Initiator=8,Initiator=9	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLSCHOOL:2,Thrashing Dragon=1
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Combat bonus					Monster Role	Bonus
+CLASS:Dragon Fury	HD:12		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:DrF		MAXLEVEL:10	SOURCEPAGE:p.144	ABILITY:Internal|AUTOMATIC|Dragon Fury ~ Class Skills	ABILITY:Internal|AUTOMATIC|Dragon Fury ~ Class Variables	DEFINE:DragonFuryLVL|CL	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Fortitude,BASE.Reflex|(CL+1)/2	BONUS:SAVE|BASE.Will|(CL+1)/3
+# Class Name	Req. Att.	Required Feat									Required Skill						Required Spell School			Required Sub-school							Req. Spell Type
+CLASS:Dragon Fury	PREATT:4	PREFEAT:2,Discipline Focus (Thrashing Dragon),Two-Weapon Fighting	PRESKILL:2,Acrobatics=6,Knowledge (Martial)=6	PRESPELLSCHOOL:2,Thrashing Dragon=1	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLTYPE:1,Initiator=3,Initiator=4,Initiator=5,Initiator=6,Initiator=7,Initiator=8,Initiator=9
+# Class Name	Skill Pts/Lvl
+CLASS:Dragon Fury	STARTSKILLPTS:4
 
 ###Block: Level Progression
 1	ABILITY:Dragon Fury Class Feature|AUTOMATIC|Dragon Fury ~ Dragon Fury Training|PREVARGTEQ:DragonFuryLVL,1
@@ -225,9 +241,14 @@ CLASS:Dragon Fury	STARTSKILLPTS:4	PREATT:4	PRESKILL:2,Acrobatics=6,Knowledge (Ma
 
 
 ###Block: Mage Hunter
-# COMMENT: Best guess at role
-CLASS:Mage Hunter	HD:8		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:MgH	MAXLEVEL:10	ABILITY:Internal|AUTOMATIC|Mage Hunter ~ Class Skills	ABILITY:Internal|AUTOMATIC|Mage Hunter ~ Class Variables	DEFINE:MageHunterLVL|CL	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat
-CLASS:Mage Hunter	STARTSKILLPTS:4	PREATT:3	PRESKILL:4,Acrobatics=2,Heal=2,Spellcraft=5,Stealth=2	PREFEAT:2,Improved Initiative,Step Up	PRELANG:1,Draconic	PRESPELLTYPE:1,Initiator=2,Initiator=3,Initiator=4,Initiator=5,Initiator=6,Initiator=7,Initiator=8,Initiator=9	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLSCHOOLSUB:1,Stance=1	PRETEXT:Must read the Grimoire Serpentis Ferra, or study with a willing instructor who has done so.
+
+# Class Name	Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																		Define			Combat bonus					Monster Role	Bonus
+CLASS:Mage Hunter	HD:8		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:MgH		MAXLEVEL:10	SOURCEPAGE:p.146	ABILITY:Internal|AUTOMATIC|Mage Hunter ~ Class Skills	ABILITY:Internal|AUTOMATIC|Mage Hunter ~ Class Variables	DEFINE:MageHunterLVL|CL	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Reflex|(CL+1)/2	BONUS:SAVE|BASE.Fortitude,BASE.Will|(CL+1)/3
+# Class Name	Req. Att.	Required Feat					Required Language		Required Skill							Required Sub-school							Req. Spell Type																	Required Text
+CLASS:Mage Hunter	PREATT:3	PREFEAT:2,Improved Initiative,Step Up	PRELANG:1,Draconic	PRESKILL:4,Acrobatics=2,Heal=2,Spellcraft=5,Stealth=2	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLSCHOOLSUB:1,Stance=1	PRESPELLTYPE:1,Initiator=2,Initiator=3,Initiator=4,Initiator=5,Initiator=6,Initiator=7,Initiator=8,Initiator=9	PRETEXT:Must read the Grimoire Serpentis Ferra, or study with a willing instructor who has done so.
+# Class Name	Skill Pts/Lvl
+CLASS:Mage Hunter	STARTSKILLPTS:4
+# Class Name	Spell Stat		Spell Type		Memorize	Caster level							Use Spell List
 CLASS:Mage Hunter	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Mage Hunter|MageHunterInitiatorLVL	SPELLLIST:1|Sorcerer
 
 ###Block: Level Progression
@@ -243,25 +264,29 @@ CLASS:Mage Hunter	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|M
 10	ABILITY:Mage Hunter Class Feature|AUTOMATIC|Mage Hunter ~ Mage Harrier's Stance|PREVARGTEQ:MageHunterLVL,10
 
 ###Block: Spellcasting
-1	KNOWN:3,2			CAST:0,2
-2	KNOWN:3,3,1			CAST:0,3,1
-3	KNOWN:3,3,2			CAST:0,3,2
-4	KNOWN:4,3,2,1		CAST:0,4,2,1
-5	KNOWN:4,4,3,2		CAST:0,4,3,2
-6	KNOWN:4,4,3,2,1		CAST:0,5,3,2,1
-7	KNOWN:4,4,3,3,2		CAST:0,5,4,3,2
-8	KNOWN:5,5,4,3,2,1		CAST:0,5,4,3,2,1
-9	KNOWN:5,5,4,3,3,2		CAST:0,5,5,4,3,2
-10	KNOWN:5,5,4,4,3,2,1	CAST:0,5,5,4,3,3,1
+1	CAST:0,2			KNOWN:3,2
+2	CAST:0,3,1			KNOWN:3,3,1
+3	CAST:0,3,2			KNOWN:3,3,2
+4	CAST:0,4,2,1		KNOWN:4,3,2,1
+5	CAST:0,4,3,2		KNOWN:4,4,3,2
+6	CAST:0,5,3,2,1		KNOWN:4,4,3,2,1
+7	CAST:0,5,4,3,2		KNOWN:4,4,3,3,2
+8	CAST:0,5,4,3,2,1		KNOWN:5,5,4,3,2,1
+9	CAST:0,5,5,4,3,2		KNOWN:5,5,4,3,3,2
+10	CAST:0,5,5,4,3,3,1	KNOWN:5,5,4,4,3,2,1
 
 ###Block: Manifesting
 1	ABILITY:Internal|AUTOMATIC|Mage Hunter ~ Initiating|PREVARGTEQ:MageHunterLVL,1
 
 
 ###Block: Umbral Blade
-# COMMENT: Best guess at role
-CLASS:Umbral Blade	HD:10		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:UmB	MAXLEVEL:10	ABILITY:Internal|AUTOMATIC|Umbral Blade ~ Class Skills	ABILITY:Internal|AUTOMATIC|Umbral Blade ~ Class Variables	DEFINE:UmbralBladeLVL|CL	BONUS:CHECKS|BASE.Reflex|(CL+1)/2	BONUS:CHECKS|BASE.Fortitude,BASE.Will|(CL+1)/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat
-CLASS:Umbral Blade	STARTSKILLPTS:4	PREATT:4	PRESKILL:2,Stealth=6,Knowledge (Planes)=6	PREFEAT:1,Discipline Focus (Veiled Moon)	PRESPELLSCHOOL:1,Veiled Moon=3
+
+# Class Name		Hit Dice	Type			Class Type		Abbreviation	Max Level	Source Page		Ability																			Define				Combat bonus					Monster Role	Bonus
+CLASS:Umbral Blade	HD:10		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:UmB		MAXLEVEL:10	SOURCEPAGE:p.149	ABILITY:Internal|AUTOMATIC|Umbral Blade ~ Class Skills	ABILITY:Internal|AUTOMATIC|Umbral Blade ~ Class Variables	DEFINE:UmbralBladeLVL|CL	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	ROLE:Combat		BONUS:SAVE|BASE.Reflex|(CL+1)/2	BONUS:SAVE|BASE.Fortitude,BASE.Will|(CL+1)/3
+# Class Name		Restricted AL		Req. Att.	Required Feat					Required Skill					Required Spell School
+CLASS:Umbral Blade	!PREALIGN:1,LG,NG,CG	PREATT:4	PREFEAT:1,Discipline Focus (Veiled Moon)	PRESKILL:2,Stealth=6,Knowledge (Planes)=6	PRESPELLSCHOOL:1,Veiled Moon=3
+# Class Name		Skill Pts/Lvl
+CLASS:Umbral Blade	STARTSKILLPTS:4
 
 ###Block: Level Progression
 1	ABILITY:Umbral Blade Class Feature|AUTOMATIC|Umbral Blade ~ Shadow Blade|PREVARGTEQ:UmbralBladeLVL,1
@@ -277,39 +302,32 @@ CLASS:Umbral Blade	STARTSKILLPTS:4	PREATT:4	PRESKILL:2,Stealth=6,Knowledge (Plan
 1	ABILITY:Internal|AUTOMATIC|Umbral Blade ~ Initiating|PREVARGTEQ:UmbralBladeLVL,1
 
 
+
 ### --- Martial Training Pseudo-Class -- ###
 
 ###Block: Martial Training pseudo-class
+
 # Class Name		Type			Visible
 CLASS:Martial Training	TYPE:Initiator	VISIBLE:NO
-# Class Name		Spell Stat		Spell Type		Memorize	Caster level
+# Class Name		Spell Stat		Spell Type			Memorize		Caster level
 CLASS:Martial Training	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Martial Training|MartialTrainingInitiatorLVL
 
 ###Block: Martial Training Maneuvers Known/Cast
-1	KNOWN:0,MartialTrainingManeuversKnownOne,MartialTrainingManeuversKnownTwo,MartialTrainingManeuversKnownThree,MartialTrainingManeuversKnownFour,MartialTrainingManeuversKnownFive,MartialTrainingManeuversKnownSix,MartialTrainingManeuversKnownSeven,MartialTrainingManeuversKnownEight,MartialTrainingManeuversKnownNine
+1																																																									KNOWN:0,MartialTrainingManeuversKnownOne,MartialTrainingManeuversKnownTwo,MartialTrainingManeuversKnownThree,MartialTrainingManeuversKnownFour,MartialTrainingManeuversKnownFive,MartialTrainingManeuversKnownSix,MartialTrainingManeuversKnownSeven,MartialTrainingManeuversKnownEight,MartialTrainingManeuversKnownNine
 1	CAST:0,MartialTrainingManeuversReadiedOne,MartialTrainingManeuversReadiedTwo,MartialTrainingManeuversReadiedThree,MartialTrainingManeuversReadiedFour,MartialTrainingManeuversReadiedFive,MartialTrainingManeuversReadiedSix,MartialTrainingManeuversReadiedSeven,MartialTrainingManeuversReadiedEight,MartialTrainingManeuversReadiedNine
 
 ###Block: Martial Training Stances pseudo-class
-# Class Name		Type			Visible
+
+# Class Name				Type				Visible
 CLASS:Martial Training Stances	TYPE:InitiatorStances	VISIBLE:NO
-# Class Name		Spell Stat		Spell Type		Memorize	Caster level
+# Class Name				Spell Stat		Spell Type			Memorize		Caster level
 CLASS:Martial Training Stances	SPELLSTAT:OTHER	SPELLTYPE:Initiator	MEMORIZE:YES	BONUS:CASTERLEVEL|Martial Training Stances|MartialTrainingInitiatorLVL
 
 ###Block: Martial Training Stances Known/Cast
-1	KNOWN:0,MartialTrainingStancesKnownOne,MartialTrainingStancesKnownTwo,MartialTrainingStancesKnownThree,MartialTrainingStancesKnownFour,MartialTrainingStancesKnownFive,MartialTrainingStancesKnownSix,MartialTrainingStancesKnownSeven,MartialTrainingStancesKnownEight,MartialTrainingStancesKnownNine
+1																																																						KNOWN:0,MartialTrainingStancesKnownOne,MartialTrainingStancesKnownTwo,MartialTrainingStancesKnownThree,MartialTrainingStancesKnownFour,MartialTrainingStancesKnownFive,MartialTrainingStancesKnownSix,MartialTrainingStancesKnownSeven,MartialTrainingStancesKnownEight,MartialTrainingStancesKnownNine
 1	CAST:0,MartialTrainingStancesReadiedOne,MartialTrainingStancesReadiedTwo,MartialTrainingStancesReadiedThree,MartialTrainingStancesReadiedFour,MartialTrainingStancesReadiedFive,MartialTrainingStancesReadiedSix,MartialTrainingStancesReadiedSeven,MartialTrainingStancesReadiedEight,MartialTrainingStancesReadiedNine
-
 
 #
 # End
 #
-
-
-# COMMENT: Test Class is a test of SPELLSTAT:OTHER, to see what does and doesn't work.
-# COMMENT: Remove it for the final version
-CLASS:Test Class	TYPE:Base.PC.Arcane	CLASSTYPE:PC	ABB:Tst	MAXLEVEL:2	STARTSKILLPTS:2
-CLASS:Test Class	SPELLSTAT:OTHER	SPELLTYPE:Arcane	MEMORIZE:YES	BONUS:CASTERLEVEL|Test Class|CL
-
-1	KNOWN:0,1,1,1,1,1			CAST:0,1,1,1,1,1
-2	KNOWN:0,1,1,1,1,1,1,1,1,1	CAST:0,1,1,1,1,1,1,1,1,1
 
