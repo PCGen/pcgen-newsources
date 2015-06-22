@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ -- Thu May 28 23:13:52 2015 -- reformated by PCGen PrettyLST v6.04.01
+# CVS $Revision: $ $Author: $ -- Mon Jun 22 00:01:05 2015 -- reformated by PCGen PrettyLST v6.05.01
 
 SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/products/btpy92zi	SOURCEDATE:2014-08
 # Original Entry by: Mark Means and Douglas Limmer
@@ -6,17 +6,17 @@ SOURCELONG:Advanced Class Guide	SOURCESHORT:ACG	SOURCEWEB:http://paizo.com/produ
 # COMMENT: Can't seem to get mastervar to work in 6.04
 #      Wrong number of arguments error when companion loaded
 
-# Class of the Master			Type				Auto Feat																Bonus Ability Pool				Modify VAR
+# Class of the Master			Type				Ability																		Bonus Ability Pool				Modify VAR
 FOLLOWER:HunterAnimalCompanionLVL=1	TYPE:Animal Companion	ABILITY:FEAT|AUTOMATIC|Outflank|PREABILITY:1,CATEGORY=Special Ability,Hunter Precise Companion Feat ~ Outflank
 #	BONUS:VAR|BonusTricks|mastervar("HunterBonusTricks")
 #	BONUS:ABILITYPOOL|Hunter Animal Focus|mastervar("HunterAnimalFocusACPool")
 
-FOLLOWER:HunterBonusTricks=1		TYPE:Animal Companion																									BONUS:VAR|BonusTricks|1
-FOLLOWER:HunterBonusTricks=2		TYPE:Animal Companion																									BONUS:VAR|BonusTricks|1
-FOLLOWER:HunterBonusTricks=3		TYPE:Animal Companion																									BONUS:VAR|BonusTricks|1
+FOLLOWER:HunterBonusTricks=1		TYPE:Animal Companion																											BONUS:VAR|BonusTricks|1
+FOLLOWER:HunterBonusTricks=2		TYPE:Animal Companion																											BONUS:VAR|BonusTricks|1
+FOLLOWER:HunterBonusTricks=3		TYPE:Animal Companion																											BONUS:VAR|BonusTricks|1
 
-FOLLOWER:HunterAnimalFocusACPool=1	TYPE:Animal Companion																		BONUS:ABILITYPOOL|Hunter Animal Focus|1
-FOLLOWER:HunterAnimalFocusACPool=2	TYPE:Animal Companion																		BONUS:ABILITYPOOL|Hunter Animal Focus|1
+FOLLOWER:HunterAnimalFocusACPool=1	TYPE:Animal Companion																				BONUS:ABILITYPOOL|Hunter Animal Focus|1
+FOLLOWER:HunterAnimalFocusACPool=2	TYPE:Animal Companion																				BONUS:ABILITYPOOL|Hunter Animal Focus|1
 
 ###Block: Spirit Animal Abilities
 # Class of the Master				Type			Ability
@@ -88,27 +88,27 @@ FOLLOWER:HalfOrcHunterFavClassBonus=20	TYPE:Animal Companion											BONUS:HP|
 
 ###Block: Modifications for Evolved Companion feat -- 20 arbitrarily chosen as the limit
 # Class of the Master				Type				Bonus Ability Pool
-FOLLOWER:EvolvedCompanionFeatCount=1	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=2	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=3	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=4	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=5	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=6	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=7	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=8	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=9	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=10	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=11	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=12	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=13	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=14	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=15	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=16	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=17	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=18	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=19	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-FOLLOWER:EvolvedCompanionFeatCount=20	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
-#	BONUS:ABILITYPOOL|Evolution|mastervar("EvolvedCompanionCount")
+FOLLOWER:EvolvedCompanionFeatCount=1	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|mastervar("EvolvedCompanionFeatCount")
+#FOLLOWER:EvolvedCompanionFeatCount=2	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=3	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=4	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=5	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=6	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=7	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=8	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=9	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=10	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=11	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=12	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=13	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=14	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=15	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=16	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=17	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=18	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=19	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#FOLLOWER:EvolvedCompanionFeatCount=20	TYPE:Animal Companion	BONUS:ABILITYPOOL|Eidolon Evolution|1
+#
 
 
 #
