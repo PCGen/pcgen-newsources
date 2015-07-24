@@ -4,6 +4,14 @@ SOURCELONG:Inner Sea Magic	SOURCESHORT:ISM	SOURCEWEB:http://paizo.com/products/b
 ###Block: Cleric ~ Varisian Wanderer
 CLASS:Cleric.MOD	DOMAIN:Chaos|Community|Liberation|Luck|Travel|Weather|Exploration Subdomain|Fate Subdomain|Freedom Subdomain|Seasons Subdomain|Trade Subdomain|PREVARGTEQ:VarisianPilgrimDomainAccess,1
 
+###Block: Summoner ~ First Worlder
+# Class Name		Output Name			HD	Type				Class Type			Max Level		Source Page		Ability					Define			Combat bonus										Save bonus																													Modify VAR
+CLASS:Eidolon (Fey)	OUTPUTNAME:Eidolon	HD:6	TYPE:Monster.Companion	CLASSTYPE:Companion	MAXLEVEL:NOLIMIT	SOURCEPAGE:p.35	ABILITY:FEAT|AUTOMATIC|CMB Output	DEFINE:EidolonLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|EidolonLVL|CL
+# Class Name		Reg. Race Type
+CLASS:Eidolon (Fey)	PRERACETYPE:Eidolon
+# Class Name		Skill Pts/Lvl	Add INT to Skill?	Class Skill
+CLASS:Eidolon (Fey)	STARTSKILLPTS:6	MODTOSKILLS:YES	CSKILL:Acrobatics|Bluff|Climb|TYPE=Craft|Diplomacy|Disguise|Escape Artist|Fly|Knowledge (Geography)|Knowledge (Nature)|Perception|TYPE=Perform|Sense Motive|Sleight of Hand|Stealth|Swim|Use Magic Device
+
 ###Block: Wizard ~ Thassilonian Specialist
 CLASS:Wizard.MOD
 SUBCLASS:Envy Specialist	COST:0	CHOICE:SCHOOL|Abjuration	KNOWNSPELLSFROMSPECIALTY:2	PROHIBITED:Evocation,Necromancy
