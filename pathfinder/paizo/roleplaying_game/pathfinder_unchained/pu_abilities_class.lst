@@ -171,3 +171,44 @@ Unchained Barbarian Core Class Skills	KEY:Class Skills ~ Unchained Barbarian	CAT
 #
 # End
 #
+
+
+
+
+###Block: Demo of Summoner Update
+
+# CFP = "Class Feature Progression"
+
+Summoner	CATEGORY:Class	DEFINE:Summoner_CFP_Level|0	BONUS:VAR|Summoner_CFP_Level|classlevel("Summoner")	DEFINE:Pool_Summoner_Class_Selection|0	BONUS:VAR|Pool_Summoner_Class_Selection|1
+
+# NOTE: Pool_Summoner_Class_Selection is part of POOL:Pool_Summoner_Class_Selection in the selection area of the AbilityPool. Not displayed here currently.
+
+
+Standard	KEY:Summoner ~ Standard Class		TYPE:Summoner Class Selection	CATEGORY:Class	CSKILL:TYPE=Craft|Fly|Handle Animal|TYPE=Knowledge|Linguistics|TYPE=Profession|Ride|Spellcraft|Use Magic Device
+Unchained	KEY:Summoner ~ Unchained Class	TYPE:Summoner Class Selection	CATEGORY:Class	CSKILL:TYPE=Craft|Fly|Handle Animal|TYPE=Knowledge|Linguistics|TYPE=Profession|Ride|Spellcraft|Use Magic Device
+
+# Class Skills can either go directly on the Ability, or make a separate call if the class skills can be altered.
+
+
+# Most of these are without the Archetype kill switch for quick demo purposes.
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Internal|AUTOMATIC|TYPE=ArmorProfLight|!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerLightArmor,TYPE.SummonerArmorProficiencies
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Internal|AUTOMATIC|TYPE=WeaponProfSimple|!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerSimpleWeapons
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Internal|AUTOMATIC|Summoner ~ Summon Monster Spell List|!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerSummonMonsterSpells
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Cantrips
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Eidolon|!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerEidolon
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Life Link|!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerLifeLink
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Summon Monster|!PREABILITY:1,CATEGORY=Archetype,TYPE.SummonerSummonMonster
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Bond Senses|PREVARGTEQ:Summoner_CFP_Level,2
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Shield Ally|PREVARGTEQ:Summoner_CFP_Level,4
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Maker's Call|PREVARGTEQ:Summoner_CFP_Level,6
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Transposition|PREVARGTEQ:Summoner_CFP_Level,8
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Aspect|PREVARGTEQ:Summoner_CFP_Level,10
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Greater Shield Ally|PREVARGTEQ:Summoner_CFP_Level,12
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Life Bond|PREVARGTEQ:Summoner_CFP_Level,14
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Merge Forms|PREVARGTEQ:Summoner_CFP_Level,16
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Greater Aspect|PREVARGTEQ:Summoner_CFP_Level,18
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Gate|PREVARGTEQ:Summoner_CFP_Level,19
+CATEGORY=Class|Summoner ~ Standard Class.MOD	ABILITY:Summoner Class Feature|AUTOMATIC|Summoner ~ Twin Eidolon|PREVARGTEQ:Summoner_CFP_Level,20
+
+
+
