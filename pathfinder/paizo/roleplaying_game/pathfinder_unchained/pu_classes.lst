@@ -40,37 +40,3 @@ CLASS:Unchained Ex-Barbarian	STARTSKILLPTS:4
 # Class Name		Prohibited Class
 CLASS:Barbarian.MOD	!PRECLASS:1,Unchained Barbarian=1,Unchained Ex-Barbarian=1
 
-
-
-###BLOCK: Updated Summoner
-
-
-# Class Name	Hit Dice	Type								Class Type		Abbreviation	Max Level	Source Page		Define			Combat bonus														Save bonus																					Modify VAR
-CLASS:Summoner	HD:8		TYPE:Base.PC.SpontaneousArcane.Spontaneous	CLASSTYPE:PC	ABB:Sum		MAXLEVEL:20	SOURCEPAGE:p.54	DEFINE:SummonerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:DisableBAB,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:VAR|SummonerLVL|CL
-# Class Name	Skill Pts/Lvl	Class Skill
-CLASS:Summoner	STARTSKILLPTS:2	
-# Class Name	Spell Stat		Spell Type		Memorize	Caster level
-CLASS:Summoner	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Summoner|Caster_Level_BL_Stripped_Summoner	BONUS:VAR|Caster_Level_BL_Stripped_Summoner|Caster_Level_Summoner-CasterLevelBLSummoner	BONUS:VAR|Caster_Level_Summoner|CL+Caster_Level_Bonus+CasterLevelBLSummoner	DEFINE:CasterLevelBLSummoner|0	BONUS:VAR|CasterLevelBL_x_Summoner|charbonusto("PCLEVEL","Summoner")	BONUS:VAR|Caster_Level_Highest__Arcane|Caster_Level_Summoner|TYPE=Base	DEFINE:Caster_Level_Summoner|0	DEFINE:Caster_Level_BL_Stripped_Summoner|0
-###Block:
-1	ABILITY:Class|AUTOMATIC|Summoner
-###Block: Casting Progression
-1	CAST:0,1			KNOWN:4,2
-2	CAST:0,2			KNOWN:5,3
-3	CAST:0,3			KNOWN:6,4
-4	CAST:0,3,1			KNOWN:6,4,2
-5	CAST:0,4,2			KNOWN:6,4,3
-6	CAST:0,4,3			KNOWN:6,4,4
-7	CAST:0,4,3,1		KNOWN:6,5,4,2
-8	CAST:0,4,4,2		KNOWN:6,5,4,3
-9	CAST:0,5,4,3		KNOWN:6,5,4,4
-10	CAST:0,5,4,3,1		KNOWN:6,5,5,4,2
-11	CAST:0,5,4,4,2		KNOWN:6,6,5,4,3
-12	CAST:0,5,5,4,3		KNOWN:6,6,5,4,4
-13	CAST:0,5,5,4,3,1		KNOWN:6,6,5,5,4,2
-14	CAST:0,5,5,4,4,2		KNOWN:6,6,6,5,4,3
-15	CAST:0,5,5,5,4,3		KNOWN:6,6,6,5,4,4
-16	CAST:0,5,5,5,4,3,1	KNOWN:6,6,6,5,5,4,2
-17	CAST:0,5,5,5,4,4,2	KNOWN:6,6,6,6,5,4,3
-18	CAST:0,5,5,5,5,4,3	KNOWN:6,6,6,6,5,4,4
-19	CAST:0,5,5,5,5,5,4	KNOWN:6,6,6,6,5,5,4
-20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
