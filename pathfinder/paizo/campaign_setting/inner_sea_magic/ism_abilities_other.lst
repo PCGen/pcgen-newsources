@@ -2,6 +2,24 @@
 SOURCELONG:Inner Sea Magic	SOURCESHORT:ISM	SOURCEWEB:http://paizo.com/products/btpy8mfs?Pathfinder-Campaign-Setting-Inner-Sea-Magic	SOURCEDATE:2011-07
 # Original Entry by: Andrew Wilson & Paul Shipley (elro the onk)
 
+## Fleshwarped abilities
+Fleshwarped Special Ability	CATEGORY:Special Ability	TYPE:SpecialQuality.FleshwarpedAbility	MULT:YES	CHOOSE:USERINPUT|1|TITLE=Fleshwarped Special Ability			DESC:A fleshwarped creature gains a single special attack, defense, or quality chosen by its creator-typically a physical ability, such as +2 to natural armor, a new natural attack like a bite or tentacle attack, a new movement mode, a new sense, or an ability such as a breath weapon, ferocity, or grab. The new ability should be comparable to those of other monsters of the base creature's CR.&nl; %1.|%LIST
+Fleshwarped Skill Bonus		CATEGORY:Special Ability	TYPE:FleshwarpedSkillBonus			MULT:YES	CHOOSE:SKILL|TYPE=Strength|TYPE=Dexterity	BONUS:SKILL|LIST|4
+Strength +4		KEY:Fleshwarped ~ Str Bonus	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityBonus		!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Str Bonus,Fleshwarped ~ Str Penalty	BONUS:STAT|STR|4
+Dexterity +4	KEY:Fleshwarped ~ Dex Bonus	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityBonus		!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Dex Bonus,Fleshwarped ~ Dex Penalty	BONUS:STAT|DEX|4
+Constitution +4	KEY:Fleshwarped ~ Con Bonus	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityBonus		!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Con Bonus,Fleshwarped ~ Con Penalty	BONUS:STAT|CON|4
+Intelligence +4	KEY:Fleshwarped ~ Int Bonus	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityBonus		!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Int Bonus,Fleshwarped ~ Int Penalty	BONUS:STAT|INT|4
+Wisdom +4		KEY:Fleshwarped ~ Wis Bonus	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityBonus		!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Wis Bonus,Fleshwarped ~ Wis Penalty	BONUS:STAT|WIS|4
+Charisma +4		KEY:Fleshwarped ~ Cha Bonus	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityBonus		!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Cha Bonus,Fleshwarped ~ Cha Penalty	BONUS:STAT|CHA|4
+Strength -4		KEY:Fleshwarped ~ Str Penalty	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityPenalty	!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Str Bonus,Fleshwarped ~ Str Penalty	BONUS:STAT|STR|-4
+Dexterity -4	KEY:Fleshwarped ~ Dex Penalty	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityPenalty	!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Dex Bonus,Fleshwarped ~ Dex Penalty	BONUS:STAT|DEX|-4
+Constitution -4	KEY:Fleshwarped ~ Con Penalty	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityPenalty	!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Con Bonus,Fleshwarped ~ Con Penalty	BONUS:STAT|CON|-4
+Intelligence -4	KEY:Fleshwarped ~ Int Penalty	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityPenalty	!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Int Bonus,Fleshwarped ~ Int Penalty	BONUS:STAT|INT|-4
+Wisdom -4		KEY:Fleshwarped ~ Wis Penalty	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityPenalty	!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Wis Bonus,Fleshwarped ~ Wis Penalty	BONUS:STAT|WIS|-4
+Charisma -4		KEY:Fleshwarped ~ Cha Penalty	CATEGORY:Special Ability	TYPE:FleshwarpedAbilityPenalty	!PREABILITY:1,CATEGORY=Special Ability,Fleshwarped ~ Cha Bonus,Fleshwarped ~ Cha Penalty	BONUS:STAT|CHA|-4
+
+
+## Magic school support
 # Ability Name		Unique Key						PI?			Category of Ability		Type			Define															Choose									Ability											Bonus Ability Pool									Modify VAR																							Temporary Bonus
 Acadamae			KEY:Acadamae ~ Academy				NAMEISPI:YES	CATEGORY:Special Ability	TYPE:MagicSchool	DEFINE:AcademyFame|0		DEFINE:GenericSchoolFame|0	DEFINE:AcadamaeFame|0			CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Acadamae Fame			ABILITY:Special Ability|AUTOMATIC|All General Academy Abilities		BONUS:ABILITYPOOL|Acadamae Reward|AcadamaeFame					BONUS:VAR|AcademyFame|AcadamaeFame|TYPE=MagicSchool				BONUS:VAR|GenericSchoolFame|AcadamaeFame|TYPE=MagicSchool			TEMPBONUS:PC|VAR|AcadamaeFame|%CHOICE
 Arcanamirium		KEY:Arcanamirium ~ Academy			NAMEISPI:YES	CATEGORY:Special Ability	TYPE:MagicSchool	DEFINE:AcademyFame|0		DEFINE:GenericSchoolFame|0	DEFINE:ArcanamiriumFame|0		CHOOSE:NUMBER|MIN=1|MAX=50|TITLE=Arcanamirium Fame		ABILITY:Special Ability|AUTOMATIC|All General Academy Abilities		BONUS:ABILITYPOOL|Arcanamirium Reward|ArcanamiriumFame			BONUS:VAR|AcademyFame|ArcanamiriumFame|TYPE=MagicSchool			BONUS:VAR|GenericSchoolFame|ArcanamiriumFame|TYPE=MagicSchool		TEMPBONUS:PC|VAR|ArcanamiriumFame|%CHOICE
