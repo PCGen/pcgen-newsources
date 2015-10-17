@@ -41,3 +41,14 @@ SOURCELONG:Pathfinder Unchained	SOURCESHORT:PU	SOURCEWEB:http://paizo.com/produc
 #	CLASS:Barbarian.MOD	!PRECLASS:1,Unchained Barbarian=1,Unchained Ex-Barbarian=1
 #	
 #	
+
+
+
+# Class Name		Hit Dice	Type					Class Type		Abbreviation	Max Level	Source Page		Define		Combat bonus											Modify VAR			Monster Role	Bonus																						Serves As
+CLASS:Unchained Rogue	HD:8		TYPE:Base.PC.Unchained Rogue	CLASSTYPE:PC	ABB:Rog		MAXLEVEL:20	SOURCEPAGE:p.67	DEFINE:RogueLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:VAR|RogueLVL|CL	ROLE:Skill		BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3	SERVESAS:CLASS|Rogue
+# Class Name		Skill Pts/Lvl
+CLASS:Unchained Rogue	STARTSKILLPTS:8
+
+###Block:Proficiencies
+1	ABILITY:Class|AUTOMATIC|Rogue ~ Unchained Class Stopgap
+
