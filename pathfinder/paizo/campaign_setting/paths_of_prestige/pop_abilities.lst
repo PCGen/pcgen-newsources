@@ -1,0 +1,382 @@
+# CVS $Revision: $ $Author: $ -- Sun Oct 18 22:33:58 2015 -- reformated by prettylst.pl v1.51 (build 23662)
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR									Bonus
+Aldori Swordlord	KEY:Aldori Swordlord ~ Class	CATEGORY:Class		DEFINE:Aldori_Swordlord_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicAldoriSwordlordLVL|TYPE=Base.REPLACE	BONUS:VAR|Aldori_Swordlord_CFP_Level|AldoriSwordlordLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicAldoriSwordlordLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicAldoriSwordlordLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicAldoriSwordlordLVL+1)/3
+
+###Block Class Feature Progression
+# Ability Name						Ability
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Aldori Dueling Mastery|PREVARGTEQ:Aldori_Swordlord_CFP_Level,1
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Deft Strike|PREVARGTEQ:Aldori_Swordlord_CFP_Level,1
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Display Weapon prowess|PREVARGTEQ:Aldori_Swordlord_CFP_Level,2
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Defensive Parry|PREVARGTEQ:Aldori_Swordlord_CFP_Level,3
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Adaptive Tactics|PREVARGTEQ:Aldori_Swordlord_CFP_Level,4
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Shatter Confidence|PREVARGTEQ:Aldori_Swordlord_CFP_Level,5
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Saving Slash|PREVARGTEQ:Aldori_Swordlord_CFP_Level,6
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Dexterous Duelist|PREVARGTEQ:Aldori_Swordlord_CFP_Level,7
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Greater Saving Slash|PREVARGTEQ:Aldori_Swordlord_CFP_Level,9
+CATEGORY=Class|Aldori Swordlord ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aldori Swordlord ~ Confounding Duelist|PREVARGTEQ:Aldori_Swordlord_CFP_Level,10
+
+###Block Class Features
+# Ability Name		Unique Key							Category of Ability		Type						Define														Description																																																																																																																																						Ability							Modify VAR
+Aldori Dueling Mastery	KEY:Aldori Swordlord ~ Aldori Dueling Mastery	CATEGORY:Special Ability	TYPE:SpecialQuality																		DESC:You gain Aldori Dueling Mastery as a bonus feat.																																																																																																																															ABILITY:FEAT|AUTOMATIC|Aldori Dueling Mastery
+Deft Strike			KEY:Aldori Swordlord ~ Deft Strike			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																DESC:You can add your Dexterity bonus (if any) on damage rolls made with an Aldori dueling sword instead of your Strength bonus. This bonus on damage rolls applies whether you are wielding an Aldori dueling sword one-handed or twohanded, though you do not apply 1-1/2 times your Dexterity bonus on damage rolls while fighting twohanded.  You cannot use this ability if you are wielding a shield or an off-hand weapon, including armor spikes, unarmed strikes, or natural weapons.
+Display Weapon Prowess	KEY:Aldori Swordlord ~ Display Weapon Prowess	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:AldoriSwordlordWeaponProwessLVL|0									DESC:You add a +%1 bonus on Intimidate checks made while using Dazzling Display with an Aldori dueling sword. You also gain a +1 competence bonus on these Intimidate checks for each of the following feats you possesses with the Aldori dueling sword: Greater Weapon Focus, Greater Weapon Specialization, Improved Critical, Weapon Focus, Weapon Specialization.  When involved in a duel, your mastery of elaborate strokes and stances grants a +%1 bonus on performance combat checks. These tricks are not merely for show, however, and are of great help in countering an enemy during a duel, granting a bonus of +%1 on rolls to make a dueling parry or use dueling resolve.|AldoriSwordlordWeaponProwessLVL																											BONUS:VAR|AldoriSwordlordWeaponProwessLVL|AldoriSwordlordLVL/2
+Defensive Parry		KEY:Aldori Swordlord ~ Defensive Parry		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:AldoriSwordlordDefensiveParryLVL|0	DEFINE:AldoriSwordlordDefensiveParryBonus|0	DESC:You gain a +%1 bonus to AC when making a full attack with an Aldori dueling sword.|AldoriSwordlordDefensiveParryBonus																																																																																																																											BONUS:VAR|AldoriSwordlordDefensiveParryLVL|(AldoriSwordlordLVL+1)/4	BONUS:VAR|AldoriSwordlordDefensiveParryBonus|AldoriSwordlordDefensiveParryLVL	BONUS:VAR|AldoriSwordlordDefensiveParryBonus|FighterLVL|PREABILITY:1,CATEGORY=Archetype,Fighter Archetype ~ Aldori Swordlod
+Adaptive Tactics		KEY:Aldori Swordlord ~ Adaptive Tactics		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:AldoriSwordlordAdaptiveTacticsLVL|0								DESC:You have learned to adapt your fighting style to counter your enemy's strengths. You reduce the attack roll penalty for fighting defensively and/or using Combat Expertise by %1.  In addition, after you use your Aldori dueling sword to attack a creature you attacked during the previous round, as a swift action you can attempt a Sense Motive check (with a DC equal to 10 + the opponent's base attack bonus).  If the check is successful, you can choose to gain a +2 circumstance bonus either on attack rolls or to AC against that creature until the beginning of your next turn.|AldoriSwordlordAdaptiveTacticsLVL																																									BONUS:VAR|AldoriSwordlordAdaptiveTacticsLVL|AldoriSwordlordLVL/4
+Shatter Confidence	KEY:Aldori Swordlord ~ Shatter Confidence		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																DESC:You can make an Intimidate check to demoralize your target as a swift action after you confirm a critical hit or succeed at a disarm, reposition, or sunder combat maneuver with an Aldori dueling sword.  If your target is already shaken, you can attempt an Intimidate check to demoralize as a swift action after any successful melee attack or combat maneuver. If this check is successful, any morale bonuses the target possesses are suppressed for %1 rounds. Suppressed effects are not dispelled, and resume after this time elapses if their duration has not expired. Suppressed morale bonuses include those gained from a barbarian's rage ability; however, this ability does not actually end rage or suppress any other effects of rage or rage powers that do not provide morale bonuses.|AldoriSwordlordLVL
+Saving Slash		KEY:Aldori Swordlord ~ Saving Slash			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																DESC:When wielding an Aldori dueling sword, you can use an immediate action to try deflecting a melee critical hit targeting you, reducing its damage to that of a normal hit, with a 25%% chance of success. This does not stack with the fortification special ability of magical armor or similar effects.
+Dexterous Duelist		KEY:Aldori Swordlord ~ Dexterous Duelist		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																DESC:If you have at least one free hand you are not denied your Dexterity bonus when making Acrobatics or Climb checks. In addition, if you stand from prone you do not provoke attacks of opportunity from any creatures you hit while you were prone earlier on the same turn.
+Greater Saving Slash	KEY:Aldori Swordlord ~ Greater Saving Slash	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																DESC:Your saving slash has a 50%% chance of reducing a melee critical hit to a normal hit. In addition, you can attempt a saving slash against a ranged critical hit, including those by rays and other ranged touch effects, with a 25%% chance of success.
+Confounding Duelist	KEY:Aldori Swordlord ~ Confounding Duelist	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																DESC:When you successfully use shatter confidence, you also suppresses any competence or insight bonuses the target possesses.
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Description						Combat bonus									Modify VAR								Bonus
+Arclord of Nex	KEY:Arclord of Nex ~ Class	CATEGORY:Class		DEFINE:Arclord_of_Nex_CFP_Level|0	DESC:Formally trained Nexian diviner	BONUS:COMBAT|BASEAB|NonEpicArclordOfNexLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Arclord_of_Nex_CFP_Level|ArclordOfNexLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicArclordOfNexLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicArclordOfNexLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicArclordOfNexLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Arclord_of_Nex_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Arclord of Nex ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define					Combat bonus								Modify VAR							Bonus
+Aspis Agent		KEY:Aspis Agent ~ Class	CATEGORY:Class		DEFINE:Aspis_Agent_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicAspisAgentLVL|TYPE=Base.REPLACE	BONUS:VAR|Aspis_Agent_CFP_Level|AspisAgentLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicAspisAgentLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicAspisAgentLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicAspisAgentLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Aspis_Agent_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Aspis Agent ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define				Combat bonus								Modify VAR							Bonus
+Bellflower		KEY:Bellflower ~ Class	CATEGORY:Class		DEFINE:Bellflower_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBellflowerLVL|TYPE=Base.REPLACE	BONUS:VAR|Bellflower_CFP_Level|BellflowerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicBellflowerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicBellflowerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicBellflowerLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Bellflower_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Bellflower ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR									Bonus
+Blackfire Adept	KEY:Blackfire Adept ~ Class	CATEGORY:Class		DEFINE:Blackfire_Adept_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBlackfireAdeptLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Blackfire_Adept_CFP_Level|BlackfireAdeptLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicBlackfireAdeptLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicBlackfireAdeptLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicBlackfireAdeptLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Blackfire Adept ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Blackfire_Adept_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Blackfire Adept ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus									Modify VAR									Bonus
+Brother of the Seal	KEY:Brother of the Seal ~ Class	CATEGORY:Class		DEFINE:Brother_of_the_Seal_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBrotherOfTheSealLVL|TYPE=Base.REPLACE	BONUS:VAR|Brother_of_the_Seal_CFP_Level|BrotherOfTheSealLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicBrotherOfTheSealLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicBrotherOfTheSealLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicBrotherOfTheSealLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Brother of the Seal ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Brother_of_the_Seal_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Brother of the Seal ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define						Combat bonus									Modify VAR									Bonus
+Champion of Irori	KEY:Champion of Irori ~ Class	CATEGORY:Class		DEFINE:Champion_of_Irori_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicChampionOfIroriLVL|TYPE=Base.REPLACE	BONUS:VAR|Champion_of_Irori_CFP_Level|ChampionOfIroriLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicChampionOfIroriLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicChampionOfIroriLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicChampionOfIroriLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Champion of Irori ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Champion_of_Irori_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Champion of Irori ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define				Combat bonus								Modify VAR							Bonus
+Daggermark		KEY:Daggermark ~ Class	CATEGORY:Class		DEFINE:Daggermark_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicDaggermarkLVL|TYPE=Base.REPLACE	BONUS:VAR|Daggermark_CFP_Level|DaggermarkLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicDaggermarkLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicDaggermarkLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicDaggermarkLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Daggermark ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Daggermark_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Daggermark ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
+Dawnflower Dissident	KEY:Dawnflower Dissident ~ Class	CATEGORY:Class		DEFINE:Dawnflower_Dissident_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicDawnflowerDissidentLVL|TYPE=Base.REPLACE	BONUS:VAR|Dawnflower_Dissident_CFP_Level|DawnflowerDissidentLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicDawnflowerDissidentLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicDawnflowerDissidentLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicDawnflowerDissidentLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Dawnflower Dissident ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Dawnflower_Dissident_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Dawnflower Dissident ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus									Modify VAR									Bonus
+Golden Legionnaire	KEY:Golden Legionnaire ~ Class	CATEGORY:Class		DEFINE:Golden_Legionnaire_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicGoldenLegionnaireLVL|TYPE=Base.REPLACE	BONUS:VAR|Golden_Legionnaire_CFP_Level|GoldenLegionnaireLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicGoldenLegionnaireLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicGoldenLegionnaireLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicGoldenLegionnaireLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Golden Legionnaire ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Golden_Legionnaire_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Golden Legionnaire ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Gray Gardener	KEY:Gray Gardener ~ Class	CATEGORY:Class		DEFINE:Gray_Gardener_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicGrayGardenerLVL|TYPE=Base.REPLACE	BONUS:VAR|Gray_Gardener_CFP_Level|GrayGardenerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicGrayGardenerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicGrayGardenerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicGrayGardenerLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Gray Gardener ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Gray_Gardener_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Gray Gardener ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus									Modify VAR										Bonus
+Green Faith Acolyte	KEY:Green Faith Acolyte ~ Class	CATEGORY:Class		DEFINE:Green_Faith_Acolyte_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicGreenFaithAcolyteLVL|TYPE=Base.REPLACE	BONUS:VAR|Green_Faith_Acolyte_CFP_Level|GreenFaithAcolyteLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicGreenFaithAcolyteLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicGreenFaithAcolyteLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicGreenFaithAcolyteLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Green Faith Acolyte ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Green_Faith_Acolyte_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Green Faith Acolyte ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
+Hellknight Signifer	KEY:Hellknight Signifer ~ Class	CATEGORY:Class		DEFINE:Hellknight_Signifer_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicHellknightSigniferLVL|TYPE=Base.REPLACE	BONUS:VAR|Hellknight_Signifer_CFP_Level|HellknightSigniferLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicHellknightSigniferLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicHellknightSigniferLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicHellknightSigniferLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Hellknight Signifer ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Hellknight_Signifer_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Hellknight Signifer ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Knight of Ozem	KEY:Knight of Ozem ~ Class	CATEGORY:Class		DEFINE:Knight_of_Ozem_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicKnightOfOzemLVL|TYPE=Base.REPLACE	BONUS:VAR|Knight_of_Ozem_CFP_Level|KnightOfOzemLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicKnightOfOzemLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicKnightOfOzemLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicKnightOfOzemLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Knight of Ozem ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Knight_of_Ozem_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Knight of Ozem ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Lantern Bearer	KEY:Lantern Bearer ~ Class	CATEGORY:Class		DEFINE:Lantern_Bearer_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicLanternBearerLVL|TYPE=Base.REPLACE	BONUS:VAR|Lantern_Bearer_CFP_Level|LanternBearerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicLanternBearerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicLanternBearerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicLanternBearerLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Lantern Bearer ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Lantern_Bearer_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Lantern Bearer ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
+Magaambyan Arcanist	KEY:Magaambyan Arcanist ~ Class	CATEGORY:Class		DEFINE:Magaambyan_Arcanist_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicMagaambyanArcanistLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Magaambyan_Arcanist_CFP_Level|MagaambyanArcanistLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicMagaambyanArcanistLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicMagaambyanArcanistLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicMagaambyanArcanistLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Magaambyan Arcanist ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Magaambyan_Arcanist_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Magaambyan Arcanist ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Mammoth Rider	KEY:Mammoth Rider ~ Class	CATEGORY:Class		DEFINE:Mammoth_Rider_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicMammothRiderLVL|TYPE=Base.REPLACE	BONUS:VAR|Mammoth_Rider_CFP_Level|MammothRiderLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicMammothRiderLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicMammothRiderLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicMammothRiderLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Mammoth Rider ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Mammoth_Rider_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Mammoth Rider ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define					Combat bonus								Modify VAR							Bonus
+Noble Scion		KEY:Noble Scion ~ Class	CATEGORY:Class		DEFINE:Noble_Scion_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicNobleScionLVL|TYPE=Base.REPLACE	BONUS:VAR|Noble_Scion_CFP_Level|NobleScionLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicNobleScionLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicNobleScionLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicNobleScionLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Noble Scion ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Noble_Scion_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Noble Scion ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define					Combat bonus								Modify VAR							Bonus
+Pit Fighter		KEY:Pit Fighter ~ Class	CATEGORY:Class		DEFINE:Pit_Fighter_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicPitFighterLVL|TYPE=Base.REPLACE	BONUS:VAR|Pit_Fighter_CFP_Level|PitFighterLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicPitFighterLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicPitFighterLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicPitFighterLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Pit Fighter ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Pit_Fighter_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Pit Fighter ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
+Prophet of Kalistrade	KEY:Prophet of Kalistrade ~ Class	CATEGORY:Class		DEFINE:Prophet_of_Kalistrade_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicProphetOfKalistradeLVL|TYPE=Base.REPLACE	BONUS:VAR|Prophet_of_Kalistrade_CFP_Level|ProphetOfKalistradeLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicProphetOfKalistradeLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicProphetOfKalistradeLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicProphetOfKalistradeLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Prophet of Kalistrade ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Prophet_of_Kalistrade_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Prophet of Kalistrade ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus										Modify VAR									Bonus
+Razmiran Priest	KEY:Razmiran Priest ~ Class	CATEGORY:Class		DEFINE:Razmiran_Priest_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicRazmiranPriestLVL*3/4|TYPE=Base.REPLACE	BONUS:VAR|Razmiran_Priest_CFP_Level|RazmiranPriestLVL*3/4	BONUS:SAVE|BASE.Fortitude|(NonEpicRazmiranPriestLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicRazmiranPriestLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicRazmiranPriestLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Razmiran Priest ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Razmiran_Priest_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Razmiran Priest ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define				Combat bonus									Modify VAR								Bonus
+Riftwarden		KEY:Riftwarden ~ Class	CATEGORY:Class		DEFINE:Riftwarden_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicRiftwardenLVL*3/4|TYPE=Base.REPLACE	BONUS:VAR|Riftwarden_CFP_Level|RiftwardenLVL*3/4	BONUS:SAVE|BASE.Fortitude|(NonEpicRiftwardenLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicRiftwardenLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicRiftwardenLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Riftwarden ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Riftwarden_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Riftwarden ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Shieldmarshal	KEY:Shieldmarshal ~ Class	CATEGORY:Class		DEFINE:Shieldmarshal_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicShieldmarshalLVL|TYPE=Base.REPLACE	BONUS:VAR|Shieldmarshal_CFP_Level|ShieldmarshalLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicShieldmarshalLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicShieldmarshalLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicShieldmarshalLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Shieldmarshal ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Shieldmarshal_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Shieldmarshal ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key			Category of Ability	Define				Combat bonus								Modify VAR							Bonus
+Skyseeker		KEY:Skyseeker ~ Class	CATEGORY:Class		DEFINE:Skyseeker_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicSkyseekerLVL|TYPE=Base.REPLACE	BONUS:VAR|Skyseeker_CFP_Level|SkyseekerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicSkyseekerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicSkyseekerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicSkyseekerLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Skyseeker ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Skyseeker_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Skyseeker ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
+Sleepless Detective	KEY:Sleepless Detective ~ Class	CATEGORY:Class		DEFINE:Sleepless_Detective_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicSleeplessDetectiveLVL|TYPE=Base.REPLACE	BONUS:VAR|Sleepless_Detective_CFP_Level|SleeplessDetectiveLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicSleeplessDetectiveLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicSleeplessDetectiveLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicSleeplessDetectiveLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Sleepless Detective ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Sleepless_Detective_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Sleepless Detective ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Storm Kindler	KEY:Storm Kindler ~ Class	CATEGORY:Class		DEFINE:Storm_Kindler_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicStormKindlerLVL|TYPE=Base.REPLACE	BONUS:VAR|Storm_Kindler_CFP_Level|StormKindlerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicStormKindlerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicStormKindlerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicStormKindlerLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Storm Kindler ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Storm_Kindler_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Storm Kindler ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR									Bonus
+Tattooed Mystic	KEY:Tattooed Mystic ~ Class	CATEGORY:Class		DEFINE:Tattooed_Mystic_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicTattooedMysticLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Tattooed_Mystic_CFP_Level|TattooedMysticLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicTattooedMysticLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicTattooedMysticLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicTattooedMysticLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Tattooed Mystic ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Tattooed_Mystic_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Tattooed Mystic ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus								Modify VAR							Bonus
+Umbral Court	KEY:Umbral Court ~ Class	CATEGORY:Class		DEFINE:Umbral_Court_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicUmbralCourtLVL|TYPE=Base.REPLACE	BONUS:VAR|Umbral_Court_CFP_Level|UmbralCourtLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicUmbralCourtLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicUmbralCourtLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicUmbralCourtLVL+1)/3
+
+### Block Class Feature Progression
+#CATEGORY=Class|Umbral Court ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Umbral_Court_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Umbral Court ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
+Veiled Illusionist	KEY:Veiled Illusionist ~ Class	CATEGORY:Class		DEFINE:Veiled_Illusionist_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicVeiledIllusionistLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Veiled_Illusionist_CFP_Level|VeiledIllusionistLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicVeiledIllusionistLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicVeiledIllusionistLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicVeiledIllusionistLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Veiled Illusionist ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Veiled_Illusionist_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Veiled Illusionist ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
+###Block
+# Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
+Winter Witch	KEY:Winter Witch ~ Class	CATEGORY:Class		DEFINE:Winter_Witch_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicWinterWitchLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Winter_Witch_CFP_Level|WinterWitchLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicWinterWitchLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicWinterWitchLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicWinterWitchLVL+1)/2
+
+### Block Class Feature Progression
+#CATEGORY=Class|Winter Witch ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Winter_Witch_CFP_Level,1
+
+###Block Class Features
+#YYYYY	KEY:Winter Witch ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+
+
+
