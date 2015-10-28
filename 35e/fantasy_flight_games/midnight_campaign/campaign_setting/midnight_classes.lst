@@ -1,4 +1,4 @@
-# CVS $Revision: $ $Author: $ dschofield Sun Oct  4 16:22:19 2015 -- reformated by PCGen PrettyLST v6.04.01
+# CVS $Revision: $ $Author: $ dschofield Sun Oct  4 16:22:19 2015 -- Wed Oct 21 19:11:41 2015 -- reformated by PCGen PrettyLST v6.04.01
 # Original Entry by: Tir Gwaith
 
 # Class Name		Bonus to skill point for a level								Template
@@ -37,9 +37,9 @@ SUBCLASSLEVEL:16	BONUS:ABILITYPOOL|Hermetic Channeler Bonus Feat|1	BONUS:ABILITY
 SUBCLASSLEVEL:18	BONUS:ABILITYPOOL|Hermetic Channeler Gift|1
 SUBCLASSLEVEL:19	BONUS:ABILITYPOOL|Hermetic Channeler Bonus Feat|1	BONUS:ABILITYPOOL|Hermetic Channeler Literacy|1
 ###Block: Spiritual Channeler Subclass
-SUBCLASS:Spiritual Channeler	COST:0	BONUS:VAR|SpiritualChannelerLvl|CL	DEFINE:SpiritualChannelerLvl|0	!PREFEAT:1,Magecraft (Hermetic),Magecraft (Charismatic)
-SUBCLASSLEVEL:1																				AUTO:FEAT|Magecraft (Spiritual)
-SUBCLASSLEVEL:3	BONUS:ABILITYPOOL|Spiritual Channeler Gift|1		ABILITY:Special Ability|AUTOMATIC|Master of Two Worlds Base
+SUBCLASS:Spiritual Channeler	COST:0	!PREFEAT:1,Magecraft (Hermetic),Magecraft (Charismatic)
+SUBCLASSLEVEL:1										BONUS:VAR|SpiritualChannelerLvl|CL	DEFINE:SpiritualChannelerLvl|0	AUTO:FEAT|Magecraft (Spiritual)
+SUBCLASSLEVEL:3	BONUS:ABILITYPOOL|Spiritual Channeler Gift|1
 SUBCLASSLEVEL:4	BONUS:ABILITYPOOL|Spiritual Channeler Bonus Feat|1
 SUBCLASSLEVEL:6	BONUS:ABILITYPOOL|Spiritual Channeler Gift|1
 SUBCLASSLEVEL:7	BONUS:ABILITYPOOL|Spiritual Channeler Bonus Feat|1
@@ -52,9 +52,9 @@ SUBCLASSLEVEL:16	BONUS:ABILITYPOOL|Spiritual Channeler Bonus Feat|1
 SUBCLASSLEVEL:18	BONUS:ABILITYPOOL|Spiritual Channeler Gift|1
 SUBCLASSLEVEL:19	BONUS:ABILITYPOOL|Spiritual Channeler Bonus Feat|1
 ###Block: Charismatic Channeler Subclass
-SUBCLASS:Charismatic Channeler	COST:0	BONUS:VAR|CharismaticChannelerLvl|CL	DEFINE:CharismaticChannelerLvl|0	!PREFEAT:1,Magecraft (Spiritual),Magecraft (Hermetic)
-SUBCLASSLEVEL:1																				AUTO:FEAT|Magecraft (Charismatic)
-SUBCLASSLEVEL:3	BONUS:ABILITYPOOL|Charismatic Channeler Gift|1		ABILITY:Special Ability|AUTOMATIC|Force of Personality Base
+SUBCLASS:Charismatic Channeler	COST:0	!PREFEAT:1,Magecraft (Spiritual),Magecraft (Hermetic)
+SUBCLASSLEVEL:1										BONUS:VAR|CharismaticChannelerLvl|CL											DEFINE:CharismaticChannelerLvl|0	AUTO:FEAT|Magecraft (Charismatic)
+SUBCLASSLEVEL:3	BONUS:ABILITYPOOL|Charismatic Channeler Gift|1									ABILITY:Special Ability|AUTOMATIC|Force of Personality Base
 SUBCLASSLEVEL:4	BONUS:ABILITYPOOL|Charismatic Channeler Bonus Feat|1
 SUBCLASSLEVEL:6	BONUS:ABILITYPOOL|Charismatic Channeler Gift|1
 SUBCLASSLEVEL:7	BONUS:ABILITYPOOL|Charismatic Channeler Bonus Feat|1
@@ -92,7 +92,7 @@ CLASS:Defender	SPELLSTAT:OTHER	BONUSSPELLSTAT:NONE	SPELLTYPE:Arcane	SPELLBOOK:NO
 ###Block: Defender abilities
 1																											ABILITY:Special Ability|AUTOMATIC|Defender ~ Weapon and Armor Proficiency	AUTO:FEAT|Improved Unarmed Strike
 1								BONUS:COMBAT|AC|(CL+1)/2|TYPE=Defender|PREVAREQ:COUNT[EQTYPE.ARMOR.EQUIPPED],0
-2	BONUS:ABILITYPOOL|Defender Ability|1																																	AUTO:FEAT|Stunning Fist (Defender)
+2	BONUS:ABILITYPOOL|Defender Ability|1																																	AUTO:FEAT|Defender ~ Stunning Fist
 3																						ADD:FEAT|1|Improved Grapple
 4																											ABILITY:Special Ability|AUTOMATIC|Defender ~ Precise Strike
 5	BONUS:ABILITYPOOL|Defender Ability|1
