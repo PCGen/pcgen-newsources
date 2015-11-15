@@ -1,4 +1,5 @@
-# CVS $Revision: $ $Author: $ -- Sun Oct 18 22:33:58 2015 -- reformated by prettylst.pl v1.51 (build 23662)
+# CVS $Revision: $ $Author: $ -- Fri Nov 13 21:31:09 2015 -- reformated by prettylst.pl v1.51 (build 23662)
+SOURCELONG:Paths of Prestige	SOURCESHORT:POP
 
 ###Block
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR									Bonus
@@ -36,35 +37,121 @@ Confounding Duelist	KEY:Aldori Swordlord ~ Confounding Duelist	CATEGORY:Special 
 # Ability Name	Unique Key				Category of Ability	Define					Description						Combat bonus									Modify VAR								Bonus
 Arclord of Nex	KEY:Arclord of Nex ~ Class	CATEGORY:Class		DEFINE:Arclord_of_Nex_CFP_Level|0	DESC:Formally trained Nexian diviner	BONUS:COMBAT|BASEAB|NonEpicArclordOfNexLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Arclord_of_Nex_CFP_Level|ArclordOfNexLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicArclordOfNexLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicArclordOfNexLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicArclordOfNexLVL+1)/2
 
-### Block Class Feature Progression
-#CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Arclord_of_Nex_CFP_Level,1
+###Block Class Feature Progression
+# Ability Name					Ability
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Mystic Pedagogue|PREVARGTEQ:Arclord_of_Nex_CFP_Level,1
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Third Eye|PREVARGTEQ:Arclord_of_Nex_CFP_Level,1
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Artificer's Touch|PREVARGTEQ:Arclord_of_Nex_CFP_Level,2
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Scholiast|PREVARGTEQ:Arclord_of_Nex_CFP_Level,3
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Arcane Architect|PREVARGTEQ:Arclord_of_Nex_CFP_Level,4
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Improved Third Eye|PREVARGTEQ:Arclord_of_Nex_CFP_Level,5
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Extradimensional Extension|PREVARGTEQ:Arclord_of_Nex_CFP_Level,7
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Call For Aid|PREVARGTEQ:Arclord_of_Nex_CFP_Level,8
+CATEGORY=Class|Arclord of Nex ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Arclord of Nex ~ Greater Third Eye|PREVARGTEQ:Arclord_of_Nex_CFP_Level,10
 
 ###Block Class Features
-#YYYYY	KEY:Arclord of Nex ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+# Ability Name			Unique Key							Category of Ability		Type						Define					Description																																																																																																																																			Modify VAR
+Mystic Pedagogue			KEY:Arclord of Nex ~ Mystic Pedagogue		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:ArclordMysticPedagogueLVL|0	DESC:You add a bonus of %1 on Spellcraft checks to learn a wizard spell or craft a magical item.|ArclordMysticPedagogueLVL																																																																																																																BONUS:VAR|ArclordMysticPedagogueLVL|ArclordOfNexLVL/3
+Third Eye				KEY:Arclord of Nex ~ Third Eye			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:ArclordThirdEyeUses|0		DESC:You can use your Eye of the Arclord feat	DESC:one additional time|PREVARLT:ArclordThirdEyeUses,2	DESC:%1 additional times|ArclordThirdEyeUses|PREVARGTEQ:ArclordThirdEyeUses,2	DESC:per day. In addition, while the eye is open, you can use the aid another action to grant an adjacent wizard a +1 bonus to his caster level and a +2 circumstance bonus on concentration checks for the next wizard spell she casts before the beginning of your next turn.																																																								BONUS:VAR|ArclordThirdEyeUses|(ArclordOfNexLVL+1)/2
+Artificer’s Touch			KEY:Arclord of Nex ~ Artificer's Touch		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary							DESC:You can expend one use of your hand of the apprentice to use the Artifice domain’s artificer’s touch power, using your caster level as your cleric level.
+Scholiast				KEY:Arclord of Nex ~ Scholiast			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DEFINE:ArclordScholiastSchools|0	DESC:You can access the wizard school powers of	DESC:another school of magic.|PREVAREQ:ArclordScholiastSchools,1	DESC:another two schools of magic.|PREVAREQ:ArclordScholiastSchools,2	DESC:another three schools of magic.|PREVAREQ:ArclordScholiastSchools,3	DESC:You choose a single arcane school spell-like ability that has a number of uses per day equal to 3 + your Intelligence modifier.  Henceforth, you may use that ability (with a wizard level equal to your caster level) by expending two uses of your hand of the apprentice ability. If you are a specialist wizard, you need to expend two uses of your equivalent ability if using scholiast for hand of the apprentice, but still have to expend one additional daily use (for a total of three) to use it for a power of a different school.	BONUS:VAR|ArclordScholiastSchools|ArclordOfNexLVL/3
+Arcane Architect			KEY:Arclord of Nex ~ Arcane Architect		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary							DESC:You can create constructs with the Craft Construct feat in only half the time it would normally take. In addition, you can apply the Extend Spell and/or Widen Spell metamagic feats to conjuration (creation) spells you prepares, even if you doesn’t possess those feats. If you does possess them, the level increase for applying Extend Spell to a conjuration (creation) spell is eliminated, and the level increase for applying Widen Spell to a conjuration (creation) spell is reduced to 2.
+Improved Third Eye		KEY:Arclord of Nex ~ Improved Third Eye		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary							DESC:You can activate your Eye of the Arclord feat as a move action. You can expend two uses of your hand of the apprentice ability to add the effect of arcane sight or see invisibility to the benefits of your Eye of the Arclord for 1 minute (or until the duration of the Eye ends, whichever is sooner). You can add both effects by expending four uses of this ability.
+Extradimensional Extension	KEY:Arclord of Nex ~ Extradimensional Extension	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary							DESC:The duration of any spell you cast that creates an extradimensional space (or demiplane) or moves creatures or objects through the ethereal plane is doubled as though affected by the Extend spell feat, without altering the level of the spell. Applications of Extend Spell do not stack with this ability.
+Call For Aid			KEY:Arclord of Nex ~ Call For Aid			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary							DESC:As a standard action, you can sacrifice a prepared spell of 2nd level or higher to call a creature bound to you, including an animal companion, eidolon, familiar, personally controlled construct or undead creature, creature telepathically linked to you (including by telepathic bond, dominate person, or dominate monster), or an outsider bound with a planar binding spell. The named creature appears adjacent you, or in the nearest open space if all adjacent squares are occupied. This ability functions like greater teleport, except the range limit is determined by the level of the sacrificed spell: short (2nd–3rd), medium (4th–5th), long (6th–7th), unlimited (same plane) (8th), or unlimited (any plane) (9th).
+Greater Third Eye			KEY:Arclord of Nex ~ Greater Third Eye		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary							DESC:You can activate your Eye of the Arclord as a swift action.  In addition, you can expend four uses of your hand of the apprentice while opening your third eye to gain greater arcane sight or true seeing until the beginning of your next turn. You gain both effects if you expend eight uses of this ability.
+
+
 
 
 
 ###Block
-# Ability Name	Unique Key			Category of Ability	Define					Combat bonus								Modify VAR							Bonus
-Aspis Agent		KEY:Aspis Agent ~ Class	CATEGORY:Class		DEFINE:Aspis_Agent_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicAspisAgentLVL|TYPE=Base.REPLACE	BONUS:VAR|Aspis_Agent_CFP_Level|AspisAgentLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicAspisAgentLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicAspisAgentLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicAspisAgentLVL+1)/3
+# Ability Name	Unique Key			Category of Ability	Define					Combat bonus									Modify VAR							Bonus
+Aspis Agent		KEY:Aspis Agent ~ Class	CATEGORY:Class		DEFINE:Aspis_Agent_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicAspisAgentLVL*3/4|TYPE=Base.REPLACE	BONUS:VAR|Aspis_Agent_CFP_Level|AspisAgentLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicAspisAgentLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicAspisAgentLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicAspisAgentLVL+1)/3
 
-### Block Class Feature Progression
-#CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Aspis_Agent_CFP_Level,1
+###Block Modify Existing Feature
+# Ability Name							Type					Modify VAR
+CATEGORY=Special Ability|Rogue ~ Trapfinding.MOD	TYPE:AspisAgentClassFeatures	BONUS:VAR|TrapfindingLVL|AspisAgentLVL
+CATEGORY=Special Ability|Trap Sense.MOD			TYPE:AspisAgentClassFeatures	BONUS:VAR|TrapSenseBonus|(AspisAgentLVL+2)/3
+
+###Block Class Feature Progression
+# Ability Name					Ability
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Agency Secrets|PREVARGTEQ:Aspis_Agent_CFP_Level,2
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Mask Alignment|PREVARGTEQ:Aspis_Agent_CFP_Level,2
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Ambush Trap|PREVARGTEQ:Aspis_Agent_CFP_Level,3
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Sneak Attack|PREVARGTEQ:Aspis_Agent_CFP_Level,3
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Crucial Taunt|PREVARGTEQ:Aspis_Agent_CFP_Level,5
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Improved Trap Sense|PREVARGTEQ:Aspis_Agent_CFP_Level,7
+CATEGORY=Class|Aspis Agent ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Aspis Agent ~ Remote Activation|PREVARGTEQ:Aspis_Agent_CFP_Level,8
 
 ###Block Class Features
-#YYYYY	KEY:Aspis Agent ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+# Ability Name		Unique Key						Category of Ability		Type								Visible	Description																																																																																																																																																																																					Ability							Bonus to Ability Pool						Modify VAR
+Agency Secrets		KEY:Aspis Agent ~ Agency Secrets		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:At 2nd level and every two levels thereafter, you gain one of the following agency secrets. You can't select an individual agency secret more than once.																																																																																																																																																																				BONUS:ABILITYPOOL|Aspis Agency Secret|AspisAgentLVL/2
+Ambush Trap			KEY:Aspis Agent ~ Ambush Trap			CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:You can specially rig a mechanical trap you have either crafted or bypassed by exceeding its Disable Device DC by 10. A trap so made can be triggered by you as a move action as long as you are adjacent to the trap. You add your trap sense bonus to the trap's Perception DC and on the trap's attack rolls, and add your sneak attack damage to the trap's damage if the target is flat-footed or otherwise denied its Dexterity bonus to AC.
+Sneak Attack		KEY:Aspis Agent ~ Sneak Attack		CATEGORY:Special Ability	TYPE:ClassFeatures.SpecialQuality.Extraordinary	VISIBLE:NO																																																																																																																																																																																							ABILITY:Special Ability|AUTOMATIC|Sneak Attack										BONUS:VAR|SneakAttackDice|AspisAgentLVL/3
+Crucial Taunt		KEY:Aspis Agent ~ Crucial Taunt		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:You can combine infuriating smugness and sneering mockery with Bluff checks to feint, Intimidate checks to demoralize, and dirty trick combat maneuvers (see the Advanced Player’s Guide), gaining a bonus of +%1 on these checks. You may then delay the effect of the successful check for up to %2 days, spending an immediate action to trigger it later. You must be within 60 feet to use or trigger a crucial taunt. This is a language dependent effect.|AspisAgentLVL/2|AspisAgentLVL
+Improved Trap Sense	KEY:Aspis Agent ~ Improved Trap Sense	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:Your trap sense bonus applies on all saving throws made to avoid trap effects.
+Mask Alignment		KEY:Aspis Agent ~ Mask Alignment		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:As a standard action, you can alter your alignment aura to deceive effects that detect alignment. You may choose to be detected as any specific alignment you choose or as no alignment.	DESC:This affects only alignment detection, not effects that cause harm or are otherwise based on alignment.|PREVARLTEQ:Aspis_Agent_CFP_Level,9	DESC:This effect lasts until you dismiss it or change your alignment aura again.	DESC:When targeted with an effect that detects alignment or with any alignment-based effect, you can automatically identify the effect by making a Spellcraft check. If successful, you can assume a false alignment as an immediate action.|PREVARGTEQ:Aspis_Agent_CFP_Level,6	DESC:When you assume a false alignment, you are treated as having that alignment for all effects of magic items, spells, and spell-like or supernatural effects (such as forbiddance, sympathy, or an unholy weapon), including magical traps based on alignment. While masking your alignment, you ignore these types of effects that relate to your true alignment.|PREVARGTEQ:Aspis_Agent_CFP_Level,10
+Remote Activation		KEY:Aspis Agent ~ Remote Activation		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary					DESC:You can use your ambush trap ability on a trap up to 30 feet away.
+
+###Block Agency secrets
+# Ability Name		Unique Key						SORTKEY							Category of Ability		Type										Restricted Ability									Innate Spells											Description																																																										Bonus to Ability Pool					Modify VAR						Bonus
+Bluster			KEY:Aspis Agent ~ Bluster			SORTKEY:Agency Secrets ~ Bluster			CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret.Extraordinary			!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Bluster															DESC:You take no penalty on Intimidate checks against larger creatures, and larger creatures gain no bonus on Intimidate checks against you.
+Bonus Feat			KEY:Aspis Agent ~ Bonus Feat			SORTKEY:Agency Secrets ~ Bonus Feat			CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret					!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Bonus Feat															DESC:You may choose one of the following as a bonus feat: Advanced Ranger Trap, Antagonize, Combat Expertise, Enforcer, Greater Dirty Trick, Improved Dirty Trick, Improved Whip Mastery, Intimidating Prowess, Learn Ranger Trap, Skill Focus (Intimidate), Whip Mastery.  You must meet the prerequisites of the selected bonus feat.					BONUS:ABILITYPOOL|Aspis Agency Bonus Feat|1
+Conceal Thoughts		KEY:Aspis Agent ~ Conceal Thoughts		SORTKEY:Agency Secrets ~ Conceal Thoughts		CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret.Supernatural.Spelllike	!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Conceal Thoughts														DESC:When you are targeted with detect thoughts or a similar effect, you may choose what thoughts are detected, while your true thoughts remain private. This does not affect mind-affecting effects other than thought-reading.
+Exotic Performance	KEY:Aspis Agent ~ Exotic Performance	SORTKEY:Agency Secrets ~ Exotic Performance	CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret					!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Exotic Performance														DESC:You increase your effective bard level by 1 for all effects related to performances, including learning new types of performances and increasing the effects of your performances.
+Hidden Stash		KEY:Aspis Agent ~ Hidden Stash		SORTKEY:Agency Secrets ~ Hidden Stash		CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret.Extraordinary.Spelllike	!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Hidden Stash															DESC:You gain a bonus equal to your class level on Sleight of Hand checks to hide small objects on your person. In addition, once per day you can hide the magical properties of one item as magic aura.																																									BONUS:SITUATION|Sleight of Hand=hide small objects|AspisAgentLVL
+Master Caster		KEY:Aspis Agent ~ Master Caster		SORTKEY:Agency Secrets ~ Master Caster		CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret					!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Master Caster														DESC:If you are able to cast spells as a bard or inquisitor, you increase your caster level for that class by 1. You do not gain other benefits of that class other than spells per day, spells known, and an increased caster level. If you have levels in both classes, you must choose which class to apply this increase to when you take this agency secret.	BONUS:ABILITYPOOL|Master Caster Choice|1
+Rogue Talent		KEY:Aspis Agent ~ Rogue Talent		SORTKEY:Agency Secrets ~ Rogue Talent		CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret					!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Rogue Talent															DESC:You can select one rogue talent for which you qualify. Your Aspis agent levels stack with rogue levels for any rogue talents you possess with level dependent effects, whether they were gained from this prestige class or another class.																				BONUS:ABILITYPOOL|Rogue Talent|1			BONUS:VAR|RogueTalentLVL|AspisAgentLVL
+Shrunken Smuggle		KEY:Aspis Agent ~ Shrunken Smuggle		SORTKEY:Agency Secrets ~ Shrunken Smuggle		CATEGORY:Special Ability	TYPE:SpecialQuality.Agency Secret.Spelllike			!PREABILITY:1,CATEGORY=Special Ability,Aspis Agent ~ Shrunken Smuggle	SPELLS:Innate|TIMES=1|TIMEUNIT=Day|CASTERLEVEL=AspisAgentLVL|Shrink Item	DESC:You can cast shrink item once per day, using your class level as your caster level. In addition, while the item is shrunken, it is also affected as nondetection. This effect ends when the item returns to its proper size.
+
+###Block Modify Existing Feats
+# Ability Name					Type
+CATEGORY=FEAT|Advanced Ranger Trap.MOD	TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Antagonize.MOD			TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Combat Expertise.MOD		TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Enforcer.MOD			TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Greater Dirty Trick.MOD	TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Improved Dirty Trick.MOD	TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Improved Whip Mastery.MOD	TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Intimidating Prowess.MOD	TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Learn Ranger Trap.MOD		TYPE:AspisAgentBonusFeat
+CATEGORY=FEAT|Whip Mastery.MOD		TYPE:AspisAgentBonusFeat
+
+###Block Master Caster Choices
+# Ability Name			Unique Key							Category of Ability		Type					Visible		Ability							Caster level
+Bard					KEY:Aspis Agent ~ Master Caster ~ Bard		CATEGORY:Special Ability	TYPE:Master Caster Choice	VISIBLE:DISPLAY									BONUS:CASTERLEVEL|Bard|1
+Inquisitor				KEY:Aspis Agent ~ Master Caster ~ Inquisitor	CATEGORY:Special Ability	TYPE:Master Caster Choice	VISIBLE:DISPLAY									BONUS:CASTERLEVEL|Inquisitor|1
+
+Skill Focus (Intimidate)	KEY:Aspis Agent ~ Skill Focus (Intimidate)	CATEGORY:Feat			TYPE:AspisAgentBonusFeat	VISIBLE:DISPLAY	ABILITY:FEAT|AUTOMATIC|Skill Focus (Intimidate)
+
+
 
 
 
 ###Block
-# Ability Name	Unique Key			Category of Ability	Define				Combat bonus								Modify VAR							Bonus
-Bellflower		KEY:Bellflower ~ Class	CATEGORY:Class		DEFINE:Bellflower_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBellflowerLVL|TYPE=Base.REPLACE	BONUS:VAR|Bellflower_CFP_Level|BellflowerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicBellflowerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicBellflowerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicBellflowerLVL+1)/3
+# Ability Name	Unique Key			Category of Ability	Define				Combat bonus									Modify VAR							Bonus
+Bellflower		KEY:Bellflower ~ Class	CATEGORY:Class		DEFINE:Bellflower_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBellflowerLVL*3/4|TYPE=Base.REPLACE	BONUS:VAR|Bellflower_CFP_Level|BellflowerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicBellflowerLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicBellflowerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicBellflowerLVL+1)/3
 
-### Block Class Feature Progression
-#CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Bellflower_CFP_Level,1
+###Block Class Feature Progression
+# Ability Name					Ability
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Bellflower Crop|PREVARGTEQ:Bellflower_CFP_Level,1
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Swift Sower|PREVARGTEQ:Bellflower_CFP_Level,1
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Crop Guardian|PREVARGTEQ:Bellflower_CFP_Level,2
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Scarecrow|PREVARGTEQ:Bellflower_CFP_Level,2
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Teamwork Feat|PREVARGTEQ:Bellflower_CFP_Level,2
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Sneak Attack|PREVARGTEQ:Bellflower_CFP_Level,3
+CATEGORY=Class|Bellflower ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC|Bellflower ~ Favored Barn|PREVARGTEQ:Bellflower_CFP_Level,5
 
 ###Block Class Features
-#YYYYY	KEY:Bellflower ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
+# Ability Name	Unique Key					Category of Ability		Type														Visible	Define										Description																																																																																																																																																																																																																																		Ability							Bonus to Ability Pool							Modify VAR
+Swift Sower		KEY:Bellflower ~ Swift Sower		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary											DEFINE:Bellflower_Swift_Sower_Speed|0					DESC:Your base land speed is treated as being +%1 feet faster when determining your overland travel speed while traveling long distances and while outside of combat.  Members of your bellflower crop may use either your overland travel speed or their own, whichever is better.|Bellflower_Swift_Sower_Speed|10																																																																																																																																																																																																		BONUS:VAR|Bellflower_Swift_Sower_Speed|10	BONUS:VAR|Bellflower_Swift_Sower_Speed|10|PREVARGTEQ:Bellflower_CFP_Level,6
+Bellflower Crop	KEY:Bellflower ~ Bellflower Crop	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary											DEFINE:Bellflower_Crop_Size|0	DEFINE:Bellflower_Crop_Range|0	DESC:As a standard action, you may designate %1 allies as part of your bellflower crop.  Members of a bellflower crop must remain within %2 feet of the bellflower tiller in order to gain the benefits granted by a bellflower tiller's other class abilities; if they leave this range, you must designate these allies again for them to be included in your crop.|Bellflower_Crop_Size|Bellflower_Crop_Range																																																																																																																																																																																			BONUS:VAR|Bellflower_Crop_Size|3+CHA	BONUS:VAR|Bellflower_Crop_Range|30	BONUS:VAR|Bellflower_Crop_Range|30|PREVARGTEQ:Bellflower_CFP_Level,7
+Crop Guardian	KEY:Bellflower ~ Crop Guardian	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																						DESC:You are dedicated to ensuring the safety and success of those you guide. Whenever you use the aid another action for a member of your bellflower crop, you grants a +3 bonus instead of the normal +2.
+Scarecrow		KEY:Bellflower ~ Scarecrow		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary											DEFINE:Bellflower_Scarecrow_Bonus|0						DESC:You receive a +%1 morale bonus on attack and damage rolls made against creatures that threaten members of your bellflower crop.|Bellflower_Scarecrow_Bonus																																																																																																																																																																																																																											BONUS:VAR|Bellflower_Scarecrow_Bonus|BellflowerLVL/2
+Teamwork Feat	KEY:Bellflower ~ Teamwork Feat	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary											DEFINE:BellflowerTeamworkPool|0						DESC:You gain a bonus feat in addition to those gained from normal advancement. This bonus feat must be selected from those listed as teamwork feats, and you must meet the prerequisites of the selected bonus feat.																																																																																																																																																																																																								BONUS:ABILITYPOOL|Teamwork Feat|BellflowerTeamworkPool	BONUS:VAR|BellflowerTeamworkPool|(BellflowerLVL+2)/4
+Sneak Attack	KEY:Bellflower ~ Sneak Attack		CATEGORY:Special Ability	TYPE:ClassFeatures.SpecialQuality.Extraordinary	TYPE:SpecialQuality.Extraordinary	VISIBLE:NO																																																																																																																																																																																																																																															ABILITY:Special Ability|AUTOMATIC|Sneak Attack											BONUS:VAR|SneakAttackDice|BellflowerLVL/3
+Favored Barn	KEY:Bellflower ~ Favored Barn		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary																						DESC:You grow familiar with and develops trusted contacts in a particular community. While inside the limits of this community, you gain a +2 bonus on initiative checks and Knowledge (local), Perception, Stealth, and Survival checks. Any ally designated as part of your bellflower crop receives a bonus on these skills equal to half your bonus. When traveling through your favored community, you leave no trail and cannot be tracked (although you may leave a trail if you so desire).  &nl;Provided you aren't in immediate danger (such as fleeing from pursuers right on your heels), you can always find a safe place for you and members of your crop to rest in your chosen community. At such a location, you and your allies are fed, clothed, and provided with basic medical attention (as if attended by a person with a Heal bonus of +10).  &nl;At 7th level, and again at 9th level, you may select an additional community in which to receive these bonuses. Each time you select a new community, the skill bonus and initiative bonus in any one chosen community (including the one just selected, if so desired) increases by +2.  &nl;For the purposes of this ability, a community is considered any settlement consisting of 100 or more individuals. The community may be larger than this minimum. Outlying farms, fields, and houses are considered part of a community.
 
 
 
@@ -72,7 +159,7 @@ Bellflower		KEY:Bellflower ~ Class	CATEGORY:Class		DEFINE:Bellflower_CFP_Level|0
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR									Bonus
 Blackfire Adept	KEY:Blackfire Adept ~ Class	CATEGORY:Class		DEFINE:Blackfire_Adept_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBlackfireAdeptLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Blackfire_Adept_CFP_Level|BlackfireAdeptLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicBlackfireAdeptLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicBlackfireAdeptLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicBlackfireAdeptLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Blackfire Adept ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Blackfire_Adept_CFP_Level,1
 
 ###Block Class Features
@@ -84,7 +171,7 @@ Blackfire Adept	KEY:Blackfire Adept ~ Class	CATEGORY:Class		DEFINE:Blackfire_Ade
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus									Modify VAR									Bonus
 Brother of the Seal	KEY:Brother of the Seal ~ Class	CATEGORY:Class		DEFINE:Brother_of_the_Seal_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicBrotherOfTheSealLVL|TYPE=Base.REPLACE	BONUS:VAR|Brother_of_the_Seal_CFP_Level|BrotherOfTheSealLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicBrotherOfTheSealLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicBrotherOfTheSealLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicBrotherOfTheSealLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Brother of the Seal ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Brother_of_the_Seal_CFP_Level,1
 
 ###Block Class Features
@@ -96,7 +183,7 @@ Brother of the Seal	KEY:Brother of the Seal ~ Class	CATEGORY:Class		DEFINE:Broth
 # Ability Name	Unique Key				Category of Ability	Define						Combat bonus									Modify VAR									Bonus
 Champion of Irori	KEY:Champion of Irori ~ Class	CATEGORY:Class		DEFINE:Champion_of_Irori_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicChampionOfIroriLVL|TYPE=Base.REPLACE	BONUS:VAR|Champion_of_Irori_CFP_Level|ChampionOfIroriLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicChampionOfIroriLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicChampionOfIroriLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicChampionOfIroriLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Champion of Irori ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Champion_of_Irori_CFP_Level,1
 
 ###Block Class Features
@@ -108,7 +195,7 @@ Champion of Irori	KEY:Champion of Irori ~ Class	CATEGORY:Class		DEFINE:Champion_
 # Ability Name	Unique Key			Category of Ability	Define				Combat bonus								Modify VAR							Bonus
 Daggermark		KEY:Daggermark ~ Class	CATEGORY:Class		DEFINE:Daggermark_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicDaggermarkLVL|TYPE=Base.REPLACE	BONUS:VAR|Daggermark_CFP_Level|DaggermarkLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicDaggermarkLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicDaggermarkLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicDaggermarkLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Daggermark ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Daggermark_CFP_Level,1
 
 ###Block Class Features
@@ -120,7 +207,7 @@ Daggermark		KEY:Daggermark ~ Class	CATEGORY:Class		DEFINE:Daggermark_CFP_Level|0
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
 Dawnflower Dissident	KEY:Dawnflower Dissident ~ Class	CATEGORY:Class		DEFINE:Dawnflower_Dissident_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicDawnflowerDissidentLVL|TYPE=Base.REPLACE	BONUS:VAR|Dawnflower_Dissident_CFP_Level|DawnflowerDissidentLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicDawnflowerDissidentLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicDawnflowerDissidentLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicDawnflowerDissidentLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Dawnflower Dissident ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Dawnflower_Dissident_CFP_Level,1
 
 ###Block Class Features
@@ -132,7 +219,7 @@ Dawnflower Dissident	KEY:Dawnflower Dissident ~ Class	CATEGORY:Class		DEFINE:Daw
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus									Modify VAR									Bonus
 Golden Legionnaire	KEY:Golden Legionnaire ~ Class	CATEGORY:Class		DEFINE:Golden_Legionnaire_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicGoldenLegionnaireLVL|TYPE=Base.REPLACE	BONUS:VAR|Golden_Legionnaire_CFP_Level|GoldenLegionnaireLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicGoldenLegionnaireLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicGoldenLegionnaireLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicGoldenLegionnaireLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Golden Legionnaire ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Golden_Legionnaire_CFP_Level,1
 
 ###Block Class Features
@@ -144,7 +231,7 @@ Golden Legionnaire	KEY:Golden Legionnaire ~ Class	CATEGORY:Class		DEFINE:Golden_
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Gray Gardener	KEY:Gray Gardener ~ Class	CATEGORY:Class		DEFINE:Gray_Gardener_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicGrayGardenerLVL|TYPE=Base.REPLACE	BONUS:VAR|Gray_Gardener_CFP_Level|GrayGardenerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicGrayGardenerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicGrayGardenerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicGrayGardenerLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Gray Gardener ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Gray_Gardener_CFP_Level,1
 
 ###Block Class Features
@@ -156,7 +243,7 @@ Gray Gardener	KEY:Gray Gardener ~ Class	CATEGORY:Class		DEFINE:Gray_Gardener_CFP
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus									Modify VAR										Bonus
 Green Faith Acolyte	KEY:Green Faith Acolyte ~ Class	CATEGORY:Class		DEFINE:Green_Faith_Acolyte_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicGreenFaithAcolyteLVL|TYPE=Base.REPLACE	BONUS:VAR|Green_Faith_Acolyte_CFP_Level|GreenFaithAcolyteLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicGreenFaithAcolyteLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicGreenFaithAcolyteLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicGreenFaithAcolyteLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Green Faith Acolyte ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Green_Faith_Acolyte_CFP_Level,1
 
 ###Block Class Features
@@ -168,7 +255,7 @@ Green Faith Acolyte	KEY:Green Faith Acolyte ~ Class	CATEGORY:Class		DEFINE:Green
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
 Hellknight Signifer	KEY:Hellknight Signifer ~ Class	CATEGORY:Class		DEFINE:Hellknight_Signifer_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicHellknightSigniferLVL|TYPE=Base.REPLACE	BONUS:VAR|Hellknight_Signifer_CFP_Level|HellknightSigniferLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicHellknightSigniferLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicHellknightSigniferLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicHellknightSigniferLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Hellknight Signifer ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Hellknight_Signifer_CFP_Level,1
 
 ###Block Class Features
@@ -180,7 +267,7 @@ Hellknight Signifer	KEY:Hellknight Signifer ~ Class	CATEGORY:Class		DEFINE:Hellk
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Knight of Ozem	KEY:Knight of Ozem ~ Class	CATEGORY:Class		DEFINE:Knight_of_Ozem_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicKnightOfOzemLVL|TYPE=Base.REPLACE	BONUS:VAR|Knight_of_Ozem_CFP_Level|KnightOfOzemLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicKnightOfOzemLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicKnightOfOzemLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicKnightOfOzemLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Knight of Ozem ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Knight_of_Ozem_CFP_Level,1
 
 ###Block Class Features
@@ -192,7 +279,7 @@ Knight of Ozem	KEY:Knight of Ozem ~ Class	CATEGORY:Class		DEFINE:Knight_of_Ozem_
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Lantern Bearer	KEY:Lantern Bearer ~ Class	CATEGORY:Class		DEFINE:Lantern_Bearer_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicLanternBearerLVL|TYPE=Base.REPLACE	BONUS:VAR|Lantern_Bearer_CFP_Level|LanternBearerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicLanternBearerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicLanternBearerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicLanternBearerLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Lantern Bearer ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Lantern_Bearer_CFP_Level,1
 
 ###Block Class Features
@@ -204,7 +291,7 @@ Lantern Bearer	KEY:Lantern Bearer ~ Class	CATEGORY:Class		DEFINE:Lantern_Bearer_
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
 Magaambyan Arcanist	KEY:Magaambyan Arcanist ~ Class	CATEGORY:Class		DEFINE:Magaambyan_Arcanist_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicMagaambyanArcanistLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Magaambyan_Arcanist_CFP_Level|MagaambyanArcanistLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicMagaambyanArcanistLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicMagaambyanArcanistLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicMagaambyanArcanistLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Magaambyan Arcanist ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Magaambyan_Arcanist_CFP_Level,1
 
 ###Block Class Features
@@ -216,7 +303,7 @@ Magaambyan Arcanist	KEY:Magaambyan Arcanist ~ Class	CATEGORY:Class		DEFINE:Magaa
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Mammoth Rider	KEY:Mammoth Rider ~ Class	CATEGORY:Class		DEFINE:Mammoth_Rider_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicMammothRiderLVL|TYPE=Base.REPLACE	BONUS:VAR|Mammoth_Rider_CFP_Level|MammothRiderLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicMammothRiderLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicMammothRiderLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicMammothRiderLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Mammoth Rider ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Mammoth_Rider_CFP_Level,1
 
 ###Block Class Features
@@ -228,7 +315,7 @@ Mammoth Rider	KEY:Mammoth Rider ~ Class	CATEGORY:Class		DEFINE:Mammoth_Rider_CFP
 # Ability Name	Unique Key			Category of Ability	Define					Combat bonus								Modify VAR							Bonus
 Noble Scion		KEY:Noble Scion ~ Class	CATEGORY:Class		DEFINE:Noble_Scion_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicNobleScionLVL|TYPE=Base.REPLACE	BONUS:VAR|Noble_Scion_CFP_Level|NobleScionLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicNobleScionLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicNobleScionLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicNobleScionLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Noble Scion ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Noble_Scion_CFP_Level,1
 
 ###Block Class Features
@@ -240,7 +327,7 @@ Noble Scion		KEY:Noble Scion ~ Class	CATEGORY:Class		DEFINE:Noble_Scion_CFP_Leve
 # Ability Name	Unique Key			Category of Ability	Define					Combat bonus								Modify VAR							Bonus
 Pit Fighter		KEY:Pit Fighter ~ Class	CATEGORY:Class		DEFINE:Pit_Fighter_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicPitFighterLVL|TYPE=Base.REPLACE	BONUS:VAR|Pit_Fighter_CFP_Level|PitFighterLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicPitFighterLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicPitFighterLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicPitFighterLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Pit Fighter ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Pit_Fighter_CFP_Level,1
 
 ###Block Class Features
@@ -252,7 +339,7 @@ Pit Fighter		KEY:Pit Fighter ~ Class	CATEGORY:Class		DEFINE:Pit_Fighter_CFP_Leve
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
 Prophet of Kalistrade	KEY:Prophet of Kalistrade ~ Class	CATEGORY:Class		DEFINE:Prophet_of_Kalistrade_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicProphetOfKalistradeLVL|TYPE=Base.REPLACE	BONUS:VAR|Prophet_of_Kalistrade_CFP_Level|ProphetOfKalistradeLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicProphetOfKalistradeLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicProphetOfKalistradeLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicProphetOfKalistradeLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Prophet of Kalistrade ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Prophet_of_Kalistrade_CFP_Level,1
 
 ###Block Class Features
@@ -264,7 +351,7 @@ Prophet of Kalistrade	KEY:Prophet of Kalistrade ~ Class	CATEGORY:Class		DEFINE:P
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus										Modify VAR									Bonus
 Razmiran Priest	KEY:Razmiran Priest ~ Class	CATEGORY:Class		DEFINE:Razmiran_Priest_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicRazmiranPriestLVL*3/4|TYPE=Base.REPLACE	BONUS:VAR|Razmiran_Priest_CFP_Level|RazmiranPriestLVL*3/4	BONUS:SAVE|BASE.Fortitude|(NonEpicRazmiranPriestLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicRazmiranPriestLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicRazmiranPriestLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Razmiran Priest ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Razmiran_Priest_CFP_Level,1
 
 ###Block Class Features
@@ -276,7 +363,7 @@ Razmiran Priest	KEY:Razmiran Priest ~ Class	CATEGORY:Class		DEFINE:Razmiran_Prie
 # Ability Name	Unique Key			Category of Ability	Define				Combat bonus									Modify VAR								Bonus
 Riftwarden		KEY:Riftwarden ~ Class	CATEGORY:Class		DEFINE:Riftwarden_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicRiftwardenLVL*3/4|TYPE=Base.REPLACE	BONUS:VAR|Riftwarden_CFP_Level|RiftwardenLVL*3/4	BONUS:SAVE|BASE.Fortitude|(NonEpicRiftwardenLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicRiftwardenLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicRiftwardenLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Riftwarden ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Riftwarden_CFP_Level,1
 
 ###Block Class Features
@@ -288,7 +375,7 @@ Riftwarden		KEY:Riftwarden ~ Class	CATEGORY:Class		DEFINE:Riftwarden_CFP_Level|0
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Shieldmarshal	KEY:Shieldmarshal ~ Class	CATEGORY:Class		DEFINE:Shieldmarshal_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicShieldmarshalLVL|TYPE=Base.REPLACE	BONUS:VAR|Shieldmarshal_CFP_Level|ShieldmarshalLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicShieldmarshalLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicShieldmarshalLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicShieldmarshalLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Shieldmarshal ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Shieldmarshal_CFP_Level,1
 
 ###Block Class Features
@@ -300,7 +387,7 @@ Shieldmarshal	KEY:Shieldmarshal ~ Class	CATEGORY:Class		DEFINE:Shieldmarshal_CFP
 # Ability Name	Unique Key			Category of Ability	Define				Combat bonus								Modify VAR							Bonus
 Skyseeker		KEY:Skyseeker ~ Class	CATEGORY:Class		DEFINE:Skyseeker_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicSkyseekerLVL|TYPE=Base.REPLACE	BONUS:VAR|Skyseeker_CFP_Level|SkyseekerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicSkyseekerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicSkyseekerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicSkyseekerLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Skyseeker ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Skyseeker_CFP_Level,1
 
 ###Block Class Features
@@ -312,7 +399,7 @@ Skyseeker		KEY:Skyseeker ~ Class	CATEGORY:Class		DEFINE:Skyseeker_CFP_Level|0	BO
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
 Sleepless Detective	KEY:Sleepless Detective ~ Class	CATEGORY:Class		DEFINE:Sleepless_Detective_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicSleeplessDetectiveLVL|TYPE=Base.REPLACE	BONUS:VAR|Sleepless_Detective_CFP_Level|SleeplessDetectiveLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicSleeplessDetectiveLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicSleeplessDetectiveLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicSleeplessDetectiveLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Sleepless Detective ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Sleepless_Detective_CFP_Level,1
 
 ###Block Class Features
@@ -324,7 +411,7 @@ Sleepless Detective	KEY:Sleepless Detective ~ Class	CATEGORY:Class		DEFINE:Sleep
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Storm Kindler	KEY:Storm Kindler ~ Class	CATEGORY:Class		DEFINE:Storm_Kindler_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicStormKindlerLVL|TYPE=Base.REPLACE	BONUS:VAR|Storm_Kindler_CFP_Level|StormKindlerLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicStormKindlerLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicStormKindlerLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicStormKindlerLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Storm Kindler ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Storm_Kindler_CFP_Level,1
 
 ###Block Class Features
@@ -336,7 +423,7 @@ Storm Kindler	KEY:Storm Kindler ~ Class	CATEGORY:Class		DEFINE:Storm_Kindler_CFP
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR									Bonus
 Tattooed Mystic	KEY:Tattooed Mystic ~ Class	CATEGORY:Class		DEFINE:Tattooed_Mystic_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicTattooedMysticLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Tattooed_Mystic_CFP_Level|TattooedMysticLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicTattooedMysticLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicTattooedMysticLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicTattooedMysticLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Tattooed Mystic ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Tattooed_Mystic_CFP_Level,1
 
 ###Block Class Features
@@ -348,7 +435,7 @@ Tattooed Mystic	KEY:Tattooed Mystic ~ Class	CATEGORY:Class		DEFINE:Tattooed_Myst
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus								Modify VAR							Bonus
 Umbral Court	KEY:Umbral Court ~ Class	CATEGORY:Class		DEFINE:Umbral_Court_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicUmbralCourtLVL|TYPE=Base.REPLACE	BONUS:VAR|Umbral_Court_CFP_Level|UmbralCourtLVL	BONUS:SAVE|BASE.Fortitude|(NonEpicUmbralCourtLVL+1)/2	BONUS:SAVE|BASE.Reflex|(NonEpicUmbralCourtLVL+1)/2	BONUS:SAVE|BASE.Will|(NonEpicUmbralCourtLVL+1)/3
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Umbral Court ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Umbral_Court_CFP_Level,1
 
 ###Block Class Features
@@ -360,7 +447,7 @@ Umbral Court	KEY:Umbral Court ~ Class	CATEGORY:Class		DEFINE:Umbral_Court_CFP_Le
 # Ability Name		Unique Key					Category of Ability	Define						Combat bonus										Modify VAR										Bonus
 Veiled Illusionist	KEY:Veiled Illusionist ~ Class	CATEGORY:Class		DEFINE:Veiled_Illusionist_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicVeiledIllusionistLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Veiled_Illusionist_CFP_Level|VeiledIllusionistLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicVeiledIllusionistLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicVeiledIllusionistLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicVeiledIllusionistLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Veiled Illusionist ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Veiled_Illusionist_CFP_Level,1
 
 ###Block Class Features
@@ -372,11 +459,9 @@ Veiled Illusionist	KEY:Veiled Illusionist ~ Class	CATEGORY:Class		DEFINE:Veiled_
 # Ability Name	Unique Key				Category of Ability	Define					Combat bonus									Modify VAR								Bonus
 Winter Witch	KEY:Winter Witch ~ Class	CATEGORY:Class		DEFINE:Winter_Witch_CFP_Level|0	BONUS:COMBAT|BASEAB|NonEpicWinterWitchLVL/2|TYPE=Base.REPLACE	BONUS:VAR|Winter_Witch_CFP_Level|WinterWitchLVL/2	BONUS:SAVE|BASE.Fortitude|(NonEpicWinterWitchLVL+1)/3	BONUS:SAVE|BASE.Reflex|(NonEpicWinterWitchLVL+1)/3	BONUS:SAVE|BASE.Will|(NonEpicWinterWitchLVL+1)/2
 
-### Block Class Feature Progression
+###Block Class Feature Progression
 #CATEGORY=Class|Winter Witch ~ Class.MOD	ABILITY:Special Ability|AUTOMATIC||PREVARGTEQ:Winter_Witch_CFP_Level,1
 
 ###Block Class Features
 #YYYYY	KEY:Winter Witch ~ YYYYY		CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary	DESC:
-
-
 
