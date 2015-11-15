@@ -13,7 +13,7 @@ Buy Path of Power		TYPE:PathOfPower	COST:1	BONUS:ABILITYPOOL|Path of Power Choic
 
 
 ###Block: Actual Feats
-Armored Caster	SOURCEPAGE:p.7	KEY:Armored Caster	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREFEAT:1,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
+Armored Caster	SOURCEPAGE:p.7	KEY:Armored Caster	TYPE:Metamagic	DESC:You may minimize your gestures when casting an arcane spell.	PREABILITY:1,CATEGORY=FEAT,Armor Proficiency (Light)	BENEFIT:You may wear light armor without risk of arcane spell failure. Special: The game master may allow characters to spend an additional two Feats to acquire the ability to wear medium armor without risking arcane spell failure.
 Domain Ability	SOURCEPAGE:p.7	TYPE:General	DESC:Your mystical studies have granted you an innate talent.	PRETEXT:Having expended a Feat on a domain path.	BENEFIT:You gain the granted power for the domain as well as access to its spells.
 #Special: Prestige or Exclusive domain abilities may cost two Feats to acquire at the option of the game master.
 Path Master		SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You become a semi-spontaneous caster.	PRETEXT:Knowing at least three paths.	BENEFIT:You may invest your spell slots in paths rather than in individual spells. You may then expend those spell levels in casting any spell on the path that you can handle. For example, a 8'th level wizard with the Pyrotics path could invest two fourth level spell slots in it, and then use them to cast Fireball and Burning Hands twice each, or any other combination of Pyrotic spells of up to level four - the maximum level of spell which he or she can cast - which adds up to eight spell levels or less.
@@ -23,13 +23,13 @@ Psionic Ability	SOURCEPAGE:p.7	TYPE:General	DESC:You have acquired limited psion
 #		A character must have a minimum ability score of (10 + the level of the power in question) to manifest a power and cannot 
 #		spend more points (base plus augmentations) manifesting a power then their caster level.
 # COMMENT: Not Sure how to implement this <needs more thought>
-Shielded Caster	SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You may perform somatic components while using a shield.	PREFEAT:1,Shield Proficiency	PRESPELLCAST:Arcane	BENEFIT:You may cast spells which have somatic components without risking arcane spell failure while using one arm to hold a shield as long as your other hand is free.
+Shielded Caster	SOURCEPAGE:p.7	TYPE:Metamagic	DESC:You may perform somatic components while using a shield.	PREABILITY:1,CATEGORY=FEAT,Shield Proficiency	PRESPELLCAST:Arcane	BENEFIT:You may cast spells which have somatic components without risking arcane spell failure while using one arm to hold a shield as long as your other hand is free.
 Skillfullness	SOURCEPAGE:p.7	TYPE:General	MULT:YES	CHOOSE:NOCHOICE	STACK:YES	DESC:You gain six skill points which may be expended normally.	PRESTAT:1,INT=10	BENEFIT:You gain +6 skill points to be expended normally per your current class. This does not allow you to surpass normal limits on class or cross-class skills. Normal: Skill points are strictly dependent on class levels. Special: This Feat may be taken repeatedly.
 # COMMENT: Unable to grant 6 Skill Points - Needs Code Work.
 Spell Ability	SOURCEPAGE:p.8	TYPE:General	DESC:You have acquired limited spellcasting abilities.	CHOOSE:PCSTAT|INT|WIS|CHA	MULT:YES	
-	ABILITY:Internal|AUTOMATIC|Spell Ability ~ INT Caster|PREFEAT:1,Spell Ability (INT)
-	ABILITY:Internal|AUTOMATIC|Spell Ability ~ WIS Caster|PREFEAT:1,Spell Ability (WIS)
-	ABILITY:Internal|AUTOMATIC|Spell Ability ~ CHA Caster|PREFEAT:1,Spell Ability (CHA)
+	ABILITY:Internal|AUTOMATIC|Spell Ability ~ INT Caster|PREABILITY:1,CATEGORY=FEAT,Spell Ability (INT)
+	ABILITY:Internal|AUTOMATIC|Spell Ability ~ WIS Caster|PREABILITY:1,CATEGORY=FEAT,Spell Ability (WIS)
+	ABILITY:Internal|AUTOMATIC|Spell Ability ~ CHA Caster|PREABILITY:1,CATEGORY=FEAT,Spell Ability (CHA)
 	
 	
 	TEMPLATE:Spell Ability Level

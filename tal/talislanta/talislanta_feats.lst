@@ -5,22 +5,22 @@ SOURCELONG:d20Talislanta	SOURCESHORT:d20Tal	SOURCEWEB:http://www.talislanta.com
 ###Block: Talislantan Feats
 # Feat Name			Type						Req. Att.	Required Feat				Multiple Requirements										Required Race		Required Skill			Required Stat				Description		Automaticaly Gained Armor Prof.	Combat bonus											Bonus to skill
 Aerial Combat		TYPE:General.Fighter																																							DESC:See Text
-Armored Spellcasting	TYPE:General												PREMULT:1,[PREARMORPROF:1,TYPE.Light],[PREFEAT:1,Armor Proficiency (Light)]																DESC:See Text
+Armored Spellcasting	TYPE:General												PREMULT:1,[PREARMORPROF:1,TYPE.Light],[PREABILITY:1,CATEGORY=FEAT,Armor Proficiency (Light)]																DESC:See Text
 Artillerist			TYPE:General.Fighter																																					DESC:See Text
 Astromancy			TYPE:General																																							DESC:See Text
 Botanomancy			TYPE:General																								PRERACE:Ardua, Green												DESC:See Text
-Body Slam			TYPE:General.Fighter			PRETOTALAB:3	PREFEAT:2,Tazian Combat,Garde Parry																							PRESTAT:1,STR=16				DESC:See Text
+Body Slam			TYPE:General.Fighter			PRETOTALAB:3	PREABILITY:2,CATEGORY=FEAT,Tazian Combat,Garde Parry																							PRESTAT:1,STR=16				DESC:See Text
 Born to the Saddle	TYPE:General																																								DESC:See Text
 Conveyance Expert		TYPE:General																																							DESC:See Text
 Faith				TYPE:General																																		PRESTAT:1,WIS=12				DESC:See Text
-Garde Parry			TYPE:General.Fighter					PREFEAT:1,Tazian Combat																									PRESTAT:1,DEX=13				DESC:See Text
+Garde Parry			TYPE:General.Fighter					PREABILITY:1,CATEGORY=FEAT,Tazian Combat																									PRESTAT:1,DEX=13				DESC:See Text
 Haggle			TYPE:General																																	PRESTAT:1,CHA=13				DESC:See Text
 Healer			TYPE:General																																							DESC:See Text
 Operate Conveyance	TYPE:General																												PRESKILL:1,Drive/Pilot=4							DESC:See Text
 Pack Rat			TYPE:General																																							DESC:See Text
 Second Sight		TYPE:General																																								DESC:See Text
 Studious			TYPE:General																																							DESC:See Text																				BONUS:SKILL|Decipher Script,Research|2
-Swashbuckler		TYPE:General.Fighter					PREFEAT:1,Weapon Finesse																								PRESTAT:1,DEX=13				DESC:See Text							BONUS:COMBAT|TOHIT.Finesseable|((CHA)+SHIELDACCHECK)|TYPE=NotRanged.STACK
+Swashbuckler		TYPE:General.Fighter					PREABILITY:1,CATEGORY=FEAT,Weapon Finesse																								PRESTAT:1,DEX=13				DESC:See Text							BONUS:COMBAT|TOHIT.Finesseable|((CHA)+SHIELDACCHECK)|TYPE=NotRanged.STACK
 Tazian Combat		TYPE:General.Fighter																																	PRESTAT:1,DEX=13	PRESTAT:1,STR=15	DESC:See Text	AUTO:ARMORPROF|TYPE.Garde
 Windfall			TYPE:General																																								DESC:See Text
 Zealot			TYPE:General																																		PRESTAT:1,WIS=13				DESC:See Text
@@ -106,7 +106,7 @@ Wizardry.MOD																																																																				
 
 
 # Feat Name				Output Name						Type								Req. Att.	Required Class			Required Feat									Required Lvl	Multiple Requirements										Required Skill	Required Stat		Var. Min. Value				Special Ability										Define									Description																												Stackable?	Multiple?	Choose																		Automaticaly Gained Armor Prof.	Automaticaly Gained Shield Prof.				Automaticaly Gained Weapon Prof.				Save checks bonus			Combat bonus														BONUS:DC						Bonus to HP			% bonus to range								Bonus to skill					Modify VAR																		Weapon prop. bonus													Weapon prof. bonus								Source Page			Temporary effect description
-# Augment Summoning										TYPE:General									PREFEAT:1,Spell Focus(Conjuration)																																																															DESC:See Text																																																																																																																																																																																					SOURCEPAGE:Feats.rtf
+# Augment Summoning										TYPE:General									PREABILITY:1,CATEGORY=FEAT,Spell Focus(Conjuration)																																																															DESC:See Text																																																																																																																																																																																					SOURCEPAGE:Feats.rtf
 # Empower Spell										TYPE:Metamagic																																																																													DESC:See Text																																																ADDSPELLLEVEL:2																																																																																																																																			SOURCEPAGE:Feats.rtf
 # Enlarge Spell										TYPE:Metamagic																																																																													DESC:See Text																																																ADDSPELLLEVEL:1																																																																																																																																			SOURCEPAGE:Feats.rtf
 # Eschew Materials										TYPE:General																																																																											DESC:See Text																																																																																																																																																																									SOURCEPAGE:Feats.rtf
@@ -120,5 +120,5 @@ Wizardry.MOD																																																																				
 # Silent Spell										TYPE:Metamagic																																																																													DESC:See Text																																																ADDSPELLLEVEL:1																																																																																																																																			SOURCEPAGE:Feats.rtf
 # Spell Mastery										TYPE:Special																																										PRESPELLBOOK:YES																																	DESC:See Text			MULT:YES	CHOOSE:SPELLLIST|1																																																																																																																																																																													SOURCEPAGE:Feats.rtf
 # Still Spell											TYPE:Metamagic																																																																													DESC:See Text																																																ADDSPELLLEVEL:1																																																																																																																																			SOURCEPAGE:Feats.rtf
-# Tower Shield Proficiency								TYPE:General																							PREMULT:1,[PRESHIELDPROF:3,TYPE.Buckler,TYPE.Light,TYPE.Heavy],[PREFEAT:1,Shield Proficiency]																																							DESC:See Text																														AUTO:SHIELDPROF|TYPE.Tower																																																																																																																																																			SOURCEPAGE:Feats.rtf
+# Tower Shield Proficiency								TYPE:General																							PREMULT:1,[PRESHIELDPROF:3,TYPE.Buckler,TYPE.Light,TYPE.Heavy],[PREABILITY:1,CATEGORY=FEAT,Shield Proficiency]																																							DESC:See Text																														AUTO:SHIELDPROF|TYPE.Tower																																																																																																																																																			SOURCEPAGE:Feats.rtf
 # Widen Spell											TYPE:Metamagic																																																																													DESC:See Text																																																ADDSPELLLEVEL:3																																																																																																																																			SOURCEPAGE:Feats.rtf
