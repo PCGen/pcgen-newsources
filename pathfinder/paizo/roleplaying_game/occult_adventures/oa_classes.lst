@@ -1,0 +1,48 @@
+SOURCELONG:Occult Adventures	SOURCESHORT:OA	SOURCEWEB:http://paizo.com/products/btpy9a0h
+
+# Class Name	HD	Type								Class Type		Abbrev	Max Level	Source Page		Define			Modify VAR
+CLASS:Mesmerist	HD:8	TYPE:Base.PC.SpontaneousPsychic.Spontaneous	CLASSTYPE:PC	ABB:Msm	MAXLEVEL:20	SOURCEPAGE:p.38	DEFINE:MesmeristLVL|0	BONUS:VAR|MesmeristLVL|CL
+# Class Name	Combat bonus											Save bonus
+CLASS:Mesmerist	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3
+# Class Name	Skill Pts/Lvl	Spell Stat		Spell Type		Memorize	Monster Role
+CLASS:Mesmerist	STARTSKILLPTS:6	SPELLSTAT:CHA	SPELLTYPE:Psychic	MEMORIZE:NO	ROLE:Skill
+# Class Name	Caster level
+CLASS:Mesmerist	DEFINE:Caster_Level_Mesmerist|0	DEFINE:Caster_Level_BL_Stripped_Mesmerist|0	DEFINE:CasterLevelBLMesmerist|0	BONUS:CASTERLEVEL|Mesmerist|Caster_Level_BL_Stripped_Mesmerist	BONUS:VAR|Caster_Level_BL_Stripped_Mesmerist|Caster_Level_Mesmerist-CasterLevelBLMesmerist	BONUS:VAR|Caster_Level_Mesmerist|CL+Caster_Level_Bonus+CasterLevelBLMesmerist	BONUS:VAR|CasterLevelBL_x_Mesmerist|charbonusto("PCLEVEL","Mesmerist")	BONUS:VAR|Caster_Level_Highest__Psychic|Caster_Level_Mesmerist|TYPE=Base
+
+###Block: Level progression
+1	CAST:0,1			KNOWN:4,2
+2	CAST:0,2			KNOWN:5,3
+3	CAST:0,3			KNOWN:6,4
+4	CAST:0,3,1			KNOWN:6,4,2
+5	CAST:0,4,2			KNOWN:6,4,3
+6	CAST:0,4,3			KNOWN:6,4,4
+7	CAST:0,4,3,1		KNOWN:6,5,4,2
+8	CAST:0,4,4,2		KNOWN:6,5,4,3
+9	CAST:0,5,4,3		KNOWN:6,5,4,4
+10	CAST:0,5,4,3,1		KNOWN:6,5,5,4,2
+11	CAST:0,5,4,4,2		KNOWN:6,6,5,4,3
+12	CAST:0,5,5,4,3		KNOWN:6,6,5,4,4
+13	CAST:0,5,5,4,3,1		KNOWN:6,6,5,5,4,2
+14	CAST:0,5,5,4,4,2		KNOWN:6,6,6,5,4,3
+15	CAST:0,5,5,5,4,3		KNOWN:6,6,6,5,4,4
+16	CAST:0,5,5,5,4,3,1	KNOWN:6,6,6,5,5,4,2
+17	CAST:0,5,5,5,4,4,2	KNOWN:6,6,6,6,5,4,3
+18	CAST:0,5,5,5,5,4,3	KNOWN:6,6,6,6,5,4,4
+19	CAST:0,5,5,5,5,5,4	KNOWN:6,6,6,6,5,5,4
+20	CAST:0,5,5,5,5,5,5	KNOWN:6,6,6,6,6,5,5
+###Block: Class Features
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Class Skills|!PREFACT:1,ABILITIES,Mesmerist_CF_ClassSkills=True
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Weapon and Armor Proficiency|!PREFACT:1,ABILITIES,Mesmerist_CF_Proficiencies=True
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Consummate Liar|!PREFACT:1,ABILITIES,Mesmerist_CF_ConsummateLiar=True
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Hypnotic Stare|!PREFACT:1,ABILITIES,Mesmerist_CF_HypnoticStare=True
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Knacks|!PREFACT:1,ABILITIES,Mesmerist_CF_Knacks=True
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Mesmerist Tricks|!PREFACT:1,ABILITIES,Mesmerist_CF_MesmeristTricks=True
+1	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Painful Stare|!PREFACT:1,ABILITIES,Mesmerist_CF_PainfulStare=True
+2	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Towering Ego|!PREFACT:1,ABILITIES,Mesmerist_CF_ToweringEgo=True
+3	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Bold Stare|!PREFACT:1,ABILITIES,Mesmerist_CF_BoldStare=True
+3	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Touch Treatment|!PREFACT:1,ABILITIES,Mesmerist_CF_TouchTreatment=True
+5	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Manifold Tricks|!PREFACT:1,ABILITIES,Mesmerist_CF_ManifoldTricks=True
+5	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Mental Potency|!PREFACT:1,ABILITIES,Mesmerist_CF_MentalPotency=True
+11	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Glib Lie|!PREFACT:1,ABILITIES,Mesmerist_CF_GlibLie=True
+12	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Masterful Tricks|!PREFACT:1,ABILITIES,Mesmerist_CF_MasterfulTricks=True
+20	ABILITY:Mesmerist Class Feature|AUTOMATIC|Mesmerist ~ Rule Minds|!PREFACT:1,ABILITIES,Mesmerist_CF_RuleMinds=True
