@@ -44,7 +44,7 @@ Whispering Awareness					TYPE:General			VISIBLE:YES																													
 
 ###BLOCK: Internal Spell Mechanics
 # Feat Name		Type							Visible		Required Feat			Var. Min. Value			Stackable?	Multiple?	Choose				Bonus to spell known/L
-Spellpool Lvl 0	TYPE:Mechanics.Spellpool.SpellpoolLvl0	VISIBLE:DISPLAY	PREFEAT:1,TYPE=Magecraft						STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER,PC	BONUS:SPELLKNOWN|CLASS=%LIST;LEVEL=0|1
+Spellpool Lvl 0	TYPE:Mechanics.Spellpool.SpellpoolLvl0	VISIBLE:DISPLAY	PREABILITY:1,CATEGORY=FEAT,TYPE=Magecraft						STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER,PC	BONUS:SPELLKNOWN|CLASS=%LIST;LEVEL=0|1
 Spellpool Lvl 1	TYPE:Mechanics.Spellpool.SpellpoolLvl1	VISIBLE:DISPLAY						PREVARGTEQ:SpellLevelMx,1	STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER,PC	BONUS:SPELLKNOWN|CLASS=%LIST;LEVEL=1|1
 Spellpool Lvl 2	TYPE:Mechanics.Spellpool.SpellpoolLvl2	VISIBLE:DISPLAY						PREVARGTEQ:SpellLevelMx,2	STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER,PC	BONUS:SPELLKNOWN|CLASS=%LIST;LEVEL=2|1
 Spellpool Lvl 3	TYPE:Mechanics.Spellpool.SpellpoolLvl3	VISIBLE:DISPLAY						PREVARGTEQ:SpellLevelMx,3	STACK:YES	MULT:YES	CHOOSE:CLASS|SPELLCASTER,PC	BONUS:SPELLKNOWN|CLASS=%LIST;LEVEL=3|1
@@ -82,6 +82,6 @@ Improviser Stunning Fist					TYPE:WarriorsWayImproviser	VISIBLE:DISPLAY	PREABILI
 
 ###BLOCK: Defender Class Feats
 # Feat Name			Unique Key				Type						Visible		Clear Prereq.	Required Feat				Prohibited Feat				Multiple Requirements																				Define									Description																				Modify VAR																											Source Page
-Stunning Fist		KEY:Defender ~ Stunning Fist	TYPE:General.Fighter.AttackOption	VISIBLE:EXPORT				PREFEAT:1,Improved Unarmed Strike																														DEFINE:StunningFistAttackTimes|0	DEFINE:StunningFistDC|0	DESC:%1/day you may stun an opponant with a carefully placed unarmed attack (DC %2)|StunningFistAttackTimes|StunningFistDC	BONUS:VAR|StunningFistDC|10+STR	BONUS:VAR|StunningFistDC|TL/2|TYPE=NoStack	BONUS:VAR|StunningFistAttackTimes|DefenderLvl+3+(TL-DefenderLvl)/4|TYPE=NoStack	SOURCEPAGE:Feats
-Stunning Fist.MOD																									!PREFEAT:1,Defender ~ Stunning Fist
+Stunning Fist		KEY:Defender ~ Stunning Fist	TYPE:General.Fighter.AttackOption	VISIBLE:EXPORT				PREABILITY:1,CATEGORY=FEAT,Improved Unarmed Strike																														DEFINE:StunningFistAttackTimes|0	DEFINE:StunningFistDC|0	DESC:%1/day you may stun an opponant with a carefully placed unarmed attack (DC %2)|StunningFistAttackTimes|StunningFistDC	BONUS:VAR|StunningFistDC|10+STR	BONUS:VAR|StunningFistDC|TL/2|TYPE=NoStack	BONUS:VAR|StunningFistAttackTimes|DefenderLvl+3+(TL-DefenderLvl)/4|TYPE=NoStack	SOURCEPAGE:Feats
+Stunning Fist.MOD																									!PREABILITY:1,CATEGORY=FEAT,Defender ~ Stunning Fist
 Mounted Combat.MOD															PRE:.CLEAR														PREMULT:1,[PRESKILL:1,Ride=1],[PREABILITY:1,CATEGORY=Special Ability,Nomadic Halfling ~ Bound to the Spirits or Bound to the Beasts]
