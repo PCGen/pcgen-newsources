@@ -1,6 +1,56 @@
 SOURCELONG:Occult Adventures	SOURCESHORT:OA	SOURCEWEB:http://paizo.com/products/btpy9a0h
 
 # Class Name	HD	Type								Class Type		Abbrev	Max Level	Source Page		Define			Modify VAR
+CLASS:Medium	HD:8	TYPE:Base.PC.SpontaneousPsychic.Spontaneous	CLASSTYPE:PC	ABB:Med	MAXLEVEL:20	SOURCEPAGE:p.30	DEFINE:MediumLVL|0	BONUS:VAR|MediumLVL|CL
+# Class Name	Combat bonus											Save bonus
+CLASS:Medium	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3
+# Class Name	Skill Pts/Lvl	Spell Stat		Spell Type		Memorize	Monster Role
+CLASS:Medium	STARTSKILLPTS:4	SPELLSTAT:CHA	SPELLTYPE:Psychic	MEMORIZE:NO	ROLE:Skill
+# Class Name	Caster level
+CLASS:Medium	DEFINE:Caster_Level_Medium|0	DEFINE:Caster_Level_BL_Stripped_Medium|0	DEFINE:CasterLevelBLMedium|0	BONUS:CASTERLEVEL|Medium|Caster_Level_BL_Stripped_Medium	BONUS:VAR|Caster_Level_BL_Stripped_Medium|Caster_Level_Medium-CasterLevelBLMedium	BONUS:VAR|Caster_Level_Medium|CL+Caster_Level_Bonus+CasterLevelBLMedium	BONUS:VAR|CasterLevelBL_x_Medium|charbonusto("PCLEVEL","Medium")	BONUS:VAR|Caster_Level_Highest__Psychic|Caster_Level_Medium|TYPE=Base
+
+###Block: Level progression
+1	CAST:0		KNOWN:2
+2	CAST:0		KNOWN:3
+3	CAST:0		KNOWN:4
+4	CAST:0,1		KNOWN:4,2
+5	CAST:0,1		KNOWN:5,3
+6	CAST:0,1		KNOWN:5,4
+7	CAST:0,1,1		KNOWN:6,4,2
+8	CAST:0,1,1		KNOWN:6,4,3
+9	CAST:0,2,1		KNOWN:6,5,4
+10	CAST:0,2,1,1	KNOWN:6,5,4,2
+11	CAST:0,2,1,1	KNOWN:6,5,4,3
+12	CAST:0,2,2,1	KNOWN:6,6,5,4
+13	CAST:0,3,2,1,1	KNOWN:6,6,5,4,2
+14	CAST:0,3,2,1,1	KNOWN:6,6,5,4,3
+15	CAST:0,3,2,2,1	KNOWN:6,6,6,5,4
+16	CAST:0,3,3,2,1	KNOWN:6,6,6,5,4
+17	CAST:0,4,3,2,1	KNOWN:6,6,6,5,4
+18	CAST:0,4,3,2,2	KNOWN:6,6,6,6,5
+19	CAST:0,4,3,3,2	KNOWN:6,6,6,6,5
+20	CAST:0,4,4,3,2	KNOWN:6,6,6,6,5
+###Block: Class Features
+1	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Class Skills|!PREFACT:1,ABILITIES,Medium_CF_ClassSkills=True
+1	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Weapon and Armor Proficiency|!PREFACT:1,ABILITIES,Medium_CF_Proficiencies=True
+1	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Knacks|!PREFACT:1,ABILITIES,Medium_CF_Knacks=True
+1	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Spirit|!PREFACT:1,ABILITIES,Medium_CF_Spirit=True
+1	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Spirit Surge|!PREFACT:1,ABILITIES,Medium_CF_SpiritSurge=True
+2	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Shared Seance|!PREFACT:1,ABILITIES,Medium_CF_SharedSeance=True
+2	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Taboo|!PREFACT:1,ABILITIES,Medium_CF_Taboo=True
+3	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Haunt Channeler|!PREFACT:1,ABILITIES,Medium_CF_HauntChanneler=True
+5	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Location Channel|!PREFACT:1,ABILITIES,Medium_CF_LocationChannel=True
+7	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Connection Channel|!PREFACT:1,ABILITIES,Medium_CF_ConnectionChannel=True
+9	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Propitiation|!PREFACT:1,ABILITIES,Medium_CF_Propitiation=True
+13	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Ask the Spirits|!PREFACT:1,ABILITIES,Medium_CF_AskTheSpirits=True
+14	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Astral Journey|!PREFACT:1,ABILITIES,Medium_CF_AstralJourney=True
+15	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Trance of Three|!PREFACT:1,ABILITIES,Medium_CF_TranceOfThree=True
+18	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Spacious Soul|!PREFACT:1,ABILITIES,Medium_CF_SpaciousSoul=True
+19	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Spirit Mastery|!PREFACT:1,ABILITIES,Medium_CF_SpiritMastery=True
+20	ABILITY:Medium Class Feature|AUTOMATIC|Medium ~ Astral Beacon|!PREFACT:1,ABILITIES,Medium_CF_AstralBeacon=True
+
+
+# Class Name	HD	Type								Class Type		Abbrev	Max Level	Source Page		Define			Modify VAR
 CLASS:Mesmerist	HD:8	TYPE:Base.PC.SpontaneousPsychic.Spontaneous	CLASSTYPE:PC	ABB:Msm	MAXLEVEL:20	SOURCEPAGE:p.38	DEFINE:MesmeristLVL|0	BONUS:VAR|MesmeristLVL|CL
 # Class Name	Combat bonus											Save bonus
 CLASS:Mesmerist	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Reflex,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3
