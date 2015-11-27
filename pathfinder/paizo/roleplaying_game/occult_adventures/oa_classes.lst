@@ -22,8 +22,49 @@ CLASS:Kineticist	BONUS:VAR|Caster_Level_Highest__Psychic|Caster_Level_Kineticist
 ###Block
 1	ABILITY:CLASS|AUTOMATIC|Kineticist
 
+# Class Name	HD	Type								Class Type		Abbrev	Max Level	Source Page		Define			Modify VAR
+CLASS:Medium	MAXLEVEL:20
+CLASS:Medium	HD:8	TYPE:Base.PC.SpontaneousPsychic.Spontaneous
+CLASS:Medium	FACT:Abb|Med	FACT:ClassType|Skill
+CLASS:Medium	DEFINE:MediumLVL|0	BONUS:VAR|MediumLVL|CL
+CLASS:Medium	SOURCEPAGE:p.30
+CLASS:Medium	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0
+CLASS:Medium	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1
+CLASS:Medium	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Medium	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Medium	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Medium	BONUS:VAR|ClassSavePoor_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1
+CLASS:Medium	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1
+CLASS:Medium	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1
+CLASS:Medium	STARTSKILLPTS:4
+CLASS:Medium	FACT:SpellType|Psychic	
+CLASS:Medium	SPELLSTAT:CHA	MEMORIZE:NO
+CLASS:Medium	BONUS:CASTERLEVEL|Medium|Caster_Level_BL_Stripped_Medium	DEFINE:Caster_Level_BL_Stripped_Medium|0	BONUS:VAR|Caster_Level_BL_Stripped_Medium|Caster_Level_Medium-CasterLevelBLMedium	BONUS:VAR|Caster_Level_Medium|CL+Caster_Level_Bonus+CasterLevelBLMedium	DEFINE:CasterLevelBLMedium|0	BONUS:VAR|CasterLevelBL_Medium|charbonusto("PCLEVEL","Medium")	
+CLASS:Medium	BONUS:VAR|Caster_Level_Highest__Psychic|Caster_Level_Medium|TYPE=Base
 
-# Medium - Paul Shipley
+###Block: Level progression
+1	CAST:0		KNOWN:2
+2	CAST:0		KNOWN:3
+3	CAST:0		KNOWN:4
+4	CAST:0,1		KNOWN:4,2
+5	CAST:0,1		KNOWN:5,3
+6	CAST:0,1		KNOWN:5,4
+7	CAST:0,1,1		KNOWN:6,4,2
+8	CAST:0,1,1		KNOWN:6,4,3
+9	CAST:0,2,1		KNOWN:6,5,4
+10	CAST:0,2,1,1	KNOWN:6,5,4,2
+11	CAST:0,2,1,1	KNOWN:6,5,4,3
+12	CAST:0,2,2,1	KNOWN:6,6,5,4
+13	CAST:0,3,2,1,1	KNOWN:6,6,5,4,2
+14	CAST:0,3,2,1,1	KNOWN:6,6,5,4,3
+15	CAST:0,3,2,2,1	KNOWN:6,6,6,5,4
+16	CAST:0,3,3,2,1	KNOWN:6,6,6,5,4
+17	CAST:0,4,3,2,1	KNOWN:6,6,6,5,4
+18	CAST:0,4,3,2,2	KNOWN:6,6,6,6,5
+19	CAST:0,4,3,3,2	KNOWN:6,6,6,6,5
+20	CAST:0,4,4,3,2	KNOWN:6,6,6,6,5
+###Block: Class Features
+1	ABILITY:CLASS|AUTOMATIC|Medium
 
 
 # Class Name	HD	Type								Class Type		Abbrev	Max Level	Source Page		Define			Modify VAR
@@ -113,7 +154,7 @@ CLASS:Occultist	BONUS:VAR|Caster_Level_Highest__Psychic|Caster_Level_Occultist|T
 # Psychic
 CLASS:Psychic	MAXLEVEL:20
 CLASS:Psychic	HD:6	TYPE:Base.PC
-CLASS:Psychic	FACT:Abb|	FACT:ClassType|Caster
+CLASS:Psychic	FACT:Abb|Psy	FACT:ClassType|Caster
 CLASS:Psychic	DEFINE:PsychicLVL|0	BONUS:VAR|PsychicLVL|CL
 CLASS:Psychic	SOURCEPAGE:p.60	
 CLASS:Psychic	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*1/2|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0
@@ -177,7 +218,7 @@ CLASS:Psychic	BONUS:VAR|Caster_Level_Highest__Psychic|Caster_Level_Psychic|TYPE=
 # Spiritualist
 CLASS:Spiritualist	MAXLEVEL:20
 CLASS:Spiritualist	HD:8	TYPE:Base.PC
-CLASS:Spiritualist	FACT:Abb|	FACT:ClassType|Caster
+CLASS:Spiritualist	FACT:Abb|Spi	FACT:ClassType|Caster
 CLASS:Spiritualist	DEFINE:SpiritualistLVL|0	BONUS:VAR|SpiritualistLVL|CL
 CLASS:Spiritualist	SOURCEPAGE:p.72	
 CLASS:Spiritualist	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0
