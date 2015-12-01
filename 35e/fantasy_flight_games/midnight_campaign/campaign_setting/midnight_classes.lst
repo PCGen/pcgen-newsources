@@ -15,6 +15,7 @@ CLASS:Barbarian.MOD	SPELLSTAT:OTHER	BONUSSPELLSTAT:NONE	SPELLTYPE:Arcane	SPELLBO
 # Class Name	Visible
 CLASS:Bard.MOD	VISIBLE:NO
 
+# COMMENT: Why is this using SUBCLASS instead of a simple pool? - Andrew
 # Class Name	Hit Dice	Type			Max Level	Base class as subclass?	Define			Combat bonus											Save bonus																					Bonus to skill point for a level								Modify VAR				Template
 CLASS:Channeler	HD:6		TYPE:PC.Base	MAXLEVEL:20	ALLOWBASECLASS:NO		DEFINE:ChannelerLvl|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2	BONUS:SKILLPOOL|NUMBER|-3|PRERACE:1,Elf (Wood/Midnight)|PREPCLEVEL:MAX=1	BONUS:VAR|ChannelerLvl|CL	TEMPLATE:Maximum Spell Level
 # Class Name	Skill Pts/Lvl	Class Skill
