@@ -1,0 +1,33 @@
+SOURCELONG:Iron Gods Player's Guide	SOURCESHORT:igpg	SOURCEWEB:http://paizo.com/products/btpy98lf?Pathfinder-Adventure-Path-Iron-Gods-Players-Guide	SOURCEDATE:2015-12											
+# Original Entry by: Pekka Marjamaki
+
+###Block: Racial Traits
+
+# Ability Name	Category of Ability
+Race Traits ~ Android					CATEGORY:Internal
+
+Remove Excess Points from Pool	SORTKEY:1	CATEGORY:Special Ability	TYPE:AndroidRacialTrait	VISIBLE:DISPLAY	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	COST:1
+
+
+# Ability Name						Ability
+CATEGORY=Internal|Race Traits ~ Android.MOD		ABILITY:Android Racial Trait|AUTOMATIC|Android ~ Exceptional Senses|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidExceptionalSenses
+CATEGORY=Internal|Race Traits ~ Android.MOD		ABILITY:Android Racial Trait|AUTOMATIC|Android ~ Constructed|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidConstructed
+CATEGORY=Internal|Race Traits ~ Android.MOD		ABILITY:Android Racial Trait|AUTOMATIC|Android ~ Emptionless|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidEmptionless
+CATEGORY=Internal|Race Traits ~ Android.MOD		ABILITY:Android Racial Trait|AUTOMATIC|Android ~ Nanite Surge|!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidNaniteSurge
+
+
+
+###Block: Android Racial Trait Abilities
+# Ability Name		Unique Key						Category of Ability		Type																	Visible		Multiple Requirements																				Innate Spells																	Description																																																																															Ability									Bonus Ability Pool					Combat bonus					Bonus to Situation																	Modify VAR									Vision									Cost		Source Page		Aspects
+Exceptional Senses			KEY:Android ~ Exceptional Senses				CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AndroidRacialTrait.AndroidExceptionalSenses								PREMULT:1,[PREABILITY:1,CATEGORY=Android ~ Exceptional Senses],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidRacialVision]																					DESC:Androids have darkvision to a range of 60 feet and low-light vision. They also gain a +2 racial bonus on Perception checks.																																																																BONUS:SKILL|Perception|2|Type=Racial	VISION:.CLEAR.Low-Light Vision	VISION:Darkvision (60')	COST:0	SOURCEPAGE:p.6
+Constructed			KEY:Android ~ Constructed			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AndroidRacialTrait.AndroidConstructed						PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Android ~ Constructed],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidConstructed]											DESC:For the purposes of effects targeting creatures by type (such as a ranger’s favored enemy and bane weapons), androids count as both humanoids and constructs. Androids gain a +4 racial bonus on all saving throws against mind-affecting effects, paralysis, poison, and stun effects, are not subject to fatigue or exhaustion, and are immune to disease and sleep effects. Androids can never gain morale bonuses, and are immune to fear effects and all emotion-based effects.																																																				SOURCEPAGE:p.6	ASPECT:SaveBonus|+4 vs. mind-affecting effects, paralysis, poison, and stun effects
+Emptionless			KEY:Android ~ Emptionless			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AndroidRacialTrait.AndroidEmptionless						PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Android ~ Emptionless],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidEmptionless]											DESC:Androids have problems processing emotions properly, and thus take a –4 penalty on Sense Motive checks.																										BONUS:SKILL|Sense Motive|-4|TYPE=Racial																										SOURCEPAGE:p.6
+Nanite Surge			KEY:Android ~ Nanite Surge			CATEGORY:Special Ability	TYPE:RacialTraits.SpecialQuality.Extraordinary.AndroidRacialTrait.AndroidnaniteSurge						PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Android ~ Nanite Surge],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.AndroidnaniteSurge]											DESC:An android’s body is infused with nanites. Once per day as an immediate action, an android can cause her nanites to surge, granting a bonus equal to 3 + the android’s character level on any one d20 roll; this ability must be activated before the roll is made. When an android uses this power, her circuitry-tattoos glow with light equivalent to that of a torch in illumination for 1 round.																																																					SOURCEPAGE:p.6
+
+
+
+CATEGORY=Internal|Default.MOD	ABILITY:Special Ability|AUTOMATIC|Android Traits|PRERACE:1,RACESUBTYPE=Android
+
+###Block: Creature Subtype Traits
+# Ability Name		Category of Ability		Visible	Define			Template					Auto Language											Ability																																																							Combat bonus											Modify VAR																			Class Skill				Source Page
+Android Traits		CATEGORY:Special Ability	VISIBLE:NO																																																																																																																						SOURCEPAGE:p.312
