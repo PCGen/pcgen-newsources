@@ -8,12 +8,12 @@ CLASS:Ashigaru	STARTSKILLPTS:2	CSKILL:Climb|Intimidate|Jump|Knowledge (Tactics ~
 1													ADD:FEAT(TYPE=Ashigaru1)												FEATAUTO:Weapon Proficiency (Bows)|Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Armor Proficiency (Medium)
 2													ADD:FEAT(TYPE=Ashigaru2)
 3													ADD:FEAT(TYPE=AshigaurFormationFighting)
-4																								VFEAT:Weapon Specialization
-5	BONUS:VAR|AshigaruKi|CL/5															FEAT:Ashigaru Ki
+4																								ABILITY:Feat|VIRTUAL|Weapon Specialization
+5	BONUS:VAR|AshigaruKi|CL/5															ABILITY:Feat|AUTOMATIC|Ashigaru Ki
 6													ADD:FEAT(TYPE=Ashigaru6)
 7													ADD:FEAT(TYPE=AshigaurFormationFighting)
 8													ADD:FEAT(TYPE=Fighter)
-9	BONUS:VAR|NumConscripts|CL	BONUS:VAR|ConscriptLevel|CL/2			ADD:FEAT(TYPE=Ashigaru9)			FEAT:Formation Command
+9	BONUS:VAR|NumConscripts|CL	BONUS:VAR|ConscriptLevel|CL/2			ADD:FEAT(TYPE=Ashigaru9)			ABILITY:Feat|AUTOMATIC|Formation Command
 11													ADD:FEAT(TYPE=Fighter)
 12													ADD:FEAT(TYPE=Ashigaru12)
 13													ADD:FEAT(TYPE=AshigaurFormationFighting)
@@ -28,18 +28,18 @@ CLASS:Ashigaru	STARTSKILLPTS:2	CSKILL:Climb|Intimidate|Jump|Knowledge (Tactics ~
 CLASS:Kuge		HD:8		TYPE:PC.Base	SOURCEPAGE:p.16	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL*3/4
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Kuge		STARTSKILLPTS:4	CSKILL:Bluff|Diplomacy|Gather Information|Handle Animal|Intimidate|Knowledge (Calligraphy ~ Sho)|Knowledge (Chinese Classics ~ Myokyo)|Knowledge (Chinese Poetry ~ Shigaku)|Knowledge (Composition and Rhetoric ~ Monjo)|Knowledge (History)|Knowledge (Japanese Poetry ~ Kagaku)|Knowledge (Law ~ Myoho)|Knowledge (Mathematics ~ San)|Knowledge (Nobility and Royalty)|Knowledge (Politics ~ Shinshi)|Knowledge (Religion)|Knowledge (Tactics ~ Shusai)|Perform (Flower Arranging)|Perform (Tea Ceremony)|Ride|Sense Motive|Survival
-1																										VFEAT:Mounted Combat			FEATAUTO:Weapon Proficiency (Bows)|Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Born to the Saddle
+1																										ABILITY:Feat|VIRTUAL|Mounted Combat			FEATAUTO:Weapon Proficiency (Bows)|Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Armor Proficiency (Medium)|Armor Proficiency (Heavy)|Born to the Saddle
 2	SA:August Personage +%|AugustPersonage	BONUS:VAR|AugustPersonage|2					DEFINE:AugustPersonage|0	ADD:FEAT(TYPE=Kuge2)
 3																						ADD:FEAT(TYPE=Kuge3)
-4																										VFEAT:Weapon Specialization
+4																										ABILITY:Feat|VIRTUAL|Weapon Specialization
 5	SA:Kuge Ki %/day|KugeKi				BONUS:VAR|AugustPersonage|2	BONUS:VAR|KugeKi|CL/5	DEFINE:KugeKi|0
 6	SA:Court Contact ~ Low Rank																	ADD:FEAT(TYPE=Kuge6)
 7																						ADD:FEAT(TYPE=Kuge7)
-8	SA:Slander																								VFEAT:Greater Weapon Focus
+8	SA:Slander																								ABILITY:Feat|VIRTUAL|Greater Weapon Focus
 9																						ADD:FEAT(TYPE=Kuge9)
 10								BONUS:VAR|AugustPersonage|2
 11	SA:Court Contact ~ Medium Rank
-12	SA:Innuendo																								VFEAT:Greater Weapon Specialization
+12	SA:Innuendo																								ABILITY:Feat|VIRTUAL|Greater Weapon Specialization
 13	SA:Court Appointment ~ Medium Rank
 14	SA:Court Contact ~ High Rank
 15								BONUS:VAR|AugustPersonage|2
@@ -71,7 +71,7 @@ CLASS:Ronin		STARTSKILLPTS:4	CSKILL:Appraise|Bluff|Diplomacy|Hide|Intimidate|Lis
 1																														FEATAUTO:Weapon Proficiency (Knives)|Weapon Proficiency (Spears and Staves)|Weapon Proficiency (Swords)|Armor Proficiency (Light)|Weapon Focus(Katana)
 2																				ADD:FEAT(TYPE=Ronin2)
 3																														FEATAUTO:Banter
-4																								VFEAT:Weapon Specialization(Katana)
+4																								ABILITY:Feat|VIRTUAL|Weapon Specialization(Katana)
 5	SA:Ronin Ki %/day|RoninKi	BONUS:VAR|RoninKi|CL/5								DEFINE:RoninKi|0											FEATAUTO:Evasion
 6										BONUS:COMBAT|AC|1|TYPE=Competence.STACK				ADD:FEAT(TYPE=Ronin6)
 7
