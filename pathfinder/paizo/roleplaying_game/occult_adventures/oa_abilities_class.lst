@@ -15,20 +15,13 @@ Spiritualist	CATEGORY:Special Ability	TYPE:FavoredClass	VISIBLE:DISPLAY	STACK:NO
 #
 
 ###Block:
-Kineticist					CATEGORY:CLASS		DEFINE:Kineticist_CFP_Level|0		BONUS:VAR|Kineticist_CFP_Level|KineticistLVL
-Mesmerist					CATEGORY:CLASS		DEFINE:Mesmerist_CFP_Level|0		BONUS:VAR|Mesmerist_CFP_Level|MesmeristLVL
-Medium					CATEGORY:CLASS		DEFINE:Medium_CFP_Level|0		BONUS:VAR|Medium_CFP_Level|MediumLVL
-Occultist					CATEGORY:CLASS		DEFINE:Occultist_CFP_Level|0		BONUS:VAR|Occultist_CFP_Level|OccultistLVL
-Psychic					CATEGORY:CLASS		DEFINE:Psychic_CFP_Level|0		BONUS:VAR|Psychic_CFP_Level|PsychicLVL
-Spiritualist				CATEGORY:CLASS		DEFINE:Spiritualist_CFP_Level|0	BONUS:VAR|Spiritualist_CFP_Level|SpiritualistLVL
+Kineticist					CATEGORY:CLASS		DEFINE:Kineticist_CFP_Level|0		BONUS:VAR|Kineticist_CFP_Level|KineticistLVL		ABILITY:Kineticist Archetype|AUTOMATIC|Archetype Kineticist
+Mesmerist					CATEGORY:CLASS		DEFINE:Mesmerist_CFP_Level|0		BONUS:VAR|Mesmerist_CFP_Level|MesmeristLVL		ABILITY:Mesmerist Archetype|AUTOMATIC|Archetype Mesmerist
+Medium					CATEGORY:CLASS		DEFINE:Medium_CFP_Level|0		BONUS:VAR|Medium_CFP_Level|MediumLVL			ABILITY:Medium Archetype|AUTOMATIC|Archetype Medium
+Occultist					CATEGORY:CLASS		DEFINE:Occultist_CFP_Level|0		BONUS:VAR|Occultist_CFP_Level|OccultistLVL		ABILITY:Occultist Archetype|AUTOMATIC|Archetype Occultist
+Psychic					CATEGORY:CLASS		DEFINE:Psychic_CFP_Level|0		BONUS:VAR|Psychic_CFP_Level|PsychicLVL			ABILITY:Psychic Archetype|AUTOMATIC|Archetype Psychic
+Spiritualist				CATEGORY:CLASS		DEFINE:Spiritualist_CFP_Level|0	BONUS:VAR|Spiritualist_CFP_Level|SpiritualistLVL	ABILITY:Spiritualist Archetype|AUTOMATIC|Archetype Spiritualist
 
-# Ability Name					Ability
-CATEGORY=Internal|Archetype Display.MOD	ABILITY:Kineticist Archetype|AUTOMATIC|Archetype Kineticist|PRECLASS:1,Kineticist=1
-CATEGORY=Internal|Archetype Display.MOD	ABILITY:Mesmerist Archetype|AUTOMATIC|Archetype Mesmerist|PRECLASS:1,Mesmerist=1
-CATEGORY=Internal|Archetype Display.MOD	ABILITY:Medium Archetype|AUTOMATIC|Archetype Medium|PRECLASS:1,Medium=1
-CATEGORY=Internal|Archetype Display.MOD	ABILITY:Occultist Archetype|AUTOMATIC|Archetype Occultist|PRECLASS:1,Occultist=1
-CATEGORY=Internal|Archetype Display.MOD	ABILITY:Psychic Archetype|AUTOMATIC|Archetype Psychic|PRECLASS:1,Psychic=1
-CATEGORY=Internal|Archetype Display.MOD	ABILITY:Spiritualist Archetype|AUTOMATIC|Archetype Spiritualist|PRECLASS:1,Spiritualist=1
 
 Archetype Kineticist			CATEGORY:Archetype	TYPE:KineticistArchetype	VISIBLE:NO
 Archetype Mesmerist			CATEGORY:Archetype	TYPE:MesmeristArchetype		VISIBLE:NO
@@ -111,38 +104,38 @@ CATEGORY=CLASS|Occultist.MOD	ABILITY:Occultist Class Feature|AUTOMATIC|Occultist
 CATEGORY=CLASS|Occultist.MOD	ABILITY:Occultist Class Feature|AUTOMATIC|Occultist ~ Implement Mastery|PREVAREQ:Occultist_CF_ImplementMastery,0|PREVARGTEQ:Occultist_CFP_Level,20
 
 ###Block:
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Weapon and Armor Proficiency|PREVAREQ:Psychic ~ Weapon and Armor Proficiency,0|PREVARGTEQ:Psychic_CFP_Level,1
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Spells|PREVAREQ:Psychic ~ Spells,0|PREVARGTEQ:Psychic_CFP_Level,1
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Knacks|PREVAREQ:Psychic ~ Knacks,0|PREVARGTEQ:Psychic_CFP_Level,1
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Phrenic Pool|PREVAREQ:Psychic ~ Phrenic Pool,0|PREVARGTEQ:Psychic_CFP_Level,1
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Phrenic Amplifications|PREVAREQ:Psychic ~ Phrenic Amplifications,0|PREVARGTEQ:Psychic_CFP_Level,1
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Psychic Discipline|PREVAREQ:Psychic ~ Psychic Discipline,0|PREVARGTEQ:Psychic_CFP_Level,1
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Detect Thoughts|PREVAREQ:Psychic ~ Detect Thoughts,0|PREVARGTEQ:Psychic_CFP_Level,2
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Telepathic Bond|PREVAREQ:Psychic ~ Telepathic Bond,0|PREVARGTEQ:Psychic_CFP_Level,9
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Major Amplifications|PREVAREQ:Psychic ~ Major Amplifications,0|PREVARGTEQ:Psychic_CFP_Level,11
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Telepathy|PREVAREQ:Psychic ~ Telepathy,0|PREVARGTEQ:Psychic_CFP_Level,17
-CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Remade Self|PREVAREQ:Psychic ~ Remade Self,0|PREVARGTEQ:Psychic_CFP_Level,20
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Weapon and Armor Proficiency|PREVAREQ:Psychic_CF_WeaponandArmorProficiency,0|PREVARGTEQ:Psychic_CFP_Level,1
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Spells|PREVAREQ:Psychic_CF_Spells,0|PREVARGTEQ:Psychic_CFP_Level,1
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Knacks|PREVAREQ:Psychic_CF_Knacks,0|PREVARGTEQ:Psychic_CFP_Level,1
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Phrenic Pool|PREVAREQ:Psychic_CF_PhrenicPool,0|PREVARGTEQ:Psychic_CFP_Level,1
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Phrenic Amplifications|PREVAREQ:Psychic_CF_PhrenicAmplifications,0|PREVARGTEQ:Psychic_CFP_Level,1
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Psychic Discipline|PREVAREQ:Psychic_CF_PsychicDiscipline,0|PREVARGTEQ:Psychic_CFP_Level,1
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Detect Thoughts|PREVAREQ:Psychic_CF_DetectThoughts,0|PREVARGTEQ:Psychic_CFP_Level,2
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Telepathic Bond|PREVAREQ:Psychic_CF_TelepathicBond,0|PREVARGTEQ:Psychic_CFP_Level,9
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Major Amplifications|PREVAREQ:Psychic_CF_MajorAmplifications,0|PREVARGTEQ:Psychic_CFP_Level,11
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Telepathy|PREVAREQ:Psychic_CF_Telepathy,0|PREVARGTEQ:Psychic_CFP_Level,17
+CATEGORY=CLASS|Psychic.MOD	ABILITY:Psychic Class Feature|AUTOMATIC|Psychic ~ Remade Self|PREVAREQ:Psychic_CF_RemadeSelf,0|PREVARGTEQ:Psychic_CFP_Level,20
 
 ###Block:
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Weapon and Armor Proficiency|PREVAREQ:Spiritualist ~ Weapon and Armor Proficiency,0|PREVARGTEQ:Spiritualist_CFP_Level,1
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Spells|PREVAREQ:Spiritualist ~ Spells,0|PREVARGTEQ:Spiritualist_CFP_Level,1
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Knacks|PREVAREQ:Spiritualist ~ Knacks,0|PREVARGTEQ:Spiritualist_CFP_Level,1
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Phantom|PREVAREQ:Spiritualist ~ Phantom,0|PREVARGTEQ:Spiritualist_CFP_Level,1
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Shared Consciousness|PREVAREQ:Spiritualist ~ Shared Consciousness,0|PREVARGTEQ:Spiritualist_CFP_Level,1
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Etheric Tether|PREVAREQ:Spiritualist ~ Etheric Tether,0|PREVARGTEQ:Spiritualist_CFP_Level,1
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Bonded Senses|PREVAREQ:Spiritualist ~ Bonded Senses,0|PREVARGTEQ:Spiritualist_CFP_Level,2
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Bonded Manifestation|PREVAREQ:Spiritualist ~ Bonded Manifestation,0|PREVARGTEQ:Spiritualist_CFP_Level,3
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Ectoplasmic Bonded Manifestation|PREVAREQ:Spiritualist ~ Ectoplasmic Bonded Manifestation,0|PREVARGTEQ:Spiritualist_CFP_Level,3
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Spiritual Interference|PREVAREQ:Spiritualist ~ Spiritual Interference,0|PREVARGTEQ:Spiritualist_CFP_Level,4
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Detect Undead|PREVAREQ:Spiritualist ~ Detect Undead,0|PREVARGTEQ:Spiritualist_CFP_Level,5
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Phantom Recall|PREVAREQ:Spiritualist ~ Phantom Recall,0|PREVARGTEQ:Spiritualist_CFP_Level,6
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Calm Spirit|PREVAREQ:Spiritualist ~ Calm Spirit,0|PREVARGTEQ:Spiritualist_CFP_Level,7
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ See Invisibility|PREVAREQ:Spiritualist ~ See Invisibility,0|PREVARGTEQ:Spiritualist_CFP_Level,9
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Fused Consciousness|PREVAREQ:Spiritualist ~ Fused Consciousness,0|PREVARGTEQ:Spiritualist_CFP_Level,10
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Greater Spiritual Interference|PREVAREQ:Spiritualist ~ Greater Spiritual Interference,0|PREVARGTEQ:Spiritualist_CFP_Level,12
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Spiritual Bond|PREVAREQ:Spiritualist ~ Spiritual Bond,0|PREVARGTEQ:Spiritualist_CFP_Level,14
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Call Spirit|PREVAREQ:Spiritualist ~ Call Spirit,0|PREVARGTEQ:Spiritualist_CFP_Level,16
-CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Dual Bond|PREVAREQ:Spiritualist ~ Dual Bond,0|PREVARGTEQ:Spiritualist_CFP_Level,17
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Weapon and Armor Proficiency|PREVAREQ:Spiritualist_CF_WeaponandArmorProficiency,0|PREVARGTEQ:Spiritualist_CFP_Level,1
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Spells|PREVAREQ:Spiritualist_CF_Spells,0|PREVARGTEQ:Spiritualist_CFP_Level,1
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Knacks|PREVAREQ:Spiritualist_CF_Knacks,0|PREVARGTEQ:Spiritualist_CFP_Level,1
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Phantom|PREVAREQ:Spiritualist_CF_Phantom,0|PREVARGTEQ:Spiritualist_CFP_Level,1
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Shared Consciousness|PREVAREQ:Spiritualist_CF_SharedConsciousness,0|PREVARGTEQ:Spiritualist_CFP_Level,1
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Etheric Tether|PREVAREQ:Spiritualist_CF_EthericTether,0|PREVARGTEQ:Spiritualist_CFP_Level,1
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Bonded Senses|PREVAREQ:Spiritualist_CF_BondedSenses,0|PREVARGTEQ:Spiritualist_CFP_Level,2
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Bonded Manifestation|PREVAREQ:Spiritualist_CF_BondedManifestation,0|PREVARGTEQ:Spiritualist_CFP_Level,3
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Ectoplasmic Bonded Manifestation|PREVAREQ:Spiritualist_CF_EctoplasmicBondedManifestation,0|PREVARGTEQ:Spiritualist_CFP_Level,3
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Spiritual Interference|PREVAREQ:Spiritualist_CF_SpiritualInterference,0|PREVARGTEQ:Spiritualist_CFP_Level,4
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Detect Undead|PREVAREQ:Spiritualist_CF_DetectUndead,0|PREVARGTEQ:Spiritualist_CFP_Level,5
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Phantom Recall|PREVAREQ:Spiritualist_CF_PhantomRecall,0|PREVARGTEQ:Spiritualist_CFP_Level,6
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Calm Spirit|PREVAREQ:Spiritualist_CF_CalmSpirit,0|PREVARGTEQ:Spiritualist_CFP_Level,7
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ See Invisibility|PREVAREQ:Spiritualist_CF_SeeInvisibility,0|PREVARGTEQ:Spiritualist_CFP_Level,9
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Fused Consciousness|PREVAREQ:Spiritualist_CF_FusedConsciousness,0|PREVARGTEQ:Spiritualist_CFP_Level,10
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Greater Spiritual Interference|PREVAREQ:Spiritualist_CF_GreaterSpiritualInterference,0|PREVARGTEQ:Spiritualist_CFP_Level,12
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Spiritual Bond|PREVAREQ:Spiritualist_CF_SpiritualBond,0|PREVARGTEQ:Spiritualist_CFP_Level,14
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Call Spirit|PREVAREQ:Spiritualist_CF_CallSpirit,0|PREVARGTEQ:Spiritualist_CFP_Level,16
+CATEGORY=CLASS|Spiritualist.MOD	ABILITY:Spiritualist Class Feature|AUTOMATIC|Spiritualist ~ Dual Bond|PREVAREQ:Spiritualist_CF_DualBond,0|PREVARGTEQ:Spiritualist_CFP_Level,17
 
 
 #
@@ -672,6 +665,7 @@ Shikigami				KEY:Kami Medium ~ Shikigami					CATEGORY:Special Ability	TYPE:Mediu
 Ask the Kami			KEY:Kami Medium ~ Ask the Kami				CATEGORY:Special Ability	TYPE:MediumClassFeatures.SpecialQuality.Supernatural																																																																																																																					DESC:A kami medium can ask the local kami for information, as commune with nature. While he can do so any number of times per day, he can ask questions of the kami in any particular area only once per day. Afterward, he must move to a non-overlapping area to use this ability again.																																																																																																																																																																																																																																																																																																																																																																																																																																						SOURCEPAGE:p.93	SPELLS:Medium|TIMES=ATWILL|CASTERLEVEL=MediumLVL|Commune With Nature,15+CHA
 Ward					KEY:Kami Medium ~ Ward						CATEGORY:Special Ability	TYPE:MediumClassFeatures.SpecialQuality.Supernatural																																																																																																																					DESC:A kami medium can declare an area or object that's an appropriate place to contact his channeled kami as his ward. This grants the kami medium the ward and merge with ward abilities of the kami subtype. For large areas such as lakes or storms, a kami medium's ward encompasses a radius of up to %1 feet.|5*MediumLVL																																																																																																																																																																																																																																																																																																																																																																																																																																SOURCEPAGE:p.93
 CATEGORY=Special Ability|Medium ~ Archmage Spirit.MOD		!PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium
+# This needs to be redone, OUTPUTNAME does not handle PRExxx. Eaither use ASPECT:NAME or go dev build and switch to INFO.
 CATEGORY=Special Ability|Medium ~ Champion Spirit.MOD		OUTPUTNAME:Kaminari (Champion) Spirit|PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium	DESC:&nl; Favored Locations: In the midst of storms.|PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium
 CATEGORY=Special Ability|Medium ~ Guardian Spirit.MOD		OUTPUTNAME:Zuishin (Guardian) Spirit|PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium	DESC:&nl; Favored Locations: Significant gates, doorways, and torii.|PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium
 CATEGORY=Special Ability|Medium ~ Hierophant Spirit.MOD	OUTPUTNAME:Suijin (Hierophant) Spirit|PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium	DESC:&nl; Favored Locations: Pure lakes, ponds, springs, and wells.|PREABILITY:1,CATEGORY=Archetype,Medium Archetype ~ Kami Medium
