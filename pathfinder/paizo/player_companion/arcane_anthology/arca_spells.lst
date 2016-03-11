@@ -45,14 +45,14 @@ Stage Fright		KEY:Stage Fright	TYPE:Arcane.Divine.Psychic		CLASSES:Antipaladin,B
 Tough Crowd		KEY:Tough Crowd	TYPE:Arcane.Divine.Psychic		CLASSES:Bard,Inquisitor,Mesmerist,Sorcerer,Wizard=4|Psychic,Witch=3	SCHOOL:Abjuration	COMPS:V, S	CASTTIME:1 standard action	RANGE:Medium	TARGETAREA:(CASTERLEVEL) creatures		DURATION:(10*CASTERLEVEL) minutes		SOURCEPAGE:p.27		SAVEINFO:Will negates (harmless)		SPELLRES:yes (harmless)		DESC:You fortify your allies against attempts to control or mislead them.|!PRERULE:1,DisplayFullSpell	DESC:You fortify your allies against attempts to control or mislead them. Each ally in the spell’s range gains a +4 insight bonus on the saving throw to resist the next enchantment or illusion spell cast on it. In addition, the DC of any Bluff, Diplomacy, Disguise, or Intimidate check to influence an affected character increases by 4 for the duration of the spell.|PRERULE:1,DisplayFullSpell
 
 
-
-
-
-##Clerics and warpriests of Iomedae and Milani can prepare Aroden’s spellsword as a 3rd-level spell, and banishing blade as a 5th-level spell. Clerics of Iomedae and Milani can prepare Aroden’s magic army as an 8th-level spell.
-
-Aroden's Spellsword.COPY=Aroden's Spellsword (Cleric)
+##Special Cleric spells
+Aroden's Spellsword.COPY=Aroden's Spellsword (Cleric/Warpriest)
 Aroden's Spellsword (Cleric/Warpriest).MOD		TYPE:Divine		CLASSES:Cleric=3		PREMULT:2,[PREDEITY:1,Iomedae,Milani],[PRECLASS:1,Cleric,Warpriest]
 Banishing Blade.COPY=Banishing Blade (Cleric)
 Banishing Blade (Cleric).MOD					TYPE:Divine		CLASSES:Cleric=5		PREMULT:2,[PREDEITY:1,Iomedae,Milani],[PRECLASS:1,Cleric]
 Aroden's Magic Army.COPY=Aroden's Magic Army (Cleric)
 Aroden's Magic Army (Cleric).MOD				TYPE:Divine		CLASSES:Cleric=8		PREMULT:2,[PREDEITY:1,Iomedae,Milani],[PRECLASS:1,Cleric]
+
+##Temporary Bonuses
+Perfect Placement.MOD			TEMPDESC:Grants a +1 insight bonus on AC (+3 against attacks of opportunity) and reflex saves.	TEMPBONUS:ANYPC|SAVE|Reflex|1|TYPE=Insight	TEMPBONUS:ANYPC|COMBAT|AC|1|TYPE=Insight
+Aroden's Magic Army.MOD			TEMPDESC:Grants each weapon a +1 enhancement bonus on attack rolls and damage rolls per 5 caster levels (maximum +4).	TEMPVALUE:MIN=5|MAX=20|TITLE=Choose spell caster level	TEMPBONUS:EQ|Weapon|WEAPON|TOHIT,DAMAGE|min(floor(%CHOICE/5),4)|TYPE=Enhancement
