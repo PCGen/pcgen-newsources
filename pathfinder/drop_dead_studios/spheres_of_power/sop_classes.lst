@@ -1,0 +1,33 @@
+
+
+CLASS:Soul Weaver	MAXLEVEL:20
+CLASS:Soul Weaver	HD:d6	TYPE:Base.PC
+CLASS:Soul Weaver	FACT:Abb|SW	FACT:ClassType|Caster
+CLASS:Soul Weaver	DEFINE:SoulWeaverLVL|0	BONUS:VAR|SoulWeaverLVL|CL
+CLASS:Soul Weaver	SOURCEPAGE:p.100	
+CLASS:Soul Weaver	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*1/2|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0
+CLASS:Soul Weaver	BONUS:VAR|ClassBABPoor|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1
+CLASS:Soul Weaver	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Soul Weaver	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Soul Weaver	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Soul Weaver	BONUS:VAR|ClassSavePoor_Fortitude|classlevel()|PREVAREQ:UseFractionalSave,1
+CLASS:Soul Weaver	BONUS:VAR|ClassSavePoor_Reflex|classlevel()|PREVAREQ:UseFractionalSave,1
+CLASS:Soul Weaver	BONUS:VAR|ClassSaveGood_Will|classlevel()|PREVAREQ:UseFractionalSave,1
+CLASS:Soul Weaver	STARTSKILLPTS:2	CSKILL:TYPE=Craft|Diplomacy|Fly|Heal|Intimidate|Knowledge (Arcana)|Knowledge (History)|Knowledge (Planes)|Knowledge (Religion)|Linguistics|TYPE=Profession|TYPE=Perform|Sense Motive|Spellcraft
+CLASS:Soul Weaver	FACT:SpellType|Arcane
+CLASS:Soul Weaver	SPELLSTAT:CHA	MEMORIZE:NO
+CLASS:Soul Weaver	BONUS:CASTERLEVEL|Soul Weaver|Caster_Level_BL_Stripped_SoulWeaver	DEFINE:Caster_Level_BL_Stripped_SoulWeaver|0	BONUS:VAR|Caster_Level_BL_Stripped_SoulWeaver|Caster_Level_SoulWeaver-CasterLevelBLSoulWeaver	BONUS:VAR|Caster_Level_SoulWeaver|CL+Caster_Level_Bonus+CasterLevelBLSoulWeaver	DEFINE:CasterLevelBLSoulWeaver|0	BONUS:VAR|CasterLevelBL_SoulWeaver|charbonusto("PCLEVEL","Soul Weaver")	
+CLASS:Soul Weaver	BONUS:VAR|Caster_Level_Highest__Arcane|Caster_Level_SoulWeaver|TYPE=Base
+CLASS:Soul Weaver	BONUS:VAR|CasterLVL|SoulWeaverLVL
+###Block 
+1	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Weapon and Armor Proficiency	
+1	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Casting				
+1	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Spell Pool				
+1	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Magic Talents			
+1	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Channel Energy			
+1	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Bound Nexus				
+2	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Blessing/Blight			
+20	ABILITY:Soul Weaver Class Feature|AUTOMATIC|Soul Weaver ~ Gravewalker
+###Block 
+1	ABILITY:Internal|AUTOMATIC|Use Sphere of Powers Rules
+
