@@ -22,7 +22,7 @@ SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www
 # Angel of Fury makes reference to Rage variable, as Barbarian. may need to change if barbarian class changes much (it did from pcgen 5.5.1 to .2...)
 
 # Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
-CLASS:Angel of Death	HD:10		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Angel of Death	HD:10		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name		Req. Att.	Required Check Base		Required Feat											Multiple Requirements								Required Skill						Required Template
 CLASS:Angel of Death	PREATT:8	PRECHECKBASE:1,Fortitude=8	PREABILITY:4,CATEGORY=FEAT,Astride the Ladder,Hide from Mortal Eyes,Power Attack,Weapon Focus	PREMULT:1,[PRETEMPLATE:Bound Angel],[PRETEMPLATE:Fallen Angel]	PRESKILL:2,Intimidate,Knowledge (Religion)=5	PRETEMPLATE:Qualify (Wings of Death)
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -37,7 +37,7 @@ CLASS:Angel of Death	STARTSKILLPTS:2	CSKILL:Concentration|TYPE.Craft|Intimidate|
 
 
 # Class Name			Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
-CLASS:Angel of Destruction	HD:10		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Angel of Destruction	HD:10		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:SAVE|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:SAVE|BASE.Reflex|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name			Restricted AL	Req. Att.	Required Check Base		Required Feat			Required Skill				Required Template
 CLASS:Angel of Destruction	!PREALIGN:6,7,8	PREATT:5	PRECHECKBASE:1,Willpower=4	PREABILITY:2,CATEGORY=FEAT,Cleave,Power Attack	PRESKILL:1,Knowledge (Religion)=2	PRETEMPLATE:Bound Angel
 # Class Name			Skill Pts/Lvl	Class Skill
@@ -49,7 +49,7 @@ CLASS:Angel of Destruction	STARTSKILLPTS:2	CSKILL:Concentration,TYPE.Craft,Intim
 5	SA:.CLEAR.Chain of Fire (Su)	SA:Chain of Greater Fire (Su)	BONUS:VAR|SmiteInfidel|1					ADD:EQUIP(Chain of Greater Fire)
 
 # Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
-CLASS:Angel of Fury	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Angel of Fury	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:SAVE|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:SAVE|BASE.Reflex|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name		Req. Att.	Required Check Base		Multiple Requirements																																																	Required Skill		Required Template
 CLASS:Angel of Fury	PREATT:5	PRECHECKBASE:1,Willpower=5	PREMULT:1,[PREABILITY:1,CATEGORY=FEAT,Energy Touch (fire)],[PRERACE:Heavenborn (Ophanite)]	PREMULT:1,[PRETEMPLATE:Qualify (Instantaneous Movement)],[PREABILITY:1,CATEGORY=FEAT,Transcend Distance I],[PRESPELL:1,Dimension Door,Dimension Slide,Teleport,Teleport (Greater),Tree Stride,Gate,Plane Shift],[PRESPELLSCHOOLSUB:Teleportation,1,3]	PRESKILL:1,Intimidate=3	PRETEMPLATE:Bound Angel
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -63,7 +63,7 @@ CLASS:Angel of Fury	STARTSKILLPTS:2	CSKILL:Climb|Concentration|Intimidate|Jump|K
 5	SA:Fiery Transformation
 
 # Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
-CLASS:Angel of Terror	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Angel of Terror	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:SAVE|BASE.Fortitude,BASE.Willpower|CL/2+2	BONUS:SAVE|BASE.Reflex|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name		Req. Att.	Required Check Base				Required Feat			Required Skill								Required Template
 CLASS:Angel of Terror	PREATT:5	PRECHECKBASE:2,Fortitude=4,Willpower=4	PREABILITY:2,CATEGORY=FEAT,Glory,Iron Will	PRESKILL:4,Intimidate=6,Listen=4,Perform (Sing)=3,Spot=4	PRETEMPLATE:Bound Angel	PRETEMPLATE:Qualify (Captain of Fear)
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -74,7 +74,7 @@ CLASS:Angel of Terror	STARTSKILLPTS:2	CSKILL:Bluff|Climb|Concentration|Diplomacy
 5	SA:Confusion Aura (Su)
 
 # Class Name		Hit Dice	Type			Max Level	Visible	Save checks bonus												Combat bonus
-CLASS:Fire-Speaker	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Fire-Speaker	HD:8		TYPE:Prestige	MAXLEVEL:5	VISIBLE:YES	BONUS:SAVE|BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:SAVE|BASE.Fortitude|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name		Req. Att.	Required Check Base			Required Feat					Multiple Requirements																					Required Skill							Required Template
 CLASS:Fire-Speaker	PREATT:4	PRECHECKBASE:2,Reflex=4,Willpower=4	PREABILITY:2,CATEGORY=FEAT,Iron Will,Spiritual Contact	PREMULT:1,[PRETEMPLATE:Qualify (Fire Tolerance)],[PRETEMPLATE:Fire],[PRESA:1,Fire Immunity,Fire Immunity (Ex)],[PREVARGTEQ:FireResistance,1]	PRESKILL:3,Concentration=5,Diplomacy=8,Intimidate=5	PRETEMPLATE:Qualify (Angel)
 # Class Name		Skill Pts/Lvl	Class Skill

@@ -89,7 +89,7 @@ SOURCELONG:Malhavoc Press - Anger of Angels|SOURCESHORT:AoA|SOURCEWEB:http://www
 #1	ADD:SPELLCASTER(Sorcerer)	BONUS:PCLEVEL|Sorcerer|5
 
 # Class Name	Product Identity?	Output Name			Hit Dice	Type			Visible	Save checks bonus									Combat bonus
-CLASS:Agrippa	NAMEISPI:YES	OUTPUTNAME:Outsider	HD:10		TYPE:Monster	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Agrippa	NAMEISPI:YES	OUTPUTNAME:Outsider	HD:10		TYPE:Monster	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Required Race
 CLASS:Agrippa	PRERACE:Agrippa
 # Class Name	Skill Pts/Lvl	Class Skill
@@ -100,12 +100,12 @@ CLASS:Agrippa	SPELLSTAT:CHA	SPELLTYPE:Arcana	MEMORIZE:NO
 
 
 # AHA! this line is causing the "stats-fill-up-entire-window" bug. now.... WHY???!!!
-#Construct.COPY=Ephemerite	TYPE:Base	PRERACE:Ephemerite		VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|(CL/2+2)-(CL/3)
-#it's definitely the BONUS:CHECKS tag
+#Construct.COPY=Ephemerite	TYPE:Base	PRERACE:Ephemerite		VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|(CL/2+2)-(CL/3)
+#it's definitely the BONUS:SAVE tag
 #different tag settings swell abilities different amounts =P
 
 # Class Name	Product Identity?	Hit Dice	Type			Add INT to Skill Points?	Levels per Feat	Save checks bonus									Combat bonus
-CLASS:Ephemerite	NAMEISPI:YES	HD:10		TYPE:Monster	MODTOSKILLS:NO			LEVELSPERFEAT:0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|(CL/2)+2	BONUS:COMBAT|BAB|CL*3/4
+CLASS:Ephemerite	NAMEISPI:YES	HD:10		TYPE:Monster	MODTOSKILLS:NO			LEVELSPERFEAT:0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|(CL/2)+2	BONUS:COMBAT|BASEAB|CL*3/4
 # Class Name	Reg. Race Type
 CLASS:Ephemerite	PRERACETYPE:Construct
 # Class Name	Skill Pts/Lvl
@@ -124,7 +124,7 @@ CLASS:Ephemerite	STARTSKILLPTS:2
 # find & replaced: visible:no to visible:no nameispi:yes
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Cherub	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Cherub	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Cherub	STARTSKILLPTS:8	CSKILL:Balance|Concentration|Hide|Intimidate|Knowledge (Religion)|Jump|Listen|Move Silently|Search|Sense Motive|Spot
 1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -132,7 +132,7 @@ CLASS:Cherub	STARTSKILLPTS:8	CSKILL:Balance|Concentration|Hide|Intimidate|Knowle
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Dynama	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Dynama	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Dynama	STARTSKILLPTS:8	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Gather Information|Heal|Intimidate|Knowledge (Local)|TYPE.Profession|Sense Motive|Speak Language|Spot
 1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -140,7 +140,7 @@ CLASS:Dynama	STARTSKILLPTS:8	CSKILL:Bluff|Concentration|TYPE.Craft|Diplomacy|Gat
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Grigori	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Grigori	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Grigori	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYPE.Knowledge|TYPE.Profession|Search|Spellcraft|Spot
 1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -148,7 +148,7 @@ CLASS:Grigori	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Diplomacy|Heal|TYP
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Hashmalite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:3	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Hashmalite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:3	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Hashmalite	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Decipher Script|Intimidate|TYPE.Knowledge|Search|Spellcraft|Spot
 1																																																									AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -230,7 +230,7 @@ CLASS:Hashmalite	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Decipher Script
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Kalkydrite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:3	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Kalkydrite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:3	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Kalkydrite	STARTSKILLPTS:8	CSKILL:Balance|Concentration|Heal|Knowledge (Nature)|TYPE.Perform|Search|Spot|Survival|Wilderness Lore|Tumble
 1																AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -245,7 +245,7 @@ CLASS:Kalkydrite	STARTSKILLPTS:8	CSKILL:Balance|Concentration|Heal|Knowledge (Na
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Malakite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Malakite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Malakite	STARTSKILLPTS:8	CSKILL:Bluff|Intimidate|Jump|Knowledge (Religion)|Knowledge (The Planes)|Listen|Move Silently|Spot
 1																			AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -257,7 +257,7 @@ CLASS:Malakite	STARTSKILLPTS:8	CSKILL:Bluff|Intimidate|Jump|Knowledge (Religion)
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Memunite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:1	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Memunite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:1	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Memunite	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Handle Animal|Heal|Hide|Listen|Move Silently|TYPE.Profession|Spot
 1												AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -268,7 +268,7 @@ CLASS:Memunite	STARTSKILLPTS:8	CSKILL:Concentration|TYPE.Craft|Handle Animal|Hea
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Ophanite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Ophanite	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Ophanite	STARTSKILLPTS:8	CSKILL:Concentration|Escape Artist|Intimidate|Jump|Knowledge (The Planes)|Speak Language|Spot|Swim|Tumble
 1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -276,7 +276,7 @@ CLASS:Ophanite	STARTSKILLPTS:8	CSKILL:Concentration|Escape Artist|Intimidate|Jum
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Para		NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Para		NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Para		STARTSKILLPTS:8	CSKILL:Concentration|Handle Animal|Jump|Perform|Ride|Speak Language|Spot|Tumble|Use Rope
 1																									AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -285,7 +285,7 @@ CLASS:Para		STARTSKILLPTS:8	CSKILL:Concentration|Handle Animal|Jump|Perform|Ride
 
 
 # Class Name		Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Principality	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Principality	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:2	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Principality	STARTSKILLPTS:8	CSKILL:Bluff|Concentration|Diplomacy|Gather Information|Heal|Intimidate|Knowledge (History)|Knowledge (Religion)|TYPE.Profession|Sense Motive|Speak Language|Spot
 1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE
@@ -295,7 +295,7 @@ CLASS:Principality	STARTSKILLPTS:8	CSKILL:Bluff|Concentration|Diplomacy|Gather I
 
 
 # Class Name	Product Identity?	Hit Dice	Type			Max Level	Visible	Save checks bonus									Combat bonus
-CLASS:Seraph	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Seraph	NAMEISPI:YES	HD:8		TYPE:Monster	MAXLEVEL:4	VISIBLE:NO	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Seraph	STARTSKILLPTS:8	CSKILL:Concentration|Diplomacy|Heal|Knowledge (History)|Knowledge (Religion)|Listen|Perform|Sense Motive|Spot
 1								AUTO:ARMORPROF|TYPE=Light|TYPE=Medium|TYPE=Heavy	AUTO:SHIELDPROF|TYPE=Buckler|TYPE=Light|TYPE=Heavy	AUTO:WEAPONPROF|TYPE=SIMPLE

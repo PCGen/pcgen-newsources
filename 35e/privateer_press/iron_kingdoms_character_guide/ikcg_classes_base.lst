@@ -61,7 +61,7 @@ CLASS:Fighter.MOD	CSKILL:Craft (Cannoneer)|Craft (Demolitions)|Craft (Small Arms
 #########################
 
 # Class Name	Hit Dice	Type			Abbreviation	Subclass?		Source Page		Automatic Languages	Define			Save checks bonus									Combat bonus
-CLASS:Monk (IK)	HD:8		TYPE:Base.PC	ABB:Mnk		HASSUBCLASS:YES	SOURCEPAGE:p.83	LANGAUTO:Literacy		DEFINE:FlurryOfBlows|1	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Monk (IK)	HD:8		TYPE:Base.PC	ABB:Mnk		HASSUBCLASS:YES	SOURCEPAGE:p.83	LANGAUTO:Literacy		DEFINE:FlurryOfBlows|1	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Required AL
 CLASS:Monk (IK)	PREALIGN:0,1,2
 # Class Name	Skill Pts/Lvl
@@ -140,7 +140,7 @@ CLASS:Wizard.MOD	CSKILL:Craft (Mechanika)|Creature Lore
 #####################
 
 # Class Name		Hit Dice	Type			Abbreviation	Source Page			Automatic Languages	Define		Save checks bonus												Combat bonus					Modify VAR
-CLASS:Arcane Mechanik	HD:6		TYPE:Base.PC	ABB:Amk		SOURCEPAGE:IKCG.pg.90	LANGAUTO:Literacy		DEFINE:FMLevel|0	BONUS:CHECKS|BASE.Willpower|CL/2+2	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|FMLevel|CL
+CLASS:Arcane Mechanik	HD:6		TYPE:Base.PC	ABB:Amk		SOURCEPAGE:IKCG.pg.90	LANGAUTO:Literacy		DEFINE:FMLevel|0	BONUS:SAVE|BASE.Willpower|CL/2+2	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/3	BONUS:COMBAT|BASEAB|CL/2|TYPE=Base.REPLACE	BONUS:VAR|FMLevel|CL
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Arcane Mechanik	STARTSKILLPTS:6	CSKILL:Appraise|Craft (Clockwork)|Craft (Mechanika)|Craft (Small Arms)|Craft (Steam Engine)|Climb|Concentration|TYPE.Craft|Disable Device|Jack Handling|Knowledge (Arcana)|Knowledge (Mechanika)|Profession (Mechanik)|Search|Spellcraft|Use Rope
 # Class Name		Spell Stat		Spell Type		Automaticaly Known Spell Levels	Spellbook		Caster level					Use Spell List
@@ -172,7 +172,7 @@ CLASS:Arcane Mechanik	SPELLSTAT:INT	SPELLTYPE:Arcane	KNOWNSPELLS:LEVEL=0			SPELL
 ############################
 
 # Class Name		Hit Dice	Type			Abbreviation	Source Page			Automatic Languages	Save checks bonus												Combat bonus
-CLASS:Bard (War-Bard)	HD:6		TYPE:Base.PC	ABB:Brd		SOURCEPAGE:ClassesI.rtf	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude|CL/3	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Bard (War-Bard)	HD:6		TYPE:Base.PC	ABB:Brd		SOURCEPAGE:ClassesI.rtf	LANGAUTO:Literacy		BONUS:SAVE|BASE.Fortitude|CL/3	BONUS:SAVE|BASE.Reflex,BASE.Willpower|CL/2+2	BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name		Required AL
 CLASS:Bard (War-Bard)	PREALIGN:0,1,2,3,4,5,6
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -210,7 +210,7 @@ CLASS:Bard (War-Bard)	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEV
 ########################################3
 
 # Class Name	Hit Dice	Type			Abbreviation	Source Page			Automatic Languages	Save checks bonus												Combat bonus
-CLASS:Bodger	HD:8		TYPE:Base.PC	ABB:Bdg		SOURCEPAGE:IKCG.pg.96	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Bodger	HD:8		TYPE:Base.PC	ABB:Bdg		SOURCEPAGE:IKCG.pg.96	LANGAUTO:Literacy		BONUS:SAVE|BASE.Reflex,BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Willpower|CL/3	BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Bodger	STARTSKILLPTS:6	CSKILL:Craft (Clockwork)|Craft (Mechanika)|Craft (Small Arms)|Craft (Steam Engine)|Appraise,Climb|TYPE.Craft|Disable Device|Jump,Knowledge (Local)|Knowledge (Mechanika)|Open Lock|Profession (Mechanik)|Search|Spot|Use Rope
 1	FEATAUTO:Armor Proficiency (Light)	FEATAUTO:Simple Weapon Proficiency|All Automatic Proficiencies
@@ -232,7 +232,7 @@ CLASS:Bodger	STARTSKILLPTS:6	CSKILL:Craft (Clockwork)|Craft (Mechanika)|Craft (S
 #To multiclass and get a level of fell caller after 1st level requires having a feat called "Bragg's Gift". This restriction is not yet implemented.
 
 # Class Name	Hit Dice	Type			Abbreviation	Source Page			Automatic Languages	Save checks bonus												Combat bonus
-CLASS:Fell Caller	HD:8		TYPE:Base.PC	ABB:FlClr		SOURCEPAGE:IKCG.pg.102	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Fell Caller	HD:8		TYPE:Base.PC	ABB:FlClr		SOURCEPAGE:IKCG.pg.102	LANGAUTO:Literacy		BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Required AL			Required Race
 CLASS:Fell Caller	PREALIGN:3,4,5,6,7,8	PRERACE:Trollkin
 # Class Name	Skill Pts/Lvl	Class Skill
@@ -253,7 +253,7 @@ CLASS:Fell Caller	STARTSKILLPTS:4	CSKILL:Climb|Concentration|TYPE.Craft|Intimida
 ####################################
 
 # Class Name	Hit Dice	Type			Abbreviation	Source Page		Automatic Languages	Save checks bonus												Combat bonus
-CLASS:Gun Mage	HD:6		TYPE:Base.PC	ABB:Gmb		SOURCEPAGE:Pg.107	LANGAUTO:Literacy		BONUS:CHECKS|BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BAB|CL*3/4|TYPE=Base.REPLACE
+CLASS:Gun Mage	HD:6		TYPE:Base.PC	ABB:Gmb		SOURCEPAGE:Pg.107	LANGAUTO:Literacy		BONUS:SAVE|BASE.Reflex|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Fortitude|CL/3	BONUS:COMBAT|BASEAB|CL*3/4|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Gun Mage	STARTSKILLPTS:2	CSKILL:Craft (Small Arms)|Bluff|Climb|Concentration|TYPE.Craft|Intimidate|Jump|Knowledge (Arcana)|Listen|Spellcraft|Spot|Swim
 # Class Name	Spell Stat		Spell Type		Memorize	Caster level
@@ -285,7 +285,7 @@ CLASS:Gun Mage	SPELLSTAT:CHA	SPELLTYPE:Arcane	MEMORIZE:NO	BONUS:CASTERLEVEL|Gun 
 ####################################
 
 # Class Name		Hit Dice	Type			Abbreviation	Ex Class			Source Page		Automatic Languages	Define		Save checks bonus												Combat bonus					Modify VAR
-CLASS:Paladin (Dwarf)	HD:10		TYPE:Base.PC	ABB:Pld		EXCLASS:Ex Paladin	SOURCEPAGE:pg.84	LANGAUTO:Literacy		DEFINE:SMLevel|0	BONUS:CHECKS|BASE.Fortitude|CL/2+2	BONUS:CHECKS|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE	BONUS:VAR|SMLevel|CL
+CLASS:Paladin (Dwarf)	HD:10		TYPE:Base.PC	ABB:Pld		EXCLASS:Ex Paladin	SOURCEPAGE:pg.84	LANGAUTO:Literacy		DEFINE:SMLevel|0	BONUS:SAVE|BASE.Fortitude|CL/2+2	BONUS:SAVE|BASE.Reflex,BASE.Willpower|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE	BONUS:VAR|SMLevel|CL
 # Class Name		Required AL	Required Race
 CLASS:Paladin (Dwarf)	PREALIGN:0	PRERACE:Dwarf
 # Class Name		Skill Pts/Lvl	Class Skill
@@ -304,7 +304,7 @@ CLASS:Paladin (Dwarf)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1
 4	BONUS:VAR|TurnCheckBase|CHA|TYPE=NoStack
 ###Block: Level progression
 1				SA:Aura of Good									BONUS:VAR|SmiteEvil|1														DEFINE:AllowHolyAvenger|1						SPELLS:Innate|TIMES=-1|CASTERLEVEL=(CL=Paladin (Dwarf)),11+WIS|Detect Evil
-2				SA:Divine Grace (Su)	SA:Lay on Hands (Su) % hp/day|LayOnHands	BONUS:VAR|LayOnHands|(CHAMAX0)*CL=Paladin (Dwarf)	BONUS:CHECKS|Fortitude,Reflex,Willpower|CHAMAX0	DEFINE:LayOnHands|0
+2				SA:Divine Grace (Su)	SA:Lay on Hands (Su) % hp/day|LayOnHands	BONUS:VAR|LayOnHands|(CHAMAX0)*CL=Paladin (Dwarf)	BONUS:SAVE|Fortitude,Reflex,Willpower|CHAMAX0	DEFINE:LayOnHands|0
 3				SA:Aura of Courage (Su)	SA:Divine Health (Ex)
 4	CAST:0,0
 5	CAST:0,0													BONUS:VAR|SmiteEvil|1																			ADD:FEAT(TYPE=DwarfPaladin)
@@ -329,7 +329,7 @@ CLASS:Paladin (Dwarf)	SPELLSTAT:WIS	SPELLTYPE:Divine	KNOWNSPELLS:LEVEL=0|LEVEL=1
 #IK Note, the Ranger in the PHB doesn't exist in the IK, there is instead the Scout. This is a mod of the Ranger class.
 
 # Class Name	Hit Dice	Type			Abbreviation	Source Page			Automatic Languages	Define			Save checks bonus												Combat bonus
-CLASS:Scout		HD:8		TYPE:Base.PC	ABB:Rgr		SOURCEPAGE:IKCG pg.84	LANGAUTO:Literacy		DEFINE:CompLevel|0	BONUS:CHECKS|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:CHECKS|BASE.Willpower|CL/3	BONUS:COMBAT|BAB|CL|TYPE=Base.REPLACE
+CLASS:Scout		HD:8		TYPE:Base.PC	ABB:Rgr		SOURCEPAGE:IKCG pg.84	LANGAUTO:Literacy		DEFINE:CompLevel|0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|CL/2+2	BONUS:SAVE|BASE.Willpower|CL/3	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Scout		STARTSKILLPTS:6	CSKILL:Craft (Cannoneer)|Craft (Demolitions)|Craft (Small Arms)|Climb|TYPE.Craft|Creature Lore|Handle Animal|Hide|Jump|Knowledge (Geography)|Knowledge (Nature)|Knowledge (Tactics)|Listen|Move Silently|TYPE.Profession|Ride|Search|Spot|Survival|Swim|Use Rope
 ###Block:Proficiencies
