@@ -238,3 +238,17 @@ CLASS:Rogue	STARTSKILLPTS:1	CSKILL:TYPE=Class
 CLASS:Mana	VISIBLE:NO
 
 
+CLASS:Animal Companion	MAXLEVEL:8	PREPCLEVEL:MAX=6	VISIBLE:NO
+CLASS:Animal Companion	HD:8	TYPE:Monster
+CLASS:Animal Companion	FACT:Abb|Ani	FACT:ClassType|Companion
+CLASS:Animal Companion	DEFINE:CompanionLVL|0	BONUS:VAR|CompanionLVL|CL
+CLASS:Animal Companion	SOURCEPAGE:p.
+CLASS:Animal Companion	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0
+CLASS:Animal Companion	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1
+CLASS:Animal Companion	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Animal Companion	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Animal Companion	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Animal Companion	BONUS:VAR|ClassSaveGood_Fortitude|classlevel()|PREVAREQ:UseFractionalSave,1
+CLASS:Animal Companion	BONUS:VAR|ClassSaveGood_Reflex|classlevel()|PREVAREQ:UseFractionalSave,1
+CLASS:Animal Companion	BONUS:VAR|ClassSavePoor_Will|classlevel()|PREVAREQ:UseFractionalSave,1
+CLASS:Animal Companion	STARTSKILLPTS:1	CSKILL:TYPE=Class
