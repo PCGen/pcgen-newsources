@@ -201,8 +201,8 @@ Plain					KEY:Ranger Favored Terrain ~ Plain		CATEGORY:Special Ability	TYPE:Clas
 Ocean					KEY:Ranger Favored Terrain ~ Ocean		CATEGORY:Special Ability	TYPE:Class Feature.Ranger Favored Enemy	DESC:When in the favored terrain of XXX, he leaves no tracks and gains +2 to initiative and survival skill checks.	ASPECT:CombatBonus|In XXX favored terrain, +2 to initiative checks.	ASPECT:SkillBonus|In XXX favored terrain, +2 to survival skill checks.
 
 #
-Animal Companion	TYPE:Hunter's Bond	ABILITY:Talent|AUTOMATIC|Talent ~ Animal Companion
-Pack Bond		TYPE:Hunter's Bond
+Animal Companion	KEY:Hunter's Bond ~ Animal Companion		TYPE:Hunter's Bond	CATEGORY:Special Ability	ABILITY:Talent|AUTOMATIC|Talent ~ Animal Companion
+Pack Bond		KEY:Hunter's Bond ~ Pack Bond				TYPE:Hunter's Bond	CATEGORY:Special Ability
 
 # Rogue
 Sneak Attack			KEY:Rogue ~ Sneak Attack				CATEGORY:Special Ability	TYPE:Class Feature.Rogue Class Feature	DESC:A rogue can use a sneak attack on an enemy who is distracted, flanked, or flat-footed.		BONUS:VAR|SneakAttackDice|(RogueLVL+1)/2	DEFINE:SneakAttackDice|0	ASPECT:NAME|Sneak Attack (%1d6)|SneakAttackDice
@@ -228,7 +228,7 @@ Advantage				KEY:Talent ~ Advantage				COST:2	TYPE:Talent	CATEGORY:Talent		DESC:
 Agile					KEY:Talent ~ Agile				COST:1	TYPE:Talent	CATEGORY:Talent	BONUS:SKILL|Athletics|2	DESC:You get a +2 bonus on all Athletics checks.
 Alertness				KEY:Talent ~ Alertness				COST:1	TYPE:Talent	CATEGORY:Talent	BONUS:SKILL|Awareness|2	DESC:You get a +2 bonus on all Awareness checks.
 Animal Affinity			KEY:Talent ~ Animal Affinity			COST:1	TYPE:Talent	CATEGORY:Talent	BONUS:SITUATION|Persuasion=animals|2	DESC:You get a +2 bonus on all Persuasion checks with animals.
-Animal Companion			KEY:Talent ~ Animal Companion			COST:1	TYPE:Talent	CATEGORY:Talent		DESC:The character has an animal follower that is loyal and understands the character's commands. The animal is typical of its species but may improve as the character gains experience.	ABILITY:Internal|AUTOMATIC|Animal Companion
+Animal Companion			KEY:Talent ~ Animal Companion			COST:1	TYPE:Talent	CATEGORY:Talent		DESC:The character has an animal follower that is loyal and understands the character's commands. The animal is typical of its species but may improve as the character gains experience.	ABILITY:Internal|AUTOMATIC|Companion ~ Animal Companion
 Blind Fight				KEY:Talent ~ Blind Fight			COST:1	TYPE:Talent	CATEGORY:Talent		DESC:In melee, every time you miss because of concealment, you can reroll your miss chance percentile roll one time to see if you actually hit. An invisible attacker gets no advantages related to hitting you in melee. That is, you don't lose your Dexterity bonus to Armor Class, and the attacker doesn't get the usual +2 bonus for being invisible. The invisible attacker's bonuses do still apply for ranged attacks, however.
 Call of Nature			KEY:Talent ~ Call of Nature			COST:1	TYPE:Talent	CATEGORY:Talent		DESC:You have an affinity to nature. You can calm animals with a CHA check, you leave no tracks in natural environments, and are unhindered by natural undergrowth.
 Cleave				KEY:Talent ~ Cleave				COST:2	TYPE:Talent	CATEGORY:Talent		DESC:If you deal a creature enough damage to make it drop (typically by dropping it to below 0 hit points or killing it), you get an immediate, extra melee attack against another creature within reach. You cannot take a 5-foot step before making this extra attack. The extra attack is with the same weapon and at the same bonus as the attack that dropped the previous creature. You can use this ability once per round.
@@ -279,5 +279,20 @@ Whirlwind Attack			KEY:Talent ~ Whirlwind Attack			COST:2	TYPE:Talent	CATEGORY:T
 
 
 ###Block:
-Animal Companion	CATEGORY:Internal
-	DEFINE:AnimalCompanionLVL|0	BONUS:VAR|AnimalCompanionLVL|TL
+Animal Companion		KEY:Companion ~ Animal Companion	CATEGORY:Internal	DEFINE:AnimalCompanionLVL|0	BONUS:VAR|AnimalCompanionLVL|TL	FOLLOWERS:Animal Companion|1	COMPANIONLIST:Animal Companion|RACESUBTYPE=Animal Companion
+
+###Block:
+Link			KEY:Animal Companion ~ Link		CATEGORY:Special Ability	TYPE:Animal Companion Class Feature.SpecialQuality	SOURCEPAGE:p.	DESC:There is a link between an animal companion and their partner. A player can suggest an action to their animal companion as a free action, and there is a favorable understanding and bond between the two.
+Evasion		KEY:Animal Companion ~ Evasion	CATEGORY:Special Ability	TYPE:Animal Companion Class Feature.SpecialQuality	SOURCEPAGE:p.	DESC:If an animal companion makes a successful Reflex save against an attack that deals half damage if successful, the rogue takes no damage.
+Share Vision	KEY:Animal Companion ~ Share Vision	CATEGORY:Special Ability	TYPE:Animal Companion Class Feature.SpecialQuality	SOURCEPAGE:p.	DESC:The player can see through the eyes of their animal companion at will. There are no distance restrictions.
+Share Mind		KEY:Animal Companion ~ Share Mind	CATEGORY:Special Ability	TYPE:Animal Companion Class Feature.SpecialQuality	SOURCEPAGE:p.	DESC:The player and companion share a strong mind link, and both gain a +4 against mind influencing spells and effects as long as they are with 100’ of each other.
+
+###Block:
+Race Traits ~ Animal Companion	CATEGORY:Internal	BONUS:VAR|Pool_Talent|CompanionLVL	
+	ABILITY:Internal|AUTOMATIC|Assign RaceSubtype ~ Animal Companion|PREVAREQ:MasterLevel,0
+	ABILITY:Internal|AUTOMATIC|Assign RaceType ~ Animal
+
+
+# Animal Companion Race Subtype is removed once the race has been made into an Animal Companion
+Assign RaceSubtype ~ Animal Companion	CATEGORY:Internal	TEMPLATE:Race Subtype ~ Animal Companion
+Assign RaceType ~ Animal	CATEGORY:Internal	TEMPLATE:Race Type ~ Animal
