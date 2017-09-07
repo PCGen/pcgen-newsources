@@ -1492,3 +1492,101 @@ Keen Senses		KEY:Halfling Default ~ Keen Senses				SOURCEPAGE:p.511	CATEGORY:Rac
 Sneaky		KEY:Halfling Default ~ Sneaky					SOURCEPAGE:p.511	CATEGORY:Racial Trait	TYPE:Racial Trait.Halfling Racial Trait.Halfling Default Racial Trait	DESC:Halflings receive a +2 racial bonus to Stealth checks. In addition, halflings reduce the penalty for using Stealth while moving by 5, and reduce the Stealth check penalty for sniping by 10.	BONUS:SKILL|Stealth|2|TYPE=Racial
 Sure-Footed		KEY:Halfling Default ~ Sure-Footed				SOURCEPAGE:p.511	CATEGORY:Racial Trait	TYPE:Racial Trait.Halfling Racial Trait.Halfling Default Racial Trait	DESC:Halflings receive a +2 racial bonus to Acrobatics and Athletics skill checks	BONUS:SKILL|Acrobatics,Athletics|2|TYPE=Racial
 
+
+
+###BLOCK-------------------------------------------------------------------------------------------------------------
+###Block: Feat Support
+
+#Enhanced Resistance
+Kinetic		KEY:Enhanced Resistance ~ Kinetic			CATEGORY:Internal		TYPE:Enhanced Resistance	DR:BAB/-
+Acid			KEY:Enhanced Resistance ~ Acid			CATEGORY:Internal		TYPE:Enhanced Resistance	BONUS:VAR|AcidResistanceBonus|BAB|TYPE=Resistance
+Cold			KEY:Enhanced Resistance ~ Cold			CATEGORY:Internal		TYPE:Enhanced Resistance	BONUS:VAR|ColdResistanceBonus|BAB|TYPE=Resistance
+Electricity		KEY:Enhanced Resistance ~ Electricity		CATEGORY:Internal		TYPE:Enhanced Resistance	BONUS:VAR|ElectricityResistanceBonus|BAB|TYPE=Resistance
+Fire			KEY:Enhanced Resistance ~ Fire			CATEGORY:Internal		TYPE:Enhanced Resistance	BONUS:VAR|FireResistanceBonus|BAB|TYPE=Resistance
+Sonic			KEY:Enhanced Resistance ~ Sonic			CATEGORY:Internal		TYPE:Enhanced Resistance	BONUS:VAR|SonicResistanceBonus|BAB|TYPE=Resistance
+
+#Improved Combat Maneuver
+Bull Rush		KEY:Improved Combat Maneuver ~ Bull Rush		CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Bull Rush		ASPECT:CombatBonus|+4 bonus to attack rolls to resolve bull rush combat maneuvers
+Dirty Trick		KEY:Improved Combat Maneuver ~ Dirty Trick	CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Dirty Trick		ASPECT:CombatBonus|+4 bonus to attack rolls to resolve dirty trick combat maneuvers
+Disarm		KEY:Improved Combat Maneuver ~ Disarm		CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Disarm		ASPECT:CombatBonus|+4 bonus to attack rolls to resolve disarm combat maneuvers
+Grapple		KEY:Improved Combat Maneuver ~ Grapple		CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Grapple		ASPECT:CombatBonus|+4 bonus to attack rolls to resolve grapple combat maneuvers
+Reposition		KEY:Improved Combat Maneuver ~ Reposition		CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Reposition		ASPECT:CombatBonus|+4 bonus to attack rolls to resolve reposition combat maneuvers
+Sunder		KEY:Improved Combat Maneuver ~ Sunder		CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Sunder		ASPECT:CombatBonus|+4 bonus to attack rolls to resolve sunder combat maneuvers
+Trip			KEY:Improved Combat Maneuver ~ Trip			CATEGORY:Internal		TYPE:Improved Combat Maneuver		!PREABILITY:1,CATEGORY=Internal,Improved Combat Maneuver ~ Trip			ASPECT:CombatBonus|+4 bonus to attack rolls to resolve trip combat maneuvers
+
+#Spell-Like Abilities for Connection Inkling feat
+Daze					KEY:Connection Inkling SLA ~ Daze					CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Daze,10+WIS|!PRECLASS:1,Mystic
+Detect Affliction			KEY:Connection Inkling SLA ~ Detect Affliction			CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Detect Affliction|!PRECLASS:1,Mystic
+Detect Magic			KEY:Connection Inkling SLA ~ Detect Magic				CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Detect Magic|!PRECLASS:1,Mystic
+Fatigue				KEY:Connection Inkling SLA ~ Fatigue				CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Fatigue,10+WIS|!PRECLASS:1,Mystic
+Ghost Sound				KEY:Connection Inkling SLA ~ Ghost Sound				CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Ghost Sound,10+WIS|!PRECLASS:1,Mystic
+Grave Words				KEY:Connection Inkling SLA ~ Grave Words				CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Grave Words|!PRECLASS:1,Mystic
+Psychokinetic Hand		KEY:Connection Inkling SLA ~ Psychokinetic Hand			CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Psychokinetic Hand|!PRECLASS:1,Mystic
+Stabilize				KEY:Connection Inkling SLA ~ Stabilize				CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Stabilize,10+WIS|!PRECLASS:1,Mystic
+Telekinetic Projectile		KEY:Connection Inkling SLA ~ Telekinetic Projectile		CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Telekinetic Projectile|!PRECLASS:1,Mystic
+Telepathic Message		KEY:Connection Inkling SLA ~ Telepathic Message			CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Telepathic Message|!PRECLASS:1,Mystic
+Token Spell				KEY:Connection Inkling SLA ~ Token Spell				CATEGORY:Internal		TYPE:Connection Inkling SLA-0		SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Token Spell|!PRECLASS:1,Mystic
+
+Charm Person			KEY:Connection Inkling SLA ~ Charm Person				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Charm Person,11+WIS|!PRECLASS:1,Mystic
+Command				KEY:Connection Inkling SLA ~ Command				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Command,11+WIS|!PRECLASS:1,Mystic
+Confusion (Lesser)		KEY:Connection Inkling SLA ~ Confusion (Lesser)			CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Confusion (Lesser),11+WIS|!PRECLASS:1,Mystic
+Detect Radiation			KEY:Connection Inkling SLA ~ Detect Radiation			CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Detect Radiation|!PRECLASS:1,Mystic
+Detect Thoughts			KEY:Connection Inkling SLA ~ Detect Thoughts			CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Detect Thoughts,11+WIS|!PRECLASS:1,Mystic
+Disguise Self			KEY:Connection Inkling SLA ~ Disguise Self			CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Disguise Self|!PRECLASS:1,Mystic
+Fear					KEY:Connection Inkling SLA ~ Fear					CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Fear (Level 1),11+WIS|!PRECLASS:1,Mystic
+Identify				KEY:Connection Inkling SLA ~ Identify				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Identify|!PRECLASS:1,Mystic
+Keen Senses				KEY:Connection Inkling SLA ~ Keen Senses				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Keen Senses,11+WIS|!PRECLASS:1,Mystic
+Life Bubble				KEY:Connection Inkling SLA ~ Life Bubble				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Life Bubble,11+WIS|!PRECLASS:1,Mystic
+Mind Link				KEY:Connection Inkling SLA ~ Mind Link				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Mind Link,11+WIS|!PRECLASS:1,Mystic
+Mind Thrust				KEY:Connection Inkling SLA ~ Mind Thrust				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Mind Thrust (Level 1),11+WIS|!PRECLASS:1,Mystic
+Mystic Cure				KEY:Connection Inkling SLA ~ Mystic Cure				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Mystic Cure (Level 1),11+WIS|!PRECLASS:1,Mystic
+Reflecting Armor			KEY:Connection Inkling SLA ~ Reflecting Armor			CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Reflecting Armor|!PRECLASS:1,Mystic
+Remove Condition (Lesser)	KEY:Connection Inkling SLA ~ Remove Condition (Lesser)	CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Remove Condition (Lesser),11+WIS|!PRECLASS:1,Mystic
+Share Language			KEY:Connection Inkling SLA ~ Share Language			CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Share Language,11+WIS|!PRECLASS:1,Mystic
+Wisp Ally				KEY:Connection Inkling SLA ~ Wisp Ally				CATEGORY:Internal		TYPE:Connection Inkling SLA-1		SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Wisp Ally|!PRECLASS:1,Mystic
+
+#Spell-Like Abilities for Technomantic Dabbler feat
+Dancing Lights			KEY:Technomantic Dabbler SLA ~ Dancing Lights			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Dancing Lights|!PRECLASS:1,Technomancer
+Daze					KEY:Technomantic Dabbler SLA ~ Daze					CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Daze,10+INT|!PRECLASS:1,Technomancer
+Detect Affliction			KEY:Technomantic Dabbler SLA ~ Detect Affliction		CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Detect Affliction|!PRECLASS:1,Technomancer
+Detect Magic			KEY:Technomantic Dabbler SLA ~ Detect Magic			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Detect Magic|!PRECLASS:1,Technomancer
+Energy Ray				KEY:Technomantic Dabbler SLA ~ Energy Ray				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Energy Ray|!PRECLASS:1,Technomancer
+Ghost Sound				KEY:Technomantic Dabbler SLA ~ Ghost Sound			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Ghost Sound,10+INT|!PRECLASS:1,Technomancer
+Mending				KEY:Technomantic Dabbler SLA ~ Mending				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Mending,10+INT|!PRECLASS:1,Technomancer
+Psychokinetic Hand		KEY:Technomantic Dabbler SLA ~ Psychokinetic Hand		CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Psychokinetic Hand|!PRECLASS:1,Technomancer
+Telepathic Message		KEY:Technomantic Dabbler SLA ~ Telepathic Message		CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Telepathic Message|!PRECLASS:1,Technomancer
+Token Spell				KEY:Technomantic Dabbler SLA ~ Token Spell			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Token Spell|!PRECLASS:1,Technomancer
+Transfer Charge			KEY:Technomantic Dabbler SLA ~ Transfer Charge			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-0	SPELLS:Innate|TIMES=ATWILL|CASTERLEVEL=TL|Transfer Charge,10+INT|!PRECLASS:1,Technomancer
+
+Comprehend Languages		KEY:Technomantic Dabbler SLA ~ Comprehend Languages		CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Comprehend Languages|!PRECLASS:1,Technomancer
+Detect Radiation			KEY:Technomantic Dabbler SLA ~ Detect Radiation			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Detect Radiation|!PRECLASS:1,Technomancer
+Detect Tech				KEY:Technomantic Dabbler SLA ~ Detect Tech			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Detect Tech|!PRECLASS:1,Technomancer
+Disguise Self			KEY:Technomantic Dabbler SLA ~ Disguise Self			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Disguise Self|!PRECLASS:1,Technomancer
+Erase					KEY:Technomantic Dabbler SLA ~ Erase				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Erase|!PRECLASS:1,Technomancer
+Flight				KEY:Technomantic Dabbler SLA ~ Flight				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Flight (Level 1),11+INT|!PRECLASS:1,Technomancer
+Grease				KEY:Technomantic Dabbler SLA ~ Grease				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Grease,11+INT|!PRECLASS:1,Technomancer
+Hold Portal				KEY:Technomantic Dabbler SLA ~ Hold Portal			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Hold Portal|!PRECLASS:1,Technomancer
+Holographic Image			KEY:Technomantic Dabbler SLA ~ Holographic Image		CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Holographic Image (Level 1),11+INT|!PRECLASS:1,Technomancer
+Identify				KEY:Technomantic Dabbler SLA ~ Identify				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Identify|!PRECLASS:1,Technomancer
+Jolting Surge			KEY:Technomantic Dabbler SLA ~ Jolting Surge			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Jolting Surge|!PRECLASS:1,Technomancer
+Keen Senses				KEY:Technomantic Dabbler SLA ~ Keen Senses			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Keen Senses,11+INT|!PRECLASS:1,Technomancer
+Life Bubble				KEY:Technomantic Dabbler SLA ~ Life Bubble			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Life Bubble,11+INT|!PRECLASS:1,Technomancer
+Magic Missile			KEY:Technomantic Dabbler SLA ~ Magic Missile			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Magic Missile|!PRECLASS:1,Technomancer
+Overheat				KEY:Technomantic Dabbler SLA ~ Overheat				CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Overheat,11+INT|!PRECLASS:1,Technomancer
+Supercharge Weapon		KEY:Technomantic Dabbler SLA ~ Supercharge Weapon		CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Supercharge Weapon|!PRECLASS:1,Technomancer
+Unseen Servant			KEY:Technomantic Dabbler SLA ~ Unseen Servant			CATEGORY:Internal		TYPE:Technomantic Dabbler SLA-1	SPELLS:Innate|TIMES=TL/3|CASTERLEVEL=TL|Unseen Servant|!PRECLASS:1,Technomancer
+
+#Spell-Like Abilities for Major Psychic Power feat
+Augury				KEY:Major Psychic Power SLA ~ Augury				CATEGORY:Internal		TYPE:Major Psychic Power SLA		SPELLS:Innate|CASTERLEVEL=TL|Augury
+Status				KEY:Major Psychic Power SLA ~ Status				CATEGORY:Internal		TYPE:Major Psychic Power SLA		SPELLS:Innate|CASTERLEVEL=TL|Status,12+CHA
+
+#Spell-Like Abilities for Minor Psychic Power feat
+Dancing Lights			KEY:Minor Psychic Power SLA ~ Dancing Lights			CATEGORY:Internal		TYPE:Minor Psychic Power SLA		SPELLS:Innate|TIMES=3|CASTERLEVEL=TL|Dancing Lights			!PREABILITY:1,CATEGORY=Internal,Minor Psychic Power SLA ~ Dancing Lights
+Psychokinetic Hand		KEY:Minor Psychic Power SLA ~ Psychokinetic Hand		CATEGORY:Internal		TYPE:Minor Psychic Power SLA		SPELLS:Innate|TIMES=3|CASTERLEVEL=TL|Psychokinetic Hand		!PREABILITY:1,CATEGORY=Internal,Minor Psychic Power SLA ~ Psychokinetic Hand
+Telekinetic Projectile		KEY:Minor Psychic Power SLA ~ Telekinetic Projectile		CATEGORY:Internal		TYPE:Minor Psychic Power SLA		SPELLS:Innate|TIMES=3|CASTERLEVEL=TL|Telekinetic Projectile		!PREABILITY:1,CATEGORY=Internal,Minor Psychic Power SLA ~ Telekinetic Projectile
+Telepathic Message		KEY:Minor Psychic Power SLA ~ Telepathic Message		CATEGORY:Internal		TYPE:Minor Psychic Power SLA		SPELLS:Innate|TIMES=3|CASTERLEVEL=TL|Telepathic Message		!PREABILITY:1,CATEGORY=Internal,Minor Psychic Power SLA ~ Telepathic Message
+
+#Spell-Like Abilities for Psychic Power feat
+Comprehend Languages		KEY:Psychic Power SLA ~ Comprehend Languages			CATEGORY:Internal		TYPE:Psychic Power SLA			SPELLS:Innate|CASTERLEVEL=TL|Comprehend Languages			!PREABILITY:1,CATEGORY=Internal,Psychic Power SLA ~ Comprehend Languages
+Detect Thoughts			KEY:Psychic Power SLA ~ Detect Thoughts				CATEGORY:Internal		TYPE:Psychic Power SLA			SPELLS:Innate|CASTERLEVEL=TL|Detect Thoughts,11+CHA			!PREABILITY:1,CATEGORY=Internal,Psychic Power SLA ~ Detect Thoughts
+Mind Link				KEY:Psychic Power SLA ~ Mind Link					CATEGORY:Internal		TYPE:Psychic Power SLA			SPELLS:Innate|CASTERLEVEL=TL|Mind Link,11+CHA				!PREABILITY:1,CATEGORY=Internal,Psychic Power SLA ~ Mind Link
