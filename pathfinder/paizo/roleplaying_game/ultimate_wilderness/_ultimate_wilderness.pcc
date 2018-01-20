@@ -7,7 +7,7 @@ GENRE:Fantasy
 BOOKTYPE:Supplement
 SETTING:Pathfinder|Golarion
 STATUS:BETA
-PRECAMPAIGN:5,INCLUDESBOOKTYPE=Core Rules,INCLUDES=Advanced Player's Guide,INCLUDES=Ultimate Magic,INCLUDES=Ultimate Combat,INCLUDES=Advanced Class Guide
+PRECAMPAIGN:5,INCLUDESBOOKTYPE=Core Rules,INCLUDES=Advanced Player's Guide,INCLUDES=Ultimate Magic,INCLUDES=Ultimate Combat,INCLUDES=Advanced Class Guide,INCLUDES=Bestiary
 PUBNAMELONG:Paizo Inc.
 PUBNAMESHORT:Paizo
 PUBNAMEWEB:http://paizo.com
@@ -49,6 +49,7 @@ COPYRIGHT:PCGen dataset conversion for "Pathfinder RPG Ultimate Wilderness Copyr
 DATACONTROL:uw__datacontrols.lst
 
 ABILITY:uw_abilities_class.lst
+ABILITY:uw_abilities_companion.lst
 ABILITY:uw_abilities_race.lst
 ABILITYCATEGORY:uw_abilitycategories.lst
 CLASS:uw_classes.lst
@@ -59,13 +60,19 @@ COMPANIONMOD:uw_companionmods.lst
 #EQUIPMOD:uw_equipmods.lst
 ABILITY:uw_feats.lst
 KIT:uw_kits.lst
+KIT:uw_kits_companion.lst
 RACE:uw_races.lst
+RACE:uw_races_companion.lst
 SKILL:uw_skills.lst
 SPELL:uw_spells.lst
 TEMPLATE:uw_templates.lst
 
-FORWARDREF:ABILITY=FEAT|Psychic Sensitivity
+ABILITY:support/uw_abilities_class_ui.lst|PRECAMPAIGN:1,INCLUDES=Ultimate Intrigue
+RACE:support/uw_races_companion_b3.lst|PRECAMPAIGN:1,INCLUDES=Bestiary 3
+RACE:support/uw_races_companion_b4.lst|PRECAMPAIGN:1,INCLUDES=Bestiary 4
 
+FORWARDREF:ABILITY=FEAT|Psychic Sensitivity
+FORWARDREF:CLASSSPELLLIST|Medium,Mesmerist,Occultist,Psychic,Spiritualist
 
 # ENTRY DATE: 2017-011
 # LST MONKEY: Gary Davies, Gwen T., Regan Anderson
