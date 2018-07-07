@@ -1,0 +1,45 @@
+# Original Entry by: Douglas Limmer
+# Original Entry Date: 2018-07-06
+
+### ---  Base Classes --- ###
+
+###Block: Harbinger
+
+CLASS:Harbinger	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	MAXLEVEL:20	SOURCEPAGE:p.6	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerClassSkills	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Variables	DEFINE:HarbingerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|HarbingerLVL|CL	BONUS:VAR|ClassSavePoor_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Hrb	FACT:SpellType|Initiator
+CLASS:Harbinger	STARTSKILLPTS:4
+CLASS:Harbinger	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Harbinger|HarbingerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating
+###Block:Proficiencies
+# COMMENT: Weapon and Armor proficiencies separated out from each other for archetypes' sake; not technically as written
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWeaponAndArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial Melee|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerArmorProficiencies
+###Block: Level Progression
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Accursed Will|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerAccursedWill|PREVARGTEQ:HarbingerLVL,1
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Dark Claim|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerDarkClaim|PREVARGTEQ:HarbingerLVL,1
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Ill Tidings|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerIllTidings|PREVARGTEQ:HarbingerLVL,1
+2	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Dark Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerDarkFocus|PREVARGTEQ:HarbingerLVL,2
+3	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Grim News|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerGrimNews|PREVARGTEQ:HarbingerLVL,3
+4	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Massacre|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerMassacre|PREVARGTEQ:HarbingerLVL,4
+5	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Elusive Shadow|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerElusiveShadow|PREVARGTEQ:HarbingerLVL,5
+7	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Sorcerous Deception|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerSorcerousDeception|PREVARGTEQ:HarbingerLVL,7
+8	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Ill Intentions|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerIllIntentions|PREVARGTEQ:HarbingerLVL,8
+11	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Black Omen|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerBlackOmen|PREVARGTEQ:HarbingerLVL,11
+12	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Bleak Prophecy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerBleakProphecy|PREVARGTEQ:HarbingerLVL,12
+13	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Dark Murmur|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerDarkMurmur|PREVARGTEQ:HarbingerLVL,13
+17	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Rumors of War|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerRumorsOfWar|PREVARGTEQ:HarbingerLVL,17
+18	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Voices in the Dark|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerVoicesInTheDark|PREVARGTEQ:HarbingerLVL,18
+19	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Whispers of Atrocity|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWhispersOfAtrocity|PREVARGTEQ:HarbingerLVL,19
+###Block: Harbinger Initiating
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Initiating|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating|PREVARGTEQ:HarbingerLVL,1
+1	ADD:SPELLCASTER|Harbinger Stances
+1	KNOWN:0,HarbingerManeuversKnownOne,HarbingerManeuversKnownTwo,HarbingerManeuversKnownThree,HarbingerManeuversKnownFour,HarbingerManeuversKnownFive,HarbingerManeuversKnownSix,HarbingerManeuversKnownSeven,HarbingerManeuversKnownEight,HarbingerManeuversKnownNine
+1	CAST:0,HarbingerManeuversReadiedOne,HarbingerManeuversReadiedTwo,HarbingerManeuversReadiedThree,HarbingerManeuversReadiedFour,HarbingerManeuversReadiedFive,HarbingerManeuversReadiedSix,HarbingerManeuversReadiedSeven,HarbingerManeuversReadiedEight,HarbingerManeuversReadiedNine
+
+###Block: Harbinger Stances pseudo-class
+CLASS:Harbinger Stances	TYPE:InitiatorStances	VISIBLE:NO	FACT:SpellType|Initiator
+CLASS:Harbinger Stances	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Harbinger Stances|HarbingerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating
+###Block: Harbinger Stances Known/Cast
+1	KNOWN:0,HarbingerStancesKnownOne,HarbingerStancesKnownTwo,HarbingerStancesKnownThree,HarbingerStancesKnownFour,HarbingerStancesKnownFive,HarbingerStancesKnownSix,HarbingerStancesKnownSeven,HarbingerStancesKnownEight,HarbingerStancesKnownNine
+1	CAST:0,HarbingerStancesReadiedOne,HarbingerStancesReadiedTwo,HarbingerStancesReadiedThree,HarbingerStancesReadiedFour,HarbingerStancesReadiedFive,HarbingerStancesReadiedSix,HarbingerStancesReadiedSeven,HarbingerStancesReadiedEight,HarbingerStancesReadiedNine
+
