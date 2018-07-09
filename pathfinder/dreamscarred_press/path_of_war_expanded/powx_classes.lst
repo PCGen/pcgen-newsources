@@ -4,8 +4,7 @@
 ### ---  Base Classes --- ###
 
 ###Block: Harbinger
-
-CLASS:Harbinger	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	MAXLEVEL:20	SOURCEPAGE:p.6	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerClassSkills	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Variables	DEFINE:HarbingerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|HarbingerLVL|CL	BONUS:VAR|ClassSavePoor_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Hrb	FACT:SpellType|Initiator
+CLASS:Harbinger	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	MAXLEVEL:20	SOURCEPAGE:p.6	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerClassSkills	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Variables	DEFINE:HarbingerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|HarbingerLVL|CL	BONUS:VAR|ClassSaveGood_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Hrb	FACT:SpellType|Initiator
 CLASS:Harbinger	STARTSKILLPTS:4
 CLASS:Harbinger	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Harbinger|HarbingerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating
 ###Block:Proficiencies
@@ -43,3 +42,39 @@ CLASS:Harbinger Stances	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Harbinger
 1	KNOWN:0,HarbingerStancesKnownOne,HarbingerStancesKnownTwo,HarbingerStancesKnownThree,HarbingerStancesKnownFour,HarbingerStancesKnownFive,HarbingerStancesKnownSix,HarbingerStancesKnownSeven,HarbingerStancesKnownEight,HarbingerStancesKnownNine
 1	CAST:0,HarbingerStancesReadiedOne,HarbingerStancesReadiedTwo,HarbingerStancesReadiedThree,HarbingerStancesReadiedFour,HarbingerStancesReadiedFive,HarbingerStancesReadiedSix,HarbingerStancesReadiedSeven,HarbingerStancesReadiedEight,HarbingerStancesReadiedNine
 
+
+###Block: Mystic
+CLASS:Mystic	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	MAXLEVEL:20	SOURCEPAGE:p.9	ABILITY:Internal|AUTOMATIC|Mystic ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticClassSkills	ABILITY:Internal|AUTOMATIC|Mystic ~ Class Variables	DEFINE:MysticLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|MysticLVL|CL	BONUS:VAR|ClassSavePoor_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Mys	FACT:SpellType|Initiator
+CLASS:Mystic	STARTSKILLPTS:4
+CLASS:Mystic	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Mystic|MysticInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInitiating
+###Block:Proficiencies
+# COMMENT: Weapon and Armor proficiencies separated out from each other for archetypes' sake; not technically as written
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWeaponAndArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArmorProficiencies
+###Block: Level Progression
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Animus|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticAnimus|PREVARGTEQ:MysticLVL,1
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Elemental Attunement|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticElementalAttunement|PREVARGTEQ:MysticLVL,1
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Blade Meditation|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticBladeMeditation|PREVARGTEQ:MysticLVL,1
+2	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Bonus Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticBonusFeat|PREVARGTEQ:MysticLVL,2
+2	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Arcane Defense|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArcaneDefense|PREVARGTEQ:MysticLVL,2
+3	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Elemental Glyph|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticElementalGlyph|PREVARGTEQ:MysticLVL,3
+4	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Mystic Artifice|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticMysticArtifice|PREVARGTEQ:MysticLVL,4
+5	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Withstand Spell|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWithstandSpell|PREVARGTEQ:MysticLVL,5
+6	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Instant Enlightenment|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInstantEnlightenment|PREVARGTEQ:MysticLVL,6
+9	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Quell Magic|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticQuellMagic|PREVARGTEQ:MysticLVL,9
+15	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Font of Animus|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticFontOfAnimus|PREVARGTEQ:MysticLVL,15
+20	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Glyph Mastery|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticGlyphMastery|PREVARGTEQ:MysticLVL,20
+###Block: Harbinger Initiating
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Initiating|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInitiating|PREVARGTEQ:MysticLVL,1
+1	ADD:SPELLCASTER|Mystic Stances
+1	KNOWN:0,MysticManeuversKnownOne,MysticManeuversKnownTwo,MysticManeuversKnownThree,MysticManeuversKnownFour,MysticManeuversKnownFive,MysticManeuversKnownSix,MysticManeuversKnownSeven,MysticManeuversKnownEight,MysticManeuversKnownNine
+1	CAST:0,MysticManeuversReadiedOne,MysticManeuversReadiedTwo,MysticManeuversReadiedThree,MysticManeuversReadiedFour,MysticManeuversReadiedFive,MysticManeuversReadiedSix,MysticManeuversReadiedSeven,MysticManeuversReadiedEight,MysticManeuversReadiedNine
+
+###Block: Mystic Stances pseudo-class
+CLASS:Mystic Stances	TYPE:InitiatorStances	VISIBLE:NO	FACT:SpellType|Initiator
+CLASS:Mystic Stances	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Mystic Stances|MysticInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInitiating
+###Block: Mystic Stances Known/Cast
+1	KNOWN:0,MysticStancesKnownOne,MysticStancesKnownTwo,MysticStancesKnownThree,MysticStancesKnownFour,MysticStancesKnownFive,MysticStancesKnownSix,MysticStancesKnownSeven,MysticStancesKnownEight,MysticStancesKnownNine
+1	CAST:0,MysticStancesReadiedOne,MysticStancesReadiedTwo,MysticStancesReadiedThree,MysticStancesReadiedFour,MysticStancesReadiedFive,MysticStancesReadiedSix,MysticStancesReadiedSeven,MysticStancesReadiedEight,MysticStancesReadiedNine
