@@ -1,62 +1,81 @@
+#  Sun Aug  5 21:24:58 2018 -- reformated by PCGen PrettyLST v6.06.00
 
 
-CLASS:Alchemist	DESC:The alchemist throws alchemical bombs and drinks concoctions of his own making during combat. Intelligence, 2nd Constitution, Dexterity
-CLASS:Alchemist	DEFINE:AlchemistCL|0	BONUS:VAR|AlchemistCL|classlevel()	BONUS:HP|CURRENTMAX|8*AlchemistCL	ABILITY:CLASS|AUTOMATIC|Alchemist
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Alchemist	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Alchemist	DEFINE:AlchemistCL|0	BONUS:HP|CURRENTMAX|8*AlchemistCL	BONUS:VAR|AlchemistCL|classlevel()	DESC:The alchemist throws alchemical bombs and drinks concoctions of his own making during combat. Intelligence, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Alchemist	PREMULT:1,[PRECLASS:1,Alchemist=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Barbarian	DESC:The barbarian flies into a rage on the battlefield, smashing foes with abandon. Strength, 2nd Constitution, Dexterity
-CLASS:Barbarian	DEFINE:BarbarianCL|0	BONUS:VAR|BarbarianCL|classlevel()	BONUS:HP|CURRENTMAX|12*BarbarianCL	ABILITY:CLASS|AUTOMATIC|Barbarian
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Barbarian	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Barbarian	DEFINE:BarbarianCL|0	BONUS:HP|CURRENTMAX|12*BarbarianCL	BONUS:VAR|BarbarianCL|classlevel()	DESC:The barbarian flies into a rage on the battlefield, smashing foes with abandon. Strength, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Barbarian	PREMULT:1,[PRECLASS:1,Barbarian=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Bard		DESC:Performance and secrets of the occult enable the bard to distract foes and inspire allies. Charisma, 2nd Constitution, Dexterity
-CLASS:Bard		DEFINE:BardCL|0	BONUS:VAR|BardCL|classlevel()	BONUS:HP|CURRENTMAX|8*BardCL	ABILITY:CLASS|AUTOMATIC|Bard
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
+CLASS:Bard		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Bard	DEFINE:BardCL|0	BONUS:HP|CURRENTMAX|8*BardCL	BONUS:VAR|BardCL|classlevel()	DESC:Performance and secrets of the occult enable the bard to distract foes and inspire allies. Charisma, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Bard		PREMULT:1,[PRECLASS:1,Bard=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Cleric	DESC:The cleric calls on the power of a deity to cast spells that can heal allies or harm foes. Wisdom, 2nd Charisma, Constitution
-CLASS:Cleric	DEFINE:ClericCL|0	BONUS:VAR|ClericCL|classlevel()	BONUS:HP|CURRENTMAX|8*ClericCL	ABILITY:CLASS|AUTOMATIC|Cleric
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Cleric	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Cleric	DEFINE:ClericCL|0	BONUS:HP|CURRENTMAX|8*ClericCL	BONUS:VAR|ClericCL|classlevel()	DESC:The cleric calls on the power of a deity to cast spells that can heal allies or harm foes. Wisdom, 2nd Charisma, Constitution
+# Class Name	Multiple Requirements
+CLASS:Cleric	PREMULT:1,[PRECLASS:1,Cleric=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Druid		DESC:The druid uses the natural world’s magic to bolster her and her allies’ strength while calling pain down upon enemies. Wisdom, 2nd Constitution, Dexterity
-CLASS:Druid		DEFINE:DruidCL|0	BONUS:VAR|DruidCL|classlevel()	BONUS:HP|CURRENTMAX|8*DruidCL	ABILITY:CLASS|AUTOMATIC|Druid
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR					Description
+CLASS:Druid		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Druid	DEFINE:DruidCL|0	BONUS:HP|CURRENTMAX|8*DruidCL	BONUS:VAR|DruidCL|classlevel()	DESC:The druid uses the natural world's magic to bolster her and her allies' strength while calling pain down upon enemies. Wisdom, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Druid		PREMULT:1,[PRECLASS:1,Druid=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Fighter	DESC:The fighter is a master of weapons, martial techniques, and powerful attack combinations. Dexterity or Strength, 2nd Constitution
-CLASS:Fighter	DEFINE:FighterCL|0	BONUS:VAR|FighterCL|classlevel()	BONUS:HP|CURRENTMAX|10*FighterCL	ABILITY:CLASS|AUTOMATIC|Fighter
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Fighter	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Fighter	DEFINE:FighterCL|0	BONUS:HP|CURRENTMAX|10*FighterCL	BONUS:VAR|FighterCL|classlevel()	DESC:The fighter is a master of weapons, martial techniques, and powerful attack combinations. Dexterity or Strength, 2nd Constitution
+# Class Name	Multiple Requirements
+CLASS:Fighter	PREMULT:1,[PRECLASS:1,Fighter=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Monk		DESC:The monk spins the secrets of martial arts into dazzling displays of battlefield prowess. Dexterity or Strength, 2nd Constitution, Wisdom
-CLASS:Monk		DEFINE:MonkCL|0	BONUS:VAR|MonkCL|classlevel()	BONUS:HP|CURRENTMAX|10*MonkCL	ABILITY:CLASS|AUTOMATIC|Monk
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
+CLASS:Monk		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Monk	DEFINE:MonkCL|0	BONUS:HP|CURRENTMAX|10*MonkCL	BONUS:VAR|MonkCL|classlevel()	DESC:The monk spins the secrets of martial arts into dazzling displays of battlefield prowess. Dexterity or Strength, 2nd Constitution, Wisdom
+# Class Name	Multiple Requirements
+CLASS:Monk		PREMULT:1,[PRECLASS:1,Monk=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Paladin	DESC:The paladin is a champion of her deity who uses divine power to enhance her heroics and protect her allies. Strength, 2nd Charisma, Constitution
-CLASS:Paladin	DEFINE:PaladinCL|0	BONUS:VAR|PaladinCL|classlevel()	BONUS:HP|CURRENTMAX|10*PaladinCL	ABILITY:CLASS|AUTOMATIC|Paladin
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Paladin	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Paladin	DEFINE:PaladinCL|0	BONUS:HP|CURRENTMAX|10*PaladinCL	BONUS:VAR|PaladinCL|classlevel()	DESC:The paladin is a champion of her deity who uses divine power to enhance her heroics and protect her allies. Strength, 2nd Charisma, Constitution
+# Class Name	Multiple Requirements
+CLASS:Paladin	PREMULT:1,[PRECLASS:1,Paladin=1],[!PRECLASS:1,TYPE=Class]
 ###Block: Class Features
-1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Code of Conduct		
-1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ The Paladin’s Code		
-1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Deific Weapon			
-1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Retributive Strike		
-1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Champion Powers		
-1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Paladin Feats			
-2	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Skill Feats		
-3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Righteous Ally		
-3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ General Feats		
-3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Skill Increases		
-5	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Weapon Expertise	
-7	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Armored Fortitude	
-9	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Holy Smite		
-11	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Aura of Justice	
-13	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Armor Mastery		
-15	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Weapon Mastery		
-17	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Legendary Armor	
-19	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Hero’s Defiance	
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Code of Conduct
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ The Paladin's Code
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Deific Weapon
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Retributive Strike
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Champion Powers
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Paladin Feats
+2	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Skill Feats
+3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Righteous Ally
+3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ General Feats
+3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Skill Increases
+5	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Weapon Expertise
+7	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Armored Fortitude
+9	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Holy Smite
+11	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Aura of Justice
+13	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Armor Mastery
+15	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Weapon Mastery
+17	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Legendary Armor
+19	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Hero's Defiance
 
-CLASS:Ranger	DESC:The ranger is a master of using his surroundings, including traps and animal allies, to harry enemies. Dexterity or Strength, 2nd Constitution, Wisdom
-CLASS:Ranger	DEFINE:RangerCL|0	BONUS:VAR|RangerCL|classlevel()	BONUS:HP|CURRENTMAX|10*RangerCL	ABILITY:CLASS|AUTOMATIC|Ranger
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Ranger	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Ranger	DEFINE:RangerCL|0	BONUS:HP|CURRENTMAX|10*RangerCL	BONUS:VAR|RangerCL|classlevel()	DESC:The ranger is a master of using his surroundings, including traps and animal allies, to harry enemies. Dexterity or Strength, 2nd Constitution, Wisdom
+# Class Name	Multiple Requirements
+CLASS:Ranger	PREMULT:1,[PRECLASS:1,Ranger=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Rogue		DESC:The rogue is a multitalented master of skullduggery who strikes when enemies least expect it. Dexterity, 2nd Charisma, Constitution
-CLASS:Rogue		DEFINE:RogueCL|0	BONUS:VAR|RogueCL|classlevel()	BONUS:HP|CURRENTMAX|8*RogueCL	ABILITY:CLASS|AUTOMATIC|Rogue
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR					Description
+CLASS:Rogue		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Rogue	DEFINE:RogueCL|0	BONUS:HP|CURRENTMAX|8*RogueCL	BONUS:VAR|RogueCL|classlevel()	DESC:The rogue is a multitalented master of skullduggery who strikes when enemies least expect it. Dexterity, 2nd Charisma, Constitution
+# Class Name	Multiple Requirements
+CLASS:Rogue		PREMULT:1,[PRECLASS:1,Rogue=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Sorcerer	DESC:The sorcerer’s magical might flows through her blood and manifests as fantastic spells and abilities. Charisma, 2nd Dexterity, Constitution
-CLASS:Sorcerer	DEFINE:SorcererCL|0	BONUS:VAR|SorcererCL|classlevel()	BONUS:HP|CURRENTMAX|6*SorcererCL	ABILITY:CLASS|AUTOMATIC|Sorcerer
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Sorcerer	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Sorcerer	DEFINE:SorcererCL|0	BONUS:HP|CURRENTMAX|6*SorcererCL	BONUS:VAR|SorcererCL|classlevel()	DESC:The sorcerer's magical might flows through her blood and manifests as fantastic spells and abilities. Charisma, 2nd Dexterity, Constitution
+# Class Name	Multiple Requirements
+CLASS:Sorcerer	PREMULT:1,[PRECLASS:1,Sorcerer=1],[!PRECLASS:1,TYPE=Class]
 
-CLASS:Wizard	DESC:The wizard is an eminent scholar whose reservoirs of arcane knowledge power his wondrous spells and abilities. Intelligence, 2nd Dexterity, Constitution
-CLASS:Wizard	DEFINE:WizardCL|0	BONUS:VAR|WizardCL|classlevel()	BONUS:HP|CURRENTMAX|6*WizardCL	ABILITY:CLASS|AUTOMATIC|Wizard
-
-
-
-
-
-
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Wizard	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Wizard	DEFINE:WizardCL|0	BONUS:HP|CURRENTMAX|6*WizardCL	BONUS:VAR|WizardCL|classlevel()	DESC:The wizard is an eminent scholar whose reservoirs of arcane knowledge power his wondrous spells and abilities. Intelligence, 2nd Dexterity, Constitution
+# Class Name	Multiple Requirements
+CLASS:Wizard	PREMULT:1,[PRECLASS:1,Wizard=1],[!PRECLASS:1,TYPE=Class]
