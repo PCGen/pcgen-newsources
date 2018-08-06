@@ -1,0 +1,124 @@
+###Block: Armor
+
+# Light
+# Equipment Name	Required Armor Proficiency	Cost		Weight	AC Penalty Check	Modifier		Maximum DEX Bonus	Combat bonus								Modify VAR													Quality and value
+Padded Armor	PROFICIENCY:ARMOR|Light		COST:2	WT:0.1				EQMOD:Fragile	MAXDEX:5		BONUS:COMBAT|AC|1|TYPE=Armor						BONUS:VAR|BulkLight|1											QUALITY:Bulk|L
+Leather		PROFICIENCY:ARMOR|Light		COST:15	WT:1								MAXDEX:6		BONUS:COMBAT|AC|1|TYPE=Armor						BONUS:VAR|Bulk|1												QUALITY:Bulk|1
+Studded Leather	PROFICIENCY:ARMOR|Light		COST:30	WT:1		ACCHECK:-1					MAXDEX:5		BONUS:COMBAT|AC|2|TYPE=Armor						BONUS:VAR|Bulk|1												QUALITY:Bulk|1
+Chain Shirt		PROFICIENCY:ARMOR|Light		COST:45	WT:2		ACCHECK:-1		EQMOD:Noisy		MAXDEX:5		BONUS:COMBAT|AC|2|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=TAC	BONUS:VAR|Bulk|2												QUALITY:Bulk|2
+# Medium
+Hide			PROFICIENCY:ARMOR|Medium	COST:20	WT:2		ACCHECK:-3					MAXDEX:4		BONUS:COMBAT|AC|3|TYPE=Armor						BONUS:VAR|Bulk|2												QUALITY:Bulk|2
+Scale Mail		PROFICIENCY:ARMOR|Medium	COST:35	WT:2		ACCHECK:-2					MAXDEX:4		BONUS:COMBAT|AC|3|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=TAC	BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2						QUALITY:Bulk|2
+Chain Mail		PROFICIENCY:ARMOR|Medium	COST:60	WT:2		ACCHECK:-3		EQMOD:Noisy		MAXDEX:3		BONUS:COMBAT|AC|4|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=TAC	BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2						QUALITY:Bulk|2
+Breastplate		PROFICIENCY:ARMOR|Medium	COST:80	WT:2		ACCHECK:-4		EQMOD:Clumsy	MAXDEX:3		BONUS:COMBAT|AC|4|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=TAC	BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2	BONUS:VAR|ReflexSave_Cap|3	QUALITY:Bulk|2
+# Heavy Armor
+Splint Mail		PROFICIENCY:ARMOR|HEavy		COST:125	WT:3		ACCHECK:-3		EQMOD:Clumsy	MAXDEX:2		BONUS:COMBAT|AC|5|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=TAC	BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3	BONUS:VAR|ReflexSave_Cap|2	QUALITY:Bulk|3
+Half-Plate		PROFICIENCY:ARMOR|HEavy		COST:175	WT:3		ACCHECK:-4					MAXDEX:2		BONUS:COMBAT|AC|5|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=TAC	BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3						QUALITY:Bulk|3
+Full Plate		PROFICIENCY:ARMOR|HEavy		COST:300	WT:3		ACCHECK:-5		EQMOD:Clumsy	MAXDEX:1		BONUS:COMBAT|AC|6|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=TAC	BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3	BONUS:VAR|ReflexSave_Cap|2	QUALITY:Bulk|3
+
+###Block Shield
+# Equipment Name		Required Shield Proficiency	Cost		Weight	AC Penalty Check	Combat bonus									Modify VAR			Quality and value
+Light Wooden Shield	PROFICIENCY:SHIELD|Light	COST:5	WT:0.1	ACCHECK:-1		BONUS:COMBAT|AC|1|TYPE=Shield	BONUS:COMBAT|AC|1|TYPE=ShieldTAC	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Light Steel Shield	PROFICIENCY:SHIELD|Light	COST:10	WT:0.1	ACCHECK:-1		BONUS:COMBAT|AC|1|TYPE=Shield	BONUS:COMBAT|AC|1|TYPE=ShieldTAC	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Heavy wooden shield	PROFICIENCY:SHIELD|Heavy	COST:10	WT:1		ACCHECK:-1		BONUS:COMBAT|AC|2|TYPE=Shield	BONUS:COMBAT|AC|2|TYPE=ShieldTAC	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Heavy steel shield	PROFICIENCY:SHIELD|Heavy	COST:20	WT:1		ACCHECK:-1		BONUS:COMBAT|AC|2|TYPE=Shield	BONUS:COMBAT|AC|2|TYPE=ShieldTAC	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+
+###Block:
+# 6-4 Simple Melee Weapons
+# Equipment Name		Required Weapon Proficiency			Type																			Cost		Weight	Slot Needed	Damage	Modifier											Range		Modify VAR			Quality and value
+Club				PROFICIENCY:WEAPON|Club				TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Ranged.Thrown.Weapon Group ~ Club.Thrown 10					COST:0			SLOTS:1	DAMAGE:1d6	EQMOD:Club.Thrown 10
+Dagger			PROFICIENCY:WEAPON|Dagger			TYPE:Piercing	TYPE:Weapon.Melee.Simple Melee.Ranged.Thrown.Weapon Group ~ Knife.Agile.Finesse.Thrown 10.Versatile S	COST:2			SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Agile.Finesse.Thrown 10.Versatile S
+Fist				PROFICIENCY:WEAPON|Unarmed Strike		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Brawling.Agile.Finesse.Nonlethal.Unarmed			COST:0			SLOTS:1	DAMAGE:1d4	EQMOD:Brawling.Agile.Finesse.Nonlethal.Unarmed
+Gauntlet			PROFICIENCY:WEAPON|Gauntlet			TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Brawling.Agile.Free-hand						COST:2			SLOTS:1	DAMAGE:1d4	EQMOD:Brawling.Agile.Free-hand
+Light Mace			PROFICIENCY:WEAPON|Light Mace			TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Club.Agile.Finesse.Shove						COST:4			SLOTS:1	DAMAGE:1d4	EQMOD:Club.Agile.Finesse.Shove
+Longspear			PROFICIENCY:WEAPON|Longspear			TYPE:Piercing	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Spear.Reach								COST:5			SLOTS:2	DAMAGE:1d8	EQMOD:Spear.Reach
+Mace				PROFICIENCY:WEAPON|Mace				TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Club.Shove								COST:12			SLOTS:1	DAMAGE:1d6	EQMOD:Club.Shove
+Morningstar			PROFICIENCY:WEAPON|Morningstar		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Club.Versatile P							COST:10			SLOTS:1	DAMAGE:1d6	EQMOD:Club.Versatile P
+Sickle			PROFICIENCY:WEAPON|Sickle			TYPE:Slashing	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Knife.Agile.Finesse.Trip						COST:2			SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Agile.Finesse.Trip
+Spear				PROFICIENCY:WEAPON|Spear			TYPE:Piercing	TYPE:Weapon.Melee.Simple Melee.Ranged.Thrown.Weapon Group ~ Spear.Thrown 20					COST:1			SLOTS:1	DAMAGE:1d6	EQMOD:Spear.Thrown 20
+Spiked gauntlet		PROFICIENCY:WEAPON|Gauntlet			TYPE:Piercing	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Brawling.Agile.Free-hand						COST:3			SLOTS:1	DAMAGE:1d4	EQMOD:Brawling.Agile.Free-hand
+Staff				PROFICIENCY:WEAPON|Staff			TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple Melee.Weapon Group ~ Club.Two-hand d8							COST:0			SLOTS:1	DAMAGE:1d4	EQMOD:Club.Two-hand d8
+
+# 6-5 Martial Melee Weapons
+Bastard sword		PROFICIENCY:WEAPON|Bastard sword		TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Two-hand d12					COST:35	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Sword.Two-hand d12										BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Battle axe			PROFICIENCY:WEAPON|Battle axe			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep							COST:12	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Axe.Sweep												BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Bo staff			PROFICIENCY:WEAPON|Bo staff			TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Club.Monk.Parry.Reach.Trip				COST:2	WT:1		SLOTS:2	DAMAGE:1d8	EQMOD:Club.Monk.Parry.Reach.Trip									BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Falchion			PROFICIENCY:WEAPON|Falchion			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Forceful.Sweep					COST:30	WT:1		SLOTS:2	DAMAGE:1d10	EQMOD:Sword.Forceful.Sweep										BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Flail				PROFICIENCY:WEAPON|Flail			TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Flail.Disarm.Sweep.Trip				COST:8	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Flail.Disarm.Sweep.Trip										BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Glaive			PROFICIENCY:WEAPON|Glaive			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Deadly d8.Forceful.Reach			COST:10	WT:2		SLOTS:2	DAMAGE:1d8	EQMOD:Polearm.Deadly d8.Forceful.Reach								BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Greataxe			PROFICIENCY:WEAPON|Greataxe			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep							COST:22	WT:2		SLOTS:2	DAMAGE:1d12	EQMOD:Axe.Sweep												BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Greatclub			PROFICIENCY:WEAPON|Greatclub			TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Club.Backswing.Shove					COST:12	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Club.Backswing.Shove										BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Greatpick			PROFICIENCY:WEAPON|Greatpick			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Fatal d12						COST:14	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Pick.Fatal d12											BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Greatsword			PROFICIENCY:WEAPON|Greatsword			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Versatile P					COST:20	WT:2		SLOTS:2	DAMAGE:1d12	EQMOD:Sword.Versatile P											BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Guisarme			PROFICIENCY:WEAPON|Guisarme			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Trip					COST:20	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Polearm.Reach.Trip										BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Halberd			PROFICIENCY:WEAPON|Halberd			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Versatile S				COST:18	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Polearm.Reach.Versatile S									BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Hatchet			PROFICIENCY:WEAPON|Hatchet			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Axe.Agile.Sweep.Thrown 10		COST:4	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Axe.Agile.Sweep.Thrown 10									BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Heavy Shield Bash		PROFICIENCY:WEAPON|Heavy Shield Bash	TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield							COST:0	WT:0		SLOTS:1	DAMAGE:1d4	EQMOD:Shield												BONUS:VAR|Bulk|-		QUALITY:Bulk|-
+Heavy shield boss		PROFICIENCY:WEAPON|Heavy shield boss	TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to heavy shield			COST:0	WT:0		SLOTS:1	DAMAGE:1d6															BONUS:VAR|Bulk|-		QUALITY:Bulk|-
+Heavy shield spikes	PROFICIENCY:WEAPON|Heavy shield spikes	TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to heavy shield			COST:0	WT:0		SLOTS:1	DAMAGE:1d6															BONUS:VAR|Bulk|-		QUALITY:Bulk|-
+Lance				PROFICIENCY:WEAPON|Lance			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Spear.Charge.Deadly d8.Reach				COST:12	WT:2		SLOTS:2	DAMAGE:1d8	EQMOD:Spear.Charge.Deadly d8.Reach									BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Light hammer		PROFICIENCY:WEAPON|Light hammer		TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Pick.Agile.Thrown 20		COST:3	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Pick.Agile.Thrown 20								RANGE:20	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Light pick			PROFICIENCY:WEAPON|Light pick			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Agile.Fatal d8					COST:4	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Pick.Agile.Fatal d8										BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Light shield bash		PROFICIENCY:WEAPON|Light shield bash	TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile						COST:0	WT:1		SLOTS:1	DAMAGE:1d3															BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Light shield boss		PROFICIENCY:WEAPON|Light shield boss	TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile.attached to light shield								COST:4	WT:0		SLOTS:1	DAMAGE:1d4	EQMOD:Shield.Agile											BONUS:VAR|Bulk|0		QUALITY:Bulk|0
+Light shield spikes	PROFICIENCY:WEAPON|Light shield spikes	TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile.attached to light shield								COST:4	WT:0		SLOTS:1	DAMAGE:1d4	EQMOD:Shield.Agile											BONUS:VAR|Bulk|0		QUALITY:Bulk|-
+Longsword			PROFICIENCY:WEAPON|Longsword			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Versatile P											COST:10	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Sword.Versatile P											BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Main-guache			PROFICIENCY:WEAPON|Main-guache		TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Knife.Agile.Disarm.Finesse.Parry.Versatile S							COST:5	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Agile.Disarm.Finesse.Parry.Versatile S						BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Maul				PROFICIENCY:WEAPON|Maul				TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Hammer.Shove												COST:26	WT:2		SLOTS:2	DAMAGE:1d12	EQMOD:Hammer.Shove											BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Pick				PROFICIENCY:WEAPON|Pick				TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Fatal d10												COST:7	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Pick.Fatal d10											BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Ranseur			PROFICIENCY:WEAPON|Ranseur			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Disarm.Reach											COST:14	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Polearm.Disarm.Reach										BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Rapier			PROFICIENCY:WEAPON|Rapier			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Deadly d8.Disarm.Finesse									COST:15	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Sword.Deadly d8.Disarm.Finesse								BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Sap				PROFICIENCY:WEAPON|Sap				TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Club.Agile.Nonlethal											COST:1	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Club.Agile.Nonlethal										BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Scimitar			PROFICIENCY:WEAPON|Scimitar			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Forceful.Sweep											COST:11	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Sword.Forceful.Sweep										BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Scythe			PROFICIENCY:WEAPON|Scythe			TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Deadly d10.Trip										COST:18	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Polearm.Deadly d10.Trip										BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Shortsword			PROFICIENCY:WEAPON|Shortsword			TYPE:Piercing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Agile.Finesse.Versatile S									COST:9	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Sword.Agile.Finesse.Versatile S								BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Starknife			PROFICIENCY:WEAPON|Starknife			TYPE:Piercing.Ranged.Thrown	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Knife.Agile.Deadly d6.Finesse.Thrown 20.Versatile S				COST:24	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Agile.Deadly d6.Finesse.Thrown 20.Versatile S			RANGE:20	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Trident			PROFICIENCY:WEAPON|Trident			TYPE:Piercing.Ranged.Thrown	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Spear.Thrown 20										COST:13	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Spear.Thrown 20									RANGE:20	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+War flail			PROFICIENCY:WEAPON|War flail			TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Flail.Disarm.Sweep.Trip										COST:15	WT:2		SLOTS:2	DAMAGE:1d10	EQMOD:Flail.Disarm.Sweep.Trip										BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Warhammer			PROFICIENCY:WEAPON|Warhammer			TYPE:Bludgeoning			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Hammer.Shove												COST:12	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Hammer.Shove											BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Whip				PROFICIENCY:WEAPON|Whip				TYPE:Slashing			TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Flail.Disarm.Finesse.Nonlethal.Reach.Trip							COST:1	WT:1		SLOTS:1	DAMAGE:1d4	EQMOD:Flail.Disarm.Finesse.Nonlethal.Reach.Trip							BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+
+# 6-6 Simple Ranged Weapons
+Blowgun			PROFICIENCY:WEAPON|Blowgun			TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Dart.Agile.Nonlethal										COST:1	WT:0.1	SLOTS:1	DAMAGE:1d1	EQMOD:Dart.Agile.Nonlethal								RANGE:20	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Crossbow			PROFICIENCY:WEAPON|Crossbow			TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow													COST:30	WT:1		SLOTS:2	DAMAGE:1d8	EQMOD:Bow											RANGE:120	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Dart				PROFICIENCY:WEAPON|Dart				TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Agile.Thrown									COST:0.1	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Dart.Agile.Thrown									RANGE:20	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Hand crossbow		PROFICIENCY:WEAPON|Hand crossbow		TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow													COST:25	WT:0.1	SLOTS:1	DAMAGE:1d6													RANGE:60	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Heavy crossbow		PROFICIENCY:WEAPON|Heavy crossbow		TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow													COST:40	WT:2		SLOTS:2	DAMAGE:1d10													RANGE:120	BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Javelin			PROFICIENCY:WEAPON|Javelin			TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Thrown										COST:1	WT:0.1	SLOTS:1	DAMAGE:1d6													RANGE:30	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Sling				PROFICIENCY:WEAPON|Sling			TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Bludgeoning.Ranged	TYPE:Weapon Group ~ Sling.Propulsive										COST:0	WT:0.1	SLOTS:1	DAMAGE:1d6													RANGE:50	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+
+# Martial Ranged Weapons
+Composite longbow		PROFICIENCY:WEAPON|Composite longbow	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Propulsive.Volley								COST:200	WT:2		SLOTS:1	DAMAGE:1d8	EQMOD:Bow.Deadly d10.Propulsive.Volley						RANGE:100	BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Composite shortbow	PROFICIENCY:WEAPON|Composite shortbow	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Propulsive									COST:140	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Bow.Deadly d10.Propulsive							RANGE:60	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Longbow			PROFICIENCY:WEAPON|Longbow			TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Volley										COST:60	WT:2		SLOTS:1	DAMAGE:1d8	EQMOD:Bow.Deadly d10.Volley								RANGE:100	BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Shortbow			PROFICIENCY:WEAPON|Shortbow			TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10											COST:30	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Bow.Deadly d10									RANGE:60	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+
+# Uncommon Simple Melee Weapons
+Clan dagger			PROFICIENCY:WEAPON|Clan dagger		TYPE:Weapon.Melee.Simple Melee.Simple.Piercing	TYPE:Weapon Group ~ Knife.Dwarf.Parry.Versatile B									COST:25	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Dwarf.Parry.Versatile B									BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Katar				PROFICIENCY:WEAPON|Katar			TYPE:Weapon.Melee.Simple Melee.Simple.Piercing	TYPE:Weapon Group ~ Knife.Agile.Deadly d6.Monk										COST:3	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Agile.Deadly d6.Monk									BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+
+# Uncommon Martial Melee Weapons
+Dogslicer			PROFICIENCY:WEAPON|Dogslicer			TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Agile.Backstabber.Finesse.Goblin								COST:1	WT:0.1	SLOTS:1	DAMAGE:1d6															BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Elven curve blade		PROFICIENCY:WEAPON|Elven curve blade	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Elf.Finesse.Forceful										COST:38	WT:2		SLOTS:2	DAMAGE:1d8	EQMOD:Sword.Elf.Finesse.Forceful									BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Filcher's fork		PROFICIENCY:WEAPON|Filcher's fork		TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Spear.Agile.Backstabber.Deadly d6.Finesse.Halfling.Thrown 20		COST:11	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Spear.Agile.Backstabber.Deadly d6.Finesse.Halfling.Thrown 20	RANGE:20	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Gnome hooked hammer	PROFICIENCY:WEAPON|Gnome hooked hammer	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Gnome.Trip.Two-hand d10.Versatile P							COST:18	WT:1		SLOTS:1	DAMAGE:1d6	EQMOD:Hammer.Gnome.Trip.Two-hand d10.Versatile P						BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Horsechopper		PROFICIENCY:WEAPON|Horsechopper		TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Polearm.Goblin.Reach.Trip.Versatile P								COST:9	WT:2		SLOTS:2	DAMAGE:1d8	EQMOD:Polearm.Goblin.Reach.Trip.Versatile P							BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Kama				PROFICIENCY:WEAPON|Kama				TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Knife.Agile.Monk.Trip											COST:10	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Knife.Agile.Monk.Trip										BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Katana			PROFICIENCY:WEAPON|Katana			TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Versatile P											COST:20	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Sword.Versatile P											BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Kukri				PROFICIENCY:WEAPON|Kukri			TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Knife.Agile.Finesse.Trip										COST:6	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Knife.Agile.Finesse.Trip									BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Nunchaku			PROFICIENCY:WEAPON|Nunchaku			TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Club.Backswing.Disarm.Finesse.Monk								COST:2	WT:0.1	SLOTS:1	DAMAGE:1d6															BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Orc knuckle dagger	PROFICIENCY:WEAPON|Orc knuckle dagger	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Orc										COST:7	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Knife.Agile.Disarm.Orc										BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Sai				PROFICIENCY:WEAPON|Sai				TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Finesse.Monk.Versatile B							COST:6	WT:0.1	SLOTS:1	DAMAGE:1d4	EQMOD:Knife.Agile.Disarm.Finesse.Monk.Versatile B						BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Spiked chain		PROFICIENCY:WEAPON|Spiked chain		TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Flail.Disarm.Finesse.Trip										COST:28	WT:1		SLOTS:2	DAMAGE:1d8	EQMOD:Flail.Disarm.Finesse.Trip									BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Temple sword		PROFICIENCY:WEAPON|Temple sword		TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Monk.Trip												COST:14	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Sword.Monk.Trip											BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+
+# Uncommon Exotic Melee Weapons
+Dwarven waraxe		PROFICIENCY:WEAPON|Dwarven waraxe		TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Axe.Dwarf.Sweep.Two-hand d12									COST:25	WT:2		SLOTS:1	DAMAGE:1d8	EQMOD:Axe.Dwarf.Sweep.Two-hand d12									BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Gnome flickmace		PROFICIENCY:WEAPON|Gnome flickmace		TYPE:Weapon.Melee.Exotic Melee.Exotic.Bludgeoning	TYPE:Weapon Group ~ Flail.Gnome.Reach											COST:24	WT:2		SLOTS:1	DAMAGE:1d8	EQMOD:Flail.Gnome.Reach											BONUS:VAR|Bulk|2		QUALITY:Bulk|2
+Orc necksplitter		PROFICIENCY:WEAPON|Orc necksplitter		TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Knife.Forceful.Orc.Versatile P									COST:21	WT:1		SLOTS:1	DAMAGE:1d8	EQMOD:Knife.Forceful.Orc.Versatile P								BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Sawtooth sabre		PROFICIENCY:WEAPON|Sawtooth sabre		TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Sword.Agile.Finesse.Twin										COST:50	WT:0.1	SLOTS:1	DAMAGE:1d6	EQMOD:Sword.Agile.Finesse.Twin									BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+
+# Uncommon Martial Ranged Weapons
+Halfling sling staff	PROFICIENCY:WEAPON|Halfling sling staff	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Bludgeoning.Ranged	TYPE:Weapon Group ~ Sling.Halfling.Propulsive									COST:50	WT:1		SLOTS:2	DAMAGE:1d10	EQMOD:Sling.Halfling.Propulsive							RANGE:80	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Shuriken			PROFICIENCY:WEAPON|Shuriken			TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Agile.Monk.Thrown 20								COST:0.1	WT:0		SLOTS:1	DAMAGE:1d4													RANGE:20	BONUS:VAR|Bulk|0		QUALITY:Bulk|-
+
