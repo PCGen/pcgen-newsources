@@ -265,6 +265,43 @@ CATEGORY=Internal|Skill Tracker.MOD											DEFINE:Proficiency_Stealth|0	DEFIN
 CATEGORY=Internal|Skill Tracker.MOD											DEFINE:Proficiency_Survival|0	DEFINE:Modifier_Survival|0																										BONUS:SKILLRANK|Survival|Proficiency_Survival|TYPE=Proficiency		BONUS:VAR|Proficiency_Survival|TL+if(Modifier_Survival==0,-2,0)+if(Modifier_Survival==1,0,0)+if(Modifier_Survival==2,1,0)+if(Modifier_Survival==3,2,0)+if(Modifier_Survival>=4,3,0)
 CATEGORY=Internal|Skill Tracker.MOD											DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0																										BONUS:SKILLRANK|Thievery|Proficiency_Thievery|TYPE=Proficiency		BONUS:VAR|Proficiency_Thievery|TL+if(Modifier_Thievery==0,-2,0)+if(Modifier_Thievery==1,0,0)+if(Modifier_Thievery==2,1,0)+if(Modifier_Thievery==3,2,0)+if(Modifier_Thievery>=4,3,0)
 
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Acrobatics|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Arcana|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Athletics|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Crafting|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Deception|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Diplomacy|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Intimidation|0	
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Lore|0			
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Medicine|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Nature|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Occultism|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Performance|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Religion|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Society|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Stealth|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Survival|0		
+CATEGORY=Internal|Default.MOD	DEFINE:SignatureSkill_Thievery|0		
+
+Signature Skill ~ Acrobatics				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Acrobatics						BONUS:VAR|SignatureSkill_Acrobatics|1|TYPE=Base
+Signature Skill ~ Arcana				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Arcana						BONUS:VAR|SignatureSkill_Arcana|1|TYPE=Base
+Signature Skill ~ Athletics				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Athletics						BONUS:VAR|SignatureSkill_Athletics|1|TYPE=Base
+Signature Skill ~ Crafting				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Crafting						BONUS:VAR|SignatureSkill_Crafting|1|TYPE=Base
+Signature Skill ~ Deception				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Deception						BONUS:VAR|SignatureSkill_Deception|1|TYPE=Base
+Signature Skill ~ Diplomacy				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Diplomacy						BONUS:VAR|SignatureSkill_Diplomacy|1|TYPE=Base
+Signature Skill ~ Intimidation			CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Intimidation					BONUS:VAR|SignatureSkill_Intimidation|1|TYPE=Base
+Signature Skill ~ Lore					CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Lore							BONUS:VAR|SignatureSkill_Lore|1|TYPE=Base
+Signature Skill ~ Medicine				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Medicine						BONUS:VAR|SignatureSkill_Medicine|1|TYPE=Base
+Signature Skill ~ Nature				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Nature						BONUS:VAR|SignatureSkill_Nature|1|TYPE=Base
+Signature Skill ~ Occultism				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Occultism						BONUS:VAR|SignatureSkill_Occultism|1|TYPE=Base
+Signature Skill ~ Performance				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Performance					BONUS:VAR|SignatureSkill_Performance|1|TYPE=Base
+Signature Skill ~ Religion				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Religion						BONUS:VAR|SignatureSkill_Religion|1|TYPE=Base
+Signature Skill ~ Society				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Society						BONUS:VAR|SignatureSkill_Society|1|TYPE=Base
+Signature Skill ~ Stealth				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Stealth						BONUS:VAR|SignatureSkill_Stealth|1|TYPE=Base
+Signature Skill ~ Survival				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Survival						BONUS:VAR|SignatureSkill_Survival|1|TYPE=Base
+Signature Skill ~ Thievery				CATEGORY:Proficiency	TYPE:Signature Skill.Signature Skill Thievery						BONUS:VAR|SignatureSkill_Thievery|1|TYPE=Base
+
+
 ###Block:
 
 
@@ -306,67 +343,67 @@ Trained in Survival				CATEGORY:Proficiency	TYPE:Trained Skill Proficiency.Skill
 Trained in Thievery				CATEGORY:Proficiency	TYPE:Trained Skill Proficiency.Skill Proficiency.Skill Proficiency Thievery.Trained in Thievery																																BONUS:VAR|Modifier_Thievery|1|TYPE=Rank
 
 
-Expert in Acrobatics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Acrobatics.Expert in Acrobatics																																			BONUS:VAR|Modifier_Acrobatics|2|TYPE=Rank
-Expert in Arcana					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Arcana.Expert in Arcana																																					BONUS:VAR|Modifier_Arcana|2|TYPE=Rank
-Expert in Athletics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Athletics.Expert in Athletics																																				BONUS:VAR|Modifier_Athletics|2|TYPE=Rank
-Expert in Crafting				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Crafting.Expert in Crafting																																				BONUS:VAR|Modifier_Crafting|2|TYPE=Rank
-Expert in Deception				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Deception.Expert in Deception																																				BONUS:VAR|Modifier_Deception|2|TYPE=Rank
-Expert in Diplomacy				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Diplomacy.Expert in Diplomacy																																				BONUS:VAR|Modifier_Diplomacy|2|TYPE=Rank
-Expert in Intimidation				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Intimidation.Expert in Intimidation																																			BONUS:VAR|Modifier_Intimidation|2|TYPE=Rank
-Expert in Lore					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Lore.Expert in Lore																																					BONUS:VAR|Modifier_Lore|2|TYPE=Rank
-Expert in Medicine				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Medicine.Expert in Medicine																																				BONUS:VAR|Modifier_Medicine|2|TYPE=Rank
-Expert in Nature					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Nature.Expert in Nature																																					BONUS:VAR|Modifier_Nature|2|TYPE=Rank
-Expert in Occultism				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Occultism.Expert in Occultism																																				BONUS:VAR|Modifier_Occultism|2|TYPE=Rank
-Expert in Performance				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Performance.Expert in Performance																																			BONUS:VAR|Modifier_Performance|2|TYPE=Rank
-Expert in Religion				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Religion.Expert in Religion																																				BONUS:VAR|Modifier_Religion|2|TYPE=Rank
-Expert in Society					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Society.Expert in Society																																				BONUS:VAR|Modifier_Society|2|TYPE=Rank
-Expert in Stealth					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Stealth.Expert in Stealth																																				BONUS:VAR|Modifier_Stealth|2|TYPE=Rank
-Expert in Survival				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Survival.Expert in Survival																																				BONUS:VAR|Modifier_Survival|2|TYPE=Rank
-Expert in Thievery				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Thievery.Expert in Thievery																																				BONUS:VAR|Modifier_Thievery|2|TYPE=Rank
+Expert in Acrobatics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Acrobatics.Expert in Acrobatics		PREVARGTEQ:Modifier_Acrobatics,1																																	BONUS:VAR|Modifier_Acrobatics|2|TYPE=Rank
+Expert in Arcana					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Arcana.Expert in Arcana				PREVARGTEQ:Modifier_Arcana,1																																	BONUS:VAR|Modifier_Arcana|2|TYPE=Rank
+Expert in Athletics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Athletics.Expert in Athletics			PREVARGTEQ:Modifier_Athletics,1																																	BONUS:VAR|Modifier_Athletics|2|TYPE=Rank
+Expert in Crafting				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Crafting.Expert in Crafting			PREVARGTEQ:Modifier_Crafting,1																																	BONUS:VAR|Modifier_Crafting|2|TYPE=Rank
+Expert in Deception				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Deception.Expert in Deception			PREVARGTEQ:Modifier_Deception,1																																	BONUS:VAR|Modifier_Deception|2|TYPE=Rank
+Expert in Diplomacy				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Diplomacy.Expert in Diplomacy			PREVARGTEQ:Modifier_Diplomacy,1																																	BONUS:VAR|Modifier_Diplomacy|2|TYPE=Rank
+Expert in Intimidation				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Intimidation.Expert in Intimidation		PREVARGTEQ:Modifier_Intimidation,1																																	BONUS:VAR|Modifier_Intimidation|2|TYPE=Rank
+Expert in Lore					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Lore.Expert in Lore				PREVARGTEQ:Modifier_Lore,1																																	BONUS:VAR|Modifier_Lore|2|TYPE=Rank
+Expert in Medicine				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Medicine.Expert in Medicine			PREVARGTEQ:Modifier_Medicine,1																																	BONUS:VAR|Modifier_Medicine|2|TYPE=Rank
+Expert in Nature					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Nature.Expert in Nature				PREVARGTEQ:Modifier_Nature,1																																	BONUS:VAR|Modifier_Nature|2|TYPE=Rank
+Expert in Occultism				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Occultism.Expert in Occultism			PREVARGTEQ:Modifier_Occultism,1																																	BONUS:VAR|Modifier_Occultism|2|TYPE=Rank
+Expert in Performance				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Performance.Expert in Performance		PREVARGTEQ:Modifier_Performance,1																																	BONUS:VAR|Modifier_Performance|2|TYPE=Rank
+Expert in Religion				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Religion.Expert in Religion			PREVARGTEQ:Modifier_Religion,1																																	BONUS:VAR|Modifier_Religion|2|TYPE=Rank
+Expert in Society					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Society.Expert in Society			PREVARGTEQ:Modifier_Society,1																																	BONUS:VAR|Modifier_Society|2|TYPE=Rank
+Expert in Stealth					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Stealth.Expert in Stealth			PREVARGTEQ:Modifier_Stealth,1																																	BONUS:VAR|Modifier_Stealth|2|TYPE=Rank
+Expert in Survival				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Survival.Expert in Survival			PREVARGTEQ:Modifier_Survival,1																																	BONUS:VAR|Modifier_Survival|2|TYPE=Rank
+Expert in Thievery				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Thievery.Expert in Thievery			PREVARGTEQ:Modifier_Thievery,1																																	BONUS:VAR|Modifier_Thievery|2|TYPE=Rank
 
 
-Mastery in Acrobatics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Acrobatics.Mastery in Acrobatics																																			BONUS:VAR|Modifier_Acrobatics|3|TYPE=Rank
-Mastery in Arcana					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Arcana.Mastery in Arcana																																					BONUS:VAR|Modifier_Arcana|3|TYPE=Rank
-Mastery in Athletics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Athletics.Mastery in Athletics																																				BONUS:VAR|Modifier_Athletics|3|TYPE=Rank
-Mastery in Crafting				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Crafting.Mastery in Crafting																																				BONUS:VAR|Modifier_Crafting|3|TYPE=Rank
-Mastery in Deception				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Deception.Mastery in Deception																																				BONUS:VAR|Modifier_Deception|3|TYPE=Rank
-Mastery in Diplomacy				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Diplomacy.Mastery in Diplomacy																																				BONUS:VAR|Modifier_Diplomacy|3|TYPE=Rank
-Mastery in Intimidation				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Intimidation.Mastery in Intimidation																																			BONUS:VAR|Modifier_Intimidation|3|TYPE=Rank
-Mastery in Lore					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Lore.Mastery in Lore																																					BONUS:VAR|Modifier_Lore|3|TYPE=Rank
-Mastery in Medicine				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Medicine.Mastery in Medicine																																				BONUS:VAR|Modifier_Medicine|3|TYPE=Rank
-Mastery in Nature					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Nature.Mastery in Nature																																					BONUS:VAR|Modifier_Nature|3|TYPE=Rank
-Mastery in Occultism				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Occultism.Mastery in Occultism																																				BONUS:VAR|Modifier_Occultism|3|TYPE=Rank
-Mastery in Performance				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Performance.Mastery in Performance																																			BONUS:VAR|Modifier_Performance|3|TYPE=Rank
-Mastery in Religion				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Religion.Mastery in Religion																																				BONUS:VAR|Modifier_Religion|3|TYPE=Rank
-Mastery in Society				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Society.Mastery in Society																																				BONUS:VAR|Modifier_Society|3|TYPE=Rank
-Mastery in Stealth				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Stealth.Mastery in Stealth																																				BONUS:VAR|Modifier_Stealth|3|TYPE=Rank
-Mastery in Survival				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Survival.Mastery in Survival																																				BONUS:VAR|Modifier_Survival|3|TYPE=Rank
-Mastery in Thievery				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Thievery.Mastery in Thievery																																				BONUS:VAR|Modifier_Thievery|3|TYPE=Rank
+Mastery in Acrobatics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Acrobatics.Mastery in Acrobatics		PREVARGTEQ:Modifier_Acrobatics,2		PREVARGTEQ:SignatureSkill_Acrobatics,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Acrobatics|3|TYPE=Rank
+Mastery in Arcana					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Arcana.Mastery in Arcana				PREVARGTEQ:Modifier_Arcana,2			PREVARGTEQ:SignatureSkill_Arcana,1			PREPCLEVEL:MIN=7																															BONUS:VAR|Modifier_Arcana|3|TYPE=Rank
+Mastery in Athletics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Athletics.Mastery in Athletics			PREVARGTEQ:Modifier_Athletics,2		PREVARGTEQ:SignatureSkill_Athletics,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Athletics|3|TYPE=Rank
+Mastery in Crafting				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Crafting.Mastery in Crafting			PREVARGTEQ:Modifier_Crafting,2		PREVARGTEQ:SignatureSkill_Crafting,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Crafting|3|TYPE=Rank
+Mastery in Deception				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Deception.Mastery in Deception			PREVARGTEQ:Modifier_Deception,2		PREVARGTEQ:SignatureSkill_Deception,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Deception|3|TYPE=Rank
+Mastery in Diplomacy				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Diplomacy.Mastery in Diplomacy			PREVARGTEQ:Modifier_Diplomacy,2		PREVARGTEQ:SignatureSkill_Diplomacy,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Diplomacy|3|TYPE=Rank
+Mastery in Intimidation				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Intimidation.Mastery in Intimidation		PREVARGTEQ:Modifier_Intimidation,2		PREVARGTEQ:SignatureSkill_Intimidation,1		PREPCLEVEL:MIN=7																															BONUS:VAR|Modifier_Intimidation|3|TYPE=Rank
+Mastery in Lore					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Lore.Mastery in Lore				PREVARGTEQ:Modifier_Lore,2			PREVARGTEQ:SignatureSkill_Lore,1			PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Lore|3|TYPE=Rank
+Mastery in Medicine				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Medicine.Mastery in Medicine			PREVARGTEQ:Modifier_Medicine,2		PREVARGTEQ:SignatureSkill_Medicine,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Medicine|3|TYPE=Rank
+Mastery in Nature					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Nature.Mastery in Nature				PREVARGTEQ:Modifier_Nature,2			PREVARGTEQ:SignatureSkill_Nature,1			PREPCLEVEL:MIN=7																															BONUS:VAR|Modifier_Nature|3|TYPE=Rank
+Mastery in Occultism				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Occultism.Mastery in Occultism			PREVARGTEQ:Modifier_Occultism,2		PREVARGTEQ:SignatureSkill_Occultism,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Occultism|3|TYPE=Rank
+Mastery in Performance				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Performance.Mastery in Performance		PREVARGTEQ:Modifier_Performance,2		PREVARGTEQ:SignatureSkill_Performance,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Performance|3|TYPE=Rank
+Mastery in Religion				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Religion.Mastery in Religion			PREVARGTEQ:Modifier_Religion,2		PREVARGTEQ:SignatureSkill_Religion,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Religion|3|TYPE=Rank
+Mastery in Society				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Society.Mastery in Society			PREVARGTEQ:Modifier_Society,2			PREVARGTEQ:SignatureSkill_Society,1			PREPCLEVEL:MIN=7																															BONUS:VAR|Modifier_Society|3|TYPE=Rank
+Mastery in Stealth				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Stealth.Mastery in Stealth			PREVARGTEQ:Modifier_Stealth,2			PREVARGTEQ:SignatureSkill_Stealth,1			PREPCLEVEL:MIN=7																															BONUS:VAR|Modifier_Stealth|3|TYPE=Rank
+Mastery in Survival				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Survival.Mastery in Survival			PREVARGTEQ:Modifier_Survival,2		PREVARGTEQ:SignatureSkill_Survival,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Survival|3|TYPE=Rank
+Mastery in Thievery				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Thievery.Mastery in Thievery			PREVARGTEQ:Modifier_Thievery,2		PREVARGTEQ:SignatureSkill_Thievery,1		PREPCLEVEL:MIN=7																																BONUS:VAR|Modifier_Thievery|3|TYPE=Rank
 
 
-Legendary in Acrobatics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Acrobatics.Legendary in Acrobatics																																			BONUS:VAR|Modifier_Acrobatics|4|TYPE=Rank
-Legendary in Arcana				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Arcana.Legendary in Arcana																																				BONUS:VAR|Modifier_Arcana|4|TYPE=Rank
-Legendary in Athletics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Athletics.Legendary in Athletics																																			BONUS:VAR|Modifier_Athletics|4|TYPE=Rank
-Legendary in Crafting				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Crafting.Legendary in Crafting																																				BONUS:VAR|Modifier_Crafting|4|TYPE=Rank
-Legendary in Deception				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Deception.Legendary in Deception																																			BONUS:VAR|Modifier_Deception|4|TYPE=Rank
-Legendary in Diplomacy				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Diplomacy.Legendary in Diplomacy																																			BONUS:VAR|Modifier_Diplomacy|4|TYPE=Rank
-Legendary in Intimidation			CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Intimidation.Legendary in Intimidation																																		BONUS:VAR|Modifier_Intimidation|4|TYPE=Rank
-Legendary in Lore					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Lore.Legendary in Lore																																					BONUS:VAR|Modifier_Lore|4|TYPE=Rank
-Legendary in Medicine				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Medicine.Legendary in Medicine																																				BONUS:VAR|Modifier_Medicine|4|TYPE=Rank
-Legendary in Nature				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Nature.Legendary in Nature																																				BONUS:VAR|Modifier_Nature|4|TYPE=Rank
-Legendary in Occultism				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Occultism.Legendary in Occultism																																			BONUS:VAR|Modifier_Occultism|4|TYPE=Rank
-Legendary in Performance			CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Performance.Legendary in Performance																																			BONUS:VAR|Modifier_Performance|4|TYPE=Rank
-Legendary in Religion				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Religion.Legendary in Religion																																				BONUS:VAR|Modifier_Religion|4|TYPE=Rank
-Legendary in Society				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Society.Legendary in Society																																				BONUS:VAR|Modifier_Society|4|TYPE=Rank
-Legendary in Stealth				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Stealth.Legendary in Stealth																																				BONUS:VAR|Modifier_Stealth|4|TYPE=Rank
-Legendary in Survival				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Survival.Legendary in Survival																																				BONUS:VAR|Modifier_Survival|4|TYPE=Rank
-Legendary in Thievery				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Thievery.Legendary in Thievery																																				BONUS:VAR|Modifier_Thievery|4|TYPE=Rank
-
-
-
+Legendary in Acrobatics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Acrobatics.Legendary in Acrobatics		PREVARGTEQ:Modifier_Acrobatics,3		PREVARGTEQ:SignatureSkill_Acrobatics,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Acrobatics|4|TYPE=Rank
+Legendary in Arcana				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Arcana.Legendary in Arcana			PREVARGTEQ:Modifier_Arcana,3			PREVARGTEQ:SignatureSkill_Arcana,1			PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Arcana|4|TYPE=Rank
+Legendary in Athletics				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Athletics.Legendary in Athletics		PREVARGTEQ:Modifier_Athletics,3		PREVARGTEQ:SignatureSkill_Athletics,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Athletics|4|TYPE=Rank
+Legendary in Crafting				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Crafting.Legendary in Crafting			PREVARGTEQ:Modifier_Crafting,3		PREVARGTEQ:SignatureSkill_Crafting,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Crafting|4|TYPE=Rank
+Legendary in Deception				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Deception.Legendary in Deception		PREVARGTEQ:Modifier_Deception,3		PREVARGTEQ:SignatureSkill_Deception,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Deception|4|TYPE=Rank
+Legendary in Diplomacy				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Diplomacy.Legendary in Diplomacy		PREVARGTEQ:Modifier_Diplomacy,3		PREVARGTEQ:SignatureSkill_Diplomacy,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Diplomacy|4|TYPE=Rank
+Legendary in Intimidation			CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Intimidation.Legendary in Intimidation	PREVARGTEQ:Modifier_Intimidation,3		PREVARGTEQ:SignatureSkill_Intimidation,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Intimidation|4|TYPE=Rank
+Legendary in Lore					CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Lore.Legendary in Lore				PREVARGTEQ:Modifier_Lore,3			PREVARGTEQ:SignatureSkill_Lore,1			PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Lore|4|TYPE=Rank
+Legendary in Medicine				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Medicine.Legendary in Medicine			PREVARGTEQ:Modifier_Medicine,3		PREVARGTEQ:SignatureSkill_Medicine,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Medicine|4|TYPE=Rank
+Legendary in Nature				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Nature.Legendary in Nature			PREVARGTEQ:Modifier_Nature,3			PREVARGTEQ:SignatureSkill_Nature,1			PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Nature|4|TYPE=Rank
+Legendary in Occultism				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Occultism.Legendary in Occultism		PREVARGTEQ:Modifier_Occultism,3		PREVARGTEQ:SignatureSkill_Occultism,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Occultism|4|TYPE=Rank
+Legendary in Performance			CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Performance.Legendary in Performance		PREVARGTEQ:Modifier_Performance,3		PREVARGTEQ:SignatureSkill_Performance,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Performance|4|TYPE=Rank
+Legendary in Religion				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Religion.Legendary in Religion			PREVARGTEQ:Modifier_Religion,3		PREVARGTEQ:SignatureSkill_Religion,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Religion|4|TYPE=Rank
+Legendary in Society				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Society.Legendary in Society			PREVARGTEQ:Modifier_Society,3			PREVARGTEQ:SignatureSkill_Society,1			PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Society|4|TYPE=Rank
+Legendary in Stealth				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Stealth.Legendary in Stealth			PREVARGTEQ:Modifier_Stealth,3			PREVARGTEQ:SignatureSkill_Stealth,1			PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Stealth|4|TYPE=Rank
+Legendary in Survival				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Survival.Legendary in Survival			PREVARGTEQ:Modifier_Survival,3		PREVARGTEQ:SignatureSkill_Survival,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Survival|4|TYPE=Rank
+Legendary in Thievery				CATEGORY:Proficiency	TYPE:Skill Proficiency.Skill Proficiency Thievery.Legendary in Thievery			PREVARGTEQ:Modifier_Thievery,3		PREVARGTEQ:SignatureSkill_Thievery,1		PREPCLEVEL:MIN=15																																BONUS:VAR|Modifier_Thievery|4|TYPE=Rank
 
 
 
+
+
+###Block:
 Trained in Alchemical Bombs			CATEGORY:Proficiency
 
 Trained in Light Armor				CATEGORY:Proficiency
