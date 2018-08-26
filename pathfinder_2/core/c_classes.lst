@@ -5,41 +5,50 @@
 CLASS:Alchemist	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Alchemist	DEFINE:AlchemistCL|0	BONUS:HP|CURRENTMAX|8*AlchemistCL	BONUS:VAR|AlchemistCL|classlevel()	DESC:The alchemist throws alchemical bombs and drinks concoctions of his own making during combat. Intelligence, 2nd Constitution, Dexterity
 # Class Name	Multiple Requirements
 CLASS:Alchemist	PREMULT:1,[PRECLASS:1,Alchemist=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
 CLASS:Barbarian	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Barbarian	DEFINE:BarbarianCL|0	BONUS:HP|CURRENTMAX|12*BarbarianCL	BONUS:VAR|BarbarianCL|classlevel()	DESC:The barbarian flies into a rage on the battlefield, smashing foes with abandon. Strength, 2nd Constitution, Dexterity
 # Class Name	Multiple Requirements
 CLASS:Barbarian	PREMULT:1,[PRECLASS:1,Barbarian=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
 CLASS:Bard		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Bard	DEFINE:BardCL|0	BONUS:HP|CURRENTMAX|8*BardCL	BONUS:VAR|BardCL|classlevel()	DESC:Performance and secrets of the occult enable the bard to distract foes and inspire allies. Charisma, 2nd Constitution, Dexterity
 # Class Name	Multiple Requirements
 CLASS:Bard		PREMULT:1,[PRECLASS:1,Bard=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
 CLASS:Cleric	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Cleric	DEFINE:ClericCL|0	BONUS:HP|CURRENTMAX|8*ClericCL	BONUS:VAR|ClericCL|classlevel()	DESC:The cleric calls on the power of a deity to cast spells that can heal allies or harm foes. Wisdom, 2nd Charisma, Constitution
 # Class Name	Multiple Requirements
 CLASS:Cleric	PREMULT:1,[PRECLASS:1,Cleric=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability				Define		Bonus to HP				Modify VAR					Description
 CLASS:Druid		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Druid	DEFINE:DruidCL|0	BONUS:HP|CURRENTMAX|8*DruidCL	BONUS:VAR|DruidCL|classlevel()	DESC:The druid uses the natural world's magic to bolster her and her allies' strength while calling pain down upon enemies. Wisdom, 2nd Constitution, Dexterity
 # Class Name	Multiple Requirements
 CLASS:Druid		PREMULT:1,[PRECLASS:1,Druid=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
 CLASS:Fighter	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Fighter	DEFINE:FighterCL|0	BONUS:HP|CURRENTMAX|10*FighterCL	BONUS:VAR|FighterCL|classlevel()	DESC:The fighter is a master of weapons, martial techniques, and powerful attack combinations. Dexterity or Strength, 2nd Constitution
 # Class Name	Multiple Requirements
 CLASS:Fighter	PREMULT:1,[PRECLASS:1,Fighter=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
 CLASS:Monk		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Monk	DEFINE:MonkCL|0	BONUS:HP|CURRENTMAX|10*MonkCL	BONUS:VAR|MonkCL|classlevel()	DESC:The monk spins the secrets of martial arts into dazzling displays of battlefield prowess. Dexterity or Strength, 2nd Constitution, Wisdom
 # Class Name	Multiple Requirements
 CLASS:Monk		PREMULT:1,[PRECLASS:1,Monk=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
-CLASS:Paladin	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Paladin	DEFINE:PaladinCL|0	BONUS:HP|CURRENTMAX|10*PaladinCL	BONUS:VAR|PaladinCL|classlevel()	DESC:The paladin is a champion of her deity who uses divine power to enhance her heroics and protect her allies. Strength, 2nd Charisma, Constitution
+CLASS:Paladin	TYPE:Class							DEFINE:PaladinCL|0	BONUS:HP|CURRENTMAX|10*PaladinCL	BONUS:VAR|PaladinCL|classlevel()	DESC:The paladin is a champion of her deity who uses divine power to enhance her heroics and protect her allies. Strength, 2nd Charisma, Constitution
 # Class Name	Multiple Requirements
 CLASS:Paladin	PREMULT:1,[PRECLASS:1,Paladin=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+1	ABILITY:CLASS|AUTOMATIC|Paladin
 ###Block: Class Features
 1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Code of Conduct
 1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ The Paladin's Code
@@ -64,18 +73,22 @@ CLASS:Paladin	PREMULT:1,[PRECLASS:1,Paladin=1],[!PRECLASS:1,TYPE=Class]
 CLASS:Ranger	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Ranger	DEFINE:RangerCL|0	BONUS:HP|CURRENTMAX|10*RangerCL	BONUS:VAR|RangerCL|classlevel()	DESC:The ranger is a master of using his surroundings, including traps and animal allies, to harry enemies. Dexterity or Strength, 2nd Constitution, Wisdom
 # Class Name	Multiple Requirements
 CLASS:Ranger	PREMULT:1,[PRECLASS:1,Ranger=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability				Define		Bonus to HP				Modify VAR					Description
 CLASS:Rogue		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Rogue	DEFINE:RogueCL|0	BONUS:HP|CURRENTMAX|8*RogueCL	BONUS:VAR|RogueCL|classlevel()	DESC:The rogue is a multitalented master of skullduggery who strikes when enemies least expect it. Dexterity, 2nd Charisma, Constitution
 # Class Name	Multiple Requirements
 CLASS:Rogue		PREMULT:1,[PRECLASS:1,Rogue=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
 CLASS:Sorcerer	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Sorcerer	DEFINE:SorcererCL|0	BONUS:HP|CURRENTMAX|6*SorcererCL	BONUS:VAR|SorcererCL|classlevel()	DESC:The sorcerer's magical might flows through her blood and manifests as fantastic spells and abilities. Charisma, 2nd Dexterity, Constitution
 # Class Name	Multiple Requirements
 CLASS:Sorcerer	PREMULT:1,[PRECLASS:1,Sorcerer=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
 # Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
 CLASS:Wizard	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Wizard	DEFINE:WizardCL|0	BONUS:HP|CURRENTMAX|6*WizardCL	BONUS:VAR|WizardCL|classlevel()	DESC:The wizard is an eminent scholar whose reservoirs of arcane knowledge power his wondrous spells and abilities. Intelligence, 2nd Dexterity, Constitution
 # Class Name	Multiple Requirements
 CLASS:Wizard	PREMULT:1,[PRECLASS:1,Wizard=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
