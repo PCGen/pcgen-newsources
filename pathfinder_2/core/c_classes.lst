@@ -7,6 +7,24 @@ CLASS:Alchemist	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Alchemist	DEFINE:AlchemistCL|
 CLASS:Alchemist	PREMULT:1,[PRECLASS:1,Alchemist=1],[!PRECLASS:1,TYPE=Class]
 1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
 
+###Block: Class Progression
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Advanced Alchemy		
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ QUICK ALCHEMY	
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Formula Book		
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Studied Resonance		
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Alchemist Feats		
+2	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Skill Feats			
+3	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Empower Bombs	
+3	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ General Feats	
+3	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Skill Increases	
+5	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Mutagen Crafting
+9	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Expanded Resonance
+13	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Double Elixir	
+17	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Alchemical Alacrity
+
+
+
+
 # Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
 CLASS:Barbarian	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Barbarian	DEFINE:BarbarianCL|0	BONUS:HP|CURRENTMAX|12*BarbarianCL	BONUS:VAR|BarbarianCL|classlevel()	DESC:The barbarian flies into a rage on the battlefield, smashing foes with abandon. Strength, 2nd Constitution, Dexterity
 # Class Name	Multiple Requirements
@@ -17,7 +35,76 @@ CLASS:Barbarian	PREMULT:1,[PRECLASS:1,Barbarian=1],[!PRECLASS:1,TYPE=Class]
 CLASS:Bard		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Bard	DEFINE:BardCL|0	BONUS:HP|CURRENTMAX|8*BardCL	BONUS:VAR|BardCL|classlevel()	DESC:Performance and secrets of the occult enable the bard to distract foes and inspire allies. Charisma, 2nd Constitution, Dexterity
 # Class Name	Multiple Requirements
 CLASS:Bard		PREMULT:1,[PRECLASS:1,Bard=1],[!PRECLASS:1,TYPE=Class]
+CLASS:Bard		SPELLLIST:1|Occult
+CLASS:Bard		FACT:SpellType|Occult
+CLASS:Bard		SPELLSTAT:CHA	MEMORIZE:NO
+	
 1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+
+###Block: Known Progression
+1	KNOWN:4,1
+2	KNOWN:5,2
+3	KNOWN:5,2,2
+4	KNOWN:5,2,3
+5	KNOWN:5,2,3,2
+6	KNOWN:5,2,3,3
+7	KNOWN:5,2,3,3,2
+8	KNOWN:5,2,3,3,3
+9	KNOWN:5,2,3,3,3,2
+10	KNOWN:5,2,3,3,3,3
+11	KNOWN:5,2,3,3,3,3,2
+12	KNOWN:5,2,3,3,3,3,3
+13	KNOWN:5,2,3,3,3,3,3,2
+14	KNOWN:5,2,3,3,3,3,3,3
+15	KNOWN:5,2,3,3,3,3,3,3,2
+16	KNOWN:5,2,3,3,3,3,3,3,3
+17	KNOWN:5,2,3,3,3,3,3,3,3,2
+18	KNOWN:5,2,3,3,3,3,3,3,3,3
+19	KNOWN:5,2,3,3,3,3,3,3,3,3
+20	KNOWN:5,2,3,3,3,3,3,3,3,3
+###Block: Class Progression
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Occult Spellcasting		
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Heightening Spells		
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Cantrips				
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Spell Repertoire			
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ First Compositions		
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Muses				
+2	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Bard Feats				
+2	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Skill Feats			
+3	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Spontaneous Heightening	
+3	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ General Feats			
+3	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Skill Increases			
+12	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Expert Spellcaster		
+16	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Master Spellcaster		
+19	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Legendary Spellcaster		
+
+
+
+
+
+
+
 
 # Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
 CLASS:Cleric	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Cleric	DEFINE:ClericCL|0	BONUS:HP|CURRENTMAX|8*ClericCL	BONUS:VAR|ClericCL|classlevel()	DESC:The cleric calls on the power of a deity to cast spells that can heal allies or harm foes. Wisdom, 2nd Charisma, Constitution
