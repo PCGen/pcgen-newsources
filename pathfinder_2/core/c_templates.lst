@@ -56,7 +56,14 @@ INT 16	PREVAREQ:INTSCORE,16	VISIBLE:NO		REMOVABLE:NO	TYPE:BaseInt	TEMPLATE:Langu
 INT 17	PREVAREQ:INTSCORE,17	VISIBLE:NO		REMOVABLE:NO	TYPE:BaseInt	TEMPLATE:Language +2
 INT 18	PREVARGTEQ:INTSCORE,18	VISIBLE:NO		REMOVABLE:NO	TYPE:BaseInt	TEMPLATE:Language +3
 
-
+# Set Race Size
+Size ~ T	SIZE:T	VISIBLE:NO
+Size ~ S	SIZE:S	VISIBLE:NO
+Size ~ M	SIZE:M	VISIBLE:NO
+Size ~ L	SIZE:L	VISIBLE:NO
+Size ~ H	SIZE:H	VISIBLE:NO
+Size ~ G	SIZE:G	VISIBLE:NO
+Size ~ C	SIZE:C	VISIBLE:NO
 
 
 
@@ -71,3 +78,54 @@ Language +1	TYPE:1st Level Languages	PREVAREQ:Locked1stLevelLanguages,1		BONUS:A
 Language +2	TYPE:1st Level Languages	PREVAREQ:Locked1stLevelLanguages,2		BONUS:ABILITYPOOL|Ancestry Bonus Language|2
 Language +3	TYPE:1st Level Languages	PREVAREQ:Locked1stLevelLanguages,3		BONUS:ABILITYPOOL|Ancestry Bonus Language|3
 Language +4	TYPE:1st Level Languages	PREVAREQ:Locked1stLevelLanguages,4		BONUS:ABILITYPOOL|Ancestry Bonus Language|4
+
+
+# Animal Companion
+Young Companion	
+	BONUS:STAT|STR|2|TYPE=Race	BONUS:LOCKEDSTAT|STR|2|TYPE=Race
+	BONUS:STAT|DEX|1|TYPE=Race	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race
+	BONUS:STAT|INT|-4|TYPE=Race	BONUS:LOCKEDSTAT|INT|-4|TYPE=Race
+	BONUS:STAT|WIS|1|TYPE=Race	BONUS:LOCKEDSTAT|WIS|1|TYPE=Race
+	BONUS:STAT|CHA|-1|TYPE=Race	BONUS:LOCKEDSTAT|CHA|-1|TYPE=Race
+	ABILITY:Proficiency|AUTOMATIC|Trained in Fortitude|Trained in Reflex|Trained in Will	
+
+Full-Grown Companion	BONUS:VAR|UnarmedDice|2|TYPE=Base	ABILITY:Specialized Companion|AUTOMATIC|Specialized companion ~ PH
+	BONUS:STAT|STR|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|STR|1|TYPE=Race.STACK
+	BONUS:STAT|DEX|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race.STACK
+	BONUS:STAT|CON|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|CON|1|TYPE=Race.STACK
+	BONUS:STAT|WIS|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|WIS|1|TYPE=Race.STACK
+	ABILITY:Proficiency|AUTOMATIC|Expert in Fortitude	
+	ABILITY:Proficiency|AUTOMATIC|Expert in Reflex		
+	ABILITY:Proficiency|AUTOMATIC|Expert in Will		
+	BONUS:VAR|AnimalCompanionSizeIncrease|1
+
+
+Nimble Companion	BONUS:VAR|UnarmedDice|3|TYPE=Base
+	BONUS:STAT|STR|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|STR|1|TYPE=Race.STACK
+	BONUS:STAT|DEX|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|2|TYPE=Race.STACK
+	BONUS:STAT|CON|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|CON|1|TYPE=Race.STACK
+	BONUS:STAT|WIS|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|WIS|1|TYPE=Race.STACK
+Savage Companion	BONUS:VAR|UnarmedDice|3|TYPE=Base
+	BONUS:STAT|STR|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|STR|2|TYPE=Race.STACK
+	BONUS:STAT|DEX|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race.STACK
+	BONUS:STAT|CON|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|CON|1|TYPE=Race.STACK
+	BONUS:STAT|WIS|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|WIS|1|TYPE=Race.STACK
+
+Specialed Companion	BONUS:VAR|UnarmedDice|4|TYPE=Base
+	BONUS:STAT|INT|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|INT|2|TYPE=Race.STACK
+	BONUS:STAT|DEX|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race.STACK
+	DESC:The first time an animal companion gains a specialization, its proficiency rank for unarmed Strikes increases to expert, and saving throws and Perception increases to master. Increase its Dexterity modifier by 1 and its Intelligence modifier by 2. Its unarmed Strike damage increases from three dice to four dice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

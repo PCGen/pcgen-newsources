@@ -153,6 +153,37 @@ Level 20 Ability Boost ~ Cha +1	SORTKEY:6b	CATEGORY:Ability		TYPE:Level 20 Abili
 Default				CATEGORY:Internal
 CATEGORY=Internal|Default.MOD					
 
+CATEGORY=Internal|Default.MOD	DEFINE:RaceSize_Base|0	DEFINE:RaceSize_Modifier|0	DEFINE:RaceSize|0
+CATEGORY=Internal|Default.MOD	BONUS:VAR|RaceSize|RaceSize_Base+RaceSize_Modifier
+
+
+Size ~ T	CATEGORY:Internal	TEMPLATE:Size ~ T
+Size ~ S	CATEGORY:Internal	TEMPLATE:Size ~ S
+Size ~ M	CATEGORY:Internal	TEMPLATE:Size ~ M
+Size ~ L	CATEGORY:Internal	TEMPLATE:Size ~ L
+Size ~ H	CATEGORY:Internal	TEMPLATE:Size ~ H
+Size ~ G	CATEGORY:Internal	TEMPLATE:Size ~ G
+Size ~ C	CATEGORY:Internal	TEMPLATE:Size ~ C
+
+
+
+
+
+
+
+
+
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ T|PREVARLTEQ:RaceSize,1
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ S|PREVAREQ:RaceSize,2
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ M|PREVAREQ:RaceSize,3
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ L|PREVAREQ:RaceSize,4
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ H|PREVAREQ:RaceSize,5
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ G|PREVAREQ:RaceSize,6
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ C|PREVARGTEQ:RaceSize,7
+
+
+
+
 CATEGORY=Internal|Default.MOD																ABILITY:Rule|AUTOMATIC|Standard Ability Generation Rule|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
 
 CATEGORY=Internal|Default.MOD					DEFINE:PoolLevel01AbilityBoost|0
@@ -574,4 +605,96 @@ Skald			KEY:Ancestry Language Support ~ Skald		ABILITY:Language|AUTOMATIC|Skald	
 Tien			KEY:Ancestry Language Support ~ Tien		ABILITY:Language|AUTOMATIC|Tien		PREVARGTEQ:AncestryBonusLang_Tien,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Lands of the Linnorm Kings, Realm of the Mammoth Lords, Tian Xia
 Varisian		KEY:Ancestry Language Support ~ Varisian		ABILITY:Language|AUTOMATIC|Varisian		PREVARGTEQ:AncestryBonusLang_Varisian,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Brevoy, Lastwall, Nidal, Nirmathas, Ustalav, Varisia
 Vudrani		KEY:Ancestry Language Support ~ Vudrani		ABILITY:Language|AUTOMATIC|Vudrani		PREVARGTEQ:AncestryBonusLang_Vudrani,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Jalmeray, Katapesh, Nex
+
+###Block: Unarmed Strikes
+Jaws ~ d8				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 1d8|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 2d8|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 3d8|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 4d8|PREVAREQ:UnarmedDice,4
+
+
+Jaws	KEY:Jaws ~ 1 ~ 1d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,1d8
+Jaws	KEY:Jaws ~ 1 ~ 2d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,2d8
+Jaws	KEY:Jaws ~ 1 ~ 3d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,3d8
+Jaws	KEY:Jaws ~ 1 ~ 4d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,4d8
+
+Jaws ~ d6				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+
+Jaws	KEY:Jaws ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,1d6
+Jaws	KEY:Jaws ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,2d6
+Jaws	KEY:Jaws ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,3d6
+Jaws	KEY:Jaws ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,4d6
+
+
+
+
+Claw ~ d6				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+
+Claw	KEY:Claw ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d6
+Claw	KEY:Claw ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,2d6
+Claw	KEY:Claw ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,3d6
+Claw	KEY:Claw ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,4d6
+
+Claw ~ d4				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d4|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d4|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d4|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d4|PREVAREQ:UnarmedDice,4
+
+
+Claw	KEY:Claw ~ 1 ~ 1d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d4
+Claw	KEY:Claw ~ 1 ~ 2d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,2d4
+Claw	KEY:Claw ~ 1 ~ 3d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,3d4
+Claw	KEY:Claw ~ 1 ~ 4d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,4d4
+
+
+Talon  ~ d4				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 1d4|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 2d4|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 3d4|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 4d4|PREVAREQ:UnarmedDice,4
+
+
+Talon	KEY:Talon ~ 1 ~ 1d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,1d4
+Talon	KEY:Talon ~ 1 ~ 2d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,2d4
+Talon	KEY:Talon ~ 1 ~ 3d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,3d4
+Talon	KEY:Talon ~ 1 ~ 4d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,4d4
+
+Talon  ~ d6				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+
+Talon	KEY:Talon ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,1d6
+Talon	KEY:Talon ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,2d6
+Talon	KEY:Talon ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,3d6
+Talon	KEY:Talon ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,4d6
+
+
+Hoof ~ d6			CATEGORY:Unarmed Strike
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+Hoof	KEY:Hoof ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,1d6
+Hoof	KEY:Hoof ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,2d6
+Hoof	KEY:Hoof ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,3d6
+Hoof	KEY:Hoof ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,4d6
+
+
+
 
