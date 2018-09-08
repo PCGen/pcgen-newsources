@@ -157,14 +157,13 @@ CATEGORY=Internal|Default.MOD	DEFINE:RaceSize_Base|0	DEFINE:RaceSize_Modifier|0	
 CATEGORY=Internal|Default.MOD	BONUS:VAR|RaceSize|RaceSize_Base+RaceSize_Modifier
 
 
-Size ~ T	CATEGORY:Internal	TEMPLATE:Size ~ T
-Size ~ S	CATEGORY:Internal	TEMPLATE:Size ~ S
-Size ~ M	CATEGORY:Internal	TEMPLATE:Size ~ M
-Size ~ L	CATEGORY:Internal	TEMPLATE:Size ~ L
-Size ~ H	CATEGORY:Internal	TEMPLATE:Size ~ H
-Size ~ G	CATEGORY:Internal	TEMPLATE:Size ~ G
-Size ~ C	CATEGORY:Internal	TEMPLATE:Size ~ C
-
+Size ~ T	CATEGORY:Internal	TEMPLATE:Size ~ T		TYPE:Size
+Size ~ S	CATEGORY:Internal	TEMPLATE:Size ~ S		TYPE:Size
+Size ~ M	CATEGORY:Internal	TEMPLATE:Size ~ M		TYPE:Size.Size Choice M or L
+Size ~ L	CATEGORY:Internal	TEMPLATE:Size ~ L		TYPE:Size.Size Choice M or L
+Size ~ H	CATEGORY:Internal	TEMPLATE:Size ~ H		TYPE:Size
+Size ~ G	CATEGORY:Internal	TEMPLATE:Size ~ G		TYPE:Size
+Size ~ C	CATEGORY:Internal	TEMPLATE:Size ~ C		TYPE:Size
 
 
 
@@ -181,8 +180,307 @@ CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ H|PREVAREQ:RaceS
 CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ G|PREVAREQ:RaceSize,6
 CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ C|PREVARGTEQ:RaceSize,7
 
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Movement
+# Encumbered
+# If you're encumbered, decrease your Speed by 10 feet, to a minimum of 5 feet. This applies to every movement type you have. You also increase your armor's check penalty by 2, or take a –2 check penalty if you're unarmored.
+# Check Penalty
+# You take this untyped penalty to Strength-, Dexterity-, and Constitution-based skill checks, except for those that have the attack trait. Armor that is better than standard quality has a lower check penalty, as described on page 190.
+
+###Block: Movement Modes
+Movement	CATEGORY:Internal		DEFINE:BulkCap|0	DEFINE:BulkEncumbered|0	BONUS:VAR|BulkEncumbered|if(BULK>=BulkCap,1,0)|TYPE=Boolean	BONUS:VAR|BulkCap|STR+10	
+CATEGORY=Internal|Movement.MOD	DEFINE:Walk|0	DEFINE:Walk_TOTAL|0	DEFINE:Walk_Race|0	DEFINE:Walk_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Fly|0	DEFINE:Fly_TOTAL|0	DEFINE:Fly_Race|0		DEFINE:Fly_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Swim|0	DEFINE:Swim_TOTAL|0	DEFINE:Swim_Race|0	DEFINE:Swim_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Climb|0	DEFINE:Climb_TOTAL|0	DEFINE:Climb_Race|0	DEFINE:Climb_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Burrow|0	DEFINE:Burrow_TOTAL|0	DEFINE:Burrow_Race|0	DEFINE:Burrow_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty|0	
+CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Armor|0
+CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Encumbered|0
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty|SpeedPenalty_Armor+SpeedPenalty_Encumbered
+	BONUS:VAR|SpeedPenalty_Encumbered|if(BulkEncumbered==1,-10,0)
 
 
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Walk|Walk_TOTAL		BONUS:VAR|Walk_TOTAL|if(BulkEncumbered==1,max(5,Walk_Race+Walk_Modifier),Walk_Race+Walk_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Fly|Fly_TOTAL			BONUS:VAR|Fly_TOTAL|if(BulkEncumbered==1,max(5,Fly_Race+Fly_Modifier),Fly_Race+Fly_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Swim|Swim_TOTAL		BONUS:VAR|Swim_TOTAL|if(BulkEncumbered==1,max(5,Swim_Race+Swim_Modifier),Swim_Race+Swim_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Climb|Climb_TOTAL		BONUS:VAR|Climb_TOTAL|if(BulkEncumbered==1,max(5,Climb_Race+Climb_Modifier),Climb_Race+Climb_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Burrow|Burrow_TOTAL		BONUS:VAR|Burrow_TOTAL|if(BulkEncumbered==1,max(5,Burrow_Race+Burrow_Modifier),Burrow_Race+Burrow_Modifier)
+
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Walk_Modifier|SpeedPenalty	
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Fly_Modifier|SpeedPenalty
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Swim_Modifier|SpeedPenalty
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Climb_Modifier|SpeedPenalty
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Burrow_Modifier|SpeedPenalty
+
+
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Walk|PREFACT:1,ABILITIES,GrantWalk=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Fly|PREFACT:1,ABILITIES,GrantFly=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Swim|PREFACT:1,ABILITIES,GrantSwim=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Climb|PREFACT:1,ABILITIES,GrantClimb=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Burrow|PREFACT:1,ABILITIES,GrantBurrow=true
+
+
+Walk		CATEGORY:Internal
+Fly		CATEGORY:Internal
+Swim		CATEGORY:Internal
+Climb		CATEGORY:Internal
+Burrow	CATEGORY:Internal		
+
+# Walk
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 005|PREVAREQ:Walk,005
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 010|PREVAREQ:Walk,010
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 015|PREVAREQ:Walk,015
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 020|PREVAREQ:Walk,020
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 025|PREVAREQ:Walk,025
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 030|PREVAREQ:Walk,030
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 035|PREVAREQ:Walk,035
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 040|PREVAREQ:Walk,040
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 045|PREVAREQ:Walk,045
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 050|PREVAREQ:Walk,050
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 055|PREVAREQ:Walk,055
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 060|PREVAREQ:Walk,060
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 065|PREVAREQ:Walk,065
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 070|PREVAREQ:Walk,070
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 075|PREVAREQ:Walk,075
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 080|PREVAREQ:Walk,080
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 085|PREVAREQ:Walk,085
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 090|PREVAREQ:Walk,090
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 095|PREVAREQ:Walk,095
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 100|PREVAREQ:Walk,100
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 105|PREVAREQ:Walk,105
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 110|PREVAREQ:Walk,110
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 115|PREVAREQ:Walk,115
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 120|PREVAREQ:Walk,120
+
+# Fly
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 005|PREVAREQ:Fly,005
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 010|PREVAREQ:Fly,010
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 015|PREVAREQ:Fly,015
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 020|PREVAREQ:Fly,020
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 025|PREVAREQ:Fly,025
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 030|PREVAREQ:Fly,030
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 035|PREVAREQ:Fly,035
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 040|PREVAREQ:Fly,040
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 045|PREVAREQ:Fly,045
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 050|PREVAREQ:Fly,050
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 055|PREVAREQ:Fly,055
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 060|PREVAREQ:Fly,060
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 065|PREVAREQ:Fly,065
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 070|PREVAREQ:Fly,070
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 075|PREVAREQ:Fly,075
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 080|PREVAREQ:Fly,080
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 085|PREVAREQ:Fly,085
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 090|PREVAREQ:Fly,090
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 095|PREVAREQ:Fly,095
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 100|PREVAREQ:Fly,100
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 105|PREVAREQ:Fly,105
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 110|PREVAREQ:Fly,110
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 115|PREVAREQ:Fly,115
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 120|PREVAREQ:Fly,120
+
+# Swim
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 005|PREVAREQ:Swim,005
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 010|PREVAREQ:Swim,010
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 015|PREVAREQ:Swim,015
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 020|PREVAREQ:Swim,020
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 025|PREVAREQ:Swim,025
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 030|PREVAREQ:Swim,030
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 035|PREVAREQ:Swim,035
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 040|PREVAREQ:Swim,040
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 045|PREVAREQ:Swim,045
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 050|PREVAREQ:Swim,050
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 055|PREVAREQ:Swim,055
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 060|PREVAREQ:Swim,060
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 065|PREVAREQ:Swim,065
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 070|PREVAREQ:Swim,070
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 075|PREVAREQ:Swim,075
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 080|PREVAREQ:Swim,080
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 085|PREVAREQ:Swim,085
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 090|PREVAREQ:Swim,090
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 095|PREVAREQ:Swim,095
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 100|PREVAREQ:Swim,100
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 105|PREVAREQ:Swim,105
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 110|PREVAREQ:Swim,110
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 115|PREVAREQ:Swim,115
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 120|PREVAREQ:Swim,120
+
+# Climb
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 005|PREVAREQ:Climb,005
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 010|PREVAREQ:Climb,010
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 015|PREVAREQ:Climb,015
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 020|PREVAREQ:Climb,020
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 025|PREVAREQ:Climb,025
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 030|PREVAREQ:Climb,030
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 035|PREVAREQ:Climb,035
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 040|PREVAREQ:Climb,040
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 045|PREVAREQ:Climb,045
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 050|PREVAREQ:Climb,050
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 055|PREVAREQ:Climb,055
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 060|PREVAREQ:Climb,060
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 065|PREVAREQ:Climb,065
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 070|PREVAREQ:Climb,070
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 075|PREVAREQ:Climb,075
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 080|PREVAREQ:Climb,080
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 085|PREVAREQ:Climb,085
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 090|PREVAREQ:Climb,090
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 095|PREVAREQ:Climb,095
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 100|PREVAREQ:Climb,100
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 105|PREVAREQ:Climb,105
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 110|PREVAREQ:Climb,110
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 115|PREVAREQ:Climb,115
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 120|PREVAREQ:Climb,120
+
+# Burrow
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 005|PREVAREQ:Burrow,005
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 010|PREVAREQ:Burrow,010
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 015|PREVAREQ:Burrow,015
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 020|PREVAREQ:Burrow,020
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 025|PREVAREQ:Burrow,025
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 030|PREVAREQ:Burrow,030
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 035|PREVAREQ:Burrow,035
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 040|PREVAREQ:Burrow,040
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 045|PREVAREQ:Burrow,045
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 050|PREVAREQ:Burrow,050
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 055|PREVAREQ:Burrow,055
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 060|PREVAREQ:Burrow,060
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 065|PREVAREQ:Burrow,065
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 070|PREVAREQ:Burrow,070
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 075|PREVAREQ:Burrow,075
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 080|PREVAREQ:Burrow,080
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 085|PREVAREQ:Burrow,085
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 090|PREVAREQ:Burrow,090
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 095|PREVAREQ:Burrow,095
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 100|PREVAREQ:Burrow,100
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 105|PREVAREQ:Burrow,105
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 110|PREVAREQ:Burrow,110
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 115|PREVAREQ:Burrow,115
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 120|PREVAREQ:Burrow,120
+
+
+Walk ~ 005	MOVE:Walk,005	CATEGORY:Internal
+Walk ~ 010	MOVE:Walk,010	CATEGORY:Internal
+Walk ~ 015	MOVE:Walk,015	CATEGORY:Internal
+Walk ~ 020	MOVE:Walk,020	CATEGORY:Internal
+Walk ~ 025	MOVE:Walk,025	CATEGORY:Internal
+Walk ~ 030	MOVE:Walk,030	CATEGORY:Internal
+Walk ~ 035	MOVE:Walk,035	CATEGORY:Internal
+Walk ~ 040	MOVE:Walk,040	CATEGORY:Internal
+Walk ~ 045	MOVE:Walk,045	CATEGORY:Internal
+Walk ~ 050	MOVE:Walk,050	CATEGORY:Internal
+Walk ~ 055	MOVE:Walk,055	CATEGORY:Internal
+Walk ~ 060	MOVE:Walk,060	CATEGORY:Internal
+Walk ~ 065	MOVE:Walk,065	CATEGORY:Internal
+Walk ~ 070	MOVE:Walk,070	CATEGORY:Internal
+Walk ~ 075	MOVE:Walk,075	CATEGORY:Internal
+Walk ~ 080	MOVE:Walk,080	CATEGORY:Internal
+Walk ~ 085	MOVE:Walk,085	CATEGORY:Internal
+Walk ~ 090	MOVE:Walk,090	CATEGORY:Internal
+Walk ~ 095	MOVE:Walk,095	CATEGORY:Internal
+Walk ~ 100	MOVE:Walk,100	CATEGORY:Internal
+Walk ~ 105	MOVE:Walk,105	CATEGORY:Internal
+Walk ~ 110	MOVE:Walk,110	CATEGORY:Internal
+Walk ~ 115	MOVE:Walk,115	CATEGORY:Internal
+Walk ~ 120	MOVE:Walk,120	CATEGORY:Internal
+
+Fly ~ 005	MOVE:Fly,005	CATEGORY:Internal
+Fly ~ 010	MOVE:Fly,010	CATEGORY:Internal
+Fly ~ 015	MOVE:Fly,015	CATEGORY:Internal
+Fly ~ 020	MOVE:Fly,020	CATEGORY:Internal
+Fly ~ 025	MOVE:Fly,025	CATEGORY:Internal
+Fly ~ 030	MOVE:Fly,030	CATEGORY:Internal
+Fly ~ 035	MOVE:Fly,035	CATEGORY:Internal
+Fly ~ 040	MOVE:Fly,040	CATEGORY:Internal
+Fly ~ 045	MOVE:Fly,045	CATEGORY:Internal
+Fly ~ 050	MOVE:Fly,050	CATEGORY:Internal
+Fly ~ 055	MOVE:Fly,055	CATEGORY:Internal
+Fly ~ 060	MOVE:Fly,060	CATEGORY:Internal
+Fly ~ 065	MOVE:Fly,065	CATEGORY:Internal
+Fly ~ 070	MOVE:Fly,070	CATEGORY:Internal
+Fly ~ 075	MOVE:Fly,075	CATEGORY:Internal
+Fly ~ 080	MOVE:Fly,080	CATEGORY:Internal
+Fly ~ 085	MOVE:Fly,085	CATEGORY:Internal
+Fly ~ 090	MOVE:Fly,090	CATEGORY:Internal
+Fly ~ 095	MOVE:Fly,095	CATEGORY:Internal
+Fly ~ 100	MOVE:Fly,100	CATEGORY:Internal
+Fly ~ 105	MOVE:Fly,105	CATEGORY:Internal
+Fly ~ 110	MOVE:Fly,110	CATEGORY:Internal
+Fly ~ 115	MOVE:Fly,115	CATEGORY:Internal
+Fly ~ 120	MOVE:Fly,120	CATEGORY:Internal
+
+Swim ~ 005	MOVE:Swim,005	CATEGORY:Internal
+Swim ~ 010	MOVE:Swim,010	CATEGORY:Internal
+Swim ~ 015	MOVE:Swim,015	CATEGORY:Internal
+Swim ~ 020	MOVE:Swim,020	CATEGORY:Internal
+Swim ~ 025	MOVE:Swim,025	CATEGORY:Internal
+Swim ~ 030	MOVE:Swim,030	CATEGORY:Internal
+Swim ~ 035	MOVE:Swim,035	CATEGORY:Internal
+Swim ~ 040	MOVE:Swim,040	CATEGORY:Internal
+Swim ~ 045	MOVE:Swim,045	CATEGORY:Internal
+Swim ~ 050	MOVE:Swim,050	CATEGORY:Internal
+Swim ~ 055	MOVE:Swim,055	CATEGORY:Internal
+Swim ~ 060	MOVE:Swim,060	CATEGORY:Internal
+Swim ~ 065	MOVE:Swim,065	CATEGORY:Internal
+Swim ~ 070	MOVE:Swim,070	CATEGORY:Internal
+Swim ~ 075	MOVE:Swim,075	CATEGORY:Internal
+Swim ~ 080	MOVE:Swim,080	CATEGORY:Internal
+Swim ~ 085	MOVE:Swim,085	CATEGORY:Internal
+Swim ~ 090	MOVE:Swim,090	CATEGORY:Internal
+Swim ~ 095	MOVE:Swim,095	CATEGORY:Internal
+Swim ~ 100	MOVE:Swim,100	CATEGORY:Internal
+Swim ~ 105	MOVE:Swim,105	CATEGORY:Internal
+Swim ~ 110	MOVE:Swim,110	CATEGORY:Internal
+Swim ~ 115	MOVE:Swim,115	CATEGORY:Internal
+Swim ~ 120	MOVE:Swim,120	CATEGORY:Internal
+
+Climb ~ 005	MOVE:Climb,005	CATEGORY:Internal
+Climb ~ 010	MOVE:Climb,010	CATEGORY:Internal
+Climb ~ 015	MOVE:Climb,015	CATEGORY:Internal
+Climb ~ 020	MOVE:Climb,020	CATEGORY:Internal
+Climb ~ 025	MOVE:Climb,025	CATEGORY:Internal
+Climb ~ 030	MOVE:Climb,030	CATEGORY:Internal
+Climb ~ 035	MOVE:Climb,035	CATEGORY:Internal
+Climb ~ 040	MOVE:Climb,040	CATEGORY:Internal
+Climb ~ 045	MOVE:Climb,045	CATEGORY:Internal
+Climb ~ 050	MOVE:Climb,050	CATEGORY:Internal
+Climb ~ 055	MOVE:Climb,055	CATEGORY:Internal
+Climb ~ 060	MOVE:Climb,060	CATEGORY:Internal
+Climb ~ 065	MOVE:Climb,065	CATEGORY:Internal
+Climb ~ 070	MOVE:Climb,070	CATEGORY:Internal
+Climb ~ 075	MOVE:Climb,075	CATEGORY:Internal
+Climb ~ 080	MOVE:Climb,080	CATEGORY:Internal
+Climb ~ 085	MOVE:Climb,085	CATEGORY:Internal
+Climb ~ 090	MOVE:Climb,090	CATEGORY:Internal
+Climb ~ 095	MOVE:Climb,095	CATEGORY:Internal
+Climb ~ 100	MOVE:Climb,100	CATEGORY:Internal
+Climb ~ 105	MOVE:Climb,105	CATEGORY:Internal
+Climb ~ 110	MOVE:Climb,110	CATEGORY:Internal
+Climb ~ 115	MOVE:Climb,115	CATEGORY:Internal
+Climb ~ 120	MOVE:Climb,120	CATEGORY:Internal
+
+Burrow ~ 005	MOVE:Burrow,005	CATEGORY:Internal
+Burrow ~ 010	MOVE:Burrow,010	CATEGORY:Internal
+Burrow ~ 015	MOVE:Burrow,015	CATEGORY:Internal
+Burrow ~ 020	MOVE:Burrow,020	CATEGORY:Internal
+Burrow ~ 025	MOVE:Burrow,025	CATEGORY:Internal
+Burrow ~ 030	MOVE:Burrow,030	CATEGORY:Internal
+Burrow ~ 035	MOVE:Burrow,035	CATEGORY:Internal
+Burrow ~ 040	MOVE:Burrow,040	CATEGORY:Internal
+Burrow ~ 045	MOVE:Burrow,045	CATEGORY:Internal
+Burrow ~ 050	MOVE:Burrow,050	CATEGORY:Internal
+Burrow ~ 055	MOVE:Burrow,055	CATEGORY:Internal
+Burrow ~ 060	MOVE:Burrow,060	CATEGORY:Internal
+Burrow ~ 065	MOVE:Burrow,065	CATEGORY:Internal
+Burrow ~ 070	MOVE:Burrow,070	CATEGORY:Internal
+Burrow ~ 075	MOVE:Burrow,075	CATEGORY:Internal
+Burrow ~ 080	MOVE:Burrow,080	CATEGORY:Internal
+Burrow ~ 085	MOVE:Burrow,085	CATEGORY:Internal
+Burrow ~ 090	MOVE:Burrow,090	CATEGORY:Internal
+Burrow ~ 095	MOVE:Burrow,095	CATEGORY:Internal
+Burrow ~ 100	MOVE:Burrow,100	CATEGORY:Internal
+Burrow ~ 105	MOVE:Burrow,105	CATEGORY:Internal
+Burrow ~ 110	MOVE:Burrow,110	CATEGORY:Internal
+Burrow ~ 115	MOVE:Burrow,115	CATEGORY:Internal
+Burrow ~ 120	MOVE:Burrow,120	CATEGORY:Internal
 
 CATEGORY=Internal|Default.MOD																ABILITY:Rule|AUTOMATIC|Standard Ability Generation Rule|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
 
@@ -252,9 +550,9 @@ CATEGORY=Internal|Default.MOD	DEFINE:Caster_Level_Highest__Occult|0
 CATEGORY=Internal|Default.MOD	DEFINE:Caster_level_Occult_Total|0
 
 
-CATEGORY=Internal|Default.MOD		DEFINE:Locked1stLevelLanguages|0		DEFINE:LangCount|0	ABILITY:Internal|AUTOMATIC|1st Level Intelligence Score|PREPCLEVEL:MIN=1	ABILITY:Internal|AUTOMATIC|Locked1stLevelLanguages|PRECLASS:1,TYPE.Class=1
+CATEGORY=Internal|Default.MOD		DEFINE:AbiltyScoreBoostsTaken|0	ABILITY:Internal|AUTOMATIC|1st Level Intelligence Score|PREVAREQ:AbiltyScoreBoostsTaken,1		BONUS:VAR|AbiltyScoreBoostsTaken|1|PREABILITY:4,CATEGORY=Ability,TYPE.Level 01 Ability Boost|PREABILITY:2,CATEGORY=Ability,TYPE.Background Ability Boost
 
-Locked1stLevelLanguages	CATEGORY:Internal	TEMPLATE:Locked1stLevelLanguages
+1st Level Intelligence Score	CATEGORY:Internal	TEMPLATE:1st Level Intelligence Score
 
 Armor Trait ~ Clumsy		CATEGORY:Trait
 
@@ -635,6 +933,12 @@ CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 
 CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
 CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
 
+Claw ~ d8				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d8|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d8|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d8|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d8|PREVAREQ:UnarmedDice,4
+
 Claw ~ d6				CATEGORY:Unarmed Strike	
 CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
 CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
@@ -647,13 +951,13 @@ CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 
 CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d4|PREVAREQ:UnarmedDice,3
 CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d4|PREVAREQ:UnarmedDice,4
 
-Talon  ~ d6				CATEGORY:Unarmed Strike	
+Talon ~ d6				CATEGORY:Unarmed Strike	
 CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
 CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
 CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
 CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
 
-Talon  ~ d4				CATEGORY:Unarmed Strike	
+Talon ~ d4				CATEGORY:Unarmed Strike	
 CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 1d4|PREVARLTEQ:UnarmedDice,1
 CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 2d4|PREVAREQ:UnarmedDice,2
 CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 3d4|PREVAREQ:UnarmedDice,3
@@ -709,6 +1013,12 @@ Jaws	KEY:Jaws ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee
 Jaws	KEY:Jaws ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,2d6,SPROP=Unarmed
 Jaws	KEY:Jaws ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,3d6,SPROP=Unarmed
 Jaws	KEY:Jaws ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,4d6,SPROP=Unarmed
+
+# Claw d8
+Claw	KEY:Claw ~ 1 ~ 1d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d8,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 2d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,2d8,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 3d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,3d8,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 4d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,4d8,SPROP=Agile and Unarmed
 
 # Claw d6
 Claw	KEY:Claw ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d6,SPROP=Agile and Unarmed
