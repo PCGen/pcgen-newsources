@@ -294,7 +294,7 @@ CLASS:Ranger	PREMULT:1,[PRECLASS:1,Ranger=1],[!PRECLASS:1,TYPE=Class]
 3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Skill Increases	
 3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Expertise	
 7	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Evasion			
-9	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Nature’s Edge		
+9	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Nature's Edge		
 11	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Wild Stride		
 13	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Mastery		
 15	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Improved Evasion	
@@ -330,19 +330,19 @@ CLASS:Rogue		PREMULT:1,[PRECLASS:1,Rogue=1],[!PRECLASS:1,TYPE=Class]
 CLASS:Sorcerer	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Sorcerer	DEFINE:SorcererCL|0	ALLOWBASECLASS:NO	BONUS:HP|CURRENTMAX|6*SorcererCL	BONUS:VAR|SorcererCL|classlevel()	DESC:The sorcerer's magical might flows through her blood and manifests as fantastic spells and abilities. Charisma, 2nd Dexterity, Constitution
 # Class Name	Multiple Requirements
 CLASS:Sorcerer	PREMULT:1,[PRECLASS:1,Sorcerer=1],[!PRECLASS:1,TYPE=Class]
-CLASS:Sorcerer	SPELLSTAT:CHA	MEMORIZE:NO
+CLASS:Sorcerer	SPELLSTAT:CHA	MEMORIZE:NO	FACT:SpellType|Arcane	BONUS:CASTERLEVEL|Sorcerer|classlevel()
 # Bloodlines
-SUBCLASS:Aberrant		COST:0	CHOICE:SCHOOL|Aberrant	SPELLLIST:1|Occult	FACT:SpellType|Occult
+SUBCLASS:Aberrant		COST:0	CHOICE:SCHOOL|Aberrant	SPELLLIST:1|Occult
 SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Aberrant			
-SUBCLASS:Angelic		COST:0	CHOICE:SCHOOL|Angelic	SPELLLIST:1|Divine	FACT:SpellType|Divine
+SUBCLASS:Angelic		COST:0	CHOICE:SCHOOL|Angelic	SPELLLIST:1|Divine
 SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Angelic			
-SUBCLASS:Demonic		COST:0	CHOICE:SCHOOL|Demonic	SPELLLIST:1|Divine	FACT:SpellType|Divine
+SUBCLASS:Demonic		COST:0	CHOICE:SCHOOL|Demonic	SPELLLIST:1|Divine
 SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Demonic			
-SUBCLASS:Draconic		COST:0	CHOICE:SCHOOL|Draconic	SPELLLIST:1|Arcane	FACT:SpellType|Arcane
+SUBCLASS:Draconic		COST:0	CHOICE:SCHOOL|Draconic	SPELLLIST:1|Arcane
 SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Draconic			
-SUBCLASS:Fey		COST:0	CHOICE:SCHOOL|Fey		SPELLLIST:1|Primal	FACT:SpellType|Primal
+SUBCLASS:Fey		COST:0	CHOICE:SCHOOL|Fey		SPELLLIST:1|Primal
 SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Fey			
-SUBCLASS:Imperial		COST:0	CHOICE:SCHOOL|Imperial	SPELLLIST:1|Arcane	FACT:SpellType|Arcane
+SUBCLASS:Imperial		COST:0	CHOICE:SCHOOL|Imperial	SPELLLIST:1|Arcane
 SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Imperial			
 
 1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
@@ -467,4 +467,11 @@ SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Universal
 12	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Expert Spellcaster		
 16	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Master Spellcaster		
 19	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Legendary Spellcaster	
-	
+
+
+
+CLASS:Arcane	FACT:SpellType|Arcane	BONUS:CASTERLEVEL|Arcane|classlevel()	VISIBLE:NO
+CLASS:Divine	FACT:SpellType|Divine	BONUS:CASTERLEVEL|Divine|classlevel()	VISIBLE:NO
+CLASS:Primal	FACT:SpellType|Primal	BONUS:CASTERLEVEL|Primal|classlevel()	VISIBLE:NO
+CLASS:Occult	FACT:SpellType|Occult	BONUS:CASTERLEVEL|Occult|classlevel()	VISIBLE:NO
+
