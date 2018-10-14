@@ -1,0 +1,469 @@
+#  Sun Aug  5 21:24:58 2018 -- reformated by PCGen PrettyLST v6.06.00
+
+
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Alchemist	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Alchemist	DEFINE:AlchemistCL|0	BONUS:HP|CURRENTMAX|8*AlchemistCL	BONUS:VAR|AlchemistCL|classlevel()	DESC:The alchemist throws alchemical bombs and drinks concoctions of his own making during combat. Intelligence, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Alchemist	PREMULT:1,[PRECLASS:1,Alchemist=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Advanced Alchemy		
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Formula Book		
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Studied Resonance		
+1	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Alchemist Feats		
+2	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Skill Feats			
+3	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Empower Bombs	
+3	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ General Feats	
+3	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Skill Increases	
+5	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Mutagen Crafting
+9	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Expanded Resonance
+13	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Double Elixir	
+17	ABILITY:Alchemist Class Feature|AUTOMATIC|Alchemist Class Feature ~ Alchemical Alacrity
+
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Barbarian	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Barbarian	DEFINE:BarbarianCL|0	BONUS:HP|CURRENTMAX|12*BarbarianCL	BONUS:VAR|BarbarianCL|classlevel()	DESC:The barbarian flies into a rage on the battlefield, smashing foes with abandon. Strength, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Barbarian	PREMULT:1,[PRECLASS:1,Barbarian=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Rage					
+1	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Totem					
+1	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Barbarian Feats		
+2	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Skill Feats			
+3	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Critical Brutality		
+3	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ General Feats			
+3	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Skill Increases		
+5	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Deny Advantage		
+7	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Juggernaut			
+9	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Raging Resistance		
+11	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Mighty Rage				
+13	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Improved Juggernaut	
+13	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Weapon Fury				
+15	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Indomitable Will		
+17	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Tireless Rage		
+19	ABILITY:Barbarian Class Feature|AUTOMATIC|Barbarian Class Feature ~ Devastating Strikes	
+
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
+CLASS:Bard		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Bard	DEFINE:BardCL|0	BONUS:HP|CURRENTMAX|8*BardCL	BONUS:VAR|BardCL|classlevel()	DESC:Performance and secrets of the occult enable the bard to distract foes and inspire allies. Charisma, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Bard		PREMULT:1,[PRECLASS:1,Bard=1],[!PRECLASS:1,TYPE=Class]
+CLASS:Bard		SPELLLIST:1|Occult
+CLASS:Bard		FACT:SpellType|Occult
+CLASS:Bard		SPELLSTAT:CHA	MEMORIZE:NO
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+###Block: Known Progression
+1	KNOWN:4,1
+2	KNOWN:5,2
+3	KNOWN:5,2,2
+4	KNOWN:5,2,3
+5	KNOWN:5,2,3,2
+6	KNOWN:5,2,3,3
+7	KNOWN:5,2,3,3,2
+8	KNOWN:5,2,3,3,3
+9	KNOWN:5,2,3,3,3,2
+10	KNOWN:5,2,3,3,3,3
+11	KNOWN:5,2,3,3,3,3,2
+12	KNOWN:5,2,3,3,3,3,3
+13	KNOWN:5,2,3,3,3,3,3,2
+14	KNOWN:5,2,3,3,3,3,3,3
+15	KNOWN:5,2,3,3,3,3,3,3,2
+16	KNOWN:5,2,3,3,3,3,3,3,3
+17	KNOWN:5,2,3,3,3,3,3,3,3,2
+18	KNOWN:5,2,3,3,3,3,3,3,3,3
+19	KNOWN:5,2,3,3,3,3,3,3,3,3
+20	KNOWN:5,2,3,3,3,3,3,3,3,3
+###Block: Class Progression
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Occult Spellcasting		
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Heightening Spells		
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Cantrips				
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Spell Repertoire			
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ First Compositions		
+1	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Muses				
+2	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Bard Feats				
+2	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Skill Feats			
+3	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Spontaneous Heightening	
+3	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ General Feats			
+3	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Skill Increases			
+12	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Expert Spellcaster		
+16	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Master Spellcaster		
+19	ABILITY:Bard Class Feature|AUTOMATIC|Bard Class Feature ~ Legendary Spellcaster		
+
+
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Cleric	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Cleric	DEFINE:ClericCL|0	BONUS:HP|CURRENTMAX|8*ClericCL	BONUS:VAR|ClericCL|classlevel()	DESC:The cleric calls on the power of a deity to cast spells that can heal allies or harm foes. Wisdom, 2nd Charisma, Constitution
+# Class Name	Multiple Requirements
+CLASS:Cleric	PREMULT:1,[PRECLASS:1,Cleric=1],[!PRECLASS:1,TYPE=Class]
+CLASS:Cleric		SPELLLIST:1|Divine
+CLASS:Cleric		FACT:SpellType|Divine
+CLASS:Cleric		SPELLSTAT:WIS	MEMORIZE:NO
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Divine Spellcasting	
+1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Heightening Spells	
+1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Cantrips			
+1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Deity and Domain	
+1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Anathema			
+1	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Channel Energy		
+2	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Cleric Feats		
+2	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Skill Feats		
+3	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ General Feats		
+3	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Skill Increases	
+12	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Expert Spellcaster	
+16	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Master Spellcaster	
+19	ABILITY:Cleric Class Feature|AUTOMATIC|Cleric Class Feature ~ Legendary Spellcaster
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+
+
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR					Description
+CLASS:Druid		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Druid	DEFINE:DruidCL|0	BONUS:HP|CURRENTMAX|8*DruidCL	BONUS:VAR|DruidCL|classlevel()	DESC:The druid uses the natural world's magic to bolster her and her allies' strength while calling pain down upon enemies. Wisdom, 2nd Constitution, Dexterity
+# Class Name	Multiple Requirements
+CLASS:Druid		PREMULT:1,[PRECLASS:1,Druid=1],[!PRECLASS:1,TYPE=Class]
+CLASS:Druid		SPELLLIST:1|Primal
+CLASS:Druid		FACT:SpellType|Primal
+CLASS:Druid		SPELLSTAT:WIS	MEMORIZE:NO
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+###Block: Class Progression
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Primal Spellcasting	
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Heightening Spells	
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Cantrips			
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Anathema			
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druidic Order		
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druidic Language	
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Wild Empathy		
+2	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druid Feats		
+2	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Skill Feats		
+3	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ General Feats		
+3	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Skill Increases		
+12	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Expert Spellcaster	
+16	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Master Spellcaster	
+19	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Legendary Spellcaster	
+
+
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Fighter	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Fighter	DEFINE:FighterCL|0	BONUS:HP|CURRENTMAX|10*FighterCL	BONUS:VAR|FighterCL|classlevel()	DESC:The fighter is a master of weapons, martial techniques, and powerful attack combinations. Dexterity or Strength, 2nd Constitution
+# Class Name	Multiple Requirements
+CLASS:Fighter	PREMULT:1,[PRECLASS:1,Fighter=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Attack of Opportunity		
+1	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Fighter Feats				
+2	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Skill Feats				
+3	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Weapon Mastery			
+3	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ General Feats				
+3	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Skill Increases			
+5	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Bravery					
+7	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Battlefield Surveyor		
+9	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Combat Flexibility			
+11	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Heavy Armor Expertise		
+13	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Weapon Specialization		
+15	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Improved Flexibility		
+17	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Armor Mastery				
+19	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Weapon Legend				
+
+
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
+CLASS:Monk		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Monk	DEFINE:MonkCL|0	BONUS:HP|CURRENTMAX|10*MonkCL	BONUS:VAR|MonkCL|classlevel()	DESC:The monk spins the secrets of martial arts into dazzling displays of battlefield prowess. Dexterity or Strength, 2nd Constitution, Wisdom
+# Class Name	Multiple Requirements
+CLASS:Monk		PREMULT:1,[PRECLASS:1,Monk=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Flurry of Blows			
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Graceful Expertise		
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Powerful Fist			
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Monk Feats				
+2	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Skill Feats			
+3	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ General Feats			
+3	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Incredible Movement		
+3	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Magic Strikes			
+3	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Skill Increases			
+5	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Metal Strikes			
+7	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Path to Perfection		
+9	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Fierce Flurry			
+11	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Second Path to Perfection	
+13	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Graceful Mastery			
+13	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Unarmed Mastery			
+15	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Third Path to Perfection	
+17	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Adamantine Strikes		
+17	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Graceful Legend			
+19	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Perfected Form			
+
+
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Paladin	TYPE:Class							DEFINE:PaladinCL|0	BONUS:HP|CURRENTMAX|10*PaladinCL	BONUS:VAR|PaladinCL|classlevel()	DESC:The paladin is a champion of her deity who uses divine power to enhance her heroics and protect her allies. Strength, 2nd Charisma, Constitution
+# Class Name	Multiple Requirements
+CLASS:Paladin	PREMULT:1,[PRECLASS:1,Paladin=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+1	ABILITY:CLASS|AUTOMATIC|Paladin
+###Block: Class Features
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Code of Conduct
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ The Paladin's Code
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Deific Weapon
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Retributive Strike
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Champion Powers
+1	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Paladin Feats
+2	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Skill Feats
+3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Righteous Ally
+3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ General Feats
+3	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Skill Increases
+5	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Weapon Expertise
+7	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Armored Fortitude
+9	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Holy Smite
+11	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Aura of Justice
+13	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Armor Mastery
+15	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Weapon Mastery
+17	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Legendary Armor
+19	ABILITY:Paladin Class Feature|AUTOMATIC|Paladin Class Feature ~ Hero's Defiance
+
+
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Ranger	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Ranger	DEFINE:RangerCL|0	BONUS:HP|CURRENTMAX|10*RangerCL	BONUS:VAR|RangerCL|classlevel()	DESC:The ranger is a master of using his surroundings, including traps and animal allies, to harry enemies. Dexterity or Strength, 2nd Constitution, Wisdom
+# Class Name	Multiple Requirements
+CLASS:Ranger	PREMULT:1,[PRECLASS:1,Ranger=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+1	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Hunt Target		
+1	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Ranger Feats		
+3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Skill Feats		
+3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ General Feats		
+3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Skill Increases	
+3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Expertise	
+7	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Evasion			
+9	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Nature's Edge		
+11	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Wild Stride		
+13	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Mastery		
+15	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Improved Evasion	
+17	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Masterful Hunter	
+19	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Swift Target		
+
+
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR					Description
+CLASS:Rogue		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Rogue	DEFINE:RogueCL|0	BONUS:HP|CURRENTMAX|8*RogueCL	BONUS:VAR|RogueCL|classlevel()	DESC:The rogue is a multitalented master of skullduggery who strikes when enemies least expect it. Dexterity, 2nd Charisma, Constitution
+# Class Name	Multiple Requirements
+CLASS:Rogue		PREMULT:1,[PRECLASS:1,Rogue=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+1	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Finesse Striker			
+1	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Sneak Attack			
+1	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Surprise Attack			
+1	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Rogue Feats			
+1	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Skill Feats			
+2	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Skill Increases			
+3	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Deny Advantage			
+3	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ General Feats			
+7	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Evasion				
+9	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Debilitating Strike		
+13	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Improved Evasion		
+13	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Weapon Tricks			
+15	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Double Debilitation		
+17	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Slippery Mind			
+19	ABILITY:Rogue Class Feature|AUTOMATIC|Rogue Class Feature ~ Master Strike			
+
+
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Sorcerer	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Sorcerer	DEFINE:SorcererCL|0	ALLOWBASECLASS:NO	BONUS:HP|CURRENTMAX|6*SorcererCL	BONUS:VAR|SorcererCL|classlevel()	DESC:The sorcerer's magical might flows through her blood and manifests as fantastic spells and abilities. Charisma, 2nd Dexterity, Constitution
+# Class Name	Multiple Requirements
+CLASS:Sorcerer	PREMULT:1,[PRECLASS:1,Sorcerer=1],[!PRECLASS:1,TYPE=Class]
+CLASS:Sorcerer	SPELLSTAT:CHA	MEMORIZE:NO	FACT:SpellType|Arcane	BONUS:CASTERLEVEL|Sorcerer|classlevel()
+# Bloodlines
+SUBCLASS:Aberrant		COST:0	CHOICE:SCHOOL|Aberrant	SPELLLIST:1|Occult
+SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Aberrant			
+SUBCLASS:Angelic		COST:0	CHOICE:SCHOOL|Angelic	SPELLLIST:1|Divine
+SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Angelic			
+SUBCLASS:Demonic		COST:0	CHOICE:SCHOOL|Demonic	SPELLLIST:1|Divine
+SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Demonic			
+SUBCLASS:Draconic		COST:0	CHOICE:SCHOOL|Draconic	SPELLLIST:1|Arcane
+SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Draconic			
+SUBCLASS:Fey		COST:0	CHOICE:SCHOOL|Fey		SPELLLIST:1|Primal
+SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Fey			
+SUBCLASS:Imperial		COST:0	CHOICE:SCHOOL|Imperial	SPELLLIST:1|Arcane
+SUBCLASSLEVEL:1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Bloodline ~ Imperial			
+
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+###Block: Known Progression
+1	KNOWN:4,1
+2	KNOWN:5,2
+3	KNOWN:5,2,2
+4	KNOWN:5,2,3
+5	KNOWN:5,2,3,2
+6	KNOWN:5,2,3,3
+7	KNOWN:5,2,3,3,2
+8	KNOWN:5,2,3,3,3
+9	KNOWN:5,2,3,3,3,2
+10	KNOWN:5,2,3,3,3,3
+11	KNOWN:5,2,3,3,3,3,2
+12	KNOWN:5,2,3,3,3,3,3
+13	KNOWN:5,2,3,3,3,3,3,2
+14	KNOWN:5,2,3,3,3,3,3,3
+15	KNOWN:5,2,3,3,3,3,3,3,2
+16	KNOWN:5,2,3,3,3,3,3,3,3
+17	KNOWN:5,2,3,3,3,3,3,3,3,2
+18	KNOWN:5,2,3,3,3,3,3,3,3,3
+19	KNOWN:5,2,3,3,3,3,3,3,3,3
+20	KNOWN:5,2,3,3,3,3,3,3,3,3
+###Block: Class Progression
+1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Bloodline			
+1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Sorcerer Spellcasting	
+1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Heightening Spells		
+1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Cantrips			
+1	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Spell Repertoire		
+2	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Skill Feats			
+2	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Sorcerer Feats		
+3	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ General Feats		
+3	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Skill Increases		
+3	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Spontaneous Heightening	
+12	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Expert Spellcaster		
+16	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Master Spellcaster		
+19	ABILITY:Sorcerer Class Feature|AUTOMATIC|Sorcerer Class Feature ~ Legendary Spellcaster	
+
+
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Wizard	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Wizard	DEFINE:WizardCL|0	BONUS:HP|CURRENTMAX|6*WizardCL	ALLOWBASECLASS:NO		BONUS:VAR|WizardCL|classlevel()	DESC:The wizard is an eminent scholar whose reservoirs of arcane knowledge power his wondrous spells and abilities. Intelligence, 2nd Dexterity, Constitution
+# Class Name	Multiple Requirements
+CLASS:Wizard	PREMULT:1,[PRECLASS:1,Wizard=1],[!PRECLASS:1,TYPE=Class]
+CLASS:Wizard		SPELLLIST:1|Arcane
+CLASS:Wizard		FACT:SpellType|Arcane
+CLASS:Wizard		SPELLSTAT:WIS	MEMORIZE:YES
+# Specialization Choice
+SUBCLASS:Abjurer		COST:0	CHOICE:SCHOOL|Abjuration
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Abjuration			
+SUBCLASS:Conjurer		COST:0	CHOICE:SCHOOL|Conjuration
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Conjuration	
+SUBCLASS:Diviner		COST:0	CHOICE:SCHOOL|Divination
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Divination	
+SUBCLASS:Enchanter	COST:0	CHOICE:SCHOOL|Enchantment
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Enchantment	
+SUBCLASS:Evoker		COST:0	CHOICE:SCHOOL|Evocation
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Evocation		
+SUBCLASS:Illusionist	COST:0	CHOICE:SCHOOL|Illusion
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Illusion		
+SUBCLASS:Necromancer	COST:0	CHOICE:SCHOOL|Necromancy
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Necromancy	
+SUBCLASS:Transmuter	COST:0	CHOICE:SCHOOL|Transmutation
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Transmutation	
+SUBCLASS:Universalist	COST:0
+SUBCLASSLEVEL:1	ABILITY:Wizard Class Feature|AUTOMATIC|Arcane School ~ Universalist
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+###Block: Class Progression
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Arcane Spellcasting		
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Heightening Spells		
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Cantrips				
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Spellbook			
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Arcane School			
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Arcane Focus			
+1	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ DRAIN ARCANE FOCUS		
+2	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Skill Feats			
+2	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Wizard Feats			
+2	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ General Feats			
+3	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Skill Increases		
+12	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Expert Spellcaster		
+16	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Master Spellcaster		
+19	ABILITY:Wizard Class Feature|AUTOMATIC|Wizard Class Feature ~ Legendary Spellcaster	
+
+
+
+CLASS:Arcane	FACT:SpellType|Arcane	BONUS:CASTERLEVEL|Arcane|classlevel()	VISIBLE:NO
+CLASS:Divine	FACT:SpellType|Divine	BONUS:CASTERLEVEL|Divine|classlevel()	VISIBLE:NO
+CLASS:Primal	FACT:SpellType|Primal	BONUS:CASTERLEVEL|Primal|classlevel()	VISIBLE:NO
+CLASS:Occult	FACT:SpellType|Occult	BONUS:CASTERLEVEL|Occult|classlevel()	VISIBLE:NO
+
