@@ -52,7 +52,7 @@ Trip							SPROP:You can use this weapon to Trip with the Athletics skill even i
 Twin							SPROP:These weapons are used as a pair, each complementing the other. When you are wielding two of the same weapon with this trait and attack with one of them, if you already attacked with the other weapon this turn, you add a circumstance bonus to the damage roll equal to the weapon's number of damage dice. For instance, if you attacked with a twin weapon in your right hand with your first action, you would gain this bonus to damage when you attack with a matching twin weapon in your left hand for your second action. On your third action, an attack with either weapon would receive this bonus, since you'd already attacked with both. The weapons must be of the same type to benefit from this trait, but they don't need to be the same quality or have the same runes.
 Two-Hand						SPROP:This weapon can be wielded with two hands. Doing so changes its weapon damage die to the indicated value. If this trait applies to a magic weapon, the extra weapon damage dice from it being a magic weapon also increase in size while it's being wielded with two hands.
 Two-hand d8						SPROP:This weapon can be wielded with two hands. Doing so changes its weapon damage die to d8. If this trait applies to a magic weapon, the extra weapon damage dice from it being a magic weapon also increase in size while it's being wielded with two hands.
-Two-hand d10						SPROP:This weapon can be wielded with two hands. Doing so changes its weapon damage die to d8. If this trait applies to a magic weapon, the extra weapon damage dice from it being a magic weapon also increase in size while it's being wielded with two hands.
+Two-hand d10					SPROP:This weapon can be wielded with two hands. Doing so changes its weapon damage die to d8. If this trait applies to a magic weapon, the extra weapon damage dice from it being a magic weapon also increase in size while it's being wielded with two hands.
 Two-hand d12					SPROP:This weapon can be wielded with two hands. Doing so changes its weapon damage die to d12. If this trait applies to a magic weapon, the extra weapon damage dice from it being a magic weapon also increase in size while it's being wielded with two hands.
 
 
@@ -78,3 +78,40 @@ Shield						SPROP:Critical Specialization Effect: You knock the target back from
 Sling							SPROP:Critical Specialization Effect: The target must succeed at a Fortitude save or become slowed 1 for 1 round.
 Spear							SPROP:Critical Specialization Effect: The weapon pierces the target, weakening its attacks. The target is enfeebled 1 for 1 round.
 Sword							SPROP:Critical Specialization Effect: The target is made off-balance by your attack, becoming flat-footed for 1 round.
+
+Standard	REPLACES:Expert,Master,Legendary
+
+###Block: Item Quality
+Expert	TYPE:Weapon	BONUS:WEAPON|TOHIT|1|TYPE=ItemBonus	COST:350		REPLACES:Standard,Master,Legendary		INFO:Hardness|+1	BONUS:EQMARMOR|EDR|1
+Master	TYPE:Weapon	BONUS:WEAPON|TOHIT|2|TYPE=ItemBonus	COST:3600		REPLACES:Standard,Expert,Legendary		INFO:Hardness|+3	BONUS:EQMARMOR|EDR|3
+Legendary	TYPE:Weapon	BONUS:WEAPON|TOHIT|3|TYPE=ItemBonus	COST:65000		REPLACES:Standard,Master,Expert		INFO:Hardness|+6	BONUS:EQMARMOR|EDR|6
+
+Expert	TYPE:Armor	REPLACES:Standard,Master,Legendary	COST:350	BONUS:ITEMCOST|TYPE=HeavyArmor|150	INFO:Hardness|+1	BONUS:EQMARMOR|EDR|1		BONUS:EQMARMOR|ACCHECK|1|TYPE=ItemBonus
+Master	TYPE:Armor	REPLACES:Standard,Expert,Legendary	COST:3600	INFO:Hardness|+3							BONUS:EQMARMOR|EDR|3		BONUS:EQMARMOR|ACCHECK|2|TYPE=ItemBonus
+Legendary	TYPE:Armor	REPLACES:Standard,Master,Expert	COST:65000	INFO:Hardness|+6							BONUS:EQMARMOR|EDR|6		BONUS:EQMARMOR|ACCHECK|3|TYPE=ItemBonus
+
+Expert	TYPE:Shield	REPLACES:Standard,Master,Legendary	COST:300	INFO:Hardness|+1	BONUS:EQMARMOR|EDR|1	BONUS:EQMARMOR|ACCHECK|1|TYPE=ItemBonus
+Master	TYPE:Shield	REPLACES:Standard,Expert,Legendary	COST:3000	INFO:Hardness|+3	BONUS:EQMARMOR|EDR|3	BONUS:EQMARMOR|ACCHECK|2|TYPE=ItemBonus
+Legendary	TYPE:Shield	REPLACES:Standard,Master,Expert	COST:6000	INFO:Hardness|+6	BONUS:EQMARMOR|EDR|6	BONUS:EQMARMOR|ACCHECK|3|TYPE=ItemBonus
+
+
+
+###Block: Special Materials
+Wood
+Stone
+Leather
+Iron
+Steel
+
+
+
+
+
+Adamantine	TYPE:Base Material
+Cold Iron
+Darkwood
+Mithral
+Orichalcum
+Silver
+
+

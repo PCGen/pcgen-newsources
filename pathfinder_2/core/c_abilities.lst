@@ -153,6 +153,335 @@ Level 20 Ability Boost ~ Cha +1	SORTKEY:6b	CATEGORY:Ability		TYPE:Level 20 Abili
 Default				CATEGORY:Internal
 CATEGORY=Internal|Default.MOD					
 
+CATEGORY=Internal|Default.MOD	DEFINE:RaceSize_Base|0	DEFINE:RaceSize_Modifier|0	DEFINE:RaceSize|0
+CATEGORY=Internal|Default.MOD	BONUS:VAR|RaceSize|RaceSize_Base+RaceSize_Modifier
+
+
+Size ~ T	CATEGORY:Internal	TEMPLATE:Size ~ T		TYPE:Size
+Size ~ S	CATEGORY:Internal	TEMPLATE:Size ~ S		TYPE:Size
+Size ~ M	CATEGORY:Internal	TEMPLATE:Size ~ M		TYPE:Size.Size Choice M or L
+Size ~ L	CATEGORY:Internal	TEMPLATE:Size ~ L		TYPE:Size.Size Choice M or L
+Size ~ H	CATEGORY:Internal	TEMPLATE:Size ~ H		TYPE:Size
+Size ~ G	CATEGORY:Internal	TEMPLATE:Size ~ G		TYPE:Size
+Size ~ C	CATEGORY:Internal	TEMPLATE:Size ~ C		TYPE:Size
+
+
+
+
+
+
+
+
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ T|PREVARLTEQ:RaceSize,1
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ S|PREVAREQ:RaceSize,2
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ M|PREVAREQ:RaceSize,3
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ L|PREVAREQ:RaceSize,4
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ H|PREVAREQ:RaceSize,5
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ G|PREVAREQ:RaceSize,6
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Size ~ C|PREVARGTEQ:RaceSize,7
+
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Movement
+# Encumbered
+# If you're encumbered, decrease your Speed by 10 feet, to a minimum of 5 feet. This applies to every movement type you have. You also increase your armor's check penalty by 2, or take a –2 check penalty if you're unarmored.
+# Check Penalty
+# You take this untyped penalty to Strength-, Dexterity-, and Constitution-based skill checks, except for those that have the attack trait. Armor that is better than standard quality has a lower check penalty, as described on page 190.
+
+###Block: Movement Modes
+Movement	CATEGORY:Internal		DEFINE:BulkCap|0	DEFINE:BulkEncumbered|0	BONUS:VAR|BulkEncumbered|if(BULK>=BulkCap,1,0)|TYPE=Boolean	BONUS:VAR|BulkCap|STR+10	
+CATEGORY=Internal|Movement.MOD	DEFINE:Walk|0	DEFINE:Walk_TOTAL|0	DEFINE:Walk_Race|0	DEFINE:Walk_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Fly|0	DEFINE:Fly_TOTAL|0	DEFINE:Fly_Race|0		DEFINE:Fly_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Swim|0	DEFINE:Swim_TOTAL|0	DEFINE:Swim_Race|0	DEFINE:Swim_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Climb|0	DEFINE:Climb_TOTAL|0	DEFINE:Climb_Race|0	DEFINE:Climb_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:Burrow|0	DEFINE:Burrow_TOTAL|0	DEFINE:Burrow_Race|0	DEFINE:Burrow_Modifier|0
+CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty|0	
+CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Armor|0
+CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Encumbered|0
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty|SpeedPenalty_Armor+SpeedPenalty_Encumbered
+	BONUS:VAR|SpeedPenalty_Encumbered|if(BulkEncumbered==1,-10,0)
+
+
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Walk|Walk_TOTAL		BONUS:VAR|Walk_TOTAL|if(BulkEncumbered==1,max(5,Walk_Race+Walk_Modifier),Walk_Race+Walk_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Fly|Fly_TOTAL			BONUS:VAR|Fly_TOTAL|if(BulkEncumbered==1,max(5,Fly_Race+Fly_Modifier),Fly_Race+Fly_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Swim|Swim_TOTAL		BONUS:VAR|Swim_TOTAL|if(BulkEncumbered==1,max(5,Swim_Race+Swim_Modifier),Swim_Race+Swim_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Climb|Climb_TOTAL		BONUS:VAR|Climb_TOTAL|if(BulkEncumbered==1,max(5,Climb_Race+Climb_Modifier),Climb_Race+Climb_Modifier)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Burrow|Burrow_TOTAL		BONUS:VAR|Burrow_TOTAL|if(BulkEncumbered==1,max(5,Burrow_Race+Burrow_Modifier),Burrow_Race+Burrow_Modifier)
+
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Walk_Modifier|SpeedPenalty	
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Fly_Modifier|SpeedPenalty
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Swim_Modifier|SpeedPenalty
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Climb_Modifier|SpeedPenalty
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|Burrow_Modifier|SpeedPenalty
+
+
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Walk|PREFACT:1,ABILITIES,GrantWalk=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Fly|PREFACT:1,ABILITIES,GrantFly=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Swim|PREFACT:1,ABILITIES,GrantSwim=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Climb|PREFACT:1,ABILITIES,GrantClimb=true	
+CATEGORY=Internal|Movement.MOD	ABILITY:Internal|AUTOMATIC|Burrow|PREFACT:1,ABILITIES,GrantBurrow=true
+
+
+Walk		CATEGORY:Internal
+Fly		CATEGORY:Internal
+Swim		CATEGORY:Internal
+Climb		CATEGORY:Internal
+Burrow	CATEGORY:Internal		
+
+# Walk
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 005|PREVAREQ:Walk,005
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 010|PREVAREQ:Walk,010
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 015|PREVAREQ:Walk,015
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 020|PREVAREQ:Walk,020
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 025|PREVAREQ:Walk,025
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 030|PREVAREQ:Walk,030
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 035|PREVAREQ:Walk,035
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 040|PREVAREQ:Walk,040
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 045|PREVAREQ:Walk,045
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 050|PREVAREQ:Walk,050
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 055|PREVAREQ:Walk,055
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 060|PREVAREQ:Walk,060
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 065|PREVAREQ:Walk,065
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 070|PREVAREQ:Walk,070
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 075|PREVAREQ:Walk,075
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 080|PREVAREQ:Walk,080
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 085|PREVAREQ:Walk,085
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 090|PREVAREQ:Walk,090
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 095|PREVAREQ:Walk,095
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 100|PREVAREQ:Walk,100
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 105|PREVAREQ:Walk,105
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 110|PREVAREQ:Walk,110
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 115|PREVAREQ:Walk,115
+CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 120|PREVAREQ:Walk,120
+
+# Fly
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 005|PREVAREQ:Fly,005
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 010|PREVAREQ:Fly,010
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 015|PREVAREQ:Fly,015
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 020|PREVAREQ:Fly,020
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 025|PREVAREQ:Fly,025
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 030|PREVAREQ:Fly,030
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 035|PREVAREQ:Fly,035
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 040|PREVAREQ:Fly,040
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 045|PREVAREQ:Fly,045
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 050|PREVAREQ:Fly,050
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 055|PREVAREQ:Fly,055
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 060|PREVAREQ:Fly,060
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 065|PREVAREQ:Fly,065
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 070|PREVAREQ:Fly,070
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 075|PREVAREQ:Fly,075
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 080|PREVAREQ:Fly,080
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 085|PREVAREQ:Fly,085
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 090|PREVAREQ:Fly,090
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 095|PREVAREQ:Fly,095
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 100|PREVAREQ:Fly,100
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 105|PREVAREQ:Fly,105
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 110|PREVAREQ:Fly,110
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 115|PREVAREQ:Fly,115
+CATEGORY=Internal|Fly.MOD	ABILITY:Internal|AUTOMATIC|Fly ~ 120|PREVAREQ:Fly,120
+
+# Swim
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 005|PREVAREQ:Swim,005
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 010|PREVAREQ:Swim,010
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 015|PREVAREQ:Swim,015
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 020|PREVAREQ:Swim,020
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 025|PREVAREQ:Swim,025
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 030|PREVAREQ:Swim,030
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 035|PREVAREQ:Swim,035
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 040|PREVAREQ:Swim,040
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 045|PREVAREQ:Swim,045
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 050|PREVAREQ:Swim,050
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 055|PREVAREQ:Swim,055
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 060|PREVAREQ:Swim,060
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 065|PREVAREQ:Swim,065
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 070|PREVAREQ:Swim,070
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 075|PREVAREQ:Swim,075
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 080|PREVAREQ:Swim,080
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 085|PREVAREQ:Swim,085
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 090|PREVAREQ:Swim,090
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 095|PREVAREQ:Swim,095
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 100|PREVAREQ:Swim,100
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 105|PREVAREQ:Swim,105
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 110|PREVAREQ:Swim,110
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 115|PREVAREQ:Swim,115
+CATEGORY=Internal|Swim.MOD	ABILITY:Internal|AUTOMATIC|Swim ~ 120|PREVAREQ:Swim,120
+
+# Climb
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 005|PREVAREQ:Climb,005
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 010|PREVAREQ:Climb,010
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 015|PREVAREQ:Climb,015
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 020|PREVAREQ:Climb,020
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 025|PREVAREQ:Climb,025
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 030|PREVAREQ:Climb,030
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 035|PREVAREQ:Climb,035
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 040|PREVAREQ:Climb,040
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 045|PREVAREQ:Climb,045
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 050|PREVAREQ:Climb,050
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 055|PREVAREQ:Climb,055
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 060|PREVAREQ:Climb,060
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 065|PREVAREQ:Climb,065
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 070|PREVAREQ:Climb,070
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 075|PREVAREQ:Climb,075
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 080|PREVAREQ:Climb,080
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 085|PREVAREQ:Climb,085
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 090|PREVAREQ:Climb,090
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 095|PREVAREQ:Climb,095
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 100|PREVAREQ:Climb,100
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 105|PREVAREQ:Climb,105
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 110|PREVAREQ:Climb,110
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 115|PREVAREQ:Climb,115
+CATEGORY=Internal|Climb.MOD	ABILITY:Internal|AUTOMATIC|Climb ~ 120|PREVAREQ:Climb,120
+
+# Burrow
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 005|PREVAREQ:Burrow,005
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 010|PREVAREQ:Burrow,010
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 015|PREVAREQ:Burrow,015
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 020|PREVAREQ:Burrow,020
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 025|PREVAREQ:Burrow,025
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 030|PREVAREQ:Burrow,030
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 035|PREVAREQ:Burrow,035
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 040|PREVAREQ:Burrow,040
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 045|PREVAREQ:Burrow,045
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 050|PREVAREQ:Burrow,050
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 055|PREVAREQ:Burrow,055
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 060|PREVAREQ:Burrow,060
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 065|PREVAREQ:Burrow,065
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 070|PREVAREQ:Burrow,070
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 075|PREVAREQ:Burrow,075
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 080|PREVAREQ:Burrow,080
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 085|PREVAREQ:Burrow,085
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 090|PREVAREQ:Burrow,090
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 095|PREVAREQ:Burrow,095
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 100|PREVAREQ:Burrow,100
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 105|PREVAREQ:Burrow,105
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 110|PREVAREQ:Burrow,110
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 115|PREVAREQ:Burrow,115
+CATEGORY=Internal|Burrow.MOD	ABILITY:Internal|AUTOMATIC|Burrow ~ 120|PREVAREQ:Burrow,120
+
+
+Walk ~ 005	MOVE:Walk,005	CATEGORY:Internal
+Walk ~ 010	MOVE:Walk,010	CATEGORY:Internal
+Walk ~ 015	MOVE:Walk,015	CATEGORY:Internal
+Walk ~ 020	MOVE:Walk,020	CATEGORY:Internal
+Walk ~ 025	MOVE:Walk,025	CATEGORY:Internal
+Walk ~ 030	MOVE:Walk,030	CATEGORY:Internal
+Walk ~ 035	MOVE:Walk,035	CATEGORY:Internal
+Walk ~ 040	MOVE:Walk,040	CATEGORY:Internal
+Walk ~ 045	MOVE:Walk,045	CATEGORY:Internal
+Walk ~ 050	MOVE:Walk,050	CATEGORY:Internal
+Walk ~ 055	MOVE:Walk,055	CATEGORY:Internal
+Walk ~ 060	MOVE:Walk,060	CATEGORY:Internal
+Walk ~ 065	MOVE:Walk,065	CATEGORY:Internal
+Walk ~ 070	MOVE:Walk,070	CATEGORY:Internal
+Walk ~ 075	MOVE:Walk,075	CATEGORY:Internal
+Walk ~ 080	MOVE:Walk,080	CATEGORY:Internal
+Walk ~ 085	MOVE:Walk,085	CATEGORY:Internal
+Walk ~ 090	MOVE:Walk,090	CATEGORY:Internal
+Walk ~ 095	MOVE:Walk,095	CATEGORY:Internal
+Walk ~ 100	MOVE:Walk,100	CATEGORY:Internal
+Walk ~ 105	MOVE:Walk,105	CATEGORY:Internal
+Walk ~ 110	MOVE:Walk,110	CATEGORY:Internal
+Walk ~ 115	MOVE:Walk,115	CATEGORY:Internal
+Walk ~ 120	MOVE:Walk,120	CATEGORY:Internal
+
+Fly ~ 005	MOVE:Fly,005	CATEGORY:Internal
+Fly ~ 010	MOVE:Fly,010	CATEGORY:Internal
+Fly ~ 015	MOVE:Fly,015	CATEGORY:Internal
+Fly ~ 020	MOVE:Fly,020	CATEGORY:Internal
+Fly ~ 025	MOVE:Fly,025	CATEGORY:Internal
+Fly ~ 030	MOVE:Fly,030	CATEGORY:Internal
+Fly ~ 035	MOVE:Fly,035	CATEGORY:Internal
+Fly ~ 040	MOVE:Fly,040	CATEGORY:Internal
+Fly ~ 045	MOVE:Fly,045	CATEGORY:Internal
+Fly ~ 050	MOVE:Fly,050	CATEGORY:Internal
+Fly ~ 055	MOVE:Fly,055	CATEGORY:Internal
+Fly ~ 060	MOVE:Fly,060	CATEGORY:Internal
+Fly ~ 065	MOVE:Fly,065	CATEGORY:Internal
+Fly ~ 070	MOVE:Fly,070	CATEGORY:Internal
+Fly ~ 075	MOVE:Fly,075	CATEGORY:Internal
+Fly ~ 080	MOVE:Fly,080	CATEGORY:Internal
+Fly ~ 085	MOVE:Fly,085	CATEGORY:Internal
+Fly ~ 090	MOVE:Fly,090	CATEGORY:Internal
+Fly ~ 095	MOVE:Fly,095	CATEGORY:Internal
+Fly ~ 100	MOVE:Fly,100	CATEGORY:Internal
+Fly ~ 105	MOVE:Fly,105	CATEGORY:Internal
+Fly ~ 110	MOVE:Fly,110	CATEGORY:Internal
+Fly ~ 115	MOVE:Fly,115	CATEGORY:Internal
+Fly ~ 120	MOVE:Fly,120	CATEGORY:Internal
+
+Swim ~ 005	MOVE:Swim,005	CATEGORY:Internal
+Swim ~ 010	MOVE:Swim,010	CATEGORY:Internal
+Swim ~ 015	MOVE:Swim,015	CATEGORY:Internal
+Swim ~ 020	MOVE:Swim,020	CATEGORY:Internal
+Swim ~ 025	MOVE:Swim,025	CATEGORY:Internal
+Swim ~ 030	MOVE:Swim,030	CATEGORY:Internal
+Swim ~ 035	MOVE:Swim,035	CATEGORY:Internal
+Swim ~ 040	MOVE:Swim,040	CATEGORY:Internal
+Swim ~ 045	MOVE:Swim,045	CATEGORY:Internal
+Swim ~ 050	MOVE:Swim,050	CATEGORY:Internal
+Swim ~ 055	MOVE:Swim,055	CATEGORY:Internal
+Swim ~ 060	MOVE:Swim,060	CATEGORY:Internal
+Swim ~ 065	MOVE:Swim,065	CATEGORY:Internal
+Swim ~ 070	MOVE:Swim,070	CATEGORY:Internal
+Swim ~ 075	MOVE:Swim,075	CATEGORY:Internal
+Swim ~ 080	MOVE:Swim,080	CATEGORY:Internal
+Swim ~ 085	MOVE:Swim,085	CATEGORY:Internal
+Swim ~ 090	MOVE:Swim,090	CATEGORY:Internal
+Swim ~ 095	MOVE:Swim,095	CATEGORY:Internal
+Swim ~ 100	MOVE:Swim,100	CATEGORY:Internal
+Swim ~ 105	MOVE:Swim,105	CATEGORY:Internal
+Swim ~ 110	MOVE:Swim,110	CATEGORY:Internal
+Swim ~ 115	MOVE:Swim,115	CATEGORY:Internal
+Swim ~ 120	MOVE:Swim,120	CATEGORY:Internal
+
+Climb ~ 005	MOVE:Climb,005	CATEGORY:Internal
+Climb ~ 010	MOVE:Climb,010	CATEGORY:Internal
+Climb ~ 015	MOVE:Climb,015	CATEGORY:Internal
+Climb ~ 020	MOVE:Climb,020	CATEGORY:Internal
+Climb ~ 025	MOVE:Climb,025	CATEGORY:Internal
+Climb ~ 030	MOVE:Climb,030	CATEGORY:Internal
+Climb ~ 035	MOVE:Climb,035	CATEGORY:Internal
+Climb ~ 040	MOVE:Climb,040	CATEGORY:Internal
+Climb ~ 045	MOVE:Climb,045	CATEGORY:Internal
+Climb ~ 050	MOVE:Climb,050	CATEGORY:Internal
+Climb ~ 055	MOVE:Climb,055	CATEGORY:Internal
+Climb ~ 060	MOVE:Climb,060	CATEGORY:Internal
+Climb ~ 065	MOVE:Climb,065	CATEGORY:Internal
+Climb ~ 070	MOVE:Climb,070	CATEGORY:Internal
+Climb ~ 075	MOVE:Climb,075	CATEGORY:Internal
+Climb ~ 080	MOVE:Climb,080	CATEGORY:Internal
+Climb ~ 085	MOVE:Climb,085	CATEGORY:Internal
+Climb ~ 090	MOVE:Climb,090	CATEGORY:Internal
+Climb ~ 095	MOVE:Climb,095	CATEGORY:Internal
+Climb ~ 100	MOVE:Climb,100	CATEGORY:Internal
+Climb ~ 105	MOVE:Climb,105	CATEGORY:Internal
+Climb ~ 110	MOVE:Climb,110	CATEGORY:Internal
+Climb ~ 115	MOVE:Climb,115	CATEGORY:Internal
+Climb ~ 120	MOVE:Climb,120	CATEGORY:Internal
+
+Burrow ~ 005	MOVE:Burrow,005	CATEGORY:Internal
+Burrow ~ 010	MOVE:Burrow,010	CATEGORY:Internal
+Burrow ~ 015	MOVE:Burrow,015	CATEGORY:Internal
+Burrow ~ 020	MOVE:Burrow,020	CATEGORY:Internal
+Burrow ~ 025	MOVE:Burrow,025	CATEGORY:Internal
+Burrow ~ 030	MOVE:Burrow,030	CATEGORY:Internal
+Burrow ~ 035	MOVE:Burrow,035	CATEGORY:Internal
+Burrow ~ 040	MOVE:Burrow,040	CATEGORY:Internal
+Burrow ~ 045	MOVE:Burrow,045	CATEGORY:Internal
+Burrow ~ 050	MOVE:Burrow,050	CATEGORY:Internal
+Burrow ~ 055	MOVE:Burrow,055	CATEGORY:Internal
+Burrow ~ 060	MOVE:Burrow,060	CATEGORY:Internal
+Burrow ~ 065	MOVE:Burrow,065	CATEGORY:Internal
+Burrow ~ 070	MOVE:Burrow,070	CATEGORY:Internal
+Burrow ~ 075	MOVE:Burrow,075	CATEGORY:Internal
+Burrow ~ 080	MOVE:Burrow,080	CATEGORY:Internal
+Burrow ~ 085	MOVE:Burrow,085	CATEGORY:Internal
+Burrow ~ 090	MOVE:Burrow,090	CATEGORY:Internal
+Burrow ~ 095	MOVE:Burrow,095	CATEGORY:Internal
+Burrow ~ 100	MOVE:Burrow,100	CATEGORY:Internal
+Burrow ~ 105	MOVE:Burrow,105	CATEGORY:Internal
+Burrow ~ 110	MOVE:Burrow,110	CATEGORY:Internal
+Burrow ~ 115	MOVE:Burrow,115	CATEGORY:Internal
+Burrow ~ 120	MOVE:Burrow,120	CATEGORY:Internal
+
 CATEGORY=Internal|Default.MOD																ABILITY:Rule|AUTOMATIC|Standard Ability Generation Rule|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
 
 CATEGORY=Internal|Default.MOD					DEFINE:PoolLevel01AbilityBoost|0
@@ -216,9 +545,14 @@ CATEGORY=Internal|Default.MOD					DEFINE:AncestryBonusLang_Skald|0
 CATEGORY=Internal|Default.MOD					DEFINE:AncestryBonusLang_Tien|0		
 CATEGORY=Internal|Default.MOD					DEFINE:AncestryBonusLang_Varisian|0	
 CATEGORY=Internal|Default.MOD					DEFINE:AncestryBonusLang_Vudrani|0	
-CATEGORY=Internal|Default.MOD		DEFINE:Locked1stLevelLanguages|0		DEFINE:LangCount|0	ABILITY:Internal|AUTOMATIC|Locked1stLevelLanguages|PREPCLEVEL:MIN=1|PRETEMPLATE:1,TYPE=BaseInt	ABILITY:Internal|AUTOMATIC|Locked1stLevelLanguages|PRECLASS:1,TYPE.Class=1
 
-Locked1stLevelLanguages	CATEGORY:Internal	TEMPLATE:Locked1stLevelLanguages
+CATEGORY=Internal|Default.MOD	DEFINE:Caster_Level_Highest__Occult|0
+CATEGORY=Internal|Default.MOD	DEFINE:Caster_level_Occult_Total|0
+
+
+CATEGORY=Internal|Default.MOD		DEFINE:AbiltyScoreBoostsTaken|0	ABILITY:Internal|AUTOMATIC|1st Level Intelligence Score|PREVAREQ:AbiltyScoreBoostsTaken,1		BONUS:VAR|AbiltyScoreBoostsTaken|1|PREABILITY:4,CATEGORY=Ability,TYPE.Level 01 Ability Boost|PREABILITY:2,CATEGORY=Ability,TYPE.Background Ability Boost
+
+1st Level Intelligence Score	CATEGORY:Internal	TEMPLATE:1st Level Intelligence Score
 
 Armor Trait ~ Clumsy		CATEGORY:Trait
 
@@ -490,6 +824,207 @@ Grant Expert to all Weapon Groups		CATEGORY:Proficiency																								A
 
 
 
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupBrawling|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupClub|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupKnife|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupSpear|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupSword|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupAxe|0		
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupFlail|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupPolearm|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupPick|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupShield|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupHammer|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupDart|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupBow|0		
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupSling|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_UnarmedStrike|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Club|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_LightMace|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Mace|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Morningstar|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Staff|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_BoStaff|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greatclub|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sap|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Nunchaku|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dagger|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sickle|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Main-guache|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Starknife|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Clandagger|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Katar|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Kama|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Kukri|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Orcknuckledagger|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sai|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Orcnecksplitter|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Longspear|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Spear|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Lance|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Trident|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Filchersfork|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Bastardsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Falchion|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greatsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Longsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Rapier|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Scimitar|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Shortsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dogslicer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Elvencurveblade|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Katana|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Templesword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sawtoothsabre|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Battleaxe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greataxe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Hatchet|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dwarvenwaraxe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Flail|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Warflail|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Whip|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Spikedchain|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Gnomeflickmace|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Glaive|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Guisarme|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Halberd|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Ranseur|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Scythe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Horsechopper|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greatpick|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Lighthammer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Lightpick|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Pick|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_HeavyShield|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_LightShield|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Maul|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Warhammer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Gnomehookedhammer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Blowgun|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dart|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Javelin|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Shuriken|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Crossbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Handcrossbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Heavycrossbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Compositelongbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Compositeshortbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Longbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Shortbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sling|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Halflingslingstaff|0
+
+
+Weapon Group ~ Brawling	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Brawling
+Weapon Group ~ Club	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Club	
+Weapon Group ~ Knife	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Knife	
+Weapon Group ~ Spear	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Spear	
+Weapon Group ~ Sword	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Sword	
+Weapon Group ~ Axe	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Axe	
+Weapon Group ~ Flail	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Flail	
+Weapon Group ~ Polearm	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Polearm	
+Weapon Group ~ Pick	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Pick	
+Weapon Group ~ Shield	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Shield	
+Weapon Group ~ Hammer	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Hammer	
+Weapon Group ~ Dart	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Dart	
+Weapon Group ~ Bow	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Bow	
+Weapon Group ~ Sling	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Sling
+	
+	
+
+
+
+# 6-4 Simple Melee Weapons
+Unarmed Strike	CATEGORY:Proficiency	AUTO:WEAPONPROF|Unarmed Strike			BONUS:WEAPONPROF=Unarmed Strike|TOHIT|max(ToHit_GroupBrawling,ToHit_UnarmedStrike)|TYPE=Class		TYPE:Weapon Proficiency.Weapon Group ~ Brawling	
+
+#
+Club		CATEGORY:Proficiency	AUTO:WEAPONPROF|Club			BONUS:WEAPONPROF=Club|TOHIT|max(ToHit_GroupClub,ToHit_Club)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Club.Thrown 10
+Light Mace	CATEGORY:Proficiency	AUTO:WEAPONPROF|Light Mace		BONUS:WEAPONPROF=Light Mace|TOHIT|max(ToHit_GroupClub,ToHit_LightMace)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Club.Agile.Finesse.Shove
+Mace		CATEGORY:Proficiency	AUTO:WEAPONPROF|Mace			BONUS:WEAPONPROF=Mace|TOHIT|max(ToHit_GroupClub,ToHit_Mace)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Club.Shove
+Morningstar	CATEGORY:Proficiency	AUTO:WEAPONPROF|Morningstar		BONUS:WEAPONPROF=Morningstar|TOHIT|max(ToHit_GroupClub,ToHit_Morningstar)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Club.Versatile P
+Staff		CATEGORY:Proficiency	AUTO:WEAPONPROF|Staff			BONUS:WEAPONPROF=Staff|TOHIT|max(ToHit_GroupClub,ToHit_Staff)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Club.Two-hand d8
+Bo staff	CATEGORY:Proficiency	AUTO:WEAPONPROF|Bo staff		BONUS:WEAPONPROF=Bo staff|TOHIT|max(ToHit_GroupClub,ToHit_Bostaff)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Club.Monk.Parry.Reach.Trip
+Greatclub	CATEGORY:Proficiency	AUTO:WEAPONPROF|Greatclub		BONUS:WEAPONPROF=Greatclub|TOHIT|max(ToHit_GroupClub,ToHit_Greatclub)|TYPE=Class		TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Club.Backswing.Shove
+Sap		CATEGORY:Proficiency	AUTO:WEAPONPROF|Sap			BONUS:WEAPONPROF=Sap|TOHIT|max(ToHit_GroupClub,ToHit_Sap)|TYPE=Class		TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Club.Agile.Nonlethal											
+Nunchaku	CATEGORY:Proficiency	AUTO:WEAPONPROF|Nunchaku		BONUS:WEAPONPROF=Nunchaku|TOHIT|max(ToHit_GroupClub,ToHit_Nunchaku)|TYPE=Class		TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Club.Backswing.Disarm.Finesse.Monk									
+
+
+
+Dagger			CATEGORY:Proficiency	AUTO:WEAPONPROF|Dagger				BONUS:WEAPONPROF=Dagger|TOHIT|max(ToHit_GroupKnife,ToHit_Dagger)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Knife.Agile.Finesse.Thrown 10.Versatile S
+Sickle			CATEGORY:Proficiency	AUTO:WEAPONPROF|Sickle				BONUS:WEAPONPROF=Sickle|TOHIT|max(ToHit_GroupKnife,ToHit_Sickle)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Knife.Agile.Finesse.Trip
+Main-guache			CATEGORY:Proficiency	AUTO:WEAPONPROF|Main-guache				BONUS:WEAPONPROF=Main-guache|TOHIT|max(ToHit_GroupKnife,ToHit_Mainguache)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Finesse.Parry.Versatile S							
+Starknife			CATEGORY:Proficiency	AUTO:WEAPONPROF|Starknife				BONUS:WEAPONPROF=Starknife|TOHIT|max(ToHit_GroupKnife,ToHit_Starknife)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Knife.Agile.Deadly d6.Finesse.Thrown 20.Versatile S				
+Clan dagger			CATEGORY:Proficiency	AUTO:WEAPONPROF|Clan dagger				BONUS:WEAPONPROF=Clan dagger|TOHIT|max(ToHit_GroupKnife,ToHit_Clandagger)|TYPE=Class	TYPE:Weapon.Melee.Simple Melee.Simple.Piercing	TYPE:Weapon Group ~ Knife.Dwarf.Parry.Versatile B								
+Katar				CATEGORY:Proficiency	AUTO:WEAPONPROF|Katar					BONUS:WEAPONPROF=Katar|TOHIT|max(ToHit_GroupKnife,ToHit_Katar)|TYPE=Class	TYPE:Weapon.Melee.Simple Melee.Simple.Piercing	TYPE:Weapon Group ~ Knife.Agile.Deadly d6.Monk								
+Kama				CATEGORY:Proficiency	AUTO:WEAPONPROF|Kama					BONUS:WEAPONPROF=Kama|TOHIT|max(ToHit_GroupKnife,ToHit_Kama)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Knife.Agile.Monk.Trip												
+Kukri				CATEGORY:Proficiency	AUTO:WEAPONPROF|Kukri					BONUS:WEAPONPROF=Kukri|TOHIT|max(ToHit_GroupKnife,ToHit_Kukri)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Knife.Agile.Finesse.Trip											
+Orc knuckle dagger	CATEGORY:Proficiency	AUTO:WEAPONPROF|Orc knuckle dagger		BONUS:WEAPONPROF=Orc knuckle dagger|TOHIT|max(ToHit_GroupKnife,ToHit_Orcknuckledagger)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Orc											
+Sai				CATEGORY:Proficiency	AUTO:WEAPONPROF|Sai					BONUS:WEAPONPROF=Sai|TOHIT|max(ToHit_GroupKnife,ToHit_Sai)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Finesse.Monk.Versatile B										
+Orc necksplitter		CATEGORY:Proficiency	AUTO:WEAPONPROF|Orc necksplitter			BONUS:WEAPONPROF=Orc necksplitter|TOHIT|max(ToHit_GroupKnife,ToHit_Orcnecksplitter)|TYPE=Class	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Knife.Forceful.Orc.Versatile P								
+# Spear
+Longspear			CATEGORY:Proficiency	AUTO:WEAPONPROF|Longspear			BONUS:WEAPONPROF=Longspear|TOHIT|max(ToHit_GroupSpear,ToHit_Longspear)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Spear.Reach
+Spear				CATEGORY:Proficiency	AUTO:WEAPONPROF|Spear				BONUS:WEAPONPROF=Spear|TOHIT|max(ToHit_GroupSpear,ToHit_Spear)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Spear.Thrown 20
+Lance				CATEGORY:Proficiency	AUTO:WEAPONPROF|Lance				BONUS:WEAPONPROF=Lance|TOHIT|max(ToHit_GroupSpear,ToHit_Lance)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Spear.Charge.Deadly d8.Reach
+Trident			CATEGORY:Proficiency	AUTO:WEAPONPROF|Trident			BONUS:WEAPONPROF=Trident|TOHIT|max(ToHit_GroupSpear,ToHit_Trident)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Spear.Thrown 20										
+Filcher's fork		CATEGORY:Proficiency	AUTO:WEAPONPROF|Filcher's fork		BONUS:WEAPONPROF=Filcher's fork|TOHIT|max(ToHit_GroupSpear,ToHit_Filchersfork)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Spear.Agile.Backstabber.Deadly d6.Finesse.Halfling.Thrown 20			
+# Sword
+Bastard sword		CATEGORY:Proficiency	AUTO:WEAPONPROF|Bastard sword			BONUS:WEAPONPROF=Bastard sword|TOHIT|max(ToHit_GroupSword,ToHit_Bastard sword)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Two-hand d12
+Falchion			CATEGORY:Proficiency	AUTO:WEAPONPROF|Falchion				BONUS:WEAPONPROF=Falchion|TOHIT|max(ToHit_GroupSword,ToHit_Falchion)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Forceful.Sweep
+Greatsword			CATEGORY:Proficiency	AUTO:WEAPONPROF|Greatsword				BONUS:WEAPONPROF=Greatsword|TOHIT|max(ToHit_GroupSword,ToHit_Greatsword)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Versatile P
+Longsword			CATEGORY:Proficiency	AUTO:WEAPONPROF|Longsword				BONUS:WEAPONPROF=Longsword|TOHIT|max(ToHit_GroupSword,ToHit_Longsword)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Versatile P											
+Rapier			CATEGORY:Proficiency	AUTO:WEAPONPROF|Rapier				BONUS:WEAPONPROF=Rapier|TOHIT|max(ToHit_GroupSword,ToHit_Rapier)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Sword.Deadly d8.Disarm.Finesse									
+Scimitar			CATEGORY:Proficiency	AUTO:WEAPONPROF|Scimitar				BONUS:WEAPONPROF=Scimitar|TOHIT|max(ToHit_GroupSword,ToHit_Scimitar)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Forceful.Sweep											
+Shortsword			CATEGORY:Proficiency	AUTO:WEAPONPROF|Shortsword				BONUS:WEAPONPROF=Shortsword|TOHIT|max(ToHit_GroupSword,ToHit_Shortsword)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Sword.Agile.Finesse.Versatile S									
+Dogslicer			CATEGORY:Proficiency	AUTO:WEAPONPROF|Dogslicer				BONUS:WEAPONPROF=Dogslicer|TOHIT|max(ToHit_GroupSword,ToHit_Dogslicer)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Agile.Backstabber.Finesse.Goblin									
+Elven curve blade		CATEGORY:Proficiency	AUTO:WEAPONPROF|Elven curve blade			BONUS:WEAPONPROF=Elven curve blade|TOHIT|max(ToHit_GroupSword,ToHit_Elven curve blade)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Elf.Finesse.Forceful											
+Katana			CATEGORY:Proficiency	AUTO:WEAPONPROF|Katana				BONUS:WEAPONPROF=Katana|TOHIT|max(ToHit_GroupSword,ToHit_Katana)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Versatile P												
+Temple sword		CATEGORY:Proficiency	AUTO:WEAPONPROF|Temple sword			BONUS:WEAPONPROF=Temple sword|TOHIT|max(ToHit_GroupSword,ToHit_Temple sword)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Monk.Trip													
+Sawtooth sabre		CATEGORY:Proficiency	AUTO:WEAPONPROF|Sawtooth sabre			BONUS:WEAPONPROF=Sawtooth sabre|TOHIT|max(ToHit_GroupSword,ToHit_Sawtooth sabre)|TYPE=Class	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Sword.Agile.Finesse.Twin									
+
+Battle axe			CATEGORY:Proficiency	AUTO:WEAPONPROF|Battle axe			BONUS:WEAPONPROF=Nunchaku|TOHIT|max(ToHit_GroupAxe,ToHit_Battleaxe)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep
+Greataxe			CATEGORY:Proficiency	AUTO:WEAPONPROF|Greataxe			BONUS:WEAPONPROF=Nunchaku|TOHIT|max(ToHit_GroupAxe,ToHit_Greataxe)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep
+Hatchet			CATEGORY:Proficiency	AUTO:WEAPONPROF|Hatchet			BONUS:WEAPONPROF=Nunchaku|TOHIT|max(ToHit_GroupAxe,ToHit_Hatchet)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Axe.Agile.Sweep.Thrown 10
+Dwarven waraxe		CATEGORY:Proficiency	AUTO:WEAPONPROF|Dwarven waraxe		BONUS:WEAPONPROF=Nunchaku|TOHIT|max(ToHit_GroupAxe,ToHit_Dwarven waraxe)|TYPE=Class		TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Axe.Dwarf.Sweep.Two-hand d12								
+# Flail
+Flail				CATEGORY:Proficiency	AUTO:WEAPONPROF|Flail					BONUS:WEAPONPROF=Flail|TOHIT|max(ToHit_GroupFlail,ToHit_Flail)|TYPE=Class	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Flail.Disarm.Sweep.Trip
+War flail			CATEGORY:Proficiency	AUTO:WEAPONPROF|War flail				BONUS:WEAPONPROF=War flail|TOHIT|max(ToHit_GroupFlail,ToHit_War flail)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Flail.Disarm.Sweep.Trip										
+Whip				CATEGORY:Proficiency	AUTO:WEAPONPROF|Whip					BONUS:WEAPONPROF=Whip|TOHIT|max(ToHit_GroupFlail,ToHit_Whip)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Flail.Disarm.Finesse.Nonlethal.Reach.Trip							
+Spiked chain		CATEGORY:Proficiency	AUTO:WEAPONPROF|Spiked chain			BONUS:WEAPONPROF=Spiked chain|TOHIT|max(ToHit_GroupFlail,ToHit_Spiked chain)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Flail.Disarm.Finesse.Trip											
+Gnome flickmace		CATEGORY:Proficiency	AUTO:WEAPONPROF|Gnome flickmace			BONUS:WEAPONPROF=Gnome flickmace|TOHIT|max(ToHit_GroupFlail,ToHit_Gnomeflickmace)|TYPE=Class	TYPE:Weapon.Melee.Exotic Melee.Exotic.Bludgeoning	TYPE:Weapon Group ~ Flail.Gnome.Reach									
+Glaive			CATEGORY:Proficiency	AUTO:WEAPONPROF|Glaive				BONUS:WEAPONPROF=Glaive|TOHIT|max(ToHit_GroupFlail,ToHit_Glaive)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Deadly d8.Forceful.Reach
+Guisarme			CATEGORY:Proficiency	AUTO:WEAPONPROF|Guisarme				BONUS:WEAPONPROF=Guisarme|TOHIT|max(ToHit_GroupFlail,ToHit_Guisarme)|TYPE=Class	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Trip
+Halberd			CATEGORY:Proficiency	AUTO:WEAPONPROF|Halberd				BONUS:WEAPONPROF=Halberd|TOHIT|max(ToHit_GroupFlail,ToHit_Halberd)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Versatile S
+Ranseur			CATEGORY:Proficiency	AUTO:WEAPONPROF|Ranseur				BONUS:WEAPONPROF=Ranseur|TOHIT|max(ToHit_GroupFlail,ToHit_Ranseur)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Polearm.Disarm.Reach											
+Scythe			CATEGORY:Proficiency	AUTO:WEAPONPROF|Scythe				BONUS:WEAPONPROF=Scythe|TOHIT|max(ToHit_GroupFlail,ToHit_Scythe)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Polearm.Deadly d10.Trip										
+Horsechopper		CATEGORY:Proficiency	AUTO:WEAPONPROF|Horsechopper			BONUS:WEAPONPROF=Horsechopper|TOHIT|max(ToHit_GroupFlail,ToHit_Horsechopper)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Polearm.Goblin.Reach.Trip.Versatile P									
+# Pick
+Greatpick			CATEGORY:Proficiency	AUTO:WEAPONPROF|Greatpick			BONUS:WEAPONPROF=Greatpick|TOHIT|max(ToHit_GroupPick,ToHit_Greatpick)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Fatal d12
+Light hammer		CATEGORY:Proficiency	AUTO:WEAPONPROF|Light hammer		BONUS:WEAPONPROF=Light hammer|TOHIT|max(ToHit_GroupPick,ToHit_Lighthammer)|TYPE=Class	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Pick.Agile.Thrown 20
+Light pick			CATEGORY:Proficiency	AUTO:WEAPONPROF|Light pick			BONUS:WEAPONPROF=Light pick|TOHIT|max(ToHit_GroupPick,ToHit_Lightpick)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Agile.Fatal d8
+Pick				CATEGORY:Proficiency	AUTO:WEAPONPROF|Pick				BONUS:WEAPONPROF=Pick|TOHIT|max(ToHit_GroupPick,ToHit_Pick)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Pick.Fatal d10												
+# Shield
+Heavy shield		CATEGORY:Proficiency	AUTO:WEAPONPROF|Heavy shield		BONUS:WEAPONPROF=Heavy shield|TOHIT|max(ToHit_GroupShield,ToHit_Heavyshield)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to heavy shield
+Light shield		CATEGORY:Proficiency	AUTO:WEAPONPROF|Light shield		BONUS:WEAPONPROF=Light shield|TOHIT|max(ToHit_GroupShield,ToHit_Lightshield)|TYPE=Class	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile
+# Hammer
+Maul				CATEGORY:Proficiency	AUTO:WEAPONPROF|Maul					BONUS:WEAPONPROF=Maul|TOHIT|max(ToHit_GroupHammer,ToHit_Maul)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Shove												
+Warhammer			CATEGORY:Proficiency	AUTO:WEAPONPROF|Warhammer				BONUS:WEAPONPROF=Warhammer|TOHIT|max(ToHit_GroupHammer,ToHit_Warhammer)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Shove												
+Gnome hooked hammer	CATEGORY:Proficiency	AUTO:WEAPONPROF|Gnome hooked hammer		BONUS:WEAPONPROF=Gnome hooked hammer|TOHIT|max(ToHit_GroupHammer,ToHit_Gnomehookedhammer)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Gnome.Trip.Two-hand d10.Versatile P								
+# Dart
+Blowgun			CATEGORY:Proficiency	AUTO:WEAPONPROF|Blowgun			BONUS:WEAPONPROF=Blowgun|TOHIT|max(ToHit_GroupDart,ToHit_Blowgun)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Dart.Agile.Nonlethal										
+Dart				CATEGORY:Proficiency	AUTO:WEAPONPROF|Dart				BONUS:WEAPONPROF=Dart|TOHIT|max(ToHit_GroupDart,ToHit_Dart)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Agile.Thrown									
+Javelin			CATEGORY:Proficiency	AUTO:WEAPONPROF|Javelin			BONUS:WEAPONPROF=Javelin|TOHIT|max(ToHit_GroupDart,ToHit_Javelin)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Thrown										
+Shuriken			CATEGORY:Proficiency	AUTO:WEAPONPROF|Shuriken			BONUS:WEAPONPROF=Shuriken|TOHIT|max(ToHit_GroupDart,ToHit_Shuriken)|TYPE=Class	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Agile.Monk.Thrown 20							
+# Bow
+Crossbow			CATEGORY:Proficiency	AUTO:WEAPONPROF|Crossbow			BONUS:WEAPONPROF=Crossbow|TOHIT|max(ToHit_GroupBow,ToHit_Crossbow)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow													
+Hand crossbow		CATEGORY:Proficiency	AUTO:WEAPONPROF|Hand crossbow			BONUS:WEAPONPROF=Hand crossbow|TOHIT|max(ToHit_GroupBow,ToHit_Handcrossbow)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow													
+Heavy crossbow		CATEGORY:Proficiency	AUTO:WEAPONPROF|Heavy crossbow		BONUS:WEAPONPROF=Heavy crossbow|TOHIT|max(ToHit_GroupBow,ToHit_Heavycrossbow)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow													
+Composite longbow		CATEGORY:Proficiency	AUTO:WEAPONPROF|Composite longbow		BONUS:WEAPONPROF=Composite longbow|TOHIT|max(ToHit_GroupBow,ToHit_Compositelongbow)|TYPE=Class	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Propulsive.Volley							
+Composite shortbow	CATEGORY:Proficiency	AUTO:WEAPONPROF|Composite shortbow		BONUS:WEAPONPROF=Composite shortbow|TOHIT|max(ToHit_GroupBow,ToHit_Compositeshortbow)|TYPE=Class	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Propulsive								
+Longbow			CATEGORY:Proficiency	AUTO:WEAPONPROF|Longbow				BONUS:WEAPONPROF=Longbow|TOHIT|max(ToHit_GroupBow,ToHit_Longbow)|TYPE=Class	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Volley									
+Shortbow			CATEGORY:Proficiency	AUTO:WEAPONPROF|Shortbow			BONUS:WEAPONPROF=Shortbow|TOHIT|max(ToHit_GroupBow,ToHit_Shortbow)|TYPE=Class	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10										
+# Sling
+Sling				CATEGORY:Proficiency	AUTO:WEAPONPROF|Sling		BONUS:WEAPONPROF=Sling|TOHIT|max(ToHit_GroupSling,ToHit_Sling)|TYPE=Class	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Bludgeoning.Ranged		TYPE:Weapon Group ~ Sling.Propulsive											
+Halfling sling staff	CATEGORY:Proficiency	AUTO:WEAPONPROF|Halfling sling staff		BONUS:WEAPONPROF=Halfling sling staff|TOHIT|max(ToHit_GroupSling,ToHit_Halflingslingstaff)|TYPE=Class	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Bludgeoning.Ranged	TYPE:Weapon Group ~ Sling.Halfling.Propulsive								
 
 
 
@@ -498,55 +1033,55 @@ Grant Expert to all Weapon Groups		CATEGORY:Proficiency																								A
 
 ###Block: Language Support
 Common	AUTO:LANG|Common		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Humans, dwarves, elves, halflings, and other common ancestries
-Draconic	AUTO:LANG|Draconic	TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Dragons, reptilian humanoids
+Draconic	AUTO:LANG|Draconic	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Dragons, reptilian humanoids
 Dwarven	AUTO:LANG|Dwarven		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Dwarves
-Elven		AUTO:LANG|Elven		TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Elves, half-elves
+Elven		AUTO:LANG|Elven		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Elves, half-elves
 Gnomish	AUTO:LANG|Gnomish		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Gnomes
 Goblin	AUTO:LANG|Goblin		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Goblins, hobgoblins, bugbears
-Halfling	AUTO:LANG|Halfling	TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Halflings
-Jotun		AUTO:LANG|Jotun		TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Giants, ogres, trolls, ettins, cyclopes
+Halfling	AUTO:LANG|Halfling	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Halflings
+Jotun		AUTO:LANG|Jotun		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Giants, ogres, trolls, ettins, cyclopes
 Orcish	AUTO:LANG|Orcish		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Orcs, half-orcs
 Sylvan	AUTO:LANG|Sylvan		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Fey, centaurs, plant creatures
-Undercommon	AUTO:LANG|Undercommon	TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Drow, duergar, morlocks
+Undercommon	AUTO:LANG|Undercommon	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Drow, duergar, morlocks
 
 # Uncommon Languages
-Abyssal		AUTO:LANG|Abyssal			TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Demons
-Aklo			AUTO:LANG|Aklo			TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Derros, otherworldly monsters, evil fey
-Aquan			AUTO:LANG|Aquan			TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Aquatic creatures, water elemental creatures
-Auran			AUTO:LANG|Auran			TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Flying creatures, air elemental creatures
-Celestial		AUTO:LANG|Celestial		TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Angels
-Gnoll			AUTO:LANG|Gnoll			TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Gnolls
-Ignan			AUTO:LANG|Ignan			TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Fire creatures
-Infernal		AUTO:LANG|Infernal		TYPE:Bonus Language			CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Devils
-Necril		AUTO:LANG|Necril			TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Ghouls, intelligent undead
-Shadowtongue	AUTO:LANG|Shadowtongue		TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Nidalese, Shadow Plane creatures
-Terran		AUTO:LANG|Terran			TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Earth creatures
+Abyssal		AUTO:LANG|Abyssal		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Demons
+Aklo			AUTO:LANG|Aklo		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Derros, otherworldly monsters, evil fey
+Aquan			AUTO:LANG|Aquan		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Aquatic creatures, water elemental creatures
+Auran			AUTO:LANG|Auran		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Flying creatures, air elemental creatures
+Celestial		AUTO:LANG|Celestial	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Angels
+Gnoll			AUTO:LANG|Gnoll		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Gnolls
+Ignan			AUTO:LANG|Ignan		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Fire creatures
+Infernal		AUTO:LANG|Infernal	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Devils
+Necril		AUTO:LANG|Necril		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Ghouls, intelligent undead
+Shadowtongue	AUTO:LANG|Shadowtongue	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Nidalese, Shadow Plane creatures
+Terran		AUTO:LANG|Terran		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Earth creatures
 # Regional Languages
 Hallit		AUTO:LANG|Hallit		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Irrisen, Mendev, Realm of the Mammoth Lords, Numeria, Sarkoris
 Kelish		AUTO:LANG|Kelish		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Katapesh, Qadira
 Mwangi		AUTO:LANG|Mwangi		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Mwangi Expanse, Sargava, the Shackles, the Sodden Lands, Thuvia
-Osiriani		AUTO:LANG|Osiriani	TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Geb, Katapesh, Mana Wastes, Nex, Osirion, Rahadoum, Thuvia
+Osiriani		AUTO:LANG|Osiriani	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Geb, Katapesh, Mana Wastes, Nex, Osirion, Rahadoum, Thuvia
 Shoanti		AUTO:LANG|Shoanti		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Belkzen, Varisia
-Skald			AUTO:LANG|Skald		TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Irrisen, Lands of the Linnorm Kings, Ustalav
-Tien			AUTO:LANG|Tien		TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Lands of the Linnorm Kings, Realm of the Mammoth Lords, Tian Xia
-Varisian		AUTO:LANG|Varisian	TYPE:Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Brevoy, Lastwall, Nidal, Nirmathas, Ustalav, Varisia
+Skald			AUTO:LANG|Skald		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Irrisen, Lands of the Linnorm Kings, Ustalav
+Tien			AUTO:LANG|Tien		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Lands of the Linnorm Kings, Realm of the Mammoth Lords, Tian Xia
+Varisian		AUTO:LANG|Varisian	TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Brevoy, Lastwall, Nidal, Nirmathas, Ustalav, Varisia
 Vudrani		AUTO:LANG|Vudrani		TYPE:Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Jalmeray, Katapesh, Nex
 # Secret Language
-Druidic		AUTO:LANG|Druidic	CATEGORY:Language	TYPE:Druid			DESC:Druids
+Druidic		AUTO:LANG|Druidic		CATEGORY:Language		TYPE:Druid			DESC:Druids
 
 
 ###Block: Ancestry Language Support
 Common		KEY:Ancestry Language Support ~ Common		ABILITY:Language|AUTOMATIC|Common		PREVARGTEQ:AncestryBonusLang_Common,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Humans, dwarves, elves, halflings, and other common ancestries
 Draconic		KEY:Ancestry Language Support ~ Draconic		ABILITY:Language|AUTOMATIC|Draconic		PREVARGTEQ:AncestryBonusLang_Draconic,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Dragons, reptilian humanoids
 Dwarven		KEY:Ancestry Language Support ~ Dwarven		ABILITY:Language|AUTOMATIC|Dwarven		PREVARGTEQ:AncestryBonusLang_Dwarven,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Dwarves
-Elven			KEY:Ancestry Language Support ~ Elven		ABILITY:Language|AUTOMATIC|Elven		PREVARGTEQ:AncestryBonusLang_Elven,1		TYPE:Ancestry Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Elves, half-elves
+Elven			KEY:Ancestry Language Support ~ Elven		ABILITY:Language|AUTOMATIC|Elven		PREVARGTEQ:AncestryBonusLang_Elven,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Elves, half-elves
 Gnomish		KEY:Ancestry Language Support ~ Gnomish		ABILITY:Language|AUTOMATIC|Gnomish		PREVARGTEQ:AncestryBonusLang_Gnomish,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Gnomes
 Goblin		KEY:Ancestry Language Support ~ Goblin		ABILITY:Language|AUTOMATIC|Goblin		PREVARGTEQ:AncestryBonusLang_Goblin,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Goblins, hobgoblins, bugbears
 Halfling		KEY:Ancestry Language Support ~ Halfling		ABILITY:Language|AUTOMATIC|Halfling		PREVARGTEQ:AncestryBonusLang_Halfling,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Halflings
-Jotun			KEY:Ancestry Language Support ~ Jotun		ABILITY:Language|AUTOMATIC|Jotun		PREVARGTEQ:AncestryBonusLang_Jotun,1		TYPE:Ancestry Bonus Language		CATEGORY:Language	TYPE:Spoken.Common	DESC:Giants, ogres, trolls, ettins, cyclopes
+Jotun			KEY:Ancestry Language Support ~ Jotun		ABILITY:Language|AUTOMATIC|Jotun		PREVARGTEQ:AncestryBonusLang_Jotun,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Giants, ogres, trolls, ettins, cyclopes
 Orcish		KEY:Ancestry Language Support ~ Orcish		ABILITY:Language|AUTOMATIC|Orcish		PREVARGTEQ:AncestryBonusLang_Orcish,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Orcs, half-orcs
 Sylvan		KEY:Ancestry Language Support ~ Sylvan		ABILITY:Language|AUTOMATIC|Sylvan		PREVARGTEQ:AncestryBonusLang_Sylvan,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Fey, centaurs, plant creatures
-Undercommon		KEY:Ancestry Language Support ~ Undercommon	ABILITY:Language|AUTOMATIC|Undercommon	PREVARGTEQ:AncestryBonusLang_Undercommon,1	TYPE:Ancestry Bonus Language			CATEGORY:Language	TYPE:Spoken.Common	DESC:Drow, duergar, morlocks
+Undercommon		KEY:Ancestry Language Support ~ Undercommon	ABILITY:Language|AUTOMATIC|Undercommon	PREVARGTEQ:AncestryBonusLang_Undercommon,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Common	DESC:Drow, duergar, morlocks
 # Uncommon Languages
 Abyssal		KEY:Ancestry Language Support ~ Abyssal		ABILITY:Language|AUTOMATIC|Abyssal		PREVARGTEQ:AncestryBonusLang_Abyssal,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Demons
 Aklo			KEY:Ancestry Language Support ~ Aklo		ABILITY:Language|AUTOMATIC|Aklo		PREVARGTEQ:AncestryBonusLang_Aklo,1			TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Derros, otherworldly monsters, evil fey
@@ -557,7 +1092,7 @@ Gnoll			KEY:Ancestry Language Support ~ Gnoll		ABILITY:Language|AUTOMATIC|Gnoll	
 Ignan			KEY:Ancestry Language Support ~ Ignan		ABILITY:Language|AUTOMATIC|Ignan		PREVARGTEQ:AncestryBonusLang_Ignan,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Fire creatures
 Infernal		KEY:Ancestry Language Support ~ Infernal		ABILITY:Language|AUTOMATIC|Infernal		PREVARGTEQ:AncestryBonusLang_Infernal,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Devils
 Necril		KEY:Ancestry Language Support ~ Necril		ABILITY:Language|AUTOMATIC|Necril		PREVARGTEQ:AncestryBonusLang_Necril,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Ghouls, intelligent undead
-Shadowtongue	KEY:Ancestry Language Support ~ Shadowtongue	ABILITY:Language|AUTOMATIC|Shadowtongue	PREVARGTEQ:AncestryBonusLang_Shadowtongue,1	TYPE:Ancestry Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Nidalese, Shadow Plane creatures
+Shadowtongue	KEY:Ancestry Language Support ~ Shadowtongue	ABILITY:Language|AUTOMATIC|Shadowtongue	PREVARGTEQ:AncestryBonusLang_Shadowtongue,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Nidalese, Shadow Plane creatures
 Terran		KEY:Ancestry Language Support ~ Terran		ABILITY:Language|AUTOMATIC|Terran		PREVARGTEQ:AncestryBonusLang_Terran,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Earth creatures
 # Regional Languages
 Hallit		KEY:Ancestry Language Support ~ Hallit		ABILITY:Language|AUTOMATIC|Hallit		PREVARGTEQ:AncestryBonusLang_Hallit,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Irrisen, Mendev, Realm of the Mammoth Lords, Numeria, Sarkoris
@@ -565,8 +1100,175 @@ Kelish		KEY:Ancestry Language Support ~ Kelish		ABILITY:Language|AUTOMATIC|Kelis
 Mwangi		KEY:Ancestry Language Support ~ Mwangi		ABILITY:Language|AUTOMATIC|Mwangi		PREVARGTEQ:AncestryBonusLang_Mwangi,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Mwangi Expanse, Sargava, the Shackles, the Sodden Lands, Thuvia
 Osiriani		KEY:Ancestry Language Support ~ Osiriani		ABILITY:Language|AUTOMATIC|Osiriani		PREVARGTEQ:AncestryBonusLang_Osiriani,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Geb, Katapesh, Mana Wastes, Nex, Osirion, Rahadoum, Thuvia
 Shoanti		KEY:Ancestry Language Support ~ Shoanti		ABILITY:Language|AUTOMATIC|Shoanti		PREVARGTEQ:AncestryBonusLang_Shoanti,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Belkzen, Varisia
-Skald			KEY:Ancestry Language Support ~ Skald		ABILITY:Language|AUTOMATIC|Skald		PREVARGTEQ:AncestryBonusLang_Skald,1	TYPE:Ancestry Bonus Language		CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Irrisen, Lands of the Linnorm Kings, Ustalav
+Skald			KEY:Ancestry Language Support ~ Skald		ABILITY:Language|AUTOMATIC|Skald		PREVARGTEQ:AncestryBonusLang_Skald,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Irrisen, Lands of the Linnorm Kings, Ustalav
 Tien			KEY:Ancestry Language Support ~ Tien		ABILITY:Language|AUTOMATIC|Tien		PREVARGTEQ:AncestryBonusLang_Tien,1		TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Absalom, Lands of the Linnorm Kings, Realm of the Mammoth Lords, Tian Xia
 Varisian		KEY:Ancestry Language Support ~ Varisian		ABILITY:Language|AUTOMATIC|Varisian		PREVARGTEQ:AncestryBonusLang_Varisian,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Brevoy, Lastwall, Nidal, Nirmathas, Ustalav, Varisia
 Vudrani		KEY:Ancestry Language Support ~ Vudrani		ABILITY:Language|AUTOMATIC|Vudrani		PREVARGTEQ:AncestryBonusLang_Vudrani,1	TYPE:Ancestry Bonus Language	CATEGORY:Language	TYPE:Spoken.Uncommon	DESC:Jalmeray, Katapesh, Nex
+
+###Block: Unarmed Strikes
+# Fist = d10
+# Jaws = d10, d8, d6
+# Claw
+
+Fist ~ d10	CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Fist ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fist ~ 1 ~ 1d10|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Fist ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fist ~ 1 ~ 2d10|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Fist ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fist ~ 1 ~ 3d10|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Fist ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fist ~ 1 ~ 4d10|PREVAREQ:UnarmedDice,4
+
+Jaws ~ d10				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Jaws ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 1d10|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Jaws ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 2d10|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Jaws ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 3d10|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Jaws ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 4d10|PREVAREQ:UnarmedDice,4
+
+Jaws ~ d8				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 1d8|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 2d8|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 3d8|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Jaws ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 4d8|PREVAREQ:UnarmedDice,4
+
+Jaws ~ d6				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Jaws ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Jaws ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+Claw ~ d8				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d8|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d8|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d8|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Claw ~ d8.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d8|PREVAREQ:UnarmedDice,4
+
+Claw ~ d6				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Claw ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+Claw ~ d4				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 1d4|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 2d4|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 3d4|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Claw ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Claw ~ 1 ~ 4d4|PREVAREQ:UnarmedDice,4
+
+Talon ~ d6				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Talon ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+Talon ~ d4				CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 1d4|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 2d4|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 3d4|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Talon ~ d4.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Talon ~ 1 ~ 4d4|PREVAREQ:UnarmedDice,4
+
+Hoof ~ d6			CATEGORY:Unarmed Strike
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 1d6|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 2d6|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 3d6|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Hoof ~ d6.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Hoof ~ 1 ~ 4d6|PREVAREQ:UnarmedDice,4
+
+Horn ~ d10	CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Horn ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Horn ~ 1 ~ 1d10|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Horn ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Horn ~ 1 ~ 2d10|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Horn ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Horn ~ 1 ~ 3d10|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Horn ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Horn ~ 1 ~ 4d10|PREVAREQ:UnarmedDice,4
+
+Antler ~ d10	CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Antler ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Antler ~ 1 ~ 1d10|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Antler ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Antler ~ 1 ~ 2d10|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Antler ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Antler ~ 1 ~ 3d10|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Antler ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Antler ~ 1 ~ 4d10|PREVAREQ:UnarmedDice,4
+
+Fangs ~ d10	CATEGORY:Unarmed Strike	
+CATEGORY=Unarmed Strike|Fangs ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fangs ~ 1 ~ 1d10|PREVARLTEQ:UnarmedDice,1
+CATEGORY=Unarmed Strike|Fangs ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fangs ~ 1 ~ 2d10|PREVAREQ:UnarmedDice,2
+CATEGORY=Unarmed Strike|Fangs ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fangs ~ 1 ~ 3d10|PREVAREQ:UnarmedDice,3
+CATEGORY=Unarmed Strike|Fangs ~ d10.MOD	ABILITY:Unarmed Strike|AUTOMATIC|Fangs ~ 1 ~ 4d10|PREVAREQ:UnarmedDice,4
+
+
+
+# Fist d10
+Fist	KEY:Fist ~ 1 ~ 1d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fist,Weapon.Melee.Natural.Piercing,*1,1d10,SPROP=Unarmed
+Fist	KEY:Fist ~ 1 ~ 2d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fist,Weapon.Melee.Natural.Piercing,*1,2d10,SPROP=Unarmed
+Fist	KEY:Fist ~ 1 ~ 3d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fist,Weapon.Melee.Natural.Piercing,*1,3d10,SPROP=Unarmed
+Fist	KEY:Fist ~ 1 ~ 4d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fist,Weapon.Melee.Natural.Piercing,*1,4d10,SPROP=Unarmed
+
+
+# Jaws d10
+Jaws	KEY:Jaws ~ 1 ~ 1d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,1d10,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 2d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,2d10,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 3d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,3d10,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 4d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,4d10,SPROP=Unarmed
+
+# Jaws d8
+Jaws	KEY:Jaws ~ 1 ~ 1d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,1d8,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 2d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,2d8,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 3d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,3d8,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 4d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,4d8,SPROP=Unarmed
+
+# Jaws d6
+Jaws	KEY:Jaws ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,1d6,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,2d6,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,3d6,SPROP=Unarmed
+Jaws	KEY:Jaws ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Jaws,Weapon.Melee.Natural.Piercing,*1,4d6,SPROP=Unarmed
+
+# Claw d8
+Claw	KEY:Claw ~ 1 ~ 1d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d8,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 2d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,2d8,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 3d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,3d8,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 4d8	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,4d8,SPROP=Agile and Unarmed
+
+# Claw d6
+Claw	KEY:Claw ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d6,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,2d6,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,3d6,SPROP=Agile and Unarmed
+Claw	KEY:Claw ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,4d6,SPROP=Agile and Unarmed
+
+# Claw d4
+Claw	KEY:Claw ~ 1 ~ 1d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,1d4,SPROP=Unarmed
+Claw	KEY:Claw ~ 1 ~ 2d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,2d4,SPROP=Unarmed
+Claw	KEY:Claw ~ 1 ~ 3d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,3d4,SPROP=Unarmed
+Claw	KEY:Claw ~ 1 ~ 4d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Claw,Weapon.Melee.Natural.Slashing,*1,4d4,SPROP=Unarmed
+
+# Talon d6
+Talon	KEY:Talon ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,1d6,SPROP=Unarmed
+Talon	KEY:Talon ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,2d6,SPROP=Unarmed
+Talon	KEY:Talon ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,3d6,SPROP=Unarmed
+Talon	KEY:Talon ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,4d6,SPROP=Unarmed
+
+# Talon d4
+Talon	KEY:Talon ~ 1 ~ 1d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,1d4,SPROP=Unarmed
+Talon	KEY:Talon ~ 1 ~ 2d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,2d4,SPROP=Unarmed
+Talon	KEY:Talon ~ 1 ~ 3d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,3d4,SPROP=Unarmed
+Talon	KEY:Talon ~ 1 ~ 4d4	CATEGORY:Unarmed Strike	NATURALATTACKS:Talon,Weapon.Melee.Natural.Slashing,*1,4d4,SPROP=Unarmed
+
+# Hoof d6
+Hoof	KEY:Hoof ~ 1 ~ 1d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,1d6,SPROP=Unarmed
+Hoof	KEY:Hoof ~ 1 ~ 2d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,2d6,SPROP=Unarmed
+Hoof	KEY:Hoof ~ 1 ~ 3d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,3d6,SPROP=Unarmed
+Hoof	KEY:Hoof ~ 1 ~ 4d6	CATEGORY:Unarmed Strike	NATURALATTACKS:Hoof,Weapon.Melee.Natural.Slashing,*1,4d6,SPROP=Unarmed
+
+# Horn d10
+Horn	KEY:Horn ~ 1 ~ 1d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Horn,Weapon.Melee.Natural.Piercing,*1,1d10,SPROP=Unarmed
+Horn	KEY:Horn ~ 1 ~ 2d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Horn,Weapon.Melee.Natural.Piercing,*1,2d10,SPROP=Unarmed
+Horn	KEY:Horn ~ 1 ~ 3d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Horn,Weapon.Melee.Natural.Piercing,*1,3d10,SPROP=Unarmed
+Horn	KEY:Horn ~ 1 ~ 4d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Horn,Weapon.Melee.Natural.Piercing,*1,4d10,SPROP=Unarmed
+
+# Antler d10
+Antler	KEY:Antler ~ 1 ~ 1d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Antler,Weapon.Melee.Natural.Piercing,*1,1d10,SPROP=Unarmed
+Antler	KEY:Antler ~ 1 ~ 2d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Antler,Weapon.Melee.Natural.Piercing,*1,2d10,SPROP=Unarmed
+Antler	KEY:Antler ~ 1 ~ 3d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Antler,Weapon.Melee.Natural.Piercing,*1,3d10,SPROP=Unarmed
+Antler	KEY:Antler ~ 1 ~ 4d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Antler,Weapon.Melee.Natural.Piercing,*1,4d10,SPROP=Unarmed
+
+# Fangs d10
+Fangs	KEY:Fangs ~ 1 ~ 1d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fangs,Weapon.Melee.Natural.Piercing,*1,1d10,SPROP=Unarmed
+Fangs	KEY:Fangs ~ 1 ~ 2d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fangs,Weapon.Melee.Natural.Piercing,*1,2d10,SPROP=Unarmed
+Fangs	KEY:Fangs ~ 1 ~ 3d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fangs,Weapon.Melee.Natural.Piercing,*1,3d10,SPROP=Unarmed
+Fangs	KEY:Fangs ~ 1 ~ 4d10	CATEGORY:Unarmed Strike	NATURALATTACKS:Fangs,Weapon.Melee.Natural.Piercing,*1,4d10,SPROP=Unarmed
+
+
+
 
