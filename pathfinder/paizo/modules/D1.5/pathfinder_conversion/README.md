@@ -15,4 +15,5 @@ It should have been the end. When the bloodthirsty adventurers burst into his th
 
 ### Feats
 **Vermin Heart:** Influence vermin with Wild Empathy.
+
 **Vermin Companion:** Gain a Vermin as an Animal Companion
