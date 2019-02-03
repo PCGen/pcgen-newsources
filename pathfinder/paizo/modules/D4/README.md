@@ -17,7 +17,7 @@ The logging town of Falcon’s Hollow has been through rough times -- first a ko
 
 **Necrobinding Serum:** A dark serum that binds lesser undead to the creator.
 
-**Tallowheart Mass:** The remains of a tallow golem, still imbued with protective restorative properties.
+**Tallowheart Mass:** The remains of a tallow golem, still imbued with protective and restorative properties.
 
 **Drazmorg's Staff of All-Sight:** The signature staff of a necromancer who would wake the Whispering Tyrant, connecting him to the eyes and ears of his minions
 
