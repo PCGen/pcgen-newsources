@@ -8,8 +8,6 @@ The crown of the kobold king will be anointed in blood. Five children from the t
 ### Monsters
 **Forge Spurned:** A dwarf cursed with undeath by the god Droskar, tasked to forge a chain of souls to appease the Dark Smith before finally being allowed the peace of death.
 
-**Slurk:** A forest toad mutated into a slime-coated abomination by Dwarven magic. Now a favored mount of kobolds.
-
 ### Items
 **Crown of the Kobold King:** An ancient bronze crown worn by the sorcerer-kings of the Truescale kobold clan.
 
