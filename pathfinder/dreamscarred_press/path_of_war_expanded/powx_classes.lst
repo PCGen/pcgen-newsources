@@ -1,0 +1,126 @@
+# Original Entry by: Douglas Limmer
+# Original Entry Date: 2018-07-06
+
+### ---  Base Classes --- ###
+
+###Block: Harbinger
+CLASS:Harbinger	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	MAXLEVEL:20	SOURCEPAGE:p.6	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerClassSkills	ABILITY:Internal|AUTOMATIC|Harbinger ~ Class Variables	DEFINE:HarbingerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|HarbingerLVL|CL	BONUS:VAR|ClassSaveGood_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Hrb	FACT:SpellType|Initiator
+CLASS:Harbinger	STARTSKILLPTS:4
+CLASS:Harbinger	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Harbinger|HarbingerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating
+###Block:Proficiencies
+# COMMENT: Weapon and Armor proficiencies separated out from each other for archetypes' sake; not technically as written
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWeaponAndArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial Melee|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerArmorProficiencies
+###Block: Level Progression
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Accursed Will|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerAccursedWill|PREVARGTEQ:HarbingerLVL,1
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Dark Claim|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerDarkClaim|PREVARGTEQ:HarbingerLVL,1
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Ill Tidings|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerIllTidings|PREVARGTEQ:HarbingerLVL,1
+2	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Dark Focus|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerDarkFocus|PREVARGTEQ:HarbingerLVL,2
+3	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Grim News|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerGrimNews|PREVARGTEQ:HarbingerLVL,3
+4	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Massacre|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerMassacre|PREVARGTEQ:HarbingerLVL,4
+5	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Elusive Shadow|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerElusiveShadow|PREVARGTEQ:HarbingerLVL,5
+7	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Sorcerous Deception|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerSorcerousDeception|PREVARGTEQ:HarbingerLVL,7
+8	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Ill Intentions|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerIllIntentions|PREVARGTEQ:HarbingerLVL,8
+11	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Black Omen|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerBlackOmen|PREVARGTEQ:HarbingerLVL,11
+12	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Bleak Prophecy|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerBleakProphecy|PREVARGTEQ:HarbingerLVL,12
+13	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Dark Murmur|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerDarkMurmur|PREVARGTEQ:HarbingerLVL,13
+17	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Rumors of War|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerRumorsOfWar|PREVARGTEQ:HarbingerLVL,17
+18	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Voices in the Dark|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerVoicesInTheDark|PREVARGTEQ:HarbingerLVL,18
+19	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Whispers of Atrocity|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerWhispersOfAtrocity|PREVARGTEQ:HarbingerLVL,19
+###Block: Harbinger Initiating
+1	ABILITY:Harbinger Class Feature|AUTOMATIC|Harbinger ~ Initiating|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating|PREVARGTEQ:HarbingerLVL,1
+1	ADD:SPELLCASTER|Harbinger Stances
+1	KNOWN:0,HarbingerManeuversKnownOne,HarbingerManeuversKnownTwo,HarbingerManeuversKnownThree,HarbingerManeuversKnownFour,HarbingerManeuversKnownFive,HarbingerManeuversKnownSix,HarbingerManeuversKnownSeven,HarbingerManeuversKnownEight,HarbingerManeuversKnownNine
+1	CAST:0,HarbingerManeuversReadiedOne,HarbingerManeuversReadiedTwo,HarbingerManeuversReadiedThree,HarbingerManeuversReadiedFour,HarbingerManeuversReadiedFive,HarbingerManeuversReadiedSix,HarbingerManeuversReadiedSeven,HarbingerManeuversReadiedEight,HarbingerManeuversReadiedNine
+
+###Block: Harbinger Stances pseudo-class
+CLASS:Harbinger Stances	TYPE:InitiatorStances	VISIBLE:NO	FACT:SpellType|Initiator
+CLASS:Harbinger Stances	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Harbinger Stances|HarbingerInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.HarbingerInitiating
+###Block: Harbinger Stances Known/Cast
+1	KNOWN:0,HarbingerStancesKnownOne,HarbingerStancesKnownTwo,HarbingerStancesKnownThree,HarbingerStancesKnownFour,HarbingerStancesKnownFive,HarbingerStancesKnownSix,HarbingerStancesKnownSeven,HarbingerStancesKnownEight,HarbingerStancesKnownNine
+1	CAST:0,HarbingerStancesReadiedOne,HarbingerStancesReadiedTwo,HarbingerStancesReadiedThree,HarbingerStancesReadiedFour,HarbingerStancesReadiedFive,HarbingerStancesReadiedSix,HarbingerStancesReadiedSeven,HarbingerStancesReadiedEight,HarbingerStancesReadiedNine
+
+
+###Block: Mystic
+CLASS:Mystic	HD:8		TYPE:Base.PC.MartialDisciple.Initiator	MAXLEVEL:20	SOURCEPAGE:p.9	ABILITY:Internal|AUTOMATIC|Mystic ~ Class Skills|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticClassSkills	ABILITY:Internal|AUTOMATIC|Mystic ~ Class Variables	DEFINE:MysticLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|MysticLVL|CL	BONUS:VAR|ClassSavePoor_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Mys	FACT:SpellType|Initiator
+CLASS:Mystic	STARTSKILLPTS:4
+CLASS:Mystic	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Mystic|MysticInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInitiating
+###Block:Proficiencies
+# COMMENT: Weapon and Armor proficiencies separated out from each other for archetypes' sake; not technically as written
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWeaponAndArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Light|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArmorProficiencies
+###Block: Level Progression
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Animus|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticAnimus|PREVARGTEQ:MysticLVL,1
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Elemental Attunement|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticElementalAttunement|PREVARGTEQ:MysticLVL,1
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Blade Meditation|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticBladeMeditation|PREVARGTEQ:MysticLVL,1
+2	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Bonus Feat|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticBonusFeat|PREVARGTEQ:MysticLVL,2
+2	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Arcane Defense|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticArcaneDefense|PREVARGTEQ:MysticLVL,2
+3	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Elemental Glyph|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticElementalGlyph|PREVARGTEQ:MysticLVL,3
+4	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Mystic Artifice|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticMysticArtifice|PREVARGTEQ:MysticLVL,4
+5	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Withstand Spell|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticWithstandSpell|PREVARGTEQ:MysticLVL,5
+6	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Instant Enlightenment|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInstantEnlightenment|PREVARGTEQ:MysticLVL,6
+9	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Quell Magic|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticQuellMagic|PREVARGTEQ:MysticLVL,9
+15	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Font of Animus|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticFontOfAnimus|PREVARGTEQ:MysticLVL,15
+20	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Glyph Mastery|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticGlyphMastery|PREVARGTEQ:MysticLVL,20
+###Block: Harbinger Initiating
+1	ABILITY:Mystic Class Feature|AUTOMATIC|Mystic ~ Initiating|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInitiating|PREVARGTEQ:MysticLVL,1
+1	ADD:SPELLCASTER|Mystic Stances
+1	KNOWN:0,MysticManeuversKnownOne,MysticManeuversKnownTwo,MysticManeuversKnownThree,MysticManeuversKnownFour,MysticManeuversKnownFive,MysticManeuversKnownSix,MysticManeuversKnownSeven,MysticManeuversKnownEight,MysticManeuversKnownNine
+1	CAST:0,MysticManeuversReadiedOne,MysticManeuversReadiedTwo,MysticManeuversReadiedThree,MysticManeuversReadiedFour,MysticManeuversReadiedFive,MysticManeuversReadiedSix,MysticManeuversReadiedSeven,MysticManeuversReadiedEight,MysticManeuversReadiedNine
+
+###Block: Mystic Stances pseudo-class
+CLASS:Mystic Stances	TYPE:InitiatorStances	VISIBLE:NO	FACT:SpellType|Initiator
+CLASS:Mystic Stances	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Mystic Stances|MysticInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.MysticInitiating
+###Block: Mystic Stances Known/Cast
+1	KNOWN:0,MysticStancesKnownOne,MysticStancesKnownTwo,MysticStancesKnownThree,MysticStancesKnownFour,MysticStancesKnownFive,MysticStancesKnownSix,MysticStancesKnownSeven,MysticStancesKnownEight,MysticStancesKnownNine
+1	CAST:0,MysticStancesReadiedOne,MysticStancesReadiedTwo,MysticStancesReadiedThree,MysticStancesReadiedFour,MysticStancesReadiedFive,MysticStancesReadiedSix,MysticStancesReadiedSeven,MysticStancesReadiedEight,MysticStancesReadiedNine
+
+
+###Block: Zealot
+CLASS:Zealot	HD:10		TYPE:Base.PC.MartialDisciple.Initiator.Psionic	MAXLEVEL:20	SOURCEPAGE:p.15	ABILITY:Internal|AUTOMATIC|Zealot PoW ~ Class Skills	ABILITY:Internal|AUTOMATIC|Zealot ~ Class Variables	DEFINE:ZealotLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABHigh|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|ZealotLVL|CL	BONUS:VAR|ClassSaveGood_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	ROLE:Combat.Skill	FACT:ClassType|PC	FACT:Abb|Zel	FACT:SpellType|Initiator
+# |!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotClassSkills
+CLASS:Zealot	STARTSKILLPTS:4
+CLASS:Zealot	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Zealot|ZealotInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotInitiating
+###Block:Proficiencies
+# COMMENT: Weapon and Armor proficiencies separated out from each other for archetypes' sake; not technically as written
+1	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Weapon and Armor Proficiency|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotWeaponAndArmorProficiencies|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Martial|Weapon Prof ~ Simple|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotWeaponProficiencies
+1	ABILITY:Internal|AUTOMATIC|Armor Prof ~ Heavy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotArmorProficiencies
+1	ABILITY:Internal|AUTOMATIC|Shield Prof|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotArmorProficiencies
+1	BONUS:VAR|IsPsionic|1	DEFINE:IsPsionic|0
+###Block: Level Progression
+1	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Collective|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotCollective|PREVARGTEQ:ZealotLVL,1
+1	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Compartmentalized Aid|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotCompartmentalizedAid|PREVARGTEQ:ZealotLVL,1
+1	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Zeal|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotZeal|PREVARGTEQ:ZealotLVL,1
+1	ABILITY:Internal|AUTOMATIC|Zealot Power Points|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotPowerPoints|PREVARGTEQ:ZealotLVL,1
+2	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Burning Contemplation|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotBurningContemplation|PREVARGTEQ:ZealotLVL,2
+2	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Conviction|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotConviction|PREVARGTEQ:ZealotLVL,2
+2	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Martyrdom|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotMartyrdom|PREVARGTEQ:ZealotLVL,2
+3	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Commitment|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotCommitment|PREVARGTEQ:ZealotLVL,3
+3	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Telepathy|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotTelepathy|PREVARGTEQ:ZealotLVL,3
+4	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Echoes of Steel|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotEchoesOfSteel|PREVARGTEQ:ZealotLVL,4
+4	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Mission|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotMission|PREVARGTEQ:ZealotLVL,4
+5	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Defiance|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotDefiance|PREVARGTEQ:ZealotLVL,5
+9	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Unshakable Will|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotUnshakableWill|PREVARGTEQ:ZealotLVL,9
+13	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Stalwart|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotStalwart|PREVARGTEQ:ZealotLVL,13
+16	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Metaphysical Transcendence|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotMetaphysicalTranscenence|PREVARGTEQ:ZealotLVL,16
+###Block: Harbinger Initiating
+1	ABILITY:Zealot Class Feature|AUTOMATIC|Zealot ~ Initiating|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotInitiating|PREVARGTEQ:ZealotLVL,1
+1	ADD:SPELLCASTER|Zealot Stances
+1	KNOWN:0,ZealotManeuversKnownOne,ZealotManeuversKnownTwo,ZealotManeuversKnownThree,ZealotManeuversKnownFour,ZealotManeuversKnownFive,ZealotManeuversKnownSix,ZealotManeuversKnownSeven,ZealotManeuversKnownEight,ZealotManeuversKnownNine
+1	CAST:0,ZealotManeuversReadiedOne,ZealotManeuversReadiedTwo,ZealotManeuversReadiedThree,ZealotManeuversReadiedFour,ZealotManeuversReadiedFive,ZealotManeuversReadiedSix,ZealotManeuversReadiedSeven,ZealotManeuversReadiedEight,ZealotManeuversReadiedNine
+
+###Block: Zealot Stances pseudo-class
+CLASS:Zealot Stances	TYPE:InitiatorStances	VISIBLE:NO	FACT:SpellType|Initiator
+CLASS:Zealot Stances	SPELLSTAT:OTHER	MEMORIZE:YES	BONUS:CASTERLEVEL|Zealot Stances|ZealotInitiatorLVL|!PREABILITY:1,CATEGORY=Archetype,TYPE.ZealotInitiating
+###Block: Zealot Stances Known/Cast
+1	KNOWN:0,ZealotStancesKnownOne,ZealotStancesKnownTwo,ZealotStancesKnownThree,ZealotStancesKnownFour,ZealotStancesKnownFive,ZealotStancesKnownSix,ZealotStancesKnownSeven,ZealotStancesKnownEight,ZealotStancesKnownNine
+1	CAST:0,ZealotStancesReadiedOne,ZealotStancesReadiedTwo,ZealotStancesReadiedThree,ZealotStancesReadiedFour,ZealotStancesReadiedFive,ZealotStancesReadiedSix,ZealotStancesReadiedSeven,ZealotStancesReadiedEight,ZealotStancesReadiedNine
+
+#
+# End
+#
