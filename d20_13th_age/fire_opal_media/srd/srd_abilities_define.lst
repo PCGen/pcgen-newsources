@@ -1,0 +1,78 @@
+Default	CATEGORY:Internal
+		BONUS:ABILITYPOOL|+2 to Race Ability Score|1|PRERACE:1,TYPE=PC
+		BONUS:ABILITYPOOL|+2 to Class Ability Score|1|PRECLASS:1,TYPE=PC
+	BONUS:COMBAT|INITIATIVE|TL
+
+	
+	
+	
+	
+	BONUS:COMBAT|AC|
+
+
+
+
+
+
+
+
+
+
+CATEGORY=Internal|Default.MOD	DEFINE:RaceInitial_Str|0
+CATEGORY=Internal|Default.MOD	DEFINE:RaceInitial_Dex|0
+CATEGORY=Internal|Default.MOD	DEFINE:RaceInitial_Con|0
+CATEGORY=Internal|Default.MOD	DEFINE:RaceInitial_Int|0
+CATEGORY=Internal|Default.MOD	DEFINE:RaceInitial_Wis|0
+CATEGORY=Internal|Default.MOD	DEFINE:RaceInitial_Cha|0
+
+CATEGORY=Internal|Default.MOD	DEFINE:ClassInitial_Str|0
+CATEGORY=Internal|Default.MOD	DEFINE:ClassInitial_Dex|0
+CATEGORY=Internal|Default.MOD	DEFINE:ClassInitial_Con|0
+CATEGORY=Internal|Default.MOD	DEFINE:ClassInitial_Int|0
+CATEGORY=Internal|Default.MOD	DEFINE:ClassInitial_Wis|0
+CATEGORY=Internal|Default.MOD	DEFINE:ClassInitial_Cha|0
+
+
+CATEGORY=Internal|Default.MOD	DEFINE:AC_Con|0
+CATEGORY=Internal|Default.MOD	DEFINE:AC_Dex|0
+CATEGORY=Internal|Default.MOD	DEFINE:AC_Wis|0
+CATEGORY=Internal|Default.MOD	DEFINE:AC_Stats_Combined|0
+
+CATEGORY=Internal|Default.MOD	DEFINE:PD_Str|0
+CATEGORY=Internal|Default.MOD	DEFINE:PD_Con|0
+CATEGORY=Internal|Default.MOD	DEFINE:PD_Dex|0
+
+CATEGORY=Internal|Default.MOD	DEFINE:MD_Int|0
+CATEGORY=Internal|Default.MOD	DEFINE:MD_Wis|0
+CATEGORY=Internal|Default.MOD	DEFINE:MD_Cha|0
+
+
+CATEGORY=Internal|Default.MOD	DEFINE:AC_High|0
+CATEGORY=Internal|Default.MOD	DEFINE:AC_Low|0
+CATEGORY=Internal|Default.MOD	DEFINE:AC_Mid|0
+
+
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_Con|CONSCORE
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_Dex|DEXSCORE
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_Wis|WISSCORE
+
+
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_High|max(AC_Con,AC_Dex,AC_Wis)|TYPE=High
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_Low|min(AC_Con,AC_Dex,AC_Wis)|TYPE=Low
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_Mid|AC_Stats_Combined-(AC_High+AC_Low)
+CATEGORY=Internal|Default.MOD	BONUS:VAR|AC_Stats_Combined|AC_Con+AC_Dex+AC_Wis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
