@@ -1,0 +1,33 @@
+# Race Selection - granted by the race, grants default racial traits, and prompts for a theme as a playable race
+# Ability Name	Category of Ability	Ability
+Morlamaw	CATEGORY:Race		ABILITY:Internal|AUTOMATIC|Playable Race Selected|Morlamaw Race Selection ~ Default
+Copaxi	CATEGORY:Race		ABILITY:Internal|AUTOMATIC|Playable Race Selected|Copaxi Race Selection ~ Default
+
+# Racial Traits Listed
+Morlamaw Race Selection ~ Default	CATEGORY:Internal		TYPE:MorlamawRaceSelection	ABILITY:Morlamaw Racial Trait|AUTOMATIC|Morlamaw Default ~ SIZE AND TYPE		ABILITY:Morlamaw Racial Trait|AUTOMATIC|Morlamaw Default ~ AMPHIBIOUS	ABILITY:Morlamaw Racial Trait|AUTOMATIC|Morlamaw Default ~ COLD RESISTANCE		ABILITY:Morlamaw Racial Trait|AUTOMATIC|Morlamaw Default ~ DARKVISION		ABILITY:Morlamaw Racial Trait|AUTOMATIC|Morlamaw Default ~ MORLAMAW MOVEMENT		ABILITY:Morlamaw Racial Trait|AUTOMATIC|Morlamaw Default ~ NATURAL WEAPONS		BONUS:VAR|RaceHP|4
+
+Copaxi Race Selection ~ Default	CATEGORY:Internal		TYPE:CopaxiRaceSelection	ABILITY:Copaxi Racial Trait|AUTOMATIC|Copaxi Default ~ SIZE AND TYPE		ABILITY:Copaxi Racial Trait|AUTOMATIC|Copaxi Default ~ BLINDSENSE	ABILITY:Copaxi Racial Trait|AUTOMATIC|Copaxi Default ~ GRAVITY ADJUSTMENT		ABILITY:Copaxi Racial Trait|AUTOMATIC|Copaxi Default ~ REGENERATIVE EVOLUTION		ABILITY:Copaxi Racial Trait|AUTOMATIC|Copaxi Default ~ NATURAL COMMUNICATOR		BONUS:VAR|RaceHP|4
+
+
+# Racial Traits Defined
+##Morlamaw
+SIZE AND TYPE		KEY:Morlamaw Default ~ SIZE AND TYPE			SORTKEY:m1		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws are Large monstrous humanoids with the aquatic subtype They have a space and reach of 10 feet.		SOURCELONG:SFS Scenario #1-08
+AMPHIBIOUS			KEY:Morlamaw Default ~ AMPHIBIOUS				SORTKEY:m2		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws are able to breathe both water and air normally.		SOURCELONG:SFS Scenario #1-08
+COLD RESISTANCE		KEY:Morlamaw Default ~ COLD RESISTANCE		SORTKEY:m2		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws are accustomed to swimming in icy water and have cold resistance 5.		SOURCELONG:SFS Scenario #1-08		BONUS:VAR|ColdResistanceBonus|5|TYPE=Resistance
+DARKVISION	KEY:Morlamaw Default ~ DARKVISION	SORTKEY:m3		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws have darkvision with a range of 60 feet.		SOURCELONG:SFS Scenario #1-08		BONUS:VAR|DarkvisionRange|60|TYPE=Base
+MORLAMAW MOVEMENT		KEY:Morlamaw Default ~ MORLAMAW MOVEMENT		SORTKEY:m4		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws have a land speed of 20 feet and a swim speed of 40 feet.		SOURCELONG:SFS Scenario #1-08
+NATURAL WEAPONS		KEY:Morlamaw Default ~ NATURAL WEAPONS		SORTKEY:m5		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws have low-light vision.		SOURCELONG:SFS Scenario #1-08		BONUS:VAR|HasLowLightVision|1|TYPE=Base
+NATURAL SURVIVOR		KEY:Morlamaw Default ~ NATURAL SURVIVOR		SORTKEY:m6		CATEGORY:Racial Trait		TYPE:Racial Trait.Morlamaw Racial Trait		DESC:Morlamaws are always considered armed. They can deal 1d3 lethal piercing damage with unarmed strikes, and those attacks don’t count as archaic. Morlamaws gain a unique weapon specialization with their natural weapons at 3rd level, allowing them to add 1-1/2 × their character level to their damage rolls for their natural weapons (instead of just adding their character level, as usual).		SOURCELONG:SFS Scenario #1-08		BONUS:WEAPONPROF=Unarmed|DAMAGE|TL+floor(TL/2)
+
+##Copaxi
+SIZE AND TYPE		KEY:Copaxi Default ~ SIZE AND TYPE			SORTKEY:c1		CATEGORY:Racial Trait		TYPE:Racial Trait.Copaxi Racial Trait		DESC:Copaxis are Medium humanoids with the copaxi subtype.		SOURCELONG:SFS Scenario #1-22
+
+BLINDSENSE		KEY:Copaxi Default ~ BLINDSENSE			SORTKEY:c2		CATEGORY:Racial Trait		TYPE:Racial Trait.Copaxi Racial Trait		DESC:Copaxis’ sensitive polyps grant them blindsense (scent)—the ability to detect trace chemicals and scents in their environment—out to 30 feet. A copaxi ignores the Stealth bonuses from any form of visual camouflage, invisibility, and the like when attempting a Perception check opposed by a creature’s Stealth check. Even on a successful Perception check, any foe that can’t be seen still has total concealment (50%% miss chance) against a copaxi, and the copaxi still has the normal miss chance when attacking foes that have concealment. A copaxi is still flat-footed against attacks from creatures it can’t see.		SOURCELONG:SFS Scenario #1-22		BONUS:VAR|BlindsenseRange|30|TYPE=Base
+
+GRAVITY ADJUSTMENT		KEY:Copaxi Default ~ GRAVITY ADJUSTMENT			SORTKEY:c3		CATEGORY:Racial Trait		TYPE:Racial Trait.Copaxi Racial Trait		DESC:Copaxis retain some of their ancient connection to the gravitational forces of the universe. A copaxi can adjust their personal gravity as a standard action. This adjustment remains in effect until the copaxi spends another standard action to return to their environment’s natural gravity. Entering an environment with a different gravity also cancels the copaxi’s ongoing adjustment. A copaxi can treat high or low gravity as standard gravity or treat standard gravity as high or low gravity. These adjustments only affect the copaxi and anything the copaxi is carrying; they do not affect thrown weapons. The copaxi cannot adjust to or from extreme or zero gravity.		SOURCELONG:SFS Scenario #1-22
+
+REGENERATIVE EVOLUTION		KEY:Copaxi Default ~ REGENERATIVE EVOLUTION			SORTKEY:c4		CATEGORY:Racial Trait		TYPE:Racial Trait.Copaxi Racial Trait		DESC:A copaxi gradually reshapes its body and neural networks to overcome new challenges. Each time a copaxi gains a level, it can retrain all the choices of one previous character level, as though it had used a mnemonic editor (Starfinder Core Rulebook 226). They must have qualified for any new selections at the retrained level.		SOURCELONG:SFS Scenario #1-22
+
+NATURAL COMMUNICATOR		KEY:Copaxi Default ~ NATURAL COMMUNICATOR			SORTKEY:c5		CATEGORY:Racial Trait		TYPE:Racial Trait.Copaxi Racial Trait		DESC:A copaxi quickly adapts to and adopts new forms of communication. Each time a copaxi gains a rank in Culture, they learn 2 languages rather than 1 language.		SOURCELONG:SFS Scenario #1-22		BONUS:VAR|AdditionalLanguage|skillinfo("TOTALRANK", "Culture")
+
+
