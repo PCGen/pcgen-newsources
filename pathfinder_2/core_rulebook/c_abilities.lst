@@ -573,17 +573,29 @@ CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT
 
 Optional Ability Generation Rule				CATEGORY:Rule		TYPE:Rule.Rules																	DESC:Deactivate the Standard Ability Generation Rules																																																									COST:0	FACT:AltAbilityGeneration|true
 
-# xxxModifier will track ranking
-# 0 = untrained
-# 1 = trained
-# 2 = expert
-# 3 = mastery
-# 4 = legendary
+#	DEFINE:Prof_rank_untrained|0
+#	DEFINE:Prof_rank_Trained|0
+#	DEFINE:Prof_rank_Expert|0
+#	DEFINE:Prof_rank_Master|0
+#	DEFINE:Prof_rank_Legendary|0
+#	BONUS:VAR|Prof_rank_untrained|TL|TYPE=Base
+#	BONUS:VAR|Prof_rank_Trained|TL+2|TYPE=Base
+#	BONUS:VAR|Prof_rank_Expert|TL+4|TYPE=Base
+#	BONUS:VAR|Prof_rank_Master|TL+6|TYPE=Base
+#	BONUS:VAR|Prof_rank_Legendary|TL+8|TYPE=Base
 
-Trained in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|Modifier_Perception|1|TYPE=Rank
-Expert in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|Modifier_Perception|2|TYPE=Rank
-Mastery in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|Modifier_Perception|3|TYPE=Rank
-Legendary in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|Modifier_Perception|4|TYPE=Rank
+
+# xxxModifier will track ranking
+# 0 = untrained	Base Level
+# 1 = trained	+2
+# 2 = expert	+4
+# 3 = mastery	+6
+# 4 = legendary	+8
+
+Trained in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|PerceptionModifier|1|TYPE=Rank
+Expert in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|PerceptionModifier|2|TYPE=Rank
+Mastery in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|PerceptionModifier|3|TYPE=Rank
+Legendary in Perception						CATEGORY:Proficiency																																																			BONUS:VAR|PerceptionModifier|4|TYPE=Rank
 
 
 
