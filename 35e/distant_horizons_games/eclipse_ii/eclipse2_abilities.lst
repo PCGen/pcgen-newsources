@@ -11,7 +11,16 @@ SOURCELONG:Eclipse II - The Libram Incarna	SOURCESHORT:EclipseII
 
 
 # Atheria Birthrights - These Replace All Racial Traits and are Human Only
-Absolute Command	SORTKEY:Birthright	KEY:Birthright ~ Absolute Command	CATEGORY:Special Ability	TYPE:AtheriaBirthright.HumanSkillBonus.HumanBonusFeat.BirthrightAbsoluteCommand	COST:1	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AtheriaBirthright
+Absolute Command	SORTKEY:Birthright	KEY:Birthright ~ Absolute Command	CATEGORY:Special Ability	TYPE:AtheriaBirthright.HumanSkillBonus.HumanBonusFeat.BirthrightAbsoluteCommand.EclipseAbilityOutput	COST:1	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AtheriaBirthright				ABILITY:Special Ability|AUTOMATIC|TYPE=AbsoluteCommandBirthright		SORTKEY:1 - The Absolute Command Birthright a
+# Make the Verbs appear, but negates the skill rank.
+CATEGORY=Special Ability|Birthright ~ Absolute Command.MOD	BONUS:SKILLRANK|Theurgical Verb (Creation)|1		BONUS:SKILL|Theurgical Verb (Creation)|-1		
+CATEGORY=Special Ability|Birthright ~ Absolute Command.MOD	BONUS:SKILLRANK|Theurgical Verb (Control)|1		BONUS:SKILL|Theurgical Verb (Control)|-1		
+CATEGORY=Special Ability|Birthright ~ Absolute Command.MOD	BONUS:SKILLRANK|Theurgical Verb (Destruction)|1		BONUS:SKILL|Theurgical Verb (Destruction)|-1		
+CATEGORY=Special Ability|Birthright ~ Absolute Command.MOD	BONUS:SKILLRANK|Theurgical Verb (Healing)|1		BONUS:SKILL|Theurgical Verb (Healing)|-1		
+CATEGORY=Special Ability|Birthright ~ Absolute Command.MOD	BONUS:SKILLRANK|Theurgical Verb (Transformation)|1	BONUS:SKILL|Theurgical Verb (Transformation)|-1	
+CATEGORY=Special Ability|Birthright ~ Absolute Command.MOD	BONUS:SKILLRANK|Theurgical Verb (Understanding)|1	BONUS:SKILL|Theurgical Verb (Understanding)|-1	
+
+
 Blood			SORTKEY:Birthright	KEY:Birthright ~ Blood			CATEGORY:Special Ability	TYPE:AtheriaBirthright.HumanSkillBonus.HumanBonusFeat.BirthrightX	COST:1	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AtheriaBirthright
 Crystal		SORTKEY:Birthright	KEY:Birthright ~ Crystal		CATEGORY:Special Ability	TYPE:AtheriaBirthright.HumanSkillBonus.HumanBonusFeat.BirthrightX	COST:1	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AtheriaBirthright
 Death			SORTKEY:Birthright	KEY:Birthright ~ Death			CATEGORY:Special Ability	TYPE:AtheriaBirthright.HumanSkillBonus.HumanBonusFeat.BirthrightX	COST:1	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AtheriaBirthright
@@ -37,8 +46,11 @@ The Dragon-Born	SORTKEY:Birthright	KEY:Birthright ~ The Dragon-Born	CATEGORY:Spe
 None			SORTKEY:Birthright1	KEY:Birthright ~ None			CATEGORY:Special Ability	TYPE:AtheriaBirthright								COST:1	!PREABILITY:1,CATEGORY=Special Ability,TYPE.AtheriaBirthright
 ###
 
-
-
+###Block: Absolute Command
+The Absolute Command Birthright / Inherent Spells				KEY:The Absolute Command Birthright ~ Inherent Spells	CATEGORY:Special Ability	SORTKEY:1 - The Absolute Command Birthright b	TYPE:AbsoluteCommandBirthright.EclipseAbilityOutput	DESC:Inherent Spells: 4xL1 (6 CP), 4x L2 (12 CP), 4x L3 (11 CP): Specialized and Corrupted: Only usable to power Theurgy, immediate commands only, requires a fortitude save at +4 against the user's own spell to avoid fatigue. Net cost: 10 CP. Caster Level = User's Hit Dice
+The Absolute Command Birthright / Reflex Action with +3 Bonus Uses	KEY:The Absolute Command Birthright ~ Reflex Action	CATEGORY:Special Ability	SORTKEY:1 - The Absolute Command Birthright b	TYPE:AbsoluteCommandBirthright.EclipseAbilityOutput	DESC:Specialized in Theurgy (12 Uses/Day, 11 CP)
+The Absolute Command Birthright / Mastery x2 (all Theurgy Verb Skills)	KEY:The Absolute Command Birthright ~ Mastery		CATEGORY:Special Ability	SORTKEY:1 - The Absolute Command Birthright b	TYPE:AbsoluteCommandBirthright.EclipseAbilityOutput	DESC:Specialist for Double Effect (may "Take 20")/immediate commands only; no long-term enchantments, no duration spells, no triggered or waiting effects, etc. Corrupted/requires a Will save against fatigue.
+The Absolute Command Birthright / Resist						KEY:The Absolute Command Birthright ~ Resist		CATEGORY:Special Ability	SORTKEY:1 - The Absolute Command Birthright b	TYPE:AbsoluteCommandBirthright.EclipseAbilityOutput	DESC:+2 on saving throws against Mental Effects, Corrupted: Mind Control Only (2 CP). That last bit is usually redundant, but it might come into play if the Protection from Law effect gets dispelled.	ASPECT:SaveBonus|+2 on saving throws against Mind Control
 
 # Elemental 
 #CATEGORY=Special Ability|.MOD		TYPE:ElementalBirthrightAbility
@@ -259,7 +271,7 @@ Fedyra Racial / Oread	KEY:Oread	CATEGORY:Special Ability	TYPE:FedyraFeyPackage.E
 Fedyra Racial / Inherent Spell ~ Elemental Bolt						KEY:Inherent Spell ~ Fedyra			CATEGORY:Special Ability	TYPE:FedyraGranted.FedyraRacialOutput.EclipseAbilityOutput	DESC:Elemental Bolt (L2, 1d6/level to a single target up to a maximum of 10d6, the type is chosen to suit the draconic ancestor, usable twice per day), Corrupted/provokes attacks of opportunity (4 CP).
 Fedyra Racial / Damage Reduction								KEY:Damage Reduction 2 ~ Fedyra		CATEGORY:Special Ability	TYPE:FedyraGranted.FedyraRacialOutput.EclipseAbilityOutput	DESC:Specialized in energy for double effect, Corrupted for reduced cost (reduces a particular type of energy damage by four points [to a minimum of zero] per exposure, 2 CP).
 #+5 CP (5000 GP) worth of Innate Enchantments: 
-Innate Enchantment / Immortal Vigor I	KEY:Immortal Vigor I			CATEGORY:Special Ability	TYPE:FedyraGranted.FedyraRacialOutput.EclipseAbilityOutput	DESC:adds 2d6 - effectively 12 due to at-will use, +2x Con Mod HP (Unlimited Use-Activated, L1 at CL1, Personal Only, 1400 GP).	BONUS:HP|CURRENTMAx|12+(CON*2)
+Innate Enchantment / Immortal Vigor I	KEY:Immortal Vigor I			CATEGORY:Special Ability	TYPE:FedyraGranted.FedyraRacialOutput.EclipseAbilityOutput	DESC:adds 2d6 - effectively 12 due to at-will use, +2x Con Mod HP (Unlimited Use-Activated, L1 at CL1, Personal Only, 1400 GP).	BONUS:HP|CURRENTMAX|12+(CON*2)
 Innate Enchantment / Inspiring Word		KEY:Inspiring Word			CATEGORY:Special Ability	TYPE:FedyraGranted.FedyraRacialOutput.EclipseAbilityOutput	DESC:provides a +1 Morale Bonus on saves, attacks, checks, and damage (Unlimited Use-Activated, L1 at CL1, Personal Only, 1400 GP). Dragons are always pretty self-confident.			BONUS:COMBAT|TOHIT|1|TYPE=Morale		BONUS:SAVE|ALL|1|TYPE=Morale	BONUS:COMBAT|DAMAGE.Unarmed,DAMAGE.Piercing,DAMAGE.Bludgeoning,DAMAGE.Slashing|1|TYPE=Morale	BONUS:SKILL|TYPE=NormalSkill,TYPE=PsychicSkill|1|TYPE=Morale
 
 
