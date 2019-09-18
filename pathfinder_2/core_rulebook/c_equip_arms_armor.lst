@@ -1,27 +1,27 @@
 ###Block: Armor
 
 # Light
-# Equipment Name	Required Armor Proficiency				Cost		Weight	AC Penalty Check	Modifier		Maximum DEX Bonus	Combat bonus								Modify VAR													Quality and value
-Padded Armor	PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:2	WT:0.1				EQMOD:Fragile	MAXDEX:5		BONUS:COMBAT|AC|1|TYPE=Armor						BONUS:VAR|BulkLight|1											QUALITY:Bulk|L
-Leather		PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:15	WT:1								MAXDEX:6		BONUS:COMBAT|AC|1|TYPE=Armor						BONUS:VAR|Bulk|1												QUALITY:Bulk|1
-Studded Leather	PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:30	WT:1		ACCHECK:-1					MAXDEX:5		BONUS:COMBAT|AC|2|TYPE=Armor						BONUS:VAR|Bulk|1												QUALITY:Bulk|1
-Chain Shirt		PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:45	WT:2		ACCHECK:-1		EQMOD:Noisy		MAXDEX:5		BONUS:COMBAT|AC|2|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=ArmorTAC	BONUS:VAR|Bulk|2												QUALITY:Bulk|2
+# Equipment Name	Required Armor Proficiency				Cost		Weight	AC Penalty Check	Modifier		Maximum DEX Bonus	Combat bonus																		Modify VAR							Quality and value
+Padded Armor	PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:2	WT:0.1				EQMOD:Fragile	MAXDEX:5		BONUS:COMBAT|AC|1|TYPE=Armor							BONUS:COMBAT|AC|ArmorProf_PaddedArmor|TYPE=ArmorProf									BONUS:VAR|BulkLight|1					QUALITY:Bulk|L
+Leather		PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:15	WT:1								MAXDEX:6		BONUS:COMBAT|AC|1|TYPE=Armor							BONUS:COMBAT|AC|ArmorProf_Leather|TYPE=ArmorProf									BONUS:VAR|Bulk|1						QUALITY:Bulk|1
+Studded Leather	PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:30	WT:1		ACCHECK:-1					MAXDEX:5		BONUS:COMBAT|AC|2|TYPE=Armor							BONUS:COMBAT|AC|ArmorProf_StuddedLeather|TYPE=ArmorProf								BONUS:VAR|Bulk|1						QUALITY:Bulk|1
+Chain Shirt		PROFICIENCY:ARMOR|Light		TYPE:Armor		COST:45	WT:2		ACCHECK:-1		EQMOD:Noisy		MAXDEX:5		BONUS:COMBAT|AC|2|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_ChainShirt|TYPE=ArmorProf									BONUS:VAR|Bulk|2						QUALITY:Bulk|2
 # Medium
-Hide			PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:20	WT:2		ACCHECK:-3					MAXDEX:4		BONUS:COMBAT|AC|3|TYPE=Armor						BONUS:VAR|Bulk|2												QUALITY:Bulk|2
-Scale Mail		PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:35	WT:2		ACCHECK:-2					MAXDEX:4		BONUS:COMBAT|AC|3|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=ArmorTAC	BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2						QUALITY:Bulk|2
-Chain Mail		PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:60	WT:2		ACCHECK:-3		EQMOD:Noisy		MAXDEX:3		BONUS:COMBAT|AC|4|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=ArmorTAC	BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2						QUALITY:Bulk|2
-Breastplate		PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:80	WT:2		ACCHECK:-4		EQMOD:Clumsy	MAXDEX:3		BONUS:COMBAT|AC|4|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2	BONUS:VAR|ReflexSave_Cap|3	QUALITY:Bulk|2
+Hide			PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:20	WT:2		ACCHECK:-3					MAXDEX:4		BONUS:COMBAT|AC|3|TYPE=Armor							BONUS:COMBAT|AC|ArmorProf_Hide|TYPE=ArmorProf										BONUS:VAR|Bulk|2						QUALITY:Bulk|2
+Scale Mail		PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:35	WT:2		ACCHECK:-2					MAXDEX:4		BONUS:COMBAT|AC|3|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_ScaleMail|TYPE=ArmorProf			BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2						QUALITY:Bulk|2
+Chain Mail		PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:60	WT:2		ACCHECK:-3		EQMOD:Noisy		MAXDEX:3		BONUS:COMBAT|AC|4|TYPE=Armor	BONUS:COMBAT|AC|1|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_ChainMail|TYPE=ArmorProf			BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2						QUALITY:Bulk|2
+Breastplate		PROFICIENCY:ARMOR|Medium	TYPE:Armor		COST:80	WT:2		ACCHECK:-4		EQMOD:Clumsy	MAXDEX:3		BONUS:COMBAT|AC|4|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_Breastplate|TYPE=ArmorProf			BONUS:VAR|SpeedPenalty_Armor|-5	BONUS:VAR|Bulk|2	BONUS:VAR|ReflexSave_Cap|3	QUALITY:Bulk|2
 # Heavy Armor
-Splint Mail		PROFICIENCY:ARMOR|Heavy		TYPE:Armor		COST:125	WT:3		ACCHECK:-3		EQMOD:Clumsy	MAXDEX:2		BONUS:COMBAT|AC|5|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3	BONUS:VAR|ReflexSave_Cap|2	QUALITY:Bulk|3
-Half-Plate		PROFICIENCY:ARMOR|Heavy		TYPE:Armor		COST:175	WT:3		ACCHECK:-4					MAXDEX:2		BONUS:COMBAT|AC|5|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3						QUALITY:Bulk|3
-Full Plate		PROFICIENCY:ARMOR|Heavy		TYPE:Armor		COST:300	WT:3		ACCHECK:-5		EQMOD:Clumsy	MAXDEX:1		BONUS:COMBAT|AC|6|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3	BONUS:VAR|ReflexSave_Cap|2	QUALITY:Bulk|3
+Splint Mail		PROFICIENCY:ARMOR|Heavy		TYPE:Armor		COST:125	WT:3		ACCHECK:-3		EQMOD:Clumsy	MAXDEX:2		BONUS:COMBAT|AC|5|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_SplintMail|TYPE=ArmorProf			BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3	BONUS:VAR|ReflexSave_Cap|2	QUALITY:Bulk|3
+Half-Plate		PROFICIENCY:ARMOR|Heavy		TYPE:Armor		COST:175	WT:3		ACCHECK:-4					MAXDEX:2		BONUS:COMBAT|AC|5|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_HalfPlate|TYPE=ArmorProf			BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3						QUALITY:Bulk|3
+Full Plate		PROFICIENCY:ARMOR|Heavy		TYPE:Armor		COST:300	WT:3		ACCHECK:-5		EQMOD:Clumsy	MAXDEX:1		BONUS:COMBAT|AC|6|TYPE=Armor	BONUS:COMBAT|AC|2|TYPE=ArmorTAC	BONUS:COMBAT|AC|ArmorProf_FullPlate|TYPE=ArmorProf			BONUS:VAR|SpeedPenalty_Armor|-10	BONUS:VAR|Bulk|3	BONUS:VAR|ReflexSave_Cap|2	QUALITY:Bulk|3
 
 ###Block Shield
-# Equipment Name		Required Shield Proficiency				Cost		Weight	AC Penalty Check	Combat bonus									Modify VAR			Quality and value
-Light Wooden Shield	PROFICIENCY:SHIELD|Light	TYPE:Shield		COST:5	WT:0.1	ACCHECK:-1		BONUS:COMBAT|AC|1|TYPE=Shield	BONUS:COMBAT|AC|1|TYPE=ShieldTAC	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
-Light Steel Shield	PROFICIENCY:SHIELD|Light	TYPE:Shield		COST:10	WT:0.1	ACCHECK:-1		BONUS:COMBAT|AC|1|TYPE=Shield	BONUS:COMBAT|AC|1|TYPE=ShieldTAC	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
-Heavy wooden shield	PROFICIENCY:SHIELD|Heavy	TYPE:Shield		COST:10	WT:1		ACCHECK:-1		BONUS:COMBAT|AC|2|TYPE=Shield	BONUS:COMBAT|AC|2|TYPE=ShieldTAC	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
-Heavy steel shield	PROFICIENCY:SHIELD|Heavy	TYPE:Shield		COST:20	WT:1		ACCHECK:-1		BONUS:COMBAT|AC|2|TYPE=Shield	BONUS:COMBAT|AC|2|TYPE=ShieldTAC	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+# Equipment Name		Required Shield Proficiency				Cost		Weight	AC Penalty Check	Combat bonus										Modify VAR			Quality and value
+Light Wooden Shield	PROFICIENCY:SHIELD|Light	TYPE:Shield		COST:5	WT:0.1	ACCHECK:-1		BONUS:COMBAT|AC|1|TYPE=Shield	BONUS:COMBAT|AC|1|TYPE=ShieldTAC	BONUS:COMBAT|AC|ShieldProf_LightShield|TYPE=ShieldProf	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Light Steel Shield	PROFICIENCY:SHIELD|Light	TYPE:Shield		COST:10	WT:0.1	ACCHECK:-1		BONUS:COMBAT|AC|1|TYPE=Shield	BONUS:COMBAT|AC|1|TYPE=ShieldTAC	BONUS:COMBAT|AC|ShieldProf_LightShield|TYPE=ShieldProf	BONUS:VAR|BulkLight|1	QUALITY:Bulk|L
+Heavy wooden shield	PROFICIENCY:SHIELD|Heavy	TYPE:Shield		COST:10	WT:1		ACCHECK:-1		BONUS:COMBAT|AC|2|TYPE=Shield	BONUS:COMBAT|AC|2|TYPE=ShieldTAC	BONUS:COMBAT|AC|ShieldProf_HeavyShield|TYPE=ShieldProf	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
+Heavy steel shield	PROFICIENCY:SHIELD|Heavy	TYPE:Shield		COST:20	WT:1		ACCHECK:-1		BONUS:COMBAT|AC|2|TYPE=Shield	BONUS:COMBAT|AC|2|TYPE=ShieldTAC	BONUS:COMBAT|AC|ShieldProf_HeavyShield|TYPE=ShieldProf	BONUS:VAR|Bulk|1		QUALITY:Bulk|1
 
 ###Block:
 # 6-4 Simple Melee Weapons
