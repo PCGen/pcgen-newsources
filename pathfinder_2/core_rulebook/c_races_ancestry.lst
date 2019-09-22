@@ -1,15 +1,16 @@
-#  Sun Aug  5 21:24:58 2018 -- reformated by PCGen PrettyLST v6.06.00
+# Sat Sep 21 13:31:46 2019 -- reformatted by PCGen TidyLst v1.04.00
 
 
-# Race Name		Move						Bonus to HP						Ability					FACT
-Dwarf			MOVE:Walk,0	GRANT:MOVEMENT|Walk	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|20	BONUS:VAR|Walk_Race|20	RACETYPE:Humanoid		GROUP:RaceType_Humanoid		TYPE:Humanoid	MODIFY:RaceType_Humanoid|SET|True		BONUS:HP|CURRENTMAX|10|TYPE=Ancestry	ABILITY:Ancestry|AUTOMATIC|Dwarf	FACT:BaseSize|M	FACT:Speed|20	SIZE:M	SORTKEY:A_PC_RACE
-Elf			MOVE:Walk,0	GRANT:MOVEMENT|Walk	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|30	BONUS:VAR|Walk_Race|30	RACETYPE:Humanoid		GROUP:RaceType_Humanoid		TYPE:Humanoid	MODIFY:RaceType_Humanoid|SET|True		BONUS:HP|CURRENTMAX|6|TYPE=Ancestry		ABILITY:Ancestry|AUTOMATIC|Elf	FACT:BaseSize|M	FACT:Speed|30	SIZE:M	SORTKEY:A_PC_RACE
-Gnome			MOVE:Walk,0	GRANT:MOVEMENT|Walk	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|20	BONUS:VAR|Walk_Race|20	RACETYPE:Humanoid		GROUP:RaceType_Humanoid		TYPE:Humanoid	MODIFY:RaceType_Humanoid|SET|True		BONUS:HP|CURRENTMAX|8|TYPE=Ancestry		ABILITY:Ancestry|AUTOMATIC|Gnome	FACT:BaseSize|S	FACT:Speed|20	SIZE:S	SORTKEY:A_PC_RACE
-Goblin		MOVE:Walk,0	GRANT:MOVEMENT|Walk	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|25	BONUS:VAR|Walk_Race|25	RACETYPE:Humanoid		GROUP:RaceType_Humanoid		TYPE:Humanoid	MODIFY:RaceType_Humanoid|SET|True		BONUS:HP|CURRENTMAX|6|TYPE=Ancestry		ABILITY:Ancestry|AUTOMATIC|Goblin	FACT:BaseSize|S	FACT:Speed|25	SIZE:S	SORTKEY:A_PC_RACE
-Halfling		MOVE:Walk,0	GRANT:MOVEMENT|Walk	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|25	BONUS:VAR|Walk_Race|25	RACETYPE:Humanoid		GROUP:RaceType_Humanoid		TYPE:Humanoid	MODIFY:RaceType_Humanoid|SET|True		BONUS:HP|CURRENTMAX|6|TYPE=Ancestry		ABILITY:Ancestry|AUTOMATIC|Halfling	FACT:BaseSize|S	FACT:Speed|25	SIZE:S	SORTKEY:A_PC_RACE
-Human			MOVE:Walk,0	GRANT:MOVEMENT|Walk	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|25	BONUS:VAR|Walk_Race|25	RACETYPE:Humanoid		GROUP:RaceType_Humanoid		TYPE:Humanoid	MODIFY:RaceType_Humanoid|SET|True		BONUS:HP|CURRENTMAX|8|TYPE=Ancestry		ABILITY:Ancestry|AUTOMATIC|Human	FACT:BaseSize|M	FACT:Speed|25	SIZE:M	SORTKEY:A_PC_RACE
+# Race Name	SORTKEY		Base Size		Size		Move		Base size		Bonus to HP						Modify VAR			Ability					Assigned Groups		Main Race Type	Type			GRANT				MODIFY					MODIFYOTHER
+Dwarf		SORTKEY:A_PC_RACE	FACT:BaseSize|M	SIZE:M	MOVE:Walk,0	FACT:Speed|20	BONUS:HP|CURRENTMAX|10|TYPE=Ancestry	BONUS:VAR|Walk_Race|20	ABILITY:Ancestry|AUTOMATIC|Dwarf	GROUP:RaceType_Humanoid	RACETYPE:Humanoid	TYPE:Humanoid	GRANT:MOVEMENT|Walk	MODIFY:RaceType_Humanoid|SET|True	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|20
+Elf		SORTKEY:A_PC_RACE	FACT:BaseSize|M	SIZE:M	MOVE:Walk,0	FACT:Speed|30	BONUS:HP|CURRENTMAX|6|TYPE=Ancestry		BONUS:VAR|Walk_Race|30	ABILITY:Ancestry|AUTOMATIC|Elf	GROUP:RaceType_Humanoid	RACETYPE:Humanoid	TYPE:Humanoid	GRANT:MOVEMENT|Walk	MODIFY:RaceType_Humanoid|SET|True	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|30
+Gnome		SORTKEY:A_PC_RACE	FACT:BaseSize|S	SIZE:S	MOVE:Walk,0	FACT:Speed|20	BONUS:HP|CURRENTMAX|8|TYPE=Ancestry		BONUS:VAR|Walk_Race|20	ABILITY:Ancestry|AUTOMATIC|Gnome	GROUP:RaceType_Humanoid	RACETYPE:Humanoid	TYPE:Humanoid	GRANT:MOVEMENT|Walk	MODIFY:RaceType_Humanoid|SET|True	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|20
+Goblin	SORTKEY:A_PC_RACE	FACT:BaseSize|S	SIZE:S	MOVE:Walk,0	FACT:Speed|25	BONUS:HP|CURRENTMAX|6|TYPE=Ancestry		BONUS:VAR|Walk_Race|25	ABILITY:Ancestry|AUTOMATIC|Goblin	GROUP:RaceType_Humanoid	RACETYPE:Humanoid	TYPE:Humanoid	GRANT:MOVEMENT|Walk	MODIFY:RaceType_Humanoid|SET|True	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|25
+Halfling	SORTKEY:A_PC_RACE	FACT:BaseSize|S	SIZE:S	MOVE:Walk,0	FACT:Speed|25	BONUS:HP|CURRENTMAX|6|TYPE=Ancestry		BONUS:VAR|Walk_Race|25	ABILITY:Ancestry|AUTOMATIC|Halfling	GROUP:RaceType_Humanoid	RACETYPE:Humanoid	TYPE:Humanoid	GRANT:MOVEMENT|Walk	MODIFY:RaceType_Humanoid|SET|True	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|25
+Human		SORTKEY:A_PC_RACE	FACT:BaseSize|M	SIZE:M	MOVE:Walk,0	FACT:Speed|25	BONUS:HP|CURRENTMAX|8|TYPE=Ancestry		BONUS:VAR|Walk_Race|25	ABILITY:Ancestry|AUTOMATIC|Human	GROUP:RaceType_Humanoid	RACETYPE:Humanoid	TYPE:Humanoid	GRANT:MOVEMENT|Walk	MODIFY:RaceType_Humanoid|SET|True	MODIFYOTHER:PC.MOVEMENT|Walk|Speed|SET|25
 
-###Block:		Description													
+###Block:		Description
+# Race Name		Description
 Dwarf.MOD		DESC:Dwarves are a short, stocky people who are often stubborn, fierce, and devoted.
 Elf.MOD		DESC:Elves are a tall, slender, long-lived people whose culture peaked long ago.
 Gnome.MOD		DESC:Gnomes are a short, slight, mercurial people who crave change and excitement.
