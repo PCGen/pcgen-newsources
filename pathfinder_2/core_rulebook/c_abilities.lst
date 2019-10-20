@@ -197,7 +197,7 @@ CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty|0
 CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Armor|0
 CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Encumbered|0
 CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty|SpeedPenalty_Armor+SpeedPenalty_Encumbered
-	BONUS:VAR|SpeedPenalty_Encumbered|if(BulkEncumbered==1,-10,0)
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty_Encumbered|if(BulkEncumbered==1,-10,0)
 
 
 CATEGORY=Internal|Movement.MOD	BONUS:VAR|Walk|Walk_TOTAL		BONUS:VAR|Walk_TOTAL|if(BulkEncumbered==1,max(5,Walk_Race+Walk_Modifier),Walk_Race+Walk_Modifier)
@@ -224,7 +224,7 @@ Walk		CATEGORY:Internal
 Fly		CATEGORY:Internal
 Swim		CATEGORY:Internal
 Climb		CATEGORY:Internal
-Burrow	CATEGORY:Internal		
+Burrow	CATEGORY:Internal
 
 # Walk
 CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 005|PREVAREQ:Walk,005
@@ -482,39 +482,39 @@ Burrow ~ 110	MOVE:Burrow,110	CATEGORY:Internal
 Burrow ~ 115	MOVE:Burrow,115	CATEGORY:Internal
 Burrow ~ 120	MOVE:Burrow,120	CATEGORY:Internal
 
-CATEGORY=Internal|Default.MOD																ABILITY:Rule|AUTOMATIC|Standard Ability Generation Rule|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
+
+CATEGORY=Internal|Default.MOD		ABILITY:Rule|AUTOMATIC|Standard Ability Generation Rule|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
+CATEGORY=Internal|Default.MOD		ABILITY:Internal|AUTOMATIC|Save Tracker
+CATEGORY=Internal|Default.MOD		ABILITY:Internal|AUTOMATIC|Skill Tracker
 
 
-CATEGORY=Internal|Default.MOD																																												BONUS:VAR|PoolLevel01AbilityBoost|4|PREPCLEVEL:MIN=1
-CATEGORY=Internal|Default.MOD																																												BONUS:VAR|PoolLevel05AbilityBoost|4|PREPCLEVEL:MIN=5
-CATEGORY=Internal|Default.MOD																																												BONUS:VAR|PoolLevel10AbilityBoost|4|PREPCLEVEL:MIN=10
-CATEGORY=Internal|Default.MOD																																												BONUS:VAR|PoolLevel15AbilityBoost|4|PREPCLEVEL:MIN=15
-CATEGORY=Internal|Default.MOD																																												BONUS:VAR|PoolLevel20AbilityBoost|4|PREPCLEVEL:MIN=20
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PoolLevel01AbilityBoost|4|PREPCLEVEL:MIN=1
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PoolLevel05AbilityBoost|4|PREPCLEVEL:MIN=5
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PoolLevel10AbilityBoost|4|PREPCLEVEL:MIN=10
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PoolLevel15AbilityBoost|4|PREPCLEVEL:MIN=15
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PoolLevel20AbilityBoost|4|PREPCLEVEL:MIN=20
 
-CATEGORY=Internal|Default.MOD					DEFINE:AncestryFeatCount|0																																			BONUS:VAR|AncestryFeatCount|(3+TL)/4
-CATEGORY=Internal|Default.MOD					DEFINE:PerceptionProf|0	DEFINE:Modifier_Perception|0	DEFINE:PerceptionTotal|0	DEFINE:PerceptionAbility|0	DEFINE:PerceptionItem|0	BONUS:VAR|PerceptionAbility|DEX																											BONUS:VAR|PerceptionProf|TL+if(Modifier_Perception==0,-2,0)+if(Modifier_Perception==1,0,0)+if(Modifier_Perception==2,1,0)+if(Modifier_Perception==3,2,0)+if(Modifier_Perception>=4,3,0)
+CATEGORY=Internal|Default.MOD		BONUS:VAR|AncestryFeatCount|(3+TL)/4
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionAbility|DEX
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionProf|TL+if(Modifier_Perception==0,-2,0)+if(Modifier_Perception==1,0,0)+if(Modifier_Perception==2,1,0)+if(Modifier_Perception==3,2,0)+if(Modifier_Perception>=4,3,0)
 CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionTotal|PerceptionAbility+PerceptionProf+PerceptionItem
 
 
 
 
-CATEGORY=Internal|Default.MOD																ABILITY:Internal|AUTOMATIC|Save Tracker
-CATEGORY=Internal|Default.MOD																ABILITY:Internal|AUTOMATIC|Skill Tracker
 
 
-CATEGORY=Internal|Default.MOD					DEFINE:ReflexSave_Cap|0																																				BONUS:VAR|ReflexSave_Cap|DEX|!PREABILITY:1,CATEGORY=Trait,Armor Trait ~ Clumsy
+CATEGORY=Internal|Default.MOD																																					BONUS:VAR|ReflexSave_Cap|DEX|!PREABILITY:1,CATEGORY=Trait,Armor Trait ~ Clumsy
 
-CATEGORY=Internal|Default.MOD					DEFINE:CurrentBulk|0	DEFINE:Bulk|0	DEFINE:BulkLight|0
+
 CATEGORY=Internal|Default.MOD																																												BONUS:VAR|CurrentBulk|Bulk+floor(BulkLight/10)
 
 CATEGORY=Internal|Default.MOD																																								BONUS:COMBAT|BASEAB|TL
 CATEGORY=Internal|Default.MOD																																		BONUS:ABILITYPOOL|Backgrounds|1
 
-CATEGORY=Internal|Default.MOD	DEFINE:Caster_Level_Highest__Occult|0
-CATEGORY=Internal|Default.MOD	DEFINE:Caster_level_Occult_Total|0
 
 
-CATEGORY=Internal|Default.MOD		DEFINE:AbiltyScoreBoostsTaken|0	ABILITY:Internal|AUTOMATIC|1st Level Intelligence Score|PREVAREQ:AbiltyScoreBoostsTaken,1		BONUS:VAR|AbiltyScoreBoostsTaken|1|PREABILITY:4,CATEGORY=Ability,TYPE.Level 01 Ability Boost|PREABILITY:2,CATEGORY=Ability,TYPE.Background Ability Boost
+CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|1st Level Intelligence Score|PREVAREQ:AbiltyScoreBoostsTaken,1		BONUS:VAR|AbiltyScoreBoostsTaken|1|PREABILITY:4,CATEGORY=Ability,TYPE.Level 01 Ability Boost|PREABILITY:2,CATEGORY=Ability,TYPE.Background Ability Boost
 
 1st Level Intelligence Score	CATEGORY:Internal	TEMPLATE:1st Level Intelligence Score
 
@@ -526,15 +526,15 @@ Armor Trait ~ Clumsy		CATEGORY:Trait
 Standard Ability Generation Rule	CATEGORY:Rule		TYPE:Rule	VISIBLE:NO	DESC:Disables user manipulation of ability scores
 
 ###Block: These prevent ability score changes
+CATEGORY=Rule|Standard Ability Generation Rule.MOD	DEFINESTAT:LOCK|STR|STR_Value	BONUS:VAR|STR_Value|10
+CATEGORY=Rule|Standard Ability Generation Rule.MOD	DEFINESTAT:LOCK|DEX|DEX_Value	BONUS:VAR|DEX_Value|10
+CATEGORY=Rule|Standard Ability Generation Rule.MOD	DEFINESTAT:LOCK|CON|CON_Value	BONUS:VAR|CON_Value|10
+CATEGORY=Rule|Standard Ability Generation Rule.MOD	DEFINESTAT:LOCK|INT|INT_Value	BONUS:VAR|INT_Value|10
+CATEGORY=Rule|Standard Ability Generation Rule.MOD	DEFINESTAT:LOCK|WIS|WIS_Value	BONUS:VAR|WIS_Value|10
+CATEGORY=Rule|Standard Ability Generation Rule.MOD	DEFINESTAT:LOCK|CHA|CHA_Value	BONUS:VAR|CHA_Value|10
+
+###Block: 
 # Ability Name							Category of Ability	Type			Define											Define Stat			Description								Save bonus									Bonus to skill rank									Modify VAR																																	Cost		FACT
-CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT:LOCK|STR|STR_Value	DEFINE:STR_Value|0	BONUS:VAR|STR_Value|10
-CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT:LOCK|DEX|DEX_Value	DEFINE:DEX_Value|0	BONUS:VAR|DEX_Value|10
-CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT:LOCK|CON|CON_Value	DEFINE:CON_Value|0	BONUS:VAR|CON_Value|10
-CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT:LOCK|INT|INT_Value	DEFINE:INT_Value|0	BONUS:VAR|INT_Value|10
-CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT:LOCK|WIS|WIS_Value	DEFINE:WIS_Value|0	BONUS:VAR|WIS_Value|10
-CATEGORY=Rule|Standard Ability Generation Rule.MOD																				DEFINESTAT:LOCK|CHA|CHA_Value	DEFINE:CHA_Value|0	BONUS:VAR|CHA_Value|10
-
-
 Optional Ability Generation Rule				CATEGORY:Rule		TYPE:Rule.Rules																	DESC:Deactivate the Standard Ability Generation Rules																																																									COST:0	FACT:AltAbilityGeneration|true
 
 #	DEFINE:Prof_rank_untrained|0
@@ -597,7 +597,7 @@ Heavy Armor		CATEGORY:Special Ability	TYPE:ProficiencyDisplay	ASPECT:NAME|Untrai
 
 Shields				CATEGORY:Proficiency	TYPE:ProficiencyDisplay	ASPECT:NAME|Untrained in Shields|PREVAREQ:Prof_Rank_Shields,0	ASPECT:NAME|Trained in Shields|PREVAREQ:Prof_Rank_Shields,1	ASPECT:NAME|Expert in Shields|PREVAREQ:Prof_Rank_Shields,2	ASPECT:NAME|Mastery in Shields|PREVAREQ:Prof_Rank_Shields,3	ASPECT:NAME|Legendary in Shields|PREVAREQ:Prof_Rank_Shields,4	DEFINE:Prof_Rank_Shields|0	BONUS:VAR|Prof_Rank_Shields|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Shields"))	DEFINE:ArmorProf_Shields|0	BONUS:VAR|ArmorProf_Shields|TL+(2*min(4,Prof_Rank_Shields))
 
-Weapon Proficiency Tracker	CATEGORY:Internal	DEFINE:Prof_WeaponToHit_Club|0	DEFINE:Prof_WeaponToHit_Dagger|0	DEFINE:Prof_WeaponToHit_Fist|0	DEFINE:Prof_WeaponToHit_Gauntlet|0	DEFINE:Prof_WeaponToHit_LightMace|0	DEFINE:Prof_WeaponToHit_Longspear|0	DEFINE:Prof_WeaponToHit_Mace|0	DEFINE:Prof_WeaponToHit_Morningstar|0	DEFINE:Prof_WeaponToHit_Sickle|0	DEFINE:Prof_WeaponToHit_Spear|0	DEFINE:Prof_WeaponToHit_Spikedgauntlet|0	DEFINE:Prof_WeaponToHit_Staff|0	DEFINE:Prof_WeaponToHit_Bastardsword|0	DEFINE:Prof_WeaponToHit_Battleaxe|0	DEFINE:Prof_WeaponToHit_Bostaff|0	DEFINE:Prof_WeaponToHit_Falchion|0	DEFINE:Prof_WeaponToHit_Flail|0	DEFINE:Prof_WeaponToHit_Glaive|0	DEFINE:Prof_WeaponToHit_Greataxe|0	DEFINE:Prof_WeaponToHit_Greatclub|0	DEFINE:Prof_WeaponToHit_Greatpick|0	DEFINE:Prof_WeaponToHit_Greatsword|0	DEFINE:Prof_WeaponToHit_Guisarme|0	DEFINE:Prof_WeaponToHit_Halberd|0	DEFINE:Prof_WeaponToHit_Hatchet|0	DEFINE:Prof_WeaponToHit_HeavyShieldBash|0	DEFINE:Prof_WeaponToHit_Heavyshieldboss|0	DEFINE:Prof_WeaponToHit_Heavyshieldspikes|0	DEFINE:Prof_WeaponToHit_Lance|0	DEFINE:Prof_WeaponToHit_Lighthammer|0	DEFINE:Prof_WeaponToHit_Lightpick|0	DEFINE:Prof_WeaponToHit_Lightshieldbash|0	DEFINE:Prof_WeaponToHit_Lightshieldboss|0	DEFINE:Prof_WeaponToHit_Lightshieldspikes|0	DEFINE:Prof_WeaponToHit_Longsword|0	DEFINE:Prof_WeaponToHit_Mainguache|0	DEFINE:Prof_WeaponToHit_Maul|0	DEFINE:Prof_WeaponToHit_Pick|0	DEFINE:Prof_WeaponToHit_Ranseur|0	DEFINE:Prof_WeaponToHit_Rapier|0	DEFINE:Prof_WeaponToHit_Sap|0	DEFINE:Prof_WeaponToHit_Scimitar|0	DEFINE:Prof_WeaponToHit_Scythe|0	DEFINE:Prof_WeaponToHit_Shortsword|0	DEFINE:Prof_WeaponToHit_Starknife|0	DEFINE:Prof_WeaponToHit_Trident|0	DEFINE:Prof_WeaponToHit_Warflail|0	DEFINE:Prof_WeaponToHit_Warhammer|0	DEFINE:Prof_WeaponToHit_Whip|0	DEFINE:Prof_WeaponToHit_Blowgun|0	DEFINE:Prof_WeaponToHit_Crossbow|0	DEFINE:Prof_WeaponToHit_Dart|0	DEFINE:Prof_WeaponToHit_Handcrossbow|0	DEFINE:Prof_WeaponToHit_Heavycrossbow|0	DEFINE:Prof_WeaponToHit_Javelin|0	DEFINE:Prof_WeaponToHit_Sling|0	DEFINE:Prof_WeaponToHit_Compositelongbow|0	DEFINE:Prof_WeaponToHit_Compositeshortbow|0	DEFINE:Prof_WeaponToHit_Longbow|0	DEFINE:Prof_WeaponToHit_Shortbow|0	DEFINE:Prof_WeaponToHit_Clandagger|0	DEFINE:Prof_WeaponToHit_Katar|0	DEFINE:Prof_WeaponToHit_Dogslicer|0	DEFINE:Prof_WeaponToHit_Elvencurveblade|0	DEFINE:Prof_WeaponToHit_Filchersfork|0	DEFINE:Prof_WeaponToHit_Gnomehookedhammer|0	DEFINE:Prof_WeaponToHit_Horsechopper|0	DEFINE:Prof_WeaponToHit_Kama|0	DEFINE:Prof_WeaponToHit_Katana|0	DEFINE:Prof_WeaponToHit_Kukri|0	DEFINE:Prof_WeaponToHit_Nunchaku|0	DEFINE:Prof_WeaponToHit_Orcknuckledagger|0	DEFINE:Prof_WeaponToHit_Sai|0	DEFINE:Prof_WeaponToHit_Spikedchain|0	DEFINE:Prof_WeaponToHit_Templesword|0	DEFINE:Prof_WeaponToHit_Dwarvenwaraxe|0	DEFINE:Prof_WeaponToHit_Gnomeflickmace|0	DEFINE:Prof_WeaponToHit_Orcnecksplitter|0	DEFINE:Prof_WeaponToHit_Sawtoothsabre|0	DEFINE:Prof_WeaponToHit_Halflingslingstaff|0	DEFINE:Prof_WeaponToHit_Shuriken|0	BONUS:VAR|Prof_WeaponToHit_Club|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dagger|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Fist|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Gauntlet|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_LightMace|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Longspear|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Mace|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Morningstar|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sickle|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Spear|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Spikedgauntlet|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Staff|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Bastardsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Battleaxe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Bostaff|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Falchion|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Flail|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Glaive|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greataxe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greatclub|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greatpick|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greatsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Guisarme|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Halberd|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Hatchet|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_HeavyShieldBash|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Heavyshieldboss|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Heavyshieldspikes|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lance|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lighthammer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightpick|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightshieldbash|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightshieldboss|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightshieldspikes|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Longsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Mainguache|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Maul|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Pick|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Ranseur|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Rapier|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sap|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Scimitar|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Scythe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Shortsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Starknife|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Trident|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Warflail|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Warhammer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Whip|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Blowgun|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Crossbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dart|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Handcrossbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Heavycrossbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Javelin|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sling|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Compositelongbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Compositeshortbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Longbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Shortbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Clandagger|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Katar|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dogslicer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Elvencurveblade|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Filchersfork|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Gnomehookedhammer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Horsechopper|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Kama|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Katana|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Kukri|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Nunchaku|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Orcknuckledagger|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sai|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Spikedchain|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Templesword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dwarvenwaraxe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Gnomeflickmace|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Orcnecksplitter|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sawtoothsabre|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Halflingslingstaff|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Shuriken|0|TYPE=Base
+Weapon Proficiency Tracker	CATEGORY:Internal	BONUS:VAR|Prof_WeaponToHit_Club|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dagger|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Fist|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Gauntlet|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_LightMace|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Longspear|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Mace|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Morningstar|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sickle|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Spear|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Spikedgauntlet|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Staff|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Bastardsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Battleaxe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Bostaff|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Falchion|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Flail|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Glaive|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greataxe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greatclub|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greatpick|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Greatsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Guisarme|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Halberd|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Hatchet|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_HeavyShieldBash|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Heavyshieldboss|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Heavyshieldspikes|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lance|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lighthammer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightpick|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightshieldbash|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightshieldboss|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Lightshieldspikes|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Longsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Mainguache|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Maul|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Pick|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Ranseur|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Rapier|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sap|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Scimitar|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Scythe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Shortsword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Starknife|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Trident|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Warflail|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Warhammer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Whip|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Blowgun|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Crossbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dart|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Handcrossbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Heavycrossbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Javelin|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sling|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Compositelongbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Compositeshortbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Longbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Shortbow|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Clandagger|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Katar|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dogslicer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Elvencurveblade|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Filchersfork|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Gnomehookedhammer|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Horsechopper|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Kama|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Katana|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Kukri|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Nunchaku|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Orcknuckledagger|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sai|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Spikedchain|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Templesword|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Dwarvenwaraxe|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Gnomeflickmace|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Orcnecksplitter|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Sawtoothsabre|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Halflingslingstaff|0|TYPE=Base	BONUS:VAR|Prof_WeaponToHit_Shuriken|0|TYPE=Base
 
 # Proficiency Counter Abilities
 Fortitude				CATEGORY:Proficiency	CHOOSE:NOCHOICE	MULT:YES	STACK:YES	
@@ -647,7 +647,7 @@ Martial Weapons Group	CATEGORY:Internal		BONUS:VAR|Prof_WeaponToHit_Bastardsword
 
 Alchemical Bombs Group	CATEGORY:Internal		DESC:No bombs listed?
 
-Light Armor		CATEGORY:Internal		DEFINE:ArmorProf_PaddedArmor|0	BONUS:VAR|ArmorProf_PaddedArmor|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_Leather|0		BONUS:VAR|ArmorProf_Leather|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_StuddedLeather|0	BONUS:VAR|ArmorProf_StuddedLeather|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_ChainShirt|0		BONUS:VAR|ArmorProf_ChainShirt|ArmorProf_LightArmor|TYPE=Base
+Light Armor		CATEGORY:Internal	DEFINE:ArmorProf_PaddedArmor|0	BONUS:VAR|ArmorProf_PaddedArmor|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_Leather|0		BONUS:VAR|ArmorProf_Leather|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_StuddedLeather|0	BONUS:VAR|ArmorProf_StuddedLeather|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_ChainShirt|0		BONUS:VAR|ArmorProf_ChainShirt|ArmorProf_LightArmor|TYPE=Base
 Medium Armor	CATEGORY:Internal	DEFINE:ArmorProf_Hide|0			BONUS:VAR|ArmorProf_Hide|ArmorProf_MediumArmor|TYPE=Base		DEFINE:ArmorProf_ScaleMail|0		BONUS:VAR|ArmorProf_ScaleMail|ArmorProf_MediumArmor|TYPE=Base	DEFINE:ArmorProf_ChainMail|0		BONUS:VAR|ArmorProf_ChainMail|ArmorProf_MediumArmor|TYPE=Base	DEFINE:ArmorProf_Breastplate|0	BONUS:VAR|ArmorProf_Breastplate|ArmorProf_MediumArmor|TYPE=Base
 Heavy Armor		CATEGORY:Internal	DEFINE:ArmorProf_SplintMail|0		BONUS:VAR|ArmorProf_SplintMail|ArmorProf_HeavyArmor|TYPE=Base	DEFINE:ArmorProf_HalfPlate|0		BONUS:VAR|ArmorProf_HalfPlate|ArmorProf_HeavyArmor|TYPE=Base	DEFINE:ArmorProf_FullPlate|0		BONUS:VAR|ArmorProf_FullPlate|ArmorProf_HeavyArmor|TYPE=Base
 Shields		CATEGORY:Internal	DEFINE:ShieldProf_LightShield|0	BONUS:VAR|ShieldProf_LightShield|ArmorProf_Shields|TYPE=Base		DEFINE:ShieldProf_HeavyShield|0	BONUS:VAR|ShieldProf_HeavyShield|ArmorProf_Shields|TYPE=Base
