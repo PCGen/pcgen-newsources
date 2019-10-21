@@ -196,7 +196,7 @@ CATEGORY=Internal|Movement.MOD	DEFINE:Burrow|0	DEFINE:Burrow_TOTAL|0	DEFINE:Burr
 CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty|0	
 CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Armor|0
 CATEGORY=Internal|Movement.MOD	DEFINE:SpeedPenalty_Encumbered|0
-CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty|SpeedPenalty_Armor+SpeedPenalty_Encumbered
+CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty|SpeedPenalty_Armor+SpeedPenalty_Encumbered		BONUS:VAR|SpeedPenalty_Encumbered|if(BulkEncumbered==1,-10,0)
 CATEGORY=Internal|Movement.MOD	BONUS:VAR|SpeedPenalty_Encumbered|if(BulkEncumbered==1,-10,0)
 
 
@@ -224,7 +224,7 @@ Walk		CATEGORY:Internal
 Fly		CATEGORY:Internal
 Swim		CATEGORY:Internal
 Climb		CATEGORY:Internal
-Burrow	CATEGORY:Internal
+Burrow	CATEGORY:Internal		
 
 # Walk
 CATEGORY=Internal|Walk.MOD	ABILITY:Internal|AUTOMATIC|Walk ~ 005|PREVAREQ:Walk,005
@@ -650,7 +650,7 @@ Alchemical Bombs Group	CATEGORY:Internal		DESC:No bombs listed?
 Light Armor		CATEGORY:Internal	DEFINE:ArmorProf_PaddedArmor|0	BONUS:VAR|ArmorProf_PaddedArmor|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_Leather|0		BONUS:VAR|ArmorProf_Leather|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_StuddedLeather|0	BONUS:VAR|ArmorProf_StuddedLeather|ArmorProf_LightArmor|TYPE=Base	DEFINE:ArmorProf_ChainShirt|0		BONUS:VAR|ArmorProf_ChainShirt|ArmorProf_LightArmor|TYPE=Base
 Medium Armor	CATEGORY:Internal	DEFINE:ArmorProf_Hide|0			BONUS:VAR|ArmorProf_Hide|ArmorProf_MediumArmor|TYPE=Base		DEFINE:ArmorProf_ScaleMail|0		BONUS:VAR|ArmorProf_ScaleMail|ArmorProf_MediumArmor|TYPE=Base	DEFINE:ArmorProf_ChainMail|0		BONUS:VAR|ArmorProf_ChainMail|ArmorProf_MediumArmor|TYPE=Base	DEFINE:ArmorProf_Breastplate|0	BONUS:VAR|ArmorProf_Breastplate|ArmorProf_MediumArmor|TYPE=Base
 Heavy Armor		CATEGORY:Internal	DEFINE:ArmorProf_SplintMail|0		BONUS:VAR|ArmorProf_SplintMail|ArmorProf_HeavyArmor|TYPE=Base	DEFINE:ArmorProf_HalfPlate|0		BONUS:VAR|ArmorProf_HalfPlate|ArmorProf_HeavyArmor|TYPE=Base	DEFINE:ArmorProf_FullPlate|0		BONUS:VAR|ArmorProf_FullPlate|ArmorProf_HeavyArmor|TYPE=Base
-Shields		CATEGORY:Internal	DEFINE:ShieldProf_LightShield|0	BONUS:VAR|ShieldProf_LightShield|ArmorProf_Shields|TYPE=Base		DEFINE:ShieldProf_HeavyShield|0	BONUS:VAR|ShieldProf_HeavyShield|ArmorProf_Shields|TYPE=Base
+Shields		CATEGORY:Internal	DEFINE:ShieldProf_Shield|0	BONUS:VAR|ShieldProf_Shield|ArmorProf_Shields|TYPE=Base		DEFINE:ShieldProf_Shield|0	BONUS:VAR|ShieldProf_Shield|ArmorProf_Shields|TYPE=Base
 
 
 Unarmored Defense	CATEGORY:Internal
@@ -855,6 +855,93 @@ Grant Expert to all Weapon Groups		CATEGORY:Proficiency																								A
 
 
 
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupBrawling|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupClub|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupKnife|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupSpear|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupSword|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupAxe|0		
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupFlail|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupPolearm|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupPick|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupShield|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupHammer|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupDart|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupBow|0		
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_GroupSling|0	
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_UnarmedStrike|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Club|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_LightMace|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Mace|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Morningstar|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Staff|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_BoStaff|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greatclub|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sap|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Nunchaku|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dagger|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sickle|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Mainguache|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Starknife|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Clandagger|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Katar|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Kama|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Kukri|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Orcknuckledagger|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sai|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Orcnecksplitter|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Longspear|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Spear|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Lance|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Trident|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Filchersfork|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Bastardsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Falchion|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greatsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Longsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Rapier|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Scimitar|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Shortsword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dogslicer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Elvencurveblade|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Katana|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Templesword|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sawtoothsabre|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Battleaxe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greataxe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Hatchet|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dwarvenwaraxe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Flail|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Warflail|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Whip|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Spikedchain|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Gnomeflickmace|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Glaive|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Guisarme|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Halberd|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Ranseur|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Scythe|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Horsechopper|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Greatpick|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Lighthammer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Lightpick|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Pick|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Maul|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Warhammer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Gnomehookedhammer|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Blowgun|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Dart|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Javelin|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Shuriken|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Crossbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Handcrossbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Heavycrossbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Compositelongbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Compositeshortbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Longbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Shortbow|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Sling|0
+CATEGORY=Internal|Default.MOD	DEFINE:ToHit_Halflingslingstaff|0
 
 
 Weapon Group ~ Brawling	CATEGORY:Proficiency		ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Brawling
@@ -945,8 +1032,7 @@ Light hammer		CATEGORY:Proficiency	AUTO:WEAPONPROF|Light hammer		BONUS:WEAPONPRO
 Light pick			CATEGORY:Proficiency	AUTO:WEAPONPROF|Light pick			BONUS:WEAPONPROF=Light pick|TOHIT|max(ToHit_GroupPick,ToHit_Lightpick)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Agile.Fatal d8
 Pick				CATEGORY:Proficiency	AUTO:WEAPONPROF|Pick				BONUS:WEAPONPROF=Pick|TOHIT|max(ToHit_GroupPick,ToHit_Pick)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Pick.Fatal d10												
 # Shield
-Heavy shield		CATEGORY:Proficiency	AUTO:WEAPONPROF|Heavy shield		BONUS:WEAPONPROF=Heavy shield|TOHIT|max(ToHit_GroupShield,ToHit_Heavyshield)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to heavy shield
-Light shield		CATEGORY:Proficiency	AUTO:WEAPONPROF|Light shield		BONUS:WEAPONPROF=Light shield|TOHIT|max(ToHit_GroupShield,ToHit_Lightshield)|TYPE=Class	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile
+Shield		CATEGORY:Proficiency	AUTO:WEAPONPROF|Shield		BONUS:WEAPONPROF=Shield|TOHIT|max(ToHit_GroupShield,ToHit_shield)|TYPE=Class	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to  shield
 # Hammer
 Maul				CATEGORY:Proficiency	AUTO:WEAPONPROF|Maul					BONUS:WEAPONPROF=Maul|TOHIT|max(ToHit_GroupHammer,ToHit_Maul)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Shove												
 Warhammer			CATEGORY:Proficiency	AUTO:WEAPONPROF|Warhammer				BONUS:WEAPONPROF=Warhammer|TOHIT|max(ToHit_GroupHammer,ToHit_Warhammer)|TYPE=Class	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Shove												
