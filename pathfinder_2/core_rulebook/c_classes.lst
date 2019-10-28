@@ -138,10 +138,10 @@ CLASS:Champion	PREMULT:1,[PRECLASS:1,Champion=1],[!PRECLASS:1,TYPE=Class]
 1							ABILITY:CLASS|AUTOMATIC|Champion
 ###Block: Class Features
 1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Initial Proficiencies			
-1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Champion’s Code				
+1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Champion's Code				
 1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Deity and Cause				
 1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Deific Weapon				
-1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Champion’s Reaction			
+1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Champion's Reaction			
 1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Devotion Spells				
 1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Champion Feats				
 1	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Shield Block					
@@ -161,7 +161,7 @@ CLASS:Champion	PREMULT:1,[PRECLASS:1,Champion=1],[!PRECLASS:1,TYPE=Class]
 15	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Greater Weapon Specialization	
 17	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Champion Mastery			
 17	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Legendary Armor			
-19	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Hero’s Defiance			
+19	ABILITY:Champion Class Feature|AUTOMATIC|Champion Class Feature ~ Hero's Defiance			
 
 
 # Class Name	Spell Type			Type		Ability					Define		Bonus to HP					Modify VAR					Description
@@ -209,8 +209,143 @@ CLASS:Cleric	SPELLSTAT:WIS	MEMORIZE:NO	SPELLLIST:1|Divine
 20	CAST:99,3,3,3,3,3,3,3,3,3
 
 
+# Class Name	Spell Type			Type		Ability				Define		Bonus to HP				Modify VAR					Description
+CLASS:Druid		FACT:SpellType|Primal	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Druid	DEFINE:DruidCL|0	BONUS:HP|CURRENTMAX|8*DruidCL	BONUS:VAR|DruidCL|classlevel()	DESC:The druid uses the natural world's magic to bolster her and her allies' strength while calling pain down upon enemies. Wisdom, 2nd Constitution, Dexterity
+
+# Class Name	Multiple Requirements
+CLASS:Druid		PREMULT:1,[PRECLASS:1,Druid=1],[!PRECLASS:1,TYPE=Class]
+
+# Class Name	Spell Stat		Memorize	Use Spell List
+CLASS:Druid		SPELLSTAT:WIS	MEMORIZE:NO	SPELLLIST:1|Primal
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Cast Progression
+1	CAST:99,2
+2	CAST:99,3
+3	CAST:99,3,2
+4	CAST:99,3,3
+5	CAST:99,3,3,2
+6	CAST:99,3,3,3
+7	CAST:99,3,3,3,2
+8	CAST:99,3,3,3,3
+9	CAST:99,3,3,3,3,2
+10	CAST:99,3,3,3,3,3
+11	CAST:99,3,3,3,3,3,2
+12	CAST:99,3,3,3,3,3,3
+13	CAST:99,3,3,3,3,3,3,2
+14	CAST:99,3,3,3,3,3,3,3
+15	CAST:99,3,3,3,3,3,3,3,2
+16	CAST:99,3,3,3,3,3,3,3,3
+17	CAST:99,3,3,3,3,3,3,3,3,2
+18	CAST:99,3,3,3,3,3,3,3,3,3
+19	CAST:99,3,3,3,3,3,3,3,3,3
+20	CAST:99,3,3,3,3,3,3,3,3,3
+###Block: Class Progression
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Initial Proficiencies	
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Primal Spellcasting	
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Anathema			
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druidic Language	
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druidic Order		
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Shield Block		
+1	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Wild Empathy		
+2	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druid Feats		
+3	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Alertness			
+3	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Great Fortitude		
+5	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Lightning Reflexes	
+7	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Expert Spellcaster	
+11	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Druid Weapon Expertise
+11	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Resolve			
+13	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Medium Armor Expertise
+13	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Weapon Specialization	
+15	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Master Spellcaster	
+19	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Legendary Spellcaster	
+19	ABILITY:Druid Class Feature|AUTOMATIC|Druid Class Feature ~ Primal Hierophant	
 
 
+# Class Name	Type		Ability					Define			Bonus to HP					Modify VAR					Description
+CLASS:Fighter	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Fighter	DEFINE:FighterCL|0	BONUS:HP|CURRENTMAX|10*FighterCL	BONUS:VAR|FighterCL|classlevel()	DESC:The fighter is a master of weapons, martial techniques, and powerful attack combinations. Dexterity or Strength, 2nd Constitution
+
+# Class Name	Multiple Requirements
+CLASS:Fighter	PREMULT:1,[PRECLASS:1,Fighter=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Initial Proficiencies		
+1	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Attack of Opportunity		
+1	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Fighter Feats					
+1	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Shield Block					
+3	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Bravery					
+5	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Fighter Weapon Mastery		
+7	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Battlefield Surveyor			
+7	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Weapon Specialization			
+9	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Combat Flexibility			
+9	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Juggernaut				
+11	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Armor Expertise			
+11	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Fighter Expertise			
+13	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Weapon Legend					
+15	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Evasion						
+15	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Greater Weapon Specialization	
+15	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Improved Flexibility			
+17	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Armor Mastery					
+19	ABILITY:Fighter Class Feature|AUTOMATIC|Fighter Class Feature ~ Versatile Legend			
+
+
+# Class Name	Type		Ability				Define		Bonus to HP				Modify VAR				Description
+CLASS:Monk		TYPE:Class	ABILITY:CLASS|AUTOMATIC|Monk	DEFINE:MonkCL|0	BONUS:HP|CURRENTMAX|10*MonkCL	BONUS:VAR|MonkCL|classlevel()	DESC:The monk spins the secrets of martial arts into dazzling displays of battlefield prowess. Dexterity or Strength, 2nd Constitution, Wisdom
+
+# Class Name	Multiple Requirements
+CLASS:Monk		PREMULT:1,[PRECLASS:1,Monk=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Initial Proficiencies		
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Flurry of Blows			
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Monk Feats				
+1	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Powerful Fist			
+3	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Incredible Movement		
+3	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Mystic Strikes			
+5	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Alertness				
+5	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Expert Strikes			
+7	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Path to Perfection		
+7	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Weapon Specialization		
+9	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Metal Strikes			
+9	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Monk Expertise			
+11	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Second Path to Perfection	
+13	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Graceful Mastery			
+13	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Master Strikes			
+15	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Greater Weapon Specialization
+15	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Third Path to Perfection	
+17	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Adamantine Strikes		
+17	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Graceful Legend			
+19	ABILITY:Monk Class Feature|AUTOMATIC|Monk Class Feature ~ Perfected Form			
+
+
+# Class Name	Type		Ability					Define		Bonus to HP					Modify VAR					Description
+CLASS:Ranger	TYPE:Class	ABILITY:CLASS|AUTOMATIC|Ranger	DEFINE:RangerCL|0	BONUS:HP|CURRENTMAX|10*RangerCL	BONUS:VAR|RangerCL|classlevel()	DESC:The ranger is a master of using his surroundings, including traps and animal allies, to harry enemies. Dexterity or Strength, 2nd Constitution, Wisdom
+
+# Class Name	Multiple Requirements
+CLASS:Ranger	PREMULT:1,[PRECLASS:1,Ranger=1],[!PRECLASS:1,TYPE=Class]
+1:REPEATLEVEL:1	DONOTADD:SKILLPOINTS
+###Block: Class Progression
+1	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Initial Proficiencies			
+1	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Hunt Prey					
+1	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Hunter's Edge					
+1	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Ranger Feats					
+3	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Iron Will					
+5	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Trackless Step					
+5	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Expertise				
+7	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Evasion						
+7	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Vigilant Senses				
+7	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Specialization			
+9	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Nature's Edge					
+9	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Ranger Expertise				
+11	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Juggernaut					
+11	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Medium Armor Expertise			
+11	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Wild Stride					
+13	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Weapon Mastery					
+15	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Greater Weapon Specialization		
+15	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Improved Evasion				
+15	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Incredible Senses				
+17	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Masterful Hunter				
+19	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Second Skin					
+19	ABILITY:Ranger Class Feature|AUTOMATIC|Ranger Class Feature ~ Swift Prey					
 
 
 
