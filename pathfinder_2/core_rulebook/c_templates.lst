@@ -89,7 +89,7 @@ Full-Grown Companion	BONUS:VAR|UnarmedDice|2|TYPE=Base	ABILITY:Specialized Compa
 Nimble Companion	BONUS:VAR|UnarmedDice|3|TYPE=Base	BONUS:STAT|STR|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|STR|1|TYPE=Race.STACK	BONUS:STAT|DEX|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|2|TYPE=Race.STACK	BONUS:STAT|CON|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|CON|1|TYPE=Race.STACK	BONUS:STAT|WIS|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|WIS|1|TYPE=Race.STACK
 Savage Companion	BONUS:VAR|UnarmedDice|3|TYPE=Base	BONUS:STAT|STR|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|STR|2|TYPE=Race.STACK	BONUS:STAT|DEX|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race.STACK	BONUS:STAT|CON|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|CON|1|TYPE=Race.STACK	BONUS:STAT|WIS|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|WIS|1|TYPE=Race.STACK
 
-Specialed Companion	BONUS:VAR|UnarmedDice|4|TYPE=Base	BONUS:STAT|INT|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|INT|2|TYPE=Race.STACK	BONUS:STAT|DEX|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race.STACK	DESC:The first time an animal companion gains a specialization, its proficiency rank for unarmed Strikes increases to expert, and saving throws and Perception increases to master. Increase its Dexterity modifier by 1 and its Intelligence modifier by 2. Its unarmed Strike damage increases from three dice to four dice.
+Specialized Companion	BONUS:VAR|UnarmedDice|4|TYPE=Base	BONUS:STAT|INT|2|TYPE=Race.STACK	BONUS:LOCKEDSTAT|INT|2|TYPE=Race.STACK	BONUS:STAT|DEX|1|TYPE=Race.STACK	BONUS:LOCKEDSTAT|DEX|1|TYPE=Race.STACK	DESC:The first time an animal companion gains a specialization, its proficiency rank for unarmed Strikes increases to expert, and saving throws and Perception increases to master. Increase its Dexterity modifier by 1 and its Intelligence modifier by 2. Its unarmed Strike damage increases from three dice to four dice.
 
 # Workaround
 #Alchemy	ADD:SPELLCASTER|Alchemy	BONUS:PCLEVEL|Alchemy|TL-1
@@ -97,6 +97,10 @@ Specialed Companion	BONUS:VAR|UnarmedDice|4|TYPE=Base	BONUS:STAT|INT|2|TYPE=Race
 
 
 
+FT_Aquatic_HasSwim	VISIBLE:NO	PREMOVE:1,Swim=1		BONUS:MOVEADD|TYPE.Swim|10
+FT_Aquatic_NoSwim		VISIBLE:NO	!PREMOVE:1,Swim=1		MOVECLONE:Walk,Swim,*1
+FT_HasClimb			VISIBLE:NO	PREMOVE:1,Climb=1		BONUS:MOVEADD|TYPE.Climb|10
+FT_NoClimb			VISIBLE:NO	!PREMOVE:1,Climb=1	MOVECLONE:Walk,Climb,*1
 
 
 
