@@ -504,7 +504,7 @@ CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionTotal|PerceptionAbility+Perce
 CATEGORY=Internal|Default.MOD		BONUS:VAR|ReflexSave_Cap|DEX|!PREABILITY:1,CATEGORY=Trait,Armor Trait ~ Clumsy
 CATEGORY=Internal|Default.MOD		BONUS:VAR|CurrentBulk|Bulk+floor(BulkLight/10)
 
-CATEGORY=Internal|Default.MOD		BONUS:COMBAT|BASEAB|TL
+#CATEGORY=Internal|Default.MOD		BONUS:COMBAT|BASEAB|TL
 CATEGORY=Internal|Default.MOD		BONUS:ABILITYPOOL|Backgrounds|1
 
 
@@ -546,16 +546,16 @@ Optional Ability Generation Rule	CATEGORY:Rule			TYPE:Rule.Rules																
 
 
 # xxxModifier will track ranking
-# 0 = untrained	Base Level
-# 1 = trained	+2
-# 2 = expert	+4
-# 3 = mastery	+6
-# 4 = legendary	+8
+# 0 = untrained	+0 Raw Ability
+# 1 = trained	Base Level+2
+# 2 = expert	Base Level+4
+# 3 = mastery	Base Level+6
+# 4 = legendary	Base Level+8
 
 CATEGORY=Internal|Default.MOD		ABILITY:Internal|AUTOMATIC|Proficiency Tracker	ABILITY:Internal|AUTOMATIC|Armor Class Tracker
 
 # This tracks Proficiency with the 4 AC Proficiency Groups
-Armor Class Tracker	CATEGORY:Internal	BONUS:COMBAT|AC|ArmorProf|TYPE=ArmorProf	DEFINE:ArmorProf|0	BONUS:VAR|ArmorProf|TL	BONUS:VAR|ArmorProf|ArmorProf_LightArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Light	BONUS:VAR|ArmorProf|ArmorProf_MediumArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Medium	BONUS:VAR|ArmorProf|ArmorProf_HeavyArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Heavy	BONUS:VAR|ArmorProf|ArmorProf_Unarmored|TYPE=Base|!PREARMORTYPE:1,TYPE.Light,TYPE.Medium,TYPE.Heavy
+Armor Class Tracker	CATEGORY:Internal	BONUS:COMBAT|AC|ArmorProf|TYPE=ArmorProfBonus	DEFINE:ArmorProf|0	BONUS:VAR|ArmorProf|ArmorProf_LightArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Light	BONUS:VAR|ArmorProf|ArmorProf_MediumArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Medium	BONUS:VAR|ArmorProf|ArmorProf_HeavyArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Heavy	BONUS:VAR|ArmorProf|ArmorProf_Unarmored|TYPE=Base|!PREARMORTYPE:1,TYPE.Light,TYPE.Medium,TYPE.Heavy
 
 
 Proficiency Tracker			CATEGORY:Internal	ABILITY:Special Ability|AUTOMATIC|TYPE=ProficiencyDisplay
@@ -563,23 +563,24 @@ Proficiency Tracker			CATEGORY:Internal	ABILITY:Special Ability|AUTOMATIC|TYPE=P
 
 Skill Tracker					CATEGORY:Internal
 #
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Acrobatics|0	DEFINE:Modifier_Acrobatics|0		BONUS:SKILLRANK|Acrobatics|TL+(Modifier_Acrobatics*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Acrobatics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Acrobatics"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Arcana|0	DEFINE:Modifier_Arcana|0			BONUS:SKILLRANK|Arcana|TL+(Modifier_Arcana*2)|TYPE=Proficiency			BONUS:VAR|Modifier_Arcana|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Arcana"))					
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Athletics|0	DEFINE:Modifier_Athletics|0		BONUS:SKILLRANK|Athletics|TL+(Modifier_Athletics*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Athletics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Athletics"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Crafting|0	DEFINE:Modifier_Crafting|0			BONUS:SKILLRANK|Crafting|TL+(Modifier_Crafting*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Crafting|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Crafting"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Deception|0	DEFINE:Modifier_Deception|0		BONUS:SKILLRANK|Deception|TL+(Modifier_Deception*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Deception|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Deception"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Diplomacy|0	DEFINE:Modifier_Diplomacy|0		BONUS:SKILLRANK|Diplomacy|TL+(Modifier_Diplomacy*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Diplomacy|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Diplomacy"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Intimidation|0	DEFINE:Modifier_Intimidation|0	BONUS:SKILLRANK|Intimidation|TL+(Modifier_Intimidation*2)|TYPE=Proficiency	BONUS:VAR|Modifier_Intimidation|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Intimidation"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Lore|0	DEFINE:Modifier_Lore|0				BONUS:SKILLRANK|Lore|TL+(Modifier_Lore*2)|TYPE=Proficiency				BONUS:VAR|Modifier_Lore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lore"))					
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Medicine|0	DEFINE:Modifier_Medicine|0			BONUS:SKILLRANK|Medicine|TL+(Modifier_Medicine*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Medicine|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medicine"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Nature|0	DEFINE:Modifier_Nature|0			BONUS:SKILLRANK|Nature|TL+(Modifier_Nature*2)|TYPE=Proficiency			BONUS:VAR|Modifier_Nature|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nature"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Occultism|0	DEFINE:Modifier_Occultism|0		BONUS:SKILLRANK|Occultism|TL+(Modifier_Occultism*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Occultism|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occultism"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Performance|0	DEFINE:Modifier_Performance|0		BONUS:SKILLRANK|Performance|TL+(Modifier_Performance*2)|TYPE=Proficiency	BONUS:VAR|Modifier_Performance|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Performance"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Religion|0	DEFINE:Modifier_Religion|0			BONUS:SKILLRANK|Religion|TL+(Modifier_Religion*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Religion|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Religion"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Society|0	DEFINE:Modifier_Society|0			BONUS:SKILLRANK|Society|TL+(Modifier_Society*2)|TYPE=Proficiency			BONUS:VAR|Modifier_Society|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Society"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Stealth|0	DEFINE:Modifier_Stealth|0			BONUS:SKILLRANK|Stealth|TL+(Modifier_Stealth*2)|TYPE=Proficiency			BONUS:VAR|Modifier_Stealth|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stealth"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Survival|0	DEFINE:Modifier_Survival|0			BONUS:SKILLRANK|Survival|TL+(Modifier_Survival*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Survival|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Survival"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0			BONUS:SKILLRANK|Thievery|TL+(Modifier_Thievery*2)|TYPE=Proficiency		BONUS:VAR|Modifier_Thievery|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Thievery"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Acrobatics|0	DEFINE:Modifier_Acrobatics|0		BONUS:SKILLRANK|Acrobatics|if(Modifier_Acrobatics>=1,TL+(Modifier_Acrobatics*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Acrobatics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Acrobatics"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Arcana|0	DEFINE:Modifier_Arcana|0			BONUS:SKILLRANK|Arcana|if(Modifier_Arcana>=1,TL+(Modifier_Arcana*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Arcana|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Arcana"))					
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Athletics|0	DEFINE:Modifier_Athletics|0		BONUS:SKILLRANK|Athletics|if(Modifier_Athletics>=1,TL+(Modifier_Athletics*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Athletics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Athletics"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Crafting|0	DEFINE:Modifier_Crafting|0			BONUS:SKILLRANK|Crafting|if(Modifier_Crafting>=1,TL+(Modifier_Crafting*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Crafting|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Crafting"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Deception|0	DEFINE:Modifier_Deception|0		BONUS:SKILLRANK|Deception|if(Modifier_Deception>=1,TL+(Modifier_Deception*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Deception|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Deception"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Diplomacy|0	DEFINE:Modifier_Diplomacy|0		BONUS:SKILLRANK|Diplomacy|if(Modifier_Diplomacy>=1,TL+(Modifier_Diplomacy*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Diplomacy|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Diplomacy"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Intimidation|0	DEFINE:Modifier_Intimidation|0	BONUS:SKILLRANK|Intimidation|if(Modifier_Intimidation>=1,TL+(Modifier_Intimidation*2),0)|TYPE=Proficiency	BONUS:VAR|Modifier_Intimidation|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Intimidation"))			
+# Lore has 30+ entries... worse than Craft, Knowledge and Performance combined from older editions... *sigh*
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Lore|0	DEFINE:Modifier_Lore|0				BONUS:SKILLRANK|Lore|if(Modifier_Lore>=1,TL+(Modifier_Lore*2),0)|TYPE=Proficiency				BONUS:VAR|Modifier_Lore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lore"))					
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Medicine|0	DEFINE:Modifier_Medicine|0			BONUS:SKILLRANK|Medicine|if(Modifier_Medicine>=1,TL+(Modifier_Medicine*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Medicine|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medicine"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Nature|0	DEFINE:Modifier_Nature|0			BONUS:SKILLRANK|Nature|if(Modifier_Nature>=1,TL+(Modifier_Nature*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Nature|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nature"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Occultism|0	DEFINE:Modifier_Occultism|0		BONUS:SKILLRANK|Occultism|if(Modifier_Occultism>=1,TL+(Modifier_Occultism*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Occultism|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occultism"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Performance|0	DEFINE:Modifier_Performance|0		BONUS:SKILLRANK|Performance|if(Modifier_Performance>=1,TL+(Modifier_Performance*2),0)|TYPE=Proficiency	BONUS:VAR|Modifier_Performance|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Performance"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Religion|0	DEFINE:Modifier_Religion|0			BONUS:SKILLRANK|Religion|if(Modifier_Religion>=1,TL+(Modifier_Religion*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Religion|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Religion"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Society|0	DEFINE:Modifier_Society|0			BONUS:SKILLRANK|Society|if(Modifier_Society>=1,TL+(Modifier_Society*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Society|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Society"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Stealth|0	DEFINE:Modifier_Stealth|0			BONUS:SKILLRANK|Stealth|if(Modifier_Stealth>=1,TL+(Modifier_Stealth*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Stealth|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stealth"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Survival|0	DEFINE:Modifier_Survival|0			BONUS:SKILLRANK|Survival|if(Modifier_Survival>=1,TL+(Modifier_Survival*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Survival|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Survival"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0			BONUS:SKILLRANK|Thievery|if(Modifier_Thievery>=1,TL+(Modifier_Thievery*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Thievery|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Thievery"))				
 
 # COMMENT: This jumps the progression regardless of standing
 Perception					CATEGORY:Proficiency																																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE
@@ -628,10 +629,10 @@ Simple Weapons				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORT
 Martial Weapons				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	ASPECT:NAME|Untrained in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,0	ASPECT:NAME|Trained in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,1	ASPECT:NAME|Expert in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,2	ASPECT:NAME|Mastery in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,3	ASPECT:NAME|Legendary in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,4
 Alchemical Bombs				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_Bombs|0																																																																									BONUS:VAR|Prof_Rank_Bombs|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Bombs"))	BONUS:VAR|Bombs|TL+(2*min(4,Prof_Rank_Bombs))																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		ASPECT:NAME|Untrained in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,0	ASPECT:NAME|Trained in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,1	ASPECT:NAME|Expert in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,2	ASPECT:NAME|Mastery in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,3	ASPECT:NAME|Legendary in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,4
 
-Light Armor					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_LightArmor|0	DEFINE:ArmorProf_LightArmor|0																																																																				BONUS:VAR|Prof_Rank_LightArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Light Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_LightArmor|(2*Prof_Rank_LightArmor)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Light Armor|PREVAREQ:Prof_Rank_LightArmor,0	ASPECT:NAME|Trained in Light Armor|PREVAREQ:Prof_Rank_LightArmor,1	ASPECT:NAME|Expert in Light Armor|PREVAREQ:Prof_Rank_LightArmor,2	ASPECT:NAME|Mastery in Light Armor|PREVAREQ:Prof_Rank_LightArmor,3	ASPECT:NAME|Legendary in Light Armor|PREVAREQ:Prof_Rank_LightArmor,4
-Medium Armor				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_MediumArmor|0	DEFINE:ArmorProf_MediumArmor|0																																																																		BONUS:VAR|Prof_Rank_MediumArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medium Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_MediumArmor|(2*Prof_Rank_MediumArmor)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												ASPECT:NAME|Untrained in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,0	ASPECT:NAME|Trained in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,1	ASPECT:NAME|Expert in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,2	ASPECT:NAME|Mastery in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,3	ASPECT:NAME|Legendary in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,4
-Heavy Armor					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_HeavyArmor|0	DEFINE:ArmorProf_HeavyArmor|0																																																																				BONUS:VAR|Prof_Rank_HeavyArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heavy Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_HeavyArmor|(2*Prof_Rank_HeavyArmor)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,0	ASPECT:NAME|Trained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,1	ASPECT:NAME|Expert in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,2	ASPECT:NAME|Mastery in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,3	ASPECT:NAME|Legendary in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,4
-Unarmored Defense				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_Unarmored|0	DEFINE:ArmorProf_Unarmored|0																																																																				BONUS:VAR|Prof_Rank_Unarmored|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Unarmored Defense"))|TYPE=Base	BONUS:VAR|ArmorProf_Unarmored|(2*Prof_Rank_Unarmored)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,0	ASPECT:NAME|Trained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,1	ASPECT:NAME|Expert in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,2	ASPECT:NAME|Mastery in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,3	ASPECT:NAME|Legendary in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,4
+Light Armor					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_LightArmor|0	DEFINE:ArmorProf_LightArmor|0																																																																				BONUS:VAR|Prof_Rank_LightArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Light Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_LightArmor|if(Prof_Rank_LightArmor>=1,TL+(2*Prof_Rank_LightArmor),0)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Light Armor|PREVAREQ:Prof_Rank_LightArmor,0	ASPECT:NAME|Trained in Light Armor|PREVAREQ:Prof_Rank_LightArmor,1	ASPECT:NAME|Expert in Light Armor|PREVAREQ:Prof_Rank_LightArmor,2	ASPECT:NAME|Mastery in Light Armor|PREVAREQ:Prof_Rank_LightArmor,3	ASPECT:NAME|Legendary in Light Armor|PREVAREQ:Prof_Rank_LightArmor,4
+Medium Armor				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_MediumArmor|0	DEFINE:ArmorProf_MediumArmor|0																																																																		BONUS:VAR|Prof_Rank_MediumArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medium Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_MediumArmor|if(Prof_Rank_MediumArmor>=1,TL+(2*Prof_Rank_MediumArmor),0)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												ASPECT:NAME|Untrained in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,0	ASPECT:NAME|Trained in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,1	ASPECT:NAME|Expert in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,2	ASPECT:NAME|Mastery in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,3	ASPECT:NAME|Legendary in Medium Armor|PREVAREQ:Prof_Rank_MediumArmor,4
+Heavy Armor					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_HeavyArmor|0	DEFINE:ArmorProf_HeavyArmor|0																																																																				BONUS:VAR|Prof_Rank_HeavyArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heavy Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_HeavyArmor|if(Prof_Rank_HeavyArmor>=1,TL+(2*Prof_Rank_HeavyArmor),0)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,0	ASPECT:NAME|Trained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,1	ASPECT:NAME|Expert in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,2	ASPECT:NAME|Mastery in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,3	ASPECT:NAME|Legendary in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,4
+Unarmored Defense				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_Unarmored|0	DEFINE:ArmorProf_Unarmored|0																																																																				BONUS:VAR|Prof_Rank_Unarmored|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Unarmored Defense"))|TYPE=Base	BONUS:VAR|ArmorProf_Unarmored|if(Prof_Rank_Unarmored>=1,TL+(2*Prof_Rank_Unarmored),0)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,0	ASPECT:NAME|Trained in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,1	ASPECT:NAME|Expert in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,2	ASPECT:NAME|Mastery in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,3	ASPECT:NAME|Legendary in Heavy Armor|PREVAREQ:Prof_Rank_HeavyArmor,4
 
 
 Shields					CATEGORY:Proficiency		TYPE:ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_Shields|0	DEFINE:ArmorProf_Shields|0																																																																				BONUS:VAR|Prof_Rank_Shields|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Shields"))	BONUS:VAR|ArmorProf_Shields|TL+(2Prof_Rank_Shields)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															ASPECT:NAME|Untrained in Shields|PREVAREQ:Prof_Rank_Shields,0	ASPECT:NAME|Trained in Shields|PREVAREQ:Prof_Rank_Shields,1	ASPECT:NAME|Expert in Shields|PREVAREQ:Prof_Rank_Shields,2	ASPECT:NAME|Mastery in Shields|PREVAREQ:Prof_Rank_Shields,3	ASPECT:NAME|Legendary in Shields|PREVAREQ:Prof_Rank_Shields,4
@@ -640,8 +641,8 @@ CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Weapon Proficiency Trac
 
 Weapon Proficiency Tracker		CATEGORY:Internal		AUTO:WEAPONPROF|Unarmed
 
-CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:VAR|Prof_Rank_SimpleWeapons|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Simple Weapons"))|TYPE=Base		BONUS:VAR|ToHit_SimpleWeapons|(Prof_Rank_SimpleWeapons*2)|TYPE=Base
-CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:VAR|Prof_Rank_MartialWeapons|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Martial Weapons"))|TYPE=Base		BONUS:VAR|ToHit_MartialWeapons|(Prof_Rank_MartialWeapons*2)|TYPE=Base
+CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:VAR|Prof_Rank_SimpleWeapons|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Simple Weapons"))|TYPE=Base		BONUS:VAR|ToHit_SimpleWeapons|if(Prof_Rank_SimpleWeapons>=1,TL+(Prof_Rank_SimpleWeapons*2),0)|TYPE=Base
+CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:VAR|Prof_Rank_MartialWeapons|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Martial Weapons"))|TYPE=Base		BONUS:VAR|ToHit_MartialWeapons|if(Prof_Rank_MartialWeapons>=1,TL+(Prof_Rank_MartialWeapons*2),0)|TYPE=Base
 
 
 
@@ -847,6 +848,9 @@ Advanced Weapons			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Arcane Spell Attacks		CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Arcane Spell DCs			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 barding				CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+
+
+
 Druid Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Fighter Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Monk Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
@@ -1036,20 +1040,46 @@ Legendary in Will			CATEGORY:Proficiency	TYPE:Save Proficiency	PREPCLEVEL:MIN=15
 # Selectors
 Trained in Alchemical Bombs			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Alchemical Bombs
 
-Trained in Light Armor				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Light Armor	
+Trained in Light Armor				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Light Armor		
 Trained in Medium Armor				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Medium Armor	
-Trained in Heavy Armor				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Heavy Armor	
-Trained in Shields				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Shields	
+Trained in Heavy Armor				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Heavy Armor		
+Trained in Shields				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Shields		
 
 
 Trained in Simple Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Simple Weapons		BONUS:VAR|Prof_Rank_SimpleWeapons|1|TYPE=Base
 Trained in Martial Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Martial Weapons		BONUS:VAR|Prof_Rank_MartialWeapons|1|TYPE=Base
 
-Expert in Unarmored Defense			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmored Defense		BONUS:VAR|Prof_Rank_UnarmoredDefense|2|TYPE=Base
-Expert in Simple Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Simple Weapons		BONUS:VAR|Prof_Rank_SimpleWeapons|2|TYPE=Base
-Expert in Martial Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Martial Weapons		BONUS:VAR|Prof_Rank_MartialWeapons|2|TYPE=Base
-Expert in Unarmed Attacks			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmed Attacks		BONUS:VAR|Prof_Rank_UnarmedAttacks|2|TYPE=Base
 
+Trained in Arcane Spell Attacks		CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Arcane Spell Attacks		
+Trained in Arcane Spell DCs			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Arcane Spell DCs		
+Trained in Barbarian Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Barbarian Class DC	
+Trained in barding				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|barding			
+Trained in Club					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Club				
+Trained in Crossbow				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Crossbow			
+Trained in Dagger					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Dagger			
+Trained in Druid Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Druid Class DC		
+Trained in Heavy Crossbow			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Heavy Crossbow		
+Trained in Perception				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Perception			
+Trained in Primal Spell Attacks		CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Primal Spell Attacks		
+Trained in Primal Spell DCs			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Primal Spell DCs		
+Trained in Rapier					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Rapier			
+Trained in Rogue Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Rogue Class DC		
+Trained in Sap					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Sap				
+Trained in Shortbow				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Shortbow			
+Trained in Shortsword				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Shortsword			
+Trained in Staff					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Staff				
+Trained in Unarmed Attacks			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmed Attacks		
+Trained in Unarmored Defense			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmored Defense		
+
+
+
+
+
+Expert in Unarmored Defense			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmored Defense						BONUS:VAR|Prof_Rank_UnarmoredDefense|2|TYPE=Base
+Expert in Simple Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Simple Weapons						BONUS:VAR|Prof_Rank_SimpleWeapons|2|TYPE=Base
+Expert in Martial Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Martial Weapons						BONUS:VAR|Prof_Rank_MartialWeapons|2|TYPE=Base
+Expert in Unarmed Attacks			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmed Attacks						BONUS:VAR|Prof_Rank_UnarmedAttacks|2|TYPE=Base
+Expert in Advanced weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Advanced weapons						BONUS:VAR|Prof_Rank_AdvancedWeapons|2|TYPE=Base	DEFINE:Prof_Rank_AdvancedWeapons|0
 
 Trained in Advanced Weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Advanced Weapons	
 Trained in Fighter Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Fighter Class DC	
@@ -1060,26 +1090,6 @@ Expert in Fortitude				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Fortit
 Expert in Perception				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Perception	
 Expert in Reflex					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Reflex		
 Expert in Will					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Will		
-Trained in Arcane Spell Attacks		CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Arcane Spell Attacks	
-Trained in Arcane Spell DCs			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Arcane Spell DCs		
-Trained in Barbarian Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Barbarian Class DC		
-Trained in barding				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|barding			
-Trained in Club					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Club				
-Trained in Crossbow				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Crossbow			
-Trained in Dagger					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Dagger				
-Trained in Druid Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Druid Class DC		
-Trained in Heavy Crossbow			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Heavy Crossbow		
-Trained in Perception				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Perception			
-Trained in Primal Spell Attacks		CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Primal Spell Attacks	
-Trained in Primal Spell DCs			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Primal Spell DCs		
-Trained in Rapier					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Rapier				
-Trained in Rogue Class DC			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Rogue Class DC		
-Trained in Sap					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Sap				
-Trained in Shortbow				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Shortbow			
-Trained in Shortsword				CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Shortsword			
-Trained in Staff					CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Staff				
-Trained in Unarmed Attacks			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmed Attacks		
-Trained in Unarmored Defense			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|Unarmored Defense		
 
 
 Expert Weapon Group Selection ~ Axe		CATEGORY:Proficiency	TYPE:Expert Weapon Group Selection																																																						BONUS:VAR|WeaponGroupRank_Axe|2|TYPE=Rank
@@ -1096,6 +1106,9 @@ Expert Weapon Group Selection ~ Shield	CATEGORY:Proficiency	TYPE:Expert Weapon G
 Expert Weapon Group Selection ~ Sling	CATEGORY:Proficiency	TYPE:Expert Weapon Group Selection																																																						BONUS:VAR|WeaponGroupRank_Sling|2|TYPE=Rank
 Expert Weapon Group Selection ~ Spear	CATEGORY:Proficiency	TYPE:Expert Weapon Group Selection																																																						BONUS:VAR|WeaponGroupRank_Spear|2|TYPE=Rank
 Expert Weapon Group Selection ~ Sword	CATEGORY:Proficiency	TYPE:Expert Weapon Group Selection																																																						BONUS:VAR|WeaponGroupRank_Sword|2|TYPE=Rank
+
+mastery in martial weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|martial weapons	
+mastery in simple weapons			CATEGORY:Proficiency	ABILITY:Proficiency|AUTOMATIC|simple weapons	
 
 
 
