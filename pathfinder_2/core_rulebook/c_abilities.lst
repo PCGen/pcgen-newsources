@@ -431,26 +431,26 @@ Armor Class Tracker	CATEGORY:Internal	BONUS:COMBAT|AC|ArmorProf|TYPE=ArmorProfBo
 Proficiency Tracker			CATEGORY:Internal	ABILITY:Special Ability|AUTOMATIC|TYPE=ProficiencyDisplay
 
 
-Skill Tracker					CATEGORY:Internal
+Skill Tracker					CATEGORY:Internal	DEFINE:UntrainedSkillBonus|0
 #
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Acrobatics|0	DEFINE:Modifier_Acrobatics|0		BONUS:SKILLRANK|Acrobatics|if(Modifier_Acrobatics>=1,TL+(Modifier_Acrobatics*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Acrobatics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Acrobatics"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Arcana|0	DEFINE:Modifier_Arcana|0			BONUS:SKILLRANK|Arcana|if(Modifier_Arcana>=1,TL+(Modifier_Arcana*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Arcana|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Arcana"))					
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Athletics|0	DEFINE:Modifier_Athletics|0		BONUS:SKILLRANK|Athletics|if(Modifier_Athletics>=1,TL+(Modifier_Athletics*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Athletics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Athletics"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Crafting|0	DEFINE:Modifier_Crafting|0			BONUS:SKILLRANK|Crafting|if(Modifier_Crafting>=1,TL+(Modifier_Crafting*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Crafting|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Crafting"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Deception|0	DEFINE:Modifier_Deception|0		BONUS:SKILLRANK|Deception|if(Modifier_Deception>=1,TL+(Modifier_Deception*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Deception|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Deception"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Diplomacy|0	DEFINE:Modifier_Diplomacy|0		BONUS:SKILLRANK|Diplomacy|if(Modifier_Diplomacy>=1,TL+(Modifier_Diplomacy*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Diplomacy|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Diplomacy"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Intimidation|0	DEFINE:Modifier_Intimidation|0	BONUS:SKILLRANK|Intimidation|if(Modifier_Intimidation>=1,TL+(Modifier_Intimidation*2),0)|TYPE=Proficiency	BONUS:VAR|Modifier_Intimidation|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Intimidation"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Acrobatics|0	DEFINE:Modifier_Acrobatics|0		BONUS:SKILLRANK|Acrobatics|if(Modifier_Acrobatics>=1,TL+(Modifier_Acrobatics*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Acrobatics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Acrobatics"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Arcana|0	DEFINE:Modifier_Arcana|0			BONUS:SKILLRANK|Arcana|if(Modifier_Arcana>=1,TL+(Modifier_Arcana*2),UntrainedSkillBonus)|TYPE=Proficiency			BONUS:VAR|Modifier_Arcana|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Arcana"))					
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Athletics|0	DEFINE:Modifier_Athletics|0		BONUS:SKILLRANK|Athletics|if(Modifier_Athletics>=1,TL+(Modifier_Athletics*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Athletics|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Athletics"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Crafting|0	DEFINE:Modifier_Crafting|0			BONUS:SKILLRANK|Crafting|if(Modifier_Crafting>=1,TL+(Modifier_Crafting*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Crafting|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Crafting"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Deception|0	DEFINE:Modifier_Deception|0		BONUS:SKILLRANK|Deception|if(Modifier_Deception>=1,TL+(Modifier_Deception*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Deception|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Deception"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Diplomacy|0	DEFINE:Modifier_Diplomacy|0		BONUS:SKILLRANK|Diplomacy|if(Modifier_Diplomacy>=1,TL+(Modifier_Diplomacy*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Diplomacy|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Diplomacy"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Intimidation|0	DEFINE:Modifier_Intimidation|0	BONUS:SKILLRANK|Intimidation|if(Modifier_Intimidation>=1,TL+(Modifier_Intimidation*2),UntrainedSkillBonus)|TYPE=Proficiency	BONUS:VAR|Modifier_Intimidation|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Intimidation"))			
 # Lore has 30+ entries... worse than Craft, Knowledge and Performance combined from older editions... *sigh*
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Lore|0	DEFINE:Modifier_Lore|0				BONUS:SKILLRANK|Lore|if(Modifier_Lore>=1,TL+(Modifier_Lore*2),0)|TYPE=Proficiency				BONUS:VAR|Modifier_Lore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lore"))					
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Medicine|0	DEFINE:Modifier_Medicine|0			BONUS:SKILLRANK|Medicine|if(Modifier_Medicine>=1,TL+(Modifier_Medicine*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Medicine|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medicine"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Nature|0	DEFINE:Modifier_Nature|0			BONUS:SKILLRANK|Nature|if(Modifier_Nature>=1,TL+(Modifier_Nature*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Nature|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nature"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Occultism|0	DEFINE:Modifier_Occultism|0		BONUS:SKILLRANK|Occultism|if(Modifier_Occultism>=1,TL+(Modifier_Occultism*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Occultism|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occultism"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Performance|0	DEFINE:Modifier_Performance|0		BONUS:SKILLRANK|Performance|if(Modifier_Performance>=1,TL+(Modifier_Performance*2),0)|TYPE=Proficiency	BONUS:VAR|Modifier_Performance|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Performance"))			
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Religion|0	DEFINE:Modifier_Religion|0			BONUS:SKILLRANK|Religion|if(Modifier_Religion>=1,TL+(Modifier_Religion*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Religion|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Religion"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Society|0	DEFINE:Modifier_Society|0			BONUS:SKILLRANK|Society|if(Modifier_Society>=1,TL+(Modifier_Society*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Society|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Society"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Stealth|0	DEFINE:Modifier_Stealth|0			BONUS:SKILLRANK|Stealth|if(Modifier_Stealth>=1,TL+(Modifier_Stealth*2),0)|TYPE=Proficiency			BONUS:VAR|Modifier_Stealth|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stealth"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Survival|0	DEFINE:Modifier_Survival|0			BONUS:SKILLRANK|Survival|if(Modifier_Survival>=1,TL+(Modifier_Survival*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Survival|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Survival"))				
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0			BONUS:SKILLRANK|Thievery|if(Modifier_Thievery>=1,TL+(Modifier_Thievery*2),0)|TYPE=Proficiency		BONUS:VAR|Modifier_Thievery|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Thievery"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Lore|0	DEFINE:Modifier_Lore|0				BONUS:SKILLRANK|Lore|if(Modifier_Lore>=1,TL+(Modifier_Lore*2),UntrainedSkillBonus)|TYPE=Proficiency				BONUS:VAR|Modifier_Lore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lore"))					
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Medicine|0	DEFINE:Modifier_Medicine|0			BONUS:SKILLRANK|Medicine|if(Modifier_Medicine>=1,TL+(Modifier_Medicine*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Medicine|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medicine"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Nature|0	DEFINE:Modifier_Nature|0			BONUS:SKILLRANK|Nature|if(Modifier_Nature>=1,TL+(Modifier_Nature*2),UntrainedSkillBonus)|TYPE=Proficiency			BONUS:VAR|Modifier_Nature|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nature"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Occultism|0	DEFINE:Modifier_Occultism|0		BONUS:SKILLRANK|Occultism|if(Modifier_Occultism>=1,TL+(Modifier_Occultism*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Occultism|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occultism"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Performance|0	DEFINE:Modifier_Performance|0		BONUS:SKILLRANK|Performance|if(Modifier_Performance>=1,TL+(Modifier_Performance*2),UntrainedSkillBonus)|TYPE=Proficiency	BONUS:VAR|Modifier_Performance|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Performance"))			
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Religion|0	DEFINE:Modifier_Religion|0			BONUS:SKILLRANK|Religion|if(Modifier_Religion>=1,TL+(Modifier_Religion*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Religion|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Religion"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Society|0	DEFINE:Modifier_Society|0			BONUS:SKILLRANK|Society|if(Modifier_Society>=1,TL+(Modifier_Society*2),UntrainedSkillBonus)|TYPE=Proficiency			BONUS:VAR|Modifier_Society|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Society"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Stealth|0	DEFINE:Modifier_Stealth|0			BONUS:SKILLRANK|Stealth|if(Modifier_Stealth>=1,TL+(Modifier_Stealth*2),UntrainedSkillBonus)|TYPE=Proficiency			BONUS:VAR|Modifier_Stealth|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stealth"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Survival|0	DEFINE:Modifier_Survival|0			BONUS:SKILLRANK|Survival|if(Modifier_Survival>=1,TL+(Modifier_Survival*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Survival|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Survival"))				
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0			BONUS:SKILLRANK|Thievery|if(Modifier_Thievery>=1,TL+(Modifier_Thievery*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Thievery|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Thievery"))				
 
 # COMMENT: This jumps the progression regardless of standing
 Perception					CATEGORY:Proficiency																																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE
@@ -508,6 +508,19 @@ Unarmored Defense				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		S
 Shields					CATEGORY:Proficiency		TYPE:ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_Shields|0	DEFINE:ArmorProf_Shields|0																																																																				BONUS:VAR|Prof_Rank_Shields|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Shields"))	BONUS:VAR|ArmorProf_Shields|TL+(2Prof_Rank_Shields)																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															ASPECT:NAME|Untrained in Shields|PREVAREQ:Prof_Rank_Shields,0	ASPECT:NAME|Trained in Shields|PREVAREQ:Prof_Rank_Shields,1	ASPECT:NAME|Expert in Shields|PREVAREQ:Prof_Rank_Shields,2	ASPECT:NAME|Mastery in Shields|PREVAREQ:Prof_Rank_Shields,3	ASPECT:NAME|Legendary in Shields|PREVAREQ:Prof_Rank_Shields,4
 
 CATEGORY=Internal|Default.MOD	ABILITY:Internal|AUTOMATIC|Weapon Proficiency Tracker
+
+###Block: Feat Support
+Armor Proficiency Tracker					CATEGORY:Internal
+
+###Block:
+CATEGORY=Internal|Weapon Proficiency Tracker.MOD	ABILITY:Proficiency|AUTOMATIC|Simple Weapons
+CATEGORY=Internal|Weapon Proficiency Tracker.MOD	ABILITY:Proficiency|AUTOMATIC|Martial Weapons|PREVARGTEQ:WeaponProficiencyCount,2
+CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:ABILITYPOOL|Advanced Weapon Choice|WeaponProficiencyCount-2|PREVARGTEQ:WeaponProficiencyCount,3
+CATEGORY=Internal|Armor Proficiency Tracker.MOD	ABILITY:Proficiency|AUTOMATIC|Light Armor
+CATEGORY=Internal|Armor Proficiency Tracker.MOD	ABILITY:Proficiency|AUTOMATIC|Medium Armor|PREVARGTEQ:ArmorProficiencyCount,2
+CATEGORY=Internal|Armor Proficiency Tracker.MOD	ABILITY:Proficiency|AUTOMATIC|Heavy Armor|PREVARGTEQ:ArmorProficiencyCount,3
+
+Advanced Weapon Choice							CATEGORY:Proficiency	TYPE:Advanced Weapon Selection													STACK:NO	MULT:YES	CHOOSE:WEAPONPROFICIENCY|TYPE=Advanced	AUTO:WEAPONPROF|%LIST
 
 Weapon Proficiency Tracker		CATEGORY:Internal		AUTO:WEAPONPROF|Unarmed
 
@@ -697,10 +710,10 @@ Save Tracker	CATEGORY:Internal	TYPE:Trackers
 CATEGORY=Internal|Save Tracker.MOD	DEFINE:FortitudeProfSave|0	DEFINE:Modifier_Fortitude|0	BONUS:VAR|Modifier_Fortitude|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fortitude"))	
 CATEGORY=Internal|Save Tracker.MOD	DEFINE:ReflexProfSave|0		DEFINE:Modifier_Reflex|0	BONUS:VAR|Modifier_Reflex|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Reflex"))		
 CATEGORY=Internal|Save Tracker.MOD	DEFINE:WillProfSave|0		DEFINE:Modifier_Will|0		BONUS:VAR|Modifier_Will|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Will"))		
-###Block
-CATEGORY=Internal|Save Tracker.MOD	BONUS:SAVE|BASE.Fortitude|FortitudeProfSave	BONUS:VAR|FortitudeProfSave|TL+(Modifier_Fortitude*2)
-CATEGORY=Internal|Save Tracker.MOD	BONUS:SAVE|BASE.Reflex|ReflexProfSave		BONUS:VAR|ReflexProfSave|TL+(Modifier_Reflex*2)
-CATEGORY=Internal|Save Tracker.MOD	BONUS:SAVE|BASE.Will|WillProfSave			BONUS:VAR|WillProfSave|TL+(Modifier_Will*2)
+###Block	
+CATEGORY=Internal|Save Tracker.MOD	BONUS:SAVE|BASE.Fortitude|FortitudeProfSave	BONUS:VAR|FortitudeProfSave|if(Modifier_Fortitude>=1,TL+(Modifier_Fortitude*2),0)|TYPE=Base			
+CATEGORY=Internal|Save Tracker.MOD	BONUS:SAVE|BASE.Reflex|ReflexProfSave		BONUS:VAR|ReflexProfSave|if(Modifier_Reflex>=1,TL+(Modifier_Reflex*2),0)|TYPE=Base	
+CATEGORY=Internal|Save Tracker.MOD	BONUS:SAVE|BASE.Will|WillProfSave			BONUS:VAR|WillProfSave|if(Modifier_Will>=1,TL+(Modifier_Will*2),0)|TYPE=Base	
 
 # Saves
 Fortitude		SORTKEY:01 - Saves		CATEGORY:Special Ability	TYPE:ProficiencyDisplay		ASPECT:NAME|Untrained in Fortitude|PREVAREQ:Modifier_Fortitude,0		ASPECT:NAME|Trained in Fortitude|PREVAREQ:Modifier_Fortitude,1	ASPECT:NAME|Expert in Fortitude|PREVAREQ:Modifier_Fortitude,2	ASPECT:NAME|Mastery in Fortitude|PREVAREQ:Modifier_Fortitude,3	ASPECT:NAME|Legendary in Fortitude|PREVAREQ:Modifier_Fortitude,4
@@ -778,79 +791,102 @@ Nunchaku						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludg
 
 Dagger						CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Simple.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Knife.Agile.Finesse.Thrown 10.Versatile S					AUTO:WEAPONPROF|Dagger																																																									
 Sickle						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Knife.Agile.Finesse.Trip										AUTO:WEAPONPROF|Sickle																																																									
-Main-guache						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Finesse.Parry.Versatile S						AUTO:WEAPONPROF|Main-guache																																																								
-Starknife						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Knife.Agile.Deadly d6.Finesse.Thrown 20.Versatile S			AUTO:WEAPONPROF|Starknife																																																								
-Clan dagger						CATEGORY:Proficiency	TYPE:Weapon.Melee.Simple Melee.Simple.Piercing	TYPE:Weapon Group ~ Knife.Dwarf.Parry.Versatile B									AUTO:WEAPONPROF|Clan dagger																																																								
-Katar							CATEGORY:Proficiency	TYPE:Weapon.Melee.Simple Melee.Simple.Piercing	TYPE:Weapon Group ~ Knife.Agile.Deadly d6.Monk										AUTO:WEAPONPROF|Katar																																																									
-Kama							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Knife.Agile.Monk.Trip										AUTO:WEAPONPROF|Kama																																																									
-Kukri							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Knife.Agile.Finesse.Trip									AUTO:WEAPONPROF|Kukri																																																									
-Orc knuckle dagger				CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Orc									AUTO:WEAPONPROF|Orc knuckle dagger																																																							
-Sai							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Knife.Agile.Disarm.Finesse.Monk.Versatile B						AUTO:WEAPONPROF|Sai																																																									
-Orc necksplitter					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Knife.Forceful.Orc.Versatile P									AUTO:WEAPONPROF|Orc necksplitter																																																							
+Main-guache						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Knife.Agile.Disarm.Finesse.Parry.Versatile S						AUTO:WEAPONPROF|Main-guache																																																								
+Starknife						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown.Weapon Group ~ Knife.Agile.Deadly d6.Finesse.Thrown 20.Versatile S			AUTO:WEAPONPROF|Starknife																																																								
+Clan dagger						CATEGORY:Proficiency	TYPE:Weapon.Melee.Simple Melee.Simple.Piercing.Weapon Group ~ Knife.Dwarf.Parry.Versatile B									AUTO:WEAPONPROF|Clan dagger																																																								
+Katar							CATEGORY:Proficiency	TYPE:Weapon.Melee.Simple Melee.Simple.Piercing.Weapon Group ~ Knife.Agile.Deadly d6.Monk										AUTO:WEAPONPROF|Katar																																																									
+Kama							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Knife.Agile.Monk.Trip										AUTO:WEAPONPROF|Kama																																																									
+Kukri							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Knife.Agile.Finesse.Trip									AUTO:WEAPONPROF|Kukri																																																									
+Orc knuckle dagger				CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Knife.Agile.Disarm.Orc									AUTO:WEAPONPROF|Orc knuckle dagger																																																							
+Sai							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Knife.Agile.Disarm.Finesse.Monk.Versatile B						AUTO:WEAPONPROF|Sai																																																									
+Orc necksplitter					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing.Weapon Group ~ Knife.Forceful.Orc.Versatile P									AUTO:WEAPONPROF|Orc necksplitter																																																							
 # Spear
-Longspear						CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Spear.Reach											AUTO:WEAPONPROF|Longspear																																																								
-Spear							CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Simple.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Spear.Thrown 20								AUTO:WEAPONPROF|Spear																																																									
-Lance							CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Spear.Charge.Deadly d8.Reach									AUTO:WEAPONPROF|Lance																																																									
-Trident						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Spear.Thrown 20									AUTO:WEAPONPROF|Trident																																																									
-Filcher's fork					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Spear.Agile.Backstabber.Deadly d6.Finesse.Halfling.Thrown 20	AUTO:WEAPONPROF|Filcher's fork																																																							
+Longspear						CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Simple.Simple Melee Weapon.Weapon Group ~ Spear.Reach											AUTO:WEAPONPROF|Longspear																																																								
+Spear							CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Simple.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Spear.Thrown 20								AUTO:WEAPONPROF|Spear																																																									
+Lance							CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Spear.Charge.Deadly d8.Reach									AUTO:WEAPONPROF|Lance																																																									
+Trident						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown.Weapon Group ~ Spear.Thrown 20									AUTO:WEAPONPROF|Trident																																																									
+Filcher's fork					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Ranged.Thrown.Weapon Group ~ Spear.Agile.Backstabber.Deadly d6.Finesse.Halfling.Thrown 20	AUTO:WEAPONPROF|Filcher's fork																																																							
 # Sword
-Bastard sword					CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Two-hand d12										AUTO:WEAPONPROF|Bastard sword																																																								
-Falchion						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Forceful.Sweep										AUTO:WEAPONPROF|Falchion																																																								
-Greatsword						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Versatile P										AUTO:WEAPONPROF|Greatsword																																																								
-Longsword						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Versatile P										AUTO:WEAPONPROF|Longsword																																																								
-Rapier						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Sword.Deadly d8.Disarm.Finesse								AUTO:WEAPONPROF|Rapier																																																									
-Scimitar						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Forceful.Sweep										AUTO:WEAPONPROF|Scimitar																																																								
-Shortsword						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Sword.Agile.Finesse.Versatile S								AUTO:WEAPONPROF|Shortsword																																																								
-Dogslicer						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Agile.Backstabber.Finesse.Goblin							AUTO:WEAPONPROF|Dogslicer																																																								
-Elven curve blade					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Elf.Finesse.Forceful									AUTO:WEAPONPROF|Elven curve blade																																																							
-Katana						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Versatile P										AUTO:WEAPONPROF|Katana																																																									
-Temple sword					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Sword.Monk.Trip											AUTO:WEAPONPROF|Temple sword																																																								
-Sawtooth sabre					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Sword.Agile.Finesse.Twin										AUTO:WEAPONPROF|Sawtooth sabre																																																							
+Bastard sword					CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Two-hand d12										AUTO:WEAPONPROF|Bastard sword																																																								
+Falchion						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Forceful.Sweep										AUTO:WEAPONPROF|Falchion																																																								
+Greatsword						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Sword.Versatile P										AUTO:WEAPONPROF|Greatsword																																																								
+Longsword						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Sword.Versatile P										AUTO:WEAPONPROF|Longsword																																																								
+Rapier						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Sword.Deadly d8.Disarm.Finesse								AUTO:WEAPONPROF|Rapier																																																									
+Scimitar						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Sword.Forceful.Sweep										AUTO:WEAPONPROF|Scimitar																																																								
+Shortsword						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Sword.Agile.Finesse.Versatile S								AUTO:WEAPONPROF|Shortsword																																																								
+Dogslicer						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Sword.Agile.Backstabber.Finesse.Goblin							AUTO:WEAPONPROF|Dogslicer																																																								
+Elven curve blade					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Sword.Elf.Finesse.Forceful									AUTO:WEAPONPROF|Elven curve blade																																																							
+Katana						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Sword.Versatile P										AUTO:WEAPONPROF|Katana																																																									
+Temple sword					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Sword.Monk.Trip											AUTO:WEAPONPROF|Temple sword																																																								
+Sawtooth sabre					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing.Weapon Group ~ Sword.Agile.Finesse.Twin										AUTO:WEAPONPROF|Sawtooth sabre																																																							
 
-Battle axe						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep												AUTO:WEAPONPROF|Battle axe																																																								
-Greataxe						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep												AUTO:WEAPONPROF|Greataxe																																																								
-Hatchet						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Axe.Agile.Sweep.Thrown 10							AUTO:WEAPONPROF|Hatchet																																																									
-Dwarven waraxe					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing	TYPE:Weapon Group ~ Axe.Dwarf.Sweep.Two-hand d12									AUTO:WEAPONPROF|Dwarven waraxe																																																							
+Battle axe						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep												AUTO:WEAPONPROF|Battle axe																																																								
+Greataxe						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Axe.Sweep												AUTO:WEAPONPROF|Greataxe																																																								
+Hatchet						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Axe.Agile.Sweep.Thrown 10							AUTO:WEAPONPROF|Hatchet																																																									
+Dwarven waraxe					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Slashing.Weapon Group ~ Axe.Dwarf.Sweep.Two-hand d12									AUTO:WEAPONPROF|Dwarven waraxe																																																							
 # Flail
-Flail							CATEGORY:Proficiency	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Flail.Disarm.Sweep.Trip									AUTO:WEAPONPROF|Flail																																																									
-War flail						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Flail.Disarm.Sweep.Trip									AUTO:WEAPONPROF|War flail																																																								
-Whip							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Flail.Disarm.Finesse.Nonlethal.Reach.Trip						AUTO:WEAPONPROF|Whip																																																									
-Spiked chain					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Flail.Disarm.Finesse.Trip									AUTO:WEAPONPROF|Spiked chain																																																								
-Gnome flickmace					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Bludgeoning	TYPE:Weapon Group ~ Flail.Gnome.Reach										AUTO:WEAPONPROF|Gnome flickmace																																																							
-Glaive						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Deadly d8.Forceful.Reach								AUTO:WEAPONPROF|Glaive																																																									
-Guisarme						CATEGORY:Proficiency	TYPE:Slashing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Trip										AUTO:WEAPONPROF|Guisarme																																																								
-Halberd						CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Versatile S									AUTO:WEAPONPROF|Halberd																																																									
-Ranseur						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Polearm.Disarm.Reach										AUTO:WEAPONPROF|Ranseur																																																									
-Scythe						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Polearm.Deadly d10.Trip									AUTO:WEAPONPROF|Scythe																																																									
-Horsechopper					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing	TYPE:Weapon Group ~ Polearm.Goblin.Reach.Trip.Versatile P							AUTO:WEAPONPROF|Horsechopper																																																								
+Flail							CATEGORY:Proficiency	TYPE:Bludgeoning.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Flail.Disarm.Sweep.Trip									AUTO:WEAPONPROF|Flail																																																									
+War flail						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning.Weapon Group ~ Flail.Disarm.Sweep.Trip									AUTO:WEAPONPROF|War flail																																																								
+Whip							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Flail.Disarm.Finesse.Nonlethal.Reach.Trip						AUTO:WEAPONPROF|Whip																																																									
+Spiked chain					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Flail.Disarm.Finesse.Trip									AUTO:WEAPONPROF|Spiked chain																																																								
+Gnome flickmace					CATEGORY:Proficiency	TYPE:Weapon.Melee.Exotic Melee.Exotic.Bludgeoning.Weapon Group ~ Flail.Gnome.Reach										AUTO:WEAPONPROF|Gnome flickmace																																																							
+Glaive						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Deadly d8.Forceful.Reach								AUTO:WEAPONPROF|Glaive																																																									
+Guisarme						CATEGORY:Proficiency	TYPE:Slashing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Trip										AUTO:WEAPONPROF|Guisarme																																																								
+Halberd						CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Polearm.Reach.Versatile S									AUTO:WEAPONPROF|Halberd																																																									
+Ranseur						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Polearm.Disarm.Reach										AUTO:WEAPONPROF|Ranseur																																																									
+Scythe						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Polearm.Deadly d10.Trip									AUTO:WEAPONPROF|Scythe																																																									
+Horsechopper					CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Slashing.Weapon Group ~ Polearm.Goblin.Reach.Trip.Versatile P							AUTO:WEAPONPROF|Horsechopper																																																								
 # Pick
-Greatpick						CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Fatal d12											AUTO:WEAPONPROF|Greatpick																																																								
-Light hammer					CATEGORY:Proficiency	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Pick.Agile.Thrown 20								AUTO:WEAPONPROF|Light hammer																																																								
-Light pick						CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Agile.Fatal d8										AUTO:WEAPONPROF|Light pick																																																								
-Pick							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing	TYPE:Weapon Group ~ Pick.Fatal d10											AUTO:WEAPONPROF|Pick																																																									
+Greatpick						CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Fatal d12											AUTO:WEAPONPROF|Greatpick																																																								
+Light hammer					CATEGORY:Proficiency	TYPE:Bludgeoning.Weapon.Melee.Martial Melee.Martial.Ranged.Thrown.Weapon Group ~ Pick.Agile.Thrown 20								AUTO:WEAPONPROF|Light hammer																																																								
+Light pick						CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Pick.Agile.Fatal d8										AUTO:WEAPONPROF|Light pick																																																								
+Pick							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Piercing.Weapon Group ~ Pick.Fatal d10											AUTO:WEAPONPROF|Pick																																																									
 # Shield
-Heavy shield					CATEGORY:Proficiency	TYPE:Piercing	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to heavy shield								AUTO:WEAPONPROF|Heavy shield																																																								
-Light shield					CATEGORY:Proficiency	TYPE:Bludgeoning	TYPE:Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile											AUTO:WEAPONPROF|Light shield																																																								
+Heavy shield					CATEGORY:Proficiency	TYPE:Piercing.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Attached to heavy shield								AUTO:WEAPONPROF|Heavy shield																																																								
+Light shield					CATEGORY:Proficiency	TYPE:Bludgeoning.Weapon.Melee.Martial Melee.Martial.Weapon Group ~ Shield.Agile											AUTO:WEAPONPROF|Light shield																																																								
 # Hammer
-Maul							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Shove											AUTO:WEAPONPROF|Maul																																																									
-Warhammer						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Shove											AUTO:WEAPONPROF|Warhammer																																																								
-Gnome hooked hammer				CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning	TYPE:Weapon Group ~ Hammer.Gnome.Trip.Two-hand d10.Versatile P						AUTO:WEAPONPROF|Gnome hooked hammer																																																							
+Maul							CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning.Weapon Group ~ Hammer.Shove											AUTO:WEAPONPROF|Maul																																																									
+Warhammer						CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning.Weapon Group ~ Hammer.Shove											AUTO:WEAPONPROF|Warhammer																																																								
+Gnome hooked hammer				CATEGORY:Proficiency	TYPE:Weapon.Melee.Martial Melee.Martial.Bludgeoning.Weapon Group ~ Hammer.Gnome.Trip.Two-hand d10.Versatile P						AUTO:WEAPONPROF|Gnome hooked hammer																																																							
 # Dart
-Blowgun						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Dart.Agile.Nonlethal								AUTO:WEAPONPROF|Blowgun																																																									
-Dart							CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Agile.Thrown							AUTO:WEAPONPROF|Dart																																																									
-Javelin						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Thrown								AUTO:WEAPONPROF|Javelin																																																									
-Shuriken						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Piercing.Ranged.Thrown	TYPE:Weapon Group ~ Dart.Agile.Monk.Thrown 20					AUTO:WEAPONPROF|Shuriken																																																								
+Blowgun						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Weapon Group ~ Dart.Agile.Nonlethal								AUTO:WEAPONPROF|Blowgun																																																									
+Dart							CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown.Weapon Group ~ Dart.Agile.Thrown							AUTO:WEAPONPROF|Dart																																																									
+Javelin						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Thrown.Weapon Group ~ Dart.Thrown								AUTO:WEAPONPROF|Javelin																																																									
+Shuriken						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Piercing.Ranged.Thrown.Weapon Group ~ Dart.Agile.Monk.Thrown 20					AUTO:WEAPONPROF|Shuriken																																																								
 # Bow
-Crossbow						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow											AUTO:WEAPONPROF|Crossbow																																																								
-Hand crossbow					CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow											AUTO:WEAPONPROF|Hand crossbow																																																								
-Heavy crossbow					CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow											AUTO:WEAPONPROF|Heavy crossbow																																																							
-Composite longbow					CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Propulsive.Volley						AUTO:WEAPONPROF|Composite longbow																																																							
-Composite shortbow				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Propulsive							AUTO:WEAPONPROF|Composite shortbow																																																							
-Longbow						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10.Volley								AUTO:WEAPONPROF|Longbow																																																									
-Shortbow						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged	TYPE:Weapon Group ~ Bow.Deadly d10									AUTO:WEAPONPROF|Shortbow																																																								
+Crossbow						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Weapon Group ~ Bow											AUTO:WEAPONPROF|Crossbow																																																								
+Hand crossbow					CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Weapon Group ~ Bow											AUTO:WEAPONPROF|Hand crossbow																																																								
+Heavy crossbow					CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Piercing.Ranged.Weapon Group ~ Bow											AUTO:WEAPONPROF|Heavy crossbow																																																							
+Composite longbow					CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged.Weapon Group ~ Bow.Deadly d10.Propulsive.Volley						AUTO:WEAPONPROF|Composite longbow																																																							
+Composite shortbow				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged.Weapon Group ~ Bow.Deadly d10.Propulsive							AUTO:WEAPONPROF|Composite shortbow																																																							
+Longbow						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged.Weapon Group ~ Bow.Deadly d10.Volley								AUTO:WEAPONPROF|Longbow																																																									
+Shortbow						CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Ranged.Piercing.Ranged.Weapon Group ~ Bow.Deadly d10									AUTO:WEAPONPROF|Shortbow																																																								
 # Sling
-Sling							CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Bludgeoning.Ranged	TYPE:Weapon Group ~ Sling.Propulsive								AUTO:WEAPONPROF|Sling																																																									
-Halfling sling staff				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Bludgeoning.Ranged	TYPE:Weapon Group ~ Sling.Halfling.Propulsive						AUTO:WEAPONPROF|Halfling sling staff																																																						
+Sling							CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple.Ranged.Bludgeoning.Ranged.Weapon Group ~ Sling.Propulsive								AUTO:WEAPONPROF|Sling																																																									
+Halfling sling staff				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial.Piercing.Bludgeoning.Ranged.Weapon Group ~ Sling.Halfling.Propulsive						AUTO:WEAPONPROF|Halfling sling staff																																																						
+
+
+
+
+
+
+CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -860,46 +896,259 @@ Halfling sling staff				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.M
 
 
 ###Block: The Lore Skills
-Dessert Lore	CATEGORY:Proficiency
-Hill Lore		CATEGORY:Proficiency
-Mountain Lore	CATEGORY:Proficiency
-Plain Lore		CATEGORY:Proficiency
-Forest Lore		CATEGORY:Proficiency
-Jungle Lore		CATEGORY:Proficiency
-River Lore		CATEGORY:Proficiency
-Ocean Lore		CATEGORY:Proficiency
-Underwater Lore	CATEGORY:Proficiency
-Swamp Lore		CATEGORY:Proficiency
-Marsh Lore		CATEGORY:Proficiency
-Canyon Lore		CATEGORY:Proficiency
-Glacier Lore	CATEGORY:Proficiency
-Tundra Lore		CATEGORY:Proficiency
-Oasis Lore		CATEGORY:Proficiency
-Valley Lore		CATEGORY:Proficiency
-Underground Lore	CATEGORY:Proficiency
+Academia Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Accounting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Architecture Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Art Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Circus Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Engineering Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Farming Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fishing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fortune-Telling Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Games Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Genealogy Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Gladiatorial Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Guild Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Heraldry Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Herbalism Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Hunting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Labor Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Legal Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Library Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Abyss Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Astral Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Heaven Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Mercantile Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Midwifery Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Milling Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Mining Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Sailing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Scouting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Scribing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Stabling Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Tanning Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Theater Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Underworld Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Warfare Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+specific settlement		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+specific terrain			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+specific food or drink		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Dessert Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Hill Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Mountain Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Plain Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Forest Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Jungle Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+River Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Ocean Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Underwater Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Swamp Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Marsh Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Canyon Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Glacier Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Tundra Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Oasis Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Valley Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Underground Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Sky Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Abadar Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Asmodeus Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Calistria Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Cayden Cailean Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Desna Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Erastil Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Gorum Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Gozreh Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Iomedae Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Irori Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Lamashtu Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Nethys Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Norgorber Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Pharasma Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Rovagug Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Sarenrae Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Shelyn Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Torag Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Urgathoa Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Zon-Kuthon Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Absalom Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Magnimar Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Creature Lore 1			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Creature Lore 2			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Food Lore 1				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Food Lore 2				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Drink Lore 1			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Drink Lore 2			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Material Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Elemental Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Astral Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Ethereal Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Feywild Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Hell Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Lower Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Upper Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Inner Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Outer Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fill In the Blank Lore 1	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fill In the Blank Lore 2	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 
 
 
 
 
 
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DessertLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HillLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MountainLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PlainLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ForestLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_JungleLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RiverLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OceanLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderwaterLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SwampLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MarshLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CanyonLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GlacierLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TundraLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OasisLore|0		
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ValleyLore|0	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UndergroundLore|0	
+
+
+
+
+
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AcademiaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AcademiaLore>=1,TL+(Modifier_AcademiaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AcademiaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Academia Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AccountingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AccountingLore>=1,TL+(Modifier_AccountingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AccountingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Accounting Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ArchitectureLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ArchitectureLore>=1,TL+(Modifier_ArchitectureLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ArchitectureLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Architecture Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ArtLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ArtLore>=1,TL+(Modifier_ArtLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ArtLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Art Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CircusLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_CircusLore>=1,TL+(Modifier_CircusLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CircusLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Circus Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_EngineeringLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_EngineeringLore>=1,TL+(Modifier_EngineeringLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_EngineeringLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Engineering Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FarmingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_FarmingLore>=1,TL+(Modifier_FarmingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FarmingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Farming Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FishingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_FishingLore>=1,TL+(Modifier_FishingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FishingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fishing Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FortuneTellingLore|0				BONUS:SKILLRANK|Thievery|if(Modifier_FortuneTellingLore>=1,TL+(Modifier_FortuneTellingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FortuneTellingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fortune-Telling Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GamesLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GamesLore>=1,TL+(Modifier_GamesLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GamesLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Games Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GenealogyLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_GenealogyLore>=1,TL+(Modifier_GenealogyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GenealogyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Genealogy Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GladiatorialLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_GladiatorialLore>=1,TL+(Modifier_GladiatorialLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GladiatorialLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gladiatorial Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GuildLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GuildLore>=1,TL+(Modifier_GuildLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GuildLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Guild Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HeraldryLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_HeraldryLore>=1,TL+(Modifier_HeraldryLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HeraldryLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heraldry Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HerbalismLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_HerbalismLore>=1,TL+(Modifier_HerbalismLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HerbalismLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Herbalism Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HuntingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_HuntingLore>=1,TL+(Modifier_HuntingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HuntingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hunting Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LaborLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_LaborLore>=1,TL+(Modifier_LaborLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LaborLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Labor Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LegalLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_LegalLore>=1,TL+(Modifier_LegalLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LegalLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Legal Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LibraryLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_LibraryLore>=1,TL+(Modifier_LibraryLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LibraryLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Library Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbyssLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_AbyssLore>=1,TL+(Modifier_AbyssLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbyssLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Abyss Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HeavenLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_HeavenLore>=1,TL+(Modifier_HeavenLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HeavenLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heaven Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MercantileLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MercantileLore>=1,TL+(Modifier_MercantileLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MercantileLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mercantile Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MidwiferyLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MidwiferyLore>=1,TL+(Modifier_MidwiferyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MidwiferyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Midwifery Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MillingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_MillingLore>=1,TL+(Modifier_MillingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MillingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Milling Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MiningLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_MiningLore>=1,TL+(Modifier_MiningLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MiningLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mining Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SailingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_SailingLore>=1,TL+(Modifier_SailingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SailingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sailing Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ScoutingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ScoutingLore>=1,TL+(Modifier_ScoutingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ScoutingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Scouting Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ScribingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ScribingLore>=1,TL+(Modifier_ScribingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ScribingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Scribing Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_StablingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_StablingLore>=1,TL+(Modifier_StablingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_StablingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stabling Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TanningLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_TanningLore>=1,TL+(Modifier_TanningLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TanningLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Tanning Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TheaterLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_TheaterLore>=1,TL+(Modifier_TheaterLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TheaterLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Theater Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderworldLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UnderworldLore>=1,TL+(Modifier_UnderworldLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UnderworldLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underworld Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_WarfareLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_WarfareLore>=1,TL+(Modifier_WarfareLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_WarfareLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Warfare Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificsettlement|0				BONUS:SKILLRANK|Thievery|if(Modifier_specificsettlement>=1,TL+(Modifier_specificsettlement*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificsettlement|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific settlement"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificterrain|0					BONUS:SKILLRANK|Thievery|if(Modifier_specificterrain>=1,TL+(Modifier_specificterrain*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificterrain|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific terrain"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificfoodordrink|0				BONUS:SKILLRANK|Thievery|if(Modifier_specificfoodordrink>=1,TL+(Modifier_specificfoodordrink*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificfoodordrink|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific food or drink"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DessertLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_DessertLore>=1,TL+(Modifier_DessertLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DessertLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Dessert Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HillLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_HillLore>=1,TL+(Modifier_HillLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HillLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hill Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MountainLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MountainLore>=1,TL+(Modifier_MountainLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MountainLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mountain Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PlainLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_PlainLore>=1,TL+(Modifier_PlainLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_PlainLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Plain Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ForestLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ForestLore>=1,TL+(Modifier_ForestLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ForestLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Forest Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_JungleLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_JungleLore>=1,TL+(Modifier_JungleLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_JungleLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Jungle Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RiverLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_RiverLore>=1,TL+(Modifier_RiverLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_RiverLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=River Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OceanLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_OceanLore>=1,TL+(Modifier_OceanLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OceanLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Ocean Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderwaterLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UnderwaterLore>=1,TL+(Modifier_UnderwaterLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UnderwaterLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underwater Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SwampLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_SwampLore>=1,TL+(Modifier_SwampLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SwampLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Swamp Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MarshLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_MarshLore>=1,TL+(Modifier_MarshLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MarshLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Marsh Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CanyonLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_CanyonLore>=1,TL+(Modifier_CanyonLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CanyonLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Canyon Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GlacierLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GlacierLore>=1,TL+(Modifier_GlacierLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GlacierLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Glacier Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TundraLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_TundraLore>=1,TL+(Modifier_TundraLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TundraLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Tundra Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OasisLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_OasisLore>=1,TL+(Modifier_OasisLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OasisLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Oasis Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ValleyLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ValleyLore>=1,TL+(Modifier_ValleyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ValleyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Valley Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UndergroundLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UndergroundLore>=1,TL+(Modifier_UndergroundLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UndergroundLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underground Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SkyLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_SkyLore>=1,TL+(Modifier_SkyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SkyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sky Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbadarLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_AbadarLore>=1,TL+(Modifier_AbadarLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbadarLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Abadar Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AsmodeusLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AsmodeusLore>=1,TL+(Modifier_AsmodeusLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AsmodeusLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Asmodeus Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CalistriaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_CalistriaLore>=1,TL+(Modifier_CalistriaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CalistriaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Calistria Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CaydenCaileanLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_CaydenCaileanLore>=1,TL+(Modifier_CaydenCaileanLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CaydenCaileanLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Cayden Cailean Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DesnaLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_DesnaLore>=1,TL+(Modifier_DesnaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DesnaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Desna Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ErastilLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ErastilLore>=1,TL+(Modifier_ErastilLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ErastilLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Erastil Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GorumLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GorumLore>=1,TL+(Modifier_GorumLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GorumLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gorum Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GozrehLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GozrehLore>=1,TL+(Modifier_GozrehLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GozrehLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gozreh Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_IomedaeLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_IomedaeLore>=1,TL+(Modifier_IomedaeLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_IomedaeLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Iomedae Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_IroriLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_IroriLore>=1,TL+(Modifier_IroriLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_IroriLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Irori Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LamashtuLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_LamashtuLore>=1,TL+(Modifier_LamashtuLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LamashtuLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lamashtu Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_NethysLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_NethysLore>=1,TL+(Modifier_NethysLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_NethysLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nethys Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_NorgorberLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_NorgorberLore>=1,TL+(Modifier_NorgorberLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_NorgorberLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Norgorber Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PharasmaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_PharasmaLore>=1,TL+(Modifier_PharasmaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_PharasmaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Pharasma Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RovagugLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_RovagugLore>=1,TL+(Modifier_RovagugLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_RovagugLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Rovagug Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SarenraeLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_SarenraeLore>=1,TL+(Modifier_SarenraeLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SarenraeLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sarenrae Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ShelynLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ShelynLore>=1,TL+(Modifier_ShelynLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ShelynLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Shelyn Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ToragLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ToragLore>=1,TL+(Modifier_ToragLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ToragLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Torag Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UrgathoaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UrgathoaLore>=1,TL+(Modifier_UrgathoaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UrgathoaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Urgathoa Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ZonKuthonLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ZonKuthonLore>=1,TL+(Modifier_ZonKuthonLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ZonKuthonLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Zon-Kuthon Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbsalomLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_AbsalomLore>=1,TL+(Modifier_AbsalomLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbsalomLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Absalom Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MagnimarLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MagnimarLore>=1,TL+(Modifier_MagnimarLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MagnimarLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Magnimar Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CreatureLore1|0					BONUS:SKILLRANK|Thievery|if(Modifier_CreatureLore1>=1,TL+(Modifier_CreatureLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CreatureLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Creature Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CreatureLore2|0					BONUS:SKILLRANK|Thievery|if(Modifier_CreatureLore2>=1,TL+(Modifier_CreatureLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CreatureLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Creature Lore 2"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FoodLore1|0						BONUS:SKILLRANK|Thievery|if(Modifier_FoodLore1>=1,TL+(Modifier_FoodLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FoodLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Food Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FoodLore2|0						BONUS:SKILLRANK|Thievery|if(Modifier_FoodLore2>=1,TL+(Modifier_FoodLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FoodLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Food Lore 2"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DrinkLore1|0						BONUS:SKILLRANK|Thievery|if(Modifier_DrinkLore1>=1,TL+(Modifier_DrinkLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DrinkLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Drink Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DrinkLore2|0						BONUS:SKILLRANK|Thievery|if(Modifier_DrinkLore2>=1,TL+(Modifier_DrinkLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DrinkLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Drink Lore 2"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MaterialPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MaterialPlaneLore>=1,TL+(Modifier_MaterialPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MaterialPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Material Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ElementalPlaneLore|0				BONUS:SKILLRANK|Thievery|if(Modifier_ElementalPlaneLore>=1,TL+(Modifier_ElementalPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ElementalPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Elemental Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AstralPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AstralPlaneLore>=1,TL+(Modifier_AstralPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AstralPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Astral Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_EtherealPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_EtherealPlaneLore>=1,TL+(Modifier_EtherealPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_EtherealPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Ethereal Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FeywildPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_FeywildPlaneLore>=1,TL+(Modifier_FeywildPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FeywildPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Feywild Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HellPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_HellPlaneLore>=1,TL+(Modifier_HellPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HellPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hell Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LowerPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_LowerPlaneLore>=1,TL+(Modifier_LowerPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LowerPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lower Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UpperPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UpperPlaneLore>=1,TL+(Modifier_UpperPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UpperPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Upper Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_InnerPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_InnerPlaneLore>=1,TL+(Modifier_InnerPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_InnerPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Inner Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OuterPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_OuterPlaneLore>=1,TL+(Modifier_OuterPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OuterPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Outer Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FillIntheBlankLore1|0				BONUS:SKILLRANK|Thievery|if(Modifier_FillIntheBlankLore1>=1,TL+(Modifier_FillIntheBlankLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FillIntheBlankLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fill In the Blank Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FillIntheBlankLore2|0				BONUS:SKILLRANK|Thievery|if(Modifier_FillIntheBlankLore2>=1,TL+(Modifier_FillIntheBlankLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FillIntheBlankLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fill In the Blank Lore 2"))	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
