@@ -367,7 +367,7 @@ CATEGORY=Internal|Default.MOD		BONUS:VAR|PoolLevel20AbilityBoost|4|PREPCLEVEL:MI
 
 CATEGORY=Internal|Default.MOD		BONUS:VAR|AncestryFeatCount|(3+TL)/4
 CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionAbility|WIS
-CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionProf|TL+if(Modifier_Perception*2)
+CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionProf|if(Modifier_Perception>=1,TL+(Modifier_Perception*2),0)
 CATEGORY=Internal|Default.MOD		BONUS:VAR|PerceptionTotal|PerceptionAbility+PerceptionProf+PerceptionItem
 
 ###Block
@@ -440,7 +440,6 @@ CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Crafting|0	DEFINE:Modifi
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Deception|0	DEFINE:Modifier_Deception|0		BONUS:SKILLRANK|Deception|if(Modifier_Deception>=1,TL+(Modifier_Deception*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Deception|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Deception"))				
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Diplomacy|0	DEFINE:Modifier_Diplomacy|0		BONUS:SKILLRANK|Diplomacy|if(Modifier_Diplomacy>=1,TL+(Modifier_Diplomacy*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Diplomacy|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Diplomacy"))			
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Intimidation|0	DEFINE:Modifier_Intimidation|0	BONUS:SKILLRANK|Intimidation|if(Modifier_Intimidation>=1,TL+(Modifier_Intimidation*2),UntrainedSkillBonus)|TYPE=Proficiency	BONUS:VAR|Modifier_Intimidation|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Intimidation"))			
-# Lore has 30+ entries... worse than Craft, Knowledge and Performance combined from older editions... *sigh*
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Lore|0	DEFINE:Modifier_Lore|0				BONUS:SKILLRANK|Lore|if(Modifier_Lore>=1,TL+(Modifier_Lore*2),UntrainedSkillBonus)|TYPE=Proficiency				BONUS:VAR|Modifier_Lore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lore"))					
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Medicine|0	DEFINE:Modifier_Medicine|0			BONUS:SKILLRANK|Medicine|if(Modifier_Medicine>=1,TL+(Modifier_Medicine*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Medicine|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Medicine"))				
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Nature|0	DEFINE:Modifier_Nature|0			BONUS:SKILLRANK|Nature|if(Modifier_Nature>=1,TL+(Modifier_Nature*2),UntrainedSkillBonus)|TYPE=Proficiency			BONUS:VAR|Modifier_Nature|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nature"))				
@@ -451,29 +450,237 @@ CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Society|0	DEFINE:Modifie
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Stealth|0	DEFINE:Modifier_Stealth|0			BONUS:SKILLRANK|Stealth|if(Modifier_Stealth>=1,TL+(Modifier_Stealth*2),UntrainedSkillBonus)|TYPE=Proficiency			BONUS:VAR|Modifier_Stealth|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stealth"))				
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Survival|0	DEFINE:Modifier_Survival|0			BONUS:SKILLRANK|Survival|if(Modifier_Survival>=1,TL+(Modifier_Survival*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Survival|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Survival"))				
 CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0			BONUS:SKILLRANK|Thievery|if(Modifier_Thievery>=1,TL+(Modifier_Thievery*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_Thievery|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Thievery"))				
+# Lore....
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AlcoholLore|0						BONUS:SKILLRANK|Lore - Alcohol Lore|if(Modifier_AlcoholLore>=1,TL+(Modifier_AlcoholLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AlcoholLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Alcohol Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AnimalLore|0						BONUS:SKILLRANK|Lore - Animal Lore|if(Modifier_AnimalLore>=1,TL+(Modifier_AnimalLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AnimalLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Animal Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AcademiaLore|0					BONUS:SKILLRANK|Lore - Academia Lore|if(Modifier_AcademiaLore>=1,TL+(Modifier_AcademiaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AcademiaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Academia Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AccountingLore|0					BONUS:SKILLRANK|Lore - Accounting Lore|if(Modifier_AccountingLore>=1,TL+(Modifier_AccountingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AccountingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Accounting Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ArchitectureLore|0					BONUS:SKILLRANK|Lore - Architecture Lore|if(Modifier_ArchitectureLore>=1,TL+(Modifier_ArchitectureLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ArchitectureLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Architecture Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ArtLore|0						BONUS:SKILLRANK|Lore - Art Lore|if(Modifier_ArtLore>=1,TL+(Modifier_ArtLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ArtLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Art Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CircusLore|0						BONUS:SKILLRANK|Lore - Circus Lore|if(Modifier_CircusLore>=1,TL+(Modifier_CircusLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CircusLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Circus Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_EngineeringLore|0					BONUS:SKILLRANK|Lore - Engineering Lore|if(Modifier_EngineeringLore>=1,TL+(Modifier_EngineeringLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_EngineeringLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Engineering Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FarmingLore|0						BONUS:SKILLRANK|Lore - Farming Lore|if(Modifier_FarmingLore>=1,TL+(Modifier_FarmingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FarmingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Farming Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FishingLore|0						BONUS:SKILLRANK|Lore - Fishing Lore|if(Modifier_FishingLore>=1,TL+(Modifier_FishingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FishingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fishing Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FortuneTellingLore|0				BONUS:SKILLRANK|Lore - Fortune-Telling Lore|if(Modifier_FortuneTellingLore>=1,TL+(Modifier_FortuneTellingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FortuneTellingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fortune-Telling Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GamesLore|0						BONUS:SKILLRANK|Lore - Games Lore|if(Modifier_GamesLore>=1,TL+(Modifier_GamesLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GamesLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Games Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GenealogyLore|0					BONUS:SKILLRANK|Lore - Genealogy Lore|if(Modifier_GenealogyLore>=1,TL+(Modifier_GenealogyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GenealogyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Genealogy Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GladiatorialLore|0					BONUS:SKILLRANK|Lore - Gladiatorial Lore|if(Modifier_GladiatorialLore>=1,TL+(Modifier_GladiatorialLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GladiatorialLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gladiatorial Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GuildLore|0						BONUS:SKILLRANK|Lore - Guild Lore|if(Modifier_GuildLore>=1,TL+(Modifier_GuildLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GuildLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Guild Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HeraldryLore|0					BONUS:SKILLRANK|Lore - Heraldry Lore|if(Modifier_HeraldryLore>=1,TL+(Modifier_HeraldryLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HeraldryLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heraldry Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HerbalismLore|0					BONUS:SKILLRANK|Lore - Herbalism Lore|if(Modifier_HerbalismLore>=1,TL+(Modifier_HerbalismLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HerbalismLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Herbalism Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HuntingLore|0						BONUS:SKILLRANK|Lore - Hunting Lore|if(Modifier_HuntingLore>=1,TL+(Modifier_HuntingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HuntingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hunting Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LaborLore|0						BONUS:SKILLRANK|Lore - Labor Lore|if(Modifier_LaborLore>=1,TL+(Modifier_LaborLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LaborLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Labor Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LegalLore|0						BONUS:SKILLRANK|Lore - Legal Lore|if(Modifier_LegalLore>=1,TL+(Modifier_LegalLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LegalLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Legal Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LibraryLore|0						BONUS:SKILLRANK|Lore - Library Lore|if(Modifier_LibraryLore>=1,TL+(Modifier_LibraryLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LibraryLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Library Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbyssLore|0						BONUS:SKILLRANK|Lore - Abyss Lore|if(Modifier_AbyssLore>=1,TL+(Modifier_AbyssLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbyssLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Abyss Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HeavenLore|0						BONUS:SKILLRANK|Lore - Heaven Lore|if(Modifier_HeavenLore>=1,TL+(Modifier_HeavenLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HeavenLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heaven Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MercantileLore|0					BONUS:SKILLRANK|Lore - Mercantile Lore|if(Modifier_MercantileLore>=1,TL+(Modifier_MercantileLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MercantileLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mercantile Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MidwiferyLore|0					BONUS:SKILLRANK|Lore - Midwifery Lore|if(Modifier_MidwiferyLore>=1,TL+(Modifier_MidwiferyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MidwiferyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Midwifery Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MillingLore|0						BONUS:SKILLRANK|Lore - Milling Lore|if(Modifier_MillingLore>=1,TL+(Modifier_MillingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MillingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Milling Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MiningLore|0						BONUS:SKILLRANK|Lore - Mining Lore|if(Modifier_MiningLore>=1,TL+(Modifier_MiningLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MiningLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mining Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SailingLore|0						BONUS:SKILLRANK|Lore - Sailing Lore|if(Modifier_SailingLore>=1,TL+(Modifier_SailingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SailingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sailing Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ScoutingLore|0					BONUS:SKILLRANK|Lore - Scouting Lore|if(Modifier_ScoutingLore>=1,TL+(Modifier_ScoutingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ScoutingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Scouting Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ScribingLore|0					BONUS:SKILLRANK|Lore - Scribing Lore|if(Modifier_ScribingLore>=1,TL+(Modifier_ScribingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ScribingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Scribing Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_StablingLore|0					BONUS:SKILLRANK|Lore - Stabling Lore|if(Modifier_StablingLore>=1,TL+(Modifier_StablingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_StablingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stabling Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TanningLore|0						BONUS:SKILLRANK|Lore - Tanning Lore|if(Modifier_TanningLore>=1,TL+(Modifier_TanningLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TanningLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Tanning Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TheaterLore|0						BONUS:SKILLRANK|Lore - Theater Lore|if(Modifier_TheaterLore>=1,TL+(Modifier_TheaterLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TheaterLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Theater Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderworldLore|0					BONUS:SKILLRANK|Lore - Underworld Lore|if(Modifier_UnderworldLore>=1,TL+(Modifier_UnderworldLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UnderworldLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underworld Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_WarfareLore|0						BONUS:SKILLRANK|Lore - Warfare Lore|if(Modifier_WarfareLore>=1,TL+(Modifier_WarfareLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_WarfareLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Warfare Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificsettlement|0				BONUS:SKILLRANK|Lore - specific settlement|if(Modifier_specificsettlement>=1,TL+(Modifier_specificsettlement*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificsettlement|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific settlement"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificterrain|0					BONUS:SKILLRANK|Lore - specific terrain|if(Modifier_specificterrain>=1,TL+(Modifier_specificterrain*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificterrain|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific terrain"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificfoodordrink|0				BONUS:SKILLRANK|Lore - specific food or drink|if(Modifier_specificfoodordrink>=1,TL+(Modifier_specificfoodordrink*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificfoodordrink|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific food or drink"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DessertLore|0						BONUS:SKILLRANK|Lore - Dessert Lore|if(Modifier_DessertLore>=1,TL+(Modifier_DessertLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DessertLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Dessert Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HillLore|0						BONUS:SKILLRANK|Lore - Hill Lore|if(Modifier_HillLore>=1,TL+(Modifier_HillLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HillLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hill Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MountainLore|0					BONUS:SKILLRANK|Lore - Mountain Lore|if(Modifier_MountainLore>=1,TL+(Modifier_MountainLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MountainLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mountain Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PlainLore|0						BONUS:SKILLRANK|Lore - Plain Lore|if(Modifier_PlainLore>=1,TL+(Modifier_PlainLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_PlainLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Plain Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ForestLore|0						BONUS:SKILLRANK|Lore - Forest Lore|if(Modifier_ForestLore>=1,TL+(Modifier_ForestLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ForestLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Forest Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_JungleLore|0						BONUS:SKILLRANK|Lore - Jungle Lore|if(Modifier_JungleLore>=1,TL+(Modifier_JungleLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_JungleLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Jungle Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RiverLore|0						BONUS:SKILLRANK|Lore - River Lore|if(Modifier_RiverLore>=1,TL+(Modifier_RiverLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_RiverLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=River Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OceanLore|0						BONUS:SKILLRANK|Lore - Ocean Lore|if(Modifier_OceanLore>=1,TL+(Modifier_OceanLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OceanLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Ocean Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderwaterLore|0					BONUS:SKILLRANK|Lore - Underwater Lore|if(Modifier_UnderwaterLore>=1,TL+(Modifier_UnderwaterLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UnderwaterLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underwater Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SwampLore|0						BONUS:SKILLRANK|Lore - Swamp Lore|if(Modifier_SwampLore>=1,TL+(Modifier_SwampLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SwampLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Swamp Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MarshLore|0						BONUS:SKILLRANK|Lore - Marsh Lore|if(Modifier_MarshLore>=1,TL+(Modifier_MarshLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MarshLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Marsh Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CanyonLore|0						BONUS:SKILLRANK|Lore - Canyon Lore|if(Modifier_CanyonLore>=1,TL+(Modifier_CanyonLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CanyonLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Canyon Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GlacierLore|0						BONUS:SKILLRANK|Lore - Glacier Lore|if(Modifier_GlacierLore>=1,TL+(Modifier_GlacierLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GlacierLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Glacier Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TundraLore|0						BONUS:SKILLRANK|Lore - Tundra Lore|if(Modifier_TundraLore>=1,TL+(Modifier_TundraLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TundraLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Tundra Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OasisLore|0						BONUS:SKILLRANK|Lore - Oasis Lore|if(Modifier_OasisLore>=1,TL+(Modifier_OasisLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OasisLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Oasis Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ValleyLore|0						BONUS:SKILLRANK|Lore - Valley Lore|if(Modifier_ValleyLore>=1,TL+(Modifier_ValleyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ValleyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Valley Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UndergroundLore|0					BONUS:SKILLRANK|Lore - Underground Lore|if(Modifier_UndergroundLore>=1,TL+(Modifier_UndergroundLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UndergroundLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underground Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SkyLore|0						BONUS:SKILLRANK|Lore - Sky Lore|if(Modifier_SkyLore>=1,TL+(Modifier_SkyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SkyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sky Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbadarLore|0						BONUS:SKILLRANK|Lore - Abadar Lore|if(Modifier_AbadarLore>=1,TL+(Modifier_AbadarLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbadarLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Abadar Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AsmodeusLore|0					BONUS:SKILLRANK|Lore - Asmodeus Lore|if(Modifier_AsmodeusLore>=1,TL+(Modifier_AsmodeusLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AsmodeusLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Asmodeus Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CalistriaLore|0					BONUS:SKILLRANK|Lore - Calistria Lore|if(Modifier_CalistriaLore>=1,TL+(Modifier_CalistriaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CalistriaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Calistria Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CaydenCaileanLore|0					BONUS:SKILLRANK|Lore - Cayden Cailean Lore|if(Modifier_CaydenCaileanLore>=1,TL+(Modifier_CaydenCaileanLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CaydenCaileanLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Cayden Cailean Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DesnaLore|0						BONUS:SKILLRANK|Lore - Desna Lore|if(Modifier_DesnaLore>=1,TL+(Modifier_DesnaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DesnaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Desna Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ErastilLore|0						BONUS:SKILLRANK|Lore - Erastil Lore|if(Modifier_ErastilLore>=1,TL+(Modifier_ErastilLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ErastilLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Erastil Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GorumLore|0						BONUS:SKILLRANK|Lore - Gorum Lore|if(Modifier_GorumLore>=1,TL+(Modifier_GorumLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GorumLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gorum Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GozrehLore|0						BONUS:SKILLRANK|Lore - Gozreh Lore|if(Modifier_GozrehLore>=1,TL+(Modifier_GozrehLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GozrehLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gozreh Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_IomedaeLore|0						BONUS:SKILLRANK|Lore - Iomedae Lore|if(Modifier_IomedaeLore>=1,TL+(Modifier_IomedaeLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_IomedaeLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Iomedae Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_IroriLore|0						BONUS:SKILLRANK|Lore - Irori Lore|if(Modifier_IroriLore>=1,TL+(Modifier_IroriLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_IroriLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Irori Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LamashtuLore|0					BONUS:SKILLRANK|Lore - Lamashtu Lore|if(Modifier_LamashtuLore>=1,TL+(Modifier_LamashtuLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LamashtuLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lamashtu Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_NethysLore|0						BONUS:SKILLRANK|Lore - Nethys Lore|if(Modifier_NethysLore>=1,TL+(Modifier_NethysLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_NethysLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nethys Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_NorgorberLore|0					BONUS:SKILLRANK|Lore - Norgorber Lore|if(Modifier_NorgorberLore>=1,TL+(Modifier_NorgorberLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_NorgorberLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Norgorber Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PharasmaLore|0					BONUS:SKILLRANK|Lore - Pharasma Lore|if(Modifier_PharasmaLore>=1,TL+(Modifier_PharasmaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_PharasmaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Pharasma Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RovagugLore|0						BONUS:SKILLRANK|Lore - Rovagug Lore|if(Modifier_RovagugLore>=1,TL+(Modifier_RovagugLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_RovagugLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Rovagug Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SarenraeLore|0					BONUS:SKILLRANK|Lore - Sarenrae Lore|if(Modifier_SarenraeLore>=1,TL+(Modifier_SarenraeLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SarenraeLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sarenrae Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ShelynLore|0						BONUS:SKILLRANK|Lore - Shelyn Lore|if(Modifier_ShelynLore>=1,TL+(Modifier_ShelynLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ShelynLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Shelyn Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ToragLore|0						BONUS:SKILLRANK|Lore - Torag Lore|if(Modifier_ToragLore>=1,TL+(Modifier_ToragLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ToragLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Torag Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UrgathoaLore|0					BONUS:SKILLRANK|Lore - Urgathoa Lore|if(Modifier_UrgathoaLore>=1,TL+(Modifier_UrgathoaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UrgathoaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Urgathoa Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ZonKuthonLore|0					BONUS:SKILLRANK|Lore - Zon-Kuthon Lore|if(Modifier_ZonKuthonLore>=1,TL+(Modifier_ZonKuthonLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ZonKuthonLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Zon-Kuthon Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbsalomLore|0						BONUS:SKILLRANK|Lore - Absalom Lore|if(Modifier_AbsalomLore>=1,TL+(Modifier_AbsalomLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbsalomLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Absalom Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MagnimarLore|0					BONUS:SKILLRANK|Lore - Magnimar Lore|if(Modifier_MagnimarLore>=1,TL+(Modifier_MagnimarLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MagnimarLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Magnimar Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CreatureLore1|0					BONUS:SKILLRANK|Lore - Creature Lore 1|if(Modifier_CreatureLore1>=1,TL+(Modifier_CreatureLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CreatureLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Creature Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CreatureLore2|0					BONUS:SKILLRANK|Lore - Creature Lore 2|if(Modifier_CreatureLore2>=1,TL+(Modifier_CreatureLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CreatureLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Creature Lore 2"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FoodLore1|0						BONUS:SKILLRANK|Lore - Food Lore 1|if(Modifier_FoodLore1>=1,TL+(Modifier_FoodLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FoodLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Food Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FoodLore2|0						BONUS:SKILLRANK|Lore - Food Lore 2|if(Modifier_FoodLore2>=1,TL+(Modifier_FoodLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FoodLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Food Lore 2"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DrinkLore1|0						BONUS:SKILLRANK|Lore - Drink Lore 1|if(Modifier_DrinkLore1>=1,TL+(Modifier_DrinkLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DrinkLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Drink Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DrinkLore2|0						BONUS:SKILLRANK|Lore - Drink Lore 2|if(Modifier_DrinkLore2>=1,TL+(Modifier_DrinkLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DrinkLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Drink Lore 2"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MaterialPlaneLore|0					BONUS:SKILLRANK|Lore - Material Plane Lore|if(Modifier_MaterialPlaneLore>=1,TL+(Modifier_MaterialPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MaterialPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Material Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ElementalPlaneLore|0				BONUS:SKILLRANK|Lore - Elemental Plane Lore|if(Modifier_ElementalPlaneLore>=1,TL+(Modifier_ElementalPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ElementalPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Elemental Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AstralPlaneLore|0					BONUS:SKILLRANK|Lore - Astral Plane Lore|if(Modifier_AstralPlaneLore>=1,TL+(Modifier_AstralPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AstralPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Astral Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_EtherealPlaneLore|0					BONUS:SKILLRANK|Lore - Ethereal Plane Lore|if(Modifier_EtherealPlaneLore>=1,TL+(Modifier_EtherealPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_EtherealPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Ethereal Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FeywildPlaneLore|0					BONUS:SKILLRANK|Lore - Feywild Plane Lore|if(Modifier_FeywildPlaneLore>=1,TL+(Modifier_FeywildPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FeywildPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Feywild Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HellPlaneLore|0					BONUS:SKILLRANK|Lore - Hell Plane Lore|if(Modifier_HellPlaneLore>=1,TL+(Modifier_HellPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HellPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hell Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LowerPlaneLore|0					BONUS:SKILLRANK|Lore - Lower Plane Lore|if(Modifier_LowerPlaneLore>=1,TL+(Modifier_LowerPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LowerPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lower Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UpperPlaneLore|0					BONUS:SKILLRANK|Lore - Upper Plane Lore|if(Modifier_UpperPlaneLore>=1,TL+(Modifier_UpperPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UpperPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Upper Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_InnerPlaneLore|0					BONUS:SKILLRANK|Lore - Inner Plane Lore|if(Modifier_InnerPlaneLore>=1,TL+(Modifier_InnerPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_InnerPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Inner Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OuterPlaneLore|0					BONUS:SKILLRANK|Lore - Outer Plane Lore|if(Modifier_OuterPlaneLore>=1,TL+(Modifier_OuterPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OuterPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Outer Plane Lore"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FillIntheBlankLore1|0				BONUS:SKILLRANK|Lore - Fill In the Blank 1|if(Modifier_FillIntheBlankLore1>=1,TL+(Modifier_FillIntheBlankLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FillIntheBlankLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fill In the Blank Lore 1"))	
+CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FillIntheBlankLore2|0				BONUS:SKILLRANK|Lore - Fill In the Blank 2|if(Modifier_FillIntheBlankLore2>=1,TL+(Modifier_FillIntheBlankLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FillIntheBlankLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fill In the Blank Lore 2"))	
 
-# COMMENT: This jumps the progression regardless of standing
-Perception					CATEGORY:Proficiency																																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Acrobatics					CATEGORY:Proficiency																																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Arcana					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Athletics					CATEGORY:Proficiency																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Crafting					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Deception					CATEGORY:Proficiency																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Diplomacy					CATEGORY:Proficiency																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Intimidation				CATEGORY:Proficiency																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lore						CATEGORY:Proficiency																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Medicine					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Nature					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Occultism					CATEGORY:Proficiency																																			STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Performance					CATEGORY:Proficiency																																				STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Religion					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Society					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Stealth					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Survival					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Thievery					CATEGORY:Proficiency																																		STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 
 
-# Display and Bonus Grantors
+Alcohol Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Animal Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+
+
+###Block: COMMENT: This jumps the progression regardless of standing
+Perception		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Acrobatics		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Arcana		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Athletics		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Crafting		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Deception		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Diplomacy		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Intimidation	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Medicine		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Nature		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Occultism		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Performance		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Religion		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Society		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Stealth		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Survival		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Thievery		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+
+
+
+
+
+
+###Block: The Lore Skills
+Alcohol Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Animal Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+
+
+Academia Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Accounting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Architecture Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Art Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Circus Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Engineering Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Farming Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fishing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fortune-Telling Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Games Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Genealogy Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Gladiatorial Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Guild Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Heraldry Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Herbalism Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Hunting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Labor Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Legal Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Library Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Abyss Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Astral Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Heaven Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Mercantile Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Midwifery Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Milling Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Mining Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Sailing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Scouting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Scribing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Stabling Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Tanning Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Theater Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Underworld Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Warfare Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+specific settlement		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+specific terrain			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+specific food or drink		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Dessert Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Hill Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Mountain Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Plain Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Forest Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Jungle Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+River Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Ocean Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Underwater Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Swamp Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Marsh Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Canyon Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Glacier Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Tundra Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Oasis Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Valley Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Underground Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Sky Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Abadar Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Asmodeus Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Calistria Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Cayden Cailean Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Desna Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Erastil Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Gorum Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Gozreh Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Iomedae Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Irori Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Lamashtu Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Nethys Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Norgorber Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Pharasma Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Rovagug Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Sarenrae Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Shelyn Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Torag Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Urgathoa Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Zon-Kuthon Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Absalom Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Magnimar Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Creature Lore 1			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Creature Lore 2			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Food Lore 1				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Food Lore 2				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Drink Lore 1			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Drink Lore 2			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Material Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Elemental Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Astral Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Ethereal Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Feywild Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Hell Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Lower Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Upper Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Inner Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Outer Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fill In the Blank Lore 1	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Fill In the Blank Lore 2	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+
+###Block: Display
 Perception					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:00 - Perception	DEFINE:PerceptionProf|0	BONUS:VAR|Modifier_Perception|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Perception"))		ASPECT:NAME|Untrained in Perception|PREVAREQ:Modifier_Perception,0	ASPECT:NAME|Trained in Perception|PREVAREQ:Modifier_Perception,1	ASPECT:NAME|Expert in Perception|PREVAREQ:Modifier_Perception,2	ASPECT:NAME|Mastery in Perception|PREVAREQ:Modifier_Perception,3	ASPECT:NAME|Legendary in Perception|PREVAREQ:Modifier_Perception,4
 # Skills		
 Acrobatics					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:02 - Skills	ASPECT:NAME|Untrained in Acrobatics|PREVAREQ:Modifier_Acrobatics,0	ASPECT:NAME|Trained in Acrobatics|PREVAREQ:Modifier_Acrobatics,1	ASPECT:NAME|Expert in Acrobatics|PREVAREQ:Modifier_Acrobatics,2	ASPECT:NAME|Mastery in Acrobatics|PREVAREQ:Modifier_Acrobatics,3	ASPECT:NAME|Legendary in Acrobatics|PREVAREQ:Modifier_Acrobatics,4
@@ -624,50 +831,29 @@ Unarmored Defense				CATEGORY:Internal		DEFINE:ArmorProf_Unarmored|0
 
 Acrobatics					CATEGORY:Proficiency																																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 
-Deity Lore Skill ~ Abadar		CATEGORY:Proficiency																																												ABILITY:Proficiency|AUTOMATIC|Lore - Circus Lore																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										CSKILL:Abadar Lore
-Deity Lore Skill ~ Asmodeus		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Asmodeus Lore
-Deity Lore Skill ~ Calistria		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Calistria Lore
-Deity Lore Skill ~ Cayden Cailean	CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Cayden Cailean Lore
-Deity Lore Skill ~ Desna		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Desna Lore
-Deity Lore Skill ~ Erastil		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Erastil Lore
-Deity Lore Skill ~ Gorum		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Gorum Lore
-Deity Lore Skill ~ Gozreh		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Gozreh Lore
-Deity Lore Skill ~ Iomedae		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Iomedae Lore
-Deity Lore Skill ~ Irori		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Irori Lore
-Deity Lore Skill ~ Lama shtu		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Lamashtu Lore
-Deity Lore Skill ~ Nethys		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Nethys Lore
-Deity Lore Skill ~ Norgorber		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Norgorber Lore
-Deity Lore Skill ~ Pharasma		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Pharasma Lore
-Deity Lore Skill ~ Rovagug		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Rovagug Lore
-Deity Lore Skill ~ Sarenrae		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Sarenrae Lore
-Deity Lore Skill ~ Shelyn		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Shelyn Lore
-Deity Lore Skill ~ Torag		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Torag Lore
-Deity Lore Skill ~ Urgathoa		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Urgathoa Lore
-Deity Lore Skill ~ Zon-Kuthon		CATEGORY:Proficiency																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														CSKILL:Zon-Kuthon Lore
-
 
 ###Block: Deity Grants: pg.437
-# Ability Name					Category of Ability	Type									Define											Ability															Save bonus									Bonus to skill rank									Modify VAR																																	Class Skill
-Abadar						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Abadar|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Abadar Lore
-Asmodeus						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Asmodeus|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Asmodeus Lore
-Calistria						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Calistria|PREVARGTEQ:GainDeityLoreSkill,1																																																									CSKILL:Calistria Lore
-Cayden Cailean					CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Cayden Cailean|PREVARGTEQ:GainDeityLoreSkill,1																																																									CSKILL:Cayden Cailean Lore
-Desna							CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Desna|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Desna Lore
-Erastil						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Erastil|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Erastil Lore
-Gorum							CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Gorum|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Gorum Lore
-Gozreh						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Gozreh|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Gozreh Lore
-Iomedae						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Iomedae|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Iomedae Lore
-Irori							CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Irori|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Irori Lore
-Lama shtu						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Lama shtu|PREVARGTEQ:GainDeityLoreSkill,1																																																									CSKILL:Lamashtu Lore
-Nethys						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Nethys|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Nethys Lore
-Norgorber						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Norgorber|PREVARGTEQ:GainDeityLoreSkill,1																																																									CSKILL:Norgorber Lore
-Pharasma						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Pharasma|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Pharasma Lore
-Rovagug						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Rovagug|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Rovagug Lore
-Sarenrae						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Sarenrae|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Sarenrae Lore
-Shelyn						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Shelyn|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Shelyn Lore
-Torag							CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Torag|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Torag Lore
-Urgathoa						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Urgathoa|PREVARGTEQ:GainDeityLoreSkill,1																																																										CSKILL:Urgathoa Lore
-Zon-Kuthon						CATEGORY:Internal																							ABILITY:Proficiency|AUTOMATIC|Deity Lore Skill ~ Zon-Kuthon|PREVARGTEQ:GainDeityLoreSkill,1																																																									CSKILL:Zon-Kuthon Lore
+# Ability Name	Category of Ability	Ability														Class Skill
+Abadar		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Abadar Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Abadar Lore
+Asmodeus		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Asmodeus Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Asmodeus Lore
+Calistria		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Calistria Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Calistria Lore
+Cayden Cailean	CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Cayden Cailean Lore|PREVARGTEQ:GainDeityLoreSkill,1	CSKILL:Lore - Cayden Cailean Lore
+Desna			CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Desna Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Desna Lore
+Erastil		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Erastil Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Erastil Lore
+Gorum			CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Gorum Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Gorum Lore
+Gozreh		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Gozreh Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Gozreh Lore
+Iomedae		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Iomedae Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Iomedae Lore
+Irori			CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Irori Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Irori Lore
+Lama shtu		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Lama shtu Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Lamashtu Lore
+Nethys		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Nethys Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Nethys Lore
+Norgorber		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Norgorber Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Norgorber Lore
+Pharasma		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Pharasma Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Pharasma Lore
+Rovagug		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Rovagug Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Rovagug Lore
+Sarenrae		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Sarenrae Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Sarenrae Lore
+Shelyn		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Shelyn Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Shelyn Lore
+Torag			CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Torag Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Torag Lore
+Urgathoa		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Urgathoa Lore|PREVARGTEQ:GainDeityLoreSkill,1		CSKILL:Lore - Urgathoa Lore
+Zon-Kuthon		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Lore - Zon-Kuthon Lore|PREVARGTEQ:GainDeityLoreSkill,1	CSKILL:Lore - Zon-Kuthon Lore
 #
 
 
@@ -693,12 +879,6 @@ Divine Spell Attacks			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Divine Spell DC				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Divine Spell DCs				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Favored Weapon				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-
-Lore - Alcohol Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lore - Animal Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lore - Art Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lore - Circus Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lore - Guild Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 
 # Is Shield anything other than a Weapon for Prof?
 Shields					CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Shields
@@ -870,232 +1050,7 @@ Halfling sling staff				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.M
 
 
 
-CATEGORY=Internal|Skill Tracker.MOD		DEFINE:Proficiency_Thievery|0	DEFINE:Modifier_Thievery|0						
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-###Block: The Lore Skills
-Academia Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Accounting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Architecture Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Art Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Circus Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Engineering Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Farming Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Fishing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Fortune-Telling Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Games Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Genealogy Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Gladiatorial Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Guild Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Heraldry Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Herbalism Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Hunting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Labor Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Legal Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Library Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Abyss Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Astral Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Heaven Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Mercantile Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Midwifery Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Milling Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Mining Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Sailing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Scouting Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Scribing Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Stabling Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Tanning Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Theater Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Underworld Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Warfare Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-specific settlement		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-specific terrain			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-specific food or drink		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Dessert Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Hill Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Mountain Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Plain Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Forest Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Jungle Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-River Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Ocean Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Underwater Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Swamp Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Marsh Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Canyon Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Glacier Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Tundra Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Oasis Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Valley Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Underground Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Sky Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Abadar Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Asmodeus Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Calistria Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Cayden Cailean Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Desna Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Erastil Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Gorum Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Gozreh Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Iomedae Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Irori Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lamashtu Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Nethys Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Norgorber Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Pharasma Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Rovagug Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Sarenrae Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Shelyn Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Torag Lore				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Urgathoa Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Zon-Kuthon Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Absalom Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Magnimar Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Creature Lore 1			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Creature Lore 2			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Food Lore 1				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Food Lore 2				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Drink Lore 1			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Drink Lore 2			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Material Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Elemental Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Astral Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Ethereal Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Feywild Plane Lore		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Hell Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Lower Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Upper Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Inner Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Outer Plane Lore			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Fill In the Blank Lore 1	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Fill In the Blank Lore 2	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-
-
-
-
-
-
-
-
-
-
-
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AcademiaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AcademiaLore>=1,TL+(Modifier_AcademiaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AcademiaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Academia Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AccountingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AccountingLore>=1,TL+(Modifier_AccountingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AccountingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Accounting Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ArchitectureLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ArchitectureLore>=1,TL+(Modifier_ArchitectureLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ArchitectureLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Architecture Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ArtLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ArtLore>=1,TL+(Modifier_ArtLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ArtLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Art Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CircusLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_CircusLore>=1,TL+(Modifier_CircusLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CircusLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Circus Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_EngineeringLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_EngineeringLore>=1,TL+(Modifier_EngineeringLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_EngineeringLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Engineering Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FarmingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_FarmingLore>=1,TL+(Modifier_FarmingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FarmingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Farming Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FishingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_FishingLore>=1,TL+(Modifier_FishingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FishingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fishing Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FortuneTellingLore|0				BONUS:SKILLRANK|Thievery|if(Modifier_FortuneTellingLore>=1,TL+(Modifier_FortuneTellingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FortuneTellingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fortune-Telling Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GamesLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GamesLore>=1,TL+(Modifier_GamesLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GamesLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Games Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GenealogyLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_GenealogyLore>=1,TL+(Modifier_GenealogyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GenealogyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Genealogy Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GladiatorialLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_GladiatorialLore>=1,TL+(Modifier_GladiatorialLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GladiatorialLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gladiatorial Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GuildLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GuildLore>=1,TL+(Modifier_GuildLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GuildLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Guild Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HeraldryLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_HeraldryLore>=1,TL+(Modifier_HeraldryLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HeraldryLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heraldry Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HerbalismLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_HerbalismLore>=1,TL+(Modifier_HerbalismLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HerbalismLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Herbalism Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HuntingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_HuntingLore>=1,TL+(Modifier_HuntingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HuntingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hunting Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LaborLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_LaborLore>=1,TL+(Modifier_LaborLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LaborLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Labor Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LegalLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_LegalLore>=1,TL+(Modifier_LegalLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LegalLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Legal Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LibraryLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_LibraryLore>=1,TL+(Modifier_LibraryLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LibraryLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Library Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbyssLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_AbyssLore>=1,TL+(Modifier_AbyssLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbyssLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Abyss Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HeavenLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_HeavenLore>=1,TL+(Modifier_HeavenLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HeavenLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Heaven Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MercantileLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MercantileLore>=1,TL+(Modifier_MercantileLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MercantileLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mercantile Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MidwiferyLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MidwiferyLore>=1,TL+(Modifier_MidwiferyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MidwiferyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Midwifery Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MillingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_MillingLore>=1,TL+(Modifier_MillingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MillingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Milling Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MiningLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_MiningLore>=1,TL+(Modifier_MiningLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MiningLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mining Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SailingLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_SailingLore>=1,TL+(Modifier_SailingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SailingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sailing Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ScoutingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ScoutingLore>=1,TL+(Modifier_ScoutingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ScoutingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Scouting Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ScribingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ScribingLore>=1,TL+(Modifier_ScribingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ScribingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Scribing Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_StablingLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_StablingLore>=1,TL+(Modifier_StablingLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_StablingLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Stabling Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TanningLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_TanningLore>=1,TL+(Modifier_TanningLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TanningLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Tanning Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TheaterLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_TheaterLore>=1,TL+(Modifier_TheaterLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TheaterLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Theater Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderworldLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UnderworldLore>=1,TL+(Modifier_UnderworldLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UnderworldLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underworld Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_WarfareLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_WarfareLore>=1,TL+(Modifier_WarfareLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_WarfareLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Warfare Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificsettlement|0				BONUS:SKILLRANK|Thievery|if(Modifier_specificsettlement>=1,TL+(Modifier_specificsettlement*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificsettlement|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific settlement"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificterrain|0					BONUS:SKILLRANK|Thievery|if(Modifier_specificterrain>=1,TL+(Modifier_specificterrain*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificterrain|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific terrain"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_specificfoodordrink|0				BONUS:SKILLRANK|Thievery|if(Modifier_specificfoodordrink>=1,TL+(Modifier_specificfoodordrink*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_specificfoodordrink|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=specific food or drink"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DessertLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_DessertLore>=1,TL+(Modifier_DessertLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DessertLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Dessert Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HillLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_HillLore>=1,TL+(Modifier_HillLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HillLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hill Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MountainLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MountainLore>=1,TL+(Modifier_MountainLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MountainLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Mountain Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PlainLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_PlainLore>=1,TL+(Modifier_PlainLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_PlainLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Plain Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ForestLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ForestLore>=1,TL+(Modifier_ForestLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ForestLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Forest Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_JungleLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_JungleLore>=1,TL+(Modifier_JungleLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_JungleLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Jungle Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RiverLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_RiverLore>=1,TL+(Modifier_RiverLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_RiverLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=River Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OceanLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_OceanLore>=1,TL+(Modifier_OceanLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OceanLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Ocean Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UnderwaterLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UnderwaterLore>=1,TL+(Modifier_UnderwaterLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UnderwaterLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underwater Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SwampLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_SwampLore>=1,TL+(Modifier_SwampLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SwampLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Swamp Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MarshLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_MarshLore>=1,TL+(Modifier_MarshLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MarshLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Marsh Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CanyonLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_CanyonLore>=1,TL+(Modifier_CanyonLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CanyonLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Canyon Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GlacierLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GlacierLore>=1,TL+(Modifier_GlacierLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GlacierLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Glacier Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_TundraLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_TundraLore>=1,TL+(Modifier_TundraLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_TundraLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Tundra Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OasisLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_OasisLore>=1,TL+(Modifier_OasisLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OasisLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Oasis Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ValleyLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ValleyLore>=1,TL+(Modifier_ValleyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ValleyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Valley Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UndergroundLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UndergroundLore>=1,TL+(Modifier_UndergroundLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UndergroundLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Underground Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SkyLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_SkyLore>=1,TL+(Modifier_SkyLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SkyLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sky Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbadarLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_AbadarLore>=1,TL+(Modifier_AbadarLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbadarLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Abadar Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AsmodeusLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AsmodeusLore>=1,TL+(Modifier_AsmodeusLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AsmodeusLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Asmodeus Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CalistriaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_CalistriaLore>=1,TL+(Modifier_CalistriaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CalistriaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Calistria Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CaydenCaileanLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_CaydenCaileanLore>=1,TL+(Modifier_CaydenCaileanLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CaydenCaileanLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Cayden Cailean Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DesnaLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_DesnaLore>=1,TL+(Modifier_DesnaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DesnaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Desna Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ErastilLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ErastilLore>=1,TL+(Modifier_ErastilLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ErastilLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Erastil Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GorumLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GorumLore>=1,TL+(Modifier_GorumLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GorumLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gorum Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_GozrehLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_GozrehLore>=1,TL+(Modifier_GozrehLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_GozrehLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Gozreh Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_IomedaeLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_IomedaeLore>=1,TL+(Modifier_IomedaeLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_IomedaeLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Iomedae Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_IroriLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_IroriLore>=1,TL+(Modifier_IroriLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_IroriLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Irori Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LamashtuLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_LamashtuLore>=1,TL+(Modifier_LamashtuLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LamashtuLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lamashtu Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_NethysLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_NethysLore>=1,TL+(Modifier_NethysLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_NethysLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Nethys Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_NorgorberLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_NorgorberLore>=1,TL+(Modifier_NorgorberLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_NorgorberLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Norgorber Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_PharasmaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_PharasmaLore>=1,TL+(Modifier_PharasmaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_PharasmaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Pharasma Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_RovagugLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_RovagugLore>=1,TL+(Modifier_RovagugLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_RovagugLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Rovagug Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_SarenraeLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_SarenraeLore>=1,TL+(Modifier_SarenraeLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_SarenraeLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Sarenrae Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ShelynLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ShelynLore>=1,TL+(Modifier_ShelynLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ShelynLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Shelyn Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ToragLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_ToragLore>=1,TL+(Modifier_ToragLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ToragLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Torag Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UrgathoaLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UrgathoaLore>=1,TL+(Modifier_UrgathoaLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UrgathoaLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Urgathoa Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ZonKuthonLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_ZonKuthonLore>=1,TL+(Modifier_ZonKuthonLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ZonKuthonLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Zon-Kuthon Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AbsalomLore|0						BONUS:SKILLRANK|Thievery|if(Modifier_AbsalomLore>=1,TL+(Modifier_AbsalomLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AbsalomLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Absalom Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MagnimarLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MagnimarLore>=1,TL+(Modifier_MagnimarLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MagnimarLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Magnimar Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CreatureLore1|0					BONUS:SKILLRANK|Thievery|if(Modifier_CreatureLore1>=1,TL+(Modifier_CreatureLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CreatureLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Creature Lore 1"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_CreatureLore2|0					BONUS:SKILLRANK|Thievery|if(Modifier_CreatureLore2>=1,TL+(Modifier_CreatureLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_CreatureLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Creature Lore 2"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FoodLore1|0						BONUS:SKILLRANK|Thievery|if(Modifier_FoodLore1>=1,TL+(Modifier_FoodLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FoodLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Food Lore 1"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FoodLore2|0						BONUS:SKILLRANK|Thievery|if(Modifier_FoodLore2>=1,TL+(Modifier_FoodLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FoodLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Food Lore 2"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DrinkLore1|0						BONUS:SKILLRANK|Thievery|if(Modifier_DrinkLore1>=1,TL+(Modifier_DrinkLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DrinkLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Drink Lore 1"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_DrinkLore2|0						BONUS:SKILLRANK|Thievery|if(Modifier_DrinkLore2>=1,TL+(Modifier_DrinkLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_DrinkLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Drink Lore 2"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_MaterialPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_MaterialPlaneLore>=1,TL+(Modifier_MaterialPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_MaterialPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Material Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_ElementalPlaneLore|0				BONUS:SKILLRANK|Thievery|if(Modifier_ElementalPlaneLore>=1,TL+(Modifier_ElementalPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_ElementalPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Elemental Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_AstralPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_AstralPlaneLore>=1,TL+(Modifier_AstralPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_AstralPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Astral Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_EtherealPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_EtherealPlaneLore>=1,TL+(Modifier_EtherealPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_EtherealPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Ethereal Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FeywildPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_FeywildPlaneLore>=1,TL+(Modifier_FeywildPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FeywildPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Feywild Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_HellPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_HellPlaneLore>=1,TL+(Modifier_HellPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_HellPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Hell Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_LowerPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_LowerPlaneLore>=1,TL+(Modifier_LowerPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_LowerPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Lower Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_UpperPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_UpperPlaneLore>=1,TL+(Modifier_UpperPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_UpperPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Upper Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_InnerPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_InnerPlaneLore>=1,TL+(Modifier_InnerPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_InnerPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Inner Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_OuterPlaneLore|0					BONUS:SKILLRANK|Thievery|if(Modifier_OuterPlaneLore>=1,TL+(Modifier_OuterPlaneLore*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_OuterPlaneLore|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Outer Plane Lore"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FillIntheBlankLore1|0				BONUS:SKILLRANK|Thievery|if(Modifier_FillIntheBlankLore1>=1,TL+(Modifier_FillIntheBlankLore1*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FillIntheBlankLore1|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fill In the Blank Lore 1"))	
-CATEGORY=Internal|Skill Tracker.MOD			DEFINE:Modifier_FillIntheBlankLore2|0				BONUS:SKILLRANK|Thievery|if(Modifier_FillIntheBlankLore2>=1,TL+(Modifier_FillIntheBlankLore2*2),UntrainedSkillBonus)|TYPE=Proficiency		BONUS:VAR|Modifier_FillIntheBlankLore2|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fill In the Blank Lore 2"))	
 
 
 
