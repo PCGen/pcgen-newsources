@@ -1,11 +1,19 @@
 # Mon Oct 28 08:06:48 2019 -- reformatted by PCGen TidyLst v1.04.00
 
+###Block: Race sets the Ancestry Feats allowed - Support for Adoption
+Dwarf			FACT:Dwarf|true		CATEGORY:Race
+Elf			FACT:Elf|true		CATEGORY:Race
+Gnome			FACT:Gnome|true		CATEGORY:Race
+Goblin		FACT:Goblin|true		CATEGORY:Race
+Halfling		FACT:Halfling|true	CATEGORY:Race
+Human			FACT:Human|true		CATEGORY:Race
+
 #
 # ANCESTRY SECTION
 #
 
 # Ability Name					SORTKEY				Unique Key									Source Page		Category of Ability	Type									Required Ability																					Required Non-Monster Lvl	Required Race						Required Text																									Var. Min. Value				Description																																																																																																																																													Template											Ability																									Bonus Ability Pool												Modify VAR									FACT
-Dwarf																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|3|TYPE=Base					FACT:GrantWalk|true	FACT:Dwarf|true
+Dwarf																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|3|TYPE=Base					FACT:GrantWalk|true	ABILITY:Race|AUTOMATIC|Dwarf
 # Dwarf Granted Traits and Ability Changes
 CATEGORY=Ancestry|Dwarf.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Flaw|AUTOMATIC|Ancestry Ability Flaw ~ Cha -2
 CATEGORY=Ancestry|Dwarf.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Boost|AUTOMATIC|Ancestry Ability Boost ~ Con +2|Ancestry Ability Boost ~ Wis +2|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
@@ -42,7 +50,7 @@ Dwarven Weapon Expertise			SORTKEY:Ancestry Feat ~ 4	KEY:Dwarf Ancestry Feat ~ D
 # ELF
 #
 
-Elf																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|3|TYPE=Base					FACT:GrantWalk|true	FACT:Elf|true
+Elf																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|3|TYPE=Base					FACT:GrantWalk|true	ABILITY:Race|AUTOMATIC|Elf
 # Elf Granted Traits and Ability Changes
 CATEGORY=Ancestry|Elf.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Flaw|AUTOMATIC|Ancestry Ability Flaw ~ Con -2
 CATEGORY=Ancestry|Elf.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Boost|AUTOMATIC|Ancestry Ability Boost ~ Dex +2|Ancestry Ability Boost ~ Int +2|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
@@ -76,7 +84,7 @@ Elven Weapon Expertise				SORTKEY:Ancestry Feat ~ 4	KEY:Elf Ancestry Feat ~ Elve
 # GNOME
 #
 
-Gnome																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|2|TYPE=Base					FACT:GrantWalk|true	FACT:Gnome|true
+Gnome																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|2|TYPE=Base					FACT:GrantWalk|true	ABILITY:Race|AUTOMATIC|Gnome
 # Gnome Granted Traits and Ability Changes
 CATEGORY=Ancestry|Gnome.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Flaw|AUTOMATIC|Ancestry Ability Flaw ~ Str -2
 CATEGORY=Ancestry|Gnome.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Boost|AUTOMATIC|Ancestry Ability Boost ~ Con +2|Ancestry Ability Boost ~ Cha +2|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
@@ -110,7 +118,7 @@ Gnome Weapon Expertise				SORTKEY:Ancestry Feat ~ 4	KEY:Gnome Ancestry Feat ~ Gn
 # GOBLIN
 #
 
-Goblin																								CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|2|TYPE=Base					FACT:GrantWalk|true	FACT:Goblin|true
+Goblin																								CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|2|TYPE=Base					FACT:GrantWalk|true	ABILITY:Race|AUTOMATIC|Goblin
 # Goblin Granted Traits and Ability Changes
 CATEGORY=Ancestry|Goblin.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Flaw|AUTOMATIC|Ancestry Ability Flaw ~ Wis -2
 CATEGORY=Ancestry|Goblin.MOD																																																																																																																																																																																																																																																																	ABILITY:Ancestry Ability Boost|AUTOMATIC|Ancestry Ability Boost ~ Dex +2|Ancestry Ability Boost ~ Cha +2|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
@@ -146,7 +154,7 @@ Very, Very Sneaky					SORTKEY:Ancestry Feat ~ 4	KEY:Goblin Ancestry Feat ~ Very 
 # HALFLING
 #
 
-Halfling																								CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|2|TYPE=Base					FACT:GrantWalk|true	FACT:Halfling|true
+Halfling																								CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount							BONUS:VAR|RaceSize_Base|2|TYPE=Base					FACT:GrantWalk|true	ABILITY:Race|AUTOMATIC|Halfling
 # Halfling Granted Traits and Ability Changes
 CATEGORY=Ancestry|Halfling.MOD																																																																																																																																																																																																																																																																ABILITY:Ancestry Ability Flaw|AUTOMATIC|Ancestry Ability Flaw ~ Str -2
 CATEGORY=Ancestry|Halfling.MOD																																																																																																																																																																																																																																																																ABILITY:Ancestry Ability Boost|AUTOMATIC|Ancestry Ability Boost ~ Dex +2|Ancestry Ability Boost ~ Wis +2|!PREFACT:1,ABILITIES,AltAbilityGeneration=true
@@ -182,7 +190,7 @@ Halfling Weapon Expertise			SORTKEY:Ancestry Feat ~ 4	KEY:Halfling Ancestry Feat
 # HUMAN
 #
 
-Human																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount	BONUS:ABILITYPOOL|Human Ethnicity|1	BONUS:VAR|LangCount|1	BONUS:VAR|RaceSize_Base|3|TYPE=Base	FACT:GrantWalk|true	FACT:Human|true
+Human																									CATEGORY:Ancestry																																																																																																																																																																																																																																																																				BONUS:ABILITYPOOL|Ancestry Feats|AncestryFeatCount	BONUS:ABILITYPOOL|Human Ethnicity|1	BONUS:VAR|LangCount|1	BONUS:VAR|RaceSize_Base|3|TYPE=Base	FACT:GrantWalk|true	ABILITY:Race|AUTOMATIC|Human
 # Human Granted Traits and Ability Changes
 CATEGORY=Ancestry|Human.MOD																																																																																																																																																																																																																																																																																											BONUS:ABILITYPOOL|Ancestry Ability Boost|2
 CATEGORY=Ancestry|Human.MOD																																																																																																																																																																																																																																																																	ABILITY:Trait|AUTOMATIC|Human|Humanoid
