@@ -719,7 +719,6 @@ Divine Spell Attack Rolls	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOIC
 Divine Spell Attacks		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Divine Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Favored Weapon			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Advanced Weapons			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Arcane Spell Attacks		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Arcane Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 barding				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
@@ -727,7 +726,7 @@ Druid Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Fighter Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Monk Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Primal Spell Attacks		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
-Primal Spell DCs			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
+Primal Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Ranger Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 Rogue Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE
 
@@ -760,6 +759,8 @@ Thievery					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:0
 # Weapon & Armor Profs
 Simple Weapons				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	ASPECT:NAME|Untrained in Simple Weapons|PREVAREQ:Prof_Rank_SimpleWeapons,0	ASPECT:NAME|Trained in Simple Weapons|PREVAREQ:Prof_Rank_SimpleWeapons,1	ASPECT:NAME|Expert in Simple Weapons|PREVAREQ:Prof_Rank_SimpleWeapons,2	ASPECT:NAME|Mastery in Simple Weapons|PREVAREQ:Prof_Rank_SimpleWeapons,3	ASPECT:NAME|Legendary in Simple Weapons|PREVAREQ:Prof_Rank_SimpleWeapons,4
 Martial Weapons				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	ASPECT:NAME|Untrained in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,0	ASPECT:NAME|Trained in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,1	ASPECT:NAME|Expert in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,2	ASPECT:NAME|Mastery in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,3	ASPECT:NAME|Legendary in Martial Weapons|PREVAREQ:Prof_Rank_MartialWeapons,4
+Advanced Weapons				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	ASPECT:NAME|Untrained in Advanced Weapons|PREVAREQ:Prof_Rank_AdvancedWeapons,0	ASPECT:NAME|Trained in Advanced Weapons|PREVAREQ:Prof_Rank_AdvancedWeapons,1	ASPECT:NAME|Expert in Advanced Weapons|PREVAREQ:Prof_Rank_AdvancedWeapons,2	ASPECT:NAME|Mastery in Advanced Weapons|PREVAREQ:Prof_Rank_AdvancedWeapons,3	ASPECT:NAME|Legendary in Advanced Weapons|PREVAREQ:Prof_Rank_AdvancedWeapons,4
+
 Alchemical Bombs				CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_Bombs|0																																																																									BONUS:VAR|Prof_Rank_Bombs|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Bombs"))	BONUS:VAR|Bombs|TL+(2*min(4,Prof_Rank_Bombs))																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		ASPECT:NAME|Untrained in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,0	ASPECT:NAME|Trained in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,1	ASPECT:NAME|Expert in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,2	ASPECT:NAME|Mastery in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,3	ASPECT:NAME|Legendary in Alchemical Bombs|PREVAREQ:Prof_Rank_Bombs,4
 
 Light Armor					CATEGORY:Special Ability	TYPE:Display.ProficiencyDisplay		SORTKEY:03 - Arms and Armor	DEFINE:Prof_Rank_LightArmor|0	DEFINE:ArmorProf_LightArmor|0																																																																				BONUS:VAR|Prof_Rank_LightArmor|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Light Armor"))|TYPE=Base	BONUS:VAR|ArmorProf_LightArmor|if(Prof_Rank_LightArmor>=1,TL+(2*Prof_Rank_LightArmor),0)|TYPE=Base																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													ASPECT:NAME|Untrained in Light Armor|PREVAREQ:Prof_Rank_LightArmor,0	ASPECT:NAME|Trained in Light Armor|PREVAREQ:Prof_Rank_LightArmor,1	ASPECT:NAME|Expert in Light Armor|PREVAREQ:Prof_Rank_LightArmor,2	ASPECT:NAME|Mastery in Light Armor|PREVAREQ:Prof_Rank_LightArmor,3	ASPECT:NAME|Legendary in Light Armor|PREVAREQ:Prof_Rank_LightArmor,4
@@ -785,6 +786,7 @@ Advanced Weapon Choice							CATEGORY:Proficiency	TYPE:Advanced Weapon Selection
 ###Block
 Simple Weapons Group			CATEGORY:Internal			ABILITY:Proficiency|AUTOMATIC|TYPE=Simple		
 Martial Weapons Group			CATEGORY:Internal			ABILITY:Proficiency|AUTOMATIC|TYPE=Martial	
+Advanced Weapons Group			CATEGORY:Internal			ABILITY:Proficiency|AUTOMATIC|TYPE=Advanced	
 
 Alchemical Bombs Group			CATEGORY:Internal																													DESC:No bombs listed?
 
@@ -792,7 +794,7 @@ Light Armor					CATEGORY:Internal
 Medium Armor				CATEGORY:Internal		
 Heavy Armor					CATEGORY:Internal		
 
-
+Unarmed Attacks				CATEGORY:Internal	
 Unarmored Defense				CATEGORY:Internal		DEFINE:ArmorProf_Unarmored|0
 
 Acrobatics					CATEGORY:Proficiency																																					STACK:YES	MULT:YES	CHOOSE:NOCHOICE
@@ -827,6 +829,7 @@ Zon-Kuthon		CATEGORY:Internal		ABILITY:Proficiency|AUTOMATIC|Zon-Kuthon Lore|PRE
 # Proficiency Counter Abilities
 Simple Weapons				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Simple Weapons Group
 Martial Weapons				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Martial Weapons Group
+Advanced Weapons				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Advanced Weapons Group
 Alchemical Bombs				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Alchemical Bombs Group
 
 Light Armor					CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Light Armor
@@ -844,7 +847,6 @@ Divine Spell Attack Rolls		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOI
 Divine Spell Attacks			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Divine Spell Attacks		
 Divine Spell DC				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Divine Spell DC			
 Favored Weapon				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Favored Weapon			
-Advanced Weapons			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Advanced Weapons		
 Arcane Spell Attacks		CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Arcane Spell Attacks	
 Arcane Spell DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Arcane Spell DC		
 barding				CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|barding			
@@ -852,7 +854,7 @@ Druid Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILIT
 Fighter Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Fighter Class DC		
 Monk Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Monk Class DC		
 Primal Spell Attacks		CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Primal Spell Attacks	
-Primal Spell DCs			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Primal Spell DCs		
+Primal Spell DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Primal Spell DC		
 Ranger Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Ranger Class DC		
 Rogue Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Rogue Class DC		
 
@@ -865,7 +867,8 @@ Rogue Class DC			CATEGORY:Proficiency		STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILIT
 
 
 
-Grant Expert to all Weapon Groups		CATEGORY:Proficiency																																	ABILITY:Proficiency|AUTOMATIC|TYPE.Expert Weapon Group Selection
+Grant Expert to all Weapon Groups		CATEGORY:Proficiency		
+	ABILITY:Proficiency|AUTOMATIC|TYPE.Expert Weapon Group Selection
 
 
 
