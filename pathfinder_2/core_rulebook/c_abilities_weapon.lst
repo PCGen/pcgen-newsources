@@ -16,7 +16,7 @@ CATEGORY=Internal|Weapon Proficiency Tracker.MOD															BONUS:ABILITYPOOL
 #	WeaponName_ToHit / WeaponName_Damage
 
 
-CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:WEAPONPROF=Unarmed Strike|TOHIT|Prof_Rank_UnarmedAttacks|TYPE=Class
+CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:WEAPONPROF=Unarmed Strike|TOHIT|if(Prof_Rank_UnarmedAttacks>=1,TL+(Prof_Rank_UnarmedAttacks*2),0)|TYPE=Class
 CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:WEAPONPROF=Unarmed Strike|DAMAGE|max(Prof_WeaponDamage_GroupBrawling,Prof_WeaponDamage_UnarmedAttacks)|TYPE=Class
 CATEGORY=Internal|Weapon Proficiency Tracker.MOD	BONUS:VAR|Prof_Rank_UnarmedAttacks|Prof_Rank_UnarmedAttacks+ProfRank_WeaponGroup_Brawling|TYPE=Base
 
@@ -368,7 +368,7 @@ CATEGORY=Internal|Weapon Proficiency Tracker.MOD																																
 #
 ####
 # 6-4 Simple Melee Weapons
-Unarmed Strike			MULT:YES	CHOOSE:NOCHOICE	STACK:YES				CATEGORY:Proficiency	TYPE:Weapon.Weapon Proficiency.Weapon Group ~ Brawling																						AUTO:WEAPONPROF|Unarmed Strike
+Unarmed Strike			MULT:YES	CHOOSE:NOCHOICE	STACK:YES				CATEGORY:Proficiency	TYPE:Weapon.Unarmed.Weapon Proficiency.Weapon Group ~ Brawling																						AUTO:WEAPONPROF|Unarmed Strike
 
 #
 Club					MULT:YES	CHOOSE:NOCHOICE	STACK:YES				CATEGORY:Proficiency	TYPE:Bludgeoning.Weapon.Melee.Simple Weapons.Simple Melee Weapon.Ranged.Thrown.Weapon Group ~ Club.Thrown 10													AUTO:WEAPONPROF|Club
@@ -459,6 +459,11 @@ Shortbow				MULT:YES	CHOOSE:NOCHOICE	STACK:YES				CATEGORY:Proficiency	TYPE:Weap
 Sling					MULT:YES	CHOOSE:NOCHOICE	STACK:YES				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Simple Ranged.Simple Weapons.Ranged.Bludgeoning.Ranged.Weapon Group ~ Sling.Propulsive														AUTO:WEAPONPROF|Sling
 Halfling sling staff		MULT:YES	CHOOSE:NOCHOICE	STACK:YES				CATEGORY:Proficiency	TYPE:Weapon.Ranged.Martial Ranged.Martial Weapons.Piercing.Bludgeoning.Ranged.Weapon Group ~ Sling.Halfling.Propulsive												AUTO:WEAPONPROF|Halfling sling staff
 
+Fist	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Fist
+
+
+
+Fist	CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_Fist|0		BONUS:VAR|Prof_Rank_Fist|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fist"))|TYPE=Base	ASPECT:NAME|Untrained in Fist|PREVAREQ:Prof_Rank_Fist,0		ASPECT:NAME|Trained in Fist|PREVAREQ:Prof_Rank_Fist,1		ASPECT:NAME|Expert in Fist|PREVAREQ:Prof_Rank_Fist,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:Prof_Rank_Fist,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:Prof_Rank_Fist,4	
 
 
 	
