@@ -878,15 +878,33 @@ Primal Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILIT
 Ranger Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Ranger Class DC
 Rogue Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Rogue Class DC
 
-Monk Spell Attacks
-Monk Spell DCs
-Occult Spell Attacks
-Occult Spell DC
+Monk Spell Attacks		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Monk Spell Attacks		
+Monk Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Monk Spell DC		
+Occult Spell Attacks		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Occult Spell Attacks	
+Occult Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Occult Spell DC		
 
 Favored Weapon			CATEGORY:Internal		DEFINE:Prof_Rank_FavoredWeapon|0		BONUS:VAR|Prof_Rank_FavoredWeapon|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Favored Weapon"))|TYPE=Base
 
 ###Block:
 # Ability Name					Category of Ability	Type																									Auto Weapon Prof					Ability																							Modify VAR																												Weapon prof. bonus
+
+Monk Spell Attacks		CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_MonkSpellAttacks|0		BONUS:VAR|Prof_Rank_MonkSpellAttacks|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Monk Spell Attacks"))|TYPE=Base	ASPECT:NAME|Untrained in Fist|PREVAREQ:Prof_Rank_MonkSpellAttacks,0		ASPECT:NAME|Trained in Fist|PREVAREQ:Prof_Rank_MonkSpellAttacks,1		ASPECT:NAME|Expert in Fist|PREVAREQ:Prof_Rank_MonkSpellAttacks,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:Prof_Rank_MonkSpellAttacks,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:Prof_Rank_MonkSpellAttacks,4	
+Monk Spell DC			CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_MonkSpellDC|0		BONUS:VAR|Prof_Rank_MonkSpellDC|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Monk Spell DC"))|TYPE=Base		ASPECT:NAME|Untrained in Fist|PREVAREQ:Prof_Rank_MonkSpellDC,0		ASPECT:NAME|Trained in Fist|PREVAREQ:Prof_Rank_MonkSpellDC,1		ASPECT:NAME|Expert in Fist|PREVAREQ:Prof_Rank_MonkSpellDC,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:Prof_Rank_MonkSpellDC,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:Prof_Rank_MonkSpellDC,4	
+Occult Spell Attacks		CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_OccultSpellAttacks|0	BONUS:VAR|Prof_Rank_OccultSpellAttacks|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occult Spell Attacks"))|TYPE=Base	ASPECT:NAME|Untrained in Fist|PREVAREQ:Prof_Rank_OccultSpellAttacks,0		ASPECT:NAME|Trained in Fist|PREVAREQ:Prof_Rank_OccultSpellAttacks,1		ASPECT:NAME|Expert in Fist|PREVAREQ:Prof_Rank_OccultSpellAttacks,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:Prof_Rank_OccultSpellAttacks,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:Prof_Rank_OccultSpellAttacks,4	
+Occult Spell DC			CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_OccultSpellDC|0		BONUS:VAR|Prof_Rank_OccultSpellDC|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occult Spell DC"))|TYPE=Base		ASPECT:NAME|Untrained in Fist|PREVAREQ:Prof_Rank_OccultSpellDC,0		ASPECT:NAME|Trained in Fist|PREVAREQ:Prof_Rank_OccultSpellDC,1		ASPECT:NAME|Expert in Fist|PREVAREQ:Prof_Rank_OccultSpellDC,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:Prof_Rank_OccultSpellDC,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:Prof_Rank_OccultSpellDC,4	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -896,7 +914,7 @@ Grant Expert to all Weapon Groups	CATEGORY:Proficiency	ABILITY:Proficiency|AUTOM
 
 
 Fist	CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Fist
-Fist	CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_Fist|0		BONUS:VAR|Prof_Rank_Fist|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fist"))|TYPE=Base	ASPECT:NAME|Untrained in Fist|PREVAREQ:ProfRank_Weapon_Fist,0		ASPECT:NAME|Trained in Fist|PREVAREQ:ProfRank_Weapon_Fist,1		ASPECT:NAME|Expert in Fist|PREVAREQ:ProfRank_Weapon_Fist,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:ProfRank_Weapon_Fist,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:ProfRank_Weapon_Fist,4	
+Fist	CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_Fist|0		BONUS:VAR|Prof_Rank_Fist|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Fist"))|TYPE=Base	ASPECT:NAME|Untrained in Fist|PREVAREQ:Prof_Rank_Fist,0		ASPECT:NAME|Trained in Fist|PREVAREQ:Prof_Rank_Fist,1		ASPECT:NAME|Expert in Fist|PREVAREQ:Prof_Rank_Fist,2		ASPECT:NAME|Mastery in Fist|PREVAREQ:Prof_Rank_Fist,3		ASPECT:NAME|Legendary in Fist|PREVAREQ:Prof_Rank_Fist,4	
 
 
 Weapon Group ~ Brawling			CATEGORY:Proficiency	TYPE:Weapon Group	ABILITY:Proficiency|AUTOMATIC|TYPE=Weapon Group ~ Brawling
