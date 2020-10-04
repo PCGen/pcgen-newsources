@@ -460,7 +460,7 @@ Will						KEY:Will		CATEGORY:Proficiency													STACK:YES	MULT:YES	CHOOSE:N
 
 
 # This tracks Proficiency with the 4 AC Proficiency Groups
-Armor Class Tracker						CATEGORY:Internal		DEFINE:ArmorProf|0																										BONUS:COMBAT|AC|ArmorProf|TYPE=ArmorProfBonus																											BONUS:VAR|ArmorProf|ArmorProf_LightArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Light	BONUS:VAR|ArmorProf|ArmorProf_MediumArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Medium	BONUS:VAR|ArmorProf|ArmorProf_HeavyArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Heavy	BONUS:VAR|ArmorProf|ArmorProf_Unarmored|TYPE=Base|!PREARMORTYPE:1,TYPE.Light,TYPE.Medium,TYPE.Heavy
+Armor Class Tracker						CATEGORY:Internal		DEFINE:ArmorProf|0																										BONUS:COMBAT|AC|ArmorProf|TYPE=ArmorProfBonus																											BONUS:VAR|ArmorProf|ArmorProf_LightArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Light	BONUS:VAR|ArmorProf|ArmorProf_MediumArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Medium	BONUS:VAR|ArmorProf|ArmorProf_HeavyArmor|TYPE=Base|PREARMORTYPE:1,TYPE.Heavy	BONUS:VAR|ArmorProf|ArmorProf_Unarmored|TYPE=Base|!PREEQUIP:1,TYPE=Armor
 
 
 Proficiency Tracker						CATEGORY:Internal																					ABILITY:Special Ability|AUTOMATIC|TYPE=ProficiencyDisplay
@@ -734,7 +734,6 @@ Arcane Spell DC			CATEGORY:Internal
 barding				CATEGORY:Internal	
 Druid Class DC			CATEGORY:Internal	
 Fighter Class DC			CATEGORY:Internal	
-Monk Class DC			CATEGORY:Internal	
 Primal Spell Attack		CATEGORY:Internal	
 Primal Spell DC			CATEGORY:Internal	
 Ranger Class DC			CATEGORY:Internal	
@@ -869,7 +868,6 @@ Arcane Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILIT
 barding				CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|barding
 Druid Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Druid Class DC
 Fighter Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Fighter Class DC
-Monk Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Monk Class DC
 Primal Spell Attack		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Primal Spell Attack
 Primal Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Primal Spell DC
 Ranger Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Internal|AUTOMATIC|Ranger Class DC
@@ -877,6 +875,7 @@ Rogue Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY
 
 Monk Spell Attack			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Monk Spell Attack		
 Monk Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Monk Spell DC		
+Monk Class DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Monk Class DC		
 Occult Spell Attack		CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Occult Spell Attack	
 Occult Spell DC			CATEGORY:Proficiency	STACK:YES	MULT:YES	CHOOSE:NOCHOICE	ABILITY:Special Ability|AUTOMATIC|Occult Spell DC		
 
@@ -887,6 +886,7 @@ Favored Weapon			CATEGORY:Internal		DEFINE:Prof_Rank_FavoredWeapon|0		BONUS:VAR|
 
 Monk Spell Attack			CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_MonkSpellAttacks|0		BONUS:VAR|Prof_Rank_MonkSpellAttacks|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Monk Spell Attack"))|TYPE=Base	ASPECT:NAME|Untrained in Monk Spell Attack|PREVAREQ:Prof_Rank_MonkSpellAttacks,0		ASPECT:NAME|Trained in Monk Spell Attack|PREVAREQ:Prof_Rank_MonkSpellAttacks,1		ASPECT:NAME|Expert in Monk Spell Attack|PREVAREQ:Prof_Rank_MonkSpellAttacks,2		ASPECT:NAME|Mastery in Monk Spell Attack|PREVAREQ:Prof_Rank_MonkSpellAttacks,3		ASPECT:NAME|Legendary in Monk Spell Attack|PREVAREQ:Prof_Rank_MonkSpellAttacks,4	
 Monk Spell DC			CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_MonkSpellDC|0		BONUS:VAR|Prof_Rank_MonkSpellDC|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Monk Spell DC"))|TYPE=Base			ASPECT:NAME|Untrained in Monk Spell DC|PREVAREQ:Prof_Rank_MonkSpellDC,0		ASPECT:NAME|Trained in Monk Spell DC|PREVAREQ:Prof_Rank_MonkSpellDC,1		ASPECT:NAME|Expert in Monk Spell DC|PREVAREQ:Prof_Rank_MonkSpellDC,2		ASPECT:NAME|Mastery in Monk Spell DC|PREVAREQ:Prof_Rank_MonkSpellDC,3		ASPECT:NAME|Legendary in Monk Spell DC|PREVAREQ:Prof_Rank_MonkSpellDC,4	
+Monk Class DC			CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_MonkClassDC|0		BONUS:VAR|Prof_Rank_MonkClassDC|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Monk Class DC"))|TYPE=Base			ASPECT:NAME|Untrained in Monk Class DC|PREVAREQ:Prof_Rank_MonkClassDC,0		ASPECT:NAME|Trained in Monk Class DC|PREVAREQ:Prof_Rank_MonkClassDC,1		ASPECT:NAME|Expert in Monk Class DC|PREVAREQ:Prof_Rank_MonkClassDC,2		ASPECT:NAME|Mastery in Monk Class DC|PREVAREQ:Prof_Rank_MonkClassDC,3		ASPECT:NAME|Legendary in Monk Class DC|PREVAREQ:Prof_Rank_MonkClassDC,4	
 Occult Spell Attack		CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_OccultSpellAttacks|0	BONUS:VAR|Prof_Rank_OccultSpellAttacks|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occult Spell Attack"))|TYPE=Base	ASPECT:NAME|Untrained in Occult Spell Attack|PREVAREQ:Prof_Rank_OccultSpellAttacks,0		ASPECT:NAME|Trained in Occult Spell Attack|PREVAREQ:Prof_Rank_OccultSpellAttacks,1		ASPECT:NAME|Expert in Occult Spell Attack|PREVAREQ:Prof_Rank_OccultSpellAttacks,2		ASPECT:NAME|Mastery in Occult Spell Attack|PREVAREQ:Prof_Rank_OccultSpellAttacks,3		ASPECT:NAME|Legendary in Occult Spell Attack|PREVAREQ:Prof_Rank_OccultSpellAttacks,4	
 Occult Spell DC			CATEGORY:Special Ability	TYPE:ProficiencyDisplay		DEFINE:Prof_Rank_OccultSpellDC|0		BONUS:VAR|Prof_Rank_OccultSpellDC|min(4,count("ABILITIES", "CATEGORY=Proficiency", "KEY=Occult Spell DC"))|TYPE=Base		ASPECT:NAME|Untrained in Occult Spell DC|PREVAREQ:Prof_Rank_OccultSpellDC,0		ASPECT:NAME|Trained in Occult Spell DC|PREVAREQ:Prof_Rank_OccultSpellDC,1		ASPECT:NAME|Expert in Occult Spell DC|PREVAREQ:Prof_Rank_OccultSpellDC,2		ASPECT:NAME|Mastery in Occult Spell DC|PREVAREQ:Prof_Rank_OccultSpellDC,3		ASPECT:NAME|Legendary in Occult Spell DC|PREVAREQ:Prof_Rank_OccultSpellDC,4	
 
