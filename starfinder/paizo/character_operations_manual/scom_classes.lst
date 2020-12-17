@@ -1,5 +1,6 @@
 # Class Name	Hit Dice	Type			Max Level	Source Page		Define		Combat bonus																	Bonus to HP										Save bonus																																																	Modify VAR																																																								Template			FACT
 CLASS:Biohacker		HD:1		TYPE:Base.PC	MAXLEVEL:20	SOURCEPAGE:p.40	DEFINE:BiohackerLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:HP|CURRENTMAX|5*BiohackerLVL	BONUS:HP|ALTHP|6*BiohackerLVL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|BiohackerLVL|CL	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|ClassSaveGood_Fortitude|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Will|classlevel()|PREVAREQ:UseFractionalSave,1	TEMPLATE:Class ~ Biohacker	FACT:KeyAbilityScore|INT or WIS	FACT:Abb|Bio	FACT:ClassType|PC
+
 # Class Name		Skill Pts/Lvl	Class Skill
 CLASS:Biohacker		STARTSKILLPTS:4	CSKILL:Bluff|Computers|Culture|Diplomacy|Engineering|Life Science|Medicine|Perception|Physical Science|TYPE=Profession|Sense Motive|Sleight of Hand
 ###Block - Class Features
@@ -27,6 +28,7 @@ CLASS:Biohacker		STARTSKILLPTS:4	CSKILL:Bluff|Computers|Culture|Diplomacy|Engine
 
 
 CLASS:Vanguard		HD:1		TYPE:Base.PC	MAXLEVEL:20	SOURCEPAGE:p.50	DEFINE:VanguardLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:HP|CURRENTMAX|6*VanguardLVL	BONUS:HP|ALTHP|7*VanguardLVL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|VanguardLVL|CL	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|ClassSaveGood_Fortitude|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Reflex|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Will|classlevel()|PREVAREQ:UseFractionalSave,1	TEMPLATE:Class ~ Vanguard	FACT:KeyAbilityScore|CON	FACT:Abb|Van	FACT:ClassType|PC
+
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Vanguard		STARTSKILLPTS:6	CSKILL:Acrobatics|Athletics|Culture|Diplomacy|Intimidate|Life Science|Medicine|Mysticism|Perception|TYPE=Profession|Stealth|Survival
 ###Block - Class Features
@@ -55,6 +57,7 @@ CLASS:Vanguard		STARTSKILLPTS:6	CSKILL:Acrobatics|Athletics|Culture|Diplomacy|In
 # End Vanguard
 
 CLASS:Witchwarper	HD:1		TYPE:Base.PC	MAXLEVEL:20	SOURCEPAGE:p.59	DEFINE:WitchwarperLVL|0	DEFINE:CasterLevelBLWitchwarper|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:HP|CURRENTMAX|4*WitchwarperLVL	BONUS:HP|ALTHP|5*WitchwarperLVL	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|WitchwarperLVL|CL	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|ClassSavePoor_Fortitude|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Fortitude|classlevel_Reflex|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Will|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:VAR|Caster_Level_Witchwarper|CL+Caster_Level_Bonus+CasterLevelBLWitchwarper	BONUS:VAR|CasterLevelBL_Witchwarper|charbonusto("PCLEVEL","Witchwarper")	BONUS:VAR|Caster_Level_Highest__All|Caster_Level_Witchwarper|TYPE=Base	TEMPLATE:Class ~ Witchwarper	FACT:KeyAbilityScore|CHA	FACT:Abb|WRP	FACT:ClassType|PC	FACT:SpellType|Spell
+
 # Class Name	Skill Pts/Lvl	Class Skill
 CLASS:Witchwarper	STARTSKILLPTS:4	CSKILL:Acrobatics|Bluff|Culture|Diplomacy|Intimidate|Mysticism|Physical Science|TYPE=Profession
 # Class Name	Spell Stat		Memorize	Caster level
