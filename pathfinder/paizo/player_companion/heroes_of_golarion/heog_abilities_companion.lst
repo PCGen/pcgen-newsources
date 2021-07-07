@@ -1,2 +1,21 @@
 #Original Entry by pokemonpasta
 SOURCELONG:Heroes of Golarion		SOURCESHORT:HEOG
+
+CATEGORY=Internal|Default.MOD			DEFINE:BeastSpeakerCompanionDC|0			BONUS:VAR|BeastSpeakerCompanionDC|10+TL/2+CON
+
+###Block: Companion Advancement
+Companion Advancement (Basilisk)			KEY:Companion Advancement ~ Basilisk			CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY					PRERACE:1,Basilisk				ABILITY:Internal|AUTOMATIC|Bite						BONUS:STAT|DEX,CON|4|TYPE=Racial								BONUS:VAR|AC_Natural_Armor|TYPE=Base.STACK
+Companion Advancement (Behir)				KEY:Companion Advancement ~ Behir				CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY					PRERACE:1,Behir
+Companion Advancement (Bulette)			KEY:Companion Advancement ~ Bulette				CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY					PRERACE:1,Bulette
+Companion Advancement (Death Worm)			KEY:Companion Advancement ~ Death Worm			CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY					PRERACE:1,Death Worm
+Companion Advancement (Sun Falcon)			KEY:Companion Advancement ~ Sun Falcon			CATEGORY:Special Ability	TYPE:CompanionAdvancement	VISIBLE:DISPLAY					PRERACE:1,Sun Falcon				ABILITY:Internal|AUTOMATIC|Talons			BONUS:SIZEMOD|NUMBER|1			BONUS:STAT|STR,CHA|2|TYPE=Racial	BONUS:STAT|CON|4|TYPE=Racial			BONUS:VAR|AC_Natural_Armor|TYPE=Base.STACK
+
+###Block: Mastery
+Basilisk Mastery						KEY:Beast Speaker Mastery ~ Basilisk			CATEGORY:Special Ability	TYPE:BeastSpeakerMastery								PRERACE:1,Basilisk				DESC:The basilisk’s gaze attack functions as flesh to stone (caster level equals basilisk’s HD) instead of inflicting paralysis.
+Behir Mastery						KEY:Beast Speaker Mastery ~ Behir				CATEGORY:Special Ability	TYPE:BeastSpeakerMastery								PRERACE:1,Behir					BONUS:SIZEMOD|NUMBER|1		BONUS:VAR|AC_Natural_Armor|2|TYPE=Base.STACK		BONUS:STAT|STR|4|TYPE=Racial		BONUS:STAT|DEX|-2|TYPE=Racial		BONUS:STAT|CON|2|TYPE=Racial			DESC:breath weapon (three times per day)			ABILITY:Special Ability|AUTOMATIC|Immunity to Electricity
+Bulette Mastery						KEY:Beast Speaker Mastery ~ Bulette				CATEGORY:Special Ability	TYPE:BeastSpeakerMastery	VISIBLE:DISPLAY					PRERACE:1,Bulette					BONUS:SIZEMOD|NUMBER|1		BONUS:VAR|AC_Natural_Armor|4|TYPE=Base.STACK		BONUS:STAT|STR|4|TYPE=Racial		BONUS:STAT|DEX|-2|TYPE=Racial		BONUS:STAT|CON|2|TYPE=Racial			ABILITY:Special Ability|AUTOMATIC|Bulette ~ Leap
+Death Worm Mastery					KEY:Beast Speaker Mastery ~ Death Worm			CATEGORY:Special Ability	TYPE:BeastSpeakerMastery	VISIBLE:DISPLAY					PRERACE:1,Death Worm				BONUS:SIZEMOD|NUMBER|1		BONUS:VAR|AC_Natural_Armor|4|TYPE=Base.STACK		BONUS:STAT|STR|4|TYPE=Racial		BONUS:STAT|DEX|-2|TYPE=Racial		BONUS:STAT|CON|2|TYPE=Racial			ABILITY:Special Ability|AUTOMATIC|Breath Weapon ~ Line of Acid|Immunity to Electricity|Immunity to Acid
+Sun Falcon Mastery					KEY:Beast Speaker Mastery ~ Sun Falcon			CATEGORY:Special Ability	TYPE:BeastSpeakerMastery								PRERACE:1,Sun Falcon				DESC:Three times per day, the sun falcon can blast an intense wave of heat and light in a 20-foot cone as a standard action. Creatures within this area must succeed at a Reflex save (DC %1) or take 1d6 points of fire damage and be blinded for 1d4+1 rounds. Creatures that succeed at this save take no fire damage and are instead dazzled for 1 round. The save DC is Charisma-based.|BeastSpeakerCompanionDC-CON+CHA
+
+###Block: Misc
+Leap								KEY:Bulette ~ Leap						CATEGORY:Special Ability	TYPE:SpecialAttack																DESC:(When charging, it can attempt a DC 20 Acrobatics check to jump into the air and land next to its enemies. If successful, it can make four claw attacks against foes in reach but cannot make a bite attack.
