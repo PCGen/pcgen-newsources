@@ -26,14 +26,13 @@ CLASS:Arclord of Nex		STARTSKILLPTS:2	CSKILL:Diplomacy|Linguistics|Sense Motive|
 10	ADD:SPELLCASTER|ANY
 
 ###Block
-CLASS:Blackfire Adept		HD:6		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:BlAd	MAXLEVEL:10	SOURCEPAGE:p.12	DEFINE:BlackfireAdeptLVL|0	DEFINE:NonEpicBlackfireAdeptLVL|0	BONUS:VAR|BlackfireAdeptLVL|CL	BONUS:VAR|NonEpicBlackfireAdeptLVL|classlevel("APPLIEDAS=NONEPIC")	DESC:Evil summoner of fiends			
+CLASS:Blackfire Adept		HD:6		TYPE:PC.Prestige	CLASSTYPE:PC	ABB:BlAd	MAXLEVEL:10	SOURCEPAGE:p.12	DEFINE:BlackfireAdeptLVL|0	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")/2|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Will|(classlevel("APPLIEDAS=NONEPIC")+1)/2|PREVAREQ:UseAlternateSaveProgression,0	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|(classlevel("APPLIEDAS=NONEPIC")+1)/3|PREVAREQ:UseAlternateSaveProgression,0	BONUS:VAR|ClassBABPoor|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|BlackfireAdeptLVL|CL	BONUS:VAR|ClassSavePoor_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	FACT:ClassType|PC
 ###Block
-CLASS:Blackfire Adept		
+CLASS:Blackfire Adept		PREABILITY:2,CATEGORY=FEAT,Augment Summoning,Spell Focus (conjuration)	PRESKILL:1,Knowledge (Planes)=5,Spellcraft=5	PRESPELL:1,Summon Monster III		PRELANG:2,Abyssal,Infernal
 ###Block
 CLASS:Blackfire Adept		STARTSKILLPTS:4	CSKILL:Bluff|Intimidate|Knowledge (arcana)|Knowledge (planes)|Sense Motive|Spellcraft
 
 1	ABILITY:Class|AUTOMATIC|Blackfire Adept ~ Class
-
 ###Block: Spell Improvement
 2	ADD:SPELLCASTER|ANY
 3	ADD:SPELLCASTER|ANY
