@@ -1,0 +1,42 @@
+
+
+
+# Armorist
+CLASS:Armorist	MAXLEVEL:20
+CLASS:Armorist	HD:10	TYPE:Base.PC.Spherecaster
+CLASS:Armorist	FACT:Abb|Arm	FACT:ClassType|Spherecaster
+CLASS:Armorist	SOURCEPAGE:p.56	
+CLASS:Armorist	BONUS:VAR|SphereCastingClass|classlevel("APPLIEDAS=NONEPIC")
+CLASS:Armorist	BONUS:VAR|ClassSphereCasterLow|classlevel("APPLIEDAS=NONEPIC")
+CLASS:Armorist	BONUS:VAR|ClassBABFull|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0
+CLASS:Armorist	BONUS:VAR|ClassSaveGood_Fortitude|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:SAVE|BASE.Fortitude|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Armorist	BONUS:VAR|ClassSavePoor_Reflex|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:SAVE|BASE.Reflex|classlevel("APPLIEDAS=NONEPIC")/3|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Armorist	BONUS:VAR|ClassSaveGood_Will|classlevel()|PREVAREQ:UseFractionalSave,1	BONUS:SAVE|BASE.Will|classlevel("APPLIEDAS=NONEPIC")/2+2|PREVAREQ:UseAlternateSaveProgression,0
+CLASS:Armorist	STARTSKILLPTS:
+CLASS:Armorist	CSKILL:
+CLASS:Armorist	FACT:SpellType|
+CLASS:Armorist	SPELLSTAT:	MEMORIZE:N
+CLASS:Armorist	BONUS:CASTERLEVEL|Armorist|Caster_Level_BL_Stripped_Armorist
+CLASS:Armorist	DEFINE:Caster_Level_BL_Stripped_Armorist|0	DEFINE:CasterLevelBLArmorist|0
+CLASS:Armorist	BONUS:VAR|Caster_Level_BL_Stripped_Armorist|Caster_Level_Armorist-CasterLevelBLArmorist
+CLASS:Armorist	BONUS:VAR|Caster_Level_Armorist|CL+Caster_Level_Bonus+CasterLevelBLArmorist
+CLASS:Armorist	BONUS:VAR|CasterLevelBL_Armorist|charbonusto("PCLEVEL","Armorist")	
+CLASS:Armorist	BONUS:VAR|Caster_Level_Highest__Arcane|Caster_Level_Armorist|TYPE=Base
+
+CLASS:Armorist	DEFINE:ArmoristLVL|0	BONUS:VAR|ArmoristLVL|CL
+
+
+#Elementalist
+#Eliciter
+#Fey Adept
+#Hedgewitch
+#Incanter
+#Mageknight
+#Shifter
+#Soul Weaver
+#Symbiat
+#Thaumaturge
+#Wraith
+
+# PRCs
+Bokor
