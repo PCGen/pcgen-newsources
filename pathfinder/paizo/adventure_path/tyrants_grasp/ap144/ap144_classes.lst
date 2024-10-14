@@ -1,0 +1,22 @@
+SOURCELONG:Midwives To Death	SOURCESHORT:AP144	SOURCEWEB:https://paizo.com/products/btq01zno?Pathfinder-Adventure-Path-144-Midwives-to-Death	SOURCEDATE:2024-10-12
+# Original Entry by: Allen Cohn
+
+# Class Name		Hit Dice	Type			Max Level	Source Page		Define				Combat bonus																	Save bonus																							Modify VAR																																																																		FACT
+CLASS:Mortal Usher	HD:8		TYPE:PC.Prestige	MAXLEVEL:10				DEFINE:MortalUsherLVL|0		BONUS:COMBAT|BASEAB|classlevel("APPLIEDAS=NONEPIC")*3/4|TYPE=Base.REPLACE|PREVAREQ:UseAlternateBABProgression,0	BONUS:SAVE|BASE.Reflex|(classlevel("APPLIEDAS=NONEPIC")+1)/3	BONUS:SAVE|BASE.Fortitude,BASE.Will|(classlevel("APPLIEDAS=NONEPIC")+1)/2	BONUS:VAR|ClassBABModerate|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalBAB,1	BONUS:VAR|MortalUsherLVL|CL	BONUS:VAR|ClassSaveGood_Fortitude|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSaveGood_Reflex|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	BONUS:VAR|ClassSavePoor_Will|classlevel("APPLIEDAS=NONEPIC")|PREVAREQ:UseFractionalSave,1	FACT:ClassType|PC	FACT:Abb|Arc
+# Class Name		Required Ability																					Req. Spell Type		PRETOTALAB
+CLASS:Mortal Usher	PRESKILL:2,Knowledge (Planes)=6,Knowledge (Religion)=6	PREALIGN:CN,LN,TN,NE,NG
+# Class Name		Skill Pts/Lvl	Class Skill
+CLASS:Mortal Usher	STARTSKILLPTS:4	CSKILL:Bluff|Diplomacy|Fly|Intimidate|Knowledge (Planes)|Knowledge (Religion)|Perception|Sense Motive|Use Magic Device
+
+1	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Vital Strike
+1	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Reaping Strike
+2	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Mortal Talents
+3	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Nosoi Plague Mask
+5	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Catrinas Calm
+6	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Improved Vital Strike
+7	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Morrigna Wrappings
+9	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Vanth Wings
+#10	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Yamaraj-Feather Cloak
+
+#can't get "Mortal Usher Class Feature" to work
+10	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Yamaraj-Feather Cloak
