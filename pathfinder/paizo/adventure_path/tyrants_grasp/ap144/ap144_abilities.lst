@@ -1,114 +1,99 @@
 SOURCELONG:Midwives To Death	SOURCESHORT:AP144	SOURCEWEB:https://paizo.com/products/btq01zno?Pathfinder-Adventure-Path-144-Midwives-to-Death	SOURCEDATE:2024-10-12
 # Original Entry by: Allen Cohn
 
-# Class Feature Blank
-#	KEY:xxx ~
-#	CATEGORY:Special Ability
-#	TYPE:xxx Class Feature.SpecialQuality
-#	SOURCEPAGE:p.
-#	DESC:
-
-# Race or Racial Trait Blank
-#	KEY:xxx ~
-#	CATEGORY:Special Ability
-#	TYPE:xxx Race Trait.Race Trait.SpecialQuality
-#	SOURCEPAGE:p.
-#	DESC:
-
-
-###Block: Barbarian Abilities
-# Ability Name	Unique Key			Category of Ability		Type						Description																																																																																																																																																																																																																					Modify VAR					Source Page
-#	Rage		KEY:Barbarian ~ Rage	CATEGORY:Special Ability	TYPE:Barbarian Class Feature.Rage	DESC:You can call upon inner reserves of strength and ferocity, granting you additional combat prowess. You can rage for %1 rounds per day. You can enter rage as a free action. The total number of rounds of rage per day is renewed after resting for 8 hours, although these hours do not need to be consecutive. While in rage, you gain a +%2 morale bonus to your Strength and a +%3 morale bonus to Constitution, as well as a +%4 morale bonus on Will saves. In addition, you take a -2 penalty to Armor Class. The increase to Constitution grants you %5 hit points, but these disappear when the rage ends and are not lost first like temporary hit points. While in rage, you cannot use any Charisma-, Dexterity-, or Intelligence-based skills (except Acrobatics, Fly, Intimidate, and Ride) or any ability that requires patience or concentration. You can end your rage as a free action and are fatigued after rage for a number of rounds equal to 2 times the number of rounds spent in the rage. You cannot enter a new rage while fatigued or exhausted but can otherwise enter rage multiple times during a single encounter or combat. If you fall unconscious, your rage immediately ends, placing you in peril of death.|RageDuration|RageStrBonus|RageConBonus|RageSaveBonus|(RageConBonus/2)*TL	BONUS:VAR|RageLVL|BarbarianLVL	SOURCEPAGE:p.32
-
-#	Defensive Training	KEY:Dwarf ~ Defensive Training	CATEGORY:Special Ability	TYPE:SpecialQuality.Extraordinary.Dwarf Racial Trait	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Dwarf ~ Defensive Training],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.DwarfDefensiveTraining]	DEFINE:RacialDefensiveTrainingBonus|0	DESC:Dwarves get a +%1 dodge bonus to AC against humanoid creatures of the giant subtype.|RacialDefensiveTrainingBonus		BONUS:VAR|RacialDefensiveTrainingBonus|4		SOURCEPAGE:p.21	ASPECT:CombatBonus|+%1 dodge bonus to AC against humanoid creatures of the giant subtype.|RacialDefensiveTrainingBonus
-
-#insert your data here
-
-#Every line that starts with a '#' is a comment. You may want to remove these comments, if you use this file to set up
-#your own data. Remember not to put the '#' at the start of your own data, as PCGen would see it as a comment only.
-#
-#When Running PCGen, you can select "Help > Documentation > List Files > List File Tag Index > Feat File tags" to find
-#out how the tags in the feats file work. Some of the tags used here are global tags. You will see an alphabetical
-#listing of all PCGen tags to the left of the documentation window. You can find the global tags there as well.
-#
-# Abilities are the newest method for all aspects of class & race abilities. Currently we use hidden feats to emulate
-# class and racial abilities. The advent of Abilities allows us to use one standard format for a variety of things.
-# Generally Abilities are exactly the same in format as a Feat with the exception of a NEW tag CATEGORY which tells
-# PCGen what the ability is to be categoried as - example: My Ability is part of the my_abilities category, So I can add
-# points only to the my_abilities allowing very small and restricted lists. Another example would be Fighter Bonus feats.
-#
-# Feat and ability are used through out this example as they almost the same thing - ABILITY can also be used to add "Feats"
-# using the CATEGORY:FEAT tag.
-# You can also use PREFEAT for any CATEGORY:FEAT, for the rest you'll need to use PREABILITY:x,CATEGORY=<category>,Foo,TYPE.Bar (x is the number)
-#####1st Example
-
-#####
-#Each ability takes one line, just like a feat, and the first field must be the abilities' name. In the Example the name of the ability is My Ability.
-#When naming feats you should only use parentheses at the end of the name if the name is not duplicated elsewhere. This is
-#because of how PCGen names abilities which can be taken multiple times. For example, the Feat/ability Weapon Focus when taken will display
-#as Weapon Focus(Dagger). Another example is Armor Proficiency (Light), there is no feat named Armor Proficiency so this name
-#is fine. What is happening is when PCGen finds a feat with parentheses that duplicates the name of another feat it assumes
-#that feat is an instance of the one without parentheses and does not display the one with parentheses.
-#
-#The TYPE tag is holding a . (period) delimited list of the types the ability/feat is.
-#
-#The DESC tag is used to hold the description of the Ability/Feat. In our files we usually keep the description brief, so the user
-#still need to own the book to make use of of the data, but for your personal files can get as elaborate as you want there.
-#
-#The MULT tag determines if a ability/feat can be taken multiple times. If the value is set to YES, then you MUST also use a CHOOSE
-#tag.
-#
-#The CHOOSE tag must be paired with a MULT:YES tag in feats for it to work properly. It will display a popup window that asks
-#for a selection according to what is being called for. There is a multitude of existing CHOOSE tags in PCGen. If you are
-#looking into the documentation under List File Tag Index, you can find them listed under the topic "CHOOSE tags".
-#
-#The BONUS tags are a group of similar tags, that grant some form of Bonus to another already existing tag. To read a description
-#of them, look in the List File Tag Index under the topic "Bonus tags".
-#
-#The SOURCEPAGE tag can be used to hold a reference to where you can find the feat. This will be displayed in PCGen.
-
-
-###Block: Campaign Traits
-# Ability Name		Unique Key					Category of Ability		Type					Multiple Requirements																										Description																																																																									Bonus to Situation					Bonus to skill						Class Skill
-Snoop				KEY:Trait ~ Snoop				CATEGORY:Special Ability	TYPE:Trait.CampaignTrait	PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Trait ~ Snoop],[PREVAREQ:BypassTraitRestriction,1],[!PREABILITY:1,CATEGORY=Special Ability,TYPE.CampaignTrait]			DESC:You gain a +1 trait bonus on Knowledge (history) and Knowledge (local) checks, and these both become class skills for you. Once each day you can reroll a single Bluff or Sense Motive check against a creature you have known for at least 24 hours, using the better result.																																					BONUS:SKILL|Knowledge (History),Knowledge (Local)|1|TYPE=Trait	CSKILL:Knowledge (Religion)|Knowledge (Local)
-CATEGORY=Special Ability|Evocation School ~ Force Missile.MOD	BONUS:VAR|EvocationForceMissileTimes|(3+INT)/2
-Obol		KEY:Campaign Effect ~ Obol			CATEGORY:Special Ability	DESC:Absorbs 2*CL hp of negative energy/attack, SR 11+HD vs. necromancy spells, all natural and melee weapons treated as magic, cold iron, and silver vs. undead
-
-
-Mortal Usher		CATEGORY:Class		DEFINE:MortalUsher_CFP_Level|0			BONUS:VAR|MortalUsher_CFP_Level|MortalUsherLVL|TYPE=Base
-
-
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Vital Strike|Mortal Usher ~ Reaping Strike|PREVARGTEQ:MortalUsher_CFP_Level,1
-#to do Mortal Talents properly, mimic Inner Sea Gods Evangelist Aligned Class
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Mortal Talents|PREVARGTEQ:MortalUsher_CFP_Level,2
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Nosoi Plague Mask|PREVARGTEQ:MortalUsher_CFP_Level,3
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Catrinas Calm|PREVARGTEQ:MortalUsher_CFP_Level,5
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Morrigna Wrappings|PREVARGTEQ:MortalUsher_CFP_Level,7
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Vanth Wings|PREVARGTEQ:MortalUsher_CFP_Level,9
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Special Ability|AUTOMATIC|Mortal Usher ~ Yamaraj-Feather Cloak|PREVARGTEQ:MortalUsher_CFP_Level,10
-
-#for some reason can't make "Mortal Usher Class Feature" work in any above
-#CATEGORY=Class|Mortal Usher.MOD	ABILITY:Mortal Usher Class Feature|AUTOMATIC|Mortal Usher ~ Yamaraj-Feather Cloak|PREVARGTEQ:MortalUsher_CFP_Level,10
+#A kludge to allow the Yamaraj-Feather Cloak to add Immunity to Electricity and Immunity to Death Effects as supernatural abilities, not extraordinary.
+CATEGORY=Special Ability|Immunity to Electricity.COPY=Immunity to Electricity ~ Yamaraj-Feather Cloak		TYPE:.CLEAR	TYPE:Supernatural.SpecialQuality
+CATEGORY=Special Ability|Immunity to Death Effects.COPY=Immunity to Death Effects ~ Yamaraj-Feather Cloak	TYPE:.CLEAR	TYPE:Supernatural.SpecialQuality
 
 ###Block: Mortal Usher
 # Ability Name			Unique Key								Category of Ability			Type													Visible		Define						Description																																																						Ability									Bonus Ability Pool								Modify VAR																																			Source Page
-#Weapon and Armor Proficiency	KEY:Weapon and Armor Proficiency ~ Mortal Usher		CATEGORY:Special Ability		TYPE:ClassFeatures.SpecialQuality								VISIBLE:DISPLAY								DESC:Mortal ushers gain no proficiency with any weapon or armor.
-Vital Strike			KEY:Mortal Usher ~ Vital Strike				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 1st level, a mortal usher gains the Vital Strike feat																																													ABILITY:FEAT|VIRTUAL|Vital Strike
-#Mortal Talents			KEY:Mortal Usher ~ Mortal Talents				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
-Mortal Talents			KEY:Mortal Usher ~ Mortal Talents				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Extraordinary											DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.																																											BONUS:ABILITYPOOL|Mortal Usher Mortal Talents Class|1
-Nosoi Plague Mask			KEY:Mortal Usher ~ Nosoi Plague Mask			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 3rd level, a mortal usher can conjure or dismiss a nosoi plague mask as a free action. 
-Reaping Strike			KEY:Mortal Usher ~ Reaping Strike				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 1st level, whenever a mortal usher deals hit point damage by using the attack action, casting a spell that targets only a single creature, or throwing an alchemical item as a standard action (including an alchemist's bombs), he deals an additional %1d6 points of damage to the target.|ceil(MortalUsherLVL/2)
-Improved Vital Strike		KEY:Mortal Usher ~ Improved Vital Strike			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 6th level, a mortal usher gains the Improved Vital Strike feat																																												ABILITY:FEAT|VIRTUAL|Improved Vital Strike
-Catrinas Calm			KEY:Mortal Usher ~ Catrinas Calm				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 5th level, a mortal usher emits a 30-foot-radius aura that acts as a calm emotions spell on creatures within its area, with a DC of %1.|16+MortalUsherLVL
-Morrigna Wrappings		KEY:Mortal Usher ~ Morrigna Wrappings			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 7th level, a mortal usher gains the ability to designate any cloak, scarf, robe, or shirt in his possession as his wrappings, granting it unique powers in addition to any abilities or enchantments it may already have.
-Vanth Wings				KEY:Mortal Usher ~ Vanth Wings				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality													DESC:At 9th level, a mortal usher gains a 60-foot fly speed with good maneuverability and resistance to cold equal to %1. The mortal usher gains a +5 circumstance bonus on Acrobatics checks and on concentration checks attempted while casting a spell.|10+MortalUsherLVL
-#Yamaraj-Feather Cloak		KEY:Mortal Usher ~ Yamaraj-Feather Cloak			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal UsherClassFeatures.SpecialQuality.Supernatural											DESC:At 10th level, a mortal usher becomes immune to electricity and death effects, and whenever he is struck by an attack or effect dealing electricity damage, he regains 1 hit point per 3 points of electricity damage the attack or effect would normally deal.
-Yamaraj-Feather Cloak		KEY:Mortal Usher ~ Yamaraj-Feather Cloak			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Supernatural											DESC:At 10th level, a mortal usher becomes immune to electricity and death effects, and whenever he is struck by an attack or effect dealing electricity damage, he regains 1 hit point per 3 points of electricity damage the attack or effect would normally deal.
+Reaping Strike			KEY:Mortal Usher ~ Reaping Strike				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialAttack.Supernatural											DESC:At 1st level, whenever a mortal usher deals hit point damage by using the attack action, casting a spell that targets only a single creature, or throwing an alchemical item as a standard action (including an alchemist's bombs), he deals an additional %1d6 points of damage to the target. This damage is positive energy damage if the target is undead, or negative energy damage if the target is living; creatures that are neither living nor dead, such as constructs, are unaffected by this ability.|ceil(MortalUsherLVL/2)
+Vital Strike			KEY:Mortal Usher ~ Vital Strike				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialAttack				VISIBLE:NO									DESC:At 1st level, a mortal usher gains the Vital Strike feat																																													ABILITY:FEAT|VIRTUAL|Vital Strike
 
-#Trying to implement Mortal Talents
-Mortal Usher Mortal Talents Class									CATEGORY:Special Ability		TYPE:Mortal Talents Class																			DESC:Mortal Talents Class is %1|%LIST	STACK:NO	MULT:YES	CHOOSE:ABILITYSELECTION|Mortal Talents Class|TYPE=Mortal Talents Class
+Mortal Talents			KEY:Mortal Usher ~ Mortal Talents				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality			VISIBLE:NO									DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+#Create variable to count number of classes before mortal usher.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD		DEFINE:MortalTalentsPriorClasses|0	BONUS:VAR|MortalTalentsPriorClasses|COUNT[CLASSES]-1
+#Only need an ability pool if character has more than one class before mortal usher. Otherwise lines below automatically choose the one class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD		BONUS:ABILITYPOOL|Mortal Usher Mortal Talents Class|1|PREVARGT:MortalTalentsPriorClasses,1
 
-# Selections  ## TODO Should update to include all base and advanced PC classes
-Cleric													CATEGORY:Mortal Talents Class		TYPE:Mortal Talents Class							PREABILITY:1,CATEGORY=Class,Cleric			BONUS:PCLEVEL|Cleric|MortalUsherLVL/2		BONUS:VAR|Cleric_CFP_Level,ClericLVL|MortalUsherLVL/2
-Inquisitor													CATEGORY:Mortal Talents Class		TYPE:Mortal Talents Class							PREABILITY:1,CATEGORY=Class,Inquisitor		BONUS:PCLEVEL|Inquisitor|MortalUsherLVL/2		BONUS:VAR|Inquisitor_CFP_Level,InquisitorLVL|MortalUsherLVL/2
+Nosoi Plague Mask			KEY:Mortal Usher ~ Nosoi Plague Mask			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Supernatural											DESC:At 3rd level, a mortal usher can conjure or dismiss a nosoi plague mask as a free action. This plague mask is a physical manifestation of the mortal usher’s soul and cannot be destroyed or stolen, though its magic can be suppressed by an antimagic field or similar effect. As long as the mortal usher’s nosoi plague mask is conjured, the mortal usher gains the ability to cast invisibility on himself as a standard action with a caster level = %1. In addition, the mortal usher can activate the nosoi plague mask as a standard action, forcing all living and undead creatures within a 60-foot radius to attempt a Will saving throw (DC %2). Those that fail are fascinated; this effect continues for every round the mortal usher maintains the effect as a swift action and for 1 round thereafter. The mortal usher cannot use the invisibility effect of the plague mask while using its fascinate ability, and a creature that saves against the fascination effect is immune for 24 hours. This is a sonic mind-affecting effect; it can affect undead even though they would normally be immune to mind-affecting effects.|5+MortalUsherLVL|15+MortalUsherLVL
+Catrinas Calm			KEY:Mortal Usher ~ Catrinas Calm				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Supernatural											DESC:At 5th level, a mortal usher emits a 30-foot-radius aura that acts as a calm emotions spell on creatures within its area, with a DC of %1. Creatures are entitled to a new saving throw each time they reenter the area of the aura after leaving it, and a creature who successfully saves against the aura’s effects is immune to it for 24 hours. The mortal usher can suppress or resume this aura as a swift action.|16+MortalUsherLVL
+Improved Vital Strike		KEY:Mortal Usher ~ Improved Vital Strike			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialAttack				VISIBLE:NO									DESC:At 6th level, a mortal usher gains the Improved Vital Strike feat																																												ABILITY:FEAT|VIRTUAL|Improved Vital Strike
+Morrigna Wrappings		KEY:Mortal Usher ~ Morrigna Wrappings			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Supernatural											DESC:At 7th level, a mortal usher gains the ability to designate any cloak, scarf, robe, or shirt in his possession as his wrappings, granting it unique powers in addition to any abilities or enchantments it may already have. The wrappings grant the mortal usher a natural armor bonus equal to half his class level as long as it is in his possession, and they can be used as a magic whip that can be wielded even if the mortal usher’s hands are full. When used as a whip, the wrappings gain an enhancement bonus equal to the mortal usher’s class level. These bonuses can be added to the whip to increase its enhancement bonus to a maximum of +5 (minimum +1), or they can be used to add any of the following weapon properties: brilliant energy, disruption (this supersedes the normal requirement that a disruption weapon must be a bludgeoning weapon), flaming, flaming burst, frost, holy, icy burst, shock, shocking burst, unholy, or vorpal. Adding these properties reduces the enhancement bonus granted by this ability by an amount equal to the property’s cost. The mortal usher can change how these properties and enhancements are assigned, or designate a new item as his wrappings, after an 8-hour rest.							BONUS:COMBAT|AC|MortalUsherLVL/2|TYPE=NaturalArmor	KIT:1|Mortal Usher ~ Morrigna Wrapping Whip
+Vanth Wings				KEY:Mortal Usher ~ Vanth Wings				CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Extraordinary											DESC:At 9th level, a mortal usher gains a 60-foot fly speed with good maneuverability and resistance to cold equal to %1. The mortal usher gains a +5 circumstance bonus on Acrobatics checks and on concentration checks attempted while casting a spell.|10+MortalUsherLVL	BONUS:SKILL|Acrobatics|5|TYPE=Circumstance	MOVE:Fly,60	BONUS:VAR|Maneuverability|4	ABILITY:Special Ability|AUTOMATIC|Resistance To Cold	BONUS:VAR|ColdResistanceBonus|10+MortalUsherLVL|TYPE=Resistance
+Yamaraj-Feather Cloak		KEY:Mortal Usher ~ Yamaraj-Feather Cloak			CATEGORY:Special Ability		TYPE:ClassFeatures.Mortal Usher Class Feature.SpecialQuality.Supernatural											DESC:At 10th level, a mortal usher becomes immune to electricity and death effects, and whenever he is struck by an attack or effect dealing electricity damage, he regains 1 hit point per 3 points of electricity damage the attack or effect would normally deal. If the amount of healing would cause the mortal usher to exceed his maximum hit points, he gains any excess as temporary hit points (maximum 50) that last for 1 hour.	ABILITY:Special Ability|AUTOMATIC|Immunity to Electricity ~ Yamaraj-Feather Cloak|Immunity to Death Effects ~ Yamaraj-Feather Cloak
 
+
+#Mortal Usher Mortal Talents adds to class features of selected previous class
+#These lines "populate" the ability category/ability pool Mortal Usher Mortal Talents Class...but only with those corresponding to the classes that the character has in addition to mortal usher (which is typically only one).
+#They also apply the right ability automatically without invoking the ability pool chooser ("Feats & Abilities") in the UI if only one class before mortal usher (which is the most common case).
+
+#Core Rulebook classes
+Mortal Talents ~ Barbarian Chosen		KEY:Mortal Talents Class Selection ~ Barbarian		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Barbarian		BONUS:PCLEVEL|Barbarian|MortalUsherLVL/2		BONUS:VAR|Barbarian_CFP_Level,BarbarianLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Barbarian|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Barbarian
+
+Mortal Talents ~ Bard Chosen			KEY:Mortal Talents Class Selection ~ Bard			CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Bard			BONUS:PCLEVEL|Bard|MortalUsherLVL/2			BONUS:VAR|Bard_CFP_Level,BardLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Bard|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Bard
+
+Mortal Talents ~ Cleric Chosen		KEY:Mortal Talents Class Selection ~ Cleric		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Cleric			BONUS:PCLEVEL|Cleric|MortalUsherLVL/2		BONUS:VAR|Cleric_CFP_Level,ClericLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Cleric|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Cleric
+
+Mortal Talents ~ Druid Chosen			KEY:Mortal Talents Class Selection ~ Druid		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Druid			BONUS:PCLEVEL|Druid|MortalUsherLVL/2		BONUS:VAR|Druid_CFP_Level,DruidLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Druid|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Druid
+
+Mortal Talents ~ Fighter Chosen		KEY:Mortal Talents Class Selection ~ Fighter		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Fighter			BONUS:PCLEVEL|Fighter|MortalUsherLVL/2		BONUS:VAR|Fighter_CFP_Level,FighterLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Fighter|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Fighter
+
+Mortal Talents ~ Monk Chosen			KEY:Mortal Talents Class Selection ~ Monk			CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Monk			BONUS:PCLEVEL|Monk|MortalUsherLVL/2			BONUS:VAR|Monk_CFP_Level,MonkLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Monk|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Monk
+
+Mortal Talents ~ Paladin Chosen		KEY:Mortal Talents Class Selection ~ Paladin		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Paladin			BONUS:PCLEVEL|Paladin|MortalUsherLVL/2		BONUS:VAR|Paladin_CFP_Level,PaladinLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Paladin|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Paladin
+
+Mortal Talents ~ Ranger Chosen		KEY:Mortal Talents Class Selection ~ Ranger		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Ranger			BONUS:PCLEVEL|Ranger|MortalUsherLVL/2		BONUS:VAR|Ranger_CFP_Level,RangerLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Ranger|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Ranger
+
+Mortal Talents ~ Rogue Chosen			KEY:Mortal Talents Class Selection ~ Rogue		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Rogue			BONUS:PCLEVEL|Rogue|MortalUsherLVL/2		BONUS:VAR|Rogue_CFP_Level,RogueLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Rogue|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Rogue
+
+Mortal Talents ~ Sorcerer Chosen		KEY:Mortal Talents Class Selection ~ Sorcerer		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Sorcerer		BONUS:PCLEVEL|Sorcerer|MortalUsherLVL/2		BONUS:VAR|Sorcerer_CFP_Level,SorcererLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Sorcerer|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Sorcerer
+
+Mortal Talents ~ Wizard Chosen		KEY:Mortal Talents Class Selection ~ Wizard		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Wizard			BONUS:PCLEVEL|Wizard|MortalUsherLVL/2		BONUS:VAR|Wizard_CFP_Level,WizardLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Wizard|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Wizard
+
+
+#Base Classes
+Mortal Talents ~ Cavalier Chosen		KEY:Mortal Talents Class Selection ~ Cavalier		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Cavalier		BONUS:PCLEVEL|Cavalier|MortalUsherLVL/2		BONUS:VAR|Cavalier_CFP_Level,CavalierLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Cavalier|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Cavalier
+
+Mortal Talents ~ Alchemist Chosen		KEY:Mortal Talents Class Selection ~ Alchemist		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Alchemist		BONUS:PCLEVEL|Alchemist|MortalUsherLVL/2		BONUS:VAR|Alchemist_CFP_Level,AlchemistLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Alchemist|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Alchemist
+
+Mortal Talents ~ Gunslinger Chosen		KEY:Mortal Talents Class Selection ~ Gunslinger		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Gunslinger		BONUS:PCLEVEL|Gunslinger|MortalUsherLVL/2		BONUS:VAR|Gunslinger_CFP_Level,GunslingerLVL|MortalUsherLVL/2		DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Gunslinger|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Gunslinger
+
+Mortal Talents ~ Inquisitor Chosen		KEY:Mortal Talents Class Selection ~ Inquisitor		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Inquisitor		BONUS:PCLEVEL|Inquisitor|MortalUsherLVL/2		BONUS:VAR|Inquisitor_CFP_Level,InquisitorLVL|MortalUsherLVL/2		DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Inquisitor|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Inquisitor
+
+Mortal Talents ~ Magus Chosen			KEY:Mortal Talents Class Selection ~ Magus		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Magus			BONUS:PCLEVEL|Magus|MortalUsherLVL/2		BONUS:VAR|Magus_CFP_Level,MagusLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Magus|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Magus
+
+Mortal Talents ~ Oracle Chosen		KEY:Mortal Talents Class Selection ~ Oracle		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Oracle			BONUS:PCLEVEL|Oracle|MortalUsherLVL/2		BONUS:VAR|Oracle_CFP_Level,OracleLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Oracle|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Oracle
+
+#Mortal Talents ~ Omdura Chosen		KEY:Mortal Talents Class Selection ~ Omdura		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Omdura			BONUS:PCLEVEL|Omdura|MortalUsherLVL/2		BONUS:VAR|Omdura_CFP_Level,OmduraLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+
+Mortal Talents ~ Shifter Chosen		KEY:Mortal Talents Class Selection ~ Shifter		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Shifter			BONUS:PCLEVEL|Shifter|MortalUsherLVL/2		BONUS:VAR|Shifter_CFP_Level,ShifterLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Monk|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Monk
+
+Mortal Talents ~ Summoner Chosen		KEY:Mortal Talents Class Selection ~ Summoner		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Summoner		BONUS:PCLEVEL|Summoner|MortalUsherLVL/2		BONUS:VAR|Summoner_CFP_Level,SummonerLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Summoner|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Summoner
+
+#Mortal Talents ~ Vampire Hunter Chosen	KEY:Mortal Talents Class Selection ~ Vampire Hunter	CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Vampire Hunter	BONUS:PCLEVEL|Vampire Hunter|MortalUsherLVL/2	BONUS:VAR|Vampire_Hunter_CFP_Level,Vampire HunterLVL|MortalUsherLVL/2	DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+
+Mortal Talents ~ Vigilante Chosen		KEY:Mortal Talents Class Selection ~ Vigilante		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Vigilante		BONUS:PCLEVEL|Vigilante|MortalUsherLVL/2		BONUS:VAR|Vigilante_CFP_Level,VigilanteLVL|MortalUsherLVL/2			DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Vigilante|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Vigilante
+
+Mortal Talents ~ Witch Chosen			KEY:Mortal Talents Class Selection ~ Witch		CATEGORY:Special Ability	TYPE:Mortal Usher Mortal Talents Class.SpecialQuality			PREABILITY:1,CATEGORY=Class,Witch			BONUS:PCLEVEL|Witch|MortalUsherLVL/2		BONUS:VAR|Witch_CFP_Level,WitchLVL|MortalUsherLVL/2				DESC:At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class.
+CATEGORY=Special Ability|Mortal Usher ~ Mortal Talents.MOD	ABILITY:Mortal Usher Mortal Talents Class|AUTOMATIC|Mortal Talents Class Selection ~ Witch|PREVAREQ:MortalTalentsPriorClasses,1|PREABILITY:1,CATEGORY=Class,Witch
