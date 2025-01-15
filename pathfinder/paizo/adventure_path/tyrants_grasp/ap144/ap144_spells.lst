@@ -1,0 +1,72 @@
+# Thu Feb 18 13:32:36 2021 -- reformated by PCGen PrettyLST v6.08.00
+SOURCELONG:Tyrant's Grasp Customizations	SOURCESHORT:TGC	SOURCEDATE:2024-06-06
+
+#
+# Blank Spell Template
+#	XXX
+#	KEY:XXX
+#	SOURCEPAGE:p.
+#	SOURCESHORT:
+#	SOURCELONG:
+#	SCHOOL:
+#	SUBSCHOOL:
+#	DESCRIPTOR:
+#	CLASSES:x,x=y|x=y
+#	DOMAINS:x,x=y|x=y
+#	CASTTIME:
+#	COMPS:
+#	RANGE:
+#	TARGETAREA:
+#	DURATION:
+#	ITEM:POTION
+#	SAVEINFO:
+#	SPELLRES:
+#	DESC:
+#	TEMPBONUS:ANYPC|x|y
+
+#insert your data here
+
+#Every line that starts with a '#' is a comment. You may want to remove these comments, if you use this file to set up
+#your own data. Remember not to put the '#' at the start of your own data, as PCGen would see it as a comment only.
+#
+#When Running PCGen, you can select "Help > Documentation > List Files > List File Tag Index > Spell File tags" to find
+#out how the tags in the spells file work. Some of the tags used here are global tags. You will see an alphabetical
+#listing of all PCGen tags to the left of the documentation window. You can find the global tags there as well.
+#
+#To learn the basics of coding a spell, you can also visit "Help > Documentation > List Files > LST File Class > Lesson 7"
+#
+#
+#####Example
+
+#Teleport		CLASSES:Sorcerer,Wizard=5		DOMAINS:Travel=5		SCHOOL:Conjuration	SUBSCHOOL:Teleportation		TYPE:Arcane.Divine	COMPS:V		CASTTIME:1 standard action		RANGE:Personal and touch	TARGETAREA:You and touched objects or other touched willing creatures		DURATION:Instantaneous		SAVEINFO:None and Will negates (object)		SPELLRES:No and Yes (object)		DESC:Instantly transports you as far as (CASTERLEVEL*100) miles.		SOURCEPAGE:SpellsT-Z	ITEM:Potion
+
+#####
+#Teleport is the name of the spell. It will appear in the spells list on PCGen's Spells tab and will be used if a spell is
+#added by use of the SPELLS tag. Every spell must have a name.
+#
+#The CLASSES tag indicates that this spell is the indicated level for the named class. It will appear in most spells, unless
+#the spell is for some reason not associated with a class.
+#
+#The DOMAINS tag indicates that this spell is the indicated level for the named domain. It is only used with spells that
+#belong to a domain.
+#
+#The SCHOOL tag lists the Schools the spell belongs to and is used for specialist wizards to determine their favored schools
+#bonus spells. It should be used if the spell belongs to a school (which almost always is the case).
+#
+#The SUBSCHOOL tag lists the Sub-Schools the spell belongs to and is also used for specialist wizards to determine their
+#favored schools bonus spells. You can usually find it in the books in parentheses after the School. If it exists, it should
+#be used.
+#
+#The TYPE tag indicates what "types" are associated with the spell. Every spell should have it.
+#
+#COMPS, CASTTIME, RANGE, TARGETAREA, DURATION, SAVEINFO, SPELLRES, and DESC are the tags that actually describe the spell.
+#Most if not all of them will be used in every spell.
+#
+#The SOURCEPAGE tag can be used to hold a reference to where you can find the spell. This will be displayed in PCGen and on
+#the output sheet.
+#
+#The ITEM tag tells PCGen what types of items this spell can be used to make (Potions, wands, wondrous items, etc).
+# Spell Name				Type					Classes of caster														School			Sub-School			Descriptor					Components		Casting Time			Range						Item		Target Area or Effect											Duration									Save Info					Spell Resistance		Source, Long Desc.							Source Page		Source Pub Link																		Description
+Detect Magic Touch			TYPE:Arcane.Divine		CLASSES:Bard,Cleric,Druid,Sorcerer,Wizard,Inquisitor,Witch=0						SCHOOL:Divination												COMPS:V, S		CASTTIME:1 standard action	RANGE:Touch							TARGETAREA:Creature or object touched								DURATION:Concentration, up to (CASTERLEVEL) minutes [D]	SAVEINFO:None				SPELLRES:No																																				DESC:You detect magical auras.|!PRERULE:1,DisplayFullSpell
+Detect Magic Ranged			TYPE:Arcane.Divine		CLASSES:Bard,Cleric,Druid,Sorcerer,Wizard,Inquisitor,Witch=1						SCHOOL:Divination												COMPS:V, S		CASTTIME:1 standard action	RANGE:60 ft.						TARGETAREA:Cone-shaped emanation									DURATION:Concentration, up to (CASTERLEVEL) minutes [D]	SAVEINFO:None				SPELLRES:No			SOURCEPAGE:p.267	SOURCELINK:http://paizo.com/pathfinderRPG/prd/spells/detectMagic.html#_detect-magic					DESC:You detect magical auras.|!PRERULE:1,DisplayFullSpell
+Clay Skin					TYPE:Arcane.Divine		CLASSES:Alchemist,Bloodranger,Inquisitor,Magus,Sorcerer,Wizard,Summoner=3				SCHOOL:Abjuration												COMPS:V, S, M	CASTTIME:1 standard action	RANGE:Touch					ITEM:Potion	TARGETAREA:creature touched										DURATION:(CASTERLEVEL*10) minutes or until discharged		SAVEINFO:Will negates (harmless)	SPELLRES:yes (harmless)				SOURCELINK:https://www.d20pfsrd.com/magic/all-spells/c/clay-skin/					DESC:The target’s skin becomes as thick and tough as clay, granting the target DR 5/adamantine. Once the spell has prevented a total of (min(50,5*CASTERLEVEL)) points of damage, it is discharged and the spell ends.
